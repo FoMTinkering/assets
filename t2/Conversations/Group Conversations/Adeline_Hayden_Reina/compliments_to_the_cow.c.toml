@@ -1,0 +1,21 @@
+[compliments_to_the_cow]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "hayden" }, { npc = "reina" }] },
+	{ adeline_zone = "<reina_zone>" },
+	{ adeline_zone = "<hayden_zone>" },
+	{ adeline_activity = "eat" },
+]
+speaker = "adeline"
+local = "Today's soup is delicious, Reina!"
+next = "1"
+
+[compliments_to_the_cow.1]
+speaker = "reina"
+local = "Awww thank you! The cream I used is from Hayden's farm."
+next = "2"
+
+[compliments_to_the_cow.2]
+speaker = "hayden"
+portrait = "happy"
+local = "I'll be sure to pass along your compliment to the girls, Adeline!"

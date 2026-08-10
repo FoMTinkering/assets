@@ -1,0 +1,23 @@
+[taste_testing]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "elsie" }, { npc = "reina" }] },
+	{ elsie_zone = "<reina_zone>" },
+	{ location = "inn", comparator = "!=" }
+]
+speaker = "elsie"
+portrait = "neutral"
+local = "I've heard tell of your fabled taste testing, and I wondered if I might join some time?"
+next = "1"
+
+[taste_testing.1]
+speaker = "reina"
+portrait = "wink"
+local = "Oh my gosh... yes, I'd love to have you! How do you feel about spicy food?"
+next = "2"
+
+[taste_testing.2]
+speaker = "elsie"
+portrait = "happy"
+effect = "hearts"
+local = "I think I can manage."

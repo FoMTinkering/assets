@@ -1,0 +1,36 @@
+[dragonguard]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "hemlock" }] },
+	{ celine_zone = "<hemlock_zone>" },
+	{ time_of_day = "night", comparator = "!=" },
+	{ celine_zone = "<dell_zone>", comparator = "!=" },
+	{ celine_zone = "<luc_zone>", comparator = "!=" },
+	{ celine_zone = "<maple_zone>", comparator = "!=" },
+	{ date_time = "1y", comparator = ">=" }
+]
+actions = [
+	{ bark = { bark = "ellipses", npc = "celine" } },
+	{ bark = { bark = "ellipses", npc = "hemlock" } },
+]
+speaker = "celine"
+portrait = "happy"
+local = "Dell said the Dragonguard was on important business today!"
+next = "1"
+
+[dragonguard.1]
+speaker = "celine"
+portrait = "think"
+local = "That always makes me nervous..."
+next = "2"
+
+[dragonguard.2]
+speaker = "hemlock"
+portrait = "wink"
+local = "Hah! Don't worry, Maple and Luc will keep her out of trouble."
+next = "3"
+
+[dragonguard.3]
+speaker = "hemlock"
+portrait = "think"
+local = "Well... Luc will keep Maple and Dell out of trouble. Right?"

@@ -1,0 +1,104 @@
+requires = [
+	{ weather = "pleasant" },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+	{ season = "winter" },
+	{ day_of_the_week = "tuesday" },
+]
+
+# adeline
+[adeline."6:00am"]
+destination = "adelines_bedroom/Bed"
+
+[adeline."6:24am"]
+destination = "general_store_home/Kitchen Table Bottom Left"
+
+[adeline."12:33pm"]
+destination = "town/Quest Board"
+on_arrival_actions = [{ animation = "write" }]
+
+[adeline."2:11pm"]
+destination = "town/Quest Board"
+
+[adeline."6:26pm"]
+destination = "adelines_office/routine_entrance"
+on_arrival_actions = [{ routine = "adeline_office_work" }]
+
+[adeline."12:43am"]
+destination = "adelines_bedroom/Bed"
+
+# caldarus
+[caldarus."6:00am"]
+destination = "deep_woods/foraging_chat_2"
+
+[caldarus."10:23am"]
+destination = "town/Quest Board Friend"
+
+[caldarus."6:27pm"]
+destination = "eilands_office/office_chat_2"
+
+[caldarus."9:12pm"]
+destination = "eilands_office/viewing_1_a"
+
+[caldarus."10:11pm"]
+destination = "eilands_office/viewing_3_a"
+
+[caldarus."11:22pm"]
+destination = "eilands_office/viewing_0_b"
+
+[caldarus."12:09am"]
+destination = "eilands_office/viewing_2_b"
+
+[caldarus."1:18am"]
+destination = "caldarus_house/Caldarus Wake Point"
+on_arrival_actions = [{ animation = "eyes_closed" }]
+
+
+# celine
+[celine."6:00am"]
+destination = "deep_woods/foraging_chat_1"
+
+[celine."10:22am"]
+destination = "bathhouse_change_room/Right Bench Right Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[celine."5:21pm"]
+destination = "celines_room/ArmChair Seat"
+on_arrival_actions = [{ animation = "book_sit" }]
+delayed_arrival_actions = [{ after = "1h 10n", activity = "drink" }]
+
+# eiland
+[eiland."6:00am"]
+destination = "eilands_bedroom/Loveseat Left Seat"
+
+[eiland."6:18am"]
+destination = "inn/North Table Left End"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[eiland."10:37am"]
+destination = "town/Anvil Chatting 1"
+
+[eiland."3:11pm"]
+destination = "blacksmith_store/Store Chatting Left"
+
+[eiland."6:48pm"]
+destination = "eilands_office/office_chat_3"
+
+[eiland."9:11pm"]
+destination = "eilands_office/viewing_1_b"
+
+[eiland."10:10pm"]
+destination = "eilands_office/viewing_3_b"
+
+[eiland."11:20pm"]
+destination = "eilands_office/viewing_0_a"
+
+[eiland."12:11am"]
+destination = "eilands_office/viewing_2_a"
+
+[eiland."1:17am"]
+destination = "eilands_bedroom/Loveseat Left Seat"
+on_arrival_actions = [{ activity = "drink" }]

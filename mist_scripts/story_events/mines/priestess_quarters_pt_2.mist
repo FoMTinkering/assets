@@ -1,0 +1,147 @@
+//
+//
+override_requirement(unlocked_pq_door);
+refresh_room_layers();
+scene(priestess_quarters);
+wait(0.5);
+play_sound("SoundEffects/Entrances/ExitReveal");
+wait(0.5);
+sim {
+	{
+		pan_camera(3, pq2_camera_2);
+	}
+	{
+		wait(1);
+		free bark_speech(ari, exclamation_mark);
+		wait(0.5);
+		face(ari, south);
+	}
+	{
+		place_actor(seridia, north, pq2_priestess_entrance);
+		play_sound("SoundEffects/NPCs/SeridiaFadeOut");
+		fade_npc_alpha(seridia, 0.0, 1, 180);
+	}
+}
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+free bark_speech(seridia, cute_face);
+wait(1.5);
+sim {
+	{
+		walk_slow(seridia, pq2_priestess_start);
+		face(seridia, east);
+	}
+	{
+		wait(0.5);
+		walk_slow(ari, pq2_ari_entrance);
+		face(ari, west);
+	}
+	{
+		pan_camera(3, pq2_camera_3);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+face(ari, south);
+wait(0.25);
+close_ari_eyes();
+wait(0.5);
+face(seridia, south);
+animate(seridia, spell_cast);
+sim {
+	{
+		wait(0.75);
+		animate(ari, pickup);
+		close_ari_eyes();
+		set_on_blackboard("glow_ari");
+		wait(0.5);
+		setup_prop(pq2_spell);
+		free fade_prop_alpha(pq2_spell, 0.0, 1.0, 120);
+		wait(3.5);
+		free fade_prop_alpha(pq2_spell, 1.0, 0.0, 60);
+		wait(1);
+		animate(ari, idle);
+		open_ari_eyes();
+		wait(0.5);
+		face(ari, west);
+	}
+	{
+		pan_camera(2, pq2_camera_4);
+		wait(2);
+		pan_camera(2, pq2_camera_3);
+	}
+	{
+		wait(5);
+		animate(seridia, idle);
+		face(seridia, east);
+	}
+	{
+		wait(1.25);
+		play_sound("SoundEffects/NPCs/SeridiaGrantLightSpell");
+		create_animation(spr_npc_effect_heal, pq2_magic_animation, 0, 0, 0, -1000);
+	}
+}
+
+next_line(); //
+sim {
+	{
+		wait(1.5);
+		face(seridia, north);
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(seridia, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(seridia, cute_face);
+wait(1);
+free bark_speech(ari, cute_face);
+wait(1.5);
+free sim {
+	{
+		play_sound("SoundEffects/NPCs/SeridiaFadeOut");
+		fade_npc_alpha(seridia, 1.0, 0, 180);
+	}
+	{
+		wait(2.5);
+		set_shadow_enabled(seridia, false);
+	}
+	{
+		wait(3);
+		remove_actor(seridia);
+	}
+}
+
+sim {
+	{
+		wait(2);
+		pan_camera(2, pq2_ari_start);
+	}
+	{
+		wait(3);
+		walk_slow(ari, pq2_ari_start);
+		face(ari, north);
+	}
+}
+
+

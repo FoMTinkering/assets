@@ -1,0 +1,134 @@
+[dinner]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "celine" },
+		{ npc = "dell" },
+		{ npc = "holt" },
+		{ npc = "nora" }
+	] },
+	{ celine_zone = "<dell_zone>" },
+	{ celine_zone = "<holt_zone>" },
+	{ celine_zone = "<nora_zone>" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+]
+speaker = "celine"
+portrait = "neutral"
+local = "How was your day, Dell?"
+next = "1"
+
+[dinner.1]
+speaker = "dell"
+portrait = "mad"
+local = "Awesome! It was so cool."
+next = "2"
+
+[dinner.2]
+speaker = "holt"
+portrait = "happy"
+local = "That's what I like to hear!"
+next = "3"
+
+[dinner.3]
+speaker = "nora"
+portrait = "think"
+effect = "sweat"
+local = "But suspiciously light on the details..."
+
+[dinner_2]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "celine" },
+		{ npc = "dell" },
+		{ npc = "holt" },
+		{ npc = "nora" }
+	] },
+	{ celine_zone = "<dell_zone>" },
+	{ celine_zone = "<holt_zone>" },
+	{ celine_zone = "<nora_zone>" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ celine_animation = "eat" },
+	{ dell_animation = "eat" },
+	{ holt_animation = "eat" },
+	{ nora_animation = "eat" },
+]
+speaker = "holt"
+portrait = "neutral"
+local = "Can you pass the carrots, Dell?"
+next = "1"
+
+[dinner_2.1]
+speaker = "dell"
+portrait = "ugh"
+local = "You can have all the carrots! They're icky!"
+next = "2"
+
+[dinner_2.2]
+speaker = "celine"
+portrait = "happy"
+local = "Carrots are good for your eyes. If you eat enough, you'll get eagle vision!"
+next = "3"
+
+[dinner_2.3]
+speaker = "dell"
+portrait = "mad"
+local = "Wow! Give the carrots back dad, I'm gonna eat them all!"
+next = "4"
+
+[dinner_2.4]
+speaker = "nora"
+portrait = "neutral"
+local = "Just remember moderation, Dell. If you eat too many carrots, you'll turn orange."
+next = "5"
+
+[dinner_2.5]
+speaker = "dell"
+portrait = "happy"
+effect = "sparkles"
+local = "But that's even COOLER!"
+
+[dinner_3]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "celine" },
+		{ npc = "dell" },
+		{ npc = "holt" },
+		{ npc = "nora" }
+	] },
+	{ celine_zone = "<dell_zone>" },
+	{ celine_zone = "<holt_zone>" },
+	{ celine_zone = "<nora_zone>" },
+	{ any = [{ celine_activity = "eat" }, { celine_activity = "drink" }] },
+	{ any = [{ dell_activity = "eat" }, { dell_activity = "drink" }] },
+	{ any = [{ holt_activity = "eat" }, { holt_activity = "drink" }] },
+	{ any = [{ nora_activity = "eat" }, { nora_activity = "drink" }] },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ celine_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ dell_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ holt_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ nora_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ location = "general_store_home" }
+]
+speaker = "celine"
+portrait = "neutral"
+local = "Did you help Dad make dinner, Dell?"
+next = "1"
+
+[dinner_3.1]
+speaker = "dell"
+portrait = "happy"
+local = "I supervised!"
+next = "2"
+
+[dinner_3.2]
+speaker = "nora"
+portrait = "neutral"
+local = "And I supervised Dell."
+next = "3"
+
+[dinner_3.3]
+speaker = "holt"
+portrait = "wink"
+local = "Otherwise we'd be having candy salad for dinner!"

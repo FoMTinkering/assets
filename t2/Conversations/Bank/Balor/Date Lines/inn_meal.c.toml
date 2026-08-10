@@ -1,0 +1,138 @@
+[inn_meal_accept_1]
+kind = "date_acceptance"
+requires = [
+    { npc = "balor" },
+    { date = "inn_meal" },
+    { da_balor_inn_meal = 0 },
+    { balor_is_spouse = false }
+]
+writes = [
+    { da_balor_inn_meal = 1 },
+    { da_balor_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "balor"
+portrait = "blush"
+local = "Oh? You want to get something to eat?"
+next = "1"
+
+[inn_meal_accept_1.1]
+speaker = "balor"
+portrait = "happy"
+local = "Of course! Fingers crossed there won't be any interruptions this time."
+
+[inn_meal_accept_2]
+kind = "date_acceptance"
+requires = [
+    { npc = "balor" },
+    { date = "inn_meal" },
+    { da_balor_inn_meal = 1 },
+    { balor_is_spouse = false }
+]
+writes = [
+    { da_balor_inn_meal = 2 },
+    { da_balor_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "balor"
+portrait = "happy"
+local = "Want to join me for a meal, [Ari]?"
+next = "1"
+
+[inn_meal_accept_2.1]
+speaker = "balor"
+portrait = "blush"
+local = "My treat, this time!"
+
+[inn_meal_accept_3]
+kind = "date_acceptance"
+requires = [
+    { npc = "balor" },
+    { date = "inn_meal" },
+    { balor_has_child = false },
+    { any = [
+        { balor_is_spouse = true },
+        { da_balor_inn_meal = 2, comparator = ">=" }
+    ] }
+]
+writes = [
+    { da_balor_inn_meal = 3 },
+    { da_balor_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "balor"
+portrait = "blush"
+local = "Care to join me for a bite?"
+next = "1"
+
+[inn_meal_accept_3.1]
+speaker = "balor"
+portrait = "happy"
+effect = "hearts"
+local = "I've got a table reserved with our names on it!"
+
+[inn_meal_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "balor" },
+    { da_balor_inn_meal = 1 },
+    { da_balor_inn_meal_follow_up_gate = true },
+    { balor_is_spouse = false }
+]
+writes = [{ da_balor_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "blush"
+local = "That was fun, [Ari]..."
+next = "1"
+
+[inn_meal_follow_up_1.1]
+portrait = "wink"
+local = "I wasn't expecting you to keep me talking like that. Next time, I want to hear more about your time in the capital!"
+next = "2"
+
+[inn_meal_follow_up_1.2]
+portrait = "happy"
+effect = "hearts"
+local = "Let's plan on doing it again soon."
+
+[inn_meal_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "balor" },
+    { da_balor_inn_meal = 2 },
+    { da_balor_inn_meal_follow_up_gate = true },
+    { balor_is_spouse = false }
+]
+writes = [{ da_balor_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "happy"
+local = "Thanks for letting me take you out for a meal."
+next = "1"
+
+[inn_meal_follow_up_2.1]
+portrait = "blush"
+local = "It's fun, getting to know more about you."
+next = "2"
+
+[inn_meal_follow_up_2.2]
+portrait = "hope_special"
+local = "Turns out, the more I learn the more I like!"
+
+[inn_meal_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "balor" },
+    { balor_has_child = false },
+    { any = [{ balor_is_spouse = true }, { da_balor_inn_meal = 3 }] },
+    { da_balor_inn_meal_follow_up_gate = true }
+]
+writes = [{ da_balor_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "blush"
+local = "I had a great time with you, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_3.1]
+portrait = "happy"
+effect = "hearts"
+local = "I'll reserve us the same spot next time!"

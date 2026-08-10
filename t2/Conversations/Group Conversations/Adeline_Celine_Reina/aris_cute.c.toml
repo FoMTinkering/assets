@@ -1,0 +1,44 @@
+[aris_cute]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "celine" }, { npc = "reina" }] },
+	{ adeline_heart_level = 4.0, comparator = ">=" },
+	{ adeline_is_best_friend = true, comparator = "!=" },
+	{ celine_heart_level = 4.0, comparator = ">=" },
+	{ celine_is_best_friend = true, comparator = "!=" },
+	{ reina_heart_level = 4.0, comparator = ">=" },
+	{ reina_is_best_friend = true, comparator = "!=" },
+	{ adeline_zone = "<celine_zone>" },
+	{ adeline_zone = "<reina_zone>" },
+]
+speaker = "reina"
+portrait = "blush"
+local = "-is pretty cute, right?"
+next = "1"
+
+[aris_cute.1]
+speaker = "celine"
+local = "[Ari] always stops by my cottage, so polite..."
+next = "2"
+
+[aris_cute.2]
+speaker = "adeline"
+portrait = "happy"
+local = "[Ari]'s always helping with my postings on the quest board... so helpful..."
+next = "3"
+
+[aris_cute.3]
+speaker = "reina"
+portrait = "happy"
+local = "You're both so shy, it's just between us!"
+next = "4"
+
+[aris_cute.4]
+speaker = "celine"
+local = "Hee hee!"
+next = "5"
+
+[aris_cute.5]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "OH HELLO [ARI]. WE WERE JUST TALKING ABOUT. THE REQUEST BOARD."

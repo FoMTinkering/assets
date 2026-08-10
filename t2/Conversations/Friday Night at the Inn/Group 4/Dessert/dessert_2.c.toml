@@ -1,0 +1,79 @@
+[dessert_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ eiland_zone = "inn/bar" },
+	{ hayden_zone = "inn/bar" },
+	{ holt_zone = "inn/bar" },
+	{ march_zone = "inn/bar" },
+	{ reina_zone = "inn/bar" },
+	{ terithia_zone = "inn/bar" },
+	{ dessert_fnati = 1 },
+	{ any = [
+		{ npc = "eiland" },
+		{ npc = "hayden" },
+		{ npc = "holt" },
+		{ npc = "march" },
+		{ npc = "reina" },
+		{ npc = "terithia" },
+	] },
+]
+actions = [
+	{ item = "moon_fruit_cake" },
+]
+writes = [{ dessert_fnati = 2 }]
+speaker = "terithia"
+portrait = "happy"
+local = "I was far from Mistria the first time I was offered a slice of $Moon Fruit Cake$, and it's always stuck with me."
+next = "1"
+
+[dessert_2.1]
+speaker = "eiland"
+portrait = "mad"
+effect = "sparkles"
+local = "Oh... what a unique texture! The cake is fluffy and light, pierced by the sharpness of the fruit!"
+next = "2"
+
+[dessert_2.2]
+speaker = "hayden"
+portrait = "neutral"
+effect = "shock"
+local = "Oh, I am a fan of this one! The fruit is somehow sweet and savory. I wouldn't mind making a jam of it."
+next = "3"
+
+[dessert_2.3]
+speaker = "hayden"
+portrait = "think"
+local = "Would this be better with coffee or sweet tea?"
+prompts = [{ local = "Coffee!", next = "4" }, { local = "Sweet Tea!", next = "5" }]
+
+[dessert_2.4]
+speaker = "reina"
+portrait = "happy"
+local = "Bitter and sweet always compliment each other, don't they?"
+next = "6"
+
+[dessert_2.5]
+speaker = "eiland"
+portrait = "happy"
+local = "Just what I was thinking! A perfect afternoon snack."
+next = "6"
+
+[dessert_2.6]
+speaker = "march"
+portrait = "think"
+local = "Did you dry the fruits before baking them in? I like it. A lot more tart than I would have thought."
+next = "7"
+
+[dessert_2.7]
+speaker = "reina"
+portrait = "happy"
+local = "That's right! I was trying to recreate the cake Terithia remembered. She did a good job describing the tastes and textures."
+next = "8"
+
+[dessert_2.8]
+speaker = "holt"
+portrait = "mad"
+effect = "sweat"
+local = "I hope I can do as good a job describing it to Nora! There's no way my piece is making it home!"

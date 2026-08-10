@@ -1,0 +1,35 @@
+[inn_drink]
+refresh = "2m"
+requires = [
+	{ npc = "hayden" },
+	{ any = [
+		{ hayden_activity = "order_drink" },
+		{ hayden_activity = "drink" },
+	] },
+	{ "<npc>_zone" = "<hayden_zone>" }
+]
+portrait = "neutral"
+local = "There's nothing better than drinks and company after a long day's work!"
+
+[inn_drink_2]
+refresh = "1y"
+requires = [
+	{ npc = "hayden" },
+	{ location = "inn" },
+	{ season = "winter" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ hayden_is_traveling = false }
+]
+portrait = "think"
+local = "I'm a simple fella."
+next = "1"
+
+[inn_drink_2.1]
+portrait = "happy"
+local = "A drink, a meal, and some friendly company are all I need on a winter's night!"
+
+[inn_drink_3]
+refresh = "3m"
+requires = [{ npc = "hayden" }, { location = "inn" }, { season = "winter" }]
+portrait = "wink"
+local = "Cozy in here, ain't it?"

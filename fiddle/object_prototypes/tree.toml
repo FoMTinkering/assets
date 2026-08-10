@@ -1,0 +1,1204 @@
+[default]
+	day_to_stage = [0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4]
+	max_hitpoints = [1, 2, 2, 4, 5]
+	spawns_bugs = true
+
+	wood_items.stage1 = []
+	wood_items.stage2 = [{ item = "basic_wood" }]
+	wood_items.stage3 = [{ item = "basic_wood" }]
+	wood_items.stage4 = [{ item = "basic_wood", count_range = [2, 2] }]
+	wood_items.stage5 = [{ item = "basic_wood", count_range = [2, 2] }]
+
+	transparency_boxes.stage1 = []
+	transparency_boxes.stage2 = []
+	transparency_boxes.stage3 = []
+	transparency_boxes.stage4 = []
+	transparency_boxes.stage5 = []
+
+	stump_id = "stump_small_oak"
+	sprites = {}
+	destruct_sprites = [["spr_illegal_16"], ["spr_illegal_16"], ["spr_illegal_16"], ["spr_illegal_16"]]
+	bird_landing_pos = false
+	cull_mask = "spr_mask_trees_culling"
+	interact_mask = "spr_mask_trees"
+	# minimum tool quality to hit this
+	minimum_quality = "tier1"
+	# animal currency gained from giving fruit to animal
+	currency = 4
+
+	burn_iframes = 0
+
+	shake_range_x = [-10, 10]
+	shake_range_y = [-28, -28]
+
+[tree_oak]
+	stump_id = "stump_small_oak"
+	shake_item = "acorn"
+
+	bird_landing_pos.stage1 = false
+	bird_landing_pos.stage2 = false
+	bird_landing_pos.stage3 = false
+	bird_landing_pos.stage4 = [0, -43]
+	bird_landing_pos.stage5 = [0, -64]
+
+	offsets.stage1 = [24, 28]
+	offsets.stage2 = [24, 28]
+	offsets.stage3 = [24, 25]
+	offsets.stage4 = [24, 25]
+	offsets.stage5 = [24, 25]
+
+	[tree_oak.transparency_boxes]
+		stage1 = []
+		stage2 = []
+		stage3 = []
+
+		[[tree_oak.transparency_boxes.stage4]]
+			offset = [10, -7]
+			size = [30, 30]
+
+		[[tree_oak.transparency_boxes.stage5]]
+			offset = [2, -24]
+			size = [44, 46]
+
+	[tree_oak.destruct_sprites]
+		spring = [
+			"spr_part_farm_tree_leaf_c1_spring",
+			"spr_part_farm_tree_leaf_c2_spring",
+			"spr_part_farm_tree_leaf_c3_spring",
+		]
+		summer = [
+			"spr_part_farm_tree_leaf_c1_summer",
+			"spr_part_farm_tree_leaf_c2_summer",
+		]
+		fall = [
+			"spr_part_farm_tree_leaf_c1_autumn",
+			"spr_part_farm_tree_leaf_c2_autumn",
+			"spr_part_farm_tree_leaf_c3_autumn",
+			"spr_part_farm_tree_leaf_c4_autumn",
+			"spr_part_farm_tree_leaf_c5_autumn",
+			"spr_part_farm_tree_leaf_c6_autumn",
+		]
+		winter = [
+			"spr_part_farm_tree_leaf_c1_winter",
+			"spr_part_farm_tree_leaf_c2_winter",
+		]
+
+	[tree_oak.sprites.stage1]
+		spring = [
+			"spr_tree_oak_spring_1_main_stage1",
+			"spr_tree_oak_spring_2_main_stage1",
+			"spr_tree_oak_spring_3_main_stage1",
+		]
+		summer = [
+			"spr_tree_oak_summer_1_main_stage1",
+			"spr_tree_oak_summer_2_main_stage1",
+			"spr_tree_oak_summer_3_main_stage1",
+		]
+		fall = [
+			"spr_tree_oak_autumn_1_main_stage1",
+			"spr_tree_oak_autumn_2_main_stage1",
+			"spr_tree_oak_autumn_3_main_stage1",
+			"spr_tree_oak_autumn_4_main_stage1",
+			"spr_tree_oak_autumn_5_main_stage1",
+			"spr_tree_oak_autumn_6_main_stage1",
+		]
+		winter = [
+			"spr_tree_oak_winter_1_main_stage1",
+			"spr_tree_oak_winter_2_main_stage1",
+		]
+
+	[tree_oak.sprites.stage2]
+		spring = [
+			"spr_tree_oak_spring_1_main_stage2",
+			"spr_tree_oak_spring_2_main_stage2",
+			"spr_tree_oak_spring_3_main_stage2",
+		]
+		summer = [
+			"spr_tree_oak_summer_1_main_stage2",
+			"spr_tree_oak_summer_2_main_stage2",
+			"spr_tree_oak_summer_3_main_stage2",
+		]
+		fall = [
+			"spr_tree_oak_autumn_1_main_stage2",
+			"spr_tree_oak_autumn_2_main_stage2",
+			"spr_tree_oak_autumn_3_main_stage2",
+			"spr_tree_oak_autumn_4_main_stage2",
+			"spr_tree_oak_autumn_5_main_stage2",
+			"spr_tree_oak_autumn_6_main_stage2",
+		]
+		winter = [
+			"spr_tree_oak_winter_1_main_stage2",
+			"spr_tree_oak_winter_2_main_stage2",
+		]
+
+	[tree_oak.sprites.stage3]
+		spring = [
+			"spr_tree_oak_spring_1_main_stage3",
+			"spr_tree_oak_spring_2_main_stage3",
+			"spr_tree_oak_spring_3_main_stage3",
+		]
+		summer = [
+			"spr_tree_oak_summer_1_main_stage3",
+			"spr_tree_oak_summer_2_main_stage3",
+			"spr_tree_oak_summer_3_main_stage3",
+		]
+		fall = [
+			"spr_tree_oak_autumn_1_main_stage3",
+			"spr_tree_oak_autumn_2_main_stage3",
+			"spr_tree_oak_autumn_3_main_stage3",
+			"spr_tree_oak_autumn_4_main_stage3",
+			"spr_tree_oak_autumn_5_main_stage3",
+			"spr_tree_oak_autumn_6_main_stage3",
+		]
+		winter = [
+			"spr_tree_oak_winter_1_main_stage3",
+			"spr_tree_oak_winter_2_main_stage3",
+		]
+
+	[tree_oak.sprites.stage4]
+		spring = [
+			"spr_tree_oak_spring_1_main_stage4",
+			"spr_tree_oak_spring_2_main_stage4",
+			"spr_tree_oak_spring_3_main_stage4",
+		]
+		summer = [
+			"spr_tree_oak_summer_1_main_stage4",
+			"spr_tree_oak_summer_2_main_stage4",
+			"spr_tree_oak_summer_3_main_stage4",
+		]
+		fall = [
+			"spr_tree_oak_autumn_1_main_stage4",
+			"spr_tree_oak_autumn_2_main_stage4",
+			"spr_tree_oak_autumn_3_main_stage4",
+			"spr_tree_oak_autumn_4_main_stage4",
+			"spr_tree_oak_autumn_5_main_stage4",
+			"spr_tree_oak_autumn_6_main_stage4",
+		]
+		winter = [
+			"spr_tree_oak_winter_1_main_stage4",
+			"spr_tree_oak_winter_2_main_stage4",
+		]
+
+	[tree_oak.sprites.stage5]
+		spring = [
+			"spr_tree_oak_spring_1_main_stage5",
+			"spr_tree_oak_spring_2_main_stage5",
+			"spr_tree_oak_spring_3_main_stage5",
+		]
+		summer = [
+			"spr_tree_oak_summer_1_main_stage5",
+			"spr_tree_oak_summer_2_main_stage5",
+			"spr_tree_oak_summer_3_main_stage5",
+		]
+		fall = [
+			"spr_tree_oak_autumn_1_main_stage5",
+			"spr_tree_oak_autumn_2_main_stage5",
+			"spr_tree_oak_autumn_3_main_stage5",
+			"spr_tree_oak_autumn_4_main_stage5",
+			"spr_tree_oak_autumn_5_main_stage5",
+			"spr_tree_oak_autumn_6_main_stage5",
+		]
+		winter = [
+			"spr_tree_oak_winter_1_main_stage5",
+			"spr_tree_oak_winter_2_main_stage5",
+		]
+
+[tree_pine_special]
+	stump_id = "stump_small_pine_special"
+	max_hitpoints = [3, 3, 3, 3, 3]
+
+	bird_landing_pos.stage1 = false
+	bird_landing_pos.stage2 = false
+	bird_landing_pos.stage3 = false
+	bird_landing_pos.stage4 = [0, -51]
+	bird_landing_pos.stage5 = [0, -67]
+
+	offsets.stage1 = [24, 28]
+	offsets.stage2 = [24, 28]
+	offsets.stage3 = [24, 25]
+	offsets.stage4 = [24, 25]
+	offsets.stage5 = [24, 25]
+
+	# nothing for this fella
+	wood_items.stage1 = []
+	wood_items.stage2 = []
+	wood_items.stage3 = []
+	wood_items.stage4 = []
+	wood_items.stage5 = []
+	spawns_bugs = false
+
+	[tree_pine_special.transparency_boxes]
+		stage1 = []
+		stage2 = []
+		stage3 = []
+
+		[[tree_pine_special.transparency_boxes.stage4]]
+			offset = [8, -9]
+			size = [34, 34]
+
+		[[tree_pine_special.transparency_boxes.stage5]]
+			offset = [2, -24]
+			size = [44, 46]
+
+	[tree_pine_special.destruct_sprites]
+		spring = ["spr_part_farm_tree_leaf_c1_autumn"]
+		summer = ["spr_part_farm_tree_leaf_c1_autumn"]
+		fall = ["spr_part_farm_tree_leaf_c1_autumn"]
+		winter = ["spr_part_farm_tree_leaf_c1_autumn"]
+
+	[tree_pine_special.sprites.stage1]
+		spring = ["spr_tree_pine_special_main_stage5"]
+		summer = ["spr_tree_pine_special_main_stage5"]
+		fall = ["spr_tree_pine_special_main_stage5"]
+		winter = ["spr_tree_pine_special_main_stage5"]
+
+	[tree_pine_special.sprites.stage2]
+		spring = ["spr_tree_pine_special_main_stage5"]
+		summer = ["spr_tree_pine_special_main_stage5"]
+		fall = ["spr_tree_pine_special_main_stage5"]
+		winter = ["spr_tree_pine_special_main_stage5"]
+
+	[tree_pine_special.sprites.stage3]
+		spring = ["spr_tree_pine_special_main_stage5"]
+		summer = ["spr_tree_pine_special_main_stage5"]
+		fall = ["spr_tree_pine_special_main_stage5"]
+		winter = ["spr_tree_pine_special_main_stage5"]
+
+	[tree_pine_special.sprites.stage4]
+		spring = ["spr_tree_pine_special_main_stage5"]
+		summer = ["spr_tree_pine_special_main_stage5"]
+		fall = ["spr_tree_pine_special_main_stage5"]
+		winter = ["spr_tree_pine_special_main_stage5"]
+
+	[tree_pine_special.sprites.stage5]
+		spring = ["spr_tree_pine_special_main_stage5"]
+		summer = ["spr_tree_pine_special_main_stage5"]
+		fall = ["spr_tree_pine_special_main_stage5"]
+		winter = ["spr_tree_pine_special_main_stage5"]
+
+[tree_pine]
+	stump_id = "stump_small_pine"
+	shake_item = "pinecone"
+
+	bird_landing_pos.stage1 = false
+	bird_landing_pos.stage2 = false
+	bird_landing_pos.stage3 = false
+	bird_landing_pos.stage4 = [0, -51]
+	bird_landing_pos.stage5 = [0, -67]
+
+	offsets.stage1 = [24, 28]
+	offsets.stage2 = [24, 28]
+	offsets.stage3 = [24, 25]
+	offsets.stage4 = [24, 25]
+	offsets.stage5 = [24, 25]
+
+	[tree_pine.transparency_boxes]
+		stage1 = []
+		stage2 = []
+		stage3 = []
+
+		[[tree_pine.transparency_boxes.stage4]]
+			offset = [8, -9]
+			size = [34, 34]
+
+		[[tree_pine.transparency_boxes.stage5]]
+			offset = [2, -24]
+			size = [44, 46]
+
+	[tree_pine.destruct_sprites]
+		spring = [
+			"spr_part_farm_tree_leaf_c1_spring",
+			"spr_part_farm_tree_leaf_c2_spring",
+		]
+		summer = [
+			"spr_part_farm_tree_leaf_c1_summer",
+			"spr_part_farm_tree_leaf_c2_summer",
+		]
+		fall = [
+			"spr_part_farm_tree_leaf_c1_autumn",
+			"spr_part_farm_tree_leaf_c2_autumn",
+		]
+		winter = [
+			"spr_part_farm_tree_leaf_c1_winter",
+			"spr_part_farm_tree_leaf_c2_winter",
+		]
+
+	[tree_pine.sprites.stage1]
+		spring = [
+			"spr_tree_pine_spring_1_main_stage1",
+			"spr_tree_pine_spring_2_main_stage1",
+		]
+		summer = [
+			"spr_tree_pine_summer_1_main_stage1",
+			"spr_tree_pine_summer_2_main_stage1",
+		]
+		fall = [
+			"spr_tree_pine_autumn_1_main_stage1",
+			"spr_tree_pine_autumn_2_main_stage1",
+			"spr_tree_pine_autumn_3_main_stage1",
+			"spr_tree_pine_autumn_4_main_stage1",
+		]
+		winter = [
+			"spr_tree_pine_winter_1_main_stage1",
+			"spr_tree_pine_winter_2_main_stage1",
+		]
+
+	[tree_pine.sprites.stage2]
+		spring = [
+			"spr_tree_pine_spring_1_main_stage2",
+			"spr_tree_pine_spring_2_main_stage2",
+		]
+		summer = [
+			"spr_tree_pine_summer_1_main_stage2",
+			"spr_tree_pine_summer_2_main_stage2",
+		]
+		fall = [
+			"spr_tree_pine_autumn_1_main_stage2",
+			"spr_tree_pine_autumn_2_main_stage2",
+			"spr_tree_pine_autumn_3_main_stage2",
+			"spr_tree_pine_autumn_4_main_stage2",
+		]
+		winter = [
+			"spr_tree_pine_winter_1_main_stage2",
+			"spr_tree_pine_winter_2_main_stage2",
+		]
+
+	[tree_pine.sprites.stage3]
+		spring = [
+			"spr_tree_pine_spring_1_main_stage3",
+			"spr_tree_pine_spring_2_main_stage3",
+		]
+		summer = [
+			"spr_tree_pine_summer_1_main_stage3",
+			"spr_tree_pine_summer_2_main_stage3",
+		]
+		fall = [
+			"spr_tree_pine_autumn_1_main_stage3",
+			"spr_tree_pine_autumn_2_main_stage3",
+			"spr_tree_pine_autumn_3_main_stage3",
+			"spr_tree_pine_autumn_4_main_stage3",
+		]
+		winter = [
+			"spr_tree_pine_winter_1_main_stage3",
+			"spr_tree_pine_winter_2_main_stage3",
+		]
+
+	[tree_pine.sprites.stage4]
+		spring = [
+			"spr_tree_pine_spring_1_main_stage4",
+			"spr_tree_pine_spring_2_main_stage4",
+		]
+		summer = [
+			"spr_tree_pine_summer_1_main_stage4",
+			"spr_tree_pine_summer_2_main_stage4",
+		]
+		fall = [
+			"spr_tree_pine_autumn_1_main_stage4",
+			"spr_tree_pine_autumn_2_main_stage4",
+			"spr_tree_pine_autumn_3_main_stage4",
+			"spr_tree_pine_autumn_4_main_stage4",
+		]
+		winter = [
+			"spr_tree_pine_winter_1_main_stage4",
+			"spr_tree_pine_winter_2_main_stage4",
+		]
+
+	[tree_pine.sprites.stage5]
+		spring = [
+			"spr_tree_pine_spring_1_main_stage5",
+			"spr_tree_pine_spring_2_main_stage5",
+		]
+		summer = [
+			"spr_tree_pine_summer_1_main_stage5",
+			"spr_tree_pine_summer_2_main_stage5",
+		]
+		fall = [
+			"spr_tree_pine_autumn_1_main_stage5",
+			"spr_tree_pine_autumn_2_main_stage5",
+			"spr_tree_pine_autumn_3_main_stage5",
+			"spr_tree_pine_autumn_4_main_stage5",
+		]
+		winter = [
+			"spr_tree_pine_winter_1_main_stage5",
+			"spr_tree_pine_winter_2_main_stage5",
+		]
+
+[tree_deep_woods]
+	stump_id = "stump_deep_woods"
+	max_hitpoints = [4, 5, 6, 10, 10]
+	bird_landing_pos.stage1 = false
+	bird_landing_pos.stage2 = false
+	bird_landing_pos.stage3 = false
+	bird_landing_pos.stage4 = [0, -61]
+	bird_landing_pos.stage5 = [0, -79]
+
+	offsets.stage1 = [24, 28]
+	offsets.stage2 = [24, 28]
+	offsets.stage3 = [24, 25]
+	offsets.stage4 = [24, 25]
+	offsets.stage5 = [24, 25]
+
+	[tree_deep_woods.transparency_boxes]
+		stage1 = []
+		stage2 = []
+		stage3 = []
+
+		[[tree_deep_woods.transparency_boxes.stage4]]
+			offset = [8, -15]
+			size = [34, 38]
+
+		[[tree_deep_woods.transparency_boxes.stage5]]
+			offset = [5, -30]
+			size = [38, 50]
+
+	[tree_deep_woods.wood_items]
+		stage1 = []
+		stage2 = [
+			{ item = "hard_wood" },
+			{ item = "basic_wood", count_range = [2, 3] },
+		]
+		stage3 = [
+			{ item = "hard_wood" },
+			{ item = "basic_wood", count_range = [2, 3] },
+		]
+		stage4 = [
+			{ item = "hard_wood", count_range = [1, 2] },
+			{ item = "basic_wood", count_range = [4, 6] },
+		]
+		stage5 = [
+			{ item = "hard_wood", count_range = [1, 3] },
+			{ item = "basic_wood", count_range = [4, 6] },
+		]
+
+	[tree_deep_woods.destruct_sprites]
+		spring = ["spr_part_farm_tree_leaf_c2_spring"]
+		summer = ["spr_part_farm_tree_leaf_c2_summer"]
+		fall = ["spr_part_farm_tree_leaf_c2_autumn"]
+		winter = ["spr_part_farm_tree_leaf_c2_winter"]
+
+	[tree_deep_woods.sprites.stage1]
+		spring = [
+			"spr_tree_deep_woods_spring_1_main_stage1",
+			"spr_tree_deep_woods_spring_2_main_stage1",
+		]
+		summer = [
+			"spr_tree_deep_woods_summer_1_main_stage1",
+			"spr_tree_deep_woods_summer_2_main_stage1",
+		]
+		fall = [
+			"spr_tree_deep_woods_autumn_1_main_stage1",
+			"spr_tree_deep_woods_autumn_2_main_stage1",
+		]
+		winter = [
+			"spr_tree_deep_woods_winter_1_main_stage1",
+			"spr_tree_deep_woods_winter_2_main_stage1",
+		]
+
+	[tree_deep_woods.sprites.stage2]
+		spring = [
+			"spr_tree_deep_woods_spring_1_main_stage2",
+			"spr_tree_deep_woods_spring_2_main_stage2",
+		]
+		summer = [
+			"spr_tree_deep_woods_summer_1_main_stage2",
+			"spr_tree_deep_woods_summer_2_main_stage2",
+		]
+		fall = [
+			"spr_tree_deep_woods_autumn_1_main_stage2",
+			"spr_tree_deep_woods_autumn_2_main_stage2",
+		]
+		winter = [
+			"spr_tree_deep_woods_winter_1_main_stage2",
+			"spr_tree_deep_woods_winter_2_main_stage2",
+		]
+
+	[tree_deep_woods.sprites.stage3]
+		spring = [
+			"spr_tree_deep_woods_spring_1_main_stage3",
+			"spr_tree_deep_woods_spring_2_main_stage3",
+		]
+		summer = [
+			"spr_tree_deep_woods_summer_1_main_stage3",
+			"spr_tree_deep_woods_summer_2_main_stage3",
+		]
+		fall = [
+			"spr_tree_deep_woods_autumn_1_main_stage3",
+			"spr_tree_deep_woods_autumn_2_main_stage3",
+		]
+		winter = [
+			"spr_tree_deep_woods_winter_1_main_stage3",
+			"spr_tree_deep_woods_winter_2_main_stage3",
+		]
+
+	[tree_deep_woods.sprites.stage4]
+		spring = [
+			"spr_tree_deep_woods_spring_1_main_stage4",
+			"spr_tree_deep_woods_spring_2_main_stage4",
+		]
+		summer = [
+			"spr_tree_deep_woods_summer_1_main_stage4",
+			"spr_tree_deep_woods_summer_2_main_stage4",
+		]
+		fall = [
+			"spr_tree_deep_woods_autumn_1_main_stage4",
+			"spr_tree_deep_woods_autumn_2_main_stage4",
+		]
+		winter = [
+			"spr_tree_deep_woods_winter_1_main_stage4",
+			"spr_tree_deep_woods_winter_2_main_stage4",
+		]
+
+	[tree_deep_woods.sprites.stage5]
+		spring = [
+			"spr_tree_deep_woods_spring_1_main_stage5",
+			"spr_tree_deep_woods_spring_2_main_stage5",
+		]
+		summer = [
+			"spr_tree_deep_woods_summer_1_main_stage5",
+			"spr_tree_deep_woods_summer_2_main_stage5",
+		]
+		fall = [
+			"spr_tree_deep_woods_autumn_1_main_stage5",
+			"spr_tree_deep_woods_autumn_2_main_stage5",
+		]
+		winter = [
+			"spr_tree_deep_woods_winter_1_main_stage5",
+			"spr_tree_deep_woods_winter_2_main_stage5",
+		]
+
+[tree_apple]
+	stump_id = "stump_apple"
+	burn_iframes = 600
+
+	bird_landing_pos.stage1 = false
+	bird_landing_pos.stage2 = false
+	bird_landing_pos.stage3 = false
+	bird_landing_pos.stage4 = [0, -48]
+	bird_landing_pos.stage5 = [0, -51]
+
+	offsets.stage1 = [24, 28]
+	offsets.stage2 = [24, 28]
+	offsets.stage3 = [24, 25]
+	offsets.stage4 = [24, 25]
+	offsets.stage5 = [24, 25]
+
+	[tree_apple.transparency_boxes]
+		stage1 = []
+		stage2 = []
+		stage3 = []
+
+		[[tree_apple.transparency_boxes.stage4]]
+			offset = [10, -7]
+			size = [30, 30]
+
+		[[tree_apple.transparency_boxes.stage5]]
+			offset = [2, -24]
+			size = [44, 46]
+
+	[tree_apple.fruit_data]
+		harvest = "apple"
+		positions = [[-12, -28], [0, -19], [14, -28]]
+		regrow_days = 3
+		seasons = ["fall"]
+
+	[tree_apple.destruct_sprites]
+		spring = ["spr_part_farm_tree_leaf_c2_spring"]
+		summer = ["spr_part_farm_tree_leaf_c2_summer"]
+		fall = ["spr_part_farm_tree_leaf_c2_autumn"]
+		winter = ["spr_part_farm_tree_leaf_c2_autumn"]
+
+	[tree_apple.sprites.stage1]
+		spring = ["spr_fruit_apple_stage1_spring"]
+		summer = ["spr_fruit_apple_stage1_spring"]
+		fall = ["spr_fruit_apple_stage1_fall"]
+		winter = ["spr_fruit_apple_stage1_winter"]
+
+	[tree_apple.sprites.stage2]
+		spring = ["spr_fruit_apple_stage2_spring"]
+		summer = ["spr_fruit_apple_stage2_spring"]
+		fall = ["spr_fruit_apple_stage2_fall"]
+		winter = ["spr_fruit_apple_stage2_winter"]
+
+	[tree_apple.sprites.stage3]
+		spring = ["spr_fruit_apple_stage3_spring"]
+		summer = ["spr_fruit_apple_stage3_spring"]
+		fall = ["spr_fruit_apple_stage3_fall"]
+		winter = ["spr_fruit_apple_stage3_winter"]
+
+	[tree_apple.sprites.stage4]
+		spring = ["spr_fruit_apple_stage4_spring"]
+		summer = ["spr_fruit_apple_stage4_spring"]
+		fall = ["spr_fruit_apple_stage4_fall"]
+		winter = ["spr_fruit_apple_stage4_winter"]
+
+	[tree_apple.sprites.stage5]
+		spring = ["spr_fruit_apple_stage5_spring"]
+		summer = ["spr_fruit_apple_stage5_spring"]
+		fall = ["spr_fruit_apple_stage5_fall"]
+		winter = ["spr_fruit_apple_stage5_winter"]
+
+[tree_cherry]
+	stump_id = "stump_cherry"
+	burn_iframes = 600
+
+	bird_landing_pos.stage1 = false
+	bird_landing_pos.stage2 = false
+	bird_landing_pos.stage3 = false
+	bird_landing_pos.stage4 = [0, -41]
+	bird_landing_pos.stage5 = [0, -50]
+
+	offsets.stage1 = [24, 28]
+	offsets.stage2 = [24, 28]
+	offsets.stage3 = [24, 25]
+	offsets.stage4 = [24, 25]
+	offsets.stage5 = [24, 25]
+
+	[tree_cherry.transparency_boxes]
+		stage1 = []
+		stage2 = []
+		stage3 = []
+
+		[[tree_cherry.transparency_boxes.stage4]]
+			offset = [10, -7]
+			size = [30, 30]
+
+		[[tree_cherry.transparency_boxes.stage5]]
+			offset = [2, -24]
+			size = [44, 46]
+
+	[tree_cherry.fruit_data]
+		harvest = "cherry"
+		positions = [[-14, -28], [0, -18], [13, -28]]
+		regrow_days = 3
+		seasons = ["spring"]
+
+	[tree_cherry.destruct_sprites]
+		spring = ["spr_part_farm_tree_leaf_c3_spring"]
+		summer = ["spr_part_farm_tree_leaf_c3_spring"]
+		fall = ["spr_part_farm_tree_leaf_c3_spring"]
+		winter = ["spr_part_farm_tree_leaf_c3_spring"]
+
+	[tree_cherry.sprites.stage1]
+		spring = ["spr_fruit_cherry_stage1_spring"]
+		summer = ["spr_fruit_cherry_stage1_spring"]
+		fall = ["spr_fruit_cherry_stage1_fall"]
+		winter = ["spr_fruit_cherry_stage1_winter"]
+
+	[tree_cherry.sprites.stage2]
+		spring = ["spr_fruit_cherry_stage2_spring"]
+		summer = ["spr_fruit_cherry_stage2_spring"]
+		fall = ["spr_fruit_cherry_stage2_fall"]
+		winter = ["spr_fruit_cherry_stage2_winter"]
+
+	[tree_cherry.sprites.stage3]
+		spring = ["spr_fruit_cherry_stage3_spring"]
+		summer = ["spr_fruit_cherry_stage3_spring"]
+		fall = ["spr_fruit_cherry_stage3_fall"]
+		winter = ["spr_fruit_cherry_stage3_winter"]
+
+	[tree_cherry.sprites.stage4]
+		spring = ["spr_fruit_cherry_stage4_spring"]
+		summer = ["spr_fruit_cherry_stage4_spring"]
+		fall = ["spr_fruit_cherry_stage4_fall"]
+		winter = ["spr_fruit_cherry_stage4_winter"]
+
+	[tree_cherry.sprites.stage5]
+		spring = ["spr_fruit_cherry_stage5_spring"]
+		summer = ["spr_fruit_cherry_stage5_spring"]
+		fall = ["spr_fruit_cherry_stage5_fall"]
+		winter = ["spr_fruit_cherry_stage5_winter"]
+
+[tree_lemon]
+	stump_id = "stump_lemon"
+	burn_iframes = 600
+
+	bird_landing_pos.stage1 = false
+	bird_landing_pos.stage2 = false
+	bird_landing_pos.stage3 = false
+	bird_landing_pos.stage4 = [0, -39]
+	bird_landing_pos.stage5 = [0, -45]
+
+	offsets.stage1 = [24, 28]
+	offsets.stage2 = [24, 28]
+	offsets.stage3 = [24, 25]
+	offsets.stage4 = [24, 25]
+	offsets.stage5 = [24, 25]
+
+	[tree_lemon.transparency_boxes]
+		stage1 = []
+		stage2 = []
+		stage3 = []
+
+		[[tree_lemon.transparency_boxes.stage4]]
+			offset = [10, -7]
+			size = [30, 30]
+
+		[[tree_lemon.transparency_boxes.stage5]]
+			offset = [2, -24]
+			size = [44, 46]
+
+	[tree_lemon.fruit_data]
+		harvest = "lemon"
+		positions = [[-13, -28], [0, -20], [14, -28]]
+		regrow_days = 3
+		seasons = ["spring"]
+
+	[tree_lemon.destruct_sprites]
+		spring = ["spr_part_farm_tree_leaf_c1_summer"]
+		summer = ["spr_part_farm_tree_leaf_c1_summer"]
+		fall = ["spr_part_farm_tree_leaf_c4_autumn"]
+		winter = ["spr_part_farm_tree_leaf_c4_autumn"]
+
+	[tree_lemon.sprites.stage1]
+		spring = ["spr_fruit_lemon_stage1_spring"]
+		summer = ["spr_fruit_lemon_stage1_spring"]
+		fall = ["spr_fruit_lemon_stage1_fall"]
+		winter = ["spr_fruit_lemon_stage1_winter"]
+
+	[tree_lemon.sprites.stage2]
+		spring = ["spr_fruit_lemon_stage2_spring"]
+		summer = ["spr_fruit_lemon_stage2_spring"]
+		fall = ["spr_fruit_lemon_stage2_fall"]
+		winter = ["spr_fruit_lemon_stage2_winter"]
+
+	[tree_lemon.sprites.stage3]
+		spring = ["spr_fruit_lemon_stage3_spring"]
+		summer = ["spr_fruit_lemon_stage3_spring"]
+		fall = ["spr_fruit_lemon_stage3_fall"]
+		winter = ["spr_fruit_lemon_stage3_winter"]
+
+	[tree_lemon.sprites.stage4]
+		spring = ["spr_fruit_lemon_stage4_spring"]
+		summer = ["spr_fruit_lemon_stage4_spring"]
+		fall = ["spr_fruit_lemon_stage4_fall"]
+		winter = ["spr_fruit_lemon_stage4_winter"]
+
+	[tree_lemon.sprites.stage5]
+		spring = ["spr_fruit_lemon_stage5_spring"]
+		summer = ["spr_fruit_lemon_stage5_spring"]
+		fall = ["spr_fruit_lemon_stage5_fall"]
+		winter = ["spr_fruit_lemon_stage5_winter"]
+
+[tree_peach]
+	stump_id = "stump_peach"
+	burn_iframes = 600
+
+	bird_landing_pos.stage1 = false
+	bird_landing_pos.stage2 = false
+	bird_landing_pos.stage3 = false
+	bird_landing_pos.stage4 = [0, -36]
+	bird_landing_pos.stage5 = [0, -42]
+
+	offsets.stage1 = [24, 28]
+	offsets.stage2 = [24, 28]
+	offsets.stage3 = [24, 25]
+	offsets.stage4 = [24, 25]
+	offsets.stage5 = [24, 25]
+
+	[tree_peach.transparency_boxes]
+		stage1 = []
+		stage2 = []
+		stage3 = []
+
+		[[tree_peach.transparency_boxes.stage4]]
+			offset = [10, -7]
+			size = [30, 30]
+
+		[[tree_peach.transparency_boxes.stage5]]
+			offset = [2, -24]
+			size = [44, 46]
+
+	[tree_peach.fruit_data]
+		harvest = "peach"
+		positions = [[-13, -26], [0, -18], [13, -26]]
+		regrow_days = 3
+		seasons = ["summer"]
+
+	[tree_peach.destruct_sprites]
+		spring = ["spr_part_farm_tree_leaf_c2_spring"]
+		summer = ["spr_part_farm_tree_leaf_c2_spring"]
+		fall = ["spr_part_farm_tree_leaf_c5_autumn"]
+		winter = ["spr_part_farm_tree_leaf_c5_autumn"]
+
+	[tree_peach.sprites.stage1]
+		spring = ["spr_fruit_peach_stage1_spring"]
+		summer = ["spr_fruit_peach_stage1_spring"]
+		fall = ["spr_fruit_peach_stage1_fall"]
+		winter = ["spr_fruit_peach_stage1_winter"]
+
+	[tree_peach.sprites.stage2]
+		spring = ["spr_fruit_peach_stage2_spring"]
+		summer = ["spr_fruit_peach_stage2_spring"]
+		fall = ["spr_fruit_peach_stage2_fall"]
+		winter = ["spr_fruit_peach_stage2_winter"]
+
+	[tree_peach.sprites.stage3]
+		spring = ["spr_fruit_peach_stage3_spring"]
+		summer = ["spr_fruit_peach_stage3_spring"]
+		fall = ["spr_fruit_peach_stage3_fall"]
+		winter = ["spr_fruit_peach_stage3_winter"]
+
+	[tree_peach.sprites.stage4]
+		spring = ["spr_fruit_peach_stage4_spring"]
+		summer = ["spr_fruit_peach_stage4_spring"]
+		fall = ["spr_fruit_peach_stage4_fall"]
+		winter = ["spr_fruit_peach_stage4_winter"]
+
+	[tree_peach.sprites.stage5]
+		spring = ["spr_fruit_peach_stage5_spring"]
+		summer = ["spr_fruit_peach_stage5_spring"]
+		fall = ["spr_fruit_peach_stage5_fall"]
+		winter = ["spr_fruit_peach_stage5_winter"]
+
+[tree_orange]
+	stump_id = "stump_orange"
+	burn_iframes = 600
+
+	bird_landing_pos.stage1 = false
+	bird_landing_pos.stage2 = false
+	bird_landing_pos.stage3 = false
+	bird_landing_pos.stage4 = [0, -45]
+	bird_landing_pos.stage5 = [0, -52]
+
+	offsets.stage1 = [24, 28]
+	offsets.stage2 = [24, 28]
+	offsets.stage3 = [24, 25]
+	offsets.stage4 = [24, 25]
+	offsets.stage5 = [24, 25]
+
+	[tree_orange.transparency_boxes]
+		stage1 = []
+		stage2 = []
+		stage3 = []
+
+		[[tree_orange.transparency_boxes.stage4]]
+			offset = [10, -7]
+			size = [30, 30]
+
+		[[tree_orange.transparency_boxes.stage5]]
+			offset = [2, -24]
+			size = [44, 46]
+
+	[tree_orange.fruit_data]
+		harvest = "orange"
+		positions = [[-15, -33], [0, -27], [15, -33]]
+		regrow_days = 3
+		seasons = ["fall"]
+
+	[tree_orange.destruct_sprites]
+		spring = ["spr_part_farm_tree_leaf_c2_spring"]
+		summer = ["spr_part_farm_tree_leaf_c2_spring"]
+		fall = ["spr_part_farm_tree_leaf_c1_autumn"]
+		winter = ["spr_part_farm_tree_leaf_c1_autumn"]
+
+	[tree_orange.sprites.stage1]
+		spring = ["spr_fruit_orange_stage1_spring"]
+		summer = ["spr_fruit_orange_stage1_spring"]
+		fall = ["spr_fruit_orange_stage1_fall"]
+		winter = ["spr_fruit_orange_stage1_winter"]
+
+	[tree_orange.sprites.stage2]
+		spring = ["spr_fruit_orange_stage2_spring"]
+		summer = ["spr_fruit_orange_stage2_spring"]
+		fall = ["spr_fruit_orange_stage2_fall"]
+		winter = ["spr_fruit_orange_stage2_winter"]
+
+	[tree_orange.sprites.stage3]
+		spring = ["spr_fruit_orange_stage3_spring"]
+		summer = ["spr_fruit_orange_stage3_spring"]
+		fall = ["spr_fruit_orange_stage3_fall"]
+		winter = ["spr_fruit_orange_stage3_winter"]
+
+	[tree_orange.sprites.stage4]
+		spring = ["spr_fruit_orange_stage4_spring"]
+		summer = ["spr_fruit_orange_stage4_spring"]
+		fall = ["spr_fruit_orange_stage4_fall"]
+		winter = ["spr_fruit_orange_stage4_winter"]
+
+	[tree_orange.sprites.stage5]
+		spring = ["spr_fruit_orange_stage5_spring"]
+		summer = ["spr_fruit_orange_stage5_spring"]
+		fall = ["spr_fruit_orange_stage5_fall"]
+		winter = ["spr_fruit_orange_stage5_winter"]
+
+[tree_pear]
+	stump_id = "stump_pear"
+	burn_iframes = 600
+
+	bird_landing_pos.stage1 = false
+	bird_landing_pos.stage2 = false
+	bird_landing_pos.stage3 = false
+	bird_landing_pos.stage4 = [0, -41]
+	bird_landing_pos.stage5 = [0, -48]
+
+	offsets.stage1 = [24, 28]
+	offsets.stage2 = [24, 28]
+	offsets.stage3 = [24, 25]
+	offsets.stage4 = [24, 25]
+	offsets.stage5 = [24, 25]
+
+	[tree_pear.transparency_boxes]
+		stage1 = []
+		stage2 = []
+		stage3 = []
+
+		[[tree_pear.transparency_boxes.stage4]]
+			offset = [10, -7]
+			size = [30, 30]
+
+		[[tree_pear.transparency_boxes.stage5]]
+			offset = [2, -24]
+			size = [44, 46]
+
+	[tree_pear.fruit_data]
+		harvest = "pear"
+		positions = [[-14, -29], [0, -18], [14, -29]]
+		regrow_days = 3
+		seasons = ["summer"]
+
+	[tree_pear.destruct_sprites]
+		spring = ["spr_part_farm_tree_leaf_c2_spring"]
+		summer = ["spr_part_farm_tree_leaf_c2_spring"]
+		fall = ["spr_part_farm_tree_leaf_c3_autumn"]
+		winter = ["spr_part_farm_tree_leaf_c3_autumn"]
+
+	[tree_pear.sprites.stage1]
+		spring = ["spr_fruit_pear_stage1_spring"]
+		summer = ["spr_fruit_pear_stage1_spring"]
+		fall = ["spr_fruit_pear_stage1_fall"]
+		winter = ["spr_fruit_pear_stage1_winter"]
+
+	[tree_pear.sprites.stage2]
+		spring = ["spr_fruit_pear_stage2_spring"]
+		summer = ["spr_fruit_pear_stage2_spring"]
+		fall = ["spr_fruit_pear_stage2_fall"]
+		winter = ["spr_fruit_pear_stage2_winter"]
+
+	[tree_pear.sprites.stage3]
+		spring = ["spr_fruit_pear_stage3_spring"]
+		summer = ["spr_fruit_pear_stage3_spring"]
+		fall = ["spr_fruit_pear_stage3_fall"]
+		winter = ["spr_fruit_pear_stage3_winter"]
+
+	[tree_pear.sprites.stage4]
+		spring = ["spr_fruit_pear_stage4_spring"]
+		summer = ["spr_fruit_pear_stage4_spring"]
+		fall = ["spr_fruit_pear_stage4_fall"]
+		winter = ["spr_fruit_pear_stage4_winter"]
+
+	[tree_pear.sprites.stage5]
+		spring = ["spr_fruit_pear_stage5_spring"]
+		summer = ["spr_fruit_pear_stage5_spring"]
+		fall = ["spr_fruit_pear_stage5_fall"]
+		winter = ["spr_fruit_pear_stage5_winter"]
+
+[tree_pomegranate]
+	stump_id = "stump_pomegranate"
+	burn_iframes = 600
+
+	bird_landing_pos.stage1 = false
+	bird_landing_pos.stage2 = false
+	bird_landing_pos.stage3 = false
+	bird_landing_pos.stage4 = [0, -43]
+	bird_landing_pos.stage5 = [0, -49]
+
+	offsets.stage1 = [24, 28]
+	offsets.stage2 = [24, 28]
+	offsets.stage3 = [24, 25]
+	offsets.stage4 = [24, 25]
+	offsets.stage5 = [24, 25]
+
+	[tree_pomegranate.transparency_boxes]
+		stage1 = []
+		stage2 = []
+		stage3 = []
+
+		[[tree_pomegranate.transparency_boxes.stage4]]
+			offset = [10, -7]
+			size = [30, 30]
+
+		[[tree_pomegranate.transparency_boxes.stage5]]
+			offset = [2, -24]
+			size = [44, 46]
+
+	[tree_pomegranate.fruit_data]
+		harvest = "pomegranate"
+		positions = [[-17, -33], [-1, -27], [13, -33]]
+		regrow_days = 3
+		seasons = ["winter"]
+
+	[tree_pomegranate.destruct_sprites]
+		spring = ["spr_part_farm_tree_leaf_c2_spring"]
+		summer = ["spr_part_farm_tree_leaf_c2_spring"]
+		fall = ["spr_part_farm_tree_leaf_c2_autumn"]
+		winter = ["spr_part_farm_tree_leaf_c2_autumn"]
+
+	[tree_pomegranate.sprites.stage1]
+		spring = ["spr_fruit_pomegranate_stage1_spring"]
+		summer = ["spr_fruit_pomegranate_stage1_spring"]
+		fall = ["spr_fruit_pomegranate_stage1_fall"]
+		winter = ["spr_fruit_pomegranate_stage1_winter"]
+
+	[tree_pomegranate.sprites.stage2]
+		spring = ["spr_fruit_pomegranate_stage2_spring"]
+		summer = ["spr_fruit_pomegranate_stage2_spring"]
+		fall = ["spr_fruit_pomegranate_stage2_fall"]
+		winter = ["spr_fruit_pomegranate_stage2_winter"]
+
+	[tree_pomegranate.sprites.stage3]
+		spring = ["spr_fruit_pomegranate_stage3_spring"]
+		summer = ["spr_fruit_pomegranate_stage3_spring"]
+		fall = ["spr_fruit_pomegranate_stage3_fall"]
+		winter = ["spr_fruit_pomegranate_stage3_winter"]
+
+	[tree_pomegranate.sprites.stage4]
+		spring = ["spr_fruit_pomegranate_stage4_spring"]
+		summer = ["spr_fruit_pomegranate_stage4_spring"]
+		fall = ["spr_fruit_pomegranate_stage4_fall"]
+		winter = ["spr_fruit_pomegranate_stage4_winter"]
+
+	[tree_pomegranate.sprites.stage5]
+		spring = ["spr_fruit_pomegranate_stage5_spring"]
+		summer = ["spr_fruit_pomegranate_stage5_spring"]
+		fall = ["spr_fruit_pomegranate_stage5_fall"]
+		winter = ["spr_fruit_pomegranate_stage5_winter"]
+
+[tree_plum_blossom]
+	stump_id = "stump_plum_blossom"
+	burn_iframes = 600
+
+	bird_landing_pos.stage1 = [0, -54]
+	bird_landing_pos.stage2 = [0, -54]
+	bird_landing_pos.stage3 = [0, -54]
+	bird_landing_pos.stage4 = [0, -54]
+	bird_landing_pos.stage5 = [0, -54]
+
+	offsets.stage1 = [24, 28]
+	offsets.stage2 = [24, 28]
+	offsets.stage3 = [24, 25]
+	offsets.stage4 = [24, 25]
+	offsets.stage5 = [24, 25]
+
+	[tree_plum_blossom.transparency_boxes]
+		[[tree_plum_blossom.transparency_boxes.stage1]]
+			offset = [2, -24]
+			size = [44, 46]
+		[[tree_plum_blossom.transparency_boxes.stage2]]
+			offset = [2, -24]
+			size = [44, 46]
+		[[tree_plum_blossom.transparency_boxes.stage3]]
+			offset = [2, -24]
+			size = [44, 46]
+		[[tree_plum_blossom.transparency_boxes.stage4]]
+			offset = [2, -24]
+			size = [44, 46]
+		[[tree_plum_blossom.transparency_boxes.stage5]]
+			offset = [2, -24]
+			size = [44, 46]
+
+	[tree_plum_blossom.fruit_data]
+		harvest = "plum_blossom"
+		positions = [[-15, -30], [0, -46], [15, -30]]
+		regrow_days = 3
+		seasons = ["winter"]
+
+	[tree_plum_blossom.destruct_sprites]
+		spring = ["spr_part_fruit_tree_plum_spring"]
+		summer = ["spr_part_fruit_tree_plum_spring"]
+		fall = ["spr_part_fruit_tree_plum_autumn"]
+		winter = ["spr_part_fruit_tree_plum_winter"]
+
+	[tree_plum_blossom.sprites.stage1]
+		spring = ["spr_fruit_plum_blossom_stage0_spring"]
+		summer = ["spr_fruit_plum_blossom_stage0_spring"]
+		fall = ["spr_fruit_plum_blossom_stage0_autumn"]
+		winter = ["spr_fruit_plum_blossom_stage0_winter"]
+
+	[tree_plum_blossom.sprites.stage2]
+		spring = ["spr_fruit_plum_blossom_stage0_spring"]
+		summer = ["spr_fruit_plum_blossom_stage0_spring"]
+		fall = ["spr_fruit_plum_blossom_stage0_autumn"]
+		winter = ["spr_fruit_plum_blossom_stage0_winter"]
+
+	[tree_plum_blossom.sprites.stage3]
+		spring = ["spr_fruit_plum_blossom_stage0_spring"]
+		summer = ["spr_fruit_plum_blossom_stage0_spring"]
+		fall = ["spr_fruit_plum_blossom_stage0_autumn"]
+		winter = ["spr_fruit_plum_blossom_stage0_winter"]
+
+	[tree_plum_blossom.sprites.stage4]
+		spring = ["spr_fruit_plum_blossom_stage0_spring"]
+		summer = ["spr_fruit_plum_blossom_stage0_spring"]
+		fall = ["spr_fruit_plum_blossom_stage0_autumn"]
+		winter = ["spr_fruit_plum_blossom_stage0_winter"]
+
+	[tree_plum_blossom.sprites.stage5]
+		spring = ["spr_fruit_plum_blossom_stage0_spring"]
+		summer = ["spr_fruit_plum_blossom_stage0_spring"]
+		fall = ["spr_fruit_plum_blossom_stage0_autumn"]
+		winter = ["spr_fruit_plum_blossom_stage0_winter"]
+
+[tree_coconut]
+	stump_id = "stump_coconut"
+	burn_iframes = 600
+
+	bird_landing_pos.stage1 = [-5, -54]
+	bird_landing_pos.stage2 = [-5, -54]
+	bird_landing_pos.stage3 = [-5, -54]
+	bird_landing_pos.stage4 = [-5, -54]
+	bird_landing_pos.stage5 = [-5, -54]
+
+	offsets.stage1 = [24, 28]
+	offsets.stage2 = [24, 28]
+	offsets.stage3 = [24, 25]
+	offsets.stage4 = [24, 25]
+	offsets.stage5 = [24, 25]
+
+	[[tree_coconut.transparency_boxes.stage5]]
+		offset = [-6, -40]
+		size = [49, 37]
+	[[tree_coconut.transparency_boxes.stage5]]
+		offset = [16, -3]
+		size = [12, 32]
+
+	[tree_coconut.fruit_data]
+		harvest = "coconut"
+		positions = [[-5, -61], [-13, -47], [4, -46]]
+		regrow_days = 3
+		seasons = ["summer"]
+
+	[tree_coconut.destruct_sprites]
+		spring = ["spr_part_fruit_tree_plum_spring"]
+		summer = ["spr_part_fruit_tree_plum_spring"]
+		fall = ["spr_part_farm_tree_leaf_c1_autumn"]
+		winter = ["spr_part_farm_tree_leaf_c1_winter"]
+
+	[tree_coconut.sprites.stage1]
+		spring = ["spr_fruit_coconut_stage0_spring"]
+		summer = ["spr_fruit_coconut_stage0_spring"]
+		fall = ["spr_fruit_coconut_stage0_autumn"]
+		winter = ["spr_fruit_coconut_stage0_winter"]
+
+	[tree_coconut.sprites.stage2]
+		spring = ["spr_fruit_coconut_stage0_spring"]
+		summer = ["spr_fruit_coconut_stage0_spring"]
+		fall = ["spr_fruit_coconut_stage0_autumn"]
+		winter = ["spr_fruit_coconut_stage0_winter"]
+
+	[tree_coconut.sprites.stage3]
+		spring = ["spr_fruit_coconut_stage0_spring"]
+		summer = ["spr_fruit_coconut_stage0_spring"]
+		fall = ["spr_fruit_coconut_stage0_autumn"]
+		winter = ["spr_fruit_coconut_stage0_winter"]
+
+	[tree_coconut.sprites.stage4]
+		spring = ["spr_fruit_coconut_stage0_spring"]
+		summer = ["spr_fruit_coconut_stage0_spring"]
+		fall = ["spr_fruit_coconut_stage0_autumn"]
+		winter = ["spr_fruit_coconut_stage0_winter"]
+
+	[tree_coconut.sprites.stage5]
+		spring = ["spr_fruit_coconut_stage0_spring"]
+		summer = ["spr_fruit_coconut_stage0_spring"]
+		fall = ["spr_fruit_coconut_stage0_autumn"]
+		winter = ["spr_fruit_coconut_stage0_winter"]

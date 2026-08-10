@@ -1,0 +1,127 @@
+var partner = get_from_blackboard("date_partner");
+set_on_blackboard("block_skip", true);
+var alt_scene = partner == "caldarus" and read_world_fact("caldarus_seridia_town") != true;
+if alt_scene {
+	set_on_blackboard("end_position", "deep_woods/caldarus' front door");
+} else {
+	set_on_blackboard("end_position", "town/bathhouse front door");
+}
+var outfit = get_from_blackboard("outfit");
+var bark_one = "";
+var bark_two = "";
+var bark_three = "";
+var bark_four = "";
+var roll = "";
+if read_world_fact("weather") == "snowy" {
+	bark_one = "bathhouse";
+	bark_two = "snow";
+	bark_three = "hot_drink";
+	bark_four = "winter";
+} else {
+	roll = irandom(3);
+	if roll == 0 {
+		bark_one = "heatwave";
+		bark_two = current_season();
+		bark_three = "cute_face";
+		bark_four = "music";
+	} else if roll == 1 {
+		bark_one = "music";
+		bark_two = "stars";
+		bark_three = "bathhouse";
+		bark_four = "cute_face";
+	} else if roll == 2 {
+		bark_one = "cold_drink";
+		bark_two = "yum";
+		bark_three = "cute_face";
+		bark_four = "music";
+	} else if roll == 3 {
+		bark_one = "question_mark";
+		bark_two = "cold_drink";
+		bark_three = "cute_face";
+		bark_four = "heatwave";
+	}
+}
+
+//
+free bark_speech(partner, heart);
+wait(1);
+fade_out(2);
+
+if alt_scene {
+	scene(deep_woods);
+	camera_position(bathdc_camera_snap);
+
+	//
+	capture_date_photo();
+	wait_one_tick();
+	set_on_blackboard("block_skip", false);
+	camera_position(bathdc_camera_1);
+	place_actor(partner, west, bathdc_partner);
+	place_actor(ari, east, bathdc_ari);
+	offset_actor_barks(partner, 14);
+	offset_actor_barks(ari, 14);
+	set_outfit(partner, outfit);
+	animate(ari, swim_idle);
+	animate(partner, "bath_swim");
+
+	sim {
+		{
+			fade_in(2);
+			wait(6.5);
+			fade_out(2);
+		}
+		{
+			wait(1);
+			free bark_speech(partner, bark_one);
+			wait(1.5);
+			free bark_speech(ari, bark_two);
+			wait(1.5);
+			free bark_speech(partner, bark_three);
+			wait(1.5);
+			free bark_speech(ari, bark_four);
+			wait(2);
+			free bark_speech(ari, heart);
+			free bark_speech(partner, heart);
+			wait(2);
+		}
+	}
+
+} else {
+	scene(bathhouse_bath);
+	camera_position(bathd_camera_1);
+
+	//
+	capture_date_photo();
+	wait_one_tick();
+	set_on_blackboard("block_skip", false);
+
+	place_actor(partner, west, bathd_partner);
+	place_actor(ari, east, bathd_ari);
+	offset_actor_barks(partner, 14);
+	offset_actor_barks(ari, 14);
+	set_outfit(partner, outfit);
+	animate(ari, swim_idle);
+	animate(partner, "bath_swim");
+
+	sim {
+		{
+			fade_in(2);
+			wait(6.5);
+			fade_out(2);
+		}
+		{
+			wait(1);
+			free bark_speech(partner, bark_one);
+			wait(1.5);
+			free bark_speech(ari, bark_two);
+			wait(1.5);
+			free bark_speech(partner, bark_three);
+			wait(1.5);
+			free bark_speech(ari, bark_four);
+			wait(2);
+			free bark_speech(ari, heart);
+			free bark_speech(partner, heart);
+			wait(2);
+		}
+	}
+}

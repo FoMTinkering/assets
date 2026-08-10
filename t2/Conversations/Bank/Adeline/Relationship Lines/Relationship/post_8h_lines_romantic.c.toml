@@ -1,0 +1,445 @@
+[adeline_post_8h_romantic_0]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_dating = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_grouping = 0 },
+	{ adeline_post_8h_romantic_progression = false }
+]
+writes = [
+	{ adeline_post_8h_romantic_gate = true, expires = "20h" },
+	{ adeline_post_8h_romantic_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "neutral"
+local = "Oh! [Ari]!"
+next = "1"
+
+[adeline_post_8h_romantic_0.1]
+portrait = "embarrassed"
+local = "I was just thinking of you, and here you are!"
+next = "2"
+
+[adeline_post_8h_romantic_0.2]
+portrait = "happy"
+local = "Are you having a good day? You really brightened mine by stopping by."
+
+[adeline_post_8h_romantic_question_0]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_dating = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_progression = false },
+	{ adeline_post_8h_romantic_grouping = 1 }
+]
+writes = [
+	{ adeline_post_8h_romantic_gate = true, expires = "20h" },
+	{ adeline_post_8h_romantic_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "think"
+local = "I've always been curious about the Adventurer's Guild in the Capital."
+next = "1"
+
+[adeline_post_8h_romantic_question_0.1]
+portrait = "neutral"
+local = "What was your time there like?"
+prompts = [
+	{ local = "There was always a new challenge waiting.", next = "2" },
+	{ local = "There was more paperwork than you'd expect!", next = "5" }
+]
+
+[adeline_post_8h_romantic_question_0.2]
+portrait = "happy"
+local = "That's pretty romantic. You sound like a character from one of Aunt Elsie's novels!"
+next = "3"
+
+[adeline_post_8h_romantic_question_0.3]
+portrait = "blush"
+local = "Though I suppose we've faced plenty of challenges together in Mistria, haven't we?"
+next = "4"
+
+[adeline_post_8h_romantic_question_0.4]
+portrait = "hope_special"
+local = "That's pretty romantic, too."
+
+[adeline_post_8h_romantic_question_0.5]
+portrait = "happy"
+local = "No way, really? Maybe I should apply..."
+next = "6"
+
+[adeline_post_8h_romantic_question_0.6]
+portrait = "wink"
+local = "I'm just kidding!"
+next = "7"
+
+[adeline_post_8h_romantic_question_0.7]
+portrait = "hope_special"
+local = "Though going on an adventure together would be fun."
+
+[adeline_post_8h_romantic_1]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_partner = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_progression = false },
+	{ adeline_post_8h_romantic_grouping = 2 }
+]
+writes = [
+	{ adeline_post_8h_romantic_gate = true, expires = "20h" },
+	{ adeline_post_8h_romantic_grouping = 3 }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "adeline" } },
+	{ item = "wildberry_scone" }
+]
+portrait = "happy"
+local = "Do you have time to take a little break with me, [Ari]?"
+next = "1"
+
+[adeline_post_8h_romantic_1.1]
+portrait = "wink"
+effect = "hearts"
+local = "Snacks are better when you have someone to share them with!"
+
+[adeline_post_8h_romantic_question_1]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_dating = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_progression = false },
+	{ adeline_post_8h_romantic_grouping = 3 },
+]
+writes = [
+	{ adeline_post_8h_romantic_gate = true, expires = "2d" },
+	{ adeline_post_8h_romantic_grouping = 4 }
+]
+actions = [{ bark = { bark = "blush", npc = "adeline" } }]
+portrait = "neutral"
+local = "[Ari]! Have you heard the latest news from the Capital?"
+next = "1"
+
+[adeline_post_8h_romantic_question_1.1]
+portrait = "think"
+local = "The court is abuzz with rumors of a potential political marriage for the King's niece, Lady Rosalind."
+next = "2"
+
+[adeline_post_8h_romantic_question_1.2]
+portrait = "concerned"
+local = "Such marriages are commonplace among the nobility. Her parents are enthusiastic, but I wonder how she feels about it..."
+prompts = [
+	{ local = "Did your parents ever want that for you?", next = "3" },
+	{ local = "How do you feel about political marriages?", next = "6" }
+]
+
+[adeline_post_8h_romantic_question_1.3]
+portrait = "embarrassed"
+local = "Not at all!"
+next = "4"
+
+[adeline_post_8h_romantic_question_1.4]
+portrait = "neutral"
+local = "They had a love match, you know. They would never push a political marriage against my wishes."
+next = "5"
+
+[adeline_post_8h_romantic_question_1.5]
+portrait = "hope_special"
+local = "And I want to follow my heart, too..."
+
+[adeline_post_8h_romantic_question_1.6]
+portrait = "embarrassed"
+local = "W-well, the pragmatist in me understands the reasoning behind them."
+next = "7"
+
+[adeline_post_8h_romantic_question_1.7]
+portrait = "neutral"
+local = "But my parents had a love match, you know. They would never push a political marriage against my wishes."
+next = "8"
+
+[adeline_post_8h_romantic_question_1.8]
+portrait = "hope_special"
+local = "And I want to follow my heart, too..."
+
+[adeline_post_8h_romantic_2]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_dating = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_progression = false },
+	{ adeline_post_8h_romantic_grouping = 4 }
+]
+writes = [{ adeline_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "think"
+local = "You know, I like to keep the little gifts you've given me in my office."
+next = "1"
+
+[adeline_post_8h_romantic_2.1]
+portrait = "embarrassed"
+local = "I like to take them out and look at them on days when work is tough."
+
+[adeline_post_8h_romantic_3]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_dating = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_progression = false },
+	{ adeline_post_8h_romantic_grouping = 4 }
+]
+writes = [{ adeline_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "adeline" } }]
+portrait = "embarrassed"
+local = "Oh hi, [Ari]! You're looking extra... cute today."
+
+[adeline_post_8h_romantic_4]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_dating = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_progression = false },
+	{ adeline_post_8h_romantic_grouping = 4 }
+]
+writes = [{ adeline_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "adeline" } }]
+portrait = "embarrassed"
+local = "Have you been working in the Mines a lot lately?"
+next = "1"
+
+[adeline_post_8h_romantic_4.1]
+portrait = "hope_special"
+local = "Oh it's just... Your arms are looking really... structurally sound."
+next = "2"
+
+[adeline_post_8h_romantic_4.2]
+portrait = "cartoon_embarrassed"
+local = "Um. I should get back to work! Thanks for stopping by!"
+
+[adeline_post_8h_romantic_5]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_dating = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_progression = false },
+	{ adeline_post_8h_romantic_grouping = 4 }
+]
+writes = [{ adeline_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "think"
+local = """Growing up, Mother always used to say "you are the company you keep"."""
+next = "1"
+
+[adeline_post_8h_romantic_5.1]
+portrait = "hope_special"
+local = "I feel like when I'm around you, I become a better version of myself."
+next = "2"
+
+[adeline_post_8h_romantic_5.2]
+portrait = "embarrassed"
+local = "I hope you can meet her someday. I just know she would like you."
+
+[adeline_post_8h_romantic_6]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_dating = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_progression = false },
+	{ adeline_post_8h_romantic_grouping = 4 }
+]
+writes = [{ adeline_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "adeline" } }]
+portrait = "embarrassed"
+local = "Last night I was reading one of Aunt Elsie's romance novels..."
+next = "1"
+
+[adeline_post_8h_romantic_6.1]
+portrait = "hope_special"
+local = "It must be nice... to be held close by the person you love."
+next = "2"
+
+[adeline_post_8h_romantic_6.2]
+portrait = "cartoon_embarrassed"
+local = "Ah-"
+next = "3"
+
+[adeline_post_8h_romantic_6.3]
+portrait = "embarrassed"
+local = "Um. A-are you reading anything good, lately, [Ari]?"
+
+[adeline_post_8h_romantic_7]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_dating = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_progression = false },
+	{ adeline_post_8h_romantic_grouping = 4 }
+]
+writes = [{ adeline_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "adeline" } }]
+portrait = "neutral"
+local = "=Middlemists= have been my favorite flower since childhood. They show up often in stories of gallantry and courtly love."
+next = "1"
+
+[adeline_post_8h_romantic_7.1]
+portrait = "happy"
+local = "Knights would receive them from their sweethearts, as a token. Isn't that romantic?"
+next = "2"
+
+[adeline_post_8h_romantic_7.2]
+portrait = "embarrassed"
+local = "Now, Middlemists kind of... remind me of you."
+
+[adeline_post_8h_romantic_8]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_partner = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_progression = false },
+	{ adeline_post_8h_romantic_grouping = 4 }
+]
+writes = [{ adeline_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "sad"
+local = "I'm always worried that you're working too hard!"
+next = "1"
+
+[adeline_post_8h_romantic_8.1]
+portrait = "happy"
+effect = "drop"
+local = "Don't overdo it, okay?"
+next = "2"
+
+[adeline_post_8h_romantic_8.2]
+portrait = "hope_special"
+local = "You can always lean on me."
+
+# Final Line
+[adeline_post_8h_romantic_9]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_partner = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_grouping = 4 }
+]
+writes = [
+	{ adeline_post_8h_romantic_gate = true, expires = "2d" },
+	{ adeline_post_8h_best_friend_gate = true, expires = "2d" },
+	{ adeline_post_8h_romantic_progression = true }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy"
+effect = "hearts"
+local = "You're so diligent and reliable, [Ari]!"
+next = "1"
+
+[adeline_post_8h_romantic_9.1]
+portrait = "blush"
+local = "I've always wanted that in a partner... I hope I can offer the same to you!"
+
+[adeline_post_8h_romantic_10]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_dating = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_progression = false },
+	{ adeline_post_8h_romantic_grouping = 4 }
+]
+writes = [{ adeline_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "adeline" } }]
+portrait = "embarrassed"
+local = "I was just thinking, I'd really like to introduce you to my parents some day..."
+next = "1"
+
+[adeline_post_8h_romantic_10.1]
+portrait = "cartoon_embarrassed"
+effect = "sweat"
+local = "I mean, it's not a rush or anything! But I think they'd really like you!"
+
+[adeline_post_8h_romantic_11]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_dating = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_progression = false },
+	{ adeline_post_8h_romantic_grouping = 4 }
+]
+writes = [{ adeline_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "adeline" } }]
+portrait = "happy"
+local = "[Ari]! You look different today... Did you do something to your hair?"
+next = "1"
+
+[adeline_post_8h_romantic_11.1]
+portrait = "blush"
+local = "It looks cute!"
+
+[adeline_post_8h_romantic_question_2]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_dating = true },
+	{ adeline_post_8h_romantic_gate = false },
+	{ adeline_post_8h_romantic_progression = false },
+	{ adeline_post_8h_romantic_grouping = 4 }
+]
+writes = [{ adeline_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "Hey [Ari]! How are things on the farm?"
+next = "1"
+
+[adeline_post_8h_romantic_question_2.1]
+portrait = "think"
+local = "Seeing how much effort you put into it, I sometimes wonder how well I'd do in your shoes."
+next = "2"
+
+[adeline_post_8h_romantic_question_2.2]
+portrait = "sly"
+local = "What do you think? Could you picture me becoming a farmer?"
+prompts = [
+	{ local = "You're welcome to join me and give it a try.", next = "3" },
+	{ local = "But what would the town do without you?", next = "6" }
+]
+
+[adeline_post_8h_romantic_question_2.3]
+portrait = "blush"
+local = "I-is that a challenge?"
+next = "4"
+
+[adeline_post_8h_romantic_question_2.4]
+portrait = "embarrassed"
+local = "I think I could prove myself..."
+next = "5"
+
+[adeline_post_8h_romantic_question_2.5]
+portrait = "happy"
+effect = "drop"
+local = "Assuming I could fit it into my schedule! Haha!"
+
+[adeline_post_8h_romantic_question_2.6]
+portrait = "embarrassed"
+local = "Well, I suppose we couldn't put Eiland in charge, could we?"
+next = "7"
+
+[adeline_post_8h_romantic_question_2.7]
+portrait = "ugh"
+local = "He might just spend the entire town budget opening a Really Big Cookie franchise."
+next = "8"
+
+[adeline_post_8h_romantic_question_2.8]
+portrait = "happy"
+effect = "drop"
+local = "Still... I bet I could do a decent job at farming, given the chance!"

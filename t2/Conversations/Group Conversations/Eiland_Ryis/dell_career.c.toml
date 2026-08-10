@@ -1,0 +1,23 @@
+[dell_career]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "ryis" }] },
+	{ eiland_zone = "<ryis_zone>" },
+	{ date_time = "2m", comparator = ">=" }
+]
+speaker = "eiland"
+portrait = "happy"
+local = "I've been thinking that Dell might make a good archaeologist. She's enthusiastic about swinging a pickaxe."
+next = "1"
+
+[dell_career.1]
+speaker = "ryis"
+portrait = "think"
+local = "Funny, I was just thinking she'd make a good carpenter, on account of how enthusiastic she is about swinging a hammer."
+next = "2"
+
+[dell_career.2]
+speaker = "eiland"
+portrait = "sad"
+effect = "drop"
+local = "I suppose she's just enthusiastic about swinging things."

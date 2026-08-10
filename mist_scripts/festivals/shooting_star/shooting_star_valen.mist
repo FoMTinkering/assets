@@ -1,0 +1,162 @@
+scene(summit);
+camera_position(shst_camera_1);
+request_music_play("Music/Location Tracks/ShootingStarFestival");
+stop_ambiance();
+play_sound("Ambience/ShootingStarFestival");
+place_actor(ari, north, shst_ari_couple_far);
+animate(ari, sit);
+place_actor(valen, north, shst_date_far);
+animate(valen, sit);
+setup_prop(shst_blanket);
+setup_prop(shst_pouf_ari_far);
+setup_prop(shst_pouf_date_far);
+__override_post_process_time(22, 30);
+
+start_shooting_stars();
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		pan_camera(4, shst_camera_2);
+	}
+}
+wait(2);
+set_on_blackboard("quiet_stars", true);
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(2);
+sim {
+	{
+		wait(3.25);
+		place_actor(valen, east, shst_date_far_sideways);
+		animate(valen, sit);
+	}
+	{
+		next_line(); //
+	}
+}
+
+
+//
+
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, blush);
+wait(1);
+next_line(); //
+sim {
+	{
+		wait(1.5);
+		place_actor(ari, west, shst_ari_couple_far_sideways);
+		animate(ari, sit);
+	}
+	{
+
+		next_line(); //
+	}
+}
+
+
+//
+
+sim {
+	{
+		wait(0.75);
+		free bark_speech(valen, exclamation_mark);
+		wait(1.5);
+		place_actor(valen, north, shst_date_far);
+		animate(valen, sit);
+	}
+	{
+		wait(3);
+		place_actor(ari, north, shst_ari_couple_far);
+		animate(ari, sit);
+	}
+	{
+		next_line(); //
+	}
+}
+
+close_textbox();
+wait(2);
+free bark_speech(valen, ellipses);
+wait(1);
+pan_camera(3, shst_camera_3);
+wait(1);
+next_line(); //
+next_line(); //
+next_line(); //
+
+//
+
+next_line(); //
+next_line(); //
+next_line(); //
+
+//
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(valen, cute_face);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(valen, blush);
+		}
+		{
+			next_line(); //
+		}
+	}
+}
+next_line(); //
+close_textbox();
+wait(1);
+free bark(valen, cute_face);
+wait(2);
+pan_camera(3, shst_camera_2);
+wait(0.5);
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(1.5);
+free bark(ari, heart);
+free bark(valen, heart);
+wait(3);
+pan_camera(3, shst_camera_3);
+wait(1);
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(1);
+free bark_speech(ari, cute_face);
+wait(1);
+free bark_speech(valen, cute_face);
+wait(1);
+sim {
+	{
+		wait(1);
+		pan_camera(5, shst_camera_4);
+	}
+	{
+		wait(4);
+		fade_out(3);
+	}
+}

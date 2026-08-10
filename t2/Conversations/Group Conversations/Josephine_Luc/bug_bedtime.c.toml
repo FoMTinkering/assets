@@ -1,0 +1,24 @@
+[bug_bedtime]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "josephine" }, { npc = "luc" }] },
+	{ josephine_zone = "<luc_zone>" },
+	{ time_of_day = "night" },
+	{ luc_is_at = "lucs_room/Luc Bed" }
+]
+speaker = "josephine"
+portrait = "neutral"
+local = "And so, the princess was able to identify the mysterious species of insect."
+next = "1"
+
+[bug_bedtime.1]
+speaker = "josephine"
+portrait = "wink"
+local = "She became known as the Mantis Queen, and established the Royal Society of Entomologists."
+next = "2"
+
+[bug_bedtime.2]
+speaker = "luc"
+portrait = "neutral"
+effect = "sparkles"
+local = "Wowww! The Mantis Queen!"

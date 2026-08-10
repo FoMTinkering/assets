@@ -1,0 +1,17 @@
+[blocking_junipers_sun]
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ group_two_beach_day = true },
+	{ location = "beach" },
+	{ weather = "pleasant" },
+	{ juniper_is_at_location = "beach" },
+	{ any = [{ time_of_day = "morning" }, { time_of_day = "afternoon" }] }
+]
+portrait = "neutral"
+local = "I'm happy to see you down on the Beach, [Ari]. Most people find it relaxing."
+next = "1"
+
+[blocking_junipers_sun.1]
+portrait = "think"
+local = """Except for Juniper, it seems. She became quite irritable because I was "blocking her sun"."""

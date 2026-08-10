@@ -1,0 +1,35 @@
+[work_parties]
+refresh = "1m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "celine" }, { npc = "reina" }] },
+	{ location = "adelines_office" },
+	{ any = [
+		{ adeline_animation = "write" },
+		{ adeline_animation = "write_sit" },
+		{ adeline_routine = "adeline_office_work" }
+	] },
+	{ adeline_zone = "<celine_zone>" },
+	{ adeline_zone = "<reina_zone>" },
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "Welcome, [Ari]! It's a work party! We're reviewing our paperwork!"
+next = "1"
+
+[work_parties.1]
+speaker = "celine"
+portrait = "happy"
+local = "And formulating new potting soil!"
+next = "2"
+
+[work_parties.2]
+speaker = "reina"
+portrait = "happy"
+effect = "sparkles"
+local = "And making a new recipe!"
+next = "3"
+
+[work_parties.3]
+speaker = "reina"
+portrait = "think"
+local = "I guess this is a lot of different parties..."

@@ -1,0 +1,61 @@
+[seasonal_counts]
+	spring.inclement = [4, 6]
+	spring.special = [4, 6]
+
+	summer.inclement = [4, 6]
+	summer.special = [0, 0]
+
+	fall.inclement = [4, 6]
+	fall.special = [4, 6]
+
+	winter.inclement = [4, 6]
+	winter.special = [0, 0]
+
+[high_cloud]
+	fade_in_start = [7, 30]
+	fade_in_end = [8, 30]
+
+	fade_out_start = [18, 30]
+	fade_out_end = [19, 30]
+
+	range = [550, 700]
+	speed = [0.07, 0.1]
+	angle = [35, 55]
+	opacity = 0.20
+
+# This entry shows you the various fields a weather event can have, as well as their
+# default values. If you omit any of these fields in the entries below, they will use the
+# values in here!
+[default]
+	# A multiplier on the number of bugs that will spawn during this weather event. For example,
+	# if 10 bugs are supposed to spawn, and our multiplier is 0.5, 5 bugs will spawn.
+	bug_spawn_multiplier = 1
+	# The music tracks associated with this weather event broken down by season.
+	# Example: music = { fall = "track_a", winter = "track_b" }
+	# You can also just provide a single track (ie: music = "track_a") if you want to set that
+	# track for *all* seasons.
+	music = "<n/a>"
+
+[inclement]
+	bug_spawn_multiplier = 0.8
+
+	[inclement.music]
+		spring = "Music/Playlists/Spring Rain"
+		summer = "Music/Playlists/Spring Rain"
+		fall = "Music/Playlists/Spring Rain"
+		winter = "Music/Playlists/Winter Snow"
+
+[heavy_inclement]
+	bug_spawn_multiplier = 0.3
+
+	[heavy_inclement.music]
+		spring = "Music/Playlists/Spring Rain"
+		summer = "Music/Playlists/Spring Rain"
+		fall = "Music/Playlists/Spring Rain"
+		winter = "Music/Playlists/Winter Snow"
+
+[special]
+
+# Calm weather behaves differently than everything else since it is our default / empty weather.
+# Basically, leave it alone!
+[calm]

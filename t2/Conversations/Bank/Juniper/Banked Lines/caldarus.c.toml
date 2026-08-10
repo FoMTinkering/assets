@@ -1,0 +1,32 @@
+[juniper_0_follow_up]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_caldarus_encounter = true },
+	{ location = "deep_woods", comparator = "!=" },
+	{ caldarus_is_human = true },
+	{ cutscene_seen_juniper_eight_hearts = false },
+	{ caldarus_seridia_town = false }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "juniper" } }]
+portrait = "neutral"
+local = "There's been a strange vibration in Mistria's leylines since the path to the Deep Woods was cleared."
+next = "1"
+
+[juniper_0_follow_up.1]
+portrait = "think"
+local = "I followed the resonance there, but I lost track of it..."
+next = "2"
+
+[juniper_0_follow_up.2]
+portrait = "mad"
+local = """And then a mysterious, disembodied voice said "a little to the left"."""
+prompts = [{ local = "I'm sure you were just hearing things.", next = "3" }, { local = "Maybe it was a ghost...", next = "4" }]
+
+[juniper_0_follow_up.3]
+portrait = "ugh"
+local = "Y-yeah... I'm sure it was nothing..."
+
+[juniper_0_follow_up.4]
+portrait = "ugh"
+local = "S-stop it [Ari]. Ghosts aren't real. Right?"

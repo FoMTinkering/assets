@@ -1,0 +1,333 @@
+[engagement_ring_seridia]
+kind = "gameplay_triggered"
+actions = [
+    { bark = { bark = "cute_face", npc = "seridia" } },
+    { cutscene = "seridia_ten_hearts" }
+]
+speaker = "seridia"
+portrait = "neutral"
+local = "You wish to speak?"
+next = "1"
+
+[engagement_ring_seridia.1]
+speaker = "seridia"
+portrait = "sly_think"
+local = "Of course. Perhaps you can come with me to check on the $Gate Between Worlds$..."
+next = "2"
+
+[engagement_ring_seridia.2]
+speaker = "seridia"
+portrait = "sly"
+local = "That will afford us all the privacy we desire."
+
+# scene
+[seridia_ten_hearts]
+kind = "gameplay_triggered"
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "This place, the font of all $Magic$..."
+next = "1"
+
+[seridia_ten_hearts.1]
+speaker = "seridia"
+portrait = "neutral"
+local = "Being here soothes me."
+next = "2"
+
+[seridia_ten_hearts.2]
+speaker = "seridia"
+portrait = "smile"
+local = "As do you, [Ari]."
+next = "3"
+
+[seridia_ten_hearts.3]
+speaker = "seridia"
+portrait = "sly"
+local = "All the plans and machinations of my old life, which preoccupied me day and night..."
+next = "4"
+
+[seridia_ten_hearts.4]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "They all fall away when I am with you."
+next = "5"
+
+[seridia_ten_hearts.5]
+speaker = "seridia"
+portrait = "smile"
+local = "And so I am able to see myself anew."
+next = "6"
+
+[seridia_ten_hearts.6]
+speaker = "seridia"
+portrait = "embarrassed"
+local = "You... challenge me like no other, [Ari]."
+prompts = [
+    { local = "You seem kind of into it.", next = "7" },
+    { local = "I'll always be here to help you better yourself.", next = "8" }
+]
+
+[seridia_ten_hearts.7]
+speaker = "seridia"
+portrait = "blush"
+local = "Despite all odds... I am."
+next = "9"
+
+[seridia_ten_hearts.8]
+speaker = "seridia"
+portrait = "blush"
+local = "Despite everything... you are."
+next = "9"
+
+[seridia_ten_hearts.9]
+speaker = "seridia"
+portrait = "think"
+local = "When I first spoke to you, in the guise of that troublesome head priestess..."
+next = "10"
+
+[seridia_ten_hearts.10]
+speaker = "seridia"
+portrait = "unsure"
+local = "That was my old cunning at work."
+next = "11"
+
+[seridia_ten_hearts.11]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "A cunning I learned long ago, in order to survive in a world pit against me..."
+next = "12"
+
+[seridia_ten_hearts.12]
+speaker = "seridia"
+portrait = "serious"
+local = "A cunning I turned on you without a moment's hesitation."
+next = "13"
+
+[seridia_ten_hearts.13]
+speaker = "seridia"
+portrait = "think"
+local = "But as you continued to return to the Mines again and again, heeding my pleas with such purpose..."
+next = "14"
+
+[seridia_ten_hearts.14]
+speaker = "seridia"
+portrait = "unsure"
+local = "I... began to look forward to our little meetings."
+next = "15"
+
+[seridia_ten_hearts.15]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "And I began to wonder if my deception had been necessary at all."
+next = "16"
+
+[seridia_ten_hearts.16]
+speaker = "seridia"
+portrait = "serious"
+local = "I am a survivor, first and foremost... but perhaps..."
+next = "17"
+
+[seridia_ten_hearts.17]
+speaker = "seridia"
+portrait = "unsure_blush"
+local = "Had I known your heart then, I may not have needed to hide my true identity."
+prompts = [
+    { local = "You and I... we make the best of our circumstances.", next = "18" },
+    { local = "It's okay. I had a suspicion.", next = "19" }
+]
+
+[seridia_ten_hearts.18]
+speaker = "seridia"
+portrait = "smile"
+local = "We do, but... it is a deception I would take back, if I could. You came to my aid, without reservation."
+next = "20"
+
+[seridia_ten_hearts.19]
+speaker = "seridia"
+portrait = "surprise"
+local = "You did? And yet you came to my aid, without reservation..."
+next = "20"
+
+[seridia_ten_hearts.20]
+speaker = "seridia"
+portrait = "think"
+local = "I see that now. There was a time I would have considered it a mark of weakness... helping a stranger as you helped me."
+next = "21"
+
+[seridia_ten_hearts.21]
+speaker = "seridia"
+portrait = "serious"
+local = "But you survive, and you thrive."
+next = "22"
+
+[seridia_ten_hearts.22]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "And you do so without making enemies of those around you."
+next = "23"
+
+[seridia_ten_hearts.23]
+speaker = "seridia"
+portrait = "angry_brows"
+local = "You dominate nature without trampling it, nor do you trample the lives of others."
+next = "24"
+
+[seridia_ten_hearts.24]
+speaker = "seridia"
+portrait = "sly"
+local = "Your actions alone ask me to reflect. They show me a new way to live."
+next = "25"
+
+[seridia_ten_hearts.25]
+speaker = "seridia"
+portrait = "sinister_blush"
+local = "Therein lies your challenge to me..."
+next = "26"
+
+[seridia_ten_hearts.26]
+speaker = "seridia"
+portrait = "embarrassed"
+local = "And that is what makes you so desirable."
+next = [
+    { target = "27_second", requires = [
+        { cutscene_seen_seridia_ten_hearts = true }
+    ] },
+    { target = "27_first", requires = [] }
+]
+
+[seridia_ten_hearts.27_second]
+speaker = "seridia"
+portrait = "blush"
+local = "I... channeled that desire when I manifested that set of $Dragonsworn Armor$ for you."
+next = "28"
+
+[seridia_ten_hearts.27_first]
+speaker = "seridia"
+portrait = "blush"
+local = "I... channeled that desire when I manifested this set of $Dragonsworn Armor$ for you. Please, take it."
+next = "28"
+
+[seridia_ten_hearts.28]
+speaker = "seridia"
+portrait = "closed_eyes_smile"
+local = "I wanted you to have a true set, one that represents our bond. In order to do so, it was necessary for me to... consider you deeply."
+next = "29"
+
+[seridia_ten_hearts.29]
+speaker = "seridia"
+portrait = "blush"
+local = "It was not difficult."
+next = "30"
+
+[seridia_ten_hearts.30]
+speaker = "seridia"
+portrait = "embarrassed"
+local = "[Ari], you are my $Dragonsworn$. I do not wish you to forget that."
+next = "31"
+
+[seridia_ten_hearts.31]
+speaker = "seridia"
+portrait = "surprise_blush"
+local = "But this feeling... it is more than that."
+next = "32"
+
+[seridia_ten_hearts.32]
+speaker = "seridia"
+portrait = "closed_eyes_blush"
+local = "There is something I wish to say... Something I wish to ask-"
+next = "33"
+
+[seridia_ten_hearts.33]
+speaker = "seridia"
+portrait = "sly_think"
+local = "But before that... There was something that brought us together today, was there not?"
+next = "34"
+
+[seridia_ten_hearts.34]
+speaker = "seridia"
+portrait = "smile"
+local = "Something you wished to speak of?"
+prompts = [
+    { local = "I wanted to talk to you about our future together...", next = "35" },
+    { local = "Let's talk about it another time...", next = "45" }
+]
+
+[seridia_ten_hearts.35]
+speaker = "seridia"
+portrait = "surprise"
+local = "Oh?"
+next = "36"
+
+[seridia_ten_hearts.36]
+speaker = "seridia"
+portrait = "blush"
+local = "Go on."
+prompts = [
+    { local = "I love you, Seridia. Will you marry me?", next = "37" },
+    { local = "Actually, let's talk about it more another day.", next = "45" }
+]
+
+[seridia_ten_hearts.37]
+writes = [
+    { breakup_bump = true, expires = "3d" },
+    { engagement_bump = true, expires = "2d" },
+    { engagement_delay = true, expires = "20h" },
+    { engagement_cap = false, expires = "3d" },
+]
+actions = [{ can_talk = "seridia" }]
+speaker = "seridia"
+portrait = "blush"
+local = "[Ari]..."
+next = "38"
+
+[seridia_ten_hearts.38]
+speaker = "seridia"
+portrait = "sinister_blush"
+local = "You dare preempt me? I wanted to... I was going to..."
+next = "39"
+
+[seridia_ten_hearts.39]
+speaker = "seridia"
+portrait = "closed_eyes_blush"
+local = "Oh, you impertinent creature."
+next = "40"
+
+[seridia_ten_hearts.40]
+speaker = "seridia"
+portrait = "blush"
+local = "Yes, such impertinence belongs by my side... for all eternity."
+next = "41"
+
+[seridia_ten_hearts.41]
+speaker = "seridia"
+portrait = "happy_blush"
+local = "Of course I will marry you."
+next = "42"
+
+[seridia_ten_hearts.42]
+speaker = "seridia"
+portrait = "blush_think"
+local = "The way you manage to catch me off guard... it is one reason that I adore you."
+next = "43"
+
+[seridia_ten_hearts.43]
+speaker = "seridia"
+portrait = "blush"
+local = "I love you, [Ari]. Let us be wed."
+next = "44"
+
+[seridia_ten_hearts.44]
+speaker = "seridia"
+portrait = "happy_blush"
+local = "This calls for ceremony and celebration! Yes... we have much to plan."
+
+[seridia_ten_hearts.45]
+speaker = "seridia"
+portrait = "surprise"
+local = "I see..."
+next = "46"
+
+[seridia_ten_hearts.46]
+speaker = "seridia"
+portrait = "think"
+local = "Then perhaps it is best we leave it here, for today. If you wish to speak, I am easy to find."

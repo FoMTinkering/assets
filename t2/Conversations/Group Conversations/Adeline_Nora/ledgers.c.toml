@@ -1,0 +1,23 @@
+[ledgers]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "nora" }] },
+	{ adeline_zone = "<nora_zone>" },
+	{ location = "general_store_store" },
+]
+speaker = "nora"
+portrait = "neutral"
+local = "Adeline! Did you need me to look at the ledgers again?"
+next = "1"
+
+[ledgers.1]
+speaker = "adeline"
+portrait = "think"
+local = "Oh, not at all!"
+next = "2"
+
+[ledgers.2]
+speaker = "adeline"
+portrait = "happy"
+effect = "drop"
+local = "Actually, I'm just here because we ran out of potatoes."

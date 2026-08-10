@@ -1,0 +1,29 @@
+[museum_swords]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "dell" }, { npc = "nora" }] },
+	{ celine_zone = "<dell_zone>" },
+	{ celine_zone = "<nora_zone>" },
+	{ celine_is_at_location = "museum_entry" },
+	{ dell_is_at_location = "museum_entry" },
+	{ nora_is_at_location = "museum_entry" },
+	{ any = [
+		{ museum_donated_alda_bronze_sword = true },
+		{ museum_donated_aldarian_sword = true },
+		{ museum_donated_caldosian_sword = true },
+	] },
+]
+speaker = "celine"
+local = "Oh, hi [Ari]. We thought we'd bring Dell to the Museum today, since it's too rainy for her to play swords outside."
+next = "1"
+
+[museum_swords.1]
+speaker = "nora"
+portrait = "think"
+local = "Can you guess what Dell has us looking at?"
+next = "2"
+
+[museum_swords.2]
+speaker = "dell"
+portrait = "happy"
+local = "Swords! Swords! Swords!"

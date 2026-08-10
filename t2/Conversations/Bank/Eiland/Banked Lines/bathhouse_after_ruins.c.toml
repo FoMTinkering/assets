@@ -1,0 +1,54 @@
+[bathhouse_after_ruins]
+refresh = "2m"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_dig_day_wr = true },
+	{ any = [
+		{ eiland_is_traveling_to_location = "bathhouse_change_room" },
+		{ eiland_is_at_location = "bathhouse_change_room" }
+	] },
+	{ time_of_day = "morning", comparator = "!=" }
+]
+portrait = "happy"
+local = "Nothing like the waters of the Bathhouse for washing away the dirt and grit from the Western Ruins."
+
+[bathhouse_after_ruins_2]
+refresh = "2m"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ eiland_dig_day_er = true },
+		{ eiland_dig_day_n = true },
+		{ eiland_dig_day_wr = true }
+	] },
+	{ time_of_day = "morning", comparator = "!=" },
+	{ any = [
+		{ eiland_is_traveling_to_location = "bathhouse_change_room" },
+		{ eiland_is_at_location = "bathhouse_change_room" }
+	] }
+]
+portrait = "think"
+local = "First the dig, then the bath."
+next = "1"
+
+[bathhouse_after_ruins_2.1]
+portrait = "neutral"
+local = "Nothing better than a bath after a long day of excavation!"
+
+[bathhouse_after_ruins_3]
+refresh = "2m"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ eiland_dig_day_er = true },
+		{ eiland_dig_day_n = true },
+		{ eiland_dig_day_wr = true }
+	] },
+	{ time_of_day = "morning", comparator = "!=" },
+	{ any = [
+		{ eiland_is_traveling_to_location = "bathhouse_change_room" },
+		{ eiland_is_at_location = "bathhouse_change_room" }
+	] }
+]
+portrait = "happy"
+local = "A long dig calls for a long bath, I'd say."

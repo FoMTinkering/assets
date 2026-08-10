@@ -1,0 +1,33 @@
+[truth_or_dare]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "celine" }, { npc = "reina" }] },
+	{ adeline_heart_level = 4, comparator = ">=" },
+	{ celine_heart_level = 4, comparator = ">=" },
+	{ reina_heart_level = 4, comparator = ">=" },
+	{ adeline_zone = "<celine_zone>" },
+	{ adeline_zone = "<reina_zone>" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ any = [{ location = "inn" }, { location = "celines_room" }] }
+]
+speaker = "reina"
+portrait = "wink"
+local = "So? Truth or dare, Adeline?"
+next = "1"
+
+[truth_or_dare.1]
+speaker = "adeline"
+portrait = "ugh"
+local = "Truth! No, dare! Actually, wait..."
+next = "2"
+
+[truth_or_dare.2]
+speaker = "celine"
+portrait = "neutral"
+local = "Adeline's usually so decisive, but Reina always makes her think twice."
+next = "3"
+
+[truth_or_dare.3]
+speaker = "celine"
+portrait = "happy"
+local = "You never know what Reina's going to ask!"

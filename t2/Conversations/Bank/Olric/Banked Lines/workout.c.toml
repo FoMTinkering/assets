@@ -1,0 +1,91 @@
+[workout]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ any = [
+		{ olric_routine = "full_body_workout" },
+		{ olric_routine = "arm_day" },
+		{ olric_routine = "leg_day" }
+	] }
+]
+portrait = "neutral"
+local = "Oh, hey pal. You caught me in the middle of my reps."
+next = "1"
+
+[workout.1]
+portrait = "happy"
+effect = "sparkles"
+local = "Uh-oh, I lost count! Better start over."
+
+[workout_2]
+refresh = "2m"
+requires = [
+	{ npc = "olric" },
+	{ any = [
+		{ olric_routine = "full_body_workout" },
+		{ olric_routine = "arm_day" },
+		{ olric_routine = "leg_day" }
+	] },
+	{ date_time = "2m", comparator = ">=" }
+]
+portrait = "neutral"
+local = "Forty one... Forty two... Oh, [Ari]! Do some reps with me!"
+next = "1"
+
+[workout_2.1]
+portrait = "think"
+local = "Hmm, should I go back and start at one?"
+
+[workout_3]
+refresh = "2m"
+requires = [
+	{ npc = "olric" },
+	{ any = [
+		{ olric_routine = "full_body_workout" },
+		{ olric_routine = "arm_day" },
+		{ olric_routine = "leg_day" }
+	] },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "neutral"
+local = "I'm trying out a new routine! Check it out!"
+
+[workout_4]
+refresh = "3m"
+requires = [
+	{ npc = "olric" },
+	{ any = [
+		{ olric_routine = "full_body_workout" },
+		{ olric_routine = "arm_day" },
+		{ olric_routine = "leg_day" }
+	] },
+	{ date_time = "1y", comparator = ">=" },
+	{ season = "winter" }
+]
+portrait = "neutral"
+local = "Want to hear a trick to warm up your hands?"
+next = "1"
+
+[workout_4.1]
+portrait = "happy"
+local = "Shrug your shoulders up and down 10 times! Works like a charm!"
+
+[workout_5]
+refresh = "3m"
+requires = [
+	{ npc = "olric" },
+	{ any = [
+		{ olric_routine = "full_body_workout" },
+		{ olric_routine = "arm_day" },
+		{ olric_routine = "leg_day" }
+	] },
+	{ date_time = "1y", comparator = ">=" },
+	{ season = "winter" }
+]
+portrait = "neutral"
+local = "It's extra important to work out in the winter! But also in the spring! And summer! And fall too!"
+next = "1"
+
+[workout_5.1]
+portrait = "think"
+local = "Basically, it's always extra important."

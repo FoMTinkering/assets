@@ -1,0 +1,33 @@
+priority = "max"
+requires = [
+	{ spring_festival_date = "1d", time = "after" },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+]
+
+[caldarus."6:00am"]
+destination = "town/sf_booth_extra"
+
+[caldarus."12:25pm"]
+destination = "town/sf_south_booth_extra"
+
+[caldarus."3:56pm"]
+destination = "town/sf_stage_extra"
+
+[caldarus."7:58pm"]
+destination = "caldarus_house/Caldarus Wake Point"
+on_arrival_actions = [{ animation = "eyes_closed" }]
+
+# seridia
+[seridia."6:00am"]
+destination = "town/sf_south_booth_extra"
+
+[seridia."11:45am"]
+destination = "town/sf_stage_extra"
+
+[seridia."4:16pm"]
+destination = "town/sf_booth_extra"
+
+[seridia."7:28pm"]
+destination = "seridias_house_back/Seridia Throne"
+on_arrival_actions = [{ activity = "drink" }]

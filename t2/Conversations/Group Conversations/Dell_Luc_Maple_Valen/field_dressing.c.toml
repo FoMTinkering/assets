@@ -1,0 +1,36 @@
+[field_dressing]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "valen" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "<valen_zone>" },
+	{ valen_babysits = true },
+	{ location = "clinic_f1" },
+]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "The children want me to demonstrate how to field-dress a wound."
+next = "1"
+
+[field_dressing.1]
+speaker = "dell"
+portrait = "mad"
+local = "For when we have to fight a monster!"
+next = "2"
+
+[field_dressing.2]
+speaker = "luc"
+portrait = "sad"
+local = "Can we just... not fight the monster?"
+next = "3"
+
+[field_dressing.3]
+speaker = "maple"
+portrait = "neutral"
+local = "I'm with Luc. Let's make friends with the monster!"

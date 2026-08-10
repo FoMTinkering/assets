@@ -1,0 +1,20 @@
+[silver_redhorse]
+refresh = "1y"
+requires = [
+	{ npc = "hayden" },
+	{ museum_donated_silver_redhorse = true },
+	{ building = "museum", comparator = "!=" },
+]
+portrait = "neutral"
+local = "You know that $Silver Redhorse$ you donated to the Museum?"
+next = "1"
+
+[silver_redhorse.1]
+portrait = "think"
+local = "Reminds me of that old legend about a horse that could turn into a fish!"
+next = "2"
+
+[silver_redhorse.2]
+portrait = "neutral"
+effect = "drop"
+local = "That seems unlikely."

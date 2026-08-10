@@ -1,0 +1,30 @@
+[animal_festival_greeting]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "josephine" },
+	{ animal_festival_today = true },
+	{ josephine_is_at = "town/af_podium" },
+	{ small_animal_place = "undefined" },
+	{ large_animal_place = "undefined" },
+]
+writes = [
+	{ jo_explained_animal_festival = true, expires = "20h" },
+]
+portrait = "happy"
+local = "Welcome to the Animal Festival, [Ari]!"
+next = "1"
+
+[animal_festival_greeting.1]
+portrait = "neutral"
+local = "If you're looking to enter one of your animals into either of the brackets, you can do so at the booths behind me!"
+next = "2"
+
+[animal_festival_greeting.2]
+portrait = "wink"
+local = "A little tip, I hear the judging panel's biggest considerations are how high the animal's heart level is, and how rare their coat color is."
+next = "3"
+
+[animal_festival_greeting.3]
+portrait = "happy"
+local = "Once you're ready, come talk to me again and we'll start the judging!"

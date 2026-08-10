@@ -1,0 +1,451 @@
+
+
+fun repeat_until_call_for_help() {
+	if get_response() == 1 {
+		repeat_line();
+		repeat_until_call_for_help();
+	}
+}
+
+
+var fade_over = false;
+
+scene(fire_seal);
+
+create_unique_renderer();
+
+//
+fade_out(2);
+place_actor(ari, north, "ari_look");
+face(ari, north);
+play_sound("SoundEffects/SpecialEvents/CaldarusStatueFix");
+trigger_scene_object_removals();
+wait(1.5);
+play_sound("SoundEffects/SpecialEvents/Premonition");
+wait(1);
+request_music_play("Music/Events/TheSeal");
+fade_in(2);
+wait(0.5);
+place_actor(seridia, south, fs_priestess);
+set_shadow_enabled(seridia, false);
+play_sound("SoundEffects/NPCs/SeridiaFadeOut");
+fade_npc_alpha(seridia, 0.0, 0.5, 180);
+wait(1);
+free pan_camera(3, fs_camera_priestess);
+wait(2);
+next_line(); //
+close_textbox();
+
+
+//
+free request_music_stop(1);
+free {
+	sim {
+		shake_camera(0.3);
+		play_sound("SoundEffects/SpecialEvents/EarthShake1");
+	}
+	wait(0.5);
+	sim {
+		shake_camera(0.6);
+		play_sound("SoundEffects/SpecialEvents/EarthShake2");
+	}
+	wait(0.8);
+	sim {
+		shake_camera(0.9);
+		play_sound("SoundEffects/SpecialEvents/EarthShakeLong");
+	}
+}
+
+wait(0.25);
+free bark_speech(seridia, exclamation_mark);
+free bark_speech(ari, exclamation_mark);
+wait(1.5);
+pan_camera(1, bfs_camera_scroll);
+sim {
+	play_sound("SoundEffects/SpecialEvents/ScrollRaise");
+	set_on_blackboard("command", "raise_scroll");
+	{
+		wait(0.3);
+		request_music_play("Music/Events/ThemeOfDarkness");
+	}
+}
+
+
+sim {
+	{
+		wait(0.5);
+		face(ari, east);
+	}
+	{
+		wait(0.75);
+		face(seridia, east);
+	}
+}
+wait(1);
+
+sim {
+	{
+		pan_camera(1, fs_camera_priestess);
+	}
+	{
+		wait(0.25);
+		face(seridia, south);
+	}
+	{
+		wait(1);
+		face(ari, north);
+	}
+	{
+		wait(0.75);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+
+close_textbox();
+
+sim {
+	{
+		play_sound("SoundEffects/NPCs/SeridiaFadeOut");
+		fade_npc_alpha(seridia, 0.5, 0.0, 60);
+		wait(1);
+		remove_actor(seridia);
+	}
+	{
+		wait(1);
+		pan_camera(1.5, bfs_ari_escape);
+	}
+	{
+		wait(1.75);
+		sim {
+			make_next_ari_walk_use_run();
+			walk(ari, bfs_ari_escape);
+			set_move_speed(ari, 2);
+		}
+	}
+	{
+		wait(2);
+		sim {
+			set_on_blackboard("command", "unfurl_scroll");
+			{
+				wait(0.1);
+				play_sound("SoundEffects/SpecialEvents/ScrollAttack");
+			}
+		}
+
+	}
+}
+
+//
+animate(ari, idle);
+shake_camera(0.5);
+sim {
+	{
+		wait(0.2);
+		set_on_blackboard("command", "start_magic_loop");
+	}
+	set_on_blackboard("command", "ari_paralysis");
+	play_sound("SoundEffects/Ari/TakeElectricDamage");
+}
+wait(0.25);
+free bark_speech(ari, exclamation_mark);
+
+wait(2);
+
+play_sound("SoundEffects/Ari/TakeDamage");
+show_menu(vitals);
+if __get_ari_health() >= 10 {
+	__set_ari_health_direct(__get_ari_health() / 2);
+}
+if __get_ari_stamina() >= 10 {
+	__set_ari_stamina_direct(__get_ari_stamina() / 2);
+}
+set_on_blackboard("command", "fake_hurt_ari");
+await_flag_from_blackboard("hurt_done");
+set_on_blackboard("hurt_done", -1);
+set_on_blackboard("command", "make_ari_blue");
+animate(ari, faint);
+freeze_ari_on_last_frame();
+await_ari_animation();
+
+wait(0.25);
+free bark(ari, ellipses);
+wait(2);
+
+__set_ari_health_direct(1);
+__set_ari_stamina_direct(1);
+set_on_blackboard("command", "fake_hurt_ari");
+await_flag_from_blackboard("hurt_done");
+set_on_blackboard("command", "make_ari_blue");
+
+wait(1.5);
+hide_menu(vitals);
+next_line(); //
+repeat_until_call_for_help();
+next_line(); //
+
+close_textbox();
+
+//
+set_on_blackboard("command", "bring_in_black");
+play_sound("SoundEffects/SpecialEvents/CaldarusAppear");
+wait(0.1);
+set_on_blackboard("command", "stop_magic_loop");
+wait(1.9);
+
+//
+
+sim {
+	pan_camera(3, bfs_camera_caldarus_dragon);
+	{
+		wait(1);
+		set_on_blackboard("command", "bring_in_caldarus");
+		wait(4);
+	}
+	{
+		request_music_play("caldarus");
+	}
+}
+
+
+__raise_textbox();
+place_actor(caldarus, north, fs_ari_entrance);
+set_outfit(caldarus, dragon_statue);
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, ellipses);
+wait(2);
+next_line(); //
+close_textbox();
+
+//
+set_on_blackboard("command", "open_dragon_eyes");
+wait(2);
+
+next_line(); //
+
+close_textbox();
+
+wait(0.25);
+
+//
+
+sim {
+	{
+		pan_camera(4, bfs_camera_ari);
+	}
+	{
+		wait(1.5);
+		setup_prop(db_spell, -1000);
+		free fade_prop_alpha(db_spell, 0.0, 1.0, 120);
+		wait(3);
+		free fade_prop_alpha(db_spell, 1.0, 0.0, 60);
+		wait(1);
+		destroy_prop(db_spell);
+	}
+	{
+		wait(2);
+		play_sound("SoundEffects/Objects/UseChickenStatue");
+		create_animation(spr_npc_effect_heal, bfs_magic_animation, 0, 0, 0, -1000);
+	}
+}
+
+next_line(); //
+close_textbox();
+wait(2);
+next_line(); //
+close_textbox();
+wait(1);
+next_line(); //
+
+//
+
+close_textbox();
+sim {
+	{
+		wait(1);
+		pan_camera(2, bfs_camera_caldarus_dragon);
+	}
+	{
+		wait(3.25);
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+
+wait(1);
+play_sound("SoundEffects/SpecialEvents/CaldarusTransformation");
+set_on_blackboard("command", "pulse_dragon");
+wait(3.5);
+set_on_blackboard("command", "flash");
+await_flag_from_blackboard("flash_in");
+set_outfit(caldarus, spring);
+set_on_blackboard("draw_cal_over_black", true);
+place_actor(caldarus, south, bfs_caldarus_entrance);
+set_on_blackboard("command", "overlay_caldarus");
+raise_actor(caldarus);
+await_flag_from_blackboard("flash_done");
+wait(2);
+pan_camera(2, bfs_camera_ari);
+next_line(); //
+close_textbox();
+
+//
+sim {
+	{
+		wait(0.25);
+		pan_camera(4, bfs_camera_caldarus_dragon);
+	}
+	{
+		sim {
+			{
+				wait(1.3);
+				lower_actor(caldarus);
+			}
+			{
+				wait(1.5);
+				set_on_blackboard("command", "remove_black");
+			}
+
+		}
+
+	}
+	{
+		wait(0.25);
+		animate(caldarus, spell_cast);
+		play_sound("SoundEffects/SpecialEvents/CaldarusMagicFull");
+		set_on_blackboard("command", "caldarus_purple");
+		wait(1.1);
+		fade_npc_alpha(caldarus, 1.0, 0, 15);
+		wait(0.7);
+		set_on_blackboard("command", "no_caldarus_purple");
+		sim {
+			{
+				wait(0.1);
+				fade_npc_alpha(caldarus, 0.0, 1.0, 15);
+			}
+			play_sound("SoundEffects/Entrances/Teleport");
+			create_animation(spr_fx_poof1_essence_once, bfs_caldarus_poof_2, 0, 0, 0, -500);
+		}
+		wait(0.3);
+		animate(caldarus, idle);
+	}
+}
+wait(1.5);
+sim {
+	{
+		pan_camera(1.5, bfs_camera_scroll_destruction);
+	}
+	{
+		sim {
+			walk(caldarus, bfs_caldarus_scroll_destruction);
+			set_move_speed(caldarus, 1.3);
+		}
+		face(caldarus, east); //
+	}
+}
+
+//
+animate(caldarus, spell_cast);
+play_sound("SoundEffects/SpecialEvents/CaldarusMagicSimple");
+wait(0.25);
+set_on_blackboard("command", "start_caldarus_spell");
+wait(2);
+set_on_blackboard("command", "destroy_scroll");
+play_sound("SoundEffects/Ari/DragonBreathStart");
+wait(1.25);
+set_on_blackboard("command", "free_ari");
+wait(0.5);
+open_ari_eyes();
+unfreeze_ari();
+animate(ari, idle);
+wait(0.5);
+animate(caldarus, idle);
+wait(1);
+face(caldarus, south);
+wait(0.5);
+
+//
+
+sim {
+	{
+		pan_camera(2, bfs_camera_ari);
+	}
+	{
+		wait(0.25);
+		animate(ari, idle);
+		wait(0.5);
+		face(ari, west);
+		wait(0.5);
+		face(ari, east);
+		wait(1);
+		face(ari, north);
+		wait(0.25);
+		free bark_speech(ari, exclamation_mark);
+		wait(1);
+	}
+}
+
+
+//
+next_line(); //
+close_textbox();
+sim {
+	{
+		wait(4.5);
+		next_line(); //
+
+	}
+	{
+		wait(1);
+		sim {
+			walk(caldarus, bfs_caldarus_start);
+			set_move_speed(caldarus, 0.4);
+		}
+		face(caldarus, west);
+		animate(caldarus, eyes_closed);
+		wait(1);
+		free bark_speech(caldarus, ellipses);
+	}
+	{
+		pan_camera(2.5, bfs_camera_conversation);
+	}
+}
+
+sim {
+	{
+		wait(0.25);
+		animate(caldarus, idle);
+		wait(0.5);
+		face(caldarus, south);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+fade_over = true;
+wait(1);
+animate(caldarus, spell_cast);
+set_on_blackboard("command", "caldarus_purple");
+play_sound("SoundEffects/SpecialEvents/CaldarusMagicSimple");
+wait(1.5);
+sim {
+	play_sound("SoundEffects/SpecialEvents/CaldarusDisappear");
+	fade_npc_alpha(caldarus, 1.0, 0.0, 6);
+	{
+		wait(0.1);
+		create_animation(spr_fx_poof1_essence_once, bfs_caldarus_poof, 0, 0, -15, -500);
+	}
+
+}
+wait(0.1);
+remove_actor(caldarus);
+wait(1);
+pan_camera(2, ari);
+show_menu(vitals);
+
+//

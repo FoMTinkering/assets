@@ -1,0 +1,779 @@
+# <---------BLACKSMITHING INGOTS------------->
+
+[copper_ingot]
+	description = "An ingot of solid copper. Used in a variety of blacksmithing and crafting recipes."
+	icon_sprite = "spr_ui_item_copper_ingot"
+	name = "Copper Ingot"
+	value = { bin = 110, store = 250 }
+	tags = ["ingot", "blacksmithing", "ingot"]
+	crafting_level_requirement = 1
+	recipe = [{ hours = 0, minutes = 20 }, { count = 10, item = "ore_copper" }]
+	recipe_is_default = true
+
+
+[iron_ingot]
+	description = "An ingot of pure iron. Used in a variety of blacksmithing and crafting recipes."
+	icon_sprite = "spr_ui_item_iron_ingot"
+	name = "Iron Ingot"
+	tags = ["ingot", "blacksmithing"]
+	value = { bin = 125, store = 300 }
+	crafting_level_requirement = 2
+	recipe = [{ hours = 0, minutes = 20 }, { count = 10, item = "ore_iron" }]
+	recipe_is_default = true
+
+[silver_ingot]
+	description = "An ingot of pure silver. Used in a variety of blacksmithing and crafting recipes."
+	icon_sprite = "spr_ui_item_silver_ingot"
+	name = "Silver Ingot"
+	tags = ["ingot", "blacksmithing"]
+	value = { bin = 220, store = 500 }
+	crafting_level_requirement = 4
+	recipe = [{ hours = 0, minutes = 20 }, { count = 10, item = "ore_silver" }]
+	recipe_is_default = true
+
+[gold_ingot]
+	description = "An ingot of pure gold. Used in a variety of blacksmithing and crafting recipes."
+	icon_sprite = "spr_ui_item_gold_ingot"
+	name = "Gold Ingot"
+	value = { bin = 275, store = 600 }
+	tags = ["ingot", "blacksmithing"]
+	crafting_level_requirement = 6
+	recipe = [{ hours = 0, minutes = 20 }, { count = 10, item = "ore_gold" }]
+	recipe_is_default = true
+
+[mistril_ingot]
+	description = "An ingot of pure mistril. Used in a variety of blacksmithing and crafting recipes."
+	icon_sprite = "spr_ui_item_mistril_ingot"
+	name = "Mistril Ingot"
+	tags = ["ingot", "blacksmithing"]
+	value = { bin = 330, store = 700 }
+	crafting_level_requirement = 8
+	recipe = [{ hours = 0, minutes = 20 }, { count = 10, item = "ore_mistril" }]
+	recipe_is_default = true
+
+# <---------BLACKSMITHING TOOLS------------->
+#WORN
+[axe_worn]
+	description = "A worn but still serviceable axe. Used to destroy branches and trees."
+	icon_sprite = "spr_ui_item_tool_rusty_axe"
+	name = "Worn Axe"
+	quality = "tier1"
+	value = { bin = 50, store = 200 }
+	tags = ["axe", "tool"]
+	tool_type = "axe"
+	damage = 1
+
+[fishing_rod_worn]
+	description = "A worn but still serviceable fish rod. It has a cast range of 6."
+	icon_sprite = "spr_ui_item_tool_rusty_rod"
+	name = "Worn Fishing Rod"
+	quality = "tier1"
+	tags = ["fishing_rod", "tool"]
+	tool_type = "fishing_rod"
+	range = 5
+	value = { bin = 250, store = 500 }
+
+[hoe_worn]
+	description = "A worn but still serviceable hoe. Used to till dirt in preparation for planting seeds."
+	icon_sprite = "spr_ui_item_tool_rusty_hoe"
+	name = "Worn Hoe"
+	quality = "tier1"
+	tags = ["hoe", "tool"]
+	tool_type = "hoe"
+	value = { bin = 50, store = 150 }
+
+[net_worn]
+	description = "A worn but still serviceable net. Used to catch bugs."
+	icon_sprite = "spr_ui_item_tool_rusty_net"
+	name = "Worn Net"
+	quality = "tier1"
+	tags = ["net", "tool"]
+	tool_type = "net"
+	stamina_cost = -1
+	catch_size = 5
+	value = { bin = 50, store = 200 }
+
+[pick_axe_worn]
+	description = "A worn but still serviceable pickaxe. Used to break small rocks and to excavate dig spots."
+	icon_sprite = "spr_ui_item_tool_rusty_pickaxe"
+	name = "Worn Pickaxe"
+	quality = "tier1"
+	tags = ["pick_axe", "tool"]
+	value = { bin = 50, store = 200 }
+	tool_type = "pick_axe"
+	damage = 1
+
+[shovel_worn]
+	description = "A worn but still serviceable shovel. Used to expand fields, excavate dig spots, and destroy crops."
+	icon_sprite = "spr_ui_item_tool_rusty_shovel"
+	name = "Worn Shovel"
+	quality = "tier1"
+	tags = ["shovel", "tool"]
+	tool_type = "shovel"
+	value = { bin = 50, store = 500 }
+
+[watering_can_worn]
+	description = "A worn but still serviceable watering can. Used to water plants."
+	icon_sprite = "spr_ui_item_tool_rusty_watering_can"
+	name = "Worn Watering Can"
+	quality = "tier1"
+	tags = ["watering_can", "tool"]
+	value = { bin = 50, store = 150 }
+	tool_type = "watering_can"
+
+	#COPPER
+
+[axe_copper]
+	description = "A copper axe. Can be charged to chop 3 tiles in a row."
+	icon_sprite = "spr_ui_item_tool_copper_axe"
+	name = "Copper Axe"
+	quality = "tier2"
+	value = { bin = 480, store = 1000 }
+	tags = ["axe", "blacksmithing", "tool", "copper_tool"]
+	tool_type = "axe"
+	crafting_level_requirement = 4
+	recipe = [{ hours = 0, minutes = 30 }, { count = 4, item = "copper_ingot" }]
+	damage = 2
+	recipe_is_default = true
+
+[fishing_rod_copper]
+	description = "A copper fishing rod. It has a cast range of 8."
+	icon_sprite = "spr_ui_item_tool_copper_rod"
+	name = "Copper Fishing Rod"
+	quality = "tier2"
+	value = { bin = 480, store = 1000 }
+	recipe_is_default = true
+	tags = ["fishing_rod", "blacksmithing", "tool", "copper_tool"]
+	tool_type = "fishing_rod"
+	crafting_level_requirement = 4
+	recipe = [{ hours = 0, minutes = 30 }, { count = 4, item = "copper_ingot" }]
+	range = 7
+
+[hoe_copper]
+	description = "A copper hoe. Can be charged to till 3 tiles in a row."
+	icon_sprite = "spr_ui_item_tool_copper_hoe"
+	name = "Copper Hoe"
+	quality = "tier2"
+	recipe_is_default = true
+	value = { bin = 480, store = 1000 }
+	tags = ["hoe", "blacksmithing", "tool", "copper_tool"]
+	tool_type = "hoe"
+	crafting_level_requirement = 4
+	recipe = [{ hours = 0, minutes = 30 }, { count = 4, item = "copper_ingot" }]
+
+[net_copper]
+	description = "A copper bug catching net. Can be charged to catch 3 tiles in a row."
+	icon_sprite = "spr_ui_item_tool_copper_net"
+	name = "Copper Net"
+	quality = "tier2"
+	tags = ["net", "blacksmithing", "tool", "copper_tool"]
+	tool_type = "net"
+	stamina_cost = -1
+	catch_size = 5
+	value = { bin = 480, store = 1000 }
+	crafting_level_requirement = 4
+	recipe = [{ hours = 0, minutes = 30 }, { count = 4, item = "copper_ingot" }]
+	recipe_is_default = true
+
+[pick_axe_copper]
+	description = "A copper pickaxe. Can break big rocks & can be charged to strike 3 tiles in a row."
+	icon_sprite = "spr_ui_item_tool_copper_pickaxe"
+	name = "Copper Pickaxe"
+	quality = "tier2"
+	recipe_is_default = true
+	tags = ["pick_axe", "blacksmithing", "tool", "copper_tool"]
+	tool_type = "pick_axe"
+	value = { bin = 480, store = 1000 }
+	crafting_level_requirement = 4
+	recipe = [{ hours = 0, minutes = 30 }, { count = 4, item = "copper_ingot" }]
+	damage = 2
+
+[shovel_copper]
+	description = "A copper shovel. Can be charged to dig 3 tiles in a row."
+	icon_sprite = "spr_ui_item_tool_copper_shovel"
+	name = "Copper Shovel"
+	quality = "tier2"
+	recipe_is_default = true
+	tags = ["shovel", "blacksmithing", "tool", "copper_tool"]
+	tool_type = "shovel"
+	value = { bin = 480, store = 1000 }
+	crafting_level_requirement = 4
+	recipe = [{ hours = 0, minutes = 30 }, { count = 4, item = "copper_ingot" }]
+
+[watering_can_copper]
+	description = "A copper watering can. Can be charged to water 3 tiles in a row."
+	icon_sprite = "spr_ui_item_tool_copper_watering_can"
+	name = "Copper Watering Can"
+	quality = "tier2"
+	value = { bin = 480, store = 1000 }
+	recipe_is_default = true
+	tags = ["watering_can", "blacksmithing", "tool", "copper_tool"]
+	tool_type = "watering_can"
+	crafting_level_requirement = 4
+	recipe = [{ hours = 0, minutes = 30 }, { count = 4, item = "copper_ingot" }]
+
+	#IRON
+
+[axe_iron]
+	description = "An iron axe. Can be charged to chop a 3x3 area."
+	icon_sprite = "spr_ui_item_tool_iron_axe"
+	name = "Iron Axe"
+	quality = "tier3"
+	tags = ["axe", "blacksmithing", "tool"]
+	tool_type = "axe"
+	crafting_level_requirement = 10
+	recipe = [{ hours = 0, minutes = 30 }, { count = 4, item = "iron_ingot" }]
+	damage = 3
+	value = { bin = 725, store = 2000 }
+	recipe_is_default = true
+
+[fishing_rod_iron]
+	description = "A fishing rod with an iron pole. It has a cast range of 10."
+	icon_sprite = "spr_ui_item_tool_iron_rod"
+	name = "Iron Fishing Rod"
+	quality = "tier3"
+	recipe_is_default = true
+	tags = ["fishing_rod", "blacksmithing", "tool"]
+	tool_type = "fishing_rod"
+	value = { bin = 725, store = 2000 }
+	crafting_level_requirement = 10
+	recipe = [{ hours = 0, minutes = 30 }, { count = 4, item = "iron_ingot" }]
+	range = 9
+
+[hoe_iron]
+	description = "An iron hoe. Can be charged to till a 3x3 area."
+	icon_sprite = "spr_ui_item_tool_iron_hoe"
+	name = "Iron Hoe"
+	quality = "tier3"
+	recipe_is_default = true
+	tags = ["hoe", "blacksmithing", "tool"]
+	tool_type = "hoe"
+	value = { bin = 725, store = 2000 }
+	crafting_level_requirement = 10
+	recipe = [{ hours = 0, minutes = 30 }, { count = 4, item = "iron_ingot" }]
+
+[net_iron]
+	description = "An iron bug catching net. Can be charged to catch a 3x3 area."
+	icon_sprite = "spr_ui_item_tool_iron_net"
+	name = "Iron Net"
+	quality = "tier3"
+	tags = ["net", "blacksmithing", "tool"]
+	tool_type = "net"
+	stamina_cost = -1
+	catch_size = 5
+	value = { bin = 725, store = 2000 }
+	crafting_level_requirement = 10
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "iron_ingot" }]
+	recipe_is_default = true
+
+[pick_axe_iron]
+	description = "An iron pickaxe. Can be charged to strike a 3x3 area."
+	icon_sprite = "spr_ui_item_tool_iron_pickaxe"
+	name = "Iron Pickaxe"
+	quality = "tier3"
+	recipe_is_default = true
+	tags = ["pick_axe", "blacksmithing", "tool"]
+	tool_type = "pick_axe"
+	value = { bin = 725, store = 2000 }
+	crafting_level_requirement = 10
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "iron_ingot" }]
+	damage = 3
+
+[shovel_iron]
+	description = "An iron shovel. Can be charged to dig a 3x3 area."
+	icon_sprite = "spr_ui_item_tool_iron_shovel"
+	name = "Iron Shovel"
+	quality = "tier3"
+	recipe_is_default = true
+	tags = ["shovel", "blacksmithing", "tool"]
+	tool_type = "shovel"
+	value = { bin = 725, store = 2000 }
+	crafting_level_requirement = 10
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "iron_ingot" }]
+
+[watering_can_iron]
+	description = "An iron watering can. Can be charged to water a 3x3 area."
+	icon_sprite = "spr_ui_item_tool_iron_watering_can"
+	name = "Iron Watering Can"
+	quality = "tier3"
+	recipe_is_default = true
+	tags = ["watering_can", "blacksmithing", "tool"]
+	tool_type = "watering_can"
+	value = { bin = 725, store = 2000 }
+	crafting_level_requirement = 10
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "iron_ingot" }]
+
+	#SILVER
+
+[watering_can_silver]
+	description = "A silver watering can. Can be charged to water a 3x6 area."
+	icon_sprite = "spr_ui_item_tool_silver_watering_can"
+	name = "Silver Watering Can"
+	quality = "tier4"
+	recipe_is_default = true
+	tags = ["watering_can", "blacksmithing", "tool"]
+	tool_type = "watering_can"
+	value = { bin = 970, store = 3000 }
+	crafting_level_requirement = 16
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "silver_ingot" }]
+
+[axe_silver]
+	description = "A silver axe. Can be charged to chop a 3x6 area."
+	icon_sprite = "spr_ui_item_tool_silver_axe"
+	name = "Silver Axe"
+	quality = "tier4"
+	tags = ["axe", "blacksmithing", "tool"]
+	tool_type = "axe"
+	value = { bin = 970, store = 3000 }
+	crafting_level_requirement = 16
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "silver_ingot" }]
+	damage = 4
+	recipe_is_default = true
+
+[fishing_rod_silver]
+	description = "A silver handled fishing rod. It has a cast range of 12."
+	icon_sprite = "spr_ui_item_tool_silver_rod"
+	name = "Silver Fishing Rod"
+	quality = "tier4"
+	recipe_is_default = true
+	tags = ["fishing_rod", "blacksmithing", "tool"]
+	tool_type = "fishing_rod"
+	value = { bin = 970, store = 3000 }
+	crafting_level_requirement = 16
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "silver_ingot" }]
+	range = 11
+
+[hoe_silver]
+	description = "A silver hoe. Can be charged to till a 3x6 area."
+	icon_sprite = "spr_ui_item_tool_silver_hoe"
+	name = "Silver Hoe"
+	quality = "tier4"
+	recipe_is_default = true
+	tags = ["hoe", "blacksmithing", "tool"]
+	tool_type = "hoe"
+	value = { bin = 970, store = 3000 }
+	crafting_level_requirement = 16
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "silver_ingot" }]
+
+[net_silver]
+	description = "A silver bug catching net. Can be charged to catch a 3x6 area."
+	icon_sprite = "spr_ui_item_tool_silver_net"
+	name = "Silver Net"
+	quality = "tier4"
+	tags = ["net", "blacksmithing", "tool"]
+	tool_type = "net"
+	stamina_cost = -1
+	catch_size = 5
+	value = { bin = 970, store = 3000 }
+	crafting_level_requirement = 16
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "silver_ingot" }]
+	recipe_is_default = true
+
+[pick_axe_silver]
+	description = "A silver pickaxe. Can be charged to strike a 3x6 area."
+	icon_sprite = "spr_ui_item_tool_silver_pickaxe"
+	name = "Silver Pickaxe"
+	quality = "tier4"
+	recipe_is_default = true
+	tags = ["pick_axe", "blacksmithing", "tool"]
+	tool_type = "pick_axe"
+	value = { bin = 970, store = 3000 }
+	crafting_level_requirement = 16
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "silver_ingot" }]
+	damage = 4
+
+[shovel_silver]
+	description = "A silver shovel. Can be charged to dig a 3x6 area."
+	icon_sprite = "spr_ui_item_tool_silver_shovel"
+	name = "Silver Shovel"
+	quality = "tier4"
+	recipe_is_default = true
+	tags = ["shovel", "blacksmithing", "tool"]
+	tool_type = "shovel"
+	value = { bin = 970, store = 3000 }
+	crafting_level_requirement = 16
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "silver_ingot" }]
+
+	#GOLD
+
+[axe_gold]
+	description = "A splendid golden axe. Can be charged to chop a 6x6 area."
+	icon_sprite = "spr_ui_item_tool_gold_axe"
+	name = "Gold Axe"
+	quality = "tier5"
+	tags = ["axe", "blacksmithing", "tool"]
+	tool_type = "axe"
+	value = { bin = 1200, store = 4000 }
+	crafting_level_requirement = 22
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "gold_ingot" }]
+	damage = 5
+	recipe_is_default = true
+
+[fishing_rod_gold]
+	description = "A splendid golden fishing rod. It has a cast range of 14."
+	icon_sprite = "spr_ui_item_tool_gold_rod"
+	name = "Gold Fishing Rod"
+	quality = "tier5"
+	recipe_is_default = true
+	tags = ["fishing_rod", "blacksmithing", "tool"]
+	tool_type = "fishing_rod"
+	value = { bin = 1200, store = 4000 }
+	crafting_level_requirement = 22
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "gold_ingot" }]
+	range = 13
+
+[hoe_gold]
+	description = "A splendid golden hoe. Can be charged to till a 6x6 area."
+	icon_sprite = "spr_ui_item_tool_gold_hoe"
+	name = "Gold Hoe"
+	quality = "tier5"
+	recipe_is_default = true
+	tags = ["hoe", "blacksmithing", "tool"]
+	tool_type = "hoe"
+	crafting_level_requirement = 22
+	value = { bin = 1200, store = 4000 }
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "gold_ingot" }]
+
+[net_gold]
+	description = "A gold bug catching net. Can be charged to catch a 6x6 area."
+	icon_sprite = "spr_ui_item_tool_gold_net"
+	name = "Gold Net"
+	quality = "tier5"
+	tags = ["net", "blacksmithing", "tool"]
+	tool_type = "net"
+	stamina_cost = -1
+	catch_size = 5
+	crafting_level_requirement = 22
+	value = { bin = 1200, store = 4000 }
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "gold_ingot" }]
+	recipe_is_default = true
+
+[pick_axe_gold]
+	description = "A splendid golden pickaxe. Can be charged to strike a 6x6 area."
+	icon_sprite = "spr_ui_item_tool_gold_pickaxe"
+	name = "Gold Pickaxe"
+	quality = "tier5"
+	recipe_is_default = true
+	tags = ["pick_axe", "blacksmithing", "tool"]
+	tool_type = "pick_axe"
+	crafting_level_requirement = 22
+	value = { bin = 1200, store = 4000 }
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "gold_ingot" }]
+	damage = 5
+
+[shovel_gold]
+	description = "A splendid golden shovel. Can be charged to dig a 6x6 area."
+	icon_sprite = "spr_ui_item_tool_gold_shovel"
+	name = "Gold Shovel"
+	quality = "tier5"
+	recipe_is_default = true
+	tags = ["shovel", "blacksmithing", "tool"]
+	tool_type = "shovel"
+	value = { bin = 1200, store = 4000 }
+	crafting_level_requirement = 22
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "gold_ingot" }]
+
+[watering_can_gold]
+	description = "A splendid golden watering can. Can be charged to water a 6x6 area."
+	icon_sprite = "spr_ui_item_tool_gold_watering_can"
+	name = "Gold Watering Can"
+	quality = "tier5"
+	recipe_is_default = true
+	tags = ["watering_can", "blacksmithing", "tool"]
+	tool_type = "watering_can"
+	value = { bin = 1200, store = 4000 }
+	crafting_level_requirement = 22
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "gold_ingot" }]
+
+	#MISTRIL
+
+[axe_mistril]
+	description = "An axe made from mistril. Can be charged to chop a 6x9 area."
+	icon_sprite = "spr_ui_item_tool_mistril_axe"
+	name = "Mistril Axe"
+	quality = "tier6"
+	tags = ["axe", "blacksmithing", "tool"]
+	tool_type = "axe"
+	value = { bin = 1450, store = 5000 }
+	crafting_level_requirement = 28
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "mistril_ingot" }]
+	damage = 6
+	recipe_is_default = true
+
+[fishing_rod_mistril]
+	description = "A fishing rod made from mistril. It has a cast range of 16."
+	icon_sprite = "spr_ui_item_tool_mistril_rod"
+	name = "Mistril Fishing Rod"
+	quality = "tier6"
+	recipe_is_default = true
+	tags = ["fishing_rod", "blacksmithing", "tool"]
+	tool_type = "fishing_rod"
+	value = { bin = 1450, store = 5000 }
+	crafting_level_requirement = 28
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "mistril_ingot" }]
+	range = 15
+
+[hoe_mistril]
+	description = "A hoe made from mistril. Can be charged to till a 6x9 area."
+	icon_sprite = "spr_ui_item_tool_mistril_hoe"
+	name = "Mistril Hoe"
+	quality = "tier6"
+	recipe_is_default = true
+	tags = ["hoe", "blacksmithing", "tool"]
+	tool_type = "hoe"
+	value = { bin = 1450, store = 5000 }
+	crafting_level_requirement = 28
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "mistril_ingot" }]
+
+[net_mistril]
+	description = "A mistril bug catching net. Can be charged to catch a 6x9 area."
+	icon_sprite = "spr_ui_item_tool_mistril_net"
+	name = "Mistril Net"
+	quality = "tier6"
+	tags = ["net", "blacksmithing", "tool"]
+	tool_type = "net"
+	stamina_cost = -1
+	catch_size = 5
+	value = { bin = 1450, store = 5000 }
+	crafting_level_requirement = 28
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "mistril_ingot" }]
+	recipe_is_default = true
+
+[pick_axe_mistril]
+	description = "A pickaxe made from mistril. Can be charged to strike a 6x9 area."
+	icon_sprite = "spr_ui_item_tool_mistril_pickaxe"
+	name = "Mistril Pickaxe"
+	quality = "tier6"
+	recipe_is_default = true
+	tags = ["pick_axe", "blacksmithing", "tool"]
+	tool_type = "pick_axe"
+	value = { bin = 1450, store = 5000 }
+	crafting_level_requirement = 28
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "mistril_ingot" }]
+	damage = 6
+
+[shovel_mistril]
+	description = "A shovel made from mistril. Can be charged to dig a 6x9 area."
+	icon_sprite = "spr_ui_item_tool_mistril_shovel"
+	name = "Mistril Shovel"
+	quality = "tier6"
+	recipe_is_default = true
+	tags = ["shovel", "blacksmithing", "tool"]
+	tool_type = "shovel"
+	value = { bin = 1450, store = 5000 }
+	crafting_level_requirement = 28
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "mistril_ingot" }]
+
+[watering_can_mistril]
+	description = "A watering can made from mistril. Can be charged to water a 6x9 area."
+	icon_sprite = "spr_ui_item_tool_mistril_watering_can"
+	name = "Mistril Watering Can"
+	quality = "tier6"
+	recipe_is_default = true
+	value = { bin = 1450, store = 5000 }
+	tags = ["watering_can", "blacksmithing", "tool"]
+	tool_type = "watering_can"
+	crafting_level_requirement = 28
+	recipe = [{ hours = 0, minutes = 40 }, { count = 4, item = "mistril_ingot" }]
+
+	# <---------BLACKSMITHING WEAPONS------------->
+
+[sword_worn]
+	description = "A worn but still serviceable sword. Used to cut grass and to fight, if necessary."
+	damage = 4
+	icon_sprite = "spr_ui_item_tool_rusty_sword"
+	name = "Worn Sword"
+	quality = "tier1"
+	value = { bin = 50, store = 150 }
+	tags = ["sword", "weapon"]
+
+[sword_scrap_metal]
+	description = "A sword constructed out of scrap metal."
+	damage = 6
+	value = { bin = 100, store = 200 }
+	icon_sprite = "spr_ui_item_tool_scrap_metal_sword"
+	name = "Scrap Metal Sword"
+	quality = "tier1"
+	tags = ["sword", "weapon"]
+
+[sword_copper]
+	description = "A copper sword."
+	damage = 8
+	icon_sprite = "spr_ui_item_tool_copper_sword"
+	name = "Copper Sword"
+	value = { bin = 480, store = 1000 }
+	quality = "tier2"
+	recipe_is_default = true
+	tags = ["sword", "blacksmithing", "weapon"]
+	crafting_level_requirement = 8
+	recipe = [{ hours = 1, minutes = 0 }, { count = 4, item = "copper_ingot" }]
+
+[sword_verdigris]
+	description = "A verdigris sword."
+	damage = 10
+	value = { bin = 600, store = 1000 }
+	icon_sprite = "spr_ui_item_tool_verdigris_sword"
+	name = "Verdigris Sword"
+	quality = "tier2"
+	tags = ["sword", "weapon"]
+
+[sword_iron]
+	description = "An iron sword."
+	damage = 12
+	icon_sprite = "spr_ui_item_tool_iron_sword"
+	name = "Iron Sword"
+	quality = "tier3"
+	recipe_is_default = true
+	value = { bin = 725, store = 2000 }
+	tags = ["sword", "blacksmithing", "weapon"]
+	crafting_level_requirement = 14
+	recipe = [{ hours = 1, minutes = 0 }, { count = 4, item = "iron_ingot" }]
+
+[sword_crystal]
+	description = "A crystal sword."
+	damage = 14
+	value = { bin = 850, store = 2000 }
+	icon_sprite = "spr_ui_item_tool_crystal_sword"
+	name = "Crystal Sword"
+	quality = "tier3"
+	tags = ["sword", "weapon"]
+
+[sword_silver]
+	description = "A silver sword."
+	damage = 16
+	icon_sprite = "spr_ui_item_tool_silver_sword"
+	name = "Silver Sword"
+	value = { bin = 970, store = 3000 }
+	quality = "tier4"
+	recipe_is_default = true
+	tags = ["sword", "blacksmithing", "weapon"]
+	crafting_level_requirement = 20
+	recipe = [{ hours = 1, minutes = 0 }, { count = 4, item = "silver_ingot" }]
+
+[sword_tarnished_gold]
+	description = "A tarnished gold sword."
+	damage = 18
+	icon_sprite = "spr_ui_item_tool_tarnished_gold_sword"
+	value = { bin = 1100, store = 3500 }
+	name = "Tarnished Gold Sword"
+	quality = "tier4"
+	tags = ["sword", "weapon"]
+
+[sword_gold]
+	description = "A splendid golden sword."
+	damage = 20
+	icon_sprite = "spr_ui_item_tool_gold_sword"
+	name = "Gold Sword"
+	quality = "tier5"
+	recipe_is_default = true
+	value = { bin = 1200, store = 4000 }
+	tags = ["sword", "blacksmithing", "weapon"]
+	crafting_level_requirement = 26
+	recipe = [{ hours = 1, minutes = 0 }, { count = 4, item = "gold_ingot" }]
+
+[sword_corrupted_mistril]
+	description = "A corrupted mistril sword."
+	damage = 22
+	icon_sprite = "spr_ui_item_tool_corrupted_mistril_sword"
+	value = { bin = 1300, store = 4500 }
+	name = "Corrupted Mistril Sword"
+	quality = "tier5"
+	tags = ["sword", "weapon"]
+
+[sword_mistril]
+	description = "A magnificent mistril sword."
+	damage = 24
+	icon_sprite = "spr_ui_item_tool_mistril_sword"
+	name = "Mistril Sword"
+	quality = "tier6"
+	recipe_is_default = true
+	value = { bin = 1450, store = 5000 }
+	tags = ["sword", "blacksmithing", "weapon"]
+	crafting_level_requirement = 32
+	recipe = [{ hours = 1, minutes = 0 }, { count = 4, item = "mistril_ingot" }]
+
+
+	# DRAGON FORGE
+
+[sword_dragon_forged]
+	description = "A Dragon-Forged sword, imbued with darkness. Has a low insta-kill chance."
+	damage = 26
+	icon_sprite = "spr_ui_item_tool_dragon_forged_sword"
+	name = "Dragon-Forged Sword"
+	quality = "tier6"
+	recipe_is_default = true
+	default_infusion = "instant_kill"
+	tags = ["sword", "blacksmithing", "weapon"]
+	crafting_level_requirement = 30
+	recipe = [
+		{ hours = 0, minutes = 50 },
+		{ count = 50, item = "voidite" },
+		{ item = "void_stone", count = 5 },
+		{ item = "void_pearl", count = 5 },
+		{ item = "void_herb", count = 5 },
+		{ item = "void_powder", count = 5 },
+	]
+
+[dragon_forged_fang]
+	description = "A dragon-forged fang, imbued with darkness."
+	name = "Dragon-Forged Fang"
+	icon_sprite = "spr_ui_item_dragon_forged_fang"
+	value = { bin = "self.recipe*1.1" }
+	tags = ["monster_part", "material", "blacksmithing"]
+	crafting_level_requirement = 30
+	recipe = [
+		{ hours = 0, minutes = 50 },
+		{ item = "monster_fang", count = 5 },
+		{ item = "void_stone", count = 5 },
+		{ item = "void_herb", count = 5 },
+		{ item = "written_root", count = 1 },
+		{ item = "essence_stone_medium", count = 1 },
+	]
+
+[dragon_forged_horn]
+	description = "A dragon-forged horn, imbued with darkness."
+	name = "Dragon-Forged Horn"
+	icon_sprite = "spr_ui_item_dragon_forged_horn"
+	value = { bin = "self.recipe*1.1" }
+	tags = ["monster_part", "material", "blacksmithing"]
+	crafting_level_requirement = 30
+	recipe = [
+		{ hours = 0, minutes = 50 },
+		{ item = "monster_horn", count = 5 },
+		{ item = "void_powder", count = 5 },
+		{ item = "void_pearl", count = 5 },
+		{ item = "void_snail", count = 1 },
+		{ item = "essence_stone_medium", count = 1 },
+	]
+
+[dragon_forged_core]
+	description = "A dragon-forged core, imbued with light."
+	name = "Dragon-Forged Core"
+	icon_sprite = "spr_ui_item_dragon_forged_core"
+	value = { bin = "self.recipe*1.1" }
+	tags = ["monster_part", "material", "blacksmithing"]
+	crafting_level_requirement = 30
+	recipe = [
+		{ hours = 0, minutes = 50 },
+		{ item = "monster_core", count = 5 },
+		{ item = "mistril_ingot", count = 1 },
+		{ item = "ore_pink_diamond", count = 1 },
+		{ item = "ancient_firefly", count = 1 },
+		{ item = "essence_stone_medium", count = 1 },
+	]
+
+[dragon_forged_powder]
+	description = "A dragon-forged powder, imbued with light."
+	name = "Dragon-Forged Powder"
+	icon_sprite = "spr_ui_item_dragon_forged_powder"
+	value = { bin = "self.recipe*1.1" }
+	tags = ["monster_part", "material", "blacksmithing"]
+	crafting_level_requirement = 30
+	recipe = [
+		{ hours = 0, minutes = 50 },
+		{ item = "monster_powder", count = 5 },
+		{ item = "mistril_ingot", count = 1 },
+		{ item = "ore_pink_diamond", count = 1 },
+		{ item = "luminescent_crab", count = 1 },
+		{ item = "essence_stone_medium", count = 1 },
+	]

@@ -1,0 +1,64 @@
+[5h_homesick]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_heart_level = 5 }
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "ryis" } }
+]
+portrait = "think"
+local = "It's wild to think how much time has passed since I first moved out here."
+next = "1"
+
+[5h_homesick.1]
+portrait = "closed_eyes"
+local = "At first, it honestly felt like I was only staying for a long visit..."
+next = "2"
+
+[5h_homesick.2]
+portrait = "sincere_special"
+local = "But lately it feels more like I've got one foot here, and one still back in the Capital."
+next = "3"
+
+
+[5h_homesick.3]
+portrait = "sad"
+local = "You ever get homesick, [Ari]?"
+prompts = [
+	{ local = "Yeah, sometimes...", next = "4" },
+	{ local = "Not so much", next = "7" }
+]
+
+
+# OPTION ONE
+[5h_homesick.4]
+portrait = "embarrassed"
+local = "Yeah, me too."
+next = "5"
+
+[5h_homesick.5]
+portrait = "thoughtful"
+local = "Not as much as I used to, though."
+next = "6"
+
+[5h_homesick.6]
+portrait = "neutral"
+local = "Hopefully we'll both find our footing before long."
+
+# OPTION TWO
+
+[5h_homesick.7]
+portrait = "embarrassed"
+local = "Yeah? That's good."
+next = "8"
+
+[5h_homesick.8]
+portrait = "thoughtful"
+local = "I still get waves of it sometimes. But I've gotten more used to life here."
+next = "9"
+
+[5h_homesick.9]
+portrait = "neutral"
+local = "Hopefully I'll find my footing before long."

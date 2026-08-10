@@ -1,0 +1,24 @@
+[mimosas]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "elsie" }, { npc = "valen" }] },
+	{ elsie_zone = "<valen_zone>" },
+	{ location = "clinic_f1" }
+]
+speaker = "valen"
+portrait = "neutral"
+local = "You're fit as a fiddle. As for your question... I don't know that I have any health advice for you, Elsie. You eat properly and have an active lifestyle."
+next = "1"
+
+[mimosas.1]
+speaker = "elsie"
+portrait = "happy"
+effect = "sparkles"
+local = "Wonderful! This calls for mimosas."
+next = "2"
+
+[mimosas.2]
+speaker = "valen"
+portrait = "raised_eyebrow"
+effect = "drop"
+local = "Well, as long as you keep it in moderation."

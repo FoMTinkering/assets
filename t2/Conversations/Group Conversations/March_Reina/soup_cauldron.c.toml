@@ -1,0 +1,17 @@
+[soup_cauldron]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "reina" }] },
+	{ march_zone = "<reina_zone>" },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ location = "inn", comparator = "!=" }
+]
+speaker = "reina"
+portrait = "happy"
+local = "The big soup cauldron you made for the Inn is holding up great, March!"
+next = "1"
+
+[soup_cauldron.1]
+speaker = "march"
+portrait = "neutral"
+local = "Glad to hear it. Just let me know if it stops heating evenly."

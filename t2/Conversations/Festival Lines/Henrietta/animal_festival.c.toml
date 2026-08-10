@@ -1,0 +1,52 @@
+[animal_festival_anticipation]
+refresh = "3m"
+requires = [
+	{ npc = "henrietta" },
+	{ animal_festival_date = "3d", time = "before" },
+]
+portrait = "neutral"
+local = "(Henrietta appears to be deep in thought. Maybe she's thinking about the upcoming Animal Festival?)"
+
+[animal_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "henrietta" },
+	{ animal_festival_today = true },
+	{ small_animal_place = "undefined" },
+	{ large_animal_place = "undefined" },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+]
+portrait = "neutral"
+local = "(Despite the upcoming judging, Henrietta seems calm and collected.)"
+
+[animal_festival_small_first_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "henrietta" },
+	{ animal_festival_today = true },
+	{ small_animal_place = 3 },
+]
+portrait = "neutral"
+local = "(Henrietta gives you a look. You can't tell if she's approving of your small animal bracket win or warning you to watch out at next year's festival.)"
+
+[animal_festival_small_second_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "henrietta" },
+	{ animal_festival_today = true },
+	{ any = [
+		{ small_animal_place = 2 },
+		{ small_animal_place = 1 },
+		{ small_animal_place = 0 },
+	] },
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "neutral"
+local = "(Henrietta clucks contentedly... it seems like she wasn't worried about not taking first place.)"

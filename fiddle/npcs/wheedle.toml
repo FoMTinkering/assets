@@ -1,0 +1,123 @@
+birthday = { season = "winter", day = 6 }
+loved_gifts = [
+	"ancient_gold_coin",
+	"coin_lump",
+	"fiber",
+	"perfect_diamond",
+	"perfect_emerald",
+	"perfect_gold_ore",
+	"perfect_pink_diamond",
+	"perfect_ruby",
+	"perfect_sapphire",
+	"ore_pink_diamond",
+]
+
+liked_gifts = [
+	"ore_diamond",
+	"ore_emerald",
+	"gold_ingot",
+	"ore_gold",
+	"golden_alpaca_wool",
+	"golden_bristle",
+	"golden_bull_horn",
+	"golden_cheesecake",
+	"golden_cookies",
+	"golden_duck_egg",
+	"golden_duck_feather",
+	"golden_egg",
+	"golden_feather",
+	"golden_horse_hair",
+	"golden_rabbit_wool",
+	"golden_sheep_wool",
+	"dragon_forged_bracelet",
+	"ore_ruby",
+	"rusted_treasure_chest",
+	"ore_sapphire",
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "criminal_confession"
+name = "Wheedle"
+aldarian_name = "WDL"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["vendor"]
+journal_portrait_offset = [-116, -30]
+journal_background_color = [255, 229, 213]
+date_photo_offset = [0, 0]
+job = "Salesman"
+icon_sprite = "spr_ui_generic_icon_npc_wheedle"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_wheedle"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_wheedle"
+dateable = false
+
+[gossip]
+	line = "wheedle_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["coffee"]
+	"17" = ["wine"]
+
+[offsets]
+	portrait = [-127, -65]
+	sweat = [5, -16]
+	hearts = [5, -16]
+	angry = [3, -16]
+	sparkles = [1, -27]
+	sparkles_dark = [1, -27]
+	sick = [0, -16]
+	music_notes = [0, -27]
+	intensity = [2, -26]
+	surprise = [33, 0]
+	shock = [6, -24]
+	sigh = [0, -23]
+	loud = [3, -13]
+	cheery = [2, -18]
+	drop = [8, -26]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"

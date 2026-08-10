@@ -1,0 +1,57 @@
+[manor_dinner]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "elsie" },
+		{ npc = "errol" },
+		{ npc = "valen" },
+	] },
+	{ adeline_zone = "<elsie_zone>" },
+	{ adeline_zone = "<errol_zone>" },
+	{ adeline_zone = "<valen_zone>" },
+	{ location = "manor_house_dining_room" },
+	{ any = [{ adeline_activity = "eat" }, { adeline_activity = "drink" }] },
+	{ any = [{ eiland_activity = "eat" }, { eiland_activity = "drink" }] },
+	{ any = [{ elsie_activity = "eat" }, { elsie_activity = "drink" }] },
+	{ any = [{ errol_activity = "eat" }, { errol_activity = "drink" }] },
+]
+speaker = "valen"
+portrait = "neutral"
+local = "You know Elsie, I saw one of your shows when I was studying in the Capital."
+next = "1"
+
+[manor_dinner.1]
+speaker = "valen"
+portrait = "happy"
+local = "You were sensational, just like my father had said."
+next = "2"
+
+[manor_dinner.2]
+speaker = "elsie"
+portrait = "happy"
+local = "Oh, that's so sweet! Your father was a big supporter of the opera."
+next = "3"
+
+[manor_dinner.3]
+speaker = "elsie"
+portrait = "neutral"
+local = "And he took very good care of me when I had a spill coming off the stage."
+next = "4"
+
+[manor_dinner.4]
+speaker = "adeline"
+portrait = "neutral"
+local = "You knew Valen's father?"
+next = "5"
+
+[manor_dinner.5]
+speaker = "errol"
+portrait = "happy"
+local = "I as well! A most esteemed fellow, with a dry wit."
+next = "6"
+
+[manor_dinner.6]
+speaker = "errol"
+portrait = "wink"
+local = "You're the very image of him, Valen."

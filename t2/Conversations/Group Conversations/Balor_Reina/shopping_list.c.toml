@@ -1,0 +1,25 @@
+[shopping_list]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "reina" }] },
+	{ balor_zone = "<reina_zone>" },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  },
+]
+writes = [{ maple_has_a_list = true, expires = "3d" }]
+speaker = "balor"
+local = "I'm heading to the Capital soon. Can you think of anything the Inn is running low on?"
+next = "1"
+
+[shopping_list.1]
+speaker = "reina"
+local = "I've got a whole list going! Maple does, too."
+next = "2"
+
+[shopping_list.2]
+speaker = "reina"
+portrait = "mad"
+local = "Please don't use Maple's list."

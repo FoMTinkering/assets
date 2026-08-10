@@ -1,0 +1,52 @@
+[post_baby_date_accept]
+requires = [
+    { npc = "seridia" },
+    { any = [
+        { date = "bathhouse" },
+        { date = "beach" },
+        { date = "deep_woods_picnic" },
+        { date = "gem_cutting" },
+        { date = "inn_meal" },
+        { date = "park" }
+    ] },
+    { seridia_is_spouse = true },
+    { seridia_has_child = true }
+]
+writes = [{ da_seridia_post_baby_follow_up_gate = true, expires = "1d" }]
+kind = "date_acceptance"
+portrait = "blush"
+local = "A date? Yes, that is an excellent idea."
+next = "1"
+
+[post_baby_date_accept.1]
+portrait = "blush_think"
+local = "Let us leave [child_0] in the care of Elsie, so that we may enjoy some alone time."
+next = "2"
+
+[post_baby_date_accept.2]
+portrait = "happy"
+local = "I believe she will be a most diligent babysitter."
+
+[post_baby_date_follow_up]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "seridia" },
+    { da_seridia_post_baby_follow_up_gate = true },
+    { seridia_is_spouse = true },
+    { seridia_has_child = true }
+]
+writes = [{ da_seridia_post_baby_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "blush"
+local = "What a memorable date, [Ari]."
+next = "1"
+
+[post_baby_date_follow_up.1]
+portrait = "embarrassed"
+local = "I do so enjoy our time alone together."
+next = "2"
+
+[post_baby_date_follow_up.2]
+portrait = "happy"
+local = "And it seems that [child_0] had an excellent time with Elsie, as well."

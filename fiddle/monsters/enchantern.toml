@@ -1,0 +1,167 @@
+[default]
+	hp = 1
+	damage = 0
+	essence = 0
+	drops = []
+	projectile_timer = [60, 90]
+	drops_balls = true
+	charge_timer = [360, 400]
+	flee_timer = [180, 240]
+	charge_speed = 1.6
+	flee_speed = 1.8
+	coin_count = [1, 3]
+
+	starting_dir = [0, 360]
+
+	damage_number_offset = -21
+
+	electrocute_kind = "yellow"
+
+	attack_frame = 1
+	iframes = 1
+	gm_object = "obj_monster_enchantern"
+	hitbox = "spr_monster_enchantern_off_hurt_box"
+	hurtbox = "spr_monster_enchantern_off_hurt_box"
+
+	patience_acknowledgement_reset = -120
+	aggro_radius = 384
+	use_circle = true
+	attack_radius = 96
+
+	# timings, if in array, it's a random value between the lower and upper bound
+	windup = [70, 110]
+	acknowledgment = [45, 60]
+	waiting = [90, 110]
+	hurt = [24, 32]
+
+	# physics
+	push_radius = 4
+	push_force = 0.25
+	pushed_radius = 7
+
+	sprites = { misc = {} }
+
+	status_effect_offset = -19
+	fire_effect_offset = -8
+
+	[default.tango]
+		flicker_on = "SoundEffects/Enemies/Enchantern/TurnOn"
+		dying = "SoundEffects/Enemies/Enchantern/Die"
+		[default.tango.misc]
+			active_footstep = "SoundEffects/Enemies/Enchantern/ActiveFootstep"
+			inactive_footstep = "SoundEffects/Enemies/Enchantern/InactiveFootstep"
+			active_loop = "SoundEffects/Enemies/Enchantern/ActiveLoop"
+			wind_down = "SoundEffects/Enemies/Enchantern/WindDown"
+			turn_off = "SoundEffects/Enemies/Enchantern/TurnOff"
+			spawn_orb = "SoundEffects/Enemies/Enchantern/SpawnOrb"
+			weak_damage = "SoundEffects/Enemies/TakeDamageRockStrong"
+			strong_damage = "SoundEffects/Enemies/TakeDamageRockStrong"
+
+[enchantern]
+	hp = 24
+	damage = 12
+	essence = 5
+	coin_count = [1, 5]
+	drops = [
+		{ item = "glass", chance = 70, count_range = [1, 1] },
+		{ item = "monster_core", chance = 30, count_range = [1, 1] },
+		{ cosmetic = "head_enchantern_hat", chance = 5 },
+		{ item = "pet_skin_enchantern", chance = 5 },
+	]
+
+	electrocute_kind = "yellow"
+	drops_balls = false
+
+	[enchantern.sprites]
+		idle.north = "spr_monster_enchantern_off_idle_north"
+		idle.south = "spr_monster_enchantern_off_idle_south"
+
+		acknowledgment.north = "spr_monster_enchantern_off_alert_north"
+		acknowledgment.south = "spr_monster_enchantern_off_alert_south"
+
+		flicker_on.north = "spr_monster_enchantern_state_transition_main_on_north"
+		flicker_on.south = "spr_monster_enchantern_state_transition_main_on_south"
+
+		charge.north = "spr_monster_enchantern_on_charge_north"
+		charge.south = "spr_monster_enchantern_on_charge_south"
+
+		flee.north = "spr_monster_enchantern_off_flee_north"
+		flee.south = "spr_monster_enchantern_off_flee_south"
+
+		go_home.north = "spr_monster_enchantern_off_walk_north"
+		go_home.south = "spr_monster_enchantern_off_walk_south"
+
+		hurt.north = "spr_monster_enchantern_off_hurt_north"
+		hurt.south = "spr_monster_enchantern_off_hurt_south"
+
+		dying.north = "spr_monster_enchantern_off_death_south"
+		dying.south = "spr_monster_enchantern_off_death_south"
+
+		misc.static_effect = "spr_fx_monster_enchantern_static"
+		misc.charge = "spr_fx_monster_enchantern_charge"
+
+		misc.charge_off_north = "spr_monster_enchantern_off_charge_north"
+		misc.charge_off_south = "spr_monster_enchantern_off_charge_south"
+
+		misc.attack_north = "spr_monster_enchantern_on_attack_north"
+		misc.attack_south = "spr_monster_enchantern_on_attack_south"
+		misc.gibs = "spr_part_enchantern_bits"
+
+		misc.proj_mask_index = "spr_monster_enchantern_projectile_main_loop"
+		misc.proj_main_start = "spr_monster_enchantern_floor_ball_main_start"
+		misc.proj_main_loop = "spr_monster_enchantern_floor_ball_main_loop"
+		misc.proj_main_fizzle = "spr_monster_enchantern_floor_ball_main_fizzle"
+
+[enchantern_blue]
+	hp = 48
+	damage = 20
+	essence = 10
+	coin_count = [2, 6]
+	drops = [
+		{ item = "glass", chance = 70, count_range = [1, 2] },
+		{ item = "monster_core", chance = 30, count_range = [1, 2] },
+		{ cosmetic = "head_enchantern_hat", chance = 5 },
+		{ item = "pet_skin_enchantern", chance = 5 },
+	]
+	drops_balls = true
+	electrocute_kind = "blue"
+
+	[enchantern_blue.sprites]
+		idle.north = "spr_monster_enchantern_blue_off_idle_north"
+		idle.south = "spr_monster_enchantern_blue_off_idle_south"
+
+		acknowledgment.north = "spr_monster_enchantern_blue_off_alert_north"
+		acknowledgment.south = "spr_monster_enchantern_blue_off_alert_south"
+
+		flicker_on.north = "spr_monster_enchantern_blue_state_transition_main_on_north"
+		flicker_on.south = "spr_monster_enchantern_blue_state_transition_main_on_south"
+
+		charge.north = "spr_monster_enchantern_blue_on_charge_north"
+		charge.south = "spr_monster_enchantern_blue_on_charge_south"
+
+		flee.north = "spr_monster_enchantern_blue_off_flee_north"
+		flee.south = "spr_monster_enchantern_blue_off_flee_south"
+
+		go_home.north = "spr_monster_enchantern_blue_off_walk_north"
+		go_home.south = "spr_monster_enchantern_blue_off_walk_south"
+
+		hurt.north = "spr_monster_enchantern_blue_off_hurt_north"
+		hurt.south = "spr_monster_enchantern_blue_off_hurt_south"
+
+		dying.north = "spr_monster_enchantern_blue_off_death_south"
+		dying.south = "spr_monster_enchantern_blue_off_death_south"
+
+		misc.static_effect = "spr_fx_monster_enchantern_blue_static"
+		misc.charge = "spr_fx_monster_enchantern_blue_charge"
+
+		misc.charge_off_north = "spr_monster_enchantern_blue_off_charge_north"
+		misc.charge_off_south = "spr_monster_enchantern_blue_off_charge_south"
+
+		misc.attack_north = "spr_monster_enchantern_blue_on_attack_north"
+		misc.attack_south = "spr_monster_enchantern_blue_on_attack_south"
+		misc.gibs = "spr_part_enchantern_blue_bits"
+
+		misc.proj_mask_index = "spr_monster_enchantern_blue_projectile_main_loop"
+		misc.proj_main_start = "spr_monster_enchantern_blue_floor_ball_main_start"
+		misc.proj_main_loop = "spr_monster_enchantern_blue_floor_ball_main_loop"
+		misc.proj_main_fizzle = "spr_monster_enchantern_blue_floor_ball_main_fizzle"

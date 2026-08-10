@@ -1,0 +1,118 @@
+[default]
+	hp = 1
+	damage = 0
+	essence = 0
+	drops = []
+	coin_count = [1, 1]
+	starting_dir = [0, 360]
+	damage_number_offset = -28
+	iframes = 1
+	gm_object = "obj_monster_tome"
+	hitbox = "spr_tome_hitbox"
+	hurtbox = "spr_tome_hurtbox"
+	dying_frames = 0
+	speed = 0.6
+	patience_acknowledgement_reset = -120
+	# physics
+	push_radius = 4
+	push_force = 0.25
+	pushed_radius = 7
+
+	status_effect_offset = -23
+	fire_effect_offset = -11
+	wind_attack_duration = 0
+	get_up_attack_radius = 64
+	flying_speed = 2.4
+	flying_timeout = 220
+	steering = 0.6
+	charge_up_time = 0
+	acknowledgment = 32
+	aggro_radius = 360
+	use_circle = true
+
+	stun_star_duration = 0
+	stun_blink_duration = 0
+	hurt_frames = 10
+	# Adjusts how frequently the book blinks when on the ground and not stunned
+	blink_timing = 0
+	# Adjusts how much faster the next blink will be
+	blink_timing_decrement = 0
+	# How much we scale the knockback vector when the tome hits the player
+	on_hit_knockback = 6
+
+	flash_sfx_frame_start = 7
+
+	idle_override_len = 60
+
+	sprites = { misc = {} }
+
+	[default.tango]
+		acknowledgment = "SoundEffects/Enemies/EnemyAlerted"
+		dying = "SoundEffects/Enemies/Tome/Die"
+		stunned = "SoundEffects/Enemies/Tome/FallToGround"
+		gentle_stun = "SoundEffects/Enemies/Tome/Bounce"
+		stun_attack = "SoundEffects/Enemies/Tome/Tornado"
+		flying = "SoundEffects/Enemies/Tome/Flap"
+		windup = "SoundEffects/Enemies/Tome/Flash"
+		misc.land = "SoundEffects/Enemies/Sapling/Land"
+		misc.weak_damage = "SoundEffects/Enemies/TakeDamageFleshStrong"
+		misc.strong_damage = "SoundEffects/Enemies/TakeDamageFleshStrong"
+		misc.struggle = "SoundEffects/Enemies/Tome/Struggle"
+
+[tome]
+	steering = 0.5
+	charge_up_time = 100
+	wind_attack_duration = 135
+	dying_frames = 30
+	hp = 150
+	damage = 50
+	essence = 5
+	coin_count = [1, 5]
+	stun_star_duration = 60
+	stun_blink_duration = 180
+	blink_timing = 60
+	blink_timing_decrement = 10
+	height = -2
+	drops = [
+		{ item = "sap", chance = 70 },
+		{ item = "monster_fang", chance = 30 },
+		{ cosmetic = "head_flying_tome_hat", chance = 5 },
+		{ item = "pet_skin_flying_tome", chance = 10 },
+	]
+
+	[tome.sprites]
+		misc.stunned_loop = "spr_monster_flying_tome_main_attack_loop"
+		misc.stunned_end = "spr_monster_flying_tome_main_attack_end"
+		misc.stun_attack_start = "spr_monster_flying_tome_main_ground_windup_south"
+		misc.stunned_vfx = "spr_fx_monster_flying_tome_wind_attack_loop"
+		misc.pit_kill = "spr_monster_flying_tome_main_falling_death_south"
+		misc.giblet = "spr_part_monster_flying_tome_page"
+		misc.hurt_alt_north = "spr_monster_flying_tome_main_hurt_2_north"
+		misc.hurt_alt_south = "spr_monster_flying_tome_main_hurt_2_south"
+
+		idle.north = "spr_monster_flying_tome_main_idle_north"
+		idle.south = "spr_monster_flying_tome_main_idle_south"
+
+		acknowledgment.north = "spr_monster_flying_tome_main_alert_north"
+		acknowledgment.south = "spr_monster_flying_tome_main_alert_south"
+
+		windup.north = "spr_monster_flying_tome_main_windup_north"
+		windup.south = "spr_monster_flying_tome_main_windup_south"
+
+		flying.north = "spr_monster_flying_tome_main_chomp_north"
+		flying.south = "spr_monster_flying_tome_main_chomp_south"
+
+		gentle_stun.north = "spr_monster_flying_tome_main_hurt_2_north"
+		gentle_stun.south = "spr_monster_flying_tome_main_hurt_2_south"
+
+		hurt.north = "spr_monster_flying_tome_main_hurt_north"
+		hurt.south = "spr_monster_flying_tome_main_hurt_south"
+
+		dying.north = "spr_monster_flying_tome_main_hurt_2_south"
+		dying.south = "spr_monster_flying_tome_main_hurt_2_south"
+
+		stunned.south = "spr_monster_flying_tome_main_ground_stunned_south"
+		stunned.north = "spr_monster_flying_tome_main_ground_stunned_south"
+
+		stun_attack.south = "spr_monster_flying_tome_main_attack_start"
+		stun_attack.north = "spr_monster_flying_tome_main_attack_start"

@@ -1,0 +1,23 @@
+[recovery]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "landen" }, { npc = "ryis" }] },
+	{ landen_zone = "<ryis_zone>" },
+	{ quest_repair_the_summit_stairs_complete = true },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "ryis"
+portrait = "neutral"
+local = "So how do you feel about the condition of the town these days, Uncle Landen?"
+next = "1"
+
+[recovery.1]
+speaker = "landen"
+portrait = "neutral"
+local = "You young folk have done a bang-up job fixing it up after the earthquake!"
+next = "2"
+
+[recovery.2]
+speaker = "landen"
+portrait = "happy"
+local = "Great work to the lot of you! That includes you, [Ari]!"

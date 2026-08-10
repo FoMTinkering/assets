@@ -1,0 +1,22 @@
+[saturday_no_market]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "hemlock" }, { npc = "josephine" }, { npc = "nora" }] },
+	{ hemlock_zone = "<josephine_zone>" },
+	{ hemlock_zone = "<nora_zone>" },
+	{ quest_repair_the_bridge_complete = false },
+	{ quest_repair_the_bridge_in_progress = true },
+]
+speaker = "hemlock"
+local = "How's the Saturday Market revival coming along?"
+next = "1"
+
+[saturday_no_market.1]
+speaker = "nora"
+portrait = "happy"
+local = "It's looking promising! Adeline is all in."
+next = "2"
+
+[saturday_no_market.2]
+speaker = "josephine"
+local = "With her and [Ari] here, it's only a matter of time! Soon we'll have those bustling Saturdays back again."

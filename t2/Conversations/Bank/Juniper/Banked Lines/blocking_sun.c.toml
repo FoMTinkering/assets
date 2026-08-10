@@ -1,0 +1,13 @@
+[blocking_sun]
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ location = "beach" },
+	{ any = [{ time_of_day = "morning" }, { time_of_day = "afternoon" }] },
+	{ season = "summer" },
+	{ weather = "pleasant" },
+	{ juniper_is_traveling = false },
+	{ juniper_heart_level = 8, comparator = "<" }
+]
+portrait = "annoyed"
+local = "You're blocking my sun, [Ari]."

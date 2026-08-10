@@ -1,0 +1,295 @@
+[baby_0]
+refresh = "10d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ ari_has_infant = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "happy"
+local = "[infant] is in such a good mood today!"
+next = "1"
+
+[baby_0.1]
+portrait = "neutral"
+local = "It puts me in quite the good mood as well."
+
+[baby_1]
+refresh = "10d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ ari_has_infant = true }
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "happy"
+local = "Doesn't [infant] have the most charming smile?"
+next = "1"
+
+[baby_1.1]
+portrait = "blush"
+local = "It reminds me of yours!"
+
+[baby_2]
+refresh = "10d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ ari_has_infant = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "neutral"
+local = "Celine has been asking to spend time with [infant]."
+next = "1"
+
+[baby_2.1]
+portrait = "happy"
+local = "I was thinking of stopping by for a visit today."
+
+[baby_3]
+refresh = "10d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ ari_has_infant = true }
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "neutral"
+local = "I'm starting to think [infant] is taking after you."
+next = "1"
+
+[baby_3.1]
+portrait = "happy"
+local = "Lucky me!"
+
+[baby_4]
+refresh = "10d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "neutral"
+local = "It's so heartwarming when [child_0] laughs..."
+next = "1"
+
+[baby_4.1]
+portrait = "happy_blush"
+local = "It sounds so much like mine!"
+next = "2"
+
+[baby_4.2]
+portrait = "laugh"
+local = "Oh ho ho!"
+
+[baby_5]
+refresh = "10d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ ari_has_infant = true }
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "happy"
+local = "It is wonderful to be a mother."
+next = "1"
+
+[baby_5.1]
+portrait = "neutral"
+local = "It's so fulfilling, seeing little [infant] looking up at me with such trust and love."
+
+[baby_6]
+refresh = "10d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "happy"
+local = "We're so lucky to have little [child_0]."
+next = "1"
+
+[baby_6.1]
+portrait = "blush"
+local = "Raising her with you by my side, I couldn't be happier."
+
+[baby_7]
+refresh = "10d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "neutral"
+local = "[child_0] is obsessed with anything I use in my magic! It's like she already knows what all of it does."
+next = "1"
+
+[baby_7.1]
+portrait = "think"
+local = "She's still so young but..."
+next = "2"
+
+[baby_7.2]
+portrait = "happy"
+local = "Wouldn't a wee little potion bandolier look cute on her?"
+
+[baby_8]
+refresh = "10d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ ari_has_infant = true },
+	{ any = [{ ari_holding_child = true }, { spouse_holding_child = true }] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "ugh"
+local = "Uh oh. [infant] needs a diaper change..."
+prompts = [{ local = "I think you might be right...", next = "1" }, { local = "Let me handle it!", next = "2" }]
+
+[baby_8.1]
+portrait = "neutral"
+local = "Never fear, [infant]. I'll have you in a fresh diaper in no time."
+next = "3"
+
+[baby_8.2]
+portrait = "happy"
+local = "Thank you, [Ari]."
+next = "3"
+
+[baby_8.3]
+actions = [{ blackout = 60 }]
+portrait = "happy"
+local = "There, isn't that better, [infant]?"
+
+[baby_9]
+refresh = "10d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ child_0_status = "infant" },
+	{ any = [{ ari_holding_child = true }, { spouse_holding_child = true }] }
+]
+actions = [
+    { bark = { bark = "cute_face", npc = "juniper" } },
+    { spawn_stamina = 40 },
+]
+portrait = "think"
+local = "[child_0] is getting fussy. Do you think she's getting hungry?"
+prompts = [
+	{ local = "I'm getting a bit hungry myself.", next = "1" },
+	{ local = "It seems like it. How are you feeling?", next = "3" }
+]
+
+[baby_9.1]
+portrait = "think"
+local = "Now that you mention it, I am too."
+next = "2"
+
+[baby_9.2]
+portrait = "happy"
+local = "Why don't we all take a break and have a bite to eat then?"
+next = "5"
+
+[baby_9.3]
+portrait = "happy"
+local = "I suppose I'm a little hungry too.."
+next = "4"
+
+[baby_9.4]
+portrait = "neutral"
+local = "Why don't we all take a break and have a bite to eat?"
+
+[baby_9.5]
+actions = [{ blackout = 60 }]
+portrait = "neutral"
+local = "[child_0] really enjoyed that."
+next = "6"
+
+[baby_9.6]
+portrait = "happy"
+local = "And so did I!"
+
+
+# Ari holding baby
+[ari_holding_baby_0]
+refresh = "5d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ child_0_location = "with_ari" }
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "neutral"
+local = "My! [child_0] certainly looks like she's enjoying herself with you."
+next = "1"
+
+[ari_holding_baby_0.1]
+portrait = "happy"
+local = "She's a chip off the old block, isn't she?"
+
+[ari_holding_baby_1]
+refresh = "5d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ ari_holding_child = true }
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "happy"
+local = "There's my little family!"
+next = "1"
+
+[ari_holding_baby_1.1]
+portrait = "neutral"
+local = "I hope you two are having fun running around together."
+
+[ari_holding_baby_2]
+refresh = "5d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ ari_holding_child = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "neutral"
+local = "Thanks for watching [child_held_by_ari] today, [Ari]."
+next = "1"
+
+[ari_holding_baby_2.1]
+portrait = "happy"
+local = "I can tell she's having the time of her life."
+
+[ari_holding_baby_3]
+refresh = "5d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ ari_holding_child = true }
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "neutral"
+local = "Seeing you and [child_held_by_ari] zipping around together..."
+next = "1"
+
+[ari_holding_baby_3.1]
+portrait = "blush"
+local = "It's very cute."
+
+[ari_holding_baby_4]
+refresh = "5d"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ child_0_location = "with_ari" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "neutral"
+local = "If you need a break, feel free to hand [child_0] off to me."
+next = "1"
+
+[ari_holding_baby_4.1]
+portrait = "happy"
+local = "I'm happy to take her!"

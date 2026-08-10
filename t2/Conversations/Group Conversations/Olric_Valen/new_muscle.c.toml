@@ -1,0 +1,30 @@
+[new_muscle]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "olric" }, { npc = "valen" }] },
+	{ olric_zone = "<valen_zone>" },
+	{ location = "clinic_f1" },
+	{ olric_new_muscle = true }
+]
+speaker = "valen"
+portrait = "neutral"
+local = "I don't know that you discovered a new muscle, Olric."
+next = "1"
+
+[new_muscle.1]
+speaker = "olric"
+portrait = "sad"
+local = "Aw..."
+next = "2"
+
+[new_muscle.2]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "However, this is the biggest deltoid I've ever recorded in all my years practicing."
+next = "3"
+
+[new_muscle.3]
+speaker = "olric"
+portrait = "happy"
+effect = "sparkles"
+local = "Whoa!"

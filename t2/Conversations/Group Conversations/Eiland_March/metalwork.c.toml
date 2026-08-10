@@ -1,0 +1,67 @@
+[metalwork]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "march" }] },
+	{ eiland_zone = "<march_zone>" },
+	{ any = [
+		{ location = "blacksmith_store" },
+		{ eiland_zone = "town/forge_lesson" },
+		{ eiland_zone = "town/blacksmith_forge" },
+		{ eiland_zone = "town/blacksmith_business" },
+		{ eiland_is_at_location = "museum_entry" }
+	] },
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "eiland" } },
+	{ bark = { bark = "crafting", npc = "march" } }
+]
+speaker = "eiland"
+portrait = "neutral"
+local = "You can tell how old this metalwork is, just at a glance? That's amazing."
+next = "1"
+
+[metalwork.1]
+speaker = "march"
+portrait = "neutral"
+local = "I wouldn't call myself a blacksmith if I couldn't."
+
+[metalwork_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "march" }] },
+	{ eiland_zone = "<march_zone>" },
+	{ any = [
+		{ location = "blacksmith_store" },
+		{ eiland_zone = "town/forge_lesson" },
+		{ eiland_zone = "town/blacksmith_forge" },
+		{ eiland_zone = "town/blacksmith_business" },
+		{ eiland_is_at_location = "museum_entry" }
+	] },
+]
+speaker = "march"
+portrait = "sigh"
+local = "Sure I could fix the hinge itself, but it might be more trouble than it's worth."
+next = "1"
+
+[metalwork_2.1]
+speaker = "march"
+portrait = "think"
+local = "A new hinge would take less time and effort."
+next = "2"
+
+[metalwork_2.2]
+speaker = "eiland"
+portrait = "neutral"
+local = "In that case, please make a new one!"
+next = "3"
+
+[metalwork_2.3]
+speaker = "eiland"
+portrait = "happy"
+local = "And if you don't mind, add some ornamentation to match the original."
+next = "4"
+
+[metalwork_2.4]
+speaker = "eiland"
+portrait = "think"
+local = "I think Aunt Elsie would like her jewelry box back sooner than later."

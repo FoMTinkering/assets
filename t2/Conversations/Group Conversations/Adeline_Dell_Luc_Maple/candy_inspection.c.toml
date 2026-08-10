@@ -1,0 +1,35 @@
+[candy_inspection]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ adeline_zone = "<dell_zone>" },
+	{ adeline_zone = "<luc_zone>" },
+	{ adeline_zone = "<maple_zone>" },
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "adeline" } }]
+speaker = "adeline"
+portrait = "think"
+local = "Dell, I'm not sure I can assign the Dragonguard to candy inspection."
+next = "1"
+
+[candy_inspection.1]
+speaker = "dell"
+portrait = "mad"
+local = "Well, someone's got to do it!"
+next = "2"
+
+[candy_inspection.2]
+speaker = "maple"
+portrait = "neutral"
+local = "What about hot chocolate inspection?"
+next = "3"
+
+[candy_inspection.3]
+speaker = "luc"
+portrait = "happy"
+local = "Or cake inspection?"

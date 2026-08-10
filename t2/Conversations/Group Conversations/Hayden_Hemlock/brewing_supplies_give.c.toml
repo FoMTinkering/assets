@@ -1,0 +1,17 @@
+[brewing_supplies_give]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "hemlock" }] },
+	{ hayden_zone = "<hemlock_zone>" },
+	{ any = [{ location = "haydens_farm" }, { location = "haydens_house" }] },
+]
+writes = [{ brewing_supplies = true, expires = "1m" }]
+speaker = "hayden"
+portrait = "neutral"
+local = "Here you go, Hemlock! Plenty of grain and hops for your next round of brewing."
+next = "1"
+
+[brewing_supplies_give.1]
+speaker = "hemlock"
+portrait = "wink"
+local = "Much obliged, Hayden. There's a barrel with your name on it when I'm done!"

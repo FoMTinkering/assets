@@ -1,0 +1,23 @@
+[new_farm]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "valen" }] },
+	{ hayden_zone = "<valen_zone>" },
+	{ date_time = "1y", comparator = "<" },
+	{ date_time = "1m", comparator = ">=" }
+]
+speaker = "valen"
+portrait = "neutral"
+local = "[Ari] has settled into the new farm nicely, <he>hasn't he</he><she>hasn't she</she><they>haven't they</they><it>hasn't it</it><none>hasn't [Ari]</none>?"
+next = "1"
+
+[new_farm.1]
+speaker = "hayden"
+portrait = "neutral"
+local = "<he>He sure has</he><she>She sure has</she><they>They sure have</they><it>It sure has</it><none>[Ari] sure has</none>!"
+next = "2"
+
+[new_farm.2]
+speaker = "hayden"
+portrait = "happy_fist"
+local = "I'm happy to see <he>him</he><she>her</she><they>them</they><it>it</it><none>[Ari]</none> breathe new life into that land. It was all rocks and weeds for too long!"

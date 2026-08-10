@@ -1,0 +1,40 @@
+[hangout]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ adeline_zone = "<dell_zone>" },
+	{ adeline_zone = "<luc_zone>" },
+	{ adeline_zone = "<maple_zone>" },
+	{ any = [
+		{ location = "manor_house_entry" },
+		{ location = "adelines_office" }
+	] }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "adeline" } }]
+speaker = "luc"
+portrait = "neutral"
+local = "Miss Adeline, you should hang out with us. My big sister Reina says you've been working a lot lately."
+next = "1"
+
+[hangout.1]
+speaker = "adeline"
+portrait = "think"
+local = "I suppose I have been spending a lot of time in the office..."
+next = "2"
+
+[hangout.2]
+speaker = "dell"
+portrait = "wink"
+local = "Maple can do your job while you're playing with us!"
+next = "3"
+
+[hangout.3]
+speaker = "maple"
+portrait = "happy"
+effect = "sparkles"
+local = "I'm good at bossing people around! [Ari], I'll need 150 sticks and 200 rocks by the end of the day! For reasons!"

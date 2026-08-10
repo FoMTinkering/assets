@@ -1,0 +1,18 @@
+[beach_is_beautiful]
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ any = [
+		{ group_one_beach_day = true },
+		{ group_two_beach_day = true },
+		{ group_three_beach_day = true },
+		{ kids_beach_day = true },
+	] },
+	{ location = "beach", comparator = "!=" },
+	{ elsie_is_traveling_to_location = "beach", comparator = "!=" },
+	{ elsie_is_traveling_from_location = "beach", comparator = "!=" },
+	{ season = "summer" },
+	{ weather = "pleasant" },
+]
+portrait = "neutral"
+local = "Have you been to the Beach yet, [Ari]? There's nothing more lovely than gazing at the ocean on a beautiful day."

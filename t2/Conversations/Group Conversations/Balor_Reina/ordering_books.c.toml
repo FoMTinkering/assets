@@ -1,0 +1,37 @@
+[ordering_books]
+priority = "max"
+refresh = "never"
+actions = [
+	{ bark = { bark = "cute_face", npc = "reina" } },
+	{ bark = { bark = "sweat_drop", npc = "balor" } }
+]
+requires = [
+	{ any = [{ npc = "reina" }, { npc = "balor" }] },
+	{ reina_zone = "<balor_zone>" },
+	{ reina_zone = "town/fountain_south" },
+	{ balor_zone = "town/fountain_south" },
+	{ balor_heart_level = 8, comparator = "<" },
+	{ reina_heart_level = 8, comparator = "<" },
+	{ date_time = "40d", comparator = "<" }
+]
+speaker = "reina"
+portrait = "neutral"
+local = "Hey Balor, do you think you could pick up another book for me next time you're in the Capital?"
+next = "1"
+
+[ordering_books.1]
+speaker = "balor"
+portrait = "think"
+local = "Another one?"
+next = "2"
+
+[ordering_books.2]
+speaker = "reina"
+portrait = "embarrassed"
+local = "Um, I finished the last one already..."
+next = "3"
+
+[ordering_books.3]
+speaker = "balor"
+portrait = "neutral"
+local = "I'll see what I can do."

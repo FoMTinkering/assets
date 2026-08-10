@@ -1,0 +1,31 @@
+[wagon_wheel]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "landen" }, { npc = "ryis" }] },
+	{ balor_zone = "<landen_zone>" },
+	{ balor_zone = "<ryis_zone>" },
+	{ wagon_needs_repairs = true },
+]
+writes = [{ wagon_needs_repairs = false }]
+speaker = "ryis"
+portrait = "neutral"
+local = "He needs a new wagon wheel, Uncle."
+next = "1"
+
+[wagon_wheel.1]
+speaker = "landen"
+portrait = "neutral"
+local = "Another? You're single-handedly keeping our woodshop open, Balor."
+next = "2"
+
+[wagon_wheel.2]
+speaker = "balor"
+portrait = "happy"
+effect = "drop"
+local = "I'll pay double if you keep your jokes to yourself."
+next = "3"
+
+[wagon_wheel.3]
+speaker = "ryis"
+portrait = "wink"
+local = "Regular price it is."

@@ -1,0 +1,157 @@
+# Hated gift
+[broccoli]
+kind = "gift"
+requires = [
+	{ npc = "dell" },
+	{ gift_desire = "hated" },
+	{ gift_given = "broccoli" }
+]
+portrait = "ugh"
+effect = "sick"
+local = "A r-real hero could handle this $Broccoli$... I gotta keep training..."
+
+# Generic lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "dell" }, { gift_desire = "loved" }]
+portrait = "happy"
+local = "[Ari], you'd give me something this cool?!"
+next = "1"
+
+[loved_gift.1]
+effect = "sparkles"
+portrait = "neutral"
+local = "I gotta go put this in the Dragonguard's secret treasure vault!"
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "dell" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "sparkles"
+local = "Wow! You find all the coolest stuff, [Ari]! Thanks!"
+
+[loved_gift_critter]
+kind = "gift"
+refresh = "1w"
+requires = [
+	{ npc = "dell" },
+	{ gift_desire = "liked" },
+	{ any = [{ gift_given = "hermit_crab" }, { gift_given = "bullfrog" }] },
+]
+portrait = "happy"
+effect = "hearts"
+local = "Oh wow, a new buddy! I gotta show everyone! Thanks [Ari]!"
+
+[loved_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "dell" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "apple_juice" },
+		{ gift_given = "chocolate" },
+		{ gift_given = "golden_cookies" },
+		{ gift_given = "ice_cream_sundae" },
+		{ gift_given = "jam_sandwich" }
+	] }
+]
+portrait = "wink"
+effect = "sparkles"
+local = "Ooh, more Dragonguard adventuring rations! This is perfect for our next expedition!"
+
+[loved_gift_sword]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "dell" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "alda_bronze_sword" },
+		{ gift_given = "aldarian_sword" },
+		{ gift_given = "caldosian_sword" }
+	] }
+]
+portrait = "mad"
+effect = "sparkles"
+local = "Holy moly, a sword! I'm gonna add this to the Dragonguard armory!"
+next = "1"
+
+[loved_gift_sword.1]
+portrait = "wink"
+local = "That's the back of my closet where my mom won't find it!"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "dell" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "Yay! Thank you, [Ari]!"
+
+[liked_gift_2]
+kind = "gift"
+requires = [{ npc = "dell" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "Aw, neat! Thanks, [Ari]!"
+
+[liked_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "dell" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "apple" },
+		{ gift_given = "blackberry" },
+		{ gift_given = "caramel_candy" },
+		{ gift_given = "glowberry_cookies" },
+		{ gift_given = "grape_juice" },
+		{ gift_given = "grilled_cheese" },
+		{ gift_given = "hot_cocoa" },
+		{ gift_given = "lemonade" },
+		{ gift_given = "monster_cookie" },
+		{ gift_given = "pudding" },
+		{ gift_given = "sour_lemon_cake" },
+		{ gift_given = "trail_mix" }
+	] }
+]
+portrait = "happy"
+local = "Yay! I'm gonna share this with Luc and Maple!"
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "dell" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Thanks!"
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "dell" }, { gift_desire = "disliked" }]
+portrait = "think"
+local = "What should I do with this, [Ari]?"
+next = "1"
+
+[disliked_gift.1]
+portrait = "neutral"
+local = "Oh, maybe I can throw it in the ocean!"
+
+[birthday_gift]
+kind = "gift"
+priority = "max"
+requires = [
+	{ npc = "dell" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ dell_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "happy"
+local = "A birthday present? Wow, [Ari]! You're the best ever!"
+next = "1"
+
+[birthday_gift.1]
+portrait = "neutral"
+effect = "sparkles"
+local = "The Dragonguard will remember this."

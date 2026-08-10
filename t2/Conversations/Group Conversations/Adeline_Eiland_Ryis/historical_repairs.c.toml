@@ -1,0 +1,51 @@
+[historical_repairs]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "eiland" }, { npc = "ryis" }] },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "<ryis_zone>" },
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "When you're doing repairs around town, it would be nice to preserve some of the historical details."
+next = "1"
+
+[historical_repairs.1]
+speaker = "ryis"
+portrait = "happy"
+local = "For sure! But I'll need references."
+next = "2"
+
+[historical_repairs.2]
+speaker = "eiland"
+portrait = "wink"
+local = "I've pulled some from the Museum archive for just that reason. Have a look!"
+
+[historical_repairs_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "eiland" }, { npc = "ryis" }] },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "<ryis_zone>" },
+]
+speaker = "ryis"
+portrait = "think"
+local = "I've been trying to identify the type of wood used to build some of the older buildings around town. Even Uncle Landen seemed a bit stumped."
+next = "1"
+
+[historical_repairs_2.1]
+speaker = "ryis"
+portrait = "neutral"
+local = "It's not a big deal right now, but it helps to know if we need to do repairs down the line."
+next = "2"
+
+[historical_repairs_2.2]
+speaker = "eiland"
+portrait = "neutral"
+local = "Fascinating. Do you think it was imported? I can start combing through the town building records."
+next = "3"
+
+[historical_repairs_2.3]
+speaker = "adeline"
+portrait = "happy"
+local = "Sounds good, Eiland! In the meantime, I'll contact Celine. If the wood came from Mistria, she'll know the tree!"

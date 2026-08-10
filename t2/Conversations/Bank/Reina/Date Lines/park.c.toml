@@ -1,0 +1,84 @@
+[park_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "reina" },
+	{ date = "park" },
+	{ da_reina_park = 0 },
+	{ reina_is_spouse = false }
+]
+writes = [
+	{ da_reina_park = 1 },
+	{ da_reina_park_follow_up_gate = true, expires = "1d" }
+]
+speaker = "reina"
+portrait = "happy"
+local = "Heya, [Ari]! What's up?"
+next = "1"
+
+[park_accept_1.1]
+speaker = "reina"
+portrait = "blush_special"
+local = "Ooh, a date to the $Park$? I'd love to!"
+
+[park_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "reina" },
+	{ date = "park" },
+	{ reina_has_child = false },
+	{ any = [
+		{ reina_is_spouse = true },
+		{ da_reina_park = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_reina_park = 2 },
+	{ da_reina_park_follow_up_gate = true, expires = "1d" }
+]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "You want to take me out to the $Park$?"
+next = "1"
+
+[park_accept_2.1]
+speaker = "reina"
+portrait = "blush"
+local = "Yay, let's go [Ari]!"
+
+[park_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ da_reina_park = 1 },
+	{ da_reina_park_follow_up_gate = true },
+	{ reina_is_spouse = false }
+]
+writes = [{ da_reina_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush_special"
+local = "You sure are a good kisser, [Ari]."
+next = "1"
+
+[park_follow_up_1.1]
+portrait = "blush"
+local = "I'd be happy to go with you to the $Park$ anytime!"
+
+[park_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "reina" },
+	{ reina_has_child = false },
+	{ any = [{ reina_is_spouse = true }, { da_reina_park = 2 }] },
+	{ da_reina_park_follow_up_gate = true }
+]
+writes = [{ da_reina_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush"
+local = "I've been really enjoying our dates."
+next = "1"
+
+[park_follow_up_2.1]
+portrait = "blush_special"
+local = "I really feel like I can just be myself around you, [Ari]."

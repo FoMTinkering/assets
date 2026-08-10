@@ -1,0 +1,19 @@
+[ready_in_time]
+refresh = "2m"
+requires = [
+	{ npc = "reina" },
+	{ any = [
+		{ location = "inn" },
+		{ reina_is_traveling_to_location = "inn" }
+	] },
+	{ day_time = "2:00pm", comparator = "<=" },
+	{ day_time = "6:00am", comparator = ">=" },
+	{ day_of_the_week = "friday" },
+]
+effect = "sweat"
+local = "Phew! I'm a little behind schedule, but I'll be ready by the time people start rolling in!"
+next = "1"
+
+[ready_in_time.1]
+portrait = "wink"
+local = "Watch me!"

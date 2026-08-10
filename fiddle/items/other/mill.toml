@@ -1,0 +1,288 @@
+# <---------MILLED INGREDIENTS------------->
+
+[flour]
+	name = "Flour"
+	description = "A bag of processed wheat flour. Frequently used for baking."
+	icon_sprite = "spr_ui_item_flour"
+	recipe_is_default = true
+	restore = 10
+	edible = false
+	value = { bin = 175, store = 200 }
+	tags = ["milling", "milled_ingredients", "material"]
+	recipe = [
+		{ item = "wheat", count = 1 },
+		{ hours = 0, minutes = 10 },
+	]
+
+[rice]
+	name = "Rice"
+	description = "A bag of processed rice. Used as an ingredient in many kinds of dishes."
+	icon_sprite = "spr_ui_item_rice"
+	recipe_is_default = true
+	restore = 10
+	edible = false
+	value = { bin = 175, store = 200 }
+	tags = ["milling", "milled_ingredients", "material"]
+	recipe = [
+		{ item = "rice_stalk", count = 1 },
+		{ hours = 0, minutes = 10 },
+	]
+
+[sugar]
+	name = "Sugar"
+	description = "A bag of processed sugar. Used to sweeten dishes when cooking."
+	icon_sprite = "spr_ui_item_sugar"
+	recipe_is_default = true
+	restore = 6
+	edible = false
+	value = { bin = 100, store = 115 }
+	tags = ["milling", "milled_ingredients", "material"]
+	recipe = [
+		{ item = "sugar_cane", count = 1 },
+		{ hours = 0, minutes = 10 },
+	]
+
+	# <---------MILLED ANIMAL PRODUCTS------------->
+
+[cheese]
+	name = "Cheese"
+	description = "Cheese made with cow's milk. Used in a variety of cooking recipes."
+	icon_sprite = "spr_ui_item_cheese"
+	recipe_is_default = true
+	value = { bin = 90 }
+	tags = ["milling", "animal_product", "ranching"]
+	restore = 6
+	recipe = [
+		{ item = "cow_milk", count = 2 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[golden_cheese]
+	name = "Golden Cheese"
+	description = "High quality cheese made with golden cow's milk. Used in high level cooking recipes."
+	icon_sprite = "spr_ui_item_golden_cheese"
+	recipe_is_default = true
+	value = { bin = 260 }
+	tags = ["milling", "animal_product", "ranching"]
+	restore = 12
+	recipe = [
+		{ item = "golden_cow_milk", count = 2 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[butter]
+	name = "Butter"
+	description = "Butter made with cow's milk. Used in a variety of cooking recipes."
+	icon_sprite = "spr_ui_item_butter"
+	recipe_is_default = true
+	restore = 6
+	edible = false
+	value = { bin = 90 }
+	tags = ["milling", "animal_product", "ranching"]
+	recipe = [
+		{ item = "cow_milk", count = 2 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[golden_butter]
+	name = "Golden Butter"
+	description = "High quality butter made with golden cow's milk. Used in high level cooking recipes."
+	icon_sprite = "spr_ui_item_golden_butter"
+	recipe_is_default = true
+	value = { bin = 260 }
+	tags = ["milling", "animal_product", "ranching"]
+	restore = 12
+	recipe = [
+		{ item = "golden_cow_milk", count = 2 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[mayonnaise]
+	name = "Mayonnaise"
+	description = "A popular condiment made from chicken eggs. Used in a variety of cooking recipes."
+	icon_sprite = "spr_ui_item_mayonnaise"
+	recipe_is_default = true
+	restore = 3
+	edible = false
+	tags = ["milling", "animal_product", "ranching"]
+	value = { bin = 90 }
+	recipe = [
+		{ item = "egg", count = 2 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[duck_mayonnaise]
+	name = "Duck Mayonnaise"
+	description = "A popular condiment made from duck eggs. Used in a variety of cooking recipes."
+	icon_sprite = "spr_ui_item_duck_mayonnaise"
+	recipe_is_default = true
+	restore = 3
+	edible = false
+	tags = ["milling", "animal_product", "ranching"]
+	value = { bin = 70 }
+	recipe = [
+		{ item = "duck_egg", count = 2 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[golden_mayonnaise]
+	name = "Golden Mayonnaise"
+	description = "A high quality condiment made from chicken eggs. Used in high level cooking recipes."
+	icon_sprite = "spr_ui_item_golden_mayonnaise"
+	recipe_is_default = true
+	restore = 5
+	edible = false
+	tags = ["milling", "animal_product", "golden_mayonnaise", "ranching"]
+	value = { bin = 140 }
+	recipe = [
+		{ item = "golden_egg", count = 2 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[golden_duck_mayonnaise]
+	name = "Golden Duck Mayonnaise"
+	description = "A high quality condiment made from duck eggs. Used in high level cooking recipes."
+	recipe_is_default = true
+	icon_sprite = "spr_ui_item_golden_duck_mayonnaise"
+	restore = 5
+	edible = false
+	tags = ["milling", "animal_product", "golden_mayonnaise", "ranching"]
+	value = { bin = 200 }
+	recipe = [
+		{ item = "golden_duck_egg", count = 2 },
+		{ hours = 0, minutes = 20 },
+	]
+
+	# <---------MILLED ANIMAL FEED------------->
+
+[quality_small_animal_feed]
+	name = "Quality Small Animal Feed"
+	description = "Quality feed for small animals. It can be placed in coop troughs or hand-fed."
+	icon_sprite = "spr_ui_item_animal_feed_seed_quality_bag"
+	recipe_is_default = true
+	animal_feed = { tier = "quality", animal_size = "small", sprite = "spr_ui_item_animal_feed_seed_quality", pet_can_eat = false }
+	value = { bin = 10 }
+	tags = ["milling", "animal_feed", "milled_animal_feed", "ranching"]
+	recipe = [
+		{ item = "grass_seed", count = 1 },
+		{ item = "water_chestnut", count = 1 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[deluxe_small_animal_feed]
+	name = "Deluxe Small Animal Feed"
+	description = "Deluxe feed for small animals. It can be placed in coop troughs or hand-fed."
+	recipe_is_default = true
+	icon_sprite = "spr_ui_item_animal_feed_seed_deluxe_bag"
+	animal_feed = { tier = "deluxe", animal_size = "small", sprite = "spr_ui_item_animal_feed_seed_deluxe", pet_can_eat = false }
+	value = { bin = 15 }
+	tags = ["milling", "animal_feed", "milled_animal_feed", "ranching"]
+	recipe = [
+		{ item = "grass_seed", count = 1 },
+		{ item = "water_chestnut", count = 1 },
+		{ item = "acorn", count = 1 },
+		{ hours = 0, minutes = 30 },
+	]
+
+[ultimate_small_animal_feed]
+	name = "Ultimate Small Animal Feed"
+	description = "Ultimate feed for small animals. It can be placed in coop troughs or hand-fed."
+	recipe_is_default = true
+	icon_sprite = "spr_ui_item_animal_feed_seed_ultimate_bag"
+	animal_feed = { tier = "ultimate", animal_size = "small", sprite = "spr_ui_item_animal_feed_seed_ultimate", pet_can_eat = false }
+	value = { bin = 30 }
+	tags = ["milling", "animal_feed", "milled_animal_feed", "ranching"]
+	recipe = [
+		{ item = "grass_seed", count = 1 },
+		{ item = "water_chestnut", count = 1 },
+		{ item = "acorn", count = 1 },
+		{ item = "seaweed", count = 1 },
+		{ hours = 0, minutes = 40 },
+	]
+
+[quality_hay]
+	name = "Quality Large Animal Feed"
+	description = "Quality feed for large animals. It can be placed in barn troughs or hand-fed."
+	recipe_is_default = true
+	icon_sprite = "spr_ui_item_animal_feed_hay_quality_bag"
+	animal_feed = { tier = "quality", animal_size = "large", sprite = "spr_ui_item_animal_feed_hay_quality", pet_can_eat = false }
+	value = { bin = 10 }
+	tags = ["milling", "animal_feed", "milled_animal_feed", "ranching"]
+	recipe = [
+		{ item = "hay", count = 1 },
+		{ item = "water_chestnut", count = 1 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[deluxe_hay]
+	name = "Deluxe Large Animal Feed"
+	description = "Deluxe feed for large animals. It can be placed in barn troughs or hand-fed."
+	recipe_is_default = true
+	icon_sprite = "spr_ui_item_animal_feed_hay_deluxe_bag"
+	animal_feed = { tier = "deluxe", animal_size = "large", sprite = "spr_ui_item_animal_feed_hay_deluxe", pet_can_eat = false }
+	value = { bin = 15 }
+	tags = ["milling", "animal_feed", "milled_animal_feed", "ranching"]
+	recipe = [
+		{ item = "hay", count = 1 },
+		{ item = "water_chestnut", count = 1 },
+		{ item = "acorn", count = 1 },
+		{ hours = 0, minutes = 30 },
+	]
+
+[ultimate_hay]
+	name = "Ultimate Large Animal Feed"
+	description = "Ultimate feed for large animals. It can be placed in barn troughs or hand-fed."
+	recipe_is_default = true
+	icon_sprite = "spr_ui_item_animal_feed_hay_ultimate_bag"
+	animal_feed = { tier = "ultimate", animal_size = "large", sprite = "spr_ui_item_animal_feed_hay_ultimate", pet_can_eat = false }
+	value = { bin = 30 }
+	tags = ["milling", "animal_feed", "milled_animal_feed", "ranching"]
+	recipe = [
+		{ item = "hay", count = 1 },
+		{ item = "water_chestnut", count = 1 },
+		{ item = "acorn", count = 1 },
+		{ item = "seaweed", count = 1 },
+		{ hours = 0, minutes = 40 },
+	]
+
+[small_grass_starter]
+	name = "Grass Starter"
+	description = "Use this item to plant a patch of new grass on your farm. Useful for grazing animals."
+	recipe_is_default = true
+	icon_sprite = "spr_ui_item_small_grass_starter"
+	value = { bin = 15 }
+	plant_grass = "grass_small"
+	tags = ["milling", "misc_mill", "crop"]
+	recipe = [
+		{ item = "grass_seed", count = 2 },
+		{ item = "sod", count = 1 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[sapling_oak]
+	description = "An oak tree sapling. This tree can be planted any time of year."
+	sapling = "tree_oak"
+	icon_sprite = "spr_ui_item_oak_sapling"
+	#mini_sprite = "spr_ui_tool_tip_icon_apple"
+	name = "Oak Sapling"
+	value = { bin = 10 }
+	tags = ["seed", "milling", "misc_mill", "crop"]
+	recipe_is_default = true
+	recipe = [
+		{ item = "acorn", count = 1 },
+		{ hours = 0, minutes = 10 },
+	]
+
+[sapling_pine]
+	description = "A pine tree sapling. This tree can be planted any time of year."
+	sapling = "tree_pine"
+	icon_sprite = "spr_ui_item_pine_sapling"
+	#mini_sprite = "spr_ui_tool_tip_icon_apple"
+	name = "Pine Sapling"
+	value = { bin = 10 }
+	tags = ["seed", "milling", "misc_mill", "crop"]
+	recipe_is_default = true
+	recipe = [
+		{ item = "pinecone", count = 1 },
+		{ hours = 0, minutes = 10 },
+	]

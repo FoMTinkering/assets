@@ -1,0 +1,145 @@
+# Loved gift
+[crayfish_etouffee]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "hemlock" },
+	{ gift_desire = "loved" },
+	{ gift_given = "crayfish_etouffee" }
+]
+portrait = "happy"
+effect = "hearts"
+local = "You got me =Etouffee=? Josie and I love this, it's one of our favorites! Can't wait to share it with her. Thanks, [Ari]."
+
+# Hated gift
+[newt]
+kind = "gift"
+requires = [
+	{ npc = "hemlock" },
+	{ gift_desire = "hated" },
+	{ gift_given = "newt" }
+]
+portrait = "sad"
+effect = "sick"
+local = "Come on now, not even Dell hands out newts as gifts."
+
+# General lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "hemlock" }, { gift_desire = "loved" }]
+portrait = "happy"
+local = "This is mighty thoughtful of you, [Ari]. Thanks, I'm going to enjoy it."
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "hemlock" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "sparkles"
+local = "Would you look at that! I was just daydreaming about this. Thanks, [Ari]!"
+
+[loved_gift_drinks]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "hemlock" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "beer" },
+		{ gift_given = "hot_toddy" },
+		{ gift_given = "white_wine" }
+	] }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "You know me so well! I'll make time to properly toast you with Josie later."
+
+[loved_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "hemlock" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "chili_coconut_curry" },
+		{ gift_given = "crayfish_etouffee" },
+		{ gift_given = "crispy_fried_earthshroom" },
+		{ gift_given = "incredibly_hot_pot" },
+		{ gift_given = "spicy_corn" },
+		{ gift_given = "wild_grapes" },
+	] }
+]
+portrait = "wink"
+effect = "sparkles"
+local = "Hot dang, that smells amazing! This is something worth changing your dinner plans for, eh?"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "hemlock" }, { gift_desire = "liked" }]
+portrait = "happy"
+local = "This is for me? I gotta show Josie!"
+
+[liked_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "hemlock" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "basil" },
+		{ gift_given = "chili_pepper" },
+		{ gift_given = "coffee" },
+		{ gift_given = "crunchy_chickpeas" },
+		{ gift_given = "dried_squid" },
+		{ gift_given = "grape_juice" },
+		{ gift_given = "honey" },
+		{ gift_given = "lemon" },
+		{ gift_given = "roasted_chestnuts" },
+		{ gift_given = "rock_salt" },
+		{ gift_given = "sesame_broccoli" },
+		{ gift_given = "spicy_cheddar_biscuit" },
+		{ gift_given = "spicy_crab_sushi" },
+		{ gift_given = "spicy_water_chestnuts" },
+		{ gift_given = "summer_salad" },
+		{ gift_given = "tea" },
+		{ gift_given = "thyme" },
+		{ gift_given = "toasted_sunflower_seeds" },
+		{ gift_given = "trail_mix" },
+		{ gift_given = "water_chestnut_fritters" },
+	] }
+]
+portrait = "wink"
+local = "Looks delicious! Thanks, [Ari]."
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "hemlock" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Hey, thanks."
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "hemlock" }, { gift_desire = "disliked" }]
+portrait = "ugh"
+local = "You sure this is for me? Well, if you say so..."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "hemlock" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ hemlock_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "neutral"
+local = "Oh, you got me something for my birthday? I can't wait to show Josie!"
+next = "1"
+
+[birthday_gift.1]
+portrait = "happy"
+effect = "sparkles"
+local = "Thanks, [Ari]!"

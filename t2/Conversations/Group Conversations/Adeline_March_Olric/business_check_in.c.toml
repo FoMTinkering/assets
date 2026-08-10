@@ -1,0 +1,29 @@
+[business_check_in]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "march" }, { npc = "olric" }] },
+	{ adeline_zone = "town/blacksmith_business" },
+	{ march_zone = "town/blacksmith_business" },
+	{ olric_zone = "town/blacksmith_business" },
+	{ adeline_business_review = true }
+]
+speaker = "adeline"
+local = "Hi March, Olric! I'm doing a business check-in around town."
+next = "1"
+
+[business_check_in.1]
+speaker = "adeline"
+portrait = "think"
+local = "You two okay with all the orders I'm sending your way?"
+next = "2"
+
+[business_check_in.2]
+speaker = "olric"
+portrait = "happy"
+local = "If anyone can handle it, it's March!"
+next = "3"
+
+[business_check_in.3]
+speaker = "march"
+portrait = "sly"
+local = "And I can handle it."

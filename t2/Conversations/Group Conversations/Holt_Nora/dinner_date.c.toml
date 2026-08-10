@@ -1,0 +1,21 @@
+[dinner_date]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "nora" }] },
+	{ holt_zone = "<nora_zone>" },
+	{ holt_activity = "eat" },
+	{ nora_activity = "eat" },
+	{ nh_date_night = true },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+speaker = "nora"
+portrait = "embarrassed"
+effect = "cheery"
+local = "Holt surprised me with a dinner date! Isn't he sweet, [Ari]?"
+next = "1"
+
+[dinner_date.1]
+speaker = "holt"
+portrait = "wink"
+local = "It's a good thing Nora doesn't have trouble with dairy. I don't know how we'd make it work if she couldn't handle my cheesy jokes."

@@ -1,0 +1,105 @@
+scene(balors_room);
+place_actor(balor, south, ptss_balor_entrance);
+animate(balor, inspect_gem);
+place_actor(ari, west, ptss_ari_entrance);
+camera_position(ptss_camera_1);
+request_music_play("Music/Events/DragonCutscene");
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		pan_camera(2.5, ptss_camera_2);
+	}
+	{
+		wait(1);
+		free bark_speech(balor, exclamation_mark);
+		wait(0.5);
+		animate(balor, idle);
+		wait(0.25);
+		face(balor, east);
+		wait(0.25);
+		walk(balor, ptss_balor_start);
+		face(balor, east);
+	}
+	{
+		wait(0.5);
+		walk_slow(ari, ptss_ari_start);
+		face(ari, west);
+	}
+	{
+		wait(2);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+
+//
+
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(balor, cute_face);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	next_line(); //
+}
+
+close_textbox();
+wait(0.25);
+sim {
+	{
+		walk_slow(balor, ptss_balor_desk);
+		face(balor, west);
+	}
+	{
+		wait(0.5);
+		walk_slow(ari, ptss_ari_desk);
+		face(ari, west);
+	}
+	{
+		pan_camera(2, ptss_camera_3);
+	}
+	{
+		wait(2.5);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, exclamation_mark);
+wait(0.5);
+face(balor, east);
+wait(0.5);
+free bark_speech(balor, sweat_drop);
+wait(0.5);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+free bark_speech(balor, cute_face);
+wait(0.5);
+sim {
+	fade_out(2);
+	{
+		wait(0.5);
+		walk_slow(ari, ptss_ari_entrance);
+	}
+	{
+		wait(1.25);
+		face(balor, west);
+	}
+	{
+		pan_camera(3, ptss_camera_2);
+	}
+}

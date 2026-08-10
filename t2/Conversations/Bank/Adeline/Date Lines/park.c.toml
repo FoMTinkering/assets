@@ -1,0 +1,84 @@
+[park_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "adeline" },
+	{ date = "park" },
+	{ da_adeline_park = 0 },
+	{ adeline_is_spouse = false }
+]
+writes = [
+	{ da_adeline_park = 1 },
+	{ da_adeline_park_follow_up_gate = true, expires = "1d" }
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "You'd like to take me to the $Park$?"
+next = "1"
+
+[park_accept_1.1]
+speaker = "adeline"
+portrait = "blush"
+local = "That would be lovely!"
+
+[park_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "adeline" },
+	{ date = "park" },
+	{ adeline_has_child = false },
+	{ any = [
+		{ adeline_is_spouse = true },
+		{ da_adeline_park = 1, comparator = ">=" }
+	] },
+]
+writes = [
+	{ da_adeline_park = 2 },
+	{ da_adeline_park_follow_up_gate = true, expires = "1d" }
+]
+speaker = "adeline"
+portrait = "happy"
+local = "[Ari], if you're free... would you like to go to the $Park$ with me?"
+next = "1"
+
+[park_accept_2.1]
+speaker = "adeline"
+portrait = "blush"
+local = "You would? Wonderful!"
+
+[park_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ da_adeline_park = 1 },
+	{ da_adeline_park_follow_up_gate = true },
+	{ adeline_is_spouse = false }
+]
+writes = [{ da_adeline_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "neutral"
+local = "It's funny how often I've been to the $Park$ to perform inspections, but not really just to relax."
+next = "1"
+
+[park_follow_up_1.1]
+portrait = "blush"
+local = "I'm glad I got to see it in a whole new light with you."
+
+[park_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_has_child = false },
+	{ any = [{ adeline_is_spouse = true }, { da_adeline_park = 2 }] },
+	{ da_adeline_park_follow_up_gate = true },
+]
+writes = [{ da_adeline_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy"
+local = "It's so nice to unwind with you at the park!"
+next = "1"
+
+[park_follow_up_2.1]
+portrait = "sly"
+local = "Let's do it again soon, okay?"

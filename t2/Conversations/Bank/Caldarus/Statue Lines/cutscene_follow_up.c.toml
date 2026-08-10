@@ -1,0 +1,172 @@
+[cutscene_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ essence = 30, comparator = "<" },
+	{ perk_count = 0 },
+	{ caldarus_first_conversation = false },
+	{ caldarus_is_human = false },
+	{}
+]
+writes = [{ caldarus_first_conversation = true }]
+speaker = "caldarus"
+local = "Ah, greetings mortal. The time has come for you to begin collecting $Essence$."
+next = "2"
+
+[cutscene_follow_up_1.2]
+local = "$Essence$ will appear in the form of $small purple orbs$ as you go about your day. Try activities such as $Farming$, $Fishing$, and $Mining$. You'll be sure to find some."
+next = "3"
+
+[cutscene_follow_up_1.3]
+local = "Use this $Shrine$ when you want to offer your collected $Essence$. In exchange, I will use my restored power to grant you $Skill Perks$."
+next = "4"
+
+[cutscene_follow_up_1.4]
+local = "These $Skill Perks$ will serve to make life easier for you."
+next = "5"
+
+[cutscene_follow_up_1.5]
+local = "..."
+next = "6"
+
+[cutscene_follow_up_1.6]
+local = "I grow tired... Let us speak again tomorrow."
+
+[cutscene_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ essence = 30, comparator = ">=" },
+	{ perk_count = 0 },
+	{ caldarus_first_conversation = false },
+	{ caldarus_is_human = false },
+	{}
+]
+writes = [{ caldarus_first_conversation = true }]
+speaker = "caldarus"
+local = "Ah, greetings mortal. I see you have already collected some Essence. Well done."
+next = "2"
+
+[cutscene_follow_up_2.2]
+local = "$Essence$ will appear in the form of $small purple orbs$ as you go about your day. Try activities such as $Farming$, $Fishing$, and $Mining$. You'll be sure to find some."
+next = "3"
+
+[cutscene_follow_up_2.3]
+local = "Use this $Shrine$ when you want to offer your collected $Essence$. In exchange, I will use my restored power to grant you $Skill Perks$."
+next = "4"
+
+[cutscene_follow_up_2.4]
+local = "These $Skill Perks$ will serve to make life easier for you."
+next = "5"
+
+[cutscene_follow_up_2.5]
+local = "..."
+next = "6"
+
+[cutscene_follow_up_2.6]
+local = "I grow tired... Let us speak again tomorrow."
+
+[unlocking_the_mines_pt_1_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ quest_unlocking_the_mines_pt_1_in_progress = true },
+	{ quest_unlocking_the_mines_pt_1_complete = false },
+	{ caldarus_is_human = false },
+	{}
+]
+local = "The earthquake... and the Mines below the town..."
+next = "1"
+
+[unlocking_the_mines_pt_1_anticipation.1]
+local = "Hmm..."
+next = "2"
+
+[unlocking_the_mines_pt_1_anticipation.2]
+local = "[Ari], I ask that you investigate further. I sense it will be key to understanding the return of magic to this land."
+
+[unlocking_the_mines_pt_2_follow_up]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ quest_unlocking_the_mines_pt_2_complete = true },
+	{ cutscene_seen_unlocking_the_mines_pt_2 = true },
+	{ caldarus_is_human = false },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{}
+]
+local = "Do you feel a shift in the air? It seems the flow of magic has increased."
+next = "1"
+
+[unlocking_the_mines_pt_2_follow_up.1]
+local = "The Mines have been opened? Interesting..."
+next = "2"
+
+[unlocking_the_mines_pt_2_follow_up.2]
+local = "Keep me apprised, [Ari]. Although I feel my strength slowly increasing, my memory still lags."
+
+[unlocking_the_mines_pt_2_follow_up_2]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ quest_unlocking_the_mines_pt_2_complete = true },
+	{ caldarus_is_human = false }
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[unlocking_the_mines_pt_2_follow_up_2.1]
+speaker = "caldarus"
+local = "You would do well to explore the Mines thoroughly, I suspect there is much of value to be found as you venture deeper."
+
+[floor_10_follow_up]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ floor_10 = "seen" },
+	{},
+	{},
+	{ caldarus_is_human = false }
+]
+local = "A voice inside the Mines?"
+next = "1"
+
+[floor_10_follow_up.1]
+local = "I recall that humans once offered their prayers from both above and below the ground..."
+next = "2"
+
+[floor_10_follow_up.2]
+local = "However... that was long ago, and human lifespans are short."
+
+[water_seal_follow_up]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ water_seal = "seen" },
+	{ cutscene_seen_break_water_seal = false },
+	{ caldarus_is_human = false },
+	{}
+]
+local = "You found a $cracked seal$ underground...?"
+next = "1"
+
+[water_seal_follow_up.1]
+local = "Ah... I seem to recall that such seals were once used to control the flow of magic between our realms."
+next = "2"
+
+[water_seal_follow_up.2]
+local = "Break the seal, [Ari], so that I may regain my strength."
+next = "3"
+
+[water_seal_follow_up.3]
+local = "I entrust this task to you."

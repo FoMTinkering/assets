@@ -1,0 +1,54 @@
+[break_earth_seal]
+kind = "gameplay_triggered"
+writes = [{ bes = true, expires = "4d" }]
+speaker = "seridia"
+local = "^Hero... thank you for breaking...^"
+next = "1"
+
+[break_earth_seal.1]
+speaker = "seridia"
+local = "^The seal... well done...^"
+portrait = "neutral_closed"
+next = "2"
+
+[break_earth_seal.2]
+speaker = "seridia"
+local = "^Offer essence... the dragon statue... above...^"
+portrait = "neutral"
+next = "3"
+
+[break_earth_seal.3]
+speaker = "seridia"
+local = "^Gain strength... to proceed.^"
+portrait = "neutral_closed"
+
+[earth_seal]
+kind = "gameplay_triggered"
+writes = [{ earth_seal = "seen" }]
+speaker = "seridia"
+portrait = "neutral"
+local = "^Hero... break... seal...^"
+next = "1"
+
+[earth_seal.1]
+speaker = "seridia"
+portrait = "sad"
+local = "^Dragon's... power...^"
+next = "2"
+
+[earth_seal.2]
+speaker = "seridia"
+portrait = "eyes_shine"
+local = "^Restore...!^"
+
+[break_earth_seal_follow_up_celine]
+refresh = "never"
+requires = [{ npc = "celine" }, { bes = true }]
+portrait = "neutral"
+local = "Did the translation work out for you, [Ari]?"
+next = "1"
+
+[break_earth_seal_follow_up_celine.1]
+portrait = "happy"
+effect = "cheery"
+local = "I'm so glad! The Codex Mistria really is useful, isn't it?"

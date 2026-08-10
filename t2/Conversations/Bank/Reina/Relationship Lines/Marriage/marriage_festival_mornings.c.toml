@@ -1,0 +1,112 @@
+#SPRING FESTIVAL
+[spring_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "Morning, [Ari]! Excited for the $Spring Festival$?"
+next = "1"
+
+
+[spring_festival.1]
+portrait = "happy"
+local = "Do you think you have enough $Breath of Spring$ to bring home the gold this year?"
+next = "2"
+
+
+[spring_festival.2]
+portrait = "wink"
+local = "I'll be cheering for you!"
+
+
+#SHOOTING STAR FESTIVAL
+[shooting_star_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "happy"
+local = "Morning! The weather is supposed to be perfect for the $Shooting Star Festival$ tonight."
+next = "1"
+
+
+[shooting_star_festival.1]
+portrait = "blush_open_eyes"
+local = "I can't wait to watch the stars with you!"
+
+
+#HARVEST FESTIVAL
+
+
+[harvest_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "happy"
+local = "Good morning and happy $Harvest Festival$!"
+next = "1"
+
+
+[harvest_festival.1]
+portrait = "wink"
+local = "I can't wait to see how many $Queen Berries$ have been collected... I think this year's going to be amazing!"
+next = "2"
+
+[harvest_festival.2]
+portrait = "blush_open_eyes"
+local = "And of course, if you want to dance later... I'm all yours."
+
+#ANIMAL FESTIVAL
+
+
+[animal_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ animal_festival_date = "1d", time = "after" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "Today's the $Animal Festival$! Are you ready?"
+next = "1"
+
+
+[animal_festival.1]
+portrait = "wink"
+local = "I just know our animals will take home a prize!"

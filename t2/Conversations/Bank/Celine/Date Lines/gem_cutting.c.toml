@@ -1,0 +1,100 @@
+[gem_cutting_accept_1]
+kind = "date_acceptance"
+requires = [
+    { npc = "celine" },
+    { date = "gem_cutting" },
+    { da_celine_gem_cutting = 0 },
+    { celine_is_spouse = false }
+]
+writes = [
+    { da_celine_gem_cutting = 1 },
+    { da_celine_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "shy_blush"
+local = "You want to go on a $Gem Cutting Date$?"
+next = "1"
+
+[gem_cutting_accept_1.1]
+portrait = "blush_special"
+local = "I've never tried anything like that before."
+next = "2"
+
+[gem_cutting_accept_1.2]
+portrait = "blush_closed_eyes"
+local = "But... There's a first time for everything!"
+
+[gem_cutting_accept_2]
+kind = "date_acceptance"
+requires = [
+    { npc = "celine" },
+    { date = "gem_cutting" },
+    { celine_has_child = false },
+    { any = [
+        { celine_is_spouse = true },
+        { da_celine_gem_cutting = 1, comparator = ">=" }
+    ] }
+]
+writes = [
+    { da_celine_gem_cutting = 2 },
+    { da_celine_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "blush_closed_eyes"
+local = "Should we practice some $Gem Cutting$, [Ari]?"
+next = "1"
+
+[gem_cutting_accept_2.1]
+portrait = "shy_blush"
+local = "I feel like I can do it this time!"
+
+[gem_cutting_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "celine" },
+    { da_celine_gem_cutting = 1 },
+    { da_celine_gem_cutting_follow_up_gate = true },
+    { celine_is_spouse = false }
+]
+writes = [{ da_celine_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "blush_closed_eyes"
+local = "Wow, [Ari], $Gem Cutting$ was so much fun!"
+next = "1"
+
+[gem_cutting_follow_up_1.1]
+portrait = "embarrassed"
+local = "Your gem turned out so pretty..."
+next = "2"
+
+[gem_cutting_follow_up_1.2]
+portrait = "shy_blush"
+local = "Dell thought mine was a \"weird marble\"..."
+next = "3"
+
+[gem_cutting_follow_up_1.3]
+portrait = "shy_blush"
+local = "I guess that just means I'll need more practice..."
+
+[gem_cutting_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "celine" },
+    { celine_has_child = false },
+    { any = [{ celine_is_spouse = true }, { da_celine_gem_cutting = 2 }] },
+    { da_celine_gem_cutting_follow_up_gate = true }
+]
+writes = [{ da_celine_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "blush_closed_eyes"
+local = "I had fun $Gem Cutting$ with you, [Ari]!"
+next = "1"
+
+[gem_cutting_follow_up_2.1]
+portrait = "shy_blush"
+local = "Mine turned out a little, um... unique."
+next = "2"
+
+[gem_cutting_follow_up_2.2]
+portrait = "blush_closed_eyes"
+local = "But I think it's pretty, all the same!"

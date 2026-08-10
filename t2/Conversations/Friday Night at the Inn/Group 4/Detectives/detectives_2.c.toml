@@ -1,0 +1,102 @@
+[detectives_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ adeline_zone = "inn/north_table" },
+	{ balor_zone = "inn/north_table" },
+	{ celine_zone = "inn/north_table" },
+	{ errol_zone = "inn/north_table" },
+	{ nora_zone = "inn/north_table" },
+	{ ryis_zone = "inn/north_table" },
+	{ detectives_fnati = 1 },
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "balor" },
+		{ npc = "celine" },
+		{ npc = "errol" },
+		{ npc = "nora" },
+		{ npc = "ryis" },
+	] },
+]
+actions = [
+	{ bark = { bark = "ellipses", npc = "adeline" } },
+	{ bark = { bark = "ellipses", npc = "balor" } },
+	{ bark = { bark = "angry", npc = "celine" } },
+	{ bark = { bark = "ellipses", npc = "errol" } },
+	{ bark = { bark = "ellipses", npc = "nora" } },
+	{ bark = { bark = "ellipses", npc = "ryis" } },
+]
+writes = [{ detectives_fnati = 2 }]
+speaker = "nora"
+portrait = "sad"
+effect = "sick"
+local = "I tell you, this clown is haunting me. After the detective club's observations last week, I haven't been able to stop thinking about this painting."
+next = "1"
+
+[detectives_2.1]
+speaker = "adeline"
+portrait = "mad"
+local = "Me either. I asked Eiland to look up the artist, and it turns out she did almost three hundred portraits during her life, mostly for nobility."
+next = "2"
+
+[detectives_2.2]
+speaker = "ryis"
+portrait = "think"
+local = "There's something about the subject... underneath all the clown makeup, he almost seems familiar."
+next = "3"
+
+[detectives_2.3]
+speaker = "balor"
+portrait = "mad"
+local = "I was thinking the same thing... odd, that."
+next = "4"
+
+[detectives_2.4]
+speaker = "errol"
+portrait = "neutral"
+local = "That's quite unlikely. The painting is over two hundred years old!"
+next = "5"
+
+[detectives_2.5]
+speaker = "celine"
+portrait = "gloomy"
+local = "Do you suppose this clown is some kind of... immortal creature of the night?"
+next = "6"
+
+[detectives_2.6]
+speaker = "nora"
+portrait = "embarrassed"
+local = "That's Dell talk. Let's not get ahead of ourselves, Celine."
+next = "7"
+
+[detectives_2.7]
+speaker = "ryis"
+portrait = "neutral"
+local = "Hm, there's something about this joint in the frame... oh!"
+next = "8"
+
+[detectives_2.8]
+speaker = "ryis"
+portrait = "mad"
+effect = "shock"
+local = "It's a sliding panel! There's a slip of paper inside... I'll read it."
+next = "9"
+
+[detectives_2.9]
+speaker = "ryis"
+portrait = "sad"
+local = "\"Do I tell the truth or do I lie? Mine true nature I must deny. If revealed, 'twould gain naught but scorn. My true name is...\" It ends there."
+next = "10"
+
+[detectives_2.10]
+speaker = "nora"
+portrait = "mad"
+local = "That's... very mysterious."
+next = "11"
+
+[detectives_2.11]
+speaker = "nora"
+portrait = "sad"
+effect = "sweat"
+local = "You don't suppose that this clown is... an immortal creature of the night?"

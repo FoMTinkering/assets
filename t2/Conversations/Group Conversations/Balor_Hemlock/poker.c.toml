@@ -1,0 +1,40 @@
+[poker]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "hemlock" }] },
+	{ balor_zone = "<hemlock_zone>" },
+	{ balor_playing_poker = true },
+	{ hemlock_playing_poker = true },
+	{ location = "inn" }
+]
+actions = [
+	{ bark = { bark = "ellipses", npc = "balor" } },
+	{ bark = { bark = "ellipses", npc = "hemlock" } },
+]
+speaker = "hemlock"
+portrait = "wink"
+local = "I think you're bluffing, merchant."
+next = "1"
+
+[poker.1]
+speaker = "balor"
+portrait = "wink"
+local = "Hah... big words, bartender. We'll flip our hands on three. One... two... three!"
+
+[poker_planning]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "hemlock" }] },
+	{ balor_zone = "<hemlock_zone>" },
+	{ balor_playing_poker = false },
+	{ hemlock_playing_poker = false },
+]
+speaker = "balor"
+portrait = "neutral"
+local = "What do you think? Is it time to get another night of cards going?"
+next = "1"
+
+[poker_planning.1]
+speaker = "hemlock"
+portrait = "wink"
+local = "Balor, it's always time for cards."

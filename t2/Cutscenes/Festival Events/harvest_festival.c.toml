@@ -1,0 +1,703 @@
+[harvest_festival_setup]
+kind = "gameplay_triggered"
+writes = [{ harvest_festival_setup = true }]
+speaker = "reina"
+portrait = "happy"
+local = "Hey, [Ari]! Do you have a minute?"
+next = [
+	{ target = "1_y2", requires = [
+		{ date_time = "1y", comparator = ">=" },
+		{ harvest_festival_attended = true },
+	] },
+	{ target = "1_y1", requires = [] },
+]
+
+[harvest_festival_setup.1_y2]
+speaker = "reina"
+portrait = "neutral"
+local = "I wanted to remind you that the $Harvest Festival$ is coming up again!"
+next = "2_y2"
+
+[harvest_festival_setup.2_y2]
+speaker = "reina"
+portrait = "happy"
+local = "There's going to be a big community feast for everyone to enjoy, and I'll be running the outdoor kitchen for the event again this year!"
+next = "3_y2"
+
+[harvest_festival_setup.3_y2]
+speaker = "reina"
+portrait = "neutral"
+local = "I hope we can count on your help again!"
+prompts = [
+	{ local = "Of course, I love collecting Queen Berries!", next = "4_y2" },
+	{ local = "I'm ready to go Queen Berry hunting!", next = "4_y2" },
+]
+
+[harvest_festival_setup.4_y2]
+speaker = "reina"
+portrait = "happy"
+local = "Oooh, thanks [Ari]!"
+next = "5_y2"
+
+[harvest_festival_setup.5_y2]
+speaker = "reina"
+portrait = "neutral"
+local = "Any $Queen Berries$ that you can collect over the next few days would be a huge help! There's even $prizes for whoever collects the most$!"
+next = "6_y2"
+
+[harvest_festival_setup.6_y2]
+speaker = "reina"
+portrait = "neutral"
+local = "Thanks, [Ari]! With your help, I know this will be the best $Harvest Festival$ yet!"
+
+[harvest_festival_setup.1_y1]
+speaker = "reina"
+portrait = "neutral"
+local = "I wanted to tell you that the $Harvest Festival$ is coming up!"
+next = "2_y1"
+
+[harvest_festival_setup.2_y1]
+speaker = "reina"
+portrait = "wink"
+local = "There's going to be all sorts of fun things to do!"
+next = "3_y1"
+
+[harvest_festival_setup.3_y1]
+speaker = "reina"
+portrait = "neutral"
+local = "There will be a big $Community Feast$ for everyone to enjoy..."
+next = "4_y1"
+
+[harvest_festival_setup.4_y1]
+speaker = "reina"
+portrait = "happy"
+local = "Hayden will have a $Pumpkin Patch$ set up..."
+next = [
+	{ target = "5_y1r", requires = [{ shooting_star_reina_attended = true }] },
+	{ target = "5_y1f", requires = [] },
+]
+
+[harvest_festival_setup.5_y1r]
+speaker = "reina"
+portrait = "blush"
+local = "And there will even be a $Dance$! If you're interested... that could be fun."
+next = "6_y1"
+
+[harvest_festival_setup.5_y1f]
+speaker = "reina"
+portrait = "wink"
+local = "And there will even be a $Dance$, if there's anyone you want to ask!"
+next = "6_y1"
+
+[harvest_festival_setup.6_y1]
+speaker = "reina"
+portrait = "think"
+local = "But as you can imagine, there's a lot to do in preparation..."
+prompts = [
+	{ local = "How can I help?", next = "7_y1" },
+	{ local = "Maybe I can bring a dish?", next = "8_y1" },
+]
+
+[harvest_festival_setup.7_y1]
+speaker = "reina"
+portrait = "happy"
+local = "Oh! Well-"
+next = "9_y1"
+
+[harvest_festival_setup.8_y1]
+speaker = "reina"
+portrait = "happy"
+local = "Actually, if you could help with one particular ingredient..."
+next = "9_y1"
+
+[harvest_festival_setup.9_y1]
+speaker = "reina"
+portrait = "neutral"
+local = "The $Harvest Festival$ is held at this time of year because it coincides with the $Queen Berry$ harvest."
+next = "10_y1"
+
+[harvest_festival_setup.10_y1]
+speaker = "reina"
+portrait = "think"
+local = "I'm not surprised you haven't heard of them. They only grow wild in Mistria, and only for a short time."
+next = "11_y1"
+
+[harvest_festival_setup.11_y1]
+speaker = "reina"
+portrait = "wink"
+local = "Then they just up and disappear! Just like $Breath of Spring$... it's like magic."
+next = "12_y1"
+
+[harvest_festival_setup.12_y1]
+speaker = "reina"
+portrait = "neutral"
+local = "But they're really tasty! All the desserts for the festival are traditionally made using them."
+next = "13_y1"
+
+[harvest_festival_setup.13_y1]
+speaker = "reina"
+portrait = "happy"
+local = "If you could help to collect some $Queen Berries$ over the next few days, that would be a huge help! There will even be $prizes for whoever collects the most$!"
+next = "14_y1"
+
+[harvest_festival_setup.14_y1]
+speaker = "reina"
+portrait = "neutral"
+local = "Thanks, [Ari]! With your help, I know this will be the best $Harvest Festival$ yet!"
+
+[harvest_festival_setup_alt]
+kind = "gameplay_triggered"
+writes = [{ harvest_festival_setup = true }]
+speaker = "josephine"
+portrait = "happy"
+local = "Hey, [Ari]! Do you have a minute?"
+next = "1"
+
+[harvest_festival_setup_alt.1]
+speaker = "josephine"
+portrait = "neutral"
+local = "I thought I'd stop by and remind you that the $Harvest Festival$ is coming up soon"
+next = "2"
+
+[harvest_festival_setup_alt.2]
+speaker = "josephine"
+portrait = "happy"
+local = "You and Reina always put in so much effort to make sure it's a special day."
+next = "3"
+
+[harvest_festival_setup_alt.3]
+speaker = "josephine"
+portrait = "neutral"
+local = "I hope we can count on your help again this year!"
+prompts = [
+	{ local = "Of course, I love collecting Queen Berries!", next = "4" },
+	{ local = "I'm ready to go Queen Berry hunting!", next = "4" },
+]
+
+[harvest_festival_setup_alt.4]
+speaker = "josephine"
+portrait = "happy"
+local = "Wonderful! I'm so glad to hear it."
+next = "5"
+
+[harvest_festival_setup_alt.5]
+speaker = "josephine"
+portrait = "neutral"
+local = "Any $Queen Berries$ that you can collect over the next few days would be such a help!"
+next = "6"
+
+[harvest_festival_setup_alt.6]
+speaker = "josephine"
+portrait = "happy"
+local = "Thank you, [Ari]!"
+
+[harvest_festival_morning]
+kind = "gameplay_triggered"
+writes = [{ harvest_festival_setup = false }]
+speaker = "reina"
+portrait = "happy"
+local = "[Ari], are you as excited as I am? Today's the $Harvest Festival$!"
+next = "1"
+
+[harvest_festival_morning.1]
+speaker = "reina"
+portrait = "neutral"
+local = "I thought I'd pop by and take any $Queen Berries$ that you collected before I head to the kitchen and start prepping."
+next = "2"
+
+[harvest_festival_morning.2]
+speaker = "reina"
+portrait = "happy"
+local = "Thanks, [Ari]!"
+next = "3"
+
+[harvest_festival_morning.3]
+speaker = "reina"
+portrait = "neutral"
+local = "I'd better dash, looking forward to seeing you at the festival!"
+
+[harvest_festival_morning_alt]
+kind = "gameplay_triggered"
+writes = [{ harvest_festival_setup = false }]
+speaker = "josephine"
+portrait = "happy"
+local = "Good morning, [Ari]! It's the $Harvest Festival$ today!"
+next = "1"
+
+[harvest_festival_morning_alt.1]
+speaker = "josephine"
+portrait = "neutral"
+local = "I'm here to collect your $Queen Berries$ before I head to the kitchen to start prepping with Reina."
+next = "2"
+
+[harvest_festival_morning_alt.2]
+speaker = "josephine"
+portrait = "happy"
+local = "Thank you again!"
+next = "3"
+
+[harvest_festival_morning_alt.3]
+speaker = "josephine"
+portrait = "neutral"
+local = "I'll see you at the festival shortly!"
+
+[harvest_festival_no_place]
+kind = "gameplay_triggered"
+writes = [
+	{ hf_no_place = true, expires = "3m" },
+	{ harvest_festival_attended = true },
+]
+speaker = "nora"
+portrait = "happy"
+local = "Welcome one and all to the Harvest Festival!"
+next = "1"
+
+[harvest_festival_no_place.1]
+speaker = "nora"
+portrait = "wink"
+local = "Now, before we get to stuffing our faces-"
+next = "2"
+
+[harvest_festival_no_place.2]
+speaker = "holt"
+portrait = "happy"
+local = "Woo!"
+next = "3"
+
+[harvest_festival_no_place.3]
+speaker = "nora"
+portrait = "neutral"
+local = "All the gathered $Queen Berries$ have been added up, and we're ready to announce the winners for this year's $Harvest Festival$."
+next = "4"
+
+[harvest_festival_no_place.4]
+speaker = "nora"
+portrait = "happy"
+local = "So without further ado-"
+next = "5"
+
+[harvest_festival_no_place.5]
+speaker = "nora"
+portrait = "think"
+local = "In third place..."
+next = "6"
+
+[harvest_festival_no_place.6]
+speaker = "nora"
+portrait = "happy"
+local = "Juniper!"
+next = "7"
+
+[harvest_festival_no_place.7]
+speaker = "juniper"
+portrait = "embarrassed"
+effect = "surprise"
+local = "T-there must be some mistake."
+next = "8"
+
+[harvest_festival_no_place.8]
+speaker = "nora"
+portrait = "neutral"
+local = "No mistake, the Festival wouldn't be the same without your generous contributions. Now come on up here!"
+next = "9"
+
+[harvest_festival_no_place.9]
+speaker = "nora"
+portrait = "think"
+local = "And in second place..."
+next = "10"
+
+[harvest_festival_no_place.10]
+speaker = "nora"
+portrait = "happy"
+local = "Maple!"
+next = "11"
+
+[harvest_festival_no_place.11]
+speaker = "maple"
+portrait = "happy"
+local = "I won, I won!"
+next = "12"
+
+[harvest_festival_no_place.12]
+speaker = "maple"
+portrait = "think"
+local = "How much queenly authority does second place get me?"
+next = "13"
+
+[harvest_festival_no_place.13]
+speaker = "josephine"
+portrait = "neutral"
+local = "It means you get an extra large slice of pie, dear."
+next = "14"
+
+[harvest_festival_no_place.14]
+speaker = "maple"
+portrait = "happy"
+local = "Yay!"
+next = "15"
+
+[harvest_festival_no_place.15]
+speaker = "nora"
+portrait = "think"
+local = "And finally, in first place..."
+next = "16"
+
+[harvest_festival_no_place.16]
+speaker = "nora"
+portrait = "happy"
+local = "Eiland!"
+next = "17"
+
+[harvest_festival_no_place.17]
+speaker = "eiland"
+portrait = "happy"
+local = "Haha, most excellent! $Queen Berry$ treats for all!"
+next = "18"
+
+[harvest_festival_no_place.18]
+speaker = "nora"
+portrait = "neutral"
+local = "Let's all congratulate our winners, without whom this Harvest Festival wouldn't be possible."
+next = "19"
+
+[harvest_festival_no_place.19]
+speaker = "nora"
+portrait = "happy"
+local = "Happy Harvest Festival, everyone!"
+
+[harvest_festival_third_place]
+kind = "gameplay_triggered"
+writes = [
+	{ hf_third_place = true, expires = "3m" },
+	{ harvest_festival_attended = true },
+]
+speaker = "nora"
+portrait = "happy"
+local = "Welcome one and all to the Harvest Festival!"
+next = "1"
+
+[harvest_festival_third_place.1]
+speaker = "nora"
+portrait = "wink"
+local = "Now, before we get to stuffing our faces-"
+next = "2"
+
+[harvest_festival_third_place.2]
+speaker = "holt"
+portrait = "happy"
+local = "Woo!"
+next = "3"
+
+[harvest_festival_third_place.3]
+speaker = "nora"
+portrait = "neutral"
+local = "All the gathered $Queen Berries$ have been added up, and we're ready to announce the winners for this year's Festival."
+next = "4"
+
+[harvest_festival_third_place.4]
+speaker = "nora"
+portrait = "happy"
+local = "So without further ado-"
+next = "5"
+
+[harvest_festival_third_place.5]
+speaker = "nora"
+portrait = "think"
+local = "In third place..."
+next = "6"
+
+[harvest_festival_third_place.6]
+speaker = "nora"
+portrait = "happy"
+local = "[Ari]!"
+next = "7"
+
+[harvest_festival_third_place.7]
+speaker = "nora"
+portrait = "think"
+local = "And in second place..."
+next = "8"
+
+[harvest_festival_third_place.8]
+speaker = "nora"
+portrait = "happy"
+local = "Maple!"
+next = "9"
+
+[harvest_festival_third_place.9]
+speaker = "maple"
+portrait = "happy"
+local = "I won, I won!"
+next = "10"
+
+[harvest_festival_third_place.10]
+speaker = "maple"
+portrait = "think"
+local = "How much queenly authority does second place get me?"
+next = "11"
+
+[harvest_festival_third_place.11]
+speaker = "josephine"
+portrait = "neutral"
+local = "It means you get an extra large slice of pie, dear."
+next = "12"
+
+[harvest_festival_third_place.12]
+speaker = "maple"
+portrait = "happy"
+local = "Yay!"
+next = "13"
+
+[harvest_festival_third_place.13]
+speaker = "nora"
+portrait = "think"
+local = "And finally, in first place..."
+next = "14"
+
+[harvest_festival_third_place.14]
+speaker = "nora"
+portrait = "happy"
+local = "Eiland!"
+next = "15"
+
+[harvest_festival_third_place.15]
+speaker = "eiland"
+portrait = "happy"
+local = "Haha, most excellent! $Queen Berry$ treats for all!"
+next = "16"
+
+[harvest_festival_third_place.16]
+speaker = "nora"
+portrait = "neutral"
+local = "Let's all congratulate our winners, without whom this Harvest Festival wouldn't be possible."
+next = "17"
+
+[harvest_festival_third_place.17]
+speaker = "nora"
+portrait = "happy"
+local = "Happy Harvest Festival, everyone!"
+
+[harvest_festival_second_place]
+kind = "gameplay_triggered"
+writes = [
+	{ hf_second_place = true, expires = "3m" },
+	{ harvest_festival_attended = true },
+]
+speaker = "nora"
+portrait = "happy"
+local = "Welcome one and all to the Harvest Festival!"
+next = "1"
+
+[harvest_festival_second_place.1]
+speaker = "nora"
+portrait = "wink"
+local = "Now, before we get to stuffing our faces-"
+next = "2"
+
+[harvest_festival_second_place.2]
+speaker = "holt"
+portrait = "happy"
+local = "Woo!"
+next = "3"
+
+[harvest_festival_second_place.3]
+speaker = "nora"
+portrait = "neutral"
+local = "All the gathered $Queen Berries$ have been added up, and we're ready to announce the winners for this year's Festival."
+next = "4"
+
+[harvest_festival_second_place.4]
+speaker = "nora"
+portrait = "happy"
+local = "So without further ado-"
+next = "5"
+
+[harvest_festival_second_place.5]
+speaker = "nora"
+portrait = "think"
+local = "In third place..."
+next = "6"
+
+[harvest_festival_second_place.6]
+speaker = "nora"
+portrait = "happy"
+local = "Maple!"
+next = "7"
+
+[harvest_festival_second_place.7]
+speaker = "maple"
+portrait = "happy"
+local = "I won, I won!"
+next = "8"
+
+[harvest_festival_second_place.8]
+speaker = "maple"
+portrait = "think"
+local = "How much queenly authority does third place get me?"
+next = "9"
+
+[harvest_festival_second_place.9]
+speaker = "josephine"
+portrait = "neutral"
+local = "It means you get an extra large slice of pie, dear."
+next = "10"
+
+[harvest_festival_second_place.10]
+speaker = "maple"
+portrait = "happy"
+local = "Yay!"
+next = "11"
+
+[harvest_festival_second_place.11]
+speaker = "nora"
+portrait = "think"
+local = "And in second place..."
+next = "12"
+
+[harvest_festival_second_place.12]
+speaker = "nora"
+portrait = "happy"
+local = "[Ari]!"
+next = "13"
+
+[harvest_festival_second_place.13]
+speaker = "nora"
+portrait = "think"
+local = "And finally, in first place..."
+next = "14"
+
+[harvest_festival_second_place.14]
+speaker = "nora"
+portrait = "happy"
+local = "Eiland!"
+next = "15"
+
+[harvest_festival_second_place.15]
+speaker = "eiland"
+portrait = "happy"
+local = "Haha, most excellent! $Queen Berry$ treats for all!"
+next = "16"
+
+[harvest_festival_second_place.16]
+speaker = "nora"
+portrait = "neutral"
+local = "Let's all congratulate our winners, without whom this Harvest Festival wouldn't be possible."
+next = "17"
+
+[harvest_festival_second_place.17]
+speaker = "nora"
+portrait = "happy"
+local = "Happy Harvest Festival, everyone!"
+
+[harvest_festival_first_place]
+kind = "gameplay_triggered"
+writes = [
+	{ hf_first_place = true, expires = "3m" },
+	{ harvest_festival_attended = true },
+]
+speaker = "nora"
+portrait = "happy"
+local = "Welcome one and all to the Harvest Festival!"
+next = "1"
+
+[harvest_festival_first_place.1]
+speaker = "nora"
+portrait = "wink"
+local = "Now, before we get to stuffing our faces-"
+next = "2"
+
+[harvest_festival_first_place.2]
+speaker = "holt"
+portrait = "happy"
+local = "Woo!"
+next = "3"
+
+[harvest_festival_first_place.3]
+speaker = "nora"
+portrait = "neutral"
+local = "All the gathered $Queen Berries$ have been added up, and we're ready to announce the winners for this year's Festival."
+next = "4"
+
+[harvest_festival_first_place.4]
+speaker = "nora"
+portrait = "happy"
+local = "So without further ado-"
+next = "5"
+
+[harvest_festival_first_place.5]
+speaker = "nora"
+portrait = "think"
+local = "In third place..."
+next = "6"
+
+[harvest_festival_first_place.6]
+speaker = "nora"
+portrait = "happy"
+local = "Maple!"
+next = "7"
+
+[harvest_festival_first_place.7]
+speaker = "maple"
+portrait = "happy"
+local = "I won, I won!"
+next = "8"
+
+[harvest_festival_first_place.8]
+speaker = "maple"
+portrait = "think"
+local = "How much queenly authority does third place get me?"
+next = "9"
+
+[harvest_festival_first_place.9]
+speaker = "josephine"
+portrait = "neutral"
+local = "It means you get an extra large slice of pie, dear."
+next = "10"
+
+[harvest_festival_first_place.10]
+speaker = "maple"
+portrait = "happy"
+local = "Yay!"
+next = "11"
+
+[harvest_festival_first_place.11]
+speaker = "nora"
+portrait = "think"
+local = "And in second place..."
+next = "12"
+
+[harvest_festival_first_place.12]
+speaker = "nora"
+portrait = "happy"
+local = "Eiland!"
+next = "13"
+
+[harvest_festival_first_place.13]
+speaker = "eiland"
+portrait = "happy"
+local = "Haha, excellent! $Queen Berry$ treats for all!"
+next = "14"
+
+[harvest_festival_first_place.14]
+speaker = "nora"
+portrait = "think"
+local = "And finally, in first place..."
+next = "15"
+
+[harvest_festival_first_place.15]
+speaker = "nora"
+portrait = "happy"
+local = "[Ari]!"
+next = "16"
+
+[harvest_festival_first_place.16]
+speaker = "nora"
+portrait = "neutral"
+local = "Let's all congratulate our winners, without whom this Harvest Festival wouldn't be possible."
+next = "17"
+
+[harvest_festival_first_place.17]
+speaker = "nora"
+portrait = "happy"
+local = "Congratulations, winners! Now, let's all enjoy some good food and dancing!"

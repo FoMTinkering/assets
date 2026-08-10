@@ -1,0 +1,42 @@
+[animal_festival_anticipation]
+refresh = "3m"
+requires = [{ npc = "dozy" }, { animal_festival_date = "3d", time = "before" }]
+portrait = "neutral"
+local = "(Dozy seems excited. Maybe about the upcoming Animal Festival?)"
+
+[animal_festival_0]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "dozy" },
+	{ animal_festival_today = true },
+	{ small_animal_place = "undefined" },
+	{ large_animal_place = "undefined" },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+]
+portrait = "neutral"
+local = "(Dozy seems to be practicing different cool expressions and poses. You probably shouldn't disturb him.)"
+
+[animal_festival_1]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "dozy" },
+	{ animal_festival_today = true },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+]
+portrait = "neutral"
+local = "(Dozy looks like he's having a good time.)"
+
+[animal_festival_dozy_third_place]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "dozy" },
+	{ animal_festival_today = true },
+	{ large_animal_place = 0 },
+]
+portrait = "neutral"
+local = "(Dozy seems happy.)"

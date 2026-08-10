@@ -1,0 +1,152 @@
+[do_a_bro_a_favor_turn_in]
+kind = "gameplay_triggered"
+speaker = "olric"
+portrait = "neutral"
+local = "Thanks for taking my request, [Ari]! Now where did I put that $Pickaxe$..."
+actions = [{ cutscene = "do_a_bro_a_favor" }]
+
+[do_a_bro_a_favor_followup]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ quest_do_a_bro_a_favor_complete = true },
+	{ quest_unlocking_the_mines_pt_1_in_progress = false },
+	{ quest_unlocking_the_mines_pt_1_complete = false },
+	{ quest_unlocking_the_mines_pt_2_in_progress = false },
+	{ quest_unlocking_the_mines_pt_2_complete = false },
+]
+portrait = "neutral"
+local = "Oh? Olric said you should talk to me about the $Mines$, you say?"
+next = "1"
+
+[do_a_bro_a_favor_followup.1]
+portrait = "happy"
+local = "Mistria was once known for them! Rich in $minerals$ and $ores$ of all kinds. I was proud to be the Foreman."
+next = "2"
+
+[do_a_bro_a_favor_followup.2]
+portrait = "think"
+local = "But after the earthquake, that all changed."
+next = "3"
+
+[do_a_bro_a_favor_followup.3]
+portrait = "ugh"
+local = "The Mines were badly damaged, and our $Town Rank$ sunk. That, along with... well..."
+next = "4"
+
+[do_a_bro_a_favor_followup.4]
+portrait = "think"
+local = "Er... Suffice to say, I had to seal them up."
+next = "5"
+
+[do_a_bro_a_favor_followup.5]
+portrait = "neutral"
+local = "My priorities now are building up the $Museum$ and our $Town Rank$."
+next = "6"
+
+[do_a_bro_a_favor_followup.6]
+portrait = "ugh"
+local = "So don't worry yourself about those $Mines$, eh? Some things are better left alone."
+
+[do_a_bro_a_favor]
+kind = "gameplay_triggered"
+speaker = "olric"
+portrait = "neutral"
+local = "Ah, here we are!"
+prompts = [
+	{ local = "So you must be the blacksmith.", next = "1" },
+	{ local = "Wow you're incredibly ripped.", next = "2" },
+]
+
+[do_a_bro_a_favor.1]
+speaker = "olric"
+portrait = "happy"
+effect = "drop"
+local = "Ah haha, I just help out around here. I actually used to be a miner! Then the earthquake hit and we had to close the $Mines$."
+next = "3"
+
+[do_a_bro_a_favor.2]
+speaker = "olric"
+portrait = "happy"
+local = "Aw, thanks for noticing! I used to be a miner, before the earthquake hit and we had to shut down the $Mines$. I just help out around here, my brother is the blacksmith in town."
+next = "3"
+
+[do_a_bro_a_favor.3]
+speaker = "olric"
+portrait = "neutral"
+local = "If you want to know more about the $Mines$, you should talk to $Errol$! He used to be the Mine's Foreman but now he's our Museum Curator. I respect him a lot, he's way chiseled."
+next = "4"
+
+[do_a_bro_a_favor.4]
+speaker = "olric"
+portrait = "happy"
+local = "Oh, that's right! I wanted you to have my old $Pickaxe$! Breaking rocks is a great way of getting toned!"
+next = "5"
+
+[do_a_bro_a_favor.5]
+speaker = "olric"
+portrait = "neutral"
+local = "It's a little old, but should be strong enough to break small rocks. If you want a stronger pickaxe, you'll have to $Forge$ it, or buy one from us here."
+next = "6"
+
+[do_a_bro_a_favor.6]
+speaker = "olric"
+portrait = "happy"
+local = "I'm glad you'll be putting this one to good use."
+next = "7"
+
+[do_a_bro_a_favor.7]
+speaker = "olric"
+portrait = "think"
+local = "These days I help out my little bro March around our family forge! He's a great blacksmith but... uh... He's a little, well, not, like, great with other people-"
+next = "8"
+
+[do_a_bro_a_favor.8]
+speaker = "march"
+portrait = "neutral"
+local = "Olric, are you out here? I need-"
+next = "9"
+
+[do_a_bro_a_favor.9]
+speaker = "march"
+portrait = "unimpressed"
+local = "Huh. What are you doing here?"
+prompts = [
+	{ local = "Hi, March!", next = "10" },
+	{ local = "Don't you keep up? I'm here by special request!", next = "11" },
+]
+
+[do_a_bro_a_favor.10]
+speaker = "march"
+portrait = "neutral"
+local = "Hmph. Well enjoy your \"chitchat\" with my brother, but try not to waste too much of his time. Olric, come to my room when you're done, I need you to look over a blueprint."
+next = "13"
+
+[do_a_bro_a_favor.11]
+speaker = "march"
+portrait = "unimpressed"
+local = "Oh? If getting a handout from my brother counts as a \"special request\" I'm not sure I'd go bragging about it."
+next = "12"
+
+[do_a_bro_a_favor.12]
+speaker = "march"
+portrait = "neutral"
+local = "Olric, come to my room after you're done seeing [Ari] out."
+next = "13"
+
+[do_a_bro_a_favor.13]
+speaker = "olric"
+portrait = "embarrassed"
+local = "Ah ha... sorry. He doesn't mean it."
+next = "14"
+
+[do_a_bro_a_favor.14]
+speaker = "olric"
+portrait = "neutral"
+local = "So um, as for my favor... If you could like, give March a chance, that'd be way cool of you. He doesn't have a lot of friends."
+next = "15"
+
+[do_a_bro_a_favor.15]
+speaker = "olric"
+portrait = "happy"
+local = "I'll talk to you later, [Ari]."

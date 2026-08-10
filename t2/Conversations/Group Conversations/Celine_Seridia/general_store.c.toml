@@ -1,0 +1,69 @@
+[general_store_0]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "seridia" }] },
+	{ celine_zone = "<seridia_zone>" },
+	{ caldarus_seridia_town = true },
+	{ location = "general_store_store", comparator = "!=" }
+]
+speaker = "celine"
+portrait = "sad"
+local = "Seridia, about your last order from the General Store..."
+next = "1"
+
+[general_store_0.1]
+speaker = "celine"
+portrait = "think"
+local = "I think we've misplaced it. I'm sorry!"
+next = "2"
+
+[general_store_0.2]
+speaker = "seridia"
+portrait = "neutral"
+local = "Hm? Oh, no. I simply teleported it directly to my lair when I saw it was ready."
+next = "3"
+
+[general_store_0.3]
+speaker = "celine"
+portrait = "neutral"
+effect = "shock"
+local = "Oh! Oh."
+next = "4"
+
+[general_store_0.4]
+speaker = "celine"
+portrait = "happy"
+effect = "drop"
+local = "So that's... alright then."
+
+[general_store_1]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "seridia" }] },
+	{ celine_zone = "<seridia_zone>" },
+	{ caldarus_seridia_town = true },
+	{ location = "general_store_store" }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "celine" } }]
+speaker = "seridia"
+portrait = "neutral"
+local = "In my draconic state, the contents of this General Store would scarcely be a morning meal."
+next = "1"
+
+[general_store_1.1]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "So be thankful that I have chosen to take this form instead."
+next = "2"
+
+[general_store_1.2]
+speaker = "celine"
+portrait = "think"
+local = "Th... thank you?"
+next = "3"
+
+[general_store_1.3]
+speaker = "celine"
+portrait = "sweat"
+effect = "drop"
+local = "Are you going to buy anything?"

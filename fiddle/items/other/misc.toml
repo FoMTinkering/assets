@@ -1,0 +1,967 @@
+# <---------CRAFTING STATIONS------------->
+
+[woodcrafting_station]
+	description = "A crafting station used to craft furniture and decor of all levels."
+	icon_sprite = "spr_ui_item_crafting_table"
+	name = "Crafting Station"
+	object = "woodcrafting_station"
+	value = { bin = 500 }
+
+[beginner_kitchen]
+	description = "A simple kitchen used for making 1-2 star dishes. Suitable for cooking levels 0-19."
+	icon_sprite = "spr_ui_item_kitchen_tier_1"
+	name = "Level 1 Kitchen"
+	object = "beginner_kitchen"
+	value = { bin = 500 }
+
+[cozy_kitchen]
+	icon_sprite = "spr_ui_item_kitchen_tier_2"
+	description = "An intermediate kitchen used for making 1-3 star dishes. Suitable for cooking levels 0-39."
+	minimum_cooking_level = 15
+	name = "Level 2 Kitchen"
+	object = "cozy_kitchen"
+	value = { bin = 750, store = 1500 }
+
+[adept_kitchen]
+	description = "An expert kitchen used for making 1-5 star dishes. Suitable for cooking levels 0-40+."
+	icon_sprite = "spr_ui_item_kitchen_tier_3"
+	minimum_cooking_level = 30
+	name = "Level 3 Kitchen"
+	object = "adept_kitchen"
+	value = { bin = 1500 }
+
+	# <---------MISC ITEMS------------->
+
+[clay_key]
+	description = "An old clay key which can be used to open clay chests."
+	icon_sprite = "spr_ui_item_clay_key"
+	name = "Clay Key"
+	value = { bin = 25 }
+
+	# <---------BUILDING BLUEPRINTS------------->
+
+[small_coop_red_blueprint]
+	description = "Use this item to place a small red coop construction site on your farm! Requirements to build: 75 wood, 50 stone."
+	icon_sprite = "spr_ui_item_small_coop_red"
+	name = "Small Red Coop Blueprint"
+	value = { store = 1500 }
+	[small_coop_red_blueprint.blueprint]
+		variant = 0
+		blueprint = "small_coop_in_progress"
+		preview_sprite = "spr_placeable_small_coop_red_preview"
+
+[small_coop_black_blueprint]
+	description = "Use this item to place a small white coop construction site on your farm! Requirements to build: 75 wood, 50 stone."
+	icon_sprite = "spr_ui_item_small_coop_black"
+	name = "Small White Coop Blueprint"
+	value = { store = 1500 }
+	[small_coop_black_blueprint.blueprint]
+		variant = 1
+		blueprint = "small_coop_in_progress"
+		preview_sprite = "spr_placeable_small_coop_black_preview"
+
+[medium_coop_red_blueprint]
+	description = "Use this item to place a medium red coop construction site on your farm! Requirements to build: 100 wood, 75 stone."
+	icon_sprite = "spr_ui_item_medium_coop_red"
+	name = "Medium Red Coop Blueprint"
+	value = { store = 3000 }
+	[medium_coop_red_blueprint.blueprint]
+		variant = 0
+		blueprint = "medium_coop_in_progress"
+		preview_sprite = "spr_placeable_medium_coop_red_preview"
+
+[medium_coop_black_blueprint]
+	description = "Use this item to place a medium white coop construction site on your farm! Requirements to build: 100 wood, 75 stone."
+	icon_sprite = "spr_ui_item_medium_coop_black"
+	name = "Medium White Coop Blueprint"
+	value = { store = 3000 }
+	[medium_coop_black_blueprint.blueprint]
+		variant = 1
+		blueprint = "medium_coop_in_progress"
+		preview_sprite = "spr_placeable_medium_coop_black_preview"
+
+[large_coop_red_blueprint]
+	description = "Use this item to place a large red coop construction site on your farm! Requirements to build: 125 wood, 100 stone."
+	icon_sprite = "spr_ui_item_large_coop_red"
+	name = "Large Red Coop Blueprint"
+	value = { store = 6000 }
+	[large_coop_red_blueprint.blueprint]
+		variant = 0
+		blueprint = "large_coop_in_progress"
+		preview_sprite = "spr_placeable_large_coop_red_preview"
+
+[large_coop_black_blueprint]
+	description = "Use this item to place a large white coop construction site on your farm! Requirements to build: 125 wood, 100 stone."
+	icon_sprite = "spr_ui_item_large_coop_black"
+	name = "Large White Coop Blueprint"
+	value = { store = 6000 }
+	[large_coop_black_blueprint.blueprint]
+		variant = 1
+		blueprint = "large_coop_in_progress"
+		preview_sprite = "spr_placeable_large_coop_black_preview"
+
+[small_barn_red_blueprint]
+	description = "Use this item to place a small red barn construction site on your farm! Requirements to build: 100 wood, 75 stone."
+	icon_sprite = "spr_ui_item_small_barn_red"
+	name = "Small Red Barn Blueprint"
+	value = { store = 2000 }
+	[small_barn_red_blueprint.blueprint]
+		variant = 0
+		blueprint = "small_barn_in_progress"
+		preview_sprite = "spr_placeable_small_barn_red_preview"
+
+[small_barn_black_blueprint]
+	description = "Use this item to place a small white barn construction site on your farm! Requirements to build: 100 wood, 75 stone."
+	icon_sprite = "spr_ui_item_small_barn_black"
+	name = "Small White Barn Blueprint"
+	value = { store = 2000 }
+	[small_barn_black_blueprint.blueprint]
+		variant = 1
+		blueprint = "small_barn_in_progress"
+		preview_sprite = "spr_placeable_small_barn_black_preview"
+
+[medium_barn_red_blueprint]
+	description = "Use this item to place a medium red barn construction site on your farm! Requirements to build: 125 wood, 100 stone."
+	icon_sprite = "spr_ui_item_medium_barn_red"
+	name = "Medium Red Barn Blueprint"
+	value = { store = 4000 }
+	[medium_barn_red_blueprint.blueprint]
+		variant = 0
+		blueprint = "medium_barn_in_progress"
+		preview_sprite = "spr_placeable_medium_barn_red_preview"
+
+[medium_barn_black_blueprint]
+	description = "Use this item to place a medium white barn construction site on your farm! Requirements to build: 125 wood, 100 stone."
+	icon_sprite = "spr_ui_item_medium_barn_black"
+	name = "Medium White Barn Blueprint"
+	value = { store = 4000 }
+	[medium_barn_black_blueprint.blueprint]
+		variant = 1
+		blueprint = "medium_barn_in_progress"
+		preview_sprite = "spr_placeable_medium_barn_black_preview"
+
+[large_barn_red_blueprint]
+	description = "Use this item to place a large red barn construction site on your farm! Requirements to build: 150 wood, 125 stone."
+	icon_sprite = "spr_ui_item_large_barn_red"
+	name = "Large Red Barn Blueprint"
+	value = { store = 8000 }
+	[large_barn_red_blueprint.blueprint]
+		variant = 0
+		blueprint = "large_barn_in_progress"
+		preview_sprite = "spr_placeable_large_barn_red_preview"
+
+[large_barn_black_blueprint]
+	description = "Use this item to place a large white barn construction site on your farm! Requirements to build: 150 wood, 125 stone."
+	icon_sprite = "spr_ui_item_large_barn_black"
+	name = "Large White Barn Blueprint"
+	value = { store = 8000 }
+
+	[large_barn_black_blueprint.blueprint]
+		variant = 1
+		blueprint = "large_barn_in_progress"
+		preview_sprite = "spr_placeable_large_barn_black_preview"
+
+[mini_museum_blueprint]
+    name = "Mini Museum Blueprint"
+	description = "Use this to place a Miniature Museum Building construction site on your farm! Requirements: 40 Refined Stone, 40 Hard Wood."
+	icon_sprite = "spr_ui_item_mini_museum"
+	soulbind = "forever"
+
+	[mini_museum_blueprint.blueprint]
+		variant = 0
+		blueprint = "mini_museum_in_progress"
+		preview_sprite = "spr_placeable_mini_museum_preview"
+
+		# <---------BAG UPGRADES------------->
+
+[basic_pouch]
+	name = "Bag Upgrade"
+	description = "Use this item to increase your inventory size by 10 slots!"
+	icon_sprite = "spr_ui_item_basic_pouch"
+	value = { store = 1000 }
+	new_inventory_size = 20
+	soulbind = "forever"
+
+[large_pouch]
+	name = "Bag Upgrade"
+	description = "Use this item to increase your inventory size by 10 slots!"
+	icon_sprite = "spr_ui_item_large_pouch"
+	value = { store = 2000 }
+	new_inventory_size = 30
+	soulbind = "forever"
+
+	# <---------HOLD E TO USE ITEMS------------->
+
+[unidentified_artifact]
+	name = "Unidentified Artifact"
+	description = "A new artifact you do not recognize. Use it to identify what it is!"
+	icon_sprite = "spr_ui_item_unidentified_artifact"
+	soulbind = "forever"
+	tags = ["identify_item"]
+
+[cosmetic]
+	description = "Use this item to unlock the cosmetic to wear!"
+	icon_sprite = "spr_illegal_16"
+	value = { store = 500 }
+	soulbind = "forever"
+	tags = ["blacklist_popup"]
+
+[animal_cosmetic]
+	description = "Use this item to unlock the cosmetic for your animals to wear!"
+	icon_sprite = "spr_illegal_16"
+	value = { store = 500 }
+	soulbind = "forever"
+	tags = ["blacklist_popup"]
+
+[pet_cosmetic]
+	description = "Use this item to unlock the cosmetic for your pets to wear!"
+	icon_sprite = "spr_illegal_16"
+	value = { store = 500 }
+	soulbind = "forever"
+	tags = ["blacklist_popup"]
+
+[purse]
+	name = "Purse of Tesserae"
+	description = "Use this item to collect the money inside!"
+	icon_sprite = "spr_ui_item_bag_of_tesserae"
+	soulbind = "forever"
+	tags = ["purse"]
+
+[recipe_scroll]
+	name = "Recipe: {}"
+	description = "Use this scroll to learn how to cook the following dish: {}."
+	icon_sprite = "spr_ui_item_recipescroll"
+	soulbind = "forever"
+	tags = ["scroll"]
+
+[crafting_scroll]
+	name = "Crafting Scroll: {}"
+	description = "Use this scroll to learn how to craft the following item: {}."
+	icon_sprite = "spr_ui_item_craftingscroll"
+	soulbind = "forever"
+	value = { store = 300 }
+	tags = ["scroll"]
+
+	# <---------TABLET RUBBINGS------------->
+
+[water_tablet_rubbing]
+	description = "A rubbing of the tablet found on the 20th floor of the Mines."
+	name = "Water Tablet Rubbing"
+	soulbind = { quest_is_active = "the_water_tablet" }
+	icon_sprite = "spr_ui_item_water_tablet_rubbing"
+
+[earth_tablet_rubbing]
+	description = "A rubbing of the tablet found on the 40th floor of the Mines."
+	name = "Earth Tablet Rubbing"
+	soulbind = { quest_is_active = "the_earth_tablet" }
+	icon_sprite = "spr_ui_item_earth_tablet_rubbing"
+
+[fire_tablet_rubbing]
+	description = "A rubbing of the tablet found on the 60th floor of the Mines."
+	name = "Fire Tablet Rubbing"
+	soulbind = { quest_is_active = "the_fire_tablet" }
+	icon_sprite = "spr_ui_item_fire_tablet_rubbing"
+
+	# <---------POWER INCERASE ITEMS------------->
+
+[heart_crystal]
+	name = "Heart Crystal"
+	icon_sprite = "spr_ui_item_heart_crystal"
+	description = "This glowing crystal emanates a feeling of power. You feel a yearning to... eat it?"
+	soulbind = "forever"
+	health_modifier = 999
+	max_health_modifier = 20
+
+[stamina_up]
+	name = "Stamina Up"
+	icon_sprite = "spr_ui_item_stamina_potion"
+	description = "This potion is famous for its energy restoration properties. Some even claim it increases your energy permanently!"
+	soulbind = "forever"
+	stamina_modifier = 999
+	max_stamina_modifier = 20
+	tags = ["drink_sound"]
+
+# <-------------------SYRUPS---------------------->
+[fairy_syrup]
+	name = "Fairy Syrup"
+	description = "This medicinal syrup grants a buff for the day that will revive you once when consumed. Tastes like strawberry."
+	icon_sprite = "spr_ui_item_syrup_fairy"
+	default_infusion = "fairy"
+	value = { store = 500 }
+	restore = 0
+	tags = ["drink_sound"]
+
+[restorative_syrup]
+	name = "Restorative Syrup"
+	description = "This medicinal syrup grants you a 2 hour health & stamina regen effect when consumed. Tastes like spearmint."
+	icon_sprite = "spr_ui_item_syrup_restore"
+	value = { store = 500 }
+	default_infusion = "restorative"
+	restore = 0
+	tags = ["drink_sound"]
+
+[heal_syrup]
+	name = "Healing Syrup"
+	description = "This medicinal syrup restores 100 health when consumed. Tastes like cherry."
+	icon_sprite = "spr_ui_item_syrup_health"
+	value = { store = 500 }
+	health_modifier = 100
+	tags = ["drink_sound"]
+
+[speedy_syrup]
+	name = "Speedy Syrup"
+	description = "This medicinal syrup grants a buff that gives you a 2 hour boost to your speed when consumed. Tastes like orange."
+	icon_sprite = "spr_ui_item_syrup_speedy"
+	value = { store = 500 }
+	default_infusion = "speedy"
+	restore = 0
+	tags = ["drink_sound"]
+
+[stamina_syrup]
+	name = "Stamina Syrup"
+	description = "This medicinal syrup restores 100 stamina when consumed. Tastes like peppermint."
+	icon_sprite = "spr_ui_item_syrup_stamina"
+	value = { store = 500 }
+	stamina_modifier = 100
+	tags = ["drink_sound"]
+
+[mana_potion]
+	name = "Mana Potion"
+	description = "This potion restores 1 mana orb when consumed. Tastes like blueberries."
+	icon_sprite = "spr_ui_item_mana_potion"
+	value = { bin = 100 }
+	edible = true
+	mana_modifier = 4
+	tags = ["drink_sound"]
+
+	# <---------ITEMS YOU SHOULD NOT HAVE------------->
+
+# this is worth 1 and dropped mostly by Monsters
+[mob_coin]
+	name = "coin"
+	description = "You shouldn't have this!"
+	icon_sprite = "spr_mob_coin"
+	tags = ["mob_coin"]
+
+# this is 25 (from chests)
+[medium_mob_coin]
+	name = "coin"
+	description = "You shouldn't have this!"
+	icon_sprite = "spr_mob_coin_medium_spring"
+	tags = ["mob_coin"]
+
+# this is 100 (from chests)
+[large_mob_coin]
+	name = "coin"
+	description = "You shouldn't have this!"
+	icon_sprite = "spr_mob_coin_large_spring"
+	tags = ["mob_coin"]
+
+[construction_fence]
+	description = "A simple construction fence."
+	icon_sprite = "spr_ui_item_decor_starter_wood_fence"
+	name = "Construction Fence"
+	value = { bin = 10, store = 20 }
+	object = "construction_fence"
+	tags = []
+
+[world_fountain]
+	name = "World Fountain 20"
+	description = "This shouldn't be visible to you in game!"
+	health_modifier = 20
+	stamina_modifier = 20
+	icon_sprite = "spr_ui_item_stone_cup"
+	tags = ["drink_sound"]
+
+[dungeon_fountain_health]
+	name = "Fountain Health 33"
+	description = "This shouldn't be visible to you in game!"
+	health_modifier = 25
+	stamina_modifier = 25
+	icon_sprite = "spr_ui_item_stone_cup"
+	tags = ["drink_sound"]
+
+[dungeon_fountain_stamina]
+	description = "This shouldn't be visible to you in game!"
+	health_modifier = 0
+	icon_sprite = "spr_ui_item_stone_cup"
+	name = "Fountain Stamina 33"
+	stamina_modifier = 33
+	tags = ["drink_sound"]
+
+[dragonsworn_helmet]
+	name = "Dragonsworn Helmet"
+	icon_sprite = "spr_ui_item_dragonsworn_helmet"
+
+[dragonsworn_greaves]
+	name = "Dragonsworn Greaves"
+	icon_sprite = "spr_ui_item_dragonsworn_greaves"
+
+[unusual_seed]
+	name = "Unusual Seed"
+	description = "Unusual! This shouldn't be in your inventory..."
+	icon_sprite = "spr_ui_item_unusual_seed"
+	value = { bin = 5 }
+
+[stinky_stamina_potion]
+	description = "This shouldn't be in your inventory..."
+	restore = 0
+	icon_sprite = "spr_ui_item_stinkypotion"
+	value = { bin = 1 }
+	tags = ["drink_sound"]
+
+[soup_of_the_day]
+	description = "This shouldn't be in your inventory..."
+	restore = 20
+	icon_sprite = "spr_ui_item_vegetablesoup"
+	name = "Soup of the Day"
+	tags = ["drink_sound"]
+
+[soup_of_the_day_gold]
+	description = "This shouldn't be in your inventory..."
+	restore = 40
+	icon_sprite = "spr_ui_item_vegetablesoup"
+	name = "Soup of the Day Deluxe"
+	tags = ["drink_sound"]
+
+[harvest_day_pie]
+	description = "This shouldn't be in your inventory..."
+	restore = 999
+	stamina_modifier = 999
+	icon_sprite = "spr_ui_item_harvest_plate"
+	name = "Special Pie"
+	tags = ["food"]
+
+[horse_potion]
+	description = "This shouldn't be in your inventory..."
+	icon_sprite = "spr_ui_item_stinkypotion"
+	restore = 0
+	value = { bin = 1 }
+	tags = ["drink_sound"]
+
+[balors_crate]
+	description = "This shouldn't be in your inventory..."
+	icon_sprite = "spr_town_crate_cutscene_spring"
+	value = { bin = 1 }
+	name = "Balor's Crate"
+
+[lurid_colored_drink]
+	description = "This shouldn't be in your inventory..."
+	restore = -1
+	icon_sprite = "spr_ui_item_lurid_colored_drink"
+	value = { bin = 1 }
+	tags = ["drink_sound"]
+
+[dragon_horn_mushroom]
+	description = "Hard to find, but delicious!"
+	restore = 1
+	icon_sprite = "spr_ui_item_dragonshorn"
+	name = "Dragon Horn Mushroom"
+	value = { bin = 80 }
+	tags = ["mushroom"]
+
+[dough_lad_doll]
+	description = "You're not quite sure what this is..."
+	icon_sprite = "spr_ui_item_doughlad"
+	name = "Doughlad Doll"
+	tags = ["junk"]
+
+[ryis_lumber]
+	description = "This shouldn't be in your inventory..."
+	icon_sprite = "spr_prop_lumber_plank_horizontal_medium_spring"
+	value = { bin = 1 }
+	name = "Ryis' Lumber"
+
+[mist_held_item]
+	description = "This shouldn't be in your inventory..."
+	icon_sprite = "spr_illegal_16"
+	value = { bin = 1 }
+	name = "Invalid Item"
+
+[haydens_weathervane]
+	name = "Hayden's Weathervane"
+	description = "The weathervane that blew off of Hayden's barn during the wind storm."
+	icon_sprite = "spr_ui_item_weathervane"
+	soulbind = { quest_is_active = "find_the_weathervane" }
+
+[sealing_scroll]
+	name = "Sealing Scroll"
+	description = "An extremely rare and dangerous magical object. Few remain in this world."
+	icon_sprite = "spr_ui_item_sealing_scroll"
+	soulbind = { quest_is_active = "breaking_the_fire_seal" }
+
+[fake_essence]
+	name = "Essence"
+	description = "Magical power collected from doing various tasks. Used to unlock skill perks and craft magical tools."
+	icon_sprite = "spr_ui_item_essence"                                                                                   # to not render things like sell price
+
+[unknown_item]
+	name = "Unknown Item"
+	description = "An unknown item was saved and failed to load. This can be thrown away."
+	icon_sprite = "spr_illegal_16"
+
+	# CUTSCENE ITEMS
+
+[dragonsworn_chest_and_pants]
+	name = "Dragonsworn Chest and Pants"
+	icon_sprite = "spr_ui_item_dragonsworn_chest_and_pants"
+
+[heros_ring]
+	description = "The legendary hero's ring. Equip to increase defense."
+	defense = 11
+	icon_sprite = "spr_ui_item_equipment_heros_ring"
+	name = "Hero's Ring"
+	tags = ["armor", "accessory", "glow_armor"]
+	soulbind = { seen_cutscene = "adeline_eight_hearts" }
+
+[maples_drawing]
+	name = "Maple's Aldarian Star Drawing"
+	description = "Maple's drawing of the Aldarian Star you and Reina won."
+	value = { bin = 50 }
+	object = "maples_drawing"
+	icon_sprite = "spr_ui_item_decor_maples_drawing"
+	tags = ['furniture']
+
+	#perk related
+
+[abyssal_chest]
+	name = "Abyssal Chest"
+	description = "A chest from the abyss."
+	icon_sprite = "spr_ui_item_abyssal_chest"
+	soulbind = "forever"
+
+	#WHEEDLE ITEMS
+
+[poison_snake_oil]
+	name = "Poison Snake Oil"
+	description = "Imbues the player's sword with venom for 6 hours."
+	icon_sprite = "spr_ui_item_snake_oil_poison"
+	default_infusion = "venom_sword"
+	value = { store = 5000, bin = 2500 }
+	apply_oil = true
+
+[fire_snake_oil]
+	name = "Fire Snake Oil"
+	description = "Imbues the player's sword with fire for 6 hours."
+	icon_sprite = "spr_ui_item_snake_oil_fire"
+	default_infusion = "fire_sword"
+	value = { store = 5000, bin = 2500 }
+	apply_oil = true
+
+[ice_snake_oil]
+	name = "Ice Snake Oil"
+	description = "Imbues the player's sword with ice for 6 hours."
+	icon_sprite = "spr_ui_item_snake_oil_ice"
+	default_infusion = "ice_sword"
+	value = { store = 5000, bin = 2500 }
+	apply_oil = true
+
+[fast_food]
+	name = "Fast Food"
+	description = "A popular new snack from the Capital. Increases your speed by 5% for 6 hours. Can be taken repeatedly up to 300%."
+	icon_sprite = "spr_ui_item_fast_food"
+	value = { store = 5000, bin = 2500 }
+	restore = 0
+	tags = ["drink_sound", "food"]
+	default_infusion = "stacking_speed"
+
+	#GREENHOUSES
+
+[small_greenhouse_white_blueprint]
+	description = "Use this to place a small white greenhouse construction site on your farm! Requirements: 20 Refined Stone, 20 Glass, 20 Hard Wood." # @review I changed this description as it was too long (test was previously not working)
+	icon_sprite = "spr_ui_item_small_greenhouse_white"
+	name = "Small White Greenhouse Blueprint"
+	value = { store = 50000 }
+	[small_greenhouse_white_blueprint.blueprint]
+		variant = 0
+		blueprint = "small_greenhouse_in_progress"
+		preview_sprite = "spr_placeable_small_greenhouse_white_preview"
+
+[small_greenhouse_wood_blueprint]
+	description = "Use this to place a small wood greenhouse construction site on your farm! Requirements: 20 Refined Stone, 20 Glass, 20 Hard Wood." # @review I changed this description as it was too long (test was previously not working)
+	icon_sprite = "spr_ui_item_small_greenhouse_wood"
+	name = "Small Wood Greenhouse Blueprint"
+	value = { store = 50000 }
+	[small_greenhouse_wood_blueprint.blueprint]
+		variant = 1
+		blueprint = "small_greenhouse_in_progress"
+		preview_sprite = "spr_placeable_small_greenhouse_wood_preview"
+
+[large_greenhouse_white_blueprint]
+	description = "Use this to place a large white greenhouse construction site on your farm! Requirements: 40 Refined Stone, 40 Glass, 40 Hard Wood." # @review I changed this description as it was too long (test was previously not working)
+	icon_sprite = "spr_ui_item_large_greenhouse_white"
+	name = "Large White Greenhouse Blueprint"
+	value = { store = 100000 }
+	[large_greenhouse_white_blueprint.blueprint]
+		variant = 0
+		blueprint = "large_greenhouse_in_progress"
+		preview_sprite = "spr_placeable_large_greenhouse_white_preview"
+
+[large_greenhouse_wood_blueprint]
+	description = "Use this to place a large wood greenhouse construction site on your farm! Requirements: 40 Refined Stone, 40 Glass, 40 Hard Wood." # @review I changed this description as it was too long (test was previously not working)
+	icon_sprite = "spr_ui_item_large_greenhouse_wood"
+	name = "Large Wood Greenhouse Blueprint"
+	value = { store = 100000 }
+	[large_greenhouse_wood_blueprint.blueprint]
+		variant = 1
+		blueprint = "large_greenhouse_in_progress"
+		preview_sprite = "spr_placeable_large_greenhouse_wood_preview"
+
+		#Renown Rewards 91-95
+
+[hero_shield_bronze]
+	description = "A decorative bronze champion's shield. Perfect for displaying on your wall."
+	icon_sprite = "spr_ui_item_decor_hero_shield_bronze"
+	name = "Champion's Shield"
+	object = "hero_shield_bronze"
+	value = { bin = "self.recipe * 1.1" }
+	recipe_key = "hero_shield"
+	tags = ["furniture", "wall_hanging", "mistrian_history_set"]
+	crafting_level_requirement = 48
+	recipe = [
+		{ count = 4, item = "copper_ingot" },
+		{ count = 4, item = "crystal" },
+		{ count = 4, item = "monster_shell" },
+		{ hours = 0, minutes = 30 },
+	]
+
+[hero_shield_gold]
+	description = "A decorative gold champion's shield. Perfect for displaying on your wall."
+	icon_sprite = "spr_ui_item_decor_hero_shield_gold"
+	name = "Champion's Shield"
+	object = "hero_shield_gold"
+	value = { bin = "self.recipe * 1.1" }
+	recipe_key = "hero_shield"
+	tags = ["furniture", "wall_hanging", "mistrian_history_set"]
+	crafting_level_requirement = 48
+	recipe = [
+		{ count = 4, item = "gold_ingot" },
+		{ count = 4, item = "crystal" },
+		{ count = 4, item = "monster_shell" },
+		{ hours = 0, minutes = 30 },
+	]
+
+[hero_shield_silver]
+	description = "A decorative silver champion's shield. Perfect for displaying on your wall."
+	icon_sprite = "spr_ui_item_decor_hero_shield_silver"
+	name = "Champion's Shield"
+	object = "hero_shield_silver"
+	value = { bin = "self.recipe * 1.1" }
+	recipe_key = "hero_shield"
+	tags = ["furniture", "wall_hanging", "mistrian_history_set"]
+	crafting_level_requirement = 48
+	recipe = [
+		{ count = 4, item = "silver_ingot" },
+		{ count = 4, item = "crystal" },
+		{ count = 4, item = "monster_shell" },
+		{ hours = 0, minutes = 30 },
+	]
+
+[royal_chest_wood]
+	description = "A wood royal chest with an extra-large storage capacity."
+	icon_sprite = "spr_ui_item_furniture_royal_chest_wood"
+	name = "Royal Chest"
+	object = "royal_chest_wood"
+	value = { bin = "self.recipe * 1.1" }
+	recipe_key = "royal_chest"
+	tags = ["furniture", "chest_and_storage", "mistrian_history_set"]
+	crafting_level_requirement = 54
+	recipe = [
+		{ count = 20, item = "hard_wood" },
+		{ count = 4, item = "gold_ingot" },
+		{ count = 4, item = "ore_diamond" },
+		{ hours = 0, minutes = 30 },
+	]
+
+[royal_chest_dark_wood]
+	description = "A dark wood royal chest with an extra-large storage capacity."
+	icon_sprite = "spr_ui_item_furniture_royal_chest_dark_wood"
+	name = "Royal Chest"
+	object = "royal_chest_dark_wood"
+	value = { bin = "self.recipe * 1.1" }
+	recipe_key = "royal_chest"
+	tags = ["furniture", "chest_and_storage", "mistrian_history_set"]
+	crafting_level_requirement = 54
+	recipe = [
+		{ count = 20, item = "hard_wood" },
+		{ count = 4, item = "gold_ingot" },
+		{ count = 4, item = "ore_diamond" },
+		{ hours = 0, minutes = 30 },
+	]
+
+[royal_chest_red]
+	description = "A red royal chest with an extra-large storage capacity."
+	icon_sprite = "spr_ui_item_furniture_royal_chest_red"
+	name = "Royal Chest"
+	object = "royal_chest_red"
+	value = { bin = "self.recipe * 1.1" }
+	recipe_key = "royal_chest"
+	tags = ["furniture", "chest_and_storage", "mistrian_history_set"]
+	crafting_level_requirement = 54
+	recipe = [
+		{ count = 20, item = "hard_wood" },
+		{ count = 4, item = "gold_ingot" },
+		{ count = 4, item = "ore_diamond" },
+		{ hours = 0, minutes = 30 },
+	]
+
+[royal_chest_blue]
+	description = "A blue royal chest with an extra-large storage capacity."
+	icon_sprite = "spr_ui_item_furniture_royal_chest_blue"
+	name = "Royal Chest"
+	object = "royal_chest_blue"
+	value = { bin = "self.recipe * 1.1" }
+	recipe_key = "royal_chest"
+	tags = ["furniture", "chest_and_storage", "mistrian_history_set"]
+	crafting_level_requirement = 54
+	recipe = [
+		{ count = 20, item = "hard_wood" },
+		{ count = 4, item = "gold_ingot" },
+		{ count = 4, item = "ore_diamond" },
+		{ hours = 0, minutes = 30 },
+	]
+
+[royal_chest_purple]
+	description = "A purple royal chest with an extra-large storage capacity."
+	icon_sprite = "spr_ui_item_furniture_royal_chest_purple"
+	name = "Royal Chest"
+	object = "royal_chest_purple"
+	value = { bin = "self.recipe * 1.1" }
+	recipe_key = "royal_chest"
+	tags = ["furniture", "chest_and_storage", "mistrian_history_set"]
+	crafting_level_requirement = 54
+	recipe = [
+		{ count = 20, item = "hard_wood" },
+		{ count = 4, item = "gold_ingot" },
+		{ count = 4, item = "ore_diamond" },
+		{ hours = 0, minutes = 30 },
+	]
+
+[royal_chest_green]
+	description = "A green royal chest with an extra-large storage capacity."
+	icon_sprite = "spr_ui_item_furniture_royal_chest_green"
+	name = "Royal Chest"
+	object = "royal_chest_green"
+	value = { bin = "self.recipe * 1.1" }
+	recipe_key = "royal_chest"
+	tags = ["furniture", "chest_and_storage", "mistrian_history_set"]
+	crafting_level_requirement = 54
+	recipe = [
+		{ count = 20, item = "hard_wood" },
+		{ count = 4, item = "gold_ingot" },
+		{ count = 4, item = "ore_diamond" },
+		{ hours = 0, minutes = 30 },
+	]
+
+[ruins_tablet_rubbing]
+	description = "A rubbing of the tablet found on the 80th floor of the Mines."
+	name = "Ruins Tablet Rubbing"
+	#soulbind = { quest_is_active = "" }
+	icon_sprite = "spr_ui_item_ruins_tablet_rubbing"
+
+[seed_magic_key]
+	description = "This seed must be planted in the Priestess Chamber Field."
+	crop_object = "magic_key"
+	mini_sprite = "spr_ui_tool_tip_icon_magic_key"
+	icon_sprite = "spr_ui_item_bagseed_balance_icon"
+	sow_sprite = "spr_ui_item_bagseed_balance_mini"
+	name = "Seed of Balance"
+	soulbind.invert.completed_quest = "find_the_magic_key"
+	tags = ["seed"]
+
+[magic_key]
+	description = "This key can be used to unlock the way forward in the Priestess Chambers."
+	icon_sprite = "spr_ui_item_magic_key"
+	name = "Magic Key"
+	soulbind.invert.completed_quest = "find_the_magic_key"
+
+#MAKERS
+[seed_maker]
+	icon_sprite = "spr_ui_item_object_seed_maker"
+	name = "Seed Maker"
+	description = "A Seed Maker that grinds up a crop or foragable and turns it into 1-3 seeds."
+	value = { bin = 1000, store = 2000 }
+	object = "seed_maker"
+
+[forge]
+	description = "A placeable Forge. Used to craft tools and weapons of all levels."
+	icon_sprite = "spr_ui_item_object_forge"
+	name = "Forge"
+	object = "forge"
+	value = { store = 2000, bin = 1000 }
+
+[forge_mistril]
+	description = "A placeable Forge made of mistril. Used to craft tools and weapons of all levels."
+	icon_sprite = "spr_ui_item_object_forge_mistril"
+	name = "Mistril Forge"
+	object = "forge_mistril"
+	value = { bin = "self.recipe*1.1" }
+	recipe_key = "forge_mistril"
+	crafting_preview_sprite = "spr_ui_forge_mistril_preview"
+	crafting_level_requirement = 40
+	recipe = [
+		{ count = 20, item = "refined_stone" },
+		{ count = 8, item = "mistril_ingot" },
+		{ hours = 0, minutes = 20 },
+	]
+	tags = ["furniture", "misc_functional"]
+
+[mini_mill]
+	description = "A placeable Mini-Mill. Used to craft animal products and animal feed. Reduces all milling times to 0."
+	icon_sprite = "spr_ui_item_object_mini_mill"
+	name = "Mini Mill"
+	object = "mini_mill"
+	value = { store = 5000, bin = 2500 }
+
+[auto_feeder]
+	description = "Stores any edible items inside to auto-fill the troughs in coops and barns with corresponding quality feed each morning." # @review, this was too long, shortened it
+	icon_sprite = "spr_ui_item_object_auto_feeder"
+	name = "Auto Feeder"
+	object = "auto_feeder"
+	value = { store = 5000, bin = 2500 }
+
+[perpetual_soup_pot]
+	description = "A cauldron modeled after the one at Sleeping Dragon Inn. If an edible item is placed in it, you can turn it into a hearty soup once per day."
+	icon_sprite = "spr_ui_item_object_perpetual_soup_pot"
+	name = "Perpetual Soup Pot"
+	object = "perpetual_soup_pot"
+	value = { store = 5000, bin = 2500 }
+
+[void_set_scroll_bundle]
+	name = "Void Scroll Bundle"
+	description = "Use this scroll to unlock the crafting recipes for the Void set!"
+	icon_sprite = "spr_ui_item_setscroll_void"
+	soulbind = "forever"
+	set_unlock = "void_set"
+	tags = ["scroll", "blacklist_popup"]
+
+[tesserae_tree]
+	icon_sprite = "spr_ui_item_object_tesserae_tree"
+	name = "Tesserae Tree"
+	description = "A tree that grows tessarae. It can be havested for coins every 3 days!"
+	object = "tesserae_tree"
+	soulbind = "forever"
+	tags = ["furniture"]
+
+# this is 10 (dropped by tesserae tree)
+[tree_coin]
+	name = "coin"
+	description = "You shouldn't have this!"
+	icon_sprite = "spr_mob_coin_tree_main"
+	tags = ["mob_coin"]
+
+[gemstone_bridge_v1]
+	name = "Gemstone Bridge"
+	description = "A placeable stone bridge embellished with multicolored gem stones."
+	icon_sprite = "spr_ui_item_decor_gemstone_bridge_v1"
+	value = { bin = "self.recipe*1.1" }
+	object = "gemstone_bridge_v1"
+	crafting_preview_sprite = "spr_ui_decor_gemstone_bridge_v1_preview"
+	recipe_key = "gemstone_bridge"
+	crafting_level_requirement = 60
+	recipe = [
+		{ count = 50, item = "refined_stone" },
+		{ count = 5, item = "ore_ruby" },
+		{ count = 5, item = "ore_sapphire" },
+		{ count = 5, item = "ore_emerald" },
+		{ count = 5, item = "ore_diamond" },
+		{ count = 5, item = "ore_pink_diamond" },
+		{ hours = 0, minutes = 60 },
+	]
+	tags = ["furniture", "misc_functional"]
+
+[gemstone_bridge_v2]
+	name = "Gemstone Bridge"
+	description = "A placeable stone bridge embellished with multicolored gem stones."
+	icon_sprite = "spr_ui_item_decor_gemstone_bridge_v2"
+	value = { bin = "self.recipe*1.1" }
+	object = "gemstone_bridge_v2"
+	crafting_preview_sprite = "spr_ui_decor_gemstone_bridge_v2_preview"
+	recipe_key = "gemstone_bridge"
+	crafting_level_requirement = 60
+	recipe = [
+		{ count = 50, item = "refined_stone" },
+		{ count = 5, item = "ore_ruby" },
+		{ count = 5, item = "ore_sapphire" },
+		{ count = 5, item = "ore_emerald" },
+		{ count = 5, item = "ore_diamond" },
+		{ count = 5, item = "ore_pink_diamond" },
+		{ hours = 0, minutes = 60 },
+	]
+	tags = ["furniture", "misc_functional"]
+
+[gemstone_bridge_v3]
+	name = "Gemstone Bridge"
+	description = "A placeable stone bridge embellished with multicolored gem stones."
+	icon_sprite = "spr_ui_item_decor_gemstone_bridge_v3"
+	value = { bin = "self.recipe*1.1" }
+	object = "gemstone_bridge_v3"
+	crafting_preview_sprite = "spr_ui_decor_gemstone_bridge_v3_preview"
+	recipe_key = "gemstone_bridge"
+	crafting_level_requirement = 60
+	recipe = [
+		{ count = 50, item = "refined_stone" },
+		{ count = 5, item = "ore_ruby" },
+		{ count = 5, item = "ore_sapphire" },
+		{ count = 5, item = "ore_emerald" },
+		{ count = 5, item = "ore_diamond" },
+		{ count = 5, item = "ore_pink_diamond" },
+		{ hours = 0, minutes = 60 },
+	]
+	tags = ["furniture", "misc_functional"]
+
+[mistril_star_trophy]
+	icon_sprite = "spr_ui_item_decor_mistril_star_trophy"
+	name = "Mistril Star Trophy"
+	description = "A trophy commemorating your achievement of the Mistril Star Town Rank!"
+	object = "mistril_star_trophy"
+	tags = ["furniture", "misc_decor"]
+	soulbind = "forever"
+
+# Marriage and Baby Items
+[engagement_ring_recipe_scroll]
+	name = "Engagement Ring Recipe Scroll"
+	description = "Use this scroll to unlock the crafting recipe for the Engagement Ring!"
+	icon_sprite = "spr_ui_item_craftingscroll_engagement_ring"
+	soulbind = "forever"
+	set_unlock = "engagement_ring_set"
+	tags = ["scroll", "blacklist_popup"]
+
+[engagement_ring]
+    name = "Engagement Ring"
+	description = "Use this item to discuss your future with a romantic partner after reaching 10 Hearts."
+    crafting_level_requirement = 30
+    tags = ["engagement_ring_set", "blacksmithing"]
+	recipe = [
+		{ count = 1, item = "dragon_forged_core" },
+		{ count = 2, item = "ore_diamond" },
+		{ count = 4, item = "mistril_ingot" },
+		{ count = 4, item = "gold_ingot" },
+		{ hours = 0, minutes = 40 },
+	]
+	value = { bin = "self.recipe * 1.1" }
+	icon_sprite = "spr_ui_item_engagement_ring"
+
+[mystical_feather]
+    name = "Mystical Feather"
+	description = "Use this item to discuss starting a family with your spouse."
+	icon_sprite = "spr_ui_item_mystical_feather"
+    soulbind = "forever"
+
+# baby cradle
+
+[baby_cradle]
+    name = "Baby Cradle"
+	description = "Place your baby in this cradle when it's time for them to rest."
+	icon_sprite = "spr_ui_item_object_baby_cradle"
+	object = "baby_cradle"
+    soulbind = "forever"
+
+# fnati 5 item
+
+[lopsided_animal]
+    name = "Lopsided Animal Plush"
+	description = "Even you're not quite sure what animal this is supposed to be."
+	icon_sprite = "spr_ui_item_decor_lopsided_animal"
+	object = "lopsided_animal"
+	value = { bin = 10 }

@@ -1,0 +1,142 @@
+requires = [
+	{ weather = "pleasant" },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+	{ season = "spring" },
+	{ day_of_the_week = "wednesday" }
+]
+
+# caldarus
+[caldarus."6:00am"]
+destination = "haydens_farm/foraging_chat_2"
+
+[caldarus."9:22am"]
+destination = "haydens_farm/foraging_chat_2"
+on_arrival_actions = [{ routine = "haydens_farm_foraging" }]
+
+[caldarus."12:15pm"]
+destination = "haydens_farm/farm_chat_1"
+
+[caldarus."2:23pm"]
+destination = "haydens_farm/statue_1"
+
+[caldarus."5:13pm"]
+destination = "haydens_farm/Observer"
+
+[caldarus."8:32pm"]
+destination = "haydens_house/Table Seat 3"
+on_arrival_actions = [{ activity = "eat" }]
+
+[caldarus."10:52pm"]
+destination = "haydens_house/Haybale Seat 1"
+on_arrival_actions = [{ activity = "drink" }]
+
+# celine
+[celine."6:00am"]
+destination = "haydens_farm/foraging_chat_1"
+
+[celine."9:21am"]
+destination = "haydens_farm/foraging_chat_1"
+on_arrival_actions = [
+	{ outfit = "spring_garden" },
+	{ routine = "haydens_farm_foraging" },
+]
+on_departure_actions = [{ outfit = "spring" }]
+
+[celine."12:34pm"]
+destination = "museum_entry/south_routine_entrance"
+occupy_point = false
+on_arrival_actions = [{ routine = "museum_visit" }]
+
+[celine."5:14pm"]
+destination = "clinic_f1/Bothering Valen"
+on_arrival_writes = [{ clinic_counter = 1, operator = "+=" }]
+on_departure_writes = [{ clinic_counter = 1, operator = "-=" }]
+
+[celine."10:31pm"]
+destination = "celines_room/ArmChair Seat"
+on_arrival_actions = [{ animation = "book_sit" }]
+
+# hayden
+[hayden."6:00am"]
+destination = "beach/fishing_4"
+
+[hayden."8:15am"]
+destination = "beach/Beach Fishing East"
+
+[hayden."10:23am"]
+destination = "haydens_farm/south_west_routine_entrance"
+on_arrival_actions = [{ routine = "hayden_farm_work"}]
+
+[hayden."12:33pm"]
+destination = "haydens_farm/farm_chat_3"
+
+[hayden."2:24pm"]
+destination = "haydens_farm/statue_2"
+
+[hayden."5:12pm"]
+destination = "haydens_farm/statue_2"
+on_arrival_actions = [{ routine = "hayden_farm_work"}]
+
+[hayden."8:21pm"]
+destination = "haydens_house/Table Seat 1"
+on_arrival_actions = [{ activity = "eat" }]
+
+[hayden."10:49pm"]
+destination = "haydens_house/Couch Seat Right"
+on_arrival_actions = [{ activity = "drink" }]
+
+# holt
+[holt."6:00am"]
+destination = "general_store_home/chores_sweep_1"
+on_arrival_actions = [{ routine = "general_store_home_chores" }]
+
+[holt."8:11am"]
+destination = "general_store_store/north_entrance_to_shift"
+on_arrival_actions = [{ routine = "general_store" }]
+
+[holt."5:12pm"]
+destination = "inn/South Table Bottom 2"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[holt."10:39pm"]
+destination = "general_store_home/Armchair"
+on_arrival_actions = [{ activity = "drink" }]
+
+# Valen
+
+[valen."6:00am"]
+destination = "clinic_f2/Valen Wake Point"
+
+[valen."6:10am"]
+destination = "clinic_f1/Research"
+
+[valen."8:25am"]
+destination = "town/North of Fountain"
+on_arrival_actions = [{ animation = "write" }]
+on_arrival_writes = [{ valen_outdoor_work = true }]
+on_departure_writes = [{ valen_outdoor_work = false }]
+
+[valen."11:32am"]
+destination = "inn/North Table Bottom 1"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+
+[valen."4:16pm"]
+destination = "inn/Top-Middle Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[valen."5:42pm"]
+destination = "clinic_f1/Research"
+
+[valen."7:03pm"]
+destination = "clinic_f1/Valen Chatting"
+
+[valen."10:34pm"]
+destination = "clinic_f1/Research"
+
+[valen."12:59am"]
+destination = "clinic_f2/Valen Wake Point"

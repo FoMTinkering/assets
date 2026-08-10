@@ -1,0 +1,53 @@
+[cute_cottage]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "holt" }, { npc = "nora" }] },
+	{ celine_zone = "<holt_zone>" },
+	{ celine_zone = "<nora_zone>" },
+	{ location = "celines_room" },
+	{ celine_activity = "eat", comparator = "!=" },
+	{ holt_activity = "eat", comparator = "!=" },
+	{ nora_activity = "eat", comparator = "!=" },
+	{ date_time = "2y", comparator = "<" }
+]
+speaker = "nora"
+portrait = "happy"
+local = "I was worried when you first moved out, Celine, but your cottage is so cute. And very you, with the ivy growing all over. It's wonderful."
+next = "1"
+
+[cute_cottage.1]
+speaker = "holt"
+portrait = "neutral"
+local = "You should have us over for dinner some time! We can even help you cook something up!"
+next = "2"
+
+[cute_cottage.2]
+speaker = "celine"
+portrait = "happy"
+effect = "sparkles"
+local = "Oh, that would be so fun! We can use ingredients from my garden!"
+
+[cute_cottage_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "holt" }, { npc = "nora" }] },
+	{ celine_zone = "<holt_zone>" },
+	{ celine_zone = "<nora_zone>" },
+	{ location = "celines_room" },
+]
+speaker = "holt"
+portrait = "neutral"
+local = "I'm proud of you, sweetheart! You've really made this cottage into a happy home. And look at all those nice plants!"
+next = "1"
+
+[cute_cottage_2.1]
+speaker = "nora"
+portrait = "happy"
+local = "I can tell your father is impressed because he didn't sneak a pun in there. That's basically the same as being speechless."
+next = "2"
+
+[cute_cottage_2.2]
+speaker = "celine"
+portrait = "happy"
+effect = "cheery"
+local = "Haha! I'm so glad you both like it!"

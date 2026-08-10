@@ -1,0 +1,131 @@
+[wagon_0]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "caldarus" }, { npc = "elsie" }] },
+	{ balor_zone = "<caldarus_zone>" },
+	{ balor_zone = "<elsie_zone>" },
+	{ caldarus_seridia_town = true },
+	{ balor_zone = "town/wagon" }
+]
+actions = [
+	{ bark = { bark = "sweat_drop", npc = "balor" } },
+	{ bark = { bark = "cute_face", npc = "caldarus" } }
+]
+speaker = "caldarus"
+portrait = "sigh"
+local = "Balor, I have decided that I must learn the art of negotiation, and I can think of no one better to teach me."
+next = "1"
+
+[wagon_0.1]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Do you have any wisdom to share?"
+next = "2"
+
+[wagon_0.2]
+speaker = "balor"
+portrait = "sly"
+local = "A good merchant always makes the first offer. That anchors a negotiation."
+next = "3"
+
+[wagon_0.3]
+speaker = "elsie"
+portrait = "wink"
+local = "I've seen this happen many times in high society, as well. Setting the terms of a conversation is a subtle but powerful tool."
+next = "4"
+
+[wagon_0.4]
+speaker = "caldarus"
+portrait = "smile"
+local = "I see. Then, for practice, I will negotiate for this piece of fiber in your store, Balor. I offer you... two diamonds!"
+next = "5"
+
+[wagon_0.5]
+speaker = "elsie"
+portrait = "embarrassed"
+local = "Oh!"
+next = "6"
+
+[wagon_0.6]
+speaker = "balor"
+portrait = "happy"
+effect = "drop"
+local = "Maybe we should start from the basics..."
+
+[wagon_1]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "caldarus" }, { npc = "elsie" }] },
+	{ balor_zone = "<caldarus_zone>" },
+	{ balor_zone = "<elsie_zone>" },
+	{ caldarus_seridia_town = true },
+	{ balor_zone = "town/wagon" }
+]
+speaker = "elsie"
+portrait = "neutral"
+local = "Doing some shopping, Caldarus?"
+next = "1"
+
+[wagon_1.1]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Yes. When I was recovering in the Deep Woods, Balor was kind enough to fill my anonymous orders with no questions asked."
+next = "2"
+
+[wagon_1.2]
+speaker = "caldarus"
+portrait = "smile"
+local = "He earned himself a loyal customer."
+next = "3"
+
+[wagon_1.3]
+speaker = "balor"
+portrait = "wink"
+local = "I can't help but give a hand to a poor soul in need! Especially not one that pays so well!"
+
+[wagon_2]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "caldarus" }, { npc = "elsie" }] },
+	{ balor_zone = "<caldarus_zone>" },
+	{ balor_zone = "<elsie_zone>" },
+	{ caldarus_seridia_town = true },
+]
+actions = [
+	{ bark = { bark = "sweat_drop", npc = "balor" } },
+	{ bark = { bark = "cute_face", npc = "caldarus" } },
+	{ bark = { bark = "sweat_drop", npc = "elsie" } }
+]
+speaker = "balor"
+portrait = "think"
+local = "Caldarus, if I hadn't been filling your mystery orders and leaving your care packages..."
+next = "1"
+
+[wagon_2.1]
+speaker = "balor"
+portrait = "sad"
+local = "What would you have done?"
+next = "2"
+
+[wagon_2.2]
+speaker = "caldarus"
+portrait = "think"
+local = "Well... I suppose I would have starved."
+next = "3"
+
+[wagon_2.3]
+speaker = "elsie"
+portrait = "sad"
+local = "Oh! But [Ari] was there!"
+next = "4"
+
+[wagon_2.4]
+speaker = "caldarus"
+portrait = "neutral"
+local = "That is true, but Elsie..."
+next = "5"
+
+[wagon_2.5]
+speaker = "caldarus"
+portrait = "sigh"
+local = "Despite what you may have heard, dragons do not eat people."

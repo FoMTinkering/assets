@@ -1,0 +1,23 @@
+[odd_jobs]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "olric" }] },
+	{ balor_zone = "<olric_zone>" },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "I've noticed that you work a lot of odd jobs around town, Olric. Very enterprising of you. Have any clicked for you?"
+next = "1"
+
+[odd_jobs.1]
+speaker = "olric"
+portrait = "neutral"
+local = "All of them, man! It's so fun seeing all the different jobs in Mistria."
+next = "2"
+
+[odd_jobs.2]
+speaker = "olric"
+portrait = "wink"
+effect = "sparkles"
+local = "March says I'm an Olric of all trades!"

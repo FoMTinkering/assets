@@ -1,0 +1,109 @@
+[inn_work]
+refresh = "never"
+requires = [
+	{ npc = "olric" },
+	{ olric_routine = "inn_olric" },
+	{ olric_was_last_spoken_to = "6h", time = "after", comparator = ">" }
+]
+portrait = "wink"
+local = "Hey [Ari]! Surprised to see me working here? I'm their favorite part-timer!"
+
+[inn_work_1]
+refresh = "1y"
+requires = [{ npc = "olric" }, { olric_routine = "inn_olric" }]
+portrait = "wink"
+local = "I'm working at the Inn part-time, [Ari]! Let me know if I can get you anything."
+next = "1"
+
+[inn_work_1.1]
+portrait = "think"
+local = "Hemlock says I make a mean bowl of peanuts."
+
+[inn_work_2]
+refresh = "1y"
+requires = [{ npc = "olric" }, { olric_routine = "inn_olric" }, { ari_utero = false }]
+portrait = "happy"
+local = "What can I get you, [Ari]? We got drinks, hot drinks and hot soup!"
+next = "1"
+
+[inn_work_2.1]
+portrait = "think"
+local = "Which is kind of a drink too, if you think about it... woah."
+
+[inn_work_3]
+refresh = "1y"
+requires = [{ npc = "olric" }, { olric_routine = "inn_olric" }]
+portrait = "neutral"
+local = "Take a look at the menu and let me know if you want anything!"
+next = "1"
+
+[inn_work_3.1]
+portrait = "wink"
+effect = "sparkles"
+local = "I can personally recommend the... everything!"
+
+[inn_work_4]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ olric_routine = "inn_olric" },
+	{ olric_heart_level = 4, comparator = ">=" },
+	{ olric_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ ari_utero = false }
+]
+portrait = "wink"
+local = "Oh, hey [Ari]! I'm on shift, so let me know if you want a meal, a drink, or a high five!"
+
+[inn_work_5]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ olric_routine = "inn_olric" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "neutral"
+local = "Hemlock said I have to behave professionally when I'm working an inn shift."
+next = "1"
+
+[inn_work_5.1]
+portrait = "think"
+local = "I'm doing my best, but these push-ups are going to need to come out at some point."
+
+[inn_work_6]
+refresh = "1y"
+requires = [{ npc = "olric" }, { olric_routine = "inn_olric" }]
+portrait = "happy"
+local = "You hungry? We got food."
+next = "1"
+
+[inn_work_6.1]
+portrait = "think"
+local = "Like... so much food!"
+
+[inn_work_7]
+refresh = "1y"
+requires = [{ npc = "olric" }, { olric_routine = "inn_olric" }]
+portrait = "happy"
+effect = "cheery"
+local = "The Sleeping Dragon Inn welcomes you to Mistria, esteemed guest!"
+next = "1"
+
+[inn_work_7.1]
+portrait = "neutral"
+local = "Oh, it's you [Ari]! You live here!"
+
+[inn_work_8]
+refresh = "2m"
+requires = [{ npc = "olric" }, { olric_routine = "inn_olric" }]
+portrait = "happy"
+local = "[Ari]! You're here, nice. Let me know if I can get you anything, okay?"
+
+[inn_work_9]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ olric_routine = "inn_olric" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "happy"
+local = "It's nice to do all these different jobs around town... it really helps me understand what everyone is all about."

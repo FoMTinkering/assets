@@ -1,0 +1,47 @@
+[manor_house_dinner]
+refresh = "never"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "balor" },
+		{ npc = "eiland" },
+		{ npc = "elsie" },
+	] },
+	{ adeline_zone = "<balor_zone>" },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "<elsie_zone>" },
+	{ any = [{ adeline_activity = "eat" }, { adeline_activity = "drink" }] },
+	{ any = [{ balor_activity = "eat" }, { balor_activity = "drink" }] },
+	{ any = [{ eiland_activity = "eat" }, { eiland_activity = "drink" }] },
+	{ any = [{ elsie_activity = "eat" }, { elsie_activity = "drink" }] },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ location = "manor_house_dining_room" }
+]
+speaker = "balor"
+portrait = "wink"
+local = "And that's the story of how I won a most dangerous game of cards, with my very life on the line."
+next = "1"
+
+[manor_house_dinner.1]
+speaker = "adeline"
+portrait = "neutral"
+local = "That was so exciting!"
+next = "2"
+
+[manor_house_dinner.2]
+speaker = "adeline"
+portrait = "sigh"
+local = "And stressful."
+next = "3"
+
+[manor_house_dinner.3]
+speaker = "eiland"
+portrait = "ugh"
+local = "So stressful!"
+next = "4"
+
+[manor_house_dinner.4]
+speaker = "elsie"
+portrait = "happy"
+effect = "sparkles"
+local = "What a tale! We should have you over for dinner more often, Balor."

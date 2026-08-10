@@ -1,0 +1,653 @@
+[default]
+	hp = 1
+	damage = 0
+	essence = 0
+	drops = []
+	death_explosion_count = -1
+	death_explosion_angle = -1
+	death_explosion_speed = -1
+	death_explosion_delay = -1
+	attack_sequence = 1
+	attack_sequence_turn = -1
+	attack_sequence_image_speed = -1
+	attack_legion = 1
+	attack_radial_degree = 0
+	coin_count = [1, 3]
+
+	starting_dir = [180, 360]
+
+	damage_number_offset = -12
+
+	iframes = 0
+	gm_object = "obj_monster_clod"
+	hurtbox = "spr_monster_rockclod_hurtbox"
+	bomb_sprite = "spr_monster_rockclod_projectile_bomb_main"
+	bomb_sprite_fx = "spr_fx_monster_rockclod_bomb_explosion"
+
+	collision_default = "spr_monster_clod_projectile_collisionbox"
+	collision_jump = "spr_monster_clod_projectile_collisionbox_jump"
+
+	speed = 0.6
+	projectile_speed = 1.8
+	launcher = false
+	launch_speed = 0
+	reflect_speed = 1
+
+	patience_acknowledgement_reset = -120
+	attack_radius = 96
+	aggro_radius = 384
+	use_circle = true
+
+	knockback_multiplier = 4
+	knockback_friction = 0.88
+
+	windup = [4, 6]
+	acknowledgment = [45, 55]
+	tired = [55, 200]
+	hurt = [24, 32]
+
+	# physics
+	push_radius = 4
+	push_force = 0.25
+	pushed_radius = 7
+
+	sprites = { misc = {} }
+
+	split_angle = -1
+	split_distance = -1
+	split_depth = -1
+	split_speed = 1.8
+	split_depreciation = -1
+
+	bomber = false
+	bomb_ammo = 0
+	bomb_chance = 0
+	bomb_radius = 0
+	bomb_stall = 0
+	bomb_delay = 0
+	# if a rock doesn't fire a bomb, lets gurantee it after 2 shots
+	bomb_force_limit = 0
+	bomb_projectile_speed = 0
+	jump_speed = 0
+	jump_gravity = 0
+	jump_cap = 0
+
+	status_effect_offset = -14
+	fire_effect_offset = -7
+
+	[default.tango]
+		acknowledgment = "SoundEffects/Enemies/EnemyAlerted"
+		walk = "SoundEffects/Enemies/Rockclod/Hop"
+		windup = "SoundEffects/Enemies/Rockclod/ProjectileChargeUp"
+		attack = "SoundEffects/Enemies/Rockclod/ProjectileSpit"
+		dying = "SoundEffects/Enemies/Rockclod/Die"
+		misc.hit_by_projectile = "SoundEffects/Enemies/Rockclod/HitByProjectile"
+		misc.projectile_break = "SoundEffects/Enemies/Rockclod/ProjectileBreak"
+		misc.projectile_reflect = "SoundEffects/Tools/SwordReflectProjectile"
+		misc.weak_damage = "SoundEffects/Enemies/TakeDamageRockWeak"
+		misc.strong_damage = "SoundEffects/Enemies/TakeDamageRockStrong"
+		misc.death = "SoundEffects/Enemies/Rockclod/Die"
+
+[rockclod]
+	hp = 8
+	damage = 10 # copper_sword = 20
+	essence = 5
+	coin_count = [1, 5]
+	drops = [
+		{ item = "ore_stone", chance = 70, count_range = [1, 2] },
+		{ item = "monster_shell", chance = 30, count_range = [1, 1] },
+		{ cosmetic = "head_rockclod_hat", chance = 5 },
+		{ item = "pet_skin_rockclod", chance = 5 },
+	]
+	[rockclod.sprites]
+		idle.north = "spr_monster_rockclod_main_idle_north"
+		idle.east = "spr_monster_rockclod_main_idle_east"
+		idle.south = "spr_monster_rockclod_main_idle_south"
+
+		acknowledgment.north = "spr_monster_rockclod_main_alert_north"
+		acknowledgment.east = "spr_monster_rockclod_main_alert_east"
+		acknowledgment.south = "spr_monster_rockclod_main_alert_south"
+
+		walk.north = "spr_monster_rockclod_main_walk_north"
+		walk.east = "spr_monster_rockclod_main_walk_east"
+		walk.south = "spr_monster_rockclod_main_walk_south"
+
+		windup.north = "spr_monster_rockclod_main_windup_north"
+		windup.east = "spr_monster_rockclod_main_windup_east"
+		windup.south = "spr_monster_rockclod_main_windup_south"
+
+		attack.north = "spr_monster_rockclod_main_attack_north"
+		attack.east = "spr_monster_rockclod_main_attack_east"
+		attack.south = "spr_monster_rockclod_main_attack_south"
+
+		tired.north = "spr_monster_rockclod_main_idle_north"
+		tired.east = "spr_monster_rockclod_main_idle_east"
+		tired.south = "spr_monster_rockclod_main_idle_south"
+
+		hurt.north = "spr_monster_rockclod_main_hurt_north"
+		hurt.east = "spr_monster_rockclod_main_hurt_east"
+		hurt.south = "spr_monster_rockclod_main_hurt_south"
+
+		dying.north = "spr_monster_rockclod_main_death_south"
+		dying.east = "spr_monster_rockclod_main_death_east"
+		dying.south = "spr_monster_rockclod_main_death_south"
+
+		misc.projectile = "spr_monster_rockclod_projectile_main"
+		misc.rock_particle = "spr_part_rockclod_projectile"
+
+		flying.north = "spr_monster_ironclod_main_walk_north"
+		flying.east = "spr_monster_ironclod_main_walk_east"
+		flying.south = "spr_monster_ironclod_main_walk_south"
+
+[copperclod]
+	hp = 16
+	damage = 12 # copper = 20
+	essence = 5
+	coin_count = [1, 5]
+	drops = [
+		{ item = "ore_copper", chance = 70, count_range = [1, 3] },
+		{ item = "monster_shell", chance = 25, count_range = [1, 1] },
+		{ item = "ore_ruby", chance = 5, count_range = [1, 1] },
+		{ cosmetic = "head_oreclod_hat", chance = 5 },
+		{ item = "pet_skin_oreclod", chance = 5 },
+	]
+	attack_legion = 2
+
+	[copperclod.sprites]
+		idle.north = "spr_monster_copperclod_main_idle_north"
+		idle.east = "spr_monster_copperclod_main_idle_east"
+		idle.south = "spr_monster_copperclod_main_idle_south"
+
+		acknowledgment.north = "spr_monster_copperclod_main_alert_north"
+		acknowledgment.east = "spr_monster_copperclod_main_alert_east"
+		acknowledgment.south = "spr_monster_copperclod_main_alert_south"
+
+		walk.north = "spr_monster_copperclod_main_walk_north"
+		walk.east = "spr_monster_copperclod_main_walk_east"
+		walk.south = "spr_monster_copperclod_main_walk_south"
+
+		windup.north = "spr_monster_copperclod_main_windup_north"
+		windup.east = "spr_monster_copperclod_main_windup_east"
+		windup.south = "spr_monster_copperclod_main_windup_south"
+
+		attack.north = "spr_monster_copperclod_main_attack_north"
+		attack.east = "spr_monster_copperclod_main_attack_east"
+		attack.south = "spr_monster_copperclod_main_attack_south"
+
+		tired.north = "spr_monster_copperclod_main_idle_north"
+		tired.east = "spr_monster_copperclod_main_idle_east"
+		tired.south = "spr_monster_copperclod_main_idle_south"
+
+		hurt.north = "spr_monster_copperclod_main_hurt_north"
+		hurt.east = "spr_monster_copperclod_main_hurt_east"
+		hurt.south = "spr_monster_copperclod_main_hurt_south"
+
+		dying.north = "spr_monster_copperclod_main_death_south"
+		dying.east = "spr_monster_copperclod_main_death_east"
+		dying.south = "spr_monster_copperclod_main_death_south"
+
+		misc.projectile = "spr_monster_copperclod_projectile_main"
+		misc.rock_particle = "spr_part_copperclod_projectile"
+
+		flying.north = "spr_monster_ironclod_main_walk_north"
+		flying.east = "spr_monster_ironclod_main_walk_east"
+		flying.south = "spr_monster_ironclod_main_walk_south"
+
+[rockclod_blue]
+	hp = 16
+	damage = 12 # 20, iron == 30
+	essence = 10
+	coin_count = [2, 6]
+	drops = [
+		{ item = "ore_stone", chance = 70, count_range = [2, 4] },
+		{ item = "monster_shell", chance = 30, count_range = [1, 2] },
+		{ cosmetic = "head_rockclod_hat", chance = 5 },
+		{ item = "pet_skin_rockclod", chance = 5 },
+	]
+	attack_sequence = 2
+	projectile_speed = 2.0
+
+	[rockclod_blue.sprites]
+		idle.north = "spr_monster_rockclod_blue_main_idle_north"
+		idle.east = "spr_monster_rockclod_blue_main_idle_east"
+		idle.south = "spr_monster_rockclod_blue_main_idle_south"
+
+		acknowledgment.north = "spr_monster_rockclod_blue_main_alert_north"
+		acknowledgment.east = "spr_monster_rockclod_blue_main_alert_east"
+		acknowledgment.south = "spr_monster_rockclod_blue_main_alert_south"
+
+		walk.north = "spr_monster_rockclod_blue_main_walk_north"
+		walk.east = "spr_monster_rockclod_blue_main_walk_east"
+		walk.south = "spr_monster_rockclod_blue_main_walk_south"
+
+		windup.north = "spr_monster_rockclod_blue_main_windup_north"
+		windup.east = "spr_monster_rockclod_blue_main_windup_east"
+		windup.south = "spr_monster_rockclod_blue_main_windup_south"
+
+		attack.north = "spr_monster_rockclod_blue_main_attack_north"
+		attack.east = "spr_monster_rockclod_blue_main_attack_east"
+		attack.south = "spr_monster_rockclod_blue_main_attack_south"
+
+		tired.north = "spr_monster_rockclod_blue_main_idle_north"
+		tired.east = "spr_monster_rockclod_blue_main_idle_east"
+		tired.south = "spr_monster_rockclod_blue_main_idle_south"
+
+		hurt.north = "spr_monster_rockclod_blue_main_hurt_north"
+		hurt.east = "spr_monster_rockclod_blue_main_hurt_east"
+		hurt.south = "spr_monster_rockclod_blue_main_hurt_south"
+
+		dying.north = "spr_monster_rockclod_blue_main_death_south"
+		dying.east = "spr_monster_rockclod_blue_main_death_east"
+		dying.south = "spr_monster_rockclod_blue_main_death_south"
+
+		misc.projectile = "spr_monster_rockclod_blue_projectile_main"
+		misc.rock_particle = "spr_part_rockclod_blue_projectile"
+
+		flying.north = "spr_monster_ironclod_main_walk_north"
+		flying.east = "spr_monster_ironclod_main_walk_east"
+		flying.south = "spr_monster_ironclod_main_walk_south"
+
+[ironclod]
+	hp = 32
+	damage = 17
+	essence = 15
+	coin_count = [2, 6]
+	drops = [
+		{ item = "ore_iron", chance = 70, count_range = [1, 3] },
+		{ item = "monster_shell", chance = 25, count_range = [1, 2] },
+		{ item = "ore_sapphire", chance = 5, count_range = [1, 1] },
+		{ cosmetic = "head_oreclod_hat", chance = 5 },
+		{ item = "pet_skin_oreclod", chance = 5 },
+	]
+	attack_radial_degree = 45
+	projectile_speed = 2.0
+
+	[ironclod.sprites]
+		idle.north = "spr_monster_ironclod_main_idle_north"
+		idle.east = "spr_monster_ironclod_main_idle_east"
+		idle.south = "spr_monster_ironclod_main_idle_south"
+
+		acknowledgment.north = "spr_monster_ironclod_main_alert_north"
+		acknowledgment.east = "spr_monster_ironclod_main_alert_east"
+		acknowledgment.south = "spr_monster_ironclod_main_alert_south"
+
+		walk.north = "spr_monster_ironclod_main_walk_north"
+		walk.east = "spr_monster_ironclod_main_walk_east"
+		walk.south = "spr_monster_ironclod_main_walk_south"
+
+		windup.north = "spr_monster_ironclod_main_windup_north"
+		windup.east = "spr_monster_ironclod_main_windup_east"
+		windup.south = "spr_monster_ironclod_main_windup_south"
+
+		attack.north = "spr_monster_ironclod_main_attack_north"
+		attack.east = "spr_monster_ironclod_main_attack_east"
+		attack.south = "spr_monster_ironclod_main_attack_south"
+
+		tired.north = "spr_monster_ironclod_main_idle_north"
+		tired.east = "spr_monster_ironclod_main_idle_east"
+		tired.south = "spr_monster_ironclod_main_idle_south"
+
+		hurt.north = "spr_monster_ironclod_main_hurt_north"
+		hurt.east = "spr_monster_ironclod_main_hurt_east"
+		hurt.south = "spr_monster_ironclod_main_hurt_south"
+
+		dying.north = "spr_monster_ironclod_main_death_south"
+		dying.east = "spr_monster_ironclod_main_death_east"
+		dying.south = "spr_monster_ironclod_main_death_south"
+
+		misc.projectile = "spr_monster_ironclod_projectile_main"
+		misc.rock_particle = "spr_part_ironclod_projectile"
+
+		flying.north = "spr_monster_ironclod_main_walk_north"
+		flying.east = "spr_monster_ironclod_main_walk_east"
+		flying.south = "spr_monster_ironclod_main_walk_south"
+
+[rockclod_green]
+	hp = 32
+	damage = 24
+	essence = 15
+	coin_count = [4, 8]
+	launcher = true
+	launch_speed = 2
+	launch_friction = 0.97
+	launch_cancel_threshold = 0.5
+	jump_speed = -2
+	jump_gravity = 0.1
+	jump_cap = -12
+	reflect_speed = 3
+	drops = [
+		{ item = "ore_stone", chance = 70, count_range = [4, 6] },
+		{ item = "monster_shell", chance = 30, count_range = [1, 3] },
+		{ cosmetic = "head_rockclod_hat", chance = 5 },
+		{ item = "pet_skin_rockclod", chance = 5 },
+	]
+	projectile_speed = 2.0
+
+	[rockclod_green.sprites]
+		idle.north = "spr_monster_rockclod_green_main_idle_north"
+		idle.east = "spr_monster_rockclod_green_main_idle_east"
+		idle.south = "spr_monster_rockclod_green_main_idle_south"
+
+		acknowledgment.north = "spr_monster_rockclod_green_main_alert_north"
+		acknowledgment.east = "spr_monster_rockclod_green_main_alert_east"
+		acknowledgment.south = "spr_monster_rockclod_green_main_alert_south"
+
+		walk.north = "spr_monster_rockclod_green_main_walk_north"
+		walk.east = "spr_monster_rockclod_green_main_walk_east"
+		walk.south = "spr_monster_rockclod_green_main_walk_south"
+
+		windup.north = "spr_monster_rockclod_green_main_windup_north"
+		windup.east = "spr_monster_rockclod_green_main_windup_east"
+		windup.south = "spr_monster_rockclod_green_main_windup_south"
+
+		attack.north = "spr_monster_rockclod_green_main_attack_north"
+		attack.east = "spr_monster_rockclod_green_main_attack_east"
+		attack.south = "spr_monster_rockclod_green_main_attack_south"
+
+		tired.north = "spr_monster_rockclod_green_main_idle_north"
+		tired.east = "spr_monster_rockclod_green_main_idle_east"
+		tired.south = "spr_monster_rockclod_green_main_idle_south"
+
+		hurt.north = "spr_monster_rockclod_green_main_hurt_north"
+		hurt.east = "spr_monster_rockclod_green_main_hurt_east"
+		hurt.south = "spr_monster_rockclod_green_main_hurt_south"
+
+		dying.north = "spr_monster_rockclod_green_main_death_south"
+		dying.east = "spr_monster_rockclod_green_main_death_east"
+		dying.south = "spr_monster_rockclod_green_main_death_south"
+
+		misc.projectile = "spr_monster_rockclod_green_projectile_main"
+		misc.rock_particle = "spr_part_rockclod_green_projectile"
+		misc.fall = "spr_monster_rockclod_green_main_falling_death_south"
+
+		flying.north = "spr_monster_rockclod_green_main_flying_attack_north"
+		flying.east = "spr_monster_rockclod_green_main_flying_attack_east"
+		flying.south = "spr_monster_rockclod_green_main_flying_attack_south"
+
+[silverclod]
+	hp = 48
+	damage = 22
+	essence = 15
+	coin_count = [4, 8]
+	tired = [120, 180]
+
+	drops = [
+		{ item = "ore_silver", chance = 70, count_range = [1, 3] },
+		{ item = "monster_shell", chance = 25, count_range = [1, 3] },
+		{ item = "ore_emerald", chance = 5, count_range = [1, 1] },
+		{ cosmetic = "head_oreclod_hat", chance = 5 },
+		{ item = "pet_skin_oreclod", chance = 5 },
+	]
+
+	bomber = true
+	bomb_radius = 64
+	bomb_ammo = 2
+	bomb_chance = 40
+	bomb_force_limit = 2
+	bomb_projectile_speed = 1.5
+	bomb_stall = 90
+	bomb_delay = 4
+	projectile_speed = 2.0
+
+	[silverclod.sprites]
+		idle.north = "spr_monster_silverclod_main_idle_north"
+		idle.east = "spr_monster_silverclod_main_idle_east"
+		idle.south = "spr_monster_silverclod_main_idle_south"
+
+		acknowledgment.north = "spr_monster_silverclod_main_alert_north"
+		acknowledgment.east = "spr_monster_silverclod_main_alert_east"
+		acknowledgment.south = "spr_monster_silverclod_main_alert_south"
+
+		walk.north = "spr_monster_silverclod_main_walk_north"
+		walk.east = "spr_monster_silverclod_main_walk_east"
+		walk.south = "spr_monster_silverclod_main_walk_south"
+
+		windup.north = "spr_monster_silverclod_main_windup_north"
+		windup.east = "spr_monster_silverclod_main_windup_east"
+		windup.south = "spr_monster_silverclod_main_windup_south"
+
+		attack.north = "spr_monster_silverclod_main_attack_north"
+		attack.east = "spr_monster_silverclod_main_attack_east"
+		attack.south = "spr_monster_silverclod_main_attack_south"
+
+		tired.north = "spr_monster_silverclod_main_idle_north"
+		tired.east = "spr_monster_silverclod_main_idle_east"
+		tired.south = "spr_monster_silverclod_main_idle_south"
+
+		hurt.north = "spr_monster_silverclod_main_hurt_north"
+		hurt.east = "spr_monster_silverclod_main_hurt_east"
+		hurt.south = "spr_monster_silverclod_main_hurt_south"
+
+		dying.north = "spr_monster_silverclod_main_death_south"
+		dying.east = "spr_monster_silverclod_main_death_east"
+		dying.south = "spr_monster_silverclod_main_death_south"
+
+		misc.projectile = "spr_monster_silverclod_projectile_main"
+		misc.rock_particle = "spr_part_silverclod_projectile"
+
+		flying.north = "spr_monster_silverclod_main_walk_north"
+		flying.east = "spr_monster_silverclod_main_walk_east"
+		flying.south = "spr_monster_silverclod_main_walk_south"
+
+[rockclod_red]
+	hp = 48
+	damage = 36
+	coin_count = [6, 12]
+	essence = 20
+	attack_sequence = 9
+	attack_legion = 1
+	attack_sequence_turn = 45
+	attack_sequence_image_speed = 2
+	projectile_speed = 2.0
+	death_explosion_count = 9
+	death_explosion_angle = 45
+	death_explosion_speed = 1.8
+	death_explosion_delay = 30
+	drops = [
+		{ item = "ore_stone", chance = 70, count_range = [6, 12] },
+		{ item = "monster_shell", chance = 30, count_range = [1, 4] },
+		{ cosmetic = "head_rockclod_hat", chance = 5 },
+		{ item = "pet_skin_rockclod", chance = 5 },
+	]
+
+	[rockclod_red.sprites]
+		idle.north = "spr_monster_rockclod_red_main_idle_north"
+		idle.east = "spr_monster_rockclod_red_main_idle_east"
+		idle.south = "spr_monster_rockclod_red_main_idle_south"
+
+		acknowledgment.north = "spr_monster_rockclod_red_main_alert_north"
+		acknowledgment.east = "spr_monster_rockclod_red_main_alert_east"
+		acknowledgment.south = "spr_monster_rockclod_red_main_alert_south"
+
+		walk.north = "spr_monster_rockclod_red_main_walk_north"
+		walk.east = "spr_monster_rockclod_red_main_walk_east"
+		walk.south = "spr_monster_rockclod_red_main_walk_south"
+
+		windup.north = "spr_monster_rockclod_red_main_windup_north"
+		windup.east = "spr_monster_rockclod_red_main_windup_east"
+		windup.south = "spr_monster_rockclod_red_main_windup_south"
+
+		attack.north = "spr_monster_rockclod_red_main_attack_north"
+		attack.east = "spr_monster_rockclod_red_main_attack_east"
+		attack.south = "spr_monster_rockclod_red_main_attack_south"
+
+		tired.north = "spr_monster_rockclod_red_main_idle_north"
+		tired.east = "spr_monster_rockclod_red_main_idle_east"
+		tired.south = "spr_monster_rockclod_red_main_idle_south"
+
+		hurt.north = "spr_monster_rockclod_red_main_hurt_north"
+		hurt.east = "spr_monster_rockclod_red_main_hurt_east"
+		hurt.south = "spr_monster_rockclod_red_main_hurt_south"
+
+		dying.north = "spr_monster_rockclod_red_main_death_south"
+		dying.east = "spr_monster_rockclod_red_main_death_east"
+		dying.south = "spr_monster_rockclod_red_main_death_south"
+
+		misc.projectile = "spr_monster_rockclod_red_projectile_main"
+		misc.rock_particle = "spr_part_rockclod_red_projectile"
+
+		flying.north = "spr_monster_ironclod_main_walk_north"
+		flying.east = "spr_monster_ironclod_main_walk_east"
+		flying.south = "spr_monster_ironclod_main_walk_south"
+
+[goldclod]
+	hp = 48
+	damage = 28
+	essence = 20
+	coin_count = [6, 12]
+
+	split_depth = 2
+	split_angle = 40
+	split_distance = 40
+	split_depreciation = 1.25
+	projectile_speed = 2.0
+
+	drops = [
+		{ item = "ore_gold", count_range = [1, 3], exclusive = false },
+		{ item = "monster_shell", chance = 25, count_range = [1, 4] },
+		{ item = "ore_diamond", chance = 5 },
+		{ cosmetic = "head_oreclod_hat", chance = 5 },
+		{ item = "pet_skin_oreclod", chance = 5 },
+	]
+
+	[goldclod.sprites]
+		idle.north = "spr_monster_goldclod_main_idle_north"
+		idle.east = "spr_monster_goldclod_main_idle_east"
+		idle.south = "spr_monster_goldclod_main_idle_south"
+
+		acknowledgment.north = "spr_monster_goldclod_main_alert_north"
+		acknowledgment.east = "spr_monster_goldclod_main_alert_east"
+		acknowledgment.south = "spr_monster_goldclod_main_alert_south"
+
+		walk.north = "spr_monster_goldclod_main_walk_north"
+		walk.east = "spr_monster_goldclod_main_walk_east"
+		walk.south = "spr_monster_goldclod_main_walk_south"
+
+		windup.north = "spr_monster_goldclod_main_windup_north"
+		windup.east = "spr_monster_goldclod_main_windup_east"
+		windup.south = "spr_monster_goldclod_main_windup_south"
+
+		attack.north = "spr_monster_goldclod_main_attack_north"
+		attack.east = "spr_monster_goldclod_main_attack_east"
+		attack.south = "spr_monster_goldclod_main_attack_south"
+
+		tired.north = "spr_monster_goldclod_main_idle_north"
+		tired.east = "spr_monster_goldclod_main_idle_east"
+		tired.south = "spr_monster_goldclod_main_idle_south"
+
+		hurt.north = "spr_monster_goldclod_main_hurt_north"
+		hurt.east = "spr_monster_goldclod_main_hurt_east"
+		hurt.south = "spr_monster_goldclod_main_hurt_south"
+
+		dying.north = "spr_monster_goldclod_main_death_south"
+		dying.east = "spr_monster_goldclod_main_death_east"
+		dying.south = "spr_monster_goldclod_main_death_south"
+
+		misc.projectile = "spr_monster_goldclod_projectile_main"
+		misc.rock_particle = "spr_part_goldclod_projectile"
+
+		flying.north = "spr_monster_ironclod_main_walk_north"
+		flying.east = "spr_monster_ironclod_main_walk_east"
+		flying.south = "spr_monster_ironclod_main_walk_south"
+
+[rockclod_purple]
+	hp = 1000
+	damage = 50
+	essence = 25
+	drops = [
+		{ item = "ore_stone", count = 1, exclusive = false },
+		{ item = "ore_pink_diamond", chance = 5 },
+		{ item = "perfect_pink_diamond", chance = 1 },
+	]
+
+	[rockclod_purple.sprites]
+		idle.north = "spr_monster_rockclod_purple_main_idle_north"
+		idle.east = "spr_monster_rockclod_purple_main_idle_east"
+		idle.south = "spr_monster_rockclod_purple_main_idle_south"
+
+		acknowledgment.north = "spr_monster_rockclod_purple_main_alert_north"
+		acknowledgment.east = "spr_monster_rockclod_purple_main_alert_east"
+		acknowledgment.south = "spr_monster_rockclod_purple_main_alert_south"
+
+		walk.north = "spr_monster_rockclod_purple_main_walk_north"
+		walk.east = "spr_monster_rockclod_purple_main_walk_east"
+		walk.south = "spr_monster_rockclod_purple_main_walk_south"
+
+		windup.north = "spr_monster_rockclod_purple_main_windup_north"
+		windup.east = "spr_monster_rockclod_purple_main_windup_east"
+		windup.south = "spr_monster_rockclod_purple_main_windup_south"
+
+		attack.north = "spr_monster_rockclod_purple_main_attack_north"
+		attack.east = "spr_monster_rockclod_purple_main_attack_east"
+		attack.south = "spr_monster_rockclod_purple_main_attack_south"
+
+		tired.north = "spr_monster_rockclod_purple_main_idle_north"
+		tired.east = "spr_monster_rockclod_purple_main_idle_east"
+		tired.south = "spr_monster_rockclod_purple_main_idle_south"
+
+		hurt.north = "spr_monster_rockclod_purple_main_hurt_north"
+		hurt.east = "spr_monster_rockclod_purple_main_hurt_east"
+		hurt.south = "spr_monster_rockclod_purple_main_hurt_south"
+
+		dying.north = "spr_monster_rockclod_purple_main_death_south"
+		dying.east = "spr_monster_rockclod_purple_main_death_east"
+		dying.south = "spr_monster_rockclod_purple_main_death_south"
+
+		misc.projectile = "spr_monster_rockclod_purple_projectile_main"
+		misc.rock_particle = "spr_part_rockclod_purple_projectile"
+
+		flying.north = "spr_monster_ironclod_main_walk_north"
+		flying.east = "spr_monster_ironclod_main_walk_east"
+		flying.south = "spr_monster_ironclod_main_walk_south"
+
+[mistrilclod]
+	hp = 1000
+	damage = 20
+	essence = 15
+	drops = [
+		{ item = "ore_mistril", count = 1, exclusive = false },
+		{ item = "ore_pink_diamond", chance = 5 },
+		{ item = "perfect_pink_diamond", chance = 1 },
+	]
+	attack_sequence = 5
+	attack_legion = 5
+
+	[mistrilclod.sprites]
+		idle.north = "spr_monster_mistrilclod_main_idle_north"
+		idle.east = "spr_monster_mistrilclod_main_idle_east"
+		idle.south = "spr_monster_mistrilclod_main_idle_south"
+
+		acknowledgment.north = "spr_monster_mistrilclod_main_alert_north"
+		acknowledgment.east = "spr_monster_mistrilclod_main_alert_east"
+		acknowledgment.south = "spr_monster_mistrilclod_main_alert_south"
+
+		walk.north = "spr_monster_mistrilclod_main_walk_north"
+		walk.east = "spr_monster_mistrilclod_main_walk_east"
+		walk.south = "spr_monster_mistrilclod_main_walk_south"
+
+		windup.north = "spr_monster_mistrilclod_main_windup_north"
+		windup.east = "spr_monster_mistrilclod_main_windup_east"
+		windup.south = "spr_monster_mistrilclod_main_windup_south"
+
+		attack.north = "spr_monster_mistrilclod_main_attack_north"
+		attack.east = "spr_monster_mistrilclod_main_attack_east"
+		attack.south = "spr_monster_mistrilclod_main_attack_south"
+
+		tired.north = "spr_monster_mistrilclod_main_idle_north"
+		tired.east = "spr_monster_mistrilclod_main_idle_east"
+		tired.south = "spr_monster_mistrilclod_main_idle_south"
+
+		hurt.north = "spr_monster_mistrilclod_main_hurt_north"
+		hurt.east = "spr_monster_mistrilclod_main_hurt_east"
+		hurt.south = "spr_monster_mistrilclod_main_hurt_south"
+
+		dying.north = "spr_monster_mistrilclod_main_death_south"
+		dying.east = "spr_monster_mistrilclod_main_death_east"
+		dying.south = "spr_monster_mistrilclod_main_death_south"
+
+		misc.projectile = "spr_monster_mistrilclod_projectile_main"
+		misc.rock_particle = "spr_part_mistrilclod_projectile"
+
+		flying.north = "spr_monster_ironclod_main_walk_north"
+		flying.east = "spr_monster_ironclod_main_walk_east"
+		flying.south = "spr_monster_ironclod_main_walk_south"

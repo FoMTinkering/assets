@@ -1,0 +1,79 @@
+[general_store_dinner]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "celine" },
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ celine_is_at_location = "general_store_home" },
+	{ dell_is_at_location = "general_store_home" },
+	{ luc_is_at_location = "general_store_home" },
+	{ maple_is_at_location = "general_store_home" },
+	{ dell_activity = "eat" },
+	{ luc_activity = "eat" },
+	{ maple_activity = "eat" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+]
+speaker = "celine"
+portrait = "neutral"
+local = "I'm no Reina, but I hope you liked dinner all the same!"
+next = "1"
+
+[general_store_dinner.1]
+speaker = "dell"
+portrait = "think"
+local = "Your dinners are like Reina's, but... greener."
+next = "2"
+
+[general_store_dinner.2]
+speaker = "luc"
+portrait = "happy"
+local = "More leafy. I feel like a caterpillar when I have dinner at your house."
+next = "3"
+
+[general_store_dinner.3]
+speaker = "maple"
+portrait = "happy"
+local = "I like to pretend I'm the princess of the veggie kingdom!"
+
+[general_store_dinner_2]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "celine" },
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ celine_is_at_location = "general_store_home" },
+	{ dell_is_at_location = "general_store_home" },
+	{ luc_is_at_location = "general_store_home" },
+	{ maple_is_at_location = "general_store_home" },
+	{ dell_activity = "eat" },
+	{ luc_activity = "eat" },
+	{ maple_activity = "eat" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+]
+speaker = "maple"
+portrait = "neutral"
+local = "Eat your vegetables, Dell! How else will you grow up to be a big strong knight?"
+next = "1"
+
+[general_store_dinner_2.1]
+speaker = "luc"
+portrait = "happy"
+local = "It's important! You have to eat them, even if you think they're the ickiest thing ever!"
+next = "2"
+
+[general_store_dinner_2.2]
+speaker = "dell"
+portrait = "mad"
+local = "My big sister says bullying is wrong! Tell them, Celine!"
+next = "3"
+
+[general_store_dinner_2.3]
+speaker = "celine"
+portrait = "happy"
+local = "Eat your vegetables, Dell."

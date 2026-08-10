@@ -1,0 +1,28 @@
+[voidite]
+refresh = "1y"
+requires = [
+	{ npc = "seridia" },
+	{ museum_donated_voidite = true },
+	{ building = "museum", comparator = "!=" },
+	{ caldarus_seridia_town = true },
+]
+portrait = "serious"
+local = "I have taken it upon myself to set up a protective shock barrier on that piece of $Voidite$ in the Museum."
+prompts = [
+	{ local = "Is it that dangerous?", next = "1" },
+	{ local = "That's so considerate of you!", next = "2" },
+]
+
+[voidite.1]
+portrait = "surprise"
+local = "Oh, not really."
+next = "3"
+
+[voidite.2]
+portrait = "surprise"
+local = "Er, well..."
+next = "3"
+
+[voidite.3]
+portrait = "wink"
+local = "I just thought it would be amusing if someone tried to touch it."

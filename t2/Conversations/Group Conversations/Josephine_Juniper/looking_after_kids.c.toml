@@ -1,0 +1,28 @@
+[looking_after_kids]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "josephine" }, { npc = "juniper" }] },
+	{ josephine_zone = "<juniper_zone>" },
+]
+speaker = "josephine"
+portrait = "neutral"
+local = "You get on so well with the kids! Thanks for keeping an eye on them every once in a while."
+next = "1"
+
+[looking_after_kids.1]
+speaker = "juniper"
+portrait = "annoyed"
+local = "It's more like they won't leave, no matter how many times I ask."
+next = "2"
+
+[looking_after_kids.2]
+speaker = "josephine"
+portrait = "happy"
+effect = "drop"
+local = "Huh?"
+next = "3"
+
+[looking_after_kids.3]
+speaker = "juniper"
+portrait = "happy"
+local = "I said, no problem! Any time!"

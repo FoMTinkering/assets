@@ -1,0 +1,19 @@
+[swung_by_museum]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "landen" }] },
+	{ errol_zone = "<landen_zone>" },
+	{ landen_museum_visit = true },
+	{ building = "museum", comparator = "!=" },
+	{ museum_total_count = 40, comparator = ">=" }
+]
+speaker = "landen"
+portrait = "neutral"
+local = "I swung by the Museum, Errol! You've really outdone yourself, old-timer!"
+next = "1"
+
+[swung_by_museum.1]
+speaker = "errol"
+portrait = "happy"
+effect = "cheery"
+local = "Oh, that's kind of you! And thank you, [Ari]. Without your assistance, our collection wouldn't be so grand!"

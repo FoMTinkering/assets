@@ -1,0 +1,52 @@
+[origins]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "eiland" }] },
+	{ balor_zone = "<eiland_zone>" },
+	{ balor_zone = "town/wagon" },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "eiland"
+portrait = "neutral"
+local = "Your latest inventory intrigues me, Balor. I might be inclined to make a purchase if you can also illuminate its origins."
+next = "1"
+
+[origins.1]
+speaker = "balor"
+portrait = "wink"
+local = "Hah! There's always a twist with you, Eiland."
+next = "2"
+
+[origins.2]
+speaker = "balor"
+portrait = "neutral"
+local = "I'll reach out to my source and see if I can't track that information down for you."
+
+[origins_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "eiland" }] },
+	{ balor_zone = "<eiland_zone>" },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "balor"
+portrait = "think"
+local = "Do you know how old the Manor House is, Eiland?"
+next = "1"
+
+[origins_2.1]
+speaker = "eiland"
+portrait = "wink"
+local = "A great question! I've got several records that seem to conflict, so I'm waiting for some kind of definitive primary source to turn up before I come to any conclusions!"
+next = "2"
+
+[origins_2.2]
+speaker = "balor"
+portrait = "sigh"
+local = """So all that translates to... "no"?"""
+next = "3"
+
+[origins_2.3]
+speaker = "eiland"
+portrait = "happy"
+local = "Yes."

@@ -1,0 +1,107 @@
+[bathhouse_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "eiland" },
+	{ date = "bathhouse" },
+	{ da_eiland_bathhouse = 0 },
+	{ eiland_is_spouse = false }
+]
+writes = [
+	{ da_eiland_bathhouse = 1 },
+	{ da_eiland_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "embarrassed"
+local = "[Ari], I was wondering..."
+next = "1"
+
+[bathhouse_accept_1.1]
+portrait = "hope_special"
+local = "Would you be interested in joining me for a soak at the $Bathhouse$?"
+next = "2"
+
+[bathhouse_accept_1.2]
+portrait = "bashful"
+local = "What's that?"
+next = "3"
+
+[bathhouse_accept_1.3]
+portrait = "happy_blush"
+local = "You'd love to?"
+next = "4"
+
+[bathhouse_accept_1.4]
+portrait = "embarrassed"
+local = "That's wonderful!"
+next = "5"
+
+[bathhouse_accept_1.5]
+portrait = "happy_blush"
+local = "Let's go relax and enjoy ourselves!"
+
+[bathhouse_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "eiland" },
+	{ date = "bathhouse" },
+	{ eiland_has_child = false },
+	{ any = [
+		{ eiland_is_spouse = true },
+		{ da_eiland_bathhouse = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_eiland_bathhouse = 2 },
+	{ da_eiland_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "embarrassed"
+local = "A couples' trip to the $Bathhouse$?"
+next = "1"
+
+[bathhouse_accept_2.1]
+portrait = "happy_blush"
+local = "I'd be delighted to, [Ari]!"
+
+[bathhouse_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ da_eiland_bathhouse = 1 },
+	{ da_eiland_bathhouse_follow_up_gate = true },
+	{ eiland_is_spouse = false }
+]
+writes = [{ da_eiland_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "happy_blush"
+local = "Thank you for joining me, [Ari]..."
+next = "1"
+
+[bathhouse_follow_up_1.1]
+portrait = "bashful"
+local = "You know, the custom of $Couples Bathing$ has been practiced in this area for centuries-"
+next = "2"
+
+[bathhouse_follow_up_1.2]
+portrait = "embarrassed"
+effect = "cheery"
+local = "It makes one truly appreciate the wisdom of our ancestors."
+
+[bathhouse_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_has_child = false },
+	{ any = [{ eiland_is_spouse = true }, { da_eiland_bathhouse = 2 }] },
+	{ da_eiland_bathhouse_follow_up_gate = true }
+]
+writes = [{ da_eiland_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "hope_special"
+local = "Thank you for inviting me out to the $Bathhouse$, [Ari]."
+next = "1"
+
+[bathhouse_follow_up_2.1]
+portrait = "happy_blush"
+effect = "cheery"
+local = "I... thoroughly enjoyed our time together."

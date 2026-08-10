@@ -1,0 +1,60 @@
+[town_workout]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "olric" }] },
+	{ hayden_zone = "<olric_zone>" },
+	{ any = [
+		{ hayden_routine = "arm_day" },
+		{ hayden_routine = "leg_day" },
+		{ hayden_routine = "full_body_workout" }
+	] },
+	{ any = [
+		{ olric_routine = "arm_day" },
+		{ olric_routine = "leg_day" },
+		{ olric_routine = "full_body_workout" }
+	] },
+]
+speaker = "hayden"
+portrait = "neutral"
+effect = "sweat"
+local = "This new routine of yours is pretty tough, Olric! But I think I'm getting the hang of it."
+next = "1"
+
+[town_workout.1]
+speaker = "olric"
+portrait = "neutral"
+effect = "sweat"
+local = "Buddy, we didn't even get to the tough part yet! Keep it going!"
+
+[town_workout_2]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "olric" }] },
+	{ hayden_zone = "<olric_zone>" },
+	{ any = [
+		{ hayden_routine = "arm_day" },
+		{ hayden_routine = "leg_day" },
+		{ hayden_routine = "full_body_workout" }
+	] },
+	{ any = [
+		{ olric_routine = "arm_day" },
+		{ olric_routine = "leg_day" },
+		{ olric_routine = "full_body_workout" }
+	] },
+]
+speaker = "hayden"
+portrait = "happy_fist"
+effect = "sweat"
+local = "This new workout routine is something else, Olric! I really feel the burn!"
+next = "1"
+
+[town_workout_2.1]
+speaker = "olric"
+portrait = "wink"
+local = "Thanks, I was thinking about it all day yesterday!"
+next = "2"
+
+[town_workout_2.2]
+speaker = "olric"
+portrait = "mad"
+local = "Okay, time to start a new set! Ready?"

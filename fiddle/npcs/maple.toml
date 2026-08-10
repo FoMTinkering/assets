@@ -1,0 +1,164 @@
+birthday = { season = "summer", day = 26 }
+loved_gifts = [
+	"ancient_horn_circlet",
+	"berries_and_cream",
+	"chocolate",
+	"hot_cocoa",
+	"lemon_pie",
+	"lost_crown_of_aldaria",
+	"middlemist",
+	"monarch_butterfly",
+	"mont_blanc",
+	"stone_shell",
+
+]
+liked_gifts = [
+	"blackberry",
+	"blue_conch_shell",
+	"cheese",
+	"daisy",
+	"glowberry_cookies",
+	"golden_cookies",
+	"grilled_cheese",
+	"ice_cream_sundae",
+	"jam_sandwich",
+	"pink_scallop_shell",
+	"pomegranate_sorbet",
+	"pudding",
+	"sand_dollar",
+	"spirula_shell",
+	"strawberry_shortcake",
+	"sunflower",
+	"trail_mix",
+	"tulip",
+	"wildberry_pie",
+	"wintergreen_ice_cream",
+
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift", "caffeine", "alcohol"]
+hated_gift = "peat"
+banned_gift_tags = ["alcohol", "caffeine", "bomb"]
+name = "Maple"
+aldarian_name = "MPL"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["townsfolk", "inn_family", "child"]
+journal_portrait_offset = [-117, -61]
+journal_background_color = [239, 196, 255]
+date_photo_offset = [0, 0]
+job = "Royalty Expert"
+icon_sprite = "spr_ui_generic_icon_npc_maple"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_maple"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_maple"
+dateable = false
+
+[gossip]
+	line = "maple_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["lemonade"]
+	"12" = ["water", "juice"]
+	"17" = ["hot_chocolate"]
+	"19" = ["milk", "hot_chocolate"]
+
+[offsets]
+	portrait = [-130, -65]
+	sweat = [-3, 30]
+	hearts = [-3, 30]
+	angry = [-1, 31]
+	sparkles = [-1, 28]
+	sparkles_dark = [-1, 28]
+	sick = [-2, 32]
+	music_notes = [-1, 28]
+	intensity = [1, 20]
+	surprise = [0, 29]
+	shock = [-3, 20]
+	sigh = [1, 25]
+	loud = [3, 26]
+	cheery = [0, 27]
+	drop = [0, 32]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.shocked]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.play_doll]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer"]
+	type = "complex"
+	on_pause_speaking = "idle"
+
+[cycles.scratch_head]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"

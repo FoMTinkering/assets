@@ -1,0 +1,22 @@
+[friday_help]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "josephine" }, { npc = "nora" }] },
+	{ adeline_zone = "<josephine_zone>" },
+	{ adeline_zone = "<nora_zone>" },
+	{ location = "inn", comparator = "!=" },
+	{ fnati = 1, comparator = ">=" }
+]
+speaker = "adeline"
+local = "Friday nights have been so busy at the Inn lately! I've got a few proposals of how I could help-"
+next = "1"
+
+[friday_help.1]
+speaker = "josephine"
+local = "Oh Adeline, you do more than enough! The best thing you could do is come and enjoy yourself."
+next = "2"
+
+[friday_help.2]
+speaker = "nora"
+portrait = "wink"
+local = "And remember, no clipboards allowed!"

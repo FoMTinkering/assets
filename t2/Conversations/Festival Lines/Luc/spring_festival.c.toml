@@ -1,0 +1,26 @@
+[pollinators]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "luc" },
+	{ spring_festival_date = "1d", time = "after" },
+]
+portrait = "happy"
+local = "A festival with so many flowers is sure to bring out all my favorite pollinators!"
+next = "1"
+
+[pollinators.1]
+portrait = "neutral"
+local = "What's your favorite, [Ari]?"
+prompts = [
+	{ local = "Uhh... bees?", next = "2" },
+	{ local = "Don't make me choose!", next = "3" },
+]
+
+[pollinators.2]
+portrait = "happy"
+local = "They're so cute when they fall asleep inside a flower!"
+
+[pollinators.3]
+portrait = "happy"
+local = "Haha, I feel the same way! They're all amazing! Hooray for Spring!"

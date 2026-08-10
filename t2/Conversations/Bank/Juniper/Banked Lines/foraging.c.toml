@@ -1,0 +1,58 @@
+[foraging]
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ any = [
+		{ juniper_routine = "eastern_road_foraging_north" },
+		{ juniper_routine = "haydens_farm_foraging" }
+	] }
+]
+portrait = "neutral"
+local = "Foraging is good in Mistria, isn't it? The soil supports all kinds of wild plants, throughout the seasons."
+next = "1"
+
+[foraging.1]
+portrait = "happy"
+local = "My cupboard is always stocked."
+
+[foraging_2]
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ any = [
+		{ juniper_routine = "eastern_road_foraging_north" },
+		{ juniper_routine = "haydens_farm_foraging" }
+	] },
+	{ juniper_heart_level = 4, comparator = ">="}
+]
+portrait = "mad"
+local = "Lend me your farmer's knowledge, [Ari]. Is there something special about the soil in Mistria?"
+next = "1"
+
+[foraging_2.1]
+portrait = "happy"
+local = "I can go out foraging twice as often as I could back home! Everything just grows right back."
+
+[foraging_3]
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_routine = "eastern_road_foraging_north" },
+]
+portrait = "think"
+local = "I don't know why I'm milling around on the eastern road. It's =Nettle= that I need."
+next = "1"
+
+[foraging_3.1]
+portrait = "mad"
+local = "I never have enough =Nettle=!"
+
+[foraging_4]
+refresh = "1y"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_routine = "eastern_road_foraging_north" },
+]
+portrait = "sly"
+local = "The foraging in Mistria is preternaturally good. The way this land renews itself... there's certainly something special about it."
+

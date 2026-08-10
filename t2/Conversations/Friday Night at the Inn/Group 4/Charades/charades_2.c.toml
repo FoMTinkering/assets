@@ -1,0 +1,94 @@
+[charades_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ dell_zone = "inn/balcony_hang" },
+	{ luc_zone = "inn/balcony_hang" },
+	{ maple_zone = "inn/balcony_hang" },
+	{ any = [{ fnati = 3 }, { fnati = 4 }]},
+	{ charades_fnati = 1 },
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+]
+writes = [{ charades_fnati = 2 }]
+speaker = "dell"
+portrait = "neutral"
+local = "Hey [Ari]! We're playing charades again."
+next = "1"
+
+[charades_2.1]
+speaker = "luc"
+portrait = "neutral"
+local = "It's Maple's turn this time!"
+next = "2"
+
+[charades_2.2]
+speaker = "maple"
+portrait = "happy"
+local = "I'm the coolest, bestest, most awesome person in all of Mistria!"
+next = "3"
+
+[charades_2.3]
+speaker = "dell"
+portrait = "happy"
+effect = "drop"
+local = "Did Maple start her impression yet?"
+next = "4"
+
+[charades_2.4]
+speaker = "maple"
+portrait = "mad"
+local = "No one appreciates my AWARD-WINNING TALENT!"
+next = "5"
+
+[charades_2.5]
+speaker = "luc"
+portrait = "think"
+local = "Ohhhh..."
+next = "6"
+
+[charades_2.6]
+speaker = "maple"
+portrait = "wink"
+effect = "sparkles"
+local = "I act sooo cool and aloof."
+next = "7"
+
+[charades_2.7]
+speaker = "dell"
+portrait = "think"
+local = "What's your guess, [Ari]?"
+prompts = [{ local = "March.", next = "8" }, { local = "Ryis.", next = "10" }, { local = "Juniper.", next = "12" }]
+
+[charades_2.8]
+speaker = "dell"
+portrait = "think"
+local = "Yeah..."
+next = "9"
+
+[charades_2.9]
+speaker = "luc"
+portrait = "think"
+local = "Totally."
+
+[charades_2.10]
+speaker = "dell"
+portrait = "think"
+local = "Ryis IS cool..."
+next = "11"
+
+[charades_2.11]
+speaker = "luc"
+portrait = "neutral"
+local = "But he's not award-winning... yet."
+
+[charades_2.12]
+speaker = "dell"
+portrait = "think"
+local = "She does seem like a genius..."
+next = "13"
+
+[charades_2.13]
+speaker = "luc"
+portrait = "neutral"
+local = """But Valen says she's "quite average"."""

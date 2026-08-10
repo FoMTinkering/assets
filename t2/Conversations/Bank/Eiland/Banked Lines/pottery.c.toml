@@ -1,0 +1,22 @@
+[pottery]
+refresh = "2m"
+requires = [
+	{ npc = "eiland" },
+	{ location = "western_ruins" },
+	{ date_time = "1y", comparator = ">=" },
+	{ time_of_day = "morning" },
+	{ eiland_was_last_spoken_to = "6h", time = "after", comparator = ">" }
+]
+portrait = "think"
+local = "I turned up some pottery shards earlier, but they're from at least two different vases."
+next = "1"
+
+[pottery.1]
+portrait = "happy"
+effect = "drop"
+local = "It's a bit like sorting two puzzles that got stored in the same box."
+next = "2"
+
+[pottery.2]
+portrait = "neutral"
+local = "Putting these together will be tricky!"

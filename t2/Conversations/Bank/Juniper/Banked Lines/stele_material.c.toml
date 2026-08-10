@@ -1,0 +1,37 @@
+[stele_material]
+refresh = "2m"
+requires = [{ npc = "juniper" }, { juniper_is_at = "town/Stele" }]
+portrait = "neutral"
+local = "This stele was built after the reign of the Witch Queens... I wonder what they would make of it."
+
+[stele_material_2]
+refresh = "2m"
+requires = [{ npc = "juniper" }, { juniper_is_at = "town/Stele" }]
+portrait = "think"
+local = "This stele has a unique resonance, but that's about all I've been able to puzzle out."
+
+[stele_material_3]
+refresh = "1y"
+requires = [{ npc = "juniper" }, { juniper_is_at = "town/Stele" }]
+portrait = "neutral"
+local = "Hm. The surface is utterly seamless, but I sense this stele has a sealed compartment."
+next = "1"
+
+[stele_material_3.1]
+portrait = "think"
+local = "Was something hidden here?"
+
+[stele_material_4]
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "town/Stele" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "think"
+local = "I always come back to this stele."
+next = "1"
+
+[stele_material_4.1]
+portrait = "sly"
+local = "There's a resonance that calls to me."

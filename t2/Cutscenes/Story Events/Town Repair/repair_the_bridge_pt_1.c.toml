@@ -1,0 +1,158 @@
+[repair_the_bridge_pt_1_follow_up_march]
+refresh = "never"
+requires = [{ npc = "march" }, { rtb = "part_1" }]
+speaker = "march"
+portrait = "think"
+local = "Heard you're helping out with the broken bridge repairs."
+next = "1"
+
+[repair_the_bridge_pt_1_follow_up_march.1]
+speaker = "march"
+local = "Don't worry about any iron goods, Adeline already secured everything that Ryis needs from me."
+next = "2"
+
+[repair_the_bridge_pt_1_follow_up_march.2]
+speaker = "march"
+portrait = "unimpressed"
+local = "You'd better be making this your top priority, [Ari]."
+
+[repair_the_bridge_pt_1_follow_up_adeline]
+refresh = "never"
+requires = [{ npc = "adeline" }, { rtb = "part_1" }]
+speaker = "adeline"
+local = "[Ari]! Hope the stone and wood collecting is going well."
+next = "1"
+
+[repair_the_bridge_pt_1_follow_up_adeline.1]
+speaker = "adeline"
+portrait = "concerned"
+local = "I've been trying to wrangle promises out of the old Saturday Market merchants to return when we're ready."
+next = "2"
+
+[repair_the_bridge_pt_1_follow_up_adeline.2]
+speaker = "adeline"
+portrait = "ugh"
+local = "The sooner the bridge is repaired the better!"
+
+[repair_the_bridge_pt_1_follow_up_ryis]
+refresh = "never"
+requires = [{ npc = "ryis" }, { rtb = "part_1" }]
+speaker = "ryis"
+portrait = "think"
+local = "Eiland told me that the bridge had stood for hundreds of years before the earthquake..."
+next = "1"
+
+[repair_the_bridge_pt_1_follow_up_ryis.1]
+speaker = "ryis"
+local = "Hopefully the new bridge will last even longer!"
+
+[repair_the_bridge_pt_1]
+kind = "gameplay_triggered"
+writes = [{ rtb = "part_1", expires = "4d" }]
+speaker = "adeline"
+local = "Hey, [Ari]! We were just getting started."
+next = "1"
+
+[repair_the_bridge_pt_1.1]
+speaker = "ryis"
+portrait = "think"
+local = "Adeline, you know I'm up for it, but this... is a big project."
+next = "2"
+
+[repair_the_bridge_pt_1.2]
+speaker = "balor"
+portrait = "think"
+local = "You can rely on me to keep Mistria supplied with the basics until the construction is done, but I can't work miracles."
+next = "3"
+
+[repair_the_bridge_pt_1.3]
+speaker = "balor"
+portrait = "concerned"
+local = "Without the bridge, I can't get my wagon in and out of town. And there's only so much I can carry in on my back."
+next = "4"
+
+[repair_the_bridge_pt_1.4]
+speaker = "adeline"
+portrait = "concerned"
+local = "I've allocated all the resources I can for this, but the earthquake relief from the Capital hasn't been as robust as we'd hoped for..."
+next = "5"
+
+[repair_the_bridge_pt_1.5]
+speaker = "nora"
+local = "I've talked it over with the other merchants in town, we're happy to contribute funds. You've got our backing!"
+next = "6"
+
+[repair_the_bridge_pt_1.6]
+speaker = "adeline"
+local = "That's wonderful to hear, Nora!"
+next = "7"
+
+[repair_the_bridge_pt_1.7]
+speaker = "nora"
+portrait = "sad"
+local = "However, with the whole kingdom in dire need of repair materials, we can't afford the inflated prices on the stone and wood we'll need..."
+prompts = [
+	{ local = "Sounds like it's my time to shine!", next = "8" },
+	{ local = "I suppose I could lend a hand...", next = "9" },
+]
+
+[repair_the_bridge_pt_1.8]
+speaker = "adeline"
+portrait = "blush"
+local = "Wonderful, [Ari]! I knew you were the right person for the job!"
+next = "10"
+
+[repair_the_bridge_pt_1.9]
+speaker = "adeline"
+local = "I knew you were the right person for the job!"
+next = "10"
+
+[repair_the_bridge_pt_1.10]
+speaker = "ryis"
+local = "Gathering materials locally would definitely speed things up!"
+next = "11"
+
+[repair_the_bridge_pt_1.11]
+speaker = "balor"
+local = "That farmland of yours is loaded with high quality stone and timber, [Ari]."
+next = "12"
+
+[repair_the_bridge_pt_1.12]
+speaker = "nora"
+portrait = "think"
+local = "If you're willing to do the gathering, we can compensate for the materials!"
+next = "13"
+
+[repair_the_bridge_pt_1.13]
+speaker = "adeline"
+portrait = "think"
+local = "By my calculations... $60 Stone$ and $60 Wood$ should be enough."
+next = "14"
+
+[repair_the_bridge_pt_1.14]
+speaker = "ryis"
+portrait = "happy"
+local = "Sounds right to me!"
+next = "15"
+
+[repair_the_bridge_pt_1.15]
+speaker = "balor"
+portrait = "neutral"
+local = "With a repaired bridge, we'll be able to get the Saturday Market up and running again!"
+next = "16"
+
+[repair_the_bridge_pt_1.16]
+speaker = "adeline"
+local = "I'll set up a $Donation Box$ here at the bridge for you to deposit any gathered materials."
+next = "17"
+
+[repair_the_bridge_pt_1.17]
+speaker = "adeline"
+portrait = "happy"
+local = "Come talk to me when you're finished, and we'll begin the repairs!"
+next = "18"
+
+[repair_the_bridge_pt_1.18]
+speaker = "nora"
+portrait = "neutral"
+local = "We're counting on you!"

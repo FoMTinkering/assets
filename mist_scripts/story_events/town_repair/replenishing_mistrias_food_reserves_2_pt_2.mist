@@ -1,0 +1,235 @@
+var pan_sizzling = true;
+
+fun cooking_sound() {
+	if pan_sizzling == false {
+		return;
+	}
+	play_sound("SoundEffects/Tools/Cooking2D");
+	wait(0.5);
+	play_sound("SoundEffects/Tools/Cooking2D");
+	if pan_sizzling == false {
+		return;
+	}
+	wait(6);
+	cooking_sound();
+}
+scene(inn);
+place_actor(adeline, south, "North Table Top 1");
+animate(adeline, sit);
+place_actor(hayden, north, "North Table Bottom 2");
+animate(hayden, sit);
+place_actor(hemlock, north, rmfr2_2_stove_right);
+place_actor(reina, north, rmfr2_2_stove_left);
+animate(reina, action);
+free cooking_sound();
+place_actor(ari, north, "North Table Bottom 1");
+animate(ari, sit);
+camera_position(rmfr2_2_camera_1);
+setup_prop(rmfr2_2_pan_full);
+request_music_play("Music/Events/Cutscene");
+
+sim {
+	{
+		wait(0.25);
+		animate(hemlock, action);
+	}
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	pan_camera(3, rmfr2_2_camera_2);
+	{
+		wait(1.5);
+		animate(reina, idle);
+		pan_sizzling = false;
+		walk(reina, "Cutting Board");
+		face(reina, north);
+		animate(reina, chop);
+	}
+	{
+		wait(4);
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		animate(hemlock, idle);
+		walk(hemlock, rmfr2_2_stove_left);
+		face(hemlock, north);
+		animate(hemlock, action);
+		pan_sizzling = true;
+		free cooking_sound();
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(1);
+		pan_sizzling = false;
+		animate(hemlock, idle);
+		walk(hemlock, rmfr2_2_stove_right);
+		face(hemlock, north);
+		animate(hemlock, action);
+	}
+	{
+		wait(1.75);
+		animate(reina, idle);
+		walk(reina, rmfr2_2_stove_left);
+		face(reina, north);
+		pan_sizzling = true;
+		free cooking_sound();
+		animate(reina, action);
+		wait(1);
+		pan_sizzling = false;
+	}
+}
+wait(1);
+play_sound("SoundEffects/SpecialEvents/OvenDing");
+animate(reina, idle);
+animate(hemlock, idle);
+wait(0.5);
+free bark_speech(reina, exclamation_mark);
+free bark_speech(hemlock, exclamation_mark);
+wait(2);
+face(reina, east);
+face(hemlock, west);
+wait(0.75);
+free bark_speech(reina, cute_face);
+free bark_speech(hemlock, cute_face);
+wait(1);
+next_line(); //
+close_textbox();
+
+sim {
+	{
+		wait(0.5);
+		face(reina, north);
+		animate(reina, action);
+		wait(1);
+		destroy_prop(rmfr2_2_pan_full);
+		setup_prop(rmfr2_2_pan_empty);
+		animate(reina, idle);
+		walk(reina, "North Table Service");
+		face(reina, east);
+		animate(reina, action);
+		wait(0.5);
+		sim {
+			sim {
+				free bark_speech(hayden, cute_face);
+				{
+					eat_item(hayden, twice_baked_rations);
+					//
+					//
+				}
+			}
+			sim {
+				free bark_speech(adeline, cute_face);
+				{
+					eat_item(adeline, twice_baked_rations);
+					//
+					//
+				}
+			}
+			sim {
+				free bark_speech(ari, cute_face);
+				setup_prop(rmfr2_2_ari_rations);
+			}
+		}
+		animate(reina, idle);
+		wait(1);
+		sim {
+			//
+			//
+			//
+			//
+			//
+			{
+				walk(reina, "North Table Left End");
+				face(reina, east);
+				animate(reina, sit);
+				eat_item(reina, twice_baked_rations);
+			}
+		}
+	}
+	{
+		wait(1);
+		face(hemlock, north);
+		animate(hemlock, action);
+		wait(1.5);
+		animate(hemlock, idle);
+		walk(hemlock, "North Table Top 2");
+		face(hemlock, south);
+		animate(hemlock, sit);
+		eat_item(hemlock, twice_baked_rations);
+		//
+
+		//
+		//
+	}
+	{
+		wait(1.5);
+		pan_camera(4, rmfr2_2_camera_3);
+	}
+	{
+		wait(3);
+		next_line(); //
+	}
+}
+
+//
+
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(reina, cute_face);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	next_line(); //
+}
+next_line(); //
+next_line(); //
+sim {
+	free {
+		await_npc_animation(adeline);
+		anim_speed(adeline, 0);
+	}
+	free {
+		await_npc_animation(hayden);
+		anim_speed(hayden, 0);
+	}
+	free {
+		await_npc_animation(hemlock);
+		anim_speed(hemlock, 0);
+	}
+	free {
+		await_npc_animation(reina);
+		anim_speed(reina, 0);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(adeline, cute_face);
+free bark_speech(hayden, cute_face);
+free bark_speech(hemlock, cute_face);
+free bark_speech(reina, cute_face);
+free bark_speech(ari, cute_face);
+wait(1);
+sim {
+	fade_out(2);
+	anim_speed(adeline, 1);
+	anim_speed(hayden, 1);
+	anim_speed(hemlock, 1);
+	anim_speed(reina, 1);
+}

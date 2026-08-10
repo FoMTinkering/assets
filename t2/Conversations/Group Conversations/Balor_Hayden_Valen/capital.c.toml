@@ -1,0 +1,30 @@
+[capital]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "hayden" }, { npc = "valen" }] },
+	{ balor_zone = "<hayden_zone>" },
+	{ balor_zone = "<valen_zone>" },
+	{ balor_heart_level = 4, comparator = ">=" },
+	{ valen_heart_level = 4, comparator = ">=" },
+]
+speaker = "hayden"
+portrait = "neutral"
+local = "It sounds like you two saw very different sides of the Capital!"
+next = "1"
+
+[capital.1]
+speaker = "valen"
+portrait = "think"
+local = "I mostly kept to the halls of academia. I was still studying at the time."
+next = "2"
+
+[capital.2]
+speaker = "balor"
+portrait = "wink"
+local = "A merchant's business is usually with other merchants. Most of my time was spent in the market quarter."
+next = "3"
+
+[capital.3]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "Still, it's interesting to think we might have walked right by each other!"

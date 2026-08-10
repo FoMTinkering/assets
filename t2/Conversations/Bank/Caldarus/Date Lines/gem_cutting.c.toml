@@ -1,0 +1,205 @@
+[gem_cutting_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "gem_cutting" },
+	{ da_caldarus_gem_cutting = 0 },
+	{ caldarus_seridia_town = false },
+]
+writes = [
+	{ da_caldarus_gem_cutting = 1 },
+	{ da_caldarus_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "smile"
+local = "You would like to go on a $Gem Cutting Date$?"
+next = "1"
+
+[gem_cutting_accept_1.1]
+portrait = "laugh_special"
+local = "That does sound intriguing!"
+next = "2"
+
+[gem_cutting_accept_1.2]
+portrait = "think"
+local = "I am not sure that I have suitable equipment out here in the woods..."
+next = "3"
+
+[gem_cutting_accept_1.3]
+portrait = "laugh_special"
+local = "But... shall we give it a try anyway?"
+
+[gem_cutting_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "gem_cutting" },
+	{ da_caldarus_gem_cutting = 1, comparator = ">=" },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ da_caldarus_gem_cutting = 2 },
+	{ da_caldarus_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "smile"
+local = "Would you like to join me for some $Gem Cutting$?"
+next = "1"
+
+[gem_cutting_accept_2.1]
+portrait = "laugh_special"
+local = "I think that I have improved somewhat since last time!"
+
+[gem_cutting_accept_eog_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "gem_cutting" },
+	{ da_caldarus_eog_gem_cutting = 0 },
+	{ caldarus_seridia_town = true },
+	{ caldarus_is_spouse = false }
+]
+writes = [
+	{ da_caldarus_eog_gem_cutting = 1 },
+	{ da_caldarus_eog_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "embarrassed"
+local = "Oh! A $Gem Cutting Date$?"
+next = "1"
+
+[gem_cutting_accept_eog_1.1]
+portrait = "caring_special"
+local = "I know you to be a skilled blacksmith, so I am happy to be in your capable hands."
+next = "2"
+
+[gem_cutting_accept_eog_1.2]
+portrait = "think_special"
+local = "Do not hesitate to correct my form."
+next = "3"
+
+[gem_cutting_accept_eog_1.3]
+portrait = "caring_special"
+local = "In fact, I encourage it."
+
+[gem_cutting_accept_eog_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "gem_cutting" },
+	{ caldarus_has_child = false },
+	{ any = [
+		{ caldarus_is_spouse = true },
+		{ da_caldarus_eog_gem_cutting = 1, comparator = ">=" },
+	] },
+	{ caldarus_seridia_town = true }
+]
+writes = [
+	{ da_caldarus_eog_gem_cutting = 2 },
+	{ da_caldarus_eog_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "smile"
+local = "I have found another rough gemstone that we could cut together, [Ari]."
+next = "1"
+
+[gem_cutting_accept_eog_2.1]
+portrait = "embarrassed"
+local = "Perhaps next time I can show you how much I have improved."
+
+[gem_cutting_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_gem_cutting = 1 },
+	{ da_caldarus_gem_cutting_follow_up_gate = true },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ da_caldarus_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "laugh_special"
+local = "I am glad that we were able to improvise a workstation for $Gem Cutting$, [Ari]!"
+next = "1"
+
+[gem_cutting_follow_up_1.1]
+portrait = "think_special"
+local = "Although I am not yet adept at such delicate work..."
+next = "2"
+
+[gem_cutting_follow_up_1.2]
+portrait = "laugh_special"
+local = "I found the experience quite enjoyable."
+
+[gem_cutting_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_gem_cutting = 2 },
+	{ da_caldarus_gem_cutting_follow_up_gate = true },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ da_caldarus_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think_special"
+local = "Thank you for $Gem Cutting$ with me, [Ari]."
+next = "1"
+
+[gem_cutting_follow_up_2.1]
+portrait = "laugh_special"
+local = "Truthfully, I am not too concerned with improving my skill..."
+next = "2"
+
+[gem_cutting_follow_up_2.2]
+portrait = "caring_special"
+local = "I find it captivating just to watch you work."
+
+[gem_cutting_follow_up_eog_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_eog_gem_cutting = 1 },
+	{ da_caldarus_eog_gem_cutting_follow_up_gate = true },
+	{ caldarus_seridia_town = true },
+	{ caldarus_is_spouse = false }
+]
+writes = [{ da_caldarus_eog_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "I enjoyed our time $Gem Cutting$, [Ari]."
+next = "1"
+
+[gem_cutting_follow_up_eog_1.1]
+portrait = "think_special"
+local = "It was illuminating to see you do such skilled work up close."
+next = "2"
+
+[gem_cutting_follow_up_eog_1.2]
+portrait = "caring_special"
+local = "And it was a valuable experience to be your student."
+next = "3"
+
+[gem_cutting_follow_up_eog_1.3]
+portrait = "laugh_special"
+local = "I'll be in your care the next time as well, [Ari]."
+
+[gem_cutting_follow_up_eog_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_has_child = false },
+	{ any = [
+		{ caldarus_is_spouse = true },
+		{ da_caldarus_eog_gem_cutting = 2 },
+	] },
+	{ da_caldarus_eog_gem_cutting_follow_up_gate = true },
+	{ caldarus_seridia_town = true }
+]
+writes = [{ da_caldarus_eog_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "$Gem Cutting$ with you is a mesmerizing experience, [Ari]."
+next = "1"
+
+[gem_cutting_follow_up_eog_2.1]
+portrait = "caring_special"
+local = "I enjoy seeing your hands at work."

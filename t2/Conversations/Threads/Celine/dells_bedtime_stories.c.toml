@@ -1,0 +1,105 @@
+[celine_dells_bedtime_stories_1]
+refresh = "1y"
+requires = [
+	{ npc = "celine" },
+	{ thread_mutex = "undefined" },
+	{ thread_delay = false },
+	{ celine_dells_bedtime_stories_finished = false },
+	{ celine_heart_level = 3, comparator = ">=" },
+	{ celine_heart_level = 8, comparator = "<" },
+]
+writes = [
+	{ thread_mutex = "celine_dells_bedtime_stories_1", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+portrait = "think"
+local = "Dell always asks me to tell her stories, but I've been running out of ideas lately..."
+next = "1"
+
+[celine_dells_bedtime_stories_1.1]
+portrait = "happy"
+local = "Do you think it would be fun if the hero comes across a fantastic creature? She could even befriend it!"
+prompts = [
+	{ local = "How about a kobold?", next = "2" },
+	{ local = "Maybe a dragon?", next = "3" }
+]
+
+[celine_dells_bedtime_stories_1.2]
+local = "Good idea, maybe the kobold steals something of the hero's and leads her somewhere mysterious and new?"
+
+[celine_dells_bedtime_stories_1.3]
+portrait = "happy"
+local = "That's the obvious choice, isn't it? Dell WOULD go crazy for a dragon, all the best stories have one! Thanks, [Ari]!"
+
+[celine_dells_bedtime_stories_2]
+refresh = "instantly"
+requires = [
+	{ npc = "celine" },
+	{ thread_mutex = "celine_dells_bedtime_stories_1" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "celine_dells_bedtime_stories_2", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+local = "[Ari], there you are! Dell loved the last story I told her, but now I'm out of ideas again!"
+next = "1"
+
+[celine_dells_bedtime_stories_2.1]
+portrait = "think"
+local = "The hero discovered the tomb of an ancient king... and the story ended just as she opened a treasure chest. What do you think should be inside?"
+prompts = [
+	{ local = "A haunted sword!", next = "2" },
+	{ local = "A draconic spell!", next = "3" }
+]
+
+[celine_dells_bedtime_stories_2.2]
+portrait = "happy"
+local = "A sword... maybe with a mysterious inscription... and imbued with the spirit of an ancient dragon! That's perfect! Thank you, [Ari]!"
+
+[celine_dells_bedtime_stories_2.3]
+portrait = "happy"
+local = "Oh, that's so much fun! I'll let Dell choose what the spell does... Though she'll probably just scream #FIRE#..."
+next = "4"
+
+[celine_dells_bedtime_stories_2.4]
+portrait = "wink"
+local = "Thanks, [Ari]! She'll really love this!"
+
+[celine_dells_bedtime_stories_3]
+refresh = "instantly"
+requires = [
+	{ npc = "celine" },
+	{ thread_mutex = "celine_dells_bedtime_stories_2" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "undefined" },
+	{ thread_delay = true, expires = "1d" },
+	{ celine_dells_bedtime_stories_finished = true }
+]
+portrait = "happy"
+local = "[Ari], Dell's been loving your story suggestions! I'm stumped on how to end it, though."
+next = "1"
+
+[celine_dells_bedtime_stories_3.1]
+portrait = "think"
+local = "The hero broke the curse on the dragons, and now she can befriend them or return them to their world. What do you think?"
+prompts = [
+	{ local = "Friendship!", next = "2" },
+	{ local = "Help get them home!", next = "3" }
+]
+
+[celine_dells_bedtime_stories_3.2]
+portrait = "happy"
+local = "Right? I think Dell would like that the most. You wouldn't believe how obsessed she is with dragons... actually, I think you would! Thank you so much, [Ari]!"
+
+[celine_dells_bedtime_stories_3.3]
+portrait = "happy"
+local = "Interesting... maybe the hero could join them in their journey as well? It would be a fun setup for a sequel, in the Land of the Dragons! Thank you so much, [Ari]!"
+
+[celine_dells_bedtime_stories_4]
+refresh = "never"
+requires = [{ npc = "dell" }, { celine_dells_bedtime_stories_finished = true }]
+portrait = "happy"
+local = "[Ari], [Ari]! If you ever have trouble falling asleep, you should ask Celine for a bedtime story! She tells the #BEST# stories, they were so exciting I stayed up all night thinking about them!"

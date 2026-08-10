@@ -1,0 +1,74 @@
+[1h_blue_jay]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_heart_level = 1 },
+	{ location = "town" }
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "ryis" } }
+]
+portrait = "neutral"
+local = "Did you see that bird fly by? The blue one?"
+next = "1"
+
+[1h_blue_jay.1]
+portrait = "happy"
+local = "That's an Aldarian blue jay."
+next = "2"
+
+[1h_blue_jay.2]
+portrait = "thoughtful"
+local = "Not to be confused with the Mistrian bluebird, which is a pretty uncommon sight these days..."
+next = "3"
+
+
+[1h_blue_jay.3]
+portrait = "neutral"
+local = "Do you like bird watching, [Ari]?"
+prompts = [
+	{ local = "I love bird watching!", next = "4" },
+	{ local = "Do chickens count?", next = "7" },
+	{ local = "Eh... not really.", next = "9" }
+]
+
+
+# OPTION ONE
+[1h_blue_jay.4]
+portrait = "happy"
+local = "Yeah? That's great!"
+next = "5"
+
+[1h_blue_jay.5]
+portrait = "neutral"
+local = "Let me know if you want to join me some time."
+next = "6"
+
+[1h_blue_jay.6]
+portrait = "happy"
+local = "We get a lot of different kinds out here in the country!"
+
+# OPTION TWO
+
+[1h_blue_jay.7]
+portrait = "happy"
+local = "Haha! Why not?"
+next = "8"
+
+[1h_blue_jay.8]
+portrait = "neutral"
+local = "It's worth keeping an eye out for the wild birds, too."
+next = "6"
+
+# OPTION THREE
+
+[1h_blue_jay.9]
+portrait = "sincere_special"
+local = "No? That's too bad."
+next = "10"
+
+[1h_blue_jay.10]
+portrait = "neutral"
+local = "You should give it a try some time..."
+next = "6"

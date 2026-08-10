@@ -1,0 +1,22 @@
+[belt_buckle]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "march" }] },
+	{ holt_zone = "<march_zone>" }
+]
+speaker = "holt"
+portrait = "neutral"
+local = "Dell tells me you're working on a new project. A belt buckle?"
+next = "1"
+
+[belt_buckle.1]
+speaker = "march"
+portrait = "think"
+local = "Yeah. Dell had the idea to make it a dragon's head buckle, where the jaw is a hinge. It's a pretty interesting challenge."
+next = "2"
+
+[belt_buckle.2]
+speaker = "holt"
+portrait = "think"
+effect = "sweat"
+local = "She didn't offer to pay you, right March? You know she doesn't have any money..."

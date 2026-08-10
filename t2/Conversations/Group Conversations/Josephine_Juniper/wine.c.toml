@@ -1,0 +1,34 @@
+[wine]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "josephine" }, { npc = "juniper" }] },
+	{ josephine_zone = "<juniper_zone>" },
+	{ location = "inn", comparator = "!=" },
+	{ juniper_can_drink = true }
+]
+writes = [{ new_vintage = true }]
+speaker = "josephine"
+portrait = "neutral"
+local = "We got in that wine you were asking for, Juniper! Come by any time and we'll pour you a glass."
+next = "1"
+
+[wine.1]
+speaker = "juniper"
+portrait = "sly"
+local = "Oho! I'll stop by as soon as I can."
+
+[wine_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "josephine" }, { npc = "juniper" }] },
+	{ josephine_zone = "<juniper_zone>" },
+]
+speaker = "josephine"
+portrait = "think"
+local = "You're such a wine aficionado, I'm surprised you don't offer wine at the Bathhouse."
+next = "1"
+
+[wine_2.1]
+speaker = "juniper"
+portrait = "angry_brows"
+local = "Dozy won't let me have wine in the bath, and if I can't do it, then no one can!"

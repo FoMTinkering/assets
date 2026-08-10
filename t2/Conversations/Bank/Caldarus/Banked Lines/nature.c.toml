@@ -1,0 +1,244 @@
+[nature_0]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" },
+]
+portrait = "neutral"
+local = "The forest teems with life..."
+next = "1"
+
+[nature_0.1]
+portrait = "smile"
+local = "It is a joy to study its many forms."
+
+[nature_1]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" },
+]
+portrait = "neutral"
+local = "The quality of light here is beautiful, is it not?"
+
+[nature_2]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" },
+]
+portrait = "neutral"
+local = "It is always pleasant to listen to birdsong."
+next = "1"
+
+[nature_2.1]
+portrait = "think"
+local = "I wonder what they would think if I played it back to them."
+
+[nature_3]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_routine = "deep_woods_forage" },
+		{ caldarus_routine = "deep_woods_wander" },
+	] },
+]
+portrait = "sigh"
+local = "A tree is a magnificent thing. It grows quietly, humbly, until it towers above all of creation."
+next = "1"
+
+[nature_3.1]
+portrait = "neutral"
+local = "When it falls early, every part sustains the one who felled it. And when it falls late, it nourishes the life that comes after."
+
+[nature_4]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" },
+]
+portrait = "neutral"
+local = "It is natural to fear decay, but decay, too, is natural. Everything grows from the body that came before."
+
+[nature_5]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" },
+	{ time_of_day = "morning" },
+]
+portrait = "neutral"
+local = "Have you ever seen a sunrise from above the clouds?"
+next = "1"
+
+[nature_5.1]
+portrait = "smile"
+local = "It is very beautiful."
+
+[nature_6]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_routine = "deep_woods_forage" },
+		{ caldarus_routine = "deep_woods_wander" },
+	] },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ eog_nature_6 = true, expires = "1y" }]
+portrait = "think"
+local = "I have forgotten much, and yet these pines are familiar to me."
+next = "1"
+
+[nature_6.1]
+portrait = "sigh"
+local = "Strange to find them such a comfort."
+
+[nature_6_alt]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_routine = "deep_woods_forage" },
+		{ caldarus_routine = "deep_woods_wander" },
+	] },
+	{ caldarus_seridia_town = true },
+	{ eog_nature_6 = false }
+]
+portrait = "think"
+local = "Even when my memory lagged, these pines remained familiar to me."
+next = "1"
+
+[nature_6_alt.1]
+portrait = "smile"
+local = "It may sound strange, but I found them such a comfort in those times."
+
+[nature_7]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" },
+]
+portrait = "sigh"
+local = "That breeze, whispering through the branches..."
+next = "1"
+
+[nature_7.1]
+portrait = "neutral"
+local = "Could it be captured with music?"
+
+[nature_8]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" },
+]
+portrait = "neutral"
+local = "So deep in the wood, the canopy weaves together. It seems impenetrable, and yet the sun breaks through."
+next = "1"
+
+[nature_8.1]
+portrait = "smile"
+local = "It always does."
+
+[nature_9]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" },
+]
+portrait = "neutral"
+local = "Talking to you anchors me to this time and place."
+next = "1"
+
+[nature_9.1]
+portrait = "smile"
+local = "Thank you for visiting."
+
+[nature_10]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+]
+portrait = "think"
+local = "The night songs of these forest insects..."
+next = "1"
+
+[nature_10.1]
+portrait = "smile"
+local = "It is the sound of home."
+
+[nature_11]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" },
+	{ caldarus_routine = "deep_woods_forage", comparator = "!=" },
+]
+portrait = "neutral"
+local = "There is an herbaceous scent in the air today. Something that smells like it would make a nice seasoning."
+next = "1"
+
+[nature_11.1]
+portrait = "think"
+local = "Perhaps some foraging is in order."
+
+[nature_12]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ eog_nature_12 = true, expires = "1y" }]
+portrait = "think"
+local = "There are quite a variety of birds that inhabit these woods. I am certain I knew their names, once."
+next = "1"
+
+[nature_12.1]
+portrait = "smile"
+local = "When I am further recovered, I will inquire with the young carpenter for their contemporary names."
+
+[nature_12_alt]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" },
+	{ caldarus_seridia_town = true },
+	{ eog_nature_12 = false }
+]
+portrait = "think"
+local = "There are quite a variety of birds that inhabit these woods. I know many by their ancient names."
+next = "1"
+
+[nature_12_alt.1]
+portrait = "smile"
+local = "I will need to inquire with young Ryis to learn more of their contemporary names."
+
+[nature_13]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" }
+]
+portrait = "neutral"
+local = "Have you taken the time to forage in the Deep Woods? There is much here that cannot be found elsewhere in Mistria."

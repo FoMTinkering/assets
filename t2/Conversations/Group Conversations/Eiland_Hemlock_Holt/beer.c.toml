@@ -1,0 +1,35 @@
+[beer]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "hemlock" }, { npc = "holt" }] },
+	{ eiland_zone = "<hemlock_zone>" },
+	{ eiland_zone = "<holt_zone>" },
+	{ date_time = "2m", comparator = ">=" }
+]
+speaker = "eiland"
+portrait = "neutral"
+local = "You know Hemlock, there are some historians who say that the history of $Beer$ is the history of civilization."
+next = "1"
+
+[beer.1]
+speaker = "hemlock"
+portrait = "wink"
+local = "I'm always saying that."
+next = "2"
+
+[beer.2]
+speaker = "eiland"
+portrait = "think"
+local = "$Beer$ was a significant development for ancient people. It was a staple food, and even used as currency!"
+next = "3"
+
+[beer.3]
+speaker = "hemlock"
+portrait = "happy"
+local = "I'm always saying that too!"
+next = "4"
+
+[beer.4]
+speaker = "holt"
+portrait = "wink"
+local = "I'm happy for you, buddy."

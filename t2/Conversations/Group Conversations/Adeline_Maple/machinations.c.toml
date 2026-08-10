@@ -1,0 +1,37 @@
+[machinations]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "maple" }] },
+	{ adeline_zone = "<maple_zone>" },
+	{ any = [
+		{ adeline_animation = "write" },
+		{ adeline_animation = "write_sit" }
+	] },
+	{ any = [
+		{ location = "adelines_office" },
+		{ maple_shadowing_adeline = true }
+	] }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "adeline" } }]
+speaker = "adeline"
+portrait = "neutral"
+local = "Are you done reviewing my books, Maple? How do they look to you?"
+next = "1"
+
+[machinations.1]
+speaker = "maple"
+portrait = "sad"
+local = "They look okay... Lady Adeline, when do we do the real royal stuff? Like in my stories?"
+next = "2"
+
+[machinations.2]
+speaker = "adeline"
+portrait = "wink"
+local = "This is the real royal stuff, Maple. A good leader works hard!"
+next = "3"
+
+[machinations.3]
+speaker = "maple"
+portrait = "mad"
+effect = "sparkles_dark"
+local = "Sure, but what about our political machinations against neighboring fiefdoms?"

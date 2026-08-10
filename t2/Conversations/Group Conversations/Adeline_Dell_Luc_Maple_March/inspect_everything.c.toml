@@ -1,0 +1,45 @@
+[inspect_everything]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "march" }
+	] },
+	{ adeline_zone = "<dell_zone>" },
+	{ adeline_zone = "<luc_zone>" },
+	{ adeline_zone = "<maple_zone>" },
+	{ adeline_zone = "<march_zone>" },
+	{ adeline_business_review = true }
+]
+writes = [{ asked_for_nails = true, expires = "1m" }]
+speaker = "march"
+portrait = "unimpressed"
+local = "What's with the kids?"
+next = "1"
+
+[inspect_everything.1]
+speaker = "adeline"
+portrait = "happy"
+local = "They're helping out!"
+next = "2"
+
+[inspect_everything.2]
+speaker = "dell"
+portrait = "mad"
+local = "We'll need to inspect everything, Mister March."
+next = "3"
+
+[inspect_everything.3]
+speaker = "maple"
+portrait = "mad"
+local = "Everything."
+next = "4"
+
+[inspect_everything.4]
+speaker = "luc"
+portrait = "mad"
+effect = "shock"
+local = "Especially Olric's rock collection! It's so cool!"

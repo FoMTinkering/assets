@@ -1,0 +1,133 @@
+birthday = { season = "summer", day = 6 }
+loved_gifts = [
+	"beet_soup",
+	"chili_coconut_curry",
+	"gazpacho",
+	"harvest_plate",
+	"mushroom_steak_dinner",
+	"pomegranate_sorbet",
+	"summer_salad",
+	"sweet_potato_pie",
+	"vegetable_pot_pie",
+	"winter_stew",
+
+]
+
+liked_gifts = [
+	"beet_salad",
+	"braised_burdock",
+	"cauliflower_curry",
+	"chickpea_curry",
+	"coconut_milk",
+	"cranberry_juice",
+	"crispy_fried_earthshroom",
+	"cucumber_salad",
+	"orange_juice",
+	"pomegranate",
+	"pomegranate_juice",
+	"roasted_cauliflower",
+	"salted_watermelon",
+	"sauteed_snow_peas",
+	"seaweed_salad",
+	"sesame_broccoli",
+	"simmered_daikon",
+	"steamed_broccoli",
+	"tide_salad",
+	"turnip_and_cabbage_salad",
+]
+
+disliked_gift_tags = ["junk", "bugs", "fishable", "animal_product", "weird_gift"]
+hated_gift = "clam"
+name = "Vera"
+aldarian_name = "VR"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["vendor"]
+journal_portrait_offset = [-118, -39]
+journal_background_color = [255, 235, 245]
+date_photo_offset = [0, 0]
+job = "Hairstyle & Accessory Vendor"
+icon_sprite = "spr_ui_generic_icon_npc_vera"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_vera"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_vera"
+dateable = false
+
+[gossip]
+	line = "vera_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["coffee"]
+	"17" = ["wine"]
+
+[offsets]
+	portrait = [-121, -65]
+	sweat = [-4, 14]
+	hearts = [-4, 14]
+	angry = [-6, 14]
+	sparkles = [1, 6]
+	sparkles_dark = [1, 6]
+	sick = [-5, 16]
+	music_notes = [-5, 8]
+	intensity = [-2, 6]
+	surprise = [-2, 6]
+	shock = [7, 1]
+	sigh = [-5, 10]
+	loud = [11, 6]
+	cheery = [3, 23]
+	drop = [-3, 11]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]

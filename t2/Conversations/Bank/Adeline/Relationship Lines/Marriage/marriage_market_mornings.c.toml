@@ -1,0 +1,210 @@
+# DARCY
+[market_darcy]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "I'm definitely in the mood for some =Coffee=."
+next = "1"
+
+
+[market_darcy.1]
+portrait = "happy"
+local = "I wonder which roasts Darcy will have at her booth today..."
+
+
+# LOUIS
+[market_louis]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "It's Saturday! Can we stop by Louis' booth today?"
+next = "1"
+
+
+[market_louis.1]
+portrait = "happy"
+local = "I want to see what the latest trends are looking like!"
+
+
+# MERRI
+[market_merri]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "Merri is going to be at the Market today..."
+next = "1"
+
+
+[market_merri.1]
+portrait = "happy"
+local = "Mind if I stop in? I've been thinking about getting a new shelf for the office..."
+
+
+# VERA
+[market_vera]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "I want to get to Vera's booth early today..."
+next = "1"
+
+
+[market_vera.1]
+portrait = "happy"
+effect = "drop"
+local = "I've been waiting for Saturday to come so I can get these ends trimmed!"
+
+
+# TALIFERRO
+
+
+[market_taliferro]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "think"
+local = "I might stop by Taliferro's booth today."
+next = "1"
+
+
+[market_taliferro.1]
+portrait = "happy"
+local = "He has to be on his best behavior if he wants to keep his vendor's license..."
+next = "2"
+
+[market_taliferro.2]
+portrait = "sly"
+local = "It's good to keep him on his toes."
+
+# WHEEDLE
+
+
+[market_wheedle]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "sweat_drop", npc = "adeline" } }]
+portrait = "sigh"
+local = "Sigh... I guess I'll stop by Wheedle's booth today."
+next = "1"
+
+
+[market_wheedle.1]
+portrait = "think"
+local = "He said he'd have a great deal for me this week..."
+next = "2"
+
+[market_wheedle.2]
+portrait = "ugh"
+local = "But I know how to do math. It's always a great deal for him!"
+
+
+# STILLWELL
+
+
+[market_stillwell]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ stillwell_has_met = true },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "I think I might stop by Stillwell's booth today..."
+next = "1"
+
+
+[market_stillwell.1]
+portrait = "happy"
+local = "It would be really helpful if he could predict next year's GDP!"
+
+
+# ZOREL
+
+
+[market_zorel]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false },
+	{ zorel_has_met = true }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "Okay, so today I absolutely have to stop by Zorel's booth."
+next = "1"
+
+
+[market_zorel.1]
+portrait = "happy"
+local = "I need some new music to get me in the zone... work goes by so much faster that way!"

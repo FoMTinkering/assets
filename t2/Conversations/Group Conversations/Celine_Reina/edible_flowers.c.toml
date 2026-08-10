@@ -1,0 +1,22 @@
+[edible_flowers]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "reina" }] },
+	{ celine_zone = "<reina_zone>" },
+	{ date_time = "1y", comparator = ">=" },
+]
+speaker = "reina"
+portrait = "neutral"
+local = "Are there edible flowers, Celine? I thought they might look pretty as a garnish."
+next = "1"
+
+[edible_flowers.1]
+speaker = "celine"
+portrait = "think"
+local = "Roses, dandelions, violents, snapdragons, cosmos... they should all be edible."
+next = "2"
+
+[edible_flowers.2]
+speaker = "celine"
+portrait = "happy"
+local = "They'd look so pretty on a cake, too!"

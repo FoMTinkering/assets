@@ -1,0 +1,135 @@
+# Hated gift
+[criminal_confession]
+kind = "gift"
+requires = [
+	{ npc = "wheedle" },
+	{ gift_desire = "hated" },
+	{ gift_given = "criminal_confession" }
+]
+portrait = "mad"
+local = "A $Criminal Confession$! This isn't mine, who said it was?"
+next = "1"
+
+[criminal_confession.1]
+portrait = "happy"
+effect = "drop"
+local = "I'll take this, for... safekeeping."
+next = "2"
+
+[criminal_confession.2]
+portrait = "think"
+local = "And perhaps, for kindling..."
+
+# Generic lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "wheedle" }, { gift_desire = "loved" }]
+portrait = "happy"
+local = "Oho, how delightful! It's so good to be appreciated."
+next = "1"
+
+[loved_gift.1]
+portrait = "wink"
+local = "Just like how I appreciate you, my number one greatest customer!"
+
+[loved_gift_not_fiber]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "wheedle" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "ancient_gold_coin" },
+		{ gift_given = "coin_lump" },
+		{ gift_given = "perfect_diamond" },
+		{ gift_given = "perfect_emerald" },
+		{ gift_given = "perfect_gold_ore" },
+		{ gift_given = "perfect_pink_diamond" },
+		{ gift_given = "perfect_ruby" },
+		{ gift_given = "perfect_sapphire" },
+		{ gift_given = "ore_pink_diamond" },
+	] }
+]
+portrait = "neutral"
+local = "Look at that sparkle! Just like the gleam of a happy customer's smile!"
+
+[fiber]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "wheedle" },
+	{ gift_desire = "loved" },
+	{ gift_given = "fiber" },
+]
+portrait = "neutral"
+local = "[Ari], how did you know!"
+next = "1"
+
+[fiber.1]
+portrait = "happy"
+local = "There's nothing I love more than a little wheed!"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "wheedle" }, { gift_desire = "liked" }]
+portrait = "happy"
+local = "Very nice, very nice. I'll take it!"
+
+[liked_gift_gold]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "wheedle" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "gold_ingot" },
+		{ gift_given = "ore_gold" },
+		{ gift_given = "golden_alpaca_wool" },
+		{ gift_given = "golden_bristle" },
+		{ gift_given = "golden_bull_horn" },
+		{ gift_given = "golden_cheesecake" },
+		{ gift_given = "golden_cookies" },
+		{ gift_given = "golden_duck_egg" },
+		{ gift_given = "golden_duck_feather" },
+		{ gift_given = "golden_egg" },
+		{ gift_given = "golden_feather" },
+		{ gift_given = "golden_horse_hair" },
+		{ gift_given = "golden_rabbit_wool" },
+		{ gift_given = "golden_sheep_wool" }
+	] }
+]
+portrait = "wink"
+local = "How did you know, gold is my favorite color! Hu hu!"
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "wheedle" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Ah, I see. Well, waste not, want not!"
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "wheedle" }, { gift_desire = "disliked" }]
+portrait = "wink"
+local = "Is this a regift? No, don't answer... I understand. I'll find a use for it."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "wheedle" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ wheedle_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "neutral"
+local = "For me! My my! Normally I'm the one doling out deals!"
+next = "1"
+
+[birthday_gift.1]
+portrait = "happy"
+local = "You've given me the greatest birthday gift of all... a deal of my very own!"

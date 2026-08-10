@@ -1,0 +1,179 @@
+[stele_0]
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ caldarus_seridia_town = true },
+	{ seridia_heart_level = 8, comparator = "<" },
+	{ seridia_is_at = "town/Stele" }
+]
+portrait = "think"
+local = "The villagers erected a stele to enshrine the Dragonsworn's... old boots?"
+next = "1"
+
+[stele_0.1]
+portrait = "neutral"
+local = "Humans will put up a statue to commemorate anything will they not?"
+next = "2"
+
+[stele_0.2]
+portrait = "sly"
+local = "I have a hideous top that I do not wear anymore, perhaps the villagers would like to build a great big stele in the middle of town to immortalize it?"
+prompts = [
+	{ local = "So generous, what powers does it have?", next = "3" },
+	{ local = "Look, if you're just giving away cute tops, I'll take it.", next = "3" }
+]
+
+[stele_0.3]
+portrait = "sigh"
+local = "..."
+next = "4"
+
+[stele_0.4]
+portrait = "mad"
+local = "You know what? Never mind."
+
+[stele_1]
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ caldarus_seridia_town = true },
+	{ seridia_heart_level = 8, comparator = ">=" },
+	{ seridia_is_at = "town/Stele" }
+]
+portrait = "neutral"
+local = "It is impressive that you solved the mystery of the stele, [Ari]."
+next = "1"
+
+[stele_1.1]
+portrait = "closed_eyes"
+local = "I commend you."
+
+[manor_pond_0]
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ caldarus_seridia_town = true },
+	{ any = [
+		{ adeline_zone = "<seridia_zone>" },
+		{ seridia_is_at = "town/Manor Pond Edge" },
+		{ seridia_routine = "manor_garden_wander" }
+	] },
+	{ caldarus_seridia_town_timer = false }
+]
+portrait = "think"
+local = "I suggested to Adeline to add some man-eating fish to the manor pond."
+next = "1"
+
+[manor_pond_0.1]
+portrait = "neutral"
+local = "There is no need to actually feed villagers to the fish... but the thought of it is enough to keep subjects in line."
+next = "2"
+
+[manor_pond_0.2]
+portrait = "serious"
+local = "I am not certain she took my proposal seriously..."
+
+[manor_garden_0]
+refresh = "3m"
+requires = [
+	{ npc = "seridia" },
+	{ caldarus_seridia_town = true },
+	{ seridia_routine = "manor_garden_wander" },
+	{ caldarus_seridia_town_timer = false },
+	{ year_time = "2m 7d", comparator = "<=", parser = "date_time" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ season = "fall" }
+]
+portrait = "neutral"
+local = "I see the $Roses$ withered at the end of summer..."
+next = "1"
+
+[manor_garden_0.1]
+portrait = "closed_eyes"
+local = "But fear not... they will be reborn as $Rose Hips$ with the coming of winter."
+next = "2"
+
+[manor_garden_0.2]
+portrait = "smile"
+local = "Such is the cycle of death and rebirth."
+
+[manor_garden_1]
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ caldarus_seridia_town = true },
+	{ seridia_routine = "manor_garden_wander" },
+	{ caldarus_seridia_town_timer = false },
+]
+portrait = "neutral"
+local = "Interesting..."
+next = "1"
+
+[manor_garden_1.1]
+portrait = "think"
+local = "Gazing upon this manor garden, I can see that Celine has been successful in finding her path in this lifetime."
+next = "2"
+
+[manor_garden_1.2]
+portrait = "sly"
+local = "I wonder what she might accomplish, if she turned her eye to destruction rather than creation..."
+next = "3"
+
+[manor_garden_1.3]
+portrait = "closed_eyes_smile"
+local = "Such a thought amuses me."
+
+[manor_garden_2]
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ caldarus_seridia_town = true },
+	{ seridia_routine = "manor_garden_wander" },
+	{ caldarus_seridia_town_timer = false },
+]
+portrait = "neutral"
+local = "Managing a garden is like managing a kingdom..."
+next = "1"
+
+[manor_garden_2.1]
+portrait = "serious"
+local = "Each inhabitant has its own needs and demands."
+next = "2"
+
+[manor_garden_2.2]
+portrait = "sly_think"
+local = "I ruled my own kingdoms to great success for eons..."
+next = "3"
+
+[manor_garden_2.3]
+portrait = "closed_eyes"
+local = "But unfortunately, plants seem to wither at my touch."
+
+[manor_garden_3]
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ caldarus_seridia_town = true },
+	{ seridia_routine = "manor_garden_wander" },
+	{ caldarus_seridia_town_timer = false },
+	{ year_time = "2m 21d", comparator = ">=", parser = "date_time" },
+	{ year_time = "3m", comparator = "<", parser = "date_time" },
+	{ season = "fall" }
+]
+portrait = "neutral"
+local = "The air becomes sharp with cold..."
+next = "1"
+
+[manor_garden_3.1]
+portrait = "serious"
+local = "And soon, the pretty flowers in this garden will succumb to the frosts of winter."
+next = "2"
+
+[manor_garden_3.2]
+portrait = "closed_eyes"
+local = "In death, they will nurture what comes after."
+next = "3"
+
+[manor_garden_3.3]
+portrait = "smile"
+local = "Endings always serve a purpose, you see."

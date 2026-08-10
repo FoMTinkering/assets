@@ -1,0 +1,74 @@
+[bedroom_0]
+refresh = "1m"
+requires = [
+	{ npc = "march" },
+	{ location = "blacksmith_room_left" },
+	{ march_heart_level = 4, comparator = "<=" },
+]
+portrait = "neutral"
+local = "What do you want, [Ari]?"
+
+[bedroom_1]
+refresh = "1m"
+requires = [
+	{ npc = "march" },
+	{ location = "blacksmith_room_left" },
+	{ march_heart_level = 4, comparator = "<=" },
+]
+portrait = "unimpressed"
+local = "Making yourself at home, I see."
+
+[bedroom_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 7, comparator = "<=" },
+	{ location = "blacksmith_room_left" },
+	{ season = "spring" },
+	{ date_time = "1y", comparator = ">=" },
+	{ date_time = "2y", comparator = "<" },
+	{ time_of_day = "night" },
+	{ march_is_at = "blacksmith_room_left/March Bed" },
+]
+portrait = "unimpressed"
+local = "So this is how we're starting your second year in Mistria, huh?"
+
+[bedroom_3]
+refresh = "1m"
+requires = [
+	{ npc = "march" },
+	{ location = "blacksmith_room_left" },
+	{ march_heart_level = 8, comparator = "<" },
+	{ march_heart_level = 6, comparator = ">=" },
+]
+portrait = "sigh"
+effect = "sigh"
+local = "Shop's closed, [Ari]. In case you were confused about that."
+
+[bedroom_4]
+refresh = "12h"
+actions = [{ bark = { bark = "blush", npc = "march" } }]
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "night" },
+	{ march_is_at = "blacksmith_room_left/March Bed" },
+	{ march_is_dating = true },
+	{ march_heart_level = 8, comparator = ">=" },
+]
+portrait = "eight_heart_flustered"
+local = "H-hey, [Ari]..."
+
+[bedroom_5]
+refresh = "12h"
+actions = [{ bark = { bark = "sweat_drop", npc = "march" } }]
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "night" },
+	{ march_is_at = "blacksmith_room_left/March Bed" },
+	{ march_is_best_friend = true },
+	{ march_heart_level = 8, comparator = ">=" },
+]
+portrait = "think"
+effect = "drop"
+local = "Um. Whatever it is, can it wait till tomorrow, [Ari]?"

@@ -1,0 +1,32 @@
+[inn]
+refresh = "2m"
+requires = [
+	{ npc = "eiland" },
+	{ location = "inn" },
+	{ any = [{ season = "fall" }, { season = "winter" }] },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+]
+portrait = "happy"
+local = "Nothing like the warmth of a hearth on a cold night..."
+next = "1"
+
+[inn.1]
+portrait = "neutral"
+local = "That's a story as old as Aldaria."
+
+[inn_2]
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ location = "inn" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ eiland_heart_level = 4, comparator = ">=" }
+]
+portrait = "neutral"
+local = "I was feeling a bit social tonight, so here I am."
+next = "1"
+
+[inn_2.1]
+portrait = "happy"
+effect = "sparkles"
+local = "And here you are!"

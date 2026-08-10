@@ -1,0 +1,16 @@
+[adeline_looks_up]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "elsie" }, { npc = "nora" }] },
+	{ elsie_zone = "<nora_zone>" },
+	{ elsie_zone = "<adeline_zone>", comparator = "!=" }
+]
+speaker = "elsie"
+portrait = "wink"
+local = "You know, Adeline really looks up to you! You're her shining example of someone meticulous and thorough."
+next = "1"
+
+[adeline_looks_up.1]
+speaker = "nora"
+portrait = "embarrassed"
+local = "Oh, that's so sweet of you to say!"

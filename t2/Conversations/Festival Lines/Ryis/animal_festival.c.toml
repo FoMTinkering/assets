@@ -1,0 +1,67 @@
+[animal_festival_anticipation]
+refresh = "3m"
+requires = [{ npc = "ryis" }, { animal_festival_date = "3d", time = "before" }]
+portrait = "neutral"
+local = "Uncle Landen and I have been getting the decorations for the upcoming Animal Festival ready."
+next = "1"
+
+[animal_festival_anticipation.1]
+portrait = "happy"
+local = "I think folks are really going to love them!"
+
+[animal_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ animal_festival_today = true },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+]
+portrait = "neutral"
+local = "Designing and building festival decorations and booths is so satisfying."
+next = "1"
+
+[animal_festival_0.1]
+portrait = "happy"
+local = "Look at all these people enjoying them!"
+
+[animal_festival_first]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ animal_festival_today = true },
+	{ any = [
+		{ small_animal_place = 3 },
+		{ large_animal_place = 3 },
+	] },
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "happy"
+local = "Congrats on the win, [Ari]!"
+
+[animal_festival_chicken_cutout]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ animal_festival_today = true },
+	{ ryis_is_at = "town/af_duck_cutout" },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "happy"
+local = "Hey, [Ari]!"
+next = "1"
+
+[animal_festival_chicken_cutout.1]
+portrait = "neutral"
+local = "Cute, aren't they? Uncle Landen and I had a great time making them."

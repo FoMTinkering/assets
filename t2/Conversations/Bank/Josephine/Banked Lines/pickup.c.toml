@@ -1,0 +1,19 @@
+[pickup]
+refresh = "1y"
+requires = [
+	{ npc = "josephine" },
+	{ any = [
+		{ reina_is_at_location = "haydens_farm" },
+		{ reina_is_at_location = "haydens_house" }
+	] },
+	{ josephine_routine = "general_store_shopping" },
+	{ time_of_day = "night", comparator = "!=" }
+]
+portrait = "neutral"
+local = "It takes a lot to run an Inn! Reina's picking up about half of it from Hayden, and I'm picking up the other half just now. Now, did Reina say tomato or potato?"
+next = "1"
+
+[pickup.1]
+portrait = "sad"
+effect = "sweat"
+local = "Suppose I'll just have to get both!"

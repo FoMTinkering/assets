@@ -1,0 +1,30 @@
+[nailed_it]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "holt" }] },
+	{ celine_zone = "<holt_zone>" },
+	{ holt_heart_level = 2, comparator = ">=" },
+	{ celine_heart_level = 2, comparator = ">=" }
+]
+speaker = "celine"
+portrait = "neutral"
+local = "Thank you so much for keeping my cottage in good repair, dad! You really nailed it."
+next = "1"
+
+[nailed_it.1]
+speaker = "holt"
+portrait = "neutral"
+local = "Ohoho... hohoho!"
+next = "2"
+
+[nailed_it.2]
+speaker = "celine"
+portrait = "ugh"
+local = "What? Huh? No, that wasn't a pun! I didn't..."
+next = "3"
+
+[nailed_it.3]
+speaker = "celine"
+portrait = "angry_blush"
+effect = "drop"
+local = "Don't look at me, [Ari]!"

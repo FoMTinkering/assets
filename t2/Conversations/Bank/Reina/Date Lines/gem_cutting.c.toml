@@ -1,0 +1,115 @@
+[gem_cutting_accept_1]
+kind = "date_acceptance"
+requires = [
+    { npc = "reina" },
+    { date = "gem_cutting" },
+    { da_reina_gem_cutting = 0 },
+    { reina_is_spouse = false }
+]
+writes = [
+    { da_reina_gem_cutting = 1 },
+    { da_reina_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "neutral"
+local = "Oh? $Gem Cutting$?"
+next = "1"
+
+[gem_cutting_accept_1.1]
+portrait = "blush"
+local = "That sounds fun!"
+next = "2"
+
+[gem_cutting_accept_1.2]
+portrait = "blush_open_eyes"
+local = "Sure, why don't we give it a try?"
+
+[gem_cutting_accept_2]
+kind = "date_acceptance"
+requires = [
+    { npc = "reina" },
+    { date = "gem_cutting" },
+    { reina_has_child = false },
+    { any = [
+        { reina_is_spouse = true },
+        { da_reina_gem_cutting = 1, comparator = ">=" }
+    ] }
+]
+writes = [
+    { da_reina_gem_cutting = 2 },
+    { da_reina_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "think"
+local = "I was wondering, [Ari]..."
+next = "1"
+
+[gem_cutting_accept_2.1]
+portrait = "blush_think"
+local = "Would you want to do some $Gem Cutting$ today?"
+next = "2"
+
+[gem_cutting_accept_2.2]
+portrait = "blush_open_eyes"
+local = "Yeah? You do?"
+next = "3"
+
+[gem_cutting_accept_2.3]
+portrait = "blush"
+local = "Yay! I've been wanting to give it another go!"
+
+[gem_cutting_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "reina" },
+    { da_reina_gem_cutting = 1 },
+    { da_reina_gem_cutting_follow_up_gate = true },
+    { reina_is_spouse = false }
+]
+writes = [{ da_reina_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush"
+local = "Thanks for taking me $Gem Cutting$, [Ari]."
+next = "1"
+
+[gem_cutting_follow_up_1.1]
+portrait = "blush_open_eyes"
+local = "I had a really nice time!"
+next = "2"
+
+[gem_cutting_follow_up_1.2]
+portrait = "blush_think"
+local = "It wasn't as hard as I thought it might be..."
+next = "3"
+
+[gem_cutting_follow_up_1.3]
+portrait = "blush"
+local = "And our gems turned out so pretty!"
+next = "4"
+
+[gem_cutting_follow_up_1.4]
+portrait = "blush_open_eyes"
+local = "I wouldn't mind doing that again... hehe."
+
+[gem_cutting_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "reina" },
+    { reina_has_child = false },
+    { any = [{ reina_is_spouse = true }, { da_reina_gem_cutting = 2 }] },
+    { da_reina_gem_cutting_follow_up_gate = true }
+]
+writes = [{ da_reina_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush"
+local = "Hehe... That was fun, [Ari]!"
+next = "1"
+
+[gem_cutting_follow_up_2.1]
+portrait = "blush_think"
+local = "I feel like I'm getting better and better at $Gem Cutting$..."
+next = "2"
+
+[gem_cutting_follow_up_2.2]
+portrait = "blush"
+local = "I'm lucky I have a good teacher!"

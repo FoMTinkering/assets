@@ -1,0 +1,381 @@
+[marriage_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ balor_is_spouse = true },
+	{ wedding_was_yesterday = true },
+	{ time_of_day = "morning" },
+	{ post_wedding_bump = true },
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "blush"
+local = "Good morning, [Ari]."
+next = "1"
+
+[marriage_0.1]
+portrait = "happy"
+local = "Yesterday exceeded even my wildest imagination!"
+next = "2"
+
+[marriage_0.2]
+portrait = "neutral"
+local = "Somehow I never expected the whole town to turn out for us."
+next = "3"
+
+[marriage_0.3]
+portrait = "hope_special"
+local = "In some ways it feels like my life, my real life, is just getting started."
+next = "4"
+
+[marriage_0.4]
+portrait = "blush"
+local = "I love you, [Ari]."
+
+[marriage_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 0 },
+	{ wedding_was_yesterday = false }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "think"
+local = "It's funny..."
+next = "1"
+
+[marriage_1.1]
+portrait = "neutral"
+local = "Doing my daily pick ups for your shipping bin, I got to see [farm_name] grow, bit by bit."
+next = "2"
+
+[marriage_1.2]
+portrait = "happy"
+local = "I'm very much looking forward to seeing where it grows from here!"
+
+[marriage_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 1 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }, { item = "deluxe_curry" }]
+portrait = "sad"
+local = "..."
+next = "1"
+
+[marriage_2.1]
+portrait = "sigh"
+effect = "sigh"
+local = "......"
+prompts = [
+	{ local = "What's up?", next = "2" },
+	{ local = "Is something the matter?", next = "2" }
+]
+
+[marriage_2.2]
+portrait = "sad"
+local = "Ah. Sorry, I made a bit of a business blunder."
+next = "3"
+
+[marriage_2.3]
+portrait = "concerned"
+local = "I enjoy =Deluxe Curry= so much that I thought it'd be a sure fire seller, so I had Reina whip up a cauldron full, but it seems I've miscalculated."
+next = "4"
+
+[marriage_2.4]
+portrait = "ugh"
+local = "It turns out my preferred level of spice isn't to everyone's palate."
+next = "5"
+
+[marriage_2.5]
+portrait = "neutral"
+effect = "drop"
+local = "At least we can both enjoy my miscalculation, eh?"
+
+[marriage_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 2 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "think"
+local = "It's vital for a merchant to only share his best side with potential customers, no matter how much they bother me."
+next = "1"
+
+[marriage_3.1]
+portrait = "neutral"
+local = "It can be exhausting. I'm so glad I can just be myself when I'm with you."
+prompts = [
+	{ local = "I'd say that's your best side.", next = "2" },
+	{ local = "Be yourself, you don't need people like that as a customer.", next = "4" }
+]
+
+[marriage_3.2]
+portrait = "embarrassed"
+local = "You charmer!"
+next = "3"
+
+[marriage_3.3]
+portrait = "happy"
+local = "I'm lucky you didn't become a merchant, I'd have been run out of business!"
+next = "5"
+
+[marriage_3.4]
+portrait = "embarrassed"
+local = "I'm happy to hear you say that."
+next = "5"
+
+[marriage_3.5]
+portrait = "neutral"
+local = "Still, it's probably best if I look at it as just another challenge."
+
+[marriage_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 3 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "sad"
+local = "I don't really like to talk about it, but my parents weren't exactly... the best role models."
+next = "1"
+
+[marriage_4.1]
+portrait = "concerned"
+local = "To be frank, I still don't know how they ended up together."
+next = "2"
+
+[marriage_4.2]
+portrait = "embarrassed"
+local = "It makes me grateful every day that I married someone as wonderful as you."
+next = "3"
+
+[marriage_4.3]
+portrait = "think"
+local = "But at the same time... let me know if I'm living up to my end of the bargain, won't you? It worries me sometimes."
+prompts = [
+	{ local = "You're doing great.", next = "4" },
+	{ local = "You're doing your best, and that's all I ask.", next = "5" },
+	{ local = "More kisses, please.", next = "6" }
+]
+
+[marriage_4.4]
+portrait = "hope_special"
+local = "It means a lot that you think so. I'm certainly trying!"
+
+[marriage_4.5]
+portrait = "hope_special"
+local = "I'm glad you've noticed, but still don't hesitate to let me know how I can do better!"
+
+[marriage_4.6]
+portrait = "blush"
+local = "Ah! At once, my love."
+
+[marriage_5]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 4 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 5 }
+]
+actions = [{ item = { item = "purse", count = 2000 }}]
+portrait = "happy_blush"
+local = "What a deal! What a score!"
+prompts = [
+	{ local = "You seem happy.", next = "1" },
+	{ local = "What happened?", next = "2" }
+]
+
+[marriage_5.1]
+portrait = "happy"
+local = "I sure am!"
+next = "3"
+
+[marriage_5.2]
+portrait = "happy"
+local = "You're going to love this."
+next = "3"
+
+[marriage_5.3]
+portrait = "neutral"
+local = "A major bridge building project in the Capital that's been mired for years in red tape was suddenly approved."
+next = "4"
+
+[marriage_5.4]
+portrait = "sly"
+local = "Prices for stone briefly skyrocketed. And guess who had more stone than he knew what to do with?"
+next = "5"
+
+[marriage_5.5]
+portrait = "embarrassed"
+local = "Here you are [Ari], I want you to share in my good fortune."
+
+[marriage_6]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 5 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 6 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "ugh"
+local = "Some business associates were shocked when I told them I got married."
+next = "1"
+
+[marriage_6.1]
+portrait = "mad"
+local = "They seem to think I'm sort of a... gallivanting rogue!"
+prompts = [
+	{ local = "They sound jealous.", next = "2" },
+	{ local = "Roguishly handsome, maybe.", next = "4" }
+]
+
+[marriage_6.2]
+portrait = "shocked"
+local = "That's it! They're just jealous!"
+next = "3"
+
+[marriage_6.3]
+portrait = "mad"
+local = "Well, you can be sure that I'm going to rub it in their faces about how cute and lovey-dovey we are!"
+
+[marriage_6.4]
+portrait = "happy_blush"
+local = "Haha! I'm glad that the person I care most about can appreciate my charm."
+
+[marriage_7]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 6 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 7 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "think"
+local = "They say time is money but..."
+next = "1"
+
+[marriage_7.1]
+portrait = "blush"
+local = "Well, I just want you to know that I'd rather be spending my time with you."
+next = "2"
+
+[marriage_7.2]
+portrait = "embarrassed"
+local = "I love you, [Ari]."
+
+[marriage_8]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 7 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 8 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "happy_blush"
+local = "......"
+next = "1"
+
+[marriage_8.1]
+portrait = "embarrassed"
+local = "[Ari]! You startled me."
+prompts = [
+	{ local = "What's got you distracted?", next = "2" },
+	{ local = "What were you thinking about?", next = "2" }
+]
+
+[marriage_8.2]
+portrait = "blush"
+local = "Oh, just thinking about last night."
+next = "3"
+
+[marriage_8.3]
+portrait = "wink"
+local = "You always have that effect on me."
+
+[marriage_9]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 8 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 9 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "think"
+local = "Time always seems to be racing by, doesn't it?"
+next = "1"
+
+[marriage_9.1]
+portrait = "neutral"
+local = "It feels like just yesterday I was guiding you to your new farm."
+next = "2"
+
+[marriage_9.2]
+portrait = "blush"
+local = "Who would have guessed that taking a rest by the bridge would turn out to be one of the best decisions of my life."
+next = "3"
+
+[marriage_9.3]
+portrait = "happy_blush"
+local = "I'm looking forward to what's next for us!"

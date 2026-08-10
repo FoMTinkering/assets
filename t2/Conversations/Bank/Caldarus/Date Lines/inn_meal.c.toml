@@ -1,0 +1,391 @@
+[inn_meal_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "inn_meal" },
+	{ da_caldarus_inn_meal = 0 },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ da_caldarus_inn_meal = 1 },
+	{ da_caldarus_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "You would like me to join you... for a meal at the Inn?"
+next = "1"
+
+[inn_meal_accept_1.1]
+speaker = "caldarus"
+portrait = "unsure_special"
+local = "Oh, [Ari]..."
+next = "2"
+
+[inn_meal_accept_1.2]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "I would like nothing more. However..."
+next = "3"
+
+[inn_meal_accept_1.3]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "I should not leave the protection of the $Deep Woods$ in my current state."
+next = "4"
+
+[inn_meal_accept_1.4]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "Would you like to join me for a meal here, instead?"
+next = "5"
+
+[inn_meal_accept_1.5]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "Yes? Ah, wonderful! I will get the fire going, and make us something nice!"
+
+[inn_meal_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "inn_meal" },
+	{ da_caldarus_inn_meal = 1 },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ da_caldarus_inn_meal = 2 },
+	{ da_caldarus_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "Have you had anything to eat yet, [Ari]?"
+next = "1"
+
+[inn_meal_accept_2.1]
+speaker = "caldarus"
+portrait = "think_special"
+local = "I have been practicing, and I think you might like this dish..."
+next = "2"
+
+[inn_meal_accept_2.2]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "Come, have a seat!"
+
+[inn_meal_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "inn_meal" },
+	{ da_caldarus_inn_meal = 2, comparator = ">=" },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ da_caldarus_inn_meal = 3 },
+	{ da_caldarus_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "caldarus"
+portrait = "think_special"
+local = "Oh?"
+next = "1"
+
+[inn_meal_accept_3.1]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "You would like to cook something for me, [Ari]?"
+next = "2"
+
+[inn_meal_accept_3.2]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "That sounds wonderful! How kind!"
+
+[inn_meal_accept_eog_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "inn_meal" },
+	{ da_caldarus_eog_inn_meal = 0 },
+	{ caldarus_seridia_town = true },
+	{ caldarus_is_spouse = false }
+]
+writes = [
+	{ da_caldarus_eog_inn_meal = 1 },
+	{ da_caldarus_eog_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "caldarus"
+portrait = "smile"
+local = "An invitation to the Sleeping Dragon? To share in a meal with you?"
+next = "1"
+
+[inn_meal_accept_eog_1.1]
+portrait = "think_special"
+local = "I would like that very much."
+next = "2"
+
+[inn_meal_accept_eog_1.2]
+portrait = "caring_special"
+local = "If I do not have to cook, my mind will be more free to enjoy your company."
+next = "3"
+
+[inn_meal_accept_eog_1.3]
+portrait = "unsure_special"
+local = "And the food will certainly taste better..."
+next = "4"
+
+[inn_meal_accept_eog_1.4]
+portrait = "laugh_special"
+effect = "sparkles"
+local = "Yes, this is a wonderful idea."
+
+[inn_meal_accept_eog_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "inn_meal" },
+	{ da_caldarus_eog_inn_meal = 1 },
+	{ caldarus_seridia_town = true },
+	{ caldarus_is_spouse = false }
+]
+writes = [
+	{ da_caldarus_eog_inn_meal = 2 },
+	{ da_caldarus_eog_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+portrait = "smile"
+local = "Have you recently eaten, [Ari]?"
+next = "1"
+
+[inn_meal_accept_eog_2.1]
+portrait = "caring_special"
+local = "I thought we might get a table at the Sleeping Dragon Inn."
+next = "2"
+
+[inn_meal_accept_eog_2.2]
+portrait = "think_special"
+local = "Last time we ate together I saw many delicious things on the menu. I would like to indulge in all of them..."
+next = "3"
+
+[inn_meal_accept_eog_2.3]
+portrait = "laugh_special"
+local = "And in your company, as well."
+
+[inn_meal_accept_eog_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "inn_meal" },
+	{ caldarus_has_child = false },
+	{ any = [
+		{ caldarus_is_spouse = true },
+		{ da_caldarus_eog_inn_meal = 2, comparator = ">=" },
+	] },
+	{ caldarus_seridia_town = true },
+]
+writes = [
+	{ da_caldarus_eog_inn_meal = 3 },
+	{ da_caldarus_eog_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "[Ari]... do you think we might share a meal at the Inn again?"
+next = "1"
+
+[inn_meal_accept_eog_3.1]
+portrait = "laugh_special"
+local = "I am enjoying the unique experience of becoming... a regular."
+
+[inn_meal_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_inn_meal = 1 },
+	{ da_caldarus_inn_meal_follow_up_gate = true },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ da_caldarus_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "laugh_special"
+local = "Thank you for spending this time with me, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_1.1]
+portrait = "unsure_special"
+local = "I apologize that I burned the food somewhat..."
+next = "2"
+
+[inn_meal_follow_up_1.2]
+portrait = "embarrassed"
+local = "A dragon is accustomed to burning things, you see."
+next = "3"
+
+[inn_meal_follow_up_1.3]
+portrait = "laugh_special"
+local = "But I am slowly improving, I assure you."
+
+[inn_meal_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_inn_meal = 2 },
+	{ da_caldarus_inn_meal_follow_up_gate = true },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ da_caldarus_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "unsure_special"
+local = "How was it, [Ari]? Did you have a nice time?"
+prompts = [
+	{ local = "Wow, your cooking really is improving!", next = "1" },
+	{ local = "I had a great time!", next = "4" }
+]
+
+[inn_meal_follow_up_2.1]
+portrait = "embarrassed"
+local = "Really?"
+next = "2"
+
+[inn_meal_follow_up_2.2]
+portrait = "laugh_special"
+local = "I was careful to scrape off the charred parts before serving it, this time."
+next = "3"
+
+[inn_meal_follow_up_2.3]
+portrait = "caring_special"
+local = "I am glad that it helped."
+
+[inn_meal_follow_up_2.4]
+portrait = "embarrassed"
+local = "Really?"
+next = "5"
+
+[inn_meal_follow_up_2.5]
+portrait = "laugh_special"
+local = "I did as well."
+next = "6"
+
+[inn_meal_follow_up_2.6]
+portrait = "caring_special"
+local = "I hope you will join me again soon."
+
+[inn_meal_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_inn_meal = 3 },
+	{ da_caldarus_inn_meal_follow_up_gate = true },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ da_caldarus_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "unsure_special"
+local = "Your cooking, [Ari]..."
+next = "1"
+
+[inn_meal_follow_up_3.1]
+portrait = "laugh_special"
+local = "It is consistently beyond my expectations."
+next = "2"
+
+[inn_meal_follow_up_3.2]
+portrait = "embarrassed"
+local = "I could eat it every day."
+
+[inn_meal_follow_up_eog_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_eog_inn_meal = 1 },
+	{ da_caldarus_eog_inn_meal_follow_up_gate = true },
+	{ caldarus_seridia_town = true },
+	{ caldarus_is_spouse = false }
+]
+writes = [{ da_caldarus_eog_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "embarrassed"
+local = "I... hope you enjoyed our meal together, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_eog_1.1]
+portrait = "unsure_special"
+local = "I had a wonderful time. In fact, I feel famished simply thinking of it."
+next = "2"
+
+[inn_meal_follow_up_eog_1.2]
+portrait = "embarrassed"
+local = "Perhaps we can petition for the name to be changed to the Hungry Dragon Inn..."
+next = "3"
+
+[inn_meal_follow_up_eog_1.3]
+portrait = "laugh_special"
+local = "Yes. Let us discuss that over our next meal."
+
+[inn_meal_follow_up_eog_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_eog_inn_meal = 2 },
+	{ da_caldarus_eog_inn_meal_follow_up_gate = true },
+	{ caldarus_seridia_town = true },
+	{ caldarus_is_spouse = false }
+]
+writes = [{ da_caldarus_eog_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "embarrassed"
+local = "I hope that our shared meal pleased you, [Ari]..."
+prompts = [
+	{ local = "It was a nice time.", next = "1" },
+	{ local = "I like seeing you so relaxed", next = "4" }
+]
+
+[inn_meal_follow_up_eog_2.1]
+portrait = "embarrassed"
+local = "It was, was it not?"
+next = "2"
+
+[inn_meal_follow_up_eog_2.2]
+portrait = "caring_special"
+local = "The food was quite delicious. I enjoyed sharing it with you."
+next = "3"
+
+[inn_meal_follow_up_eog_2.3]
+portrait = "unsure_special"
+local = "And I... would do it again some time, if you are amenable."
+
+[inn_meal_follow_up_eog_2.4]
+portrait = "unsure_special"
+local = "I... suppose I was relaxed."
+next = "5"
+
+[inn_meal_follow_up_eog_2.5]
+portrait = "embarrassed"
+local = "You have that effect on me."
+next = "6"
+
+[inn_meal_follow_up_eog_2.6]
+portrait = "caring_special"
+local = "Thank you for the respite, [Ari]."
+
+[inn_meal_follow_up_eog_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_has_child = false },
+	{ any = [{ caldarus_is_spouse = true }, { da_caldarus_eog_inn_meal = 3 }] },
+	{ da_caldarus_eog_inn_meal_follow_up_gate = true },
+	{ caldarus_seridia_town = true }
+]
+writes = [{ da_caldarus_eog_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think_special"
+local = "I have been enjoying our meals at the Inn, just the two of us..."
+next = "1"
+
+[inn_meal_follow_up_eog_3.1]
+portrait = "caring_special"
+local = "We shall need to do it again soon."

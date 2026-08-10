@@ -1,0 +1,22 @@
+[brewing]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "hemlock" }, { npc = "olric" }] },
+	{ hemlock_zone = "<olric_zone>" },
+	{ brewing_supplies = true },
+	{ any = [
+		{ location = "inn" },
+		{ hemlock_zone = "town/inn_yard_chores" },
+		{ hemlock_zone = "town/inn_yard_chat" }
+	] },
+	{ any = [{ time_of_day = "morning" }, { time_of_day = "afternoon" }] }
+]
+speaker = "hemlock"
+portrait = "neutral"
+local = "We're brewing today, Olric! The first step is mashing... we need to crush the grains so we can mix them up to make the mash."
+next = "1"
+
+[brewing.1]
+speaker = "olric"
+portrait = "happy"
+local = "You got it, boss!"

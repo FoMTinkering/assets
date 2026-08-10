@@ -1,0 +1,38 @@
+requires = [
+	{ weather = "snowy" },
+	{ caldarus_seridia_town = true },
+	{ seridia_is_human = true },
+	{ season = "winter" }
+]
+
+# Seridia
+[seridia."6:00am"]
+destination = "seridias_house/Seridia Wake Point"
+
+[seridia."6:12am"]
+destination = "seridias_house/Seridia Fire Bench"
+on_arrival_actions = [{ activity = "seridia_coffee" }]
+
+[seridia."9:21am"]
+destination = "western_ruins/seridia_sea_watch"
+
+[seridia."1:08pm"]
+destination = "western_ruins/spell_cast_1"
+on_arrival_actions = [{ activity = "seridia_spell_cast" }]
+on_arrival_writes = [{ seridia_casting_spells = true }]
+on_departure_writes = [{ seridia_casting_spells = false }]
+
+[seridia."3:48pm"]
+destination = "seridias_house/Seridia Desk Chair"
+on_arrival_actions = [{ animation = "write_sit" }]
+
+[seridia."6:44pm"]
+destination = "seridias_house/Seridia Desk Chair"
+on_arrival_actions = [{ routine = "seridia_bookshelf"}]
+
+[seridia."10:32pm"]
+destination = "seridias_house/Seridia Fire Bench"
+on_arrival_actions = [{ activity = "drink" }]
+
+[seridia."1:55am"]
+destination = "seridias_house/Seridia Wake Point"

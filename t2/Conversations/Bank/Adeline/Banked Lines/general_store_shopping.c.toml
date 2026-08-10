@@ -1,0 +1,20 @@
+[general_store_shopping]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_routine = "general_store_shopping" },
+	{ adeline_heart_level = 2, comparator = ">=" },
+	{ eiland_heart_level = 2, comparator = ">=" },
+]
+portrait = "think"
+local = "Let's see, Eiland asked for... a bag of sugar?"
+next = "1"
+
+[general_store_shopping.1]
+portrait = "happy"
+local = "You know, when we were kids he'd sometimes eat it straight from a bag, haha!"
+next = "2"
+
+[general_store_shopping.2]
+portrait = "mad"
+local = "Wait... you don't think..."

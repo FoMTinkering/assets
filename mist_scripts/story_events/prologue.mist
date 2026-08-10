@@ -1,0 +1,312 @@
+wait_one_tick();
+scene(adelines_office);
+camera_position(prologue_camera_1);
+remove_actor(ari);
+place_actor(adeline, south, prologue_adeline_wander_1);
+animate(adeline, write);
+place_actor(eiland, west, prologue_eiland_entrance);
+play_sound("Ambience/IndoorRain");
+set_post_process("world");
+__override_post_process_time(22, 0);
+request_music_stop(1);
+wait(1);
+//
+
+sim {
+	{
+		wait(0.25);
+		fade_in(4);
+	}
+	{
+		wait(2.5);
+		play_sound("SoundEffects/SpecialEvents/IndoorThunderIndividual");
+	}
+	{
+		wait(2);
+		sim {
+			{
+				wait(0.25);
+				free bark_speech(adeline, ellipses);
+			}
+			{
+				animate(adeline, think);
+				wait(1.75);
+				sim {
+					walk(adeline, prologue_adeline_wander_2);
+					set_move_speed(adeline, 0.5);
+				}
+				face(adeline, south);
+				animate(adeline, think);
+				wait(1.5);
+				animate(adeline, write);
+				wait(1.5);
+				animate(adeline, idle);
+				sim {
+					walk(adeline, prologue_adeline_pause);
+					set_move_speed(adeline, 0.5);
+				}
+				free bark_speech(adeline, exclamation_mark);
+				face(adeline, east);
+			}
+		}
+	}
+	{
+		wait(8.75);
+		play_sound("SoundEffects/SpecialEvents/PoliteKnock");
+	}
+	{
+		wait(9.25);
+		pan_camera(1.5, prologue_camera_2);
+	}
+	{
+		wait(9.45);
+		play_sound("SoundEffects/Entrances/DoorWoodIndoorOpen2D");
+		wait(0.35);
+		sim {
+			walk(eiland, prologue_eiland_start);
+			set_move_speed(eiland, 0.45);
+		}
+		face(eiland, west);
+	}
+	{
+		wait(10.7);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		walk_slow(eiland, prologue_eiland_coffee);
+		face(eiland, south);
+		animate(eiland, action);
+		wait(0.5);
+		setup_prop(prologue_coffee);
+		animate(eiland, idle);
+		wait(0.25);
+		face(eiland, west);
+	}
+	{
+		wait(1.5);
+		walk_slow(adeline, prologue_adeline_desk);
+		face(adeline, east);
+	}
+	{
+		wait(1.75);
+		pan_camera(2.5, prologue_camera_3);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+free bark_speech(adeline, cute_face);
+wait(0.5);
+free bark_speech(eiland, cute_face);
+wait(1.25);
+face(adeline, south);
+animate(adeline, write);
+wait(1);
+sim {
+	{
+		wait(2.5);
+		animate(adeline, idle);
+		face(adeline, east);
+		wait(1.25);
+		sim {
+			walk(adeline, prologue_adeline_numbers);
+			set_move_speed(adeline, 0.4);
+		}
+		face(adeline, north);
+	}
+	{
+		wait(0.25);
+		play_sound("SoundEffects/SpecialEvents/IndoorThunderIndividual");
+	}
+	{
+		wait(0.75);
+		sim {
+			walk(eiland, prologue_eiland_inspect);
+			set_move_speed(eiland, 0.4);
+		}
+		face(eiland, north);
+	}
+	//
+	//
+	//
+	//
+	{
+		wait(2);
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(adeline, east);
+	}
+	{
+		wait(1);
+		face(eiland, west);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		face(adeline, south);
+		animate(adeline, write);
+	}
+	{
+		wait(2);
+		play_sound("SoundEffects/SpecialEvents/IndoorThunderIndividual");
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		animate(adeline, idle);
+		face(adeline, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		face(eiland, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(0.5);
+		free bark_speech(eiland, ellipses);
+		wait(1.75);
+		sim {
+			walk(eiland, prologue_eiland_think);
+			set_move_speed(eiland, 0.4);
+		}
+		face(eiland, south);
+	}
+	{
+		wait(1);
+		play_sound("SoundEffects/SpecialEvents/IndoorThunderIndividual");
+	}
+	{
+		wait(3.75);
+		face(adeline, south);
+	}
+	{
+		wait(2.5);
+		pan_camera(4, prologue_camera_1);
+	}
+	{
+		wait(2.5);
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(0.1);
+		animate(adeline, finger_snap);
+		wait(1.2);
+		anim_speed(adeline, 0);
+		wait(0.25);
+		animate(adeline, idle);
+		anim_speed(adeline, 1);
+	}
+	{
+		wait(0.8);
+		sim {
+			play_sound("SoundEffects/SpecialEvents/SnapAndDing");
+			play_sound("SoundEffects/SpecialEvents/SnapAndDing");
+			play_sound("SoundEffects/SpecialEvents/SnapAndDing");
+		}
+
+	}
+	{
+		pan_camera(0.5, prologue_camera_4);
+	}
+	{
+		wait(1);
+		free bark_speech(eiland, exclamation_mark);
+		wait(0.25);
+		face(eiland, north);
+	}
+	{
+		wait(1.2);
+		request_music_play("Music/Events/DragonCutscene");
+	}
+	{
+		wait(1.2);
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.25);
+		sim {
+			walk(adeline, prologue_adeline_idea);
+			set_move_speed(adeline, 1.2);
+		}
+		face(adeline, east);
+	}
+	{
+		wait(0.75);
+		pan_camera(1.5, prologue_camera_1);
+	}
+	{
+		wait(1);
+		face(eiland, west);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(adeline, south);
+		wait(0.25);
+		animate(adeline, think);
+		wait(0.5);
+		anim_speed(adeline, 0);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+sim {
+	{
+		wait(1);
+		fade_out(2);
+	}
+	{
+		free pan_camera(5, prologue_camera_5);
+	}
+	{
+		wait(3.1);
+		anim_speed(adeline, 1);
+		wait_one_tick();
+	}
+}

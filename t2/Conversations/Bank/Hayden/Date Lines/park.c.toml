@@ -1,0 +1,96 @@
+[park_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "hayden" },
+	{ date = "park" },
+	{ da_hayden_park = 0 },
+	{ hayden_is_spouse = false }
+]
+writes = [
+	{ da_hayden_park = 1 },
+	{ da_hayden_park_follow_up_gate = true, expires = "1d" }
+]
+speaker = "hayden"
+portrait = "happy"
+local = "Hey, [Ari]!"
+next = "1"
+
+[park_accept_1.1]
+speaker = "hayden"
+portrait = "shy_special"
+local = "What do you say to me and you heading over to the $Park$ and having ourselves a date?"
+next = "2"
+
+[park_accept_1.2]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "You'd like to? Great!"
+
+[park_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "hayden" },
+	{ date = "park" },
+	{ hayden_has_child = false },
+	{ any = [
+		{ hayden_is_spouse = true },
+		{ da_hayden_park = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_hayden_park = 2 },
+	{ da_hayden_park_follow_up_gate = true, expires = "1d" }
+]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "What's that, [Ari]?"
+next = "1"
+
+[park_accept_2.1]
+speaker = "hayden"
+portrait = "happy"
+local = "You want to go to the $Park$ together?"
+next = "2"
+
+[park_accept_2.2]
+speaker = "hayden"
+portrait = "wink_fist"
+local = "Sounds fun to me!"
+
+[park_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ da_hayden_park = 1 },
+	{ da_hayden_park_follow_up_gate = true },
+	{ hayden_is_spouse = false }
+]
+writes = [{ da_hayden_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "neutral"
+local = "Growing up in Mistria, I got a lot of good memories at that $Park$."
+next = "1"
+
+[park_follow_up_1.1]
+portrait = "shy_special"
+local = "And now I've got one more."
+
+[park_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_has_child = false },
+	{ any = [{ hayden_is_spouse = true }, { da_hayden_park = 2 }] },
+	{ da_hayden_park_follow_up_gate = true }
+]
+writes = [{ da_hayden_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "shy_special"
+local = "I really do enjoy our dates together."
+next = "1"
+
+[park_follow_up_2.1]
+portrait = "happy"
+local = "And the $Park$ is such a nice place to relax!"

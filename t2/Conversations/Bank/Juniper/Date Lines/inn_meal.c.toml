@@ -1,0 +1,155 @@
+[inn_meal_accept_1]
+kind = "date_acceptance"
+requires = [
+    { npc = "juniper" },
+    { date = "inn_meal" },
+    { da_juniper_inn_meal = 0 },
+    { juniper_is_spouse = false }
+]
+writes = [
+    { da_juniper_inn_meal = 1 },
+    { da_juniper_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "juniper"
+portrait = "sly"
+local = "You want to take me out for a meal?"
+next = "1"
+
+[inn_meal_accept_1.1]
+speaker = "juniper"
+portrait = "embarrassed"
+local = "How quaint..."
+next = "2"
+
+[inn_meal_accept_1.2]
+speaker = "juniper"
+portrait = "think_special"
+local = "I'll allow it."
+
+[inn_meal_accept_2]
+kind = "date_acceptance"
+requires = [
+    { npc = "juniper" },
+    { date = "inn_meal" },
+    { da_juniper_inn_meal = 1 },
+    { juniper_is_spouse = false }
+]
+writes = [
+    { da_juniper_inn_meal = 2 },
+    { da_juniper_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "juniper"
+portrait = "angry_blush"
+local = "[Ari]. Come here."
+next = "1"
+
+[inn_meal_accept_2.1]
+speaker = "juniper"
+portrait = "embarrassed"
+local = "I have decided we are going to the Inn again."
+next = "2"
+
+[inn_meal_accept_2.2]
+speaker = "juniper"
+portrait = "think_special"
+local = "Since you asked me out last time we went..."
+
+[inn_meal_accept_3]
+kind = "date_acceptance"
+requires = [
+    { npc = "juniper" },
+    { date = "inn_meal" },
+    { juniper_has_child = false },
+    { any = [
+        { juniper_is_spouse = true },
+        { da_juniper_inn_meal = 2, comparator = ">=" }
+    ] }
+]
+writes = [
+    { da_juniper_inn_meal = 3 },
+    { da_juniper_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "juniper"
+portrait = "blush"
+local = "Want to go get some food?"
+next = "1"
+
+[inn_meal_accept_3.1]
+speaker = "juniper"
+portrait = "happy"
+effect = "hearts"
+local = "Yes? Good. Excellent."
+
+[inn_meal_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "juniper" },
+    { da_juniper_inn_meal = 1 },
+    { da_juniper_inn_meal_follow_up_gate = true },
+    { juniper_is_spouse = false }
+]
+writes = [{ da_juniper_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "think_special"
+local = "As cliché as it sounds..."
+next = "1"
+
+[inn_meal_follow_up_1.1]
+portrait = "blush"
+effect = "hearts"
+local = "I had a nice time with you at the $Inn$, [Ari]."
+
+[inn_meal_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "juniper" },
+    { da_juniper_inn_meal = 2 },
+    { da_juniper_inn_meal_follow_up_gate = true },
+    { juniper_is_spouse = false }
+]
+writes = [{ da_juniper_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "think_special"
+local = "Thanks for coming out with me..."
+next = "1"
+
+[inn_meal_follow_up_2.1]
+portrait = "blush"
+local = "Next time, I suppose I'll let you pick where we go."
+next = "2"
+
+[inn_meal_follow_up_2.2]
+portrait = "embarrassed"
+local = "Just keep in mind what they say-"
+next = "3"
+
+[inn_meal_follow_up_2.3]
+portrait = "blush"
+local = "The way to a woman's heart is through her stomach."
+next = "4"
+
+[inn_meal_follow_up_2.4]
+portrait = "wild_laugh"
+local = "Oh ho ho ho!"
+
+[inn_meal_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "juniper" },
+    { juniper_has_child = false },
+    { any = [{ juniper_is_spouse = true }, { da_juniper_inn_meal = 3 }] },
+    { da_juniper_inn_meal_follow_up_gate = true }
+]
+writes = [{ da_juniper_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "blush"
+local = "That was a fun meal, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_3.1]
+portrait = "wink"
+effect = "hearts"
+local = "Let's go again soon!"

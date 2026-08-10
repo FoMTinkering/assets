@@ -1,0 +1,298 @@
+scene(haydens_farm);
+place_actor(hayden, west, h4h_hayden_entrance);
+animate(hayden, till);
+place_actor(ari, north, h4h_ari_entrance);
+camera_position(h4h_camera_1);
+request_music_play(hayden);
+setup_prop(h4h_feed_stack);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		walk_slow(ari, h4h_ari_start);
+		face(ari, west);
+	}
+	{
+		wait(2.5);
+		free bark_speech(hayden, exclamation_mark);
+		wait(0.5);
+		animate(hayden, idle);
+	}
+	{
+		pan_camera(3.5, h4h_camera_2);
+	}
+	{
+		wait(3.5);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+free bark_speech(hayden, cute_face);
+wait(0.5);
+next_line(); //
+close_textbox();
+sim {
+	{
+		pan_camera(4, h4h_camera_3);
+	}
+	{
+		walk_slow(hayden, h4h_hayden_start);
+		face(hayden, east);
+	}
+	free {
+		wait(0.5);
+		walk_slow(ari, h4h_ari_pause);
+		face(ari, west);
+	}
+	{
+		wait(2);
+		place_actor(henrietta, east, h4h_henrietta_entrance);
+		walk(henrietta, h4h_henrietta_start);
+		face(henrietta, west);
+	}
+}
+sim {
+	{
+		wait(1);
+		animate(hayden, action);
+		wait(0.5);
+		animate(hayden, idle);
+	}
+	{
+		wait(1.5);
+		animate(henrietta, flap);
+		free bark(henrietta, music);
+		play_sound("SoundEffects/Animals/ChickenHenriettaCutscene");
+		wait(0.5);
+		animate(henrietta, idle);
+	}
+	{
+		next_line(); //
+	}
+}
+
+//
+if get_response() == 0 {
+	sim {
+		{
+			wait(1);
+			face(henrietta, east);
+		}
+		{
+			next_line(); //
+		}
+	}
+	close_textbox();
+	wait(0.5);
+	free bark(henrietta, cute_face);
+	wait(1);
+} else {
+	sim {
+		{
+			wait(1);
+			face(henrietta, east);
+		}
+		{
+			next_line(); //
+		}
+	}
+	close_textbox();
+	wait(0.5);
+	free bark(henrietta, annoyed);
+	wait(1);
+}
+sim {
+	free {
+		walk(henrietta, h4h_henrietta_peck_1);
+		face(henrietta, west);
+		wait(1);
+		animate(henrietta, eat);
+		wait(1);
+		animate(henrietta, idle);
+		wait(4);
+		walk_slow(henrietta, h4h_henrietta_peck_2);
+		face(henrietta, west);
+		wait(1);
+		animate(henrietta, eat);
+		wait(1);
+		animate(henrietta, idle);
+	}
+	{
+		wait(1);
+		face(hayden, west);
+		wait(0.5);
+		free bark_speech(hayden, ellipses);
+		wait(2);
+	}
+	{
+		wait(2);
+		walk_slow(ari, h4h_henrietta_start);
+		face(ari, west);
+	}
+	{
+		wait(2);
+		pan_camera(1.5, h4h_camera_4);
+	}
+}
+sim {
+	{
+		wait(1);
+		face(hayden, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.75);
+		face(hayden, west);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(hayden, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.75);
+		face(hayden, west);
+	}
+	{
+		next_line(); //
+	}
+}
+
+//
+sim {
+	{
+		wait(0.75);
+		free bark_speech(hayden, exclamation_mark);
+		wait(0.25);
+		face(hayden, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(0.5);
+		walk_slow(hayden, h4h_hayden_henrietta);
+		face(hayden, west);
+	}
+	{
+		wait(1.5);
+		free bark(henrietta, exclamation_mark);
+		wait(0.5);
+		face(henrietta, east);
+	}
+	{
+		pan_camera(2, h4h_camera_5);
+	}
+	{
+		wait(1.5);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark(henrietta, music);
+wait(1.25);
+free bark_speech(hayden, heart);
+wait(1.5);
+sim {
+	{
+		wait(0.5);
+		face(hayden, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(1);
+		face(henrietta, west);
+		animate(henrietta, eat);
+		wait(1);
+		animate(henrietta, idle);
+	}
+	{
+		wait(0.5);
+		walk(hayden, h4h_hayden_start);
+		face(hayden, east);
+	}
+	{
+		wait(1);
+		next_line(); //
+	}
+	{
+		wait(0.5);
+		pan_camera(2, h4h_camera_4);
+	}
+}
+sim {
+	{
+		wait(1);
+		face(hayden, west);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(hayden, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+sim {
+	face(hayden, west);
+	pan_camera(1.5, h4h_camera_5);
+	{
+		wait(0.5);
+		face(henrietta, east);
+		wait(1.5);
+		animate(henrietta, flap);
+		free bark(henrietta, music);
+		play_sound("SoundEffects/Animals/ChickenHenriettaCutscene");
+		wait(0.5);
+		animate(henrietta, idle);
+	}
+}
+wait(1);
+pan_camera(1, h4h_camera_4);
+wait(0.5);
+free bark_speech(hayden, cute_face);
+wait(1);
+sim {
+	face(hayden, east);
+	fade_out(2);
+}

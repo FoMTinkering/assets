@@ -1,0 +1,12 @@
+[post_forge]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ march_forge_work_day = true },
+	{ march_routine = "forge_work_solo", comparator = "!=" },
+	{ march_routine = "forge_work_principal", comparator = "!=" },
+	{ march_routine = "forge_work_secondary", comparator = "!=" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+]
+portrait = "think"
+local = "I'm never satisfied with the day if I haven't spent some time at the forge."

@@ -1,0 +1,195 @@
+# Loved gifts
+[red_wine]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "louis" },
+	{ gift_desire = "loved" },
+	{ gift_given = "red_wine" }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "Oh, what an enchanting =Red Wine=! Behold that luster, like the deepest of velvets. I will enjoy this, [Ari]!"
+
+[white_wine]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "louis" },
+	{ gift_desire = "loved" },
+	{ gift_given = "white_wine" }
+]
+portrait = "happy"
+effect = "cheery"
+local = "What a delightful =White Wine=! Now, whatever shall I pair it with? I must be sure to draw out its complexities..."
+
+# Liked gifts
+[crystal]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "louis" },
+	{ gift_desire = "liked" },
+	{ gift_given = "crystal" }
+]
+portrait = "happy"
+local = "A =Crystal=! Lovely! What should I use it for? Beads? Buttons? Perhaps an adornment..."
+
+[lilac]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "louis" },
+	{ gift_desire = "liked" },
+	{ gift_given = "lilac" }
+]
+portrait = "happy"
+local = "What a charming bloom! =Lilacs= have the loveliest scent, and they make fetching lapel flowers."
+
+# Hated gift
+[fuzzy_moth]
+kind = "gift"
+requires = [
+	{ npc = "louis" },
+	{ gift_desire = "hated" },
+	{ gift_given = "fuzzy_moth" }
+]
+portrait = "ugh"
+effect = "sweat"
+local = "Oh no no no [Ari], this will not do! I can't abide such a thing near my fabrics! A $Fuzzy Moth$ is a harbinger of disaster!"
+
+# Generic lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "louis" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "sparkles"
+local = "How beatific! How exceptional! I shan't forget this gift, [Ari]!"
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "louis" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "sparkles"
+local = "You have my sincerest thanks, [Ari]. I will make most excellent use of this!"
+
+[loved_gift_quality]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "louis" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "golden_alpaca_wool" },
+		{ gift_given = "golden_bristle" },
+		{ gift_given = "golden_duck_feather" },
+		{ gift_given = "golden_feather" },
+		{ gift_given = "golden_horse_hair" },
+		{ gift_given = "golden_rabbit_wool" },
+		{ gift_given = "golden_sheep_wool" },
+	] },
+]
+portrait = "happy"
+effect = "sparkles"
+local = "Materials of this caliber beg to be transformed into the finest of goods! I feel inspired! Touched by the divine! My deepest gratitude to you, [Ari]!"
+
+[loved_gift_wine]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "louis" },
+	{ gift_desire = "loved" },
+	{ any = [{ gift_given = "red_wine" }, { gift_given = "white_wine" }] }
+]
+portrait = "wink"
+effect = "sparkles"
+local = "Ahh, Mistrian soil truly makes for the finest vintage! Thank you, this is an elegant gift!"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "louis" }, { gift_desire = "liked" }]
+portrait = "happy"
+local = "A most thoughtful gift, [Ari]. Thank you."
+
+[liked_gift_2]
+kind = "gift"
+requires = [{ npc = "louis" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "You have a generous heart, [Ari]. My thanks."
+
+[liked_gift_flower]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "louis" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "breath_of_fire" },
+		{ gift_given = "celosia" },
+		{ gift_given = "crystal_rose" },
+		{ gift_given = "essence_blossom" },
+		{ gift_given = "frost_lily" },
+		{ gift_given = "lilac" },
+		{ gift_given = "marigold" },
+		{ gift_given = "shadow_flower" },
+		{ gift_given = "snapdragon" },
+		{ gift_given = "viola" },
+	] },
+]
+portrait = "neutral"
+local = "How lovely! There are some flowers that truly accentuate everything around them, don't you think?"
+
+[liked_gift_materials]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "louis" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "alpaca_wool" },
+		{ gift_given = "bristle" },
+		{ gift_given = "cattail" },
+		{ gift_given = "duck_feather" },
+		{ gift_given = "feather" },
+		{ gift_given = "horse_hair" },
+		{ gift_given = "rabbit_wool" },
+		{ gift_given = "sheep_wool" },
+	] },
+]
+portrait = "neutral"
+local = "Splendid! I'll be sure to turn this into something that shines."
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "louis" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "I thank you for your kindness."
+
+[neutral_gift_2]
+kind = "gift"
+requires = [{ npc = "louis" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Oh, for me? It's a nice thought."
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "louis" }, { gift_desire = "disliked" }]
+portrait = "think"
+local = "Ah, I suppose I can find some space for it in my bags..."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "louis" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ louis_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "embarrassed"
+effect = "sparkles"
+local = "Oh, you're a thoughtful one. Thank you for thinking of me on my birthday."

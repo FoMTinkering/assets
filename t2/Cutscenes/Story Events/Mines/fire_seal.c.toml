@@ -1,0 +1,145 @@
+[break_fire_seal]
+kind = "gameplay_triggered"
+writes = [
+	{ bfs = true, expires = "4d" },
+	{ caldarus_is_human = true },
+]
+speaker = "seridia"
+portrait = "neutral"
+local = "^Hero, valiantly done-^"
+next = "1"
+
+[break_fire_seal.1]
+speaker = "seridia"
+portrait = "mad"
+local = "^A $Sealing Scroll$!?^"
+next = "extra_1"
+
+[break_fire_seal.extra_1]
+speaker = "seridia"
+portrait = "mad"
+local = "^No...! It's a trap!^"
+next = "extra_2"
+
+[break_fire_seal.extra_2]
+speaker = "seridia"
+portrait = "eyes_shine"
+local = "^Quickly! You must flee, or you will be sealed as well!^"
+next = "2"
+
+[break_fire_seal.2]
+no_speaker = true
+local = "Your body is growing heavy and your senses are fading..."
+prompts = [{ local = "Call out for help.", next = "3" }, { local = "Do nothing.", next = "3" }] # will fix later
+
+[break_fire_seal.loop_0]
+no_speaker = true
+local = "..."
+next = "loop_1"
+
+[break_fire_seal.loop_1]
+no_speaker = true
+local = "..."
+prompts = [{ local = "Call out for help.", next = "3" }, { local = "Do nothing.", next = "loop_0" }]
+
+[break_fire_seal.3]
+no_speaker = true
+local = "You called out for help."
+next = "4"
+
+[break_fire_seal.4]
+# statue
+speaker = "caldarus"
+portrait = "real_closed_eyes"
+local = "[Ari]...? I can hear your voice calling out in my mind. What has happened?"
+next = "5"
+
+[break_fire_seal.5]
+# statue
+speaker = "caldarus"
+portrait = "real"
+local = "A $Sealing Scroll$!?"
+next = "6"
+
+[break_fire_seal.6]
+# statue
+speaker = "caldarus"
+portrait = "real"
+local = "Hurry, [Ari]! You must take action before it is too late. With the fire seal broken, I bestow upon you a new spell - $Dragon's Breath$."
+next = "7"
+
+[break_fire_seal.7]
+# statue
+speaker = "caldarus"
+portrait = "real"
+local = "Use it now to destroy the $Sealing Scroll$!"
+next = "8"
+
+[break_fire_seal.8]
+# statue
+speaker = "caldarus"
+portrait = "real"
+local = "[Ari]...? [Ari], can you hear me?"
+next = "9"
+
+[break_fire_seal.9]
+# statue
+speaker = "caldarus"
+portrait = "real"
+local = "Please... wake up! You must use the spell!"
+next = "10"
+
+[break_fire_seal.10]
+# statue
+speaker = "caldarus"
+portrait = "real_closed_eyes"
+local = "..."
+next = "11"
+
+[break_fire_seal.11]
+# statue
+speaker = "caldarus"
+portrait = "real"
+local = "I do not have enough power. But... it is the only way..."
+next = "12"
+
+[break_fire_seal.12]
+speaker = "caldarus"
+portrait = "pained"
+local = "[Ari], hold on! I am coming to save you!"
+next = "13"
+
+[break_fire_seal.13]
+speaker = "caldarus"
+portrait = "sad"
+local = "[Ari]... Thank goodness you are safe."
+next = "14"
+
+[break_fire_seal.14]
+speaker = "caldarus"
+portrait = "sigh"
+local = "I do not have much strength left."
+next = "15"
+
+[break_fire_seal.15]
+speaker = "caldarus"
+portrait = "neutral"
+local = "I must retreat to my temple within the $Deep Woods$... $Use your new spell to clear the way$ and join me there."
+
+[fire_seal]
+kind = "gameplay_triggered"
+writes = [{ fire_seal = "seen" }]
+speaker = "seridia"
+portrait = "neutral_closed"
+local = "^Hero, break the Fire Seal...^"
+next = "1"
+
+[fire_seal.1]
+speaker = "seridia"
+portrait = "neutral"
+local = "^I place my faith... in you...^"
+next = "2"
+
+[fire_seal.2]
+no_speaker = true
+local = "Hopefully Juniper can help me unravel the Seal's requirements."

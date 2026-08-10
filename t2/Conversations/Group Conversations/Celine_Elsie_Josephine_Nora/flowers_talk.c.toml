@@ -1,0 +1,35 @@
+[flowers_talk]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "celine" },
+		{ npc = "elsie" },
+		{ npc = "josephine" },
+		{ npc = "nora" }
+	] },
+	{ celine_zone = "<elsie_zone>" },
+	{ celine_zone = "<josephine_zone>" },
+	{ celine_zone = "<nora_zone>" },
+]
+speaker = "elsie"
+portrait = "neutral"
+local = "Did you know that there's a language of flowers, Celine?"
+next = "1"
+
+[flowers_talk.1]
+speaker = "celine"
+portrait = "mad"
+effect = "shock"
+local = "Really? Flowers talk to each other? The Codex Mistria didn't cover this..."
+next = "2"
+
+[flowers_talk.2]
+speaker = "josephine"
+portrait = "think"
+local = "I don't think that's quite where Elsie was going with it, Celine."
+next = "3"
+
+[flowers_talk.3]
+speaker = "nora"
+portrait = "happy"
+local = "It's more like a language of romance, isn't it?"

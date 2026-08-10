@@ -1,0 +1,40 @@
+[quest_board]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "eiland" }] },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "town/quest_board" }
+]
+speaker = "eiland"
+portrait = "neutral"
+local = "You update the quest board? Every day?"
+next = "1"
+
+[quest_board.1]
+speaker = "adeline"
+portrait = "wink"
+local = "Every day! Mistria never sleeps, Eiland."
+next = "2"
+
+[quest_board.2]
+speaker = "eiland"
+portrait = "think"
+local = "I sleep, personally."
+
+[quest_board_2]
+refresh = "1m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "eiland" }] },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "town/quest_board" }
+]
+speaker = "adeline"
+portrait = "sigh"
+local = "Thanks for helping me out today, Eiland. I should be back on track by tomorrow!"
+next = "1"
+
+[quest_board_2.1]
+speaker = "eiland"
+portrait = "neutral"
+local = "Happy to help! Don't hesitate to call on your brother when you need a hand, okay?"
+

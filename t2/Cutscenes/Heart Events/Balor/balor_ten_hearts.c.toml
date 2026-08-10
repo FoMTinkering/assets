@@ -1,0 +1,369 @@
+[engagement_ring_balor]
+kind = "gameplay_triggered"
+actions = [
+	{ bark = { bark = "cute_face", npc = "balor" } },
+	{ cutscene = "balor_ten_hearts" }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "Something on your mind, [Ari]?"
+next = "1"
+
+[engagement_ring_balor.1]
+speaker = "balor"
+portrait = "happy"
+local = "Sure, I have time to talk."
+next = "2"
+
+[engagement_ring_balor.2]
+speaker = "balor"
+portrait = "wink"
+local = "How about we wander the $Eastern Road$ and have ourselves a chat?"
+
+# 10 heart scene
+[balor_ten_hearts]
+kind = "gameplay_triggered"
+speaker = "balor"
+portrait = "neutral"
+local = "It's so lovely out here, no matter the season..."
+next = "1"
+
+[balor_ten_hearts.1]
+speaker = "balor"
+portrait = "happy"
+local = "And this bridge has a special place in my heart."
+next = "2"
+
+[balor_ten_hearts.2]
+speaker = "balor"
+portrait = "neutral"
+local = "I think of you every time I cross it on my way back to town..."
+next = "3"
+
+[balor_ten_hearts.3]
+speaker = "balor"
+portrait = "hope_special"
+local = "You remember, right? This is where we first met."
+next = "4"
+
+[balor_ten_hearts.4]
+speaker = "balor"
+portrait = "concerned"
+local = "I was in a different place in my life, then."
+next = "5"
+
+[balor_ten_hearts.5]
+speaker = "balor"
+portrait = "hurt"
+local = "My time in the Capital wasn't so far behind me yet. I know that I'm not that person anymore... but I can't deny that history, either."
+next = "6"
+
+[balor_ten_hearts.6]
+speaker = "balor"
+portrait = "sincere_special"
+local = "I want you to know all of me, [Ari]. That includes the parts of I'm not as proud of."
+prompts = [
+	{ local = "I don't mind a little bit of mystery...", next = "7" },
+	{ local = "I know you, and you're wonderful just as you are.", next = "8" }
+]
+
+[balor_ten_hearts.7]
+speaker = "balor"
+portrait = "blush"
+local = "[Ari]..."
+next = "9"
+
+[balor_ten_hearts.8]
+speaker = "balor"
+portrait = "hope_special"
+local = "[Ari]... Do you really think so?"
+next = "9"
+
+[balor_ten_hearts.9]
+speaker = "balor"
+portrait = "neutral"
+local = "I'm glad."
+next = "10"
+
+[balor_ten_hearts.10]
+speaker = "balor"
+portrait = "sad"
+local = "Looking back, I really did have a hard life. It's not an excuse, but-"
+next = "11"
+
+[balor_ten_hearts.11]
+speaker = "balor"
+portrait = "mad"
+local = "I was young, angry, and desperate..."
+next = "12"
+
+[balor_ten_hearts.12]
+speaker = "balor"
+portrait = "sad"
+local = "Stealing and cheating were all I knew growing up. It's how I survived life in the Capital."
+next = "13"
+
+[balor_ten_hearts.13]
+speaker = "balor"
+portrait = "hurt"
+local = "And... I must have carried some remnant of that with me to Mistria. In the beginning, I'd convinced myself this was just another stop on the road."
+next = "14"
+
+[balor_ten_hearts.14]
+speaker = "balor"
+portrait = "blush_special"
+local = "That changed because of you."
+next = "15"
+
+[balor_ten_hearts.15]
+speaker = "balor"
+portrait = "blush"
+local = "Seeing the way you made it your business to help the people of this town... it gave me confidence that I was finally headed down the right path."
+next = "16"
+
+[balor_ten_hearts.16]
+speaker = "balor"
+portrait = "shocked_special"
+local = "In no small part because you just... trusted me to do the right thing. Right from the beginning."
+next = "17"
+
+[balor_ten_hearts.17]
+speaker = "balor"
+portrait = "blush_special"
+local = "You never doubted me, [Ari]."
+next = "18"
+
+[balor_ten_hearts.18]
+speaker = "balor"
+portrait = "blush"
+local = "How could I possibly disappoint someone like you?"
+prompts = [
+	{ local = "You make me want to be a good person, too.", next = "19" },
+	{ local = "You always work hard to make Mistria better... I want to do the same.", next = "19" }
+]
+
+[balor_ten_hearts.19]
+speaker = "balor"
+portrait = "embarrassed"
+local = "I'm setting a good example? For you?"
+next = "20"
+
+[balor_ten_hearts.20]
+speaker = "balor"
+portrait = "shocked_special"
+local = "..."
+next = "21"
+
+[balor_ten_hearts.21]
+speaker = "balor"
+portrait = "embarrassed"
+local = "That means a lot to me."
+next = "22"
+
+[balor_ten_hearts.22]
+speaker = "balor"
+portrait = "neutral"
+local = "You've always been a gem in my eyes, you know."
+next = "23"
+
+[balor_ten_hearts.23]
+speaker = "balor"
+portrait = "think"
+local = "I never would have guessed, that despite my rough exterior-"
+next = "24"
+
+[balor_ten_hearts.24]
+speaker = "balor"
+portrait = "blush"
+local = "You managed to see a glimmer of something similar in me."
+next = "25"
+
+[balor_ten_hearts.25]
+speaker = "balor"
+portrait = "happy_blush"
+local = "There's no one else like you. You're truly precious to me, [Ari]."
+next = [
+	{ target = "26_second", requires = [
+		{ cutscene_seen_balor_ten_hearts = true }
+	] },
+	{ target = "26_first", requires = [] }
+]
+
+[balor_ten_hearts.26_second]
+speaker = "balor"
+portrait = "blush"
+local = "That's why I gave you that $Polished Gem$."
+next = "27_second"
+
+[balor_ten_hearts.27_second]
+speaker = "balor"
+portrait = "hope_special"
+local = "It started out as a piece of sea glass I found by the Beach when I first came to Mistria."
+next = "28_second"
+
+[balor_ten_hearts.28_second]
+speaker = "balor"
+portrait = "think"
+local = "It was a humble little thing, probably washed in from the Capital..."
+next = "29_second"
+
+[balor_ten_hearts.29_second]
+speaker = "balor"
+portrait = "blush"
+local = "But after we met, I began to polish it... and now it shines like a sapphire."
+next = "30"
+
+[balor_ten_hearts.26_first]
+speaker = "balor"
+portrait = "blush"
+local = "That reminds me... I have something for you."
+next = "27_first"
+
+[balor_ten_hearts.27_first]
+speaker = "balor"
+portrait = "hope_special"
+local = "I found a piece of sea glass out by the Beach when I first arrived to Mistria."
+next = "28_first"
+
+[balor_ten_hearts.28_first]
+speaker = "balor"
+portrait = "think"
+local = "It was a humble little thing, probably washed in from the Capital..."
+next = "29_first"
+
+[balor_ten_hearts.29_first]
+speaker = "balor"
+portrait = "blush"
+local = "After we met, I began to polish it... and lately, it shines like a sapphire. Here, I want you to have this $Polished Gem$."
+next = "30"
+
+[balor_ten_hearts.30]
+speaker = "balor"
+portrait = "think"
+local = "I don't know whether I'll ever truly shine the way it does... the way that you do."
+next = "31"
+
+[balor_ten_hearts.31]
+speaker = "balor"
+portrait = "blush"
+local = "But you make me want to try."
+next = "32"
+
+[balor_ten_hearts.32]
+speaker = "balor"
+portrait = "concerned"
+local = "Anyway... sorry for going off on a tangent."
+next = "33"
+
+[balor_ten_hearts.33]
+speaker = "balor"
+portrait = "embarrassed"
+local = "I almost forgot why we'd come out here in the first place!"
+next = "34"
+
+[balor_ten_hearts.34]
+speaker = "balor"
+portrait = "blush"
+local = "There was something else you wanted to talk about, wasn't there?"
+prompts = [
+	{ local = "I wanted to talk to you about our future together...", next = "35" },
+	{ local = "Let's talk about it another time...", next = "48" }
+]
+
+[balor_ten_hearts.35]
+speaker = "balor"
+portrait = "neutral"
+local = "Our future? [Ari]..."
+next = "36"
+
+[balor_ten_hearts.36]
+speaker = "balor"
+portrait = "hope_special"
+local = "Does that mean...?"
+prompts = [
+	{ local = "I love you, Balor. Will you marry me?", next = "37" },
+	{ local = "Actually, let's talk about it more another day.", next = "48" }
+]
+
+[balor_ten_hearts.37]
+writes = [
+	{ breakup_bump = true, expires = "3d" },
+	{ engagement_bump = true, expires = "2d" },
+	{ engagement_delay = true, expires = "20h" },
+	{ engagement_cap = false, expires = "3d" }
+]
+actions = [{ can_talk = "balor" }]
+speaker = "balor"
+portrait = "shocked_special"
+local = "Marry-"
+next = "38"
+
+[balor_ten_hearts.38]
+speaker = "balor"
+portrait = "hope_special"
+local = "Marry you...?"
+next = "39"
+
+[balor_ten_hearts.39]
+speaker = "balor"
+portrait = "blush_special"
+local = "Are you sure? Really?"
+next = "40"
+
+[balor_ten_hearts.40]
+speaker = "balor"
+portrait = "happy_blush"
+local = "There's nothing I've ever wanted more!"
+next = "41"
+
+[balor_ten_hearts.41]
+speaker = "balor"
+portrait = "embarrassed"
+local = "Yes. I will!"
+next = "42"
+
+[balor_ten_hearts.42]
+speaker = "balor"
+portrait = "blush"
+local = "I love you, [Ari]."
+next = "43"
+
+[balor_ten_hearts.43]
+speaker = "balor"
+portrait = "embarrassed"
+local = "I never expected to meet someone like you..."
+next = "44"
+
+[balor_ten_hearts.44]
+speaker = "balor"
+portrait = "blush"
+local = "You're so much more than I ever bargained for."
+next = "45"
+
+[balor_ten_hearts.45]
+speaker = "balor"
+portrait = "happy_blush"
+local = "And I mean that in the best way possible."
+next = "46"
+
+[balor_ten_hearts.46]
+speaker = "balor"
+portrait = "embarrassed"
+local = "I get the feeling you'll be keeping me busier than ever from now on!"
+next = "47"
+
+[balor_ten_hearts.47]
+speaker = "balor"
+portrait = "happy_blush"
+local = "And now we have a wedding to plan, don't we? Let's go all out!"
+
+[balor_ten_hearts.48]
+speaker = "balor"
+portrait = "shocked"
+local = "Oh? Sure thing."
+next = "49"
+
+[balor_ten_hearts.49]
+speaker = "balor"
+portrait = "neutral"
+local = "You know where to find me if you ever want to talk."

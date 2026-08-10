@@ -1,0 +1,93 @@
+[eiland_four_hearts_follow_up_1]
+refresh = "never"
+requires = [{ npc = "errol" }, { eiland_heart_event = "four_heart" }]
+portrait = "happy"
+local = "The $Dragonsworn Helmet$! At our Museum! I'm beside myself. Thank you so much, [Ari]!"
+
+[eiland_four_hearts]
+kind = "gameplay_triggered"
+writes = [{ eiland_heart_event = "four_heart", expires = "4d" }]
+speaker = "eiland"
+portrait = "neutral"
+local = "[Ari]! Welcome, welcome. Take it all in, isn't it magnificent?"
+next = "1"
+
+[eiland_four_hearts.1]
+portrait = "think"
+local = "Forgive me if you've heard this before, but this whole site was only revealed after the earthquake."
+next = "2"
+
+[eiland_four_hearts.2]
+portrait = "happy"
+local = "A location completely untouched for untold years! I could spend the rest of my life here and not uncover all of its secrets."
+prompts = [
+	{ local = "Good thing you've got an assistant now, huh?", next = "3" },
+	{ local = "Bet there's a lot of treasure around!", next = "4" }
+]
+
+[eiland_four_hearts.3]
+portrait = "neutral"
+local = "I'd say you're more of a collaborator! You've got a talent for archaeology, [Ari]."
+next = "5"
+
+[eiland_four_hearts.4]
+portrait = "neutral"
+local = "Anything we find here could have immense archaeological value! Let's keep our eyes open."
+next = "5"
+
+[eiland_four_hearts.5]
+portrait = "think"
+local = "The writing you uncovered at the stele was illuminating."
+next = "6"
+
+[eiland_four_hearts.6]
+portrait = "neutral"
+local = "It implies that the people who hid the $Dragonsworn Armor$ believed that its ability to defend wasn't just in wearing the armor itself."
+next = "7"
+
+[eiland_four_hearts.7]
+portrait = "neutral"
+local = "They thought that a single piece of the armor could protect an entire area."
+next = "8"
+
+[eiland_four_hearts.8]
+portrait = "think"
+local = "Which makes me believe that the $Western Ruins$ are a good candidate for uncovering more pieces!"
+next = "9"
+
+[eiland_four_hearts.9]
+portrait = "neutral"
+local = "So are you ready to roll up your sleeves and begin the hunt? It's a big site to cover!"
+next = "10"
+
+[eiland_four_hearts.10]
+portrait = "neutral"
+local = "[Ari], that's it! That's the $Dragonsworn Helmet$!"
+next = "11"
+
+[eiland_four_hearts.11]
+portrait = "happy"
+local = "And look at the pristine condition it's in, despite being hidden away on a seaside cliff! Remarkable!"
+next = "12"
+
+[eiland_four_hearts.12]
+portrait = "think"
+local = "And... yes. More writing. Between cataloging the helmet, translating this, and deducing where the next piece of the armor is, I've got my work cut out for me!"
+prompts = [
+	{ local = "It's your time to shine!", next = "13" },
+	{ local = "Anything I can do to help?", next = "14" }
+]
+
+[eiland_four_hearts.13]
+portrait = "neutral"
+local = "You're right! I need to rise to the occasion."
+next = "15"
+
+[eiland_four_hearts.14]
+portrait = "neutral"
+local = "Thank you, but you've already done so much! I won't let you down!"
+next = "15"
+
+[eiland_four_hearts.15]
+portrait = "happy"
+local = "I'll let you know when we can begin our search for the next piece of the armor set. Thank you, [Ari]!"

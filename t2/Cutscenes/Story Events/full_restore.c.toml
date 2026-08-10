@@ -1,0 +1,45 @@
+[full_restore]
+kind = "gameplay_triggered"
+speaker = "caldarus"
+local = "You have been hard at work around Mistria, [Ari]. The magic returning to me through your efforts has begun to clear my mind."
+prompts = [
+	{ local = "It's an honor to help out!", next = "1" },
+	{ local = "Wait, you've been WATCHING me?", next = "2" },
+]
+
+[full_restore.1]
+local = "I am grateful."
+next = "5"
+
+[full_restore.2]
+local = "..."
+next = "3"
+
+[full_restore.3]
+local = "The powers and sight of a dragon are vast."
+next = "4"
+
+[full_restore.4]
+local = "As I was saying..."
+next = "5"
+
+[full_restore.5]
+local = "I have now recalled a particular $Spell$ suitable for human use, as well as the means by which to bestow it to you."
+next = "6"
+
+[full_restore.6]
+local = "I will now grant you the $Full Restore Spell$, you will be able to access it from your $Journal$. As its name suggests, casting it will $fully restore your Health and Stamina$."
+next = "7"
+
+[full_restore.7]
+local = "Your $Mana$ will restore bit by bit each night after a $Spell$ has been cast. Use it wisely."
+prompts = [
+	{ local = "Thank you for entrusting me with this spell, great Caldarus.", next = "8" },
+	{ local = "Full Restore? Really? Couldn't you have given it a cooler name?", next = "9" },
+]
+
+[full_restore.8]
+local = "You are most welcome. Practice your magic and continue to hone your abilities. We will speak again soon."
+
+[full_restore.9]
+local = """I would have thought that being granted magical powers by a dragon would have been "cool" enough on its own. Wake, brazen mortal."""

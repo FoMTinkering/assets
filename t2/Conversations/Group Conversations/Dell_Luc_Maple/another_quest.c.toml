@@ -1,0 +1,29 @@
+[another_quest]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "town/quest_board_looking" },
+	{ luc_zone = "town/quest_board_looking" },
+	{ maple_zone = "town/quest_board_looking" },
+]
+speaker = "maple"
+portrait = "neutral"
+local = "Lady Adeline posted a request!"
+next = "1"
+
+[another_quest.1]
+speaker = "luc"
+portrait = "sad"
+local = "I don't know, it looks kind of hard..."
+next = "2"
+
+[another_quest.2]
+speaker = "dell"
+portrait = "think"
+local = "What about this one?"
+next = "3"
+
+[another_quest.3]
+speaker = "maple"
+portrait = "ugh"
+local = "That one's even harder, Dell!"

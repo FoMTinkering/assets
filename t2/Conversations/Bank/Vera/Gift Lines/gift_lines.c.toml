@@ -1,0 +1,171 @@
+# Loved gift
+[gazpacho]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "vera" },
+	{ gift_desire = "loved" },
+	{ gift_given = "gazpacho" }
+]
+portrait = "wink"
+effect = "sparkles"
+local = "[Ari] how did you know? =Gazpacho= is the perfect meal! What's better than a smoothie... but savory?"
+
+[summer_salad]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "vera" },
+	{ gift_desire = "loved" },
+	{ gift_given = "summer_salad" }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "What a gorgeous =Summer Salad=! So refreshing! Just the thing for a day on my feet!"
+
+# Liked gift
+[coconut_milk]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "vera" },
+	{ gift_desire = "liked" },
+	{ gift_given = "coconut_milk" }
+]
+portrait = "wink"
+local = "=Coconut Milk= is so versatile! I could have a fancy drink... or maybe I'll make a hair mask!"
+
+[cranberry_juice]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "vera" },
+	{ gift_desire = "liked" },
+	{ gift_given = "cranberry_juice" }
+]
+portrait = "happy"
+local = "Ooh thank you! I can't resist a tart drink! The best =Cranberry Juice= makes your whole jaw tingle."
+
+[orange_juice]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "vera" },
+	{ gift_desire = "liked" },
+	{ gift_given = "orange_juice" }
+]
+portrait = "happy"
+local = "A fresh =Orange Juice= was exactly what I needed! You're a sweetie, [Ari]."
+
+[pomegranate]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "vera" },
+	{ gift_desire = "liked" },
+	{ gift_given = "pomegranate" }
+]
+portrait = "neutral"
+local = "What a beautiful =Pomegranate=! You know, the nutrients in these are really good for your hair and skin."
+
+# Hated gift
+[clam]
+kind = "gift"
+requires = [
+	{ npc = "vera" },
+	{ gift_desire = "hated" },
+	{ gift_given = "clam" }
+]
+portrait = "ugh"
+effect = "sick"
+local = "Ugh this is so slimy, it throws off my whole vibe! Shellfish belong in the river!"
+
+# Generic lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "vera" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "sparkles"
+local = "[Ari], you nailed it! I really needed a pick-me-up!"
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "vera" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "sparkles"
+local = "You're so sweet, thinking of me! This is just what I needed!"
+
+[loved_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "vera" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "beet_soup" },
+		{ gift_given = "chili_coconut_curry" },
+		{ gift_given = "gazpacho" },
+		{ gift_given = "harvest_plate" },
+		{ gift_given = "mushroom_steak_dinner" },
+		{ gift_given = "pomegranate_sorbet" },
+		{ gift_given = "summer_salad" },
+		{ gift_given = "sweet_potato_pie" },
+		{ gift_given = "vegetable_pot_pie" },
+		{ gift_given = "winter_stew" }
+	] }
+]
+portrait = "wink"
+effect = "sparkles"
+local = "Thanks [Ari]! You wouldn't believe how much energy it takes to cut hair all day!"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "vera" }, { gift_desire = "liked" }]
+portrait = "happy"
+local = "How'd you know I like this? Thanks, [Ari]!"
+
+[liked_gift_2]
+kind = "gift"
+requires = [{ npc = "vera" }, { gift_desire = "liked" }]
+portrait = "wink"
+local = "You're the best, [Ari]! Thanks!"
+
+[liked_gift_3]
+kind = "gift"
+requires = [{ npc = "vera" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "Ooh, for me? Don't mind if I do! Thanks for looking out, [Ari]."
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "vera" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Aw, thanks for thinking of me."
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "vera" }, { gift_desire = "disliked" }]
+portrait = "ugh"
+local = "I'm not saying I hate it, but I'm not saying I like it either..."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "vera" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ vera_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "neutral"
+local = "Ooh, I bet I know what this is!"
+next = "1"
+
+[birthday_gift.1]
+portrait = "embarrassed"
+effect = "sparkles"
+local = "A birthday gift! Thanks, [Ari]."

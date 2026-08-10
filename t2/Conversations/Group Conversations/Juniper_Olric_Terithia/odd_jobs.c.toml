@@ -1,0 +1,23 @@
+[odd_jobs]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "juniper" }, { npc = "olric" }, { npc = "terithia" }] },
+	{ juniper_zone = "<olric_zone>" },
+	{ juniper_zone = "<terithia_zone>" },
+	{ date_time = "3m", comparator = ">=" }
+]
+speaker = "juniper"
+portrait = "mad"
+local = "Why am I seeing you everywhere these days, Olric? It's suspicious!"
+next = "1"
+
+[odd_jobs.1]
+speaker = "terithia"
+portrait = "wink"
+local = "I don't know about suspicious, but Juni's right. The General Store, the Inn, the Blacksmith's, the Museum... you're everywhere!"
+next = "2"
+
+[odd_jobs.2]
+speaker = "olric"
+portrait = "happy"
+local = "Aw, you noticed? I picked up some odd jobs. Life is all about the journey, you know?"

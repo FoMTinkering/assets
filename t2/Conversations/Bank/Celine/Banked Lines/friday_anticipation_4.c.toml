@@ -1,0 +1,13 @@
+[friday_anticipation_4]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ day_of_the_week = "friday", comparator = "!=" },
+	{ dnd_fnati = 3, comparator = "<=" },
+	{ dnd_fnati = 1, comparator = ">=" },
+	{ location = "inn", comparator = "!=" },
+	{ dnd_fnati_discussion = 2, comparator = "<" }
+]
+writes = [{ dnd_fnati_discussion = 1, operator = "+=", expires = "1w" }]
+portrait = "think"
+local = "I wonder if Reina can make themed food for our next Dragons & Drama. I have ideas!"

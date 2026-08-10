@@ -1,0 +1,80 @@
+[basement_1]
+priority = "basement"
+refresh = "instantly"
+requires = [{ npc = "march" }]
+portrait = "neutral"
+local = "Oh, hey."
+
+[basement_2]
+priority = "basement"
+refresh = "instantly"
+requires = [{ npc = "march" }, { march_heart_level = 2, comparator = "<=" }]
+portrait = "neutral"
+local = "..."
+next = "1"
+
+[basement_2.1]
+portrait = "unimpressed"
+local = "Hey."
+
+[basement_3]
+priority = "basement"
+refresh = "instantly"
+requires = [{ npc = "march" }, { march_heart_level = 3, comparator = "<=" }]
+portrait = "neutral"
+local = "What, did you need something?"
+
+[basement_4]
+priority = "basement"
+refresh = "instantly"
+requires = [{ npc = "march" }, { march_heart_level = 3, comparator = "<=" }]
+portrait = "neutral"
+local = "Hey."
+
+[basement_5]
+priority = "basement"
+refresh = "instantly"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 4, comparator = "<=" },
+	{ time_of_day = "morning" },
+]
+portrait = "neutral"
+local = "Morning."
+
+[basement_6]
+priority = "basement"
+refresh = "instantly"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ march_heart_level = 6, comparator = "<=" },
+]
+portrait = "neutral"
+local = "What's up?"
+
+[basement_7]
+priority = "basement"
+refresh = "instantly"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ march_heart_level = 6, comparator = "<=" },
+]
+portrait = "neutral"
+local = "Hm? Oh, hey [Ari]."
+
+[basement_8]
+priority = "basement"
+refresh = "instantly"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 8, comparator = ">=" },
+]
+portrait = "neutral"
+local = "Oh!"
+next = "1"
+
+[basement_8.1]
+portrait = "happy"
+local = "Hey [Ari]."

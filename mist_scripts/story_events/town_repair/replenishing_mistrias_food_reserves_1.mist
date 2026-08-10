@@ -1,0 +1,160 @@
+scene(manor_house_entry);
+place_actor(valen, west, rmfr1_valen_entrance);
+place_actor(adeline, east, rmfr1_adeline_entrance);
+place_actor(ari, north, rmfr1_ari_entrance);
+camera_position(rmfr1_camera_1);
+request_music_play("Music/Events/Cutscene");
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		pan_camera(3, rmfr1_camera_3);
+		wait(0.5);
+		pan_camera(3, rmfr1_camera_2);
+	}
+	{
+		walk_slow(ari, rmfr1_ari_start);
+		face(ari, north);
+		wait(0.5);
+		face(ari, west);
+	}
+	{
+		wait(1);
+		bark_speech(adeline, ellipses);
+		bark_speech(valen, farming);
+	}
+	{
+		wait(3.5);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(adeline, exclamation_mark);
+wait(0.5);
+free bark_speech(valen, exclamation_mark);
+wait(0.5);
+face(valen, east);
+wait(1);
+sim {
+	pan_camera(3, rmfr1_camera_3);
+	{
+		walk(valen, rmfr1_valen_start);
+		face(valen, east);
+	}
+	{
+		wait(1);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.25);
+free bark_speech(ari, cute_face);
+wait(0.75);
+sim {
+	{
+		wait(1.5);
+		face(valen, west);
+		wait(1.25);
+		face(valen, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(valen, cute_face);
+wait(1);
+sim {
+	{
+		walk(valen, rmfr1_ari_entrance);
+		remove_actor(valen);
+	}
+	{
+		wait(1.25);
+		walk_slow(ari, rmfr1_ari_chat);
+		face(ari, west);
+	}
+	{
+		wait(0.75);
+		walk_slow(adeline, rmfr1_adeline_start);
+		face(adeline, east);
+	}
+	{
+		wait(1.25);
+		pan_camera(2, rmfr1_camera_4);
+	}
+	{
+		wait(1.75);
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(4);
+		sim {
+			walk(adeline, rmfr1_adeline_thought);
+			set_move_speed(adeline, 0.4);
+		}
+		face(adeline, west);
+	}
+	{
+		next_line(); //
+	}
+}
+//
+if get_response() == 0 {
+	free {
+		wait(0.5);
+		bark_speech(adeline, cute_face);
+	}
+} else {
+	free {
+		wait(0.5);
+		//
+	}
+}
+sim {
+	{
+		wait(1);
+		face(adeline, east);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		walk(adeline, rmfr1_adeline_give);
+		face(adeline, east);
+		wait(0.5);
+		animate(adeline, action);
+		wait(0.5);
+		animate(adeline, idle);
+		ari_hold_item(seed_potato, 10);
+		wait(0.5);
+		walk(adeline, rmfr1_adeline_start);
+		face(adeline, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(adeline, cute_face);
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+fade_out(2);

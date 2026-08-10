@@ -1,0 +1,52 @@
+[post_baby_date_accept]
+requires = [
+    { npc = "eiland" },
+    { any = [
+        { date = "bathhouse" },
+        { date = "beach" },
+        { date = "deep_woods_picnic" },
+        { date = "gem_cutting" },
+        { date = "inn_meal" },
+        { date = "park" }
+    ] },
+    { eiland_is_spouse = true },
+    { eiland_has_child = true }
+]
+writes = [{ da_eiland_post_baby_follow_up_gate = true, expires = "1d" }]
+kind = "date_acceptance"
+portrait = "embarrassed"
+local = "A date? I can't think of anything I'd like more!"
+next = "1"
+
+[post_baby_date_accept.1]
+portrait = "happy_blush"
+local = "Let's drop off [child_0] with Great Aunt Elsie first."
+next = "2"
+
+[post_baby_date_accept.2]
+portrait = "neutral"
+local = "She does so enjoy spending time with her!"
+
+[post_baby_date_follow_up]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "eiland" },
+    { da_eiland_post_baby_follow_up_gate = true },
+    { eiland_is_spouse = true },
+    { eiland_has_child = true }
+]
+writes = [{ da_eiland_post_baby_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "happy_blush"
+local = "I had a great time..."
+next = "1"
+
+[post_baby_date_follow_up.1]
+portrait = "embarrassed"
+local = "It was so nice to have a little alone time together."
+next = "2"
+
+[post_baby_date_follow_up.2]
+portrait = "neutral"
+local = "And I can tell [child_0] enjoyed his time with Great Aunt Elsie, too!"

@@ -1,0 +1,24 @@
+[cauldron_gossip]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "elsie" }, { npc = "juniper" }] },
+	{ adeline_zone = "<elsie_zone>" },
+	{ adeline_zone = "<juniper_zone>" },
+	{ location = "bathhouse" },
+	{ adeline_zone = "bathhouse/cauldron" },
+]
+speaker = "juniper"
+portrait = "sly"
+local = "Elsie's telling us about some of her exploits in the Capital... she's SUCH a role model."
+next = "1"
+
+[cauldron_gossip.1]
+speaker = "elsie"
+portrait = "wink"
+local = "The Countess didn't give me flowers until the morning after! Can you believe it? It was so memorable... so roguish of her."
+next = "2"
+
+[cauldron_gossip.2]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "Wow, haha... this cauldron sure is fascinating, isn't it?!"

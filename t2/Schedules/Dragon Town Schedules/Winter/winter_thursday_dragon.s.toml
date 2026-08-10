@@ -1,0 +1,82 @@
+requires = [
+	{ weather = "pleasant" },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+	{ season = "winter" },
+	{ day_of_the_week = "thursday" },
+]
+
+# holt
+[holt."6:00am"]
+destination = "town/business_general_store"
+
+[holt."11:33am"]
+destination = "town/business_general_store"
+on_arrival_actions = [{ routine = "general_store_outside_chores" }]
+
+[holt."3:42pm"]
+destination = "bathhouse_change_room/Left Stool Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[holt."7:24pm"]
+destination = "general_store_home/Kid Drop Off"
+
+[holt."8:52pm"]
+destination = "inn/South Table Top 3"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[holt."12:03am"]
+destination = "general_store_home/Lower Couch Right Seat"
+on_arrival_actions = [{ activity = "drink" }]
+
+# juniper
+[juniper."6:00am"]
+destination = "bathhouse/Cauldron 3"
+
+[juniper."8:12am"]
+destination = "general_store_store/south_entrance_to_shift"
+on_arrival_actions = [{ routine = "general_store_shopping" }]
+
+[juniper."11:21am"]
+destination = "bathhouse/dozy_bed_chat_2"
+
+[juniper."2:08pm"]
+destination = "bathhouse/supervisor_2"
+
+[juniper."4:39pm"]
+destination = "bathhouse/Front Desk"
+
+[juniper."7:48pm"]
+destination = "inn/Bottom Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[juniper."11:02pm"]
+destination = "bathhouse_bedroom/Crystal Ball Seat"
+
+# seridia
+[seridia."6:00am"]
+destination = "town/adeline_business_general_store"
+
+[seridia."11:32am"]
+destination = "bathhouse/dozy_bed_chat_1"
+
+[seridia."2:07pm"]
+destination = "bathhouse/supervisor_1"
+
+[seridia."4:40pm"]
+destination = "bathhouse_change_room/Left Bench Right Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[seridia."7:31pm"]
+destination = "museum_entry/south_routine_entrance"
+occupy_point = false
+on_arrival_actions = [{ routine = "museum_visit" }]
+
+[seridia."12:18am"]
+destination = "western_ruins/routine_entrance"

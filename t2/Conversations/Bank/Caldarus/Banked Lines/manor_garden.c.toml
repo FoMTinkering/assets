@@ -1,0 +1,48 @@
+[manor_garden_0]
+refresh = "2m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_routine = "manor_garden_wander" },
+	{ caldarus_seridia_town_timer = false },
+]
+portrait = "neutral"
+local = "Those who tend plants leave their signature behind..."
+next = "1"
+
+[manor_garden_0.1]
+portrait = "smile"
+local = "It took but a glance to know that Celine is the keeper of these grounds."
+
+[manor_garden_1]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_routine = "manor_garden_wander" },
+]
+portrait = "neutral"
+local = "While I favor nature's wilder state, I must concede that these gardens are very beautiful."
+next = "1"
+
+[manor_garden_1.1]
+portrait = "smile"
+local = "Perhaps I can help Celine care for them in the coming seasons."
+
+[manor_garden_2]
+refresh = "2m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_seridia_town = true },
+	{ any = [
+		{ building = "manor" },
+		{ caldarus_routine = "manor_garden_wander" },
+	] },
+]
+portrait = "neutral"
+local = "This is an impressive house."
+next = "1"
+
+[manor_garden_2.1]
+portrait = "think"
+local = "You could fit at least two dragons inside of it. Comfortably, even."

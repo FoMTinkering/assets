@@ -1,0 +1,62 @@
+[watching_dig_0]
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ caldarus_seridia_town = true },
+	{ seridia_is_at = "western_ruins/watch_dig" },
+	{ eiland_routine = "western_ruins_archaeology_pit" },
+	{ errol_routine = "western_ruins_archaeology_pit_errol" }
+]
+portrait = "neutral"
+local = "Look, there. At the dig site."
+next = "1"
+
+[watching_dig_0.1]
+portrait = "serious"
+local = "Why does the large one take orders from the small one?"
+next = "2"
+
+[watching_dig_0.2]
+portrait = "closed_eyes"
+local = "The rules of hierarchy have changed quite a lot since my imprisonment."
+
+[watching_dig_1]
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ caldarus_seridia_town = true },
+	{ seridia_is_at = "western_ruins/watch_dig" },
+	{ eiland_routine = "western_ruins_archaeology_pit" },
+	{ errol_routine = "western_ruins_archaeology_pit_errol" },
+	{ caldarus_seridia_town_timer = false }
+]
+portrait = "serious"
+local = "[Ari], is Eiland looking over here?"
+next = "1"
+
+[watching_dig_1.1]
+portrait = "think"
+local = "He has been gesturing for me to come to the dig site, and I have been feigning misunderstanding."
+next = "2"
+
+[watching_dig_1.2]
+portrait = "mad"
+local = "Is he still waving? Do NOT wave back."
+
+[watching_dig_2]
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ caldarus_seridia_town = true },
+	{ seridia_is_at = "western_ruins/watch_dig" },
+	{ eiland_routine = "western_ruins_archaeology_pit" },
+	{ errol_routine = "western_ruins_archaeology_pit_errol" },
+	{ caldarus_seridia_town_timer = false }
+]
+portrait = "neutral"
+local = "Eiland and Errol appear excited. It seems they have made a discovery."
+next = "1"
+
+[watching_dig_2.1]
+portrait = "closed_eyes"
+local = "Or they are searching for Errol's keys again. It is difficult to say."

@@ -1,0 +1,90 @@
+[capital_club_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { day_of_the_week = "friday" },
+    { elsie_zone = "inn/capital_club" },
+    { ryis_zone = "inn/capital_club" },
+    { valen_zone = "inn/capital_club" },
+    { any = [{ npc = "elsie" }, { npc = "ryis" }, { npc = "valen" }] },
+]
+writes = [{ capital_club_fnati = 1 }]
+actions = [
+    { bark = { bark = "cute_face", npc = "elsie" } },
+    { bark = { bark = "cute_face", npc = "ryis" } },
+    { bark = { bark = "sweat_drop", npc = "valen" } },
+]
+speaker = "elsie"
+portrait = "neutral"
+local = "[Ari], come over dear. We were just discussing the Capital."
+prompts = [
+    { local = "I love the Capital!", next = "1" },
+    { local = "I only ever passed through...", next = "2" },
+    { local = "I prefer Mistria.", next = "3" }
+]
+
+[capital_club_1.1]
+speaker = "elsie"
+portrait = "happy"
+local = "Then you're in good company!"
+next = "4"
+
+[capital_club_1.2]
+speaker = "elsie"
+portrait = "think"
+local = "Being Aldaria's largest city, it does mean that many pass through it eventually."
+next = "4"
+
+[capital_club_1.3]
+speaker = "elsie"
+portrait = "happy"
+local = "Couldn't agree more!"
+next = "4"
+
+[capital_club_1.4]
+speaker = "ryis"
+portrait = "neutral"
+local = "My family has been living and baking there for generations."
+next = "5"
+
+[capital_club_1.5]
+speaker = "ryis"
+portrait = "happy"
+local = "Mistria's my home now, but sometimes I miss the hustle and bustle."
+next = "6"
+
+[capital_club_1.6]
+speaker = "valen"
+portrait = "neutral"
+local = "There was something exhilarating about being in the big city during my college days."
+next = "7"
+
+[capital_club_1.7]
+speaker = "elsie"
+portrait = "neutral"
+local = "The Opera House still keeps my old suite of rooms for me. Just in case I feel like doing a guest appearance."
+next = "8"
+
+[capital_club_1.8]
+speaker = "valen"
+portrait = "think"
+local = "On the other hand, could you imagine getting a whole balcony just for your group at any tavern in the Capital?"
+next = "9"
+
+[capital_club_1.9]
+speaker = "ryis"
+portrait = "happy"
+local = "Or a bartender who knows my favorite drink!"
+next = "10"
+
+[capital_club_1.10]
+speaker = "elsie"
+portrait = "happy"
+local = "And it's so nice to not be mobbed by fans everywhere I go."
+next = "11"
+
+[capital_club_1.11]
+speaker = "valen"
+portrait = "neutral"
+effect = "drop"
+local = "Er, if you say so Elsie."

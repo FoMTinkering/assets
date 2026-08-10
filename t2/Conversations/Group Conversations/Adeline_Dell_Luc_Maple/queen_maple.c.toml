@@ -1,0 +1,49 @@
+[queen_maple]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ adeline_zone = "<dell_zone>" },
+	{ adeline_zone = "<luc_zone>" },
+	{ adeline_zone = "<maple_zone>" },
+	{ location = "manor_house_entry" }
+]
+writes = [{ queen_maple = true, expires = "18h" }]
+speaker = "maple"
+portrait = "mad"
+local = "[Ari]! Welcome! You stand in Queen Maple's royal court!"
+next = "1"
+
+[queen_maple.1]
+speaker = "maple"
+portrait = "happy"
+local = "I'm currently consulting with my high council."
+next = "2"
+
+[queen_maple.2]
+speaker = "luc"
+portrait = "mad"
+local = "Our top priority should be to begin diplomatic negotiations with the insect kingdom of Aldaria!"
+next = "3"
+
+[queen_maple.3]
+speaker = "dell"
+portrait = "mad"
+local = "I disagree! Your royal-ness, we should travel to lands far beyond, to find the coolest stuff so we might bring it back for your most majestic majesty."
+next = "4"
+
+[queen_maple.4]
+speaker = "adeline"
+portrait = "neutral"
+local = "Queen Maple said she was taking over the entry hall to hold court, and I couldn't say no."
+next = "5"
+
+[queen_maple.5]
+speaker = "adeline"
+portrait = "happy"
+effect = "sweat"
+local = "I mean, she's a queen. I'm outranked!"

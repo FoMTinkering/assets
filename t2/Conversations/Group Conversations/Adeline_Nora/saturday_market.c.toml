@@ -1,0 +1,28 @@
+[saturday_market]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "nora" }] },
+	{ adeline_zone = "<nora_zone>" },
+	{ any = [
+		{ adeline_animation = "write" },
+		{ adeline_animation = "write_sit" }
+	] },
+	{ any = [{ nora_animation = "write_sit" }, { nora_animation = "tap" }] },
+	{ market_is_back = true },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "Is the Saturday Market budget holding up, Nora?"
+next = "1"
+
+[saturday_market.1]
+speaker = "nora"
+portrait = "happy"
+local = "It is! We're actually in great shape."
+next = "2"
+
+[saturday_market.2]
+speaker = "nora"
+portrait = "wink"
+local = "Though we'll need to start costing out some fresh pennants for next year."

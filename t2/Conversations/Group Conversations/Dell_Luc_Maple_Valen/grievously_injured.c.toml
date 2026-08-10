@@ -1,0 +1,38 @@
+[grievously_injured]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "valen" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "<valen_zone>" },
+	{ valen_babysits = true },
+	{ location = "clinic_f1" },
+]
+speaker = "valen"
+portrait = "neutral"
+effect = "sigh"
+local = "So you were grievously injured in a great battle? And only I can heal you?"
+next = "1"
+
+[grievously_injured.1]
+speaker = "dell"
+portrait = "mad"
+effect = "sick"
+local = "Cough... yes... I think this is the end of the road for me... avenge me..."
+next = "2"
+
+[grievously_injured.2]
+speaker = "maple"
+portrait = "ugh"
+local = "I'm not doing all that."
+next = "3"
+
+[grievously_injured.3]
+speaker = "luc"
+portrait = "sad"
+local = "Avenging someone is a lot of work, Dell!"

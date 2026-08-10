@@ -1,0 +1,28 @@
+[celine_getting_by]
+priority = "max"
+refresh = "never"
+actions = [
+	{ bark = { bark = "sweat_drop", npc = "nora" } }]
+requires = [
+	{ npc = "nora" },
+	{ date_time = "13d", comparator = ">" },
+	{ date_time = "21d", comparator = "<" },
+    { nora_zone = "<celine_zone>", comparator = "!=" }
+]
+portrait = "think"
+local = "I hope Celine is getting along alright."
+next = "1"
+
+[celine_getting_by.1]
+portrait = "sad"
+local = "She does a little work at the store and then grows flowers and herbs on the side... But can she really make a living doing that?"
+next = "2"
+
+[celine_getting_by.2]
+portrait = "think"
+local = "If she spent less time with her nose in the $Codex Mistria$, she might apply herself more."
+next = "3"
+
+[celine_getting_by.3]
+portrait = "ugh"
+local = "Sigh..."

@@ -1,0 +1,36 @@
+[leviathan_storytime]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "terithia" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "<terithia_zone>" },
+	{ terithia_story_time = true },
+]
+speaker = "terithia"
+portrait = "mad"
+effect = "sparkles_dark"
+local = "And that's when the leviathan breached the surface! Half shark, half kraken, half stingray!"
+next = "1"
+
+[leviathan_storytime.1]
+speaker = "dell"
+portrait = "mad"
+local = "I wish I was half shark!"
+next = "2"
+
+[leviathan_storytime.2]
+speaker = "luc"
+portrait = "think"
+local = "I'll be half kraken!"
+next = "3"
+
+[leviathan_storytime.3]
+speaker = "maple"
+portrait = "neutral"
+local = "That's a lot of halves, Miss Terithia!"

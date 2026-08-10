@@ -1,0 +1,36 @@
+[dinner_chat]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "eiland" },
+		{ npc = "elsie" },
+		{ npc = "errol" },
+		{ npc = "landen" },
+	] },
+	{ location = "manor_house_dining_room" },
+	{ eiland_zone = "<elsie_zone>" },
+	{ eiland_zone = "<errol_zone>" },
+	{ eiland_zone = "<landen_zone>" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+]
+speaker = "landen"
+portrait = "neutral"
+local = "A toast, to our hosts! Thanks for having an old timer over for some grub."
+next = "1"
+
+[dinner_chat.1]
+speaker = "eiland"
+portrait = "think"
+local = "An old timer? I think you're quite youthful, Landen."
+next = "2"
+
+[dinner_chat.2]
+speaker = "errol"
+portrait = "neutral"
+local = "HAH! Youthful? Compared to what? The ancient Alda civilization?"
+next = "3"
+
+[dinner_chat.3]
+speaker = "elsie"
+portrait = "wink"
+local = "I suspect that's exactly what young Eiland is comparing you to."

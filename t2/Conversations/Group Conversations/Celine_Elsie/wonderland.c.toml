@@ -1,0 +1,31 @@
+[wonderland]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "elsie" }] },
+	{ celine_zone = "<elsie_zone>" },
+	{ season = "winter" },
+	{ any = [
+		{ celine_zone = "town/front_of_manor" },
+		{ celine_zone = "town/gazebo" },
+		{ celine_zone = "town/manor_flowers_north_east" },
+		{ celine_zone = "town/manor_flowers_north_west" },
+		{ celine_zone = "town/manor_flowers_south_east" },
+		{ celine_zone = "town/manor_flowers_south_west" },
+	] },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "elsie"
+portrait = "happy"
+local = "It's a winter wonderland out here! And you look perfectly suited to it, Celine!"
+next = "1"
+
+[wonderland.1]
+speaker = "celine"
+portrait = "embarrassed"
+local = "Oh, thank you!"
+next = "2"
+
+[wonderland.2]
+speaker = "celine"
+portrait = "happy"
+local = "I'm fond of the manor garden in the cold season... it's so pretty!"

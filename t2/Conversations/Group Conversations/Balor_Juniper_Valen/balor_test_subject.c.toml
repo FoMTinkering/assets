@@ -1,0 +1,41 @@
+[balor_test_subject]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "juniper" }, { npc = "valen" }] },
+	{ juniper_zone = "<valen_zone>" },
+	{ location = "clinic_f1" },
+	{ balor_is_at = "clinic_f1/Top Bed" },
+]
+speaker = "juniper"
+portrait = "wink"
+local = "Valen won't let me give Balor one of my potions. He'd be up and about right away if he drank it. Probably."
+next = "1"
+
+[balor_test_subject.1]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "You can't run trials on my patients, Juniper. I won't allow it."
+next = "2"
+
+[balor_test_subject.2]
+speaker = "juniper"
+portrait = "sly"
+local = "So YOU drink it!"
+next = "3"
+
+[balor_test_subject.3]
+speaker = "valen"
+portrait = "wink"
+local = "We can share it, if you like."
+next = "4"
+
+[balor_test_subject.4]
+speaker = "juniper"
+portrait = "angry_blush"
+local = "......"
+next = "5"
+
+[balor_test_subject.5]
+speaker = "balor"
+portrait = "mad"
+local = "Would you two be quiet? I'm trying to recover here!"

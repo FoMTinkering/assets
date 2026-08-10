@@ -1,0 +1,95 @@
+[bathhouse_0]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "juniper" }] },
+	{ caldarus_zone = "<juniper_zone>" },
+	{ caldarus_seridia_town = true },
+	{ location = "eastern_road", comparator = "!=" },
+	{ location = "deep_woods", comparator = "!=" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Juniper, there is a scent I was hoping you might be able to recreate."
+next = "1"
+
+[bathhouse_0.1]
+speaker = "caldarus"
+portrait = "think"
+local = "It is not of any true importance, but it is... nostalgic."
+next = "2"
+
+[bathhouse_0.2]
+speaker = "juniper"
+portrait = "wink"
+local = "I like a challenge! Tell me more, and I'll keep it in mind when I'm out foraging."
+
+[bathhouse_1]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "juniper" }] },
+	{ caldarus_zone = "<juniper_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_zone = "<seridia_zone>", comparator = "!=" }
+]
+speaker = "juniper"
+portrait = "neutral"
+local = "You and Seridia have very different philosophies on things, don't you?"
+next = "1"
+
+[bathhouse_1.1]
+speaker = "juniper"
+portrait = "think"
+local = "I guess it never occurred to me that dragons wouldn't be of a mind with one another."
+next = "2"
+
+[bathhouse_1.2]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Of a mind? With Seridia? I do not think such a thing is possible."
+next = "3"
+
+[bathhouse_1.3]
+speaker = "caldarus"
+portrait = "mad"
+local = "To begin with, have you seen her sense of decor?"
+
+[bathhouse_2]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "juniper" }] },
+	{ caldarus_zone = "<juniper_zone>" },
+	{ caldarus_seridia_town = true },
+	{ location = "bathhouse" }
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "caldarus" } },
+	{ bark = { bark = "sweat_drop", npc = "juniper" } }
+]
+speaker = "juniper"
+portrait = "neutral"
+local = "Dozy has always been friendly, but you get along with him more than I anticipated."
+next = "1"
+
+[bathhouse_2.1]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Is that right? Perhaps he can sense my appreciation for him..."
+next = "2"
+
+[bathhouse_2.2]
+speaker = "caldarus"
+portrait = "smile"
+local = "He is a calming and stabilizing presence in this bathhouse."
+next = "3"
+
+[bathhouse_2.3]
+speaker = "juniper"
+portrait = "neutral"
+local = "That's true."
+next = "4"
+
+[bathhouse_2.4]
+speaker = "juniper"
+portrait = "annoyed"
+local = "Wait. What does that make me?"

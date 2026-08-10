@@ -1,0 +1,36 @@
+var a = 1;
+assert(a == 1, "Assignment failed!");
+var b = a + 1;
+assert(b == 2, "Addition failed!");
+var c = a - 1;
+assert(c == 0, "Subtraction failed!");
+var d = a * 2;
+assert(d == 2, "Multiplication failed!");
+var d = a / 2;
+assert(d == 0.5, "Divison failed!");
+var e = (a * 5) + 3 - (8 - 2);
+assert(e == 2, "Complex expression failed!");
+fun add(a, b) {
+	return a + b;
+}
+var f = add(1, 1);
+assert(f == 2, "Function call failed!");
+var g = 0;
+sim {
+	g = g + 1;
+	{
+        g = g + 1;
+	    g = g + 1;
+	    g = g + 1;
+    }
+
+	free g = g + 1;
+
+	free sim {
+		{
+            g = g + 1;
+		    g = g + 1;
+        }
+	}
+}
+assert(g == 7, "Sim/Free blocks failed!");

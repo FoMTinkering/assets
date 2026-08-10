@@ -1,0 +1,63 @@
+[cards_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ errol_zone = "inn/north_table" },
+	{ hayden_zone = "inn/north_table" },
+	{ nora_zone = "inn/north_table" },
+	{ olric_zone = "inn/north_table" },
+	{ ryis_zone = "inn/north_table" },
+	{ terithia_zone = "inn/north_table" },
+	{ cards_fnati = 2 },
+	{ any = [
+		{ npc = "errol" },
+		{ npc = "hayden" },
+		{ npc = "nora" },
+		{ npc = "olric" },
+		{ npc = "ryis" },
+		{ npc = "terithia" },
+	] },
+	{ any = [{ fnati = 0 }, { fnati = 1 }]},
+]
+writes = [{ cards_fnati = 3 }]
+actions = [
+	{ bark = { bark = "angry", npc = "errol" } },
+	{ bark = { bark = "ellipses", npc = "hayden" } },
+	{ bark = { bark = "angry", npc = "nora" } },
+	{ bark = { bark = "sweat_drop", npc = "ryis" } },
+	{ bark = { bark = "angry", npc = "terithia" } },
+]
+speaker = "errol"
+portrait = "think"
+local = "We're in agreement, then?"
+next = "1"
+
+[cards_3.1]
+speaker = "nora"
+portrait = "think"
+local = "Yes... a truce... so we can take down Olric."
+next = "2"
+
+[cards_3.2]
+speaker = "terithia"
+portrait = "ugh"
+local = "I'm with you... I can't let Olric smudge my reputation..."
+next = "3"
+
+[cards_3.3]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "Friends, is this really necessary? Olric's just having fun playing the game... he even bought us all dinner with his winnings last time."
+next = "4"
+
+[cards_3.4]
+speaker = "ryis"
+portrait = "think"
+local = "Besides, he couldn't possibly win a third time in a row... right?"
+next = "5"
+
+[cards_3.5]
+speaker = "olric"
+portrait = "think"
+local = "Hey uh, sorry I wasn't listening. Can anyone tell me what the difference between a regular flush and a royal flush is?"

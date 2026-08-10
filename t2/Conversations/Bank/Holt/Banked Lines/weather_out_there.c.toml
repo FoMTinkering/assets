@@ -1,0 +1,17 @@
+[weather_out_there]
+refresh = "3m"
+requires = [
+	{ npc = "holt" },
+	{ is_inside = true },
+	{ any = [
+		{ season = "winter" },
+		{ weather = "pleasant", comparator = "!=" }
+	] }
+]
+portrait = "neutral"
+local = "How's the weather out there?"
+next = "1"
+
+[weather_out_there.1]
+portrait = "wink"
+local = "Better in here, I bet!"

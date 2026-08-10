@@ -1,0 +1,29 @@
+[dont_drown]
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "bathhouse/Front Desk" },
+	{ juniper_heart_level = 8, comparator = "<" },
+]
+local = "Welcome! If you soak in the bath, do me a favor and don't drown."
+next = "1"
+
+[dont_drown.1]
+portrait = "unimpressed"
+local = "Adeline will make me fill out a ton of paperwork."
+
+
+[dont_drown_b]
+refresh = "2m"
+actions = [{ bark = { bark = "relationship_status", npc = "juniper" } }]
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "bathhouse/Front Desk" },
+	{ juniper_heart_level = 8, comparator = ">=" },
+]
+local = "Welcome! If you soak in the bath, do me a favor..."
+next = "1"
+
+[dont_drown_b.1]
+portrait = "wink"
+local = "Try not to drown. I'd prefer to keep you around."

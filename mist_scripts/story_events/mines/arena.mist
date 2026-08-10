@@ -1,0 +1,26 @@
+show_menu(mines);
+
+fun await_fade_in() {
+} resolve {
+  return !__camera_is_fading();
+}
+
+__setup_arena("lights_on");
+
+var ladder_x = get_from_blackboard(ladder_x);
+var ladder_y = get_from_blackboard(ladder_y);
+
+await_fade_in();
+wait(0.5);
+__play_sound_free("Music/Combat/RuinsArenaIntro");
+
+pan_camera(2, ladder_x + 16, ladder_y);
+wait(1.0);
+__setup_arena("ladder");
+wait(1.0);
+__setup_arena("chest");
+wait(1.0);
+__setup_arena("lights_off");
+wait(1.5);
+pan_camera(1.5, ari);
+request_music_play("Music/Combat/RuinsArenaLoop");

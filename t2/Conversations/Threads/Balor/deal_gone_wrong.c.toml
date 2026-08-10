@@ -1,0 +1,127 @@
+[balor_deal_gone_wrong_1]
+refresh = "1y"
+requires = [
+	{ npc = "balor" },
+	{ thread_mutex = "undefined" },
+	{ thread_delay = false },
+	{ balor_deal_gone_wrong_finished = false },
+	{ balor_heart_level = 3, comparator = ">=" },
+	{ balor_heart_level = 8, comparator = "<" },
+]
+writes = [
+	{ thread_mutex = "balor_deal_gone_wrong_1", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+portrait = "wink"
+local = "Want to hear a secret, [Ari]?"
+next = "1"
+
+[balor_deal_gone_wrong_1.1]
+local = "I've got a line on a good deal... I'm meeting my contact tonight, and if everything goes well then yours truly will be rolling in it by the time the deal is done."
+prompts = [
+	{ local = "Sounds kind of shady...", next = "2" },
+	{ local = "Good luck!", next = "3" },
+]
+
+[balor_deal_gone_wrong_1.2]
+portrait = "wink"
+local = "Don't worry, I'll be careful."
+
+[balor_deal_gone_wrong_1.3]
+portrait = "wink"
+local = "Thanks, [Ari]. Luck is the one thing money can't buy..."
+next = "4"
+
+[balor_deal_gone_wrong_1.4]
+portrait = "think"
+local = "Or was that love...?"
+
+[balor_deal_gone_wrong_2]
+refresh = "instantly"
+requires = [
+	{ npc = "balor" },
+	{ thread_mutex = "balor_deal_gone_wrong_1" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "balor_deal_gone_wrong_2", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+portrait = "think"
+local = "That deal I was chasing took an odd turn... my contact says their client is crazy for strawberry milk? In exchange for raw, uncut gems?"
+next = "1"
+
+[balor_deal_gone_wrong_2.1]
+portrait = "think"
+effect = "sweat"
+local = "He sounds eccentric... and just how much milk are we talking here?"
+
+[balor_deal_gone_wrong_3]
+refresh = "instantly"
+requires = [
+	{ npc = "balor" },
+	{ thread_mutex = "balor_deal_gone_wrong_2" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "balor_deal_gone_wrong_3", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+portrait = "think"
+local = "[Ari], I could use your advice... this deal I've been working on is puzzling. Raw gems for strawberry milk?"
+next = "1"
+
+[balor_deal_gone_wrong_3.1]
+portrait = "ugh"
+local = "Even 50 gallons of strawberry milk isn't worth what we're trading for. What do you think?"
+prompts = [
+	{ local = "It definitely seems suspicious...", next = "2" },
+	{ local = "Sounds like an easy deal... go for it!", next = "3" },
+]
+
+[balor_deal_gone_wrong_3.2]
+local = "You think so too, eh? Hmm... I'll have to look into it."
+
+[balor_deal_gone_wrong_3.3]
+local = "That's what I don't like about it. It's too easy... I'll have to look into it."
+
+[balor_deal_gone_wrong_4]
+refresh = "instantly"
+requires = [
+	{ npc = "balor" },
+	{ thread_mutex = "balor_deal_gone_wrong_3" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "undefined" },
+	{ thread_delay = true, expires = "1d" },
+	{ balor_deal_gone_wrong_finished = true },
+]
+portrait = "think"
+local = "You know that deal I was working on? The gems for the milk?"
+next = "1"
+
+[balor_deal_gone_wrong_4.1]
+portrait = "annoyed"
+local = "I trailed my contact, and it turns out he was trying to trick a kid into parting with the find of a lifetime."
+next = "2"
+
+[balor_deal_gone_wrong_4.2]
+portrait = "mad"
+local = "Some people don't have a heart."
+prompts = [
+	{ local = "Sounds like you've got a heart.", next = "3" },
+	{ local = "How did things turn out?", next = "4" },
+]
+
+[balor_deal_gone_wrong_4.3]
+portrait = "wink"
+local = "Haha, is that wishful thinking, [Ari]?"
+
+[balor_deal_gone_wrong_4.4]
+local = "I sent my contact packing and I introduced the kid's parents to an appraiser I trust. Came out empty-handed, but it's not about money ALL the time..."
+next = "5"
+
+[balor_deal_gone_wrong_4.5]
+portrait = "wink"
+local = "Just most of it."

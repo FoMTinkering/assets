@@ -1,0 +1,58 @@
+[harvest_festival_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ harvest_festival_setup = true },
+	{ adeline_heart_level = 8, comparator = ">=" },
+	{ adeline_is_partner = true },
+]
+portrait = "neutral"
+local = "Eiland's all about collecting $Queen Berries$ for the $Harvest Festival$, but I'm more interested in the dance."
+next = "1"
+
+[harvest_festival_anticipation.1]
+portrait = "blush"
+local = "I used to take lessons, you know."
+
+[harvest_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "adeline" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=", ignore_priority = true },
+]
+portrait = "happy"
+local = "Happy Harvest Festival, [Ari]!"
+next = "1"
+
+[harvest_festival_0.1]
+portrait = "neutral"
+local = "Look at all those smiling faces..."
+next = "2"
+
+[harvest_festival_0.2]
+portrait = "happy"
+local = "I hope you're having a good time as well!"
+
+[harvest_festival_place_follow_up]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "adeline" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ any = [
+		{ hf_third_place = true },
+		{ hf_second_place = true },
+		{ hf_first_place = true },
+	] },
+	{},
+]
+portrait = "happy"
+local = "Wow, [Ari]! You managed to collect so many berries despite being so busy!"
+next = "1"
+
+[harvest_festival_place_follow_up.1]
+portrait = "neutral"
+local = "You deserve another award for your excellent time management skills!"

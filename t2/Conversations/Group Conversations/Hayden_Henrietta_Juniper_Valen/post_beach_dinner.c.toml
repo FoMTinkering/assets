@@ -1,0 +1,49 @@
+[post_beach_dinner]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "hayden" },
+		{ npc = "henrietta" },
+		{ npc = "juniper" },
+		{ npc = "valen" }
+	] },
+	{ hayden_zone = "<juniper_zone>" },
+	{ hayden_zone = "<valen_zone>" },
+	{ hayden_is_at_location = "<henrietta_is_at_location>" },
+	{ group_two_beach_day = true },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ any = [{ hayden_activity = "eat" }, { hayden_activity = "drink" }] },
+	{ any = [{ juniper_activity = "eat" }, { juniper_activity = "drink" }] },
+	{ any = [{ valen_activity = "eat" }, { valen_activity = "drink" }] },
+	{ valen_can_drink = true },
+	{ juniper_can_drink = true }
+]
+speaker = "hayden"
+portrait = "happy"
+local = "What's better than a day at the Beach? Dinner with friends, that's what!"
+next = "1"
+
+[post_beach_dinner.1]
+speaker = "juniper"
+portrait = "annoyed"
+local = "Friend, singular. That would be you, Hayden. Please ask that one to pass the pepper."
+next = "2"
+
+[post_beach_dinner.2]
+speaker = "valen"
+portrait = "happy"
+effect = "angry"
+local = "This one heard you just fine. Here, the pepper. Now, are you going to share that wine or drink it all on your own?"
+next = "3"
+
+[post_beach_dinner.3]
+speaker = "hayden"
+portrait = "happy"
+effect = "sparkles"
+local = "They're getting on well, aren't they [Ari]?"
+next = "4"
+
+[post_beach_dinner.4]
+speaker = "henrietta"
+portrait = "neutral"
+local = "(Henrietta clucks to herself. She seems... unconvinced.)"

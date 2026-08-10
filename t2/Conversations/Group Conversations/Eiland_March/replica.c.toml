@@ -1,0 +1,28 @@
+[replica]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "march" }] },
+	{ eiland_zone = "<march_zone>" },
+	{ any = [
+		{ location = "blacksmith_store" },
+		{ eiland_zone = "town/forge_lesson" },
+		{ eiland_zone = "town/blacksmith_forge" },
+		{ eiland_zone = "town/blacksmith_business" },
+	] },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "march"
+portrait = "neutral"
+local = "This replica you asked for is coming along. Interesting project, asking for something that can intentionally tarnish."
+next = "1"
+
+[replica.1]
+speaker = "eiland"
+portrait = "happy"
+local = "I'm glad you like it! I'll be able to develop a more formal scale of how metallic artifacts age, as long as you fill out the spreadsheet I left with you."
+next = "2"
+
+[replica.2]
+speaker = "march"
+portrait = "think"
+local = "Yeah, I've got it under control."

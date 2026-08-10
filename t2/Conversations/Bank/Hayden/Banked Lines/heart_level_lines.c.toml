@@ -1,0 +1,61 @@
+
+[zero_to_one_0]
+refresh = "never"
+requires = [{ npc = "hayden" }, { hayden_heart_level = 2, comparator = "<" }]
+portrait = "neutral"
+local = "Settling in alright? It can be a bit much, farmwork. Just take it one day at a time."
+
+[two_to_three_0]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_heart_level = 4, comparator = "<" },
+	{ hayden_heart_level = 2, comparator = ">=" }
+]
+actions = [{ item = "sugar" }]
+portrait = "neutral"
+local = "Hey there, neighbor! You know, I keep waiting for you to ask to borrow a cup of sugar."
+next = "1"
+
+[two_to_three_0.1]
+portrait = "happy"
+local = "And then I thought to myself, why not get ahead of it?"
+next = "2"
+
+[two_to_three_0.2]
+portrait = "laugh"
+local = "Gya ha ha!"
+
+[four_to_five_0]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_heart_level = 6, comparator = "<" },
+	{ hayden_heart_level = 4 , comparator = ">=" }
+]
+portrait = "neutral"
+local = "Your farm seems to be coming along nicely, [Ari]. I'm impressed!"
+next = "1"
+
+[four_to_five_0.1]
+portrait = "wink"
+local = "Got any tips?"
+prompts = [{ local = "Hard work and lots of it!", next = "2" }, { local = "Hmm... got any dragon statues on your property?", next = "4" }]
+
+[four_to_five_0.2]
+portrait = "happy_fist"
+local = "That's what having a farm is all about!"
+next = "3"
+
+[four_to_five_0.3]
+portrait = "neutral_arm_down"
+local = "I'd say the rewards are more than worth it."
+
+[four_to_five_0.4]
+portrait = "think"
+local = "Can't say I do..."
+next = "5"
+
+[four_to_five_0.5]
+portrait = "neutral_arm_down"
+local = "Got a chicken statue though! Maybe that's why I've always had such good luck with animals."

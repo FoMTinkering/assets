@@ -1,0 +1,455 @@
+[juniper_post_8h_romantic_0]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_dating = true },
+	{ juniper_post_8h_romantic_gate = false },
+	{ juniper_post_8h_romantic_grouping = 0 },
+	{ juniper_post_8h_romantic_progression = false }
+]
+writes = [
+	{ juniper_post_8h_romantic_gate = true, expires = "20h" },
+	{ juniper_post_8h_romantic_grouping = 1 }
+]
+actions = [{ bark = { bark = "blush", npc = "juniper" } }]
+portrait = "angry_brows"
+local = "[Ari]! I was just contemplating the change in our status, and I wanted to set a few things straight."
+next = "1"
+
+[juniper_post_8h_romantic_0.1]
+portrait = "closed_eyes"
+local = "First, you still have to pay for baths at the Bathhouse."
+next = "2"
+
+[juniper_post_8h_romantic_0.2]
+portrait = "mad"
+local = "Second, you have to be extra nice to me while I'm working."
+next = "3"
+
+[juniper_post_8h_romantic_0.3]
+portrait = "embarrassed"
+local = "And third... you have to hold my hand."
+next = "4"
+
+[juniper_post_8h_romantic_0.4]
+portrait = "think_special"
+local = "I-if you want to."
+
+[juniper_post_8h_romantic_question_0]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_dating = true },
+	{ juniper_post_8h_romantic_gate = false },
+	{ juniper_post_8h_romantic_grouping = 1 },
+	{ juniper_post_8h_romantic_progression = false }
+]
+writes = [
+	{ juniper_post_8h_romantic_gate = true, expires = "20h" },
+	{ juniper_post_8h_romantic_grouping = 2 }
+]
+actions = [{ bark = { bark = "blush", npc = "juniper" } }]
+portrait = "neutral"
+local = "Hello, [Ari]."
+next = "1"
+
+[juniper_post_8h_romantic_question_0.1]
+portrait = "think_special"
+local = "Is your mind well? And how is your body?"
+prompts = [
+	{ local = "My... mind? Should I be concerned, Juniper?", next = "2" },
+	{ local = "My... body? Are you up to something, Juniper?", next = "2" }
+]
+
+[juniper_post_8h_romantic_question_0.2]
+portrait = "ugh"
+local = "N-no! I just wanted to ask how you're doing."
+next = "3"
+
+[juniper_post_8h_romantic_question_0.3]
+portrait = "embarrassed"
+local = "Is this not how one should go about it?"
+next = "4"
+
+[juniper_post_8h_romantic_question_0.4]
+portrait = "angry_blush"
+local = "Stop smirking like that! Begone!"
+
+[juniper_post_8h_romantic_1]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_dating = true },
+	{ juniper_post_8h_romantic_gate = false },
+	{ juniper_post_8h_romantic_grouping = 2 },
+	{ juniper_post_8h_romantic_progression = false }
+]
+writes = [
+	{ juniper_post_8h_romantic_gate = true, expires = "20h" },
+	{ juniper_post_8h_romantic_grouping = 3 }
+]
+actions = [{ bark = { bark = "blush", npc = "juniper" } }]
+portrait = "think"
+local = "Lately, I've been having unnerving thoughts..."
+next = "1"
+
+[juniper_post_8h_romantic_1.1]
+portrait = "think_special"
+local = """Like "I wonder how [Ari]'s doing" and "I wonder if [Ari]'s eating enough"."""
+next = "2"
+
+[juniper_post_8h_romantic_1.2]
+portrait = "angry_blush"
+local = "Surely it's a side effect of the spell you cast on me."
+
+[juniper_post_8h_romantic_question_1]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_dating = true },
+	{ juniper_post_8h_romantic_gate = false },
+	{ juniper_post_8h_romantic_grouping = 3 },
+	{ juniper_post_8h_romantic_progression = false }
+]
+writes = [
+	{ juniper_post_8h_romantic_gate = true, expires = "2d" },
+	{ juniper_post_8h_romantic_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "think"
+local = "You know... my daydreams have been a little different lately."
+next = "1"
+
+[juniper_post_8h_romantic_question_1.1]
+portrait = "angry_brows"
+local = "And it's your fault!"
+prompts = [
+	{ local = "What do you mean?", next = "2" },
+	{ local = "Because you're daydreaming about... me?", next = "6" }
+]
+
+[juniper_post_8h_romantic_question_1.2]
+portrait = "embarrassed"
+local = "Well, I normally fantasize about becoming a powerful sorceress-"
+next = "3"
+
+[juniper_post_8h_romantic_question_1.3]
+portrait = "angry_blush"
+local = "and going back to gloat over my old classmates."
+next = "4"
+
+[juniper_post_8h_romantic_question_1.4]
+portrait = "blush"
+local = "But now I imagine showing up with you on my arm, too."
+next = "5"
+
+[juniper_post_8h_romantic_question_1.5]
+portrait = "wink"
+effect = "sparkles_dark"
+local = """Can you imagine? We could give new meaning to the term "power couple"."""
+
+[juniper_post_8h_romantic_question_1.6]
+portrait = "think_special"
+local = "Well... in a sense."
+next = "7"
+
+[juniper_post_8h_romantic_question_1.7]
+portrait = "embarrassed"
+local = "I normally fantasize about becoming a powerful sorceress-"
+next = "3"
+
+# Last line
+[juniper_post_8h_romantic_2]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_dating = true },
+	{ juniper_post_8h_romantic_gate = false },
+	{ juniper_post_8h_romantic_grouping = 4 }
+]
+writes = [
+	{ juniper_post_8h_romantic_gate = true, expires = "2d" },
+	{ juniper_post_8h_best_friend_gate = true, expires = "2d" },
+	{ juniper_post_8h_romantic_progression = true }
+]
+actions = [{ bark = { bark = "blush", npc = "juniper" } }]
+portrait = "mad"
+local = "Good, you're here."
+next = "1"
+
+[juniper_post_8h_romantic_2.1]
+portrait = "angry_blush"
+local = "Now, hold my hand."
+next = "2"
+
+[juniper_post_8h_romantic_2.2]
+portrait = "think_special"
+local = "Yes, like that."
+next = "3"
+
+[juniper_post_8h_romantic_2.3]
+portrait = "closed_eyes"
+local = "..."
+next = "4"
+
+[juniper_post_8h_romantic_2.4]
+portrait = "embarrassed"
+local = "Okay, that's enough! Let's not get all clingy about it."
+
+[juniper_post_8h_romantic_3]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_dating = true },
+	{ juniper_post_8h_romantic_gate = false },
+	{ juniper_post_8h_romantic_grouping = 4 },
+	{ juniper_post_8h_romantic_progression = false }
+]
+writes = [{ juniper_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "juniper" } }]
+portrait = "think"
+local = "Now, [Ari]... you can do as you please..."
+next = "1"
+
+[juniper_post_8h_romantic_3.1]
+portrait = "embarrassed"
+local = "But don't you think it's a frivolous use of your magic to increase your allure?"
+next = "2"
+
+[juniper_post_8h_romantic_3.2]
+portrait = "think_special"
+local = "It's not like you need it."
+next = "3"
+
+[juniper_post_8h_romantic_3.3]
+portrait = "angry_blush"
+local = "What? You're... not using magic?"
+next = "4"
+
+[juniper_post_8h_romantic_3.4]
+portrait = "embarrassed"
+local = "Oh."
+
+[juniper_post_8h_romantic_4]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_dating = true },
+	{ juniper_post_8h_romantic_gate = false },
+	{ juniper_post_8h_romantic_grouping = 4 },
+	{ juniper_post_8h_romantic_progression = false }
+]
+writes = [{ juniper_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "neutral"
+local = "[Ari], I've been thinking..."
+next = "1"
+
+[juniper_post_8h_romantic_4.1]
+portrait = "closed_eyes"
+local = "I have my magic, and you have yours."
+next = "2"
+
+[juniper_post_8h_romantic_4.2]
+portrait = "blush"
+local = "I wonder what would happen if the two intertwined?"
+
+[juniper_post_8h_romantic_5]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_dating = true },
+	{ juniper_post_8h_romantic_gate = false },
+	{ juniper_post_8h_romantic_grouping = 4 },
+	{ any = [
+		{ juniper_post_8h_romantic_progression = false },
+		{ juniper_post_8h_best_friend_grouping = 0 },
+		{ juniper_post_8h_best_friend_grouping = 4 }
+	] },
+	{ location = "bathhouse" }
+]
+writes = [{ juniper_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "juniper" } }]
+portrait = "blush"
+local = "Oh! I was just thinking of you, [Ari]."
+next = "1"
+
+[juniper_post_8h_romantic_5.1]
+portrait = "angry_blush"
+effect = "shock"
+local = "In the... purely professional way that I think of all customers who frequent my establishment!"
+next = "2"
+
+[juniper_post_8h_romantic_5.2]
+portrait = "angry_brows"
+local = "You won't be getting any special treatment from me while I'm working."
+next = "3"
+
+[juniper_post_8h_romantic_5.3]
+portrait = "think_special"
+local = "Obviously."
+
+[juniper_post_8h_romantic_6]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_dating = true },
+	{ juniper_post_8h_romantic_gate = false },
+	{ juniper_post_8h_romantic_grouping = 4 },
+	{ juniper_post_8h_romantic_progression = false }
+]
+writes = [{ juniper_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "juniper" } }]
+portrait = "closed_eyes"
+local = "During my time in college, I was surrounded by people studying magic."
+next = "1"
+
+[juniper_post_8h_romantic_6.1]
+portrait = "neutral"
+local = "Sharing an interest with other people like that was... nice."
+next = "2"
+
+[juniper_post_8h_romantic_6.2]
+portrait = "think"
+local = "I've had that feeling again, lately."
+next = "3"
+
+[juniper_post_8h_romantic_6.3]
+portrait = "angry_brows"
+local = "What? Why are you looking at me like that?"
+next = "4"
+
+[juniper_post_8h_romantic_6.4]
+portrait = "embarrassed"
+local = "Stop looking so pleased with yourself. Begone!"
+
+[juniper_post_8h_romantic_7]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_dating = true },
+	{ juniper_post_8h_romantic_gate = false },
+	{ juniper_post_8h_romantic_grouping = 4 },
+	{ juniper_post_8h_romantic_progression = false }
+]
+writes = [{ juniper_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "blush", npc = "juniper" } },
+	{ item = "water_chestnut_fritters" }
+]
+portrait = "angry_brows"
+local = "Ah, there you are."
+next = "1"
+
+[juniper_post_8h_romantic_7.1]
+portrait = "embarrassed"
+local = "I um. Made something for you."
+next = "2"
+
+[juniper_post_8h_romantic_7.2]
+portrait = "unimpressed"
+local = "You don't have to eat it if you don't like it..."
+next = "3"
+
+[juniper_post_8h_romantic_7.3]
+portrait = "angry_blush"
+local = "But you'd better not throw it away!"
+
+[juniper_post_8h_romantic_question_2]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_partner = true },
+	{ juniper_post_8h_romantic_gate = false },
+	{ juniper_post_8h_romantic_grouping = 4 },
+	{ juniper_post_8h_romantic_progression = false }
+]
+writes = [{ juniper_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "juniper" } }]
+portrait = "sad"
+local = "Hmmm. I was just thinking about that unfortunate incident with the... scales."
+next = "1"
+
+[juniper_post_8h_romantic_question_2.1]
+portrait = "ugh"
+local = "To tell the truth, I was mortified that you saw me like that."
+next = "2"
+
+[juniper_post_8h_romantic_question_2.2]
+portrait = "sad_special"
+local = "What would you think of me, if your spell hadn't restored me to normal...?"
+prompts = [
+	{ local = "Honestly, you can really pull off an animal print.", next = "3" },
+	{ local = "I was kind of into it.", next = "6" }
+]
+
+[juniper_post_8h_romantic_question_2.3]
+portrait = "laugh"
+local = "Oh ho ho ho!"
+next = "4"
+
+[juniper_post_8h_romantic_question_2.4]
+portrait = "happy"
+local = "When you put it that way... it doesn't sound so bad."
+next = "5"
+
+[juniper_post_8h_romantic_question_2.5]
+portrait = "think_special"
+local = "I'm glad it wouldn't have scared you off."
+
+[juniper_post_8h_romantic_question_2.6]
+portrait = "embarrassed"
+local = "You... were?"
+next = "7"
+
+[juniper_post_8h_romantic_question_2.7]
+portrait = "angry_blush"
+local = "S-stop joking around, [Ari]!"
+next = "8"
+
+[juniper_post_8h_romantic_question_2.8]
+portrait = "think_special"
+local = "But... I'm glad it wouldn't have scared you off."
+
+[juniper_post_8h_romantic_question_3]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ has_spouse = false },
+	{ juniper_is_partner = true },
+	{ juniper_post_8h_romantic_gate = false },
+	{ juniper_post_8h_romantic_grouping = 4 },
+	{ juniper_post_8h_romantic_progression = false }
+]
+writes = [{ juniper_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "juniper" } }]
+portrait = "closed_eyes"
+effect = "sigh"
+local = "I need inspiration for a new signature bath scent..."
+next = "1"
+
+[juniper_post_8h_romantic_question_3.1]
+portrait = "angry_blush"
+local = "[Ari]! Quick! What's the first flower that springs to mind when you think of me?"
+prompts = [
+	{ local = "Crystal Rose!", next = "2" },
+	{ local = "Shadow Flower!", next = "4" }
+]
+
+[juniper_post_8h_romantic_question_3.2]
+portrait = "think"
+local = "Hmmm... Mystical, sensual, and notably prickly."
+next = "3"
+
+[juniper_post_8h_romantic_question_3.3]
+portrait = "embarrassed"
+local = "I guess you're... not wrong."
+
+[juniper_post_8h_romantic_question_3.4]
+portrait = "think"
+local = "Hmmm... Beautiful, mysterious, and resilient."
+next = "5"
+
+[juniper_post_8h_romantic_question_3.5]
+portrait = "think_special"
+local = "A nice choice."

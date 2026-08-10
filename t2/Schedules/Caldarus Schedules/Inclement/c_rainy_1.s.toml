@@ -1,0 +1,33 @@
+requires = [
+	{ weather = "rainy" },
+	{ caldarus_home = true },
+	{ rain_counter = 1 }
+]
+
+# Caldarus
+[caldarus."6:00am"]
+destination = "caldarus_house/Caldarus Wake Point"
+on_arrival_actions = [{ animation = "eyes_closed" }]
+
+[caldarus."6:35am"]
+destination = "caldarus_house/lute_1"
+on_arrival_actions = [{ animation = "lute_play" }]
+
+[caldarus."10:33am"]
+destination = "caldarus_house/lute_1"
+on_arrival_actions = [{ routine = "caldarus_house_reading" }]
+
+[caldarus."2:27pm"]
+destination = "caldarus_house/dragon_cleaning_1"
+on_arrival_actions = [{ routine = "statue_cleaning" }]
+
+[caldarus."5:32pm"]
+destination = "caldarus_house/Caldarus Pouf Right"
+
+[caldarus."6:43pm"]
+destination = "caldarus_house/Caldarus Pouf Right"
+on_arrival_actions = [{ routine = "tea_making" }]
+
+[caldarus."10:23pm"]
+destination = "caldarus_house/Caldarus Wake Point"
+on_arrival_actions = [{ animation = "eyes_closed" }]

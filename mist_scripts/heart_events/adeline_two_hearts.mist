@@ -1,0 +1,170 @@
+scene(adelines_office);
+camera_position(a2h_camera_1);
+place_actor(ari, west, a2h_ari_entrance);
+place_actor(adeline, south, "Desk Chair Seat");
+animate(adeline, write_sit);
+place_actor(eiland, north, a2h_eiland_start);
+animate(eiland, action);
+place_actor(elsie, east, "Ad Couch Top Seat");
+animate(elsie, write_sit);
+face(elsie, east);
+request_music_play(adeline);
+
+sim {
+	fade_in(2);
+	pan_camera(3, a2h_camera_2);
+	{
+		walk_slow(ari, a2h_ari_start);
+		face(ari, west);
+	}
+	{
+		wait(1.5);
+		free bark_speech(adeline, exclamation_mark);
+		wait(0.5);
+		animate(adeline, sit);
+		wait(0.25);
+		free bark_speech(eiland, exclamation_mark);
+		wait(0.5);
+		animate(eiland, idle);
+		animate(elsie, sit);
+		wait(0.25);
+		face(eiland, east);
+	}
+	{
+		wait(2.5);
+		next_line(); //
+		next_line(); //
+
+	}
+}
+sim {
+	pan_camera(2, a2h_camera_3);
+	{
+		wait(0.5);
+		walk_slow(adeline, a2h_adeline_eiland);
+		face(adeline, south);
+		walk_slow(adeline, a2h_adeline_forward);
+		face(adeline, east);
+		animate(adeline, idle);
+	}
+	{
+		wait(1);
+		walk_slow(ari, a2h_ari_forward);
+		face(ari, west);
+	}
+	{
+		wait(1.5);
+		face(eiland, south);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		//
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(1.5);
+		pan_camera(1.75, a2h_camera_4);
+	}
+	{
+		wait(1.5);
+		walk_slow(adeline, a2h_adeline_elsie);
+		face(adeline, west);
+	}
+	{
+		next_line(); //
+	}
+}
+next_line(); //
+sim {
+	{
+		wait(1);
+		walk_slow(adeline, a2h_adeline_eiland);
+		face(adeline, north);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(0.25);
+		face(adeline, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+free bark_speech(ari, sweat_drop);
+free bark_speech(elsie, sweat_drop);
+free bark_speech(eiland, sweat_drop);
+wait(1.5);
+sim {
+	{
+		wait(0.5);
+		pan_camera(2, a2h_camera_3);
+	}
+	{
+		wait(0.5);
+		walk_slow(adeline, "Desk Chair Seat");
+		face(adeline, south);
+		animate(adeline, sit);
+	}
+	{
+		wait(1);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		//
+		next_line(); //
+	}
+}
+
+next_line();
+free bark_speech(ari, exclamation_mark);
+free bark_speech(elsie, exclamation_mark);
+free bark_speech(eiland, exclamation_mark);
+next_line();
+
+close_textbox();
+
+sim {
+	{
+		wait(0.25);
+		walk(ari, a2h_ari_paperwork);
+		face(ari, south);
+		animate(ari, action);
+	}
+	{
+		wait(2);
+		face(adeline, west);
+		wait(1);
+		face(adeline, east);
+		wait(1);
+		face(adeline, south);
+		free bark_speech(adeline, music);
+		wait(1);
+		animate(adeline, write_sit);
+		fade_out(2);
+	}
+	{
+		wait(0.75);
+		face(eiland, south);
+		wait(0.25);
+		animate(eiland, write);
+	}
+	{
+		wait(1.25);
+		animate(elsie, write_sit);
+	}
+}
+wait_one_tick();

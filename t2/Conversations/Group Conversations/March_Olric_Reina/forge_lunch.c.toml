@@ -1,0 +1,36 @@
+[forge_lunch]
+refresh = "1y"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn" },
+	{ march_zone = "<olric_zone>" },
+	{ march_is_at_location = "inn" },
+	{ march_forge_work_day = true },
+	{ olric_forge_work_day = true },
+	{ march_activity = "eat" },
+	{ olric_activity = "eat" },
+	{ day_time = "4:00pm", comparator = "<=" },
+	{ day_time = "11:00am", comparator = ">=" }
+]
+speaker = "reina"
+local = "I can always tell when March and Olric have been working the forge."
+next = "1"
+
+[forge_lunch.1]
+speaker = "reina"
+portrait = "embarrassed"
+effect = "sigh"
+local = "They show up super hungry and order half the menu."
+next = "2"
+
+[forge_lunch.2]
+speaker = "march"
+effect = "loud"
+local = "Pass the salt, Olric!"
+next = "3"
+
+[forge_lunch.3]
+speaker = "olric"
+portrait = "mad"
+effect = "loud"
+local = "Trade you for the pepper!"

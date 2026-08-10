@@ -1,0 +1,38 @@
+[beach_wander]
+refresh = "2m"
+requires = [
+	{ npc = "hayden" },
+	{ location = "beach" },
+	{ time_of_day = "night" }
+]
+portrait = "neutral"
+local = "Oh, were you also thinking of the Beach?"
+next = "1"
+
+[beach_wander.1]
+portrait = "happy"
+local = "I just had to hear those waves before I went to sleep!"
+
+[beach_wander_2]
+requires = [
+	{ npc = "hayden" },
+	{ location = "beach" },
+]
+refresh = "2m"
+portrait = "neutral"
+local = "Nothing quite like the sound of waves on the shore. It's hard to imagine life away from the farm, but in another life I think I would have enjoyed being a sailor!"
+
+[beach_wander_3]
+refresh = "1y"
+requires = [
+	{ npc = "hayden" },
+	{ location = "beach" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "neutral"
+local = "Grandma and I used to stand with our toes in the water, watching the tide come in."
+next = "1"
+
+[beach_wander_3.1]
+portrait = "wink"
+local = "She said it was good for your feet after a long day on the farm."

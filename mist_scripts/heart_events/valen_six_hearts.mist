@@ -1,0 +1,363 @@
+fun on_scene_end() {
+	request_music_stop(2);
+}
+
+scene(bathhouse);
+camera_position(v6h_camera_1);
+place_actor(ari, north, v6h_ari_entrance);
+place_actor(dozy, east, "Dozy");
+animate(dozy, sleep_2);
+place_actor(juniper, south, "Front Desk");
+place_actor(valen, north, v6h_valen_entrance);
+request_music_play(valen);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		pan_camera(3, v6h_camera_2);
+	}
+	{
+		walk_slow(ari, v6h_ari_start);
+		face(ari, north);
+	}
+	{
+		wait(0.5);
+		free bark_speech(valen, exclamation_mark);
+		wait(0.5);
+		face(valen, south);
+		wait(1.5);
+		face(valen, north);
+	}
+	{
+		wait(3);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+	free {
+		wait(3.5);
+		animate(dozy, doze_2);
+		wait(2);
+		animate(dozy, doze_1);
+	}
+}
+close_textbox();
+wait(0.25);
+free bark_speech(valen, annoyed);
+wait(1);
+animate(juniper, laugh);
+play_sound("SoundEffects/NPCs/Vocal/JuniperLaugh");
+wait(2.25);
+animate(juniper, idle);
+sim {
+	{
+		walk_slow(juniper, v6h_juniper_pause);
+		face(juniper, south);
+		walk_slow(juniper, v6h_ari_start);
+		face(juniper, east);
+	}
+	{
+		wait(2);
+		face(valen, west);
+	}
+	{
+		wait(2);
+		next_line(); //
+		close_textbox();
+	}
+	{
+		wait(1.25);
+		walk_slow(ari, v6h_ari_back);
+		face(ari, north);
+	}
+	{
+		pan_camera(3, v6h_camera_3);
+	}
+}
+wait(0.25);
+sim {
+	{
+		walk_slow(valen, v6h_juniper_notes);
+		face(valen, north);
+		animate(valen, action);
+		wait(0.5);
+		setup_prop(v6h_notes);
+		animate(valen, idle);
+	}
+	{
+		wait(0.75);
+		face(juniper, north);
+	}
+}
+
+sim {
+	{
+		walk_slow(valen, v6h_valen_back);
+		face(valen, north);
+		//
+		//
+		//
+		//
+	}
+	{
+		wait(0.5);
+		walk_slow(ari, v6h_ari_left);
+		face(ari, north);
+		//
+		//
+		//
+		//
+	}
+	{
+		wait(0.75);
+		walk_slow(juniper, v6h_juniper_notes);
+		face(juniper, north);
+	}
+}
+wait(0.5);
+next_line(); //
+close_textbox();
+wait(1);
+free bark_speech(juniper, ellipses);
+wait(2);
+sim {
+	{
+		wait(0.25);
+		face(valen, west);
+		wait(1.5);
+		face(valen, north);
+	}
+	{
+		face(ari, east);
+		wait(1.5);
+		face(ari, north);
+	}
+}
+wait(0.25);
+//
+free bark_speech(juniper, cute_face);
+wait(0.5);
+next_line(); //
+sim {
+	{
+		wait(0.75);
+		face(juniper, south);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1.75);
+		face(juniper, north);
+	}
+	{
+		next_line(); //
+	}
+}
+
+//
+sim {
+	{
+		wait(0.75);
+		free bark_speech(juniper, exclamation_mark);
+		wait(0.25);
+		face(juniper, south);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		face(valen, west);
+		wait(2);
+		face(valen, north);
+	}
+	{
+		wait(1.25);
+		face(ari, east);
+		wait(2);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+	}
+}
+next_line(); //
+close_textbox();
+wait(0.5);
+face(juniper, west);
+wait(1.25);
+face(juniper, east);
+wait(1.25);
+face(juniper, north);
+wait(0.5);
+free bark_speech(juniper, ellipses);
+wait(2);
+face(juniper, south);
+next_line(); //
+//
+next_line(); //
+close_textbox();
+wait(0.5);
+face(juniper, north);
+wait(0.5);
+ {
+	{
+		wait(1.5);
+		face(juniper, south);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(juniper, north);
+	}
+	{
+		wait(1);
+		animate(dozy, idle);
+		face(dozy, south);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		walk(juniper, v6h_juniper_exit);
+		face(juniper, north);
+		remove_actor(juniper);
+	}
+	{
+		wait(1.5);
+		face(valen, west);
+		wait(0.5);
+		free bark_speech(valen, sweat_drop);
+	}
+	{
+		wait(2);
+		face(ari, east);
+	}
+	{
+		wait(0.5);
+		walk(dozy, v6h_dozy_pause);
+		face(dozy, south);
+		walk(dozy, v6h_juniper_notes);
+		face(dozy, south);
+	}
+	{
+		wait(1);
+		pan_camera(2, v6h_camera_4);
+	}
+	{
+		wait(3);
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(valen, north);
+	}
+	{
+		wait(1);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(0.5);
+		face(dozy, north);
+		wait(1);
+		destroy_prop(v6h_notes);
+		wait(0.25);
+		face(dozy, south);
+	}
+	{
+		wait(1.5);
+		walk_slow(valen, v6h_valen_forward);
+		face(valen, north);
+		animate(valen, action);
+		wait(0.5);
+		animate(valen, idle);
+		walk_slow(valen, v6h_valen_back);
+		face(valen, north);
+	}
+	{
+		wait(2);
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(valen, west);
+	}
+	{
+		wait(1);
+		face(ari, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+free bark_speech(valen, cute_face);
+wait(1.5);
+next_line(); //
+close_textbox();
+wait(0.5);
+sim {
+	{
+		walk(valen, v6h_ari_entrance);
+		face(valen, south);
+		remove_actor(valen);
+	}
+	{
+		wait(0.5);
+		face(ari, south);
+		wait(1.5);
+		face(ari, north);
+		wait(1);
+		animate(dozy,tailwag);
+		wait(1.25);
+		animate(dozy, idle);
+		face(ari, south);
+		wait(1);
+		walk_slow(ari, v6h_ari_entrance);
+	}
+	{
+		wait(5.25);
+		fade_out(2);
+	}
+	{
+		wait(5.25);
+		free pan_camera(2.5, v6h_camera_1);
+	}
+}

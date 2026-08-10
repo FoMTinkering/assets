@@ -1,0 +1,82 @@
+scene(farm);
+request_music_play("Music/Events/Cutscene");
+camera_position(et_camera_1);
+place_actor(ari, south, et_ari_door);
+place_actor(elsie, west, et_elsie_entrance);
+
+
+sim {
+	fade_in(2);
+	{
+		walk_slow(elsie, et_elsie_start);
+		face(elsie, west);
+	}
+	{
+		wait(0.5);
+		free bark_speech(elsie, exclamation_mark);
+		wait(0.5);
+		free bark_speech(ari, exclamation_mark);
+		wait(0.5);
+		face(ari, east);
+	}
+	{
+		walk(ari, et_ari_entrance);
+		face(ari, south);
+	}
+	{
+		wait(2);
+		next_line(); //
+	}
+	pan_camera(1.5, et_camera_2);
+}
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+sim {
+    {
+        wait(0.5);
+        animate(elsie, action);
+        wait(0.5);
+        animate(elsie, idle);
+    }
+    {
+        wait(0.6);
+        animate(ari, action);
+        wait(0.5);
+        animate(ari, idle);
+		__play_item_toast(engagement_ring_recipe_scroll, 1);
+    }
+}
+wait(0.5);
+free bark_speech(ari, exclamation_mark);
+wait(0.5);
+free bark_speech(elsie, cute_face);
+wait(1.5);
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+free bark_speech(elsie, cute_face);
+wait(1.5);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(elsie, cute_face);
+wait(1);
+free bark_speech(ari, cute_face);
+wait(1);
+sim {
+	fade_out(2);
+	{
+		wait(0.5);
+		walk_slow(elsie, et_elsie_exit);
+		face(elsie, east);
+	}
+}

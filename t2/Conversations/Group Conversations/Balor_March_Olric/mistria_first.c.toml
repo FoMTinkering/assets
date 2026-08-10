@@ -1,0 +1,23 @@
+[mistria_first]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "march" }, { npc = "olric" }] },
+	{ balor_zone = "<march_zone>" },
+	{ balor_zone = "<olric_zone>" },
+	{ date_time = "2m", comparator = ">=" }
+]
+speaker = "march"
+portrait = "think"
+local = "No thanks, Balor. I'm good for now."
+next = "1"
+
+[mistria_first.1]
+speaker = "balor"
+portrait = "mad"
+local = "I don't understand. Are you sure? With your skill, finding you a steady stream of clients from the Capital would be easy."
+next = "2"
+
+[mistria_first.2]
+speaker = "olric"
+portrait = "happy"
+local = "March would love doing all that fancy stuff, but as much as he complains about making nails, I know my bro... Mistria comes first. He's always been like that!"

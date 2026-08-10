@@ -1,0 +1,28 @@
+[etching]
+refresh = "1y"
+requires = [
+	{ npc = "errol" },
+	{ any = [
+		{ location = "museum_entry" },
+		{ location = "eilands_office" },
+		{ errol_routine = "narrows_archaeology" },
+		{ errol_routine = "eastern_road_archaeology" },
+		{ errol_routine = "western_ruins_archaeology_pit" },
+		{ errol_routine = "western_ruins_archaeology_pit_errol" },
+		{ errol_routine = "western_ruins_archaeology_winter" },
+	] }
+]
+writes = [{ etching = true, expires = "1w" }]
+portrait = "think"
+local = "Oh, hello [Ari]! I was just following up on something I read. There's a particular etching I'm searching for..."
+
+[etching_2]
+refresh = "never"
+requires = [{ npc = "errol" }, { etching = true }]
+portrait = "mad"
+local = "I found the etching I was searching for! But it only raised more questions."
+next = "1"
+
+[etching_2.1]
+portrait = "think"
+local = "I'll have to do some more reading if I want to follow the thread of this research!"

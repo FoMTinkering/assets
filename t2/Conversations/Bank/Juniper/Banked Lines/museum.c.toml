@@ -1,0 +1,24 @@
+[museum]
+refresh = "1y"
+requires = [
+	{ npc = "juniper" },
+	{ museum_total_count = 40, comparator = ">=" },
+	{ juniper_routine = "museum_visit" }
+]
+portrait = "neutral"
+local = "The concentration of ancient relics in Mistria is an endless source of fascination."
+next = "1"
+
+[museum.1]
+portrait = "sly"
+local = "Eiland and Errol have certainly made my life easier, gathering them all in one place like this."
+
+[museum_2]
+refresh = "1y"
+requires = [
+	{ npc = "juniper" },
+	{ museum_archaeology_count = 20, comparator = ">=" },
+	{ juniper_routine = "museum_visit" }
+]
+portrait = "unimpressed"
+local = "I wonder what archaeologists of the distant future will think when they find me buried with all my shoes."

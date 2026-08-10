@@ -1,0 +1,244 @@
+# post birth baby lines
+[post_birth_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ balor_is_spouse = true },
+	{ child_born_today = true },
+	{ child_0_status = "infant" },
+	{ child_born_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "happy_blush"
+local = "Isn't he precious? Our own sweet little boy."
+next = "1"
+
+[post_birth_0.1]
+portrait = "embarrassed"
+local = "It suddenly feels like there's nothing in the world I wouldn't do for [child_0]. Is it normal for a parent to feel this way?"
+next = "2"
+
+[post_birth_0.2]
+portrait = "happy"
+local = "It's a... wonderful feeling."
+next = "3"
+
+[post_birth_0.3]
+portrait = "embarrassed"
+local = "Our little family. I love you, [Ari]."
+
+[post_birth_1]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ post_birth_gate = false },
+	{ post_birth_grouping = 0 },
+	{ child_0_status = "infant" }
+]
+writes = [
+	{ post_birth_gate = true, expires = "3d" },
+	{ post_birth_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "think"
+local = "Growing up, I didn't have a lot of choices... I'd like things to be better for [child_0]. A lot better."
+next = "1"
+
+[post_birth_1.1]
+portrait = "happy"
+local = "I'd like to give him every opportunity we can as he gets older."
+next = "2"
+
+[post_birth_1.2]
+portrait = "neutral"
+local = "Of course, it'd be easier if he wants to be a merchant or a farmer."
+next = "3"
+
+[post_birth_1.3]
+portrait = "wink"
+local = "Still, even in Mistria I think we can help him pursue whatever he wants to do."
+
+[post_birth_2]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ post_birth_gate = false },
+	{ post_birth_grouping = 1 },
+	{ child_0_status = "infant" }
+]
+writes = [
+	{ post_birth_gate = true, expires = "3d" },
+	{ post_birth_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "think"
+local = "I don't know how it was for you growing up, [Ari], but when I was a kid..."
+next = "1"
+
+[post_birth_2.1]
+portrait = "hurt"
+local = "Well, my parents never made me feel like they wanted me around."
+next = "2"
+
+[post_birth_2.2]
+portrait = "mad"
+local = "I never want [child_0] to feel like that. I want him to know that his parents are always going to be there for him."
+next = "3"
+
+[post_birth_2.3]
+portrait = "happy"
+local = "Let's give it our all, okay?"
+
+[post_birth_3]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ post_birth_gate = false },
+	{ post_birth_grouping = 2 },
+	{ child_0_status = "infant" }
+]
+writes = [
+	{ post_birth_gate = true, expires = "3d" },
+	{ post_birth_grouping = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "I never realized how much work it takes to manage your own life, be a good spouse, and a good dad..."
+next = "1"
+
+[post_birth_3.1]
+portrait = "embarrassed"
+local = "I'm proud of us, [Ari]. We're really making this whole thing work."
+next = "2"
+
+[post_birth_3.2]
+portrait = "blush"
+local = "I love you."
+
+[post_birth_4]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ post_birth_gate = false },
+	{ post_birth_grouping = 3 },
+	{ child_0_status = "infant" }
+]
+writes = [
+	{ post_birth_gate = true, expires = "3d" },
+	{ post_birth_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "I unfortunately had some business with Wheedle. When he saw [child_0], he offered him a piece of candy."
+next = "1"
+
+[post_birth_4.1]
+portrait = "happy"
+local = "And [child_0] wouldn't take it! You should have seen the look on Wheedle's face!"
+next = "2"
+
+[post_birth_4.2]
+portrait = "embarrassed"
+local = "I'm so proud of our son. So young, but such a good judge of character already."
+
+[post_birth_5]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ post_birth_gate = false },
+	{ post_birth_grouping = 4 },
+	{ child_0_status = "infant" }
+]
+writes = [
+	{ post_birth_gate = true, expires = "3d" },
+	{ post_birth_grouping = 5 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "Maple keeps trying to recruit [child_0] for the Dragonguard..."
+next = "1"
+
+[post_birth_5.1]
+portrait = "mad"
+local = "And asking to get a discount from me on bulk candy purchases."
+next = "2"
+
+[post_birth_5.2]
+portrait = "neutral"
+local = "Well, maybe when he's older. It'll be nice for him to have a group of other kids to run around with."
+
+# friends and family
+[baby_born_balor_hemlock_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "hemlock" },
+	{ balor_is_spouse = true },
+	{ child_0_status = "infant" },
+	{ baby_born_timer = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "hemlock" } }]
+portrait = "happy"
+local = "Congratulations on the new baby, [Ari]!"
+next = "1"
+
+[baby_born_balor_hemlock_0.1]
+portrait = "neutral"
+local = "I can already tell that [child_0] is going to be a little charmer!"
+
+[baby_born_balor_josephine_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "josephine" },
+	{ balor_is_spouse = true },
+	{ child_0_status = "infant" },
+	{ baby_born_timer = true },
+	{ any = [
+		{ animal_festival_today = false },
+		{ jo_explained_animal_festival = true },
+	] },
+]
+actions = [{ bark = { bark = "cute_face", npc = "josephine" } }]
+portrait = "happy"
+local = "[Ari], congrats to you and Balor! [child_0] is so precious!"
+next = "1"
+
+[baby_born_balor_josephine_0.1]
+portrait = "neutral"
+local = "You ever need a babysitter, just keep me in mind. I'm considering myself an honorary Aunt!"
+
+[baby_born_balor_maple_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "maple" },
+	{ balor_is_spouse = true },
+	{ child_0_status = "infant" },
+	{ baby_born_timer = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "maple" } }]
+portrait = "neutral"
+local = "Little [child_0) looks so much like Balor!"
+next = "1"
+
+[baby_born_balor_maple_0.1]
+portrait = "think"
+local = "I've never thought about what everyone looked like as a baby before."
+next = "2"
+
+[baby_born_balor_maple_0.2]
+portrait = "ugh"
+local = "Do you think Errol was ever a baby? I can't picture it."

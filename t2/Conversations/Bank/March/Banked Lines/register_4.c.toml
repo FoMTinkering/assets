@@ -1,0 +1,32 @@
+[register_4]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ location = "blacksmith_store" },
+	{ march_zone = "blacksmith_store/workbench" },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ march_heart_level = 8, comparator = "<" },
+]
+portrait = "think"
+local = "Doing some shopping?"
+next = "1"
+
+[register_4.1]
+portrait = "neutral"
+local = "You can just leave your money by the till, you know."
+
+[register_alt]
+refresh = "1y"
+requires = [
+	{ npc = "march" },
+	{ location = "blacksmith_store" },
+	{ march_zone = "blacksmith_store/workbench" },
+	{ march_heart_level = 8.0, comparator = ">=" },
+]
+portrait = "eight_heart_think"
+local = "Doing some shopping?"
+next = "1"
+
+[register_alt.1]
+portrait = "eight_heart_happy"
+local = "Let me know if you need anything, [Ari]."

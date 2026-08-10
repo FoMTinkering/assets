@@ -1,0 +1,44 @@
+[skull]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "valen" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "<valen_zone>" },
+	{ valen_babysits = true },
+	{ location = "clinic_f1" },
+]
+writes = [{ dell_skeleton = true }]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "I can see you're fascinated with the Clinic's skeleton, children. Can you tell me what bone this is?"
+next = "1"
+
+[skull.1]
+speaker = "dell"
+portrait = "mad"
+local = "The skull!"
+next = "2"
+
+[skull.2]
+speaker = "luc"
+portrait = "happy"
+local = "Skull!"
+next = "3"
+
+[skull.3]
+speaker = "maple"
+portrait = "mad"
+local = "Skull! Skull! Skull!"
+next = "4"
+
+[skull.4]
+speaker = "valen"
+portrait = "wink"
+effect = "sparkles"
+local = "I see we have some skull fans in the Clinic! Me too."

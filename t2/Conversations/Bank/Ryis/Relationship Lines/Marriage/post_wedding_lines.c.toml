@@ -1,0 +1,414 @@
+[marriage_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_is_spouse = true },
+	{ wedding_was_yesterday = true },
+	{ time_of_day = "morning" },
+	{ post_wedding_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy_blush"
+local = "Good morning, [Ari]."
+next = "1"
+
+[marriage_0.1]
+portrait = "embarrassed"
+local = "Yesterday was so perfect, I can hardly believe it was real!"
+next = "2"
+
+[marriage_0.2]
+portrait = "blush_special"
+local = "But here we are, starting our new life together."
+next = "3"
+
+[marriage_0.3]
+portrait = "starry_eyed"
+local = "Waking up next to you, kissing you good morning..."
+next = "4"
+
+[marriage_0.4]
+portrait = "closed_eyes_smile_blush"
+local = "Eating meals with you, making a home for ourselves..."
+next = "5"
+
+[marriage_0.5]
+portrait = "embarrassed"
+local = "That's the dream, [Ari]. I'm living it!"
+
+
+[marriage_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 0 },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ wedding_was_yesterday = false }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "For as long as you've been living in Mistria, I should have visited you at the farm more..."
+next = "1"
+
+[marriage_1.1]
+portrait = "happy"
+local = "It's unreal pretty out here, isn't it?"
+next = "2"
+
+[marriage_1.2]
+portrait = "surprise"
+local = "I thought it was nice living over on the Eastern Road, but [farm_name] is something else entirely."
+next = "3"
+
+[marriage_1.3]
+portrait = "happy_blush"
+local = "Can't believe we get to live in a place like this. Together! It's like my wildest fantasy came true."
+
+[marriage_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 1 },
+	{ any = [{ location = "farm" }, { building = "player_home" }] }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 2 }
+]
+actions = [{ bark = { bark = "blush", npc = "ryis" } }]
+portrait = "happy"
+effect = "drop"
+local = "I hope you don't mind all the little home repairs I do around the house."
+next = "1"
+
+[marriage_2.1]
+portrait = "thoughtful"
+local = "I was like this back when I was living with Uncle Landen, too."
+next = "2"
+
+[marriage_2.2]
+portrait = "embarrassed"
+local = "I like making life easier for my loved ones, you know?"
+
+[marriage_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 2 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "think"
+local = "You know, I came to Mistria hoping for a little peace, maybe a little self-reflection on what I wanted to do with my life."
+next = "1"
+
+[marriage_3.1]
+portrait = "neutral"
+local = "My home life was fun and lively, but I couldn't really hear myself think in a house with five sisters..."
+next = "2"
+
+[marriage_3.2]
+portrait = "happy"
+effect = "drop"
+local = "Then I moved to Mistria and, well. Sometimes Uncle Landen has as much energy as all my sisters combined, you know?"
+next = "3"
+
+[marriage_3.3]
+portrait = "blush_special"
+local = "I think this life with you... it's what I was searching for all along."
+
+[marriage_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 3 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "It's funny, Uncle Landen's been talking for years about how I should take notes on all his life experience..."
+next = "1"
+
+[marriage_4.1]
+portrait = "neutral"
+local = "And finally, I have a life experience he doesn't. I beat him to the wedding altar!"
+next = "2"
+
+[marriage_4.2]
+portrait = "shocked"
+local = "I think he had a bunch of engagements that didn't work out when he was younger..."
+next = "3"
+
+[marriage_4.3]
+portrait = "happy"
+local = "But he has plenty of time to find love. Uncle's still got a lot of pep in his step!"
+next = "4"
+
+[marriage_4.4]
+portrait = "wink"
+local = "And maybe I can teach him a thing or two about marriage. He'll love that!"
+
+[marriage_5]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 4 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 5 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "closed_eyes"
+local = "Earlier, I was kind of drowsy while doing some staining work..."
+next = "1"
+
+[marriage_5.1]
+portrait = "ugh"
+local = "I went to grab my coffee... and nearly took a sip of wood stain!"
+next = "2"
+
+[marriage_5.2]
+portrait = "sad"
+effect = "shock"
+local = "They were both the same color!"
+next = "3"
+
+[marriage_5.3]
+portrait = "embarrassed"
+local = "Rookie mistake. If I showed up at the Clinic like that, Valen would have never let me hear the end of it."
+prompts = [
+	{ local = "I'm glad you didn't get poisoned!", next = "4" },
+	{ local = "What did I tell you about putting your coffee next to the paint cup?", next = "6" }
+]
+
+[marriage_5.4]
+portrait = "happy"
+local = "Right? I live to drink normal drinks another day."
+next = "5"
+
+[marriage_5.5]
+portrait = "ugh"
+effect = "drop"
+local = "That'll teach me to keep my my =Iced Coffee= at my work station."
+
+[marriage_5.6]
+portrait = "happy"
+effect = "drop"
+local = "Ahaha, busted."
+next = "7"
+
+[marriage_5.7]
+portrait = "wink"
+local = "That'll teach me to keep my my =Iced Coffee= at my work station."
+
+[marriage_6]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ child_0_status = "undefined" },
+	{ ryis_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 5 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 6 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "My dad and I have been exchanging letters..."
+next = "1"
+
+[marriage_6.1]
+portrait = "shocked"
+local = "He's been telling me about how hard it was when my big sisters were still babies. Him and Mom were trying to keep the bakery afloat."
+next = "2"
+
+[marriage_6.2]
+portrait = "neutral"
+local = "They wanted to make sure they gave us an easier life than they had growing up."
+next = "3"
+
+[marriage_6.3]
+portrait = "happy_blush"
+local = "And you know, if we ever decide to have kids... I want them to have it even better."
+
+[marriage_7]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 6 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 7 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "neutral"
+local = "You know, sometimes I just look at you and I can't believe it."
+next = "1"
+
+[marriage_7.1]
+portrait = "blush_special"
+local = "I am so lucky to be with you."
+next = "2"
+
+[marriage_7.2]
+portrait = "happy_blush"
+local = "To have it so good... this is crazy, right? It's crazy."
+
+[marriage_8]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 7 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 8 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "neutral"
+local = "Hey... Don't think we've ever met before. You come here often?"
+next = "1"
+
+[marriage_8.1]
+portrait = "wink"
+local = "You're real cute. Think you'd ever be interested in a little old homebody like me?"
+next = "2"
+
+[marriage_8.2]
+portrait = "closed_eyes"
+local = "..."
+next = "3"
+
+[marriage_8.3]
+portrait = "embarrassed"
+local = "Hahaha! Okay okay I gotta stop!"
+next = "4"
+
+[marriage_8.4]
+portrait = "starry_eyed"
+local = "Sorry [Ari], it's too embarrassing. Flirting is way too hard!"
+prompts = [
+	{ local = "Keep going! I was having fun!", next = "5" },
+	{ local = "Haha! You surprised me!", next = "10" }
+]
+
+[marriage_8.5]
+portrait = "closed_eyes_smile_blush"
+local = "Okay, yeah. I can do this."
+next = "6"
+
+[marriage_8.6]
+portrait = "blush_special"
+local = "Hey, how about you and me go somewhere real quiet..."
+next = "7"
+
+[marriage_8.7]
+portrait = "thoughtful_blush"
+local = "We can talk about... um."
+next = "8"
+
+[marriage_8.8]
+portrait = "embarrassed"
+local = "Seasonal bird migration?"
+next = "9"
+
+[marriage_8.9]
+portrait = "closed_eyes_smile_blush"
+effect = "drop"
+local = "Let... let me get a do-over."
+
+[marriage_8.10]
+portrait = "embarrassed"
+local = "I think I surprised me too by the end there."
+next = "11"
+
+[marriage_8.11]
+portrait = "closed_eyes_smile_blush"
+effect = "drop"
+local = "Guess I'm not smooth like that."
+next = "12"
+
+[marriage_8.12]
+portrait = "thoughtful_blush"
+local = "I better stick to being direct."
+next = "13"
+
+[marriage_8.13]
+portrait = "happy_blush"
+local = "Love you, [Ari]."
+
+[marriage_9]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 8 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 9 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "thoughtful_blush"
+local = "This is gonna sound weird..."
+next = "1"
+
+[marriage_9.1]
+portrait = "blush_special"
+local = "But I can't wait to get old with you."
+next = "2"
+
+[marriage_9.2]
+portrait = "closed_eyes_smile_blush"
+local = "I want to know that [Ari] too, and all the [Ari]s in between then and now."
+next = "3"
+
+[marriage_9.3]
+portrait = "embarrassed"
+local = "And you'll get to know all the different versions of me from now on, too."
+next = "4"
+
+[marriage_9.4]
+portrait = "happy_blush"
+local = "Man... I can't wait!"

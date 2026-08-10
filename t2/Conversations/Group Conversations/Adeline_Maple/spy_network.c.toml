@@ -1,0 +1,22 @@
+[spy_network]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "maple" }] },
+	{ adeline_zone = "<maple_zone>" }
+]
+speaker = "maple"
+portrait = "mad"
+local = "I think the best way to check up on townsfolk would be to use your royal spy network!"
+next = "1"
+
+[spy_network.1]
+speaker = "adeline"
+portrait = "happy"
+effect = "sweat"
+local = "Um... Maple... I don't have anything like that..."
+next = "2"
+
+[spy_network.2]
+speaker = "maple"
+portrait = "wink"
+local = "Right... that's what we want them to think!"

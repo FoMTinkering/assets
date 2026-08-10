@@ -1,0 +1,23 @@
+requires = [
+	{ day_of_the_week = "saturday" },
+	{ weather = "pleasant" },
+	{ season = "winter" },
+	{ quest_repair_the_bridge_complete = true },
+	{ quest_upgrade_the_saturday_market_complete = true }
+]
+
+# taliferro
+[taliferro."6:00am"]
+destination = "town/Taliferro"
+
+[taliferro."8:45pm"]
+destination = "town/Taliferro"
+on_arrival_actions = [{ routine = "taliferro_packing" }]
+
+# wheedle
+[wheedle."6:00am"]
+destination = "town/Wheedle"
+
+[wheedle."9:18pm"]
+destination = "town/Wheedle"
+on_arrival_actions = [{ routine = "wheedle_packing" }]

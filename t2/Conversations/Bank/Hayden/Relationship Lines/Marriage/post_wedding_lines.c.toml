@@ -1,0 +1,354 @@
+[marriage_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ hayden_is_spouse = true },
+	{ wedding_was_yesterday = true },
+	{ time_of_day = "morning" },
+	{ post_wedding_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "confident_blush"
+local = "Good morning, [Ari]."
+next = "1"
+
+[marriage_0.1]
+portrait = "happy_arm_down_blush"
+local = "Feels like I'm walking on air."
+next = "2"
+
+[marriage_0.2]
+portrait = "confident_blush"
+local = "The wedding, the party... the whole town coming out to celebrate with us..."
+next = "3"
+
+[marriage_0.3]
+portrait = "shy_special"
+local = "And then waking up with you by my side..."
+prompts = [
+	{ local = "I couldn't be happier.", next = "4" },
+	{ local = "I love you, Hayden!", next = "5" }
+]
+
+[marriage_0.4]
+portrait = "confident_blush"
+local = "I love you, [Ari]."
+next = "6"
+
+[marriage_0.5]
+portrait = "confident_blush"
+local = "I love you too, [Ari]."
+next = "6"
+
+[marriage_0.6]
+portrait = "happy_arm_down_blush"
+local = "Nothing to do now but enjoy the rest of our lives together!"
+
+[marriage_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 0 },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ wedding_was_yesterday = false }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "neutral"
+local = "There are some folks who can't tell the difference from one farm to the next."
+next = "1"
+
+[marriage_1.1]
+portrait = "happy_fist"
+local = "Not me though. You've done fine work out here, [Ari]."
+next = "2"
+
+[marriage_1.2]
+portrait = "confident_blush"
+local = "It's an honor and a pleasure to join you in caring for such fine land."
+
+[marriage_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 1 },
+	{ any = [{ location = "farm" }, { building = "player_home" }] }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "think"
+local = "..."
+next = "1"
+
+[marriage_2.1]
+portrait = "shocked"
+effect = "surprise"
+local = "AHH!"
+prompts = [
+	{ local = "Ahh!", next = "2" },
+	{ local = "Hayden, calm down! What's wrongs?", next = "2" }
+]
+
+[marriage_2.2]
+portrait = "embarrassed"
+local = "Ooh, I'm sorry [Ari]!"
+next = "3"
+
+[marriage_2.3]
+portrait = "shy_special"
+local = "I got so used to being by myself most days out on Sweetwater Farm, that you sorta... snuck up on me."
+next = "4"
+
+[marriage_2.4]
+portrait = "confident_blush"
+local = "Guess it's something I'll have to work on now, huh!"
+
+[marriage_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ day_time = "6:20am", comparator = ">=" },
+	{ hayden_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 2 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 3 }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "hayden" } }]
+portrait = "gloomy"
+local = "Took forever for me to make this extra healthy formula of animal feed..."
+next = "1"
+
+[marriage_3.1]
+portrait = "annoyed"
+local = "And now none of my livestock want to eat it!"
+next = "2"
+
+[marriage_3.2]
+portrait = "sad"
+local = "Guess it's back to the drawing board..."
+
+[marriage_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 3 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "think"
+local = "You know, growing up, Grandma used to tell me all sorts of stories about her own parents..."
+next = "1"
+
+[marriage_4.1]
+portrait = "shy_special"
+local = "It seems to me that if you get married to the right person, they sort of color the rest of your life for the better."
+next = "2"
+
+[marriage_4.2]
+portrait = "happy_fist"
+local = "Whatever comes next [Ari], I just want you to know how precious you are to me."
+prompts = [
+	{ local = "I feel the same way.", next = "3" },
+	{ local = "You're precious to me, too!", next = "3" }
+]
+
+[marriage_4.3]
+portrait = "confident_blush"
+local = "I love you, [Ari]."
+
+[marriage_5]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 4 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 5 }
+]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "sad"
+local = "Ripped another shirt..."
+next = "1"
+
+[marriage_5.1]
+portrait = "annoyed"
+local = "Can't tell if I'm getting bigger, or if Louis just keeps making the darn things too tight!"
+prompts = [
+	{ local = "It's a small price to pay.", next = "2" },
+	{ local = "Leave 'em ripped!", next = "4" }
+]
+
+[marriage_5.2]
+portrait = "sweat"
+local = "Is that so...?"
+next = "3"
+
+[marriage_5.3]
+portrait = "shy_special"
+local = "Well... as long as you're happy."
+
+[marriage_5.4]
+portrait = "sweat"
+local = "Oh?"
+next = "5"
+
+[marriage_5.5]
+portrait = "shy_special"
+local = "Well, if it makes you happy..."
+
+[marriage_6]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 5 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 6 }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "hayden" } },
+	{ item = "pumpkin_pie" }
+]
+# pumpkin pie
+portrait = "neutral"
+local = "Seems like every time I pop over to the Inn, Hemlock and Jo want to give me advice about married life."
+next = "1"
+
+[marriage_6.1]
+portrait = "shy_special"
+local = "This time it was how an unexpected treat never goes amiss... and, well..."
+next = "2"
+
+[marriage_6.2]
+portrait = "wink"
+local = "You let me know if they were right, okay?"
+
+[marriage_7]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 6 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 7 }
+]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "shy_special"
+local = "You know it's funny, now that we're married it's hard to imagine how I got through my days without you."
+next = "1"
+
+[marriage_7.1]
+portrait = "confident_blush"
+local = "You're one in a million [Ari], I'm so glad you're mine."
+
+[marriage_8]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 7 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 8 }
+]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "confident_blush"
+local = "Now, I don't know what it is, but there's something about how you look today..."
+next = "1"
+
+[marriage_8.1]
+portrait = "shy_special"
+local = "You've got me feeling young again."
+prompts = [
+	{ local = "What are you going to do with all that extra energy?", next = "2" },
+	{ local = "You're looking pretty good today yourself, handsome.", next = "4" }
+]
+
+[marriage_8.2]
+portrait = "laugh_blush"
+local = "Gya ha ha ha!"
+next = "3"
+
+[marriage_8.3]
+portrait = "confident_blush"
+local = "Between the two of us, I'm sure we can think of something."
+
+[marriage_8.4]
+portrait = "laugh_blush"
+local = "Gya ha ha ha!"
+next = "5"
+
+[marriage_8.5]
+portrait = "confident_blush"
+local = "I'm glad you think so, [Ari]."
+
+[marriage_9]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 8 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 9 }
+]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "think"
+local = "Starting to get a bit more gray in my hair..."
+next = "1"
+
+[marriage_9.1]
+portrait = "sweat"
+local = "I never used to think much about getting older, but now that we're married..."
+next = "2"
+
+[marriage_9.2]
+portrait = "neutral"
+local = "It's nice, imagining us enjoying the fruits of our labor, maybe a couple of kids around..."
+next = "3"
+
+[marriage_9.3]
+portrait = "confident_blush"
+local = "But whatever the future brings, I'm just glad I'll be by your side."

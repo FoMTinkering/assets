@@ -1,0 +1,72 @@
+[inn_folk_4_josephine]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ any = [
+		{ josephine_zone = "inn/bar" },
+		{ josephine_zone = "inn/kitchen" },
+	] },
+	{ josephine_first_fnati = 3 },
+	{ npc = "josephine" },
+	{ adeline_zone = "inn/south_table" },
+	{ balor_zone = "inn/south_table" },
+	{ celine_zone = "inn/south_table" },
+	{ eiland_zone = "inn/south_table" },
+	{ holt_zone = "inn/south_table" },
+	{ dnd_fnati = 3 },
+	{ any = [{ fnati = 0 }, { fnati = 1 }]},
+]
+writes = [{ josephine_first_fnati = 4 }]
+portrait = "neutral"
+effect = "sweat"
+local = "Things are getting heated over at Eiland's table... It sounds like it's all down to Snicklefritz... I mean Balor..."
+
+[inn_folk_4_josephine_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ any = [
+		{ josephine_zone = "inn/bar" },
+		{ josephine_zone = "inn/kitchen" },
+		{ location = "inn" },
+		# remove after zones are fixed
+	] },
+	{ npc = "josephine" },
+	{ adeline_zone = "inn/south_table" },
+	{ balor_zone = "inn/south_table" },
+	{ celine_zone = "inn/south_table" },
+	{ eiland_zone = "inn/south_table" },
+	{ holt_zone = "inn/south_table" },
+	{ dnd_fnati = 4 },
+	{ any = [{ fnati = 0 }, { fnati = 1 }]},
+]
+writes = [{ josephine_first_fnati = 4 }]
+portrait = "happy"
+effect = "sparkles"
+local = "Snicklefritz... you came through for your friends in their time of need, when the chips were down... oh, I'm getting all misty!"
+
+[inn_folk_4_hemlock]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ any = [
+		{ hemlock_zone = "inn/bar" },
+		{ hemlock_zone = "inn/kitchen" },
+		{ location = "inn" },             # remove after zones are fixed
+	] },
+	{ hemlock_first_fnati = 3 },
+	{ npc = "hemlock" },
+	{ elsie_zone = "inn/bar" },
+	{ juniper_zone = "inn/bar" },
+	{ landen_zone = "inn/bar" },
+	{ march_zone = "inn/bar" },
+	{ valen_zone = "inn/bar" },
+	{ drinkers_fnati = 4, comparator = "<=" },
+	{ any = [{ fnati = 0 }, { fnati = 1 }]},
+]
+writes = [{ hemlock_first_fnati = 4 }]
+portrait = "think"
+local = "You know, I've known March for a while, and it still surprises me that he's a happy drunk. It's kind of charming, actually."

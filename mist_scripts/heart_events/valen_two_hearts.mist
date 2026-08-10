@@ -1,0 +1,312 @@
+scene(clinic_f1);
+place_actor(valen, east, "v2h_valen_facing_ari");
+place_actor(hayden, south, "Top Bed");
+place_actor(ari, north, v2h_ari_entrance);
+camera_position(v2h_camera_1);
+request_music_play(valen);
+
+sim {
+    fade_in(2);
+    pan_camera(3, v2h_camera_2);
+    {
+        sim {
+            walk(ari, v2h_ari_start);
+            set_move_speed(ari, 0.5);
+        }
+        face(ari, east);
+    }
+    {
+        wait(2.5);
+        next_line(); //
+        next_line(); //
+        next_line(); //
+    }
+}
+close_textbox();
+wait(0.25);
+face(hayden, west);
+wait(0.5);
+free bark_speech(hayden, exclamation_mark);
+wait(0.5);
+face(valen, west);
+next_line(); //
+face(valen, east);
+next_line(); //
+next_line(); //
+face(valen, west);
+next_line(); //
+
+//
+
+next_line(); //
+if get_response() == 0 {
+    close_textbox();
+    sim {
+        pan_camera(3, v2h_camera_2_also);
+        {
+            walk(ari, "Clinic B1 Trap Door");
+            face(ari, west);
+        }
+        {
+            wait(0.5);
+            fade_out(2);
+        }
+    }
+} else {
+    close_textbox();
+    sim {
+        pan_camera(3, v2h_camera_2_also);
+        {
+            sim {
+                walk(ari, "Clinic B1 Trap Door");
+                set_move_speed(ari, 1.2);
+            }
+            face(ari, west);
+        }
+        sim {
+            fade_out(2);
+        }
+    }
+}
+free request_music_stop();
+wait(1);
+scene(clinic_b1);
+place_actor(ari, east, "Clinic F1 Stairs");
+camera_position(v2h_camera_3);
+sim {
+    fade_in(2);
+    pan_camera(2, v2h_camera_4);
+    {
+        walk(ari, v2h_ari_indecision);
+        face(ari, south);
+    }
+}
+wait(0.5);
+free bark_speech(ari, ellipses);
+wait(0.5);
+face(ari, west);
+wait(1);
+face(ari, east);
+wait(1);
+face(ari, south);
+wait(0.25);
+free bark_speech(ari, exclamation_mark);
+wait(0.5);
+walk(ari, v2h_ari_barrel);
+face(ari, west);
+wait(0.5);
+animate(ari, action);
+wait(0.5);
+animate(ari, idle);
+wait(0.5);
+sim {
+    pan_camera(3, v2h_camera_3);
+    {
+        wait(0.5);
+        fade_out(2);
+    }
+    {
+        walk(ari, "Clinic F1 Stairs");
+        face(ari, west);
+    }
+}
+wait(1);
+scene(clinic_f1);
+camera_position(v2h_camera_2_also);
+place_actor(ari, east, "Clinic B1 Trap Door");
+place_actor(valen, east, "v2h_valen_facing_ari");
+place_actor(hayden, south, "Top Bed");
+request_music_play(valen);
+
+
+sim {
+    fade_in(2);
+    pan_camera(3, v2h_camera_6);
+    {
+        walk(ari, v2h_ari_give);
+        face(ari, east);
+        wait(0.5);
+        animate(ari, action);
+        wait(0.5);
+        animate(ari, idle);
+    }
+    {
+        wait(2);
+        face(valen, west);
+    }
+}
+sim {
+    {
+        wait(1);
+        walk_slow(ari, v2h_ari_post_give);
+        face(ari, east);
+    }
+    {
+        wait(1.5);
+        animate(valen, idle);
+        walk_slow(valen, v2h_valen_facing_ari);
+        face(valen, east);
+    }
+    {
+        next_line(); //
+        //
+        next_line(); //
+    }
+}
+close_textbox();
+wait(0.5);
+animate(valen, heal);
+wait(1);
+animate(valen, idle);
+create_animation(spr_npc_effect_heal, v2h_heal_animation, 0, 0, 0, -1000);
+play_sound("SoundEffects/Ari/Heal");
+wait(1);
+free bark_speech(hayden, exclamation_mark);
+next_line(); //
+animate(valen, idle);
+wait(0.75);
+sim {
+    {
+        place_actor(hayden, west, v2h_hayden_healed);
+    }
+    {
+        wait(0.25);
+        free bark_speech(valen, exclamation_mark);
+        free bark_speech(ari, exclamation_mark);
+        wait(1);
+        free bark_speech(hayden, cute_face);
+        wait(0.5);
+    }
+    {
+        place_actor(valen, east, v2h_valen_hop_back);
+    }
+    {
+        next_line(); //
+    }
+}
+close_textbox();
+wait(0.5);
+sim {
+    {
+        wait(0.5);
+        //
+        //
+        //
+        //
+        //
+        sim {
+            walk(hayden, v2h_ari_entrance);
+            set_move_speed(hayden, 2);
+        }
+        face(hayden, south);
+        remove_actor(hayden);
+    }
+    {
+        wait(0.75);
+        face(valen, west);
+        wait(0.25);
+        face(ari, west);
+        wait(0.5);
+        face(ari, south);
+        wait(0.25);
+        face(valen, south);
+    }
+    {
+        wait(1);
+        next_line(); //
+    }
+}
+close_textbox();
+wait(0.5);
+free bark_speech(valen, sweat_drop);
+wait(1);
+sim {
+    pan_camera(2, v2h_camera_2);
+    {
+        wait(0.5);
+        face(ari, east);
+    }
+    {
+        wait(0.75);
+        face(valen, west);
+    }
+    {
+        next_line(); //
+        free bark_speech(ari, cute_face);
+        wait(0.5);
+        next_line(); //
+    }
+}
+close_textbox();
+sim {
+    {
+        wait(2);
+        fade_out(2);
+    }
+    {
+        wait(2);
+        pan_camera(2, v2h_camera_6);
+    }
+    {
+        wait(2);
+        walk_slow(ari, "Top Bed");
+        face(ari, south);
+    }
+    {
+        wait(0.5);
+        walk_slow(valen, "Research");
+        face(valen, north);
+        animate(valen, sit);
+    }
+}
+
+show_menu(vitals);
+wait(1);
+set_ari_health(__get_ari_max_health());
+set_ari_stamina(__get_ari_max_stamina());
+wait(1);
+hide_menu(vitals);
+
+place_actor(ari, east, v2h_ari_end);
+place_actor(valen, west, v2h_valen_end);
+animate(valen, idle);
+camera_position(v2h_camera_7);
+
+sim {
+    fade_in(2);
+    {
+        wait(1.5);
+        next_line(); //
+        next_line(); //
+        //
+        next_line(); //
+        close_textbox();
+        wait(1);
+        free bark_speech(ari, ellipses);
+    }
+}
+wait(1);
+free sim {
+        {
+            wait(0.5);
+            walk(valen, "Doctor's Desk");
+            face(valen, south);
+            wait(1);
+            animate(valen, write);
+        }
+        {
+            wait(3);
+            face(ari, north);
+        }
+}
+next_line(); //
+close_textbox();
+wait(1);
+sim {
+    {
+        walk_slow(ari, v2h_ari_entrance);
+        face(ari, south);
+    }
+    fade_out(2);
+}
+wait_one_tick();

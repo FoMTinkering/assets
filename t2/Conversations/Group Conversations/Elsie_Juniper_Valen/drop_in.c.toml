@@ -1,0 +1,23 @@
+[drop_in]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "elsie" }, { npc = "juniper" }, { npc = "valen" }] },
+	{ elsie_zone = "<juniper_zone>" },
+	{ elsie_zone = "<valen_zone>" },
+]
+speaker = "juniper"
+portrait = "annoyed"
+local = "Elsie, would you please ask Valen why she insists on being here?"
+next = "1"
+
+[drop_in.1]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "Elsie, it might be prudent to inform Juniper that I'm here at your invitation. But I do wonder why she's here, too."
+next = "2"
+
+[drop_in.2]
+speaker = "elsie"
+portrait = "happy"
+effect = "cheery"
+local = "Well, the Capital is known for the fireworks shows it puts on, and I was wondering how I might see something similar out in the country..."

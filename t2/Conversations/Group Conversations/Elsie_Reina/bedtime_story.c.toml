@@ -1,0 +1,23 @@
+[bedtime_story]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "elsie" }, { npc = "reina" }] },
+	{ elsie_zone = "<reina_zone>" },
+	{ date_time = "2m", comparator = ">=" }
+]
+speaker = "elsie"
+portrait = "wink"
+local = "If you want to tell Maple a bedtime story with more authentic intrigue, I suggest talking to Eiland! He has some very well-researched history books on his shelf."
+next = "1"
+
+[bedtime_story.1]
+speaker = "reina"
+portrait = "neutral"
+local = "Ooh, that's a great idea! Last time Maple complained that my bedtime stories didn't feature the proper court decorum..."
+next = "2"
+
+[bedtime_story.2]
+speaker = "reina"
+portrait = "happy"
+effect = "drop"
+local = "How does she even know the word anachronistic?"

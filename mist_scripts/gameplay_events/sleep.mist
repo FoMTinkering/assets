@@ -1,0 +1,90 @@
+var ari_bed_x = __get_new_day_spawn_x();
+var ari_bed_y = __get_new_day_spawn_y();
+var ari_kiss_x = ari_bed_x;
+
+var RUN_PATH_LENGTH = 150;
+var CANCEL_PATH_LENGTH = 500;
+
+var spouse_bed_x = -1;
+var spouse_bed_y = -1;
+var spouse_kiss_x = -1;
+var spouse_is_present = get_from_blackboard("spouse_is_present");
+var spouse = get_from_blackboard("spouse");
+var spouse_path_length = -1;
+if spouse_is_present {
+    spouse_bed_x = spouse_wake_x();
+    spouse_bed_y = spouse_wake_y();
+
+    var mid_x = (ari_bed_x + spouse_bed_x) / 2;
+    ari_kiss_x = mid_x - 8;
+    spouse_kiss_x = mid_x + 8;
+
+	spouse_path_length = path_length(spouse, spouse_kiss_x, spouse_bed_y);
+	if spouse_path_length == -1 or spouse_path_length > CANCEL_PATH_LENGTH {
+		//
+		spouse_is_present = false;
+	}
+}
+
+//
+//
+var played_jingle = false;
+if !spouse_is_present {
+	play_sound("Music/Jingles/GoToSleep");
+	request_music_stop(0);
+	played_jingle = true;
+}
+
+sim {
+	{
+		//
+		if path_length(ari, ari_kiss_x, ari_bed_y) == -1 {
+			place_actor(ari, ari_kiss_x, ari_bed_y);
+		} else {
+			walk_slow(ari, ari_kiss_x, ari_bed_y);
+		}
+
+		if spouse_is_present {
+			face(ari, east);
+		}
+	}
+
+	if spouse_is_present {
+		if spouse_path_length > RUN_PATH_LENGTH {
+			walk(spouse, spouse_kiss_x, spouse_bed_y);
+		} else {
+			walk_slow(spouse, spouse_kiss_x, spouse_bed_y);
+		}
+		face(spouse, west);
+	}
+}
+
+if !played_jingle {
+	play_sound("Music/Jingles/GoToSleep");
+	request_music_stop(0);
+	played_jingle = true;
+}
+
+drop_pet();
+
+if spouse_is_present {
+	wait(0.25);
+    kiss_npc(spouse, false, 0);
+}
+
+face(ari, south);
+animate(ari, sleep_start);
+wait(0.1);
+play_sound("SoundEffects/Ari/Yawn", ari);
+sim {
+	await_ari_animation();
+	{
+        if spouse_is_present {
+	    	wait(1.0);
+		    animate(spouse, sleep);
+        }
+	}
+
+}
+animate(ari, sleep_loop);
+fade_out(3);

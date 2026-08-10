@@ -1,0 +1,786 @@
+[caldarus_post_8h_romantic_0]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_grouping = 0 },
+	{ caldarus_post_8h_romantic_progression = false }
+]
+writes = [
+	{ caldarus_post_8h_romantic_gate = true, expires = "20h" },
+	{ caldarus_post_8h_romantic_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "I have become quite grateful to this form and stature."
+next = "1"
+
+[caldarus_post_8h_romantic_0.1]
+portrait = "neutral"
+local = "Now I may admire you as I please, and touch you without fear of doing harm."
+next = "2"
+
+[caldarus_post_8h_romantic_0.2]
+portrait = "caring_special"
+local = "While adapting to this form has had its challenges, that alone has made it worthwhile."
+
+[caldarus_post_8h_romantic_1]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_grouping = 1 },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ caldarus_post_8h_romantic_gate = true, expires = "20h" },
+	{ caldarus_post_8h_romantic_grouping = 2 },
+	{ eog_caldarus_post_8h_romantic_1 = true }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "I have long thought on the state of Mistria outside the confines of the Deep Woods..."
+next = "1"
+
+[caldarus_post_8h_romantic_1.1]
+portrait = "neutral"
+local = "I know much of the town and its people, but have yet to experience the modern world directly."
+next = "2"
+
+[caldarus_post_8h_romantic_1.2]
+portrait = "happy"
+local = "Tell me, once I am strong enough to leave this place... what would you like to do first?"
+prompts = [
+	{ local = "I would introduce you to all of my friends in town!", next = "3" },
+	{ local = "I would bring you to my farmhouse and cook dinner for you.", next = "6" }
+]
+
+[caldarus_post_8h_romantic_1.3]
+portrait = "laugh"
+local = "That would be a delight."
+next = "4"
+
+[caldarus_post_8h_romantic_1.4]
+portrait = "smile"
+local = "It would gladden my heart to finally meet those you cherish most."
+next = "5"
+
+[caldarus_post_8h_romantic_1.5]
+portrait = "caring_special"
+local = "And I believe that understanding how others embrace you would teach me much of your heart."
+
+[caldarus_post_8h_romantic_1.6]
+portrait = "think_special"
+local = "Being welcomed into your den and indulged by the fruits of your labor... It would be a great honor."
+next = "7"
+
+[caldarus_post_8h_romantic_1.7]
+portrait = "serious_blush"
+local = "I would make certain to repay the favor in any way you desired."
+
+[caldarus_post_8h_romantic_1_alt]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_grouping = 1 },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_seridia_town = true },
+	{ eog_caldarus_post_8h_romantic_1 = false }
+]
+writes = [
+	{ caldarus_post_8h_romantic_gate = true, expires = "20h" },
+	{ caldarus_post_8h_romantic_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "I had long desired to explore the Mistria of this modern world..."
+next = "1"
+
+[caldarus_post_8h_romantic_1_alt.1]
+portrait = "smile"
+local = "It has been a dream come true to finally experience it directly."
+next = "2"
+
+[caldarus_post_8h_romantic_1_alt.2]
+portrait = "happy"
+local = "I owe this blessing to you, [Ari]."
+prompts = [
+	{ local = "I'm so happy you could finally meet my friends in town!", next = "3" },
+	{ local = "I'm so glad I can finally have you over for dinner!", next = "6" }
+]
+
+[caldarus_post_8h_romantic_1_alt.3]
+portrait = "laugh"
+local = "It has been a delight."
+next = "4"
+
+[caldarus_post_8h_romantic_1_alt.4]
+portrait = "smile"
+local = "It gladdens my heart that I have finally met those you cherish most."
+next = "5"
+
+[caldarus_post_8h_romantic_1_alt.5]
+portrait = "caring_special"
+local = "Seeing how others embrace you has taught me much of your heart."
+
+[caldarus_post_8h_romantic_1_alt.6]
+portrait = "think_special"
+local = "Being welcomed into your den and indulged by the fruits of your labor... It is a great honor."
+next = "7"
+
+[caldarus_post_8h_romantic_1_alt.7]
+portrait = "serious_blush"
+local = "I will make certain to repay the favor in any way you desire."
+
+[caldarus_post_8h_romantic_2]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_grouping = 2 },
+	{ caldarus_post_8h_romantic_progression = false }
+]
+writes = [
+	{ caldarus_post_8h_romantic_gate = true, expires = "20h" },
+	{ caldarus_post_8h_romantic_grouping = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "neutral"
+local = "There are times that I feel a strong desire to be near you."
+next = [
+	{ target = "1_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "1_n", requires = [] }
+]
+
+[caldarus_post_8h_romantic_2.1_eog]
+portrait = "avoidant_special"
+local = "It was difficult, in the past... to stand by and watch you go where I could not follow."
+next = "2_eog"
+
+[caldarus_post_8h_romantic_2.2_eog]
+portrait = "caring_special"
+local = "But even at those times, you always remained with me in my thoughts."
+
+[caldarus_post_8h_romantic_2.1_n]
+portrait = "avoidant_special"
+local = "It can be difficult to stand by and watch you go where I cannot follow."
+next = "2_n"
+
+[caldarus_post_8h_romantic_2.2_n]
+portrait = "caring_special"
+local = "But even then, you remain with me in my thoughts."
+
+[caldarus_post_8h_romantic_3]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_grouping = 3 },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ caldarus_post_8h_romantic_gate = true, expires = "2d" },
+	{ caldarus_post_8h_romantic_grouping = 4 },
+	{ eog_caldarus_post_8h_romantic_3 = true }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "caldarus" } },
+	{ item = "crop_faux_temple_flower" }
+]
+portrait = "neutral"
+local = "[Ari]... you have spared no effort when it comes to bringing me tokens of your affection."
+next = "1"
+
+[caldarus_post_8h_romantic_3.1]
+portrait = "serious_blush"
+local = "I wish to return the favor."
+prompts = [
+	{ local = "You saved my life, you don't owe me!", next = "2" },
+	{ local = "What do dragons give as gifts?", next = "5" }
+]
+
+[caldarus_post_8h_romantic_3.2]
+portrait = "think"
+local = "Such a sentiment was not meant to measure our devotion against one another..."
+next = "3"
+
+[caldarus_post_8h_romantic_3.3]
+portrait = "neutral"
+local = "I simply wish to explore what offerings would most please you."
+next = "4"
+
+[caldarus_post_8h_romantic_3.4]
+portrait = "embarrassed"
+local = "In the meantime, please consider this the first of many."
+
+[caldarus_post_8h_romantic_3.5]
+portrait = "think"
+local = "I do not seem to recall if such a custom existed."
+next = "6"
+
+[caldarus_post_8h_romantic_3.6]
+portrait = "sigh"
+local = "At least, not in my memory."
+next = "7"
+
+[caldarus_post_8h_romantic_3.7]
+portrait = "neutral"
+local = "I simply wish to explore what offerings would most please you."
+next = "8"
+
+[caldarus_post_8h_romantic_3.8]
+portrait = "embarrassed"
+local = "In the meantime, please consider this the first of many."
+
+[caldarus_post_8h_romantic_3_alt]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_grouping = 3 },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_seridia_town = true },
+	{ eog_caldarus_post_8h_romantic_3 = false }
+]
+writes = [
+	{ caldarus_post_8h_romantic_gate = true, expires = "2d" },
+	{ caldarus_post_8h_romantic_grouping = 4 }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "caldarus" } },
+	{ item = "crop_faux_temple_flower" }
+]
+portrait = "neutral"
+local = "[Ari]... you have spared no effort when it comes to gifting me with tokens of your affection."
+next = "1"
+
+[caldarus_post_8h_romantic_3_alt.1]
+portrait = "serious_blush"
+local = "I wish to return the favor."
+prompts = [
+	{ local = "You saved my life, you don't owe me!", next = "2" },
+	{ local = "What do dragons give as gifts?", next = "5" }
+]
+
+[caldarus_post_8h_romantic_3_alt.2]
+portrait = "think"
+local = "Such a sentiment was not meant to measure our devotion against one another..."
+next = "3"
+
+[caldarus_post_8h_romantic_3_alt.3]
+portrait = "neutral"
+local = "I simply wish to explore what offerings would most please you."
+next = "4"
+
+[caldarus_post_8h_romantic_3_alt.4]
+portrait = "embarrassed"
+local = "In the meantime, please consider this the first of many."
+
+[caldarus_post_8h_romantic_3_alt.5]
+portrait = "think"
+local = "Dragons will sometimes hunt for their mates, providing them with offerings of food."
+next = "6"
+
+[caldarus_post_8h_romantic_3_alt.6]
+portrait = "sigh"
+local = """But they do not typically "gift" in the way that humans do."""
+next = "7"
+
+[caldarus_post_8h_romantic_3_alt.7]
+portrait = "neutral"
+local = "And yet... I find myself desiring to explore what offerings would most please you."
+next = "8"
+
+[caldarus_post_8h_romantic_3_alt.8]
+portrait = "embarrassed"
+local = "In the meantime, please consider this the first of many."
+
+[caldarus_post_8h_romantic_4]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_post_8h_romantic_grouping = 4 }
+]
+writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "heart", npc = "caldarus" } },
+	{ item = "roasted_chestnuts" }
+]
+portrait = "neutral"
+local = "I am fond of =Mont Blanc=, and I am fond of you..."
+next = "1"
+
+[caldarus_post_8h_romantic_4.1]
+portrait = "think"
+local = "So I thought I would make =Mont Blanc= for you."
+next = "2"
+
+[caldarus_post_8h_romantic_4.2]
+portrait = "sigh"
+local = "In my many attempts, I learned that it is quite a complex dish."
+next = "3"
+
+[caldarus_post_8h_romantic_4.3]
+portrait = "think"
+local = "Try as I might, the end result was always... different than I expected."
+next = "4"
+
+[caldarus_post_8h_romantic_4.4]
+portrait = "laugh_special"
+local = "Still, I would like for you to have what I could salvage."
+
+[caldarus_post_8h_romantic_5]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_partner = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_post_8h_romantic_grouping = 4 }
+]
+writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "heart", npc = "caldarus" } },
+	{ item = "spicy_water_chestnuts" },
+	{ item = "spirit_mushroom_tea" }
+]
+portrait = "think"
+local = "I have made you something... $Spicy Water Chestnuts$."
+next = "1"
+
+[caldarus_post_8h_romantic_5.1]
+portrait = "sigh"
+local = "I did not set out to make it quite so spicy..."
+next = "2"
+
+[caldarus_post_8h_romantic_5.2]
+portrait = "think"
+local = "I sampled it while I cooked, and it is a bit like casting Dragon's Breath... without magic."
+next = "3"
+
+[caldarus_post_8h_romantic_5.3]
+portrait = "smile"
+local = "But do not be alarmed. I made you a drink to go with it."
+
+[caldarus_post_8h_romantic_6]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_post_8h_romantic_grouping = 4 }
+]
+writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "Recently, I have expanded the sphere of my reading to include works that explore feelings of romance..."
+next = "1"
+
+[caldarus_post_8h_romantic_6.1]
+portrait = "neutral"
+local = "It seems that humans have a great many ways of expressing these feelings to one another."
+next = "2"
+
+[caldarus_post_8h_romantic_6.2]
+portrait = "laugh_special"
+local = "And some are very creative."
+
+[caldarus_post_8h_romantic_7]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_post_8h_romantic_grouping = 4 }
+]
+writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "sigh"
+local = "The heart is a funny thing. I know it resides here, in my chest..."
+next = "1"
+
+[caldarus_post_8h_romantic_7.1]
+portrait = "embarrassed"
+local = "And yet, I feel it return to me whenever you seek me out."
+
+[caldarus_post_8h_romantic_8]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_partner = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_post_8h_romantic_grouping = 4 }
+]
+writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "heart", npc = "caldarus" } },
+	{ item = "breath_of_fire" }
+]
+portrait = "smile"
+local = "[Ari], I made a wonderful discovery while reading a scroll the other day."
+next = "1"
+
+[caldarus_post_8h_romantic_8.1]
+portrait = "neutral"
+local = "This =Breath of Flame= must have been pressed into it centuries ago."
+next = "2"
+
+[caldarus_post_8h_romantic_8.2]
+portrait = "sigh"
+local = "The sight of it filled my chest with so many feelings, all at once..."
+next = "3"
+
+[caldarus_post_8h_romantic_8.3]
+portrait = "smile"
+local = "Just as you do."
+next = "4"
+
+[caldarus_post_8h_romantic_8.4]
+portrait = "caring_special"
+local = "Please... I would like you to have it."
+
+[caldarus_post_8h_romantic_9]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_post_8h_romantic_grouping = 4 }
+]
+writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "neutral"
+local = "After the kiss we shared, I have been thinking..."
+next = "1"
+
+[caldarus_post_8h_romantic_9.1]
+portrait = "think_special"
+local = "It would seem that expressing affection in this form is as pleasant as it is unique."
+next = "2"
+
+[caldarus_post_8h_romantic_9.2]
+portrait = "embarrassed"
+local = "I look forward to exploring more such experiences with you."
+
+[caldarus_post_8h_romantic_10]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_post_8h_romantic_grouping = 4 }
+]
+writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "Please do not mistake my ineptitude in the kitchen for clumsiness."
+next = "1"
+
+[caldarus_post_8h_romantic_10.1]
+portrait = "serious_blush"
+local = "In most regards, I am in fact, quite dextrous."
+
+[caldarus_post_8h_romantic_11]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_post_8h_romantic_grouping = 4 }
+]
+writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "I have noticed that you look upon me with a warm curiosity at times, [Ari]."
+next = "1"
+
+[caldarus_post_8h_romantic_11.1]
+portrait = "smile"
+local = "Do not be shy. There is no question that you cannot ask me."
+prompts = [
+	{ local = "Can I touch your tail?", next = "2" },
+	{ local = "Well, I've wondered what your horns are like.", next = "6" }
+]
+
+[caldarus_post_8h_romantic_11.2]
+portrait = "laugh_special"
+local = "My tail? Ahahaha. Of course."
+next = "3"
+
+[caldarus_post_8h_romantic_11.3]
+portrait = "caring_special"
+local = "You are indeed a curious one, [Ari]."
+next = "4"
+
+[caldarus_post_8h_romantic_11.4]
+portrait = "avoidant_special"
+local = "As your mate, it is proper that I should return the gesture, but-"
+next = "5"
+
+[caldarus_post_8h_romantic_11.5]
+portrait = "caring_special"
+local = "Well, you will have to suggest an appropriate substitute."
+
+[caldarus_post_8h_romantic_11.6]
+portrait = "laugh_special"
+local = "My... horns? Ahahaha."
+next = "7"
+
+[caldarus_post_8h_romantic_11.7]
+portrait = "caring_special"
+local = "You may take a closer look, if you like."
+next = "8"
+
+[caldarus_post_8h_romantic_11.8]
+portrait = "laugh_special"
+local = "See? They are quite sturdy."
+next = "9"
+
+[caldarus_post_8h_romantic_11.9]
+portrait = "caring_special"
+local = "That gentle touch of yours will do them no harm."
+
+[caldarus_post_8h_romantic_12]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_post_8h_romantic_grouping = 4 }
+]
+writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "caldarus" } }]
+portrait = "think"
+local = "It is a small thing, but... I have been composing a song for you."
+next = "1"
+
+[caldarus_post_8h_romantic_12.1]
+portrait = "sigh"
+local = "I am not quite ready to share it. It does not yet meet my standard..."
+next = "2"
+
+[caldarus_post_8h_romantic_12.2]
+portrait = "avoidant_special"
+local = "And there is... another feeling that causes me to hesitate."
+prompts = [
+	{ local = "I'll wait as long as it takes!", next = "3" },
+	{ local = "Are you feeling... shy?", next = "7" }
+]
+
+[caldarus_post_8h_romantic_12.3]
+portrait = "sigh"
+local = "I am thankful for your patience."
+next = "4"
+
+[caldarus_post_8h_romantic_12.4]
+portrait = "neutral"
+local = "I wish to understand you in every way, so I can make a song that truly pleases you..."
+next = "5"
+
+[caldarus_post_8h_romantic_12.5]
+portrait = "sigh"
+local = "And yet, the thought of sharing such a song makes me feel... exposed."
+next = "6"
+
+[caldarus_post_8h_romantic_12.6]
+portrait = "embarrassed"
+local = "It is quite foreign to me. Is this what it is to be vulnerable?"
+
+[caldarus_post_8h_romantic_12.7]
+portrait = "think"
+local = "Is that what it is?"
+next = "8"
+
+[caldarus_post_8h_romantic_12.8]
+portrait = "neutral"
+local = "I wish to understand you in every way, so I can make a song that truly pleases you..."
+next = "9"
+
+[caldarus_post_8h_romantic_12.9]
+portrait = "sigh"
+local = "And yet, the thought of sharing such a song makes me feel... exposed."
+next = "10"
+
+[caldarus_post_8h_romantic_12.10]
+portrait = "embarrassed"
+local = "It is quite foreign to me. Is this what it is to be vulnerable?"
+
+[caldarus_post_8h_romantic_13]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_post_8h_romantic_grouping = 4 }
+]
+writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "neutral"
+local = "I do not like to speak of it, but when you were trapped by the $Sealing Scroll$ down in the Mines..."
+next = "1"
+
+[caldarus_post_8h_romantic_13.1]
+portrait = "avoidant_special"
+local = "It is one of the few times I have been truly afraid."
+prompts = [
+	{ local = "But you were so brave!", next = "2" },
+	{ local = "It's a risk I accepted when I became your Dragonsworn.", next = "6" }
+]
+
+[caldarus_post_8h_romantic_13.2]
+portrait = "neutral"
+local = "It was your courage that showed me the way."
+next = "3"
+
+[caldarus_post_8h_romantic_13.3]
+portrait = "sigh"
+local = "And it was the depth of my feeling for you that spurred me to action so quickly."
+next = "4"
+
+[caldarus_post_8h_romantic_13.4]
+portrait = "serious_blush"
+local = "A world without you would be a world dimmed..."
+next = "5"
+
+[caldarus_post_8h_romantic_13.5]
+portrait = "caring_special"
+local = "Changed as I am, I have no regrets."
+
+[caldarus_post_8h_romantic_13.6]
+portrait = "smile"
+local = "That is the courage that first stirred me."
+next = "7"
+
+[caldarus_post_8h_romantic_13.7]
+portrait = "sigh"
+local = "But to me... you are more than my Dragonsworn."
+next = "8"
+
+[caldarus_post_8h_romantic_13.8]
+portrait = "serious_blush"
+local = "A world without you would be a world dimmed..."
+next = "9"
+
+[caldarus_post_8h_romantic_13.9]
+portrait = "caring_special"
+local = "Changed as I am, I have no regrets."
+
+[caldarus_post_8h_romantic_14]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_progression = false },
+	{ caldarus_post_8h_romantic_grouping = 4 }
+]
+writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "I have been inspired of late to delve further into my library's scrolls of poetry."
+next = "1"
+
+[caldarus_post_8h_romantic_14.1]
+portrait = "smile"
+local = "I do not know what inspired the Dragon Priestesses to amass such a collection, but I am grateful to them."
+prompts = [
+	{ local = "I don't know much about poetry.", next = "2" },
+	{ local = "I'd love it if you read something to me.", next = "10" }
+]
+
+[caldarus_post_8h_romantic_14.2]
+portrait = "neutral"
+local = "Nor do I. It is a deficiency I am attempting to overcome through my reading."
+next = "3"
+
+[caldarus_post_8h_romantic_14.3]
+portrait = "unsure_special"
+local = "May I recite one to you?"
+next = "4"
+
+[caldarus_post_8h_romantic_14.4]
+portrait = "sigh"
+local = "..."
+next = "5"
+
+[caldarus_post_8h_romantic_14.5]
+portrait = "neutral"
+local = """"I wish to know you without thought," """
+next = "6"
+
+[caldarus_post_8h_romantic_14.6]
+portrait = "sigh"
+local = """"Memorize your spirit within my spirit," """
+next = "7"
+
+[caldarus_post_8h_romantic_14.7]
+portrait = "neutral"
+local = """"So even in dreams we may never be separated." """
+next = "8"
+
+[caldarus_post_8h_romantic_14.8]
+portrait = "sigh"
+local = "..."
+next = "9"
+
+[caldarus_post_8h_romantic_14.9]
+portrait = "embarrassed"
+local = "I hope it is not overly bold to say, but... this one brought you to my mind."
+
+[caldarus_post_8h_romantic_14.10]
+portrait = "laugh_special"
+local = "Nothing would bring me greater joy."
+next = "4"
+
+# last line
+[caldarus_post_8h_romantic_15]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_dating = true },
+	{ caldarus_post_8h_romantic_gate = false },
+	{ caldarus_post_8h_romantic_grouping = 4 }
+]
+writes = [
+	{ caldarus_post_8h_romantic_gate = true, expires = "2d" },
+	{ caldarus_post_8h_best_friend_gate = true, expires = "2d" },
+	{ caldarus_post_8h_romantic_progression = true }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "You have a dragon's grace today, [Ari]."
+next = "1"
+
+[caldarus_post_8h_romantic_15.1]
+portrait = "think"
+local = "It is strange... I have never thought that of a human before."
+next = "2"
+
+[caldarus_post_8h_romantic_15.2]
+portrait = "unsure_special"
+local = "Perhaps it is more that I am coming to appreciate human grace."
+next = "3"
+
+[caldarus_post_8h_romantic_15.3]
+portrait = "laugh_special"
+local = "In either case... you are truly special."

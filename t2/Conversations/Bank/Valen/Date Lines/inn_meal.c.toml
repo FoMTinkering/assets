@@ -1,0 +1,203 @@
+[inn_meal_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "valen" },
+	{ date = "inn_meal" },
+	{ da_valen_inn_meal = 0 },
+	{ valen_is_spouse = false }
+]
+writes = [
+	{ da_valen_inn_meal = 1 },
+	{ da_valen_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "valen"
+portrait = "neutral_blush"
+local = "Join you? For a meal at the Inn?"
+next = "1"
+
+[inn_meal_accept_1.1]
+speaker = "valen"
+portrait = "embarrassed"
+local = "Of course, [Ari]!"
+next = "2"
+
+[inn_meal_accept_1.2]
+speaker = "valen"
+portrait = "caring_special"
+local = "I'd be happy to."
+
+[inn_meal_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "valen" },
+	{ date = "inn_meal" },
+	{ da_valen_inn_meal = 1 },
+	{ valen_is_spouse = false }
+]
+writes = [
+	{ da_valen_inn_meal = 2 },
+	{ da_valen_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "valen"
+portrait = "embarrassed"
+local = "Are you free, [Ari]?"
+next = "1"
+
+[inn_meal_accept_2.1]
+speaker = "valen"
+portrait = "happy"
+local = "I thought maybe we could go over to the Inn again."
+next = "2"
+
+[inn_meal_accept_2.2]
+speaker = "valen"
+portrait = "happy_blush"
+local = "You promised to tell me more about your time in the Capital, remember?"
+
+[inn_meal_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "valen" },
+	{ date = "inn_meal" },
+	{ valen_has_child = false },
+	{ any = [
+		{ valen_is_spouse = true },
+		{ da_valen_inn_meal = 2, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_valen_inn_meal = 3 },
+	{ da_valen_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "valen"
+portrait = "neutral_blush"
+local = "You know what I could go for right now?"
+next = "1"
+
+[inn_meal_accept_3.1]
+speaker = "valen"
+portrait = "happy"
+local = "A meal at the Inn."
+next = "2"
+
+[inn_meal_accept_3.2]
+speaker = "valen"
+portrait = "caring_special"
+local = "Yeah, you're up for it?"
+next = "3"
+
+[inn_meal_accept_3.3]
+speaker = "valen"
+portrait = "happy"
+effect = "hearts"
+local = "Great! Let's go."
+
+[inn_meal_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ da_valen_inn_meal = 1 },
+	{ da_valen_inn_meal_follow_up_gate = true },
+	{ valen_is_spouse = false }
+]
+writes = [{ da_valen_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "caring_special"
+local = "Thank you for inviting me out, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_1.1]
+portrait = "neutral_blush"
+local = "I really enjoyed hearing about your time in the Capital."
+next = "2"
+
+[inn_meal_follow_up_1.2]
+portrait = "caring_special"
+local = "Next time I'll tell you more about my time there."
+
+[inn_meal_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ da_valen_inn_meal = 2 },
+	{ da_valen_inn_meal_follow_up_gate = true },
+	{ valen_is_spouse = false }
+]
+writes = [{ da_valen_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "happy"
+local = "I had a really nice time chatting with you, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_2.1]
+portrait = "neutral_blush"
+local = "I hope I didn't go on too much about my university days..."
+prompts = [
+	{ local = "Not at all! I can't believe you nearly failed that one class though...", next = "2" },
+	{ local = "I still can't believe that one professor was so strict about attendance...", next = "6" },
+]
+
+[inn_meal_follow_up_2.2]
+portrait = "embarrassed"
+local = "I know. Ironic isn't it?"
+next = "3"
+
+[inn_meal_follow_up_2.3]
+portrait = "think"
+local = "Getting sick from studying medicine too hard."
+next = "4"
+
+[inn_meal_follow_up_2.4]
+portrait = "embarrassed"
+local = "And missing two weeks of class because of it..."
+next = "5"
+
+[inn_meal_follow_up_2.5]
+portrait = "happy"
+local = "I consider it field experience on the importance of not overdoing things."
+
+[inn_meal_follow_up_2.6]
+portrait = "embarrassed"
+local = "I know. Ironic isn't it?"
+next = "7"
+
+[inn_meal_follow_up_2.7]
+portrait = "think"
+local = "Getting sick from studying medicine too hard."
+next = "8"
+
+[inn_meal_follow_up_2.8]
+portrait = "embarrassed"
+local = "And missing two weeks of class because of it..."
+next = "9"
+
+[inn_meal_follow_up_2.9]
+portrait = "happy"
+local = "I consider it field experience on the importance of not overdoing things."
+
+[inn_meal_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "valen" },
+	{ valen_has_child = false },
+	{ any = [{ valen_is_spouse = true }, { da_valen_inn_meal = 3 }] },
+	{ da_valen_inn_meal_follow_up_gate = true }
+]
+writes = [{ da_valen_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "caring_special"
+local = "That was a great time, wasn't it?"
+next = "1"
+
+[inn_meal_follow_up_3.1]
+portrait = "neutral_blush"
+local = "A meal like that is good for the heart."
+next = "2"
+
+[inn_meal_follow_up_3.2]
+portrait = "happy"
+effect = "hearts"
+local = "Although... perhaps more figuratively than literally."

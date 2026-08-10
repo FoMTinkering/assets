@@ -1,0 +1,23 @@
+[pocket_frog]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ is_inside = false },
+]
+speaker = "maple"
+portrait = "mad"
+local = "[Ari], please tell Dell she's not allowed to put more frogs in her pockets."
+next = "1"
+
+[pocket_frog.1]
+speaker = "luc"
+portrait = "sad"
+local = "Last time they all got loose in the Inn and Mom and Dad had us chasing frogs in the kitchen until bedtime."
+next = "2"
+
+[pocket_frog.2]
+speaker = "dell"
+portrait = "think"
+local = "But what's the point of pockets if they don't have frogs in them?"

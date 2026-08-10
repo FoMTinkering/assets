@@ -1,0 +1,155 @@
+[juniper_four_hearts_follow_up]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_heart_event = "four_heart" }
+]
+portrait = "think"
+local = "How are you feeling, [Ari]? No lingering effects from that transformation, I presume?"
+next = "1"
+
+[juniper_four_hearts_follow_up.1]
+portrait = "sly"
+local = "Good. I was slightly worried when I saw you trotting toward me like that."
+next = "2"
+
+[juniper_four_hearts_follow_up.2]
+portrait = "laugh"
+local = "Oh ho ho!"
+
+[juniper_four_hearts]
+kind = "gameplay_triggered"
+writes = [{ juniper_heart_event = "four_heart", expires = "4d" }]
+speaker = "juniper"
+portrait = "happy"
+local = "Well well, look who's here, Dozy! Looks like you were right."
+next = "1"
+
+[juniper_four_hearts.1]
+portrait = "sly"
+local = "Oh, I didn't think you'd have the guts to show, but Dozy was positive you'd rush over."
+next = "2"
+
+[juniper_four_hearts.2]
+portrait = "laugh"
+local = "Oh ho ho!"
+next = "3"
+
+[juniper_four_hearts.3]
+portrait = "neutral"
+local = "Before I administer my concoction, it's important that you understand how brilliant I am."
+next = "4"
+
+[juniper_four_hearts.4]
+portrait = "think"
+local = "I'm sure you've noticed the hot spring's water acts as a powerful restorative. It makes a perfect base for my potionwork."
+next = "5"
+
+[juniper_four_hearts.5]
+portrait = "sly"
+local = "I believe this elixir will give you the power of a dragon."
+next = "6"
+
+[juniper_four_hearts.6]
+portrait = "wink"
+local = "Maybe you'll even turn into one for me."
+prompts = [
+	{ local = "D-dragons? I don't think they exist.", next = "7" },
+	{ local = "A dragon versus a mere sorceress sounds pretty one-sided.", next = "8" },
+]
+
+[juniper_four_hearts.7]
+portrait = "happy"
+local = "My, I've never met such a terrible liar, it's so charming."
+next = "10"
+
+[juniper_four_hearts.8]
+portrait = "happy"
+local = "It's so cute when you try to be threatening!"
+next = "9"
+
+[juniper_four_hearts.9]
+portrait = "sly"
+local = "Just remember I'm the only one who could turn you back, silly."
+next = "10"
+
+[juniper_four_hearts.10]
+portrait = "wink"
+local = "Whenever you're ready, [Ari]."
+next = "11"
+
+[juniper_four_hearts.11]
+portrait = "mad"
+local = "What the-"
+next = "12"
+
+[juniper_four_hearts.12]
+portrait = "think"
+local = "But I'm sure the recipe was correct... What went wrong?"
+next = "13"
+
+[juniper_four_hearts.13]
+portrait = "embarrassed"
+local = "Ah yes, CLEARLY the issue lies with you, [Ari]. Willy-nilly infusions of power have unstabilized your morphogenic field."
+prompts = [
+	{ local = "Well at least I can still talk...", next = "14" },
+	{ local = "Very funny, now stop horsing around, Juniper.", next = "15" },
+]
+
+[juniper_four_hearts.14]
+portrait = "mad"
+local = "Y-you can still talk?"
+next = "16"
+
+[juniper_four_hearts.15]
+portrait = "mad"
+local = "Well at least your abysmal sense of humor is still intact..."
+next = "16"
+
+[juniper_four_hearts.16]
+portrait = "angry_blush"
+local = "..."
+next = "17"
+
+[juniper_four_hearts.17]
+portrait = "unimpressed"
+local = "This has been a complete waste of time."
+next = "18"
+
+[juniper_four_hearts.18]
+portrait = "sad"
+local = "I'll prepare the counterspell."
+prompts = [
+	{ local = "Try to cheer Juniper up.", next = "19" },
+	{ local = "Try to make Juniper mess up again.", next = "19" },
+]
+
+[juniper_four_hearts.19]
+portrait = "sad"
+local = "Now let's see..."
+next = "20"
+
+[juniper_four_hearts.20]
+portrait = "think"
+effect = "surprise"
+local = "What are you-"
+next = "21"
+
+[juniper_four_hearts.21]
+portrait = "laugh"
+local = "Oh ho ho!"
+next = "22"
+
+[juniper_four_hearts.22]
+portrait = "wink"
+local = "Okay, okay. Hold still."
+next = "23"
+
+[juniper_four_hearts.23]
+portrait = "neutral"
+local = "There, no harm done."
+next = "24"
+
+[juniper_four_hearts.24]
+portrait = "sly"
+local = "You make an excellent test subject. I'll call on you again when I have something new to try."

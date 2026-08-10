@@ -1,0 +1,17 @@
+[allergies]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "nora" }, { npc = "valen" }] },
+	{ nora_zone = "<holt_zone>", comparator = "!=" },
+	{ nora_zone = "<valen_zone>" },
+	{ season = "winter", comparator = "!=" }
+]
+speaker = "nora"
+portrait = "neutral"
+local = "Holt thinks he might have allergies. Do you have anything for that?"
+next = "1"
+
+[allergies.1]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "I do, but if it's mostly sneezing he might try trimming that mustache first."

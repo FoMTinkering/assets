@@ -1,0 +1,242 @@
+[repair_the_bridge_pt_2_follow_up_march]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ quest_repair_the_bridge_complete = true },
+	{ rtb = "part_2" },
+]
+speaker = "march"
+portrait = "think"
+local = "What?"
+prompts = [
+	{ local = "The bridge is repaired!", next = "1" },
+	{ local = "Couldn't have repaired the bridge without your support!", next = "3" },
+]
+
+[repair_the_bridge_pt_2_follow_up_march.1]
+speaker = "march"
+local = "And I already congratulated Ryis, he did a great job."
+next = "2"
+
+[repair_the_bridge_pt_2_follow_up_march.2]
+speaker = "march"
+portrait = "unimpressed"
+local = "What, you want a pat on the head for doing the bare minimum? Nah."
+
+[repair_the_bridge_pt_2_follow_up_march.3]
+speaker = "march"
+effect = "surprise"
+local = "Oh!"
+next = "4"
+
+[repair_the_bridge_pt_2_follow_up_march.4]
+speaker = "march"
+portrait = "tsundere"
+local = "Well... you're welcome."
+
+[repair_the_bridge_pt_2_follow_up_dell]
+refresh = "never"
+requires = [
+	{ npc = "dell" },
+	{ quest_repair_the_bridge_complete = true },
+	{ rtb = "part_2" },
+]
+speaker = "dell"
+portrait = "happy"
+local = "Now that the bridge is repaired, the Saturday Market is back on!"
+next = "1"
+
+[repair_the_bridge_pt_2_follow_up_dell.1]
+speaker = "dell"
+effect = "cheery"
+local = "I've been saving my allowance for this!"
+
+[repair_the_bridge_pt_2_follow_up_celine]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ quest_repair_the_bridge_complete = true },
+	{ rtb = "part_2" },
+]
+speaker = "celine"
+portrait = "happy"
+local = "My mom is over the moon about the bridge being repaired, [Ari]!"
+next = "1"
+
+[repair_the_bridge_pt_2_follow_up_celine.1]
+speaker = "celine"
+local = "She told me they're going to place a big restock order for the General Store, I hope Balor has enough room in his wagon!"
+
+[repair_the_bridge_pt_2_follow_up_reina]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ quest_repair_the_bridge_complete = true },
+	{ rtb = "part_2" },
+]
+speaker = "reina"
+portrait = "happy"
+local = "Well look who it is!"
+next = "1"
+
+[repair_the_bridge_pt_2_follow_up_reina.1]
+speaker = "reina"
+local = "Adeline told me all about how you helped out with the bridge. The whole inn thanks you, [Ari]!"
+
+[repair_the_bridge_pt_2_follow_up_valen]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ quest_repair_the_bridge_complete = true },
+	{ rtb = "part_2" },
+]
+speaker = "valen"
+local = "Thank you for your help repairing the bridge, [Ari]."
+next = "1"
+
+[repair_the_bridge_pt_2_follow_up_valen.1]
+speaker = "valen"
+portrait = "happy"
+local = "Be sure to stop by the Saturday Market and enjoy it with the rest of us!"
+
+[repair_the_bridge_pt_2_follow_up_juniper]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ quest_repair_the_bridge_complete = true },
+	{ rtb = "part_2" },
+]
+speaker = "juniper"
+local = "If it isn't the talk of the town. I suppose I have to hand it to you, you're willing to get your hands dirty."
+next = "1"
+
+[repair_the_bridge_pt_2_follow_up_juniper.1]
+speaker = "juniper"
+portrait = "sly"
+local = "Feel free to use the Bathhouse to clean up."
+
+[repair_the_bridge_pt_2_follow_up_hayden]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ quest_repair_the_bridge_complete = true },
+	{ rtb = "part_2" },
+]
+speaker = "hayden"
+portrait = "happy"
+local = "The bridge is repaired, woohoo!"
+next = "1"
+
+[repair_the_bridge_pt_2_follow_up_hayden.1]
+speaker = "hayden"
+local = "You wouldn't believe how excited Henrietta was when I told her!"
+
+[repair_the_bridge_pt_2_follow_up_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ quest_repair_the_bridge_complete = true },
+	{ rtb = "part_2" },
+]
+speaker = "eiland"
+portrait = "happy"
+local = "[Ari], thank you so much for your help repairing the bridge!"
+next = "1"
+
+[repair_the_bridge_pt_2_follow_up_eiland.1]
+speaker = "eiland"
+portrait = "think"
+effect = "drop"
+local = "I should probably warn you that my sister has moved up the timetables of several of her other initiatives as a result..."
+next = "2"
+
+[repair_the_bridge_pt_2_follow_up_eiland.2]
+speaker = "eiland"
+local = "Still, it's all to help Mistria grow. Exciting times are ahead!"
+
+[repair_the_bridge_pt_2_turn_in]
+kind = "gameplay_triggered"
+actions = [{ cutscene = "repair_the_bridge_pt_2" }]
+speaker = "adeline"
+local = "Hey there, [Ari]! What's up?"
+prompts = [
+	{ local = "I've gathered what we need to repair the bridge!", next = "1" },
+	{ local = "Nothing much, just completed the bridge repair donation.", next = "2" },
+]
+
+[repair_the_bridge_pt_2_turn_in.1]
+speaker = "adeline"
+portrait = "happy"
+local = "That's great news!"
+next = "5"
+
+[repair_the_bridge_pt_2_turn_in.2]
+speaker = "adeline"
+portrait = "think"
+local = "Oh, that's nice-"
+next = "3"
+
+[repair_the_bridge_pt_2_turn_in.3]
+speaker = "adeline"
+effect = "surprise"
+local = "Wait, what?!"
+next = "4"
+
+[repair_the_bridge_pt_2_turn_in.4]
+speaker = "adeline"
+portrait = "happy"
+local = "That's wonderful news!"
+next = "5"
+
+[repair_the_bridge_pt_2_turn_in.5]
+speaker = "adeline"
+local = "Come on, let's go tell everyone!"
+
+[repair_the_bridge_pt_2]
+kind = "gameplay_triggered"
+writes = [{ rtb = "part_2", expires = "4d" }]
+speaker = "adeline"
+local = "It's time! Let's get this bridge repaired."
+next = "1"
+
+[repair_the_bridge_pt_2.1]
+speaker = "ryis"
+local = "Nice work [Ari]! Now it's my turn."
+next = "2"
+
+[repair_the_bridge_pt_2.2]
+speaker = "balor"
+local = "Just let us know how we can help, Ryis."
+next = "3"
+
+[repair_the_bridge_pt_2.3]
+speaker = "balor"
+local = "Are we done, Ryis? Feels like we're done."
+next = "4"
+
+[repair_the_bridge_pt_2.4]
+speaker = "ryis"
+portrait = "happy"
+local = "We sure are! This bridge is going to last a long, long time."
+next = "5"
+
+[repair_the_bridge_pt_2.5]
+speaker = "adeline"
+portrait = "happy"
+local = "Great job, everyone!"
+next = "6"
+
+[repair_the_bridge_pt_2.6]
+speaker = "adeline"
+local = "I'll let the Saturday Market merchants know that the bridge is repaired!"
+next = "7"
+
+[repair_the_bridge_pt_2.7]
+speaker = "nora"
+local = "Let me help you, Adeline. Together, I'm sure we can guarantee that Saturday will be market day in Mistria again!"
+next = "8"
+
+[repair_the_bridge_pt_2.8]
+speaker = "balor"
+portrait = "wink"
+local = "Cheers to that!"

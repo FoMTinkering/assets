@@ -1,0 +1,26 @@
+[taking_orders]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ march_taking_orders = true },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ march_heart_level = 8, comparator = "<" },
+	{ blacksmithing_level = 10, comparator = ">=" }
+]
+portrait = "think"
+local = "I'm taking orders for tool repairs around town today."
+next = "1"
+
+[taking_orders.1]
+portrait = "neutral"
+local = "I'm sure you can fix your own by now, right?"
+
+[taking_orders_2]
+refresh = "1y"
+requires = [
+	{ npc = "march" },
+	{ march_taking_orders = true },
+	{ march_heart_level = 4, comparator = ">=" },
+]
+portrait = "think"
+local = "There's always a hinge that needs replacing in this town."

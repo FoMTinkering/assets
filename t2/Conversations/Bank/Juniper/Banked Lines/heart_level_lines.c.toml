@@ -1,0 +1,59 @@
+[zero_to_one_0]
+refresh = "never"
+requires = [{ npc = "juniper" }, { juniper_heart_level = 2, comparator = "<" }]
+portrait = "neutral"
+local = "I'm offering a new resident discount you might want to take advantage of."
+next = "1"
+
+[zero_to_one_0.1]
+portrait = "wink"
+local = "Buy one bath, get one bath."
+next = "2"
+
+[zero_to_one_0.2]
+portrait = "laugh"
+local = "Oh ho ho!"
+
+[two_to_three_0]
+refresh = "1y"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_heart_level = 4, comparator = "<" },
+	{ juniper_heart_level = 2, comparator = ">=" }
+]
+portrait = "neutral"
+local = "Please don't feel obligated to make small talk every time you see me."
+next = "1"
+
+[two_to_three_0.1]
+portrait = "think"
+local = "Even in a town as small as this, I'm sure you can find someone who will want to hear about your day that isn't me."
+
+[four_to_five_0]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_heart_level = 6, comparator = "<" },
+	{ juniper_heart_level = 4 , comparator = ">=" }
+]
+portrait = "neutral"
+local = "You should feel honored, [Ari]. You're the first farmer I've deigned to be acceptable in my presence."
+prompts = [{ local = "And you're the first bathhouse owner I've made friends with!", next = "1" }, { local = "What about Hayden?", next = "3" }]
+
+[four_to_five_0.1]
+portrait = "think"
+local = "..."
+next = "2"
+
+[four_to_five_0.2]
+portrait = "ugh"
+local = "Thanks?"
+
+[four_to_five_0.3]
+portrait = "mad"
+local = "Oooh, him and that rude chicken of his!"
+next = "4"
+
+[four_to_five_0.4]
+portrait = "unimpressed"
+local = "The things she clucked about Dozy! You wouldn't believe it."

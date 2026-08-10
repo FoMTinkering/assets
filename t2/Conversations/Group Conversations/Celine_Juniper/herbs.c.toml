@@ -1,0 +1,29 @@
+[herbs]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "juniper" }] },
+	{ celine_zone = "<juniper_zone>" },
+	{ location = "bathhouse" }
+]
+speaker = "celine"
+portrait = "happy"
+local = "I brought you those herbs you wanted, Juniper!"
+next = "1"
+
+[herbs.1]
+speaker = "celine"
+portrait = "neutral"
+local = "These are good for tea, and these are good for extracts."
+next = "2"
+
+[herbs.2]
+speaker = "juniper"
+portrait = "sly"
+local = "Perfect. And do you want payment in tesserae, or bath coupons?"
+next = "3"
+
+[herbs.3]
+speaker = "celine"
+portrait = "sweat"
+effect = "drop"
+local = "Tesserae, please!"

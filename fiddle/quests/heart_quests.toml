@@ -1,0 +1,500 @@
+[tall_dark_and_mysterious]
+	name = "Tall, Dark and Mysterious"
+	npc_for_icon = "balor"
+	description = "Seeking help to unload supplies for the relief effort, paying 200t. Come talk to me."
+	rewards = [{ gold = 200 }]
+
+	[[tall_dark_and_mysterious.stages]]
+		objective_description = "Talk to Balor."
+		queries = [{ npc = "balor", npc_conversation = "balor_two_hearts_turn_in" }]
+
+[a_get_together]
+	name = "A Get Together"
+	npc_for_icon = "hayden"
+	description = "Hayden asked me to come down to his house on Sweetwater Farm for a get together."
+
+	[[a_get_together.stages]]
+		objective_description = "Meet with Hayden at his house."
+		queries = [{ cutscene = "hayden_two_hearts", location = "haydens_house" }]
+
+[becoming_junipers_guinea_pig]
+	name = "Becoming Juniper's Guinea Pig"
+	npc_for_icon = "juniper"
+	description = """Come and get your free health tonic at Juniper's Bathhouse!
+
+Clears your pores, freshens your breath, and side effects are minimal.
+
+Available while supplies last."""
+	[[becoming_junipers_guinea_pig.stages]]
+		objective_description = "Meet Juniper at the Bathhouse."
+		queries = [{ cutscene = "juniper_two_hearts", location = "bathhouse" }]
+
+[the_unusual_seed]
+	name = "The Unusual Seed"
+	npc_for_icon = "celine"
+	description = "Celine asked me to meet her in her cottage to help her with a flower."
+
+	[[the_unusual_seed.stages]]
+		objective_description = "Meet Celine at her cottage south of town."
+		queries = [{ cutscene = "celine_two_hearts", location = "celines_room" }]
+
+[the_smell_of_drying_ink]
+	name = "The Smell of Drying Ink"
+	npc_for_icon = "adeline"
+	description = "Adeline asked me to meet her in her office to get a better understanding of the inner workings of the government."
+	rewards = [{ item = "cherry_tart" }]
+
+	[[the_smell_of_drying_ink.stages]]
+		objective_description = "Meet Adeline in her office within the Manor House."
+		queries = [{ cutscene = "adeline_two_hearts", location = "adelines_office" }]
+
+[the_stele]
+	name = "The Stele"
+	npc_for_icon = "eiland"
+	description = "Eiland asked me to meet him in front of the Manor House so that he can show me an interesting site on the grounds."
+
+	[[the_stele.stages]]
+		objective_description = "Meet Eiland outside the Manor House."
+		queries = [
+			{ cutscene = "eiland_two_hearts", location = "town", area = [
+				124,
+				76,
+				150,
+				87,
+			] },
+		]
+
+[surprise_me]
+	name = "Surprise Me"
+	npc_for_icon = "march"
+	description = "March asked me to meet him at the Blacksmith's store but didn't say why."
+
+	[[surprise_me.stages]]
+		objective_description = "Meet March in his house by the forge."
+		queries = [{ cutscene = "march_two_hearts", location = "blacksmith_store" }]
+
+[pie_in_the_sky]
+	name = "Pie in the Sky"
+	npc_for_icon = "reina"
+	description = "Reina asked me to meet her at the Inn to taste test a new dish."
+	rewards = [{ item = "wildberry_pie" }]
+
+	[[pie_in_the_sky.stages]]
+		objective_description = "Meet Reina at the Sleeping Dragon Inn."
+		queries = [{ cutscene = "reina_two_hearts", location = "inn" }]
+
+[the_annual_check_up]
+	name = "The Annual Check-up"
+	npc_for_icon = "valen"
+	description = """It's time for YOUR free annual check-up! Yes you, the person reading this.
+
+Come to Valen's Clinic today for a healthier you!"""
+
+	[[the_annual_check_up.stages]]
+		objective_description = "Meet Valen at the Clinic."
+		queries = [{ cutscene = "valen_two_hearts", location = "clinic_f1" }]
+
+[bird_song]
+	name = "Bird Song"
+	npc_for_icon = "landen"
+	description = "Landen asked me if I had any spare wood on the farm. He said to bring him 15 pieces for 150t!"
+	rewards = [{ gold = 150 }]
+
+	[[bird_song.stages]]
+		objective_description = "Bring Landen 15 pieces of wood."
+		requirements = { has_item = { basic_wood = 15 } }
+		queries = [{ npc = "landen", npc_conversation = "ryis_two_hearts_turn_in" }]
+
+[a_rewarding_choice]
+	name = "A Rewarding Choice"
+	npc_for_icon = "adeline"
+	description = "Adeline asked me to meet her in her office. She wants my help with an important choice as \"an average Mistrian\"."
+	rewards = []
+
+	[[a_rewarding_choice.stages]]
+		objective_description = "Meet Adeline in her office."
+		queries = [{ cutscene = "adeline_four_hearts", location = "adelines_office" }]
+
+[water_and_soil]
+	name = "Water and Soil"
+	npc_for_icon = "celine"
+	description = "Celine asked me to meet her at her cottage. The mystery seed hasn't sprouted yet and she wants my insight into what could possibly make this seed grow."
+
+	[[water_and_soil.stages]]
+		objective_description = "Meet Celine at her cottage."
+		queries = [{ cutscene = "celine_four_hearts", location = "celines_room" }]
+
+[many_hands_make_light_work]
+	name = "Many Hands Make Light Work"
+	npc_for_icon = "march"
+	description = "Olric asked me to come help him and March out with their work. March said my blacksmithing is improving but Olric wasn't supposed to tell me that..."
+
+	[[many_hands_make_light_work.stages]]
+		objective_description = "Meet Olric at the forge."
+		queries = [
+			{ cutscene = "march_four_hearts", location = "town", area = [
+				54,
+				118,
+				104,
+				140,
+			] },
+		]
+
+[shopping_buddy]
+	name = "Shopping Buddy"
+	npc_for_icon = "reina"
+	description = "Reina asked me to join her in the General Store. She's on the hunt for ingredients to wow the judges of the cooking competition."
+
+	[[shopping_buddy.stages]]
+		objective_description = "Meet Reina at the General Store."
+		queries = [{ cutscene = "reina_four_hearts", location = "general_store_store" }]
+
+[the_ruins]
+	name = "The Ruins"
+	npc_for_icon = "eiland"
+	description = "Eiland asked me to meet him at the Western Ruins to look for more clues and possibly more Dragonsworn Armor."
+
+	[[the_ruins.stages]]
+		objective_description = "Meet Eiland at the Western Ruins."
+		queries = [{ cutscene = "eiland_four_hearts", location = "western_ruins" }]
+
+[batch_312]
+	name = "Batch 312"
+	npc_for_icon = "valen"
+	description = "Valen asked me to bring her one piece of peat for her research. I hope it's not for flavoring her medicine..."
+	rewards = [{ gold = 200 }]
+
+	[[batch_312.stages]]
+		objective_description = "Bring Valen one piece of peat."
+		requirements = { has_item = { peat = 1 } }
+		queries = [{ npc = "valen", npc_conversation = "valen_four_hearts_turn_in" }]
+
+[horsing_around]
+	name = "Horsing Around"
+	npc_for_icon = "juniper"
+	description = "Juniper wants to test another potion on me. I should go to the Bathhouse before she tests it on someone else."
+
+	[[horsing_around.stages]]
+		objective_description = "Meet Juniper in the Bathhouse."
+		queries = [{ cutscene = "juniper_four_hearts", location = "bathhouse" }]
+
+[an_open_book]
+	name = "An Open Book"
+	npc_for_icon = "balor"
+	description = "Balor wants to give me advice on the items I'm shipping. I should go meet him in the Inn to hear him out."
+
+	[[an_open_book.stages]]
+		objective_description = "Meet Balor at the Inn."
+		queries = [{ cutscene = "balor_four_hearts", location = "inn" }]
+
+[a_sapling]
+	name = "A Sapling"
+	npc_for_icon = "ryis"
+	description = "Ryis wants me to meet him in his room to talk about a new tree for the cottage ruins. One step closer to a new birdhouse!"
+
+	[[a_sapling.stages]]
+		objective_description = "Meet Ryis in his room."
+		queries = [{ cutscene = "ryis_four_hearts", location = "landens_house_f2" }]
+
+[extra_feed]
+	name = "Extra Feed"
+	npc_for_icon = "hayden"
+	description = "Hayden has some extra feed to give me and wants me to meet him at his farm. I wonder how Henrietta's doing..."
+
+	[[extra_feed.stages]]
+		objective_description = "Meet Hayden at his farm."
+		queries = [
+			{ cutscene = "hayden_four_hearts", location = "haydens_farm", area = [
+				110,
+				32,
+				180,
+				76,
+			] },
+		]
+
+[an_outside_consultant]
+	name = "An Outside Consultant"
+	npc_for_icon = "valen"
+	description = "Valen is struggling with her research into the panacea and wants to get Juniper's help. This might be tricky..."
+
+	[[an_outside_consultant.stages]]
+		objective_description = "Meet Valen at the Bathhouse."
+		queries = [{ cutscene = "valen_six_hearts", location = "bathhouse" }]
+
+[real_fine_day]
+	name = "Real Fine Day"
+	npc_for_icon = "hayden"
+	description = "Hayden says he has a day planned to help socialize Henrietta. Does the General Store let chickens inside...?"
+
+	[[real_fine_day.stages]]
+		objective_description = "Meet Hayden at the General Store."
+		queries = [{ cutscene = "hayden_six_hearts", location = "general_store_store" }]
+
+[the_manor]
+	name = "The Manor"
+	npc_for_icon = "eiland"
+	description = "Eiland says that the search for the Dragonsworn Armor has taken an unexpected turn. I should meet him at the manor."
+
+	[[the_manor.stages]]
+		objective_description = "Meet Eiland at the Manor House."
+		queries = [{ cutscene = "eiland_six_hearts", location = "manor_house_entry" }]
+
+
+[lemonade_from_lemons]
+	name = "Lemonade From Lemons"
+	npc_for_icon = "balor"
+	icon = "heart"
+	description = "Balor asked me to join him for a meal at the Inn. Business must be good!"
+
+	[[lemonade_from_lemons.stages]]
+		objective_description = "Meet Balor at the Inn."
+		queries = [{ cutscene = "balor_six_hearts", location = "inn" }]
+
+[a_change_of_greenery]
+	name = "A Change of Green-ery"
+	npc_for_icon = "celine"
+	description = "Celine says the she can't get the sprout to grow any more and wants to brainstorm what to do. Is there something special it needs?"
+	rewards = [{ item = "cherry_cobbler" }]
+
+	[[a_change_of_greenery.stages]]
+		objective_description = "Meet Celine at her house."
+		queries = [{ cutscene = "celine_six_hearts", location = "celines_room" }]
+
+[farm_fresh_sous_chef]
+	name = "Farm Fresh Sous Chef"
+	npc_for_icon = "reina"
+	description = "Reina says she has something important she needs to ask me. I wonder if she's heard more about the Cooking Competition..."
+	rewards = [{ item = "honey_curry" }]
+
+	[[farm_fresh_sous_chef.stages]]
+		objective_description = "Meet Reina at the Inn."
+		queries = [{ cutscene = "reina_six_hearts", location = "inn" }]
+
+[working_like_a_dog]
+	name = "Working Like a Dog"
+	npc_for_icon = "juniper"
+	description = """Juniper asked me to come and help her with some "menial errands". How does Dozy put up with it..."""
+
+	[[working_like_a_dog.stages]]
+		objective_description = "Meet Juniper in her room at the Bathhouse."
+		queries = [{ cutscene = "juniper_six_hearts", location = "bathhouse_bedroom" }]
+
+[chief_inspector]
+	name = "Chief Inspector"
+	npc_for_icon = "adeline"
+	description = "Adeline asked me to come along for her next inspection of Mistria. We'll start from the Request Board."
+
+	[[chief_inspector.stages]]
+		objective_description = "Meet Adeline at the Request Board."
+		queries = [
+			{ cutscene = "adeline_six_hearts", location = "town", area = [
+				142,
+				191,
+				207,
+				231,
+			] },
+		]
+
+[shield_of_the_realm]
+	name = "Shield of the Realm"
+	npc_for_icon = "march"
+	icon = "heart"
+	description = "March asked me in a short letter to stop by if I wanted part-time work. How loquacious..."
+
+	[[shield_of_the_realm.stages]]
+		objective_description = "Meet March at the Blacksmith Store."
+		queries = [{ cutscene = "march_six_hearts", location = "blacksmith_store" }]
+
+[a_birdhouse]
+	name = "A Birdhouse"
+	npc_for_icon = "ryis"
+	icon = "heart"
+	description = "Ryis says the tree is ready for a birdhouse and asked me to come over to build it. What color should we paint it?"
+
+	[[a_birdhouse.stages]]
+		objective_description = "Meet Ryis at the Carpenter's Shop."
+		queries = [{ cutscene = "ryis_six_hearts", location = "landens_house_f1" }]
+
+[lost_track_of_time]
+	name = "Lost Track of Time"
+	npc_for_icon = "adeline"
+	icon = "heart"
+	description = "Adeline asked me to join her for tea. I hope she takes the time to actually relax..."
+
+	[[lost_track_of_time.stages]]
+		objective_description = "Meet Adeline at the Manor House."
+		queries = [{ cutscene = "adeline_eight_hearts", location = "manor_house_entry" }]
+
+[for_good]
+	name = "For Good"
+	npc_for_icon = "balor"
+	icon = "heart"
+	description = "Balor asked me to meet him in his room at the Inn for a meal."
+
+	[[for_good.stages]]
+		objective_description = "Meet Balor in his room at the Inn."
+		queries = [{ cutscene = "balor_eight_hearts", location = "balors_room" }]
+
+[a_lost_flower]
+	name = "A Lost Flower"
+	npc_for_icon = "celine"
+	icon = "heart"
+	description = "Celine asked me to join her for a picnic! She wants to meet at her cottage first."
+
+	[[a_lost_flower.stages]]
+		objective_description = "Meet Celine at her house."
+		queries = [{ cutscene = "celine_eight_hearts", location = "celines_room" }]
+
+[a_little_while_longer]
+	name = "A Little While Longer"
+	npc_for_icon = "hayden"
+	icon = "heart"
+	description = "Hayden asked me to come over so that we could spend some time together. I wonder what food he's making..."
+
+	[[a_little_while_longer.stages]]
+		objective_description = "Meet Hayden at his house."
+		queries = [{ cutscene = "hayden_eight_hearts", location = "haydens_house" }]
+
+[potions_and_errands]
+	name = "Potions and Errands"
+	npc_for_icon = "juniper"
+	icon = "heart"
+	description = "Juniper asked me to bring her a Breath of Flame flower for a new bath infusion. Another errand?"
+
+	[[potions_and_errands.stages]]
+		objective_description = "Bring Juniper a Breath of Flame flower."
+		requirements.has_item = "breath_of_fire"
+		queries = [{ npc = "juniper", npc_conversation = "juniper_eight_hearts_turn_in" }]
+
+[the_aldarian_cooking_contest]
+	name = "The Aldarian Cooking Contest"
+	npc_for_icon = "reina"
+	icon = "heart"
+	description = "It's time! This is Reina's big moment in front of the judges for the Aldarian Cooking Contest."
+
+	[[the_aldarian_cooking_contest.stages]]
+		objective_description = "Meet Reina at the Inn."
+		queries = [{ cutscene = "reina_eight_hearts", location = "inn" }]
+
+[the_glade]
+	name = "The Glade"
+	npc_for_icon = "eiland"
+	icon = "heart"
+	description = "Eiland needs more time to find a lead on the Dragonsworn armor, but wants go for a walk in the Deep Woods. Maybe walking will clear his mind?"
+
+	[[the_glade.stages]]
+		objective_description = "Meet Eiland in the Deep Woods."
+		queries = [{ cutscene = "eiland_eight_hearts", location = "deep_woods" }]
+
+[life_in_this_form]
+	name = "Life in This Form"
+	npc_for_icon = "caldarus"
+	icon = "heart"
+	description = "Caldarus asked me to join him at his temple for a meal. What could he want to speak about?"
+
+	[[life_in_this_form.stages]]
+		objective_description = "Meet Caldarus at his temple."
+		queries = [{ cutscene = "caldarus_eight_hearts", location = "caldarus_house" }]
+
+[a_duet]
+	name = "A Duet"
+	npc_for_icon = "ryis"
+	icon = "heart"
+	description = "Ryis said he spotted a blue feather by the birdhouse. I should meet him at the Hawthorn tree for some bird watching!"
+
+	[[a_duet.stages]]
+		objective_description = "Meet Ryis at the Hawthorn tree."
+		queries = [
+			{ cutscene = "ryis_eight_hearts", location = "eastern_road", area = [
+				102,
+				132,
+				152,
+				176,
+			] },
+		]
+
+[the_panacea]
+	name = "The Panacea"
+	npc_for_icon = "valen"
+	icon = "heart"
+	description = "Valen asked me to meet her at the Western Ruins to search for the Cliffblossom. There are a lot of cliffs there, so hopefully it'll turn up..."
+
+	[[the_panacea.stages]]
+		objective_description = "Meet Valen at the Western Ruins."
+		queries = [{ cutscene = "valen_eight_hearts", location = "western_ruins" }]
+
+[whatever_your_heart_desires]
+	name = "Your Heart Desires"
+	npc_for_icon = "seridia"
+	icon = "heart"
+	description = "Seridia asked me to meet her at her temple to discuss something privately. Does she want me to pay homage again?"
+
+	[[whatever_your_heart_desires.stages]]
+		objective_description = "Meet Seridia at her Temple."
+		queries = [{ cutscene = "seridia_eight_hearts", location = "seridias_house" }]
+
+[adeline_pregnancy_request]
+	name = "A Craving"
+	npc_for_icon = "adeline"
+	icon = "heart"
+	description = "Adeline said she's been craving Lemon Pie. Anything to help her out!"
+
+	[[adeline_pregnancy_request.stages]]
+		objective_description = "Bring Adeline a Lemon Pie."
+		requirements.has_item = "lemon_pie"
+		queries = [{ npc = "adeline", npc_conversation = "adeline_pregnancy_request_turn_in" }]
+
+[celine_pregnancy_request]
+	name = "A Craving"
+	npc_for_icon = "celine"
+	icon = "heart"
+	description = "Celine said she's been craving a Spring Salad. Anything to help her out!"
+
+	[[celine_pregnancy_request.stages]]
+		objective_description = "Bring Celine a Spring Salad."
+		requirements.has_item = "spring_salad"
+		queries = [{ npc = "celine", npc_conversation = "celine_pregnancy_request_turn_in" }]
+
+[juniper_pregnancy_request]
+	name = "A Craving"
+	npc_for_icon = "juniper"
+	icon = "heart"
+	description = "Juniper said she's been craving Pizza. Anything to help her out!"
+
+	[[juniper_pregnancy_request.stages]]
+		objective_description = "Bring Juniper a Pizza."
+		requirements.has_item = "pizza"
+		queries = [{ npc = "juniper", npc_conversation = "juniper_pregnancy_request_turn_in" }]
+
+[reina_pregnancy_request]
+	name = "A Craving"
+	npc_for_icon = "reina"
+	icon = "heart"
+	description = "Reina said she's been craving an Ice Cream Sundae. Anything to help her out!"
+
+	[[reina_pregnancy_request.stages]]
+		objective_description = "Bring Reina an Ice Cream Sundae."
+		requirements.has_item = "ice_cream_sundae"
+		queries = [{ npc = "reina", npc_conversation = "reina_pregnancy_request_turn_in" }]
+
+[seridia_pregnancy_request]
+	name = "A Craving"
+	npc_for_icon = "seridia"
+	icon = "heart"
+	description = "Seridia said she's been craving an Ice Cream Sundae. Anything to help her out!"
+
+	[[seridia_pregnancy_request.stages]]
+		objective_description = "Bring Seridia an Ice Cream Sundae."
+		requirements.has_item = "ice_cream_sundae"
+		queries = [{ npc = "seridia", npc_conversation = "seridia_pregnancy_request_turn_in" }]
+
+[valen_pregnancy_request]
+	name = "A Craving"
+	npc_for_icon = "valen"
+	icon = "heart"
+	description = "Valen said she's been craving a Grilled Cheese. Anything to help her out!"
+
+	[[valen_pregnancy_request.stages]]
+		objective_description = "Bring Valen a Grilled Cheese."
+		requirements.has_item = "grilled_cheese"
+		queries = [{ npc = "valen", npc_conversation = "valen_pregnancy_request_turn_in" }]

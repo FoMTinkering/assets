@@ -1,0 +1,19 @@
+[dinner]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "hayden" }] },
+	{ balor_activity = "eat" },
+	{ hayden_activity = "eat" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ balor_zone = "<hayden_zone>" },
+	{ location = "haydens_house" }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "This is a great spread, Hayden! I hope it didn't take too long to put it all together."
+next = "1"
+
+[dinner.1]
+speaker = "hayden"
+portrait = "happy_fist"
+local = "Oh, don't you worry! Cooking is a breeze when Henrietta is my sous chef!"

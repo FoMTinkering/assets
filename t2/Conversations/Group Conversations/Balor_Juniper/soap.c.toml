@@ -1,0 +1,16 @@
+[soap]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "juniper" }] },
+	{ balor_zone = "<juniper_zone>" },
+	{ balor_zone = "town/wagon" }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "You want to sell your soap in the Capital?"
+next = "1"
+
+[soap.1]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "No, I want you to sell my soap in the Capital. I've got a bathhouse to run."

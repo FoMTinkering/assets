@@ -1,0 +1,127 @@
+[bathhouse_accept_1]
+kind = "date_acceptance"
+requires = [
+    { npc = "valen" },
+    { date = "bathhouse" },
+    { da_valen_bathhouse = 0 },
+    { valen_is_spouse = false }
+]
+writes = [
+    { da_valen_bathhouse = 1 },
+    { da_valen_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "think_blush"
+local = "I was wondering, [Ari]..."
+next = "1"
+
+[bathhouse_accept_1.1]
+portrait = "embarrassed"
+local = "How would you feel about joining me at the $Bathhouse$ for a soak?"
+next = "2"
+
+[bathhouse_accept_1.2]
+portrait = "neutral_blush"
+local = "I thought we could both use some time to relax, unwind, and-"
+next = "3"
+
+[bathhouse_accept_1.3]
+portrait = "happy_blush"
+local = "Well, spend some time together!"
+next = "4"
+
+[bathhouse_accept_1.4]
+portrait = "embarrassed"
+local = "Oh, you'd love to?"
+next = "5"
+
+[bathhouse_accept_1.5]
+portrait = "happy_blush"
+local = "I'm so glad."
+next = "6"
+
+[bathhouse_accept_1.6]
+portrait = "think_blush"
+local = "I'm ready to go when you are!"
+
+[bathhouse_accept_2]
+kind = "date_acceptance"
+requires = [
+    { npc = "valen" },
+    { date = "bathhouse" },
+    { valen_has_child = false },
+    { any = [
+        { valen_is_spouse = true },
+        { da_valen_bathhouse = 1, comparator = ">=" }
+    ] }
+]
+writes = [
+    { da_valen_bathhouse = 2 },
+    { da_valen_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "think_blush"
+local = "You'd like to go visit the $Bathhouse$, [Ari]?"
+next = "1"
+
+[bathhouse_accept_2.1]
+portrait = "happy_blush"
+local = "Of course, I'd love to come with you!"
+
+[bathhouse_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "valen" },
+    { da_valen_bathhouse = 1 },
+    { da_valen_bathhouse_follow_up_gate = true },
+    { valen_is_spouse = false }
+]
+writes = [{ da_valen_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "happy_blush"
+effect = "cheery"
+local = "Ah... My mind and body feel so refreshed."
+next = "1"
+
+[bathhouse_follow_up_1.1]
+portrait = "think_blush"
+local = "You feel the same way?"
+next = "2"
+
+[bathhouse_follow_up_1.2]
+portrait = "embarrassed"
+local = "Well..."
+next = "3"
+
+[bathhouse_follow_up_1.3]
+portrait = "happy_blush"
+local = "I guess it was just what the doctor ordered."
+
+[bathhouse_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "valen" },
+    { valen_has_child = false },
+    { any = [{ valen_is_spouse = true }, { da_valen_bathhouse = 2 }] },
+    { da_valen_bathhouse_follow_up_gate = true }
+]
+writes = [{ da_valen_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "happy_blush"
+local = "I love our trips to the $Bathhouse$, [Ari]."
+next = "1"
+
+[bathhouse_follow_up_2.1]
+portrait = "neutral_blush"
+effect = "cheery"
+local = "The positive effects on the body are-"
+next = "2"
+
+[bathhouse_follow_up_2.2]
+portrait = "embarrassed"
+local = "Ah, that is to say, I always feel good afterwards."
+next = "3"
+
+[bathhouse_follow_up_2.3]
+portrait = "happy_blush"
+local = "Thank you for suggesting it!"

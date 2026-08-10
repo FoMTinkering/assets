@@ -1,0 +1,69 @@
+[balors_gate_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ balor_zone = "inn/south_table" },
+	{ dell_zone = "inn/south_table" },
+	{ eiland_zone = "inn/south_table" },
+	{ nora_zone = "inn/south_table" },
+	{ ryis_zone = "inn/south_table" },
+	{ any = [
+		{ npc = "balor" },
+		{ npc = "dell" },
+		{ npc = "eiland" },
+		{ npc = "nora" },
+		{ npc = "ryis" },
+	] },
+]
+writes = [{ balors_gate_fnati = 1 }]
+speaker = "balor"
+portrait = "wink"
+local = "With Eiland's blessing, I'll be your host for a new adventure! Now, let's set the stage: you stand before an imposing gate, decorated with the bones and blood of fallen adventurers."
+next = "1"
+
+[balors_gate_1.1]
+speaker = "dell"
+portrait = "happy"
+effect = "hearts"
+local = "Yaaaay!"
+next = "2"
+
+[balors_gate_1.2]
+speaker = "eiland"
+local = "A perfect place to introduce ourselves. I'm the scholar Aram, here to research the architectural secrets of the world!"
+next = "3"
+
+[balors_gate_1.3]
+speaker = "ryis"
+local = "Keeping it true to life, cool. I'm a birdwatcher by the name of Silver, seeking the legendary Dragonhawk! That's a hawk, not a dragon. Common misunderstanding."
+next = "4"
+
+[balors_gate_1.4]
+speaker = "balor"
+portrait = "sigh"
+effect = "sigh"
+local = "A birdwatcher and a scholar... did anyone pick a combat class? For ascending the deadly Blood Tower?"
+next = "5"
+
+[balors_gate_1.5]
+speaker = "dell"
+portrait = "mad"
+local = "Me! I'm a cool elf who's also a dragon and also a knight. My name is Brightclaw and I have a cool sword and claws and also my mom is here!"
+next = "6"
+
+[balors_gate_1.6]
+speaker = "nora"
+local = "Ahem... yes, I'm Brightclaw's mother, a simple elvish trader... who negotiated a pact with a demon."
+next = "7"
+
+[balors_gate_1.7]
+speaker = "nora"
+effect = "sparkles_dark"
+local = "My name is Supreme Warlock Grimblade."
+next = "8"
+
+[balors_gate_1.8]
+speaker = "balor"
+portrait = "think"
+local = "I'm beginning to understand where Dell's imagination comes from..."

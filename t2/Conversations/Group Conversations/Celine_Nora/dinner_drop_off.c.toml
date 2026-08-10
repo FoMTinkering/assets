@@ -1,0 +1,37 @@
+[handful]
+refresh = "never"
+priority = "max"
+actions = [{ bark = { bark = "sweat_drop", npc = "celine" } }]
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "nora" }] },
+	{ celine_zone = "<nora_zone>" },
+	{ date_time = "4d", comparator = ">" },
+	{ date_time = "28d", comparator = "<" }
+]
+speaker = "nora"
+portrait = "happy"
+local = "Are you sure you don't want me to drop off some dinner for the week?"
+next = "1"
+
+[handful.1]
+speaker = "celine"
+portrait = "embarrassed"
+local = "I'm fine, Mom. Really... I've got food at home."
+next = "2"
+
+[handful.2]
+speaker = "nora"
+portrait = "think"
+local = "A girl can't live on peanut butter sandwiches alone, you know..."
+next = "3"
+
+[handful.3]
+speaker = "celine"
+portrait = "angry_blush"
+local = "M-mom."
+next = "4"
+
+[handful.4]
+speaker = "celine"
+portrait = "blush_special"
+local = "Not in front of [Ari]!"

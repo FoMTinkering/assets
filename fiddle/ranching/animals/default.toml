@@ -1,0 +1,228 @@
+[core]
+	# The species name (i.e.: Chicken).
+	name = "<n/a>"
+	# The plural form of the species name (i.e.: "Chickens)
+	plural_name = "<n/a>"
+	# the name of a female other, such as `a hen`, `a mare`, or `a capybara`. This should include indefinite article.
+	female_other = "<n/a>"
+	# the name of a male other, such as `a rooster`, `a stallion`, or `a capybara`. This should include indefinite article.
+	male_other = "<n/a>"
+	# a new animal was born!
+	new_baby_born = "<n/a>"
+	# The size of this animal (small or large).
+	size = "small"
+	# The variant that will be used to LUT the animal's icon when used generically in UI's.
+	default_icon_variant = "<n/a>"
+	# The UI sub icon that should be displayed on ItemId.AnimalCosmetic for this animal.
+	cosmetic_sub_icon = "<n/a>"
+	# The requirements for this animal to be unlocked at Hayden's store.
+	requirements = {}
+
+[behavior]
+	# The range of time (expressed in hours) that an animal may decide to go outside in
+	go_outside_time = [8, 9]
+	# The range of time (expressed in hours) that an animal may decide to go back inside
+	go_inside_time = [18, 19]
+	# The range of time (expressed in hours) an animal may decide to sleep in
+	sleep_time = [20, 22]
+	# The random range of the rate (expressed in seconds) an animal will display an empty heart
+	# bark if they have not been pet yet today.
+	empty_heart_bark_frequency = [15, 25]
+	# The maximum distance (in pixels) an animal can "see" Ari in the morning to greet her
+	greeting_distance = 100
+	# The movement speed of the animal when walking.
+	move_speed = 0.35
+	# If true, this animal is allowed to wander around in its home. Otherwise, it will remain in its
+	# stall.
+	can_wander_in_home = true
+
+[celebration_data]
+	baby_animation = "idle"
+	adult_animation = "idle"
+
+[breeding]
+	# If true, animals will lay an egg and incubate it until it hatches. If false, they will become
+	# pregnant before later giving birth.
+	uses_egg = true
+	# The number of days an animal takes to be born from its initial conception.
+	#
+	# This is only relevant if the breeding kind is egg!
+	incubation_days = 3
+	# The number of days an animal remains a baby after being born.
+	days_until_adult = 5
+	# The item this animal uses to breed
+	treat = "heart_shaped_chicken_treat"
+	# the offset on which we use the sparkle
+	sparkle_offset = [0, 0]
+
+# Each animal can specify the x/y offset of their barks per age. In the future we might want/need
+# to be specific to each cardinal, as well.
+[bark_offsets]
+	adult = { north = [0, 0], south = [0, 0], east = [0, 0], west = [0, 0] }
+	baby = { north = [0, 0], south = [0, 0], east = [0, 0], west = [0, 0] }
+
+[mounting]
+	# Whether or not this animal is a mount.
+	is_mount = false
+	# The move speed of this mount.
+	move_speed = 1
+
+[eating]
+	# The kind of food this animal eats. Possible options are "seed" and "hay".
+	kind = "seed"
+	# this is how much stuff they eat, though note that things have different values
+	hunger = 3
+	offset = [0, 0]
+	baby_offset = [0, 0]
+	shake_frames = [0, 10000]
+
+[petting]
+	# The manner in which Ari pets this animal. Possible options are:
+	#
+	# "pet": Ari will play her petting animation resulting in a happy dance from the animal.
+	# "pick_up": Ari will pick up the animal, which will count as a pet.
+	kind = "pet"
+	# The offset Ari will use when rendering this animal while holding it.
+	held_offset = [0, 0]
+	# The amount of essence *points* Ari should get for petting an animal.
+	#
+	# Keep in mind that these are essence *points*, which contribute towards the real essence
+	# currency.
+	#
+	# As of right now the ratio of essence points per essence is 10. We should TOML-ify that.
+	essence_points = 3
+	# The amount of stamina it costs Ari to pet an animal.
+	stamina_cost = 1
+
+[pricing]
+	# This is the base buy price of an animal.
+	buy_price = 0
+	# This is how much a baby sells for (ignores heart level).
+	baby_sell_price = 0
+	# This is the prices each adult animal sells at per heart.
+	adult_sell_prices = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	# These are the multipliers applied to the sell price based on the variant tier.
+	tier_sell_price_multipliers = [1, 1, 1.2, 1.4, 1.6, 1.8, 2]
+
+[production.male]
+	# How many days it takes for this animal to produce an item.
+	days_to_produce = 0
+	# The base object (found in the objects/animal_product.toml) that this animal produces.
+	normal_product = "<n/a>"
+	# The rare object produced by this animal
+	golden_product = "<n/a>"
+
+# All same as above
+[production.female]
+	days_to_produce = 0
+	normal_product = "<n/a>"
+	golden_product = "<n/a>"
+
+# The animals have a variety of sounds. Sometimes we create multiple variations of a sound that
+# the animals permanently select to create a distinct "voice", but sometimes it makes more sense
+# to just use the same ones. Each animal therefor is able to select one "pack" of sounds, and if
+# the implementor wants to use the same sound in multiple packs, that's fine.
+[[sounds.baby]]
+	ambient = "SoundEffects/Animals/ChickenBabyAmbient"
+	positive_react = "SoundEffects/Animals/ChickBabyAPositiveReact"
+	negative_react = "SoundEffects/Animals/ChickenUpsetReact"
+
+[[sounds.adult]]
+	ambient = "SoundEffects/Animals/ChickenAAmbient"
+	positive_react = "SoundEffects/Animals/ChickenPositiveReact"
+	negative_react = "SoundEffects/Animals/ChickenUpsetReact"
+
+# These are the animations each animal has. You can optionally mark them to be randomly selected
+# by the animal when they're looking for something to do.
+[animations.default]
+	# Whether or not the animal can randomly select this state.
+	randomly_selected = true
+	# The number of seconds the animal should stay in this animation for. If not provided, it will not
+	# use any timer.
+	duration = "<n/a>"
+	# If true, this animation will automatically end when it reaches its end, instead of looping.
+	end_with_animation = false
+	# If true, this animal will be able to play its ambient sounds while in this animation.
+	play_ambient_sounds = false
+	# You can use this to specify which types of animals this animation is included for.
+	valid_for = ["male", "female", "baby"]
+	# The range of time (in hours) that this state can be selected within.
+	time_range = [6, 20]
+
+# Now below are the animations all animals (must) have.
+[animations.idle]
+	randomly_selected = false
+	duration = [3, 7]
+	play_ambient_sounds = true
+
+[animations.walk]
+	randomly_selected = false
+	duration = [1, 2]
+
+[animations.sleep]
+	time_range = [20, 26]
+	play_ambient_sounds = false
+
+[animations.eat]
+	randomly_selected = false
+	# end_with_animation = true
+
+# All the various variants an animal comes in. It will be more helpful to look at another animal
+# for its individual implementation.
+[variants.default]
+	# The name of this variant as displayed to the user.
+	name = "<n/a>"
+	# The tier of this variants rarity.
+	tier = 1
+	# What seasons this animal can be conceived in.
+	born_in = ["spring", "summer", "fall", "winter"]
+	# Whether or not this variant can be purchased from Hayden by default. If false, the
+	# player will have to first acquire this variant from breeding.
+	default_unlocked = false
+	# The LUT texture this variant uses to recolor itself. This is optional. You can use this
+	# as a default for the male, female and baby luts.
+	lut = "<n/a>"
+	# The index on the LUT that should be used. You can use this as a default for the male,
+	# female and baby indexes.
+	lut_index = "<n/a>"
+	# The amount of renown granted for donating this animal.
+	renown_value = 1
+	# The cosmetic, if any, that this animal should always be born wearing.
+	default_cosmetic = "<n/a>"
+	# Whether or not Ari can acquire this animal through adoption/breeding
+	acquirable = true
+
+	# Information specific to the males in this variant. You can provide overrides to the LUT
+	# properties above, otherwise the variant will default to those values.
+	[variants.default.male]
+		# The "key" of the sprite to be inserted. For example, if this was a variant for the chicken,
+		# and your key below was "male", we'd look for sprites using `spr_animal_chicken_male_<animation>`
+		key = "male"
+		# The key for the top sprite of animals, if they have one.
+		top_key = "<n/a>"
+		# The key used to find the icon sprite for this variant. If omitted, it will default to `key`.
+		ui_key = "<n/a>"
+
+	# lut = "something"
+	# lut_index = 5
+	# Same as above
+	[variants.default.female]
+		key = "female"
+		ui_key = "<n/a>"
+		top_key = "<n/a>"
+
+	# Same as above
+	[variants.default.baby]
+		key = "baby"
+		ui_key = "<n/a>"
+		top_key = "<n/a>"
+
+# The various cosmetics an animal can have.
+[cosmetics.default]
+	[cosmetics.default.male]
+		key = "<n/a>"
+		top_key = "<n/a>"
+
+	[cosmetics.default.female]
+		key = "<n/a>"
+		top_key = "<n/a>"

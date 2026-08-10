@@ -1,0 +1,105 @@
+[supply_run]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "reina" }] },
+	{ hayden_zone = "<reina_zone>" },
+	{ any = [{ location = "haydens_farm" }, { location = "haydens_house" }] },
+	{ hayden_is_at_location = "<hemlock_is_at_location>", comparator = "!=" }
+]
+writes = [
+	{ farm_groceries = true, expires = "1w" },
+	{ reina_visited_hayden_farm = true, expires = "2d" }
+]
+speaker = "reina"
+portrait = "neutral"
+effect = "sparkles"
+local = "Oh, hi [Ari]! I'm doing a supply run for the Inn. We're Hayden's biggest customers!"
+next = "1"
+
+[supply_run.1]
+speaker = "hayden"
+portrait = "neutral"
+local = "Did you know? Reina took over the supply run for Hemlock after he hurt his back."
+next = "2"
+
+[supply_run.2]
+speaker = "hayden"
+portrait = "happy"
+effect = "drop"
+local = "His back got better, but every time Reina brings it up he pretends like he threw it out again."
+next = "3"
+
+[supply_run.3]
+speaker = "reina"
+portrait = "wink"
+local = "I don't mind one bit! Mostly I like my dad's terrible acting."
+
+[supply_run_2]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "reina" }] },
+	{ hayden_zone = "<reina_zone>" },
+	{ any = [{ location = "haydens_farm" }, { location = "haydens_house" }] },
+]
+writes = [
+	{ farm_groceries = true, expires = "1w" },
+	{ reina_visited_hayden_farm = true, expires = "2d" }
+]
+speaker = "hayden"
+portrait = "neutral"
+local = "Reina! I've got those supplies for the Inn all ready to go."
+next = "1"
+
+[supply_run_2.1]
+speaker = "hayden"
+portrait = "wink"
+local = "We got milk, we got eggs, we got cheese! But give it a once over and make sure it's all there."
+next = "2"
+
+[supply_run_2.2]
+speaker = "reina"
+portrait = "happy"
+local = "Aw, thanks Hayden! I can't wait!"
+
+[supply_run_3]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "reina" }] },
+	{ hayden_zone = "<reina_zone>" },
+	{ any = [{ location = "haydens_farm" }, { location = "haydens_house" }] },
+	{ hayden_is_at_location = "<hemlock_is_at_location>", comparator = "!=" }
+]
+writes = [
+	{ farm_groceries = true, expires = "1w" },
+	{ reina_visited_hayden_farm = true, expires = "2d" }
+]
+speaker = "hayden"
+portrait = "wink"
+local = "I've got that order of eggs set aside for you. Let me know if you need help taking it back to the Inn."
+next = "1"
+
+[supply_run_3.1]
+speaker = "reina"
+portrait = "happy"
+local = "I should be okay, but thanks Hayden!"
+
+[supply_run_4]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "reina" }] },
+	{ hayden_zone = "<reina_zone>" },
+	{ any = [{ location = "haydens_farm" }, { location = "haydens_house" }] },
+]
+writes = [
+	{ farm_groceries = true, expires = "1w" },
+	{ reina_visited_hayden_farm = true, expires = "2d" }
+]
+speaker = "hayden"
+portrait = "wink_fist"
+local = "Here for the supply pickup? I threw in some extra eggs this time!"
+next = "1"
+
+[supply_run_4.1]
+speaker = "reina"
+portrait = "happy"
+local = "Ooh, thanks Hayden! Maybe I'll bake a quiche!"

@@ -1,0 +1,538 @@
+# Collections of activities NPCs can cycle between.
+#
+# A routine is nothing more than a way to define a group of activities
+# that will be randomly requested whenever the previous activity finished.
+#
+# Routines are automatically cleared when the NPC leaves for the next part
+# of their schedule.
+[default]
+	# The activities this routine will automatically cycle through
+	activities = []
+	# The activities that can interrupt the routine at any moment. These are always
+	# ones that the programmers wrote with more complex behavior, such as serving food.
+	overrides = []
+	# If true the `wander` activity will be attempted if all other activities in this routine fail.
+	wander_on_failure = false
+
+[inn_chores]
+	activities = ["sing", "sweep", "stock_shelves"]
+
+[inn_bar_service]
+	activities = ["polish_glass"]
+	overrides = ["serve_bar"]
+
+[inn_table_service]
+	activities = ["cook", "chop_vegetables", "stir_soup_pot", "hot_pass"]
+	overrides = ["serve_table"]
+
+[inn_solo_josephine]
+	activities = [
+		"cook",
+		"chop_vegetables",
+		"stir_soup_pot",
+		"polish_glass",
+		"sweep",
+	]
+	overrides = ["serve_bar", "serve_table"]
+
+[inn_josephine_fnati]
+	activities = [
+		"cook",
+		"chop_vegetables",
+		"stir_soup_pot",
+		"sweep",
+	]
+	overrides = ["serve_table"]
+
+[inn_reina_fnati]
+	activities = [
+		"cook",
+		"chop_vegetables",
+		"stir_soup_pot",
+		"hot_pass",
+	]
+	overrides = ["serve_bar"]
+
+[inn_solo_hemlock]
+	activities = ["cook", "chop_vegetables", "stir_soup_pot", "polish_glass"]
+	overrides = ["serve_bar", "serve_table"]
+
+[inn_solo_bartend]
+	activities = ["polish_glass"]
+	overrides = ["serve_bar", "serve_table"]
+
+[inn_solo_reina]
+	activities = [
+		"cook",
+		"chop_vegetables",
+		"stir_soup_pot",
+		"hot_pass",
+		"polish_glass",
+	]
+	overrides = ["serve_bar", "serve_table"]
+
+[inn_olric]
+	activities = ["sweep", "stir_soup_pot", "cook", "polish_glass"]
+	overrides = ["serve_bar", "serve_table"]
+
+[inn_kids]
+	activities = ["stir_soup_pot", "cook", "attend_register", "stock_shelves"]
+
+[inn_celine]
+	activities = ["stir_soup_pot", "cook", "stock_shelves", "sweep"]
+
+[inn_baking]
+	activities = ["cook", "hot_pass"]
+	overrides = ["serve_table"]
+
+[inn_hayden_fnati]
+	activities = ["cook", "hot_pass"]
+
+[room_clean]
+	activities = ["sweep", "tidy_action"]
+
+[look_for_sticks]
+	activities = ["look_for_sticks"]
+
+[general_store]
+	activities = ["sweep", "attend_register", "stock_shelves"]
+
+[general_store_shopping]
+	activities = ["shopping", "checking_out"]
+
+[hayden_farm_work]
+	activities = ["repair_work", "till", "water_plants", "wipe_brow"]
+
+[hayden_farm_work_rain]
+	activities = ["repair_work"]
+
+[hayden_farm_work_pumpkin_patch]
+	activities = ["till", "water_plants"]
+
+[hayden_farm_work_ryis]
+	activities = ["repair_work", "wipe_brow"]
+
+[celine_gardening]
+	activities = ["celine_gardening"]
+
+[hgs_it]
+	activities = ["hgs_it"]
+
+[inspect]
+	activities = ["inspect"]
+
+[saturday_market]
+	activities = [
+		"visit_darcy_stall",
+		"visit_louis_stall",
+		"visit_merri_stall",
+		"visit_stillwell_stall",
+		"visit_taliferro_stall",
+		"visit_vera_stall",
+		"visit_wheedle_stall",
+		"visit_zorel_stall",
+	]
+
+[saturday_market_inspector]
+	activities = [
+		"visit_darcy_stall",
+		"visit_louis_stall",
+		"visit_merri_stall",
+		"visit_stillwell_stall",
+		"visit_taliferro_stall",
+		"visit_vera_stall",
+		"visit_wheedle_stall",
+		"visit_zorel_stall",
+		"inspect",
+		"inspect_upgrade_one",
+		"inspect_upgrade_two"
+	]
+
+[adeline_office_work]
+	activities = ["adeline_office_work", "adeline_desk_work"]
+
+[eastern_road_archaeology]
+	activities = [
+		"archaeology_pickaxe",
+		"archaeology_magnify",
+		"archaeology_brush",
+		"archaeology_trowel",
+	]
+
+[eiland_office_work]
+	activities = [
+		"eiland_office_work_action",
+		"eiland_office_work_magnify",
+		"eiland_office_work_write",
+		"eiland_office_work_idle",
+	]
+
+[inn_yard_chores]
+	activities = ["inn_yard_chores_action", "inn_yard_chores_idle"]
+
+[general_store_home_chores]
+	activities = ["sweep", "clean"]
+
+[celines_house_chores]
+	activities = ["sweep", "clean"]
+
+[narrows_archaeology]
+	activities = [
+		"archaeology_pickaxe",
+		"archaeology_magnify",
+		"archaeology_brush",
+		"archaeology_action",
+		"archaeology_trowel",
+	]
+
+[western_ruins_archaeology_pit]
+	activities = [
+		"archaeology_pickaxe",
+		"archaeology_magnify",
+		"archaeology_brush",
+		"archaeology_action",
+		"archaeology_buckets",
+		"archaeology_trowel",
+	]
+
+[western_ruins_archaeology_pit_errol]
+	activities = [
+		"archaeology_pickaxe",
+		"archaeology_brush",
+		"archaeology_action",
+		"archaeology_buckets",
+		"archaeology_trowel",
+	]
+[western_ruins_archaeology_winter]
+	activities = [
+		"archaeology_buckets",
+		"archaeology_brush",
+		"archaeology_action",
+	]
+[town_repair_work]
+	activities = ["repair_work", "wipe_brow"]
+
+[general_store_outside_chores]
+	activities = ["sweep", "fix_shutters"]
+
+[forge_work_solo]
+	activities = ["anvil", "forge", "forge_wipe_brow_principal"]
+
+[forge_work_principal]
+	activities = ["anvil", "forge", "forge_wipe_brow_principal"]
+
+[forge_work_secondary]
+	activities = ["forge", "anvil_tongs", "forge_wipe_brow_secondary"]
+
+[pond_wander]
+	activities = ["pond_wander"]
+
+[darcy_packing]
+	activities = ["darcy_packing"]
+
+[merri_packing]
+	activities = ["merri_packing"]
+
+[stillwell_packing]
+	activities = ["stillwell_packing"]
+
+[wheedle_packing]
+	activities = ["wheedle_packing"]
+
+[louis_packing]
+	activities = ["louis_packing"]
+
+[vera_packing]
+	activities = ["vera_packing"]
+
+[taliferro_packing]
+	activities = ["taliferro_packing"]
+
+[zorel_packing]
+	activities = ["zorel_packing"]
+
+[manor_garden_wander]
+	activities = ["manor_garden_wander"]
+
+[eastern_road_foraging_north]
+	activities = ["eastern_road_foraging_north"]
+
+[leylines]
+	activities = ["leylines"]
+
+[home_cooking]
+	activities = ["home_cooking"]
+
+[fishing]
+	activities = ["fishing"]
+
+[narrows_ruins_wander]
+	activities = ["narrows_ruins_wander"]
+
+[haydens_farm_foraging]
+	activities = ["haydens_farm_foraging"]
+
+[manor_gardening]
+	activities = ["manor_gardening"]
+
+[arm_day]
+	activities = ["arm_day", "workout_wipe_brow"]
+
+[leg_day]
+	activities = ["leg_day", "workout_wipe_brow"]
+
+[full_body_workout]
+	activities = ["arm_day", "leg_day", "workout_wipe_brow"]
+
+[dozy_snooze]
+	activities = ["dozy_snooze", "dozy_sleep"]
+
+[western_ruins_north_wander]
+	activities = ["western_ruins_north_wander", "leylines"]
+
+[western_ruins_south_wander]
+	activities = ["western_ruins_south_wander"]
+
+[eastern_road_woodwork]
+	activities = ["woodwork", "woodwork_action", "woodwork_planning", "wipe_brow"]
+
+[beach_dock_fishing]
+	activities = ["beach_dock_fishing", "beach_dock_baiting", "catch"]
+
+[beach_wave_fishing]
+	activities = ["beach_wave_fishing", "beach_wave_baiting"]
+
+[spring_festival_dozy_wander]
+	activities = ["spring_festival_dozy_wander"]
+
+[animal_festival_dozy_wander]
+	activities = ["animal_festival_dozy_wander"]
+
+[pumpkin_patch]
+	activities = ["pumpkin_patch"]
+
+[celine_cottage_outside_chores]
+	activities = ["cottage_sweep", "cottage_windows"]
+
+[museum_visit]
+	activities = ["museum_rotation", "museum_sitting"]
+
+[museum_work]
+	activities = ["museum_sweep"]
+
+[clinic_work]
+	activities = ["tidy_action", "sweep"]
+
+[caldarus_house_reading]
+	activities = ["reading", "desk_reading", "scroll_rearranging"]
+
+[scroll_rearranging]
+	activities = ["scroll_rearranging"]
+
+[tea_making]
+	activities = ["tea_making", "tea_drinking"]
+
+[statue_cleaning]
+	activities = ["statue_cleaning"]
+
+[tree_pruning]
+	activities = ["tree_pruning"]
+
+[deep_woods_gardening]
+	activities = ["deep_woods_gardening"]
+
+[deep_woods_pond_wander]
+	activities = ["deep_woods_pond_wander"]
+
+[deep_woods_wander]
+	activities = ["deep_woods_wander"]
+
+[deep_woods_forage]
+	activities = ["deep_woods_forage"]
+
+[deep_woods_west_forage]
+	activities = ["deep_woods_west_forage"]
+
+[harvest_festival_kitchen]
+	activities = ["hf_action", "hf_chop", "hf_polish", "hf_stand"]
+
+[harvest_festival_dozy_wander]
+	activities = ["hf_dozy_wander"]
+
+[bathhouse_magic]
+	activities = ["study", "study_sit", "spell_cast", "ingredients"]
+
+[grove_of_rest_wander]
+	activities = ["grove_of_rest_wander"]
+
+[narrows_workout]
+	activities = ["narrows_workout"]
+
+[seridia_inside_writing]
+	activities = ["seridia_inside_writing", "seridia_bookshelf_writing"]
+
+[seridia_bookshelf]
+	activities = ["seridia_bookshelf_writing", "seridia_shelf_rearranging"]
+
+[seridia_statue_cleaning]
+	activities = ["seridia_statue_cleaning"]
+
+[seridia_spell_cast]
+	activities = ["seridia_spell_cast"]
+
+[seridia_coffee_making]
+	activities = ["seridia_fire_stoke", "seridia_coffee"]
+
+[seridia_gold]
+	activities = ["seridia_gold_arrange", "seridia_gold_count"]
+
+[seridia_dig_site_wander]
+	activities = ["seridia_dig_site_wander"]
+
+[seridia_western_ruins_writing]
+	activities = ["seridia_western_ruins_writing"]
+
+[seridia_western_ruins_writing_and_wander]
+	activities = ["western_ruins_north_wander", "seridia_western_ruins_writing"]
+
+[seridia_beach_wander]
+	activities = ["seridia_beach_wander"]
+
+[seridia_narrows_ruins_wander]
+	activities = ["seridia_narrows_ruins_wander"]
+
+[fnati_five_kids_inn]
+	activities = ["cook_fnati_kids", "chop_vegetables_fnati_kids", "hot_pass_fnati_kids", "scratch_head_fnati_kids", "stir_soup_pot_fnati_kids"]
+
+[inn_josephine_fnati_five]
+	activities = ["sweep"]
+	overrides = ["serve_table"]
+
+[adeline_roommate]
+	wander_on_failure = true
+	activities = [
+		"roommate_cooking",
+		"roommate_sitting",
+		"roommate_read_sitting",
+		"roommate_write_sitting",
+		"roommate_work_sitting",
+	]
+
+[balor_roommate]
+	wander_on_failure = true
+	activities = [
+		"roommate_cooking",
+		"roommate_sitting",
+		"roommate_read_sitting",
+		"roommate_sitting_idle",
+		"roommate_inspect_gem",
+		"roommate_action",
+	]
+
+[caldarus_roommate]
+	activities = [
+		"roommate_cooking",
+		"roommate_sitting",
+		"roommate_read_sitting",
+		"roommate_lute_playing",
+		]
+
+[celine_roommate]
+	wander_on_failure = true
+	activities = [
+		"roommate_cooking",
+		"roommate_sitting",
+		"roommate_read_sitting",
+		"roommate_action",
+		"roommate_water",
+		"roommate_sweep",
+	]
+
+[eiland_roommate]
+	activities = [
+		"roommate_cooking",
+		"roommate_sitting",
+		"roommate_read_sitting",
+		"roommate_write_sitting",
+		"roommate_action",
+		"roommate_brush",
+		]
+
+[hayden_roommate]
+	activities = [
+		"roommate_cooking",
+		"roommate_sitting",
+		"roommate_read_sitting",
+		"roommate_action",
+		"roommate_water",
+		]
+
+[juniper_roommate]
+	wander_on_failure = true
+	activities = [
+		"roommate_cooking",
+		"roommate_sitting",
+		"roommate_read_sitting",
+		"roommate_spell_cast",
+		"roommate_action",
+	]
+
+[march_roommate]
+	wander_on_failure = true
+	activities = [
+		"roommate_cooking",
+		"roommate_sitting",
+		"roommate_read_sitting",
+		"roommate_work_sitting",
+		"roommate_hammer",
+	]
+
+[reina_roommate]
+	wander_on_failure = true
+	activities = [
+		"roommate_cooking",
+		"roommate_sitting",
+		"roommate_read_sitting",
+		"roommate_write_sitting",
+		"roommate_action",
+		"roommate_chop",
+	]
+
+[ryis_roommate]
+	wander_on_failure = true
+	activities = [
+		"roommate_cooking",
+		"roommate_sitting",
+		"roommate_read_sitting",
+		"roommate_write",
+		"roommate_saw",
+	]
+
+[seridia_roommate]
+	wander_on_failure = true
+	activities = [
+		"roommate_cooking",
+		"roommate_sitting",
+		"roommate_read_sitting",
+		"roommate_write_sitting",
+		"roommate_spell_cast",
+		"roommate_action",
+	]
+
+[valen_roommate]
+	wander_on_failure = true
+	activities = [
+		"roommate_cooking",
+		"roommate_sitting",
+		"roommate_read_sitting",
+		"roommate_write_sitting",
+		"roommate_action",
+	]
+
+[dozy_roommate]
+	wander_on_failure = true
+	activities = ["roommate_dozy_bed_sleep"]
+
+[henrietta_roommate]
+	wander_on_failure = true
+	activities = []

@@ -1,0 +1,220 @@
+[balor_six_hearts_follow_up_adeline]
+refresh = "never"
+requires = [{ npc = "adeline" }, { balor_heart_event = "six_heart" }]
+portrait = "think"
+local = "Wheedle has been sniffing around town, but it seems like he's up to more than his usual tricks."
+
+[balor_six_hearts_follow_up_balor]
+refresh = "never"
+requires = [{ npc = "balor" }, { balor_heart_event = "six_heart" }]
+portrait = "think"
+local = "Funny isn't it? You spend your whole life working towards a dream, then it drops into your lap and suddenly..."
+next = "1"
+
+[balor_six_hearts_follow_up_balor.1]
+portrait = "sigh"
+effect = "sigh"
+local = "Don't mind me."
+
+[balor_six_hearts_follow_up_wheedle]
+refresh = "never"
+requires = [{ npc = "wheedle" }, { balor_heart_event = "six_heart" }]
+portrait = "neutral"
+local = "Checking in on your pal's Balor decision? Don't worry, I'm sure he'll make the right call."
+next = "1"
+
+[balor_six_hearts_follow_up_wheedle.1]
+portrait = "wink"
+local = "Which is to say, the one that makes him the most money."
+next = "2"
+
+[balor_six_hearts_follow_up_wheedle.2]
+portrait = "happy"
+local = "Huhuhu!"
+
+[balor_six_hearts]
+kind = "gameplay_triggered"
+writes = [{ balor_heart_event = "six_heart", expires = "4d" }]
+speaker = "balor"
+portrait = "happy"
+local = "[Ari], there you are! Come and join me."
+next = "1"
+
+[balor_six_hearts.1]
+speaker = "balor"
+portrait = "neutral"
+local = "Hemlock, bring us over whatever the most expensive drink on the menu is."
+next = "2"
+
+[balor_six_hearts.2]
+speaker = "hemlock"
+portrait = "neutral"
+local = "You got it! Seems like you're in a rare mood, Balor."
+next = "3"
+
+[balor_six_hearts.3]
+speaker = "balor"
+portrait = "wink"
+local = "Why shouldn't I be?"
+next = "4"
+
+[balor_six_hearts.4]
+speaker = "balor"
+portrait = "neutral"
+local = "Profits are up, the town's businesses are booming... I couldn't be happier."
+next = "5"
+
+[balor_six_hearts.5]
+speaker = "hemlock"
+portrait = "happy"
+local = "Cheers you two, have the rest of the bottle on the house. Just give me a yell when you're ready to order."
+next = "6"
+
+[balor_six_hearts.6]
+speaker = "balor"
+portrait = "sly"
+local = "To [Ari], and to Mistria!"
+prompts = [
+	{ local = "I'll drink to that!", next = "7" },
+	{ local = "Actually, can I get a lemonade?", next = "8" },
+	{ local = "To Mistria, to raising my cut of the profits!", next = "9" }
+]
+
+[balor_six_hearts.7]
+speaker = "balor"
+portrait = "happy"
+local = "Cheers!"
+next = "10"
+
+[balor_six_hearts.8]
+speaker = "balor"
+portrait = "happy"
+local = "Of course! Hemlock, a glass of your fanciest lemonade, if you please."
+next = "10"
+
+[balor_six_hearts.9]
+speaker = "balor"
+portrait = "happy"
+local = "Haha, if business keeps up like this..."
+next = "10"
+
+[balor_six_hearts.10]
+speaker = "wheedle"
+portrait = "happy"
+local = "Well doesn't this look cozy! Mind if I join?"
+next = "11"
+
+[balor_six_hearts.11]
+speaker = "balor"
+portrait = "mad"
+local = "Wheedle! Yes, actually."
+next = "12"
+
+[balor_six_hearts.12]
+speaker = "wheedle"
+portrait = "neutral"
+local = "Splendid!"
+next = "13"
+
+[balor_six_hearts.13]
+speaker = "balor"
+portrait = "mad"
+effect = "angry"
+local = "To what do we owe the unexpected pleasure of your company?"
+next = "14"
+
+[balor_six_hearts.14]
+speaker = "wheedle"
+portrait = "happy"
+local = "Why I thought you'd never ask!"
+next = "15"
+
+[balor_six_hearts.15]
+speaker = "wheedle"
+portrait = "neutral"
+local = "I represent a consortium of merchants who have taken an interest in your work in Mistria, Balor. We're all very impressed."
+next = "16"
+
+[balor_six_hearts.16]
+speaker = "wheedle"
+portrait = "wink"
+local = "You've certainly made lemonade out of lemons."
+next = "17"
+
+[balor_six_hearts.17]
+speaker = "balor"
+portrait = "ugh"
+local = "Get to the point."
+next = "18"
+
+[balor_six_hearts.18]
+speaker = "wheedle"
+portrait = "neutral"
+local = "This paperwork transfers your Mistrian contract rights over to my business partners, and you walk away with..."
+next = "19"
+
+[balor_six_hearts.19]
+speaker = "balor"
+portrait = "angry_blush"
+effect = "shock"
+local = "This is-!"
+next = "20"
+
+[balor_six_hearts.20]
+speaker = "wheedle"
+portrait = "wink"
+local = "Well, to call it a tidy sum doesn't do it justice, does it?"
+prompts = [
+	{ local = "Do the contracts with the Mistrian businesses stay the same?", next = "21" },
+	{ local = "And what's my cut?", next = "22" }
+]
+
+[balor_six_hearts.21]
+speaker = "wheedle"
+portrait = "happy"
+local = "I'm afraid that's not for you to decide."
+next = "23"
+
+[balor_six_hearts.22]
+speaker = "wheedle"
+portrait = "happy"
+local = "And why would you need such a thing?"
+next = "23"
+
+[balor_six_hearts.23]
+speaker = "balor"
+portrait = "mad"
+local = "I... see."
+next = "24"
+
+[balor_six_hearts.24]
+speaker = "wheedle"
+portrait = "neutral"
+local = "Well I won't overstay this warm welcome. Think about it, Balor. It's everything you've ever wanted, isn't it?"
+next = "25"
+
+[balor_six_hearts.25]
+speaker = "balor"
+portrait = "ugh"
+local = "Well that was unexpected."
+next = "26"
+
+[balor_six_hearts.26]
+speaker = "balor"
+portrait = "concerned"
+local = "Can I have a rain check on the meal, [Ari]? I've got a lot to think about."
+prompts = [
+	{ local = "You aren't thinking of taking Wheedle's scummy deal?", next = "27" },
+	{ local = "You should do whatever makes you happy.", next = "27" }
+]
+
+[balor_six_hearts.27]
+speaker = "balor"
+portrait = "sigh"
+local = "..."
+next = "28"
+
+[balor_six_hearts.28]
+speaker = "balor"
+portrait = "concerned"
+local = "Hemlock, can you bring me a fresh bottle? Thanks."

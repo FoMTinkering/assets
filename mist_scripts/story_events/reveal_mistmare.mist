@@ -1,0 +1,45 @@
+scene(narrows);
+wait(1);
+fade_out(1);
+place_actor(ari, north, "reveal_mistmare_ari_spawn");
+camera_position(rm_camera_1);
+face(ari, north);
+wait(0.5);
+fade_in(2);
+wait(1);
+var mistmare = spawn_animal(horse, mistmare, male, 10, west, "reveal_mistmare_horse_spawn");
+free play_sound("SoundEffects/Animals/SteedSummon");
+sim {
+	mistmare_poof();
+	free pan_camera(1, rm_camera_2);
+}
+wait(0.25);
+free bark_speech(ari, exclamation_mark);
+animate(mistmare, idle_3);
+wait(0.25);
+face(ari, east);
+wait(1);
+animate(mistmare, idle);
+wait(1.5);
+sim {
+	walk(ari, reveal_mistmare_ari_approach);
+	set_move_speed(ari, 0.4);
+}
+face(ari, east);
+wait(1);
+animate(ari, action);
+wait(1);
+face(mistmare, west);
+animate(mistmare, happy);
+wait(0.2);
+free play_sound("SoundEffects/Animals/HorseNeigh");
+await_ari_animation();
+animate(ari, idle);
+wait(0.5);
+run_tutorial("mistmare");
+wait(1);
+free bark_speech(ari, heart);
+wait(1);
+fade_out(2);
+camera_position(ari);
+

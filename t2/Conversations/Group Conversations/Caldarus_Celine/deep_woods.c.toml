@@ -1,0 +1,98 @@
+[deep_woods_0]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "celine" }] },
+	{ caldarus_zone = "<celine_zone>" },
+	{ caldarus_seridia_town = true },
+	{ location = "deep_woods" }
+]
+speaker = "celine"
+portrait = "think"
+local = "You know, I'd never seen a $Temple Flowers$ in person until the Deep Woods were re-opened!"
+next = "1"
+
+[deep_woods_0.1]
+speaker = "celine"
+portrait = "neutral"
+local = "Even before the earthquake, your shrine was overgrown and blocked."
+next = "2"
+
+[deep_woods_0.2]
+speaker = "caldarus"
+portrait = "neutral"
+local = "The Dragon Priestesses cultivated those flowers carefully to ensure their hardiness."
+next = "3"
+
+[deep_woods_0.3]
+speaker = "caldarus"
+portrait = "sigh"
+local = "If not for their diligence, those pale blossoms may not have survived to today."
+next = "4"
+
+[deep_woods_0.4]
+speaker = "celine"
+portrait = "happy"
+local = "Really? Well, I'll take up their efforts so future Mistrians can appreciate them as well!"
+
+[deep_woods_1]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "celine" }] },
+	{ caldarus_zone = "<celine_zone>" },
+	{ caldarus_seridia_town = true },
+	{ is_inside = false },
+	{ season = "winter" }
+]
+actions = [{ item = "jasmine_tea" }]
+speaker = "celine"
+portrait = "gloomy"
+local = "Aren't you chilly, Caldarus? I brought a flask of tea if you'd like to warm up!"
+next = "1"
+
+[deep_woods_1.1]
+speaker = "caldarus"
+portrait = "sigh"
+local = "Oh... thank you, Celine. Simply holding the tea warms my hands, and your kindness warms my spirit."
+next = "2"
+
+[deep_woods_1.2]
+speaker = "celine"
+portrait = "happy"
+local = "You have some too, [Ari]! It's a homemade blend!"
+
+[deep_woods_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "celine" }] },
+	{ caldarus_zone = "<celine_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false },
+	{ caldarus_is_spouse = false }
+]
+speaker = "celine"
+portrait = "think"
+local = "Caldarus, have you ever thought about moving to town? Don't you get lonely living in the Deep Woods by yourself?"
+next = "1"
+
+[deep_woods_2.1]
+speaker = "caldarus"
+portrait = "neutral"
+local = "I do not consider myself alone in a place colored so deeply by memories."
+next = "2"
+
+[deep_woods_2.2]
+speaker = "caldarus"
+portrait = "smile"
+local = "And the woods are neither lonely nor empty... I am surrounded on all sides by the hum of life."
+next = "3"
+
+[deep_woods_2.3]
+speaker = "caldarus"
+portrait = "sigh"
+local = "Perhaps I could be convinced, some day..."
+next = "4"
+
+[deep_woods_2.4]
+speaker = "caldarus"
+portrait = "smile"
+local = "But for the moment, I am content where I am."

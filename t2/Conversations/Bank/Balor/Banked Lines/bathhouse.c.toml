@@ -1,0 +1,59 @@
+[bathhouse]
+refresh = "2m"
+requires = [{ npc = "balor" }, { balor_building = "bathhouse" }]
+portrait = "neutral"
+local = "No such thing as a perfumed bath on the road, so I come to the Bathhouse whenever I can."
+next = "1"
+
+[bathhouse.1]
+portrait = "happy"
+local = "What a luxury!"
+
+[bathhouse_2]
+refresh = "1y"
+requires = [
+	{ npc = "balor" },
+	{ balor_building = "bathhouse" },
+	{ balor_heart_level = 4, comparator = ">=" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "neutral"
+local = "Juniper's got a peppery aroma going with today's bath."
+next = "1"
+
+[bathhouse_2.1]
+portrait = "happy"
+local = "That and the heat reminds me of faraway market streets. It's a nice memory."
+
+[bathhouse_3]
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ balor_building = "bathhouse" },
+	{ balor_heart_level = 4, comparator = ">=" },
+	{ date_time = "1y", comparator = ">=" },
+	{ season = "winter" }
+]
+portrait = "wink"
+local = "A visit to the Bathhouse is a perfect remedy for the winter chill."
+
+[bathhouse_4]
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ balor_building = "bathhouse" },
+	{ balor_heart_level = 4, comparator = ">=" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "think"
+local = "I learned early in my career to take my time with washing my hair."
+next = "1"
+
+[bathhouse_4.1]
+portrait = "neutral"
+local = "A merchant's hair ought to look luxurious... to convey a sense of prosperity."
+next = "2"
+
+[bathhouse_4.2]
+portrait = "wink"
+local = "What do you think? Is it working?"

@@ -1,0 +1,63 @@
+[spring_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "seridia" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ caldarus_seridia_town = true }
+]
+portrait = "smile"
+local = "What a charming festival!"
+next = "1"
+
+[spring_festival_0.1]
+portrait = "think"
+local = "Celine even braved a visit to my Temple to plead for flowers for it."
+next = "2"
+
+[spring_festival_0.2]
+portrait = "sly"
+local = "Fearless, that one."
+
+[spring_festival_first_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "seridia" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ any = [{ sf_first_place = true }, { sf_first_place_plus = true }] },
+	{ caldarus_seridia_town = true }
+]
+portrait = "smile"
+local = "A well earned first place, [Ari]."
+next = "1"
+
+[spring_festival_first_place.1]
+portrait = "think"
+local = "I was tempted to summon enough $Breath of Spring$ flowers to win, but..."
+next = "2"
+
+[spring_festival_first_place.2]
+portrait = "happy"
+local = "Where is the fun in that?"
+
+[spring_festival_other_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "seridia" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ any = [
+		{ sf_second_place = true },
+		{ sf_third_place = true },
+		{ sf_no_place = true }
+	] },
+	{ caldarus_seridia_town = true }
+]
+portrait = "unsure"
+local = "Remarkable to think that there are townsfolk who can best even my Dragonsworn."
+next = "1"
+
+[spring_festival_other_place.1]
+portrait = "serious"
+local = "I am sure next year you'll take first, right [Ari]?"

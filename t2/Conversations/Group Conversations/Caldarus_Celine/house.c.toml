@@ -1,0 +1,89 @@
+[house_0]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "celine" }] },
+	{ caldarus_zone = "<celine_zone>" },
+	{ caldarus_seridia_town = true },
+	{ location = "celines_room" }
+]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Your house is quite comfortable, Celine."
+next = "1"
+
+[house_0.1]
+speaker = "caldarus"
+portrait = "smile"
+local = "With all these plants, it is as though the outside is inside. I find it pleasing."
+next = "2"
+
+[house_0.2]
+speaker = "celine"
+portrait = "very_happy"
+local = "Oh, I'm so glad you like it!"
+
+[house_1]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "celine" }] },
+	{ caldarus_zone = "<celine_zone>" },
+	{ caldarus_seridia_town = true },
+	{ location = "celines_room" }
+]
+speaker = "celine"
+portrait = "neutral"
+local = "Can I offer you anything, Caldarus? Tea?"
+next = "1"
+
+[house_1.1]
+speaker = "caldarus"
+portrait = "smile"
+local = "Your hospitality is appreciated. I would very much enjoy a cup of tea."
+next = "2"
+
+[house_1.2]
+speaker = "celine"
+portrait = "think"
+local = "Oh, great! I have green, black, jasmine, chamomile, lemon, apple..."
+next = "3"
+
+[house_1.3]
+speaker = "celine"
+portrait = "happy"
+local = "Apple cinnamon, apple ginger, apple honey..."
+next = "4"
+
+[house_1.4]
+speaker = "celine"
+portrait = "very_happy"
+local = "Lavender, rose, lavender rose and... mint!"
+next = "5"
+
+[house_1.5]
+speaker = "caldarus"
+portrait = "sigh"
+local = "You know, I have always considered myself close to nature..."
+next = "6"
+
+[house_1.6]
+speaker = "caldarus"
+portrait = "smile"
+local = "But I had no idea so much of it could become tea."
+
+[house_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "celine" }] },
+	{ caldarus_zone = "<celine_zone>" },
+	{ caldarus_seridia_town = true },
+	{ location = "deep_woods", comparator = "!=" }
+]
+speaker = "celine"
+portrait = "happy"
+local = "I'm so glad the $Deep Woods$ are accessible again... I missed getting lost in those trees."
+next = "1"
+
+[house_2.1]
+speaker = "caldarus"
+portrait = "smile"
+local = "Please come and explore any time you like. The forest belongs to everyone."

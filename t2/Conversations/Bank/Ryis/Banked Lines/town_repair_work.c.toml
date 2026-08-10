@@ -1,0 +1,108 @@
+[town_repair_work_1]
+refresh = "1m"
+requires = [{ npc = "ryis" }, { ryis_routine = "town_repair_work" }]
+portrait = "neutral"
+local = "These repairs are coming along! A little at a time adds up."
+
+[town_repair_work_2]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_routine = "town_repair_work" },
+	{ season = "winter", comparator = "!=" }
+]
+portrait = "neutral"
+local = "S'good to patch up as much as we can before winter hits."
+
+[town_repair_work_3]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_routine = "town_repair_work" },
+	{ season = "spring" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "think"
+local = "I'm fixing up this and that, but overall the town's looking pretty good after winter."
+next = "1"
+
+[town_repair_work_3.1]
+portrait = "happy"
+local = "All that prep in the autumn really paid off!"
+
+[town_repair_work_4]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_routine = "town_repair_work" },
+	{ season = "fall" },
+	{ ryis_heart_level = 4, comparator = ">=" }
+]
+portrait = "neutral"
+local = "Just trying to finish off this job before it gets properly cold."
+next = "1"
+
+[town_repair_work_4.1]
+portrait = "happy"
+local = "Hope the day's treating you nice, [Ari]."
+
+[town_repair_work_5]
+refresh = "1y"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_routine = "town_repair_work" },
+	{ ryis_heart_level = 4, comparator = ">=" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "happy"
+local = "I'm ahead of schedule today. Cool."
+
+[town_repair_work_6]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_routine = "town_repair_work" },
+	{ ryis_heart_level = 4, comparator = ">=" },
+	{ date_time = "1y", comparator = ">=" },
+	{ season = "winter" }
+]
+portrait = "neutral"
+local = "Back in the Capital, I'd be warm the whole winter because we'd have all the ovens going."
+next = "1"
+
+[town_repair_work_6.1]
+portrait = "happy"
+effect = "drop"
+local = "As you can imagine, that's not the case in the Carpenter's Shop."
+
+[town_repair_work_7]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_routine = "town_repair_work" },
+	{ date_time = "1y", comparator = ">=" },
+	{ quest_repair_the_summit_stairs_complete = true }
+]
+portrait = "neutral"
+local = "This is more like maintenance than repair. Town's been looking good."
+next = "1"
+
+[town_repair_work_7.1]
+portrait = "happy"
+local = "How's Terithia put it? Shipshape."
+
+[town_repair_work_8]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_routine = "town_repair_work" },
+	{ season = "winter" },
+	{ louis_has_met = true, ignore_priority = true }
+]
+portrait = "neutral"
+local = "I got these gloves off Louis at a past Saturday Market. You really can't be hammering in the winter without some gloves."
+next = "1"
+
+[town_repair_work_8.1]
+portrait = "think"
+local = "Well, unless you're Hayden. He's built different."

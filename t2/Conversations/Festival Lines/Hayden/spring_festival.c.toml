@@ -1,0 +1,30 @@
+[flower_crown]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "hayden" },
+	{ spring_festival_date = "1d", time = "after" },
+]
+portrait = "happy"
+local = "Happy Spring Festival! I made Henrietta her traditional flower crown this morning."
+next = "1"
+
+[flower_crown.1]
+portrait = "sweat"
+local = "'course, she already ate it."
+next = "2"
+
+[flower_crown.2]
+portrait = "happy_fist"
+local = "Gya ha ha!"
+
+[first_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "hayden" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ any = [{ sf_first_place = true }, { sf_first_place_plus = true }] },
+]
+portrait = "happy_fist"
+local = "Way to go, [Ari]! I can't remember the last time the festival was so lively!"

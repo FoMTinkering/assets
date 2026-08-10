@@ -1,0 +1,22 @@
+[vouch]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 6, comparator = ">=" },
+	{ march_heart_level = 8, comparator = "<=" },
+	{ march_status = "undefined" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+		{ march_zone = "blacksmith_store/till" },
+		{ march_zone = "blacksmith_store/workbench" },
+	] },
+]
+portrait = "think"
+local = "I can vouch for the quality of my metalwork."
+next = "1"
+
+[vouch.1]
+portrait = "neutral"
+local = "I don't take anything more seriously."

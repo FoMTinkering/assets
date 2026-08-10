@@ -1,0 +1,147 @@
+[inn_meal_accept_1]
+kind = "date_acceptance"
+requires = [
+    { npc = "ryis" },
+    { date = "inn_meal" },
+    { da_ryis_inn_meal = 0 },
+    { ryis_is_spouse = false }
+]
+writes = [
+    { da_ryis_inn_meal = 1 },
+    { da_ryis_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "ryis"
+portrait = "neutral"
+local = "Hey, [Ari]."
+next = "1"
+
+[inn_meal_accept_1.1]
+speaker = "ryis"
+portrait = "blush_special"
+local = "Want to go get something to eat at the Inn?"
+next = "2"
+
+[inn_meal_accept_1.2]
+speaker = "ryis"
+portrait = "wink"
+local = "My treat, of course!"
+
+[inn_meal_accept_2]
+kind = "date_acceptance"
+requires = [
+    { npc = "ryis" },
+    { date = "inn_meal" },
+    { da_ryis_inn_meal = 1 },
+    { ryis_is_spouse = false }
+]
+writes = [
+    { da_ryis_inn_meal = 2 },
+    { da_ryis_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "ryis"
+portrait = "blush_special"
+local = "Are you asking me out, [Ari]?"
+next = "1"
+
+[inn_meal_accept_2.1]
+speaker = "ryis"
+portrait = "happy_blush"
+effect = "hearts"
+local = "Of course I'll join you for a meal!"
+next = "2"
+
+[inn_meal_accept_2.2]
+speaker = "ryis"
+portrait = "blush_special"
+local = "Last time was really fun!"
+
+[inn_meal_accept_3]
+kind = "date_acceptance"
+requires = [
+    { npc = "ryis" },
+    { date = "inn_meal" },
+    { ryis_has_child = false },
+    { any = [
+        { ryis_is_spouse = true },
+        { da_ryis_inn_meal = 2, comparator = ">=" }
+    ] }
+]
+writes = [
+    { da_ryis_inn_meal = 3 },
+    { da_ryis_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "ryis"
+portrait = "blush_special"
+local = "Should we go get something to eat, [Ari]?"
+next = "1"
+
+[inn_meal_accept_3.1]
+speaker = "ryis"
+portrait = "happy_blush"
+effect = "hearts"
+local = "Come on, let's go. You can fill me in on your day!"
+
+[inn_meal_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "ryis" },
+    { da_ryis_inn_meal = 1 },
+    { da_ryis_inn_meal_follow_up_gate = true },
+    { ryis_is_spouse = false }
+]
+writes = [{ da_ryis_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "embarrassed"
+local = "We'll have to do that more often, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_1.1]
+portrait = "happy_blush"
+effect = "hearts"
+local = "I had a great time. Really!"
+
+[inn_meal_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "ryis" },
+    { da_ryis_inn_meal = 2 },
+    { da_ryis_inn_meal_follow_up_gate = true },
+    { ryis_is_spouse = false }
+]
+writes = [{ da_ryis_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "blush_special"
+local = "I'm glad we've been getting to spend more time together, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_2.1]
+portrait = "happy_blush"
+effect = "hearts"
+local = "I'm always surprised how much you get me, especially when we get to talking like that..."
+next = "2"
+
+[inn_meal_follow_up_2.2]
+portrait = "embarrassed"
+local = "I guess we really are birds of a feather."
+
+[inn_meal_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "ryis" },
+    { ryis_has_child = false },
+    { any = [{ ryis_is_spouse = true }, { da_ryis_inn_meal = 3 }] },
+    { da_ryis_inn_meal_follow_up_gate = true }
+]
+writes = [{ da_ryis_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "blush_special"
+local = "I had a great time, as always."
+next = "1"
+
+[inn_meal_follow_up_3.1]
+portrait = "happy_blush"
+effect = "hearts"
+local = "Let's make plans to do it again soon, [Ari]."

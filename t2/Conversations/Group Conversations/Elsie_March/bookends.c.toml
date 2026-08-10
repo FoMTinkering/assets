@@ -1,0 +1,22 @@
+[bookends]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "elsie" }, { npc = "march" }] },
+	{ elsie_zone = "<march_zone>" },
+	{ any = [
+		{ location = "blacksmith_store" },
+		{ march_zone = "town/blacksmith_forge" },
+		{ march_zone = "town/forge_lesson" }
+	] }
+]
+actions = [{ bark = { bark = "ellipses", npc = "march" } }]
+speaker = "march"
+portrait = "neutral"
+local = "You want custom bookends? Sure... sounds like a fun project."
+next = "1"
+
+[bookends.1]
+speaker = "elsie"
+portrait = "happy"
+effect = "cheery"
+local = "Wonderful! I made up some sketches!"

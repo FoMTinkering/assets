@@ -1,0 +1,42 @@
+[saturday_no_market]
+refresh = "never"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "celine" },
+		{ npc = "march" },
+		{ npc = "reina" },
+		{ npc = "ryis" },
+	] },
+	{ quest_repair_the_bridge_complete = false },
+	{ quest_repair_the_bridge_in_progress = true },
+	{ adeline_zone = "<celine_zone>" },
+	{ adeline_zone = "<march_zone>" },
+	{ adeline_zone = "<reina_zone>" },
+	{ adeline_zone = "<ryis_zone>" },
+]
+speaker = "celine"
+local = "Hi [Ari]! We were just reminiscing about the Saturday Market!"
+next = "1"
+
+[saturday_no_market.1]
+speaker = "reina"
+portrait = "happy"
+local = "Just because it's not happening, doesn't mean we can't hang out!"
+next = "2"
+
+[saturday_no_market.2]
+speaker = "march"
+portrait = "ugh"
+local = "I miss getting my hair done by a pro... Olric gets a little too excited with the scissors."
+next = "3"
+
+[saturday_no_market.3]
+speaker = "adeline"
+portrait = "wink"
+local = "[Ari] and I are working on it!"
+next = "4"
+
+[saturday_no_market.4]
+speaker = "ryis"
+local = "Can't wait!"

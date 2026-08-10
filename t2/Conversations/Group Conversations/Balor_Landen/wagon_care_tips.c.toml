@@ -1,0 +1,19 @@
+[wagon_care_tips]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "landen" }] },
+	{ balor_zone = "<landen_zone>" },
+	{ location = "landens_house_f1" },
+	{ wagon_needs_repairs = true },
+]
+writes = [{ wagon_needs_repairs = false }]
+speaker = "landen"
+portrait = "mad"
+local = "Do you need some tips on how to take care of your wagon, Balor? I never met someone who needed repairs as often as you."
+next = "1"
+
+[wagon_care_tips.1]
+speaker = "balor"
+portrait = "sly"
+effect = "sparkles"
+local = "Maybe I just like your company, old-timer."

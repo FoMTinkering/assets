@@ -1,0 +1,99 @@
+[beach_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "balor" },
+	{ date = "beach" },
+	{ da_balor_beach = 0 },
+	{ balor_is_spouse = false }
+]
+writes = [
+	{ da_balor_beach = 1 },
+	{ da_balor_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "balor"
+portrait = "blush"
+local = "Would you like to go for a walk, [Ari]?"
+next = "1"
+
+[beach_accept_1.1]
+speaker = "balor"
+portrait = "embarrassed"
+local = "Maybe down at the Beach?"
+next = "2"
+
+[beach_accept_1.2]
+speaker = "balor"
+portrait = "happy"
+local = "Great, let's go!"
+
+[beach_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "balor" },
+	{ date = "beach" },
+	{ balor_has_child = false },
+	{ any = [
+		{ balor_is_spouse = true },
+		{ da_balor_beach = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_balor_beach = 2 },
+	{ da_balor_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "balor"
+portrait = "blush"
+local = "Shall we go out to the Beach for a walk?"
+next = "1"
+
+[beach_accept_2.1]
+speaker = "balor"
+portrait = "happy"
+local = "Here, take my arm. Let's go!"
+
+[beach_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ da_balor_beach = 1 },
+	{ da_balor_beach_follow_up_gate = true },
+	{ balor_is_spouse = false }
+]
+writes = [{ da_balor_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "blush"
+local = "Thanks for joining me at the Beach, [Ari]."
+next = "1"
+
+[beach_follow_up_1.1]
+portrait = "blush_special"
+local = "The way you looked with the sun on your skin and the sea breeze in your hair..."
+prompts = [{ local = "...?", next = "2" }, { local = "(Blush)", next = "3" }]
+
+[beach_follow_up_1.2]
+portrait = "hope_special"
+local = "Well, you looked stunning!"
+
+[beach_follow_up_1.3]
+portrait = "hope_special"
+local = "Well, I can't stop thinking about it!"
+
+[beach_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "balor" },
+	{ balor_has_child = false },
+	{ any = [{ balor_is_spouse = true }, { da_balor_beach = 2 }] },
+	{ da_balor_beach_follow_up_gate = true }
+]
+writes = [{ da_balor_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "blush"
+local = "A walk on the Beach is beautiful any time of year."
+next = "1"
+
+[beach_follow_up_2.1]
+portrait = "embarrassed"
+local = "Especially with you beside me."

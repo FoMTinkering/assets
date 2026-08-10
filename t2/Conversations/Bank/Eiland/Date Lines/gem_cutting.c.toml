@@ -1,0 +1,107 @@
+[gem_cutting_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "eiland" },
+	{ date = "gem_cutting" },
+	{ da_eiland_gem_cutting = 0 },
+	{ eiland_is_spouse = false }
+]
+writes = [
+	{ da_eiland_gem_cutting = 1 },
+	{ da_eiland_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "neutral"
+local = "What's that, [Ari]?"
+next = "1"
+
+[gem_cutting_accept_1.1]
+portrait = "happy_blush"
+local = "A $Gem Cutting Date$?"
+next = "2"
+
+[gem_cutting_accept_1.2]
+portrait = "embarrassed"
+local = "Oh! That sounds really fun!"
+next = "3"
+
+[gem_cutting_accept_1.3]
+portrait = "think"
+local = "I'm used to delicate work, restoring artifacts..."
+next = "4"
+
+[gem_cutting_accept_1.4]
+portrait = "embarrassed"
+local = "Perhaps some of the same skills apply!"
+
+[gem_cutting_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "eiland" },
+	{ date = "gem_cutting" },
+	{ eiland_has_child = false },
+	{ any = [
+		{ eiland_is_spouse = true },
+		{ da_eiland_gem_cutting = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_eiland_gem_cutting = 2 },
+	{ da_eiland_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "happy_blush"
+local = "Would you like to do some $Gem Cutting$, [Ari]?"
+next = "1"
+
+[gem_cutting_accept_2.1]
+portrait = "embarrassed"
+local = "I thought it might be fun to try recreating a gem artifact..."
+next = "2"
+
+[gem_cutting_accept_2.2]
+portrait = "happy_blush"
+local = "What better way to understand how the original was made?"
+
+[gem_cutting_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ da_eiland_gem_cutting = 1 },
+	{ da_eiland_gem_cutting_follow_up_gate = true },
+	{ eiland_is_spouse = false }
+]
+writes = [{ da_eiland_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "happy_blush"
+effect = "cheery"
+local = "I had so much fun $Gem Cutting$ with you, [Ari]!"
+next = "1"
+
+[gem_cutting_follow_up_1.1]
+portrait = "think"
+local = "I suppose the time I've spent restoring inlaid artifacts paid off."
+next = "2"
+
+[gem_cutting_follow_up_1.2]
+portrait = "happy_blush"
+local = "I hope we can do it again soon!"
+
+[gem_cutting_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_has_child = false },
+	{ any = [{ eiland_is_spouse = true }, { da_eiland_gem_cutting = 2 }] },
+	{ da_eiland_gem_cutting_follow_up_gate = true }
+]
+writes = [{ da_eiland_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "happy_blush"
+effect = "cheery"
+local = "I've been enjoying $Gem Cutting$ together, [Ari]!"
+next = "1"
+
+[gem_cutting_follow_up_2.1]
+portrait = "embarrassed"
+local = "It's nice that we've found another shared interest..."

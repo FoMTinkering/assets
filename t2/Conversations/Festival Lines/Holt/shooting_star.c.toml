@@ -1,0 +1,50 @@
+[shooting_star_anticipation]
+refresh = "3m"
+requires = [
+	{ npc = "holt" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+]
+portrait = "neutral"
+local = "Hey there, [Ari]! Thinking about inviting someone to the Shooting Star Festival?"
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "wink"
+local = "The first time I invited Nora to watch the stars, I knew I was ready to star-t a relationship!"
+
+[shooting_star_day_of]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "holt" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ holt_is_at = "town/star_festival_holt", comparator = "!=" },
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+portrait = "neutral"
+local = "Are you looking forward to tonight's festival?"
+next = "1"
+
+[shooting_star_day_of.1]
+portrait = "wink"
+local = "It should be pretty stellar."
+
+
+[shooting_star_celine_follow_up_holt]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "holt" },
+	{ shooting_star_date_status = "celine_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ celine_is_partner = false }
+]
+portrait = "think"
+local = "Celine... Did she really go up to the Summit to watch the stars this year...?"
+next = "1"
+
+[shooting_star_celine_follow_up_holt.1]
+portrait = "sad"
+local = "It seems like it was only yesterday that I'd have to lift her up on my shoulder so she could watch them."

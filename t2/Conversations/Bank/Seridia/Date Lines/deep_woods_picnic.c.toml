@@ -1,0 +1,219 @@
+[deep_woods_picnic_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "seridia" },
+	{ date = "deep_woods_picnic" },
+	{ da_seridia_deep_woods_picnic = 0 },
+	{ seridia_is_spouse = false }
+]
+writes = [
+	{ da_seridia_deep_woods_picnic = 1 },
+	{ da_seridia_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+portrait = "neutral"
+local = "Tell me more of this... picnic you speak of."
+next = "1"
+
+[deep_woods_picnic_accept_1.1]
+portrait = "serious"
+local = "You fill a little basket with morsels? And then carry it into the wilderness to devour it?"
+next = "2"
+
+[deep_woods_picnic_accept_1.2]
+portrait = "sly"
+local = "I see. A picnic is a kind of survival exercise."
+next = "3"
+
+[deep_woods_picnic_accept_1.3]
+portrait = "sly_think"
+local = "And you wish to conduct this exercise in the $Deep Woods$? Inside of enemy territory?"
+next = "4"
+
+[deep_woods_picnic_accept_1.4]
+portrait = "embarrassed"
+local = "Something about this stirs my heart."
+next = "5"
+
+[deep_woods_picnic_accept_1.5]
+portrait = "sinister_blush"
+local = "Yes. Let us... picnic."
+
+[deep_woods_picnic_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "seridia" },
+	{ date = "deep_woods_picnic" },
+	{ da_seridia_deep_woods_picnic = 1 },
+	{ seridia_is_spouse = false }
+]
+writes = [
+	{ da_seridia_deep_woods_picnic = 2 },
+	{ da_seridia_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+portrait = "blush"
+local = "It is time to embark upon another picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_accept_2.1]
+portrait = "blush_think"
+local = "And it is my turn to fill the survival basket."
+next = "2"
+
+[deep_woods_picnic_accept_2.2]
+portrait = "embarrassed"
+local = "Behold! The finest fare, liberated from the Inn."
+next = "3"
+
+[deep_woods_picnic_accept_2.3]
+portrait = "blush"
+local = "Now, let us go and find a secluded corner of the $Deep Woods$ to amuse ourselves."
+
+[deep_woods_picnic_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "seridia" },
+	{ date = "deep_woods_picnic" },
+	{ seridia_has_child = false },
+	{ any = [
+		{ seridia_is_spouse = true },
+		{ da_seridia_deep_woods_picnic = 2, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_seridia_deep_woods_picnic = 3 },
+	{ da_seridia_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+portrait = "embarrassed"
+local = "[Ari], I desire to feel the thrill of eating outdoors again."
+next = "1"
+
+[deep_woods_picnic_accept_3.1]
+portrait = "blush_think"
+local = "Let us pack our basket of rations and steal deep into enemy territory..."
+next = "2"
+
+[deep_woods_picnic_accept_3.2]
+portrait = "sinister_blush"
+local = "Yes. Let us picnic once more."
+
+[deep_woods_picnic_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ da_seridia_deep_woods_picnic = 1 },
+	{ da_seridia_deep_woods_picnic_follow_up_gate = true },
+	{ seridia_is_spouse = false }
+]
+writes = [{ da_seridia_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "think"
+local = "[Ari], as romantic activities go, your idea of a picnic in the $Deep Woods$..."
+next = "1"
+
+[deep_woods_picnic_follow_up_1.1]
+portrait = "blush"
+local = "I found it to be quite thrilling."
+next = "2"
+
+[deep_woods_picnic_follow_up_1.2]
+portrait = "blush_think"
+local = "I have never considered trespassing thusly to be a romantic exercise..."
+next = "3"
+
+[deep_woods_picnic_follow_up_1.3]
+portrait = "sinister_blush"
+local = "But I am happy to be proven wrong."
+next = "4"
+
+[deep_woods_picnic_follow_up_1.4]
+portrait = "embarrassed"
+local = "Let us trespass again soon."
+
+[deep_woods_picnic_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ da_seridia_deep_woods_picnic = 2 },
+	{ da_seridia_deep_woods_picnic_follow_up_gate = true },
+	{ seridia_is_spouse = false }
+]
+writes = [{ da_seridia_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "blush"
+local = "I enjoyed our picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_2.1]
+portrait = "blush_think"
+local = "To smuggle ourselves into the $Deep Woods$, so we might eat and amuse ourselves in secret..."
+next = "2"
+
+[deep_woods_picnic_follow_up_2.2]
+portrait = "embarrassed"
+local = "It makes me feel like a mischievous youngling again."
+prompts = [
+	{ local = "Oh? Did you get up to a lot of mischief back then?", next = "3" },
+	{ local = "Me too. I like getting up to trouble with you.", next = "7" }
+]
+
+[deep_woods_picnic_follow_up_2.3]
+portrait = "think"
+local = "One might say that."
+next = "4"
+
+[deep_woods_picnic_follow_up_2.4]
+portrait = "neutral"
+local = "But then I rose to power, and became the one who decides what mischief is. I suppose, at that point, the shine comes off."
+next = "5"
+
+[deep_woods_picnic_follow_up_2.5]
+portrait = "blush"
+local = "But you have reminded me of what I saw in such diversions, [Ari]."
+next = "6"
+
+[deep_woods_picnic_follow_up_2.6]
+portrait = "embarrassed"
+local = "Provide me with more such diversions soon."
+
+[deep_woods_picnic_follow_up_2.7]
+portrait = "surprise_blush"
+local = "Oho..."
+next = "8"
+
+[deep_woods_picnic_follow_up_2.8]
+portrait = "blush"
+local = "You knew just what to say."
+next = "9"
+
+[deep_woods_picnic_follow_up_2.9]
+portrait = "blush_think"
+local = "You provide me with pleasing diversions, [Ari]."
+next = "10"
+
+[deep_woods_picnic_follow_up_2.10]
+portrait = "embarrassed"
+local = "I look forward to the next one."
+
+[deep_woods_picnic_follow_up_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_has_child = false },
+	{ any = [
+		{ seridia_is_spouse = true },
+		{ da_seridia_deep_woods_picnic = 3 }
+	] },
+	{ da_seridia_deep_woods_picnic_follow_up_gate = true }
+]
+writes = [{ da_seridia_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "blush"
+local = "I enjoyed our picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_3.1]
+portrait = "embarrassed"
+local = "And I will turn the memory over in my mind until the next one."

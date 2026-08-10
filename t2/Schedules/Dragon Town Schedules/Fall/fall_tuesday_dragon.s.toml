@@ -1,0 +1,84 @@
+requires = [
+	{ weather = "pleasant" },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+	{ season = "fall" },
+	{ day_of_the_week = "tuesday" },
+]
+
+# celine
+[celine."6:00am"]
+destination = "celines_room/ArmChair Seat"
+on_arrival_actions = [{ animation = "book_sit" }]
+
+[celine."6:15am"]
+destination = "town/celine_garden_start"
+on_arrival_actions = [
+	{ outfit = "autumn_garden" },
+	{ routine = "celine_gardening" },
+]
+on_departure_actions = [{ outfit = "autumn" }]
+
+[celine."8:42am"]
+destination = "town/Celine Garden 1"
+
+[celine."2:32pm"]
+destination = "general_store_store/south_entrance_to_shift"
+on_arrival_actions = [{ routine = "general_store" }]
+
+[celine."6:13pm"]
+destination = "celines_room/ArmChair Seat"
+delayed_arrival_actions = [
+	{ after = "43n", activity = "drink" },
+	{ after = "4h 29n", animation = "book_sit" }
+]
+
+# juniper
+[juniper."6:00am"]
+destination = "bathhouse_bedroom/Crystal Ball Seat"
+
+[juniper."6:31am"]
+destination = "bathhouse/cauldron_convo_2"
+
+[juniper."10:33am"]
+destination = "bathhouse/Front Desk"
+on_arrival_actions = [{ animation = "snooze" }]
+
+[juniper."11:28am"]
+destination = "town/bathhouse_chat_1"
+
+[juniper."4:11pm"]
+destination = "inn/Top Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[juniper."9:15pm"]
+destination = "bathhouse_bedroom/Crystal Ball Seat"
+
+# seridia
+[seridia."6:00am"]
+destination = "town/north_west_routine_entrance"
+
+[seridia."6:11am"]
+destination = "bathhouse/cauldron_convo_1"
+
+[seridia."10:32am"]
+destination = "town/Celine Garden Talking To"
+
+[seridia."2:31pm"]
+destination = "general_store_store/south_entrance_to_shift"
+on_arrival_actions = [{ routine = "general_store_shopping" }]
+
+[seridia."5:45pm"]
+destination = "town/garden_wander_entrance"
+on_arrival_actions = [{ routine = "manor_garden_wander" }]
+
+[seridia."9:32pm"]
+destination = "town/Manor Gazebo"
+
+[seridia."11:14pm"]
+destination = "town/Stele"
+
+[seridia."1:12am"]
+destination = "western_ruins/north_wander_5"

@@ -1,0 +1,27 @@
+[inn_breakfast]
+refresh = "2m"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ location = "inn" },
+	{ any = [{ ryis_activity = "eat" }, { ryis_activity = "order_food" }] },
+	{ date_time = "2m", comparator = ">=" }
+]
+portrait = "neutral"
+local = "I'm more of a light breakfast kind of guy, but the food at the Inn always gets my appetite going."
+
+[inn_breakfast_2]
+refresh = "1y"
+requires = [
+	{ npc = "ryis" },
+	{ location = "inn" },
+	{ any = [
+		{ ryis_activity = "eat" },
+		{ ryis_activity = "order_food" },
+		{ ryis_activity = "drink" },
+		{ ryis_activity = "order_drink" }
+	] },
+	{ ryis_heart_level = 4, comparator = ">=" }
+]
+portrait = "wink"
+local = "Plenty of room at the table, [Ari]. Pull up a chair."

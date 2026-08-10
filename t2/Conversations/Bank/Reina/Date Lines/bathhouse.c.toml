@@ -1,0 +1,109 @@
+[bathhouse_accept_1]
+kind = "date_acceptance"
+requires = [
+    { npc = "reina" },
+    { date = "bathhouse" },
+    { da_reina_bathhouse = 0 },
+    { reina_is_spouse = false }
+]
+writes = [
+    { da_reina_bathhouse = 1 },
+    { da_reina_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "blush_open_eyes"
+local = "The $Bathhouse$...?"
+next = "1"
+
+[bathhouse_accept_1.1]
+portrait = "blush"
+local = "You want to go together?"
+next = "2"
+
+[bathhouse_accept_1.2]
+portrait = "blush_special"
+effect = "hearts"
+local = "I'd love to, [Ari]!"
+
+[bathhouse_accept_2]
+kind = "date_acceptance"
+requires = [
+    { npc = "reina" },
+    { date = "bathhouse" },
+    { reina_has_child = false },
+    { any = [
+        { reina_is_spouse = true },
+        { da_reina_bathhouse = 1, comparator = ">=" }
+    ] }
+]
+writes = [
+    { da_reina_bathhouse = 2 },
+    { da_reina_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "blush_think"
+local = "Should we hit the $Bathhouse$, [Ari]?"
+next = "1"
+
+[bathhouse_accept_2.1]
+portrait = "blush"
+local = "Yeah? You're up for it?"
+next = "2"
+
+[bathhouse_accept_2.2]
+portrait = "blush_open_eyes"
+local = "Oooh, great! Let's go!"
+
+[bathhouse_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "reina" },
+    { da_reina_bathhouse = 1 },
+    { da_reina_bathhouse_follow_up_gate = true },
+    { reina_is_spouse = false }
+]
+writes = [{ da_reina_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush"
+effect = "cheery"
+local = "Oh, [Ari]!"
+next = "1"
+
+[bathhouse_follow_up_1.1]
+portrait = "blush_think"
+local = "That was such a nice time!"
+next = "2"
+
+[bathhouse_follow_up_1.2]
+portrait = "blush"
+effect = "cheery"
+local = "My whole body feels sooo relaxed."
+next = "3"
+
+[bathhouse_follow_up_1.3]
+portrait = "blush_special"
+local = "I hope we can go again soon!"
+
+[bathhouse_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "reina" },
+    { reina_has_child = false },
+    { any = [{ reina_is_spouse = true }, { da_reina_bathhouse = 2 }] },
+    { da_reina_bathhouse_follow_up_gate = true }
+]
+writes = [{ da_reina_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush_think"
+local = "You know, [Ari]..."
+next = "1"
+
+[bathhouse_follow_up_2.1]
+portrait = "blush"
+effect = "cheery"
+local = "I really love visiting the $Bathhouse$ with you!"
+next = "2"
+
+[bathhouse_follow_up_2.2]
+portrait = "blush_open_eyes"
+local = "Let's go again soon, okay? Just the two of us!"

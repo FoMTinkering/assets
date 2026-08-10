@@ -1,0 +1,144 @@
+[reina_bug_facts_1]
+refresh = "1y"
+requires = [
+	{ npc = "reina" },
+	{ thread_mutex = "undefined" },
+	{ thread_delay = false },
+	{ reina_bug_facts_finished = false },
+	{ reina_heart_level = 3, comparator = ">=" },
+	{ reina_heart_level = 8, comparator = "<" },
+]
+writes = [
+	{ thread_mutex = "reina_bug_facts_1", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+portrait = "think"
+local = "Recently Luc has been teaching me bug facts, and I want to be a good big sister so I'm trying to memorize them..."
+next = "1"
+
+[reina_bug_facts_1.1]
+portrait = "embarrassed"
+local = "But bugs aren't really my thing, you know? Help me review, [Ari]?"
+next = "2"
+
+[reina_bug_facts_1.2]
+portrait = "think"
+local = "Ants are really strong right?"
+prompts = [
+	{ local = "Yeah! They can hold many times their own body weight.", next = "3" },
+	{ local = "I dunno, but they're awfully cute!", next = "4" }
+]
+
+[reina_bug_facts_1.3]
+portrait = "happy"
+effect = "sparkles"
+local = "So interesting! I can see why Luc likes them!"
+
+[reina_bug_facts_1.4]
+portrait = "happy"
+effect = "sparkles"
+local = "They are, aren't they?"
+
+[luc_bug_facts_1]
+refresh = "1y"
+requires = [{ npc = "luc" }, { thread_mutex = "reina_bug_facts_1" }]
+local = "I thought my big sister wasn't listening when I told her about ants, but she totally was!"
+next = "1"
+
+[luc_bug_facts_1.1]
+portrait = "happy"
+local = "She said ants are cute and strong... I'm so glad!"
+
+[reina_bug_facts_2]
+refresh = "instantly"
+requires = [
+	{ npc = "reina" },
+	{ thread_mutex = "reina_bug_facts_1" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "reina_bug_facts_2", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+local = "[Ari]! This is so silly that I forgot but, uh..."
+next = "1"
+
+[reina_bug_facts_2.1]
+portrait = "happy"
+effect = "drop"
+local = "Where are my mandibles?"
+prompts = [
+	{ local = "Isn't that part of your jaw?", next = "2" },
+	{ local = "Is... is that something you use when you're cooking?", next = "3" }
+]
+
+[reina_bug_facts_2.2]
+portrait = "happy"
+local = "I thought so! Thanks, [Ari]!"
+
+[reina_bug_facts_2.3]
+portrait = "think"
+local = "Hmm, it... it might be. Maybe Luc wanted me to make him a special snack?"
+
+[luc_bug_facts_2]
+refresh = "1y"
+requires = [{ npc = "luc" }, { thread_mutex = "reina_bug_facts_2" }]
+portrait = "happy"
+local = "Reina made my favorite snack while we talked about insects! I've got a great big sister."
+
+[reina_bug_facts_3]
+refresh = "instantly"
+requires = [
+	{ npc = "reina" },
+	{ thread_mutex = "reina_bug_facts_2" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "undefined" },
+	{ thread_delay = true, expires = "1d" },
+	{ reina_bug_facts_finished = true },
+	{ reina_bug_facts_day = true, expires = "7d" }
+]
+portrait = "happy"
+local = "I think I'm really getting the hang of Luc's bug facts!"
+next = "1"
+
+[reina_bug_facts_3.1]
+portrait = "embarrassed"
+local = "But I want to teach him one back! Let me try it out on you first."
+next = "2"
+
+[reina_bug_facts_3.2]
+local = "Why does a firefly glow like that? Do you know, [Ari]?"
+prompts = [
+	{ local = "To attract a mate!", next = "3" },
+	{ local = "Because it's scared of the dark.", next = "4" }
+]
+
+[reina_bug_facts_3.3]
+portrait = "blush"
+local = "That's correct! It's kind of romantic, don't you think?"
+
+[reina_bug_facts_3.4]
+portrait = "happy"
+local = "Haha, you're so funny! Thanks [Ari]."
+
+[luc_bug_facts_3]
+refresh = "1y"
+requires = [
+	{ npc = "luc" },
+	{ reina_bug_facts_finished = true },
+	{ reina_bug_facts_day = true }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "Reina taught me something about fireflies. That's so cool!"
+next = "1"
+
+[luc_bug_facts_3.1]
+local = "She said they glow to attract a mate, which I verified in the latest Royal Society of Entomology Almanac."
+next = "2"
+
+[luc_bug_facts_3.2]
+portrait = "think"
+local = "I wonder how humans find mates. Reina said Pa would tell me when I'm older? I don't get it!"

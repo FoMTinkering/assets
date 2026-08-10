@@ -1,0 +1,36 @@
+[dinner]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "march" }, { npc = "ryis" }] },
+	{ hayden_zone = "<march_zone>" },
+	{ hayden_zone = "<ryis_zone>" },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "hayden"
+portrait = "neutral"
+local = "Sometimes the work is going to feel overwhelming! No avoiding it."
+next = "1"
+
+[dinner.1]
+speaker = "hayden"
+portrait = "happy_fist"
+local = "That's when it helps to remind yourself to take it one day at a time. No way to build a bridge except stone by stone."
+next = "2"
+
+[dinner.2]
+speaker = "ryis"
+portrait = "neutral"
+local = "That's good advice, Hayden. Thanks."
+next = "3"
+
+[dinner.3]
+speaker = "ryis"
+portrait = "think"
+local = "You listening, March? You're the impatient one."
+next = "4"
+
+[dinner.4]
+speaker = "march"
+portrait = "sigh"
+effect = "sigh"
+local = "Yeah, yeah... thanks, Hayden. That helps."

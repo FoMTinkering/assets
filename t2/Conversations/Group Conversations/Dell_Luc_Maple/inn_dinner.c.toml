@@ -1,0 +1,25 @@
+[inn_dinner]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ time_of_day = "evening" },
+	{ season = "winter" },
+	{ any = [{ dell_activity = "drink" }, { dell_activity = "eat" }] },
+]
+speaker = "dell"
+portrait = "happy"
+local = "Nothing like a cold drink after a long days work."
+next = "1"
+
+[inn_dinner.1]
+speaker = "luc"
+portrait = "think"
+local = "Ignore Dell, [Ari]. She keeps saying that because she learned it from her dad."
+next = "2"
+
+[inn_dinner.2]
+speaker = "maple"
+portrait = "sad"
+local = "Her drink isn't even cold! That's hot chocolate! And Dell doesn't even have a job!"

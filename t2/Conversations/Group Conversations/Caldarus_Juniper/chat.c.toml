@@ -1,0 +1,102 @@
+[chat_0]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "juniper" }] },
+	{ caldarus_zone = "<juniper_zone>" },
+	{ caldarus_seridia_town = true },
+	{ location = "eastern_road" }
+]
+speaker = "caldarus"
+portrait = "neutral"
+local = "You are quite knowledgeable about what grows along the Eastern Road, Juniper."
+next = "1"
+
+[chat_0.1]
+speaker = "juniper"
+portrait = "angry_brows"
+local = "Of course. I'm an expert, after all."
+next = "2"
+
+[chat_0.2]
+speaker = "juniper"
+portrait = "think"
+local = "But I suppose it was Celine who showed me where to do the best foraging. That country girl is surprising."
+next = "3"
+
+[chat_0.3]
+speaker = "caldarus"
+portrait = "smile"
+local = "Yes... you both have a strong connection to this land."
+
+[chat_1]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "juniper" }] },
+	{ caldarus_zone = "<juniper_zone>" },
+	{ caldarus_seridia_town = true },
+]
+speaker = "juniper"
+portrait = "angry_brows"
+local = "[Ari] told me that you're the one who lent <he>him</he><she>her</she><they>them</they><it>it</it><none>[Ari]</none> your power."
+next = "1"
+
+[chat_1.1]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "It explains why I detected such unique magic emanating from <he>him</he><she>her</she><they>them</they><it>it</it><none>[Ari]</none>."
+next = "2"
+
+[chat_1.2]
+speaker = "caldarus"
+portrait = "sigh"
+local = "I merely opened a door. [Ari] is capable of great things, with or without me."
+next = "3"
+
+[chat_1.3]
+speaker = "juniper"
+portrait = "wink"
+local = "Still... I imagine having a dragon on your side doesn't hurt."
+
+[chat_2]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "juniper" }] },
+	{ caldarus_zone = "<juniper_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_zone = "<seridia_zone>", comparator = "!=" },
+	{ caldarus_is_inside = false }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "juniper" } }]
+speaker = "caldarus"
+portrait = "smile"
+local = "It is quite relaxing, seeking out herbs with you."
+next = "1"
+
+[chat_2.1]
+speaker = "caldarus"
+portrait = "sad"
+local = "But you do not seem relaxed, Juniper. What is the matter?"
+next = "2"
+
+[chat_2.2]
+speaker = "juniper"
+portrait = "ugh"
+local = "Well, Seridia doesn't like you very much. I'm just hoping she doesn't see us foraging together."
+next = "3"
+
+[chat_2.3]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Oh, do not worry. I know how to deal with her."
+next = "4"
+
+[chat_2.4]
+speaker = "caldarus"
+portrait = "sigh"
+local = "If she asks, I will say that you are researching my weaknesses, or something of the like."
+next = "5"
+
+[chat_2.5]
+speaker = "caldarus"
+portrait = "think"
+local = "You are right to be concerned, though. She can be quite... territorial."

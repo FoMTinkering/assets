@@ -1,0 +1,406 @@
+[complete_the_museum_turn_in]
+kind = "gameplay_triggered"
+speaker = "errol"
+portrait = "happy"
+actions = [{ bark = { npc = "errol", bark = "cute_face" } }]
+local = "Please accept my most heartfelt thanks, [Ari]. Your diligent effort has filled all four wings of the Museum!"
+next = "1"
+
+[complete_the_museum_turn_in.1]
+portrait = "neutral"
+local = "Never in my wildest imagination did I ever envision that I would be Curator to a Museum so rich as this one!"
+next = "2"
+
+[complete_the_museum_turn_in.2]
+portrait = "embarrassed"
+local = "The collection you have gathered will be celebrated throughout Mistria's history, and your name and deeds will be part of it."
+next = "3"
+
+[complete_the_museum_turn_in.3]
+portrait = "happy"
+local = "Please accept this reward from the Aldarian Museum Association, along with a little something from the Mistrian Historical Society!"
+
+[complete_the_museum_adeline]
+refresh = "never"
+requires = [{ npc = "adeline" }, { completed_museum = true }]
+portrait = "happy"
+local = "Wonderful work on completing the Museum, [Ari]!"
+next = "1"
+
+[complete_the_museum_adeline.1]
+portrait = "neutral"
+local = "I've received multiple inquiries from other townships in Aldaria asking if we can loan out parts of our collection."
+next = "2"
+
+[complete_the_museum_adeline.2]
+portrait = "happy"
+local = "Just think, people all over Aldaria could one day be inspired by your finds!"
+
+[complete_the_museum_balor]
+refresh = "never"
+requires = [{ npc = "balor" }, { completed_museum = true }]
+portrait = "happy"
+local = "Congrats on completing the Museum!"
+next = "1"
+
+[complete_the_museum_balor.1]
+portrait = "neutral"
+local = "Truly the best one I've ever been to."
+next = "2"
+
+[complete_the_museum_balor.2]
+portrait = "wink"
+local = "Although a gift shop could be a nice addition. I'll talk to Errol."
+
+[complete_the_museum_caldarus]
+refresh = "never"
+requires = [
+    { npc = "caldarus" },
+    { completed_museum = true },
+    { caldarus_seridia_town = true }
+]
+portrait = "smile"
+local = "It is astonishing how many items you have donated to the Museum, [Ari]."
+next = "1"
+
+[complete_the_museum_caldarus.1]
+portrait = "happy"
+local = "Truly a sight to behold. Well done!"
+
+[complete_the_museum_celine]
+refresh = "never"
+requires = [
+    { npc = "celine" },
+    { completed_museum = true },
+    { building = "museum", comparator = "!=" }
+]
+portrait = "happy"
+local = "[Ari], I heard about the Museum! Congrats!"
+next = "1"
+
+[complete_the_museum_celine.1]
+portrait = "neutral"
+local = """Dell has been clamoring for me to take her. I'm going to try and count all the "Donated by [Ari]" plaques when we do!"""
+
+[complete_the_museum_eiland]
+refresh = "never"
+requires = [{ npc = "eiland" }, { completed_museum = true }]
+actions = [{ item = "caldosian_chocolate_cake" }]
+portrait = "happy"
+local = "Momentous work, [Ari]!"
+next = "1"
+
+[complete_the_museum_eiland.1]
+portrait = "neutral"
+local = "The Museum's collection has become the talk of the Archaeological world!"
+next = "2"
+
+[complete_the_museum_eiland.2]
+portrait = "embarrassed"
+local = "To celebrate, I commissioned you a cake as well..."
+next = "3"
+
+[complete_the_museum_eiland.3]
+portrait = "happy_blush"
+effect = "cheery"
+local = "Enjoy!"
+
+[complete_the_museum_hayden]
+refresh = "never"
+requires = [{ npc = "hayden" }, { completed_museum = true }]
+portrait = "happy"
+local = "Everyone's talking about how much you donated to the Museum!"
+next = "1"
+
+[complete_the_museum_hayden.1]
+portrait = "neutral_arm_down"
+local = "And now so am I. Fantastic work [Ari]!"
+next = "2"
+
+[complete_the_museum_hayden.2]
+portrait = "laugh"
+local = "Gya ha ha!"
+
+[complete_the_museum_juniper]
+refresh = "never"
+requires = [{ npc = "juniper" }, { completed_museum = true }]
+portrait = "neutral"
+local = "Incredible work on the Museum collection, [Ari]."
+next = "1"
+
+[complete_the_museum_juniper.1]
+portrait = "think"
+local = "Sometimes I wonder if Errol or Eiland truly appreciate the rarity and power of some of the things you collected..."
+next = "2"
+
+[complete_the_museum_juniper.2]
+portrait = "happy"
+local = "Well, I certainly do."
+next = "3"
+
+[complete_the_museum_juniper.3]
+portrait = "laugh"
+local = "Oh ho ho!"
+
+[complete_the_museum_march]
+refresh = "never"
+requires = [
+    { npc = "march" },
+    { completed_museum = true },
+    { building = "museum", comparator = "!=" }
+]
+portrait = "happy"
+local = "I heard about the Museum. Congrats, that's an achievement to be proud of."
+next = "1"
+
+[complete_the_museum_march.1]
+portrait = "think"
+local = "..."
+next = "2"
+
+[complete_the_museum_march.2]
+portrait = "eight_heart_think"
+local = "I wonder if Errol still has that $Worm$ you donated on display..."
+prompts = [
+    { local = "What was that, March?", next = "3" },
+    { local = "That Worm is a cultural treasure.", next = "4" }
+]
+
+[complete_the_museum_march.3]
+portrait = "embarrassed"
+local = "Nothing!"
+next = "5"
+
+[complete_the_museum_march.4]
+portrait = "embarrassed"
+local = "Y-Yeah..."
+next = "5"
+
+[complete_the_museum_march.5]
+portrait = "eight_heart_happy"
+local = "Great work, [Ari]!"
+
+[complete_the_museum_reina]
+refresh = "never"
+requires = [
+    { npc = "reina" },
+    { completed_museum = true },
+    { building = "museum", comparator = "!=" }
+]
+portrait = "happy"
+local = "Congrats on filling out the wings at the Museum!"
+next = "1"
+
+[complete_the_museum_reina.1]
+portrait = "neutral"
+local = "You're the talk of town!"
+
+[complete_the_museum_ryis]
+refresh = "never"
+requires = [{ npc = "ryis" }, { completed_museum = true }]
+portrait = "happy"
+local = "Incredible job filling out the Museum's collection, [Ari]!"
+next = "1"
+
+[complete_the_museum_ryis.1]
+portrait = "think"
+local = "When I was getting the Museum building fixed up, I thought it was probably too big of a space for a little town like ours..."
+next = "2"
+
+[complete_the_museum_ryis.2]
+portrait = "wink"
+local = "You sure proved me wrong!"
+
+[complete_the_museum_seridia]
+refresh = "never"
+requires = [
+    { npc = "seridia" },
+    { completed_museum = true },
+    { caldarus_seridia_town = true }
+]
+portrait = "happy"
+local = "The whole town is abuzz about how you've filled the wings of the Museum."
+next = "1"
+
+[complete_the_museum_seridia.1]
+portrait = "think"
+local = "It has me wondering..."
+next = "2"
+
+[complete_the_museum_seridia.2]
+portrait = "sinister"
+local = "Perhaps you could assist me with filling up my treasure hoard next?"
+
+[complete_the_museum_valen]
+refresh = "never"
+requires = [{ npc = "valen" }, { completed_museum = true }]
+portrait = "happy"
+local = "You've done something extraordinary by completing the Museum's collection, [Ari]."
+next = "1"
+
+[complete_the_museum_valen.1]
+portrait = "neutral"
+local = "Very well done!"
+
+# villagers
+[complete_the_museum_dell]
+refresh = "never"
+requires = [
+    { npc = "dell" },
+    { completed_museum = true },
+    { building = "museum", comparator = "!=" }
+]
+portrait = "happy"
+local = "[Ari], did you really fill up the Museum? That's amazing!"
+next = "1"
+
+[complete_the_museum_dell.1]
+portrait = "neutral"
+local = "I just want you to know that now that there's no more room in there, you can give any swords you find to me."
+next = "2"
+
+[complete_the_museum_dell.2]
+portrait = "mad"
+local = "I'm gonna start Dell's Sword Museum!"
+
+[complete_the_museum_elsie]
+refresh = "never"
+requires = [{ npc = "elsie" }, { completed_museum = true }]
+portrait = "neutral"
+local = "Between you and me, your work for the Mistrian Museum has made quite the stir in the Capital."
+next = "1"
+
+[complete_the_museum_elsie.1]
+portrait = "wink"
+local = "I wouldn't be surprised if other Museums reach out to you to help with their collections!"
+
+[complete_the_museum_errol]
+refresh = "never"
+requires = [{ npc = "errol" }, { completed_museum = true }]
+portrait = "neutral"
+local = "I cannot thank you enough for your hard work on behalf of the Museum, [Ari]."
+next = "1"
+
+[complete_the_museum_errol.1]
+portrait = "happy"
+local = "It will be both my privilege and pleasure to be the caretaker of such a storied collection!"
+
+[complete_the_museum_hemlock]
+refresh = "never"
+requires = [{ npc = "hemlock" }, { completed_museum = true }]
+portrait = "neutral"
+local = "You've gone and done it again, [Ari]!"
+next = "1"
+
+[complete_the_museum_hemlock.1]
+portrait = "happy"
+local = "Cheers to you and cheers to a filled up Museum!"
+
+[complete_the_museum_holt]
+refresh = "never"
+requires = [
+    { npc = "holt" },
+    { completed_museum = true },
+    { building = "museum", comparator = "!=" }
+]
+portrait = "happy"
+local = "You really made Errol's day when you finished the Museum's collection, [Ari]."
+next = "1"
+
+[complete_the_museum_holt.1]
+portrait = "think"
+local = "He nearly burst into tears when the last piece was donated."
+next = "2"
+
+[complete_the_museum_holt.2]
+portrait = "neutral"
+local = "He held it in though, I guess he didn't want to make an exhibit of himself."
+
+[complete_the_museum_josephine]
+refresh = "never"
+requires = [
+    { npc = "josephine" },
+    { completed_museum = true }
+]
+portrait = "neutral"
+local = "I never thought I'd see our Museum with such an impressive collection!"
+next = "1"
+
+[complete_the_museum_josephine.1]
+portrait = "happy"
+local = "Great work, [Ari]!"
+
+[complete_the_museum_landen]
+refresh = "never"
+requires = [{ npc = "landen" }, { completed_museum = true }]
+portrait = "happy"
+local = "[Ari]! You know Errol won't stop talking about you."
+next = "1"
+
+[complete_the_museum_landen.1]
+portrait = "neutral"
+local = "I wanted to give you an extra thank you, your hard work has made him the curator of the museum of his dreams."
+
+[complete_the_museum_luc]
+refresh = "never"
+requires = [
+    { npc = "luc" },
+    { completed_museum = true },
+    { building = "museum", comparator = "!=" }
+]
+portrait = "happy"
+local = "The insect collection at the Museum is impeccable, [Ari]!"
+next = "1"
+
+[complete_the_museum_luc.1]
+portrait = "neutral"
+local = "The other stuff you donated is also pretty neat too."
+
+[complete_the_museum_maple]
+refresh = "never"
+requires = [{ npc = "maple" }, { completed_museum = true }]
+portrait = "neutral"
+local = "The Museum is so full of cool stuff now thanks to you, [Ari]!"
+next = "1"
+
+[complete_the_museum_maple.1]
+portrait = "happy"
+effect = "cheery"
+local = "I'm gonna suggest to Errol that he invite the Royal Family to come see it."
+
+[complete_the_museum_nora]
+refresh = "never"
+requires = [
+    { npc = "adeline" },
+    { completed_museum = true },
+    { building = "museum", comparator = "!=" }
+]
+portrait = "neutral"
+local = "Did you really complete all four wings of the Museum?"
+next = "1"
+
+[complete_the_museum_nora.1]
+portrait = "happy"
+local = "You're a wonder, [Ari]."
+
+[complete_the_museum_olric]
+refresh = "never"
+requires = [{ npc = "olric" }, { completed_museum = true }]
+portrait = "neutral"
+local = "Thanks for helping out Errol so much with his Museum, [Ari]!"
+next = "1"
+
+[complete_the_museum_olric.1]
+portrait = "happy"
+local = "You can tell it means the world to him. I'm so glad he got to live out his dreams!"
+
+[complete_the_museum_terithia]
+refresh = "never"
+requires = [{ npc = "terithia" }, { completed_museum = true }]
+portrait = "happy"
+local = "It's rare that I've seen Errol so happy, but you did it by filling the Museum, [Ari]!"
+next = "1"
+
+[complete_the_museum_terithia.1]
+portrait = "wink"
+local = "Let me know the next time you want to grab a drink, it's on me as an extra thank you."

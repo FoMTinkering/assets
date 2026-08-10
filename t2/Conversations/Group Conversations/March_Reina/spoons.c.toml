@@ -1,0 +1,25 @@
+[spoons]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "reina" }] },
+	{ march_zone = "<reina_zone>" },
+	{ location = "inn", comparator = "!=" },
+	{ date_time = "1y", comparator = ">=" }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "reina" } }]
+speaker = "reina"
+portrait = "happy"
+effect = "drop"
+local = "March, we need more spoons at the Inn... I think Dell and Maple and Luc keep running off with the utensils to fill their Dragonguard armory."
+next = "1"
+
+[spoons.1]
+speaker = "march"
+portrait = "neutral"
+local = "I told Nora I'd just make Dell a sword, but she shut that down so fast."
+next = "2"
+
+[spoons.2]
+speaker = "march"
+portrait = "unimpressed"
+local = "Tch. Look where that got us now."

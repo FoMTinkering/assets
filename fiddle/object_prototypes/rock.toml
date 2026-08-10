@@ -1,0 +1,634 @@
+[default]
+	size = [2, 2]
+	drops = []
+	hp = 1
+	spring_sprites = ["spr_illegal_16"]
+	# seam rocks override this -- otherwise, everyone is collideable
+	collideable = true
+	# this means if it's collideable, is it also jumpable? only boulder is not jumpable
+	jumpable = true
+	# studs and seams override this -- otherwise, everyone is on the farm (or can be)
+	dungeon_only = false
+	# minimum tool quality to hit this
+	minimum_quality = "tier1"
+	# The amount of mining xp you gain for breaking this rock
+	mining_xp_gain = 4
+
+	# by default, rocks offset as `[8, 8]`, which puts their origin at the center of
+	# their 2x2 structure. For anything not `2x2` in size, you'll probably want to override `offset`!
+	offset = [8, 0]
+
+	# this means in the mines a ladder can spawn under it
+	ladder_candidate = true
+
+	# if set to a table with a name of a light and an offset, then a light will be created
+	# light = false
+
+[boulder_rock_stone]
+	jumpable = false
+	size = [6, 6]
+	hp = 6
+	minimum_quality = "tier2"
+	spring_sprites = ["spr_rock_boulder_spring"]
+	winter_sprites = ["spr_rock_boulder_winter"]
+	offset = [24, 8]
+	ladder_candidate = false
+	mining_xp_gain = 6
+
+	[[boulder_rock_stone.drops]]
+		item = "ore_stone"
+		count_range = [20, 20]
+		exclusive = false
+
+	[[boulder_rock_stone.drops]]
+		item = "ore_sapphire"
+
+[small_rock_stone_one]
+	hp = 3
+	spring_sprites = [
+		"spr_farm_rock_small_t1_c1_spring",
+		"spr_farm_rock_small_t1_c2_spring",
+		"spr_farm_rock_small_t2_c1_spring",
+		"spr_farm_rock_small_t2_c2_spring",
+		"spr_farm_rock_small_t3_c1_spring",
+		"spr_farm_rock_small_t3_c2_spring",
+		"spr_farm_rock_small_t4_c1_spring",
+		"spr_farm_rock_small_t4_c2_spring",
+	]
+	winter_sprites = [
+		"spr_farm_rock_small_t1_c1_winter",
+		"spr_farm_rock_small_t1_c2_winter",
+		"spr_farm_rock_small_t2_c1_winter",
+		"spr_farm_rock_small_t2_c2_winter",
+		"spr_farm_rock_small_t3_c1_winter",
+		"spr_farm_rock_small_t3_c2_winter",
+		"spr_farm_rock_small_t4_c1_winter",
+		"spr_farm_rock_small_t4_c2_winter",
+	]
+
+	[[small_rock_stone_one.drops]]
+		item = "ore_stone"
+		count_range = [1, 1]
+		exclusive = false
+	[[small_rock_stone_one.drops]]
+		item = "ore_stone"
+		count_range = [1, 1]
+		chance = 10
+		exclusive = false
+
+[small_rock_stone_upper]
+	hp = 2
+	spring_sprites = [
+		"spr_dungeon_mines_biome_1_rock_small_t1_spring",
+		"spr_dungeon_mines_biome_1_rock_small_t2_spring",
+		"spr_dungeon_mines_biome_1_rock_small_t3_spring",
+		"spr_dungeon_mines_biome_1_rock_small_t4_spring",
+	]
+	[[small_rock_stone_upper.drops]]
+		item = "ore_stone"
+		exclusive = false
+	[[small_rock_stone_upper.drops]]
+		item = "ore_stone"
+		chance = 20
+		exclusive = false
+
+[small_rock_stone_two]
+	hp = 3
+	spring_sprites = [
+		"spr_dungeon_mines_biome_2_rock_small_t1_spring",
+		"spr_dungeon_mines_biome_2_rock_small_t2_spring",
+		"spr_dungeon_mines_biome_2_rock_small_t3_spring",
+		"spr_dungeon_mines_biome_2_rock_small_t4_spring",
+	]
+	[[small_rock_stone_two.drops]]
+		item = "ore_stone"
+		count_range = [1, 2]
+
+[small_rock_stone_three]
+	hp = 4
+	spring_sprites = [
+		"spr_dungeon_mines_biome_3_rock_small_t1_spring",
+		"spr_dungeon_mines_biome_3_rock_small_t2_spring",
+		"spr_dungeon_mines_biome_3_rock_small_t3_spring",
+		"spr_dungeon_mines_biome_3_rock_small_t4_spring",
+	]
+	[[small_rock_stone_three.drops]]
+		item = "ore_stone"
+		count_range = [1, 2]
+
+[small_rock_stone_four]
+	hp = 5
+	spring_sprites = [
+		"spr_dungeon_mines_biome_4_rock_small_t1_spring",
+		"spr_dungeon_mines_biome_4_rock_small_t2_spring",
+		"spr_dungeon_mines_biome_4_rock_small_t3_spring",
+		"spr_dungeon_mines_biome_4_rock_small_t4_spring",
+	]
+	[[small_rock_stone_four.drops]]
+		item = "ore_stone"
+		count_range = [1, 2]
+
+[small_rock_stone_five]
+	hp = 6
+	spring_sprites = [
+		"spr_dungeon_mines_biome_5_rock_small_t1_spring",
+		"spr_dungeon_mines_biome_5_rock_small_t2_spring",
+		"spr_dungeon_mines_biome_5_rock_small_t3_spring",
+		"spr_dungeon_mines_biome_5_rock_small_t4_spring",
+	]
+	[[small_rock_stone_five.drops]]
+		item = "ore_stone"
+		count_range = [1, 2]
+
+[small_rock_priestess_quarters]
+	jumpable = false
+	# size = [2, 2]
+	hp = 6
+	minimum_quality = "tier6"
+	spring_sprites = [
+		"spr_priestess_quarters_corrupted_rock_small_t1_spring",
+		"spr_priestess_quarters_corrupted_rock_small_t2_spring",
+		"spr_priestess_quarters_corrupted_rock_small_t3_spring",
+		"spr_priestess_quarters_corrupted_rock_small_t4_spring",
+	]
+	# offset = [40, 8]
+	ladder_candidate = false
+	mining_xp_gain = 6
+
+	[[small_rock_priestess_quarters.drops]]
+		item = "ore_stone"
+		count_range = [1, 2]
+		exclusive = false
+
+[large_rock_stone_one]
+	size = [4, 4]
+	offset = [16, 0]
+	hp = 10
+	mining_xp_gain = 6
+	minimum_quality = "tier2"
+	spring_sprites = [
+		"spr_farm_rock_big_t1_c1_spring",
+		"spr_farm_rock_big_t1_c2_spring",
+		"spr_farm_rock_big_t2_c1_spring",
+		"spr_farm_rock_big_t2_c2_spring",
+		"spr_farm_rock_big_t3_c1_spring",
+		"spr_farm_rock_big_t3_c2_spring",
+	]
+	winter_sprites = [
+		"spr_farm_rock_big_t1_c1_winter",
+		"spr_farm_rock_big_t1_c2_winter",
+		"spr_farm_rock_big_t2_c1_winter",
+		"spr_farm_rock_big_t2_c2_winter",
+		"spr_farm_rock_big_t3_c1_winter",
+		"spr_farm_rock_big_t3_c2_winter",
+	]
+	ladder_candidate = false
+
+	[[large_rock_stone_one.drops]]
+		item = "ore_stone"
+		count_range = [6, 8]
+
+	[[large_rock_stone_one.drops]]
+		item = "glass"
+		count_range = [2, 4]
+
+[large_rock_stone_upper]
+	size = [4, 4]
+	offset = [16, 0]
+	hp = 8
+	mining_xp_gain = 6
+	minimum_quality = "tier2"
+	spring_sprites = [
+		"spr_dungeon_mines_biome_1_rock_big_t1_spring",
+		"spr_dungeon_mines_biome_1_rock_big_t2_spring",
+		"spr_dungeon_mines_biome_1_rock_big_t3_spring",
+	]
+	ladder_candidate = false
+
+	[[large_rock_stone_upper.drops]]
+		item = "ore_stone"
+		count_range = [3, 4]
+
+[large_rock_stone_two]
+	size = [4, 4]
+	offset = [16, 0]
+	hp = 8
+	mining_xp_gain = 6
+	minimum_quality = "tier2"
+	spring_sprites = [
+		"spr_dungeon_mines_biome_2_rock_big_t1_spring",
+		"spr_dungeon_mines_biome_2_rock_big_t2_spring",
+		"spr_dungeon_mines_biome_2_rock_big_t3_spring",
+	]
+	ladder_candidate = false
+
+	[[large_rock_stone_two.drops]]
+		item = "ore_stone"
+		count_range = [3, 4]
+
+[large_rock_stone_three]
+	size = [4, 4]
+	offset = [16, 0]
+	hp = 12
+	mining_xp_gain = 6
+	minimum_quality = "tier3"
+	spring_sprites = [
+		"spr_dungeon_mines_biome_3_rock_big_t1_spring",
+		"spr_dungeon_mines_biome_3_rock_big_t2_spring",
+		"spr_dungeon_mines_biome_3_rock_big_t3_spring",
+	]
+	ladder_candidate = false
+
+	[[large_rock_stone_three.drops]]
+		item = "ore_stone"
+		count_range = [3, 4]
+
+[large_rock_stone_four]
+	size = [4, 4]
+	offset = [16, 0]
+	hp = 16
+	mining_xp_gain = 6
+	minimum_quality = "tier4"
+	spring_sprites = [
+		"spr_dungeon_mines_biome_4_rock_big_t1_spring",
+		"spr_dungeon_mines_biome_4_rock_big_t2_spring",
+		"spr_dungeon_mines_biome_4_rock_big_t3_spring",
+	]
+	ladder_candidate = false
+
+	[[large_rock_stone_four.drops]]
+		item = "ore_stone"
+		count_range = [3, 4]
+
+[large_rock_stone_five]
+	size = [4, 4]
+	offset = [16, 0]
+	hp = 20
+	mining_xp_gain = 6
+	minimum_quality = "tier5"
+	spring_sprites = [
+		"spr_dungeon_mines_biome_5_rock_big_t1_spring",
+		"spr_dungeon_mines_biome_5_rock_big_t2_spring",
+		"spr_dungeon_mines_biome_5_rock_big_t3_spring",
+	]
+	ladder_candidate = false
+
+	[[large_rock_stone_five.drops]]
+		item = "ore_stone"
+		count_range = [3, 4]
+
+#------------ GROUND SEAMS, ALL BIOMES
+[seam_rock_copper]
+	drops = [{ item = "ore_copper", count_range = [1, 2] }]
+	hp = 1
+	spring_sprites = ["spr_dungeon_mines_biome_1_ground_seam_spring"]
+	collideable = false
+	dungeon_only = true
+
+[seam_rock_iron]
+	drops = [{ item = "ore_iron", count_range = [1, 2] }]
+	hp = 2
+	spring_sprites = ["spr_dungeon_mines_biome_2_ground_seam_spring"]
+	collideable = false
+	dungeon_only = true
+
+[seam_rock_silver]
+	drops = [{ item = "ore_silver", count_range = [1, 2] }]
+	hp = 3
+	spring_sprites = ["spr_dungeon_mines_biome_3_ground_seam_spring"]
+	collideable = false
+	dungeon_only = true
+
+[seam_rock_gold]
+	drops = [{ item = "ore_gold", count_range = [1, 2] }]
+	hp = 4
+	spring_sprites = ["spr_dungeon_mines_biome_4_ground_seam_spring"]
+	collideable = false
+	dungeon_only = true
+
+[seam_rock_mistril]
+	drops = [{ item = "ore_mistril", count_range = [1, 2] }]
+	hp = 5
+	spring_sprites = ["spr_dungeon_mines_biome_5_ground_seam_spring"]
+	collideable = false
+	dungeon_only = true
+
+	#------------ DIRT ROCKS, ALL BIOMES
+
+[small_dirt_rock_one]
+	drops = [
+		{ item = "ore_stone", chance = 25, exclusive = false },
+		{ item = "sod", chance = 0.8, exclusive = false },
+		{ item = "clay", chance = 0.8, exclusive = false },
+		{ item = "peat", chance = 0.8, exclusive = false },
+	]
+	hp = 1
+	mining_xp_gain = 2
+	spring_sprites = [
+		"spr_dungeon_mines_biome_1_dirt_rock_small_t1_spring",
+		"spr_dungeon_mines_biome_1_dirt_rock_small_t2_spring",
+		"spr_dungeon_mines_biome_1_dirt_rock_small_t3_spring",
+	]
+	dungeon_only = true
+
+[small_dirt_rock_two]
+	drops = [
+		{ item = "ore_stone", chance = 25, exclusive = false },
+		{ item = "sod", chance = 1.6, exclusive = false },
+		{ item = "clay", chance = 1.6, exclusive = false },
+		{ item = "peat", chance = 1.6, exclusive = false },
+	]
+	mining_xp_gain = 2
+	hp = 2
+	spring_sprites = [
+		"spr_dungeon_mines_biome_2_dirt_rock_small_t1_spring",
+		"spr_dungeon_mines_biome_2_dirt_rock_small_t2_spring",
+		"spr_dungeon_mines_biome_2_dirt_rock_small_t3_spring",
+	]
+	dungeon_only = true
+
+[small_dirt_rock_three]
+	drops = [
+		{ item = "ore_stone", chance = 25, exclusive = false },
+		{ item = "sod", chance = 1.6, exclusive = false },
+		{ item = "clay", chance = 1.6, exclusive = false },
+		{ item = "peat", chance = 1.6, exclusive = false },
+	]
+	mining_xp_gain = 2
+	hp = 3
+	spring_sprites = [
+		"spr_dungeon_mines_biome_3_dirt_rock_small_t1_spring",
+		"spr_dungeon_mines_biome_3_dirt_rock_small_t2_spring",
+		"spr_dungeon_mines_biome_3_dirt_rock_small_t3_spring",
+	]
+	dungeon_only = true
+
+[small_dirt_rock_four]
+	drops = [
+		{ item = "ore_stone", chance = 25, exclusive = false },
+		{ item = "sod", chance = 1.6, exclusive = false },
+		{ item = "clay", chance = 1.6, exclusive = false },
+		{ item = "peat", chance = 1.6, exclusive = false },
+	]
+	mining_xp_gain = 2
+	hp = 4
+	spring_sprites = [
+		"spr_dungeon_mines_biome_4_dirt_rock_small_t1_spring",
+		"spr_dungeon_mines_biome_4_dirt_rock_small_t2_spring",
+		"spr_dungeon_mines_biome_4_dirt_rock_small_t3_spring",
+	]
+	dungeon_only = true
+
+[small_dirt_rock_five]
+	drops = [
+		{ item = "ore_stone", chance = 25, exclusive = false },
+		{ item = "sod", chance = 1.6, exclusive = false },
+		{ item = "clay", chance = 1.6, exclusive = false },
+		{ item = "peat", chance = 1.6, exclusive = false },
+	]
+	mining_xp_gain = 2
+	hp = 5
+	spring_sprites = [
+		"spr_dungeon_mines_biome_5_dirt_rock_small_t1_spring",
+		"spr_dungeon_mines_biome_5_dirt_rock_small_t2_spring",
+		"spr_dungeon_mines_biome_5_dirt_rock_small_t3_spring",
+	]
+	dungeon_only = true
+
+#------------ BIOME 1 ORES, GEMS
+# HP is 3 hits * 1 HP/hit = 3 HP
+[node_copper]
+	drops = [
+		{ item = "ore_copper", exclusive = false },
+		{ item = "perfect_copper_ore", chance = 1, exclusive = false, perfect_pick_chance = 1 },
+	]
+	hp = 3
+	spring_sprites = [
+		"spr_dungeon_ore_copper_t1_spring",
+		"spr_dungeon_ore_copper_t2_spring",
+	]
+	dungeon_only = true
+
+[rock_copper]
+	drops = [
+		{ item = "ore_copper", count_range = [1, 2], exclusive = false },
+		{ item = "ore_copper", chance = 20, exclusive = false },
+		{ item = "perfect_copper_ore", chance = 1, exclusive = false, perfect_pick_chance = 4},
+	]
+	hp = 3
+	spring_sprites = ["spr_dungeon_ore_copper_full_spring"]
+	dungeon_only = true
+
+[node_ruby]
+	drops = [
+		{ item = "ore_ruby", count_range = [1, 1], exclusive = false },
+		{ item = "perfect_ruby", chance = 5, exclusive = false, perfect_pick_chance = 1},
+	]
+	hp = 3
+	spring_sprites = [
+		"spr_dungeon_ore_ruby_t1_spring",
+		"spr_dungeon_ore_ruby_t2_spring",
+	]
+	dungeon_only = true
+
+[rock_ruby]
+	drops = [
+		{ item = "ore_ruby", count_range = [2, 3], exclusive = false },
+		{ item = "perfect_ruby", chance = 5, exclusive = false, perfect_pick_chance = 5},
+	]
+	hp = 3
+	spring_sprites = ["spr_dungeon_ore_ruby_full_spring"]
+	dungeon_only = true
+
+	#------------ BIOME 2 ORES, GEMS
+	# HP is 3 hits * 2 HP/hit = 6 HP
+
+[node_iron] #the node has rock in it
+	drops = [
+		{ item = "ore_iron", count_range = [1, 2], exclusive = false },
+		#{ item = "perfect_iron_ore", chance = 1, exclusive = false, perfect_pick_chance = 1},
+	]
+	hp = 6
+	spring_sprites = [
+		"spr_dungeon_ore_iron_t1_spring",
+		"spr_dungeon_ore_iron_t2_spring",
+	]
+	dungeon_only = true
+
+[rock_iron] #the rock is the one without any rock
+	drops = [
+		{ item = "ore_iron", count_range = [2, 3], exclusive = false },
+		{ item = "perfect_iron_ore", chance = 1, exclusive = false, perfect_pick_chance = 4},
+	]
+	hp = 6
+	spring_sprites = ["spr_dungeon_ore_iron_full_spring"]
+	dungeon_only = true
+
+[node_sapphire]
+	drops = [
+		{ item = "ore_sapphire", count_range = [1, 1], exclusive = false },
+		{ item = "perfect_sapphire", chance = 5, exclusive = false, perfect_pick_chance = 1},
+	]
+	hp = 6
+	spring_sprites = [
+		"spr_dungeon_ore_sapphire_t1_spring",
+		"spr_dungeon_ore_sapphire_t2_spring",
+	]
+	dungeon_only = true
+
+[rock_sapphire]
+	drops = [
+		{ item = "ore_sapphire", count_range = [1, 2], exclusive = false },
+		{ item = "perfect_sapphire", chance = 5, exclusive = false, perfect_pick_chance = 5},
+	]
+	hp = 6
+	spring_sprites = ["spr_dungeon_ore_sapphire_full_spring"]
+	dungeon_only = true
+
+#------------ BIOME 3 ORES, GEMS
+# HP is 3 hits * 3 HP/hit = 9 HP
+[node_silver]
+	drops = [
+		{ item = "ore_silver", count_range = [1, 2], exclusive = false },
+		{ item = "perfect_silver_ore", chance = 1, exclusive = false, perfect_pick_chance = 1},
+	]
+	hp = 9
+	spring_sprites = [
+		"spr_dungeon_ore_silver_t1_spring",
+		"spr_dungeon_ore_silver_t2_spring",
+	]
+	dungeon_only = true
+
+[rock_silver]
+	drops = [
+		{ item = "ore_silver", count_range = [2, 3], exclusive = false },
+		{ item = "perfect_silver_ore", chance = 1, exclusive = false, perfect_pick_chance = 4},
+	]
+	hp = 9
+	spring_sprites = ["spr_dungeon_ore_silver_full_spring"]
+	dungeon_only = true
+
+[node_emerald]
+	drops = [
+		{ item = "ore_emerald", count_range = [1, 1], exclusive = false },
+		{ item = "perfect_emerald", chance = 5, exclusive = false, perfect_pick_chance = 1},
+	]
+	hp = 9
+	spring_sprites = [
+		"spr_dungeon_ore_emerald_t1_spring",
+		"spr_dungeon_ore_emerald_t2_spring",
+	]
+	dungeon_only = true
+
+[rock_emerald]
+	drops = [
+		{ item = "ore_emerald", count_range = [1, 2], exclusive = false },
+		{ item = "perfect_emerald", chance = 5, exclusive = false, perfect_pick_chance = 5},
+	]
+	hp = 9
+	spring_sprites = ["spr_dungeon_ore_emerald_full_spring"]
+	dungeon_only = true
+
+#------------ BIOME 4 ORES, GEMS
+# HP is 3 hits * 4 HP/hit = 12 HP
+[node_gold]
+	drops = [
+		{ item = "ore_gold", count_range = [1, 2], exclusive = false },
+		{ item = "perfect_gold_ore", chance = 1, exclusive = false, perfect_pick_chance = 1},
+	]
+	hp = 12
+	spring_sprites = [
+		"spr_dungeon_ore_gold_t1_spring",
+		"spr_dungeon_ore_gold_t2_spring",
+	]
+	dungeon_only = true
+
+[rock_gold]
+	drops = [
+		{ item = "ore_gold", count_range = [2, 3], exclusive = false },
+		{ item = "perfect_gold_ore", chance = 1, exclusive = false, perfect_pick_chance = 4},
+	]
+	hp = 12
+	spring_sprites = ["spr_dungeon_ore_gold_full_spring"]
+	dungeon_only = true
+
+[node_diamond]
+	drops = [
+		{ item = "ore_diamond", count_range = [1, 2], exclusive = false },
+		{ item = "perfect_diamond", chance = 5, exclusive = false, perfect_pick_chance = 1},
+	]
+	hp = 12
+	spring_sprites = [
+		"spr_dungeon_ore_diamond_t1_spring",
+		"spr_dungeon_ore_diamond_t2_spring",
+	]
+	dungeon_only = true
+
+[rock_diamond]
+	drops = [
+		{ item = "ore_diamond", count_range = [2, 3], exclusive = false },
+		{ item = "perfect_diamond", chance = 5, exclusive = false, perfect_pick_chance = 5},
+	]
+	hp = 12
+	spring_sprites = ["spr_dungeon_ore_diamond_full_spring"]
+	dungeon_only = true
+
+#------------ BIOME 5 ORES, GEMS
+# HP is 3 hits * 5 HP/hit = 15 HP
+[node_mistril]
+	drops = [
+		{ item = "ore_mistril", count_range = [1, 2], exclusive = false },
+		{ item = "perfect_mistril_ore", chance = 1, exclusive = false, perfect_pick_chance = 1},
+	]
+	hp = 15
+	spring_sprites = [
+		"spr_dungeon_ore_mistril_t1_spring",
+		"spr_dungeon_ore_mistril_t2_spring",
+	]
+	dungeon_only = true
+	[node_mistril.light]
+		name = "circle_forty_eight_weak"
+		offset = [0, 7]
+
+[rock_mistril]
+	drops = [
+		{ item = "ore_mistril", count_range = [2, 3], exclusive = false },
+		{ item = "perfect_mistril_ore", chance = 1, exclusive = false, perfect_pick_chance = 4},
+	]
+	hp = 15
+	spring_sprites = ["spr_dungeon_ore_mistril_full_spring"]
+	dungeon_only = true
+	[rock_mistril.light]
+		name = "circle_forty_eight_weak"
+		offset = [0, 8]
+
+[node_pink_diamond]
+	drops = [
+		{ item = "ore_pink_diamond", count_range = [1, 2], exclusive = false },
+		{ item = "perfect_pink_diamond", chance = 5, exclusive = false, perfect_pick_chance = 1},
+	]
+	hp = 15
+	spring_sprites = [
+		"spr_dungeon_ore_pink_diamond_t1_spring",
+		"spr_dungeon_ore_pink_diamond_t2_spring",
+	]
+	dungeon_only = true
+
+[rock_pink_diamond]
+	drops = [
+		{ item = "ore_pink_diamond", count_range = [2, 3], exclusive = false },
+		{ item = "perfect_pink_diamond", chance = 5, exclusive = false},
+	]
+	hp = 15
+	spring_sprites = ["spr_dungeon_ore_pink_diamond_full_spring"]
+	dungeon_only = true
+
+[rock_void]
+	drops = [
+		{ item = "void_stone", count_range = [1, 2], exclusive = false },
+	]
+	hp = 15
+	spring_sprites = [
+		"spr_dungeon_mines_biome_5_rock_void_main",
+	]
+	dungeon_only = true

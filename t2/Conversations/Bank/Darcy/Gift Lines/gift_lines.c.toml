@@ -1,0 +1,129 @@
+# Hated gift
+[ant]
+kind = "gift"
+requires = [
+	{ npc = "darcy" },
+	{ gift_desire = "hated" },
+	{ gift_given = "ant" }
+]
+portrait = "mad"
+local = "Don't you dare bring $Ants$ near my stall! They'll get into everything!"
+
+# Generic Lines
+[loved_gift]
+kind = "gift"
+requires = [
+	{ npc = "darcy" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "chocolate" },
+		{ gift_given = "coconut_milk" },
+		{ gift_given = "cow_milk" },
+		{ gift_given = "crystal_berries" },
+		{ gift_given = "golden_cheesecake" },
+		{ gift_given = "golden_cookies" },
+		{ gift_given = "golden_egg" },
+		{ gift_given = "golden_cow_milk" },
+		{ gift_given = "spell_fruit" },
+		{ gift_given = "sugar" }
+	] }
+]
+portrait = "happy"
+effect = "hearts"
+local = "Ooh, thanks [Ari]! This is exactly what I need for a new recipe I'm working on!"
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "darcy" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "sparkles"
+local = "I was just thinking I should stock up, and this is exactly what I needed! You're so on it, [Ari]!"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "darcy" }, { gift_desire = "liked" }]
+portrait = "happy"
+local = "I really like this, [Ari]! Thanks, you're so generous!"
+
+[liked_gift_2]
+kind = "gift"
+requires = [
+	{ npc = "darcy" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "apple" },
+		{ gift_given = "blackberry" },
+		{ gift_given = "blueberry" },
+		{ gift_given = "cherry" },
+		{ gift_given = "coconut" },
+		{ gift_given = "cranberry" },
+		{ gift_given = "egg" },
+		{ gift_given = "flour" },
+		{ gift_given = "glowberry" },
+		{ gift_given = "lemon" },
+		{ gift_given = "orange" },
+		{ gift_given = "moon_fruit" },
+		{ gift_given = "peach" },
+		{ gift_given = "pear" },
+		{ gift_given = "pomegranate" },
+		{ gift_given = "strawberry" },
+		{ gift_given = "tea" },
+		{ gift_given = "wild_berries" },
+		{ gift_given = "wild_grapes" },
+		{ gift_given = "wintergreen_berry" },
+	] }
+]
+portrait = "neutral"
+local = "Oh, this looks nice. I'm gonna make it into something tasty!"
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "darcy" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "For me? Thank you."
+
+[neutral_gift_drinks]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "darcy" },
+	{ gift_desire = "neutral" },
+	{ any = [
+		{ gift_given = "coffee" },
+		{ gift_given = "cup_of_tea" },
+		{ gift_given = "floral_tea" },
+		{ gift_given = "green_tea" },
+		{ gift_given = "iced_coffee" },
+		{ gift_given = "jasmine_tea" },
+		{ gift_given = "latte" },
+		{ gift_given = "lavender_tea" },
+		{ gift_given = "mocha" },
+		{ gift_given = "roasted_rice_tea" },
+		{ gift_given = "rose_tea" }
+	] }
+]
+portrait = "neutral"
+local = "Oh, thank you [Ari], but I get more than enough coffee and tea in my line of work. I do appreciate the thought, though."
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "darcy" }, { gift_desire = "disliked" }]
+portrait = "think"
+local = "Ah, is this for me...?"
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "darcy" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ darcy_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "embarrassed"
+effect = "sparkles"
+local = "You knew it was my birthday? Gosh, [Ari]! Thank you!"

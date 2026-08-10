@@ -1,0 +1,35 @@
+camera_out();
+wait(3);
+__raise_textbox();
+request_music_play(caldarus);
+play_sound("SoundEffects/SpecialEvents/CaldarusAppear");
+show_caldarus_statue();
+
+//
+next_line(); //
+if get_response() == 1 {
+	next_line(); //
+	next_line(); //
+}
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+
+next_line(); //
+if get_response() == 0 {
+	close_textbox();
+	wait(0.25);
+	run_tutorial("skill_perks");
+	wait(0.25);
+}
+
+next_line(); //
+next_line(); //
+
+close_textbox();
+hide_caldarus_statue();

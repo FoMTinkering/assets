@@ -1,0 +1,19 @@
+[dnd_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ day_of_the_week = "friday" },
+	{ dnd_fnati = 3, comparator = "<=" },
+	{ dnd_fnati = 0, comparator = ">=" },
+	{ location = "inn", comparator = "!=" },
+	{ dnd_fnati_discussion = 2, comparator = "<" }
+]
+writes = [{ dnd_fnati_discussion = 1, operator = "+=", expires = "1w" }]
+portrait = "happy"
+effect = "sparkles"
+local = "Today's the day... I've got today's session of our Historical Adventure Reenactment ready!"
+next = "1"
+
+[dnd_anticipation.1]
+portrait = "think"
+local = "Though it's also known by its official name, Dragons & Drama."

@@ -1,0 +1,21 @@
+[bee_pun]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "holt" },
+	{ spring_festival_date = "1d", time = "after" },
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+portrait = "neutral"
+local = "What an unbeelievable turnout! The air is practically buzzing!"
+
+[no_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "holt" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ sf_no_place = true },
+]
+portrait = "neutral"
+local = "Festival is a bit quiet this year, but I'm sure next year will be better."

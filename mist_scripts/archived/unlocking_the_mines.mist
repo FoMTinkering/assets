@@ -1,0 +1,217 @@
+scene(narrows);
+place_actor(errol, east, utm_errol);
+place_actor(eiland, west, utm_eiland);
+place_actor(ari,west, utm_ari_start);
+camera_position(utm_camera_1);
+request_music_play("Music/Events/Cutscene");
+
+//
+free sim {
+	fade_in(2);
+	pan_camera(6, utm_camera_extra);
+	{
+		walk_slow(ari, utm_ari_wait);
+		face(ari, north);
+	}
+}
+wait(2);
+next_line(); //
+next_line(); //
+close_textbox();
+
+//
+free bark_speech(eiland, exclamation_mark);
+face(eiland, south);
+wait(0.5);
+face(errol, south);
+free sim {
+	{
+		walk_slow(ari, utm_ari);
+		face(ari, north);
+	}
+	pan_camera(2, utm_camera_2_response);
+}
+next_line(); //
+
+//
+free pan_camera(2, utm_camera_2);
+next_line(); //
+free {
+	face(errol, east);
+	wait(0.5);
+	face(eiland, west);
+}
+next_line(); //
+next_line(); //
+close_textbox();
+wait(1);
+face(eiland, south);
+face(errol, south);
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+
+free sim {
+	play_sound("SoundEffects/SpecialEvents/Premonition");
+	pan_camera(3, utm_camera_3);
+	{
+		walk_slow(errol, utm_errol_mines_entrance);
+		face(errol, north);
+	}
+}
+next_line(); //
+close_textbox();
+bark_speech(errol, ellipses);
+face(errol, east);
+next_line(); //
+
+//
+
+free sim {
+	{
+		walk(eiland, utm_eiland_mines_entrance);
+		face(eiland, west);
+	}
+	{
+		wait(1);
+		walk_slow(ari, utm_ari_mines_entrance);
+		face(ari, north);
+	}
+}
+next_line(); //
+next_line(); //
+next_line(); //
+free {
+	face(eiland, south);
+	wait(0.5);
+	face(errol, south);
+}
+next_line(); //
+
+//
+
+next_line(); //
+face(eiland, west);
+wait(0.5);
+face(errol, east);
+next_line(); //
+next_line(); //
+face(errol, north);
+next_line(); //
+close_textbox();
+wait(0.5);
+fade_out(1);
+play_sound("SoundEffects/SpecialEvents/Construction");
+trigger_scene_object_removals();
+wait(4);
+fade_in(1);
+walk_slow(errol, utm_errol_mines_side);
+
+var x = get_element_x(utm_errol_mines_entrance);
+var y = get_element_y(utm_errol_mines_entrance) - 24;
+sim {
+	pan_camera(3, x, y);
+	{
+		walk_slow(eiland, x, y);
+		remove_actor(eiland);
+	}
+	{
+		wait(1);
+		walk_slow(ari, x, y);
+		remove_actor(ari);
+	}
+	{
+		wait(2);
+		fade_out(1);
+	}
+}
+
+scene(mines_entry);
+camera_position(utm_camera_1);
+place_actor(eiland, north, utm_eiland_entrance);
+place_actor(ari, north, utm_ari_entrance);
+
+//
+free {
+	sim {
+		free {
+			walk_slow(ari, utm_ari);
+			face(ari, west);
+		}
+		free {
+			walk_slow(eiland, utm_eiland);
+			face(eiland, east);
+		}
+	}
+}
+sim {
+	pan_camera(3, utm_camera_start);
+	fade_in(2);
+}
+//
+sim {
+	{
+		pan_camera(2, utm_camera_3);
+		wait(1.5);
+		pan_camera(2, utm_camera_start);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		close_textbox();
+	}
+}
+
+//
+face(eiland, north);
+free bark_speech(eiland, exclamation_mark);
+wait(0.75);
+sim {
+	{
+		walk(eiland, utm_eiland_forward);
+		face(eiland, north);
+		wait(3);
+		free bark_speech(eiland, exclamation_mark);
+		walk(eiland, utm_eiland_statue);
+		face(eiland, west);
+	}
+	{
+		wait(3);
+		walk_slow(ari, utm_ari_forward);
+		face(ari, north);
+	}
+	pan_camera(3, utm_camera_4);
+}
+next_line(); //
+
+//
+face(eiland, south);
+next_line(); //
+face(eiland, west);
+next_line(); //
+next_line(); //
+sim {
+	{
+		walk_slow(eiland, utm_eiland_leaving);
+		face(eiland, south);
+	}
+	pan_camera(2, utm_camera_5);
+	next_line(); //
+}
+free {
+	wait(0.5);
+	bark_speech(eiland, cute_face);
+}
+bark_speech(ari, exclamation_mark);
+next_line(); //
+
+sim {
+	free {
+		walk(eiland, utm_eiland_entrance);
+		remove_actor(eiland);
+	}
+	fade_out(2);
+}
+wait_one_tick();

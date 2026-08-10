@@ -1,0 +1,65 @@
+[breakfast]
+refresh = "2m"
+requires = [{ npc = "valen" }, { time_of_day = "morning" }]
+actions = [{ item = "hard_boiled_egg" }]
+portrait = "neutral"
+local = "Did you eat a balanced breakfast, [Ari]? It sets the tone for your day. Here, take this."
+
+[breakfast_2]
+refresh = "1y"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ any = [{ valen_activity = "eat" }, { valen_activity = "order_food" }] },
+	{ valen_heart_level = 4, comparator = ">=" }
+]
+portrait = "neutral"
+local = "A balanced breakfast opens the door to a balanced day."
+next = "1"
+
+[breakfast_2.1]
+portrait = "raised_eyebrow"
+local = "That's what my father used to say, anyway."
+next = "2"
+
+[breakfast_2.2]
+portrait = "ugh"
+local = """Though I don't know if I'd call a dozen boiled eggs "balanced"."""
+
+[breakfast_3]
+refresh = "1m"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ any = [{ valen_activity = "eat" }, { valen_activity = "order_food" }] },
+	{ valen_heart_level = 4, comparator = ">=" }
+]
+portrait = "neutral"
+local = "Be sure to get yourself some breakfast, [Ari]. A farmer needs it."
+
+[breakfast_4]
+refresh = "1y"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ any = [{ valen_activity = "eat" }, { valen_activity = "order_food" }] },
+	{ valen_heart_level = 4, comparator = ">=" }
+]
+portrait = "raised_eyebrow"
+local = "As tempting as it is, a cup of =Coffee= is not a proper breakfast."
+next = "1"
+
+[breakfast_4.1]
+portrait = "happy"
+local = "Make sure you eat something that will keep you warm today."
+
+[breakfast_5]
+refresh = "1y"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ any = [{ valen_activity = "eat" }, { valen_activity = "order_food" }] },
+	{ valen_heart_level = 4, comparator = ">=" }
+]
+portrait = "neutral"
+local = "Have yourself some breakfast, [Ari]! Or at least take something to go. You never know when you'll need to renew your energy."

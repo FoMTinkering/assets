@@ -1,0 +1,52 @@
+[museum_0]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ eiland_is_at = "eilands_office/Desk Chair Seat" },
+		{ eiland_is_at = "eilands_office/Front of Desk" },
+		{ eiland_zone = "museum_entry/desk" }
+	] },
+	{ eiland_zone = "<errol_zone>", comparator = "!=" }
+]
+portrait = "think"
+local = "Forgive my preoccupation, [Ari]... Errol came across some fascinating marginalia."
+next = "1"
+
+[museum_0.1]
+portrait = "happy"
+local = "Isn't this one cute?"
+next = "2"
+
+[museum_0.2]
+portrait = "ugh"
+local = "Oh dear. The one after is quite crude."
+
+[museum_1]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_zone = "museum_entry/desk" },
+	{ museum_total_count = 20, comparator = ">=" }
+]
+portrait = "neutral"
+local = "[Ari]! Are you making another donation?"
+next = "1"
+
+[museum_1.1]
+portrait = "happy"
+local = "You've truly helped to expand our collection beyond my wildest dreams. Thank you!"
+
+[museum_2]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ eiland_is_at = "eilands_office/Desk Chair Seat" },
+		{ eiland_is_at = "eilands_office/Front of Desk" },
+		{ eiland_zone = "museum_entry/desk" }
+	] },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "happy"
+local = "There are few things more exciting than beginning a new research folio. Oh, the possibilities!"

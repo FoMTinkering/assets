@@ -1,0 +1,46 @@
+[impressive_ruins]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ location = "western_ruins", comparator = "!=" },
+	{ eiland_is_traveling_to_location = "western_ruins", comparator = "!=" },
+	{ eiland_is_traveling_from_location = "western_ruins", comparator = "!=" },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ eog_impressive_ruins = true, expires = "1y" }]
+portrait = "neutral"
+local = "Hm? Oh, sorry. I was daydreaming about the Western Ruins."
+next = "1"
+
+[impressive_ruins.1]
+portrait = "think"
+local = "Such an odd place to build such an impressive site..."
+
+[impressive_ruins_alt]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ location = "western_ruins", comparator = "!=" },
+	{ eiland_is_traveling_to_location = "western_ruins", comparator = "!=" },
+	{ eiland_is_traveling_from_location = "western_ruins", comparator = "!=" },
+	{ eog_impressive_ruins = false },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false }
+]
+portrait = "neutral"
+local = "Hm? Oh, sorry. I was just thinking about the Western Ruins."
+next = "1"
+
+[impressive_ruins_alt.1]
+portrait = "think"
+local = "Seridia mentioned that what remains of her temple today is but a fraction of the original site."
+next = "2"
+
+[impressive_ruins_alt.2]
+portrait = "ugh"
+local = "Apparently the floating towers of her court crashed into the Western Bay when the $Magic$ that kept them aloft was sealed by Caldarus."
+next = "3"
+
+[impressive_ruins_alt.3]
+portrait = "sad"
+local = "If only one had survived!"

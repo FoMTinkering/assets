@@ -1,0 +1,25 @@
+[tending_garden]
+refresh = "2m"
+requires = [{ npc = "celine" }, { celine_routine = "celine_gardening" }]
+portrait = "happy"
+local = "Tending the garden is my favorite part of the day."
+
+[tending_garden_2]
+refresh = "1y"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_routine = "celine_gardening" },
+		{ celine_routine = "manor_gardening" },
+	] },
+	{ celine_heart_level = 3, comparator = ">=" }
+]
+portrait = "happy"
+effect = "music_notes"
+local = "Hm hmm hmmmm..."
+next = "1"
+
+[tending_garden_2.1]
+portrait = "neutral"
+effect = "drop"
+local = "Oh, [Ari]! Sorry, sometimes I disappear into my own little world when I'm gardening!"

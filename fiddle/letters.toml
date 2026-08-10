@@ -1,0 +1,2754 @@
+[default]
+	subject_line = "MISSING"
+	local = "MISSING"
+	npc = "adeline"
+	quest_to_start = "<n/a>"
+	quest_to_progress = "<n/a>"
+	requirements = {}
+	can_repeat = false
+	items = []
+
+[friday_at_the_sleeping_dragon_inn]
+	subject_line = "Friday at the Sleeping Dragon Inn"
+	local = """Hey [Ari]!
+
+Mistria has a tradition where everyone gathers at the Sleeping Dragon Inn on Friday nights! That's tonight, and this is your invitation!
+
+Meet me at the Inn after 6 PM tonight. Keep me company and I'll throw in a free drink!"""
+	npc = "reina"
+	quest_to_start = "friday_at_the_sleeping_dragon_inn"
+	requirements = { reached_date = { season = "spring", day = 5 } }
+
+[museum_donation_wanted]
+	npc = "errol"
+	subject_line = "Visit The Museum"
+	local = """Dear [Ari],
+
+As the curator of Mistria's Museum, I'm delighted to share that we have unveiled a series of tiered rewards to encourage donations to our collection.
+
+Please stop by the Museum west of town at your earliest convenience."""
+	quest_to_start = "museum_donation_wanted"
+	requirements = { reached_date = { season = "spring", day = 2 } }
+
+[tea_with_hayden]
+	npc = "hayden"
+	subject_line = "Let's Have Tea!"
+	local = """[Ari],
+Can't thank you enough for your work on the Mill!
+
+If you've got time, come on over to my place! I'll put the kettle on and we can talk ranching and raising animals."""
+	quest_to_start = "tea_with_hayden"
+	requirements = { completed_quest = "repair_the_mill" }
+
+[repair_the_mill]
+	npc = "adeline"
+	subject_line = "Repairing the Mill"
+	local = """[Ari],
+
+The mill was damaged in the earthquake, and it's high time we repaired it!
+
+A working mill is essential to the town and will let you process all sorts of new products.
+
+Meet me in my office up at the Manor House!"""
+	quest_to_start = "repair_the_mill"
+	requirements = { completed_quest = { quest = "replenishing_mistrias_food_reserves_1", days_after = 3 } }
+
+[cozy_kitchen_unlock]
+	npc = "ryis"
+	subject_line = "Need a Kitchen Upgrade?"
+	requirements = { reached_skill_level = { cooking = 15 } }
+	local = """[Ari],
+
+The Level 2 Kitchen is now available at the Carpenter's Shop. You should stop by and check it out!"""
+
+[adept_kitchen_unlock]
+	npc = "ryis"
+	subject_line = "Need an Even Better Kitchen?"
+	requirements = { reached_skill_level = { cooking = 30 } }
+	local = """[Ari],
+
+The Level 3 Kitchen is now in stock at the Carpenter's Shop. Stop by when you want to upgrade!"""
+
+[greet_the_vendors]
+	npc = "nora"
+	subject_line = "Greet the Saturday Market Vendors"
+	local = """[Ari],
+
+The Saturday Market is finally back in town!
+
+Please go and introduce yourself to this week's vendors. Then come talk to me for a reward!"""
+	quest_to_start = "greet_the_vendors"
+
+	[greet_the_vendors.requirements]
+		is_day_type = "saturday"
+		completed_quest = "repair_the_bridge"
+
+[the_unusual_seed]
+	subject_line = "The Unusual Seed"
+	local = """[Ari],
+
+Could you come to my house when you have a moment?
+
+I've got a question about a flower that I hope you can help with!"""
+	npc = "celine"
+	quest_to_start = "the_unusual_seed"
+	requirements = { reached_heart_level = { celine = 2 } }
+
+[the_smell_of_drying_ink]
+	subject_line = "Official Town Business"
+	local = """[Ari],
+
+You've already taken such a keen interest in so much of the goings on around Mistria, would you be interested in getting a closer look at the inner workings of our government?
+
+Come meet me in my office at the Manor House and be prepared for fun!"""
+	npc = "adeline"
+	quest_to_start = "the_smell_of_drying_ink"
+	requirements = { reached_heart_level = { adeline = 2 } }
+
+[the_stele]
+	subject_line = "The Stele"
+	local = """[Ari],
+
+I'm sure by now you've seen that Mistria is full of ancient places, with many more still left to discover.
+
+If you're interested, meet me at the Manor House and I can show you a particularly interesting site on the grounds!"""
+	npc = "eiland"
+	quest_to_start = "the_stele"
+
+	[the_stele.requirements]
+		reached_heart_level = { eiland = 2 }
+
+[surprise_me]
+	subject_line = "Hey"
+	local = """[Ari],
+
+Meet me at the Blacksmith's, and don't keep me waiting."""
+	npc = "march"
+	quest_to_start = "surprise_me"
+	requirements = { reached_heart_level = { march = 2 } }
+
+[pie_in_the_sky]
+	subject_line = "In Need Of A Taste Tester"
+	local = """[Ari]
+
+You've been in town too long without getting to taste test a new dish of mine. I think I've got just the recipe to try out on a hardworking farmer like you.
+
+Come by the Inn when you get a chance!"""
+	npc = "reina"
+	quest_to_start = "pie_in_the_sky"
+	requirements = { reached_heart_level = { reina = 2 } }
+
+[bird_song]
+	subject_line = "Lumber Request"
+	local = """[Ari],
+
+Do you have any extra wood to spare from clearing your farm?
+
+We're working on a project and supplies are short in Mistria at the moment.
+
+I can pay 150t for 15 pieces! Just drop it off with me when you have it!"""
+	npc = "landen"
+	quest_to_start = "bird_song"
+	requirements = { reached_heart_level = { ryis = 2 } }
+
+[a_rewarding_choice]
+	subject_line = "An Important Choice"
+	local = """[Ari]!
+
+I have an important choice to make, and I wanted to get the thoughts of an average Mistrian to weigh in on it.
+
+Meet me at my office?
+
+Thank you!"""
+	npc = "adeline"
+	quest_to_start = "a_rewarding_choice"
+
+	[a_rewarding_choice.requirements]
+		reached_heart_level = { adeline = 4 }
+		completed_quest = "the_smell_of_drying_ink"
+
+# this letter is for adeline 4h
+[adeline_4h_reward_1]
+	subject_line = "Thanks Again!"
+	local = """[Ari],
+
+Thank you so much for your help yesterday! I know everyone in town will really appreciate these extra materials, and I'm sure you'll put yours to good use.
+
+This was a great choice!"""
+	npc = "adeline"
+	requirements = { world_fact_is.adeline_4h_materials = true }
+	items = [
+		{ item_name = "basic_wood", count = 25 },
+		{ item_name = "ore_stone", count = 25 },
+	]
+
+[adeline_4h_reward_2]
+	subject_line = "Thank You!"
+	local = """[Ari],
+
+Thank you so much for your help yesterday! We got the shipment of cookies in this morning, and it made the whole Manor House smell like a bakery!
+
+I hope you enjoy your cookie (Eiland already ate his...).
+
+This was a great choice!"""
+	requirements = { world_fact_is.adeline_4h_cookie = true }
+	npc = "adeline"
+	items = [{ item_name = "big_cookie", count = 1 }]
+
+[water_and_soil]
+	subject_line = "Water And Soil"
+	local = """[Ari],
+
+The seed we found still hasn't sprouted...
+
+I've been doing research into it and I'm starting to think its growth conditions might be very particular.
+
+Could you come over and lend me your insight as a farmer as well? It'd be very appreciated!"""
+	npc = "celine"
+	quest_to_start = "water_and_soil"
+
+	[water_and_soil.requirements]
+		reached_heart_level = { celine = 4 }
+		completed_quest = "the_unusual_seed"
+
+[many_hands_make_light_work]
+	subject_line = "Blacksmithing Buddies"
+	local = """Hey [Ari]!
+
+Are you busy? March and I sure are! We can hardly keep up with all our work.
+
+March told me your blacksmithing has been improving, and that I shouldn't tell you he said that. Buuuut what I think he meant to say was "I sure hope [Ari] can help us out!"
+
+Hope to see you at the forge soon!
+
+Your pal,"""
+	npc = "olric"
+	quest_to_start = "many_hands_make_light_work"
+
+	[many_hands_make_light_work.requirements]
+		reached_heart_level = { march = 4 }
+		completed_quest = "surprise_me"
+		saturday_market_unlocked = true
+
+[shopping_buddy]
+	subject_line = "Let's Go Shopping!"
+	local = """Hey [Ari]!
+
+If you're free, I could use a shopping buddy! I want to pick out ingredients that'll really wow the judges.
+
+Meet me at the General Store when you've got time!"""
+	npc = "reina"
+	quest_to_start = "shopping_buddy"
+
+	[shopping_buddy.requirements]
+		reached_heart_level = { reina = 4 }
+		completed_quest = "pie_in_the_sky"
+
+[the_ruins]
+	subject_line = "To the Ruins!"
+	local = """[Ari],
+
+The new text you uncovered has been an enormous help regarding the whereabouts of the Dragonsworn Armor.
+
+I have every reason to believe that we can discover more at the Western Ruins.
+
+Meet me there and we can begin!"""
+	npc = "eiland"
+	quest_to_start = "the_ruins"
+
+	[the_ruins.requirements]
+		reached_heart_level = { eiland = 4 }
+		completed_quest = "the_stele"
+
+[batch_312]
+	subject_line = "Medicinal Research"
+	local = """[Ari],
+
+Have you come across any peat while you've been out digging?
+
+I'm told it can be found quite often when searching for artifacts. I believe that it could be useful to my research.
+
+Could you bring me a piece? I'm happy to pay for it."""
+	npc = "valen"
+	quest_to_start = "batch_312"
+
+	[batch_312.requirements]
+		reached_heart_level = { valen = 4 }
+		completed_quest = "the_annual_check_up"
+
+[baked_potato_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "potato" }
+	items = [{ recipe_scroll = "baked_potato" }]
+	subject_line = "Baked Potato Recipe"
+	local = """[Ari],
+
+Balor delivered your shipment of potatoes this morning. We're so excited to have new produce in!
+
+Please accept this baked potato recipe as thanks!
+
+Enjoy,"""
+
+[sliced_turnip_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "turnip" }
+	items = [{ recipe_scroll = "sliced_turnip" }]
+	subject_line = "Sliced Turnip Recipe"
+	local = """[Ari],
+
+We received your shipment of turnips this morning from Balor. You're doing great work over there!
+
+I've attached my recipe for sliced turnips, I thought you might want to try it out.
+
+Enjoy,"""
+
+[cabbage_slaw_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "cabbage" }
+	items = [{ recipe_scroll = "cabbage_slaw" }]
+	subject_line = "Cabbage Slaw Recipe"
+	local = """[Ari],
+
+Your cabbage shipment made my morning! Try out this recipe for cabbage slaw if you have any left over.
+
+Thanks again,"""
+
+[candied_strawberries_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "strawberry" }
+	items = [{ recipe_scroll = "candied_strawberries" }]
+	subject_line = "Candied Strawberries"
+	local = """[Ari],
+
+Thank you for the shipment of strawberries! I thought you might like this recipe for a simple strawberry dessert.
+
+Keep up the hard work!"""
+
+[candied_lemon_peel_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "lemon" }
+	items = [{ recipe_scroll = "candied_lemon_peel" }]
+	subject_line = "Candied Lemon Peel Recipe"
+	local = """[Ari],
+
+Balor dropped off your lemon shipment this morning! It made me think you might like this recipe for candied lemon peel.
+
+Enjoy!"""
+
+[spicy_water_chestunut_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "chili_pepper" }
+	items = [{ recipe_scroll = "spicy_water_chestnuts" }]
+	subject_line = "Spicy Water Chestnuts"
+	local = """[Ari],
+
+Balor dropped off your chili pepper shipment this morning! I thought you might like this recipe for spicy water chestnuts.
+
+Thanks again!"""
+
+[grilled_corn_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "corn" }
+	items = [{ recipe_scroll = "grilled_corn" }]
+	subject_line = "Grilled Corn Recipe"
+	local = """[Ari],
+
+Thank you for the wonderful corn shipment! Why don't you try out this simple recipe for grilled corn?
+
+Enjoy!"""
+
+[cucumber_salad_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "cucumber" }
+	items = [{ recipe_scroll = "cucumber_salad" }]
+	subject_line = "Cucumber Salad"
+	local = """[Ari],
+
+The shipment of cucumber we received from you this morning was excellent! Here's my recipe for cucumber salad.
+
+Give it a try!"""
+
+[tomato_soup_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "tomato" }
+	items = [{ recipe_scroll = "tomato_soup" }]
+	subject_line = "Tomato Soup Recipe"
+	local = """[Ari],
+
+The tomatoes from your last shipment are already flying off the shelves! Please accept this recipe for my famous tomato soup.
+
+I hope you enjoy it!"""
+
+[salted_watermelon_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "watermelon" }
+	items = [{ recipe_scroll = "salted_watermelon" }]
+	subject_line = "Salted Watermelon"
+	local = """[Ari],
+
+It's so nice to have some fresh watermelon in town! I thought you might like this simple recipe for salted watermelon.
+
+Thanks again!"""
+
+[rose_tea_recipe]
+	npc = "josephine"
+	requirements = { shipped_item = "tea" }
+	items = [{ recipe_scroll = "rose_tea" }]
+	subject_line = "Rose Tea Recipe"
+	local = """[Ari],
+
+I was so pleased to see the tea you grew at the General Store this morning! Thought you might like this recipe for rose tea. It's one of my favorites!
+
+Thanks again!"""
+
+
+[steamed_broccoli_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "broccoli" }
+	items = [{ recipe_scroll = "steamed_broccoli" }]
+	subject_line = "Steamed Broccoli"
+	local = """[Ari],
+
+Balor dropped off your shipment of broccoli with us! I thought you might like this recipe for steamed broccoli.
+
+Thanks again!"""
+
+[sauteed_snow_peas_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "snow_peas" }
+	items = [{ recipe_scroll = "sauteed_snow_peas" }]
+	subject_line = "Sauteed Snow Peas Recipe"
+	local = """[Ari],
+
+Thank you for the shipment of snow peas! Why don't you try out this simple recipe if you have any left over?
+
+Enjoy!"""
+
+[buttered_peas_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "peas" }
+	items = [{ recipe_scroll = "buttered_peas" }]
+	subject_line = "Buttered Peas Recipe"
+	local = """[Ari],
+
+Thank you for the shipment of peas! I thought I might recommend a recipe for them, in case you have any extra.
+
+Enjoy!"""
+
+[braised_carrots_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "carrot" }
+	items = [{ recipe_scroll = "braised_carrots" }]
+	subject_line = "Braised Carrots Recipe"
+	local = """[Ari],
+
+Thank you for the shipment of carrots! Have you ever tried braising them? I highly recommend it!
+
+Enjoy!"""
+
+[onion_soup_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "onion" }
+	items = [{ recipe_scroll = "onion_soup" }]
+	subject_line = "Onion Soup"
+	local = """[Ari],
+
+The shipment of onion we received from you this morning was great! Here's my recipe for onion soup.
+
+Give it a try!"""
+
+[roasted_sweet_potato_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "sweet_potato" }
+	items = [{ recipe_scroll = "roasted_sweet_potato" }]
+	subject_line = "Roasted Sweet Potato Recipe"
+	local = """[Ari],
+
+The sweet potatoes from your last shipment are proving popular! Please accept this recipe for roasted sweet potato.
+
+I hope you enjoy it!"""
+
+[pumpkin_stew_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "pumpkin" }
+	items = [{ recipe_scroll = "pumpkin_stew" }]
+	subject_line = "Pumpkin Stew Recipe"
+	local = """[Ari],
+
+It really feels like Fall now that we have your pumpkin shipment in stock! I thought you might like this recipe for pumpkin stew.
+
+Thanks as always!"""
+
+[cranberry_juice_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "cranberry" }
+	items = [{ recipe_scroll = "cranberry_juice" }]
+	subject_line = "Cranberry Juice Recipe"
+	local = """[Ari],
+
+Thank you for your shipment of fresh cranberries! Try out this recipe for cranberry juice if you have any left over.
+
+Enjoy!"""
+
+[beet_salad_recipe]
+	npc = "valen"
+	requirements = { shipped_item = "beet" }
+	items = [{ recipe_scroll = "beet_salad" }]
+	subject_line = "Beet Salad Recipe"
+	local = """Hello [Ari],
+
+I was happy to find beets in stock at the store this morning. It made me think that you might like to try out my favorite beet salad recipe.
+
+Thanks for your hard work,"""
+
+
+[roasted_cauliflower_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "cauliflower" }
+	items = [{ recipe_scroll = "roasted_cauliflower" }]
+	subject_line = "Roasted Cauliflower Recipe"
+	local = """[Ari],
+
+Thank you for your shipment of cauliflower! I thought you might like to try out this recipe for roasted cauliflower if you have any left over.
+
+I hope you enjoy it!"""
+
+[simmered_daikon_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "daikon_radish" }
+	items = [{ recipe_scroll = "simmered_daikon" }]
+	subject_line = "Simmered Daikon Recipe"
+	local = """[Ari],
+
+We received your shipment of daikon radish this morning! Here's my recipe for simmered daikon.
+
+Why not give it a try?"""
+
+[braised_burdock_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "burdock_root" }
+	items = [{ recipe_scroll = "braised_burdock" }]
+	subject_line = "Braised Burdock Recipe"
+	local = """[Ari],
+
+The shipment of burdock root we received this morning was perfect! Please find attached my recipe for braised burdock.
+
+I hope you like it!"""
+
+[coconut_milk_recipe]
+	npc = "landen"
+	requirements = { shipped_item = "coconut" }
+	items = [{ recipe_scroll = "coconut_milk" }]
+	subject_line = "Coconut Milk Recipe"
+	local = """Hi there [Ari],
+
+I'm a big fan of all things coconut, so I was glad to see your shipment in the General Store this morning!
+
+I thought you might like my recipe for coconut milk.
+
+Enjoy!"""
+
+
+[toasted_sunflower_seeds_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "sunflower" }
+	items = [{ recipe_scroll = "toasted_sunflower_seeds" }]
+	subject_line = "Toasted Sunflower Seeds Recipe"
+	local = """[Ari],
+
+Your sunflower shipment was lovely to see! Did you know you can roast their seeds to make a tasty snack? It's one of my favorites.
+
+I've included the recipe for you. Enjoy!"""
+
+
+[poached_pear_recipe]
+	npc = "elsie"
+	requirements = { shipped_item = "pear" }
+	items = [{ recipe_scroll = "poached_pear" }]
+	subject_line = "Poached Pear Recipe"
+	local = """Dear [Ari],
+
+When I saw your pear shipment in the General Store this morning, I knew I had to make some poached pears!
+
+I thought I would share my recipe with you.
+
+Enjoy!"""
+
+
+[peaches_and_cream_recipe]
+	npc = "adeline"
+	requirements = { shipped_item = "peach" }
+	items = [{ recipe_scroll = "peaches_and_cream" }]
+	subject_line = "Peaches and Cream Recipe"
+	local = """Hi [Ari]!
+
+I saw your peach shipment at the General Store this morning and wanted to share one of my favorite recipes!
+
+It's for peaches and cream. I hope you like it!"""
+
+[orange_juice_recipe]
+	npc = "nora"
+	requirements = { shipped_item = "orange" }
+	items = [{ recipe_scroll = "orange_juice" }]
+	subject_line = "Orange Juice Recipe"
+	local = """[Ari],
+
+Thank you for your orange shipment! Here's a quick and easy recipe for orange juice.
+
+It's good for you!"""
+
+[apple_juice_recipe]
+	npc = "dell"
+	requirements = { shipped_item = "apple" }
+	items = [{ recipe_scroll = "apple_juice" }]
+	subject_line = "Apple Juice Recipe"
+	local = """Hi [Ari]!
+
+Mom said I could send this one because apple juice is my favorite!
+
+Um, I mean thanks for the apple shipment!"""
+
+[pomegranate_sorbet_recipe]
+	npc = "elsie"
+	requirements = { shipped_item = "pomegranate" }
+	items = [{ recipe_scroll = "pomegranate_sorbet" }]
+	subject_line = "Pomegranate Sorbet Recipe"
+	local = """Dear [Ari],
+
+Did you know that you can blend pomegranate with ice to make a wonderful pomegranate sorbet?
+
+Try it, you'll love it!"""
+
+[unlocking_the_mines_pt_1]
+	npc = "eiland"
+	subject_line = "Reopening The Mines"
+	local = """[Ari],
+
+I need your help with something important!
+
+Please meet myself and Curator Errol at the Museum west of town to discuss the reopening of the Mines."""
+	quest_to_start = "unlocking_the_mines_pt_1"
+	requirements = { reached_date = { season = "spring", day = 6, year = 1 } }
+
+[unlocking_the_mines_pt_2]
+	npc = "errol"
+	subject_line = "Mistria's Town Rank"
+	local = """[Ari],
+
+In regards to the Mines...
+
+Eiland has informed me that Mistria's rank has been raised to Stone Star, and I have agreed to meet with him to further discuss the Mines.
+
+Please meet us at the Mine's Entrance west of town, [Ari]."""
+	quest_to_start = "unlocking_the_mines_pt_2"
+
+	[unlocking_the_mines_pt_2.requirements]
+		completed_quest = "unlocking_the_mines_pt_1"
+		reached_renown_level = 10
+
+[repair_the_bridge]
+	npc = "adeline"
+	subject_line = "Let's Repair The Bridge!"
+	local = """[Ari],
+
+I'm sure you noticed the state of the bridge into town when you arrived.
+
+I'd like to introduce you to a group of us that are spearheading a repair plan.
+
+Could you meet with us at the bridge east of town?"""
+	quest_to_start = "repair_the_bridge"
+	requirements = { reached_date = { season = "spring", day = 3, year = 1 } }
+
+[miners_mushroom_stew]
+	npc = "errol"
+	subject_line = "Mushroom Stew"
+	local = """Esteemed [Ari],
+
+Your recent donation of mushrooms from the Mines jogged my memory!
+
+Find enclosed the recipe for a dish I used to make for the mining crew after a long day's work.
+
+It's especially hearty in the wintertime, but delicious in all seasons.
+
+Best,"""
+	items = [{ recipe_scroll = "miners_mushroom_stew" }]
+	requirements = { donated_item = "upper_mines_mushroom" }
+
+[baked_sweetroot]
+	npc = "errol"
+	subject_line = "Baked Sweetroot Recipe"
+	local = """Patron [Ari],
+
+I'm glad to see you've come across Sweetroot in the Mines, an excellent find!
+
+Here's a simple recipe for Baked Sweetroot, passed on to me when I was just a greenhorn. You'll find it keeps your energy up!
+
+Happy eating,"""
+	items = [{ recipe_scroll = "baked_sweetroot" }]
+	requirements = { donated_item = "sweetroot" }
+
+[deep_sea_soup]
+	npc = "reina"
+	subject_line = "Deep Sea Soup Recipe"
+	local = """Hey [Ari]!
+
+That Jade Dulse you donated to the museum reminded me of a recipe I saw in a cookbook I borrowed!
+
+You'll need a few more ingredients, but it's super healthy and tastes really good!
+
+Just, um, ignore how green it is. That's how you know you made it right, I promise!"""
+	items = [{ recipe_scroll = "deep_sea_soup" }]
+	requirements = { donated_item = "cave_kelp" }
+
+[horsing_around]
+	npc = "juniper"
+	subject_line = "I Require My Test Subject"
+	local = """[Ari],
+
+I've prepared a potion to test on you, so come to the Bathhouse.
+
+Don't make me wait too long, or I might just test it on someone else."""
+	quest_to_start = "horsing_around"
+
+	[horsing_around.requirements]
+		reached_heart_level = { juniper = 4 }
+		completed_quest = "becoming_junipers_guinea_pig"
+
+[replenishing_mistrias_food_reserves_1]
+	npc = "adeline"
+	subject_line = "Restocking Mistria's Food Reserves"
+	local = """[Ari],
+
+I hope this letter finds you well.
+
+Can you meet me at the Manor House when you have the time? I'd like to discuss Mistria's emergency supply reserves with you."""
+	quest_to_start = "replenishing_mistrias_food_reserves_1"
+	requirements = { completed_quest = { quest = "repair_the_bridge", days_after = 2 } }
+
+[an_open_book]
+	npc = "balor"
+	subject_line = "Business Chat"
+	local = """[Ari],
+
+Your farm has been a boon to Mistria's economy.
+
+As the person handling your shipments I have some advice that might interest you.
+
+Meet me at the Inn when you have the time!"""
+	quest_to_start = "an_open_book"
+
+	[an_open_book.requirements]
+		reached_heart_level = { balor = 4 }
+		completed_quest = "tall_dark_and_mysterious"
+
+[repair_the_general_store]
+	npc = "adeline"
+	subject_line = "The General Store"
+	local = """[Ari],
+
+Could you meet me at the General Store? It's time to unveil Phase 2 of my plan to revitalize Mistria."""
+	quest_to_start = "repair_the_general_store"
+	requirements = { completed_quest = { quest = "repair_the_summit_stairs", days_after = 3 } }
+
+[crafting_tutorial]
+	npc = "ryis"
+	subject_line = "Crafting Overview"
+	local = """Hey [Ari],
+
+I've been thinking about what a big task it is to get your farm back in shape.
+
+If you can bring me 10 Wood, I can give you a quick overview on how to start crafting the things you'll need, like fences."""
+	quest_to_start = "crafting_tutorial"
+	requirements = { reached_date = { season = "spring", day = 10, year = 1 } }
+
+[medium_farm_buildings_unlocked]
+	npc = "ryis"
+	subject_line = "Need More Space for your Animals?"
+	local = """[Ari],
+
+The blueprints for medium barns and coops are now available at the Carpenter's Shop. You can fit up to 8 animals in each!"""
+	requirements = { reached_skill_level = { ranching = 20 } }
+
+[large_farm_buildings_unlocked]
+	npc = "ryis"
+	subject_line = "Need Even More Space for Animals?"
+	local = """[Ari],
+
+The blueprints for large barns and coops are now available at the Carpenter Shop. You can fit up to 12 animals in each!"""
+	requirements = { reached_skill_level = { ranching = 40 } }
+
+[repair_the_summit_stairs]
+	npc = "adeline"
+	subject_line = "Next Project"
+	local = """[Ari],
+
+Now that Mistria has its basic necessities met, I'd like to pivot our focus to a real morale booster for the town.
+
+Would you meet Eiland and me in front of the Manor House?"""
+	quest_to_start = "repair_the_summit_stairs"
+	requirements = { completed_quest = { quest = "repair_the_mill", days_after = 3 } }
+
+[weather_globe_letter]
+	npc = "juniper"
+	subject_line = "Weather Crystal Ball"
+	local = """[Ari],
+
+Dozy absolutely insisted that I send you an extra token of apology for nearly knocking you out with my experimental potion yesterday...
+
+Here's a magical object that you might find useful. If you can figure out what it does.
+
+Oh ho ho ho!"""
+	requirements = { completed_quest = { quest = "stinky_stamina_potion", days_after = 1 } }
+	items = [
+		{ item_name = "weather_crystal_ball", count = 1 },
+	]
+
+[repair_haydens_barn]
+	npc = "adeline"
+	subject_line = "Project for Hayden"
+	local = """[Ari],
+
+Could you meet me at Hayden's farm? I have a new project for the town that I think you'll be very excited for!"""
+	quest_to_start = "repair_haydens_barn"
+	requirements = { completed_quest = { quest = "replenishing_mistrias_food_reserves_2", days_after = 2 } }
+
+[a_get_together]
+	npc = "hayden"
+	subject_line = "A Get Together"
+	local = """Hey neighbor!
+
+I'm hosting a little get together at my place, nothing fancy. I just thought we could all do with some time to unwind. I'd love to have you join us! Stop by if you have a chance."""
+	quest_to_start = "a_get_together"
+	requirements = { reached_heart_level = { hayden = 2 } }
+
+	# new letters for tool unlocks
+
+[copper_fishing_rod_unlocked]
+	npc = "terithia"
+	subject_line = "New Arrival: Copper Fishing Rod!"
+	local = """[Ari],
+
+I wanted to let you know that I now have copper fishing rods in stock. Stop by anytime if you want to upgrade!"""
+	requirements = { reached_skill_level = { fishing = 8 } }
+
+
+[iron_fishing_rod_unlocked]
+	npc = "terithia"
+	subject_line = "New Arrival: Iron Fishing Rod!"
+	local = """[Ari],
+
+I just got a new iron fishing rod in that would be perfect for a talented angler such as yourself. Come on by if you want to upgrade!"""
+	requirements = { reached_skill_level = { fishing = 15 } }
+
+
+[silver_fishing_rod_unlocked]
+	npc = "terithia"
+	subject_line = "New Arrival: Silver Fishing Rod!"
+	local = """[Ari],
+
+I've added a silver fishing rod to my shop that's very nearly a work of art. Stop by and take a look, it's worth seeing in person!"""
+	requirements = { reached_skill_level = { fishing = 20 } }
+
+[gold_fishing_rod_unlocked]
+	npc = "terithia"
+	subject_line = "Gold Fishing Rod for Sale!"
+	local = """[Ari],
+
+For a true angler like yourself, you won't find better than a Gold Fishing Rod! Come on down to my shop and take a look!"""
+	requirements = { reached_skill_level = { fishing = 30 } }
+
+
+	#needs mines level condition added
+
+[iron_tools_unlocked]
+	npc = "march"
+	subject_line = "Iron Tools & Armor are in Stock."
+	local = """[Ari],
+
+I've updated our shop selection with iron tools and armor. You could craft them yourself... but you're probably not skilled enough."""
+	requirements = { reached_mines_level = 21 }
+
+[silver_tools_unlocked]
+	npc = "march"
+	subject_line = "Silver Tools & Armor are in Stock."
+	local = """[Ari],
+
+Silver tools and armor are now available at our shop. We don't offer payment plans for them, so don't ask."""
+	requirements = { reached_mines_level = 41 }
+
+[gold_tools_unlocked]
+	npc = "march"
+	subject_line = "Gold Tools and Armor have Arrived."
+	local = """[Ari],
+
+Crafting with gold is the pinnacle of the Blacksmith's art, come and see for yourself."""
+	requirements = { reached_mines_level = 61 }
+
+[a_sapling]
+	npc = "ryis"
+	subject_line = "Help with a Tree"
+	local = """Hey [Ari],
+
+Think I got a little ahead of myself with the birdhouse. First thing we're going to need is a tree, huh?
+
+Please meet me at my room!"""
+	quest_to_start = "a_sapling"
+
+	[a_sapling.requirements]
+		reached_heart_level = { ryis = 4 }
+		completed_quest = "bird_song"
+
+[replenishing_mistrias_food_reserves_2]
+	npc = "adeline"
+	subject_line = "Mistria's Food Reserves Part 2"
+	local = """[Ari],
+
+We've hit a snag on replenishing our food reserves.
+
+Can you meet with Hayden, Reina and me at Hayden's farm?"""
+	quest_to_start = "replenishing_mistrias_food_reserves_2"
+	requirements = { completed_quest = { quest = "repair_the_beach_bridge", days_after = 2 } }
+
+[repair_the_beach_bridge]
+	npc = "terithia"
+	subject_line = "Repair the Beach Bridge"
+	local = """[Ari],
+
+Could you meet Adeline and me at the Beach? The General Store getting spruced up got me thinking that there's plenty of other places in Mistria that could use some shine on 'em!"""
+	quest_to_start = "repair_the_beach_bridge"
+	requirements = { completed_quest = { quest = "repair_the_general_store", days_after = 3 } }
+
+[repair_the_inn]
+	npc = "adeline"
+	subject_line = "Upgrading the Inn"
+	local = """[Ari],
+
+It's time to discuss what's next for Mistria.
+
+Could you meet me at the Inn?"""
+	quest_to_start = "repair_the_inn"
+	requirements = { completed_quest = { quest = "repair_haydens_barn", days_after = 3 } }
+
+[extra_feed]
+	npc = "hayden"
+	subject_line = "Extra Feed"
+	local = """Hey [Ari]!
+
+Wouldn't you know it, my last animal feed shipment had a few extra bags.
+
+If you'd care to stop by my farm, they're yours!"""
+	quest_to_start = "extra_feed"
+
+	[extra_feed.requirements]
+		completed_quest = "a_get_together"
+		reached_heart_level = { hayden = 4 }
+
+[stone_star_rank_letter]
+	npc = "adeline"
+	requirements = { reached_renown_level = 10 }
+	subject_line = "Stone Star Rank"
+	local = """[Ari],
+
+Congratulations! Mistria has reached the Stone Star Town Rank!
+
+We couldn't have done it without your help. Mistria is sure to make a full recovery with your continued assistance.
+
+Please accept this token of thanks!"""
+	items = [{ item_name = "copper_ingot", count = 1 }]
+
+[copper_star_rank_letter]
+	npc = "adeline"
+	requirements = { reached_renown_level = 20 }
+	subject_line = "Copper Star Rank"
+	local = """[Ari],
+
+Congratulations! Mistria has reached the Copper Star Town Rank.
+
+This means we have officially earned back our pre-earthquake rank!
+
+I believe I speak for the whole town when I say thank you, [Ari].
+
+Eiland and I baked you a little something to celebrate!"""
+	items = [{ item_name = "strawberry_shortcake" }]
+
+[ruby_star_rank_letter]
+	npc = "adeline"
+	requirements = { reached_renown_level = 30 }
+	subject_line = "Ruby Star Rank"
+	local = """[Ari],
+
+Congratulations! Mistria has reached the Ruby Star Town Rank!
+
+This is the highest our rank has ever been! Thank you for believing in this little town of ours.
+
+I've included a reward we received straight from the Capital for you!"""
+	items = [{ item_name = "iron_ingot", count = 3 }] # should be replaced with purse = 400
+
+[iron_star_rank_letter]
+	npc = "adeline"
+	requirements = { reached_renown_level = 40 }
+	subject_line = "Iron Star Rank"
+	local = """[Ari],
+
+Congratulations! Mistria has reached the Iron Star Town Rank!
+
+What a proud day for Mistria! Mother sent an overnight letter to share the news herself!
+
+And of course, the Capital has once again included a reward to mark the occasion!"""
+	items = [{ item_name = "silver_ingot", count = 3 }] # should be purse = 600
+
+[sapphire_star_rank_letter]
+	npc = "adeline"
+	requirements = { reached_renown_level = 50 }
+	subject_line = "Sapphire Star Rank"
+	local = """[Ari],
+
+Congratulations! Mistria has reached the Sapphire Star Town Rank!
+
+What an achievement. We now rank among the top half of all towns in Aldaria! Mother and Father are delighted.
+
+They said to expect news this week from the king himself. I wonder what it could be?"""
+	items = [{ item_name = "treasure_box_gold" }]
+
+[silver_star_rank_letter]
+	npc = "adeline"
+	requirements = { reached_renown_level = 60 }
+	subject_line = "Silver Star Rank"
+	local = """[Ari],
+
+Congratulations! Mistria has reached the Silver Star Town Rank!
+
+Mother and Father are reporting that Mistria's reputation throughout the kingdom has never been better. The completed Crown Requests must be making an impact!
+
+I have attached your reward from the Capital!"""
+	items = [{ item_name = "treasure_box_gold" }]
+
+[emerald_star_rank_letter]
+	npc = "adeline"
+	requirements = { reached_renown_level = 70 }
+	subject_line = "Emerald Star Rank"
+	local = """[Ari],
+
+I'm delighted to announce Mistria has reached the Emerald Star Town Rank!
+
+This couldn't have been possible without all your hard work. On behalf of the whole town, thank you for your hard work and dedication."""
+	items = [{ item_name = "treasure_box_gold" }]
+
+[gold_star_rank_letter]
+	npc = "adeline"
+	requirements = { reached_renown_level = 80 }
+	subject_line = "Gold Star Rank"
+	local = """[Ari],
+
+I am so excited to announce Mistria has reached the Gold Star Town Rank!
+
+What an incredible honor! We owe it in large part to your efforts. Wonderful job!"""
+	items = [{ item_name = "treasure_box_gold" }]
+
+
+[diamond_star_rank_letter]
+	npc = "adeline"
+	requirements = { reached_renown_level = 90 }
+	subject_line = "Diamond Star Rank"
+	local = """[Ari],
+
+I can't believe it! Mistria has reached the Diamond Star Town Rank!
+
+That means that Mistria now ranks among the topmost towns in the kingdom.
+
+If we keep gaining renown like this, they might have to create a new rank just for us!
+
+"""
+	items = [{ item_name = "mana_potion" }]
+
+[post_carpenters_upgrade]
+	npc = "adeline"
+	subject_line = "Town Repairs"
+	local = """[Ari],
+
+Congratulations again on the completion of the Carpenter's Shop upgrade!
+
+I'm in awe of how far Mistria has come since you first arrived.
+
+I'm working on additional plans for the town's future, but in the meantime, please accept this reward!
+
+"""
+	requirements = { completed_quest = { quest = "upgrade_the_carpenters_shop", days_after = 1 } }
+	items = [{ item_name = "mana_potion" }]
+
+	#<-------Birthday Letters-------->
+
+[ari_birthday_adeline]
+	npc = "adeline"
+	subject_line = "Happy Birthday!"
+	local = """[Ari],
+
+A very happy birthday to you!
+
+Enclosed is a Lemon Pie I had specially ordered for you, hope you enjoy it!"""
+	can_repeat = true
+	items = [{ item_name = "lemon_pie" }]
+
+	[ari_birthday_adeline.requirements]
+		is_player_birthday = true
+		reached_heart_level = { adeline = 4 }
+		world_fact_is = { adeline_status = "undefined" }
+
+[ari_birthday_adeline_best_friend]
+	npc = "adeline"
+	subject_line = "A day to celebrate!"
+	local = """I'm so grateful you came to Mistria, [Ari]!
+
+Happy birthday, and thank you for being such a wonderful friend!"""
+	can_repeat = true
+	items = [{ item_name = "crop_faux_tulip" }]
+
+	[ari_birthday_adeline_best_friend.requirements]
+		is_player_birthday = true
+		reached_heart_level = { adeline = 8 }
+		world_fact_is = { adeline_is_best_friend = true }
+
+[ari_birthday_adeline_romantic]
+	npc = "adeline"
+	subject_line = "Today is a special day!"
+	local = """I'm so grateful to have you in my life, [Ari]!
+
+You make me so happy, and I wanted to give you something that might make you happy too.
+
+Let's go out and celebrate soon! Happy birthday!"""
+	can_repeat = true
+	items = [{ item_name = "crop_faux_tulip" }]
+
+	[ari_birthday_adeline_romantic.requirements]
+		is_player_birthday = true
+		reached_heart_level = { adeline = 8 }
+		or = [{ world_fact_is = { adeline_is_dating = true } }, { world_fact_is = { adeline_is_fiance = true } }]
+
+[ari_birthday_balor]
+	npc = "balor"
+	subject_line = "Happy Birthday!"
+	local = """[Ari],
+
+Hope it's a great one!
+
+I've included a curry that's a personal favorite of mine, I think you'll enjoy it as well."""
+	can_repeat = true
+	items = [{ item_name = "chickpea_curry" }]
+
+	[ari_birthday_balor.requirements]
+		is_player_birthday = true
+		reached_heart_level = { balor = 4 }
+		world_fact_is = { balor_status = "undefined" }
+
+[ari_birthday_balor_best_friend]
+	npc = "balor"
+	subject_line = "A little something for you!"
+	local = """Hello, friend!
+
+I selected the finest apples and honey for this birthday curry. Should I have put candles in it?
+
+You can let me know next time we chat."""
+	can_repeat = true
+	items = [{ item_name = "apple_honey_curry" }]
+
+	[ari_birthday_balor_best_friend.requirements]
+		is_player_birthday = true
+		reached_heart_level = { balor = 8 }
+		world_fact_is = { balor_is_best_friend = true }
+
+[ari_birthday_balor_romantic]
+	npc = "balor"
+	subject_line = "A little something special, just for you!"
+	local = """Did you know my favorite person was born on this day?
+
+I can't wait to spend more time with you. Let this birthday curry tide you over until then.
+
+Happy birthday, [Ari]!"""
+	can_repeat = true
+	items = [{ item_name = "apple_honey_curry" }]
+
+	[ari_birthday_balor_romantic.requirements]
+		is_player_birthday = true
+		reached_heart_level = { balor = 8 }
+		or = [{ world_fact_is = { balor_is_dating = true } }, { world_fact_is = { balor_is_fiance = true } }]
+
+[ari_birthday_caldarus]
+	npc = "caldarus"
+	subject_line = "Celebrating your birth"
+	local = """[Ari],
+
+Congratulations on completing another yearly cycle.
+
+Please accept this gift that I have prepared for you."""
+	can_repeat = true
+	items = [{ item_name = "marigold" }]
+
+	[ari_birthday_caldarus.requirements]
+		is_player_birthday = true
+		world_fact_is = [{ caldarus_home = true }, { caldarus_status = "undefined" }]
+		reached_heart_level = { caldarus = 6 }
+
+[ari_birthday_caldarus_best_friend]
+	npc = "caldarus"
+	subject_line = "On this day of your birth."
+	local = """The birth date of my Dragonsworn is certainly a day to celebrate!
+
+We have been through many trials and tribulations together, have we not?
+
+That makes me all the more thankful for your presence in my life."""
+	can_repeat = true
+	items = [{ item_name = "essence_stone_large" }]
+
+	[ari_birthday_caldarus_best_friend.requirements]
+		is_player_birthday = true
+		reached_heart_level = { caldarus = 8 }
+		world_fact_is = { caldarus_is_best_friend = true }
+
+[ari_birthday_caldarus_romantic]
+	npc = "caldarus"
+	subject_line = "On this auspicious day of your birth."
+	local = """My dear [Ari],
+
+I have spent the preceding days in contemplation of you. Know that you are very special to me."""
+	can_repeat = true
+	items = [{ item_name = "essence_stone_large" }]
+
+	[ari_birthday_caldarus_romantic.requirements]
+		is_player_birthday = true
+		reached_heart_level = { caldarus = 8 }
+		or = [{ world_fact_is = { caldarus_is_dating = true } }, { world_fact_is = { caldarus_is_fiance = true } }]
+
+[ari_birthday_celine]
+	npc = "celine"
+	subject_line = "Wishing you a very Happy Birthday!"
+	local = """[Ari],
+
+I hope you have a wonderful day!
+
+Please enjoy the tea, I brewed it myself!"""
+	can_repeat = true
+	items = [{ item_name = "rose_tea" }]
+
+	[ari_birthday_celine.requirements]
+		is_player_birthday = true
+		reached_heart_level = { celine = 4 }
+		world_fact_is = { celine_status = "undefined" }
+
+[ari_birthday_celine_best_friend]
+	npc = "celine"
+	subject_line = "A blossom for your birthday!"
+	local = """Happy birthday, [Ari]!
+
+Time flies by so quickly, doesn't it?
+
+Here are some $Temple Flower Seeds$. They grow all year round, so you can always have flowers around your birthday!"""
+	can_repeat = true
+	items = [{ item_name = "seed_temple_flower", count = 5 }]
+
+	[ari_birthday_celine_best_friend.requirements]
+		is_player_birthday = true
+		reached_heart_level = { celine = 8 }
+		world_fact_is = { celine_is_best_friend = true }
+
+[ari_birthday_celine_romantic]
+	npc = "celine"
+	subject_line = "A blossom that always blooms!"
+	local = """Happy birthday!
+
+I wanted to find you a flower that grows all year.
+
+I hope you'll plant these somewhere nice! Let's get together soon and you can show me how they've grown.
+
+You make me so happy, [Ari]. Enjoy your special day."""
+	can_repeat = true
+	items = [{ item_name = "seed_temple_flower", count = 5 }]
+
+	[ari_birthday_celine_romantic.requirements]
+		is_player_birthday = true
+		reached_heart_level = { celine = 8 }
+		or = [{ world_fact_is = { celine_is_dating = true } }, { world_fact_is = { celine_is_fiance = true } }]
+
+[ari_birthday_eiland]
+	npc = "eiland"
+	subject_line = "Happy Birthday!"
+	local = """[Ari],
+
+A birthday just isn't quite the same without cake, wouldn't you agree?
+
+I've included one I think you'll agree is quite delicious!"""
+	can_repeat = true
+	items = [{ item_name = "caldosian_chocolate_cake" }]
+
+	[ari_birthday_eiland.requirements]
+		is_player_birthday = true
+		reached_heart_level = { eiland = 4 }
+		world_fact_is = { eiland_status = "undefined" }
+
+[ari_birthday_eiland_best_friend]
+	npc = "eiland"
+	subject_line = "Most happiest birthday!"
+	local = """A birthday is the best day of the year to indulge, isn't it?
+
+And so, here is the most indulgent birthday cake I could think of!"""
+	can_repeat = true
+	items = [{ item_name = "golden_cheesecake" }]
+
+	[ari_birthday_eiland_best_friend.requirements]
+		is_player_birthday = true
+		reached_heart_level = { eiland = 8 }
+		world_fact_is = { eiland_is_best_friend = true }
+
+[ari_birthday_eiland_romantic]
+	npc = "eiland"
+	subject_line = "Most happiest birthday!"
+	local = """Dearest [Ari],
+
+I hope you're finding your birthday enjoyable! Hopefully this cake makes it a little sweeter.
+
+And if you'd like to share the sweetness, you know where to find me!"""
+	can_repeat = true
+	items = [{ item_name = "golden_cheesecake" }]
+
+	[ari_birthday_eiland_romantic.requirements]
+		is_player_birthday = true
+		reached_heart_level = { eiland = 8 }
+		or = [{ world_fact_is = { eiland_is_dating = true } }, { world_fact_is = { eiland_is_fiance = true } }]
+
+[ari_birthday_hayden]
+	npc = "hayden"
+	subject_line = "Happy Birthday!"
+	local = """[Ari],
+
+Personally I make it a point for every year that goes by to find something new to appreciate in life.
+
+I've included one of those things with this letter, maybe you'll appreciate it as much as I do!"""
+	can_repeat = true
+	items = [{ item_name = "loaded_baked_potato" }]
+
+	[ari_birthday_hayden.requirements]
+		is_player_birthday = true
+		reached_heart_level = { hayden = 4 }
+		world_fact_is = { hayden_status = "undefined" }
+
+[ari_birthday_hayden_best_friend]
+	npc = "hayden"
+	subject_line = "A little something for your birthday!"
+	local = """A very happy birthday to ya, [Ari]!
+
+I had a big talk with all the animals on my farm, and they let me know to wish you a big happy birthday!
+
+Don't be a stranger!"""
+	can_repeat = true
+	items = [{ item_name = "golden_bull_horn", count = 2 }]
+
+	[ari_birthday_hayden_best_friend.requirements]
+		is_player_birthday = true
+		reached_heart_level = { hayden = 8 }
+		world_fact_is = { hayden_is_best_friend = true }
+
+[ari_birthday_hayden_romantic]
+	npc = "hayden"
+	subject_line = "A little something for you!"
+	local = """It's a great day, [Ari]!
+
+Birthdays are a good time to come out and say things you're shy about.
+
+So... You make me mighty happy, [Ari]. And if you'll allow me the pleasure of your company some time, I'll surely practice saying so in person."""
+	can_repeat = true
+	items = [{ item_name = "golden_bull_horn", count = 2 }]
+
+	[ari_birthday_hayden_romantic.requirements]
+		is_player_birthday = true
+		reached_heart_level = { hayden = 8 }
+		or = [{ world_fact_is = { hayden_is_dating = true } }, { world_fact_is = { hayden_is_fiance = true } }]
+
+[ari_birthday_juniper]
+	npc = "juniper"
+	subject_line = "So it's your Birthday."
+	local = """[Ari],
+
+Congratulations, I suppose. I've included a dish I quite like.
+
+Don't worry if it's gone cold, it's even better that way."""
+	can_repeat = true
+	items = [{ item_name = "pizza" }]
+
+	[ari_birthday_juniper.requirements]
+		is_player_birthday = true
+		reached_heart_level = { juniper = 4 }
+		world_fact_is = { juniper_status = "undefined" }
+
+[ari_birthday_juniper_best_friend]
+	npc = "juniper"
+	subject_line = "So it's your birthday!"
+	local = """[Ari],
+
+I look forward to whatever mischief we might get up to this year.
+
+Oh, and the gift... I thought your house could use a bit more dramatic flair."""
+	can_repeat = true
+	items = [{ item_name = "cavern_crystal_lamp_purple" }]
+
+	[ari_birthday_juniper_best_friend.requirements]
+		is_player_birthday = true
+		reached_heart_level = { juniper = 8 }
+		world_fact_is = { juniper_is_best_friend = true }
+
+[ari_birthday_juniper_romantic]
+	npc = "juniper"
+	# subject_line = "I'm only telling you this because it's your birthday." @review -- the left was supposedly too long.
+	subject_line = "I'm telling you since it's your birthday."
+	local = """I had a dream about you.
+
+Happy birthday and you're welcome."""
+	can_repeat = true
+	items = [{ item_name = "cavern_crystal_lamp_purple" }]
+
+	[ari_birthday_juniper_romantic.requirements]
+		is_player_birthday = true
+		reached_heart_level = { juniper = 8 }
+		or = [{ world_fact_is = { juniper_is_dating = true } }, { world_fact_is = { juniper_is_fiance = true } }]
+
+[ari_birthday_march]
+	npc = "march"
+	subject_line = "Happy Birthday."
+	local = """[Ari],
+
+I had some ingots lying around, figured you could use them."""
+	can_repeat = true
+	items = [{ item_name = "iron_ingot", count = 4 }]
+
+	[ari_birthday_march.requirements]
+		is_player_birthday = true
+		reached_heart_level = { march = 4 }
+		world_fact_is = { march_status = "undefined" }
+
+[ari_birthday_march_best_friend]
+	npc = "march"
+	subject_line = "Hey, I got you something."
+	local = """[Ari],
+
+I went and refined these myself, so you can rely on them for whatever project you need.
+
+And happy birthday, in case it's not obvious."""
+	can_repeat = true
+	items = [{ item_name = "refined_stone", count = 10 }]
+
+	[ari_birthday_march_best_friend.requirements]
+		is_player_birthday = true
+		reached_heart_level = { march = 8 }
+		world_fact_is = { march_is_best_friend = true }
+
+[ari_birthday_march_romantic]
+	npc = "march"
+	subject_line = "Happy birthday to you."
+	local = """Hey [Ari],
+
+Consider this letter an IOU. The next time we get together we can do whatever you want.
+
+Just don't make me sing you a birthday song."""
+	can_repeat = true
+	items = [{ item_name = "refined_stone", count = 10 }]
+
+	[ari_birthday_march_romantic.requirements]
+		is_player_birthday = true
+		reached_heart_level = { march = 8 }
+		or = [{ world_fact_is = { march_is_dating = true } }, { world_fact_is = { march_is_fiance = true } }]
+
+[ari_birthday_reina]
+	npc = "reina"
+	subject_line = "Happy Birthday!"
+	local = """[Ari],
+
+A birthday should include plenty of good things to eat, don't you think?
+
+I've sent along something scrumptious that I made just for you!"""
+	can_repeat = true
+	items = [{ item_name = "spicy_cheddar_biscuit" }]
+
+	[ari_birthday_reina.requirements]
+		is_player_birthday = true
+		reached_heart_level = { reina = 4 }
+		world_fact_is = { reina_status = "undefined" }
+
+[ari_birthday_reina_best_friend]
+	npc = "reina"
+	subject_line = "It's birthday time!"
+	local = """Happy Birthday, [Ari]!
+
+Today's the day to eat something delicious!
+
+In case you can't make it to the Inn... the Inn should come to you!"""
+	can_repeat = true
+	items = [{ item_name = "vegetable_pot_pie" }]
+
+	[ari_birthday_reina_best_friend.requirements]
+		is_player_birthday = true
+		reached_heart_level = { reina = 8 }
+		world_fact_is = { reina_is_best_friend = true }
+
+[ari_birthday_reina_romantic]
+	npc = "reina"
+	subject_line = "It's birthday time!"
+	local = """Happy birthday [Ari]!
+
+For your birthday, I wanted to give you a date in a box... I hope you like it!
+
+Let's do it for real some time soon!"""
+	can_repeat = true
+	items = [{ item_name = "vegetable_pot_pie" }, { item_name = "pudding" }, { item_name = "pomegranate_juice" }]
+
+	[ari_birthday_reina_romantic.requirements]
+		is_player_birthday = true
+		reached_heart_level = { reina = 8 }
+		or = [{ world_fact_is = { reina_is_dating = true } }, { world_fact_is = { reina_is_fiance = true } }]
+
+[ari_birthday_ryis]
+	npc = "ryis"
+	subject_line = "Happy Birthday!"
+	local = """[Ari],
+
+Be sure to pamper yourself a bit, you deserve it.
+
+Here's to another year of working on fun projects with you!"""
+	can_repeat = true
+	items = [{ item_name = "hard_wood", count = 5 }]
+
+	[ari_birthday_ryis.requirements]
+		is_player_birthday = true
+		reached_heart_level = { ryis = 4 }
+		world_fact_is = { ryis_status = "undefined" }
+
+[ari_birthday_ryis_best_friend]
+	npc = "ryis"
+	subject_line = "It's your day!"
+	local = """Hey [Ari]!
+
+It's been a while since I rolled up my sleeves in the kitchen, but I don't think these turned out too bad.
+
+Enjoy!"""
+	can_repeat = true
+	items = [{ item_name = "golden_cookies" }]
+
+	[ari_birthday_ryis_best_friend.requirements]
+		is_player_birthday = true
+		reached_heart_level = { ryis = 8 }
+		world_fact_is = { ryis_is_best_friend = true }
+
+[ari_birthday_ryis_romantic]
+	npc = "ryis"
+	subject_line = "It's your day!"
+	local = """Hey [Ari]!
+
+You know, I've never made birthday cookies for someone before.
+
+Let me know if you want a hand eating them. I know it's hard work and I wouldn't leave you hanging."""
+	can_repeat = true
+	items = [{ item_name = "golden_cookies" }]
+
+	[ari_birthday_ryis_romantic.requirements]
+		is_player_birthday = true
+		reached_heart_level = { ryis = 8 }
+		or = [{ world_fact_is = { ryis_is_dating = true } }, { world_fact_is = { ryis_is_fiance = true } }]
+
+[ari_birthday_seridia]
+	npc = "seridia"
+	subject_line = "Congratulations"
+	local = """[Ari],
+
+It is always worth celebrating that despite the machinations of one's foes, one has managed to survive another year.
+
+My compliments!
+
+Have a cookie."""
+	can_repeat = true
+	items = [{ item_name = "monster_cookie" }]
+
+	[ari_birthday_seridia.requirements]
+		is_player_birthday = true
+		reached_heart_level = { seridia = 6 }
+		world_fact_is = [{ caldarus_seridia_town = true }, { seridia_status = "undefined" }]
+
+[ari_birthday_seridia_best_friend]
+	npc = "seridia"
+	subject_line = "A year well-earned."
+	local = """[Ari],
+
+Happy Birthday. May your birthday bring you all the happiness that you have fought for.
+
+As a token of our friendship, I have prepared an appropriate gift. Do enjoy it!"""
+	can_repeat = true
+	items = [{ item_name = "essence_stone_large" }]
+
+	[ari_birthday_seridia_best_friend.requirements]
+		is_player_birthday = true
+		reached_heart_level = { seridia = 8 }
+		world_fact_is = { seridia_is_best_friend = true }
+
+[ari_birthday_seridia_romantic]
+	npc = "seridia"
+	subject_line = "A year well-earned."
+	local = """[Ari],
+
+Happy Birthday. May your birthday bring you all the happiness that you have fought for.
+
+As a token of my affection, I have prepared an appropriate gift. Do enjoy it!"""
+	can_repeat = true
+	items = [{ item_name = "essence_stone_large" }]
+
+	[ari_birthday_seridia_romantic.requirements]
+		is_player_birthday = true
+		reached_heart_level = { seridia = 8 }
+		or = [{ world_fact_is = { seridia_is_dating = true } }, { world_fact_is = { seridia_is_fiance = true } }]
+
+[ari_birthday_valen]
+	npc = "valen"
+	subject_line = "Happy Birthday!"
+	local = """[Ari],
+
+Birthdays are a wonderful opportunity to reflect on everything you've accomplished in the past year.
+
+You've done so much, and that should be celebrated!"""
+	can_repeat = true
+	items = [{ item_name = "green_tea" }]
+
+	[ari_birthday_valen.requirements]
+		is_player_birthday = true
+		reached_heart_level = { valen = 4 }
+		world_fact_is = { valen_status = "undefined" }
+
+[ari_birthday_valen_best_friend]
+	npc = "valen"
+	subject_line = "Wishing you a wonderful birthday."
+	local = """Happy birthday, [Ari].
+
+No health advice from me... I hope you enjoy the day as you see fit.
+
+Though if you go the route of raucous celebration, then perhaps the syrup I've enclosed will help keep the party going."""
+	can_repeat = true
+	items = [{ item_name = "stamina_syrup" }]
+
+	[ari_birthday_valen_best_friend.requirements]
+		is_player_birthday = true
+		reached_heart_level = { valen = 8 }
+		world_fact_is = { valen_is_best_friend = true }
+
+[ari_birthday_valen_romantic]
+	npc = "valen"
+	# subject_line = "Wishing you a wonderful birthday and another happy year."
+	subject_line = "Wishing you a wonderful birthday." # @review -- the above was the original but it was too long
+	local = """[Ari],
+
+Your birthday was coming up, so I wanted to write you. I hope this gift helps you make the most of your big day.
+
+And let me treat you some time... I'd enjoy that."""
+	can_repeat = true
+	items = [{ item_name = "stamina_syrup" }]
+
+	[ari_birthday_valen_romantic.requirements]
+		is_player_birthday = true
+		reached_heart_level = { valen = 8 }
+		or = [{ world_fact_is = { valen_is_dating = true } }, { world_fact_is = { valen_is_fiance = true } }]
+
+[new_animals_in_stock]
+	npc = "hayden"
+	subject_line = "Alpacas & Capybaras!"
+	local = """[Ari],
+
+Alpacas and Capybaras are now available at Sweetwater Farm!
+
+Stop by and take a look if you're interested!"""
+
+	[new_animals_in_stock.requirements]
+		completed_quest = { quest = "repair_haydens_barn", days_after = 1 }
+		reached_date = { season = "winter", day = 1, year = 1 }
+
+[an_outside_consultant]
+	npc = "valen"
+	subject_line = "Research Assistance"
+	local = """[Ari],
+
+After much careful analysis, and with the additional pressure of the panacea being used up, I have decided to gather my notes and bring in an outside consultant.
+
+Could you meet me at the Bathhouse? I suspect that negotiations will be... tricky."""
+	quest_to_start = "an_outside_consultant"
+
+	[an_outside_consultant.requirements]
+		reached_heart_level = { valen = 6 }
+		completed_quest = "batch_312"
+
+[real_fine_day]
+	npc = "hayden"
+	subject_line = "Socialize Henrietta"
+	local = """[Ari],
+
+Would you come to the General Store?
+
+I've got a fun and educational time all planned out to help socialize Henrietta!"""
+	quest_to_start = "real_fine_day"
+
+	[real_fine_day.requirements]
+		reached_heart_level = { hayden = 6 }
+		completed_quest = "extra_feed"
+
+[the_manor]
+	subject_line = "Unexpected Turn"
+	local = """[Ari],
+
+Can you pay me a visit at home?
+
+The search for the next piece of the Dragonsworn Armor has taken an unexpected turn."""
+	npc = "eiland"
+	quest_to_start = "the_manor"
+
+	[the_manor.requirements]
+		reached_heart_level = { eiland = 6 }
+		completed_quest = "the_ruins"
+
+[lemonade_from_lemons]
+	npc = "balor"
+	subject_line = "Join Me For a Meal?"
+	local = """[Ari],
+
+My business is booming and it's all thanks to you.
+
+Join me for a meal at the Inn? Let's celebrate our success and toast to a bright future!"""
+	quest_to_start = "lemonade_from_lemons"
+
+	[lemonade_from_lemons.requirements]
+		reached_heart_level = { balor = 6 }
+		earned_gold = 10000
+		completed_quest = "an_open_book"
+
+
+[a_change_of_greenery]
+	subject_line = "Sprout Brainstorm"
+	local = """[Ari],
+
+I've been doing everything I can to help the mystery sprout along, but it just doesn't seem to want to grow.
+
+Will you come over and help me brainstorm?"""
+	npc = "celine"
+	quest_to_start = "a_change_of_greenery"
+
+	[a_change_of_greenery.requirements]
+		reached_heart_level = { celine = 6 }
+		completed_quest = "water_and_soil"
+
+[farm_fresh_sous_chef]
+	subject_line = "A Favor"
+	local = """[Ari]!
+
+Can you meet me at the Inn when you have a chance? I have something important to ask you."""
+	npc = "reina"
+	quest_to_start = "farm_fresh_sous_chef"
+
+	[farm_fresh_sous_chef.requirements]
+		reached_heart_level = { reina = 6 }
+		completed_quest = "shopping_buddy"
+
+[working_like_a_dog]
+	subject_line = "Some Chores"
+	local = """[Ari],
+
+I'm in the middle of an important piece of spellwork and need you to handle some menial errands for me.
+
+Come to my room at the Bathhouse.
+
+Oh, and wear something nice. I don't want you to embarrass me in that typical getup you throw on."""
+	npc = "juniper"
+	quest_to_start = "working_like_a_dog"
+
+	[working_like_a_dog.requirements]
+		reached_heart_level = { juniper = 6 }
+		completed_quest = "horsing_around"
+
+[chief_inspector]
+	subject_line = "Inspection Help"
+	local = """[Ari],
+
+It's time for my next inspection of Mistria! It's important work, would you like to come along for it?
+
+If you do, meet me at the Request Board!"""
+	npc = "adeline"
+	quest_to_start = "chief_inspector"
+
+	[chief_inspector.requirements]
+		reached_heart_level = { adeline = 6 }
+		completed_quest = "a_rewarding_choice"
+
+[shooting_star_morning_letter]
+	subject_line = "Shooting Star Festival"
+	local = """[Ari],
+
+Tonight is the Shooting Star Festival!
+
+Since you're new to town, I thought you might not know how to make the traditional decorations yet. You don't necessarily need them in order to celebrate, but I think every Mistrian should have a set!"""
+	npc = "josephine"
+	items = [
+		{ recipe_scroll = "star_lantern_yellow" },
+		{ recipe_scroll = "star_viewing_blanket_yellow" },
+		{ recipe_scroll = "star_cushion_yellow" },
+	]
+	requirements = { reached_date = { season = "summer", day = 28 } }
+
+[crown_requests_unlocked]
+	subject_line = "Crown Requests"
+	local = """[Ari],
+
+Exciting news has arrived from the King!
+
+Now that Mistria has reached the Sapphire Star Town Rank, we will be receiving weekly Crown Requests straight from the Capital!
+
+Crown Requests are reserved for high-ranking towns, and each is worth a lot of Renown. Be sure to visit the Request Board, I just posted our first one!"""
+	npc = "adeline"
+	requirements = { eligible_for_crown_request = true }
+
+[shield_of_the_realm]
+	subject_line = "Part-Time Work"
+	local = """[Ari],
+
+Stop by if you want some part-time work."""
+	npc = "march"
+	quest_to_start = "shield_of_the_realm"
+
+	[shield_of_the_realm.requirements]
+		reached_heart_level = { march = 6 }
+		completed_quest = "many_hands_make_light_work"
+
+[a_birdhouse]
+	subject_line = "Building Project"
+	local = """Hey [Ari]!
+
+The Hawthorn tree looks like it's grown big enough to support a birdhouse.
+
+Come on over to the Carpenter's Shop if you have time and we can start building one!"""
+	npc = "ryis"
+	quest_to_start = "a_birdhouse"
+
+	[a_birdhouse.requirements]
+		reached_heart_level = { ryis = 6 }
+		completed_quest = "a_sapling"
+
+[procuring_the_sealing_scroll]
+	subject_line = "Your Special Order"
+	npc = "balor"
+	quest_to_progress = "procuring_the_sealing_scroll"
+	local = """[Ari],
+
+Meet me in my room when you have a moment, I have a lead on your special order."""
+
+	[procuring_the_sealing_scroll.requirements]
+		completed_quest = { quest = "the_fire_tablet", days_after = 2 }
+
+[stone_refinery]
+	subject_line = "Exciting News"
+	npc = "adeline"
+	quest_to_start = "stone_refinery"
+	local = """[Ari]!
+
+I've just received some very exciting news from the King's Council, could you please meet me at the entrance to the Mines?"""
+
+	[stone_refinery.requirements]
+		opened_mines = true
+		reached_renown_level = 50
+		completed_quest = { quest = "repair_the_inn", days_after = 2 }
+
+[lost_track_of_time_ssa]
+	subject_line = "Join Me at My Place?"
+	npc = "adeline"
+	quest_to_start = "lost_track_of_time"
+	local = """Dear [Ari],
+
+I was wondering if you might like to come over for tea? I freed up some time in my schedule and I thought we could spend it together.
+
+Stop by the Manor House if you have time!"""
+
+	[lost_track_of_time_ssa.requirements]
+		world_fact_is = [{ shooting_star_adeline_attended = true }, { adeline_status = "undefined" }]
+		reached_heart_level = { adeline = 8 }
+		completed_quest = "chief_inspector"
+
+[lost_track_of_time_ssna]
+	subject_line = "Join Me for Some Tea?"
+	npc = "adeline"
+	quest_to_start = "lost_track_of_time"
+	local = """Dear [Ari],
+
+I was wondering if you might like to come over for tea? I freed up some time in my schedule and I thought we could spend it together.
+
+Stop by the Manor House if you have time!"""
+
+	[lost_track_of_time_ssna.requirements]
+		world_fact_is = [{ shooting_star_adeline_attended = false }, { adeline_status = "undefined" }]
+		reached_heart_level = { adeline = 8 }
+		completed_quest = "chief_inspector"
+
+[bell_berry_bakewell_tart_recipe]
+	npc = "reina"
+	requirements = { shipped_item = "bell_berry" }
+	items = [{ recipe_scroll = "bell_berry_bakewell_tart" }]
+	subject_line = "Bell Berry Bakewell Tart Recipe"
+	local = """[Ari],
+
+With the Deep Woods reopened, I've been experimenting with new recipes from the ingredients there!
+
+I think this one turned out good enough to share with you."""
+
+[candied_walnuts_recipe]
+	npc = "landen"
+	requirements = { shipped_item = "walnut" }
+	items = [{ recipe_scroll = "candied_walnuts" }]
+	subject_line = "Candied Walnuts Recipe"
+	local = """Hey, [Ari]!
+
+Candied Walnuts are a bit of a wintertime tradition here in Mistria, so I thought you'd like the recipe!"""
+
+[spirit_mushroom_tea_recipe]
+	npc = "valen"
+	requirements = { shipped_item = "spirit_mushroom" }
+	items = [{ recipe_scroll = "spirit_mushroom_tea" }]
+	subject_line = "Spirit Mushroom Tea Recipe"
+	local = """[Ari],
+
+If you're a fan of mushrooms, I think you'll enjoy this recipe for a soothing cup of Spirit Mushroom Tea."""
+
+[glowberry_cookies_recipe]
+	npc = "ryis"
+	requirements = { shipped_item = "glowberry" }
+	items = [{ recipe_scroll = "glowberry_cookies" }]
+	subject_line = "Glowberry Cookies Recipe"
+	local = """[Ari],
+
+I was excited to see the Glowberries you shipped in stock at the General Store!
+
+Since you've been gathering them, I thought you might like to try out this family recipe. Enjoy!"""
+
+[for_good_ssa]
+	npc = "balor"
+	subject_line = "Join me for a private meal?"
+	local = """[Ari],
+
+Sorry I had to take a rain check on our last get together.
+
+Would you like to join me for a meal? No interruptions this time.
+
+Meet me in my room at the Inn."""
+	quest_to_start = "for_good"
+
+	[for_good_ssa.requirements]
+		world_fact_is = [{ balor_status = "undefined" }]
+		reached_heart_level = { balor = 8 }
+		completed_quest = ["an_open_book", "repair_the_bridge"]
+
+# @PATCH_CANDIDATE 0.14.1 -- this letter used to be different from the above one, but now its not.
+# we're temporarily making it impossible to get and then we'll make a patch to remove it. we just
+# don't want to break our saves rn
+[for_good_ssna]
+	npc = "balor"
+	subject_line = "Join Me For a Meal?"
+	local = """[Ari],
+
+Sorry I had to take a rain check on our last get together.
+
+Would you like to join me for a meal? No interruptions this time.
+
+Meet me in my room at the Inn."""
+	quest_to_start = "for_good"
+
+	[for_good_ssna.requirements]
+		or = [] # this will make it impossible to receive
+
+[a_lost_flower]
+	subject_line = "Join me for a picnic?"
+	local = """Dear [Ari],
+
+Would you like to join me for a picnic? I thought it would be nice to spend some time together. Meet me at my cottage if you have the time!"""
+	npc = "celine"
+	quest_to_start = "a_lost_flower"
+
+	[a_lost_flower.requirements]
+		reached_heart_level = { celine = 8 }
+		completed_quest = ["a_change_of_greenery", "repair_the_summit_stairs"]
+
+[a_little_while_longer_ssa]
+	npc = "hayden"
+	subject_line = "Would you like to come over?"
+	local = """[Ari],
+Would you like to come over to my place for a meal?
+
+I've been thinking it would be nice to spend some time together. Stop by if you have a moment!"""
+	quest_to_start = "a_little_while_longer"
+
+	[a_little_while_longer_ssa.requirements]
+		world_fact_is = [{ shooting_star_hayden_attended = true }, { hayden_status = "undefined" }]
+		reached_heart_level = { hayden = 8 }
+		completed_quest = ["real_fine_day", "repair_the_mill"]
+
+[a_little_while_longer_ssna]
+	npc = "hayden"
+	subject_line = "Would you like to come over?"
+	local = """[Ari],
+Would you like to come over to my place for a meal?
+
+I've been thinking it would be nice to spend some time together. Stop by if you have a moment!"""
+	quest_to_start = "a_little_while_longer"
+
+	[a_little_while_longer_ssna.requirements]
+		world_fact_is = [{ shooting_star_hayden_attended = false }, { hayden_status = "undefined" }]
+		reached_heart_level = { hayden = 8 }
+		completed_quest = ["real_fine_day", "repair_the_mill"]
+
+[potions_and_errands]
+	subject_line = "Time to Test the Waters"
+	local = """[Ari],
+
+I'm working on a new type of bath infusion, but it requires a "Breath of Flame" flower. They can be found deep within the Mines. Bring one to me.
+
+When you do, be sure to wear something you don't mind getting wet. You're going to test it for me!"""
+	npc = "juniper"
+	quest_to_start = "potions_and_errands"
+
+	[potions_and_errands.requirements]
+		reached_heart_level.juniper = 8
+		completed_quest = ["working_like_a_dog", "the_earth_tablet"]
+
+[the_aldarian_cooking_contest]
+	npc = "reina"
+	subject_line = "It's time, sous chef!"
+	local = """[Ari],
+
+The judges are on their way to Mistria! Meet me at the Inn and let's get cooking!"""
+	quest_to_start = "the_aldarian_cooking_contest"
+
+	[the_aldarian_cooking_contest.requirements]
+		reached_heart_level = { reina = 8 }
+		completed_quest = ["farm_fresh_sous_chef"]
+
+[the_glade]
+	subject_line = "Shall we go for a walk?"
+	local = """Dear [Ari],
+
+I'm still searching for a lead on the next piece of the Dragonsworn armor set, but I was hoping we could spend some time together anyway.
+
+The Deep Woods are beautiful this time of year. Would you care to join me for a walk?
+
+If you have the time, please meet me there."""
+	npc = "eiland"
+	quest_to_start = "the_glade"
+
+	[the_glade.requirements]
+		reached_heart_level.eiland = 8
+		unlocked_deep_woods = true
+		completed_quest = "the_manor"
+
+[the_glade_hint]
+	subject_line = "Just a hunch..."
+	local = """Dear [Ari],
+
+I haven't had any luck finding a clear lead on the next piece of the Dragonsworn armor set yet. I've searched all around town to no avail...
+
+It may be worth exploring the deeper levels of the mines to see if that leads anywhere!"""
+	npc = "eiland"
+
+	[the_glade_hint.requirements]
+		reached_heart_level.eiland = 8
+		invert.unlocked_deep_woods = true
+		completed_quest = "the_manor"
+
+[gold_ore]
+	npc = "olric"
+	subject_line = "Gold Ore"
+	local = """Hey [Ari]!
+
+We've been having a hard time getting consistent shipments of Gold Ore lately.
+
+If you were able to reach the lower levels of the Mines, you might be able to find some!
+
+I know it would mean a lot to March if we could start getting local shipments again.
+
+Just thought I'd mention it!"""
+
+	[gold_ore.requirements]
+		reached_heart_level.march = 8
+		invert.broke_fire_seal = true
+		completed_quest = "shield_of_the_realm"
+
+[life_in_this_form]
+	subject_line = "Will You Join Me?"
+	local = """Greetings [Ari],
+
+I was hoping that you might join me for a meal, if you have the time. There is something that I would like to speak with you about.
+
+Please meet me at my temple, at your convenience."""
+	npc = "caldarus"
+	quest_to_start = "life_in_this_form"
+
+	[life_in_this_form.requirements]
+		reached_heart_level.caldarus = 8
+		unlocked_deep_woods = true
+
+[upgrade_the_carpenters_shop]
+	npc = "adeline"
+	subject_line = "Next Town Upgrade"
+	local = """[Ari],
+
+Could you meet me at the Carpenter's Shop? I'd like to talk to you about the town's next upgrade."""
+	quest_to_start = "upgrade_the_carpenters_shop"
+
+	[upgrade_the_carpenters_shop.requirements]
+		reached_renown_level = 70
+		completed_quest = { quest = "upgrade_the_saturday_market", days_after = 1 }
+
+
+[upgrade_the_saturday_market]
+	subject_line = "The Saturday Market"
+	local = """[Ari],
+
+I have amazing news to share, regarding the Saturday Market!
+
+Stop by when you get a chance and I'll fill you in!"""
+	npc = "adeline"
+	quest_to_start = "upgrade_the_saturday_market"
+
+	[upgrade_the_saturday_market.requirements]
+		reached_renown_level = 60
+		world_fact_is.market_is_back = true
+		completed_quest = { quest = "stone_refinery", days_after = 1 }
+
+[elsie_dating_followup]
+	npc = "elsie"
+	subject_line = "Another Date Idea"
+	items = [{ item_name = "picnic_set", count = 1 }]
+	local = """[Ari],
+
+Now that the Deep Woods is accessible again, you should consider taking your partner on a Date there some weekend!
+
+I've included a Date Inspiration Item for you. Enjoy!"""
+
+	[elsie_dating_followup.requirements]
+		seen_cutscene = "elsie_dating_tutorial"
+		unlocked_deep_woods = true
+		invert.acquired_item = "picnic_set"
+
+[a_duet]
+	npc = "ryis"
+	subject_line = "Bird Watching"
+	quest_to_start = "a_duet"
+	local = """[Ari],
+
+I spotted a blue feather by the Hawthorn tree!
+
+Meet me at the Cottage Ruins when you have time and we'll do a little bird watching.
+
+Maybe they've found the house we made for them!"""
+
+	[a_duet.requirements]
+		reached_heart_level.ryis = 8
+		completed_quest = "a_birdhouse"
+
+[crystal_berry_pie_recipe]
+	npc = "reina"
+	requirements = { shipped_item = "crystal_berries" }
+	items = [{ recipe_scroll = "crystal_berry_pie" }]
+	subject_line = "Crystal Berry Pie Recipe"
+	local = """[Ari],
+
+Those Crystal Berries you shipped looked delicious! I thought they might make a good pie... and they did!
+
+Here's the recipe!"""
+
+[the_panacea]
+	npc = "valen"
+	subject_line = "Cliffblossom Search"
+	local = """[Ari],
+
+The Cliffblossom has so far proven elusive.
+
+I'm planning to do a thorough investigation of the cliffs at the Western Ruins, would you care to meet me there?
+
+If nothing else, I would certainly appreciate your company."""
+	quest_to_start = "the_panacea"
+
+	[the_panacea.requirements]
+		reached_heart_level.valen = 8
+		completed_quest = "an_outside_consultant"
+
+# This is a letter exclusively to help users who patch into 0.14.0 between harvest_festival_setup
+# and the festival itself.
+[harvest_festival_patch_case]
+	npc = "reina"
+	subject_line = "Get ready for the Harvest Festival!"
+	items = [
+		{ item_name = "queen_berry", count = 10 },
+	]
+	requirements.or = [] # this can never pass, which is what we want!
+	local = """[Ari],
+
+The Harvest Festival is coming up on Fall 10!
+
+Be sure to collect as many Queen Berries as you can between now and then. There will be all kinds of prizes to win, a community feast, and even a dance!
+
+Berry collecting normally starts on Fall 7, so I've included a few of my own berries to get you started this year."""
+
+[lost_and_found]
+	npc = "adeline"
+	subject_line = "Community Improvements"
+	quest_to_start = "lost_and_found"
+	local = """[Ari],
+
+With Mistria's renown rank continuing to climb, I'd like to call a town meeting to discuss some ways we can improve the community.
+
+We'll be meeting in the Dining Room at the Manor House, and would be delighted if you'd attend!"""
+
+	[lost_and_found.requirements]
+		reached_renown_level = 20
+
+[apiaries_and_terrariums]
+	npc = "luc"
+	subject_line = "Calling all Entomologists!"
+	quest_to_start = "apiaries_and_terrariums"
+	local = """[Ari]!
+
+Our hard work has finally paid off!
+
+Meet me at the Inn for an incredible insect opportunity!!!"""
+
+	[apiaries_and_terrariums.requirements]
+		reached_renown_level = 30
+
+[seed_maker]
+	npc = "nora"
+	subject_line = "Seed Maker now in stock!"
+	local = """[Ari],
+
+I'm excited to share that we have a new item called a "Seed Maker" in stock! You can use it to convert harvested crops and certain forageable plants into seeds.
+
+I thought I'd write to you personally since I bet it'd be helpful to have on your farm.
+
+Why not stop by the General Store and take a look?"""
+
+	[seed_maker.requirements]
+		repaired_general_store = true
+
+[artifact_replicator]
+	npc = "errol"
+	subject_line = "Artifact Replicator"
+	local = """Dear [Ari],
+
+As a generous contributor, I wanted you to be the first to know that we have recently installed an Artifact Replicator at the Museum.
+
+This marvelous device takes artifacts and exchanges them for a decorative replica, ideal for placement around your home and farm.
+
+I think you'll find it a most rewarding way to make use of any artifacts that you have already donated, while simultaneously benefiting the museum's back catalog."""
+
+	[artifact_replicator.requirements]
+		completed_museum_set_within = "archaeology"
+
+[fish_trap]
+	npc = "terithia"
+	subject_line = "Fish Trap"
+	local = """[Ari],
+
+I've set up a Fish Trap at the pier across the Beach Bridge.
+
+If you've got any Fish Bait to place in it, it's a great spot to hunt down rare fish and other ocean oddities!
+
+The tides bring in all sorts of things to that spot."""
+
+	[fish_trap.requirements]
+		repaired_beach_bridge = true
+
+[whatever_your_heart_desires]
+	npc = "seridia"
+	subject_line = "An invitation."
+	quest_to_start = "whatever_your_heart_desires"
+	local = """Greetings [Ari],
+
+Please meet me at my temple. There is an important matter that I wish to discuss with you... privately.
+
+Do not keep me waiting."""
+
+	[whatever_your_heart_desires.requirements]
+		reached_heart_level = { seridia = 8 }
+		world_fact_is.seridia_is_human = true
+
+[auto_feeder]
+	npc = "hayden"
+	subject_line = "Auto Feeders for sale!"
+	local = """Hey, [Ari]!
+
+I have a new innovation from the Capital in stock today! I think you'll find it very useful.
+
+Auto-Feeders are a great way to keep your animals fed and your farm tidy! Just place them in large Barns or Coops and keep them stocked with edible items.
+
+The Auto-Feeder will automatically refill a building's troughs each morning with corresponding quality feed based on the items you put in.
+
+Swing on by my shop if you want to see them yourself!"""
+
+	[auto_feeder.requirements]
+		reached_skill_level.ranching = 45
+
+[perpetual_soup_unlocked]
+	npc = "reina"
+	subject_line = "Perpetual Soup Pot"
+	local = """Hey [Ari]!
+
+The Inn's free soup of the day is pretty popular, so why not try making your own at home?
+
+If that sounds fun, we now have a Perpetual Soup Pot for sale at the Inn!
+
+You put pretty much anything edible in it and you'll get soup once per day!"""
+	[perpetual_soup_unlocked.requirements]
+		repaired_inn = true
+
+[mini_mill]
+	npc = "landen"
+	subject_line = "Mini Mills now in stock!"
+	local = """Dear, [Ari],
+
+I'm excited to share that we now stock placeable Mini-Mills for your farm. What times we live in!
+
+Come on by the Carpenter's Shop if you want to see them for yourself!"""
+
+	[mini_mill.requirements]
+		repaired_carpenters_shop = true
+
+
+[post_final_home_upgrade]
+	npc = "landen"
+	subject_line = "Customizing Your Home"
+	local = """Hey, [Ari]!
+
+Congratulations again on your latest home upgrade.
+
+It's about as big as we can get it now, but if you ever want to change up the exterior, you should stop by the Carpenter's Shop!
+
+We have a number of different looks to choose from, and I'd be happy to help you customize your home's look.
+"""
+	requirements.has_home_upgrade = "large_west_east"
+
+
+[wedding_gifts_adeline]
+	npc = "elsie"
+	subject_line = "Wedding Gifts"
+	local = """Dear [Ari] and Adeline,
+
+I hope you had a magical day yesterday. I went ahead and gathered up the wedding gifts that everyone in the village left at the Inn for you last night.
+
+Congratulations again!
+"""
+	requirements.is_spouse = "adeline"
+	items = [
+		{ item_name = "adeline_desk", count = 1 },
+		{ item_name = "adeline_chair", count = 1 },
+		{ item_name = "adeline_hobby_table", count = 1 },
+	]
+
+[wedding_gifts_balor]
+	npc = "elsie"
+	subject_line = "Wedding Gifts"
+	local = """Dear [Ari] and Balor,
+
+I hope you had a magical day yesterday. I went ahead and gathered up the wedding gifts that everyone in the village left at the Inn for you last night.
+
+Congratulations again!
+"""
+	requirements.is_spouse = "balor"
+	items = [
+		{ item_name = "balor_desk", count = 1 },
+		{ item_name = "balor_chair", count = 1 },
+		{ item_name = "balor_gem_station", count = 1 },
+	]
+
+[wedding_gifts_caldarus]
+	npc = "elsie"
+	subject_line = "Wedding Gifts"
+	local = """Dear [Ari] and Caldarus,
+
+I hope you had a magical day yesterday. I went ahead and gathered up the wedding gifts that everyone in the village left at the Inn for you last night.
+
+Congratulations again!
+"""
+	requirements.is_spouse = "caldarus"
+	items = [
+		{ item_name = "caldarus_desk", count = 1 },
+		{ item_name = "caldarus_chair", count = 1 },
+		{ item_name = "caldarus_music_station", count = 1 },
+	]
+
+[wedding_gifts_celine]
+	npc = "elsie"
+	subject_line = "Wedding Gifts"
+	local = """Dear [Ari] and Celine,
+
+I hope you had a magical day yesterday. I went ahead and gathered up the wedding gifts that everyone in the village left at the Inn for you last night.
+
+Congratulations again!
+"""
+	requirements.is_spouse = "celine"
+	items = [
+		{ item_name = "celine_desk", count = 1 },
+		{ item_name = "celine_chair", count = 1 },
+		{ item_name = "celine_garden_shelf", count = 1 },
+	]
+
+[wedding_gifts_eiland]
+	npc = "elsie"
+	subject_line = "Wedding Gifts"
+	local = """Dear [Ari] and Eiland,
+
+I hope you had a magical day yesterday. I went ahead and gathered up the wedding gifts that everyone in the village left at the Inn for you last night.
+
+Congratulations again!
+"""
+	requirements.is_spouse = "eiland"
+	items = [
+		{ item_name = "eiland_desk", count = 1 },
+		{ item_name = "eiland_chair", count = 1 },
+		{ item_name = "eiland_artifact_shelf", count = 1 },
+	]
+
+[wedding_gifts_hayden]
+	npc = "elsie"
+	subject_line = "Wedding Gifts"
+	local = """Dear [Ari] and Hayden,
+
+I hope you had a magical day yesterday. I went ahead and gathered up the wedding gifts that everyone in the village left at the Inn for you last night.
+
+Congratulations again!
+"""
+	requirements.is_spouse = "hayden"
+	items = [
+		{ item_name = "hayden_desk", count = 1 },
+		{ item_name = "hayden_chair", count = 1 },
+		{ item_name = "hayden_indoor_garden", count = 1 },
+	]
+
+[wedding_gifts_juniper]
+	npc = "elsie"
+	subject_line = "Wedding Gifts"
+	local = """Dear [Ari] and Juniper,
+
+I hope you had a magical day yesterday. I went ahead and gathered up the wedding gifts that everyone in the village left at the Inn for you last night.
+
+Congratulations again!
+"""
+	requirements.is_spouse = "juniper"
+	items = [
+		{ item_name = "juniper_desk", count = 1 },
+		{ item_name = "juniper_chair", count = 1 },
+		{ item_name = "juniper_cauldron", count = 1 },
+		{ item_name = "dozy_pet_bed", count = 1 },
+	]
+
+[wedding_gifts_march]
+	npc = "elsie"
+	subject_line = "Wedding Gifts"
+	local = """Dear [Ari] and March,
+
+I hope you had a magical day yesterday. I went ahead and gathered up the wedding gifts that everyone in the village left at the Inn for you last night.
+
+Congratulations again!
+"""
+	requirements.is_spouse = "march"
+	items = [
+		{ item_name = "march_desk", count = 1 },
+		{ item_name = "march_chair", count = 1 },
+		{ item_name = "march_forge", count = 1 },
+	]
+
+[wedding_gifts_reina]
+	npc = "elsie"
+	subject_line = "Wedding Gifts"
+	local = """Dear [Ari] and Reina,
+
+I hope you had a magical day yesterday. I went ahead and gathered up the wedding gifts that everyone in the village left at the Inn for you last night.
+
+Congratulations again!
+"""
+	requirements.is_spouse = "reina"
+	items = [
+		{ item_name = "reina_desk", count = 1 },
+		{ item_name = "reina_chair", count = 1 },
+		{ item_name = "reina_test_kitchen", count = 1 },
+	]
+
+[wedding_gifts_ryis]
+	npc = "elsie"
+	subject_line = "Wedding Gifts"
+	local = """Dear [Ari] and Ryis,
+
+I hope you had a magical day yesterday. I went ahead and gathered up the wedding gifts that everyone in the village left at the Inn for you last night.
+
+Congratulations again!
+"""
+	requirements.is_spouse = "ryis"
+	items = [
+		{ item_name = "ryis_desk", count = 1 },
+		{ item_name = "ryis_chair", count = 1 },
+		{ item_name = "ryis_crafting_station", count = 1 },
+	]
+
+[wedding_gifts_seridia]
+	npc = "elsie"
+	subject_line = "Wedding Gifts"
+	local = """Dear [Ari] and Seridia,
+
+I hope you had a magical day yesterday. I went ahead and gathered up the wedding gifts that everyone in the village left at the Inn for you last night.
+
+Congratulations again!
+"""
+	requirements.is_spouse = "seridia"
+	items = [
+		{ item_name = "seridia_desk", count = 1 },
+		{ item_name = "seridia_chair", count = 1 },
+		{ item_name = "seridia_magic_fire", count = 1 },
+	]
+
+[wedding_gifts_valen]
+	npc = "elsie"
+	subject_line = "Wedding Gifts"
+	local = """Dear [Ari] and Valen,
+
+I hope you had a magical day yesterday. I went ahead and gathered up the wedding gifts that everyone in the village left at the Inn for you last night.
+
+Congratulations again!
+"""
+	requirements.is_spouse = "valen"
+	items = [
+		{ item_name = "valen_desk", count = 1 },
+		{ item_name = "valen_chair", count = 1 },
+		{ item_name = "valen_workstation", count = 1 },
+	]
+
+[adeline_break_up]
+	npc = "adeline"
+	subject_line = "Let's be friends"
+	local = """Dear [Ari],
+
+I've given it a lot of thought, and I think a romantic relationship isn't what's best for me right now.
+
+I just feel like I need to spend some more time focusing on myself. I hope we can remain good friends!"""
+	requirements.world_fact_is = [{ adeline_is_ex = true }, { disabled_break_up_content = false }]
+
+[balor_break_up]
+	npc = "balor"
+	subject_line = "Let's call this what it is"
+	local = """Dear [Ari],
+
+You'll always be important to me, but I think it's time we admit that things between us have changed.
+
+The end of romance doesn't have to mean the end of a relationship. I hope we can keep on as friends... you changed me for the better, and I'd still like for you to be in my life."""
+	requirements.world_fact_is = [{ balor_is_ex = true }, { disabled_break_up_content = false }]
+
+[caldarus_break_up]
+	npc = "caldarus"
+	subject_line = "Let us bring this chapter to a close"
+	local = """My Dragonsworn,
+
+Our bond runs deep, but I think we perhaps mistook the depth of it for romance.
+
+Getting caught up in the moment has been a uniquely mortal experience... I am glad we could share it together. Let us share our next moment as the best of friends."""
+	requirements.world_fact_is = [{ caldarus_is_ex = true }, { disabled_break_up_content = false }]
+
+[celine_break_up]
+	npc = "celine"
+	subject_line = "Growing apart"
+	local = """Dear [Ari],
+
+I want you to know that I've thoroughly enjoyed getting to know you better. While we've had a lot of fun together, I've been feeling that our romance has come to a natural conclusion. Like a flower that only blooms for a short while.
+
+While I'll treasure those memories, I think we're better off just being friends."""
+	requirements.world_fact_is = [{ celine_is_ex = true }, { disabled_break_up_content = false }]
+
+[eiland_break_up]
+	npc = "eiland"
+	subject_line = "Let's leave our romance in the past."
+	local = """Dear [Ari],
+
+I think that perhaps we got ourselves swept up in the romance that accompanies all major archeologic discoveries.
+
+I still deeply value our connection, and hope we can continue to remain colleagues and good friends."""
+	requirements.world_fact_is = [{ eiland_is_ex = true }, { disabled_break_up_content = false }]
+
+[hayden_break_up]
+	npc = "hayden"
+	subject_line = "Let's talk"
+	local = """Hey [Ari],
+
+I was hoping we could talk. You mean the world to me, but I think we'd be best off putting our romance behind us."""
+	requirements.world_fact_is = [{ hayden_is_ex = true }, { disabled_break_up_content = false }]
+
+[juniper_break_up]
+	npc = "juniper"
+	subject_line = "Let's end things"
+	local = """Hey [Ari],
+
+We had fun together, but I think it's about time we ended things. Don't you?
+
+No hard feelings okay? I think we're better off just being friends!"""
+	requirements.world_fact_is = [{ juniper_is_ex = true }, { disabled_break_up_content = false }]
+
+[march_break_up]
+	npc = "march"
+	subject_line = "Hey..."
+	local = """Hey [Ari],
+
+Can we talk? I've been thinking about things, and I feel like we should just be friends."""
+	requirements.world_fact_is = [{ march_is_ex = true }, { disabled_break_up_content = false }]
+
+[reina_break_up]
+	npc = "reina"
+	subject_line = "Turning a Page"
+	local = """Hey [Ari],
+
+I've been doing some soul searching and I think it would be best if we closed this chapter of our relationship.
+
+My feelings of admiration for you haven't changed, but I'm beginning to realize I may have mistaken them for romance.
+
+I hope we can still be friends!"""
+	requirements.world_fact_is = [{ reina_is_ex = true }, { disabled_break_up_content = false }]
+
+[ryis_break_up]
+	npc = "ryis"
+	subject_line = "Let's break things off"
+	local = """[Ari],
+
+Lately, I've been feeling some distance between us. It happens, and I think the grown-up thing to do is to call it what it is and break up.
+
+No hard feelings, okay? I really want to stay friends, if you're cool with it."""
+	requirements.world_fact_is = [{ ryis_is_ex = true }, { disabled_break_up_content = false }]
+
+[seridia_break_up]
+	npc = "seridia"
+	subject_line = "You DARE, worm?"
+	local = """Hello worm,
+
+You DARE to toy with my heart? To lead me on?
+
+How delicious... you surprise me at every turn. Naturally, I will presume our continued friendship, unless you inform me otherwise."""
+	requirements.world_fact_is = [{ seridia_is_ex = true }, { disabled_break_up_content = false }]
+
+[valen_break_up]
+	npc = "valen"
+	subject_line = "It's time for closure"
+	local = """[Ari],
+
+I've enjoyed what we shared, but I feel the time is right to end things. It is important to recognize when something has run its course.
+
+I hope our friendship will remain intact. I consider you a trusted and valued friend."""
+	requirements.world_fact_is = [{ valen_is_ex = true }, { disabled_break_up_content = false }]
+
+[baby_cradle_male]
+	npc = "landen"
+	subject_line = "Baby Cradle"
+	local = """Dear [Ari],
+
+Congratulations on the birth of your baby!
+
+I thought that you and [spouse] might be in need of a Cradle for little [child_0]!
+
+I had the materials handy, so it was no trouble to make. I hope he loves it!"""
+	requirements.baby_is_due = true
+	requirements.or = [
+		{ is_spouse = "balor" },
+		{ is_spouse = "celine" },
+		{ is_spouse = "hayden" },
+		{ is_spouse = "reina" },
+		{ is_spouse = "ryis" },
+		{ is_spouse = "seridia" },
+	]
+    items = [{ item_name = "baby_cradle" }]
+
+[baby_cradle_female]
+	npc = "landen"
+	subject_line = "Baby Cradle"
+	local = """Dear [Ari],
+
+Congratulations on the birth of your baby!
+
+I thought that you and [spouse] might be in need of a Cradle for little [child_0]!
+
+I had the materials handy, so it was no trouble to make. I hope she loves it!"""
+	requirements.baby_is_due = true
+	requirements.invert.or = [
+		{ is_spouse = "balor" },
+		{ is_spouse = "celine" },
+		{ is_spouse = "hayden" },
+		{ is_spouse = "reina" },
+		{ is_spouse = "ryis" },
+		{ is_spouse = "seridia" },
+	]
+    items = [{ item_name = "baby_cradle" }]
+
+[upgrade_the_saturday_market_plaza]
+	npc = "nora"
+	subject_line = "Saturday Market Expansion"
+	local = """[Ari],
+
+Mistria's Gold Rank has resulted in an increased volume of requests to join our Saturday Market. It's an amazing opportunity, but we simply don't have the space!
+
+Will you meet with Adeline and I at the Manor House to discuss the situation? I'd really like to find a way to add a few more stalls to the market!"""
+
+	quest_to_start = "upgrade_the_saturday_market_plaza"
+	[upgrade_the_saturday_market_plaza.requirements]
+		reached_renown_level = 80
+		completed_quest = { quest = "upgrade_the_carpenters_shop", days_after = 1 }
+
+[meet_the_new_vendors]
+	npc = "nora"
+	subject_line = "Meet the New Vendors"
+	local = """[Ari],
+
+I wanted to thank you again for helping our market grow, and also invite you to say hello to the new vendors, Stillwell and Zorel.
+
+I think you'll find both of their booths quite interesting! Come find me afterwards for an additional reward."""
+	quest_to_start = "meet_the_new_vendors"
+
+	[meet_the_new_vendors.requirements]
+		is_day_type = "saturday"
+		completed_quest = "upgrade_the_saturday_market_plaza"
+
+[repair_the_bell_tower]
+	npc = "zorel"
+	subject_line = "Repairing the Bell Tower"
+	local = """Hey [Ari],
+
+As a fellow music fan I wanted to ask for your help. Everyone says you can really get things done, and I'm hoping you can help my chances of getting Mistria's Bell Tower repaired.
+
+Can you meet me at the Bell Tower? I've asked for Adeline and Landen to meet us there as well, so we can hopefully figure something out!"""
+	quest_to_start = "repair_the_bell_tower"
+
+	[repair_the_bell_tower.requirements]
+		reached_renown_level = 90
+		completed_quest = { quest = "meet_the_new_vendors", days_after = 1 }
+
+[complete_the_museum_incomplete]
+	npc = "errol"
+	subject_line = "The Museum"
+	local = """Dear [Ari],
+
+Congratulations on the momentous achievement that is Mistril Star Town Rank! I hope you take pride in how large a role you played in this. I, and the whole town, celebrate you!
+
+Knowing you as I do, I suspect you are even now looking for additional challenges. As the Museum's Curator, may I humbly suggest helping us complete our collection?
+
+I believe you will find the task every bit as rewarding as raising Mistria's rank. There is also a generous monetary reward to be had, in the form of 10000 tesserae from the Aldarian Museum Association.
+"""
+	quest_to_start = "complete_the_museum"
+	[complete_the_museum_incomplete.requirements]
+		completed_quest = { quest = "reach_mistril_star_town_rank", days_after = 2 }
+		invert.received_letter = "complete_the_museum_complete"
+
+[complete_the_museum_complete]
+	npc = "errol"
+	subject_line = "Congratulations!"
+	items = [{ purse = 10000 }, { item_name = "mini_museum_blueprint" }]
+	local = """Please accept my most heartfelt thanks, [Ari]. Your diligent effort has filled all four wings of the Museum!
+
+Never in wildest imagination did I ever envision that I would be Curator to a Museum so rich as this one! The collection you have gathered will be celebrated throughout Mistria's history, and your name and deeds will be part of it.
+
+I have included your rewards from the Aldarian Museum Association along with a little something from the Mistrian Historical Society that I hope you will enjoy.
+"""
+	[complete_the_museum_complete.requirements]
+		completed_quest = "complete_the_museum"

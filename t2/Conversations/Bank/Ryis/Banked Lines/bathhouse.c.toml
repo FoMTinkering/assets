@@ -1,0 +1,68 @@
+[bathhouse]
+refresh = "2m"
+requires = [
+	{ npc = "ryis" },
+	{ any = [
+		{ location = "bathhouse_change_room" },
+		{ ryis_is_traveling_from_building = "bathhouse" }
+	] }
+]
+portrait = "happy"
+local = "Had a knot in my shoulder... all gone now. Juniper's baths are something else."
+
+[bathhouse_2]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ any = [
+		{ location = "bathhouse_change_room" },
+		{ ryis_is_traveling_from_building = "bathhouse" }
+	] }
+]
+portrait = "neutral"
+local = "A bathhouse is like a big birdbath for people."
+next = "1"
+
+[bathhouse_2.1]
+portrait = "think"
+local = "Or maybe it's that birdbaths are bathhouses for birds..."
+
+[bathhouse_3]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_building = "bathhouse" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "neutral"
+local = "Uncle Landen and I engineered a special kind of varnish to restore the Bathhouse. Resists water, and good with lots of foot traffic."
+next = "1"
+
+[bathhouse_3.1]
+portrait = "happy"
+local = "Looks like it's holding up!"
+
+[bathhouse_4]
+refresh = "2m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_building = "bathhouse" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "happy"
+local = "Love coming here. The baths are nice, and visiting Dozy always brightens up my day."
+
+[bathhouse_5]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_building = "bathhouse" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "think"
+local = "City bath's pretty different from a country bath."
+next = "1"
+
+[bathhouse_5.1]
+portrait = "neutral"
+local = "For one, a city bath was always a sprint against my sisters. I like that I can soak as long as I want out here."

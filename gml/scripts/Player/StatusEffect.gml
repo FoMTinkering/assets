@@ -1,0 +1,20 @@
+enum StatusEffectId {
+    Restorative,
+    Speedy,
+    Fairy,
+    GuardiansShield,
+    MineTime,
+    SlimeDash,
+    ShrineBoon,
+    KillHaste,
+    FlameBreath,
+    StackingSpeed,
+    Venomous,
+    VenomSword,
+    Frozen,
+    IceSword,
+    FireSword,
+    SureStrike,
+    SacredLight,
+    LEN
+}

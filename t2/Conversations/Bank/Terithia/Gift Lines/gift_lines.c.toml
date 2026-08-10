@@ -1,0 +1,162 @@
+# Loved gift
+[fish_stew]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "terithia" },
+	{ gift_desire = "loved" },
+	{ gift_given = "fish_stew" }
+]
+effect = "hearts"
+local = "Oho, what a gift! What's better than fish? =Fish Stew=!"
+next = "1"
+
+[fish_stew.1]
+portrait = "happy"
+local = "KYA HA HA!"
+
+# Hated gift
+[fiber]
+kind = "gift"
+requires = [
+	{ npc = "terithia" },
+	{ gift_desire = "hated" },
+	{ gift_given = "fiber" }
+]
+portrait = "ugh"
+effect = "sick"
+local = "There's nothing worse than pulling up some $Fiber$ at the end of your line, and you'd give it to me as gift?"
+
+# Generic lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "terithia" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "hearts"
+local = "You're as generous as the sea, [Ari]!"
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "terithia" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "sparkles"
+local = "You sure know how to brighten an ol' girl's day! Much thanks for your kindness, [Ari]!"
+
+[loved_gift_seafood]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "terithia" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "cod_with_thyme" },
+		{ gift_given = "fish_stew" },
+		{ gift_given = "lobster_roll" },
+		{ gift_given = "perch_risotto" },
+		{ gift_given = "sea_bream_rice" },
+		{ gift_given = "seafood_boil" },
+		{ gift_given = "seafood_snow_pea_noodles" },
+		{ gift_given = "sushi_platter" }
+	] }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "Now this is fine fare! There's nothing better than a dish overflowing with the bounty of the sea."
+
+[loved_gift_seafood_2]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "terithia" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "cod_with_thyme" },
+		{ gift_given = "fish_stew" },
+		{ gift_given = "lobster_roll" },
+		{ gift_given = "perch_risotto" },
+		{ gift_given = "sea_bream_rice" },
+		{ gift_given = "seafood_boil" },
+		{ gift_given = "seafood_snow_pea_noodles" },
+		{ gift_given = "sushi_platter" }
+	] }
+]
+portrait = "wink"
+effect = "sparkles"
+local = "Oho! I can catch a fish like it's nothing, but preparing 'em was never my strong suit. My thanks, [Ari]!"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "terithia" }, { gift_desire = "liked" }]
+portrait = "happy"
+local = "A gift? For me? Ain't that nice."
+
+[liked_gift_2]
+kind = "gift"
+requires = [
+	{ npc = "terithia" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "breaded_catfish" },
+		{ gift_given = "canned_sardines" },
+		{ gift_given = "clam_chowder" },
+		{ gift_given = "crayfish_etouffee" },
+		{ gift_given = "deep_sea_soup" },
+		{ gift_given = "dried_squid" },
+		{ gift_given = "fish_skewer" },
+		{ gift_given = "fish_tacos" },
+		{ gift_given = "grilled_eel_rice_bowl" },
+		{ gift_given = "horseradish_salmon" },
+		{ gift_given = "mackerel_sashimi" },
+		{ gift_given = "pan_fried_bream" },
+		{ gift_given = "pan_fried_salmon" },
+		{ gift_given = "pan_fried_snapper" },
+		{ gift_given = "red_snapper_sushi" },
+		{ gift_given = "salmon_sashimi" },
+		{ gift_given = "sesame_tuna_bowl" },
+		{ gift_given = "smoked_trout_soup" },
+		{ gift_given = "spicy_crab_sushi" },
+		{ gift_given = "tuna_sashimi" },
+	] }
+]
+portrait = "neutral"
+local = "What handsomely prepared seafood! Thank you, [Ari]."
+
+[liked_gift_3]
+kind = "gift"
+requires = [{ npc = "terithia" }, { gift_desire = "liked" }]
+portrait = "wink"
+local = "I do appreciate when someone else does the work for me! Thanks, I'll enjoy this!"
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "terithia" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Thanks."
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "terithia" }, { gift_desire = "disliked" }]
+portrait = "think"
+local = "Don't even think I could use this as bait... ah well."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "terithia" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ terithia_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "embarrassed"
+local = "A birthday gift? For me? You're making me feel like a fish out of water, [Ari]!"
+next = "1"
+
+[birthday_gift.1]
+portrait = "happy"
+effect = "sparkles"
+local = "Thank you."

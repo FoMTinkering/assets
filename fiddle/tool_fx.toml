@@ -1,0 +1,102 @@
+axe_pickaxe_swing_sfx = "SoundEffects/Tools/AxeAndPickSwing"
+hoe_shovel_swing_sfx = "SoundEffects/Tools/HoeAndShovelSwing"
+
+# you're using the right kind of tool, but it's not upgraded enough
+[pick.inadequate]
+	sfx = "SoundEffects/Tools/PickInadequateHitRock"
+	cam_trauma = 0.3
+	node_trauma = 0.5
+
+# You hit a rock but it hasn't been destroyed
+[pick.damaged]
+	large_sfx = "SoundEffects/Tools/PickDamageRock"
+	sfx = "SoundEffects/Tools/PickDamageRock"
+	cam_trauma = 0.08
+	node_trauma = 0.7
+
+# You hit a rock and its been destroyed
+[pick.destroyed]
+	large_sfx = "SoundEffects/Tools/PickDestroyRockLarge"
+	sfx = "SoundEffects/Tools/PickDestroyRock"
+	cam_trauma = 0.3
+
+# wrong tool
+[pick.wrong]
+	sfx = "SoundEffects/Tools/WrongToolUse"
+	cam_trauma = 0.1
+	node_trauma = 0.5
+
+[pick.furniture]
+	sfx = "SoundEffects/UI/UIUnPlaceBuilding"
+	cam_trauma = 0.08
+
+# you're using the right kind of tool, but it's not upgraded enough
+[chop.inadequate]
+	sfx = "SoundEffects/Tools/AxeInadequateHitWood"
+	cam_trauma = 0.3
+	node_trauma = 0.5
+
+[chop.damaged]
+	cam_trauma = 0.08
+	node_trauma = 0.7
+	large_stump_sfx = "SoundEffects/Tools/AxeDamageWood"
+	stump_sfx = "SoundEffects/Tools/AxeDamageWoodSmall"
+	branch_sfx = "SoundEffects/Tools/AxeDamageWoodSmaller"
+	tree = [
+		{ sfx = "SoundEffects/Tools/AxeDamageWoodSmaller", cam_trauma = 0.1, node_trauma = 0.7 },
+		{ sfx = "SoundEffects/Tools/AxeDamageTreeSmaller", cam_trauma = 0.1, node_trauma = 0.7 },
+		{ sfx = "SoundEffects/Tools/AxeDamageTreeSmall", cam_trauma = 0.1, node_trauma = 0.7 },
+		{ sfx = "SoundEffects/Tools/AxeDamageTreeMedium", cam_trauma = 0.1, node_trauma = 0.7 },
+		{ sfx = "SoundEffects/Tools/AxeDamageTree", cam_trauma = 0.1, node_trauma = 0.7 },
+	]
+
+[chop.destroyed]
+	cam_trauma = 0.3
+	large_stump_sfx = "SoundEffects/Objects/WoodDestroyedLarge"
+	stump_sfx = "SoundEffects/Objects/WoodDestroyedMedium"
+	branch_sfx = "SoundEffects/Objects/WoodDestroyedSmall"
+	tree = [
+		{ sfx = "SoundEffects/Objects/TreeDestroyedSmallest", cam_trauma = 0.1 },
+		{ sfx = "SoundEffects/Objects/TreeDestroyedSmaller", cam_trauma = 0.1 },
+		{ sfx = "SoundEffects/Objects/TreeDestroyedSmall", cam_trauma = 0.1 },
+		{ sfx = "SoundEffects/Objects/TreeDestroyedMedium", cam_trauma = 0.1 },
+		{ sfx = "SoundEffects/Objects/TreeDestroyedFullSize", cam_trauma = 0.1 },
+	]
+
+[chop.wrong]
+	sfx = "SoundEffects/Tools/WrongToolUse"
+	cam_trauma = 0.1
+	node_trauma = 0.5
+
+[water]
+	main_sfx = "SoundEffects/Tools/WateredSuccess"
+	start_sfx = "SoundEffects/Tools/WaterCanUse"
+
+[hoe]
+	till_sfx = "SoundEffects/Tools/HoeTill"
+	untill_sfx = "SoundEffects/Tools/HoeUntill"
+
+[shovel]
+	fill_sfx = "SoundEffects/Tools/ShovelFill"
+	dig_sfx = "SoundEffects/Tools/ShovelDig"
+	dig_digsite_sfx = "SoundEffects/Tools/DigSiteDig"
+
+[fishing]
+	casting_sfx = "SoundEffects/Tools/FishingRodCast"
+	retract_sfx = "SoundEffects/Tools/FishingRodRetract"
+	pullout_sfx = "SoundEffects/Tools/FishingSuccessCatchPullOut"
+	bobber_land_sfx = "SoundEffects/Tools/FishingBobberLand"
+	bobber_fly_sfx = "SoundEffects/Tools/FishingBobberFly"
+	splash_sfx = "SoundEffects/Ari/Swim"
+
+[food]
+	eat_sfx = "SoundEffects/Ari/Eat"
+	drink_sfx = "SoundEffects/Ari/Drink"
+
+[seed]
+	invalid_sfx = "SoundEffects/Tools/SeedUseInvalid"
+	plant_sfx = "SoundEffects/Tools/SeedUseSuccess"
+
+[sapling]
+	invalid_sfx = "SoundEffects/Tools/SeedUseInvalid"
+	plant_sfx = "SoundEffects/Tools/SaplingPlant"

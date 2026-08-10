@@ -1,0 +1,24 @@
+[shopping_business]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "nora" }] },
+	{ adeline_zone = "<nora_zone>" },
+	{ adeline_routine = "general_store_shopping" },
+	{ nora_routine = "general_store" },
+	{ date_time = "1m", comparator = ">=" }
+]
+speaker = "nora"
+portrait = "neutral"
+local = "Oh, Adeline! Did I forget something at the last business check-in?"
+next = "1"
+
+[shopping_business.1]
+speaker = "adeline"
+portrait = "neutral"
+local = "Not at all! You were very thorough."
+next = "2"
+
+[shopping_business.2]
+speaker = "adeline"
+portrait = "happy"
+local = "I'm actually here for groceries."

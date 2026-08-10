@@ -1,0 +1,91 @@
+[orb_viewing]
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "bathhouse_bedroom/Crystal Ball Seat" },
+]
+portrait = "unimpressed"
+local = "Sigh. I can view untold dimensions with this orb, and not one of them is showing anything interesting."
+
+[orb_viewing_2]
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "bathhouse_bedroom/Crystal Ball Seat" },
+]
+portrait = "neutral"
+local = "The thing about scrying at the crystal ball is you sit down to do one thing, and then you're stuck there."
+next = "1"
+
+[orb_viewing_2.1]
+portrait = "think"
+effect = "sick"
+local = "Suddenly it's four hours later, you've eaten an entire bag of =Water Chestnut Fritters=, and you're wondering what happened to your life."
+
+[orb_viewing_3]
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ any = [
+		{ location = "narrows" },
+		{ juniper_is_at = "bathhouse_bedroom/Crystal Ball Seat" },
+	] },
+	{ quest_unlocking_the_mines_pt_2_complete = true },
+	{ juniper_heart_level = 8, comparator = "<" }
+]
+portrait = "think"
+local = "Many of the leylines I've discovered seem to converge on the Narrows. And the Mines, I suspect."
+next = "1"
+
+[orb_viewing_3.1]
+portrait = "sly"
+local = "Curious."
+
+[orb_viewing_4]
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "bathhouse_bedroom/Crystal Ball Seat" },
+]
+portrait = "mad"
+local = "Shush, I finally got a clear signal."
+
+[orb_viewing_5]
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "bathhouse_bedroom/Crystal Ball Seat" },
+	{ juniper_heart_level = 4, comparator = ">=" }
+]
+portrait = "unimpressed"
+local = "You can stay, but you have to be quiet. My show is just starting to get good."
+
+[orb_viewing_6]
+refresh = "1y"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "bathhouse_bedroom/Crystal Ball Seat" },
+	{ juniper_heart_level = 4, comparator = ">=" }
+]
+portrait = "angry_brows"
+local = "The mist inside my crystal ball is clearing... the images are revealing themselves..."
+next = "1"
+
+[orb_viewing_6.1]
+portrait = "happy"
+local = """Finally... "42 Silly Labrador Pictures That Had Me On The Floor Laughing"."""
+
+[orb_viewing_7]
+refresh = "1y"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "bathhouse_bedroom/Crystal Ball Seat" },
+	{ juniper_heart_level = 4, comparator = ">=" }
+]
+portrait = "think"
+local = "Now, let's see what tomorrow's weather is..."
+next = "1"
+
+[orb_viewing_7.1]
+portrait = "wink"
+local = "It's important to plan tomorrow's shoes today."

@@ -1,0 +1,79 @@
+[office_paperwork]
+refresh = "2m"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_animation = "write" },
+	{ location = "eilands_office" },
+]
+portrait = "happy"
+effect = "drop"
+local = "Switching a pickaxe for a pen... I'd much rather be digging, though."
+
+[office_paperwork_2]
+refresh = "1y"
+requires = [{ npc = "eiland" }, { eiland_routine = "eiland_office_work" }]
+portrait = "neutral"
+local = "These two primary sources each center on the same subject, but the details don't quite line up."
+next = "1"
+
+[office_paperwork_2.1]
+portrait = "think"
+local = "Very strange..."
+
+[office_paperwork_3]
+refresh = "1y"
+requires = [{ npc = "eiland" }, { eiland_routine = "eiland_office_work" }]
+portrait = "neutral"
+local = "This record of alluvial deposits along the water's edge seems to imply ancient people settled nearby. These bits of ceramic found on the riverbed may very well confirm it!"
+next = "1"
+
+[office_paperwork_3.1]
+portrait = "happy"
+local = "How exciting!"
+
+[office_paperwork_4]
+refresh = "2m"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ eiland_is_at = "museum_entry/Museum Desk" },
+		{ eiland_routine = "eiland_office_work" }
+	] }
+]
+portrait = "think"
+local = "Sometimes you're examining an ancient scroll, and you ask yourself..."
+next = "1"
+
+[office_paperwork_4.1]
+portrait = "happy"
+effect = "drop"
+local = "Why did they write so small?"
+
+[office_paperwork_5]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ eiland_is_at = "museum_entry/Museum Desk" },
+		{ eiland_routine = "eiland_office_work" }
+	] }
+]
+portrait = "ugh"
+local = "These tax forms are neverending."
+next = "1"
+
+[office_paperwork_5.1]
+portrait = "think"
+local = "It would be so much more fun to do some archival work..."
+next = "2"
+
+[office_paperwork_5.2]
+portrait = "happy"
+effect = "cheery"
+local = "Like creating a record of municipal architecture across various eras of Mistria's history!"
+
+[office_paperwork_6]
+refresh = "2m"
+requires = [{ npc = "eiland" }, { eiland_routine = "eiland_office_work" }]
+portrait = "happy"
+local = "[Ari]! Nice of you to visit me at the office. Hang around as long as you'd like!"

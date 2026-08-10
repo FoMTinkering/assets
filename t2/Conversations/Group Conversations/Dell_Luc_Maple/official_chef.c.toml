@@ -1,0 +1,28 @@
+[official_chef]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_activity = "eat" },
+	{ luc_activity = "eat" },
+	{ maple_activity = "eat" },
+	{ location = "inn" },
+	{ reina_is_at_location = "inn" }
+]
+speaker = "dell"
+portrait = "happy"
+local = "This is so tasty! Your sister is really good at food, guys! Can she be the Dragonguard's official chef?"
+next = "1"
+
+[official_chef.1]
+speaker = "luc"
+portrait = "think"
+local = "Well, the Dragonguard is part of Mistria, and Reina is essentially Mistria's royal chef..."
+next = "2"
+
+[official_chef.2]
+speaker = "maple"
+portrait = "happy"
+effect = "sparkles"
+local = "So yes!"

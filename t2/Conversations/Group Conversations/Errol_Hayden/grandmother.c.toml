@@ -1,0 +1,39 @@
+[grandmother]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "hayden" }] },
+	{ errol_zone = "<hayden_zone>" },
+	{ date_time = "2m", comparator = ">=" }
+]
+speaker = "errol"
+portrait = "neutral"
+local = "Your grandmother was quite a woman, Hayden. She could work a field and tend her animals, all before breakfast."
+next = "1"
+
+[grandmother.1]
+speaker = "hayden"
+portrait = "wink_fist"
+local = "She's the one who taught me how to run a farm! I got strong just trying to keep up with her."
+next = "2"
+
+[grandmother.2]
+speaker = "hayden"
+portrait = "laugh"
+local = "Gya ha ha!"
+
+[grandmother_2]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "hayden" }] },
+	{ errol_zone = "<hayden_zone>" },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "errol"
+portrait = "neutral"
+local = "Your grandmother would be proud of how well you've done with the farm, Hayden."
+next = "1"
+
+[grandmother_2.1]
+speaker = "hayden"
+portrait = "happy"
+local = "Well now, thank you Errol! That's mighty nice to hear."

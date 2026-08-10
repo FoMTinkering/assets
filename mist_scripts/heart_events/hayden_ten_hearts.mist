@@ -1,0 +1,348 @@
+wait(1);
+fade_out(2);
+scene(summit);
+place_actor(ari, north, h10h_ari_entrance);
+place_actor(hayden, north, h10h_hayden_entrance);
+camera_position(h10h_camera_1);
+request_music_play("Music/Events/SharedLight");
+sim {
+    {
+        wait(0.25);
+        fade_in(2);
+    }
+    {
+        pan_camera(4, h10h_camera_3);
+    }
+}
+wait(1);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free pan_camera(3, h10h_camera_2);
+wait(2);
+face(hayden, east);
+wait(0.5);
+face(ari, west);
+wait(0.5);
+next_line(); //
+close_textbox();
+free bark_speech(ari, cute_face);
+free bark_speech(hayden, cute_face);
+wait(2);
+face(hayden, north);
+wait(0.5);
+next_line(); //
+sim {
+    {
+        wait(0.5);
+        face(hayden, east);
+    }
+    {
+        next_line(); //
+    }
+}
+close_textbox();
+free pan_camera(2, h10h_camera_1);
+wait(1);
+face(hayden, south);
+wait(1);
+next_line(); //
+sim {
+    {
+        wait(0.5);
+        face(hayden, west);
+    }
+    {
+        next_line(); //
+    }
+}
+close_textbox();
+free pan_camera(2, h10h_camera_2);
+wait(1);
+face(hayden, east);
+wait(1);
+next_line(); //
+//
+if get_response() == 0 {
+    close_textbox();
+    sim {
+        {
+            wait(0.75);
+            free bark_speech(hayden, blush);
+        }
+        {
+            wait(2.5);
+            face(hayden, west);
+        }
+        {
+            wait(1.5);
+            next_line(); //
+        }
+    }
+} else {
+    close_textbox();
+    wait(0.75);
+    face(hayden, west);
+    next_line(); //
+    next_line(); //
+}
+close_textbox();
+wait(1);
+free bark_speech(hayden, ellipses);
+wait(2);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(hayden, ellipses);
+wait(2);
+sim {
+    {
+       wait(0.5);
+       face(hayden, east);
+    }
+    {
+        next_line(); //
+    }
+}
+close_textbox();
+wait(0.5);
+face(hayden, north);
+wait(1);
+next_line(); //
+
+sim {
+    {
+        wait(0.5);
+        face(hayden, east);
+    }
+    {
+        next_line(); //
+    }
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+free bark_speech(hayden, blush);
+wait(1);
+face(hayden, north);
+wait(1);
+next_line(); //
+close_textbox();
+wait(1.5);
+face(hayden, east);
+wait(0.5);
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+sim {
+    {
+        pan_camera(1.5, h10h_camera_4);
+    }
+    {
+        wait(0.5);
+        sim {
+            walk(hayden, h10h_hayden_kiss);
+            set_move_speed(hayden, 0.4);
+        }
+        face(hayden, east);
+    }
+    {
+        wait(1.5);
+        next_line(); //
+    }
+}
+
+//
+close_textbox();
+sim {
+    {
+        pan_camera(1.5, h10h_camera_5);
+    }
+    {
+        wait(0.5);
+        walk_slow(ari, h10h_ari_kiss);
+        face(ari, west);
+    }
+}
+free bark_speech(hayden, exclamation_mark);
+wait(1);
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, heart);
+wait(1);
+free bark_speech(hayden, blush);
+wait(1);
+face(hayden, north);
+wait(1);
+face(ari, north);
+pan_camera(3, h10h_camera_6);
+next_line(); //
+next_line(); //
+next_line(); //
+sim {
+    {
+        wait(1);
+        face(ari, west);
+    }
+    {
+        next_line(); //
+    }
+}
+close_textbox();
+free pan_camera(2, h10h_camera_2);
+wait(1);
+face(hayden, east);
+wait(1);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(hayden, blush);
+wait(1);
+free bark_speech(ari, question_mark);
+wait(0.5);
+face(hayden, west);
+wait(1);
+sim {
+    walk(hayden, h10h_hayden_entrance);
+    set_move_speed(hayden, 0.4);
+}
+face(hayden, west);
+wait(1.5);
+face(hayden, east);
+wait(0.5);
+next_line(); //
+next_line(); //
+
+if read_world_fact("cutscene_seen_hayden_ten_hearts") == true {
+    next_line(); //
+    next_line(); //
+} else {
+    next_line(); //
+    sim {
+        {
+            wait(0.5);
+            animate(hayden, action);
+            wait(0.1);
+            animate(ari, action);
+            wait(0.4);
+            animate(hayden, idle);
+            wait(0.1);
+            animate(ari, idle);
+        }
+        {
+            wait(1.5);
+            ari_hold_item(haydens_carved_nest);
+        }
+        {
+            next_line(); //
+        }
+    }
+}
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, heart);
+free bark_speech(hayden, heart);
+wait(2);
+face(hayden, west);
+wait(1);
+next_line(); //
+
+sim {
+    {
+        wait(0.5);
+        face(hayden, east);
+    }
+    {
+        next_line(); //
+        next_line(); //
+    }
+}
+
+//
+if get_response() == 0 {
+    //
+    close_textbox();
+    sim {
+        {
+            wait(0.75);
+            free bark_speech(hayden, exclamation_mark);
+        }
+        {
+            wait(1.25);
+            next_line(); //
+            make_next_prompt_pink(0);
+            next_line(); //
+        }
+    }
+    //
+    if get_response() == 0 {
+        set_on_blackboard("trigger_proposal_with", "hayden");
+        close_textbox();
+        wait(0.5);
+        free bark_speech(hayden, exclamation_mark);
+        wait(1);
+        next_line(); //
+        next_line(); //
+        sim {
+            {
+                wait(0.25);
+                sim {
+                    walk(hayden, h10h_hayden_kiss);
+                    set_move_speed(hayden, 0.4);
+                }
+                face(hayden, east);
+            }
+            {
+                next_line(); //
+                next_line(); //
+            }
+        }
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, heart);
+        wait(1.5);
+        checkpoint("kiss");
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        kiss_npc(hayden, true, 1);
+        wait(2);
+        next_line(); //
+        next_line(); //
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(hayden, heart);
+        wait(0.5);
+        free bark_speech(ari, heart);
+        fade_out(2);
+    } else {
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(hayden, cute_face);
+        wait(1);
+        free bark_speech(ari, cute_face);
+        fade_out(2);
+    }
+} else {
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(hayden, cute_face);
+    wait(1);
+    free bark_speech(ari, cute_face);
+    fade_out(2);
+}

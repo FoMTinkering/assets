@@ -1,0 +1,32 @@
+[bathhouse]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ celine_building = "bathhouse" },
+	{ date_time = "1y", comparator = ">=" },
+	{ season = "winter" }
+]
+portrait = "neutral"
+local = "It's so nice to visit the Bathhouse in winter!"
+next = "1"
+
+[bathhouse.1]
+portrait = "happy"
+local = "I feel like a flower tucked away in a cozy little greenhouse."
+
+[bathhouse_1]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_traveling_from_building = "bathhouse" },
+	{ date_time = "1y", comparator = ">=" },
+	{ season = "winter" }
+]
+portrait = "happy"
+effect = "cheery"
+local = "Oh, that was so nice! A bath was just what I needed."
+next = "1"
+
+[bathhouse_1.1]
+portrait = "neutral"
+local = "The water's nice and hot, [Ari]! You should have a soak if you haven't already."

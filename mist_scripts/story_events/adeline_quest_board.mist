@@ -1,0 +1,113 @@
+fun await_quest() {} resolve {
+	return quest_is_active("greet_the_townsfolk");
+}
+
+scene(town);
+place_actor(ari, north, aqb_ari_spawn);
+place_actor(adeline, south, aqb_adeline_spawn);
+camera_position(ari);
+request_music_play("Music/Events/Cutscene");
+sim {
+	pan_camera(2, aqb_ari_approach);
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		wait(1.5);
+		free bark_speech(adeline, cute_face);
+	}
+	{
+		walk_slow(ari, aqb_ari_approach);
+		face(ari, north);
+	}
+	{
+		wait(2.25);
+		next_line(); //
+		next_line(); //
+	}
+}
+camera_follow(ari);
+sim {
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+	{
+		wait(1);
+		walk(adeline, aqb_adeline_board);
+		face(adeline, north);
+		wait(1);
+		face(adeline, east);
+	}
+	{
+		wait(1.5);
+		walk(ari, aqb_ari_board);
+		face(ari, north);
+		wait(1);
+		face(ari, west);
+	}
+}
+sim {
+	{
+		wait(1);
+		face(adeline, north);
+	}
+	{
+		wait(0.5);
+		walk_slow(ari, aqb_ari_at_board);
+		face(ari, north);
+	}
+	close_textbox();
+}
+wait(0.5);
+open_menu(request_board);
+await_quest();
+close_menu(request_board);
+await_menu_close(request_board);
+wait(0.5);
+sim {
+	{
+		wait(0.25);
+		face(ari, south);
+		wait(0.25);
+		free bark_speech(adeline, cute_face);
+		wait(1);
+		walk_slow(ari, aqb_ari_board);
+		face(ari, west);
+	}
+	{
+		wait(2.5);
+		face(adeline, east);
+	}
+	{
+		wait(1.25);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+if get_response() == 0 {
+	next_line(); //
+} else {
+	next_line(); //
+	next_line(); //
+	next_line(); //
+}
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.25);
+free bark_speech(adeline, cute_face);
+wait(1);
+free bark_speech(ari, cute_face);
+wait(0.5);
+fade_out(2);

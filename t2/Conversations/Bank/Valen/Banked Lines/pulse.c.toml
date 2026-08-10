@@ -1,0 +1,28 @@
+[pulse]
+refresh = "2m"
+requires = [
+	{ npc = "valen" },
+	{ valen_heart_level = 8, comparator = ">=" },
+	{ valen_is_dating = true },
+]
+portrait = "mad"
+local = "Give me your wrist, [Ari]. You have a strong pulse, that's good."
+next = "1"
+
+[pulse.1]
+portrait = "think"
+local = "Hm, did it just get faster?"
+
+[pulse_2]
+refresh = "2m"
+requires = [
+	{ npc = "valen" },
+	{ valen_heart_level = 4, comparator = ">=" },
+]
+portrait = "mad"
+local = "Come here so I can check your pulse."
+next = "1"
+
+[pulse_2.1]
+portrait = "raised_eyebrow"
+local = "Oh, it's quite strong. Very good."

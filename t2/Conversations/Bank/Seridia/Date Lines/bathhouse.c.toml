@@ -1,0 +1,147 @@
+[bathhouse_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "seridia" },
+	{ date = "bathhouse" },
+	{ da_seridia_bathhouse = 0 },
+	{ seridia_is_spouse = false }
+]
+writes = [
+	{ da_seridia_bathhouse = 1 },
+	{ da_seridia_bathhouse_follow_up_gate = true, expires = "1d" },
+]
+portrait = "neutral"
+local = "[Ari], I require companionship in the bath."
+next = "1"
+
+[bathhouse_accept_1.1]
+portrait = "closed_eyes_blush"
+local = "I have taken on a mortal form, but my physiology is not like the other villagers..."
+next = "2"
+
+[bathhouse_accept_1.2]
+portrait = "blush_think"
+local = "The heat of the bath can sneak up on me. I would appreciate your assistance with regulating my body temperature."
+next = "3"
+
+[bathhouse_accept_1.3]
+portrait = "blush"
+local = "Come. The $Bathhouse$ awaits."
+
+[bathhouse_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "seridia" },
+	{ date = "bathhouse" },
+	{ seridia_has_child = false },
+	{ any = [
+		{ seridia_is_spouse = true },
+		{ da_seridia_bathhouse = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_seridia_bathhouse = 2 },
+	{ da_seridia_bathhouse_follow_up_gate = true, expires = "1d" },
+]
+portrait = "closed_eyes"
+local = "I should like to visit the $Bathhouse$, [Ari]."
+next = "1"
+
+[bathhouse_accept_2.1]
+portrait = "blush"
+local = "You will accompany me, of course."
+
+[bathhouse_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ da_seridia_bathhouse = 1 },
+	{ da_seridia_bathhouse_follow_up_gate = true },
+	{ seridia_is_spouse = false }
+]
+writes = [{ da_seridia_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "neutral"
+local = "Your companionship in the bath was..."
+next = "1"
+
+[bathhouse_follow_up_1.1]
+portrait = "blush_think"
+local = "It was enjoyable. I feel cleansed in mind and body."
+next = "2"
+
+[bathhouse_follow_up_1.2]
+portrait = "embarrassed"
+local = "I would hope you feel the same, [Ari]. You were very brave to trust me as you did."
+prompts = [
+	{ local = "You mean when you washed my back?", next = "3" },
+	{ local = "Of course I trust you.", next = "7" },
+]
+
+[bathhouse_follow_up_1.3]
+portrait = "blush_think"
+local = "Yes. My claws are quite useful for exfoliating, if I use a light touch..."
+next = "4"
+
+[bathhouse_follow_up_1.4]
+portrait = "blush"
+local = "But in the end, they are still the claws of a dragon. Your trust... was noted."
+next = "5"
+
+[bathhouse_follow_up_1.5]
+portrait = "embarrassed"
+local = "Looking at you now... you are as radiant as the moon, today."
+next = "6"
+
+[bathhouse_follow_up_1.6]
+portrait = "blush"
+local = "Perhaps I will look at you a while longer."
+
+[bathhouse_follow_up_1.7]
+portrait = "blush_think"
+local = "Yes. It was... noted."
+next = "8"
+
+[bathhouse_follow_up_1.8]
+portrait = "unsure_blush"
+local = "It is easier to show than to explain the traditional draconic method of exfoliation."
+next = "9"
+
+[bathhouse_follow_up_1.9]
+portrait = "surprise_blush"
+local = "One's claws must be applied with the lightest pressure."
+next = "10"
+
+[bathhouse_follow_up_1.10]
+portrait = "embarrassed"
+local = "And it would appear I have not lost my touch."
+next = "11"
+
+[bathhouse_follow_up_1.11]
+portrait = "blush"
+local = "And now, you look radiant as the moon."
+next = "12"
+
+[bathhouse_follow_up_1.12]
+portrait = "embarrassed"
+local = "Stay there a moment. Allow me to admire you a while longer."
+
+[bathhouse_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_has_child = false },
+	{ any = [{ seridia_is_spouse = true }, { da_seridia_bathhouse = 2 }] },
+	{ da_seridia_bathhouse_follow_up_gate = true },
+]
+writes = [{ da_seridia_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "blush_think"
+local = "I enjoy this Mistrian custom of bathing together. It is both relaxing and invigorating."
+next = "1"
+
+[bathhouse_follow_up_2.1]
+portrait = "blush"
+local = "I expect you to take me again soon."

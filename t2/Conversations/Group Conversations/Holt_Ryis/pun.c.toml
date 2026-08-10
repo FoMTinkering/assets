@@ -1,0 +1,41 @@
+[pun]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "ryis" }] },
+	{ holt_zone = "<ryis_zone>" },
+]
+actions = [{ bark = { bark = "ellipses", npc = "ryis" } }]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+speaker = "holt"
+portrait = "mad"
+local = "I knew we were going to meet up today, so I've been trying to come up with a pun just for you."
+next = "1"
+
+[pun.1]
+speaker = "ryis"
+portrait = "happy"
+effect = "drop"
+local = "Oh... haha, that's okay, Holt. I'm good."
+next = "2"
+
+[pun.2]
+speaker = "holt"
+portrait = "wink"
+local = "Yeah... it's just that none of the jokes wood work!"
+
+[pun_2]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "ryis" }] },
+	{ holt_zone = "<ryis_zone>" },
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+speaker = "ryis"
+portrait = "neutral"
+local = "I tightened those hinges on the door to your shop, Holt."
+next = "1"
+
+[pun_2.1]
+speaker = "holt"
+portrait = "wink"
+local = "I appreciate it! Maybe now folks will stop calling me unhinged!"

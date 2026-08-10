@@ -1,0 +1,13 @@
+# arbitrarily locking this to fall because multiple conditions can't go in an any bracket, so i can't make it fire at the transition of any season
+[fresh_start]
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_zone = "town/quest_board" },
+	{ year_time = "2m 3d", comparator = "<=", parser = "date_time" },
+	{ year_time = "2m", comparator = ">", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "The turning of the seasons is so exciting. Time for a fresh start for the request board!"

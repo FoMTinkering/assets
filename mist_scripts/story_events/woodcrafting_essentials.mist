@@ -1,0 +1,44 @@
+scene(eastern_road);
+camera_position(we_camera_1);
+place_actor(ryis, east, we_ryis_working);
+place_actor(ari, south, "Porch Near Lumber");
+animate(ryis, saw);
+request_music_play("Music/Events/Cutscene");
+
+//
+fade_in(2);
+wait(2);
+animate(ryis, idle);
+wait(0.5);
+face(ryis, north);
+next_line(); //
+
+//
+if get_response() == 0 {
+	free bark_speech(ari, sweat_drop);
+}
+next_line(); //
+
+//
+free pan_camera(3, we_camera_2);
+free {
+	walk(ryis, we_ryis_closer);
+	face(ryis, east);
+	face(ari, west);
+}
+next_line(); //
+next_line(); //
+next_line(); //
+sim {
+	{
+		wait(2);
+		fade_out(2);
+	}
+	pan_camera(2, we_camera_1);
+	{
+		walk(ryis, we_ryis_working);
+		face(ryis, east);
+		animate(ryis, saw);
+	}
+}
+wait_one_tick();

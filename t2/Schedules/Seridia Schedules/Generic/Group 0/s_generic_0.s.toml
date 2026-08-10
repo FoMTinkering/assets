@@ -1,0 +1,30 @@
+requires = [
+	{ weather = "pleasant" },
+	{ caldarus_seridia_town = true },
+	{ seridia_is_human = true },
+	{ seridia_counter = 0 }
+]
+end_writes = [{ seridia_counter = 1 }]
+
+# Seridia
+[seridia."6:00am"]
+destination = "seridias_house/Seridia Wake Point"
+
+[seridia."6:12am"]
+destination = "western_ruins/seridias_house_routine_exit"
+on_arrival_actions = [{ routine = "seridia_western_ruins_writing_and_wander" }]
+
+[seridia."11:48am"]
+destination = "seridias_house/seridias_house_routine_entrance_south"
+on_arrival_actions = [{ routine = "seridia_coffee_making" }]
+
+[seridia."4:34pm"]
+destination = "seridias_house/Seridia Desk Chair"
+on_arrival_actions = [{ animation = "write_sit" }]
+
+[seridia."9:22pm"]
+destination = "seridias_house_back/Seridia Throne"
+on_arrival_actions = [{ activity = "drink" }]
+
+[seridia."1:45am"]
+destination = "seridias_house/Seridia Wake Point"

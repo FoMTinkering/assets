@@ -1,0 +1,110 @@
+[gem_cutting_accept_1]
+kind = "date_acceptance"
+requires = [
+    { npc = "juniper" },
+    { date = "gem_cutting" },
+    { da_juniper_gem_cutting = 0 },
+    { juniper_is_spouse = false }
+]
+writes = [
+    { da_juniper_gem_cutting = 1 },
+    { da_juniper_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "angry_brows"
+local = "You want to do some $Gem Cutting$?"
+next = "1"
+
+[gem_cutting_accept_1.1]
+portrait = "blush"
+local = "My, [Ari], I didn't realize you dabbled!"
+next = "2"
+
+[gem_cutting_accept_1.2]
+portrait = "think_special"
+local = "Me? I took three years of Lapidary in school."
+next = "3"
+
+[gem_cutting_accept_1.3]
+portrait = "embarrassed"
+local = "Who do you think cut the Bathhouse crystals?"
+next = "4"
+
+[gem_cutting_accept_1.4]
+portrait = "wild_laugh"
+local = "Oh ho ho ho!"
+
+[gem_cutting_accept_2]
+kind = "date_acceptance"
+requires = [
+    { npc = "juniper" },
+    { date = "gem_cutting" },
+    { juniper_has_child = false },
+    { any = [
+        { juniper_is_spouse = true },
+        { da_juniper_gem_cutting = 1, comparator = ">=" }
+    ] }
+]
+writes = [
+    { da_juniper_gem_cutting = 2 },
+    { da_juniper_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "think_special"
+local = "You want to do some $Gem Cutting$?"
+next = "1"
+
+[gem_cutting_accept_2.1]
+portrait = "happy_blush"
+local = "Of course, I'd love to!"
+
+[gem_cutting_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "juniper" },
+    { da_juniper_gem_cutting = 1 },
+    { da_juniper_gem_cutting_follow_up_gate = true },
+    { juniper_is_spouse = false }
+]
+writes = [{ da_juniper_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "happy_blush"
+local = "That was fun, [Ari]..."
+next = "1"
+
+[gem_cutting_follow_up_1.1]
+portrait = "think_special"
+local = "Your work wasn't half bad either!"
+next = "2"
+
+[gem_cutting_follow_up_1.2]
+portrait = "sincere_special"
+local = "Just remember to move to a finer grit more gradually if you want a smoother polish next time."
+next = "3"
+
+[gem_cutting_follow_up_1.3]
+portrait = "happy_blush"
+local = "Don't worry, I'll be there to help."
+
+[gem_cutting_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "juniper" },
+    { juniper_has_child = false },
+    { any = [{ juniper_is_spouse = true }, { da_juniper_gem_cutting = 2 }] },
+    { da_juniper_gem_cutting_follow_up_gate = true }
+]
+writes = [{ da_juniper_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "happy_blush"
+local = "Did you have fun $Gem Cutting$, [Ari]?"
+next = "1"
+
+[gem_cutting_follow_up_2.1]
+portrait = "think_special"
+local = "It's nice..."
+next = "2"
+
+[gem_cutting_follow_up_2.2]
+portrait = "blush"
+local = "Having a hobby we can share."

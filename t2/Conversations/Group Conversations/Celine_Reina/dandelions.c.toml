@@ -1,0 +1,18 @@
+[dandelions]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "reina" }] },
+	{ celine_zone = "<reina_zone>" },
+	{ season = "summer", comparator = "!=" },
+	{ season = "spring", comparator = "!=" }
+]
+speaker = "celine"
+portrait = "think"
+local = "You want to know my favorite dish from the summer seasonal menu? I liked that dandelion salad the most."
+next = "1"
+
+[dandelions.1]
+speaker = "reina"
+portrait = "ugh"
+effect = "sweat"
+local = "Celine, did you add dandelions to one of my salads?"

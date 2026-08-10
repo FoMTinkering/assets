@@ -1,0 +1,181 @@
+bio = "Excitable, wildchild leader of the Dragonguard. Sister to Celine, daughter of Nora and Holt."
+birthday = { season = "winter", day = 3 }
+loved_gifts = [
+	"alda_bronze_sword",
+	"aldarian_sword",
+	"apple_juice",
+	"bullfrog",
+	"caldosian_sword",
+	"chocolate",
+	"golden_cookies",
+	"hermit_crab",
+	"ice_cream_sundae",
+	"jam_sandwich",
+
+]
+liked_gifts = [
+	"apple",
+	"basic_wood",
+	"blackberry",
+	"caramel_candy",
+	"cattail",
+	"clay",
+	"frog",
+	"glowberry_cookies",
+	"grape_juice",
+	"grilled_cheese",
+	"hot_cocoa",
+	"sour_lemon_cake",
+	"lemonade",
+	"lightning_dragonfly",
+	"monster_cookie",
+	"pudding",
+	"snail",
+	"ore_stone",
+	"trail_mix",
+	"turtle",
+
+]
+disliked_gift_tags = ["junk", "weird_gift", "caffeine", "alcohol"]
+hated_gift = "broccoli"
+banned_gift_tags = ["alcohol", "caffeine", "bomb"]
+name = "Dell"
+aldarian_name = "DL"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["townsfolk", "general_store_family", "child"]
+journal_portrait_offset = [-113, -59]
+journal_background_color = [211, 222, 225]
+date_photo_offset = [0, 0]
+job = "Leader of the Dragonguard"
+icon_sprite = "spr_ui_generic_icon_npc_dell"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_dell"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_dell"
+dateable = false
+
+[gossip]
+	line = "dell_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["juice"]
+	"12" = ["juice", "lemonade"]
+	"17" = ["milk"]
+	"19" = ["milk", "hot_chocolate"]
+
+[offsets]
+	portrait = [-123, -65]
+	sweat = [-3, 28]
+	hearts = [-3, 28]
+	angry = [-2, 31]
+	sparkles = [-1, 24]
+	sparkles_dark = [-1, 24]
+	sick = [-1, 30]
+	music_notes = [-2, 24]
+	intensity = [0, 23]
+	surprise = [0, 28]
+	shock = [0, 24]
+	sigh = [-3, 26]
+	loud = [4, 25]
+	cheery = [0, 39]
+	drop = [0, 28]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.shocked]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.yawn]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.stretch]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.scratch_head]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer"]
+	type = "complex"
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.swing_stick]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "idle"

@@ -1,0 +1,17 @@
+[nice_produce]
+refresh = "1y"
+requires = [
+	{ npc = "valen" },
+	{ location = "general_store_store" },
+	{ valen_routine = "general_store_shopping" },
+	{ farming_level = 20, comparator = ">=" },
+	{ date_time = "12d", comparator = ">=" },
+	{ valen_heart_level = 2.0, comparator = ">=" },
+	{ valen_status = "undefined" }
+]
+portrait = "think"
+local = "Oh, hello [Ari]. Are you also doing grocery shopping? The produce is looking especially fresh today."
+next = "1"
+
+[nice_produce.1]
+local = "I suspect I have you to thank for it."

@@ -1,0 +1,273 @@
+fun ari_dig() {
+	play_sound("SoundEffects/Tools/DigSiteDig");
+	animate(ari, shovel);
+	ari_set_attachment(shovel_worn);
+	await_ari_animation();
+	animate(ari, idle);
+}
+
+scene(celines_room);
+camera_position(c2h_camera_1);
+place_actor(ari, north, c2h_ari_entrance);
+place_actor(celine, north, "Next To Desk");
+animate(celine, action);
+request_music_play(celine);
+override_requirement("celine_plant_stage_zero");
+set_on_blackboard("grow_plant", true);
+
+sim {
+	fade_in(2);
+	pan_camera(3, c2h_camera_2);
+	{
+		walk_slow(ari, c2h_ari_start);
+		face(ari, north);
+	}
+	{
+		wait(3);
+		free bark_speech(celine, exclamation_mark);
+		animate(celine, idle);
+		wait(0.5);
+		face(celine, south);
+	}
+	{
+		wait(3.5);
+		next_line(); //
+		close_textbox();
+		free bark_speech(ari, cute_face);
+		wait(1);
+		free bark_speech(celine, cute_face);
+		wait(0.25);
+
+	}
+}
+sim {
+	{
+		wait(0.5);
+		pan_camera(2, c2h_camera_3);
+	}
+	{
+		walk_slow(celine, "ArmChair Seat");
+		face(celine, south);
+		animate(celine, book_sit);
+	}
+	{
+		wait(1);
+		walk_slow(ari, c2h_ari_chair);
+		face(ari, south);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+//
+anim_speed("celine", 0);
+next_line(); //
+
+//
+
+next_line(); //
+close_textbox();
+sim {
+	pan_camera(2, c2h_camera_4);
+	{
+		animate(celine, sit);
+		wait(0.5);
+		walk_slow(celine, c2h_celine_wander);
+		face(celine, east);
+		animate(celine, idle);
+	}
+	{
+		wait(1.5);
+		face(ari, east);
+	}
+	{
+		wait(1);
+		next_line(); //
+		next_line(); //
+	}
+}
+
+//
+
+sim {
+	{
+		wait(0.5);
+		walk_slow(ari, c2h_ari_forward);
+		face(ari, east);
+	}
+	{
+		wait(0.75);
+		free bark_speech(celine, exclamation_mark);
+		wait(0.5);
+		face(celine, west);
+	}
+	{
+		next_line(); //
+		free bark_speech(ari, cute_face);
+		wait(0.5);
+		next_line(); //
+	}
+}
+sim {
+	close_textbox();
+	fade_out(2);
+	free bark_speech(celine, cute_face);
+}
+
+
+//
+scene(eastern_road);
+camera_position(c2h_camera_5_also);
+place_actor(celine, west, c2h_celine_talk);
+place_actor(ari, east, c2h_ari_1);
+
+sim {
+	fade_in(2);
+	pan_camera(4, c2h_camera_5);
+	{
+		wait(1.5);
+		next_line(); //
+	}
+}
+
+//
+
+sim {
+	{
+		walk_slow(celine, c2h_celine_give);
+		face(celine, west);
+		sim {
+			{
+				animate(celine, action);
+				wait(0.5);
+				animate(celine, idle);
+				wait(0.5);
+				walk_slow(celine, c2h_celine_talk);
+				face(celine, west);
+			}
+			{
+				wait(0.25);
+				__ari_hold_item(shovel_worn);
+			}
+		}
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+free bark_speech(celine, cute_face);
+wait(0.5);
+
+free {
+	walk_slow(celine, c2h_celine_inspection_1);
+	face(celine, north);
+	animate(celine, action);
+	wait(6);
+	animate(celine, idle);
+	walk_slow(celine, c2h_celine_inspection_2);
+	face(celine, north);
+	animate(celine, action);
+}
+
+
+//
+
+wait(2);
+sim {
+	ari_dig();
+	{
+		wait(0.2);
+		setup_prop(c2h_dirt_1);
+	}
+	{
+		wait(0.3);
+		setup_prop(c2h_sod);
+	}
+}
+
+
+//
+
+wait(1);
+walk_slow(ari, c2h_ari_2);
+face(ari, east);
+wait(1);
+sim {
+	ari_dig();
+	{
+		wait(0.2);
+		setup_prop(c2h_dirt_2);
+	}
+	{
+		wait(0.3);
+		setup_prop(c2h_peat);
+	}
+}
+
+//
+
+wait(1);
+walk_slow(ari, c2h_ari_3);
+face(ari, east);
+wait(1);
+sim {
+	ari_dig();
+	{
+		wait(0.2);
+		setup_prop(c2h_dirt_3);
+	}
+	{
+		wait(0.3);
+		setup_prop(c2h_unusual_seed);
+	}
+}
+
+wait(0.25);
+
+
+//
+
+free bark_speech(ari, exclamation_mark);
+wait(0.5);
+free bark_speech(celine, exclamation_mark);
+wait(0.5);
+animate(celine, idle);
+face(celine, east);
+next_line(); //
+close_textbox();
+sim {
+	pan_camera(2, c2h_camera_6);
+	{
+		walk(celine, c2h_celine_reaction);
+		face(celine, east);
+		animate(celine, action);
+		wait(0.5);
+		animate(ari, idle);
+		animate(celine, idle);
+	}
+	{
+		wait(1);
+		destroy_prop(c2h_unusual_seed);
+		animate(ari, pickup);
+		__ari_hold_item(unusual_seed);
+		face(ari, west);
+	}
+	{
+		wait(3);
+		next_line(); //
+		//
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(celine, cute_face);
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+fade_out(2);

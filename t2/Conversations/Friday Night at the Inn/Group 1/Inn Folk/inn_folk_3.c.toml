@@ -1,0 +1,71 @@
+[inn_folk_3_josephine]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ any = [
+		{ josephine_zone = "inn/bar" },
+		{ josephine_zone = "inn/kitchen" },
+		{ location = "inn" },
+		# remove after zones are fixed
+	] },
+	{ josephine_first_fnati = 2 },
+	{ npc = "josephine" },
+	{ adeline_zone = "inn/south_table" },
+	{ balor_zone = "inn/south_table" },
+	{ celine_zone = "inn/south_table" },
+	{ eiland_zone = "inn/south_table" },
+	{ holt_zone = "inn/south_table" },
+	{ dnd_fnati = 3, comparator = "<=" },
+	{ any = [{ fnati = 0 }, { fnati = 1 }]},
+]
+writes = [{ josephine_first_fnati = 3 }]
+portrait = "think"
+local = "You know, Balor pretends like Eiland's game is beneath him, but between you and me? I'd say he's getting into it. I saw him scribbling notes about his character earlier this week..."
+
+[inn_folk_3_hemlock]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ any = [
+		{ hemlock_zone = "inn/bar" },
+		{ hemlock_zone = "inn/kitchen" },
+		{ location = "inn" },
+		# remove after zones are fixed
+	] },
+	{ hemlock_first_fnati = 2 },
+	{ npc = "hemlock" },
+	{ elsie_zone = "inn/bar" },
+	{ juniper_zone = "inn/bar" },
+	{ landen_zone = "inn/bar" },
+	{ march_zone = "inn/bar" },
+	{ valen_zone = "inn/bar" },
+	{ drinkers_fnati = 3, comparator = "<=" },
+	{ any = [{ fnati = 0 }, { fnati = 1 }]},
+]
+writes = [{ hemlock_first_fnati = 3 }]
+portrait = "think"
+local = "Juniper brought a bottle of Witchvine Merlot. Can you believe it? The stuff is legendary... maybe I can get a taste..."
+
+[inn_folk_3_reina]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ any = [
+		{ reina_zone = "inn/bar" },
+		{ reina_zone = "inn/kitchen" },
+		{ location = "inn" },           # remove after zones are fixed
+	] },
+	{ reina_first_fnati = 2 },
+	{ npc = "reina" },
+	{ kids_plot_fnati = 3, comparator = "<=" },
+	{ dell_zone = "inn/balcony_hang" },
+	{ luc_zone = "inn/balcony_hang" },
+	{ maple_zone = "inn/balcony_hang" },
+	{ any = [{ fnati = 0 }, { fnati = 1 }]},
+]
+writes = [{ reina_first_fnati = 3 }]
+portrait = "happy"
+local = "Dell, Maple and Luc have been sneaking around all night... you wouldn't know anything about that, would you, [Ari]? No, of course not..."

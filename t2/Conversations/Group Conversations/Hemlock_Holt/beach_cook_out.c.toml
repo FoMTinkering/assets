@@ -1,0 +1,25 @@
+[beach_cook_out]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "hemlock" }, { npc = "holt" }] },
+	{ hemlock_zone = "<holt_zone>" },
+	{ season = "summer" },
+	{ location = "beach", comparator = "!=" },
+	{ holt_beach_day = false },
+	{ hemlock_beach_day = false },
+]
+speaker = "holt"
+portrait = "neutral"
+local = "Two words:"
+next = "1"
+
+[beach_cook_out.1]
+speaker = "holt"
+portrait = "mad"
+local = "Beach. COOKOUT."
+next = "2"
+
+[beach_cook_out.2]
+speaker = "hemlock"
+portrait = "mad"
+local = "The two most important words of the season."

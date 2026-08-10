@@ -1,0 +1,33 @@
+[animal_festival_anticipation]
+refresh = "3m"
+requires = [
+	{ npc = "maple" },
+	{ animal_festival_date = "3d", time = "before" },
+]
+portrait = "happy"
+local = "Did you know that the Animal Festival will have a PETTING ZOO?"
+next = "1"
+
+[animal_festival_anticipation.1]
+portrait = "think"
+local = "I mean, I guess Mister Hayden lets us play with his animals when we visit his farm..."
+next = "2"
+
+[animal_festival_anticipation.2]
+portrait = "neutral"
+local = "But these will be new animals!"
+
+[animal_festival_0]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "maple" },
+	{ animal_festival_today = true },
+]
+portrait = "neutral"
+local = "I asked Adeline if the royal family has their own petting zoo, and she said she didn't think so."
+next = "1"
+
+[animal_festival_0.1]
+portrait = "mad"
+local = "Another thing to add to my to-do list when I'm Queen!"

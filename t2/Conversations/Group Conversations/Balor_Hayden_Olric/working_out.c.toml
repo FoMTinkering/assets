@@ -1,0 +1,30 @@
+[working_out]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "hayden" }, { npc = "olric" }] },
+	{ balor_zone = "<hayden_zone>" },
+	{ balor_zone = "<olric_zone>" },
+	{ is_inside = false }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "You boys look like you broke a sweat!"
+next = "1"
+
+[working_out.1]
+speaker = "hayden"
+portrait = "wink"
+effect = "sweat"
+local = "Olric was showing me his new routine. It's challenging, but I can't let this guy show me up."
+next = "2"
+
+[working_out.2]
+speaker = "olric"
+portrait = "sad"
+local = "Working out's not a competition, bro!"
+next = "3"
+
+[working_out.3]
+speaker = "olric"
+portrait = "mad"
+local = "Except against... yourself."

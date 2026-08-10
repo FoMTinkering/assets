@@ -1,0 +1,13 @@
+[have_a_drink]
+refresh = "2m"
+requires = [
+	{ npc = "ryis" },
+	{ location = "inn" },
+	{ day_time = "5:00pm", comparator = ">=" },
+	{ ryis_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ date_time = "3m", comparator = ">=" },
+	{ ryis_activity = "drink" },
+	{ ari_utero = false }
+]
+portrait = "neutral"
+local = "Oh, hey! You also here to relax and have a drink?"

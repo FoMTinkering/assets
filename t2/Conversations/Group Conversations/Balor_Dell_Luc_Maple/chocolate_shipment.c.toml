@@ -1,0 +1,35 @@
+[chocolate_shipment]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "balor" },
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ balor_zone = "<dell_zone>" },
+	{ balor_zone = "<luc_zone>" },
+	{ balor_zone = "<maple_zone>" },
+]
+writes = [{ kids_got_chocolate = 1, operator = "+=", expires = "1w" }]
+speaker = "dell"
+portrait = "mad"
+local = "The Dragonguard is here to protect your chocolate shipment, Balor."
+next = "1"
+
+[chocolate_shipment.1]
+speaker = "luc"
+portrait = "mad"
+local = "I drew up defensive plans, and Maple made the necessary arrangements."
+next = "2"
+
+[chocolate_shipment.2]
+speaker = "balor"
+portrait = "wink"
+local = "To say I'm grateful to the Dragonguard would be an understatement, so allow me to thank you with some samples from the shipment."
+next = "3"
+
+[chocolate_shipment.3]
+speaker = "maple"
+portrait = "happy"
+local = "Yaaaay!"

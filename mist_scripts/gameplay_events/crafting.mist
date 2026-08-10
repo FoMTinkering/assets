@@ -1,0 +1,131 @@
+__prepare_room();
+var x = get_from_blackboard(ari_x);
+var y = get_from_blackboard(ari_y);
+var item = get_from_blackboard(item);
+var context = get_from_blackboard(skill);
+var stop_animation = false;
+
+fun ari_saw_sound() {
+	play_sound("SoundEffects/Tools/SawBackAndForth2D");
+	wait(0.9);
+	if stop_animation or get_from_blackboard(timelapse_complete) == true {
+		return;
+	}
+	ari_saw_sound();
+}
+
+fun ari_saw() {
+	sim {
+		animate(ari, saw);
+		ari_set_attachment(craftingsaw);
+		face(ari, east);
+	}
+	{
+		ari_saw_sound();
+	}
+}
+
+var keep_swinging_ari = false;
+fun ari_hammer_sound() {
+	wait(0.1);
+	play_sound("SoundEffects/Tools/BlacksmithingHammerSwingAndHit2D");
+	wait(0.35);
+	if stop_animation or keep_swinging_ari == false {
+		return;
+	}
+	ari_hammer_sound();
+}
+
+fun ari_hammer() {
+	animate(ari, axe);
+	keep_swinging_ari = true;
+	ari_set_attachment(craftinghammer);
+	face(ari, east);
+	free ari_hammer_sound();
+	keep_swinging_ari = false;
+	await_ari_animation();
+	if stop_animation {
+		return;
+	}
+	animate(ari, idle);
+	wait(0.25);
+	ari_hammer();
+}
+
+fun ari_cooking_sound() {
+	play_sound("SoundEffects/Tools/Cooking2D");
+	wait(0.85);
+	if stop_animation {
+		return;
+	}
+	ari_cooking_sound();
+}
+
+fun ari_milling_sound() {
+	play_sound("SoundEffects/Tools/Milling");
+	wait(0.85);
+	if stop_animation {
+		return;
+	}
+	ari_milling_sound();
+}
+
+fun ari_cook() {
+	sim {
+		animate(ari, water);
+		face(ari, north);
+	}
+	{
+		ari_cooking_sound();
+	}
+}
+
+fun ari_mill() {
+	sim {
+		animate(ari, water);
+		face(ari, north);
+	}
+	{
+		ari_milling_sound();
+	}
+}
+
+
+place_actor(ari, east, x, y);
+if context == "woodcrafting" {
+	free ari_saw();
+} else if context == "cooking" {
+	free ari_cook();
+} else if context == "blacksmithing" {
+	if __get_location_name() == "town" {
+		setup_prop(blacksmithing_cutscene_fireball);
+	}
+	free ari_hammer();
+} else {
+	free ari_mill();
+}
+camera_position(ari);
+wait_one_tick();
+camera_in();
+await_flag_from_blackboard(timelapse_complete);
+if context == "blacksmithing" and __get_location_name() == "town" {
+	destroy_prop(blacksmithing_cutscene_fireball);
+}
+animate(ari, idle);
+
+if context == "cooking" {
+	play_sound("SoundEffects/SpecialEvents/OvenDing");
+	wait(1);
+}
+
+stop_animation = true;
+animate(ari, pickup);
+play_sound("SoundEffects/Ari/RaiseAboveHeadAward");
+__ari_hold_item(item);
+wait(0.25);
+face(ari, south);
+wait(1);
+set_on_blackboard(spawn_menu, true);
+await_flag_from_blackboard(sequence_complete);
+animate(ari, idle);
+__ari_hold_item(); //

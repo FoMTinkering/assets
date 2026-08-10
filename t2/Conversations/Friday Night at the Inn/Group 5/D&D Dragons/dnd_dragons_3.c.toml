@@ -1,0 +1,180 @@
+[dnd_dragons_3]
+priority = "max"
+refresh = "never"
+requires = [
+    { day_of_the_week = "friday" },
+    { balor_zone = "inn/south_table" },
+    { caldarus_zone = "inn/south_table" },
+    { eiland_zone = "inn/south_table" },
+    { olric_zone = "inn/south_table" },
+    { seridia_zone = "inn/south_table" },
+    { terithia_zone = "inn/south_table" },
+    { any = [
+        { npc = "balor" },
+        { npc = "caldarus" },
+        { npc = "eiland" },
+        { npc = "olric" },
+        { npc = "seridia" },
+        { npc = "terithia" },
+    ] },
+    { dnd_dragons_fnati = 2 }
+]
+writes = [{ dnd_dragons_fnati = 3 }]
+actions = [
+    { bark = { bark = "cute_face", npc = "balor" } },
+    { bark = { bark = "cute_face", npc = "caldarus" } },
+    { bark = { bark = "cute_face", npc = "eiland" } },
+    { bark = { bark = "cute_face", npc = "olric" } },
+    { bark = { bark = "sweat_drop", npc = "seridia" } },
+    { bark = { bark = "cute_face", npc = "terithia" } },
+]
+speaker = "seridia"
+portrait = "smile"
+local = "Welcome back, adventurers."
+next = "1"
+
+[dnd_dragons_3.1]
+speaker = "seridia"
+portrait = "neutral"
+local = "Despite Caldarus' frankly bewildering attempt to wipe your party, you managed to survive the monster's ambush."
+next = "2"
+
+[dnd_dragons_3.2]
+speaker = "seridia"
+portrait = "serious"
+local = "However, you are all injured, and Solstice remains a statue."
+next = "3"
+
+[dnd_dragons_3.3]
+speaker = "caldarus"
+portrait = "sad"
+local = "My apologies, everyone."
+next = "4"
+
+[dnd_dragons_3.4]
+speaker = "seridia"
+portrait = "sly"
+local = "Now, as a rule-abiding DM, I cannot simply allow you roll a new character Caldarus-"
+next = "5"
+
+[dnd_dragons_3.5]
+speaker = "olric"
+portrait = "think"
+local = "Wait..."
+next = "6"
+
+[dnd_dragons_3.6]
+speaker = "olric"
+portrait = "neutral"
+local = "So like, if Solstice is made of stone... does that mean most of my earth magic spells will work on him?"
+next = "7"
+
+[dnd_dragons_3.7]
+speaker = "balor"
+portrait = "neutral"
+local = "Olric, that's brilliant!"
+next = "8"
+
+[dnd_dragons_3.8]
+speaker = "terithia"
+portrait = "neutral"
+local = "Let's all buff up Solstice's statue as much as we can, and have Olric throw him into the next room!"
+next = "9"
+
+[dnd_dragons_3.9]
+speaker = "terithia"
+portrait = "mad"
+local = "I cast Might of Trell on his statue, doubling his stats until the target takes an action!"
+next = "10"
+
+[dnd_dragons_3.10]
+speaker = "seridia"
+portrait = "unsure"
+local = "Ah. Are you sure of these... tactics?"
+next = "11"
+
+[dnd_dragons_3.11]
+speaker = "eiland"
+portrait = "mad"
+local = "I cast Fire of the Righteous on Solstice, which does pulsing 1d6 damage until the target is destroyed!"
+next = "12"
+
+[dnd_dragons_3.12]
+speaker = "olric"
+portrait = "mad"
+local = "I cast Landslide to shove Solstice into the great hall of the castle!"
+next = "13"
+
+[dnd_dragons_3.13]
+speaker = "caldarus"
+portrait = "mad"
+local = "I... heroically brace myself!"
+next = "14"
+
+[dnd_dragons_3.14]
+speaker = "seridia"
+portrait = "ugh"
+local = "..."
+next = "15"
+
+[dnd_dragons_3.15]
+speaker = "seridia"
+portrait = "mad"
+local = "Fine."
+next = "16"
+
+[dnd_dragons_3.16]
+speaker = "seridia"
+portrait = "sinister"
+local = "Your party sets off another set of elaborate magical traps, and yet another horde of monsters comes rushing in."
+next = "17"
+
+[dnd_dragons_3.17]
+speaker = "balor"
+portrait = "mad"
+local = "I use my action skill Arrow Rain on them!"
+prompts = [
+    { local = "I'll mop up the monsters that are left!", next = "18" },
+    { local = "I'll guard the exit!", next = "19" }
+]
+
+[dnd_dragons_3.18]
+speaker = "caldarus"
+portrait = "smile"
+local = "Smart move, Nix!"
+next = "20"
+
+[dnd_dragons_3.19]
+speaker = "caldarus"
+portrait = "smile"
+local = "Good thinking, Nix!"
+next = "20"
+
+[dnd_dragons_3.20]
+speaker = "seridia"
+portrait = "unsure"
+local = "Let me do a few rolls to determine the outcome."
+next = "21"
+
+[dnd_dragons_3.21]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "You have defeated the monsters."
+next = "22"
+
+[dnd_dragons_3.22]
+speaker = "seridia"
+portrait = "mad"
+local = "Everyone levels up."
+next = "23"
+
+[dnd_dragons_3.23]
+speaker = "olric"
+portrait = "happy"
+local = "Whooooooa! Cool!"
+next = "24"
+
+[dnd_dragons_3.24]
+actions = [{ blackout = 60 }]
+no_speaker = true
+local = "You had a game-breaking time playing Dragons and Drama."

@@ -1,0 +1,91 @@
+scene(farm);
+camera_position(ari);
+wait(1);
+sim {
+	next_line(); //
+	free bark_speech(ari, exclamation_mark);
+}
+close_textbox();
+fade_out(2);
+place_actor(ari, north, pws_ari_entrance);
+camera_position(pws_camera_1);
+request_music_play(caldarus);
+fade_in(2);
+next_line(); //
+next_line(); //
+close_textbox();
+
+//
+wait(0.5);
+free bark_speech(ari, exclamation_mark);
+wait(1.5);
+face(ari, south);
+sim {
+	{
+		pan_camera(4, pws_camera_2);
+	}
+	{
+		wait(0.75);
+		animate(ari, pickup);
+		wait(0.5);
+		setup_prop(pes_spell);
+		free fade_prop_alpha(pes_spell, 0.0, 1.0, 120);
+		wait(3.5);
+		free fade_prop_alpha(pes_spell, 1.0, 0.0, 60);
+		wait(1);
+		animate(ari, idle);
+		wait(0.5);
+		face(ari, north);
+	}
+	{
+		wait(1.25);
+		play_sound("SoundEffects/Objects/UseChickenStatue");
+		create_animation(spr_npc_effect_heal, pws_magic_animation, 0, 0, 0, -1000);
+	}
+}
+wait(0.25);
+sim {
+	{
+		pan_camera(2.5, pws_camera_1);
+		wait(0.5);
+	}
+	{
+		wait(1);
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	free pan_camera(5, pws_camera_3);
+	fade_out(2);
+}
+wait(1);
+__raise_textbox();
+//
+
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+free pan_camera(4, pws_camera_1);
+wait(1);
+sim {
+	{
+		wait(0.5);
+		fade_in(2);
+	}
+	{
+		wait(2);
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+if __get_ari_health() == __get_ari_max_health() {
+	play_sound("SoundEffects/Ari/Heal");
+}
+set_ari_health(__get_ari_max_health());
+set_ari_stamina(__get_ari_max_stamina());
+wait(1);
+fade_out(2);

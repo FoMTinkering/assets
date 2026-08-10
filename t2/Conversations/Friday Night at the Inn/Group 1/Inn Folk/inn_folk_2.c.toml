@@ -1,0 +1,74 @@
+[inn_folk_2_josephine]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ any = [
+		{ josephine_zone = "inn/bar" },
+		{ josephine_zone = "inn/kitchen" },
+		{ location = "inn" },
+		# remove after zones are fixed
+	] },
+	{ josephine_first_fnati = 1 },
+	{ npc = "josephine" },
+	{ adeline_zone = "inn/south_table" },
+	{ balor_zone = "inn/south_table" },
+	{ celine_zone = "inn/south_table" },
+	{ eiland_zone = "inn/south_table" },
+	{ holt_zone = "inn/south_table" },
+	{ dnd_fnati = 2, comparator = "<=" },
+	{ any = [{ fnati = 0 }, { fnati = 1 }]},
+]
+writes = [{ josephine_first_fnati = 2 }]
+portrait = "think"
+local = "Last time they were here, Holt broke into song for two hours. I may have politely asked Eiland to rein him in a little... no offense, Holt..."
+
+[inn_folk_2_hemlock]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ any = [
+		{ hemlock_zone = "inn/bar" },
+		{ hemlock_zone = "inn/kitchen" },
+		{ location = "inn" },
+		# remove after zones are fixed
+	] },
+	{ hemlock_first_fnati = 1 },
+	{ npc = "hemlock" },
+	{ elsie_zone = "inn/bar" },
+	{ juniper_zone = "inn/bar" },
+	{ landen_zone = "inn/bar" },
+	{ march_zone = "inn/bar" },
+	{ valen_zone = "inn/bar" },
+	{ drinkers_fnati = 2, comparator = "<=" },
+	{ any = [{ fnati = 0 }, { fnati = 1 }]},
+]
+writes = [{ hemlock_first_fnati = 2 }]
+portrait = "neutral"
+local = "Valen bought our most expensive bottle of wine... my eyes just about popped out of my head."
+
+[inn_folk_2_reina]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ any = [
+		{ reina_zone = "inn/bar" },
+		{ reina_zone = "inn/kitchen" },
+		{ location = "inn" },           # remove after zones are fixed
+	] },
+	{ reina_first_fnati = 1 },
+	{ npc = "reina" },
+	{ errol_zone = "inn/north_table" },
+	{ hayden_zone = "inn/north_table" },
+	{ nora_zone = "inn/north_table" },
+	{ olric_zone = "inn/north_table" },
+	{ ryis_zone = "inn/north_table" },
+	{ terithia_zone = "inn/north_table" },
+	{ cards_fnati = 2, comparator = "<=" },
+	{ any = [{ fnati = 0 }, { fnati = 1 }]},
+]
+writes = [{ reina_first_fnati = 2 }]
+portrait = "happy"
+local = "Wow, the cards table is hot tonight, [Ari]. Watch out..."

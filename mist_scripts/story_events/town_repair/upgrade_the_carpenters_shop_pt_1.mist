@@ -1,0 +1,320 @@
+scene(landens_house_f1);
+camera_position(utcs1_camera_1);
+place_actor(ari, east, utcs1_ari_entrance);
+place_actor(adeline, south, utcs1_adeline_entrance);
+animate(adeline, write);
+place_actor(landen, west, utcs1_landen_entrance);
+place_actor(ryis, east, utcs1_ryis_entrance);
+request_music_play("Music/Events/Cutscene");
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		pan_camera(4, utcs1_camera_2);
+	}
+	{
+		walk_slow(ari, utcs1_ari_start);
+		face(ari, north);
+	}
+	{
+		free bark_speech(adeline, woodcrafting);
+		wait(1);
+		free bark_speech(ryis, five);
+		wait(1);
+		free bark_speech(landen, four);
+		wait(1);
+		free bark_speech(ryis, exclamation_mark);
+	}
+	{
+		wait(3.5);
+		face(ryis, south);
+	}
+	{
+		wait(4);
+		face(landen, south);
+	}
+	{
+		wait(4.5);
+		animate(adeline, idle);
+	}
+	{
+		wait(4);
+		next_line(); //
+	}
+}
+close_textbox();
+
+sim {
+	{
+		pan_camera(3, utcs1_camera_3);
+	}
+	{
+		walk_slow(ari, utcs1_ari_chat);
+		face(ari, north);
+	}
+	{
+		wait(2);
+		face(ryis, east);
+	}
+	{
+		wait(1);
+		animate(adeline, write);
+	}
+	{
+		wait(1.5);
+		face(landen, west);
+	}
+	{
+		wait(2);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, question_mark);
+wait(1);
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, exclamation_mark);
+wait(0.5);
+face(ryis, south);
+wait(0.5);
+free bark_speech(ryis, cute_face);
+face(landen, south);
+wait(0.5);
+animate(adeline, idle);
+wait(0.5);
+next_line(); //
+sim {
+	{
+		wait(1);
+		face(ryis, east);
+	}
+	{
+		wait(0.5);
+		face(landen, west);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(landen, south);
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(ryis, south);
+	}
+	{
+		wait(1);
+		face(landen, west);
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		pan_camera(2, utcs1_camera_4);
+	}
+	{
+		wait(0.5);
+		face(ryis, north);
+	}
+	{
+		wait(1);
+		face(landen, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.25);
+sim {
+	{
+		pan_camera(3, utcs1_camera_5);
+	}
+	{
+		walk_slow(adeline, utcs1_adeline_table);
+		face(adeline, south);
+		animate(adeline, action);
+		wait(0.5);
+		setup_prop(utcs1_blueprints);
+		animate(adeline, idle);
+		walk_slow(adeline, utcs1_adeline_start);
+		face(adeline, south);
+	}
+	{
+		wait(0.3);
+		walk(ari, utcs1_ari_back);
+		face(ari, west);
+		wait(0.75);
+		walk_slow(ari, utcs1_ari_blueprints);
+		face(ari, south);
+	}
+	{
+		wait(0.5);
+		face(ryis, east);
+		wait(0.5);
+		walk_slow(ryis, utcs1_ryis_start);
+		face(ryis, south);
+	}
+	{
+		wait(0.75);
+		face(landen, west);
+		wait(0.5);
+		walk_slow(landen, utcs1_landen_start);
+		face(landen, south);
+	}
+}
+next_line(); //
+next_line(); //
+
+//
+
+sim {
+	{
+		wait(1.75);
+		face(landen, north);
+	}
+	{
+		wait(0.5);
+		face(ryis, east);
+		wait(0.5);
+		free bark_speech(ryis, cute_face);
+	}
+	{
+		wait(1.5);
+		face(adeline, east);
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(adeline, south);
+	}
+	{
+		wait(1);
+		face(landen, west);
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	//
+	//
+	//
+	//
+	{
+		wait(1);
+		face(ari, west);
+	}
+	{
+		wait(0.5);
+		face(ryis, north);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.75);
+		animate(adeline, write);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(2);
+		animate(adeline, idle);
+		face(adeline, east);
+	}
+	{
+		wait(1.5);
+		pan_camera(2, utcs1_camera_6);
+	}
+	{
+		next_line(); //
+	}
+}
+
+//
+
+sim {
+	{
+		wait(0.75);
+		free bark_speech(landen, cute_face);
+		wait(0.5);
+		face(landen, north);
+	}
+	{
+		wait(1);
+		face(ari, south);
+	}
+	{
+		wait(1.5);
+		face(ryis, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+
+sim {
+	{
+		wait(0.5);
+		face(ari, west);
+	}
+	{
+		pan_camera(2, utcs1_camera_5);
+	}
+	{
+		wait(1);
+		face(ryis, north);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+face(ari, south);
+wait(0.5);
+free bark_speech(adeline, cute_face);
+free bark_speech(landen, cute_face);
+free bark_speech(ryis, cute_face);
+wait(0.5);
+fade_out(2);
+

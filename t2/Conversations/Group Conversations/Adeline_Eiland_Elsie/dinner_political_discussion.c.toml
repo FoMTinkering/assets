@@ -1,0 +1,24 @@
+[dinner_political_discussion]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "eiland" }, { npc = "elsie" }] },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "<elsie_zone>" },
+	{ location = "manor_house_dining_room" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+]
+speaker = "adeline"
+portrait = "happy"
+local = "Hello [Ari]! We were just talking about some very exciting changes to the civic code that I'd like to propose."
+next = "1"
+
+[dinner_political_discussion.1]
+speaker = "eiland"
+portrait = "ugh"
+local = "Very exciting might be overselling it..."
+next = "2"
+
+[dinner_political_discussion.2]
+speaker = "elsie"
+portrait = "happy"
+local = "Ah, you just haven't had enough wine yet Eiland. Go on, pour yourself another!"

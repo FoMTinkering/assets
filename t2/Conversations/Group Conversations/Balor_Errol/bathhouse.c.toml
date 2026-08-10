@@ -1,0 +1,24 @@
+[bathhouse]
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "errol" }] },
+	{ location = "bathhouse_change_room" },
+	{ balor_zone = "<errol_zone>" },
+	{ museum_total_count = 10, comparator = ">=" }
+]
+refresh = "1y"
+speaker = "balor"
+portrait = "neutral"
+local = "I've got a line on a rarity in the Capital, Errol. Will you let me know if the Museum's interested?"
+next = "1"
+
+[bathhouse.1]
+speaker = "errol"
+portrait = "neutral_closed"
+local = "Balor my boy, when you get to my age, you learn some rules. And one of them is:"
+next = "2"
+
+[bathhouse.2]
+speaker = "errol"
+portrait = "mad"
+effect = "shock"
+local = "No business in the Bathhouse!"

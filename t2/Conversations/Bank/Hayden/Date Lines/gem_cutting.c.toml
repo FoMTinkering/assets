@@ -1,0 +1,142 @@
+[gem_cutting_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "hayden" },
+	{ date = "gem_cutting" },
+	{ da_hayden_gem_cutting = 0 },
+	{ hayden_is_spouse = false }
+]
+writes = [
+	{ da_hayden_gem_cutting = 1 },
+	{ da_hayden_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "neutral"
+local = "You want to do some $Gem Cutting$?"
+next = "1"
+
+[gem_cutting_accept_1.1]
+portrait = "think"
+local = "I'm not usually one for such fiddly work..."
+next = "2"
+
+[gem_cutting_accept_1.2]
+portrait = "wink"
+local = "But if you promise not to make fun, I'm willing to give it a try."
+next = "3"
+
+[gem_cutting_accept_1.3]
+portrait = "laugh_blush"
+local = "Gya ha ha!"
+
+[gem_cutting_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "hayden" },
+	{ date = "gem_cutting" },
+	{ hayden_has_child = false },
+	{ any = [
+		{ hayden_is_spouse = true },
+		{ da_hayden_gem_cutting = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_hayden_gem_cutting = 2 },
+	{ da_hayden_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "confident_blush"
+local = "Should we do some $Gem Cutting$, [Ari]?"
+next = "1"
+
+[gem_cutting_accept_2.1]
+portrait = "shy_special"
+local = "I could use all the practice I can get..."
+next = "2"
+
+[gem_cutting_accept_2.2]
+portrait = "laugh_blush"
+local = "Gya ha ha!"
+
+[gem_cutting_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ da_hayden_gem_cutting = 1 },
+	{ da_hayden_gem_cutting_follow_up_gate = true },
+	{ hayden_is_spouse = false }
+]
+writes = [{ da_hayden_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "happy_arm_down_blush"
+local = "That was fun, [Ari]. I'm glad your gem turned out pretty!"
+next = "1"
+
+[gem_cutting_follow_up_1.1]
+portrait = "confident_blush"
+local = "So what do you think? How'd I do at $Gem Cutting$?"
+prompts = [
+	{ local = "That was um... impressive!", next = "2" },
+	{ local = "You're supposed to cut the gem, Hayden, not crush it...", next = "6" },
+]
+
+[gem_cutting_follow_up_1.2]
+portrait = "laugh_blush"
+local = "Gya ha ha!"
+next = "3"
+
+[gem_cutting_follow_up_1.3]
+portrait = "embarrassed"
+local = "That's a kind way of putting it..."
+next = "4"
+
+[gem_cutting_follow_up_1.4]
+portrait = "shy_special"
+local = "I didn't mean to crush my gem! I only meant to cut it!"
+next = "5"
+
+[gem_cutting_follow_up_1.5]
+portrait = "confident_blush"
+local = "Well, lesson learned for next time..."
+
+[gem_cutting_follow_up_1.6]
+portrait = "laugh_blush"
+local = "Gya ha ha!"
+next = "7"
+
+[gem_cutting_follow_up_1.7]
+portrait = "shy_special"
+local = "Hey, you said you wouldn't tease me!"
+next = "8"
+
+[gem_cutting_follow_up_1.8]
+portrait = "embarrassed"
+local = "It was my first try! How was I supposed to know that was too much pressure?"
+next = "9"
+
+[gem_cutting_follow_up_1.9]
+portrait = "confident_blush"
+local = "Well, lesson learned for next time..."
+
+[gem_cutting_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_has_child = false },
+	{ any = [{ hayden_is_spouse = true }, { da_hayden_gem_cutting = 2 }] },
+	{ da_hayden_gem_cutting_follow_up_gate = true }
+]
+writes = [{ da_hayden_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "happy_arm_down_blush"
+local = "Your gem turned out so well, [Ari]!"
+next = "1"
+
+[gem_cutting_follow_up_2.1]
+portrait = "shy_blush"
+local = "I'm just glad mine turned out at all..."
+next = "2"
+
+[gem_cutting_follow_up_2.2]
+portrait = "laugh_blush"
+local = "Gya ha ha!"

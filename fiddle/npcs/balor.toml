@@ -1,0 +1,221 @@
+birthday = { season = "summer", day = 10 }
+loved_gifts = [
+	"alda_gem_bracelet",
+	"apple_honey_curry",
+	"chili_coconut_curry",
+	"deluxe_curry",
+	"family_crest_pendant",
+	"perfect_diamond",
+	"perfect_emerald",
+	"perfect_pink_diamond",
+	"perfect_ruby",
+	"perfect_sapphire",
+]
+liked_gifts = [
+	"cauliflower_curry",
+	"chickpea_curry",
+	"crystal_rose",
+	"ore_diamond",
+	"ore_emerald",
+	"fog_orchid",
+	"frost_lily",
+	"gold_ingot",
+	"ore_gold",
+	"golden_cookies",
+	"golden_cheesecake",
+	"jasmine",
+	"perfect_gold_ore",
+	"ore_pink_diamond",
+	"rose",
+	"ore_ruby",
+	"rusted_treasure_chest",
+	"ore_sapphire",
+	"sapphire_betta",
+	"snowdrop_anemone",
+]
+
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "ant"
+name = "Balor"
+aldarian_name = "BLR"
+music = "Music/Npc Tracks/Balor"
+outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+tags = ["townsfolk", "dateable"]
+journal_portrait_offset = [-115, -27]
+journal_background_color = [207, 211, 250]
+date_photo_offset = [-2, 0]
+job = "Traveling Merchant"
+icon_sprite = "spr_ui_generic_icon_npc_balor"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_balor"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_balor"
+dateable = true
+roommate_routine = "balor_roommate"
+proposal_cutscene = "balor_ten_hearts"
+children = ["sterling"]
+can_carry_child = false
+
+[gossip]
+	line = "balor_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["black_tea"]
+	"16" = ["beer"]
+	"18" = ["beer", "whiskey"]
+	"22" = ["whiskey", "wine"]
+
+[offsets]
+	portrait = [-121, -65]
+	sweat = [0, -9]
+	hearts = [0, -9]
+	angry = [0, -6]
+	sparkles = [1, -4]
+	sparkles_dark = [1, -4]
+	sick = [0, -9]
+	music_notes = [0, -4]
+	intensity = [2, -13]
+	surprise = [0, -4]
+	shock = [0, -11]
+	sigh = [-1, -6]
+	loud = [5, -7]
+	cheery = [-1, -4]
+	drop = [-1, -12]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	think = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	concerned = ["spring", "summer", "autumn", "winter", "beach"]
+	happy = ["spring", "summer", "autumn", "winter", "beach"]
+	wink = ["spring", "summer", "autumn", "winter", "beach"]
+	blush = ["spring", "summer", "autumn", "winter", "beach"]
+	mad = ["spring", "summer", "autumn", "winter", "beach"]
+	angry_blush = ["spring", "summer", "autumn", "winter", "beach"]
+	embarrassed = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	sad = ["spring", "summer", "autumn", "winter", "beach"]
+	ugh = ["spring", "summer", "autumn", "winter", "beach"]
+	sigh = ["spring", "summer", "autumn", "winter", "beach"]
+	sly = ["spring", "summer", "autumn", "winter", "beach"]
+	blush_special = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	hope_special = ["spring", "summer", "autumn", "winter", "beach"]
+	sincere_special = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	hurt = ["spring", "summer", "autumn", "winter"]
+	sad_special = ["spring", "summer", "autumn", "winter"]
+	bath_neutral = ["beach"]
+	happy_blush = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	shocked = ["spring", "summer", "autumn", "winter", "beach"]
+	shocked_special = ["spring", "summer", "autumn", "winter", "beach"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+
+[cycles.shocked]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.kiss]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.sleep]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.bath_swim]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["beach"]
+	type = "linear"
+
+[cycles.hair_flip]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "beach"]
+	type = "linear"
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.coin_flip]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer"]
+	type = "linear"
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.inspect_gem]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.read_sit]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	is_seated = true
+
+[cycles.jump]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring"]
+	type = "linear"

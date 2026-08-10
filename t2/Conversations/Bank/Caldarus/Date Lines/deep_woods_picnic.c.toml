@@ -1,0 +1,234 @@
+[deep_woods_picnic_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "deep_woods_picnic" },
+	{ da_caldarus_deep_woods_picnic = 0 },
+	{ caldarus_is_spouse = false }
+]
+writes = [
+	{ da_caldarus_deep_woods_picnic = 1 },
+	{ da_caldarus_deep_woods_picnic_follow_up_gate = true, expires = "1d" },
+]
+speaker = "caldarus"
+portrait = "neutral"
+local = "A... picnic?"
+next = "1"
+
+[deep_woods_picnic_accept_1.1]
+speaker = "caldarus"
+portrait = "think"
+local = "I am afraid that I am not familiar with the term."
+next = "2"
+
+[deep_woods_picnic_accept_1.2]
+speaker = "caldarus"
+portrait = "unsure_special"
+local = "Oh? A meal shared out in nature?"
+next = "3"
+
+[deep_woods_picnic_accept_1.3]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "That you prepared in advance? And brought here in that little basket?"
+next = "4"
+
+[deep_woods_picnic_accept_1.4]
+speaker = "caldarus"
+portrait = "sigh"
+local = "..."
+next = "5"
+
+[deep_woods_picnic_accept_1.5]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "W-what is this feeling?"
+next = "6"
+
+[deep_woods_picnic_accept_1.6]
+speaker = "caldarus"
+portrait = "laugh_special"
+effect = "cheery"
+local = "How unbearably charming."
+next = "7"
+
+[deep_woods_picnic_accept_1.7]
+speaker = "caldarus"
+portrait = "unsure_special"
+local = "I feel a strange urge to just... pick you up and hold you."
+next = "8"
+
+[deep_woods_picnic_accept_1.8]
+speaker = "caldarus"
+portrait = "ugh"
+local = "Ah, but... perhaps that would not be appropriate."
+next = "9"
+
+[deep_woods_picnic_accept_1.9]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = """So. Er. Let us go on this "picnic" you describe."""
+next = "10"
+
+[deep_woods_picnic_accept_1.10]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "I should like that very much!"
+
+[deep_woods_picnic_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "deep_woods_picnic" },
+	{ da_caldarus_deep_woods_picnic = 1 },
+	{ caldarus_is_spouse = false }
+]
+writes = [
+	{ da_caldarus_deep_woods_picnic = 2 },
+	{ da_caldarus_deep_woods_picnic_follow_up_gate = true, expires = "1d" },
+]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "Perhaps, if you have the time..."
+next = "1"
+
+[deep_woods_picnic_accept_2.1]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "We could share another picnic?"
+next = "2"
+
+[deep_woods_picnic_accept_2.2]
+speaker = "caldarus"
+portrait = "caring_special"
+effect = "cheery"
+local = "I prepared a basket for us, this time."
+
+[deep_woods_picnic_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "deep_woods_picnic" },
+	{ caldarus_has_child = false },
+	{ any = [
+		{ caldarus_is_spouse = true },
+		{ da_caldarus_deep_woods_picnic = 2, comparator = ">=" },
+	] },
+]
+writes = [
+	{ da_caldarus_deep_woods_picnic = 3 },
+	{ da_caldarus_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "Ah, a picnic?"
+next = "1"
+
+[deep_woods_picnic_accept_3.1]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "Of course. I would love to join you, [Ari]."
+next = "2"
+
+[deep_woods_picnic_accept_3.2]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "Thank you for the invitation."
+
+[deep_woods_picnic_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_deep_woods_picnic = 1 },
+	{ da_caldarus_deep_woods_picnic_follow_up_gate = true },
+	{ caldarus_is_spouse = false }
+]
+writes = [{ da_caldarus_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "caring_special"
+local = "I had a most wonderful time on our picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_1.1]
+portrait = "laugh"
+local = "You were correct, it is very pleasant to share a meal out in nature together."
+next = "2"
+
+[deep_woods_picnic_follow_up_1.2]
+portrait = "unsure_special"
+local = "Perhaps I will prepare something for next time."
+
+[deep_woods_picnic_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_deep_woods_picnic = 2 },
+	{ da_caldarus_deep_woods_picnic_follow_up_gate = true },
+	{ caldarus_is_spouse = false }
+]
+writes = [{ da_caldarus_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "embarrassed"
+local = "Thank you for joining me, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_2.1]
+portrait = "avoidant_special"
+effect = "drop"
+local = "My apologies that the meal I prepared triggered your coughing fit..."
+prompts = [
+	{ local = "Not at all! It was just, uh... the pollen.", next = "2" },
+	{ local = "How much black pepper did you use?", next = "5" },
+]
+
+[deep_woods_picnic_follow_up_2.2]
+portrait = "laugh_special"
+local = "Oh, good. I was worried that perhaps I did not use enough black pepper."
+next = "3"
+
+[deep_woods_picnic_follow_up_2.3]
+portrait = "serious_blush"
+local = "I did think that the container it came in was rather small."
+next = "4"
+
+[deep_woods_picnic_follow_up_2.4]
+portrait = "laugh_special"
+local = "I hope that you had a good time, regardless!"
+
+[deep_woods_picnic_follow_up_2.5]
+portrait = "laugh_special"
+local = "The normal amount, I assure you."
+next = "6"
+
+[deep_woods_picnic_follow_up_2.6]
+portrait = "serious_blush"
+local = "Though I did think the container it came in was rather small."
+next = "7"
+
+[deep_woods_picnic_follow_up_2.7]
+portrait = "laugh_special"
+local = "I hope that you had a good time regardless!"
+
+[deep_woods_picnic_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_has_child = false },
+	{ any = [
+		{ caldarus_is_spouse = true },
+		{ da_caldarus_deep_woods_picnic = 3 },
+	] },
+	{ da_caldarus_deep_woods_picnic_follow_up_gate = true },
+]
+writes = [{ da_caldarus_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "caring_special"
+local = "I truly enjoyed our picnic together, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_3.1]
+portrait = "laugh_special"
+local = "Let us make plans to do it again soon."

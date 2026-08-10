@@ -1,0 +1,35 @@
+[old_boot]
+refresh = "never"
+requires = [
+	{ any = [
+		{ npc = "balor" },
+		{ npc = "eiland" },
+		{ npc = "hayden" },
+		{ npc = "olric" },
+	] },
+	{ balor_zone = "<eiland_zone>" },
+	{ balor_zone = "<hayden_zone>" },
+	{ balor_zone = "<olric_zone>" },
+]
+speaker = "eiland"
+portrait = "mad"
+local = "Have you ever dug up any artifacts on your land, Hayden? Anything of historical importance?"
+next = "1"
+
+[old_boot.1]
+speaker = "hayden"
+portrait = "think"
+local = "I dig up old stuff occasionally! Let's see... is my great granddad's old boot noteworthy? We did have the same shoe size!"
+next = "2"
+
+[old_boot.2]
+speaker = "balor"
+portrait = "ugh"
+local = "Why would you know that? Did you... did you put on the boot, Hayden?"
+next = "3"
+
+[old_boot.3]
+speaker = "olric"
+portrait = "happy"
+effect = "sparkles"
+local = "Haha... I kinda dared him to..."

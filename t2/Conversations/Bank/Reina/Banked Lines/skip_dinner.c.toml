@@ -1,0 +1,17 @@
+[skip_dinner]
+refresh = "1y"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn" },
+	{ reina_activity = "eat", comparator = "!=" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ any = [
+		{ reina_routine = "inn_solo_reina", comparator = "!=" },
+		{ reina_routine = "inn_solo_bartend", comparator = "!=" },
+		{ reina_routine = "inn_reina_fnati", comparator = "!=" },
+		{ reina_routine = "inn_table_service", comparator = "!=" },
+	] }
+]
+portrait = "happy"
+effect = "drop"
+local = "I nibbled so much while working in the kitchen, I ended up skipping dinner."

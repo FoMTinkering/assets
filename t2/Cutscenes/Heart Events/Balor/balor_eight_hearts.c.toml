@@ -1,0 +1,640 @@
+[balor_eight_hearts_follow_up_balor]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_heart_event = "eight_heart" },
+	{ balor_eight_heart_priority_bump = true }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "balor" } }]
+portrait = "sincere_special"
+local = "[Ari]... thank you."
+next = "1"
+
+[balor_eight_hearts_follow_up_balor.1]
+portrait = "hope_special"
+local = "It makes all the difference in the world to know you're in my corner."
+
+[balor_eight_hearts_follow_up_dell_luc_maple]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ balor_heart_event = "eight_heart" }
+]
+speaker = "maple"
+portrait = "neutral"
+local = "Hey, [Ari]! Did you have a nice time with Balor?"
+next = "1"
+
+[balor_eight_hearts_follow_up_dell_luc_maple.1]
+speaker = "luc"
+portrait = "neutral"
+local = "He gave each of us a bar of $Chocolate$ to not interrupt."
+next = "2"
+
+[balor_eight_hearts_follow_up_dell_luc_maple.2]
+speaker = "dell"
+portrait = "think"
+local = "Dunno why."
+next = "3"
+
+[balor_eight_hearts_follow_up_dell_luc_maple.3]
+speaker = "dell"
+portrait = "happy"
+local = "I think it'd have been a lot more fun if we had been there, don't you?"
+
+[balor_eight_hearts_follow_up_hemlock]
+refresh = "never"
+requires = [{ npc = "hemlock" }, { balor_heart_event = "eight_heart" }]
+portrait = "think"
+local = "I nearly stepped in when things started getting heated between Wheedle and Balor."
+next = "1"
+
+[balor_eight_hearts_follow_up_hemlock.1]
+portrait = "neutral"
+local = "But I know Balor. He needed to handle Wheedle himself."
+next = "2"
+
+[balor_eight_hearts_follow_up_hemlock.2]
+portrait = "wink"
+local = "I'm glad you spoke up for him. He's lucky to have you."
+
+[balor_eight_hearts_follow_up_josephine]
+refresh = "never"
+requires = [{ npc = "josephine" }, { balor_heart_event = "eight_heart" }]
+portrait = "mad"
+local = "That Wheedle! That he would even THINK that Balor would ever sell out Mistria for a pile of dirty coins!"
+
+[balor_eight_hearts_follow_up_reina]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_partner = false },
+	{ balor_heart_event = "eight_heart" }
+]
+portrait = "neutral"
+local = "I had to step out for a moment while getting your special meal ready, and mom said I missed quite the show!"
+next = "1"
+
+[balor_eight_hearts_follow_up_reina.1]
+portrait = "happy"
+local = "I'm glad you helped Balor come out of his shell, [Ari]. He seems much happier now."
+
+[balor_eight_hearts_follow_up_wheedle]
+refresh = "never"
+requires = [{ npc = "wheedle" }, { balor_heart_event = "eight_heart" }]
+portrait = "neutral"
+local = "Ah, I thought I might be seeing you again."
+next = "1"
+
+[balor_eight_hearts_follow_up_wheedle.1]
+portrait = "happy"
+local = "Please rest assured that despite the... unpleasantness with Balor, you're more than welcome to continue patronizing my booth."
+
+[balor_eight_hearts]
+kind = "gameplay_triggered"
+writes = [
+	{ balor_heart_event = "eight_heart", expires = "4d" },
+	{ balor_eight_heart_priority_bump = true, expires = "4d" }
+]
+speaker = "balor"
+portrait = "happy"
+local = "There you are! Please, sit down."
+next = "1"
+
+[balor_eight_hearts.1]
+speaker = "balor"
+portrait = "neutral"
+local = "Do you like it? I had a bit of help from Hemlock and Jo getting everything set up."
+next = "2"
+
+[balor_eight_hearts.2]
+speaker = "balor"
+portrait = "ugh"
+local = "Maple, Luc and Dell tried to pitch in too... but it was easy enough to clean up their mess afterwards."
+next = "3"
+
+[balor_eight_hearts.3]
+speaker = "balor"
+portrait = "happy"
+local = "For today's menu, Reina is preparing some of her finest dishes."
+next = [
+	{ target = "4r", requires = [
+		{ shooting_star_balor_attended = true, comparator = "==" }
+	] },
+	{ target = "4f", requires = [] }
+]
+
+[balor_eight_hearts.4r]
+speaker = "balor"
+portrait = "wink"
+local = "It's worth enjoying a nice date since we have the time, don't you think?"
+prompts = [
+	{ local = "I can't wait!", next = "5" },
+	{ local = "It seems like you've put a lot of effort into this.", next = "6" }
+]
+
+[balor_eight_hearts.4f]
+speaker = "balor"
+portrait = "neutral"
+local = "It's worth celebrating our success since we have the time, don't you think?"
+prompts = [
+	{ local = "I can't wait!", next = "5" },
+	{ local = "It seems like you've put a lot of effort into this.", next = "6" }
+]
+
+[balor_eight_hearts.5]
+speaker = "balor"
+portrait = "neutral"
+local = "I'm sure the food will start arriving at any moment. But before it does..."
+next = [
+	{ target = "7r", requires = [
+		{ shooting_star_balor_attended = true, comparator = "==" }
+	] },
+	{ target = "7f", requires = [] }
+]
+
+[balor_eight_hearts.6]
+speaker = "balor"
+portrait = "happy"
+local = "I wanted to make up for last time. And, well..."
+next = [
+	{ target = "7r", requires = [
+		{ shooting_star_balor_attended = true, comparator = "==" }
+	] },
+	{ target = "7f", requires = [] }
+]
+
+[balor_eight_hearts.7r]
+speaker = "balor"
+portrait = "blush_special"
+local = "Actually, [Ari]... there's something I-"
+next = "8"
+
+[balor_eight_hearts.7f]
+speaker = "balor"
+portrait = "think"
+local = "Actually, [Ari]... there's something I-"
+next = "8"
+
+[balor_eight_hearts.8]
+speaker = "josephine"
+portrait = "happy"
+local = "Food's up!"
+next = "9"
+
+[balor_eight_hearts.9]
+speaker = "balor"
+portrait = "happy"
+local = "Ah, our first course."
+next = "10"
+
+[balor_eight_hearts.10]
+speaker = "balor"
+portrait = "neutral"
+local = "Shall we discuss our drink options before we tuck in?"
+next = "11"
+
+[balor_eight_hearts.11]
+speaker = "josephine"
+portrait = "think"
+local = "Actually, Balor..."
+next = "12"
+
+[balor_eight_hearts.12]
+speaker = "josephine"
+portrait = "sad"
+local = "I'm so sorry to interrupt, but can I talk to you outside?"
+next = "13"
+
+[balor_eight_hearts.13]
+speaker = "balor"
+portrait = "ugh"
+local = "..."
+next = "14"
+
+[balor_eight_hearts.14]
+speaker = "balor"
+portrait = "embarrassed"
+local = "E-excuse me, [Ari]. Feel free to get started. I'm sure I'll only be gone a moment."
+next = "15"
+
+[balor_eight_hearts.15]
+speaker = "josephine"
+portrait = "think"
+local = "Wheedle is downstairs, and he's demanding to see you."
+next = "16"
+
+[balor_eight_hearts.16]
+speaker = "josephine"
+portrait = "mad"
+local = "He said something about picking up your contract."
+next = "17"
+
+[balor_eight_hearts.17]
+speaker = "josephine"
+portrait = "sad"
+local = "Balor, surely you're not...?"
+next = "18"
+
+[balor_eight_hearts.18]
+speaker = "balor"
+portrait = "hurt"
+local = "I see. This is not the timing I'd hoped for."
+next = "19"
+
+[balor_eight_hearts.19]
+speaker = "balor"
+portrait = "concerned"
+local = "Jo... I need to talk to [Ari] first. Can you delay him?"
+next = "20"
+
+[balor_eight_hearts.20]
+speaker = "josephine"
+portrait = "ugh"
+local = "For you Balor, Hemlock and I will try to keep him busy. But you owe us one!"
+next = "21"
+
+[balor_eight_hearts.21]
+speaker = "balor"
+portrait = "neutral"
+local = "I'm in your debt. Thank you."
+next = "22"
+
+[balor_eight_hearts.22]
+speaker = "balor"
+portrait = "sad"
+local = "Sorry about that..."
+
+[[balor_eight_hearts.22.prompts]]
+local = "Everything alright?"
+next = [
+	{ target = "23r", requires = [
+		{ shooting_star_balor_attended = true, comparator = "==" }
+	] },
+	{ target = "23f", requires = [] }
+]
+
+[[balor_eight_hearts.22.prompts]]
+local = "If you're busy, we could reschedule..."
+next = [
+	{ target = "24r", requires = [
+		{ shooting_star_balor_attended = true, comparator = "==" }
+	] },
+	{ target = "24f", requires = [] }
+]
+
+[balor_eight_hearts.23r]
+speaker = "balor"
+portrait = "concerned"
+local = "It's... nothing. It can wait."
+next = "25r"
+
+[balor_eight_hearts.23f]
+speaker = "balor"
+portrait = "think"
+local = "It's... nothing. It can wait."
+next = "25f"
+
+[balor_eight_hearts.24r]
+speaker = "balor"
+portrait = "concerned"
+local = "No, no... It's nothing. It can wait."
+next = "25r"
+
+[balor_eight_hearts.24f]
+speaker = "balor"
+portrait = "think"
+local = "No, no... It's nothing. It can wait."
+next = "25f"
+
+[balor_eight_hearts.25r]
+speaker = "balor"
+portrait = "blush_special"
+local = "There's something I've been meaning to ask you."
+next = "26r"
+
+[balor_eight_hearts.25f]
+speaker = "balor"
+portrait = "concerned"
+local = "[Ari], there's something I've been meaning to ask you."
+next = "26f"
+
+[balor_eight_hearts.26r]
+speaker = "balor"
+portrait = "blush_special"
+local = "Since the Shooting Star Festival, I've been wondering... what am I to you, [Ari]? We're more than just business partners... right?"
+prompts = [
+	{ local = "You're one of my best friends, Balor!", next = "27r" },
+	{ local = "You're more to me than anyone, Balor.", next = "30r" }
+]
+
+[balor_eight_hearts.26f]
+speaker = "balor"
+portrait = "concerned"
+local = "About Mistria... would it matter to you if I stayed? Your business would continue to be successful, regardless. You don't really need-"
+prompts = [
+	{ local = "What are you saying, Balor? You're one of my best friends!", next = "27f" },
+	{ local = "What are you saying, Balor? It matters to me more than anything.", next = "30f" }
+]
+
+# option one
+[balor_eight_hearts.27r]
+actions = [{ update_status = { npc = "balor", status = "best_friend" } }]
+speaker = "balor"
+portrait = "concerned"
+local = "Ah, of course. Thank you, [Ari]. It means a lot to hear you say that."
+next = "28r"
+
+[balor_eight_hearts.27f]
+actions = [{ update_status = { npc = "balor", status = "best_friend" } }]
+speaker = "balor"
+portrait = "hope_special"
+local = "Do you mean it, [Ari]? I feel the same way."
+next = "28f"
+
+[balor_eight_hearts.28r]
+speaker = "balor"
+portrait = "neutral"
+local = "In this line of work, it can be hard to know who your real friends are."
+next = "29r"
+
+[balor_eight_hearts.28f]
+speaker = "balor"
+portrait = "concerned"
+local = "In this line of work, it can be hard to know who your real friends are."
+next = "29f"
+
+[balor_eight_hearts.29r]
+speaker = "balor"
+portrait = "sincere_special"
+local = "But... you've always been true to me, [Ari]. Someone I can truly rely on."
+next = "34"
+
+[balor_eight_hearts.29f]
+speaker = "balor"
+portrait = "sincere_special"
+local = "But I've been giving it a lot of thought recently. You're someone I really trust. I know that I can rely on you."
+next = "34"
+
+# Romance branch two
+[balor_eight_hearts.30r]
+actions = [{ update_status = { npc = "balor", status = "dating" } }]
+speaker = "balor"
+portrait = "embarrassed"
+local = "[Ari]!"
+next = "31r"
+
+[balor_eight_hearts.30f]
+actions = [{ update_status = { npc = "balor", status = "dating" } }]
+speaker = "balor"
+portrait = "hope_special"
+local = "[Ari]!"
+next = "31f"
+
+[balor_eight_hearts.31r]
+speaker = "balor"
+portrait = "blush_special"
+local = "I... I feel the same way."
+next = "32r"
+
+[balor_eight_hearts.31f]
+speaker = "balor"
+portrait = "blush_special"
+local = "I... didn't realize you felt that way about me."
+next = "32f"
+
+[balor_eight_hearts.32r]
+speaker = "balor"
+portrait = "blush"
+local = "Honestly, I haven't been able to stop thinking about you since that evening we shared on the Summit."
+next = "33r"
+
+[balor_eight_hearts.32f]
+speaker = "balor"
+portrait = "embarrassed"
+local = "Honestly, I felt something for you that first day when we crossed the bridge into Mistria together."
+next = "33f"
+
+[balor_eight_hearts.33r]
+speaker = "balor"
+portrait = "blush"
+local = "I never planned on staying in Mistria so long, but over time... the people here won me over. You won me over, [Ari]."
+next = "34"
+
+[balor_eight_hearts.33f]
+speaker = "balor"
+portrait = "blush"
+local = "I never planned on staying so long, but over time... the people here won me over. You won me over, [Ari]."
+next = "34"
+
+# End of branching
+[balor_eight_hearts.34]
+speaker = "balor"
+portrait = "think"
+local = "I'm sorry to interrupt our meal again but... would you come downstairs with me for a moment?"
+next = "35"
+
+[balor_eight_hearts.35]
+speaker = "balor"
+portrait = "neutral"
+local = "There's some business I need to finish, and I'd like for you to be there."
+next = "36"
+
+[balor_eight_hearts.36]
+speaker = "wheedle"
+portrait = "happy"
+local = "Balor, there you are!"
+next = "37"
+
+[balor_eight_hearts.37]
+speaker = "wheedle"
+portrait = "neutral"
+local = "I assume you're ready to sign that contract and leave this backwater for good?"
+next = "38"
+
+[balor_eight_hearts.38]
+speaker = "balor"
+portrait = "mad"
+local = "Wrong as usual, Wheedle."
+next = "39"
+
+[balor_eight_hearts.39]
+speaker = "balor"
+portrait = "neutral"
+local = "Mistria is my home, and its people and their livelihoods aren't chips to be bargained with."
+next = "40"
+
+[balor_eight_hearts.40]
+speaker = "wheedle"
+portrait = "happy"
+local = "Ah, I know a negotiation tactic when I hear one. If you sit down, I'm sure we can find a deal that works for you-"
+next = "41"
+
+[balor_eight_hearts.41]
+speaker = "balor"
+portrait = "sincere_special"
+local = "No amount of money would make me sign Mistria over to you and your band of crooks."
+next = "42"
+
+[balor_eight_hearts.42]
+speaker = "wheedle"
+portrait = "ugh"
+local = "I see."
+next = "43"
+
+[balor_eight_hearts.43]
+speaker = "wheedle"
+portrait = "mad"
+local = "And who are you exactly, to be calling me a crook? You've been stealing and cheating your way around the Capital longer than most."
+next = "44"
+
+[balor_eight_hearts.44]
+speaker = "wheedle"
+portrait = "think"
+local = "For the right price... there's no depths you won't sink to."
+next = "45"
+
+[balor_eight_hearts.45]
+speaker = "wheedle"
+portrait = "sad"
+local = "And you, [Ari]. Don't you see what's happening here? This is nothing but an act."
+next = "46"
+
+[balor_eight_hearts.46]
+speaker = "wheedle"
+portrait = "mad"
+local = "You'd better run while you still can. He'll turn on you the moment you stop being useful to him."
+next = "47"
+
+[balor_eight_hearts.47]
+speaker = "balor"
+portrait = "mad"
+local = "Enough!"
+next = "48"
+
+[balor_eight_hearts.48]
+speaker = "balor"
+portrait = "hurt"
+local = "He's not... entirely wrong, [Ari]. I've done things in my past that I'm not proud of."
+next = "49"
+
+[balor_eight_hearts.49]
+speaker = "balor"
+portrait = "sad_special"
+local = "I was just a kid trying to survive. But I'm a different person now, a better person."
+next = "50"
+
+[balor_eight_hearts.50]
+speaker = "balor"
+portrait = "sincere_special"
+local = "I have been for a long time now. Even more so since I met you."
+next = [
+	{ target = "51r", requires = [
+		{ shooting_star_balor_attended = true, comparator = "==" },
+		{ balor_is_partner = true, comparator = "==" }
+	] },
+	{ target = "51f", requires = [] }
+]
+
+[balor_eight_hearts.51r]
+speaker = "wheedle"
+portrait = "neutral"
+local = "What a charmer! And so sincere! Don't let him fool you..."
+prompts = [
+	{ local = "I don't think so, Wheedle. (Kiss Balor)", next = "52r" },
+	{ local = "Shut the hell up, Wheedle.", next = "53" }
+]
+
+[balor_eight_hearts.51f]
+speaker = "wheedle"
+portrait = "neutral"
+local = "What a charmer! And so sincere! Don't let him fool you..."
+prompts = [
+	{ local = "If you really knew him, you'd know he's changed. I believe in Balor.", next = "52f" },
+	{ local = "Shut the hell up, Wheedle.", next = "53" }
+]
+
+[balor_eight_hearts.52r]
+speaker = "balor"
+portrait = "hope_special"
+local = "[Ari]!"
+next = "54"
+
+[balor_eight_hearts.52f]
+speaker = "balor"
+portrait = "sincere_special"
+local = "[Ari]... thank you."
+next = "54"
+
+[balor_eight_hearts.53]
+speaker = "balor"
+portrait = "happy"
+local = "Hah! Couldn't have said it better myself."
+next = "54"
+
+[balor_eight_hearts.54]
+speaker = "balor"
+portrait = "mad"
+local = "I have your contract here, Wheedle."
+next = "55"
+
+[balor_eight_hearts.55]
+speaker = "balor"
+portrait = "sincere_special"
+local = "See these scraps? I tore it up weeks ago."
+next = "56"
+
+[balor_eight_hearts.56]
+speaker = "balor"
+portrait = "neutral"
+local = "I think I'll hold on to the pieces-"
+next = "57"
+
+[balor_eight_hearts.57]
+speaker = "balor"
+portrait = "wink"
+local = "As a little memento. Proof that my heart lies here with Mistria."
+next = "58"
+
+[balor_eight_hearts.58]
+speaker = "wheedle"
+portrait = "mad"
+local = "You... we're done here!"
+next = "59"
+
+[balor_eight_hearts.59]
+speaker = "josephine"
+portrait = "mad"
+local = "He didn't even pay for his drink!"
+next = "60"
+
+[balor_eight_hearts.60]
+speaker = "hemlock"
+portrait = "mad"
+local = "If it means we won't see him here again, it's on the house."
+next = "61"
+
+[balor_eight_hearts.61]
+speaker = "josephine"
+portrait = "embarrassed"
+local = "Balor dear, we're all so proud of you."
+next = "62"
+
+[balor_eight_hearts.62]
+speaker = "hemlock"
+portrait = "happy"
+local = "She's right. You're a true Mistrian, Balor."
+next = "63"
+
+[balor_eight_hearts.63]
+speaker = "balor"
+portrait = "embarrassed"
+local = "Everyone..."
+next = "64"
+
+[balor_eight_hearts.64]
+speaker = "josephine"
+portrait = "neutral"
+local = "You and [Ari] had better head back up, the next course is almost ready."

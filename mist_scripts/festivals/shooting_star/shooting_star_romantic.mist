@@ -1,0 +1,206 @@
+set_on_blackboard("block_skip", true);
+var partner = get_from_blackboard("date_partner");
+var outfit = get_from_blackboard("outfit");
+var bark_one = "";
+var bark_two = "";
+var bark_three = "";
+var bark_four = "";
+var roll = irandom(3);
+if roll == 0 {
+	bark_one = "summer";
+	bark_two = "moon";
+	bark_three = "sleepy";
+	bark_four = "hot_drink";
+} else if roll == 1 {
+	bark_one = "stars";
+	bark_two = "music";
+	bark_three = "moon";
+	bark_four = "thread";
+} else if roll == 2 {
+	bark_one = "four";
+	bark_two = "question_mark";
+	bark_three = "stars";
+	bark_four = "horse";
+} else {
+	bark_one = "question_mark";
+	bark_two = "cold_drink";
+	bark_three = "yum";
+	bark_four = "heatwave";
+}
+
+//
+free bark_speech(partner, heart);
+wait(1);
+fade_out(2);
+scene(summit);
+camera_position(shst_camera_3);
+request_music_play("Music/Location Tracks/ShootingStarFestival");
+stop_ambiance();
+play_sound("Ambience/ShootingStarFestival");
+__override_post_process_time(22, 30);
+start_shooting_stars();
+
+//
+capture_date_photo();
+wait_one_tick();
+set_on_blackboard("block_skip", false);
+
+if partner == "caldarus" or partner == "seridia" {
+	place_actor(ari, north, shst_ari_couple_caldarus);
+	animate(ari, sit);
+	place_actor(partner, north, shst_date_caldarus);
+	animate(partner, sit);
+	setup_prop(shst_blanket);
+	setup_prop(shst_pouf_ari_caldarus);
+	setup_prop(shst_pouf_date_caldarus);
+	camera_position(shst_camera_1);
+
+	sim {
+		{
+			wait(0.25);
+			fade_in(2);
+		}
+		{
+			pan_camera(4, shst_camera_2);
+		}
+	}
+	wait(2);
+	set_on_blackboard("quiet_stars", true);
+	wait(1);
+	free bark_speech(ari, bark_one);
+	wait(1.5);
+	free bark_speech(partner, bark_two);
+	wait(1.5);
+	free bark_speech(ari, bark_three);
+	wait(1.5);
+	free bark_speech(partner, bark_four);
+	wait(2);
+	free bark_speech(ari, cute_face);
+	free bark_speech(partner, cute_face);
+	wait(2);
+	sim {
+		{
+			place_actor(partner, north, shst_date_caldarus_stand);
+			animate(partner, idle);
+			wait(0.25);
+			face(partner, east);
+		}
+		{
+			wait(0.5);
+			place_actor(ari, north, shst_ari_couple_caldarus_stand);
+			animate(ari, idle);
+			wait(0.25);
+			face(ari, west);
+		}
+		{
+			pan_camera(2, shst_camera_5);
+		}
+	}
+	checkpoint("kiss");
+	sim {
+		{
+			walk_slow(partner, shst_date_kiss);
+			face(partner, east);
+		}
+		{
+			walk_slow(ari, shst_ari_couple_kiss);
+			face(ari, west);
+		}
+	}
+	if is_partner(partner) {
+		kiss_npc(partner, true, 1);
+	} else {
+		wait(0.5);
+		free bark_speech(ari, cute_face);
+		free bark_speech(partner, cute_face);
+	}
+	sim {
+		{
+			wait(1);
+			pan_camera(5, shst_camera_4);
+		}
+		{
+			wait(4);
+			fade_out(3);
+		}
+	}
+} else {
+	place_actor(ari, north, shst_ari_couple_near);
+	animate(ari, sit);
+	place_actor(partner, north, shst_date_near);
+	animate(partner, sit);
+	setup_prop(shst_blanket);
+	setup_prop(shst_pouf_ari_near);
+	setup_prop(shst_pouf_date_near);
+	camera_position(shst_camera_1);
+
+	sim {
+		{
+			wait(0.25);
+			fade_in(2);
+		}
+		{
+			pan_camera(4, shst_camera_2);
+		}
+	}
+	wait(2);
+	set_on_blackboard("quiet_stars", true);
+	wait(1);
+	free bark_speech(ari, bark_one);
+	wait(1.5);
+	free bark_speech(partner, bark_two);
+	wait(1.5);
+	free bark_speech(ari, bark_three);
+	wait(1.5);
+	free bark_speech(partner, bark_four);
+	wait(2);
+	free bark_speech(ari, cute_face);
+	free bark_speech(partner, cute_face);
+	wait(2);
+	sim {
+		{
+			place_actor(partner, north, shst_date_near_stand);
+			animate(partner, "idle");
+			wait(0.25);
+			face(partner, east);
+		}
+		{
+			wait(0.5);
+			place_actor(ari, north, shst_ari_couple_near_stand);
+			animate(ari, idle);
+			wait(0.25);
+			face(ari, west);
+		}
+		{
+			pan_camera(2, shst_camera_5);
+		}
+	}
+	checkpoint("kiss");
+	sim {
+		{
+			walk_slow(partner, shst_date_kiss);
+			face(partner, east);
+		}
+		{
+			walk_slow(ari, shst_ari_couple_kiss);
+			face(ari, west);
+		}
+	}
+	if is_partner(partner) {
+		kiss_npc(partner);
+	} else {
+		wait(0.5);
+		free bark_speech(ari, cute_face);
+		free bark_speech(partner, cute_face);
+	}
+	sim {
+		{
+			wait(1);
+			pan_camera(5, shst_camera_4);
+		}
+		{
+			wait(4);
+			fade_out(3);
+		}
+	}
+}

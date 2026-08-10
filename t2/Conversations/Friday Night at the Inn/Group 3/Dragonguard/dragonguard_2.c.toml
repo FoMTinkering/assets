@@ -1,0 +1,72 @@
+[dragonguard_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ adeline_zone = "inn/balcony_dragonguard" },
+	{ balor_zone = "inn/balcony_dragonguard" },
+	{ dell_zone = "inn/balcony_dragonguard" },
+	{ juniper_zone = "inn/balcony_dragonguard" },
+	{ olric_zone = "inn/balcony_dragonguard" },
+	{ dragonguard_fnati = 1 },
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "balor" },
+		{ npc = "dell" },
+		{ npc = "juniper" },
+		{ npc = "olric" },
+	] },
+]
+actions = [
+	{ bark = { bark = "angry", npc = "adeline" } },
+	{ bark = { bark = "angry", npc = "balor" } },
+	{ bark = { bark = "cute_face", npc = "dell" } },
+	{ bark = { bark = "sweat_drop", npc = "juniper" } },
+	{ bark = { bark = "angry", npc = "olric" } },
+]
+writes = [{ dragonguard_fnati = 2 }]
+speaker = "juniper"
+portrait = "mad"
+local = "Okay, Dell. It's time we had a talk, grown-up to kid. What's the Dragonguard's treasure?"
+next = "1"
+
+[dragonguard_2.1]
+speaker = "dell"
+portrait = "mad"
+local = "I can't just tell you, Miss Juniper. You have to prove yourselves!"
+next = "2"
+
+[dragonguard_2.2]
+speaker = "dell"
+portrait = "neutral"
+local = "It's the Dragonguard's job to help the town. So what have you done for Mistria this week?"
+next = "3"
+
+[dragonguard_2.3]
+speaker = "adeline"
+portrait = "neutral"
+local = "Well, I coordinated the town's postings for the request board."
+next = "4"
+
+[dragonguard_2.4]
+speaker = "balor"
+portrait = "mad"
+local = "I sourced and imported a variety of supplies that are otherwise difficult to obtain in Mistria."
+next = "5"
+
+[dragonguard_2.5]
+speaker = "olric"
+portrait = "mad"
+local = "I trained extra hard this week!"
+next = "6"
+
+[dragonguard_2.6]
+speaker = "juniper"
+portrait = "happy"
+local = "I... heroically ordered the most expensive bottle of wine at the Inn! Thereby contributing to the great wheel of the Mistrian economy!"
+next = "7"
+
+[dragonguard_2.7]
+speaker = "dell"
+portrait = "sad"
+local = "You're really holding the other recruits back here, Miss Juniper. But I guess we can decide what to do with the treasure... next week."

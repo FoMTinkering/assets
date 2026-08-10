@@ -1,0 +1,36 @@
+[farm_inspection]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "hayden" },
+		{ npc = "luc" },
+		{ npc = "maple" }
+	] },
+	{ dell_zone = "<hayden_zone>" },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ location = "haydens_farm" }
+]
+speaker = "dell"
+portrait = "mad"
+local = "Make way, make way! I'm the captain of Queen Maple's royal guard! Her Majesty is here to inspect your farm, Mister Hayden."
+next = "1"
+
+[farm_inspection.1]
+speaker = "luc"
+portrait = "mad"
+local = "The Queen seeks a royal steed. Show us your finest riding animals!"
+next = "2"
+
+[farm_inspection.2]
+speaker = "hayden"
+portrait = "think"
+local = "Oh! Well actually, I think they're all fine animals. I don't think I could play favorites."
+next = "3"
+
+[farm_inspection.3]
+speaker = "maple"
+portrait = "happy"
+effect = "sparkles_dark"
+local = "Your politicking is most clever, Mister Hayden. Queen Maple is pleased to have such cunning subjects."

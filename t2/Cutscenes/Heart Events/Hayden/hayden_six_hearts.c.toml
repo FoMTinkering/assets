@@ -1,0 +1,269 @@
+[hayden_six_hearts_follow_up_dell]
+refresh = "never"
+requires = [{ npc = "dell" }, { hayden_heart_event = "six_heart" }]
+portrait = "think"
+local = "Henrietta is really cool, huh? I wonder if mom would let me get a chicken too..."
+
+[hayden_six_hearts_follow_up_holt]
+refresh = "never"
+requires = [{ npc = "holt" }, { hayden_heart_event = "six_heart" }]
+portrait = "neutral"
+local = "Dell's been after Nora to let her get a chicken after playing with Henrietta."
+next = "1"
+
+[hayden_six_hearts_follow_up_holt.1]
+portrait = "happy"
+local = "And I'm on Dell's side!"
+
+[hayden_six_hearts_follow_up_luc]
+refresh = "never"
+requires = [{ npc = "luc" }, { hayden_heart_event = "six_heart" }]
+portrait = "happy"
+local = "Henrietta is really good at finding bugs!"
+next = "1"
+
+[hayden_six_hearts_follow_up_luc.1]
+portrait = "mad"
+local = "We've got competition, [Ari]!"
+
+[hayden_six_hearts_follow_up_maple]
+refresh = "never"
+requires = [{ npc = "maple" }, { hayden_heart_event = "six_heart" }]
+portrait = "happy"
+local = "It was fun playing with Henrietta!"
+next = "1"
+
+[hayden_six_hearts_follow_up_maple.1]
+portrait = "think"
+local = "I wonder what position I should give her in my royal court..."
+
+[hayden_six_hearts_follow_up_nora]
+refresh = "never"
+requires = [{ npc = "nora" }, { hayden_heart_event = "six_heart" }]
+portrait = "mad"
+local = "You wouldn't be interested in taking on an apprentice, would you [Ari]?"
+next = "1"
+
+[hayden_six_hearts_follow_up_nora.1]
+portrait = "ugh"
+local = "Dell has gone chicken crazy."
+
+
+[hayden_six_hearts]
+kind = "gameplay_triggered"
+writes = [{ hayden_heart_event = "six_heart", expires = "4d" }]
+speaker = "hayden"
+portrait = "happy"
+local = "[Ari]!"
+next = "greeting"
+
+[hayden_six_hearts.greeting]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "I've already picked up a picnic basket from the Inn for us, but I thought Henrietta should choose her own treat."
+next = "1"
+
+[hayden_six_hearts.1]
+speaker = "holt"
+portrait = "think"
+local = "Now Nora normally doesn't let animals in here..."
+next = "2"
+
+[hayden_six_hearts.2]
+speaker = "holt"
+portrait = "happy"
+local = "But I'm sure she couldn't have meant Henrietta!"
+next = "3"
+
+[hayden_six_hearts.3]
+speaker = "hayden"
+portrait = "neutral"
+local = "Go on, Henrietta! Pick out whatever you like!"
+prompts = [{ local = "I can personally recommend the produce here!", next = "4" }, { local = "Treat yourself! You deserve it.", next = "5" }]
+
+[hayden_six_hearts.4]
+speaker = "holt"
+portrait = "neutral"
+local = "I'm sure you can, [Ari]. After all, you grew a lot of it yourself!"
+next = "6"
+
+[hayden_six_hearts.5]
+speaker = "henrietta"
+portrait = "neutral"
+local = "(Henrietta seems to agree with you.)"
+next = "6"
+
+[hayden_six_hearts.6]
+speaker = "holt"
+portrait = "think"
+local = "Ooooh, that's the good stuff. Best ears of corn we've had in a while."
+next = "7"
+
+[hayden_six_hearts.7]
+speaker = "holt"
+portrait = "neutral"
+local = "Hayden, your chicken has a good eye for quality!"
+next = "8"
+
+[hayden_six_hearts.8]
+speaker = "henrietta"
+portrait = "neutral"
+local = "(Henrietta seems to have made her selection, and is looking at you.)"
+next = "9"
+
+[hayden_six_hearts.9]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "Put it on my tab, Holt!"
+next = "10"
+
+[hayden_six_hearts.10]
+speaker = "holt"
+portrait = "happy"
+local = "You got it!"
+next = "11"
+
+[hayden_six_hearts.11]
+speaker = "holt"
+portrait = "think"
+local = "Oh and..."
+next = "12"
+
+[hayden_six_hearts.12]
+speaker = "holt"
+portrait = "neutral"
+local = "Here you go, Henrietta."
+next = "13"
+
+[hayden_six_hearts.13]
+speaker = "holt"
+portrait = "wink"
+local = "It's been a real pleasure to have you at our humble store."
+next = "14"
+
+[hayden_six_hearts.14]
+speaker = "hayden"
+portrait = "happy_fist"
+local = "Looks like you've made a new friend, Henrietta!"
+next = "15"
+
+[hayden_six_hearts.15]
+speaker = "hayden"
+portrait = "happy"
+local = "Well isn't this nice!"
+next = "16"
+
+[hayden_six_hearts.16]
+speaker = "luc"
+portrait = "neutral"
+local = "Hey [Ari]!"
+next = "17"
+
+[hayden_six_hearts.17]
+speaker = "maple"
+portrait = "neutral"
+local = "Hey Hayden!"
+next = "18"
+
+[hayden_six_hearts.18]
+speaker = "dell"
+portrait = "neutral"
+local = "Hey chicken!"
+next = "19"
+
+[hayden_six_hearts.19]
+speaker = "hayden"
+portrait = "neutral"
+local = "Hey y'all! This here's Henrietta."
+next = "20"
+
+[hayden_six_hearts.20]
+speaker = "dell"
+portrait = "think"
+local = "Is she the prize-winning chicken you're always talking about?"
+next = "21"
+
+[hayden_six_hearts.21]
+speaker = "hayden"
+portrait = "wink_fist"
+local = "That's her!"
+next = "22"
+
+[hayden_six_hearts.22]
+speaker = "luc"
+portrait = "happy"
+local = "Cool!"
+next = "23"
+
+[hayden_six_hearts.23]
+speaker = "dell"
+portrait = "think"
+local = "Wanna come play in the mud with us, Henrietta?"
+prompts = [{ local = "Go on, Henrietta!", next = "24" }, { local = "Show these kids how to really play in the mud!", next = "24" }]
+
+[hayden_six_hearts.24]
+speaker = "henrietta"
+portrait = "neutral"
+local = "(Henrietta seems encouraged.)"
+next = "25"
+
+[hayden_six_hearts.25]
+speaker = "maple"
+portrait = "happy"
+local = "Yaaaay! Chicken friend, chicken friend!"
+next = "26"
+
+[hayden_six_hearts.26]
+speaker = "luc"
+portrait = "happy"
+local = "Let's go!"
+next = "27"
+
+[hayden_six_hearts.27]
+speaker = "hayden"
+portrait = "happy"
+local = "Gya ha ha!"
+next = "28"
+
+[hayden_six_hearts.28]
+speaker = "hayden"
+portrait = "annoyed"
+local = "..."
+next = "29"
+
+[hayden_six_hearts.29]
+speaker = "hayden"
+portrait = "sad"
+local = "Think she'll be okay? Maybe I should tag along."
+prompts = [{ local = "Relax, Hayden.", next = "30" }, { local = "Isn't this what you wanted for her?", next = "30" }]
+
+[hayden_six_hearts.30]
+speaker = "hayden"
+portrait = "neutral"
+local = "You're right, you're right."
+next = "31"
+
+[hayden_six_hearts.31]
+speaker = "hayden"
+portrait = "gloomy"
+local = "It's been tough, taking care of the farm and worrying about Henrietta."
+next = "32"
+
+[hayden_six_hearts.32]
+speaker = "hayden"
+portrait = "neutral"
+local = "It means a lot to me, that you'd take the time to help Henrietta come out of her shell like this."
+next = "33"
+
+[hayden_six_hearts.33]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "Thanks, [Ari]."
+next = "34"
+
+[hayden_six_hearts.34]
+speaker = "hayden"
+portrait = "happy"
+local = "This has turned into a real fine day, hasn't it?"
+
+

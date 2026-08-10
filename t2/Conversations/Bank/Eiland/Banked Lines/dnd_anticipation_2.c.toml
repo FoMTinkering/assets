@@ -1,0 +1,17 @@
+[dnd_anticipation_2]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ day_of_the_week = "friday", comparator = "!=" },
+	{ dnd_fnati = 3, comparator = "<=" },
+	{ dnd_fnati = 0, comparator = ">=" },
+	{ dnd_fnati_discussion = 2, comparator = "<" }
+]
+writes = [{ dnd_fnati_discussion = 1, operator = "+=", expires = "1w" }]
+portrait = "happy"
+local = "We play Dragons & Drama at the Inn once a week. I'm the DM!"
+next = "1"
+
+[dnd_anticipation_2.1]
+portrait = "think"
+local = "That's Dragon Manager... or Drama Maker, whichever you prefer!"

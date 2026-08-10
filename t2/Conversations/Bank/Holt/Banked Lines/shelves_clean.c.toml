@@ -1,0 +1,15 @@
+[shelves_clean]
+refresh = "1y"
+requires = [
+	{ npc = "holt" },
+	{ location = "general_store_store" },
+	{ holt_routine = "general_store" },
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+portrait = "think"
+local = "Do you know why we keep the store so clean?"
+next = "1"
+
+[shelves_clean.1]
+portrait = "wink"
+local = "Because if we didn't, we'd be ashamed of ourshelves."

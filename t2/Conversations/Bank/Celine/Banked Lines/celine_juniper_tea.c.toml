@@ -1,0 +1,23 @@
+[celine_juniper_tea]
+refresh = "never"
+actions = [
+	{ bark = { bark = "cute_face", npc = "celine" } }
+]
+requires = [
+	{ npc = "celine" },
+	{ date_time = "3d", comparator = ">" },
+	{ date_time = "10d", comparator = "<" },
+	{ celine_zone = "<juniper_zone>", comparator = "!=" }
+]
+portrait = "think"
+local = "Juniper hasn't made too many friends since moving here."
+next = "1"
+
+[celine_juniper_tea.1]
+portrait = "sweat"
+local = "Probably because she's always so busy running the $Bathhouse$!"
+next = "2"
+
+[celine_juniper_tea.2]
+portrait = "neutral"
+local = "Maybe I should invite her over for tea some time!"

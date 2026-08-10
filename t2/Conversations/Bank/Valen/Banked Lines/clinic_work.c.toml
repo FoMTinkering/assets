@@ -1,0 +1,58 @@
+[clinic_work]
+refresh = "2m"
+requires = [
+	{ npc = "valen" },
+	{ valen_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ location = "clinic_f1" },
+	{ valen_heart_level = 4, comparator = ">=" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "think"
+local = "[Ari]! Hold on, I'll pull out your charts... Oh, you're just stopping by to say hello?"
+next = "1"
+
+[clinic_work.1]
+portrait = "happy"
+local = "How nice. Hello!"
+
+[clinic_work_2]
+refresh = "1y"
+requires = [
+	{ npc = "valen" },
+	{ valen_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ location = "clinic_f1" },
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "neutral"
+local = "Oh, [Ari]! Thanks for stopping by."
+next = "1"
+
+[clinic_work_2.1]
+portrait = "happy"
+local = "I was just thinking that the Clinic was a little quiet today."
+
+[clinic_work_3]
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ valen_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ location = "clinic_f1" },
+	{ season = "winter" }
+]
+portrait = "neutral"
+local = "How's the weather out there?"
+next = "1"
+
+[clinic_work_3.1]
+portrait = "happy"
+local = "Take as long as you need to warm up in the Clinic."
+
+[clinic_work_4]
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ location = "clinic_f1" },
+	{ season = "winter" }
+]
+portrait = "neutral"
+local = "Stay warm out there, [Ari]."

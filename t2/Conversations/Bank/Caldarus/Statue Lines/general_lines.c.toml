@@ -1,0 +1,3030 @@
+# <---------GENERAL LINES------------->
+[general_lines_1]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{},
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_1.1]
+speaker = "caldarus"
+local = "From what you've told me, it seems that much has changed in Mistria over the years..."
+
+[general_lines_2]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{},
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_2.1]
+speaker = "caldarus"
+local = "Are you tending your fields? Cultivating the land will yield many benefits."
+
+[general_lines_3]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{},
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_3.1]
+speaker = "caldarus"
+local = "Mistria was an abundant place in my time, I am glad to hear it is still so."
+
+[general_lines_4]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ quest_greet_the_townsfolk_complete = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_4.1]
+speaker = "caldarus"
+local = "The residents of the town seem quite welcoming, I would like to meet them myself one day."
+
+[general_lines_5]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ celine_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_5.1]
+speaker = "caldarus"
+local = "This Celine sounds like a thoughtful and caring neighbor. Be sure to reciprocate her kindness."
+
+[general_lines_6]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ hayden_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_6.1]
+speaker = "caldarus"
+local = "Hayden's love of the land is similar to my own. Be sure to learn what you can from him."
+
+[general_lines_7]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ archaeology_level = 2, comparator = ">=" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_7.1]
+speaker = "caldarus"
+local = "You're hunting for artifacts you say? To think the humans of this age value such things..."
+
+[general_lines_8]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ fishing_level = 2, comparator = ">=" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_8.1]
+speaker = "caldarus"
+local = "Ah, I remember the delicious fish off the coast of Mistria fondly! A pity you need to fish them up individually."
+
+[general_lines_9]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ cooking_level = 2, comparator = ">=" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_9.1]
+speaker = "caldarus"
+local = "Cooking? Hmm, it is not something that I have much experience with outside of fire roasting..."
+
+[general_lines_10]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ ranching_level = 2, comparator = ">=" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_10.1]
+speaker = "caldarus"
+local = "You have adopted an animal? What an interesting concept. AND you built them their own home? How kind."
+
+[general_lines_11]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ date_time = "6d", comparator = "<" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_11.1]
+speaker = "caldarus"
+local = "The people of my time had a saying that they passed down through many generations..."
+next = "2"
+
+[general_lines_11.2]
+speaker = "caldarus"
+local = """"Do not forget that there's a $jump button$", I believe it was."""
+next = "3"
+
+[general_lines_11.3]
+speaker = "caldarus"
+local = "I assume that makes more sense if you're human. Perhaps you will find it useful."
+
+[general_lines_12]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ date_time = "10d", comparator = ">" },
+	{ cooking_level = 1, comparator = "=" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_12.1]
+speaker = "caldarus"
+local = """If you find yourself getting low on energy, do not forget to "$cook$" something and then consume it."""
+next = "2"
+
+[general_lines_12.2]
+speaker = "caldarus"
+local = """That is how it typically works with humans, correct?"""
+
+[general_lines_13]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_13.1]
+speaker = "caldarus"
+local = "This land is a bountiful one. Be sure to explore and $Forage$ all it has to offer you."
+
+[general_lines_14]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ date_time = "7d", comparator = "<" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_14.1]
+speaker = "caldarus"
+local = """The waters of this land have much to offer you..."""
+next = "2"
+
+[general_lines_14.2]
+speaker = "caldarus"
+local = """Be sure to explore them via $Fishing$, $Swimming$, and $Diving$."""
+
+[general_lines_15]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ cutscene_seen_unlocking_the_mines_pt_2 = true },
+	{ date_time = "10d", comparator = "<" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_15.1]
+speaker = "caldarus"
+local = "[Ari], your offerings of $Essence$ are greatly appreciated."
+next = "2"
+
+[general_lines_15.2]
+speaker = "caldarus"
+local = """Along with the increased flow from underground, I feel my strength slowly recovering."""
+next = "3"
+
+[general_lines_15.3]
+speaker = "caldarus"
+local = "Please continue to offer your $Essence$, I will share my restored power with you via $Skill Perks$."
+
+[general_lines_16]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_16.1]
+speaker = "caldarus"
+local = "It seems if I strain my memory I can recall things from very long ago, but the last few thousand years are shrouded..."
+
+[general_lines_17]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_17.1]
+speaker = "caldarus"
+local = "Thank you for taking the time to talk to me, [Ari]. I know how busy you are aiding the town."
+
+[general_lines_18]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ perk_count = 5, comparator = ">=" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_18.1]
+speaker = "caldarus"
+local = "The essence that you bring to me continues to slowly restore my power. It is astonishing how weak I had become."
+
+[general_lines_19]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_19.1]
+speaker = "caldarus"
+local = "Boredom? I cannot say I understand the concept. Perhaps it is a human affliction?"
+
+[general_lines_20]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_20.1]
+speaker = "caldarus"
+local = "Do not worry yourself unduly over me, [Ari]. Dragons are immortal, whether my power returns tomorrow or in a year, I can be patient."
+
+[general_lines_21]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ farming_level = 10, comparator = ">=" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_21.1]
+speaker = "caldarus"
+local = "Seeing you work so diligently on your land makes me wish I could help. Although I suppose as a dragon clearing the land would require a most delicate touch."
+
+[general_lines_22]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ caldarus_birthday = "1d", time = "after" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_22.1]
+speaker = "caldarus"
+local = "My birth... day? Hmm... I hatched in the springtime of a long ago age, the last of my clutchmates."
+
+[general_lines_23]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_23.1]
+speaker = "caldarus"
+local = "A small bird has been recently using me as a perch. It is very... cute. Although I hope it does not try to build a nest on me."
+
+[general_lines_24]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ any = [{ season = "summer" }, { season = "winter" }] },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_24.1]
+speaker = "caldarus"
+local = "I feel both the heat of summer and the cold of winter, but you do not need to concern yourself for my comfort. A dragon is above such things."
+
+[general_lines_25]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ any = [
+		{ archaeology_level = 20, comparator = ">=" },
+		{ blacksmithing_level = 20, comparator = ">=" },
+		{ cooking_level = 20, comparator = ">=" },
+		{ farming_level = 20, comparator = ">=" },
+		{ fishing_level = 20, comparator = ">=" },
+		{ ranching_level = 20, comparator = ">=" },
+		{ woodcrafting_level = 20, comparator = ">=" },
+	] },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_25.1]
+speaker = "caldarus"
+local = "Having seen so few humans in this new age, would you say that you are a typical example?"
+prompts = [
+	{ local = "I'm just your everyday human!", next = "2" },
+	{ local = "I'm pretty exceptional.", next = "3" },
+]
+
+[general_lines_25.2]
+speaker = "caldarus"
+local = "How interesting, you would have been someone extraordinary in the last age."
+
+[general_lines_25.3]
+speaker = "caldarus"
+local = "It does seem so to me."
+
+[general_lines_26]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_26.1]
+speaker = "caldarus"
+local = "You would like to give me a gift? While I appreciate the thought, my current form has no need for material things."
+
+[general_lines_27]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_27.1]
+speaker = "caldarus"
+local = "You have heard that a dragon has a hoard of treasure? I suppose I had collected quite a pile of knick-knacks over the years..."
+next = "2"
+
+[general_lines_27.2]
+speaker = "caldarus"
+local = "I do not believe anyone else would think of it as treasure in the traditional sense, however."
+
+[general_lines_28]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_28.1]
+speaker = "caldarus"
+local = "Zzz... Oh! [Ari], good day. Something about being a statue seems to make me prone to naps."
+
+[general_lines_29]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ had_item_beet_soup = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_29.1]
+speaker = "caldarus"
+local = "When I regain my power, I would very much like to sample some of these mouthwatering dishes you describe. =Beet Soup=! How novel."
+
+[general_lines_30]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ had_item_mont_blanc = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_30.1]
+speaker = "caldarus"
+local = "This =Mont Blanc= you speak of sounds delightful! No such confection existed in my time."
+
+[general_lines_31]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_31.1]
+speaker = "caldarus"
+local = "You have seen gryphon statues around Mistria? They are noble guardians and protectors. I fondly remember sharing the skies with them."
+
+[general_lines_32]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ essence = 30, comparator = ">=" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_32.1]
+speaker = "caldarus"
+local = "Where should you invest your essence? The choices you are given merely represent the desires of your own heart. Choose how you like."
+
+[general_lines_33]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ date_time = "1m", comparator = ">=" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_33.1]
+speaker = "caldarus"
+local = "Every day that passes I see you grow more and more into your power, [Ari]."
+
+[general_lines_34]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_34.1]
+speaker = "caldarus"
+local = "There is no need to worry about fitting everything into one day, you have all the time in the world."
+
+[general_lines_35]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_35.1]
+speaker = "caldarus"
+local = "A little advice from a dragon who has lived millenia [Ari]. The sooner you learn to live in the moment, the richer your life will be."
+
+[general_lines_36]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_36.1]
+speaker = "caldarus"
+local = "Why not try something new today? There is plenty to see and do in Mistria."
+
+[general_lines_37]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ essence = 40, comparator = ">=" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_37.1]
+speaker = "caldarus"
+local = "Unlocking a skill perk has the potential to greatly improve the activity for you, I would advise that you experiment."
+
+[general_lines_38]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[general_lines_38.1]
+speaker = "caldarus"
+local = "Be sure to spend time with your fellow townsfolk."
+
+[fainted_0]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ fainted = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[fainted_0.1]
+speaker = "caldarus"
+local = "You seem unwell today, [Ari]. Pray, do not overexert yourself today."
+
+[fainted_1]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ fainted = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[fainted_1.1]
+speaker = "caldarus"
+local = "Are you tired? A good meal should help."
+
+[died_0]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ died = true },
+	{ quest_unlocking_the_mines_pt_2_complete = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[died_0.1]
+speaker = "caldarus"
+local = "I can tell that you have met an unfortunate fate beneath the town. Rest and heal, and do not be discouraged. What you attempt, few mortals would succeed in."
+
+[died_1]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ died = true },
+	{ quest_unlocking_the_mines_pt_2_complete = true },
+	{ health_percent = 0.5, comparator = "<=" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[died_1.1]
+speaker = "caldarus"
+local = "You seem battered, [Ari]. You should consider investing in stronger armor and weapons to help keep you safe."
+
+[friday]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ day_of_the_week = "friday" },
+	{ quest_friday_at_the_sleeping_dragon_inn_complete = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[friday.1]
+speaker = "caldarus"
+local = "Ah [Ari], happy Friday. Will you be going to the Inn tonight with your fellow townsfolk?"
+
+# <----------HEART EVENT FOLLOW UPS----------------------->
+[after_eiland_2h]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ quest_the_stele_complete = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[after_eiland_2h.1]
+speaker = "caldarus"
+local = "You and Eiland are searching for the armor of someone called the Dragonsworn? Hmm..."
+next = "2"
+
+[after_eiland_2h.2]
+speaker = "caldarus"
+local = "The name is familiar, but my memory is still too clouded. I am sorry I could not be of more assistance."
+
+## <---------TOWN REPAIR QUESTLINE FOLLOW UPS------------->
+[after_repairing_bridge]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ cutscene_seen_repair_the_bridge_pt_2 = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[after_repairing_bridge.1]
+speaker = "caldarus"
+local = "You have helped to repair the bridge into town?"
+next = "2"
+
+[after_repairing_bridge.2]
+speaker = "caldarus"
+local = "Well done, [Ari]. I am sure the other villagers appreciate your efforts."
+
+[after_replenishing_mistrias_food_reserves]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ quest_replenishing_mistrias_food_reserves_1_complete = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[after_replenishing_mistrias_food_reserves.1]
+speaker = "caldarus"
+local = "I am glad to hear you've helped the town replenish its reserves, [Ari]."
+next = "2"
+
+[after_replenishing_mistrias_food_reserves.2]
+speaker = "caldarus"
+local = "Caring for the wellbeing of others is admirable."
+
+[after_repairing_mill]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ cutscene_seen_repair_the_mill_pt_2 = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[after_repairing_mill.1]
+speaker = "caldarus"
+local = "I see that the Mill in town has been restored to a functioning state."
+next = "2"
+
+[after_repairing_mill.2]
+speaker = "caldarus"
+local = "Well done. This is sure to improve the lives of the townspeople."
+
+[after_repair_the_summit_stairs]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ cutscene_seen_repair_the_summit_stairs = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[after_repair_the_summit_stairs.1]
+speaker = "caldarus"
+local = "So you have finished clearing away the marks left behind by the earthquake?"
+next = "2"
+
+[after_repair_the_summit_stairs.2]
+speaker = "caldarus"
+local = "Well done. I am glad to see things in order."
+
+[after_upgrading_general_store]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ cutscene_seen_repair_the_general_store_pt_2 = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[after_upgrading_general_store.1]
+speaker = "caldarus"
+local = "The General Store in town has been upgraded? Excellent work."
+next = "2"
+
+[after_upgrading_general_store.2]
+speaker = "caldarus"
+local = "In helping others, you also help yourself."
+
+## <---------DRAGON STORYLINE BETWEEN BEATS LINES------------->
+[after_mines_unlocked]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ cutscene_seen_unlocking_the_mines_pt_2 = true },
+	{ cutscene_seen_break_water_seal = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[after_mines_unlocked.1]
+speaker = "caldarus"
+local = "The increased flow of magic from the Mines has begun to clear my head somewhat."
+next = "2"
+
+[after_mines_unlocked.2]
+speaker = "caldarus"
+local = "I recall that magic was once widely used by the humans who lived here."
+next = "3"
+
+[after_mines_unlocked.3]
+speaker = "caldarus"
+local = "In fact, I believe I had granted some of that power myself..."
+next = "4"
+
+[after_mines_unlocked.4]
+speaker = "caldarus"
+local = "Apologies, I wish I could remember more."
+
+# <---------FESTIVAL LINES------------->
+[spring_festival_lead_up]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ spring_festival_setup = true },
+	{ date_time = "15d", comparator = "<" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[spring_festival_lead_up.1]
+speaker = "caldarus"
+local = """Ah, $Breath of Spring$? I believe you will $find them anywhere you find essence$."""
+next = "2"
+
+[spring_festival_lead_up.2]
+speaker = "caldarus"
+local = "I recall that such flowers are known to grow where dragon's breath has touched the earth..."
+next = "3"
+
+[spring_festival_lead_up.3]
+speaker = "caldarus"
+local = "I am glad that humans have come to enjoy them so."
+
+[shooting_star_festival_lead_up]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ shooting_star_festival_date = "3d", time = "before" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[shooting_star_festival_lead_up.1]
+speaker = "caldarus"
+local = "A meteor shower returns to the skies every year around this time."
+next = "2"
+
+[shooting_star_festival_lead_up.2]
+speaker = "caldarus"
+local = "It is a rare constant, looking back over the years."
+next = "3"
+
+[shooting_star_festival_lead_up.3]
+speaker = "caldarus"
+local = "I look forward to viewing it once more."
+
+[shooting_star_festival_day]
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ day_time = "7:00pm", comparator = "<=" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[shooting_star_festival_day.1]
+speaker = "caldarus"
+local = "The meteor shower you speak of has been an annual occurrence for untold years. I will enjoy the show myself tonight."
+
+[shooting_star_festival_follow_up]
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[shooting_star_festival_follow_up.1]
+speaker = "caldarus"
+local = "The stars were beautiful last night, were they not?"
+next = "2"
+
+[shooting_star_festival_follow_up.2]
+speaker = "caldarus"
+local = "Like distant dragonfire. I am glad I was able to see them again."
+
+# <---------PRE-BASEMENT LINES------------->
+[rainy]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "rainy" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[rainy.1]
+speaker = "caldarus"
+local = "The sound of the rain is so peaceful..."
+next = "2"
+
+[rainy.2]
+speaker = "caldarus"
+local = "Stand with me a moment, [Ari]."
+next = "3"
+
+[rainy.3]
+speaker = "caldarus"
+local = "............"
+next = "4"
+
+[rainy.4]
+speaker = "caldarus"
+local = "Moments like this make me glad to be awake."
+
+[sunny]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[sunny.1]
+speaker = "caldarus"
+local = """I had missed experiencing sunny days such as this one..."""
+next = "2"
+
+[sunny.2]
+speaker = "caldarus"
+local = "I enjoy feeling the sun's warmth, even in this form."
+
+# <---------SPRING LINES------------->
+[spring_amnesia]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ date_time = "1y", comparator = "<" },
+	{ weather = "pleasant" },
+	{ season = "spring" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[spring_amnesia.1]
+speaker = "caldarus"
+local = """Although there is much that I cannot remember from ages past..."""
+next = "2"
+
+[spring_amnesia.2]
+speaker = "caldarus"
+local = "The feeling of springtime is something one cannot forget."
+
+[stormy_spring]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "spring" },
+	{ weather = "rainy" },
+	{ weather_is_strong = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[stormy_spring.1]
+speaker = "caldarus"
+local = "The sound of thunder woke me this morning as well."
+next = "2"
+
+[stormy_spring.2]
+speaker = "caldarus"
+local = "It sounds much like a dragon's call, does it not?"
+
+[spring_petals]
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "spring" },
+	{ weather = "pleasant" },
+	{ weather_is_strong = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[spring_petals.1]
+speaker = "caldarus"
+local = "What a pleasant breeze..."
+next = "2"
+
+[spring_petals.2]
+speaker = "caldarus"
+local = "The flower petals smell nice, do they not?"
+
+[spring_petals_b]
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "spring" },
+	{ weather = "pleasant" },
+	{ weather_is_strong = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[spring_petals_b.1]
+speaker = "caldarus"
+local = "There is a warm breeze blowing today..."
+
+[spring_petals_c]
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "spring" },
+	{ weather = "pleasant" },
+	{ weather_is_strong = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[spring_petals_c.1]
+speaker = "caldarus"
+local = "What a perfect spring day. The petals on the wind are beautiful."
+
+
+# <---------SUMMER LINES------------->
+[sunny_summer]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "summer" },
+	{ weather = "pleasant" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[sunny_summer.1]
+speaker = "caldarus"
+local = "The weather is getting rather hot..."
+next = "2"
+
+[sunny_summer.2]
+speaker = "caldarus"
+local = "Make sure to take breaks and drink plenty of water."
+
+[rainy_summer]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "summer" },
+	{ weather = "rainy" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[rainy_summer.1]
+speaker = "caldarus"
+local = "The rain is a refreshing break from the heat..."
+next = "2"
+
+[rainy_summer.2]
+speaker = "caldarus"
+local = "Can you hear them? The plants sound happy."
+
+[stormy_summer]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "rainy" },
+	{ weather_is_strong = true },
+	{ season = "summer" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[stormy_summer.1]
+speaker = "caldarus"
+local = "This storm moved in overnight, [Ari], and it seems to be getting stronger."
+next = "2"
+
+[stormy_summer.2]
+speaker = "caldarus"
+local = "It may be best to spend the day indoors."
+
+# <---------FALL LINES------------->
+[sunny_fall]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "fall" },
+	{ weather = "pleasant" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[sunny_fall.1]
+speaker = "caldarus"
+local = "I enjoy watching the colors change in fall."
+next = "2"
+
+[sunny_fall.2]
+speaker = "caldarus"
+local = "Another cycle nears its end. Peaceful, is it not?"
+
+[rainy_fall]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "fall" },
+	{ weather = "rainy" },
+	{ weather_is_strong = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[rainy_fall.1]
+speaker = "caldarus"
+local = "The smell of rain on fallen leaves, and wood smoke wafting through the air..."
+next = "2"
+
+[rainy_fall.2]
+speaker = "caldarus"
+local = "How wonderful."
+
+[stormy_fall]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "fall" },
+	{ weather = "rainy" },
+	{ weather_is_strong = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[stormy_fall.1]
+speaker = "caldarus"
+local = "The rain is colder than usual today."
+next = "2"
+
+[stormy_fall.2]
+speaker = "caldarus"
+local = "Soon these storms will become blizzards."
+
+# <---------WINTER LINES------------->
+[sunny_winter]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "winter" },
+	{ weather = "pleasant" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[sunny_winter.1]
+speaker = "caldarus"
+local = "The scenery changes quickly when the season turns."
+next = "2"
+
+[sunny_winter.2]
+speaker = "caldarus"
+local = "Mistria's children will soon be building snow dragons, I am sure."
+
+[snowy_winter]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "snowy" },
+	{ weather_is_strong = false },
+	{ season = "winter" },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[snowy_winter.1]
+speaker = "caldarus"
+local = "It is cold today, [Ari]."
+next = "2"
+
+[snowy_winter.2]
+speaker = "caldarus"
+local = "The snow is beautiful, but please take care to keep warm."
+
+[blizzard_winter]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "snowy" },
+	{ weather_is_strong = false },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[blizzard_winter.1]
+speaker = "caldarus"
+local = "I appreciate that you would make the time to speak with me today..."
+next = "2"
+
+[blizzard_winter.2]
+speaker = "caldarus"
+local = "But I would feel better knowing you were warm and safe indoors. The snow is getting heavy."
+
+# <----------TOWNSFOLK---------------->
+[townsfolk_adeline]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ adeline_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_adeline.1]
+speaker = "caldarus"
+local = "This Adeline you talk about seems to have a good head on her shoulders. It is rare to meet someone who truly cares about everyone around her."
+
+[townsfolk_balor]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ balor_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_balor.1]
+speaker = "caldarus"
+local = """I confess I have not had much dealings with merchants, so I cannot tell you if this Balor should be relied upon or not. Dragons rarely need to "buy" things."""
+
+[townsfolk_darcy]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ darcy_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_darcy.1]
+speaker = "caldarus"
+local = "So Darcy specializes in bitter bean related drinks? And people... hold these drinks in high regard?"
+next = "2"
+
+[townsfolk_darcy.2]
+speaker = "caldarus"
+local = "What a fascinating time to be alive."
+
+[townsfolk_dell]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ dell_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_dell.1]
+speaker = "caldarus"
+local = "Dell sounds to me like she would make an excellent knight."
+next = "2"
+
+[townsfolk_dell.2]
+speaker = "caldarus"
+local = "Hmm... does the kingdom still have knights?"
+
+[townsfolk_dozy]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ dozy_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_dozy.1]
+speaker = "caldarus"
+local = "This very good boy you speak of, Dozy... I would like to meet such a noble soul."
+
+[townsfolk_eiland]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ eiland_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_eiland.1]
+speaker = "caldarus"
+local = "One day I would like to thank Eiland personally for helping rediscover my shrine."
+
+[townsfolk_elsie]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ elsie_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_elsie.1]
+speaker = "caldarus"
+local = "This Elsie sounds like someone who has learned to live life to the fullest. You could learn much from her."
+
+[townsfolk_errol]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ errol_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_errol.1]
+speaker = "caldarus"
+local = "Errol sounds like he would be a good person to reminisce about the past with. Perhaps he would help to jog my memories."
+
+[townsfolk_hemlock]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ hemlock_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_hemlock.1]
+speaker = "caldarus"
+local = "Hemlock is a drink expert, you say? Hmm... I would like to sample his craft."
+
+[townsfolk_henrietta]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ henrietta_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_henrietta.1]
+speaker = "caldarus"
+local = "I am sorry, did I mishear? This Henrietta you speak of is a chicken? I assumed we were talking about a person."
+
+[townsfolk_holt]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ holt_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_holt.1]
+speaker = "caldarus"
+local = """Holt enjoys "punning"? In my time, such behavior was a nearly criminal offense."""
+
+[townsfolk_josephine]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ josephine_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_josephine.1]
+speaker = "caldarus"
+local = "This Sleeping Dragon Inn that Josephine runs, I am quite intrigued by the name. Did the family's ancestors perhaps remember me?"
+
+[townsfolk_juniper]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ juniper_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_juniper.1]
+speaker = "caldarus"
+local = "So Juniper runs a bathhouse, with waters that restore your health and stamina? It sounds almost magical."
+
+[townsfolk_landen]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ landen_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_landen.1]
+speaker = "caldarus"
+local = """From what you say about Landen, I am having a hard time understanding what this thing called "retirement" actually entails."""
+
+[townsfolk_louis]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ louis_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_louis.1]
+speaker = "caldarus"
+local = "Louis is a tailor? How interesting. I wonder how fashion has evolved after all this time..."
+
+[townsfolk_luc]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ luc_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_luc.1]
+speaker = "caldarus"
+local = "It is kind of you to aid Luc in his search for bugs. I, too, will let you know if I see any of particular note."
+
+[townsfolk_maple]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ maple_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_maple.1]
+speaker = "caldarus"
+local = "You say that Maple wants to be the next Queen? She has a long road ahead of her, I suspect many vie for the position."
+
+[townsfolk_march]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ march_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_march.1]
+speaker = "caldarus"
+local = "It is strange that although March has won so many awards for his work, he has not won any for his personality."
+next = "2"
+
+[townsfolk_march.2]
+speaker = "caldarus"
+local = "Something to bring up the next time you talk to him, perhaps?"
+
+[townsfolk_nora]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ nora_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_nora.1]
+speaker = "caldarus"
+local = "So Nora organizes the Saturday Market? How commendable."
+
+[townsfolk_olric]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ olric_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_olric.1]
+speaker = "caldarus"
+local = "Olric seems like a trustworthy fellow. Be sure you are worthy of that trust, [Ari]."
+
+[townsfolk_reina]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ reina_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_reina.1]
+speaker = "caldarus"
+local = "These meals Reina cooks do sound appealing. Dragons do not need to eat, although I confess that I find it quite enjoyable."
+
+[townsfolk_ryis]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ ryis_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_ryis.1]
+speaker = "caldarus"
+local = "This Ryis you mention, I can sometimes hear him about his carpentry work even from here. It seems the things you mortals build are forever falling to pieces."
+
+[townsfolk_terithia]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ terithia_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_terithia.1]
+speaker = "caldarus"
+local = "It seems this Terithia and I have much in common. I would like to talk to her one day about the delicious fish off the coast of Mistria."
+
+[townsfolk_valen]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ valen_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_valen.1]
+speaker = "caldarus"
+local = "Dragons are rarely ill, it is good to hear that this Doctor Valen can attend to your mortal frailties."
+
+[townsfolk_vera]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ vera_has_met = true, ignore_priority = true },
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[townsfolk_vera.1]
+speaker = "caldarus"
+local = "This Vera styles your hair? How interesting. I wonder what style she would recommend for me..."
+
+# ----------- TIME OF DAY BASEMENT
+
+# MORNING TIME OF DAY BASEMENT LINES
+[morning_greeting_a] # MORNING A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[morning_greeting_a.1]
+local = "Good morning, [Ari]. Did you sleep well?"
+
+[morning_greeting_b] # MORNING B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[morning_greeting_b.1]
+local = "What a nice morning. It is sure to be a pleasant day."
+
+[morning_greeting_c] # MORNING C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[morning_greeting_c.1]
+local = "The day is young. Let us do our best to make it a good one."
+
+[morning_greeting_d] # MORNING D
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[morning_greeting_d.1]
+local = "I look forward to seeing what today brings."
+
+[morning_greeting_e] # MORNING E
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[morning_greeting_e.1]
+local = "Take things one day at a time, [Ari]."
+next = "2"
+
+[morning_greeting_e.2]
+local = "There is no need to try and do everything at once."
+
+[morning_greeting_f] # MORNING F
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[morning_greeting_f.1]
+local = "A good night's sleep is important."
+next = "2"
+
+[morning_greeting_f.2]
+local = "I hope that you are getting enough yourself, [Ari]."
+
+# AFTERNOON TIME OF DAY BASEMENT LINES
+
+[afternoon_greeting_a] # AFTERNOON A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "afternoon" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[afternoon_greeting_a.1]
+local = "Good afternoon, [Ari]. Are you making the most out of the day?"
+
+[afternoon_greeting_b] # AFTERNOON B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "afternoon" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[afternoon_greeting_b.1]
+local = "Enjoying the day, [Ari]?"
+
+[afternoon_greeting_c] # AFTERNOON C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "afternoon" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[afternoon_greeting_c.1]
+local = "The day seems to fly by when one is busy."
+
+[afternoon_greeting_d] # AFTERNOON D
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "afternoon" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[afternoon_greeting_d.1]
+local = "How are your crops faring, [Ari]?"
+
+[afternoon_greeting_e] # AFTERNOON E
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "afternoon" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[afternoon_greeting_e.1]
+local = "The sun is already getting high in the sky..."
+
+[afternoon_greeting_f] # AFTERNOON F
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "afternoon" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[afternoon_greeting_f.1]
+local = "I am sure tonight's sunset will be another beautiful one."
+
+# EVENING TIME OF DAY BASEMENT LINES
+
+
+[night_greeting_a] # NIGHT/EVENING A
+refresh = "1w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[night_greeting_a.1]
+local = "Good evening, [Ari]. How was your day?"
+
+[night_greeting_b] # NIGHT/EVENING B
+refresh = "1w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[night_greeting_b.1]
+local = "Did you have a long day today? Be sure to get plenty of rest."
+
+
+[night_greeting_c] # NIGHT/EVENING C
+refresh = "1w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[night_greeting_c.1]
+local = "Zzzz... Ah, excuse me, [Ari]. I must have drifted off."
+
+[night_greeting_d] # NIGHT/EVENING D
+refresh = "1w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[night_greeting_d.1]
+local = "Have you had dinner yet, [Ari]? Make sure you eat well."
+
+[night_greeting_e] # NIGHT/EVENING E
+refresh = "1w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[night_greeting_e.1]
+local = "Nights in Mistria are peaceful. In enjoy the chorus of its tiniest creatures."
+
+# ----------- RAINY BASEMENT GREETINGS
+
+[rainy_morning_a] # RAINY MORNING A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "rainy" },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[rainy_morning_a.1]
+local = "A rainy day now and then is good for the plant life."
+
+[rainy_afternoon_a] # RAINY AFTERNOON A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "rainy" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[rainy_afternoon_a.1]
+local = "There is something to be said for a rainy day. It is... peaceful."
+
+
+[rainy_afternoon_b] # RAINY AFTERNOON B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "rainy" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[rainy_afternoon_b.1]
+local = "The rain does not seem to show any sign of stopping."
+
+
+[rainy_afternoon_c] # RAINY AFTERNOON C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "rainy" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[rainy_afternoon_c.1]
+local = "The sound of rain makes me... sleepy."
+
+[rainy_afternoon_e] # RAINY AFTERNOON E
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "rainy" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[rainy_afternoon_e.1]
+local = "The rain is welcome. It refreshes the land."
+
+[rainy_afternoon_f] # RAINY AFTERNOON F
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "rainy" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[rainy_afternoon_f.1]
+local = "Do not stand out in the rain too long, [Ari]. I would not want you to get chilled."
+
+# ----------- BASEMENT SPRING
+
+[spring_morning_a] # SPRING MORNING A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "spring" },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[spring_morning_a.1]
+local = "It is always exciting to see new sprouts appear overnight."
+
+[spring_morning_b] # SPRING MORNING B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "spring" },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[spring_morning_b.1]
+local = "The flowers always look happiest in spring."
+
+[spring_morning_c] # SPRING MORNING C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "spring" },
+	{ weather = "pleasant" },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[spring_morning_c.1]
+local = "The early morning dew makes the world seem to sparkle..."
+
+[spring_afternoon_a] # SPRING AFTERNOON A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "spring" },
+	{ time_of_day = "afternoon" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[spring_afternoon_a.1]
+local = "Spring afternoons are so mild and comfortable."
+next = "2"
+
+[spring_afternoon_a.2]
+local = "It makes me feel sleepy..."
+
+[spring_afternoon_b] # SPRING AFTERNOON B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "spring" },
+	{ time_of_day = "afternoon" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[spring_afternoon_b.1]
+local = "The day is starting to warm up nicely."
+
+[spring_afternoon_c] # SPRING AFTERNOON C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "spring" },
+	{ time_of_day = "afternoon" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[spring_afternoon_c.1]
+local = "The sky looks so large and clear on spring afternoons..."
+
+[spring_night_a] # SPRING NIGHT A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "spring" },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[spring_night_a.1]
+local = "You worked hard today, [Ari]. Be sure to get some rest."
+
+[spring_night_b] # SPRING NIGHT B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "spring" },
+	{ weather = "pleasant" },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[spring_night_b.1]
+local = "The crickets really come alive during spring nights."
+next = "2"
+
+[spring_night_b.2]
+local = "Do you also enjoy listening to them?"
+
+[spring_night_c] # SPRING NIGHT C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "spring" },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[spring_night_c.1]
+local = "Although there is much work to do in spring, try not to overdo it."
+
+
+# ----------- BASEMENT SUMMER
+
+[summer_morning_a] # SUMMER MORNING A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "summer" },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[summer_morning_a.1]
+local = "It seems today will be another hot one. Try to get your work in early, if you can."
+
+
+[summer_morning_b] # SUMMER MORNING B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "summer" },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[summer_morning_b.1]
+local = "I can tell that today will be a humid one..."
+
+[summer_morning_c] # SUMMER MORNING C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ season = "summer" },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[summer_morning_c.1]
+local = "Make sure to stay hydrated today, [ari]."
+
+[summer_afternoon_a] # SUMMER AFTERNOON A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "summer" },
+	{ time_of_day = "afternoon" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[summer_afternoon_a.1]
+local = "The sun can be harsh this time of day..."
+
+[summer_afternoon_b] # SUMMER AFTERNOON B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "summer" },
+	{ time_of_day = "afternoon" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[summer_afternoon_b.1]
+local = "A summer afternoon is best spent at the Beach, if you ask me."
+
+[summer_afternoon_c] # SUMMER AFTERNOON C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "summer" },
+	{ time_of_day = "afternoon" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[summer_afternoon_c.1]
+local = "I am glad that the trees around us provide such shade."
+
+
+[summer_night_a] # SUMMER NIGHT A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "summer" },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[summer_night_a.1]
+local = "What a pleasant summer evening."
+
+[summer_night_b] # SUMMER NIGHT B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "summer" },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[summer_night_b.1]
+local = "The day has finally begun to cool..."
+
+[summer_night_c] # SUMMER NIGHT C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "summer" },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[summer_night_c.1]
+local = "Running around in the heat burns a lot of energy. Get plenty of sleep tonight."
+
+# ----------- BASEMENT FALL
+
+
+[fall_morning_a] # FALL MORNING A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "fall" },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[fall_morning_a.1]
+local = "It is a bit chilly this morning."
+
+[fall_morning_b] # FALL MORNING B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "fall" },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[fall_morning_b.1]
+local = "The wind is calm today. I expect the afternoon will warm up."
+
+[fall_morning_c] # FALL MORNING C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "fall" },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[fall_morning_c.1]
+local = "Mmm... the autumn air is so fresh first thing in the morning."
+
+[fall_afternoon_a] # FALL AFTERNOON A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "fall" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[fall_afternoon_a.1]
+local = "Ah, another crisp fall day."
+
+[fall_afternoon_b] # FALL AFTERNOON B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "fall" },
+	{ time_of_day = "afternoon" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[fall_afternoon_b.1]
+local = "I enjoy watching the falling leaves this time of year."
+
+[fall_afternoon_c] # FALL AFTERNOON C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "fall" },
+	{ time_of_day = "afternoon" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[fall_afternoon_c.1]
+local = "The fall leaves look brilliant in the afternoon sun..."
+
+[fall_night_a] # FALL NIGHT A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "fall" },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[fall_night_a.1]
+local = "The evenings are getting colder. Stay warm, [Ari]."
+
+[fall_night_b] # FALL NIGHT B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "fall" },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[fall_night_b.1]
+local = "I suspect we will have another frost tonight..."
+
+[fall_night_c] # FALL NIGHT C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "fall" },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[fall_night_c.1]
+local = "Make sure you have plenty of wood for the fire. It seems that tonight is going to be quite cold."
+
+# ----------- TIME OF DAY BASEMENT WINTER
+
+[winter_morning_a] # WINTER MORNING A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "winter" },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[winter_morning_a.1]
+local = "The snow looks pretty this time of day."
+
+
+[winter_morning_b] # WINTER MORNING B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "winter" },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[winter_morning_b.1]
+local = "It looks like today will be another cold one..."
+
+[winter_morning_c] # WINTER MORNING C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "winter" },
+	{ time_of_day = "morning" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[winter_morning_c.1]
+local = "Are you keeping warm, [Ari]? Perhaps you should start your day with a hot drink."
+
+[winter_afternoon_a] # WINTER AFTERNOON A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "winter" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[winter_afternoon_a.1]
+local = "I watched some birds playing in the snow this morning. It was very... cute."
+
+
+[winter_afternoon_b] # WINTER AFTERNOON B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "winter" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[winter_afternoon_b.1]
+local = "The smell of wood burning stoves has long been a characteristic of Mistrian winters."
+
+[winter_afternoon_c] # WINTER AFTERNOON B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "winter" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[winter_afternoon_c.1]
+local = "The sun feels warm today, even if the wind is cold."
+
+[winter_night_a] # WINTER NIGHT A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "winter" },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[winter_night_a.1]
+local = "Watch your step, [Ari]. The ground may be slippery."
+
+[winter_night_b] # WINTER NIGHT B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "winter" },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[winter_night_b.1]
+local = "Winter nights are quiet..."
+
+[winter_night_c] # WINTER NIGHT C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+	{ season = "winter" },
+	{ time_of_day = "evening" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[winter_night_c.1]
+local = "I hope you have enough blankets at home, [Ari]. You will want to wrap up warm tonight."
+
+
+# ----------- GENERAL GOOD VIBES BASEMENT LINES
+
+[good_vibes_a] # VIBES A
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_a.1]
+local = "Fresh air has a way of soothing one's spirit..."
+
+[good_vibes_b] # VIBES B
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_b.1]
+local = "It is worth observing the way that nature changes throughout the seasons."
+next = "2"
+
+[good_vibes_b.2]
+local = "There is much that can be gleaned by doing so."
+
+[good_vibes_c] # VIBES C
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_c.1]
+local = "I often admire the effort you put into your tasks, [Ari]."
+next = "2"
+
+[good_vibes_c.2]
+local = "Your enthusiasm is contagious."
+
+[good_vibes_d] # VIBES D
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_d.1]
+local = "I always appreciate that you make the time to speak with me."
+next = "2"
+
+[good_vibes_d.2]
+local = "You are very kind."
+
+[good_vibes_e] # VIBES E
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_e.1]
+local = "Mistria is doing well these days."
+next = "2"
+
+[good_vibes_e.2]
+local = "I am glad to see it."
+
+[good_vibes_f] # VIBES F
+refresh = "1m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_f.1]
+local = "You are looking well, [Ari]."
+
+[good_vibes_g] # VIBES G
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_g.1]
+local = "I think I may take a nap today..."
+
+[good_vibes_h] # VIBES H
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_h.1]
+local = "Do you have any nice plans for the day, [Ari]?"
+
+[good_vibes_i] # VIBES I
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_i.1]
+local = "It is relaxing to watch the clouds drift by..."
+
+[good_vibes_j] # VIBES J
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_j.1]
+local = "Life is not all about work, [Ari]. Make time for fun, as well."
+
+[good_vibes_k] # VIBES K
+refresh = "1m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_k.1]
+local = "I appreciate the decorations you have set up here, [Ari]."
+
+[good_vibes_l] # VIBES L
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_l.1]
+local = "It is a joy to watch this land develop."
+next = "2"
+
+[good_vibes_l.2]
+local = "Thank you for all that you do to nurture it."
+
+[good_vibes_m] # VIBES M
+refresh = "1m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_m.1]
+local = "Whenever things are difficult, it is worth remembering..."
+next = "2"
+
+[good_vibes_m.2]
+local = "The sun will always break through the clouds, given time."
+
+[good_vibes_n] # VIBES N
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_n.1]
+local = "The sound of the river is very calming..."
+
+[good_vibes_o] # VIBES O
+refresh = "3w"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ weather = "pleasant" },
+]
+priority = "basement"
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[good_vibes_o.1]
+local = "Watching the animals play provides me with much entertainment."
+
+# <------------Mines----------->
+[pits]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ cutscene_seen_unlocking_the_mines_pt_2 = true },
+	{ cutscene_seen_break_water_seal = false },
+	{ caldarus_mines_tips_and_tricks = false }
+]
+writes = [{ caldarus_mines_tips_and_tricks = true, expires = "3d" }]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[pits.1]
+local = "Do not let the $pits$ in the Mines impede your progress, [Ari]. Remember, you can simply fly over them."
+prompts = [{ local = "I, uh, can't fly?", next = "2" }, { local = "Do you mean jump over them?", next = "4" }]
+
+[pits.2]
+local = "Ah. That must be terribly inconvenient for you."
+next = "3"
+
+[pits.3]
+local = "Well, I am sure that a $jump$ over them will suffice."
+
+[pits.4]
+local = "Ah. Yes."
+next = "5"
+
+[pits.5]
+local = "Flying would be easier... However, I suppose a $jump$ will suffice."
+
+[rockclod]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ cutscene_seen_unlocking_the_mines_pt_2 = true },
+	{ floor_10 = "seen" },
+	{ caldarus_mines_tips_and_tricks = false }
+]
+writes = [{ caldarus_mines_tips_and_tricks = true, expires = "3d" }]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[rockclod.1]
+local = "You encountered a $Rock Clod$ monster in the Mines that shoots stones at you?"
+next = "2"
+
+[rockclod.2]
+local = "How intriguing. It seems the magic seeping into this world is infusing inanimate objects..."
+prompts = [{ local = "They're really tough.", next = "3" }, { local = "They're not a problem, I just reflect their attacks back.", next = "4" }]
+
+[rockclod.3]
+local = "Rocks tend to be. You would do well to $use your sword to reflect their projectiles back at them$."
+
+[rockclod.4]
+local = "Well done. I can see my faith in your abilities was not misplaced."
+
+[mushroom]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ cutscene_seen_unlocking_the_mines_pt_2 = true },
+	{ floor_10 = "seen" },
+	{ caldarus_mines_tips_and_tricks = false }
+]
+writes = [{ caldarus_mines_tips_and_tricks = true, expires = "3d" }]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[mushroom.1]
+local = "You have seen a $Mushroom$ monster in the Mines that defends against your attacks?"
+next = "2"
+
+[mushroom.2]
+local = "Hmm. You will need to $strike decisively at the moment before it attacks you$ to disarm it. It will be most vulnerable then."
+next = "3"
+
+[mushroom.3]
+local = "Of course, knocking them over $with a jump attack$ may work as well..."
+
+[mimic]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ cutscene_seen_unlocking_the_mines_pt_2 = true },
+	{ cutscene_seen_break_water_seal = true },
+	{ caldarus_mines_tips_and_tricks = false }
+]
+writes = [{ caldarus_mines_tips_and_tricks = true, expires = "3d" }]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[mimic.1]
+local = "You have encountered a $Mimic$ treasure chest monster in the Mines that only bites if you attack it first? How curious."
+next = "2"
+
+[mimic.2]
+local = "Have you considered... $throwing it a gift$ to chew on instead?"

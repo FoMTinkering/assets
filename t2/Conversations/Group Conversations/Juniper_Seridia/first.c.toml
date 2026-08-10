@@ -1,0 +1,53 @@
+[first]
+refresh = "never"
+priority = "max"
+requires = [
+	{ any = [{ npc = "juniper" }, { npc = "seridia" }] },
+	{ juniper_zone = "<seridia_zone>" },
+	{ juniper_seridia_first_convo = false },
+	{ caldarus_seridia_town = true }
+]
+writes = [{ juniper_seridia_first_convo = true }]
+actions = [
+	{ bark = { npc = "juniper", bark = "cute_face" } },
+	{ bark = { npc = "seridia", bark = "cute_face" } }
+]
+speaker = "juniper"
+portrait = "closed_eyes"
+local = "Y-your Majesty..."
+next = "1"
+
+[first.1]
+speaker = "juniper"
+portrait = "think"
+local = "Er. Your Holiness?"
+next = "2"
+
+[first.2]
+speaker = "juniper"
+portrait = "ugh"
+local = "Um... what is the appropriate way for me to address you?"
+next = "3"
+
+[first.3]
+speaker = "juniper"
+portrait = "angry_brows"
+local = "Unholy Dragon Seridia? The Witch Queen? Perhaps Dark Goddess?"
+next = "4"
+
+[first.4]
+speaker = "seridia"
+portrait = "neutral"
+local = "I have gone by all these names and more, my disciple."
+next = "5"
+
+[first.5]
+speaker = "seridia"
+portrait = "closed_eyes_smile"
+local = "For the time being, I have agreed to forgo such titles."
+next = "6"
+
+[first.6]
+speaker = "seridia"
+portrait = "serious"
+local = "You will call me Seridia."

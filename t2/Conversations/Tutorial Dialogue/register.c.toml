@@ -1,0 +1,52 @@
+[register_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hemlock" },
+	{ location = "inn" },
+	{ date_time = "7d", comparator = "<=" },
+	{ register_tutorial = 0 },
+	{ balor_is_at_location = "inn", comparator = "!=" },
+]
+writes = [{ register_tutorial = 1 }]
+local = "If no one's around, don't worry about it, we'll put it on your tab!"
+next = "1"
+
+[register_0.1]
+portrait = "mad"
+local = "Speaking of which, have you seen Balor around?"
+
+[register_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "holt" },
+	{ location = "general_store_store" },
+	{ date_time = "7d", comparator = "<=" },
+	{ register_tutorial = 0 },
+]
+writes = [{ register_tutorial = 1 }]
+local = "If no one's at the counter, you can just leave your tesserae on the counter."
+next = "1"
+
+[register_1.1]
+portrait = "wink"
+local = "Between you and me, you do NOT want to be in debt to Nora."
+
+[register_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "landen" },
+	{ location = "landens_house_f1" },
+	{ date_time = "7d", comparator = "<=" },
+	{ register_tutorial = 0 },
+]
+writes = [{ register_tutorial = 1 }]
+portrait = "happy"
+local = "The register's always open, even if no one's around... the town works on an honor system!"
+next = "1"
+
+[register_2.1]
+portrait = "wink"
+local = "And besides, I know where you live."

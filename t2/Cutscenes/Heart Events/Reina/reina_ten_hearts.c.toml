@@ -1,0 +1,383 @@
+[engagement_ring_reina]
+kind = "gameplay_triggered"
+actions = [
+    { bark = { bark = "cute_face", npc = "reina" } },
+    { cutscene = "reina_ten_hearts" }
+]
+speaker = "reina"
+portrait = "happy"
+local = "What's up [Ari]?"
+next = "1"
+
+[engagement_ring_reina.1]
+speaker = "reina"
+portrait = "blush_special"
+local = "You want to go talk somewhere? Privately?"
+next = "2"
+
+[engagement_ring_reina.2]
+speaker = "reina"
+portrait = "blush_think"
+local = "Why don't we go for a walk on the $Eastern Road$ then?"
+next = "3"
+
+[engagement_ring_reina.3]
+speaker = "reina"
+portrait = "blush"
+local = "It's usually quiet out by the park!"
+
+# scene
+[reina_ten_hearts]
+kind = "gameplay_triggered"
+speaker = "reina"
+portrait = "closed_eyes_smile_blush"
+local = "Ah... It's so peaceful out here."
+next = "1"
+
+[reina_ten_hearts.1]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "It kind of feels like we have all of Mistria to ourselves, doesn't it?"
+next = "2"
+
+[reina_ten_hearts.2]
+speaker = "reina"
+portrait = "blush"
+local = "I always feel like that when I'm sitting here with you."
+next = "3"
+
+[reina_ten_hearts.3]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "Actually... I think I feel that way when I'm just about anywhere with you!"
+next = "4"
+
+[reina_ten_hearts.4]
+speaker = "reina"
+portrait = "blush_think"
+local = "It's like it's just you and me-"
+next = "5"
+
+[reina_ten_hearts.5]
+speaker = "reina"
+portrait = "embarrassed"
+local = """Well, not "against" the world, exactly. It's more like..."""
+next = "6"
+
+[reina_ten_hearts.6]
+speaker = "reina"
+
+portrait = "blush_open_eyes"
+local = "We're making our dreams a reality... making our own world together."
+prompts = [{ local = "You are my world, Reina!", next = "7" }, { local = "You've achieved so much, I'm so proud of you.", next = "8" }]
+
+[reina_ten_hearts.7]
+speaker = "reina"
+
+portrait = "blush"
+local = "[Ari]...! You're my world too!"
+next = "9"
+
+[reina_ten_hearts.8]
+speaker = "reina"
+
+portrait = "blush_special"
+local = "[Ari]... Thank you. I'm not sure I could have done it without your encouragement and support."
+next = "9"
+
+[reina_ten_hearts.9]
+speaker = "reina"
+
+portrait = "blush_think"
+local = "Even back when we first met, I knew there was something special about you."
+next = "10"
+
+[reina_ten_hearts.10]
+speaker = "reina"
+
+portrait = "blush_special"
+local = "It's not every day that an adventurer shows up to a village out in the country!"
+next = "11"
+
+[reina_ten_hearts.11]
+speaker = "reina"
+
+portrait = "closed_eyes_blush"
+local = "Especially not to Mistria... not back then..."
+next = "12"
+
+[reina_ten_hearts.12]
+speaker = "reina"
+
+portrait = "closed_eyes_smile_blush"
+local = "You're the kind of person who isn't afraid of a challenge. You make things happen, [Ari]."
+next = "13"
+
+[reina_ten_hearts.13]
+speaker = "reina"
+
+portrait = "blush_think"
+local = "Even before I really got to know you, I found it inspiring."
+next = "14"
+
+[reina_ten_hearts.14]
+speaker = "reina"
+
+portrait = "blush_open_eyes"
+local = "Then as we grew closer, I found your outlook so contagious!"
+next = "15"
+
+[reina_ten_hearts.15]
+speaker = "reina"
+
+portrait = "closed_eyes_smile_blush"
+local = "It made me feel that my own dreams... I could really make them happen."
+next = "16"
+
+[reina_ten_hearts.16]
+speaker = "reina"
+
+portrait = "blush_open_eyes"
+local = "Then with the cooking contest, it did happen! And you were there beside me every step of the way."
+prompts = [{ local = "You've inspired me, too. More than you know...", next = "17" }, { local = "It was watching you work so hard that gave me the strength to do the same.", next = "18" }]
+
+[reina_ten_hearts.17]
+speaker = "reina"
+
+portrait = "blush_special"
+local = "[Ari]..."
+next = "19"
+
+[reina_ten_hearts.18]
+speaker = "reina"
+
+portrait = "blush_special"
+local = "[Ari]."
+next = "19"
+
+[reina_ten_hearts.19]
+speaker = "reina"
+
+portrait = "blush"
+local = "You've been inspired by... me?"
+next = "20"
+
+[reina_ten_hearts.20]
+speaker = "reina"
+
+portrait = "blush_special"
+local = "Really?"
+next = "21"
+
+[reina_ten_hearts.21]
+speaker = "reina"
+
+portrait = "blush_think"
+local = "This whole time, watching you work so hard to build up the farm, to help the town..."
+next = "22"
+
+[reina_ten_hearts.22]
+speaker = "reina"
+
+portrait = "blush_special"
+local = "I wondered what kept you going, day after day."
+next = "23"
+
+[reina_ten_hearts.23]
+speaker = "reina"
+
+portrait = "closed_eyes_smile_blush"
+local = "But I guess I should have known..."
+next = "24"
+
+[reina_ten_hearts.24]
+speaker = "reina"
+
+portrait = "blush_open_eyes"
+local = "Because I feel the same way about you."
+next = "25"
+
+[reina_ten_hearts.25]
+speaker = "reina"
+portrait = "closed_eyes_smile_blush"
+local = "You're the fire in my heart, [Ari]. With you as my muse, anything is possible."
+next = [{ target = "26_second", requires = [{ cutscene_seen_reina_ten_hearts = true }]}, { target = "26_first", requires = []}]
+
+[reina_ten_hearts.26_second]
+speaker = "reina"
+portrait = "blush_think"
+local = "That's why I wanted to give you my $Cookbook Manuscript$."
+next = "27_second"
+
+[reina_ten_hearts.27_second]
+speaker = "reina"
+portrait = "embarrassed"
+local = "Even though it's not quite finished yet!"
+next = "28_second"
+
+[reina_ten_hearts.28_second]
+speaker = "reina"
+portrait = "blush_think"
+local = "I'm not in a rush though..."
+next = "29_second"
+
+[reina_ten_hearts.29_second]
+speaker = "reina"
+portrait = "blush"
+local = "After all, Mistria wasn't rebuilt in a day! Hehe."
+next = "30_second"
+
+[reina_ten_hearts.30_second]
+speaker = "reina"
+portrait = "blush_think"
+local = "And anyway, it's enough for now that you know it's dedicated to you."
+next = "31"
+
+[reina_ten_hearts.26_first]
+speaker = "reina"
+portrait = "blush_think"
+local = "Actually, on that note... I have something for you. Something I've been working on quietly for a while now."
+next = "27_first"
+
+[reina_ten_hearts.27_first]
+speaker = "reina"
+portrait = "embarrassed"
+local = "I wanted to wait until it was finished to show you, but actually... I find I just keep adding to it!"
+next = "28_first"
+
+[reina_ten_hearts.28_first]
+speaker = "reina"
+portrait = "wink"
+local = "So instead, I'll share it with you just as it is... a work in progress, with room to grow."
+next = "29_first"
+
+[reina_ten_hearts.29_first]
+speaker = "reina"
+portrait = "blush"
+local = "It's my $Cookbook Manuscript$!"
+next = "30_first"
+
+[reina_ten_hearts.30_first]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "See the dedication in the front? I wrote it for you!"
+next = "31"
+
+[reina_ten_hearts.31]
+speaker = "reina"
+portrait = "closed_eyes_smile_blush"
+local = """"To my sous chef, my inspiration... My [Ari]." """
+next = "32"
+
+[reina_ten_hearts.32]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "I made sure to put all your favorite recipes in it, too."
+next = "33"
+
+[reina_ten_hearts.33]
+speaker = "reina"
+portrait = "blush_think"
+local = """I'm toying with the idea of naming the book "Wildberry Pie"!"""
+next = "34"
+
+[reina_ten_hearts.34]
+speaker = "reina"
+portrait = "blush"
+local = "Because I can't bake one anymore without thinking of the day you first taste-tested it with me at the Inn."
+next = "35"
+
+[reina_ten_hearts.35]
+speaker = "reina"
+portrait = "embarrassed"
+local = "But that's enough about my book for the time being."
+next = "36"
+
+[reina_ten_hearts.36]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "There was something else you wanted to talk about today, right?"
+prompts = [
+    { local = "I wanted to talk to you about our future together...", next = "37" },
+    { local = "Actually, let's talk about it another day.", next = "47" }
+]
+
+[reina_ten_hearts.37]
+speaker = "reina"
+portrait = "shocked"
+local = "Our future together?"
+next = "38"
+
+[reina_ten_hearts.38]
+speaker = "reina"
+portrait = "blush_special"
+local = "Do you mean...?"
+prompts = [
+    { local = "I love you, Reina. Will you marry me?", next = "39" },
+    { local = "Actually, let's talk about it more another day.", next = "47" }
+]
+
+[reina_ten_hearts.39]
+writes = [
+    { breakup_bump = true, expires = "3d" },
+    { engagement_bump = true, expires = "2d" },
+    { engagement_delay = true, expires = "20h" },
+    { engagement_cap = false, expires = "3d" },
+]
+actions = [{ can_talk = "reina" }]
+speaker = "reina"
+portrait = "blush"
+local = "Yes!"
+next = "40"
+
+[reina_ten_hearts.40]
+speaker = "reina"
+portrait = "embarrassed"
+local = "YES! Of course I will!"
+next = "41"
+
+[reina_ten_hearts.41]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "Oh [Ari]..."
+next = "42"
+
+[reina_ten_hearts.42]
+speaker = "reina"
+portrait = "blush_special"
+local = "I'm so happy, I could cry!"
+next = "43"
+
+[reina_ten_hearts.43]
+speaker = "reina"
+portrait = "blush_special"
+local = "I just can't believe it!"
+next = "44"
+
+[reina_ten_hearts.44]
+speaker = "reina"
+portrait = "blush_think"
+local = "You've done it again, you know..."
+next = "45"
+
+[reina_ten_hearts.45]
+speaker = "reina"
+portrait = "blush"
+local = "You just made another of my dreams come true!"
+next = "46"
+
+[reina_ten_hearts.46]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "I love you, [Ari]!"
+
+[reina_ten_hearts.47]
+speaker = "reina"
+portrait = "shocked"
+local = "Oh? If you're sure!"
+next = "48"
+
+[reina_ten_hearts.48]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "We'll put a pin in it then. Any time you want to talk, [Ari], just let me know."

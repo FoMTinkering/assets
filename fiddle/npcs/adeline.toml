@@ -1,0 +1,241 @@
+loved_gifts = [
+	"coffee",
+	"gazpacho",
+	"lemon_pie",
+	"middlemist",
+	"mistril_ingot",
+	"peaches_and_cream",
+	"perfect_pink_diamond",
+	"plum_blossom",
+	"pumpkin_pie",
+	"cup_of_tea",
+]
+
+
+bio = "Bright-eyed, hardworking noble looking to help Mistria recover after the earthquake. Eiland's sister."
+birthday = { season = "winter", day = 18 }
+
+liked_gifts = [
+	"candied_lemon_peel",
+	"ore_diamond",
+	"heather",
+	"lemon",
+	"sour_lemon_cake",
+	"lemonade",
+	"ore_mistril",
+	"paper",
+	"peach",
+	"pineshroom_toast",
+	"ore_pink_diamond",
+	"pumpkin_stew",
+	"red_wine",
+	"snapdragon",
+	"spicy_cheddar_biscuit",
+	"tulip",
+	"vegetable_soup",
+	"white_wine",
+	"wildberry_pie",
+	"wildberry_scone",
+]
+
+disliked_gift_tags = ["junk", "bugs", "mushroomy", "weird_gift"]
+hated_gift = "morel_mushroom"
+name = "Adeline"
+aldarian_name = "ADLN"
+music = "Music/Npc Tracks/Adeline"
+outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+tags = ["townsfolk", "noble", "dateable"]
+journal_portrait_offset = [-114, -35]
+journal_background_color = [255, 228, 236]
+date_photo_offset = [-2, 0]
+job = "Town Leader"
+icon_sprite = "spr_ui_generic_icon_npc_adeline"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_adeline"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_adeline"
+dateable = true
+roommate_routine = "adeline_roommate"
+proposal_cutscene = "adeline_ten_hearts"
+children = ["ellie"]
+can_carry_child = true
+
+[gossip]
+	line = "adeline_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["espresso"]
+	"12" = ["coffee"]
+	"16" = ["wine", "white_wine", "rose_wine"]
+	"24" = ["hot_chocolate"]
+
+[offsets]
+	portrait = [-121, -65]
+	sweat = [0, 0]
+	hearts = [0, 0]
+	angry = [0, 0]
+	sparkles = [0, 0]
+	sparkles_dark = [0, 0]
+	sick = [0, 0]
+	music_notes = [0, 0]
+	intensity = [0, 0]
+	surprise = [0, 0]
+	shock = [0, 0]
+	sigh = [0, 0]
+	loud = [0, 0]
+	cheery = [0, 0]
+	drop = [0, 0]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	think = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	concerned = ["spring", "summer", "autumn", "winter", "beach"]
+	happy = ["spring", "summer", "autumn", "winter", "beach"]
+	wink = ["spring", "summer", "autumn", "winter", "beach"]
+	blush = ["spring", "summer", "autumn", "winter", "beach"]
+	mad = ["spring", "summer", "autumn", "winter", "beach"]
+	angry_blush = ["spring", "summer", "autumn", "winter", "beach"]
+	embarrassed = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	cartoon_embarrassed = ["spring", "summer", "autumn", "winter", "beach"]
+	sad = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	ugh = ["spring", "summer", "autumn", "winter", "beach"]
+	sigh = ["spring", "summer", "autumn", "winter", "beach"]
+	sly = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	gloomy_special = ["spring", "summer", "autumn", "winter", "beach"]
+	hope_special = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	neutral_tired = ["spring", "summer", "autumn", "winter"]
+	embarrassed_tired = ["spring", "summer", "autumn", "winter"]
+	evasive_tired = ["spring", "summer", "autumn", "winter"]
+	sick_eyes_open = ["spring", "summer", "autumn", "winter"]
+	sick_eyes_closed = ["spring", "summer", "autumn", "winter"]
+	sick_smile = ["spring", "summer", "autumn", "winter"]
+	sick_think = ["spring", "summer", "autumn", "winter"]
+	bath_neutral = ["beach"]
+	happy_blush = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	shocked = ["spring", "summer", "autumn", "winter", "beach"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+
+[cycles.shocked]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.kiss]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.sleep]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.bath_swim]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	outfits = ["beach"]
+	type = "linear"
+
+[cycles.finger_snap]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "linear"
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.write]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+
+[cycles.write_sit]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	is_seated = true
+
+[cycles.read_sit]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	is_seated = true
+
+[cycles.work_sit]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	is_seated = true
+
+[cycles.think]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.faint]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"

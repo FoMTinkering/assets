@@ -1,0 +1,48 @@
+[harvest_festival_anticipation]
+refresh = "never"
+requires = [{ npc = "hayden" }, { harvest_festival_setup = true }]
+portrait = "neutral"
+local = "Hope to see you at the $Harvest Festival$, [Ari]!"
+next = "1"
+
+[harvest_festival_anticipation.1]
+portrait = "happy"
+local = "I'm running the pumpkin patch this year, and I've grown some real beauties!"
+
+[harvest_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "hayden" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hayden_is_at = "town/hf_hayden_patch" }
+]
+portrait = "neutral"
+local = "[Ari]! Here to pick a pumpkin? All grown by yours truly!"
+next = "1"
+
+[harvest_festival_0.1]
+portrait = "happy"
+local = "I've got some rare varieties and colors that you won't find anywhere else!"
+
+[harvest_festival_first_place_follow_up]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "hayden" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_first_place = true },
+	{  }
+]
+portrait = "happy"
+local = "Well congrats on the win, [Ari]! Well earned."
+next = "1"
+
+[harvest_festival_first_place_follow_up.1]
+portrait = "neutral_arm_down"
+local = "I'm a fan of berry picking myself, but it looks like I'm a bigger fan of growing all these pumpkins!"
+next = "2"
+
+[harvest_festival_first_place_follow_up.2]
+portrait = "laugh"
+local = "Gya ha ha!"

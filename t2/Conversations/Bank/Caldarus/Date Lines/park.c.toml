@@ -1,0 +1,203 @@
+[park_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "park" },
+	{ da_caldarus_park = 0 },
+	{ caldarus_seridia_town = false },
+]
+writes = [
+	{ da_caldarus_park = 1 },
+	{ da_caldarus_park_follow_up_gate = true, expires = "1d" },
+]
+speaker = "caldarus"
+portrait = "think"
+local = "You say that a typical couple activity is to spend time together at the local $Park$?"
+next = "1"
+
+[park_accept_1.1]
+speaker = "caldarus"
+portrait = "smile"
+local = "Well, the area around my temple is quite park-like..."
+next = "2"
+
+[park_accept_1.2]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "If that sounds like an acceptable alternative to you."
+next = "3"
+
+[park_accept_1.3]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "It does? Wonderful!"
+
+[park_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "park" },
+	{ da_caldarus_park = 1, comparator = ">=" },
+	{ caldarus_seridia_town = false },
+]
+writes = [
+	{ da_caldarus_park = 2 },
+	{ da_caldarus_park_follow_up_gate = true, expires = "1d" },
+]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "Would you like to spend some time in the courtyard together?"
+next = "1"
+
+[park_accept_2.1]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "I know I certainly would!"
+
+[park_accept_eog_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "park" },
+	{ da_caldarus_eog_park = 0 },
+	{ caldarus_seridia_town = true },
+	{ caldarus_is_spouse = false }
+]
+writes = [
+	{ da_caldarus_eog_park = 1 },
+	{ da_caldarus_eog_park_follow_up_gate = true, expires = "1d" },
+]
+portrait = "embarrassed"
+local = "You would have me accompany you to the park?"
+next = "1"
+
+[park_accept_eog_1.1]
+portrait = "caring_special"
+local = "I meant to propose the same to you. What kismet."
+next = "2"
+
+[park_accept_eog_1.2]
+portrait = "laugh_special"
+local = "After you, [Ari]."
+
+[park_accept_eog_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "park" },
+	{ caldarus_has_child = false },
+	{ any = [
+		{ caldarus_is_spouse = true },
+		{ da_caldarus_eog_park = 1, comparator = ">=" },
+	] },
+	{ caldarus_seridia_town = true },
+]
+writes = [
+	{ da_caldarus_eog_park = 2 },
+	{ da_caldarus_eog_park_follow_up_gate = true, expires = "1d" },
+]
+portrait = "smile"
+local = "Would you care to join me in the park, [Ari]?"
+next = "1"
+
+[park_accept_eog_2.1]
+portrait = "think_special"
+local = "We could sit together and take in the changing of the season."
+next = "2"
+
+[park_accept_eog_2.2]
+portrait = "caring_special"
+local = "You will? That is wonderful, let us go."
+
+[park_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_park = 1 },
+	{ da_caldarus_park_follow_up_gate = true },
+	{ caldarus_seridia_town = false },
+]
+writes = [{ da_caldarus_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "avoidant_special"
+local = "While I long to explore more of the world with you..."
+next = "1"
+
+[park_follow_up_1.1]
+portrait = "embarrassed"
+local = "These carefree days spent here together are truly wonderful, [Ari]."
+
+[park_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_park = 2 },
+	{ da_caldarus_park_follow_up_gate = true },
+	{ caldarus_seridia_town = false },
+]
+writes = [{ da_caldarus_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "embarrassed"
+local = """I had a marvelous time with you on our "$Park$" date, [Ari]."""
+next = "1"
+
+[park_follow_up_2.1]
+portrait = "laugh_special"
+local = "My courtyard is available anytime."
+
+[park_follow_up_eog_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_eog_park = 1 },
+	{ da_caldarus_eog_park_follow_up_gate = true },
+	{ caldarus_seridia_town = true },
+	{ caldarus_is_spouse = false }
+]
+writes = [{ da_caldarus_eog_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "I had a lovely time in the park with you, [Ari]."
+next = "1"
+
+[park_follow_up_eog_1.1]
+portrait = "think_special"
+local = "There is something special about an outdoor space, cared for and preserved by mortal hands."
+next = "2"
+
+[park_follow_up_eog_1.2]
+portrait = "caring_special"
+local = "It made our time together feel more special, too."
+next = "3"
+
+[park_follow_up_eog_1.3]
+portrait = "laugh_special"
+local = "Thank you for inviting me."
+
+[park_follow_up_eog_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_has_child = false },
+	{ any = [{ caldarus_is_spouse = true }, { da_caldarus_eog_park = 2 }] },
+	{ da_caldarus_eog_park_follow_up_gate = true },
+	{ caldarus_seridia_town = false },
+]
+writes = [{ da_caldarus_eog_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "I enjoyed our time in the park, [Ari]."
+next = "1"
+
+[park_follow_up_eog_2.1]
+portrait = "embarrassed"
+local = "To enjoy conversation and quiet moments with you... I find it quite pleasurable."
+next = "2"
+
+[park_follow_up_eog_2.2]
+portrait = "caring_special"
+local = "And I will always make time for it."

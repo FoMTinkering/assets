@@ -1,0 +1,18 @@
+[breakfast]
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "morning" },
+	{ any = [
+		{ juniper_activity = "eat" },
+		{ juniper_activity = "order_food" }
+	] },
+	{ location = "inn" }
+]
+portrait = "annoyed"
+local = "Dozy made me get up to eat a proper breakfast at the Inn."
+next = "1"
+
+[breakfast.1]
+portrait = "mad"
+local = "Like a =Latte= isn't breakfast? Ridiculous."

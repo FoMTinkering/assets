@@ -1,0 +1,37 @@
+[wood_for_whittling]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "landen" }] },
+	{ holt_zone = "<landen_zone>" },
+	{ location = "landens_house_f1" },
+]
+speaker = "landen"
+portrait = "think"
+local = "Oh, that wood's no good for whittling... too hard. You want something softer, like willow or cedar."
+next = "1"
+
+[wood_for_whittling.1]
+speaker = "holt"
+portrait = "think"
+local = "Wish I'd known that before I started my new project... have any scraps lying around?"
+
+[wood_for_whittling_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "landen" }] },
+	{ holt_zone = "<landen_zone>" },
+	{ location = "landens_house_f1", comparator = "!=" },
+	{ holt_zone = "eastern_road/business_check_in", comparator = "!=", ignore_priority = true },
+	{ holt_zone = "eastern_road/porch_conversation", comparator = "!=", ignore_priority = true },
+	{ holt_zone = "eastern_road/work_station", comparator = "!=", ignore_priority = true },
+	{ holt_zone = "eastern_road/work_station_teaching", comparator = "!=", ignore_priority = true },
+]
+speaker = "holt"
+portrait = "neutral"
+local = "I think I'm going to need some more whittling wood soon."
+next = "1"
+
+[wood_for_whittling_2.1]
+speaker = "landen"
+portrait = "think"
+local = "You'll want something nice and soft for that. Next time you're by the woodshop, I'll see what we've got."

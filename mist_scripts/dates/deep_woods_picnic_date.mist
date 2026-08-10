@@ -1,0 +1,102 @@
+var partner = get_from_blackboard("date_partner");
+set_on_blackboard("block_skip", true);
+set_on_blackboard("end_position", "eastern_road/deep_woods_cutscene_exit");
+var outfit = get_from_blackboard("outfit");
+var bark_one = "";
+var bark_two = "";
+var bark_three = "";
+var bark_four = "";
+
+if roll == 0 {
+	bark_one = "sunny";
+	bark_two = "book";
+	bark_three = "question_mark";
+	bark_four = "farming";
+} else if roll == 1 {
+	bark_one = "forest";
+	bark_two = "music";
+	bark_three = "sunny";
+	bark_four = "cherry_blossoms";
+} else if roll == 2 {
+	bark_one = "lake";
+	bark_two = "fishing";
+	bark_three = "hungry";
+	bark_four = "cooking";
+} else {
+	bark_one = "cold_drink";
+	bark_two = "question_mark";
+	bark_three = "summer";
+	bark_four = "yum";
+}
+
+
+//
+free bark_speech(partner, heart);
+wait(1);
+fade_out(2);
+
+
+scene(deep_woods);
+camera_position(dwpd_camera_snap);
+setup_prop(dwpd_blanket);
+setup_prop(dwpd_pouf_ari);
+setup_prop(dwpd_pouf_partner);
+setup_prop(dwpd_picnic_basket);
+
+//
+capture_date_photo();
+wait_one_tick();
+set_on_blackboard("block_skip", false);
+camera_position(dwpd_camera_1);
+place_actor(partner, east, dwpd_partner_pouf);
+place_actor(ari, west, dwpd_ari_pouf);
+set_outfit(partner, outfit);
+animate(partner, "sit");
+animate(ari, sit);
+
+sim {
+	{
+		fade_in(2);
+	}
+	{
+		wait(1);
+		free bark_speech(ari, bark_one);
+		wait(1.5);
+		free bark_speech(partner, bark_two);
+		wait(1.5);
+		free bark_speech(ari, bark_three);
+		wait(1.5);
+		free bark_speech(partner, bark_four);
+		wait(2);
+		free bark_speech(ari, cute_face);
+		free bark_speech(partner, cute_face);
+		wait(2);
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(ari, south);
+		wait(0.25);
+		place_actor(ari, south, dwpd_ari_stand);
+		animate(ari, idle);
+		wait(0.25);
+		walk_slow(ari, dwpd_ari_kiss);
+		face(ari, west);
+	}
+	{
+		face(partner, south);
+		wait(0.25);
+		place_actor(partner, south, dwpd_partner_stand);
+		animate(partner, "idle");
+		wait(0.25);
+		walk_slow(partner, dwpd_partner_kiss);
+		face(partner, east);
+	}
+	{
+		pan_camera(2, dwpd_camera_2);
+	}
+}
+kiss_npc(partner);
+wait(1);
+fade_out(2);

@@ -1,0 +1,145 @@
+# Hated gift
+[hard_boiled_egg]
+kind = "gift"
+requires = [
+	{ npc = "errol" },
+	{ gift_desire = "hated" },
+	{ gift_given = "hard_boiled_egg" }
+]
+portrait = "think"
+local = "[Ari]... are you trying to say something with this gift of a $Boiled Egg$?"
+next = "1"
+
+[hard_boiled_egg.1]
+portrait = "mad"
+local = "The shiny orb of the egg... the shiny orb of my pate... I must protest at the comparison!"
+
+# Generic lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "errol" }, { gift_desire = "loved" }]
+portrait = "happy"
+local = "Why thank you very much indeed, [Ari]!."
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "errol" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "sparkles"
+local = "Goodness, what a considerate gift! You have my most hearty thanks."
+
+[loved_gift_edible_1]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "errol" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "baked_sweetroot" },
+		{ gift_given = "miners_mushroom_stew" },
+		{ gift_given = "white_wine" },
+	] }
+]
+portrait = "happy"
+effect = "hearts"
+local = "Oh, this is a great favorite of mine! And it looks wonderful! I can't wait to tuck into it."
+
+[loved_gift_edible_2]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "errol" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "baked_sweetroot" },
+		{ gift_given = "braised_burdock" },
+		{ gift_given = "clam_chowder" },
+		{ gift_given = "fish_skewer" },
+		{ gift_given = "miners_mushroom_stew" },
+		{ gift_given = "pan_fried_bream" },
+		{ gift_given = "perch_risotto" },
+		{ gift_given = "white_wine" },
+	] }
+]
+portrait = "wink"
+effect = "sparkles"
+local = "Oho, how did you know my weakness? I must make time to properly appreciate this later."
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "errol" }, { gift_desire = "liked" }]
+portrait = "happy"
+local = "Oh! This is most generous of you, [Ari]. My thanks."
+
+[liked_gift_2]
+kind = "gift"
+requires = [{ npc = "errol" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "Tremendously thoughtful of you, [Ari]. Thank you."
+
+[liked_gift_drinks]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "errol" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "beer" },
+		{ gift_given = "hot_toddy" },
+		{ gift_given = "latte" },
+		{ gift_given = "mocha" },
+		{ gift_given = "red_wine" },
+	] }
+]
+portrait = "neutral"
+local = "It's so kind of you to bring me a bit of refreshment. Cheers!"
+
+[liked_gift_food]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "errol" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "apple" },
+		{ gift_given = "breaded_catfish" },
+		{ gift_given = "canned_sardines" },
+		{ gift_given = "fish_stew" },
+		{ gift_given = "pear" },
+		{ gift_given = "pomegranate" },
+		{ gift_given = "sweetroot" },
+		{ gift_given = "upper_mines_mushroom" },
+		{ gift_given = "wintergreen_ice_cream" },
+	] }
+]
+portrait = "neutral"
+local = "This is just the thing to brighten the day. My thanks, [Ari]."
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "errol" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "My thanks, [Ari]."
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "errol" }, { gift_desire = "disliked" }]
+portrait = "think"
+local = "This is, ah... for me? Maybe I can find a place for it in our back catalog..."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "errol" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ errol_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "happy"
+effect = "sparkles"
+local = "To think I'd still be receiving birthday presents at my age! Thank you, [Ari]. I'll treasure this."

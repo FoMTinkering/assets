@@ -1,0 +1,102 @@
+#SPRING FESTIVAL
+[spring_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ hayden_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ hayden_morning_greeting = false }
+]
+writes = [{ hayden_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "hayden" } }]
+portrait = "neutral_arm_down"
+local = "I spent the whole morning thinking about the $Spring Festival$..."
+next = "1"
+
+
+[spring_festival.1]
+portrait = "happy_fist"
+local = "I'm really looking forward to seeing all the flowers this year!"
+
+
+#SHOOTING STAR FESTIVAL
+[shooting_star_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ hayden_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ hayden_morning_greeting = false }
+]
+writes = [{ hayden_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "shocked"
+local = "Morning, [Ari]! It's the $Shooting Star Festival$ today, isn't it?"
+next = "1"
+
+
+[shooting_star_festival.1]
+portrait = "embarrassed"
+local = "Don't suppose you'd want to sneak out to the Summit with me tonight, would you?"
+
+
+#HARVEST FESTIVAL
+
+
+[harvest_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hayden_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ hayden_morning_greeting = false }
+]
+writes = [{ hayden_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "happy_arm_down"
+local = "Morning, [Ari]! It's the $Harvest Festival$ today!"
+next = "1"
+
+
+[harvest_festival.1]
+portrait = "embarrassed"
+local = "I'm looking forward to cutting a rug with you!"
+
+
+#ANIMAL FESTIVAL
+
+
+[animal_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ animal_festival_date = "1d", time = "after" },
+	{ hayden_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ hayden_morning_greeting = false }
+]
+writes = [{ hayden_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "hayden" } }]
+portrait = "neutral_arm_down"
+local = "Good morning, [Ari]! Are you ready for the $Animal Festival$?"
+next = "1"
+
+
+[animal_festival.1]
+portrait = "happy_fist"
+local = "No matter how things shake out, I'd say we have a good chance of bringing that blue ribbon home!"

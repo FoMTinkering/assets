@@ -1,0 +1,373 @@
+[core]
+	name = "Cow"
+	plural_name = "Cows"
+	female_other = "a female cow"
+	male_other = "a male cow"
+	new_baby_born = "A new Cow was born! Enter new name"
+	size = "large"
+	default_icon_variant = "spotted"
+	cosmetic_sub_icon = "spr_ui_item_sub_animal_cow"
+
+[behavior]
+	can_wander_in_home = false
+
+[celebration_data]
+	baby_animation = "happy"
+	adult_animation = "happy"
+
+[production.male]
+	days_to_produce = 3
+	normal_product = "bull_horn"
+	golden_product = "golden_bull_horn"
+
+[production.female]
+	days_to_produce = 1
+	normal_product = "cow_milk"
+	golden_product = "golden_cow_milk"
+
+[breeding]
+	uses_egg = false
+	treat = "heart_shaped_cow_treat"
+
+[eating]
+	kind = "hay"
+	offset = [18, -2]
+	baby_offset = [14, -4]
+	shake_frames = [1, 9]
+
+[petting]
+	kind = "pet"
+
+[pricing]
+	buy_price = 2000
+	baby_sell_price = 500
+	adult_sell_prices = [
+		700,
+		750,
+		900,
+		1000,
+		1100,
+		1200,
+		1400,
+		1600,
+		2000,
+		2200,
+		2300,
+	]
+
+[mounting]
+	is_mount = true
+
+[bark_offsets]
+	adult = { north = [2, -40], south = [2, -33], east = [8, -37], west = [-4, -37] }
+	baby = { north = [1, -31], south = [1, -29], east = [5, -28], west = [-3, -28] }
+
+[[sounds.baby]]
+	ambient = "SoundEffects/Animals/CowAAmbient"
+	positive_react = "SoundEffects/Animals/CalfPositiveReact"
+	negative_react = "SoundEffects/Animals/CowUpsetReact"
+
+[[sounds.adult]]
+	ambient = "SoundEffects/Animals/CowAAmbient"
+	positive_react = "SoundEffects/Animals/CowAPositiveReact"
+	negative_react = "SoundEffects/Animals/CowUpsetReact"
+
+[[sounds.adult]]
+	ambient = "SoundEffects/Animals/CowAAmbient"
+	positive_react = "SoundEffects/Animals/CowAPositiveReact"
+	negative_react = "SoundEffects/Animals/CowUpsetReact"
+
+[[sounds.adult]]
+	ambient = "SoundEffects/Animals/CowDAmbient"
+	positive_react = "SoundEffects/Animals/CowAPositiveReact"
+	negative_react = "SoundEffects/Animals/CowUpsetReact"
+
+[[sounds.adult]]
+	ambient = "SoundEffects/Animals/CowDAmbient"
+	positive_react = "SoundEffects/Animals/CowAPositiveReact"
+	negative_react = "SoundEffects/Animals/CowUpsetReact"
+
+[animations.idle]
+	player_offsets.south = [
+		[0, -14],
+	]
+	player_offsets.east = [
+		[-1, -14],
+	]
+	player_offsets.north = [
+		[0, -14],
+	]
+	randomly_selected = false
+	duration = [3, 7]
+	play_ambient_sounds = true
+
+[animations.idle_2]
+	player_offsets.south = [
+		[0, -14],
+	]
+	player_offsets.east = [
+		[-1, -14],
+	]
+	player_offsets.north = [
+		[0, -14],
+	]
+	end_with_animation = true
+	valid_for = ["male", "female"]
+
+[animations.blink]
+	player_offsets.south = [
+		[0, -14],
+	]
+	player_offsets.east = [
+		[-1, -14],
+	]
+	player_offsets.north = [
+		[0, -14],
+	]
+	end_with_animation = true
+
+[animations.walk]
+	player_offsets.south = [
+		[0, -13],
+		[0, -14],
+		[0, -13],
+		[0, -14],
+	]
+	player_offsets.east = [
+		[-1, -13],
+		[-1, -14],
+		[-1, -13],
+		[-1, -14],
+	]
+	player_offsets.north = [
+		[0, -13],
+		[0, -14],
+		[0, -13],
+		[0, -14],
+	]
+	randomly_selected = false
+	duration = [1, 2]
+
+[animations.run]
+	player_offsets.south = [
+		[0, -13],
+		[0, -14],
+		[0, -15],
+		[0, -14],
+	]
+	player_offsets.east = [
+		[-1, -14],
+		[-1, -15],
+		[-1, -16],
+		[-1, -15],
+	]
+	player_offsets.north = [
+		[0, -14],
+		[0, -15],
+		[0, -17],
+		[0, -15],
+	]
+	randomly_selected = false
+	valid_for = ["male", "female"]
+
+[animations.jump]
+	player_offsets.south = [
+		[0, -13],
+		[0, -14],
+		[0, -16],
+		[0, -15],
+	]
+	player_offsets.east = [
+		[-1, -15],
+		[-1, -16],
+		[-1, -17],
+		[-1, -14],
+	]
+	player_offsets.north = [
+		[0, -16],
+		[0, -18],
+		[0, -17],
+		[0, -13],
+	]
+	randomly_selected = false
+	valid_for = ["male", "female"]
+
+[animations.happy]
+	randomly_selected = false
+
+[animations.playball]
+	randomly_selected = false
+	valid_for = ["male", "female"]
+
+# Variants
+[variants.default]
+	lut = "spr_animal_cow_lut"
+
+	[variants.default.male]
+		key = "basic_male_base"
+		ui_key = "basic_male"
+		top_key = "basic_male_top"
+
+	[variants.default.female]
+		key = "basic_female_base"
+		ui_key = "basic_female"
+		top_key = "basic_female_top"
+
+	[variants.default.baby]
+		key = "basic_baby_calf"
+		top_key = "<n/a>"
+
+# Brown
+[variants.brown]
+	name = "Brown"
+	default_unlocked = true
+	lut_index = 1
+
+# Spotted
+[variants.spotted]
+	name = "Spotted"
+	default_unlocked = true
+	lut_index = 2
+
+# Black
+[variants.black]
+	name = "Black"
+	default_unlocked = true
+	lut_index = 3
+
+# Chocolate
+[variants.chocolate]
+	name = "Chocolate"
+	tier = 2
+	lut_index = 4
+
+# Red
+[variants.red]
+	name = "Red"
+	tier = 2
+	lut_index = 5
+
+# White
+[variants.white]
+	name = "White"
+	tier = 2
+	lut_index = 6
+
+# Blue
+[variants.blue]
+	name = "Blue"
+	tier = 3
+	lut_index = 7
+
+# Purple
+[variants.purple]
+	name = "Purple"
+	tier = 3
+	lut_index = 8
+
+# Pink
+[variants.pink]
+	name = "Pink"
+	tier = 3
+	lut_index = 9
+
+# Silver
+[variants.silver]
+	name = "Silver"
+	tier = 4
+	lut_index = 10
+
+# Gold
+[variants.gold]
+	name = "Gold"
+	tier = 5
+	lut_index = 11
+
+# Spring
+[variants.spring]
+	name = "Spring"
+	tier = 6
+	born_in = "spring"
+	lut_index = 12
+	default_cosmetic = "flower_crown"
+
+# Summer
+[variants.summer]
+	name = "Summer"
+	tier = 6
+	born_in = "summer"
+	lut_index = 13
+	default_cosmetic = "sun_hat"
+
+# Fall
+[variants.fall]
+	name = "Fall"
+	tier = 6
+	born_in = "fall"
+	lut_index = 14
+	default_cosmetic = "horns"
+
+# Winter
+[variants.winter]
+	name = "Winter"
+	tier = 6
+	born_in = "winter"
+	lut_index = 15
+	default_cosmetic = "antlers"
+
+# Cosmetics
+[cosmetics.default.male]
+	key = "male_base"
+	top_key = "male_top"
+
+[cosmetics.default.female]
+	key = "female_base"
+	top_key = "female_top"
+
+[cosmetics.antlers]
+	name = "Cow Antlers"
+
+[cosmetics.beret]
+	name = "Cow Beret"
+
+[cosmetics.cheese_hat]
+	name = "Cow Cheese Hat"
+
+[cosmetics.cowboy_hat]
+	name = "Cow Cowboy Hat"
+
+[cosmetics.crown]
+	name = "Cow Crown"
+
+[cosmetics.flower_crown]
+	name = "Cow Flower Crown"
+
+[cosmetics.halo]
+	name = "Cow Halo"
+
+[cosmetics.horns]
+	name = "Cow Horns"
+
+[cosmetics.pink_bow]
+	name = "Pink Cow Bow"
+
+[cosmetics.pink_sunglasses]
+	name = "Pink Cow Sunglasses"
+
+[cosmetics.ribbon_blue]
+    name = "Cow Blue Ribbon"
+
+[cosmetics.ribbon_red]
+    name = "Cow Red Ribbon"
+
+[cosmetics.ribbon_white]
+    name = "Cow White Ribbon"
+
+[cosmetics.sun_hat]
+	name = "Cow Sun Hat"
+
+[cosmetics.bell_collar]
+	name = "Cow Bell Collar"
+
+[cosmetics.laurels]
+	name = "Cow Laurels"

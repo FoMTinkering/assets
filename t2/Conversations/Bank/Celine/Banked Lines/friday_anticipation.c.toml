@@ -1,0 +1,16 @@
+[friday_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ dnd_fnati = 0 },
+	{ day_of_the_week = "friday" },
+	{ fnati = 0 },
+	{ location = "inn", comparator = "!=" },
+	{ dnd_fnati_discussion = 2, comparator = "<" },
+	{ date_time = "2m", comparator = "<" },
+	{ celine_heart_level = 2, comparator = "<" },
+	{ eiland_heart_level = 2, comparator = "<" }
+]
+writes = [{ dnd_fnati_discussion = 1, operator = "+=", expires = "1w" }]
+portrait = "neutral"
+local = "I'll be at the Inn this evening. Lord Eiland's been so excited to play his new game with us!"

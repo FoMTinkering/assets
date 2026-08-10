@@ -1,0 +1,101 @@
+[balcony_1_follow_up_reina]
+refresh = "never"
+requires = [{ npc = "reina" }, { balcony_fnati = 1 }, { balcony_reina = true }]
+portrait = "think"
+local = "Juniper and Terithia have been asking for island recipes. Are they going on vacation?"
+next = "1"
+
+[balcony_1_follow_up_reina.1]
+portrait = "happy"
+local = "Anyway, I gave them Papa's tropical punch recipe and they seemed really happy!"
+
+[balcony_1_follow_up_hayden]
+refresh = "never"
+requires = [{ npc = "hayden" }, { balcony_fnati = 1 }, { balcony_hayden = true }]
+portrait = "think"
+local = "Juniper and Terithia flagged me down earlier, asking how I'd cultivate a deserted island."
+next = "1"
+
+[balcony_1_follow_up_hayden.1]
+portrait = "sweat"
+effect = "sweat"
+local = "Is that their way of telling me I should take a vacation?"
+
+[balcony_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ juniper_zone = "inn/balcony_hang" },
+	{ terithia_zone = "inn/balcony_hang" },
+	{ any = [
+		{ npc = "juniper" },
+		{ npc = "terithia" },
+	] },
+]
+writes = [{ balcony_fnati = 1 }]
+speaker = "terithia"
+portrait = "happy"
+local = "Juniper, [Ari]! Let me ask you a question..."
+next = "1"
+
+[balcony_1.1]
+speaker = "terithia"
+local = "Who in Mistria would survive on a deserted island?"
+next = "2"
+
+[balcony_1.2]
+speaker = "juniper"
+portrait = "happy"
+local = "Terithia! What a question! Let's see..."
+next = "3"
+
+[balcony_1.3]
+speaker = "juniper"
+portrait = "sly"
+local = "Balor enjoys his luxuries far too much, so he wouldn't last a day. Eiland, too. Our lord would expire without a slice of cake before bedtime."
+next = "4"
+
+[balcony_1.4]
+speaker = "terithia"
+portrait = "wink"
+local = "Oh, they might surprise you. But I wouldn't say either is my first pick."
+next = "5"
+
+[balcony_1.5]
+speaker = "juniper"
+portrait = "happy"
+local = "Holt would simply perish if he didn't have someone else to hear his jokes. On the other hand, Adeline would have the island organized in short order."
+next = "6"
+
+[balcony_1.6]
+speaker = "terithia"
+local = "Aye, that girl's no stranger to rolling up her sleeves. What do you think, [Ari]? Anyone in mind?"
+prompts = [
+	{ local = "Reina! She can make a meal out of anything!", next = "7" },
+	{ local = "Hayden! He's so self-reliant!", next = "9" },
+]
+
+[balcony_1.7]
+writes = [{ balcony_reina = true }]
+speaker = "terithia"
+portrait = "wink"
+local = "My thoughts exactly."
+next = "8"
+
+[balcony_1.8]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Unlike me, [Ari]. Can you imagine, ME on a deserted island? I would simply give up."
+
+[balcony_1.9]
+writes = [{ balcony_hayden = true }]
+speaker = "terithia"
+portrait = "happy"
+local = "He's like you, isn't he? He'd have some crops going and animals befriended before the week was out."
+next = "10"
+
+[balcony_1.10]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "I suppose. Mostly I'm just glad it's not me on a deserted island."

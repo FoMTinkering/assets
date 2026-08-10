@@ -1,0 +1,24 @@
+[privacy]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "elsie" }] },
+	{ celine_zone = "<elsie_zone>" },
+	{ celine_heart_level = 4, comparator = ">=" },
+	{ celine_heart_level = 8, comparator = "<" }
+]
+speaker = "celine"
+portrait = "sweat"
+local = "Oh, [Ari]! When did you get here?"
+next = "1"
+
+[privacy.1]
+speaker = "celine"
+portrait = "think"
+local = "We were just talking about... um..."
+next = "2"
+
+[privacy.2]
+speaker = "elsie"
+portrait = "wink"
+effect = "cheery"
+local = "A bit of this and that. Be a dear and allow us some privacy, won't you?"

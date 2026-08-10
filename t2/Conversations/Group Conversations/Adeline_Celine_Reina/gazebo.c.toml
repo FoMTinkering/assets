@@ -1,0 +1,27 @@
+[gazebo]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "celine" }, { npc = "reina" }] },
+	{ adeline_heart_level = 6, comparator = ">=" },
+	{ celine_heart_level = 6, comparator = ">=" },
+	{ reina_heart_level = 6, comparator = ">=" },
+	{ adeline_zone = "<celine_zone>" },
+	{ adeline_zone = "<reina_zone>" },
+	{ adeline_zone = "town/gazebo" },
+	{ has_spouse = false }
+]
+speaker = "reina"
+portrait = "happy"
+local = "My parents still talk about getting married by the gazebo! They love it out here."
+next = "1"
+
+[gazebo.1]
+speaker = "adeline"
+portrait = "neutral"
+local = "I'm glad! It's really pretty, isn't it? I'm so happy you took charge of the manor grounds, Celine!"
+next = "2"
+
+[gazebo.2]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "It's fun for me, but also... I want it to look extra special the next time a wedding comes around!"

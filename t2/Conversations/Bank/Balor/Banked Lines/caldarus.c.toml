@@ -1,0 +1,21 @@
+[balor_0_follow_up]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_caldarus_encounter = true },
+	{ location = "deep_woods", comparator = "!=" },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ balor_caldarus_orders = true }]
+portrait = "think"
+local = "Lately, I've been getting mysterious orders left out by the Deep Woods stairs. They're written in a bit of an archaic hand, and sometimes items are described a bit strangely."
+next = "1"
+
+[balor_0_follow_up.1]
+portrait = "sigh"
+local = """It took me a bit to figure out what "wheat powder" was. Why wouldn't you just write "$Flour$"?"""
+next = "2"
+
+[balor_0_follow_up.2]
+portrait = "wink"
+local = "Pay is good enough that I don't ask questions, though. Those old coins are worth a lot, so I leave goods on the designated stump and get on with my day."

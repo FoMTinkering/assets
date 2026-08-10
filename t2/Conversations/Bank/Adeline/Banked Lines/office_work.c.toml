@@ -1,0 +1,118 @@
+[office_work]
+refresh = "2m"
+requires = [
+	{ npc = "adeline" },
+	{ location = "adelines_office", comparator = "!=" },
+	{ date_time = "1y", comparator = "<" }
+]
+portrait = "sad"
+effect = "sigh"
+local = "Sigh. My administrative duties frequently keep me holed up in my office. Do come by and say hello... It gets a little lonely in there."
+next = "1"
+
+[office_work.1]
+portrait = "happy"
+effect = "drop"
+local = "Ah, that's not a royal decree or anything though! It would just be nice."
+
+[office_work_2]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ adeline_routine = "adeline_office_work" }
+]
+portrait = "happy"
+local = "Oh, hi [Ari]! I'm consolidating my latest notes about the town's restoration. I thought it was important to record some things for posterity, you know?"
+
+[office_work_3]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_routine = "adeline_office_work" }
+]
+portrait = "sigh"
+local = "Whew, I had better start winding down in here. I'm getting tired, and Elsie and Eiland forbade me from napping in the office."
+next = "1"
+
+[office_work_3.1]
+portrait = "happy"
+effect = "drop"
+local = "It was just the one time!"
+
+[office_work_4]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_routine = "adeline_office_work" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "think"
+local = "I need to put in a request for more paper..."
+next = "1"
+
+[office_work_4.1]
+portrait = "happy"
+effect = "drop"
+local = "But since I need the paper, it feels like a waste of resources to write the request..."
+
+[office_work_5]
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_drinking = "coffee" },
+	{ season = "winter" }
+]
+portrait = "neutral"
+local = "A bit of hot =Coffee= is especially nice in the winter."
+next = "1"
+
+[office_work_5.1]
+portrait = "happy"
+local = "The warm mug keeps my hands cozy too!"
+
+[office_work_6]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_routine = "adeline_office_work" },
+	{ adeline_heart_level = 4, comparator = ">=" },
+	{ season = "winter" }
+]
+portrait = "neutral"
+local = "During the winter when I was really little, I'd curl up and nap underneath my mother's desk."
+next = "1"
+
+[office_work_6.1]
+portrait = "think"
+local = "That's why I asked Eiland to take over her old office..."
+next = "2"
+
+[office_work_6.2]
+portrait = "happy"
+effect = "drop"
+local = "Can't risk falling into that old habit when work needs doing!"
+
+[office_work_7]
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_routine = "adeline_office_work" },
+	{ any = [
+		{ year_time = "14d", comparator = "<=", parser = "date_time" },
+		{ year_time = "3m 15d", comparator = ">=", parser = "date_time" },
+	] }
+]
+portrait = "think"
+local = "The cost of three booths inclusive of the time to run them is..."
+next = "1"
+
+[office_work_7.1]
+portrait = "happy"
+local = "Oh, [Ari]! I was just making some preliminary festival notes to share with Nora."
+next = "2"
+
+[office_work_7.2]
+portrait = "neutral"
+local = "They're a lot of work, but I love planning them!"

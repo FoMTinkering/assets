@@ -1,0 +1,109 @@
+[bathhouse_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "adeline" },
+	{ date = "bathhouse" },
+	{ da_adeline_bathhouse = 0 },
+	{ adeline_is_spouse = false }
+]
+writes = [
+	{ da_adeline_bathhouse = 1 },
+	{ da_adeline_bathhouse_follow_up_gate = true, expires = "1d" },
+]
+portrait = "blush"
+local = "You want to go relax at the $Bathhouse$ together?"
+next = "1"
+
+[bathhouse_accept_1.1]
+portrait = "angry_blush"
+effect = "sparkles"
+local = "Yes!"
+next = "2"
+
+[bathhouse_accept_1.2]
+portrait = "cartoon_embarrassed"
+local = "I mean-"
+next = "3"
+
+[bathhouse_accept_1.3]
+portrait = "embarrassed"
+local = "I would love to, [Ari]."
+
+[bathhouse_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "adeline" },
+	{ date = "bathhouse" },
+	{ adeline_has_child = false },
+	{ any = [
+		{ adeline_is_spouse = true },
+		{ da_adeline_bathhouse = 1, comparator = ">=" },
+	] }
+]
+writes = [
+	{ da_adeline_bathhouse = 2 },
+	{ da_adeline_bathhouse_follow_up_gate = true, expires = "1d" },
+]
+portrait = "blush"
+local = "Do you have some time to go to the $Bathhouse$ with me, [Ari]?"
+next = "1"
+
+[bathhouse_accept_2.1]
+portrait = "happy_blush"
+local = "You do?"
+next = "2"
+
+[bathhouse_accept_2.2]
+portrait = "embarrassed"
+effect = "cheery"
+local = "Yay! Let's go!"
+
+[bathhouse_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ da_adeline_bathhouse = 1 },
+	{ da_adeline_bathhouse_follow_up_gate = true },
+	{ adeline_is_spouse = false }
+]
+writes = [{ da_adeline_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "blush"
+local = "I had such a great time, [Ari]."
+next = "1"
+
+[bathhouse_follow_up_1.1]
+portrait = "embarrassed"
+local = "I usually keep trips to the Bathhouse quick. I'm glad we could take our time."
+next = "2"
+
+[bathhouse_follow_up_1.2]
+portrait = "happy_blush"
+effect = "cheery"
+local = "All my stress just melted away!"
+
+[bathhouse_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_has_child = false },
+	{ any = [{ adeline_is_spouse = true }, { da_adeline_bathhouse = 2 }] },
+	{ da_adeline_bathhouse_follow_up_gate = true },
+]
+writes = [{ da_adeline_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "embarrassed"
+local = "I really enjoyed our trip to the $Bathhouse$, [Ari]."
+next = "1"
+
+[bathhouse_follow_up_2.1]
+portrait = "happy_blush"
+effect = "cheery"
+local = "I feel so... refreshed!"
+next = "2"
+
+[bathhouse_follow_up_2.2]
+portrait = "blush"
+local = "I want to go again soon, okay?"

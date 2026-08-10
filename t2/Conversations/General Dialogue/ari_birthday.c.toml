@@ -1,0 +1,1674 @@
+# Non-dateables
+[ari_birthday_hemlock_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hemlock" },
+	{ hemlock_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ hemlock_birthday_gate = false },
+]
+writes = [{ hemlock_birthday_gate = true, expires = "3m" }]
+actions = [{ item = "grape_juice" }]
+portrait = "neutral"
+local = "Did you say your birthday is today?"
+next = "1"
+
+[ari_birthday_hemlock_low_hearts.1]
+portrait = "happy"
+local = "Happy birthday, [Ari]!"
+next = "2"
+
+[ari_birthday_hemlock_low_hearts.2]
+portrait = "wink"
+local = "Here, have a drink. It's on me."
+
+[ari_birthday_hemlock_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hemlock" },
+	{ hemlock_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ hemlock_birthday_gate = false },
+]
+writes = [{ hemlock_birthday_gate = true, expires = "3m" }]
+actions = [{ item = "lemonade" }]
+portrait = "neutral"
+local = "Well, well, look who it is."
+next = "1"
+
+[ari_birthday_hemlock_high_hearts.1]
+portrait = "wink"
+local = "Happy birthday, [Ari]!"
+next = "2"
+
+[ari_birthday_hemlock_high_hearts.2]
+portrait = "happy"
+local = "Here, this is for you. I mixed you up a little something to celebrate!"
+
+[ari_birthday_holt_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "holt" },
+	{ holt_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ holt_birthday_gate = false },
+]
+writes = [{ holt_birthday_gate = true, expires = "3m" }]
+actions = [{ item = "chocolate" }]
+portrait = "neutral"
+local = "Now what's this I hear...?"
+next = "1"
+
+[ari_birthday_holt_low_hearts.1]
+portrait = "wink"
+local = "Today is your birthday? You don't say!"
+next = "2"
+
+[ari_birthday_holt_low_hearts.2]
+portrait = "happy"
+local = "Happy Birthday, [Ari]."
+next = "3"
+
+[ari_birthday_holt_low_hearts.3]
+portrait = "neutral"
+local = "Here, take a treat for the road."
+
+[ari_birthday_holt_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "holt" },
+	{ holt_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ holt_birthday_gate = false },
+]
+writes = [{ holt_birthday_gate = true, expires = "3m" }]
+actions = [{ item = "strawberry_shortcake" }]
+portrait = "happy"
+effect = "music_notes"
+local = "Happppy Birthday to youuu..."
+next = "1"
+
+[ari_birthday_holt_high_hearts.1]
+portrait = "think"
+local = "..."
+next = "2"
+
+[ari_birthday_holt_high_hearts.2]
+portrait = "wink"
+local = "As a special birthday treat, I'll spare you the rest of the song."
+next = "3"
+
+[ari_birthday_holt_high_hearts.3]
+portrait = "happy"
+local = "And here, this cake is for you. Just a little something I whipped up this morning."
+
+[ari_birthday_josephine_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "josephine" },
+	{ josephine_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ josephine_birthday_gate = false },
+]
+writes = [{ josephine_birthday_gate = true, expires = "3m" }]
+actions = [{ item = "chocolate" }]
+portrait = "neutral"
+local = "Oh, [Ari]! It's your birthday?"
+next = "1"
+
+[ari_birthday_josephine_low_hearts.1]
+portrait = "happy"
+local = "Here, take this. It's not much, but..."
+next = "2"
+
+[ari_birthday_josephine_low_hearts.2]
+portrait = "wink"
+local = "Everyone deserves to have a little treat on their special day!"
+
+[ari_birthday_josephine_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "josephine" },
+	{ josephine_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ josephine_birthday_gate = false },
+]
+writes = [{ josephine_birthday_gate = true, expires = "3m" }]
+actions = [{ item = "caldosian_chocolate_cake" }]
+portrait = "wink"
+local = "I heard someone has a birthday today..."
+next = "1"
+
+[ari_birthday_josephine_high_hearts.1]
+portrait = "happy"
+local = "Here you go, dear. I made this especially for you!"
+
+[ari_birthday_nora_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "nora" },
+	{ nora_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ nora_birthday_gate = false },
+]
+writes = [{ nora_birthday_gate = true, expires = "3m" }]
+actions = [{ item = "oil" }]
+portrait = "neutral"
+local = "What can I do for you today, [Ari]?"
+next = "1"
+
+[ari_birthday_nora_low_hearts.1]
+portrait = "happy"
+local = "It's your birthday...?"
+next = "2"
+
+[ari_birthday_nora_low_hearts.2]
+portrait = "neutral"
+local = "Well, happy birthday!"
+next = "3"
+
+[ari_birthday_nora_low_hearts.3]
+portrait = "think"
+local = "Now let's see... it's a bit last minute but..."
+next = "4"
+
+[ari_birthday_nora_low_hearts.4]
+portrait = "wink"
+local = "Here, take this. We had some extra stock this week."
+
+[ari_birthday_nora_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "nora" },
+	{ nora_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ nora_birthday_gate = false },
+]
+writes = [{ nora_birthday_gate = true, expires = "3m" }]
+actions = [{ item = "cherry_tart" }]
+portrait = "neutral"
+local = "Today is your birthday, isn't it, [Ari]?"
+next = "1"
+
+[ari_birthday_nora_high_hearts.1]
+portrait = "happy"
+local = "Happy birthday!"
+next = "2"
+
+[ari_birthday_nora_high_hearts.2]
+portrait = "neutral"
+local = "It isn't much, but here's a little gift I picked up for you."
+
+# Dateables
+[ari_birthday_adeline_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ adeline_birthday_gate = false },
+]
+writes = [{ adeline_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "adeline" } },
+	{ item = { item = "paper", count = 3 } },
+]
+portrait = "neutral"
+local = "[Ari]! There you are!"
+next = "1"
+
+[ari_birthday_adeline_low_hearts.1]
+portrait = "think"
+local = "According to my records..."
+next = "2"
+
+[ari_birthday_adeline_low_hearts.2]
+portrait = "happy"
+effect = "cheery"
+local = "Today is your birthday!"
+next = "3"
+
+[ari_birthday_adeline_low_hearts.3]
+portrait = "wink"
+local = "Here, this is for you. I hope you'll find these extra supplies useful!"
+
+[ari_birthday_adeline_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ adeline_is_partner = false },
+	{ adeline_birthday_gate = false },
+]
+writes = [{ adeline_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "[Ari]!"
+next = "1"
+
+[ari_birthday_adeline_high_hearts.1]
+portrait = "happy"
+effect = "cheery"
+local = "Happy birthday!"
+next = "2"
+
+[ari_birthday_adeline_high_hearts.2]
+portrait = "blush"
+local = "I hope you received my gift in the mail..."
+next = "3"
+
+[ari_birthday_adeline_high_hearts.3]
+portrait = "happy"
+local = "I made sure to drop it off as my first order of business this morning!"
+
+[ari_birthday_adeline_romantic]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_heart_level = 8, comparator = ">=" },
+	{ any = [{ adeline_is_dating = true }, { adeline_is_fiance = true }] },
+	{ is_ari_birthday = true },
+	{ adeline_birthday_gate = false },
+]
+writes = [{ adeline_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "blush"
+effect = "cheery"
+local = "Happy birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_adeline_romantic.1]
+portrait = "embarrassed"
+local = "Let's make this year our best one yet."
+
+[ari_birthday_adeline_spouse]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ is_ari_birthday = true },
+	{ adeline_birthday_gate = false },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  }
+]
+writes = [{ adeline_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "heart", npc = "adeline" } },
+	{ item = "lemon_pie" }
+]
+portrait = "happy_blush"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_adeline_spouse.1]
+portrait = "neutral"
+local = "I got you a little something to celebrate."
+next = "2"
+
+[ari_birthday_adeline_spouse.2]
+portrait = "wink"
+local = "Let me know if there's anything at all you want to do, I've cleared my schedule for your big day!"
+
+[ari_birthday_balor_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ balor_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ balor_birthday_gate = false },
+]
+writes = [{ balor_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "balor" } },
+	{ item = { item = "basic_wood", count = 10 } },
+]
+portrait = "neutral"
+local = "What's new, [Ari]?"
+next = "1"
+
+[ari_birthday_balor_low_hearts.1]
+portrait = "think"
+local = "Your birthday...?"
+next = "2"
+
+[ari_birthday_balor_low_hearts.2]
+portrait = "embarrassed"
+local = "Of course, your birthday!"
+next = "3"
+
+[ari_birthday_balor_low_hearts.3]
+portrait = "happy"
+local = "H-here you go. A little gift from me to you."
+
+[ari_birthday_balor_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ balor_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ balor_is_partner = false },
+	{ balor_birthday_gate = false },
+]
+writes = [{ balor_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "cute_face", npc = "balor" } }]
+portrait = "neutral"
+local = "Well, if it isn't [Ari]!"
+next = "1"
+
+[ari_birthday_balor_high_hearts.1]
+portrait = "happy"
+local = "Happy Birthday."
+next = "2"
+
+[ari_birthday_balor_high_hearts.2]
+portrait = "wink"
+local = "I hope it's a stellar one."
+
+[ari_birthday_balor_romantic]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ balor_heart_level = 8, comparator = ">=" },
+	{ any = [{ balor_is_dating = true }, { balor_is_fiance = true }] },
+	{ is_ari_birthday = true },
+	{ balor_birthday_gate = false },
+]
+writes = [{ balor_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "blush", npc = "balor" } }]
+portrait = "wink"
+local = "Today's a special day..."
+next = "1"
+
+[ari_birthday_balor_romantic.1]
+portrait = "blush"
+local = "Happy birthday, [Ari]!"
+next = "2"
+
+[ari_birthday_balor_romantic.2]
+portrait = "embarrassed"
+local = "I'm glad I was able to skip going out on the road today."
+
+[ari_birthday_balor_spouse]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ is_ari_birthday = true },
+	{ balor_birthday_gate = false },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  }
+]
+writes = [{ balor_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "heart", npc = "balor" } },
+	{ item = "caldosian_chocolate_cake" }
+]
+portrait = "happy_blush"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_balor_spouse.1]
+portrait = "embarrassed"
+local = "I'm not much for sweets, but I've been told by Darcy that her $Chocolate Cake$ never disappoints. I hope you like it."
+next = "2"
+
+[ari_birthday_balor_spouse.2]
+portrait = "blush"
+local = "Let me know what else I can do to make this birthday the perfect day for you."
+
+[ari_birthday_caldarus_statue_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ caldarus_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ caldarus_birthday_gate = false },
+]
+writes = [{ caldarus_birthday_gate = true, expires = "3m" }]
+portrait = "neutral"
+local = "Today is your birthday?"
+next = "1"
+
+[ari_birthday_caldarus_statue_low_hearts.1]
+portrait = "neutral"
+local = "Then it is an auspicious day. Happy birthday to you, [Ari]."
+
+[ari_birthday_caldarus_statue_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = false },
+	{ caldarus_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ caldarus_birthday_gate = false },
+]
+writes = [{ caldarus_birthday_gate = true, expires = "3m" }]
+portrait = "neutral"
+local = "I know that it is customary to give a gift when a friend has a birthday, but in my current form... well..."
+next = "1"
+
+[ari_birthday_caldarus_statue_high_hearts.1]
+portrait = "neutral"
+local = "For now, I hope my birthday wishes will suffice."
+
+[ari_birthday_caldarus_human_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ caldarus_heart_level = 6, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ caldarus_status = "undefined" },
+	{ caldarus_birthday_gate = false },
+]
+writes = [{ caldarus_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "cute_face", npc = "caldarus" } }]
+portrait = "happy"
+local = "[Ari], I wish you a happy birthday!"
+next = "1"
+
+[ari_birthday_caldarus_human_low_hearts.1]
+portrait = "smile"
+local = "I hope you liked your gift. I thought it was quite a remarkable flower."
+
+[ari_birthday_caldarus_human_best_friend]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ caldarus_heart_level = 8, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ caldarus_is_best_friend = true },
+	{ caldarus_birthday_gate = false },
+]
+writes = [{ caldarus_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "cute_face", npc = "caldarus" } }]
+portrait = "happy"
+local = "Happy Birthday, [Ari]."
+next = "1"
+
+[ari_birthday_caldarus_human_best_friend.1]
+portrait = "smile"
+local = "You have had quite the year. I am glad to have played a small part in it."
+
+[ari_birthday_caldarus_human_romantic]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ caldarus_heart_level = 8, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ any = [{ caldarus_is_dating = true }, { caldarus_is_fiance = true }] },
+	{ caldarus_birthday_gate = false },
+]
+writes = [{ caldarus_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "blush", npc = "caldarus" } }]
+portrait = "embarrassed"
+local = "Happy Birthday, [Ari]."
+next = "1"
+
+[ari_birthday_caldarus_human_romantic.1]
+portrait = "laugh_special"
+local = "I am so glad to share this special day with you."
+
+[ari_birthday_caldarus_human_spouse]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ is_ari_birthday = true },
+	{ caldarus_birthday_gate = false },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  }
+]
+writes = [{ caldarus_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "heart", npc = "caldarus" } },
+	{ item = "mont_blanc" }
+]
+portrait = "laugh_special"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_caldarus_human_spouse.1]
+portrait = "embarrassed"
+local = "I thought it would mean more if I baked you a =Mont Blanc= myself as a gift, but..."
+next = "2"
+
+[ari_birthday_caldarus_human_spouse.2]
+portrait = "unsure_special"
+effect = "drop"
+local = "The results were... less than edible..."
+next = "3"
+
+[ari_birthday_caldarus_human_spouse.3]
+portrait = "happy"
+local = "So I special ordered one from Darcy for you."
+next = "4"
+
+[ari_birthday_caldarus_human_spouse.4]
+portrait = "wink"
+local = "Perhaps next year I will have better luck."
+
+[ari_birthday_celine_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ celine_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ celine_birthday_gate = false },
+]
+writes = [{ celine_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "celine" } },
+	{ item = "starter_potted_plant" },
+]
+portrait = "neutral"
+local = "Happy birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_celine_low_hearts.1]
+portrait = "embarrassed"
+local = "I hope you don't mind that I asked Adeline for the date..."
+next = "2"
+
+[ari_birthday_celine_low_hearts.2]
+portrait = "happy"
+local = "Here, I potted this for you myself!"
+
+[ari_birthday_celine_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ celine_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ celine_is_partner = false },
+	{ celine_birthday_gate = false },
+]
+writes = [{ celine_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "blush", npc = "celine" } }]
+portrait = "happy"
+local = "Happy birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_celine_high_hearts.1]
+portrait = "blush_special"
+local = "I-I hope you got the gift I left in your mailbox."
+next = "2"
+
+[ari_birthday_celine_high_hearts.2]
+portrait = "embarrassed"
+local = "It's nothing much really, I just thought it might be a nice way to start your day..."
+
+[ari_birthday_celine_romantic]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ celine_heart_level = 8, comparator = ">=" },
+	{ any = [{ celine_is_dating = true }, { celine_is_fiance = true }] },
+	{ is_ari_birthday = true },
+	{ celine_birthday_gate = false },
+]
+writes = [{ celine_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "blush", npc = "celine" } }]
+portrait = "embarrassed"
+local = "Happy birthday-"
+next = "1"
+
+[ari_birthday_celine_romantic.1]
+portrait = "blush_special"
+local = "To my dearest [Ari]!"
+next = "2"
+
+[ari_birthday_celine_romantic.2]
+portrait = "blush"
+local = "Let's make it a special one!"
+
+[ari_birthday_celine_spouse]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = true },
+	{ is_ari_birthday = true },
+	{ celine_birthday_gate = false },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  }
+]
+writes = [{ celine_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "heart", npc = "celine" } },
+	{ item = "tulip_cake" }
+]
+portrait = "happy_blush"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_celine_spouse.1]
+portrait = "embarrassed"
+local = "I had some help from Reina but... I baked you a =Tulip Cake= as a present."
+next = "2"
+
+[ari_birthday_celine_spouse.2]
+portrait = "blush_closed_eyes"
+local = "It was a lot of fun piping all the flowers!"
+next = "3"
+
+[ari_birthday_celine_spouse.3]
+portrait = "wink"
+local = "Let me know if there's anything else you want to do on your special day!"
+
+[ari_birthday_eiland_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ eiland_birthday_gate = false },
+]
+writes = [{ eiland_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "eiland" } },
+	{ item = "berries_and_cream" },
+]
+portrait = "neutral"
+local = "[Ari]! A happy birthday to you."
+next = "1"
+
+[ari_birthday_eiland_low_hearts.1]
+portrait = "think"
+local = "A birthday without a little treat is hardly a birthday at all, so..."
+next = "2"
+
+[ari_birthday_eiland_low_hearts.2]
+portrait = "happy"
+local = "Enjoy!"
+
+[ari_birthday_eiland_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ eiland_is_partner = false },
+	{ eiland_birthday_gate = false },
+]
+writes = [{ eiland_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "cute_face", npc = "eiland" } }]
+portrait = "happy"
+local = "Happy birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_eiland_high_hearts.1]
+portrait = "neutral"
+local = "I hope you enjoyed the gift I sent you."
+next = "2"
+
+[ari_birthday_eiland_high_hearts.2]
+portrait = "wink"
+local = "It's your special day, so be sure to make the most of it!"
+
+[ari_birthday_eiland_romantic]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_heart_level = 8, comparator = ">=" },
+	{ any = [{ eiland_is_dating = true }, { eiland_is_fiance = true }] },
+	{ is_ari_birthday = true },
+	{ eiland_birthday_gate = false },
+]
+writes = [{ eiland_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "happy_blush"
+effect = "cheery"
+local = "Happy Birthday!"
+next = "1"
+
+[ari_birthday_eiland_romantic.1]
+portrait = "embarrassed"
+local = "It's a privilege to share this day with you, [Ari]."
+
+[ari_birthday_eiland_spouse]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_spouse = true },
+	{ is_ari_birthday = true },
+	{ eiland_birthday_gate = false },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  }
+]
+writes = [{ eiland_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "heart", npc = "eiland" } },
+	{ item = "caldosian_chocolate_cake" },
+]
+portrait = "happy_blush"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_eiland_spouse.1]
+portrait = "neutral"
+local = "I commissioned Darcy to make her finest =Chocolate Cake=, with single source cacao, heirloom wheat..."
+next = "2"
+
+[ari_birthday_eiland_spouse.2]
+portrait = "embarrassed"
+local = "Well, I could go on, but suffice to say... I love you, [Ari], and I want you to have only the very best on your birthday!"
+
+[ari_birthday_hayden_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ hayden_birthday_gate = false },
+]
+writes = [{ hayden_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "hayden" } },
+	{ item = { item = "hay", count = 5 } },
+]
+portrait = "neutral_arm_down"
+local = "I was hoping to run into you!"
+next = "1"
+
+[ari_birthday_hayden_low_hearts.1]
+portrait = "happy"
+local = "I heard it was your birthday, [Ari]!"
+next = "2"
+
+[ari_birthday_hayden_low_hearts.2]
+portrait = "wink"
+local = "It's not much, but I got you a little something."
+
+[ari_birthday_hayden_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ hayden_is_partner = false },
+	{ hayden_birthday_gate = false },
+]
+writes = [{ hayden_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "cute_face", npc = "hayden" } }]
+portrait = "happy"
+local = "Haaaaappy birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_hayden_high_hearts.1]
+portrait = "neutral"
+local = "Did you get the package I sent you? Good!"
+next = "2"
+
+[ari_birthday_hayden_high_hearts.2]
+portrait = "wink"
+local = "Just let me know if you need any help celebrating!"
+
+[ari_birthday_hayden_romantic]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_heart_level = 8, comparator = ">=" },
+	{ any = [{ hayden_is_dating = true }, { hayden_is_fiance = true }] },
+	{ is_ari_birthday = true },
+	{ hayden_birthday_gate = false },
+]
+writes = [{ hayden_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "happy"
+local = "Happy Birthday!"
+next = "1"
+
+[ari_birthday_hayden_romantic.1]
+portrait = "neutral_arm_down"
+local = "Just let me know how I can make it a great one, [Ari]."
+prompts = [
+	{ local = "Just being with you is more than enough!", next = "2" },
+	{ local = "Hug, please!", next = "3" },
+]
+
+[ari_birthday_hayden_romantic.2]
+portrait = "shy_special"
+local = "Aww, shucks!"
+
+[ari_birthday_hayden_romantic.3]
+portrait = "shy_special"
+local = "You got it!"
+
+[ari_birthday_hayden_spouse]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = true },
+	{ is_ari_birthday = true },
+	{ hayden_birthday_gate = false },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  }
+]
+writes = [{ hayden_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "heart", npc = "hayden" } },
+	{ item = "pumpkin_pie" }
+]
+portrait = "happy_arm_down_blush"
+local = "Haaaaappy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_hayden_spouse.1]
+portrait = "wink"
+local = "I baked you up this =Pumpkin Pie= special."
+next = "2"
+
+[ari_birthday_hayden_spouse.2]
+portrait = "confident_blush"
+local = "Remember, you gotta eat the whole thing today if you want good luck for the coming year!"
+next = "3"
+
+[ari_birthday_hayden_spouse.3]
+portrait = "shy_special"
+local = "Well... I mighta made that up."
+next = "4"
+
+[ari_birthday_hayden_spouse.4]
+portrait = "laugh"
+local = "Gya ha ha!"
+
+[ari_birthday_juniper_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ juniper_birthday_gate = false },
+]
+writes = [{ juniper_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "juniper" } },
+	{ item = "newt" },
+]
+portrait = "unimpressed"
+local = "What's that? It's your... birthday?"
+next = "1"
+
+[ari_birthday_juniper_low_hearts.1]
+portrait = "ugh"
+local = "..."
+next = "2"
+
+[ari_birthday_juniper_low_hearts.2]
+portrait = "sly"
+local = "Well then, have a =Newt=. You deserve it."
+next = "3"
+
+[ari_birthday_juniper_low_hearts.3]
+portrait = "laugh"
+local = "Oh ho ho!"
+
+[ari_birthday_juniper_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ juniper_status = "undefined" },
+	{ juniper_birthday_gate = false },
+]
+writes = [{ juniper_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "happy"
+local = "Happy Birthday, [Ari]."
+next = "1"
+
+[ari_birthday_juniper_high_hearts.1]
+portrait = "neutral"
+local = "How did you like the gift I mailed you? Wasn't it simply scrumptious?"
+
+[ari_birthday_juniper_best_friend]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_heart_level = 8, comparator = ">=" },
+	{ juniper_is_best_friend = true },
+	{ is_ari_birthday = true },
+	{ juniper_birthday_gate = false },
+]
+writes = [{ juniper_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "happy"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_juniper_best_friend.1]
+portrait = "wink"
+local = "I hope you liked the gift I mailed you."
+
+[ari_birthday_juniper_romantic]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_heart_level = 8, comparator = ">=" },
+	{ any = [{ juniper_is_dating = true }, { juniper_is_fiance = true }] },
+	{ is_ari_birthday = true },
+	{ juniper_birthday_gate = false },
+]
+writes = [{ juniper_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "blush", npc = "juniper" } }]
+portrait = "happy"
+local = "Happy Birthday, [Ari]."
+next = "1"
+
+[ari_birthday_juniper_romantic.1]
+portrait = "think_special"
+local = "I... should say this more often, but-"
+next = "2"
+
+[ari_birthday_juniper_romantic.2]
+portrait = "blush"
+local = "I'm glad to be in your life."
+
+[ari_birthday_juniper_spouse]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = true },
+	{ is_ari_birthday = true },
+	{ juniper_birthday_gate = false },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  }
+]
+writes = [{ juniper_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "heart", npc = "juniper" } },
+	{ item = "moon_fruit_cake" }
+]
+portrait = "happy_blush"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_juniper_spouse.1]
+portrait = "neutral"
+local = "I had Darcy make you an absolutely scrumptious =Moon Fruit Cake= to celebrate."
+next = "2"
+
+[ari_birthday_juniper_spouse.2]
+portrait = "neutral_blush"
+local = "Let's make this a birthday to remember!"
+
+[ari_birthday_march_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ march_birthday_gate = false },
+]
+writes = [{ march_birthday_gate = true, expires = "3m" }]
+portrait = "unimpressed"
+local = "What...?"
+prompts = [
+	{ local = "It's my birthday!", next = "1" },
+	{ local = "Wish me a happy birthday!", next = "2" },
+]
+
+[ari_birthday_march_low_hearts.1]
+portrait = "sigh"
+local = "Happy birthday then."
+
+[ari_birthday_march_low_hearts.2]
+portrait = "mad"
+local = "No! Beat it!"
+
+[ari_birthday_march_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ march_status = "undefined" },
+	{ march_birthday_gate = false },
+]
+writes = [{ march_birthday_gate = true, expires = "3m" }]
+portrait = "think"
+local = "Hey..."
+next = "1"
+
+[ari_birthday_march_high_hearts.1]
+portrait = "neutral"
+local = "Happy birthday."
+prompts = [
+	{ local = "Thank you for the gift!", next = "2" },
+	{ local = "Ingots you just had lying around? SO thoughtful.", next = "3" },
+]
+
+[ari_birthday_march_high_hearts.2]
+portrait = "tsundere"
+local = "Oh! You're welcome."
+
+[ari_birthday_march_high_hearts.3]
+portrait = "mad"
+local = "T-then you can just give them back!"
+
+[ari_birthday_march_best_friend]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 8, comparator = ">=" },
+	{ march_is_best_friend = true },
+	{ is_ari_birthday = true },
+	{ march_birthday_gate = false },
+]
+writes = [{ march_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_march_best_friend.1]
+portrait = "wink"
+local = "Let me know if you end up crafting something with my gift."
+
+[ari_birthday_march_romantic]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 8, comparator = ">=" },
+	{ any = [{ march_is_dating = true }, { march_is_fiance = true }] },
+	{ is_ari_birthday = true },
+	{ march_birthday_gate = false },
+]
+writes = [{ march_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "blush", npc = "march" } },
+	{ item = "caldosian_chocolate_cake" },
+]
+portrait = "eight_heart_happy"
+local = "[Ari]!"
+next = "1"
+
+[ari_birthday_march_romantic.1]
+portrait = "eight_heart_blush"
+local = "So don't laugh, but I, uh..."
+next = "2"
+
+[ari_birthday_march_romantic.2]
+portrait = "eight_heart_flustered"
+local = "I got you a cake."
+next = "3"
+
+[ari_birthday_march_romantic.3]
+portrait = "eight_heart_happy_blush"
+local = "Happy birthday."
+
+[ari_birthday_march_spouse]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ is_ari_birthday = true },
+	{ march_birthday_gate = false },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  }
+]
+writes = [{ march_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "heart", npc = "march" } },
+	{ item = "caldosian_chocolate_cake" },
+]
+portrait = "eight_heart_happy_blush"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_march_spouse.1]
+portrait = "happy"
+local = "I special ordered you this =Chocolate Cake= just for your big day."
+next = "2"
+
+[ari_birthday_march_spouse.2]
+portrait = "eight_heart_flustered"
+local = "Anything you want to do today? I want to make today all about you."
+prompts = [
+	{ local = "Just knowing how much you care is enough!", next = "3" },
+	{ local = "Well... (whisper)", next = "4" }
+]
+
+[ari_birthday_march_spouse.3]
+portrait = "eight_heart_happy"
+local = "I really, really do. I love you, [Ari]."
+
+[ari_birthday_march_spouse.4]
+portrait = "super_flustered"
+local = "Oh!"
+next = "5"
+
+[ari_birthday_march_spouse.5]
+portrait = "eight_heart_happy_blush"
+local = "Absolutely!"
+
+[ari_birthday_reina_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ reina_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ reina_birthday_gate = false },
+]
+writes = [{ reina_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "reina" } },
+	{ item = "crunchy_chickpeas" },
+]
+portrait = "neutral"
+local = "Hey, [Ari]! I just heard that it's your birthday!"
+next = "1"
+
+[ari_birthday_reina_low_hearts.1]
+portrait = "happy"
+local = "I made some extra $Crunchy Chickpeas$ this morning, so I thought you should have some!"
+
+[ari_birthday_reina_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ reina_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ reina_is_partner = false },
+	{ reina_birthday_gate = false },
+]
+writes = [{ reina_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "happy"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_reina_high_hearts.1]
+portrait = "neutral"
+local = "I hope you liked your gift! I had one myself and thought they turned out pretty nice."
+
+[ari_birthday_reina_romantic]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ reina_heart_level = 8, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ any = [{ reina_is_dating = true }, { reina_is_fiance = true }] },
+	{ reina_birthday_gate = false },
+]
+writes = [{ reina_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "blush", npc = "reina" } },
+	{ item = "wildberry_pie" },
+]
+portrait = "happy"
+local = "Happy birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_reina_romantic.1]
+portrait = "blush"
+local = "I know I already sent you a gift but... I made you a =Wild Berry Pie= too."
+next = "2"
+
+[ari_birthday_reina_romantic.2]
+portrait = "happy"
+local = "I hope you enjoy it!"
+
+[ari_birthday_reina_spouse]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ is_ari_birthday = true },
+	{ reina_is_spouse = true },
+	{ reina_birthday_gate = false },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  }
+]
+writes = [{ reina_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "heart", npc = "reina" } },
+	{ item = "ice_cream_sundae" },
+]
+portrait = "happy"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_reina_spouse.1]
+portrait = "wink"
+local = "Here's an extra special =Ice Cream Sundae= made just for you by your adoring wife."
+next = "2"
+
+[ari_birthday_reina_spouse.2]
+portrait = "blush_special"
+local = "I love you, [Ari]."
+
+[ari_birthday_ryis_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ ryis_birthday_gate = false },
+]
+writes = [{ ryis_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "ryis" } },
+	{ item = { item = "basic_wood", count = 10 } },
+]
+portrait = "neutral"
+local = "Hey, [Ari]."
+next = "1"
+
+[ari_birthday_ryis_low_hearts.1]
+portrait = "happy"
+local = "A little bird told me that today's your birthday!"
+next = "2"
+
+[ari_birthday_ryis_low_hearts.2]
+portrait = "think"
+local = "Well in all honesty, it was Adeline..."
+next = "3"
+
+[ari_birthday_ryis_low_hearts.3]
+portrait = "neutral"
+local = "But here, take this. I thought you might find it useful. Happy birthday!"
+
+[ari_birthday_ryis_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ ryis_status = "undefined" },
+	{ ryis_birthday_gate = false },
+]
+writes = [{ ryis_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "happy"
+local = "Happy birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_ryis_high_hearts.1]
+portrait = "neutral"
+local = "Be sure to tell me what you end up crafting with the gift I sent you."
+next = "2"
+
+[ari_birthday_ryis_high_hearts.2]
+portrait = "wink"
+local = "I'm sure it'll be cool!"
+
+[ari_birthday_ryis_best_friend]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_heart_level = 8, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ ryis_is_best_friend = true },
+	{ ryis_birthday_gate = false },
+]
+writes = [{ ryis_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "happy"
+local = "Happy Birthday!"
+next = "1"
+
+[ari_birthday_ryis_best_friend.1]
+portrait = "neutral"
+local = "I hope you enjoyed the cookies I sent!"
+
+[ari_birthday_ryis_romantic]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_heart_level = 8, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ any = [{ ryis_is_dating = true }, { ryis_is_fiance = true }] },
+	{ ryis_birthday_gate = false },
+]
+writes = [{ ryis_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "blush", npc = "ryis" } },
+	{ item = "golden_cheesecake" },
+]
+portrait = "happy"
+local = "Happy birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_ryis_romantic.1]
+portrait = "blush_special"
+local = "I wanted you to have a special cake, so..."
+next = "2"
+
+[ari_birthday_ryis_romantic.2]
+portrait = "embarrassed"
+local = "Here, I hope you like it."
+
+[ari_birthday_ryis_spouse]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ is_ari_birthday = true },
+	{ ryis_is_spouse = true },
+	{ ryis_birthday_gate = false },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  }
+]
+writes = [{ ryis_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "heart", npc = "ryis" } },
+	{ item = "golden_cheesecake" },
+]
+portrait = "happy_blush"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_ryis_spouse.1]
+portrait = "neutral"
+local = "Jo let me use the inn's kitchen so I could bake you this =Golden Cheesecake= without you noticing."
+next = "2"
+
+[ari_birthday_ryis_spouse.2]
+portrait = "blush_special"
+local = "Let me know if there's any other way you want to celebrate today!"
+
+[ari_birthday_seridia_best_friend]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_heart_level = 8, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ seridia_is_best_friend = true },
+	{ seridia_birthday_gate = false },
+]
+writes = [{ seridia_birthday_gate = true, expires = "3m" }]
+portrait = "happy"
+local = "Happy Birthday, my Dragonsworn."
+next = "1"
+
+[ari_birthday_seridia_best_friend.1]
+portrait = "smile"
+local = "I trust you enjoyed the gift I sent to you?"
+
+[ari_birthday_seridia_romantic]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_heart_level = 8, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ any = [{ seridia_is_dating = true }, { seridia_is_fiance = true }] },
+	{ seridia_birthday_gate = false },
+]
+writes = [{ seridia_birthday_gate = true, expires = "3m" }]
+portrait = "happy"
+local = "I wish you a very happy Birthday, dear [Ari]."
+next = "1"
+
+[ari_birthday_seridia_romantic.1]
+portrait = "blush"
+local = "I have taken the liberty to adjust Mistria's leylines, to ensure that your day is as special as possible."
+prompts = [
+	{ local = "You're so sweet!", next = "2" },
+	{ local = "Oh! T-thank you.", next = "3" },
+]
+
+[ari_birthday_seridia_romantic.2]
+portrait = "happy_blush"
+local = "I am, am I not?"
+
+[ari_birthday_seridia_romantic.3]
+portrait = "sinister_blush"
+local = "Of course, anything for you."
+
+[ari_birthday_seridia_spouse]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "seridia" },
+	{ is_ari_birthday = true },
+	{ seridia_is_spouse = true },
+	{ seridia_birthday_gate = false },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  }
+]
+writes = [{ seridia_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "heart", npc = "seridia" } },
+	{ item = "spell_fruit_parfait" }
+]
+portrait = "happy_blush"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_seridia_spouse.1]
+portrait = "blush"
+local = "I have prepared for you a =Spell Fruit Parfait=, spun from the raw ferment of the cosmos."
+next = "2"
+
+[ari_birthday_seridia_spouse.2]
+portrait = "smile"
+local = "And as is traditional, I will smite one of your enemies in celebration."
+next = "3"
+
+[ari_birthday_seridia_spouse.3]
+portrait = "sly_think"
+local = "No? Oh, very well."
+next = "4"
+
+[ari_birthday_seridia_spouse.4]
+portrait = "sinister_blush"
+local = "I will just have to think of another way to show you how much you mean to me."
+
+[ari_birthday_valen_low_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ valen_heart_level = 4, comparator = "<" },
+	{ is_ari_birthday = true },
+	{ valen_birthday_gate = false },
+]
+writes = [{ valen_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "valen" } },
+	{ item = "coffee" },
+]
+portrait = "neutral"
+local = "Oh, [Ari]. Happy birthday!"
+next = "1"
+
+[ari_birthday_valen_low_hearts.1]
+portrait = "happy"
+local = "Here, have a cup of =Coffee=. It's on me."
+
+[ari_birthday_valen_high_hearts]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ valen_heart_level = 4, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ valen_status = "undefined" },
+	{ valen_birthday_gate = false },
+]
+writes = [{ valen_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "happy"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_valen_high_hearts.1]
+portrait = "neutral"
+local = "Let me know if you like that =Green Tea= I got you."
+next = "2"
+
+[ari_birthday_valen_high_hearts.2]
+portrait = "raised_eyebrow"
+local = "It's always nice to find someone else who enjoys it."
+
+[ari_birthday_valen_best_friend]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ valen_heart_level = 8, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ valen_is_best_friend = true },
+	{ valen_birthday_gate = false },
+]
+writes = [{ valen_birthday_gate = true, expires = "3m" }]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "happy"
+local = "[Ari], I hope you're enjoying your birthday!"
+
+[ari_birthday_valen_romantic]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ valen_heart_level = 8, comparator = ">=" },
+	{ is_ari_birthday = true },
+	{ any = [{ valen_is_dating = true }, { valen_is_fiance = true }] },
+	{ valen_birthday_gate = false },
+]
+writes = [{ valen_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "blush", npc = "valen" } },
+	{ item = "fairy_syrup" },
+]
+portrait = "happy"
+local = "Happy birthday, [Ari]."
+next = "1"
+
+[ari_birthday_valen_romantic.1]
+portrait = "embarrassed"
+local = "Now don't take this the wrong way..."
+next = "2"
+
+[ari_birthday_valen_romantic.2]
+portrait = "happy_blush"
+local = "But after everything we've been through, I always want you to come back to me safe."
+next = "3"
+
+[ari_birthday_valen_romantic.3]
+portrait = "neutral_blush"
+local = "So keep this $Fairy Tonic$ with you, okay?"
+
+[ari_birthday_valen_spouse]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ is_ari_birthday = true },
+	{ valen_is_spouse = true },
+	{ valen_birthday_gate = false },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  }
+]
+writes = [{ valen_birthday_gate = true, expires = "3m" }]
+actions = [
+	{ bark = { bark = "heart", npc = "valen" } },
+	{ item = "sushi_platter" },
+]
+portrait = "happy_blush"
+local = "Happy Birthday, [Ari]!"
+next = "1"
+
+[ari_birthday_valen_spouse.1]
+portrait = "think_blush"
+local = "I put together this =Sushi Platter= for you, I hope you enjoy it."
+next = "2"
+
+[ari_birthday_valen_spouse.2]
+portrait = "caring_special"
+local = "Let me know what else you'd like to do today!"

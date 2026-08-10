@@ -1,0 +1,17 @@
+[road_wear]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "valen" }] },
+	{ balor_zone = "<valen_zone>" },
+	{ building = "clinic", comparator = "!=" }
+]
+speaker = "valen"
+portrait = "mad"
+local = "You really should come by the Clinic for a checkup, Balor. You're on the road quite a bit."
+next = "1"
+
+[road_wear.1]
+speaker = "balor"
+portrait = "think"
+effect = "sweat"
+local = "Travel keeps me healthy! But I hear you, doc."

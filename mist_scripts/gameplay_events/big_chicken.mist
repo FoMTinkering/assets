@@ -1,0 +1,21 @@
+animate(ari, idle);
+
+wait(0.75);
+sim {
+    {
+        pan_camera(5, bc_camera_1);
+    }
+    {
+        wait(0.5);
+        play_sound("SoundEffects/SpecialEvents/BigEggSummonPart1");
+    }
+    {
+        wait(11);
+        __play_sound_free("SoundEffects/SpecialEvents/BigEggSummonPart2");
+        wait(1.4);
+        chicken_give_egg();
+    }
+}
+wait(3);
+pan_camera(3, ari);
+wait(1);

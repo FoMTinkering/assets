@@ -1,0 +1,100 @@
+#SPRING FESTIVAL
+[spring_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ juniper_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ juniper_morning_greeting = false }
+]
+writes = [{ juniper_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "neutral"
+local = "Today's the $Spring Festival$..."
+next = "1"
+
+[spring_festival.1]
+portrait = "happy_blush"
+local = "I'm looking forward to buying some seasonal treats!"
+
+
+#SHOOTING STAR FESTIVAL
+[shooting_star_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ juniper_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ juniper_morning_greeting = false }
+]
+writes = [{ juniper_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "neutral"
+local = "It's the $Shooting Star Festival$ tonight..."
+next = "1"
+
+[shooting_star_festival.1]
+portrait = "happy"
+local = "I'm looking forward to visiting the Summit with you!"
+next = "2"
+
+[shooting_star_festival.2]
+portrait = "blush"
+local = "We can count the stars together..."
+
+#HARVEST FESTIVAL
+
+[harvest_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ juniper_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ juniper_morning_greeting = false }
+]
+writes = [{ juniper_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "neutral"
+local = "I look forward to the $Harvest Festival$ every year..."
+next = "1"
+
+[harvest_festival.1]
+portrait = "wink"
+local = "It's an excuse to break out my dancing shoes."
+
+
+#ANIMAL FESTIVAL
+
+[animal_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ animal_festival_date = "1d", time = "after" },
+	{ juniper_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ juniper_morning_greeting = false }
+]
+writes = [{ juniper_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "neutral"
+local = "Today's the $Animal Festival$!"
+next = "1"
+
+[animal_festival.1]
+portrait = "happy"
+local = "Dozy's put himself in the running again... I'll be sure to give him a nice treat whether he wins or not!"

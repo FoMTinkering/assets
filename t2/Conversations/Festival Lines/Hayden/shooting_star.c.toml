@@ -1,0 +1,205 @@
+[shooting_star_anticipation]
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+	{ hayden_heart_level = 4, comparator = ">=" },
+	{ hayden_heart_level = 8, comparator = "<" },
+]
+portrait = "think"
+local = "I always wonder what my animals think about the Shooting Star Festival..."
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "happy"
+local = "Henrietta always seems like she'd try to fly up and eat the stars out of the sky if she could."
+
+[shooting_star_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_at = "town/star_festival_hayden" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "hayden_invited" },
+]
+portrait = "happy"
+local = "Hey, [Ari]!"
+next = "1"
+
+[shooting_star_invited.1]
+portrait = "think"
+local = "Juniper and Dozy are going to babysit Henrietta for the night."
+next = "2"
+
+[shooting_star_invited.2]
+portrait = "blush"
+local = "Are you ready to head up to the Summit?"
+
+[shooting_star_invited_anticipation]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ shooting_star_date_status = "hayden_invited" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ hayden_is_at = "town/star_festival_hayden", comparator = "!=" },
+]
+portrait = "happy"
+local = "Tonight should be fun! I'll see you at 8 pm?"
+
+[shooting_star_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ shooting_star_date_status = "hayden_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ hayden_is_partner = false },
+]
+portrait = "neutral"
+local = "Hey there, [Ari]!"
+next = "1"
+
+[shooting_star_follow_up.1]
+portrait = "embarrassed"
+local = "Last night was fun, huh?"
+next = "2"
+
+[shooting_star_follow_up.2]
+portrait = "happy_fist"
+local = "Thanks again for inviting me."
+
+[shooting_star_8h_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ shooting_star_date_status = "hayden_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ hayden_is_partner = true },
+]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "embarrassed"
+local = "Last night was fun, huh?"
+next = "1"
+
+[shooting_star_8h_follow_up.1]
+portrait = "confident_blush"
+local = "Let's watch them again next year, too."
+
+[shooting_star_missed_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ shooting_star_date_status = "hayden_invited" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "gloomy"
+local = "[Ari]... Did something come up last night?"
+next = "1"
+
+[shooting_star_missed_follow_up.1]
+portrait = "sad"
+local = "I was wondering what happened when you didn't show up..."
+
+[shooting_star_valen_follow_up_hayden]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ shooting_star_date_status = "valen_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ hayden_is_partner = false },
+	{ valen_is_partner = false }
+]
+portrait = "think"
+local = "I think there must be a cold going around..."
+next = "1"
+
+[shooting_star_valen_follow_up_hayden.1]
+portrait = "gloomy"
+local = "I was at the Clinic with shivers this morning."
+next = "2"
+
+[shooting_star_valen_follow_up_hayden.2]
+portrait = "think"
+local = "Valen said it's just the colder weather, but I noticed that she looked flushed too..."
+next = "3"
+
+[shooting_star_valen_follow_up_hayden.3]
+portrait = "wink"
+local = "When your name came up."
+
+[shooting_star_follow_up_not_invited]
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ shooting_star_date_status = "hayden_invited", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "hayden_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "valen_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "neutral_arm_down"
+local = "Whew! Henrietta was cranky this morning!"
+next = "1"
+
+[shooting_star_follow_up_not_invited.1]
+portrait = "think"
+local = "I guess I should have known better than to let her stay up so late."
+next = "2"
+
+[shooting_star_follow_up_not_invited.2]
+portrait = "sweat"
+local = "But she was so excited to see the stars! How could I say no?"
+
+# NEW ROMANCE LINE FOLLOW UPS
+[shooting_star_romantic_follow_up_A]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ shooting_star_date_status = "hayden_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+	{ hayden_is_partner = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "cute_face", npc = "hayden" } }]
+portrait = "happy"
+local = "Well if it isn't [Ari]! I have a little something for you..."
+next = "1"
+
+[shooting_star_romantic_follow_up_A.1]
+portrait = "embarrassed"
+local = "It's nothing special. I just thought you might like to try some of the =Apple Pie= I made. It's an old family recipe!"
+next = "2"
+
+[shooting_star_romantic_follow_up_A.2]
+portrait = "blush"
+actions = [{ item = "apple_pie" }]
+local = "I hope you like it."
+
+[shooting_star_romantic_follow_up_B]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ shooting_star_date_status = "hayden_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "hayden" } }]
+portrait = "happy"
+local = "You look good today, [Ari]!"
+next = "1"
+
+[shooting_star_romantic_follow_up_B.1]
+portrait = "embarrassed"
+local = "Must be all that fresh air and farm work making you glow!"

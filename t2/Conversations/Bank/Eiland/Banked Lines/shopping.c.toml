@@ -1,0 +1,48 @@
+[shopping]
+refresh = "2m"
+requires = [{ npc = "eiland" }, { eiland_routine = "general_store_shopping" }]
+portrait = "neutral"
+local = "Great Aunt Elsie really likes her jams, so I'm buying some ingredients."
+
+[shopping_2]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_routine = "general_store_shopping" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "neutral"
+local = "The variety of produce available to us is a wonderful sign of progress."
+next = "1"
+
+[shopping_2.1]
+portrait = "happy"
+local = "So is the variety of desserts!"
+
+[shopping_3]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_routine = "general_store_shopping" },
+	{ date_time = "1y", comparator = ">=" },
+	{ quest_repair_the_general_store_complete = true }
+]
+portrait = "happy"
+local = "We're lucky to have such a successful General Store, [Ari]."
+next = "1"
+
+[shopping_3.1]
+portrait = "neutral"
+local = "That's a sign of a prosperous town."
+
+[shopping_4]
+refresh = "2m"
+requires = [{ npc = "eiland" }, { eiland_routine = "general_store_shopping" }]
+portrait = "think"
+local = "I used up all of Adeline's honey sweetening my tea."
+next = "1"
+
+[shopping_4.1]
+portrait = "happy"
+effect = "drop"
+local = "I'm hoping to replace it before she notices."

@@ -1,0 +1,407 @@
+[juniper_post_8h_best_friend_0]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = false },
+	{ any = [
+		{ juniper_post_8h_romantic_progression = true },
+		{ juniper_is_best_friend = true }
+	] },
+	{ juniper_post_8h_best_friend_gate = false },
+	{ juniper_post_8h_best_friend_grouping = 0 }
+]
+writes = [
+	{ juniper_post_8h_best_friend_gate = true, expires = "20h" },
+	{ juniper_post_8h_best_friend_grouping = 1 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "juniper" } }]
+portrait = "think"
+local = "You know... when I first came here, I thought the most interesting thing about this little village would be the leylines."
+next = "1"
+
+[juniper_post_8h_best_friend_0.1]
+portrait = "closed_eyes"
+local = "But you turned out to be far more intriguing..."
+next = "2"
+
+[juniper_post_8h_best_friend_0.2]
+portrait = "sly"
+local = "And a marginally better conversation partner."
+
+[juniper_post_8h_best_friend_question_0]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = false },
+	{ any = [
+		{ juniper_post_8h_romantic_progression = true },
+		{ juniper_is_best_friend = true }
+	] },
+	{ juniper_post_8h_best_friend_gate = false },
+	{ juniper_post_8h_best_friend_grouping = 1 }
+]
+writes = [
+	{ juniper_post_8h_best_friend_gate = true, expires = "20h" },
+	{ juniper_post_8h_best_friend_grouping = 2 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "juniper" } }]
+portrait = "closed_eyes"
+local = "Ahem..."
+next = "1"
+
+[juniper_post_8h_best_friend_question_0.1]
+portrait = "think"
+local = "Elsie has advised me that, from time to time, I should ask about you and your farm."
+next = "2"
+
+[juniper_post_8h_best_friend_question_0.2]
+portrait = "mad"
+local = "So. How is your farm doing? How is all the... dirt? And... the worms? Is it all... satisfactory?"
+prompts = [
+	{ local = "The worms are doing great.", next = "3" },
+	{ local = "That's nice of you, but don't push yourself.", next = "7" }
+]
+
+[juniper_post_8h_best_friend_question_0.3]
+portrait = "happy"
+local = "And... that's good? Wonderful!"
+next = "4"
+
+[juniper_post_8h_best_friend_question_0.4]
+portrait = "think"
+local = "Wonderful..."
+next = "5"
+
+[juniper_post_8h_best_friend_question_0.5]
+portrait = "mad"
+local = "Listen! I don't know the first thing about farming, but... it pleases me to see you succeed!"
+next = "6"
+
+[juniper_post_8h_best_friend_question_0.6]
+portrait = "happy"
+local = "And that's what's important!"
+
+[juniper_post_8h_best_friend_question_0.7]
+portrait = "closed_eyes"
+effect = "sigh"
+local = "Oh thank goodness."
+next = "8"
+
+[juniper_post_8h_best_friend_question_0.8]
+portrait = "angry_brows"
+local = "Listen. I don't know the first thing about farming, but... it pleases me to see you succeed! And that's what matters!"
+
+[juniper_post_8h_best_friend_1]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = false },
+	{ any = [
+		{ juniper_post_8h_romantic_progression = true },
+		{ juniper_is_best_friend = true }
+	] },
+	{ juniper_post_8h_best_friend_gate = false },
+	{ juniper_post_8h_best_friend_grouping = 2 }
+]
+writes = [
+	{ juniper_post_8h_best_friend_gate = true, expires = "20h" },
+	{ juniper_post_8h_best_friend_grouping = 3 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "juniper" } }]
+portrait = "neutral"
+local = "I've recently been thinking about the early days, back when we first met."
+next = "1"
+
+[juniper_post_8h_best_friend_1.1]
+portrait = "happy"
+local = "If it wasn't for Dozy, I'm not sure I would have given you the time of day."
+next = "2"
+
+[juniper_post_8h_best_friend_1.2]
+portrait = "sly"
+local = "Lucky for me... he is an excellent judge of character."
+
+[juniper_post_8h_best_friend_question_1]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = false },
+	{ any = [
+		{ juniper_post_8h_romantic_progression = true },
+		{ juniper_is_best_friend = true }
+	] },
+	{ juniper_post_8h_best_friend_gate = false },
+	{ juniper_post_8h_best_friend_grouping = 3 }
+]
+writes = [
+	{ juniper_post_8h_best_friend_gate = true, expires = "2d" },
+	{ juniper_post_8h_best_friend_grouping = 4 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "neutral"
+local = "With power like yours, it's hard to believe you spend so much time scrabbling around in the dirt..."
+next = "1"
+
+[juniper_post_8h_best_friend_question_1.1]
+portrait = "ugh"
+local = "Wouldn't you prefer being an all-powerful sorcerer, rather than a common farmer?"
+prompts = [
+	{ local = "What about you and your bathhouse?", next = "2" },
+	{ local = "Farming is just the first step on the road to unimaginable power!", next = "5" }
+]
+
+[juniper_post_8h_best_friend_question_1.2]
+portrait = "think"
+local = "Hmmm. I suppose you have a point."
+next = "3"
+
+[juniper_post_8h_best_friend_question_1.3]
+portrait = "happy"
+local = "It started out as a means to reach my greater ambitions, but... I've come around to it."
+next = "4"
+
+[juniper_post_8h_best_friend_question_1.4]
+portrait = "neutral"
+local = "I guess it's the same for you and farming, huh?"
+
+[juniper_post_8h_best_friend_question_1.5]
+portrait = "angry_brows"
+local = "Oho, I see."
+next = "6"
+
+[juniper_post_8h_best_friend_question_1.6]
+portrait = "sly"
+local = "Perhaps I ought to give it a try some time..."
+
+[juniper_post_8h_best_friend_2]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = false },
+	{ any = [
+		{ juniper_post_8h_romantic_progression = true },
+		{ juniper_is_best_friend = true }
+	] },
+	{ juniper_post_8h_best_friend_gate = false },
+	{ juniper_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ juniper_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "relationship_status", npc = "juniper" } }]
+portrait = "think"
+local = "Hey..."
+next = "1"
+
+[juniper_post_8h_best_friend_2.1]
+portrait = "angry_brows"
+local = "You'd tell me if someone was giving you a hard time, right?"
+next = "2"
+
+[juniper_post_8h_best_friend_2.2]
+portrait = "happy"
+local = "Because that would give me license to obliterate them."
+
+[juniper_post_8h_best_friend_3]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = false },
+	{ any = [
+		{ juniper_post_8h_romantic_progression = true },
+		{ juniper_is_best_friend = true }
+	] },
+	{ juniper_post_8h_best_friend_gate = false },
+	{ juniper_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ juniper_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "neutral"
+local = "Oooh I was hoping you'd stop by."
+next = "1"
+
+[juniper_post_8h_best_friend_3.1]
+portrait = "sly"
+local = "I've been thinking up some potential experiments."
+next = "2"
+
+[juniper_post_8h_best_friend_3.2]
+portrait = "think"
+local = "What would happen if we combined my inherited magic and your essence magic...?"
+next = "3"
+
+[juniper_post_8h_best_friend_3.3]
+portrait = "sly"
+local = "Between the two of us, I'll bet we could get up to a bit of trouble."
+
+[juniper_post_8h_best_friend_4]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = false },
+	{ any = [
+		{ juniper_post_8h_romantic_progression = true },
+		{ juniper_is_best_friend = true }
+	] },
+	{ juniper_post_8h_best_friend_gate = false },
+	{ juniper_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ juniper_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "sweat_drop", npc = "juniper" } }]
+portrait = "sincere_special"
+local = "Hey, [Ari]."
+next = "1"
+
+[juniper_post_8h_best_friend_4.1]
+portrait = "sad_special"
+local = "There's something I've been meaning to tell you..."
+next = "2"
+
+[juniper_post_8h_best_friend_4.2]
+portrait = "happy"
+effect = "sparkles_dark"
+local = "Um. Sorry about that time I turned you into a horse."
+
+[juniper_post_8h_best_friend_5]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = false },
+	{ any = [
+		{ juniper_post_8h_romantic_progression = true },
+		{ juniper_is_best_friend = true }
+	] },
+	{ juniper_post_8h_best_friend_gate = false },
+	{ juniper_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ juniper_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "relationship_status", npc = "juniper" } }]
+portrait = "think"
+local = "Dozy tells me I've been spending less time scrying my crystal ball..."
+next = "1"
+
+[juniper_post_8h_best_friend_5.1]
+portrait = "sly"
+local = "I suppose it's because I find you more entertaining."
+
+# Final Line
+[juniper_post_8h_best_friend_6]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ any = [
+		{ juniper_post_8h_romantic_progression = true },
+		{ juniper_is_best_friend = true }
+	] },
+	{ juniper_post_8h_best_friend_gate = false },
+	{ juniper_post_8h_best_friend_grouping = 4, ignore_priority = true }
+]
+writes = [{ juniper_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "angry_brows"
+local = "That look... I know that look. You're up to something."
+next = "1"
+
+[juniper_post_8h_best_friend_6.1]
+portrait = "wink"
+local = "Well, if you're looking for a partner in crime... you know where to find me."
+
+[juniper_post_8h_best_friend_question_2]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_spouse = false },
+	{ any = [
+		{ juniper_post_8h_romantic_progression = true },
+		{ juniper_is_best_friend = true }
+	] },
+	{ juniper_post_8h_best_friend_gate = false },
+	{ juniper_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ juniper_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "happy"
+local = "Hey, you're not busy, right? Of course you're not."
+next = "1"
+
+[juniper_post_8h_best_friend_question_2.1]
+portrait = "think"
+local = "I've been meaning to ask you more about your time in the Mines."
+next = "2"
+
+[juniper_post_8h_best_friend_question_2.2]
+portrait = "sly"
+local = "My professional curiosity has the better of me. What is it like down there?"
+prompts = [
+	{ local = "Not much, just a bunch of ore, gems, and essence-infused monsters...", next = "3" },
+	{ local = "I think I keep seeing a ghost?", next = "7" }
+]
+
+[juniper_post_8h_best_friend_question_2.3]
+portrait = "ugh"
+local = "Not... much?"
+next = "4"
+
+[juniper_post_8h_best_friend_question_2.4]
+portrait = "angry_brows"
+local = "Are you kidding? That sounds incredible!"
+next = "5"
+
+[juniper_post_8h_best_friend_question_2.5]
+portrait = "sly"
+local = "Well, if you ever want to try swapping powers for a day..."
+next = "6"
+
+[juniper_post_8h_best_friend_question_2.6]
+portrait = "happy"
+local = "I wouldn't mind going to see it for myself."
+
+[juniper_post_8h_best_friend_question_2.7]
+portrait = "ugh"
+local = "..."
+next = "8"
+
+[juniper_post_8h_best_friend_question_2.8]
+portrait = "embarrassed"
+local = "You think I'm going to fall for that? G-ghosts aren't real, [Ari]!"
+next = "9"
+
+[juniper_post_8h_best_friend_question_2.9]
+portrait = "happy"
+effect = "drop"
+local = "But, um... I'm glad you're the one doing the exploring."
+
+[juniper_post_8h_best_friend_question_3]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ any = [
+		{ juniper_post_8h_romantic_progression = true },
+		{ juniper_is_best_friend = true }
+	] },
+	{ juniper_post_8h_best_friend_gate = false },
+	{ juniper_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ juniper_post_8h_best_friend_gate = true, expires = "2d" }]
+portrait = "think"
+local = "Did I ever tell you how Dozy and I met? It was in college, actually."
+prompts = [
+	{ local = "Haha, right. I bet he majored in cuteness.", next = "1" },
+	{ local = "Having a long friendship like that must be special!", next = "3" }
+]
+
+[juniper_post_8h_best_friend_question_3.1]
+portrait = "mad"
+local = "A degree? In cuteness? Don't be ridiculous."
+next = "2"
+
+[juniper_post_8h_best_friend_question_3.2]
+portrait = "closed_eyes"
+local = "He did minor in business, though."
+
+[juniper_post_8h_best_friend_question_3.3]
+portrait = "happy"
+local = "It is. Dozy is very important to me."
+next = "4"
+
+[juniper_post_8h_best_friend_question_3.4]
+portrait = "angry_brows"
+local = "And it's especially important to keep that in mind when he schedules me for the morning shift."

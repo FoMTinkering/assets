@@ -1,0 +1,18 @@
+[hemlock_drink]
+refresh = "1y"
+requires = [
+	{ npc = "terithia" },
+	{ location = "inn" },
+	{ any = [
+		{ terithia_activity = "drink" },
+		{ terithia_activity = "order_drink" }
+	] },
+	{ hemlock_is_at_location = "inn" },
+	{ any = [
+		{ hemlock_routine = "inn_bar_service" },
+		{ hemlock_routine = "inn_solo_hemlock" },
+		{ hemlock_routine = "inn_solo_bartend" }
+	] }
+]
+portrait = "happy"
+local = "I always let Hemlock pick my drink for me! He always knows just the thing."

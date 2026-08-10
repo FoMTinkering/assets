@@ -1,0 +1,4 @@
+enum SetAnimationOverride {
+    DoNotOverride,
+    OverrideAnyway
+}

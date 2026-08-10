@@ -1,0 +1,33 @@
+[1h_company]
+refresh = "never"
+actions = [
+	{ bark = { bark = "cute_face", npc = "hayden" } }
+]
+requires = [
+	{ npc = "hayden" },
+	{ date_time = "1d", comparator = ">" },
+	{ date_time = "40d", comparator = "<" },
+	{ hayden_heart_level = 1 }
+]
+portrait = "neutral"
+local = "How's it going, [Ari]?"
+next = "1"
+
+[1h_company.1]
+portrait = "neutral_arm_down"
+local = "Life on $[farm_name]$ treating you well?"
+next = "2"
+
+[1h_company.2]
+portrait = "sweat"
+local = " I know it can get a little lonesome, living out on the edge of town."
+next = "3"
+
+[1h_company.3]
+portrait = "happy_arm_down"
+local = "Feel free to drop by Sweetwater Farm anytime, okay?"
+next = "4"
+
+[1h_company.4]
+portrait = "neutral_arm_down"
+local = "I'm always happy to have company!"

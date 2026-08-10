@@ -1,0 +1,48 @@
+[zero_to_one_0]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_heart_level = 2, comparator = "<" },
+	{ location = "inn", comparator = "!=" },
+	{ date_time = "1y", comparator = "<" }
+]
+portrait = "neutral"
+local = "The Inn is a great place to swing by if you're looking for a bite to eat or some company, [Ari]!"
+next = "1"
+
+[zero_to_one_0.1]
+portrait = "wink"
+local = "Or you can just talk to me!"
+
+[two_to_three_0]
+refresh = "1y"
+requires = [
+	{ npc = "reina" },
+	{ reina_heart_level = 4, comparator = "<" },
+	{ reina_heart_level = 2, comparator = ">=" },
+	{ location = "inn", comparator = "!=" },
+	{ reina_was_last_spoken_to = "4h", time = "after", comparator = ">" }
+]
+portrait = "neutral"
+local = "Hey, [Ari]! You know, if you have anything you really like to eat, let me know. Maybe we can add it to the menu at the Inn!"
+
+[four_to_five_0]
+refresh = "1y"
+requires = [
+	{ npc = "reina" },
+	{ reina_heart_level = 6, comparator = "<" },
+	{ reina_heart_level = 4, comparator = ">=" }
+]
+actions = [{ item = "wildberry_scone" }]
+portrait = "neutral"
+local = "Have you heard of a baker's dozen? We make an extra one to taste test."
+next = "1"
+
+[four_to_five_0.1]
+portrait = "embarrassed"
+local = "Well I accidentally made a \"Reina's fourteen.\""
+next = "2"
+
+[four_to_five_0.2]
+portrait = "wink"
+local = "Enjoy!"

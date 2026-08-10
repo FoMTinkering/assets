@@ -1,0 +1,177 @@
+# <---------MINES ITEMS: LAVA CAVES------------->
+
+# <---------LAVA CAVE ARTIFACTS------------->
+[fire_crystal]
+	name = "Fire Crystal"
+	description = "A common Lava Caves artifact. This crystal has been imbued by the essence of fire."
+	icon_sprite = "spr_ui_item_fire_crystal"
+	value = { bin = 50, renown = 10 }
+	tags = ["archaeology"]
+
+[warm_rock]
+	name = "Warm Rock"
+	description = "A common Lava Caves artifact. This rock is ordinary in appearance, but it remains perpetually warm to the touch."
+	icon_sprite = "spr_ui_item_warm_rock"
+	value = { bin = 50, renown = 10 }
+	tags = ["archaeology"]
+
+[red_obsidian]
+	name = "Red Obsidian"
+	description = "An uncommon Lava Caves artifact. This chunk of obsidian has a streak of red running through it."
+	icon_sprite = "spr_ui_item_red_obsidian"
+	value = { bin = 60, renown = 15 }
+	tags = ["archaeology"]
+
+[rainbow_geode]
+	name = "Rainbow Geode"
+	description = "An uncommon Lava Caves artifact. This incredible geode is formed of many different gems, all fused together."
+	icon_sprite = "spr_ui_item_rainbow_geode"
+	value = { bin = 60, renown = 15 }
+	tags = ["archaeology"]
+
+[tiny_volcano]
+	name = "Tiny Volcano"
+	description = "A rare Lava Caves artifact. This geological formation looks a lot like a volcano, except... tiny."
+	icon_sprite = "spr_ui_item_tiny_volcano"
+	value = { bin = 135, renown = 25 }
+	tags = ["archaeology"]
+
+
+	# <---------LAVA CAVE FORAGE------------->
+
+[flame_pepper]
+	name = "Flame Pepper"
+	description = "These incredibly hot peppers should be handled with care."
+	value = { bin = 35 }
+	icon_sprite = "spr_ui_item_flame_pepper"
+	restore = 6
+	tags = ["forageable", "mines_forageable"]
+
+[ash_mushroom]
+	name = "Ash Mushroom"
+	description = "A delicate mushroom that releases ashlike spores when jostled."
+	value = { bin = 40 }
+	icon_sprite = "spr_ui_item_ash_mushroom"
+	restore = 6
+	tags = ["forageable", "mines_forageable"]
+
+[lava_chestnuts]
+	name = "Lava Chestnuts"
+	description = "These delicious chestnuts come pre-cooked!"
+	value = { bin = 45 }
+	icon_sprite = "spr_ui_item_lava_chestnut"
+	restore = 10
+	tags = ["forageable", "mines_forageable"]
+
+[hot_potato]
+	name = "Hot Potato"
+	description = "These pre-cooked wild potatoes have a tangy flavor that is surprisingly addictive."
+	value = { bin = 40 }
+	icon_sprite = "spr_ui_item_hot_potato"
+	restore = 10
+	tags = ["forageable", "mines_forageable"]
+
+[breath_of_fire]
+	name = "Breath of Flame"
+	description = "These beautiful flowers continue to glow, even after they've been picked."
+	value = { bin = 45 }
+	icon_sprite = "spr_ui_item_breath_of_flame"
+	tags = ["forageable", "mines_forageable"]
+
+	# <---------LAVA CAVE MATERIALS------------->
+
+[obsidian]
+	name = "Obsidian"
+	description = "A shard of volcanic glass."
+	value = { bin = 15 }
+	icon_sprite = "spr_ui_item_obsidian"
+	recipe_is_default = true
+	recipe = [
+		{ count = 8, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	tags = ["refined_material", "material"]
+
+	# <---------LAVA CAVE FISH------------->
+
+[lava_piranha]
+	name = "Lava Piranha"
+	description = "A common small Lava Caves fish. This fish couldn't be more alarming in both its appearance and its behavior."
+	icon_sprite = "spr_ui_item_fish_small_lava_piranha"
+	value = { bin = 50 }
+	edible = false
+	restore = "small_common_fish_restore"
+	tags = ["fishable", "fishy"]
+
+[candelabra_seadragon]
+	name = "Candelabra Seadragon"
+	description = "An uncommon small Lava Caves fish. This seadragon has a number of thin protrusions that make it look like its namesake."
+	icon_sprite = "spr_ui_item_fish_small_candelabra_seadragon"
+	value = { bin = 60 }
+	edible = false
+	restore = "small_common_fish_restore"
+	tags = ["fishable", "fishy"]
+
+[armored_bass]
+	name = "Armored Bass"
+	description = "A common medium Lava Caves fish. This bass species has adapted to grow incredibly thick and metallic looking scales."
+	icon_sprite = "spr_ui_item_fish_medium_armored_bass"
+	value = { bin = 65 }
+	edible = false
+	restore = "small_common_fish_restore"
+	tags = ["fishable", "fishy"]
+
+[sulfur_crab]
+	name = "Sulfur Crab"
+	description = "An uncommon medium Lava Caves crustacean. This crab is encased in a thick yellow coating of sulfur on its shell."
+	icon_sprite = "spr_ui_item_fish_medium_sulfur_crab"
+	value = { bin = 60 }
+	edible = false
+	restore = "small_common_fish_restore"
+	tags = ["fishable", "fishy"]
+
+[firesail_fish]
+	name = "Firesail Fish"
+	description = "A rare large Lava Caves fish found in lava. Its physiology is a complete mystery." # description needs tweaking since this fish is not actually found in lava
+	icon_sprite = "spr_ui_item_fish_large_firesail_fish"
+	value = { bin = 130 }
+	edible = false
+	restore = "small_common_fish_restore"
+	tags = ["fishable", "fishy"]
+
+	# <---------LAVA CAVE BUGS------------>
+
+[fire_wasp]
+	description = "A common Lava Caves insect. Luckily this wasp seems to be a danger only to other insects."
+	icon_sprite = "spr_ui_item_insect_fire_wasp"
+	name = "Fire Wasp"
+	value = { bin = 30 }
+	tags = ["bugs"]
+
+[cooktop_beetle]
+	description = "A common Lava Caves insect. The top of this beetle's shell is hot enough to fry an egg."
+	icon_sprite = "spr_ui_item_insect_cooktop_beetle"
+	name = "Cooktop Beetle"
+	value = { bin = 30 }
+	tags = ["bugs"]
+
+[lava_snail]
+	description = "An uncommon Lava Caves insect. This snail leaves tiny molten trails."
+	icon_sprite = "spr_ui_item_insect_lava_snail"
+	name = "Lava Snail"
+	value = { bin = 45 }
+	tags = ["bugs"]
+
+[smoke_moth]
+	description = "An uncommon Lava Caves insect. This moth generates a small cloud of smoke around it to help protect it from predators."
+	icon_sprite = "spr_ui_item_insect_smoke_moth"
+	name = "Smoke Moth"
+	value = { bin = 40 }
+	tags = ["bugs"]
+
+[diamond_beetle]
+	description = "A rare Lava Caves insect. This wondrous beetle has an impenetrable defense... unless you pick it up."
+	icon_sprite = "spr_ui_item_insect_diamond_beetle"
+	name = "Diamond Beetle"
+	value = { bin = 80 }
+	tags = ["bugs"]

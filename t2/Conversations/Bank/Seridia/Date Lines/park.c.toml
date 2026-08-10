@@ -1,0 +1,143 @@
+[park_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "seridia" },
+	{ date = "park" },
+	{ da_seridia_park = 0 },
+	{ seridia_is_spouse = false }
+]
+writes = [
+	{ da_seridia_park = 1 },
+	{ da_seridia_park_follow_up_gate = true, expires = "1d" },
+]
+portrait = "neutral"
+local = "You wish for me to accompany you..."
+next = "1"
+
+[park_accept_1.1]
+portrait = "serious"
+local = "To relax on a bench together?"
+next = "2"
+
+[park_accept_1.2]
+portrait = "think"
+local = "And gaze upon the glassy stillness of a pond?"
+next = "3"
+
+[park_accept_1.3]
+portrait = "closed_eyes"
+local = "..."
+next = "4"
+
+[park_accept_1.4]
+portrait = "blush"
+local = "Very well. This couple's activity intrigues me. Let us make haste... to relax."
+
+[park_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "seridia" },
+	{ date = "park" },
+	{ seridia_has_child = false },
+	{ any = [
+		{ seridia_is_spouse = true },
+		{ da_seridia_park = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_seridia_park = 2 },
+	{ da_seridia_park_follow_up_gate = true, expires = "1d" },
+]
+portrait = "surprise_blush"
+local = "You desire my company once more? For another $Date$ in the $Park$?"
+next = "1"
+
+[park_accept_2.1]
+portrait = "blush_think"
+local = "In the past, I would give such a place no second thought, and yet..."
+next = "2"
+
+[park_accept_2.2]
+portrait = "blush"
+local = "Your presence seemingly imbues it with magic. A curious phenomenon."
+next = "3"
+
+[park_accept_2.3]
+portrait = "happy_blush"
+local = "Let us go, so I may observe it for myself once more."
+
+[park_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ da_seridia_park = 1 },
+	{ da_seridia_park_follow_up_gate = true },
+	{ seridia_is_spouse = false }
+]
+writes = [{ da_seridia_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "closed_eyes"
+local = "I must admit, [Ari]..."
+next = "1"
+
+[park_follow_up_1.1]
+portrait = "neutral"
+local = "The act of enjoying your company while surrounded by nature..."
+next = "2"
+
+[park_follow_up_1.2]
+portrait = "embarrassed"
+local = "While being unproductive... it did not disappoint."
+prompts = [
+	{ local = "I'm happy you enjoyed yourself!", next = "3" },
+	{ local = "I knew you'd enjoy yourself!", next = "4" },
+]
+
+[park_follow_up_1.3]
+portrait = "neutral"
+local = "Yes. You have come to know me... and my tastes well."
+next = "5"
+
+[park_follow_up_1.4]
+portrait = "surprised"
+local = "Have you come to know me and my tastes so well?"
+next = "5"
+
+[park_follow_up_1.5]
+portrait = "think"
+local = "I suppose this is the true purpose of courtship... to come to know your paramour more deeply."
+next = "6"
+
+[park_follow_up_1.6]
+portrait = "closed_eyes"
+local = "In that case..."
+next = "7"
+
+[park_follow_up_1.7]
+portrait = "blush"
+local = "I expect more $Dates$ with you in the future."
+
+[park_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_has_child = false },
+	{ any = [{ seridia_is_spouse = true }, { da_seridia_park = 2 }] },
+	{ da_seridia_park_follow_up_gate = true },
+]
+writes = [{ da_seridia_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "closed_eyes"
+local = "My mind is sharper and my resolve is stronger since our shared time at the park."
+next = "1"
+
+[park_follow_up_2.1]
+portrait = "neutral"
+local = "I ever enjoy your company, and your counsel."
+next = "2"
+
+[park_follow_up_2.2]
+portrait = "blush"
+local = "So do not hesitate to call upon me for another such... $Date$."

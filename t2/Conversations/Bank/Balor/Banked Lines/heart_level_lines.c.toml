@@ -1,0 +1,46 @@
+[zero_to_one_0]
+refresh = "2m"
+requires = [{ npc = "balor" }, { balor_heart_level = 2, comparator = "<" }]
+portrait = "neutral"
+local = "Keep an eye on the request board, I occasionally post jobs that are more suited to an adventurer like yourself."
+next = "1"
+
+[zero_to_one_0.1]
+portrait = "wink"
+local = "I can assure you that they'll be lucrative for both of us."
+
+[two_to_three_0]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_heart_level = 4, comparator = "<" },
+	{ balor_heart_level = 2, comparator = ">=" },
+	{ location = "inn", comparator = "!=" }
+]
+portrait = "neutral"
+local = "Have you been taking the time to relax and enjoy Mistria's charms?"
+next = "1"
+
+[two_to_three_0.1]
+portrait = "happy"
+local = "I can particularly recommend the Inn, nothing quite like a cold drink after a long day."
+next = "2"
+
+[two_to_three_0.2]
+portrait = "wink"
+local = "You should join me sometime!"
+
+[four_to_five_0]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_heart_level = 6, comparator = "<" },
+	{ balor_heart_level = 4 , comparator = ">=" }
+]
+portrait = "think"
+local = "If you had told me one new farmer moving to Mistria was going to boost business this way..."
+next = "1"
+
+[four_to_five_0.1]
+portrait = "happy"
+local = "I would have made it a point to meet you further up the road!"

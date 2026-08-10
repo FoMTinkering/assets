@@ -1,0 +1,51 @@
+[snowman]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ is_inside = false },
+	{ season = "winter" }
+]
+speaker = "dell"
+portrait = "mad"
+local = "Well, what do you think, Head Scientist Luc? Has the Dragonguard done a good job?"
+next = "1"
+
+[snowman.1]
+speaker = "luc"
+portrait = "mad"
+effect = "sparkles"
+local = "Operation Snow Guy is proceeding very nicely."
+next = "2"
+
+[snowman.2]
+speaker = "maple"
+portrait = "happy"
+effect = "hearts"
+local = "He's so cute!"
+
+[snowman_2]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ is_inside = false },
+	{ season = "winter" }
+]
+speaker = "dell"
+portrait = "happy"
+local = "More snow! More snow!"
+next = "1"
+
+[snowman_2.1]
+speaker = "maple"
+portrait = "neutral"
+local = "You heard her! More snow, Luc!"
+next = "2"
+
+[snowman_2.2]
+speaker = "luc"
+portrait = "happy"
+local = "Yay!"

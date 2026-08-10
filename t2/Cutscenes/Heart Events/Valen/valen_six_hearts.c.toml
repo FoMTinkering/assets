@@ -1,0 +1,218 @@
+[valen_six_hearts_follow_up_dozy]
+refresh = "never"
+requires = [{ npc = "dozy" }, { valen_heart_event = "six_heart" }]
+portrait = "neutral"
+local = "(You're not quite sure, but Dozy seems to be giving the impression that Juniper really enjoyed having Valen and you over.)"
+
+[valen_six_hearts_follow_up_juniper]
+refresh = "never"
+requires = [{ npc = "juniper" }, { valen_heart_event = "six_heart" }]
+portrait = "neutral"
+local = """I'd ask you to forgive my behavior with the town "doctor" but..."""
+next = "1"
+
+[valen_six_hearts_follow_up_juniper.1]
+portrait = "sly"
+local = "Well, I don't think I did anything that needs to be forgiven."
+next = "2"
+
+[valen_six_hearts_follow_up_juniper.2]
+portrait = "laugh"
+local = "Oh ho ho!"
+
+[valen_six_hearts_follow_up_valen]
+refresh = "never"
+requires = [{ npc = "valen" }, { valen_heart_event = "six_heart" }]
+portrait = "think"
+local = "As much as I hate to admit it, I can see why I missed Cliffblossom as a lead."
+next = "1"
+
+[valen_six_hearts_follow_up_valen.1]
+portrait = "neutral"
+local = "It goes by several different regional names, and is regarded as a weed with no medicinal properties."
+next = "2"
+
+[valen_six_hearts_follow_up_valen.2]
+portrait = "ugh"
+local = "If only Juniper would use her knowledge for the general good."
+
+[valen_six_hearts]
+kind = "gameplay_triggered"
+writes = [{ valen_heart_event = "six_heart", expires = "4d" }]
+speaker = "valen"
+portrait = "neutral"
+local = "Juniper, thank you for agreeing to this meeting."
+next = "1"
+
+[valen_six_hearts.1]
+speaker = "juniper"
+portrait = "neutral"
+local = "How could I possibly think of refusing, Doctor Valen?"
+next = "2"
+
+[valen_six_hearts.2]
+speaker = "juniper"
+portrait = "sly"
+local = "After all, I haven't had a good laugh in ages."
+next = "3"
+
+[valen_six_hearts.3]
+speaker = "juniper"
+portrait = "neutral"
+local = """Let's see these "notes" of yours."""
+next = "4"
+
+[valen_six_hearts.4]
+speaker = "juniper"
+portrait = "think"
+local = "Now let's see..."
+next = "5"
+
+[valen_six_hearts.5]
+speaker = "juniper"
+portrait = "happy"
+local = "What unique handwriting!"
+next = "6"
+
+[valen_six_hearts.6]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Shame the content is drivel. You've made no real progress on the missing key ingredient, have you?"
+next = "7"
+
+[valen_six_hearts.7]
+speaker = "valen"
+portrait = "mad"
+local = "Do you have insight that you'd care to share, or is this just your usual badmouthing?"
+next = "8"
+
+[valen_six_hearts.8]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "This whole thing is such a rat's nest."
+next = "9"
+
+[valen_six_hearts.9]
+speaker = "juniper"
+portrait = "neutral"
+local = "You would have better luck focusing on a smaller problem, something more suited to your skill level. Wart removal, perhaps?"
+prompts = [
+	{ local = "Valen's worked hard and made a lot of progress.", next = "10" },
+	{ local = "Hey, don't be a jerk.", next = "10" }
+]
+
+[valen_six_hearts.10]
+speaker = "juniper"
+portrait = "mad"
+local = "Why Valen, your test subject speaks! Good to know your reckless experiments didn't do any permanent damage."
+next = "11"
+
+[valen_six_hearts.11]
+speaker = "valen"
+portrait = "mad"
+local = "[Ari] is a valued colleague and friend. We are both here because we recognize the importance of this research."
+next = "12"
+
+[valen_six_hearts.12]
+speaker = "juniper"
+portrait = "think"
+local = "I suppose it is a mark of sincerity that you two would be willing to embarrass yourselves like this..."
+next = "13"
+
+[valen_six_hearts.13]
+speaker = "juniper"
+portrait = "angry_brows"
+local = "Very well, you have my support. Just don't expect me to do all the work."
+prompts = [
+	{ local = "I knew we could count on you!", next = "14" },
+	{ local = "Just admit you're out of your depth, Juniper.", next = "15" }
+]
+
+[valen_six_hearts.14]
+speaker = "juniper"
+portrait = "happy"
+local = "Well, that makes one of us."
+next = "16"
+
+[valen_six_hearts.15]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Oh dear, and now I'm bored."
+next = "16"
+
+[valen_six_hearts.16]
+speaker = "juniper"
+portrait = "mad"
+local = "The herb you're looking for is colloquially known as Cliffblossom. I believe you can find it growing at the Western Ruins."
+next = "17"
+
+[valen_six_hearts.17]
+speaker = "valen"
+portrait = "mad"
+local = "You figured that out by just... glancing at my notes?"
+next = "18"
+
+[valen_six_hearts.18]
+speaker = "juniper"
+portrait = "wink"
+local = "Humbling isn't it? And you're welcome, by the way."
+next = "19"
+
+[valen_six_hearts.19]
+speaker = "juniper"
+portrait = "neutral"
+local = "Need anything else? When it grows? The best time to pick it? What part of the plant is most effective for your work?"
+next = "20"
+
+[valen_six_hearts.20]
+speaker = "valen"
+portrait = "think"
+local = "I-"
+next = "21"
+
+[valen_six_hearts.21]
+speaker = "juniper"
+portrait = "happy"
+local = "Oh, of course not! I'll leave you two sleuths to it. Now if you'll excuse me..."
+next = "22"
+
+[valen_six_hearts.22]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Dozy, see them out."
+next = "23"
+
+[valen_six_hearts.23]
+speaker = "valen"
+portrait = "ugh"
+local = "Honestly, that went better than I expected."
+next = "24"
+
+[valen_six_hearts.24]
+speaker = "dozy"
+portrait = "neutral"
+local = "(Dozy appears to be agreeing with Valen.)"
+next = "25"
+
+[valen_six_hearts.25]
+speaker = "valen"
+portrait = "think"
+local = "It seems my research isn't done, but at least we have a lead."
+next = "26"
+
+[valen_six_hearts.26]
+speaker = "valen"
+portrait = "neutral"
+local = "Thank you for sticking by and standing up for me, [Ari]."
+next = "27"
+
+[valen_six_hearts.27]
+speaker = "valen"
+portrait = "embarrassed"
+local = "It... means a lot to me. I don't think I could have done this by myself."
+next = "28"
+
+[valen_six_hearts.28]
+speaker = "valen"
+portrait = "neutral"
+local = "I'll let you know when it's time to go hunting for the Cliffblossom."

@@ -1,0 +1,463 @@
+# <---------CRAFTING MATERIALS------------->
+
+[basic_wood]
+	description = "A piece of cut wood. Essential for many crafting recipes."
+	icon_sprite = "spr_ui_item_regularwood"
+	name = "Wood"
+	value = { bin = 2, store = 20 }
+	edible = false
+	restore = "small_common_fish_restore"
+	recipe_is_default = true
+	recipe = [
+		{ count = 2, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	tags = ["refined_material", "material", "wood", "fishable"]
+
+[hard_wood]
+	description = "A piece of high quality hard wood. Used in a variety of crafting recipes."
+	icon_sprite = "spr_ui_item_hardwood"
+	name = "Hard Wood"
+	value = { bin = 15, store = 80 }
+	recipe_is_default = true
+	recipe = [
+		{ count = 10, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	tags = ["refined_material", "material", "wood", "gem"]
+
+[fiber]
+	description = "Fiber made of plant material. Used in a variety of crafting recipes."
+	icon_sprite = "spr_ui_item_fiber"
+	name = "Fiber"
+	edible = false
+	restore = "small_common_fish_restore"
+	tags = ["junk", "fishable", "material"]
+	value = { bin = 2, store = 20 }
+
+[grass_seed]
+	description = "Can be used as a basic feed for small animals."
+	icon_sprite = "spr_ui_item_animal_feed_seed"
+	name = "Grass Seed"
+	animal_feed = { animal_size = "small", sprite = "spr_ui_item_animal_feed_seed", tier = "normal", pet_can_eat = false }
+	recipe_is_default = true
+	recipe = [
+		{ count = 6, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	value = { bin = 5, store = 50 }
+	tags = ["refined_material", "animal_feed", "ranching"]
+
+[hay]
+	description = "Dried grass used as feed for large animals. Also used in certain crafting recipes."
+	icon_sprite = "spr_ui_item_hayball"
+	name = "Hay"
+	animal_feed = { animal_size = "large", sprite = "spr_ui_item_hayball", tier = "normal", pet_can_eat = false }
+	value = { bin = 5, store = 50 }
+	recipe_is_default = true
+	recipe = [
+		{ count = 6, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	tags = ["refined_material", "junk", "animal_feed", "ranching"]
+
+[sod]
+	name = "Sod"
+	description = "A square of cut earth. Used as a crafting material."
+	icon_sprite = "spr_ui_item_sod"
+	tags = ["refined_material", "junk", "material"]
+	recipe_is_default = true
+	recipe = [
+		{ count = 6, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	value = { bin = 5, store = 50 }
+
+[peat]
+	name = "Peat"
+	description = "A brick of compressed organic matter. Often used as a crafting material."
+	icon_sprite = "spr_ui_item_peat"
+	value = { bin = 5, store = 50 }
+	recipe_is_default = true
+	recipe = [
+		{ count = 6, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	tags = ["refined_material", "material"]
+
+[clay]
+	name = "Clay"
+	description = "A small lump of clay. Used in a variety of crafting recipes."
+	icon_sprite = "spr_ui_item_clay"
+	tags = ["refined_material", "material"]
+	recipe_is_default = true
+	recipe = [
+		{ count = 6, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	value = { bin = 5, store = 50 }
+
+[glass]
+	name = "Glass"
+	description = "A slab of naturally formed glass. Used in a variety of crafting recipes."
+	icon_sprite = "spr_ui_item_glass"
+	tags = ["refined_material", "material"]
+	recipe_is_default = true
+	recipe = [
+		{ count = 8, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	value = { bin = 15, store = 80 }
+
+[paper]
+	name = "Paper"
+	description = "Paper milled with plant fiber. Used in a variety of crafting recipes."
+	icon_sprite = "spr_ui_item_paper"
+	value = { bin = 20, store = 100 }
+	recipe_is_default = true
+	tags = ["material", "milling", "misc_mill"]
+	recipe = [
+		{ item = "fiber", count = 5 },
+		{ hours = 0, minutes = 10 },
+	]
+
+[shards]
+	name = "Shards"
+	description = "Shards originating from unknown artifacts. Used as a crafting material."
+	icon_sprite = "spr_ui_item_shards"
+	value = { bin = 5, store = 50 }
+	recipe_is_default = true
+	recipe = [
+		{ count = 10, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	tags = ["refined_material", "material"]
+
+[shard_mass]
+	name = "Shard Mass"
+	description = "A large mass of shards from unknown artifacts. Used as a crafting material."
+	icon_sprite = "spr_ui_item_shard_mass"
+	recipe_is_default = true
+	recipe = [
+		{ count = 15, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	value = { bin = 10, store = 80 }
+	tags = ["refined_material", "material"]
+
+	# <---------COOKING MATERIALS------------->
+
+[rock_salt]
+	description = "Salt from a natural deposit. Used in a variety of cooking recipes."
+	icon_sprite = "spr_ui_item_rocksalt"
+	name = "Rock Salt"
+	restore = 2
+	edible = false
+	value = { bin = 25, store = 50 }
+	tags = ["pantry", "material"]
+
+[oil]
+	name = "Oil"
+	description = "Oil made from vegetables. Used in cooking and crafting recipes."
+	icon_sprite = "spr_ui_item_oil"
+	restore = 3
+	edible = false
+	recipe_is_default = true
+	recipe = [{ count = 2, item = "sesame" }, { hours = 0, minutes = 15 }]
+	tags = ["material", "material"]
+	value = { bin = 30, store = 60 }
+
+[soy_sauce]
+	name = "Soy Sauce"
+	description = "A tasty and essential condiment. Used in cooking recipes."
+	icon_sprite = "spr_ui_item_soy_sauce"
+	restore = 3
+	edible = false
+	tags = ["pantry", "material"]
+	value = { bin = 30, store = 60 }
+
+[curry_powder]
+	description = "A delicious and aromatic spice blend. Used as an ingredient in cooking recipes."
+	name = "Curry Powder"
+	icon_sprite = "spr_ui_item_curry_powder"
+	restore = 3
+	edible = false
+	tags = ["pantry", "material"]
+	value = { bin = 20, store = 40 }
+
+[honey]
+	description = "A delicious syrup made by bees. Used in a variety of cooking recipes."
+	icon_sprite = "spr_ui_item_honey"
+	name = "Honey"
+	restore = 5
+	tags = ["pantry", "material"]
+	value = { bin = 50, store = 100 }
+	edible = false
+
+[chocolate]
+	description = "A bar of quality chocolate. Used in a variety of cooking recipes."
+	restore = 10
+	icon_sprite = "spr_ui_item_chocolate"
+	value = { bin = 100, store = 200 }
+	tags = ["pantry", "choco", "material"]
+	name = "Chocolate"
+
+	# <---------ORE MATERIALS------------->
+
+[ore_copper]
+	description = "Found in the upper levels of the Mines, this ore can be refined into ingots for use in crafting recipes."
+	icon_sprite = "spr_ui_item_copper_ore"
+	name = "Copper Ore"
+	recipe_is_default = true
+	recipe = [
+		{ count = 20, item = "ore_stone" },
+		{ hours = 0, minutes = 5 },
+	]
+	value = { bin = 10, store = 50 }
+	tags = ["refined_ore", "material", "ore"]
+
+[ore_emerald]
+	description = "A shining green gem. Can be sold, gifted, or used in certain crafting recipes."
+	icon_sprite = "spr_ui_item_emerald"
+	name = "Emerald"
+	value = { bin = 60, store = 240 }
+	recipe_is_default = true
+	recipe = [
+		{ count = 30, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	tags = ["refined_material", "gem", "material", "ore"]
+
+[ore_ruby]
+	description = "A sparkling red gem. Can be sold, gifted, or used in certain crafting recipes."
+	icon_sprite = "spr_ui_item_ruby"
+	name = "Ruby"
+	value = { bin = 45, store = 180 }
+	recipe_is_default = true
+	recipe = [
+		{ count = 22, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	tags = ["refined_material", "gem", "material", "ore"]
+
+[ore_sapphire]
+	description = "A lustrous blue gem. Can be sold, gifted, or used in certain crafting recipes."
+	icon_sprite = "spr_ui_item_sapphire"
+	name = "Sapphire"
+	value = { bin = 50, store = 200 }
+	recipe_is_default = true
+	recipe = [
+		{ count = 25, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	tags = ["refined_material", "gem", "material", "ore"]
+
+[ore_diamond]
+	description = "A rare and beautiful gem. Can be sold, gifted, or used in high level crafting recipes."
+	icon_sprite = "spr_ui_item_diamond"
+	name = "Diamond"
+	recipe_is_default = true
+	recipe = [
+		{ count = 35, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	value = { bin = 70, store = 800 }
+	tags = ["refined_material", "gem", "material", "ore"]
+
+[ore_pink_diamond]
+	icon_sprite = "spr_ui_item_pinkdiamond"
+	description = "A rare pink colored diamond. Can be sold, gifted, or used in high level crafting recipes."
+	name = "Pink Diamond"
+	value = { bin = 300, store = 1200 }
+	tags = ["gem", "material", "ore"]
+
+[ore_gold]
+	description = "A chunk of gold ore. Can be refined into ingots for crafting."
+	icon_sprite = "spr_ui_item_gold_ore"
+	name = "Gold Ore"
+	recipe_is_default = true
+	value = { bin = 25, store = 200 }
+	tags = ["material", "ore"]
+
+[ore_mistril]
+	description = "A chunk of mistril ore. Can be refined into ingots for crafting."
+	icon_sprite = "spr_ui_item_mistril_ore"
+	name = "Mistril Ore"
+	value = { bin = 30, store = 400 }
+	tags = ["material", "ore"]
+
+[ore_iron]
+	description = "A chunk of iron ore. Can be refined into ingots for crafting."
+	icon_sprite = "spr_ui_item_iron_ore"
+	name = "Iron Ore"
+	value = { bin = 15, store = 70 }
+	tags = ["material", "ore"]
+
+[ore_silver]
+	description = "A chunk of silver ore. Can be refined into ingots for crafting."
+	icon_sprite = "spr_ui_item_silver_ore"
+	name = "Silver Ore"
+	value = { bin = 20, store = 100 }
+	tags = ["gem", "material", "ore"]
+
+[ore_stone]
+	description = "A piece of stone. Essential for many crafting recipes."
+	icon_sprite = "spr_ui_item_rock"
+	name = "Stone"
+	value = { bin = 2, store = 20 }
+	tags = ["material", "ore"]
+
+[refined_stone]
+	name = "Refined Stone"
+	description = "Refined Stone. Used in a variety of high-level crafting recipes."
+	icon_sprite = "spr_ui_item_refined_stone"
+	value = { bin = "self.recipe*1.1" }
+	recipe_is_default = true
+	recipe = [
+		{ count = 10, item = "ore_stone" },
+		{ hours = 0, minutes = 10 },
+	]
+	tags = ["refined_material", "material", "ore"]
+
+[essence_stone_tiny]
+	name = "Tiny Essence Stone"
+	description = "An Essence Stone. Used to charge a magic tool for 1 day. Consume for 5 Essence."
+	icon_sprite = "spr_ui_item_essence_stone_tiny"
+	value = { bin = 20 }
+	tags = ["essence_stone", "material"]
+	essence_charge = 1
+	recipe_is_default = true
+	recipe = [
+		{ count = 5, item = "ore_stone" },
+		{ essence = 5 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[essence_stone_small]
+	name = "Small Essence Stone"
+	description = "An Essence Stone. Used to charge a magic tool for 5 days. Consume for 25 Essence."
+	icon_sprite = "spr_ui_item_essence_stone_small"
+	value = { bin = 80 }
+	tags = ["essence_stone", "material"]
+	essence_charge = 5
+	recipe_is_default = true
+	recipe = [
+		{ count = 10, item = "ore_stone" },
+		{ essence = 25 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[essence_stone_medium]
+	name = "Medium Essence Stone"
+	description = "An Essence Stone. Used to charge a magic tool for 10 days. Consume for 50 Essence."
+	icon_sprite = "spr_ui_item_essence_stone_medium"
+	tags = ["essence_stone", "material"]
+	value = { bin = 160 }
+	essence_charge = 10
+	recipe_is_default = true
+	recipe = [
+		{ count = 20, item = "ore_stone" },
+		{ essence = 50 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[essence_stone_large]
+	name = "Large Essence Stone"
+	description = "An Essence Stone. Charges a magic tool for 20 days. Consume for 100 Essence."
+	icon_sprite = "spr_ui_item_essence_stone_large"
+	tags = ["essence_stone", "material"]
+	value = { bin = 320 }
+	essence_charge = 20
+	recipe_is_default = true
+	recipe = [
+		{ count = 40, item = "ore_stone" },
+		{ essence = 100 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[essence_stone_giant]
+	name = "Giant Essence Stone"
+	description = "An Essence Stone. Charges a magic tool for 40 days. Consume for 200 Essence."
+	icon_sprite = "spr_ui_item_essence_stone_giant"
+	tags = ["essence_stone", "material"]
+	value = { bin = 640 }
+	essence_charge = 40
+	recipe_is_default = false
+	recipe = [
+		{ count = 80, item = "ore_stone" },
+		{ essence = 200 },
+		{ hours = 0, minutes = 20 },
+	]
+
+[small_wood_bundle]
+	description = "Use to unpack a bundle of 20 Wood."
+	icon_sprite = "spr_ui_item_wood_bundle_small"
+	name = "Small Bundle of Wood"
+	value = { store = "basic_wood.store * 20" }
+	item_bundle = [{ basic_wood = 20 }]
+
+[small_stone_bundle]
+	description = "Use to unpack a bundle of 20 Stone."
+	icon_sprite = "spr_ui_item_stone_bundle_small"
+	name = "Small Bundle of Stone"
+	value = { store = "ore_stone.store * 20" }
+	item_bundle = [{ ore_stone = 20 }]
+
+[large_wood_bundle]
+	description = "Use to unpack a bundle of 100 Wood."
+	icon_sprite = "spr_ui_item_wood_bundle_large"
+	name = "Large Bundle of Wood"
+	value = { store = "basic_wood.store * 100" }
+	item_bundle = [{ basic_wood = 100 }]
+
+[large_stone_bundle]
+	description = "Use to unpack a bundle of 100 Stone."
+	icon_sprite = "spr_ui_item_stone_bundle_large"
+	name = "Large Bundle of Stone"
+	value = { store = "ore_stone.store * 100" }
+	item_bundle = [{ ore_stone = 100 }]
+
+	# VOID MATERIALS
+
+
+[void_herb]
+	name = "Void Herb"
+	description = "A void herb found throughout the Mines. Can be used in high level crafting recipes."
+	value = { bin = 30 }
+	restore = 10
+	icon_sprite = "spr_ui_item_void_herb"
+	tags = ["forageable", "mines_forageable"]
+
+
+[void_stone]
+	name = "Void Stone"
+	description = "A void stone found throughout the Mines. Can be used in high level crafting recipes."
+	value = { bin = 30 }
+	icon_sprite = "spr_ui_item_void_stone"
+	tags = ["material", "ore"]
+
+[void_powder]
+	name = "Void Powder"
+	description = "Void Powder dropped from defeated Monsters. Can be used in high level crafting recipes."
+	value = { bin = 30 }
+	icon_sprite = "spr_ui_item_void_powder"
+	tags = ["monster_part", "material"]
+
+[void_pearl]
+	name = "Void Pearl"
+	description = "A void pearl found by fishing up small fish shadows in the Mines. Can be used in high level crafting recipes."
+	value = { bin = 30 }
+	icon_sprite = "spr_ui_item_void_pearl"
+	tags = ["gem", "material"]
+
+[void_cake]
+	name = "Void Cake"
+	description = "An otherworldly cake loved exclusively by Eiland, despite being unsubstantial."
+	value = { bin = 1 }
+	icon_sprite = "spr_ui_item_void_cake"
+
+[void_newt]
+	name = "Void Newt"
+	description = "An otherworldly newt loved exclusively by Juniper, despite its tendency to flicker out of existence."
+	value = { bin = 1 }
+	icon_sprite = "spr_ui_item_void_newt"

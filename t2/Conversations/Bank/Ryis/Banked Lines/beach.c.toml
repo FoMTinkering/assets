@@ -1,0 +1,32 @@
+[beach]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ location = "beach" },
+	{ weather = "pleasant" },
+	{ any = [{ time_of_day = "morning" }, { time_of_day = "afternoon" }] },
+	{ march_is_at_location = "beach" },
+	{ sand_to_glass = true }
+]
+writes = [{ sand_to_glass = false }]
+portrait = "happy"
+effect = "drop"
+local = "Is March still talking about turning sand into glass? It wouldn't be summer if he didn't bring it up at least once."
+
+[beach_2]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ location = "beach" },
+	{ weather = "pleasant" },
+	{ any = [{ time_of_day = "morning" }, { time_of_day = "afternoon" }] },
+	{ march_is_at_location = "beach" },
+]
+writes = [{ shell_competition = true }]
+portrait = "neutral"
+local = "March thinks he can beat me at shell-collecting? He's never going to find more than me."
+next = "1"
+
+[beach_2.1]
+portrait = "wink"
+local = "When I was a kid, I used to make a necklace of shells for each of my sisters. I have a lot of sisters, [Ari]!"

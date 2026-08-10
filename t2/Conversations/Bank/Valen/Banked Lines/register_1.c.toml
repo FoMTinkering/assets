@@ -1,0 +1,23 @@
+[register_1]
+refresh = "1m"
+requires = [
+	{ npc = "valen" },
+	{ valen_status = "undefined" },
+	{ valen_zone = "clinic_f1/desk" },
+]
+local = "Hello, [Ari]. Here for a check-up?"
+
+[register_romantic]
+refresh = "1m"
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+requires = [
+	{ npc = "valen" },
+	{ valen_is_partner = true },
+	{ valen_zone = "clinic_f1/desk" },
+]
+local = "Hello, [Ari]. Here for a check-up?"
+next = "1"
+
+[register_romantic.1]
+portrait = "happy_blush"
+local = "I'm teasing!"

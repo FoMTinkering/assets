@@ -1,0 +1,860 @@
+# LOVED GIFTS
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "seridia" }, { gift_desire = "loved" }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "smile"
+local = "Oh... what an exquisite offering."
+next = "1"
+
+[loved_gift.1]
+portrait = "happy"
+local = "Yes... this is quite appropriate for one of my station. I am pleased."
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "seridia" }, { gift_desire = "loved" }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "closed_eyes_smile"
+local = "I see that you have done well observing my predilections..."
+next = "1"
+
+[loved_gift_2.1]
+portrait = "blush"
+effect = "sparkles_dark"
+local = "You are most attentive."
+
+[loved_gift_3]
+kind = "gift"
+requires = [{ npc = "seridia" }, { gift_desire = "loved" }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "closed_eyes_smile"
+local = "There was a time when such tribute would be offered at an altar."
+next = "1"
+
+[loved_gift_3.1]
+portrait = "angry_brows"
+effect = "sparkles_dark"
+local = "But to receive this gift directly from your hands... I find it all the more pleasing."
+
+[loved_gift_food]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "seridia" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "queen_berry_pie" },
+		{ gift_given = "monster_mash" },
+		{ gift_given = "spell_fruit_parfait" },
+	] },
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "happy"
+local = "What a delectable morsel."
+next = "1"
+
+[loved_gift_food.1]
+portrait = "sly"
+local = "I will enjoy this indulgence."
+
+[loved_gift_dragon_forged]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "seridia" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "dragon_forged_fang" },
+		{ gift_given = "dragon_forged_core" },
+		{ gift_given = "dragon_forged_horn" },
+		{ gift_given = "dragon_forged_powder" },
+		{ gift_given = "dragon_forged_bracelet" },
+	] },
+]
+portrait = "neutral"
+local = "Most impressive. Dragon-forging has become a rarified art form..."
+next = "1"
+
+[loved_gift_dragon_forged.1]
+portrait = "smile"
+local = "It is pleasing to receive such fine evidence of its persistence."
+
+[queen_berry_pie]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "queen_berry_pie" },
+	{ gift_desire = "loved" },
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "closed_eyes_smile"
+local = "Ah, a pastry of $Queen Berries$...?"
+next = "1"
+
+[queen_berry_pie.1]
+portrait = "think"
+local = "They make for a dish complex in both flavor and history."
+next = "2"
+
+[queen_berry_pie.2]
+portrait = "smile"
+local = "It pleases me to see they still grow in abundance after all these years."
+
+[dragon_forged_fang]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "dragon_forged_fang" },
+	{ gift_desire = "loved" },
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "smile"
+local = "This =Dragon-Forged Fang= is imbued with a powerful darkness..."
+next = "1"
+
+[dragon_forged_fang.1]
+portrait = "sinister"
+effect = "sparkles_dark"
+local = "You are wise to give this to me."
+
+[dragon_forged_core]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "dragon_forged_core" },
+	{ gift_desire = "loved" },
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "happy"
+local = "Ah, splendid. A =Dragon-Forged Core= is far superior to the average core of a monster."
+next = "1"
+
+[dragon_forged_core.1]
+portrait = "smile"
+local = "There is much I shall be able to do with this."
+
+[dragon_forged_horn]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "dragon_forged_horn" },
+	{ gift_desire = "loved" },
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "closed_eyes_smile"
+local = "A =Dragon-Forged Horn=, formed in darkness..."
+next = "1"
+
+[dragon_forged_horn.1]
+portrait = "sinister"
+effect = "sparkles_dark"
+local = "Yes. This speaks to me."
+
+[dragon_forged_powder]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "dragon_forged_powder" },
+	{ gift_desire = "loved" },
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "sly_think"
+local = "Ah! This =Dragon-Forged Powder= is expertly imbued with light..."
+next = "1"
+
+[dragon_forged_powder.1]
+portrait = "sly"
+local = "The magical value of such an item is undeniable. I shall make good use of this, [Ari]."
+
+[dragon_forged_bracelet]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "dragon_forged_bracelet" },
+	{ gift_desire = "loved" },
+]
+portrait = "sly_think"
+local = "This =Dragon-Forged Bracelet= remains immaculate, despite the passage of time."
+next = "1"
+
+[dragon_forged_bracelet.1]
+portrait = "closed_eyes_smile"
+local = "Dragons were the original masters of the forging arts. This bracelet is a testament to that."
+
+[dragon_pact_tablet]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "dragon_pact_tablet" },
+	{ gift_desire = "loved" },
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "sly"
+local = "It pleases me that you wish to renew our dragon pact, [Ari]. I recognize your fealty."
+next = "1"
+
+[dragon_pact_tablet.1]
+portrait = "closed_eyes_smile"
+local = "And naturally, I accept."
+
+[monster_mash]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "monster_mash" },
+	{ gift_desire = "loved" },
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "smile"
+local = "A delightful treat, this =Monster Mash=."
+next = "1"
+
+[monster_mash.1]
+portrait = "sly_think"
+local = "I do not understand why this concoction is not more popular..."
+next = "2"
+
+[monster_mash.2]
+portrait = "sinister"
+effect = "sparkles_dark"
+local = "For it tastes of the defeat of one's enemies."
+
+[perfect_mistril]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "perfect_mistril_ore" },
+	{ gift_desire = "loved" },
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "smile"
+local = "Rarer than gold, hard as diamond, and a superb conduit for magic... =Perfect Mistril= is queen of the earth's riches."
+next = "1"
+
+[perfect_mistril.1]
+portrait = "sly_think"
+local = "And so, worthy of me."
+
+[spell_fruit_parfait]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "spell_fruit_parfait" },
+	{ gift_desire = "loved" },
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "closed_eyes_smile"
+local = "The echo of magic from the deepest mines emanates from this =Spell Fruit Parfait=..."
+next = "1"
+
+[spell_fruit_parfait.1]
+portrait = "sinister"
+effect = "sparkles_dark"
+local = "I will consume it... and combine its powers with my own."
+
+[hardened_essence]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "hardened_essence" },
+	{ gift_desire = "loved" },
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "neutral"
+local = "=Hardened Essence=... a most useful rarity. Wonderful."
+next = "1"
+
+[hardened_essence.1]
+portrait = "sly"
+local = "I will use this in my research."
+
+[unknown_dragon_statuette]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "unknown_dragon_statuette" },
+	{ gift_desire = "loved" },
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "smile"
+local = "Ah! Statuettes such as this were carved at the height of my reign."
+next = "1"
+
+[unknown_dragon_statuette.1]
+portrait = "sly_think"
+local = "I was worshipped as a queen in those days, and all was my dominion."
+next = "2"
+
+[unknown_dragon_statuette.2]
+portrait = "happy"
+local = "How nostalgic!"
+
+# LIKED GIFTS
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "seridia" }, { gift_desire = "liked" }]
+portrait = "smile"
+local = "A new amusement for my hoard? I accept."
+
+[liked_gift_2]
+kind = "gift"
+requires = [{ npc = "seridia" }, { gift_desire = "liked" }]
+portrait = "smile"
+local = "You have provided an interesting diversion, [Ari]. I will take it."
+
+[liked_gift_3]
+kind = "gift"
+requires = [{ npc = "seridia" }, { gift_desire = "liked" }]
+portrait = "closed_eyes_smile"
+local = "With this, my hoard of tribute continues to grow."
+
+[liked_gift_plant]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "seridia" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "void_herb" },
+		{ gift_given = "essence_blossom" },
+		{ gift_given = "night_queen" },
+		{ gift_given = "plum_blossom" },
+		{ gift_given = "purple_mushroom" },
+		{ gift_given = "red_toadstool" },
+	] },
+]
+portrait = "smile"
+local = "I do favor the dark flora of Mistria."
+next = "1"
+
+[liked_gift_plant.1]
+portrait = "sly"
+local = "Yes... I will make use of this in my rituals."
+
+[liked_gift_monster_part]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "seridia" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "monster_horn" },
+		{ gift_given = "monster_powder" },
+		{ gift_given = "monster_shell" },
+		{ gift_given = "monster_fang" },
+		{ gift_given = "monster_whisker" },
+		{ gift_given = "monster_block" },
+	] },
+]
+portrait = "smile"
+local = "You have become an adept hunter, [Ari]."
+next = "1"
+
+[liked_gift_monster_part.1]
+portrait = "sly"
+local = "Do bring me more of your trophies. It pleases me."
+
+[void_powder]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "void_powder" },
+	{ gift_desire = "liked" },
+]
+portrait = "closed_eyes_smile"
+local = "Oh, good. I have need of =Void Powder= now and again."
+next = "1"
+
+[void_powder.1]
+portrait = "sly_think"
+local = "I enjoy the flavor it adds to my concoctions."
+next = "2"
+
+[void_powder.2]
+portrait = "sly"
+local = "I do not recommend that you try it yourself, however."
+
+[void_pearl]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "void_pearl" },
+	{ gift_desire = "liked" },
+]
+portrait = "closed_eyes_smile"
+local = "Occasionally when something mundane falls into the void, the void will calcify around it."
+next = "1"
+
+[void_pearl.1]
+portrait = "sly"
+local = "That process creates this useful little bauble. How nice."
+
+[void_stone]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "void_stone" },
+	{ gift_desire = "liked" },
+]
+portrait = "closed_eyes_smile"
+local = "What a fine sample of =Void Stone=."
+next = "1"
+
+[void_stone.1]
+portrait = "sly"
+local = "This shall be useful to me, [Ari]."
+
+[void_herb]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "void_herb" },
+	{ gift_desire = "liked" },
+]
+portrait = "smile"
+local = "A perfect =Void Herb= specimen."
+next = "1"
+
+[void_herb.1]
+portrait = "sly"
+local = "If every plant should thrive in darkness rather than sunlight... what an interesting world that would be."
+
+[essence_blossom]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "essence_blossom" },
+	{ gift_desire = "liked" },
+]
+portrait = "smile"
+local = "Choices, choices. Perhaps I will put this =Essence Blossom= into a glass of water, to enjoy its beauty..."
+next = "1"
+
+[essence_blossom.1]
+portrait = "angry_brows"
+local = "Or perhaps I will grind it into a paste, in order to extract its magical energies."
+
+[monster_wing]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "monster_wing" },
+	{ gift_desire = "liked" },
+]
+portrait = "smile"
+local = "A =Monster Wing= from Mistria's depths makes a fine magical ingredient."
+next = "1"
+
+[monster_wing.1]
+portrait = "closed_eyes_smile"
+local = "Yes... this has potential. Thank you."
+
+[monster_cookie]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "monster_cookie" },
+	{ gift_desire = "liked" },
+]
+portrait = "sly"
+local = "A charming confection. I do hope you hunted the monstrous ingredients yourself."
+
+[monster_horn]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "monster_horn" },
+	{ gift_desire = "liked" },
+]
+portrait = "smile"
+local = "You have been hunting $Stalagmites$ in the depths of the Mines, I see."
+next = "1"
+
+[monster_horn.1]
+portrait = "sly"
+local = "A fine trophy. Well done."
+
+[monster_powder]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "monster_powder" },
+	{ gift_desire = "liked" },
+]
+portrait = "closed_eyes_smile"
+local = "You must have defeated a $Mushroom$ of the Mines to harvest these spores."
+next = "1"
+
+[monster_powder.1]
+portrait = "sly"
+local = "A most useful prize. Thank you."
+
+[monster_shell]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "monster_shell" },
+	{ gift_desire = "liked" },
+]
+portrait = "smile"
+local = "The shell of a Monster from the Mines..."
+next = "1"
+
+[monster_shell.1]
+portrait = "sly_think"
+local = "This will make a fine pauldron. My thanks, [Ari]."
+
+[monster_fang]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "monster_fang" },
+	{ gift_desire = "liked" },
+]
+portrait = "smile"
+local = "The $Saplings$ of the Mines have such a charming visage..."
+next = "1"
+
+[monster_fang.1]
+portrait = "happy"
+effect = "sparkles"
+local = "I am pleased their cuteness also compels you to squish them into oblivion."
+
+[monster_whisker]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "monster_whisker" },
+	{ gift_desire = "liked" },
+]
+portrait = "closed_eyes_smile"
+local = "So you have encountered the inchoate felines of the Mines."
+next = "1"
+
+[monster_whisker.1]
+portrait = "sly"
+local = "They are not true cats, but still shed whiskers. I find such a facsimile charming. Thank you."
+
+[monster_block]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "monster_block" },
+	{ gift_desire = "liked" },
+]
+portrait = "smile"
+local = "Wonderful. A perfect cube of stone has many uses."
+next = "1"
+
+[monster_block.1]
+portrait = "sly"
+local = "Especially one that once formed a monster. Thank you."
+
+[night_queen]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "night_queen" },
+	{ gift_desire = "liked" },
+]
+portrait = "closed_eyes_smile"
+local = "The =Night Queen= is as beautiful as it is rare..."
+next = "1"
+
+[night_queen.1]
+portrait = "smile"
+local = "And I am drawn to things that flourish in darkness. Thank you."
+
+[pink_diamond]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "ore_pink_diamond" },
+	{ gift_desire = "liked" },
+]
+portrait = "smile"
+local = "I am not unmoved by things that sparkle brightly."
+next = "1"
+
+[pink_diamond.1]
+portrait = "closed_eyes_smile"
+local = "This will make a fine addition to my hoard."
+
+[plum_blossom]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "plum_blossom" },
+	{ gift_desire = "liked" },
+]
+portrait = "neutral"
+local = "My worshippers once adorned my altars with garlands of =Plum Blossoms= strung together..."
+next = "1"
+
+[plum_blossom.1]
+portrait = "closed_eyes_smile"
+local = "Sentimentality is unbecoming of a former queen, but... I do have an affection for these blooms."
+
+[ancient_royal_scepter]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "ancient_royal_scepter" },
+	{ gift_desire = "liked" },
+]
+portrait = "closed_eyes_smile"
+local = "My! An =Ancient Royal Scepter=. How nostalgic."
+next = "1"
+
+[ancient_royal_scepter.1]
+portrait = "sly_think"
+local = "There is a misconception that these scepters were wielded by me... In fact, they were used as gifts to the most trusted members of my court."
+next = "2"
+
+[ancient_royal_scepter.2]
+portrait = "sinister"
+local = "I find it amusing to receive one from you, [Ari]."
+
+[purple_mushroom]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "purple_mushroom" },
+	{ gift_desire = "liked" },
+]
+portrait = "smile"
+local = "I do have a fondness for mushrooms from the deepest depths of the Mines."
+next = "1"
+
+[purple_mushroom.1]
+portrait = "sly"
+local = "It is a shame these are not poisonous... but I will still make use of it."
+
+[red_toadstool]
+kind = "gift"
+refresh = "2w"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "red_toadstool" },
+	{ gift_desire = "liked" },
+]
+portrait = "sly_think"
+local = "These mushrooms are known to be rather poisonous."
+next = "1"
+
+[red_toadstool.1]
+portrait = "happy"
+local = "A most thoughtful tribute."
+
+# NEUTRAL GIFTS
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "seridia" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "A gift? I see."
+
+[neutral_gift_2]
+kind = "gift"
+requires = [{ npc = "seridia" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Your gift does not displease me, [Ari]."
+
+[neutral_gift_3]
+kind = "gift"
+requires = [{ npc = "seridia" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Is this an offering? Interesting."
+
+[ancient_crystal_goblet]
+kind = "gift"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "ancient_crystal_goblet" },
+	{ gift_desire = "neutral" },
+]
+portrait = "neutral"
+local = "A goblet like this was mundane in my time..."
+next = "1"
+
+[ancient_crystal_goblet.1]
+portrait = "closed_eyes"
+local = "I suppose I can accept it as a token."
+
+[ancient_gold_coin]
+kind = "gift"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "ancient_gold_coin" },
+	{ gift_desire = "neutral" },
+]
+portrait = "neutral"
+local = "This... is one of my old minted coins."
+next = "1"
+
+[ancient_gold_coin.1]
+portrait = "closed_eyes"
+local = "I have a countless hoard of these, but one more cannot hurt."
+
+[ancient_horn_circlet]
+kind = "gift"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "ancient_horn_circlet" },
+	{ gift_desire = "neutral" },
+]
+portrait = "neutral"
+local = "I remember this style of $Ancient Horn Circlet$..."
+next = "1"
+
+[ancient_horn_circlet.1]
+portrait = "closed_eyes"
+local = "Although fashions have moved on, I will accept it."
+
+[ancient_stone_lantern]
+kind = "gift"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "ancient_stone_lantern" },
+	{ gift_desire = "neutral" },
+]
+portrait = "neutral"
+local = "This type of $Ancient Stone Lantern$ was common in my day. But tell me..."
+next = "1"
+
+[ancient_stone_lantern.1]
+portrait = "closed_eyes"
+local = "Have mortals not invented a superior lantern by now?"
+
+# DISLIKED GIFTS
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "seridia" }, { gift_desire = "disliked" }]
+portrait = "mad"
+local = "You must have found this under your heel. Take it away."
+
+[disliked_gift_2]
+kind = "gift"
+requires = [{ npc = "seridia" }, { gift_desire = "disliked" }]
+portrait = "mad"
+local = "You would mock me with such an offering?"
+
+[disliked_gift_3]
+kind = "gift"
+requires = [{ npc = "seridia" }, { gift_desire = "disliked" }]
+portrait = "mad"
+local = "I do not enjoy such practical jokes, [Ari]."
+
+[disliked_gift_dragon_part]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "seridia" },
+	{ gift_desire = "disliked" },
+	{ any = [{ gift_given = "dragon_scale" }, { gift_given = "dragon_claw" }] },
+]
+portrait = "mad"
+local = "You would gift me a fragment discarded by my kin?"
+next = "1"
+
+[disliked_gift_dragon_part.1]
+portrait = "ugh"
+local = "And not even one that fell by your hand?"
+next = "2"
+
+[disliked_gift_dragon_part.2]
+portrait = "closed_eyes"
+local = "If I had a need for such a thing, I could simply make use my own."
+
+[disliked_gift_dragon_part_2]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "seridia" },
+	{ gift_desire = "disliked" },
+	{ any = [{ gift_given = "dragon_scale" }, { gift_given = "dragon_claw" }] },
+]
+portrait = "closed_eyes"
+local = "You give me something I already have in abundance."
+next = "1"
+
+[disliked_gift_dragon_part_2.1]
+portrait = "mad"
+local = "Perhaps you enjoy being gifted stray hairs and nail clippings?"
+
+[hated_gift]
+kind = "gift"
+requires = [
+	{ npc = "seridia" },
+	{ gift_given = "statuette_of_caldarus" },
+	{ gift_desire = "hated" },
+]
+portrait = "mad"
+local = "Have you mistaken that buffoon's visage for mine?"
+next = "1"
+
+[hated_gift.1]
+portrait = "closed_eyes_brow"
+local = "Look at those passive swept-back horns, that guileless face."
+next = "2"
+
+[hated_gift.2]
+portrait = "mad"
+local = "How disappointing."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "seridia" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ "seridia_birthday" = "24h", time = "after" },
+	{},
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "neutral"
+local = "A gift? To commemorate the day of my birth?"
+next = "1"
+
+[birthday_gift.1]
+portrait = "closed_eyes"
+local = "Once, it was mandatory to pay me tribute on my birth date."
+next = "2"
+
+[birthday_gift.2]
+portrait = "smile"
+local = "To have it celebrated when it is not compulsory is... unexpectedly welcome."

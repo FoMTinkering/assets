@@ -1,0 +1,447 @@
+fade_out(4);
+wait(1);
+__raise_textbox();
+set_on_blackboard("no_held_child", true);
+
+//
+var spouse = spouse();
+var convo_path = "Cutscenes/Heart Events/Children/Delivery/Spouse Delivery/spouse_delivery_" + spouse + "/spouse_delivery_" + spouse;
+set_conversation(convo_path);
+
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+
+scene(clinic_f1);
+if spouse != "valen" {
+    place_actor(ari, west, spd_ari_entrance);
+    place_actor(spouse, south, spd_spouse_entrance);
+    place_actor(valen, east, spd_valen_entrance);
+    camera_position(spd_camera_1);
+    request_music_play("Music/Events/Twinkling Light"); //
+
+    //
+    sim {
+        {
+            fade_in(2);
+            wait(1);
+            fade_out(2);
+
+        }
+        {
+            wait(0.5);
+            free bark_speech(spouse, sweat_drop);
+            wait(1);
+            free bark_speech(ari, question_mark);
+            wait(0.5);
+            face(spouse, west);
+            wait(0.5);
+            free bark_speech(valen, plant_tonic);
+            wait(1);
+            free bark_speech(valen, cute_face);
+            wait(1.5);
+        }
+        {
+            pan_camera(7, spd_camera_2);
+        }
+    }
+    face(spouse, south);
+    animate(spouse, blink);
+    wait(0.1);
+    anim_speed(spouse, 0);
+    place_actor(valen, north, spd_valen_medicine);
+    animate(ari, action);
+    wait(0.3);
+    freeze_ari();
+    camera_position(spd_camera_3);
+
+    //
+    sim {
+        {
+            fade_in(2);
+        }
+        {
+            animate(valen, action);
+            wait(0.5);
+            animate(valen, idle);
+            animate(valen, action);
+            wait(0.5);
+            animate(valen, idle);
+            animate(valen, action);
+            wait(0.5);
+            animate(valen, idle);
+            animate(valen, action);
+            wait(0.5);
+            animate(valen, idle);
+        }
+    }
+    sim {
+        {
+            walk(valen, spd_valen_entrance);
+            face(valen, east);
+        }
+        {
+            free pan_camera(5, spd_camera_4);
+        }
+        {
+            wait(1.5);
+            anim_speed(spouse, 1);
+            animate(spouse, idle);
+        }
+        {
+            wait(2);
+            unfreeze_ari();
+            animate(ari, idle);
+        }
+    }
+    face(spouse, west);
+    wait(0.5);
+    animate(valen, action);
+    wait(0.5);
+    animate(valen, idle);
+    free bark_speech(valen, plant_tonic);
+    wait(1);
+    free bark_speech(spouse, annoyed);
+    wait(0.5);
+    face(spouse, south);
+    wait(0.5);
+    free bark_speech(valen, cute_face);
+    wait(0.5);
+    animate(spouse, blink);
+    wait(0.1);
+    anim_speed(spouse, 0);
+    sim {
+        {
+            fade_out(2);
+        }
+        {
+            wait(1);
+            animate(ari, action);
+            wait(0.3);
+            freeze_ari();
+        }
+    }
+
+    //
+    wait(1);
+    play_sound("SoundEffects/SpecialEvents/BabyCry");
+    wait(4);
+    anim_speed(spouse, 1);
+    animate(spouse, idle);
+    unfreeze_ari();
+    animate(ari, idle);
+    camera_position(spd_camera_4);
+    spawn_baby_prop(baby_prop);
+    fade_in(2);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    face(spouse, east);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            pan_camera(2, spd_camera_5);
+        }
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+    }
+    trigger_birth();
+    wait(1);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(0.5);
+    pan_camera(2, spd_camera_4);
+    free bark_speech(valen, cute_face);
+    wait(0.5);
+    face(spouse, west);
+    wait(1.5);
+    face(spouse, south);
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, west);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    //
+    if get_response() == 0 {
+        close_textbox();
+        wait(0.25);
+        run_tutorial("baby");
+        wait(0.25);
+    } else {
+        next_line(); //
+    }
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(0.5);
+    face(spouse, east);
+    wait(0.5);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, west);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    face(spouse, south);
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    free bark_speech(valen, cute_face);
+    wait(1);
+    fade_out(3);
+} else {
+    place_actor(ari, west, spd_ari_entrance);
+    place_actor(valen, south, spd_spouse_entrance);
+    place_actor(josephine, east, spd_valen_entrance);
+    camera_position(spd_camera_1);
+    request_music_play("Music/Events/Twinkling Light"); //
+
+    //
+    sim {
+        {
+            fade_in(2);
+            wait(1);
+            fade_out(2);
+
+        }
+        {
+            wait(0.5);
+            free bark_speech(valen, sweat_drop);
+            wait(1);
+            free bark_speech(ari, question_mark);
+            wait(0.5);
+            face(valen, west);
+            wait(0.5);
+            free bark_speech(josephine, plant_tonic);
+            wait(1);
+            free bark_speech(josephine, cute_face);
+            wait(1.5);
+        }
+        {
+            pan_camera(7, spd_camera_2);
+        }
+    }
+    face(valen, south);
+    animate(valen, blink);
+    wait(0.1);
+    anim_speed(valen, 0);
+    place_actor(josephine, north, spd_valen_medicine);
+    animate(ari, action);
+    wait(0.3);
+    freeze_ari();
+    camera_position(spd_camera_3);
+
+    //
+    sim {
+        {
+            fade_in(2);
+        }
+        {
+            animate(josephine, action);
+            wait(0.5);
+            animate(josephine, idle);
+            animate(josephine, action);
+            wait(0.5);
+            animate(josephine, idle);
+            animate(josephine, action);
+            wait(0.5);
+            animate(josephine, idle);
+            animate(josephine, action);
+            wait(0.5);
+            animate(josephine, idle);
+        }
+    }
+    sim {
+        {
+            walk(josephine, spd_valen_entrance);
+            face(josephine, east);
+        }
+        {
+            free pan_camera(5, spd_camera_4);
+        }
+        {
+            wait(1.5);
+            anim_speed(valen, 1);
+            animate(valen, idle);
+        }
+        {
+            wait(2);
+            unfreeze_ari();
+            animate(ari, idle);
+        }
+    }
+    face(valen, west);
+    wait(0.5);
+    animate(josephine, action);
+    wait(0.5);
+    animate(josephine, idle);
+    wait(0.5);
+    free bark_speech(valen, plant_tonic);
+    wait(1);
+    free bark_speech(josephine, cute_face);
+    wait(1);
+    free bark_speech(josephine, plant_tonic);
+    wait(1);
+    free bark_speech(valen, cute_face);
+    wait(0.5);
+    face(valen, south);
+    wait(1);
+    animate(valen, blink);
+    wait(0.1);
+    anim_speed(valen, 0);
+    sim {
+        {
+            fade_out(2);
+        }
+        {
+            wait(1);
+            animate(ari, action);
+            wait(0.3);
+            freeze_ari();
+        }
+    }
+
+    //
+    wait(1);
+    play_sound("SoundEffects/SpecialEvents/BabyCry");
+    wait(4);
+    anim_speed(valen, 1);
+    animate(valen, idle);
+    unfreeze_ari();
+    animate(ari, idle);
+    camera_position(spd_camera_4);
+    spawn_baby_prop(baby_prop);
+    fade_in(2);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    face(valen, east);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(valen, heart);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(valen, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            pan_camera(2, spd_camera_5);
+        }
+        {
+            wait(0.5);
+            face(valen, east);
+        }
+    }
+    trigger_birth();
+    wait(1);
+    free bark_speech(ari, heart);
+    free bark_speech(valen, heart);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    free bark_speech(valen, cute_face);
+    wait(0.5);
+    pan_camera(2, spd_camera_4);
+    free bark_speech(josephine, cute_face);
+    wait(0.5);
+    face(valen, west);
+    wait(1.5);
+    face(valen, south);
+    wait(0.5);
+    free bark_speech(valen, heart);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(valen, west);
+        }
+        {
+            next_line(); //
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(0.5);
+    face(valen, east);
+    wait(0.5);
+    free bark_speech(valen, cute_face);
+    wait(2);
+    face(valen, south);
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    free bark_speech(valen, cute_face);
+    wait(1);
+    fade_out(3);
+
+    __raise_textbox();
+    wait(0.5);
+    next_line(); //
+    //
+    if get_response() == 0 {
+        close_textbox();
+        wait(0.25);
+        run_tutorial("baby");
+        wait(0.25);
+    }
+}

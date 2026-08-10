@@ -1,0 +1,63 @@
+[town_repair_0]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "hayden" }] },
+	{ caldarus_zone = "<hayden_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_zone = "town/repair_observation" }
+]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Much goes into keeping the town in good condition. Watching you, I am learning to appreciate how laborious it truly is."
+next = "1"
+
+[town_repair_0.1]
+speaker = "hayden"
+portrait = "happy_fist"
+local = "It's hard work for sure, but I like it! It feels good, walking around town and seeing all the effort you've put in."
+
+[town_repair_1]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "hayden" }] },
+	{ caldarus_zone = "<hayden_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_zone = "town/repair_observation" },
+	{ caldarus_seridia_town_timer = false }
+]
+speaker = "caldarus"
+portrait = "neutral"
+local = "I have watched you make a number of repairs, and it has made me realize..."
+next = "1"
+
+[town_repair_1.1]
+speaker = "caldarus"
+portrait = "smile"
+local = "I would like to hammer something, too. Might I borrow your tools?"
+next = "2"
+
+[town_repair_1.2]
+speaker = "hayden"
+portrait = "happy"
+effect = "drop"
+local = "I'm gonna need special permission from Adeline for that..."
+
+[town_repair_2]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "hayden" }] },
+	{ caldarus_zone = "<hayden_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_zone = "town/repair_observation" },
+	{ caldarus_seridia_town_timer = false },
+	{ quest_repair_the_summit_stairs_complete = true }
+]
+speaker = "caldarus"
+portrait = "neutral"
+local = "[Ari] has done much to make this town shine. <he>He works</he><she>She works</she><they>They work</they><it>It works</it><none>[Ari] works</none> hard in all aspects of <he>his</he><she>her</she><they>their</they><it>its</it><none>[Ari]'s</none> life, it seems."
+next = "1"
+
+[town_repair_2.1]
+speaker = "hayden"
+portrait = "wink_fist"
+local = "Absolutely. Without <he>him</he><she>her</she><they>them</they><it>it</it><none>[Ari]</none>, we would still be putting the pieces together after the earthquake. <he>His</he><she>Her</she><they>Their</they><it>Its</it><none>[Ari]'s</none> hard work really made a difference!"

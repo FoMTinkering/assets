@@ -1,0 +1,112 @@
+#SPRING FESTIVAL
+[spring_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "neutral"
+local = "Goodness, is it the $Spring Festival$ already? How time flies."
+next = "1"
+
+
+[spring_festival.1]
+portrait = "think"
+local = "I haven't had the time to pick any $Breath of Spring$ this year..."
+next = "2"
+
+
+[spring_festival.2]
+portrait = "happy"
+local = "But I'll be cheering for you!"
+
+
+#SHOOTING STAR FESTIVAL
+[shooting_star_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "think_blush"
+local = "Good morning, [Ari]. Are you excited for tonight's $Shooting Star Festival$?"
+next = "1"
+
+
+[shooting_star_festival.1]
+portrait = "caring_special"
+local = "We can watch the stars from anywhere... but the Summit has the best view of all, don't you think?"
+
+
+#HARVEST FESTIVAL
+
+
+[harvest_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "neutral_blush"
+local = "Good morning and happy $Harvest Festival$!"
+next = "1"
+
+
+[harvest_festival.1]
+portrait = "caring_special"
+local = "Once you've sampled all the delicacies at the feast, do find me..."
+next = "2"
+
+[harvest_festival.2]
+portrait = "happy_blush"
+local = "I'd love to join you for the dance."
+
+#ANIMAL FESTIVAL
+
+
+[animal_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ animal_festival_date = "1d", time = "after" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "neutral"
+local = "Good morning, [Ari]. Are you excited for the $Animal Festival$?"
+next = "1"
+
+
+[animal_festival.1]
+portrait = "happy"
+local = "I'm not one of the judges, but I'm certain our animals will take home a prize!"

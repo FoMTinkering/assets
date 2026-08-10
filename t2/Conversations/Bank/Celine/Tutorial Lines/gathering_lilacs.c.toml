@@ -1,0 +1,15 @@
+[gathering_lilacs]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ location = "haydens_farm" },
+	{ season = "spring" },
+	{ celine_routine = "haydens_farm_foraging" },
+	{ celine_was_last_spoken_to = "12h", time = "after", comparator = ">" },
+]
+local = "Hello, [Ari]! I'm gathering lilacs today. They only really appear around Hayden's farm."
+next = "1"
+
+[gathering_lilacs.1]
+portrait = "happy"
+local = "Pretty, aren't they?"

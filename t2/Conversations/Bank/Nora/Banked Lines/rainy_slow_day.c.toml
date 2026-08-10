@@ -1,0 +1,16 @@
+[rainy_slow_day]
+refresh = "1y"
+requires = [
+	{ npc = "nora" },
+	{ nora_zone = "<dell_zone>", comparator = "!=" },
+	{ location = "general_store_store", comparator = "!=" },
+	{ location = "general_store_home", comparator = "!=" },
+	{ weather = "rainy" },
+	{ nora_is_traveling = true },
+]
+local = "Rain usually means it's slow at the General Store, so I take the day to run some errands."
+next = "1"
+
+[rainy_slow_day.1]
+portrait = "think"
+local = "Unless I'm chasing Dell out of puddles."

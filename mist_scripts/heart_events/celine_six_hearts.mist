@@ -1,0 +1,578 @@
+scene(celines_room);
+camera_position(c6h_camera_1);
+place_actor(ari, north, c6h_ari_entrance);
+place_actor(celine, south, "ArmChair Seat");
+animate(celine, book_sit);
+request_music_play(celine);
+setup_prop(c6h_celine_pot);
+//
+toggle_object_visibility("obj_celine_pot");
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		wait(1);
+		free bark_speech(celine, ellipses);
+		wait(3);
+		free bark_speech(celine, exclamation_mark);
+		wait(0.5);
+		animate(celine, sit);
+		walk(celine, c6h_celine_entrance);
+		face(celine, south);
+	}
+	{
+		wait(3.5);
+		walk_slow(ari, c6h_ari_start);
+		face(ari, north);
+	}
+	{
+		wait(3.5);
+		pan_camera(2, c6h_camera_2);
+	}
+	{
+		wait(5);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, music);
+wait(1);
+free bark_speech(celine, cute_face);
+wait(1.5);
+sim {
+	{
+		walk_slow(celine, c6h_celine_start);
+		face(celine, north);
+	}
+	{
+		wait(0.5);
+		walk_slow(ari, c6h_ari_desk);
+		face(ari, north);
+	}
+	{
+		pan_camera(3, c6h_camera_3);
+	}
+	{
+		wait(1);
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(celine, east);
+	}
+	{
+		wait(1);
+		face(ari, west);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(celine, north);
+	}
+	{
+		next_line(); //
+	}
+}
+//
+sim {
+	{
+		wait(1);
+		face(celine, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(1);
+face(ari, north);
+face(celine, north);
+wait(1);
+free bark_speech(celine, ellipses);
+free bark_speech(ari, ellipses);
+wait(2);
+play_sound("SoundEffects/SpecialEvents/PoliteKnock");
+wait(0.5);
+free bark_speech(celine, exclamation_mark);
+wait(0.5);
+sim {
+	{
+		face(celine, south);
+	}
+	{
+		wait(0.5);
+		face(ari, south);
+	}
+	{
+		place_actor(dell, north, c6h_ari_entrance);
+		walk(dell, c6h_dell_entrance);
+		face(dell, north);
+	}
+	{
+		pan_camera(1, c6h_camera_2);
+		wait(0.5);
+		pan_camera(2, c6h_camera_3);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(2);
+		face(celine, east);
+		wait(1);
+		face(celine, south);
+	}
+	{
+		wait(2.5);
+		face(ari, west);
+		wait(1);
+		face(ari, south);
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(1.5);
+		face(celine, east);
+	}
+	{
+		next_line(); //
+	}
+}
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.75);
+			face(ari, west);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	sim {
+		{
+			wait(1.5);
+			face(ari, west);
+		}
+		{
+			next_line(); //
+		}
+	}
+}
+close_textbox();
+wait(0.25);
+free bark_speech(dell, yum);
+wait(1);
+sim {
+	{
+		sim {
+			walk(dell, c6h_dell_sprint_1);
+			set_move_speed(dell, 2);
+		}
+		face(dell, east);
+		sim {
+			walk(dell, c6h_dell_sprint_2);
+			set_move_speed(dell, 2);
+		}
+		face(dell, west);
+		sim {
+			walk(dell, c6h_dell_sprint_1);
+			set_move_speed(dell, 2);
+		}
+		face(dell, east);
+		sim {
+			walk(dell, c6h_dell_sprint_2);
+			set_move_speed(dell, 2);
+		}
+		face(dell, west);
+		sim {
+			walk(dell, c6h_dell_entrance);
+			set_move_speed(dell, 2);
+		}
+		face(dell, north);
+	}
+	{
+		wait(0.5);
+		free bark_speech(celine, exclamation_mark);
+		free bark_speech(ari, exclamation_mark);
+		wait(0.5);
+		face(ari, south);
+		face(celine, south);
+	}
+	{
+		wait(1);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(celine, cute_face);
+free bark_speech(ari, cute_face);
+wait(0.5);
+free bark_speech(dell, cute_face);
+wait(1);
+sim {
+	{
+		walk(dell, c6h_ari_entrance);
+		remove_actor(dell);
+	}
+	{
+		wait(0.75);
+		face(celine, north);
+		animate(celine, action);
+		wait(0.5);
+		destroy_prop(c6h_celine_pot);
+		animate(celine, idle);
+		free walk_slow(celine, c6h_celine_exit);
+	}
+	{
+		wait(0.5);
+		walk_slow(ari, c6h_ari_start);
+	}
+	{
+		wait(0.5);
+		fade_out(2);
+	}
+	{
+		wait(0.5);
+		pan_camera(2, c6h_camera_2);
+	}
+}
+wait(1);
+scene(town);
+camera_position(c6h_camera_4);
+place_actor(ari, north, c6h_ari_town_entrance);
+place_actor(celine, north, c6h_celine_town_entrance);
+place_actor(dell, north, c6h_dell_town_entrance);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		walk_slow(ari, c6h_ari_town_start);
+		face(ari, west);
+	}
+	{
+		walk_slow(dell, c6h_dell_town_start);
+		face(dell, east);
+		next_line(); //
+	}
+	free {
+		walk_slow(celine, c6h_celine_town_pause);
+		face(celine, north);
+		free bark_speech(celine, exclamation_mark);
+	}
+	{
+		pan_camera(3, c6h_camera_5);
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(dell, south);
+	}
+	{
+		sim {
+			walk(celine, c6h_celine_town_start);
+			set_move_speed(celine, 1.2);
+		}
+		face(celine, north);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.75);
+		face(ari, south);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	free {
+		sim {
+			walk(dell, c6h_dell_town_walk);
+			set_move_speed(dell, 1.2);
+		}
+		face(dell, north);
+		sim {
+			walk(dell, c6h_dell_town_exit);
+			set_move_speed(dell, 1.2);
+		}
+		face(dell, north);
+		use_door(dell);
+	}
+	{
+		wait(0.5);
+		face(ari, north);
+		wait(1.5);
+		face(ari, south);
+	}
+	{
+		wait(2.5);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+free bark_speech(celine, blush);
+wait(0.5);
+fade_out(2);
+
+wait(1);
+scene(general_store_home);
+toggle_asset_visibility("spr_generalstore_home_tableflowers_spring");
+camera_position(c6h_camera_6);
+place_actor(ari, north, c6h_gs_entrance);
+place_actor(celine, north, c6h_gs_entrance);
+place_actor(dell, north, c6h_dell_gs_entrance);
+place_actor(holt, north, c6h_holt_entrance);
+animate(holt, action);
+place_actor(nora, north, c6h_nora_entrance);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		pan_camera(3, c6h_camera_7);
+	}
+	{
+		wait(1);
+		free bark_speech(nora, exclamation_mark);
+		wait(0.5);
+		face(nora, south);
+	}
+	{
+		wait(0.75);
+		walk_slow(ari, c6h_ari_gs_entrance);
+		face(ari, west);
+	}
+	{
+		walk_slow(celine, c6h_celine_gs_entrance);
+	}
+	{
+		wait(2);
+		face(dell, south);
+	}
+	{
+		wait(2.5);
+		animate(holt, idle);
+		wait(0.5);
+		face(holt, south);
+	}
+	{
+		wait(2);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+sim {
+	{
+		face(holt, north);
+		animate(holt, action);
+		wait(3);
+		animate(holt, idle);
+		face(holt, south);
+		walk_slow(holt, c6h_holt_start);
+		face(holt, south);
+		animate(holt, action);
+		wait(0.5);
+		setup_prop(c6h_cobbler);
+		animate(holt, idle);
+	}
+	{
+		wait(2);
+		walk_slow(nora, "Kitchen Table Top Right");
+		face(nora, west);
+		animate(nora, sit);
+	}
+	{
+		walk_slow(dell, "Kitchen Table Top Left");
+		face(dell, east);
+		animate(dell, sit);
+	}
+	{
+		wait(1.5);
+		walk_slow(ari, "Kitchen Table Bottom Left");
+		face(ari, east);
+		animate(ari, sit);
+	}
+	{
+		wait(0.5);
+		walk_slow(celine, c6h_celine_gs_start);
+		face(celine, north);
+	}
+	{
+		pan_camera(3, c6h_camera_8);
+	}
+	{
+		wait(3);
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+animate(celine, action);
+wait(0.5);
+setup_prop(c6h_sprout);
+animate(celine, idle);
+wait(0.5);
+sim {
+	{
+		wait(1);
+		walk_slow(celine, "Kitchen Table Bottom Right");
+		face(celine, west);
+		animate(celine, sit);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		//
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(celine, sweat_drop);
+wait(1.5);
+sim {
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(1);
+free bark_speech(celine, ellipses);
+wait(1.5);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(celine, cute_face);
+wait(0.5);
+free bark_speech(ari, cute_face);
+free bark_speech(dell, cute_face);
+free bark_speech(holt, cute_face);
+free bark_speech(nora, cute_face);
+wait(2.5);
+sim {
+	{
+		destroy_prop(c6h_sprout);
+		setup_prop(c6h_sprouting);
+		wait(0.5);
+		destroy_prop(c6h_sprouting);
+		setup_prop(c6h_sprouted);
+	}
+	{
+		play_sound("SoundEffects/SpecialEvents/PottedPlantSproutStage2");
+	}
+	{
+		wait(0.5);
+		free bark_speech(ari, exclamation_mark);
+		free bark_speech(celine, exclamation_mark);
+		free bark_speech(dell, exclamation_mark);
+		free bark_speech(holt, exclamation_mark);
+		free bark_speech(nora, exclamation_mark);
+		wait(1);
+	}
+}
+next_line(); //
+close_textbox();
+wait(1);
+free play_sound("SoundEffects/SpecialEvents/PottedPlantSproutStage3");
+destroy_prop(c6h_sprouted);
+setup_prop(c6h_sprouting_2);
+wait(0.5);
+destroy_prop(c6h_sprouting_2);
+setup_prop(c6h_sprouted_2);
+wait(1);
+next_line(); //
+next_line(); //
+sim {
+	{
+		wait(4);
+		animate(celine, idle);
+		walk(celine, c6h_celine_gs_exit);
+		face(celine, south);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	next_line(); //
+	{
+		wait(1);
+		free bark_speech(celine, exclamation_mark);
+	}
+
+}
+sim {
+	{
+		wait(0.5);
+		face(celine, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(dell, cute_face);
+wait(0.5);
+sim {
+	{
+		walk_slow(celine, "Kitchen Table Bottom Right");
+		face(celine, west);
+		animate(celine, sit);
+		wait(1.25);
+		free bark_speech(ari, cute_face);
+		wait(1);
+		free bark_speech(celine, cute_face);
+		wait(1);
+	}
+	{
+		wait(5);
+		fade_out(2);
+	}
+}

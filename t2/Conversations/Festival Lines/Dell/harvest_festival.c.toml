@@ -1,0 +1,30 @@
+[harvest_festival_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "dell" },
+	{ harvest_festival_setup = true },
+	{ celine_heart_level = 8, comparator = ">=" },
+	{ celine_is_dating = true },
+]
+portrait = "happy"
+local = "Last time I visited Celine, I caught her dancing with a broom!"
+next = "1"
+
+[harvest_festival_anticipation.1]
+portrait = "neutral"
+local = """She said she was practicing for the $Harvest Festival$ Dance. She also asked me not to tell "You Know Who"."""
+next = "2"
+
+[harvest_festival_anticipation.2]
+portrait = "think"
+local = "But I don't know who she meant..."
+
+[harvest_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "dell" },
+	{ harvest_festival_date = "1d", time = "after" },
+]
+portrait = "think"
+local = "If there are $Queen Berries$, do you think there are Knight Berries too?"

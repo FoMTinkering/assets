@@ -1,0 +1,70 @@
+[animal_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "eiland" },
+	{ animal_festival_today = true },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "happy"
+local = "Be sure to get yourself a snack, [Ari]. Reina's outdone herself with how cute and tasty they all are!"
+
+[animal_festival_first]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "eiland" },
+	{ animal_festival_today = true },
+	{ any = [{ small_animal_place = 3 }, { large_animal_place = 3 }] },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "happy"
+local = "Congratulations! Today is a historic day for the annals of [farm_name] ranching."
+
+[animal_festival_chicken_cutout]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "eiland" },
+	{ animal_festival_today = true },
+	{ eiland_is_at = "town/af_chicken_cutout" },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "happy"
+local = "These are rather cute, aren't they? I should commission some similar ones for the Museum from Ryis!"
+next = "1"
+
+[animal_festival_chicken_cutout.1]
+portrait = "neutral"
+effect = "cheery"
+local = "Imagine posing like this in a famous portrait or statue!"

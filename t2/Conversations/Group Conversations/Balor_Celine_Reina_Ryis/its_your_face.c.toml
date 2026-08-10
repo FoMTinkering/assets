@@ -1,0 +1,35 @@
+[its_your_face]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "balor" },
+		{ npc = "celine" },
+		{ npc = "reina" },
+		{ npc = "ryis" },
+	] },
+	{ balor_zone = "<celine_zone>" },
+	{ balor_zone = "<reina_zone>" },
+	{ balor_zone = "<ryis_zone>" },
+]
+speaker = "balor"
+portrait = "sly"
+local = "You wound me! I'm not as shady as all that."
+next = "1"
+
+[its_your_face.1]
+speaker = "reina"
+portrait = "neutral"
+local = "You're definitely not. But you look shady."
+next = "2"
+
+[its_your_face.2]
+speaker = "celine"
+portrait = "think"
+local = "It's your face, honestly."
+next = "3"
+
+[its_your_face.3]
+speaker = "ryis"
+portrait = "happy"
+effect = "cheery"
+local = "Definitely your face."

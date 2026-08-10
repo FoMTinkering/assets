@@ -1,0 +1,91 @@
+[museum_donation_wanted_follow_up_1]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ mdw = true },
+]
+local = "Errol talked to you about the Museum? Fantastic!"
+next = "1"
+
+[museum_donation_wanted_follow_up_1.1]
+portrait = "happy"
+local = "I knew the Mistria Historical Society could count on your support!"
+
+[museum_donation_wanted_follow_up_5]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ mdw = true },
+]
+portrait = "happy"
+local = "Oh, Lord Eiland will be thrilled that you're supporting the Museum. The Mistria Historical Society is indebted to you!"
+
+[museum_donation_wanted]
+kind = "gameplay_triggered"
+writes = [{ mdw = true, expires = "4d" }]
+speaker = "errol"
+portrait = "happy"
+local = "[Ari]! Welcome, welcome!"
+next = "1"
+
+[museum_donation_wanted.1]
+speaker = "errol"
+local = "I assume this is about my letter?"
+next = "2"
+
+[museum_donation_wanted.2]
+speaker = "errol"
+portrait = "happy"
+local = "Excellent!"
+next = "3"
+
+[museum_donation_wanted.3]
+speaker = "errol"
+portrait = "think"
+local = "In my talks with Lord Eiland and Lady Adeline, they entreated me to concern myself with objects from antiquity..."
+next = "4"
+
+[museum_donation_wanted.4]
+speaker = "errol"
+portrait = "neutral"
+local = "As well as to use the Museum to showcase the many unique specimens of Mistria."
+next = "5"
+
+[museum_donation_wanted.5]
+speaker = "errol"
+local = "To wit, if you could bring me not only your $Archaeological Finds$ but also the $Plants$, $Insects$, and $Fish$ of the region! I believe together we can create a museum that's one of a kind!"
+prompts = [
+	{ local = "You want... bugs?!", next = "6" },
+	{ local = "You want... my crops?!", next = "6" },
+]
+
+[museum_donation_wanted.6]
+speaker = "errol"
+portrait = "happy"
+local = "Indeed! I will display the items that you donate so that visitors from far and wide can appreciate what Mistria has to offer!"
+next = "7"
+
+[museum_donation_wanted.7]
+speaker = "errol"
+local = "And do not think we would be ungrateful, there is a generous reimbursement policy set up by the Historical Society. $Renown$ and all kinds of $Rewards$!"
+next = "8"
+
+[museum_donation_wanted.8]
+no_speaker = true
+local = "Would you like to view the $Museum Tutorial$?"
+prompts = [{ local = "Yes", next = "9" }, { local = "No", next = "9" }]
+
+[museum_donation_wanted.9]
+speaker = "errol"
+local = "What do you say, [Ari]? Can we count on you?"
+prompts = [
+	{ local = "Let's get digging!", next = "10" },
+	{ local = "Get ready for an alarming variety of creepy crawlies!", next = "10" },
+]
+
+[museum_donation_wanted.10]
+speaker = "errol"
+portrait = "happy"
+local = "Splendid! As an official surveyor, let me give you a small stipend to welcome you."

@@ -1,0 +1,733 @@
+[reina_eight_hearts_follow_up_adeline]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ reina_heart_event = "eight_heart" }
+]
+portrait = "happy"
+local = "[Ari], congrats!"
+next = "1"
+
+[reina_eight_hearts_follow_up_adeline.1]
+portrait = "neutral"
+local = "I've talked all about it with Reina, it's so wonderful that Mistria has its very own establishment with an Aldarian Star."
+next = "2"
+
+[reina_eight_hearts_follow_up_adeline.2]
+portrait = "happy"
+local = "This is such a big moment for the whole town. I'm sure we're the talk of the Capital!"
+
+[reina_eight_hearts_follow_up_darcy]
+refresh = "never"
+requires = [
+	{ npc = "darcy" },
+	{ reina_heart_event = "eight_heart" },
+	{ reina_eight_heart_priority_bump = true }
+]
+portrait = "neutral"
+local = "I couldn't believe it when I was nominated to help as a judge for the Aldarian Cooking Contest."
+next = "1"
+
+[reina_eight_hearts_follow_up_darcy.1]
+portrait = "happy"
+local = "It's been so fun! Aldaria has a lot of hidden cooking talent."
+next = "2"
+
+[reina_eight_hearts_follow_up_darcy.2]
+portrait = "ugh"
+local = "Too bad it means I need to work with Taliferro, though."
+
+[reina_eight_hearts_follow_up_hemlock]
+refresh = "never"
+requires = [{ npc = "hemlock" }, { reina_heart_event = "eight_heart" }]
+portrait = "neutral"
+local = "We've been getting reservation inquiries on the regular since Reina's cooking won that Aldarian Star award."
+next = "1"
+
+[reina_eight_hearts_follow_up_hemlock.1]
+portrait = "happy"
+local = "I keep writing them back and letting them know they can just drop by whenever!"
+
+[reina_eight_hearts_follow_up_josephine]
+refresh = "never"
+requires = [{ npc = "josephine" }, { reina_heart_event = "eight_heart" }]
+portrait = "neutral"
+local = "Reina's been so confident in the kitchen lately. I'm glad all of Aldaria knows how great a cook my daughter is!"
+
+[reina_eight_hearts_follow_up_luc]
+refresh = "never"
+requires = [{ npc = "luc" }, { reina_heart_event = "eight_heart" }]
+actions = [{ bark = { bark = "cute_face", npc = "luc" } }]
+portrait = "neutral"
+local = "It's so cool that Reina won a cooking award!"
+next = "1"
+
+[reina_eight_hearts_follow_up_luc.1]
+portrait = "happy"
+local = "She says it's partly my award, because I did such a good job cleaning the silverware for the judges."
+
+[reina_eight_hearts_follow_up_maple]
+refresh = "never"
+requires = [
+	{ npc = "maple" },
+	{ reina_heart_event = "eight_heart" },
+	{ reina_eight_heart_priority_bump = true }
+]
+actions = [{ item = "maples_drawing" }]
+portrait = "think"
+local = "I can't believe Reina won and she didn't even get a trophy or anything!"
+next = "1"
+
+[reina_eight_hearts_follow_up_maple.1]
+portrait = "happy"
+local = "So I drew a picture of the Star trophy she'd have gotten if I was Queen!"
+next = "2"
+
+[reina_eight_hearts_follow_up_maple.2]
+portrait = "neutral"
+effect = "cheery"
+local = "I made one for you too, [Ari]."
+
+[reina_eight_hearts_follow_up_reina_best_friend]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_heart_event = "eight_heart" },
+	{ reina_is_best_friend = true },
+	{ reina_eight_heart_priority_bump = true }
+]
+portrait = "neutral"
+local = "The cooking contest was fun, wasn't it?"
+next = "1"
+
+[reina_eight_hearts_follow_up_reina_best_friend.1]
+portrait = "happy"
+effect = "cheery"
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+local = "I'm glad we got to experience it together."
+
+[reina_eight_hearts_follow_up_reina_romantic]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_heart_event = "eight_heart" },
+	{ reina_is_partner = true },
+	{ reina_eight_heart_priority_bump = true }
+]
+actions = [{ bark = { bark = "blush", npc = "reina" } }]
+portrait = "happy"
+local = "The cooking contest was fun, wasn't it?"
+next = "1"
+
+[reina_eight_hearts_follow_up_reina_romantic.1]
+portrait = "blush_special"
+local = "If I had known we were going to confess our feelings afterwards, I would have been a lot more nervous!"
+
+[reina_eight_hearts_follow_up_taliferro]
+refresh = "never"
+requires = [
+	{ npc = "taliferro" },
+	{ reina_heart_event = "eight_heart" },
+	{ reina_eight_heart_priority_bump = true }
+]
+portrait = "think"
+local = "Oh, it's you."
+next = "1"
+
+[reina_eight_hearts_follow_up_taliferro.1]
+portrait = "sly"
+local = """I'm not going to call you "Chef" just because you assisted in the cooking competition, you know."""
+next = "2"
+
+[reina_eight_hearts_follow_up_taliferro.2]
+portrait = "mad"
+local = "You've yet to earn that title as far as I'm concerned."
+
+[reina_eight_hearts_follow_up_vera]
+refresh = "never"
+requires = [
+	{ npc = "vera" },
+	{ reina_heart_event = "eight_heart" },
+	{ reina_eight_heart_priority_bump = true }
+]
+portrait = "neutral"
+local = "I always knew Reina could cook, but she really pulled out all the stops!"
+next = "1"
+
+[reina_eight_hearts_follow_up_vera.1]
+portrait = "happy"
+local = "That Aldarian Star was well earned!"
+
+[reina_eight_hearts]
+writes = [
+	{ reina_heart_event = "eight_heart", expires = "7d" },
+	{ reina_eight_heart_priority_bump = true, expires = "7d" }
+]
+kind = "gameplay_triggered"
+speaker = "reina"
+portrait = "happy"
+local = "[Ari]! Thank goodness you're here!"
+next = "1"
+
+[reina_eight_hearts.1]
+speaker = "reina"
+portrait = "wink"
+local = "I hope you're ready to show the culinary world what Mistria's got to offer!"
+prompts = [
+	{ local = "Just tell me where you need me!", next = "2" },
+	{ local = "It'll be a piece of cake! Or pie. Either or.", next = "3" }
+]
+
+[reina_eight_hearts.2]
+speaker = "reina"
+portrait = "neutral"
+local = "Of course! Can you start chopping the vegetables?"
+next = "4"
+
+[reina_eight_hearts.3]
+speaker = "reina"
+portrait = "neutral"
+local = "I like that confidence! Can you start chopping the vegetables?"
+next = "4"
+
+[reina_eight_hearts.4]
+speaker = "hemlock"
+portrait = "mad"
+local = "I'll start prepping the drink selection. Whatever the judges want, you can be sure we'll have it!"
+next = "5"
+
+[reina_eight_hearts.5]
+speaker = "josephine"
+portrait = "happy"
+local = "I'll get our freshest, starchiest tablecloth ready!"
+next = "6"
+
+[reina_eight_hearts.6]
+speaker = "maple"
+portrait = "neutral"
+local = "Me and Luc want to help too, Reina!"
+next = "7"
+
+[reina_eight_hearts.7]
+speaker = "reina"
+portrait = "mad"
+local = "Can I count on you two to get the cutlery ready and make sure it's suuuuuper clean?"
+next = "8"
+
+[reina_eight_hearts.8]
+speaker = "luc"
+portrait = "happy"
+local = "You got it, sis! It'll be so clean a bug could eat off it!"
+next = "9"
+
+[reina_eight_hearts.9]
+speaker = "josephine"
+portrait = "neutral"
+local = "Don't worry, dear. I'll check their work."
+next = "10"
+
+[reina_eight_hearts.10]
+speaker = "reina"
+portrait = "happy"
+local = "Thank you, everyone. Let's go!"
+next = "11"
+
+[reina_eight_hearts.11]
+speaker = "maple"
+portrait = "neutral"
+local = "Reina, some people are coming up the road!"
+next = "12"
+
+[reina_eight_hearts.12]
+speaker = "vera"
+portrait = "happy"
+local = "Hi, everyone!"
+next = "13"
+
+[reina_eight_hearts.13]
+speaker = "luc"
+portrait = "happy"
+local = "Vera! Hi!"
+next = "14"
+
+[reina_eight_hearts.14]
+speaker = "vera"
+portrait = "neutral"
+local = "We're the judges for the Aldarian Cooking Contest!"
+next = "15"
+
+[reina_eight_hearts.15]
+speaker = "darcy"
+portrait = "neutral"
+local = "I've been looking forward to this. Haven't ever had a bad meal at the Sleeping Dragon Inn."
+next = "16"
+
+[reina_eight_hearts.16]
+speaker = "taliferro"
+portrait = "mad"
+local = "Hmph. Let's keep it professional and try for a little impartiality, Darcy."
+next = "17"
+
+[reina_eight_hearts.17]
+speaker = "josephine"
+portrait = "neutral"
+local = "Welcome, judges. We've prepared a table for you, right this way."
+next = "18"
+
+[reina_eight_hearts.18]
+speaker = "hemlock"
+portrait = "neutral"
+local = "Let me take your drink orders."
+next = "19"
+
+[reina_eight_hearts.19]
+speaker = "hemlock"
+portrait = "happy"
+local = "Chef Reina's got some recommendations for pairing, but we can make whatever you like."
+next = "20"
+
+[reina_eight_hearts.20]
+speaker = "reina"
+portrait = "sad"
+effect = "drop"
+local = "Ooh, I just got real nervous, [Ari]."
+prompts = [
+	{ local = "Take a deep breath, you can do this!", next = "21" },
+	{ local = "I'll be with you every step of the way!", next = "22" }
+]
+
+[reina_eight_hearts.21]
+speaker = "reina"
+portrait = "neutral"
+effect = "sigh"
+local = "You're right. I've made up my mind, and now I just need to follow through."
+next = "23"
+
+[reina_eight_hearts.22]
+speaker = "reina"
+portrait = "blush_special"
+local = "Yeah... yeah! Thank you, [Ari]."
+next = "23"
+
+[reina_eight_hearts.23]
+speaker = "reina"
+portrait = "wink"
+local = "Let's get those dishes served up!"
+next = "24"
+
+[reina_eight_hearts.24]
+speaker = "reina"
+portrait = "happy"
+local = "Welcome everyone! To start your meal, my sous chef and I have prepared for you $Dragon Horn Mushroom & Thyme$."
+next = "25"
+
+[reina_eight_hearts.25]
+speaker = "reina"
+portrait = "neutral"
+local = "These ingredients were foraged from the woods and fields of Mistria just yesterday."
+next = "26"
+
+[reina_eight_hearts.26]
+speaker = "taliferro"
+portrait = "think"
+local = "What mundane plating. I'd prefer something more unexpected..."
+next = "27"
+
+[reina_eight_hearts.27]
+speaker = "taliferro"
+portrait = "embarrassed"
+local = "Ah-"
+next = "28"
+
+[reina_eight_hearts.28]
+speaker = "vera"
+portrait = "happy"
+effect = "cheery"
+local = "I've never had a mushroom with so much flavor!"
+next = "29"
+
+[reina_eight_hearts.29]
+speaker = "darcy"
+portrait = "neutral"
+local = "So rich and savory, what a good start to the meal."
+next = "30"
+
+[reina_eight_hearts.30]
+speaker = "taliferro"
+portrait = "mad"
+local = "Hmph, well... let's see how it leads into the next course."
+next = "31"
+
+[reina_eight_hearts.31]
+speaker = "reina"
+portrait = "happy"
+local = "For your main, we've prepared our signature $Mistrian Vegetable Curry$."
+next = "32"
+
+[reina_eight_hearts.32]
+speaker = "reina"
+portrait = "neutral"
+local = "The vegetables in this dish were grown with love and care on the sous chef's own farm."
+next = "33"
+
+[reina_eight_hearts.33]
+speaker = "vera"
+portrait = "happy"
+local = "What an aromatic blend of spices!"
+next = "34"
+
+[reina_eight_hearts.34]
+speaker = "taliferro"
+portrait = "think"
+local = "A... respectable depth of flavor, considering."
+next = "35"
+
+[reina_eight_hearts.35]
+speaker = "darcy"
+portrait = "neutral"
+local = "It's a shame I need to leave room for dessert, or I'd ask for a second helping."
+next = "take_home"
+
+[reina_eight_hearts.take_home]
+speaker = "darcy"
+portrait = "wink"
+local = "Are judges allowed to ask for take-home containers?"
+next = "36"
+
+[reina_eight_hearts.36]
+speaker = "reina"
+portrait = "embarrassed"
+local = "O-of course!"
+next = "37"              # OH my GOD
+
+[reina_eight_hearts.37]
+speaker = "reina"
+portrait = "neutral"
+local = "For dessert, we've prepared our local specialty, $Wildberry Pie$."
+next = "38"
+
+[reina_eight_hearts.38]
+speaker = "reina"
+portrait = "happy"
+local = "The berries were selected for their sweetness, indicated by size and brilliance of color."
+next = "39"                                                                                         # TWICE!?!?!?!?!?
+
+[reina_eight_hearts.39]
+speaker = "vera"
+portrait = "neutral"
+local = "Crisp crust, no soggy bottom on this pie."
+next = "40"
+
+[reina_eight_hearts.40]
+speaker = "darcy"
+portrait = "happy"
+local = "The berries are so sweet. What a perfect taste of Mistria!"
+next = "41"
+
+[reina_eight_hearts.41]
+speaker = "reina"
+portrait = "think"
+effect = "sweat"
+local = "Judge, is something wrong?"
+next = "42"
+
+[reina_eight_hearts.42]
+speaker = "taliferro"
+portrait = "ugh"
+local = "Er, no."
+next = "43"
+
+[reina_eight_hearts.43]
+speaker = "vera"
+portrait = "neutral"
+local = "Out with it, Taliferro."
+next = "44"
+
+[reina_eight_hearts.44]
+speaker = "taliferro"
+portrait = "mad"
+local = "Well, I must concede... it's pretty good."
+next = "45"
+
+[reina_eight_hearts.45]
+speaker = "taliferro"
+portrait = "mad"
+local = "Oh, don't look at me like that! I pride myself in my taste as a chef. To deny good food is to deny my own abilities."
+next = "46"
+
+[reina_eight_hearts.46]
+speaker = "taliferro"
+portrait = "embarrassed"
+local = "And anyway, the presentation still leaves much to be desired. Would it kill you to serve it with a scoop of ice cream?"
+next = "47"
+
+[reina_eight_hearts.47]
+speaker = "vera"
+portrait = "happy"
+local = "Well well, I haven't seen Tali this happy with a meal in-"
+next = "48"
+
+[reina_eight_hearts.48]
+speaker = "taliferro"
+portrait = "ugh"
+local = "Please refer to me by my full name, Vera."
+next = "49"
+
+[reina_eight_hearts.49]
+speaker = "darcy"
+portrait = "neutral"
+local = "Judges, let's confer."
+next = "50"
+
+[reina_eight_hearts.50]
+speaker = "vera"
+portrait = "think"
+local = "After much deliberation."
+next = "51"
+
+[reina_eight_hearts.51]
+speaker = "darcy"
+portrait = "mad"
+local = "Especially by one judge in particular..."
+next = "52"
+
+[reina_eight_hearts.52]
+speaker = "taliferro"
+portrait = "mad"
+local = "The culinary prestige of Aldaria rests on our shoulders, Darcy!"
+next = "53"
+
+[reina_eight_hearts.53]
+speaker = "vera"
+portrait = "happy"
+local = "We are delighted to award the Sleeping Dragon Inn and its head chef Reina, an $Aldarian Star$."
+next = "54"
+
+[reina_eight_hearts.54]
+speaker = "reina"
+portrait = "happy"
+local = "Oh my gosh!"
+next = "55"
+
+[reina_eight_hearts.55]
+speaker = "josephine"
+portrait = "happy"
+local = "Oooh, Reina! I'm so proud!"
+next = "56"
+
+[reina_eight_hearts.56]
+speaker = "hemlock"
+portrait = "happy"
+local = "That's my daughter!"
+next = "57"
+
+[reina_eight_hearts.57]
+speaker = "maple"
+portrait = "happy"
+local = "I want to hold the star first!"
+next = "58"
+
+[reina_eight_hearts.58]
+speaker = "taliferro"
+portrait = "think"
+local = "It's not a real star, small child."
+next = "59"
+
+[reina_eight_hearts.59]
+speaker = "maple"
+portrait = "ugh"
+local = "What kind of sham is this?"
+next = "60"
+
+[reina_eight_hearts.60]
+speaker = "reina"
+portrait = "blush"
+local = "Thank you all, it means so much to me."
+next = "61"
+
+[reina_eight_hearts.61]
+speaker = "reina"
+portrait = "wink"
+local = "And thank you, [Ari]. I couldn't have done this without you beside me in the kitchen."
+next = "62"
+
+[reina_eight_hearts.62]
+speaker = "darcy"
+portrait = "happy"
+local = "Well done, both of you. I think I speak for all of the judges when I say that we'll be looking forward to where you go from here!"
+next = "63"
+
+[reina_eight_hearts.63]
+speaker = "reina"
+portrait = "neutral"
+local = "I suppose we should get the kitchen tidied up, huh?"
+next = "64"
+
+[reina_eight_hearts.64]
+speaker = "josephine"
+portrait = "neutral"
+local = "Let us handle it, dear! You've worked hard enough today."
+next = "65"
+
+[reina_eight_hearts.65]
+speaker = "hemlock"
+portrait = "neutral"
+local = "Why don't you go and take a well deserved break with [Ari]?"
+next = "66"
+
+[reina_eight_hearts.66]
+speaker = "reina"
+portrait = "happy"
+local = "Oh! That does sound nice."
+next = "67"
+
+[reina_eight_hearts.67]
+speaker = "reina"
+portrait = "neutral"
+local = "What do you say, [Ari]. Want to go for a walk?"
+next = "68"
+
+[reina_eight_hearts.68]
+speaker = "reina"
+portrait = "neutral"
+local = "Whew... we did it, [Ari]. I'm so glad the judges liked everything!"
+prompts = [
+	{ local = "How did you come up with the menu?", next = "69" },
+	{ local = "What happened to all the avant-garde dishes?", next = "70" }
+]
+
+[reina_eight_hearts.69]
+speaker = "reina"
+portrait = "think"
+local = "Well..."
+next = "71"
+
+[reina_eight_hearts.70]
+speaker = "reina"
+portrait = "think"
+local = "Well..."
+next = "71"
+
+[reina_eight_hearts.71]
+speaker = "reina"
+portrait = "sad"
+local = "My family was trying to be nice when we debuted those new dishes, but I knew something was off."
+next = "72"                                                                                               # im sorry.
+
+[reina_eight_hearts.72]
+speaker = "reina"
+portrait = "think"
+local = "And I got to thinking that even if we won with them... so what? None of them were really true to Mistrian cooking, you know?"
+next = [
+	{ target = "72r", requires = [{ shooting_star_reina_attended = true }] },
+	{ target = "72f", requires = [] }
+]
+
+[reina_eight_hearts.72r]
+speaker = "reina"
+portrait = "embarrassed"
+local = "So I decided I'd rather win or lose on more authentic dishes, ones I've shared-"
+next = "73r"
+
+[reina_eight_hearts.72f]
+speaker = "reina"
+portrait = "happy"
+local = "So I decided I'd rather win or lose on more authentic dishes."
+next = "73f"
+
+[reina_eight_hearts.73r]
+speaker = "reina"
+portrait = "blush_special"
+local = "With the person that I care about. With... you"
+prompts = [
+	{ local = "I'm lucky to have a best friend like you, Reina.", next = "74r" },
+	{ local = "I care about you too, Reina.", next = "77" }
+]
+
+[reina_eight_hearts.73f]
+speaker = "reina"
+portrait = "blush"
+local = "Ones that we care about. Ones we've shared... together."
+prompts = [
+	{ local = "I'm lucky to have a best friend like you, Reina.", next = "74f" },
+	{ local = "I really care about... you, Reina.", next = "77" }
+]
+
+# friendzoned
+[reina_eight_hearts.74r]
+actions = [{ update_status = { npc = "reina", status = "best_friend" } }]
+speaker = "reina"
+portrait = "gloomy_special"
+local = "I'm glad to have a best friend like you too, [Ari]."
+next = "75"
+
+[reina_eight_hearts.74f]
+actions = [{ update_status = { npc = "reina", status = "best_friend" } }]
+speaker = "reina"
+portrait = "happy"
+local = "I'm glad to have a best friend like you too, [Ari]. "
+next = "75"
+
+[reina_eight_hearts.75]
+speaker = "reina"
+portrait = "neutral"
+local = "I was so nervous about taking on this competition..."
+next = "76"
+
+[reina_eight_hearts.76]
+speaker = "reina"
+portrait = "happy"
+local = "But you've supported me and lifted me up, every step of the way."
+next = "80"
+
+# romance
+[reina_eight_hearts.77]
+actions = [{ update_status = { npc = "reina", status = "dating" } }]
+speaker = "reina"
+portrait = "blush_special"
+local = "Oh, [Ari]!"
+next = [
+	{ target = "78r", requires = [{ shooting_star_reina_attended = true }] },
+	{ target = "78f", requires = [] }
+]
+
+[reina_eight_hearts.78r]
+speaker = "reina"
+portrait = "embarrassed"
+local = "Even after our date on the summit... I wasn't totally sure if you felt the same way."
+next = "79"
+
+[reina_eight_hearts.78f]
+speaker = "reina"
+portrait = "embarrassed"
+local = "I wasn't sure if you felt the same way..."
+next = "79"
+
+[reina_eight_hearts.79]
+speaker = "reina"
+portrait = "blush_special"
+local = "I'm so happy you share my feelings!"
+next = "80"
+
+[reina_eight_hearts.80]
+speaker = "reina"
+portrait = "blush"
+local = "What a day! It's like the whole world is our oyster, and we can cook it up however we like."
+next = "81"
+
+[reina_eight_hearts.81]
+speaker = "reina"
+portrait = "happy"
+local = "Ooooh... are you thinking what I'm thinking?"
+next = "82"
+
+[reina_eight_hearts.82]
+speaker = "reina"
+portrait = "neutral"
+local = "There's plenty of curry and pie leftover from the judging."
+next = "83"
+
+[reina_eight_hearts.83]
+speaker = "reina"
+portrait = "wink"
+local = "Let's go get some before Maple and Luc eat it all!"

@@ -1,0 +1,27 @@
+[form]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "nora" }] },
+	{ adeline_zone = "<nora_zone>" },
+	{ any = [
+		{ adeline_animation = "write" },
+		{ adeline_animation = "write_sit" }
+	] },
+	{ any = [{ nora_animation = "write_sit" }, { nora_animation = "tap" }] }
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "See, Nora? You just put the merchant's fee over here."
+next = "1"
+
+[form.1]
+speaker = "adeline"
+portrait = "happy"
+local = "These new forms can be confusing, but they're designed to get you an extra deduction!"
+next = "2"
+
+[form.2]
+speaker = "nora"
+portrait = "neutral"
+effect = "surprise"
+local = "That explains it! What a nice surprise!"

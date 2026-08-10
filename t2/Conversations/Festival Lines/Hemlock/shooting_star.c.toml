@@ -1,0 +1,81 @@
+[shooting_star_anticipation]
+refresh = "3m"
+requires = [
+	{ npc = "hemlock" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+]
+portrait = "neutral"
+local = "The Shooting Star Festival is one of my favorites. Jo and I used to watch it every year together, before we got married..."
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "happy"
+local = "And now we get to watch those same stars with the family we've built together. Warms my heart."
+
+[shooting_star_anticipation_no_summit]
+refresh = "3m"
+requires = [
+	{ npc = "hemlock" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = false },
+]
+portrait = "neutral"
+local = "The Shooting Star Festival is one of my favorites. Jo and I used to watch it at the Summit every year together, before we got married..."
+next = "1"
+
+[shooting_star_anticipation_no_summit.1]
+portrait = "think"
+local = "It's a little sad the young folks won't be able to do the same this year, $with the Summit inaccessible$..."
+
+
+[shooting_star_day_of]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hemlock" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ hemlock_is_at = "town/star_festival_hemlock", comparator = "!=" },
+]
+portrait = "neutral"
+local = "Hey, [Ari], looking forward to watching the stars tonight?"
+
+[shooting_star_balor_follow_up_hemlock]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hemlock" },
+	{ shooting_star_date_status = "balor_went" },
+	{ shooting_star_festival_date = "7d", time = "after" },
+	{ balor_is_spouse = false }
+]
+portrait = "think"
+local = "Balor doesn't like to talk about his past much, but he's mentioned that he had to fend for himself a lot growing up."
+next = "1"
+
+[shooting_star_balor_follow_up_hemlock.1]
+portrait = "neutral"
+local = "Traveling merchants tend to be drifters, but I think Balor genuinely cares about making sure people have what they need to get by."
+
+[shooting_star_reina_follow_up_hemlock]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hemlock" },
+	{ shooting_star_date_status = "reina_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ reina_is_partner = false }
+]
+portrait = "neutral"
+local = "Well well, look who it is!"
+next = "1"
+
+[shooting_star_reina_follow_up_hemlock.1]
+portrait = "wink"
+local = "Reina asked me not to tease, so I won't..."
+next = "2"
+
+[shooting_star_reina_follow_up_hemlock.2]
+portrait = "neutral"
+local = "But next time you two decide to make tea at midnight, don't forget to put your cups in the sink after."

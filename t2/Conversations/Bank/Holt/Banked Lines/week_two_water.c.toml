@@ -1,0 +1,23 @@
+[week_two_water]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "holt" },
+	{ location = "general_store_store" },
+	{ weather = "rainy" },
+	{ date_time = "1d", comparator = ">" },
+	{ date_time = "21d", comparator = "<" }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "holt" } }]
+portrait = "neutral"
+local = "Watch your step, [Ari]!"
+next = "1"
+
+[week_two_water.1]
+portrait = "think"
+local = "We sometimes get a little water in the store on days like this."
+next = "2"
+
+[week_two_water.2]
+portrait = "embarrassed"
+local = "It's true what they say... when it rains, it pours!"

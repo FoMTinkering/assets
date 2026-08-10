@@ -1,0 +1,59 @@
+[dnd_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ adeline_zone = "inn/south_table" },
+	{ balor_zone = "inn/south_table" },
+	{ celine_zone = "inn/south_table" },
+	{ eiland_zone = "inn/south_table" },
+	{ holt_zone = "inn/south_table" },
+	{ dnd_fnati = 2 },
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "balor" },
+		{ npc = "celine" },
+		{ npc = "eiland" },
+		{ npc = "holt" },
+	] },
+	{ any = [{ fnati = 0 }, { fnati = 1 }]},
+]
+writes = [{ dnd_fnati = 3 }]
+speaker = "eiland"
+local = "After your mercurial bout of regicide, you have become the villains of the Kingdom. According to ancient Aldarian law, you must now be tried in a court of law."
+next = "1"
+
+[dnd_3.1]
+speaker = "adeline"
+portrait = "think"
+local = "Aha, I'm familiar with Aldarian law. We have the right to appoint ourselves a defender."
+next = "2"
+
+[dnd_3.2]
+speaker = "celine"
+portrait = "concerned"
+local = "I... I'll do it. I'll use one of my emerald blessings to summon us an attorney. Oh, I rolled a one... oh dear. That means our attorney is... ah... a tree..."
+next = "3"
+
+[dnd_3.3]
+speaker = "balor"
+portrait = "ugh"
+local = "A talking tree? Snicklefritz inspects the tree for signs of intelligence... I mean, I guess he does... who cares... but tell me, though."
+next = "4"
+
+[dnd_3.4]
+speaker = "celine"
+portrait = "happy"
+local = "It's a normal tree... but it's very pretty!"
+next = "5"
+
+[dnd_3.5]
+speaker = "eiland"
+portrait = "ugh"
+local = "I see. Well, you're all found guilty."
+next = "6"
+
+[dnd_3.6]
+speaker = "holt"
+portrait = "happy"
+local = "Oh I have GOT to write a ballad about this one!"

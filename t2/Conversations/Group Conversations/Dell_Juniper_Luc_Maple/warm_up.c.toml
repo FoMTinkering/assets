@@ -1,0 +1,41 @@
+[warm_up]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "juniper" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ season = "winter" },
+	{ location = "bathhouse" },
+	{ any = [
+		{ juniper_is_at_location = "bathhouse" },
+		{ dell_zone = "<juniper_zone>" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "bathhouse/cauldron" }
+]
+speaker = "luc"
+portrait = "mad"
+local = "In the name of the Dragonguard, we're commandeering this cauldron!"
+next = "1"
+
+[warm_up.1]
+speaker = "dell"
+portrait = "mad"
+local = "Good work, Luc. Now, Dragonguard... get yourselves warmed up!"
+next = "2"
+
+[warm_up.2]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "There's no need to commandeer my belongings, children. I'm not going to stop you from thawing yourselves out."
+next = "3"
+
+[warm_up.3]
+speaker = "maple"
+portrait = "happy"
+effect = "cheery"
+local = "Sorry, this cauldron is definitely ours now."

@@ -1,0 +1,151 @@
+[bathhouse_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "hayden" },
+	{ date = "bathhouse" },
+	{ da_hayden_bathhouse = 0 },
+	{ hayden_is_spouse = false }
+]
+writes = [
+	{ da_hayden_bathhouse = 1 },
+	{ da_hayden_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "confident_blush"
+local = "Would you like to go to the $Bathhouse$ with me, [Ari]?"
+next = "1"
+
+[bathhouse_accept_1.1]
+portrait = "laugh_blush"
+local = "Gya ha ha ha!"
+next = "2"
+
+[bathhouse_accept_1.2]
+portrait = "embarrassed"
+local = "Sorry... I- I didn't mean to laugh."
+next = "3"
+
+[bathhouse_accept_1.3]
+portrait = "shy_special"
+local = "Really, it's okay if you don't want to-"
+next = "4"
+
+[bathhouse_accept_1.4]
+portrait = "confident_blush"
+local = "Oh, you DO want to?"
+next = "5"
+
+[bathhouse_accept_1.5]
+portrait = "laugh_blush"
+local = "Gya ha ha ha!"
+next = "6"
+
+[bathhouse_accept_1.6]
+portrait = "embarrassed"
+local = "Okay, okay, I'm sorry!"
+next = "7"
+
+[bathhouse_accept_1.7]
+portrait = "happy_arm_down_blush"
+local = "Come on, [Ari]. Let's go and have a nice time."
+
+[bathhouse_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "hayden" },
+	{ date = "bathhouse" },
+	{ hayden_has_child = false },
+	{ any = [
+		{ hayden_is_spouse = true },
+		{ da_hayden_bathhouse = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_hayden_bathhouse = 2 },
+	{ da_hayden_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "confident_blush"
+local = "You want to go to the $Bathhouse$?"
+next = "1"
+
+[bathhouse_accept_2.1]
+portrait = "happy_arm_down_blush"
+local = "Of course, [Ari]!"
+next = "2"
+
+[bathhouse_accept_2.2]
+portrait = "confident_blush"
+local = "I'd love to."
+
+[bathhouse_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ da_hayden_bathhouse = 1 },
+	{ da_hayden_bathhouse_follow_up_gate = true },
+	{ hayden_is_spouse = false }
+]
+writes = [{ da_hayden_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "shy_blush"
+local = "I, um."
+next = "1"
+
+[bathhouse_follow_up_1.1]
+portrait = "confident_blush"
+local = "I hope you had as good a time at the $Bathhouse$ as I did, [Ari]."
+prompts = [
+	{ local = "I had a great time!", next = "2" },
+	{ local = "(blush)", next = "4" },
+]
+
+[bathhouse_follow_up_1.2]
+portrait = "happy_arm_down_blush"
+effect = "music_notes"
+local = "I'm so glad!"
+next = "3"
+
+[bathhouse_follow_up_1.3]
+portrait = "blush"
+effect = "cheery"
+local = "We'll have to go again soon, eh?"
+
+[bathhouse_follow_up_1.4]
+portrait = "blush"
+local = "Aww, [Ari]..."
+next = "5"
+
+[bathhouse_follow_up_1.5]
+portrait = "laugh_blush"
+local = "Gya ha ha ha!"
+next = "6"
+
+[bathhouse_follow_up_1.6]
+portrait = "blush"
+effect = "cheery"
+local = "You're too cute. You know that?"
+
+[bathhouse_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_has_child = false },
+	{ any = [{ hayden_is_spouse = true }, { da_hayden_bathhouse = 2 }] },
+	{ da_hayden_bathhouse_follow_up_gate = true }
+]
+writes = [{ da_hayden_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "confident_blush"
+local = "Ah, that was something else..."
+next = "1"
+
+[bathhouse_follow_up_2.1]
+portrait = "happy_arm_down_blush"
+effect = "cheery"
+local = "Feels great to unwind together, doesn't it?"
+next = "2"
+
+[bathhouse_follow_up_2.2]
+portrait = "confident_blush"
+local = "I could get used to that!"

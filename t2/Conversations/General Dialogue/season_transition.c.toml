@@ -1,0 +1,511 @@
+#<-------Early Spring------>
+[early_spring_eiland]
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ season = "spring" },
+	{ year_time = "3d", comparator = "<=", parser = "date_time" },
+	{ date_time = "1y", comparator = ">" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "Keep an eye out for dig spots, [Ari]! Now that the snow has all melted, more artifacts are sure to surface!"
+
+[early_spring_hayden]
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ season = "spring" },
+	{ year_time = "3d", comparator = "<=", parser = "date_time" },
+	{ date_time = "1y", comparator = ">" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "happy"
+local = "Lots to do on the farm now that springtime is here! I couldn't be happier!"
+
+[early_spring_ryis]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ season = "spring" },
+	{ year_time = "3d", comparator = "<=", parser = "date_time" },
+	{ date_time = "1y", comparator = ">" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "happy"
+local = "The warmer weather means the birds are coming back! I've been keeping an eye out for nests."
+
+[early_spring_valen]
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ season = "spring" },
+	{ year_time = "3d", comparator = "<=", parser = "date_time" },
+	{ date_time = "1y", comparator = ">" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "I miss the quiet beauty of winter, but at least it means we're out of flu season."
+
+#<---------Late Spring------>
+[late_spring_balor]
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ season = "spring" },
+	{ year_time = "25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "1m", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "With summer around the corner, I've been daydreaming ways of getting blocks of ice to Mistria."
+next = "1"
+
+[late_spring_balor.1]
+portrait = "sigh"
+local = "It'd be a big seller, but it's not very practical."
+
+[late_spring_maple]
+refresh = "3m"
+requires = [
+	{ npc = "maple" },
+	{ season = "spring" },
+	{ year_time = "25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "1m", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "Luc won't stop talking about summer being almost here. He's gonna want to go bug hunting every day..."
+next = "1"
+
+[late_spring_maple.1]
+portrait = "think"
+local = "It's tough being a big sister, sometimes!"
+
+[late_spring_march]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ season = "spring" },
+	{ year_time = "25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "1m", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "think"
+local = "Summer's nearly here. Time to tear the sleeves off another old shirt..."
+
+[late_spring_reina]
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ season = "spring" },
+	{ location = "beach", comparator = "!=" },
+	{ year_time = "25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "1m", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "I can't wait for summer! The Beach is calling to me."
+
+#<------Early Summer------>
+[early_summer_celine]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ season = "summer" },
+	{ year_time = "1m 3d", comparator = "<=", parser = "date_time" },
+	{ year_time = "1m", comparator = ">", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "happy"
+local = "Is there a better time of year than summer? You can really feel how alive Mistria is."
+
+[early_summer_errol]
+refresh = "3m"
+requires = [
+	{ npc = "errol" },
+	{ season = "summer" },
+	{ year_time = "1m 3d", comparator = "<=", parser = "date_time" },
+	{ year_time = "1m", comparator = ">", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "Ah, summertime! Be sure to get out and enjoy all the Mistria has to offer."
+
+[early_summer_henrietta]
+refresh = "3m"
+requires = [
+	{ npc = "henrietta" },
+	{ season = "summer" },
+	{ year_time = "1m 3d", comparator = "<=", parser = "date_time" },
+	{ year_time = "1m", comparator = ">", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "(Something about Henrietta's bearing suggests that she's hoping you grow lots of =Corn= this summer)"
+
+[early_summer_olric]
+refresh = "3m"
+requires = [
+	{ npc = "olric" },
+	{ season = "summer" },
+	{ is_inside = false },
+	{ weather = "pleasant" },
+	{ year_time = "1m 3d", comparator = "<=", parser = "date_time" },
+	{ year_time = "1m", comparator = ">", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [
+	{ seasonal_transition_delay = true, expires = "1d" },
+	{ olrics_shorts = true, expires = "4d" }
+]
+portrait = "neutral"
+local = "Another hot one! I've been thinking about how to beat the heat."
+next = "1"
+
+[early_summer_olric.1]
+portrait = "think"
+local = "Imagine shorts... but like... even shorter."
+next = "2"
+
+[early_summer_olric.2]
+portrait = "happy"
+effect = "sparkles"
+local = "Short shorts! I gotta talk to Balor."
+
+[early_summer_olric_follow_up_balor]
+refresh = "never"
+requires = [{ npc = "balor" }, { olrics_shorts = true }, { season = "summer" }]
+portrait = "neutral"
+local = "Did Olric tell you about his short shorts idea too?"
+next = "1"
+
+[early_summer_olric_follow_up_balor.1]
+portrait = "think"
+local = "Right after he left, March came by, gave me some money, and told me to forget about it."
+next = "2"
+
+[early_summer_olric_follow_up_balor.2]
+portrait = "sigh"
+local = "It's a shame. I bet they'd be a real money-maker."
+
+#<-----Late Summer------>
+[late_summer_dozy]
+refresh = "3m"
+requires = [
+	{ npc = "dozy" },
+	{ season = "summer" },
+	{ year_time = "1m 25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "2m", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "(You get the impression that Dozy is looking forward to summer being over)"
+
+[late_summer_holt]
+refresh = "3m"
+requires = [
+	{ npc = "holt" },
+	{ season = "summer" },
+	{ year_time = "1m 25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "2m", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "think"
+local = "The dog days of summer are nearly over..."
+next = "1"
+
+[late_summer_holt.1]
+portrait = "neutral"
+local = "I've been meaning to ask Dozy about what that means for him."
+
+[late_summer_landen]
+refresh = "3m"
+requires = [
+	{ npc = "landen" },
+	{ season = "summer" },
+	{ year_time = "1m 25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "2m", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "It's time to dig out the sweaters, fall is just around the corner!"
+
+[late_summer_josephine]
+refresh = "3m"
+requires = [
+	{ npc = "josephine" },
+	{ season = "summer" },
+	{ year_time = "1m 25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "2m", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "Feels like summer just started, and now it's just about over! When I was Maple's age, summers felt much longer."
+
+#<-------Early Fall----->
+[early_fall_elsie]
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ season = "fall" },
+	{ is_inside = false },
+	{ weather = "pleasant" },
+	{ year_time = "2m 3d", comparator = "<=", parser = "date_time" },
+	{ year_time = "2m", comparator = ">", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "There's something terribly romantic about fall, isn't there?"
+next = "1"
+
+[early_fall_elsie.1]
+portrait = "happy"
+local = "Although now that I come to think of it, there's something terribly romantic about all the seasons."
+
+[early_fall_hemlock]
+refresh = "3m"
+requires = [
+	{ npc = "hemlock" },
+	{ season = "fall" },
+	{ year_time = "2m 3d", comparator = "<=", parser = "date_time" },
+	{ year_time = "2m", comparator = ">", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "happy"
+local = "It's finally hot drink weather! I've been looking forward to it all year."
+
+[early_fall_march]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ season = "fall" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" }
+	] },
+	{ year_time = "2m 3d", comparator = "<=", parser = "date_time" },
+	{ year_time = "2m", comparator = ">", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "Fall is the perfect time of year to be working the forge."
+
+[early_fall_reina]
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ season = "fall" },
+	{ year_time = "2m 3d", comparator = "<=", parser = "date_time" },
+	{ year_time = "2m", comparator = ">", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "There's nothing more fun than getting to work with fresh fall produce!"
+next = "1"
+
+[early_fall_reina.1]
+portrait = "wink"
+local = "I hope you're planning to grow lots, [Ari]!"
+
+#<-----Late Fall------>
+[late_fall_juniper]
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ season = "fall" },
+	{ year_time = "2m 25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "3m", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "I do love fall, but I suspect winter will be the Bathhouse's busy season."
+next = "1"
+
+[late_fall_juniper.1]
+portrait = "laugh"
+local = "Oh ho ho!"
+
+[late_fall_nora]
+refresh = "3m"
+requires = [
+	{ npc = "nora" },
+	{ season = "fall" },
+	{ year_time = "2m 25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "3m", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "Another season about to end. Time to start working on the General Store's winter restock..."
+
+[late_fall_ryis]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ season = "fall" },
+	{ year_time = "2m 25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "3m", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "Birds are all heading south now that winter is nearly here. It'd be fun to follow them one day, wouldn't it?"
+
+[late_fall_terithia]
+refresh = "3m"
+requires = [
+	{ npc = "terithia" },
+	{ season = "fall" },
+	{ year_time = "2m 25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "3m", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "Now [Ari], you don't have to say a word. I know what you're worrying about, but there'll still be plenty of fishing here in winter."
+next = "1"
+
+[late_fall_terithia.1]
+portrait = "happy"
+local = "The water doesn't tend to freeze over, and thank goodness for that!"
+
+#<---Early Winter---->
+[early_winter_celine]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ season = "winter" },
+	{ year_time = "3m 3d", comparator = "<=", parser = "date_time" },
+	{ year_time = "3m", comparator = ">", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "We're so lucky plants still grow in the winter, here in Mistria! I don't know how I'd keep myself busy otherwise."
+
+[early_winter_errol]
+refresh = "3m"
+requires = [
+	{ npc = "errol" },
+	{ season = "winter" },
+	{ is_inside = false },
+	{ weather = "rainy", comparator = "!=" },
+	{ year_time = "3m 3d", comparator = "<=", parser = "date_time" },
+	{ year_time = "3m", comparator = ">", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "Just smell that winter air! Invigorating, isn't it?"
+
+[early_winter_luc]
+refresh = "3m"
+requires = [
+	{ npc = "luc" },
+	{ season = "winter" },
+	{ year_time = "3m 3d", comparator = "<=", parser = "date_time" },
+	{ year_time = "3m", comparator = ">", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "There's not nearly as many bugs to find in the winter, I'll have to start doing a more thorough search indoors."
+next = "1"
+
+[early_winter_luc.1]
+portrait = "sad"
+local = "And then I'll have to keep any I find a secret. Not everyone likes bugs as much as we do, [Ari]!"
+
+[early_winter_valen]
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ season = "winter" },
+	{ year_time = "3m 3d", comparator = "<=", parser = "date_time" },
+	{ year_time = "3m", comparator = ">", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "happy"
+local = "Isn't winter lovely? It's my favorite season, you know."
+
+#<----Late Winter---->
+[late_winter_balor]
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ season = "winter" },
+	{ year_time = "3m 25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "1y", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "Spring is almost here! The sooner this snow is gone, the happier I'll be. The road to the Capital has been trial."
+
+[late_winter_dell]
+refresh = "3m"
+requires = [
+	{ npc = "dell" },
+	{ season = "winter" },
+	{ year_time = "3m 25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "1y", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "think"
+local = "I'm going to miss winter. Mom never gets mad when I play in the snow, but she always gets mad when I play in the mud."
+
+[late_winter_landen]
+refresh = "3m"
+requires = [
+	{ npc = "landen" },
+	{ season = "winter" },
+	{ year_time = "3m 25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "1y", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "neutral"
+local = "Winter's almost over, and it wasn't too bad. Remind me to tell you about the winters when I was a lad sometime."
+next = "1"
+
+[late_winter_landen.1]
+portrait = "mad"
+effect = "sparkles"
+local = "Now those were REAL winters!"
+
+[late_winter_olric]
+refresh = "3m"
+requires = [
+	{ npc = "olric" },
+	{ season = "winter" },
+	{ year_time = "3m 25d", comparator = ">=", parser = "date_time" },
+	{ year_time = "1y", comparator = "<", parser = "date_time" },
+	{ seasonal_transition_delay = false }
+]
+writes = [{ seasonal_transition_delay = true, expires = "1d" }]
+portrait = "think"
+local = "Winter is ending, time to start thinking about my spring workout routine!"

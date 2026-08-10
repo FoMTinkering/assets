@@ -1,0 +1,181 @@
+scene(adelines_office);
+camera_position(a4h_camera_1);
+place_actor(ari, west, a4h_ari_entrance);
+place_actor(adeline, south, "Desk Chair Seat");
+animate(adeline, write_sit);
+request_music_play(adeline);
+
+sim {
+	fade_in(2);
+	{
+		pan_camera(3, a4h_camera_2);
+	}
+	{
+		wait(0.5);
+		walk_slow(ari, a4h_ari_wait);
+		face(ari, west);
+		wait(0.5);
+		walk_slow(ari, a4h_ari_start);
+		face(ari, west);
+	}
+	{
+		wait(1.5);
+		free bark_speech(adeline, exclamation_mark);
+		wait(0.5);
+		animate(adeline, sit);
+		wait(0.5);
+		walk_slow(adeline, a4h_adeline_think);
+		face(adeline, east);
+		walk_slow(adeline, a4h_adeline_start);
+		face(adeline, east);
+	}
+	{
+		wait(2);
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		animate(adeline, write);
+	}
+	{
+		next_line(); //
+	}
+}
+
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.5);
+			free bark_speech(adeline, cute_face);
+			wait(0.5);
+			animate(adeline, idle);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	next_line(); //
+}
+sim {
+	{
+		wait(0.5);
+		animate(adeline, write);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		animate(adeline, idle);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		//
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(adeline, west);
+		free bark_speech(adeline, ellipses);
+		wait(0.75);
+		walk_slow(adeline, a4h_adeline_think);
+		face(adeline, west);
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(adeline, east);
+	}
+	{
+		next_line(); //
+
+	}
+}
+sim {
+	{
+		wait(0.5);
+		walk_slow(adeline, a4h_adeline_start);
+		face(adeline, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+
+//
+//
+//
+if get_response() == 0 {
+	write_world_fact("adeline_4h_materials", true);
+} else {
+	write_world_fact("adeline_4h_cookie", true);
+}
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(adeline, cute_face);
+wait(1);
+
+sim {
+	{
+		wait(0.5);
+		walk(adeline, "Desk Chair Seat");
+		face(adeline, south);
+		animate(adeline, sit);
+	}
+	{
+		wait(1.25);
+		walk_slow(ari, a4h_ari_end);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(adeline, cute_face);
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+sim {
+	{
+		animate(adeline, write_sit);
+	}
+	{
+		wait(0.25);
+		walk_slow(ari, a4h_ari_entrance);
+	}
+	{
+		wait(0.25);
+		pan_camera(3, a4h_camera_1);
+	}
+	{
+		wait(0.25);
+		fade_out(2);
+	}
+}
+wait_one_tick();
+
+
+
+

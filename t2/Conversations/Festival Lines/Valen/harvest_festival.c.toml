@@ -1,0 +1,44 @@
+[harvest_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [{ npc = "valen" }, { harvest_festival_date = "1d", time = "after" }]
+portrait = "neutral"
+local = "$Queen Berries$ are quite healthy for you, they make an excellent snack."
+next = "1"
+
+[harvest_festival_0.1]
+portrait = "think"
+local = "Shame that they only grow in such a brief window. I should talk to Celine about it."
+
+[harvest_festival_first_place_follow_up]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "valen" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_first_place = true },
+]
+portrait = "happy"
+local = "First place, very commendable, [Ari]."
+
+[harvest_festival_second_place_follow_up]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "valen" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_second_place = true },
+]
+portrait = "happy"
+local = "Second place, very commendable, [Ari]."
+
+[harvest_festival_third_place_follow_up]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "valen" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_third_place = true },
+]
+portrait = "happy"
+local = "Third place, very commendable, [Ari]."

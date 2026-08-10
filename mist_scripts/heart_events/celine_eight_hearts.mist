@@ -1,0 +1,670 @@
+scene(celines_room);
+camera_position(c8h_camera_1);
+place_actor(ari, north, c8h_ari_entrance);
+place_actor(celine, north, c8h_celine_entrance);
+animate(celine, action);
+request_music_play(celine);
+setup_prop(c8h_flower_pot);
+setup_prop(c8h_sandwiches);
+setup_prop(c8h_basket_open);
+toggle_object_visibility("obj_celine_pot");
+toggle_asset_visibility("spr_celinecottage_basket_spring");
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		walk_slow(ari, c8h_ari_start);
+		face(ari, east);
+	}
+	{
+		pan_camera(3, c8h_camera_2);
+	}
+	{
+		wait(2);
+		free bark_speech(celine, exclamation_mark);
+		wait(0.5);
+		animate(celine, idle);
+		face(celine, west);
+	}
+	{
+		wait(3);
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(1.25);
+		walk_slow(ari, c8h_ari_forward);
+		face(ari, east);
+	}
+	{
+		walk_slow(celine, c8h_celine_mid);
+		face(celine, south);
+		walk_slow(celine, c8h_celine_start);
+		face(celine, east);
+		animate(celine, action);
+		wait(0.5);
+		animate(celine, idle);
+		face(celine, west);
+	}
+	{
+		pan_camera(2, c8h_camera_3);
+	}
+	{
+		wait(1);
+		next_line(); //
+		next_line(); //
+	}
+}
+
+//
+
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(celine, cute_face);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	sim {
+		{
+			wait(1);
+			face(celine, east);
+			wait(1.5);
+			face(celine, west);
+		}
+		{
+			next_line(); //
+		}
+	}
+}
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+
+if read_world_fact("shooting_star_celine_attended") == true {
+	free bark_speech(celine, blush);
+} else {
+	free bark_speech(celine, cute_face);
+}
+wait(1);
+free bark_speech(ari, cute_face);
+wait(1);
+
+sim {
+	{
+		pan_camera(2, c8h_camera_4);
+	}
+	{
+		walk_slow(celine, c8h_celine_mid);
+		face(celine, north);
+		walk(celine, c8h_celine_entrance);
+		face(celine, north);
+		animate(celine, action);
+		wait(0.5);
+		animate(celine, idle);
+		wait(0.5);
+		animate(celine, action);
+		wait(0.5);
+		destroy_prop(c8h_sandwiches);
+		animate(celine, idle);
+	}
+}
+sim {
+	{
+		pan_camera(2, c8h_camera_5);
+	}
+	{
+		wait(0.25);
+		walk_slow(celine, c8h_celine_mid);
+		face(celine, south);
+		walk(celine, c8h_celine_start);
+		face(celine, east);
+		animate(celine, action);
+		wait(0.5);
+		animate(celine, idle);
+		wait(0.5);
+		animate(celine, action);
+		wait(0.5);
+		destroy_prop(c8h_basket_open);
+		setup_prop(c8h_basket_closed);
+		animate(celine, idle);
+	}
+}
+wait(0.5);
+sim {
+	{
+		pan_camera(2, c8h_camera_3);
+	}
+	{
+		free bark_speech(celine, cute_face);
+		wait(0.5);
+		face(celine, west);
+	}
+	{
+		wait(1.5);
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, question_mark);
+wait(1);
+next_line(); //
+
+sim {
+	{
+		wait(0.5);
+		face(celine, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+face(celine, west);
+wait(0.5);
+free bark_speech(celine, cute_face);
+wait(1);
+next_line(); //
+close_textbox();
+wait(0.5);
+
+sim {
+	{
+		wait(1);
+		face(celine, east);
+		animate(celine, action);
+		wait(0.5);
+		destroy_prop(c8h_basket_closed);
+		animate(celine, idle);
+		wait(0.5);
+		face(celine, west);
+		wait(3);
+		walk(celine, c8h_ari_entrance);
+	}
+	{
+		walk(ari, c8h_ari_pot);
+		face(ari, north);
+		animate(ari, action);
+		wait(0.5);
+		destroy_prop(c8h_flower_pot);
+		animate(ari, idle);
+		walk(ari, c8h_ari_entrance);
+	}
+	{
+		pan_camera(2, c8h_camera_6);
+		wait(1.5);
+		pan_camera(3, c8h_camera_1);
+	}
+	{
+		wait(5);
+		fade_out(2);
+	}
+	{
+		wait(6);
+		request_music_stop(2);
+	}
+}
+
+scene(summit);
+camera_position(c8h_camera_7);
+place_actor(ari, north, c8h_ari_summit_entrance);
+place_actor(celine, north, c8h_celine_summit_seat);
+animate(celine, sit);
+setup_prop(c8h_flower_pot_summit);
+setup_prop(c8h_basket_closed_summit);
+setup_prop(c8h_blanket);
+setup_prop(c8h_cushion_ari);
+setup_prop(c8h_cushion_celine);
+wait(1);
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		wait(0.25);
+		request_music_play("Music/Events/SharedLight");
+	}
+	{
+		pan_camera(3, c8h_camera_8);
+	}
+	{
+		wait(3);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+
+sim {
+	{
+		wait(1);
+		face(ari, south);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(0.5);
+		walk_slow(ari, c8h_ari_summit_seat);
+		animate(ari, sit);
+		face(ari, west);
+	}
+	{
+		pan_camera(3, c8h_camera_9);
+	}
+	{
+		face(celine, south);
+		wait(0.5);
+		destroy_prop(c8h_basket_closed_summit);
+		setup_prop(c8h_basket_open_summit);
+		wait(0.5);
+		face(celine, east);
+		setup_prop(c8h_tea_ari);
+		wait(0.5);
+		setup_prop(c8h_tea_celine);
+	}
+}
+wait(0.5);
+free bark_speech(celine, cute_face);
+free bark_speech(ari, cute_face);
+wait(1.5);
+
+next_line(); //
+next_line(); //
+
+//
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(celine, cute_face);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(celine, exclamation_mark);
+		}
+		{
+			next_line(); //
+		}
+	}
+}
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(celine, cute_face);
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+
+next_line(); //
+next_line(); //
+close_textbox();
+wait(1);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(1);
+free bark_speech(celine, ellipses);
+wait(0.5);
+sim {
+	{
+		face(celine, north);
+	}
+	{
+		pan_camera(6, c8h_camera_10);
+	}
+	{
+		wait(1.5);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+
+	}
+}
+close_textbox();
+wait(1);
+
+free pan_camera(3, c8h_camera_9);
+wait(1);
+free bark_speech(celine, ellipses);
+wait(1.5);
+sim {
+	{
+		wait(0.5);
+		face(celine, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		face(celine, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(1);
+sim {
+	{
+		wait(0.5);
+		face(celine, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+
+//
+
+
+next_line(); //
+close_textbox();
+
+sim {
+	{
+		walk_slow(celine, c8h_celine_summit_pot);
+		face(celine, south);
+		animate(celine, idle);
+	}
+	{
+		wait(1);
+		walk_slow(ari, c8h_ari_summit_pot);
+		face(ari, south);
+		animate(ari, idle);
+	}
+	{
+		pan_camera(2, c8h_camera_11);
+	}
+	{
+		wait(1);
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(2.5);
+		face(celine, east);
+	}
+	{
+		wait(3);
+		face(ari, west);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(celine, south);
+	}
+	{
+		wait(1);
+		face(ari, south);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+
+close_textbox();
+wait(0.5);
+free bark_speech(celine, ellipses);
+wait(1);
+free bark_speech(celine, exclamation_mark);
+wait(0.5);
+sim {
+	{
+		face(celine, east);
+	}
+	{
+		wait(0.5);
+		face(ari, west);
+	}
+	{
+		wait(0.5);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+face(celine, south);
+wait(0.5);
+free bark_speech(celine, blush);
+wait(1);
+next_line(); //
+sim {
+	{
+		wait(0.5);
+		face(celine, east);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(celine, south);
+	}
+	{
+		make_next_prompt_pink(1);
+		next_line(); //
+	}
+}
+
+//
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(celine, exclamation_mark);
+			wait(0.5);
+			face(celine, east);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	close_textbox();
+	wait(0.25);
+	walk_slow(ari, c8h_ari_summit_pot_forward);
+	face(ari, west);
+	wait(0.25);
+	free bark_speech(celine, exclamation_mark);
+	wait(0.5);
+	face(celine, east);
+	wait(0.25);
+	next_line(); //
+}
+
+sim {
+	{
+		wait(0.5);
+		if get_response() == 1 {
+			walk_slow(celine, c8h_celine_summit_pot_forward);
+			face(celine, east);
+		}
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+if get_response() == 0 {
+	free bark_speech(celine, cute_face);
+	free bark_speech(ari, cute_face);
+} else {
+	free bark_speech(celine, heart);
+	free bark_speech(ari, heart);
+}
+wait(1.5);
+
+if get_response() == 0 {
+	sim {
+		{
+			destroy_prop(c8h_flower_pot_summit);
+			setup_prop(c8h_flower_pot_summit_yellow_sprouting);
+			wait(0.5);
+			destroy_prop(c8h_flower_pot_summit_yellow_sprouting);
+			setup_prop(c8h_flower_pot_summit_yellow_sprouted);
+		}
+		{
+			wait(0.25);
+			create_animation(spr_fx_twinkle_1, c8h_plant_sparkle, 0, 0, 0, -5000);
+		}
+		{
+			play_sound("SoundEffects/SpecialEvents/PottedPlantSproutStage4");
+		}
+		{
+			wait(0.5);
+			free bark_speech(ari, exclamation_mark);
+			free bark_speech(celine, exclamation_mark);
+		}
+		{
+			wait(1);
+			face(ari, south);
+			face(celine, south);
+		}
+		{
+			pan_camera(1, c8h_camera_12);
+		}
+	}
+} else {
+	sim {
+		{
+			destroy_prop(c8h_flower_pot_summit);
+			setup_prop(c8h_flower_pot_summit_pink_sprouting);
+			wait(0.5);
+			destroy_prop(c8h_flower_pot_summit_pink_sprouting);
+			setup_prop(c8h_flower_pot_summit_pink_sprouted);
+		}
+		{
+			wait(0.25);
+			create_animation(spr_fx_twinkle_1, c8h_plant_sparkle, 0, 0, 0, -5000);
+		}
+		{
+			play_sound("SoundEffects/SpecialEvents/PottedPlantSproutStage4");
+		}
+		{
+			wait(0.5);
+			free bark_speech(ari, exclamation_mark);
+			free bark_speech(celine, exclamation_mark);
+		}
+		{
+			wait(1);
+			face(ari, south);
+			face(celine, south);
+		}
+		{
+			pan_camera(1, c8h_camera_12);
+		}
+	}
+}
+wait(1);
+next_line(); //
+next_line(); //
+
+sim {
+	{
+		wait(0.5);
+		face(celine, east);
+	}
+	{
+		wait(1);
+		face(ari, west);
+	}
+	{
+		pan_camera(1.5, c8h_camera_11);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(celine, cute_face);
+free bark_speech(ari, cute_face);
+wait(1.5);
+sim {
+	{
+		walk_slow(celine, c8h_celine_summit_pot);
+		face(celine, south);
+		walk_slow(celine, c8h_celine_summit_seat);
+		animate(celine, sit);
+		face(celine, east);
+		wait(1);
+		face(celine, south);
+		wait(0.5);
+		face(celine, east);
+		setup_prop(c8h_sandwiches_summit);
+	}
+	{
+		wait(0.5);
+		walk_slow(ari, c8h_ari_summit_pot);
+		face(ari, south);
+		walk_slow(ari, c8h_ari_summit_seat);
+		animate(ari, sit);
+		face(ari, west);
+		wait(1);
+		free bark_speech(ari, cute_face);
+		wait(0.5);
+		free bark_speech(celine, cute_face);
+	}
+	{
+		pan_camera(2, c8h_camera_9);
+		wait(2);
+		pan_camera(4, c8h_camera_13);
+	}
+	{
+		wait(5.5);
+		fade_out(2);
+	}
+}

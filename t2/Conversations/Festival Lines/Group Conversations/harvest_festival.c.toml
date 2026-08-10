@@ -1,0 +1,78 @@
+[harvest_festival_dell_errol_maple]
+refresh = "never"
+priority = "max"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "errol" }, { npc = "maple" }] },
+	{ dell_zone = "<errol_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ location = "town" }
+]
+speaker = "maple"
+portrait = "think"
+local = "Wait, who named them $Queen Berries$? A Queen? Or is it berry royalty?"
+next = "1"
+
+[harvest_festival_dell_errol_maple.1]
+speaker = "errol"
+portrait = "think"
+local = "You know, I'm not sure! Eiland would probably be a better person to ask."
+next = "2"
+
+[harvest_festival_dell_errol_maple.2]
+speaker = "dell"
+portrait = "sad"
+local = "We tried, but he kept getting distracted by all the desserts..."
+
+[harvest_festival_elsie_hemlock_josephine]
+refresh = "never"
+priority = "max"
+requires = [
+	{ any = [{ npc = "elsie" }, { npc = "hemlock" }, { npc = "josephine" }] },
+	{ elsie_zone = "<hemlock_zone>" },
+	{ elsie_zone = "<josephine_zone>" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ location = "town" }
+]
+actions = [{ bark = { bark = "heart", npc = "josephine" } }]
+speaker = "elsie"
+portrait = "wink"
+local = "So how long did it take for you to get the courage to ask Jo to dance with you at the Harvest Festival, Hemlock?"
+next = "1"
+
+[harvest_festival_elsie_hemlock_josephine.1]
+speaker = "hemlock"
+portrait = "happy"
+local = "I asked her right away! I knew if I waited I wouldn't have any chance at all with such a fine woman."
+
+# Holt, Landen, Terithia: (At the kitchen)
+# Holt (think) It's a shame that the stage stays empty for so much of the Festival, we should plan more events for it.
+# Landen (happy) Hmm... how about a pie eating contest?
+# Terithia (happy) Well shucks, we don't need the stage for that! Race you two to the table!
+# Olric, Jo: (At the kitchen)
+# Olric (neutral) You need any help in the kitchen, Josephine?
+# Jo (happy) Thank you Olric, but we've got things well in hand! You just focus on having a good time!
+[harvest_festival_dozy_luc]
+refresh = "never"
+priority = "max"
+requires = [
+	{ any = [{ npc = "dozy" }, { npc = "luc" }] },
+	{ dozy_zone = "<luc_zone>" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ location = "town" }
+]
+speaker = "luc"
+portrait = "neutral"
+local = "I bet you could make some really fun shampoo and soap and stuff out of $Queen Berries$, huh?"
+next = "1"
+
+[harvest_festival_dozy_luc.1]
+speaker = "luc"
+portrait = "happy"
+local = "It'd make baths a lot more fun if it smelled as good as a pie!"
+next = "2"
+
+[harvest_festival_dozy_luc.2]
+speaker = "dozy"
+portrait = "neutral"
+local = "(Dozy appears to be seriously thinking about Luc's suggestion.)"

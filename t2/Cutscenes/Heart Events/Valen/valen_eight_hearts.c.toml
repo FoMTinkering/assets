@@ -1,0 +1,573 @@
+[valen_eight_hearts_follow_up_balor]
+refresh = "never"
+requires = [{ npc = "balor" }, { valen_heart_event = "eight_heart" }]
+portrait = "neutral"
+local = "Glad to hear you and Valen tracked down that rare flower she was searching for."
+next = "1"
+
+[valen_eight_hearts_follow_up_balor.1]
+portrait = "think"
+local = "She put me on the hunt as well, but all I could learn about it was that it was rare, finicky, and doesn't travel well."
+next = "2"
+
+[valen_eight_hearts_follow_up_balor.2]
+portrait = "ugh"
+local = "I'm good at transporting merchandise, but I'm not THAT good."
+
+[valen_eight_hearts_follow_up_celine]
+refresh = "never"
+requires = [{ npc = "celine" }, { valen_heart_event = "eight_heart" }]
+portrait = "neutral"
+local = "Valen told me all about your adventures finding a Cliffblossom! You're both so brave!"
+next = "1"
+
+[valen_eight_hearts_follow_up_celine.1]
+portrait = "blush_special"
+local = "When I think about having to go anywhere near those cliffs... I just don't think I could."
+next = "2"
+
+[valen_eight_hearts_follow_up_celine.2]
+portrait = "think"
+local = "I wonder if Valen happened to save any seeds?"
+
+[valen_eight_hearts_follow_up_eiland]
+refresh = "never"
+requires = [{ npc = "eiland" }, { valen_heart_event = "eight_heart" }]
+portrait = "surprised"
+local = "So you and Valen found the Cliffblossom? Incredible work!"
+next = "1"
+
+[valen_eight_hearts_follow_up_eiland.1]
+portrait = "happy"
+local = "Those ruins are hiding all sorts of surprises, aren't they?"
+
+[valen_eight_hearts_follow_up_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ valen_heart_event = "eight_heart" },
+	{ valen_eight_heart_priority_bump = true }
+]
+portrait = "sad"
+local = "Valen told me about what happened, I'm relieved you're alright, [Ari]."
+next = "1"
+
+[valen_eight_hearts_follow_up_errol.1]
+portrait = "think"
+local = "Eiland and I have already cleaned the site and repaired the damage to the wall. That stonework won't be falling on anyone else!"
+
+[valen_eight_hearts_follow_up_juniper]
+refresh = "never"
+requires = [{ npc = "juniper" }, { valen_heart_event = "eight_heart" }]
+portrait = "neutral"
+local = "Please extend my congratulations to you and Valen on finding the last ingredient for her little poultice."
+next = "1"
+
+[valen_eight_hearts_follow_up_juniper.1]
+portrait = "happy"
+local = "Why, with a few more years of training, she might be just as good as Dozy at hunting down rare ingredients!"
+next = "2"
+
+[valen_eight_hearts_follow_up_juniper.2]
+portrait = "laugh"
+local = "Oh ho ho!"
+
+[valen_eight_hearts_follow_up_valen_best_friend]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ valen_heart_event = "eight_heart" },
+	{ valen_is_best_friend = true },
+	{ valen_eight_heart_priority_bump = true }
+]
+portrait = "neutral"
+local = "I feel such a sense of relief, now that we have recovered the panacea's recipe."
+next = "1"
+
+[valen_eight_hearts_follow_up_valen_best_friend.1]
+portrait = "think"
+local = "Now I just need to figure out why it loses its effectiveness if it's taken outside of Mistria..."
+next = "2"
+
+[valen_eight_hearts_follow_up_valen_best_friend.2]
+portrait = "happy"
+local = "It's an exciting time!"
+
+[valen_eight_hearts_follow_up_valen_romantic]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ valen_heart_event = "eight_heart" },
+	{ valen_is_partner = true },
+	{ valen_eight_heart_priority_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "neutral"
+local = "I feel such a sense of relief, now that we have recovered the panacea's recipe."
+next = "1"
+
+[valen_eight_hearts_follow_up_valen_romantic.1]
+portrait = "think"
+local = "Now I just need to figure out why it loses its effectiveness if it's taken outside of Mistria..."
+next = "2"
+
+[valen_eight_hearts_follow_up_valen_romantic.2]
+portrait = "neutral_blush"
+local = "I suppose it's another mystery for us to unravel."
+
+[valen_eight_hearts]
+kind = "gameplay_triggered"
+writes = [
+	{ valen_heart_event = "eight_heart", expires = "4d" },
+	{ valen_eight_heart_priority_bump = true, expires = "4d" }
+]
+speaker = "valen"
+portrait = "happy"
+local = "Oh good, you made it!"
+next = "1"
+
+[valen_eight_hearts.1]
+speaker = "valen"
+portrait = "neutral"
+local = "I've been making it a point to come up here whenever I have the chance, but so far I haven't had any luck spotting a $Cliffblossom$..."
+next = "2"
+
+[valen_eight_hearts.2]
+speaker = "valen"
+portrait = "happy"
+local = "With a second pair of eyes, I like our chances much better."
+next = "3"
+
+[valen_eight_hearts.3]
+speaker = "valen"
+portrait = "think"
+local = "This area was only revealed after the earthquake."
+next = "4"
+
+[valen_eight_hearts.4]
+speaker = "valen"
+portrait = "wink"
+local = "I'm sure it's hiding plenty of secrets, and I'm determined to keep searching till we find our elusive final ingredient."
+next = "5"
+
+[valen_eight_hearts.5]
+speaker = "valen"
+portrait = "neutral"
+local = "I've asked Eiland and Errol to keep an eye out while they're here working, but..."
+next = "6"
+
+[valen_eight_hearts.6]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "Well, it's probably best that we do a circuit ourselves, don't you think?"
+prompts = [
+	{ local = "Cliffblossom... do we have any other details? ", next = "7" },
+	{ local = "I'll pick every flower I can find! ", next = "8" }
+]
+
+[valen_eight_hearts.7]
+speaker = "valen"
+portrait = "happy"
+local = "We'll want to look for a pink flower, with four petals."
+next = "9"
+
+[valen_eight_hearts.8]
+speaker = "valen"
+portrait = "happy"
+local = "You can if you like, but supposedly $Cliffblossom$ is a pink flower, with four petals."
+next = "9"
+
+[valen_eight_hearts.9]
+speaker = "valen"
+portrait = "sad"
+local = "You would think those features would make it stand out but... frankly I've yet to see anything like it."
+next = "10"
+
+[valen_eight_hearts.10]
+speaker = "valen"
+portrait = "neutral"
+local = "I'm not usually one for fieldwork, but piecing together clues to track down a rare herb..."
+next = "11"
+
+[valen_eight_hearts.11]
+speaker = "valen"
+portrait = "happy"
+local = "It's a bit like something out of a mystery novel, isn't it?"
+prompts = [
+	{ local = "It's exciting! ", next = "12" },
+	{ local = "You'll have to write it!", next = "13" }
+]
+
+[valen_eight_hearts.12]
+speaker = "valen"
+portrait = "neutral"
+local = "I couldn't agree more."
+next = "14"
+
+[valen_eight_hearts.13]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "Well, I have been putting together my notes on the panacea, but I suspect the average reader would find it to be a bit dry."
+next = "14"
+
+[valen_eight_hearts.14]
+speaker = "valen"
+portrait = "ugh"
+local = "Seems like today isn't the day."
+next = "15"
+
+[valen_eight_hearts.15]
+speaker = "valen"
+portrait = "sad"
+local = "Research is all about persistence. I suppose we'll just have to come back another time."
+prompts = [
+	{ local = "Why don't we check the ruins themselves?", next = "16" },
+	{ local = "But I want to spend more time with you.", next = [
+		{ target = "17r", requires = [
+			{ shooting_star_valen_attended = true }
+		] },
+		{ target = "17f" }
+	] }
+]
+
+[valen_eight_hearts.16]
+speaker = "valen"
+portrait = "think"
+local = """Hmm... despite the name of the plant, I suppose we were simply told the "Western Ruins", weren't we?"""
+next = "18"
+
+[valen_eight_hearts.17r]
+speaker = "valen"
+portrait = "neutral_blush"
+local = "I'd... I'd like that as well. I suppose we might as well explore the ruins themselves."
+next = "18"
+
+[valen_eight_hearts.17f]
+speaker = "valen"
+portrait = "happy"
+local = "I'd like that as well. I suppose we might as well explore the ruins themselves."
+next = "18"
+
+[valen_eight_hearts.18]
+speaker = "valen"
+portrait = "neutral"
+effect = "surprise"
+local = "I think that... yes... that's a $Cliffblossom$!"
+next = "19"
+
+[valen_eight_hearts.19]
+speaker = "valen"
+portrait = "ugh"
+effect = "drop"
+local = "It's out of reach..."
+next = "20"
+
+[valen_eight_hearts.20]
+speaker = "valen"
+portrait = "think"
+local = "There's a ladder in the tent at the digsite. [Ari], can you go and get it?"
+next = "21"
+
+[valen_eight_hearts.21]
+speaker = "valen"
+portrait = "neutral"
+local = "Hold the ladder steady for me, will you?"
+next = "22"
+
+[valen_eight_hearts.22]
+speaker = "valen"
+portrait = "think"
+local = "This stonework seems liable to give way at any moment, I'll need to be delicate."
+next = "23"
+
+[valen_eight_hearts.23]
+speaker = "valen"
+portrait = "mad"
+local = "Careful..."
+next = "24"
+
+[valen_eight_hearts.24]
+speaker = "valen"
+portrait = "happy"
+local = "I've got it!"
+next = "25"
+
+[valen_eight_hearts.25]
+speaker = "valen"
+portrait = "neutral"
+local = "Quick, let's get the flower back to my lab!"
+next = "26"
+
+[valen_eight_hearts.26]
+speaker = "valen"
+portrait = "panic"
+effect = "shock"
+local = "[Ari]!"
+next = "27"
+
+[valen_eight_hearts.27]
+speaker = "valen"
+portrait = "sad"
+local = "Please, hold on just a little longer, [Ari]. This panacea must work... I'll stake my life on it!"
+next = "28"
+
+[valen_eight_hearts.28]
+speaker = "valen"
+portrait = "think"
+local = "There's no getting around it, I'll have to test it on myself."
+next = "29"
+
+[valen_eight_hearts.29]
+speaker = "valen"
+portrait = "teary"
+local = "It has to work... it just has to."
+next = "30"
+
+[valen_eight_hearts.30]
+speaker = "valen"
+portrait = "mad"
+local = "..."
+next = "31"
+
+[valen_eight_hearts.31]
+speaker = "valen"
+portrait = "sad"
+local = "Come on, Doc. Get it together!"
+next = "32"
+
+[valen_eight_hearts.32]
+speaker = "valen"
+portrait = "panic"
+local = "It works!"
+next = "33"
+
+[valen_eight_hearts.33]
+speaker = "valen"
+portrait = "teary"
+local = "Hold on, I'm coming, [Ari]!"
+next = "34"
+
+[valen_eight_hearts.34]
+speaker = "valen"
+portrait = "teary"
+local = "Oh, thank goodness you're awake. How are you feeling, [Ari]?"
+prompts = [
+	{ local = "I feel... fine? What happened?", next = "35" },
+	{ local = "Good, but are you okay?", next = "36" }
+]
+
+[valen_eight_hearts.35]
+speaker = "valen"
+portrait = "sad"
+local = "You took a direct hit from that falling stone."
+next = "37"
+
+[valen_eight_hearts.36]
+speaker = "valen"
+portrait = "embarrassed"
+local = "Yes, thanks to your selfless act."
+next = "37"
+
+[valen_eight_hearts.37]
+speaker = "valen"
+portrait = "neutral"
+local = "Thankfully, I just used a fresh batch of panacea to heal you."
+next = "38"
+
+[valen_eight_hearts.38]
+speaker = "valen"
+portrait = "happy"
+local = "If you're feeling up to it, why don't we head upstairs and I'll fill you in on the details?"
+next = "39"
+
+[valen_eight_hearts.39]
+speaker = "valen"
+portrait = "neutral"
+local = "-I could immediately tell something was different when I used the Cliffblossom in the recipe."
+next = "40"
+
+[valen_eight_hearts.40]
+speaker = "valen"
+portrait = "sad"
+local = "Oh, I'm so relieved."
+next = "41"
+
+[valen_eight_hearts.41]
+speaker = "valen"
+portrait = "neutral"
+local = "I couldn't have made more panacea without you, [Ari]. I'm very grateful."
+next = "42"
+
+[valen_eight_hearts.42]
+speaker = "valen"
+portrait = "think"
+local = "But as your doctor..."
+next = [
+	{ target = "43r", requires = [{ shooting_star_valen_attended = true }] },
+	{ target = "43f", requires = [] }
+]
+
+[valen_eight_hearts.43r]
+speaker = "valen"
+portrait = "embarrassed"
+local = "No, not just as your doctor-"
+next = "44"
+
+[valen_eight_hearts.43f]
+speaker = "valen"
+portrait = "sincere_special"
+local = "No, not just as your doctor-"
+next = "44"
+
+[valen_eight_hearts.44]
+speaker = "valen"
+portrait = "sad"
+local = "I never wanted to risk any harm coming to you. Why did you jump in the way like that?"
+prompts = [
+	{ local = "Because you're my best friend!", next = [
+		{ target = "45r", requires = [
+			{ shooting_star_valen_attended = true }
+		] },
+		{ target = "45f" }
+	] },
+	{ local = "Because I care about you... more than anyone!", next = "51" }
+]
+
+[valen_eight_hearts.45r]
+actions = [{ update_status = { npc = "valen", status = "best_friend" } }]
+speaker = "valen"
+portrait = "sad"
+local = "[Ari]..."
+next = "46"
+
+[valen_eight_hearts.45f]
+actions = [{ update_status = { npc = "valen", status = "best_friend" } }]
+speaker = "valen"
+portrait = "happy"
+local = "[Ari]..."
+next = "46"
+
+[valen_eight_hearts.46]
+speaker = "valen"
+portrait = "neutral"
+local = "I couldn't ask for a better best friend."
+next = "47"
+
+[valen_eight_hearts.47]
+speaker = "valen"
+portrait = "think"
+local = "But please..."
+next = "48"
+
+[valen_eight_hearts.48]
+speaker = "valen"
+portrait = "sad"
+local = "No more putting yourself in danger for my sake."
+next = "49"
+
+[valen_eight_hearts.49]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "Even though we figured out how to make more panacea... I'd prefer not to have occasion to use it."
+next = [
+	{ target = "50r", requires = [{ shooting_star_valen_attended = true }] },
+	{ target = "50f", requires = [] }
+]
+
+[valen_eight_hearts.50r]
+speaker = "valen"
+portrait = "happy"
+local = "Okay? You promise?"
+next = "57"
+
+[valen_eight_hearts.50f]
+speaker = "valen"
+portrait = "smile"
+local = "Okay? You promise?"
+next = "57"
+
+[valen_eight_hearts.51]
+actions = [{ update_status = { npc = "valen", status = "dating" } }]
+speaker = "valen"
+portrait = "embarrassed"
+local = "Oh! [Ari]... do you mean it?"
+next = [
+	{ target = "52r", requires = [{ shooting_star_valen_attended = true }] },
+	{ target = "52f", requires = [] }
+]
+
+[valen_eight_hearts.52r]
+speaker = "valen"
+portrait = "think_blush"
+local = "I have been wondering if you felt the same since our evening together under the stars..."
+next = "53"
+
+[valen_eight_hearts.52f]
+speaker = "valen"
+portrait = "think_blush"
+local = "I care about you too. I didn't realize you felt the same way."
+next = "53"
+
+[valen_eight_hearts.53]
+speaker = "valen"
+portrait = "happy_blush"
+local = "I'm so happy!"
+next = "54"
+
+[valen_eight_hearts.54]
+speaker = "valen"
+portrait = "think"
+local = "But please... no more putting yourself in danger for my sake."
+next = "55"
+
+[valen_eight_hearts.55]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "Even though we figured out how to make more panacea, I'd prefer not to have occasion to use it."
+next = [
+	{ target = "56r", requires = [{ shooting_star_valen_attended = true }] },
+	{ target = "56f", requires = [] }
+]
+
+[valen_eight_hearts.56r]
+speaker = "valen"
+portrait = "happy_blush"
+local = "Okay? You promise?"
+next = "57"
+
+[valen_eight_hearts.56f]
+speaker = "valen"
+portrait = "smile"
+local = "Okay? You promise?"
+next = "57"
+
+[valen_eight_hearts.57]
+speaker = "valen"
+portrait = "happy"
+local = "I can't thank you enough for everything you've done, [Ari]."
+next = [
+	{ target = "58r", requires = [{ shooting_star_valen_attended = true }] },
+	{ target = "58f", requires = [] }
+]
+
+[valen_eight_hearts.58r]
+speaker = "valen"
+portrait = "think_blush"
+local = "I feel that I can finally rest easy..."
+next = "59r"
+
+[valen_eight_hearts.58f]
+speaker = "valen"
+portrait = "think_smile"
+local = "I feel that I can finally rest easy..."
+next = "59f"
+
+[valen_eight_hearts.59r]
+speaker = "valen"
+portrait = "neutral_blush"
+local = "Knowing that we can protect the people of Mistria... together."
+
+[valen_eight_hearts.59f]
+speaker = "valen"
+portrait = "neutral"
+local = "Knowing that we can protect the people of Mistria together."

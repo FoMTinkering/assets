@@ -1,0 +1,116 @@
+requires = [
+	{ weather = "pleasant" },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+	{ season = "summer" },
+	{ day_of_the_week = "thursday" },
+]
+
+# balor
+[balor."6:00am"]
+destination = "balors_room/Balor Wake Point"
+
+[balor."6:23am"]
+destination = "town/Wagon Meet Up 2"
+delayed_arrival_actions = [
+	{ after = "1h 3n", animation = "inspect_gem" },
+	{ after = "2h 7n", animation = "idle" },
+]
+
+[balor."12:12pm"]
+destination = "inn/North Table Top 1"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[balor."3:23pm"]
+destination = "town/Wagon Meet Up 2"
+
+[balor."5:12pm"]
+destination = "eastern_road/adeline_business_carpenter"
+
+[balor."8:03pm"]
+destination = "inn/Top Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[balor."12:23am"]
+destination = "balors_room/Balor Wake Point"
+
+# caldarus
+[caldarus."6:00am"]
+destination = "town/Town Fishing Friend"
+
+[caldarus."10:27am"]
+destination = "town/Bothering Balor"
+
+[caldarus."12:14pm"]
+destination = "inn/North Table Bottom 1"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[caldarus."3:26pm"]
+destination = "town/Wagon Meet Up 3"
+
+[caldarus."4:47pm"]
+destination = "bathhouse_change_room/Left Stool Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[caldarus."10:53pm"]
+destination = "caldarus_house/Caldarus Wake Point"
+on_arrival_actions = [{ animation = "eyes_closed" }]
+
+# elsie
+[elsie."6:00am"]
+destination = "bathhouse_change_room/Middle Bench Right Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[elsie."8:49am"]
+destination = "museum_entry/chat_2"
+
+[elsie."12:21pm"]
+destination = "inn/North Table Left End"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[elsie."3:22pm"]
+destination = "town/Wagon Meet Up 1"
+
+[elsie."5:11pm"]
+destination = "general_store_store/shopping_entrance"
+on_arrival_actions = [{ routine = "general_store_shopping" }]
+
+[elsie."7:12pm"]
+destination = "manor_house_entry/Couch Middle Seat"
+on_arrival_actions = [{ animation = "write_sit" }]
+
+[elsie."11:36pm"]
+destination = "elsies_bedroom/Chaise Right Seat"
+
+
+# terithia
+[terithia."6:00am"]
+destination = "town/River Fishing Near Celine's House"
+on_arrival_actions = [{ animation = "fish" }]
+
+[terithia."9:45am"]
+destination = "town/River Fishing Near Celine's House"
+
+[terithia."10:26am"]
+destination = "town/Blacksmith Customer"
+
+[terithia."12:37pm"]
+destination = "narrows/narrows_eastern_routine_entrance"
+on_arrival_actions = [{ routine = "fishing" }]
+
+[terithia."2:32pm"]
+destination = "terithias_house/Couch Seat Top"
+on_arrival_actions = [{ activity = "drink" }]
+
+[terithia."7:51pm"]
+destination = "beach/Dock Chatting 1"

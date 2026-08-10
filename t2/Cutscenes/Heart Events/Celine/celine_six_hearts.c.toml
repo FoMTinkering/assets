@@ -1,0 +1,289 @@
+[celine_six_hearts_follow_up_celine]
+refresh = "never"
+requires = [{ npc = "celine" }, { celine_heart_event = "six_heart" }]
+portrait = "neutral"
+local = "After the sprout's last growth spurt, I think I'm starting to understand the context of some of the words I couldn't translate in the Codex."
+next = "1"
+
+[celine_six_hearts_follow_up_celine.1]
+portrait = "blush_closed_eyes"
+local = "Isn't this exciting?"
+
+[celine_six_hearts_follow_up_dell]
+refresh = "never"
+requires = [{ npc = "dell" }, { celine_heart_event = "six_heart" }]
+portrait = "neutral"
+local = "Celine says there's a perfectly natural explanation for her sprout growing like that..."
+next = "1"
+
+[celine_six_hearts_follow_up_dell.1]
+portrait = "happy"
+local = "But I'm pretty sure it was magic!"
+
+[celine_six_hearts_follow_up_holt]
+refresh = "never"
+requires = [{ npc = "holt" }, { celine_heart_event = "six_heart" }]
+portrait = "think"
+local = "Now I know Celine says that the little sprout doesn't grow off of puns, but whenever I'm over, I make sure to whisper a few to it."
+next = "1"
+
+[celine_six_hearts_follow_up_holt.1]
+portrait = "neutral"
+local = "Who knows? Could be just the thicket."
+
+[celine_six_hearts_follow_up_nora]
+refresh = "never"
+requires = [{ npc = "nora" }, { celine_heart_event = "six_heart" }]
+portrait = "neutral"
+local = "I've never seen a plant grow like that before! My daughter's turned into quite the botanist, hasn't she?"
+
+[celine_six_hearts]
+kind = "gameplay_triggered"
+writes = [{ celine_heart_event = "six_heart", expires = "4d" }]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "[Ari], you came!"
+next = "1"
+
+[celine_six_hearts.1]
+speaker = "celine"
+portrait = "think"
+local = "I've been trying everything I can think of! Lighting levels, humidity, temperature..."
+next = "2"
+
+[celine_six_hearts.2]
+speaker = "celine"
+portrait = "sweat"
+effect = "drop"
+local = "But it's not growing at all."
+next = "3"
+
+[celine_six_hearts.3]
+speaker = "celine"
+portrait = "neutral"
+local = "It's one of a kind, so I don't want to try anything too drastic, but at this point I'm running out of ideas."
+prompts = [
+	{ local = "What does the Codex say?", next = "4" },
+	{ local = "Maybe we could go looking for more seeds?", next = "5" }
+]
+
+[celine_six_hearts.4]
+speaker = "celine"
+portrait = "ugh"
+local = "It's not much help, I just haven't translated enough of it..."
+next = "6"
+
+[celine_six_hearts.5]
+speaker = "celine"
+portrait = "think"
+local = "We could, but I think we might have gotten really lucky the first time."
+next = "6"
+
+[celine_six_hearts.6]
+speaker = "dell"
+portrait = "happy"
+local = "Hey sis! Hey [Ari]!"
+next = "7"
+
+[celine_six_hearts.7]
+speaker = "dell"
+portrait = "neutral"
+local = "Dad baked a $Cherry Cobbler$! Mom says you have to come over cause me and Dad can't eat it all ourselves."
+next = "8"
+
+[celine_six_hearts.8]
+speaker = "dell"
+portrait = "think"
+local = "We totally could though, I don't know what she's talking about."
+next = "9"
+
+[celine_six_hearts.9]
+speaker = "celine"
+portrait = "happy"
+local = "Oh, I'd love to! But [Ari] and I are trying to get some important work done."
+next = "10"
+
+[celine_six_hearts.10]
+speaker = "dell"
+portrait = "neutral"
+local = "[Ari] can have some too!"
+prompts = [
+	{ local = "Let's bring the sprout along, maybe it'd like a change of scenery.", next = "11" },
+	{ local = "Fresh out of the oven cobbler? As a treat?", next = "12" }
+]
+
+[celine_six_hearts.11]
+speaker = "celine"
+portrait = "neutral"
+local = "You might be onto something! It's certainly worth a try."
+next = "13"
+
+[celine_six_hearts.12]
+speaker = "celine"
+portrait = "neutral"
+local = "Ooh, it does sound good, doesn't it? How about we bring the sprout with us? It might like the change of scenery."
+next = "13"
+
+[celine_six_hearts.13]
+speaker = "dell"
+portrait = "happy"
+local = "Yaaaay, it's cobbling time!"
+next = "14"
+
+[celine_six_hearts.14]
+speaker = "dell"
+portrait = "neutral"
+local = "So [Ari], you and Celine are like best friends right? She talks about you all the time."
+next = "15"
+
+[celine_six_hearts.15]
+speaker = "celine"
+portrait = "blush_special"
+local = "Dell!"
+next = "16"
+
+[celine_six_hearts.16]
+speaker = "dell"
+portrait = "think"
+local = "Why is your face getting all red like that?"
+next = "17"
+
+[celine_six_hearts.17]
+speaker = "celine"
+portrait = "angry_blush"
+local = "Why don't you run ahead and let Mom and Dad know we're on our way?"
+next = "18"
+
+[celine_six_hearts.18]
+speaker = "dell"
+portrait = "happy"
+local = "Okaaaaay!"
+next = "19"
+
+[celine_six_hearts.19]
+speaker = "celine"
+portrait = "sweat"
+local = "Ahaha..."
+next = "20"
+
+[celine_six_hearts.20]
+speaker = "nora"
+portrait = "wink"
+local = "Celine, you brought a friend! Make yourself at home, [Ari]."
+next = "21"
+
+[celine_six_hearts.21]
+speaker = "holt"
+portrait = "happy"
+local = "Hope you two are ready for the finest $Cherry Cobbler$ currently in this kitchen!"
+next = "22"
+
+[celine_six_hearts.22]
+speaker = "celine"
+portrait = "happy"
+local = "We sure are!"
+next = "23"
+
+[celine_six_hearts.23]
+speaker = "celine"
+portrait = "neutral"
+local = "I hope you don't mind, [Ari] and I thought we'd try a little experiment with the sprout."
+next = "24"
+
+[celine_six_hearts.24]
+speaker = "nora"
+portrait = "neutral"
+local = "A good dessert needs a centerpiece for the table, that's what I always say."
+next = "25"
+
+[celine_six_hearts.25]
+speaker = "dell"
+portrait = "think"
+local = "I don't think I've ever heard you say that, Mom."
+next = "26"
+
+[celine_six_hearts.26]
+speaker = "holt"
+portrait = "neutral"
+local = "Do you think your plant would like some cobbler? Just so it knows we're all rooting for it."
+next = "27"
+
+[celine_six_hearts.27]
+speaker = "celine"
+portrait = "ugh"
+local = "Oh Dad..."
+prompts = [
+	{ local = "It should know we be-leaf in it.", next = "28" },
+	{ local = "Yeah! All it needs is some grow-ti-vation!", next = "28" }
+]
+
+[celine_six_hearts.28]
+speaker = "celine"
+portrait = "sad"
+local = "[Ari], not you too!"
+next = "29"
+
+[celine_six_hearts.29]
+speaker = "nora"
+portrait = "happy"
+local = "Hahaha!"
+next = "30"
+
+[celine_six_hearts.30]
+speaker = "dell"
+portrait = "happy"
+local = "Come on, Celine!"
+next = "31"
+
+[celine_six_hearts.31]
+speaker = "celine"
+portrait = "neutral"
+local = "Well, I-"
+next = "32"
+
+[celine_six_hearts.32]
+speaker = "celine"
+portrait = "laugh"
+local = "I suppose this can be my good seed for the day."
+next = "33"
+
+[celine_six_hearts.33]
+speaker = "holt"
+portrait = "happy"
+local = "That's my girl!"
+next = "34"
+
+[celine_six_hearts.34]
+speaker = "nora"
+portrait = "neutral"
+local = "Celine, your plant is growing!"
+next = "35"
+
+[celine_six_hearts.35]
+speaker = "celine"
+portrait = "very_happy"
+local = "Oh my gosh!"
+next = "36"
+
+[celine_six_hearts.36]
+speaker = "holt"
+portrait = "think"
+local = "A plant that grows on puns, huh? Maybe I missed my calling!"
+next = "37"
+
+[celine_six_hearts.37]
+speaker = "celine"
+portrait = "think"
+local = "No no, I don't think it was that... I should get home to write all this down!"
+next = "38"
+
+[celine_six_hearts.38]
+speaker = "dell"
+portrait = "sad"
+local = "No time for cobbler?"
+next = "39"
+
+[celine_six_hearts.39]
+speaker = "celine"
+portrait = "blush_special"
+local = "Ah, r-right. Of course!"

@@ -1,0 +1,17 @@
+[hot_bath]
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ any = [
+		{ location = "bathhouse_change_room" },
+		{ reina_is_traveling_from_location = "bathhouse_change_room" }
+	] },
+	{ season = "summer", comparator = "!=" }
+]
+portrait = "neutral"
+local = "The bath's hot, [Ari]!"
+next = "1"
+
+[hot_bath.1]
+portrait = "happy"
+local = "Wow, do I feel good after that!"

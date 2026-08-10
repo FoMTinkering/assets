@@ -1,0 +1,21 @@
+[town_square]
+refresh = "1y"
+requires = [
+	{ npc = "valen" },
+	{ any = [
+		{ valen_zone = "town/fountain_north_east" },
+		{ valen_zone = "town/fountain_north_west" },
+		{ valen_zone = "town/fountain_south" },
+		{ valen_zone = "town/center_square" },
+		{ valen_routine = "saturday_market" }
+	] },
+	{ date_time = "1y", comparator = ">=" },
+	{ market_is_back = true }
+]
+portrait = "think"
+local = "The Saturday Market really transforms the town square."
+next = "1"
+
+[town_square.1]
+portrait = "neutral"
+local = "I always look forward to it."

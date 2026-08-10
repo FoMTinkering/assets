@@ -1,0 +1,242 @@
+[apiaries_and_terrariums_follow_up_pre_adeline]
+refresh = "never"
+requires = [{ npc = "adeline" }, { aat = "pre" }]
+portrait = "neutral"
+local = "That Luc! I wish I had half his gumption when I was his age."
+
+[apiaries_and_terrariums_follow_up_pre_hemlock]
+refresh = "never"
+requires = [{ npc = "hemlock" }, { aat = "pre" }]
+portrait = "think"
+local = "Terrariums huh..."
+next = "1"
+
+[apiaries_and_terrariums_follow_up_pre_hemlock.1]
+portrait = "sad"
+local = "On the one hand, that means Luc will be able to keep more bugs."
+next = "2"
+
+[apiaries_and_terrariums_follow_up_pre_hemlock.2]
+portrait = "happy"
+local = "But on the other hand, it means my little guy will be even happier!"
+next = "3"
+
+[apiaries_and_terrariums_follow_up_pre_hemlock.3]
+portrait = "wink"
+local = "Seems worth it to me."
+
+[apiaries_and_terrariums_follow_up_pre_reina]
+refresh = "never"
+requires = [{ npc = "reina" }, { aat = "pre" }]
+portrait = "neutral"
+local = "Thanks for agreeing to help Luc, [Ari]."
+next = "1"
+
+[apiaries_and_terrariums_follow_up_pre_reina.1]
+portrait = "think"
+local = "I've been helping him write to the Royal Society of Entomologists like every week."
+next = "2"
+
+[apiaries_and_terrariums_follow_up_pre_reina.2]
+portrait = "happy"
+local = "He was so tickled when they wrote back calling him a Fellow Scientist!"
+
+[apiaries_and_terrariums_follow_up_post_luc]
+refresh = "never"
+requires = [{ npc = "luc" }, { aat = "post" }]
+portrait = "neutral"
+local = "[Ari]! Thank you so much for shipping all those insects!"
+next = "1"
+
+[apiaries_and_terrariums_follow_up_post_luc.1]
+portrait = "happy"
+effect = "cheery"
+local = "Isn't the terrarium cool? I can't wait to see what kind of bugs we'll find with it!"
+
+[apiaries_and_terrariums_follow_up_post_terithia]
+refresh = "never"
+requires = [{ npc = "terithia" }, { aat = "post" }]
+portrait = "neutral"
+local = "Luc was telling me about that Terrarium thingy."
+next = "1"
+
+[apiaries_and_terrariums_follow_up_post_terithia.1]
+portrait = "happy"
+local = "Bet you could fish up all sorts of interesting creatures with that $Bait$!"
+
+[apiaries_and_terrariums_turn_in]
+kind = "gameplay_triggered"
+writes = [{ aat = "post", expires = "4d" }]
+speaker = "adeline"
+portrait = "neutral"
+local = "There you are, [Ari]!"
+next = "1"
+
+[apiaries_and_terrariums_turn_in.1]
+speaker = "adeline"
+portrait = "happy"
+local = "We just heard from the Royal Society of Entomologists..."
+next = "2"
+
+[apiaries_and_terrariums_turn_in.2]
+speaker = "adeline"
+portrait = "wink"
+local = "They approved our application for the $Apiary & Terrarium$ program! Congratulations!"
+next = "3"
+
+[apiaries_and_terrariums_turn_in.3]
+speaker = "adeline"
+portrait = "neutral"
+local = "And here's the included equipment they provided to get you started."
+next = "4"
+
+[apiaries_and_terrariums_turn_in.4]
+speaker = "adeline"
+portrait = "happy"
+local = "Best of luck on your bug hunting!"
+
+[apiaries_and_terrariums]
+kind = "gameplay_triggered"
+writes = [{ aat = "pre" }]
+speaker = "luc"
+portrait = "happy"
+local = "[Ari], you came!"
+next = "1"
+
+[apiaries_and_terrariums.1]
+speaker = "luc"
+portrait = "mad"
+local = "Ahem!"
+next = "2"
+
+[apiaries_and_terrariums.2]
+speaker = "luc"
+portrait = "neutral"
+local = "I have here a letter from the Royal Society of Entomologists!"
+next = "3"
+
+[apiaries_and_terrariums.3]
+speaker = "luc"
+portrait = "happy"
+local = "It congratulates Mistria on its recovery efforts and contributions to the science of Entomology!"
+next = "4"
+
+[apiaries_and_terrariums.4]
+speaker = "adeline"
+portrait = "neutral"
+local = "It's wonderful to hear that a society from the Capital has taken notice of our hard work!"
+prompts = [
+	{ local = "Did they include a medal?", next = "5" },
+	{ local = "Wow Luc, that's amazing!", next = "6" },
+]
+
+[apiaries_and_terrariums.5]
+speaker = "luc"
+portrait = "neutral"
+local = "Something even better than a medal, [Ari]!"
+next = "7"
+
+[apiaries_and_terrariums.6]
+speaker = "reina"
+portrait = "happy"
+local = "It is, isn't it?"
+next = "7"
+
+[apiaries_and_terrariums.7]
+speaker = "luc"
+portrait = "think"
+local = "In recognition of our hard work..."
+next = "8"
+
+[apiaries_and_terrariums.8]
+speaker = "luc"
+portrait = "happy"
+local = "They'd like to offer us an opportunity to apply to their $Apiary and Terrarium$ program!"
+next = "9"
+
+[apiaries_and_terrariums.9]
+speaker = "reina"
+portrait = "neutral"
+local = "Keeping $Bees$ in $Apiaries$? That would mean..."
+next = "10"
+
+[apiaries_and_terrariums.10]
+speaker = "reina"
+portrait = "happy"
+local = "Access to all kinds of fresh, delicious $Honey$!"
+next = "11"
+
+[apiaries_and_terrariums.11]
+speaker = "luc"
+portrait = "neutral"
+local = "And $Terrariums$ can house $Bugs$ that make all sorts of useful things!"
+next = "12"
+
+[apiaries_and_terrariums.12]
+speaker = "luc"
+portrait = "think"
+local = "To be sure we're qualified for the program, the society has asked us to ship them... a lot of bugs."
+next = "13"
+
+[apiaries_and_terrariums.13]
+speaker = "luc"
+portrait = "sad"
+local = "I'm good, but there's only so many hours in a day."
+next = "14"
+
+[apiaries_and_terrariums.14]
+speaker = "luc"
+portrait = "neutral"
+local = "I could really use your help, [Ari]."
+prompts = [
+	{ local = "Of course!", next = "15" },
+	{ local = "Sure! Maybe Reina and Adeline could help too?", next = "16" },
+]
+
+[apiaries_and_terrariums.15]
+speaker = "luc"
+portrait = "happy"
+local = "I knew I could count on you!"
+next = "21"
+
+[apiaries_and_terrariums.16]
+speaker = "adeline"
+portrait = "ugh"
+local = "I um... well."
+next = "17"
+
+[apiaries_and_terrariums.17]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "I guess I could keep a look out."
+next = "18"
+
+[apiaries_and_terrariums.18]
+speaker = "reina"
+portrait = "sad"
+effect = "drop"
+local = "I suppose if it means we'll get new kinds of $Honey$ in stock..."
+next = "19"
+
+[apiaries_and_terrariums.19]
+speaker = "luc"
+portrait = "neutral"
+local = "Oh don't worry about it you two, [Ari] and I can handle it!"
+next = "20"
+
+[apiaries_and_terrariums.20]
+speaker = "luc"
+portrait = "happy"
+local = "After all, this job calls for the professional touch of the true entomologist!"
+next = "21"
+
+[apiaries_and_terrariums.21]
+speaker = "luc"
+portrait = "think"
+local = "If you could $ship 20 bugs$, [Ari], I'll cover the rest, okay?"
+next = "22"
+
+[apiaries_and_terrariums.22]
+speaker = "adeline"
+portrait = "neutral"
+local = "After you've shipped them, come and see me, okay, [Ari]?"

@@ -1,0 +1,55 @@
+[hayden_dinner]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "hayden" }, { npc = "terithia" }] },
+	{ errol_zone = "<hayden_zone>" },
+	{ errol_zone = "<terithia_zone>" },
+	{ location = "haydens_house" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+]
+speaker = "errol"
+portrait = "neutral"
+local = "Thank you for having us over for dinner, Hayden."
+next = "1"
+
+[hayden_dinner.1]
+speaker = "terithia"
+portrait = "happy"
+local = "Yes! You're a right thoughtful host!"
+next = "2"
+
+[hayden_dinner.2]
+speaker = "hayden"
+portrait = "wink"
+local = "Shucks! Food's always better when you got company!"
+
+[hayden_dinner_2]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "hayden" }, { npc = "terithia" }] },
+	{ errol_zone = "<hayden_zone>" },
+	{ errol_zone = "<terithia_zone>" },
+	{ location = "haydens_house" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+]
+speaker = "hayden"
+portrait = "neutral"
+local = "Thank you both for coming over! It's nice to have company."
+next = "1"
+
+[hayden_dinner_2.1]
+speaker = "errol"
+portrait = "happy"
+local = "It's nice to be company!"
+next = "2"
+
+[hayden_dinner_2.2]
+speaker = "terithia"
+portrait = "wink"
+local = "I'm just here for the gossip!"
+next = "3"
+
+[hayden_dinner_2.3]
+speaker = "terithia"
+portrait = "happy"
+local = "KYA HA HA!"

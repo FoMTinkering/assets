@@ -1,0 +1,178 @@
+[deep_woods_picnic_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "hayden" },
+	{ date = "deep_woods_picnic" },
+	{ da_hayden_deep_woods_picnic = 0 },
+	{ hayden_is_spouse = false }
+]
+writes = [
+	{ da_hayden_deep_woods_picnic = 1 },
+	{ da_hayden_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "hayden"
+portrait = "happy_arm_down_blush"
+local = "What's this about a picnic?"
+next = "1"
+
+[deep_woods_picnic_accept_1.1]
+speaker = "hayden"
+portrait = "confident_blush"
+local = "As if I could say no to a date with you."
+next = "2"
+
+[deep_woods_picnic_accept_1.2]
+speaker = "hayden"
+portrait = "shy_special"
+local = "Or to a basket full of good things to eat..."
+next = "3"
+
+[deep_woods_picnic_accept_1.3]
+speaker = "hayden"
+portrait = "laugh"
+local = "Gya ha ha!"
+
+[deep_woods_picnic_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "hayden" },
+	{ date = "deep_woods_picnic" },
+	{ da_hayden_deep_woods_picnic = 1 },
+	{ hayden_is_spouse = false }
+]
+writes = [
+	{ da_hayden_deep_woods_picnic = 2 },
+	{ da_hayden_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "hayden"
+portrait = "confident_blush"
+local = "How about a picnic, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_accept_2.1]
+speaker = "hayden"
+portrait = "happy_arm_down_blush"
+local = "My treat this time!"
+next = "2"
+
+[deep_woods_picnic_accept_2.2]
+speaker = "hayden"
+portrait = "confident_blush"
+local = "Great! Let's go!"
+
+[deep_woods_picnic_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "hayden" },
+	{ date = "deep_woods_picnic" },
+	{ hayden_has_child = false },
+	{ any = [
+		{ hayden_is_spouse = true },
+		{ da_hayden_deep_woods_picnic = 2, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_hayden_deep_woods_picnic = 3 },
+	{ da_hayden_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "hayden"
+portrait = "happy_arm_down_blush"
+local = "Want to go on another $Deep Woods$ picnic, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_accept_3.1]
+speaker = "hayden"
+portrait = "confident_blush"
+local = "I'm always happy to spend a little time alone there, just the two of us."
+
+[deep_woods_picnic_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ da_hayden_deep_woods_picnic = 1 },
+	{ da_hayden_deep_woods_picnic_follow_up_gate = true },
+	{ hayden_is_spouse = false }
+]
+writes = [{ da_hayden_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "confident_blush"
+local = "Thank you for such a nice picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_1.1]
+portrait = "embarrassed"
+local = "It reminded me a bit of that time we took Henrietta out to the park."
+next = "2"
+
+[deep_woods_picnic_follow_up_1.2]
+portrait = "shy_special"
+local = "Don't tell her I said this now..."
+next = "3"
+
+[deep_woods_picnic_follow_up_1.3]
+portrait = "confident_blush"
+local = "But this time... just the two of us. It was really something special."
+
+[deep_woods_picnic_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ da_hayden_deep_woods_picnic = 2 },
+	{ da_hayden_deep_woods_picnic_follow_up_gate = true },
+	{ hayden_is_spouse = false }
+]
+writes = [{ da_hayden_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "happy_arm_down_blush"
+local = "Ahh... what a nice picnic."
+next = "1"
+
+[deep_woods_picnic_follow_up_2.1]
+portrait = "confident_blush"
+local = "It's good to take a break like that every now and then, isn't it?"
+prompts = [
+	{ local = "It's even nicer that we get to relax together.", next = "2" },
+	{ local = "It's even nicer that we get to spend time alone together.", next = "4" },
+]
+
+[deep_woods_picnic_follow_up_2.2]
+portrait = "happy_arm_down"
+local = "It is, isn't it?"
+next = "3"
+
+[deep_woods_picnic_follow_up_2.3]
+portrait = "confident_blush"
+local = "I'd be happy to do even more of that..."
+
+[deep_woods_picnic_follow_up_2.4]
+portrait = "shy_special"
+local = "It is, isn't it?"
+next = "5"
+
+[deep_woods_picnic_follow_up_2.5]
+portrait = "confident_blush"
+local = "I'd be happy to do even more of that..."
+
+[deep_woods_picnic_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_has_child = false },
+	{ any = [
+		{ hayden_is_spouse = true },
+		{ da_hayden_deep_woods_picnic = 3 }
+	] },
+	{ da_hayden_deep_woods_picnic_follow_up_gate = true },
+]
+writes = [{ da_hayden_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "happy_arm_down_blush"
+local = "Thanks for joining me on the picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_3.1]
+portrait = "confident_blush"
+local = "Let's do it again soon, okay?"

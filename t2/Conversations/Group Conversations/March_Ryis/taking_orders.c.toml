@@ -1,0 +1,45 @@
+[taking_orders]
+refresh = "1m"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "ryis" }] },
+	{ march_zone = "<ryis_zone>" },
+	{ march_taking_orders = true },
+	{ march_heart_level = 4, comparator = ">=" },
+]
+speaker = "ryis"
+portrait = "happy"
+effect = "drop"
+local = "Sorry man, I'm going to need twice as many brackets for this job."
+next = "1"
+
+[taking_orders.1]
+speaker = "march"
+portrait = "think"
+local = "Not a problem. I'll make it work."
+
+[taking_orders_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "ryis" }] },
+	{ march_zone = "<ryis_zone>" },
+	{ march_taking_orders = true },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ time_of_day = "morning", comparator = "!=" }
+]
+speaker = "ryis"
+portrait = "neutral"
+local = "You collected a lot of orders from around town, March."
+next = "1"
+
+[taking_orders_2.1]
+speaker = "ryis"
+portrait = "happy"
+effect = "drop"
+local = "Gonna be okay with all that?"
+next = "2"
+
+[taking_orders_2.2]
+speaker = "march"
+portrait = "eight_heart_happy"
+local = "No worries. I can handle it."
+

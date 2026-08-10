@@ -1,0 +1,24 @@
+[message_in_a_bottle]
+refresh = "1y"
+requires = [
+	{ npc = "errol" },
+	{ museum_donated_message_in_a_bottle = true },
+	{ building = "museum", comparator = "!=" },
+]
+portrait = "think"
+local = "The $Message in a Bottle$ you donated...?"
+next = "1"
+
+[message_in_a_bottle.1]
+portrait = "happy"
+local = "Oh yes! I did manage to inspect the message inside."
+next = "2"
+
+[message_in_a_bottle.2]
+portrait = "neutral"
+local = "It was from some far flung island I'd never heard of before."
+next = "3"
+
+[message_in_a_bottle.3]
+portrait = "happy"
+local = "Their high priest was looking for a pen pal! I was happy to oblige him."

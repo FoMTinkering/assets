@@ -1,0 +1,67 @@
+[shooting_star_anticipation]
+refresh = "3m"
+requires = [
+	{ npc = "nora" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+]
+portrait = "neutral"
+local = "Ah, with summer ending it's almost time for the yearly Shooting Star Festival."
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "embarrassed"
+local = "I still remember my first time watching the stars with Holt. How nostalgic."
+
+[shooting_star_anticipation_no_summit]
+refresh = "3m"
+requires = [
+	{ npc = "nora" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = false },
+]
+portrait = "neutral"
+local = "Ah, with summer ending it's almost time for the yearly Shooting Star Festival."
+next = "1"
+
+[shooting_star_anticipation_no_summit.1]
+portrait = "embarrassed"
+local = "I still remember my first time watching the stars with Holt. How nostalgic."
+next = "2"
+
+[shooting_star_anticipation_no_summit.2]
+portrait = "sad"
+local = "Too bad that the $Summit is still blocked off$."
+
+[shooting_star_day_of]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "nora" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "6:00pm", comparator = "<=" }
+]
+portrait = "happy"
+local = "Tonight should be fun!"
+next = "1"
+
+[shooting_star_day_of.1]
+portrait = "neutral"
+local = "The show starts when the sun sets, around $8 pm$."
+
+[shooting_star_celine_follow_up_nora]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "nora" },
+	{ shooting_star_date_status = "celine_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ celine_is_partner = false }
+]
+portrait = "neutral"
+local = "Celine mentioned you two watched the stars on the Summit together last night!"
+next = "1"
+
+[shooting_star_celine_follow_up_nora.1]
+portrait = "happy"
+local = "She's never been a big fan of heights, you know. I'm glad she worked up the courage."

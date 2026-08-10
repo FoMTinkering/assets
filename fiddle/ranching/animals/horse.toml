@@ -1,0 +1,448 @@
+[core]
+	name = "Horse"
+	plural_name = "Horses"
+	female_other = "a mare"
+	male_other = "a stallion"
+	new_baby_born = "A new Horse was born! Enter new name"
+	size = "large"
+	default_icon_variant = "sandy_bay"
+	cosmetic_sub_icon = "spr_ui_item_sub_animal_horse"
+	requirements = { repaired_haydens_farm = true }
+
+[behavior]
+	can_wander_in_home = false
+
+[celebration_data]
+	baby_animation = "happy"
+	adult_animation = "happy"
+
+[production.male]
+	days_to_produce = 3
+	normal_product = "horse_hair"
+	golden_product = "golden_horse_hair"
+
+[production.female]
+	days_to_produce = 3
+	normal_product = "horse_hair"
+	golden_product = "golden_horse_hair"
+
+[breeding]
+	uses_egg = false
+	treat = "heart_shaped_horse_treat"
+
+[eating]
+	kind = "hay"
+	offset = [18, -2]
+	baby_offset = [14, -2]
+	shake_frames = [1, 9]
+
+[petting]
+	kind = "pet"
+
+[pricing]
+	buy_price = 2300
+	baby_sell_price = 650
+	adult_sell_prices = [
+		900,
+		975,
+		1170,
+		1300,
+		1450,
+		1600,
+		1850,
+		2100,
+		2300,
+		2500,
+		2600,
+	]
+
+[mounting]
+	is_mount = true
+
+[bark_offsets]
+	adult = { north = [1, -44], south = [1, -38], east = [9, -44], west = [-7, -44] }
+	baby = { north = [2, -37], south = [2, -37], east = [5, -36], west = [-1, -36] }
+
+[[sounds.baby]]
+	ambient = "SoundEffects/Animals/FoalAmbient"
+	positive_react = "SoundEffects/Animals/HorsePositiveReact"
+	negative_react = "SoundEffects/Animals/HorseNegativeReact"
+
+[[sounds.adult]]
+	ambient = "SoundEffects/Animals/HorseAmbient"
+	positive_react = "SoundEffects/Animals/HorsePositiveReact"
+	negative_react = "SoundEffects/Animals/HorseNegativeReact"
+
+[animations.idle]
+	player_offsets.south = [
+		[0, -15],
+	]
+	player_offsets.east = [
+		[-1, -11],
+	]
+	player_offsets.north = [
+		[0, -15],
+	]
+	randomly_selected = false
+	duration = [3, 7]
+	play_ambient_sounds = true
+
+[animations.idle_2]
+	player_offsets.south = [
+		[0, -15],
+	]
+	player_offsets.east = [
+		[-1, -11],
+	]
+	player_offsets.north = [
+		[0, -15],
+	]
+	end_with_animation = true
+
+[animations.idle_3]
+	player_offsets.south = [
+		[0, -15],
+	]
+	player_offsets.east = [
+		[-1, -11],
+	]
+	player_offsets.north = [
+		[0, -15],
+	]
+	end_with_animation = true
+	valid_for = ["male", "female"]
+
+[animations.idle_4]
+	player_offsets.south = [
+		[0, -15],
+	]
+	player_offsets.east = [
+		[-1, -11],
+	]
+	player_offsets.north = [
+		[0, -15],
+	]
+	end_with_animation = true
+	valid_for = ["male", "female"]
+
+[animations.blink]
+	player_offsets.south = [
+		[0, -15],
+	]
+	player_offsets.east = [
+		[-1, -11],
+	]
+	player_offsets.north = [
+		[0, -15],
+	]
+	end_with_animation = true
+
+[animations.walk]
+	player_offsets.south = [
+		[0, -14],
+		[0, -14],
+		[0, -15],
+		[0, -15],
+	]
+	player_offsets.east = [
+		[-1, -11],
+		[-2, -11],
+		[-2, -12],
+		[-1, -12],
+	]
+	player_offsets.north = [
+		[0, -16],
+		[0, -16],
+		[0, -15],
+		[0, -15],
+	]
+	randomly_selected = false
+	duration = [1, 2]
+
+[animations.run]
+	player_offsets.south = [
+		[0, -14],
+		[0, -14],
+		[0, -16],
+		[0, -15],
+	]
+	player_offsets.east = [
+		[-1, -10],
+		[-1, -11],
+		[-1, -12],
+		[-1, -11],
+	]
+	player_offsets.north = [
+		[0, -14],
+		[0, -15],
+		[0, -17],
+		[0, -15],
+	]
+	randomly_selected = false
+	valid_for = ["male", "female"]
+
+[animations.jump]
+	player_offsets.south = [
+		[0, -18],
+		[0, -19],
+		[0, -17],
+		[0, -14],
+	]
+	player_offsets.east = [
+		[-1, -13],
+		[-1, -14],
+		[-1, -14],
+		[-1, -10],
+	]
+	player_offsets.north = [
+		[0, -18],
+		[0, -19],
+		[0, -18],
+		[0, -15],
+	]
+	randomly_selected = false
+	valid_for = ["male", "female"]
+
+[animations.happy]
+	randomly_selected = false
+
+[animations.playball]
+	randomly_selected = false
+	valid_for = ["male", "female"]
+
+# Variants
+[variants.default]
+	lut = "spr_animal_horse_lut"
+
+	[variants.default.male]
+		key = "basic_base"
+		ui_key = "basic"
+		top_key = "basic_top"
+
+	[variants.default.female]
+		key = "basic_base"
+		ui_key = "basic"
+		top_key = "basic_top"
+
+	[variants.default.baby]
+		key = "basic_baby_foal"
+		top_key = "<n/a>"
+
+# Spotted
+[variants.spotted]
+	name = "Spotted"
+	lut_index = 1
+	default_unlocked = true
+
+# Sandy Bay
+[variants.sandy_bay]
+	name = "Sandy Bay"
+	lut_index = 2
+	default_unlocked = true
+
+# Champagne
+[variants.champagne]
+	name = "Champagne"
+	lut_index = 3
+	default_unlocked = true
+
+# Chestnut
+[variants.chestnut]
+	name = "Chestnut"
+	tier = 2
+	lut_index = 4
+
+# Black
+[variants.black]
+	name = "Black"
+	tier = 2
+	lut_index = 5
+
+# White
+[variants.white]
+	name = "White"
+	tier = 2
+	lut_index = 6
+
+# Blue
+[variants.blue]
+	name = "Blue"
+	tier = 3
+	lut_index = 7
+
+# Purple
+[variants.purple]
+	name = "Purple"
+	tier = 3
+	lut_index = 8
+
+# Pink
+[variants.pink]
+	name = "Pink"
+	tier = 3
+	lut_index = 9
+
+# Silver
+[variants.silver]
+	name = "Silver"
+	tier = 4
+	lut = "<n/a>"
+
+	[variants.silver.male]
+		key = "silver_base"
+		ui_key = "silver"
+		top_key = "silver_top"
+
+	[variants.silver.female]
+		key = "silver_base"
+		ui_key = "silver"
+		top_key = "silver_top"
+
+	[variants.silver.baby]
+		key = "silver_baby_foal"
+
+# Gold
+[variants.gold]
+	name = "Gold"
+	tier = 5
+	lut = "<n/a>"
+
+	[variants.gold.male]
+		key = "gold_base"
+		ui_key = "gold"
+		top_key = "gold_top"
+
+	[variants.gold.female]
+		key = "gold_base"
+		ui_key = "gold"
+		top_key = "gold_top"
+
+	[variants.gold.baby]
+		key = "gold_baby_foal"
+
+# Spring
+[variants.spring]
+	name = "Spring"
+	tier = 6
+	born_in = "spring"
+	lut_index = 12
+	default_cosmetic = "flower_crown"
+
+# Summer
+[variants.summer]
+	name = "Summer"
+	tier = 6
+	born_in = "summer"
+	lut_index = 13
+	default_cosmetic = "seashell_clips"
+
+# Fall
+[variants.fall]
+	name = "Fall"
+	tier = 6
+	born_in = "fall"
+	lut_index = 14
+	default_cosmetic = "dark_unicorn_horn"
+
+# Winter
+[variants.winter]
+	name = "Winter"
+	tier = 6
+	born_in = "winter"
+	lut_index = 15
+	default_cosmetic = "antlers"
+
+[variants.mistmare]
+	name = "Mistmare"
+	lut = "<n/a>"
+	acquirable = false
+
+	[variants.mistmare.male]
+		key = "mistmare_base"
+		ui_key = "mistmare"
+		top_key = "mistmare_top"
+
+	[variants.mistmare.female]
+		key = "mistmare_base"
+		ui_key = "mistmare"
+		top_key = "mistmare_top"
+
+[variants.giant_chicken_white]
+    name = "Big Chicken"
+    lut = "<n/a>"
+    acquirable = false
+
+    [variants.giant_chicken_white.male]
+        key = "giant_chicken_basic_base"
+        ui_key = "giant_chicken_basic"
+        top_key = "giant_chicken_basic_top"
+
+    [variants.giant_chicken_white.female]
+        key = "giant_chicken_basic_base"
+        ui_key = "giant_chicken_basic"
+        top_key = "giant_chicken_basic_top"
+
+[variants.giant_chicken_gold]
+    name = "Big Chicken Gold"
+    lut = "<n/a>"
+    acquirable = false
+
+    [variants.giant_chicken_gold.male]
+        key = "giant_chicken_gold_base"
+        ui_key = "giant_chicken_gold"
+        top_key = "giant_chicken_gold_top"
+
+    [variants.giant_chicken_gold.female]
+        key = "giant_chicken_gold_base"
+        ui_key = "giant_chicken_gold"
+        top_key = "giant_chicken_gold_top"
+
+[cosmetics.default.male]
+	key = "base"
+	top_key = "top"
+
+[cosmetics.default.female]
+	key = "base"
+	top_key = "top"
+
+[cosmetics.antlers]
+	name = "Horse Antlers"
+
+[cosmetics.cowboy_hat]
+	name = "Horse Cowboy Hat"
+
+[cosmetics.crown]
+	name = "Horse Crown"
+
+[cosmetics.derby_hat]
+	name = "Horse Derby Hat"
+
+[cosmetics.dark_unicorn_horn]
+	name = "Horse Dark Unicorn Horn"
+
+[cosmetics.flower_crown]
+	name = "Horse Flower Crown"
+
+[cosmetics.pink_bow]
+	name = "Pink Horse Bow"
+
+[cosmetics.ribbon_blue]
+	name = "Horse Blue Ribbon"
+
+[cosmetics.ribbon_red]
+	name = "Horse Red Ribbon"
+
+[cosmetics.ribbon_white]
+	name = "Horse White Ribbon"
+
+[cosmetics.unicorn_horn]
+	name = "Horse Unicorn Horn"
+
+[cosmetics.seashell_clips]
+	name = "Horse Seashell Clips"
+
+[cosmetics.monocle]
+	name = "Horse Monocle"
+
+[cosmetics.bandana]
+	name = "Horse Bandana"

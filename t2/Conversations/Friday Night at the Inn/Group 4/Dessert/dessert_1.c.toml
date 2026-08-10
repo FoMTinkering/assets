@@ -1,0 +1,91 @@
+[dessert_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ eiland_zone = "inn/bar" },
+	{ hayden_zone = "inn/bar" },
+	{ holt_zone = "inn/bar" },
+	{ march_zone = "inn/bar" },
+	{ reina_zone = "inn/bar" },
+	{ terithia_zone = "inn/bar" },
+	{ any = [
+		{ npc = "eiland" },
+		{ npc = "hayden" },
+		{ npc = "holt" },
+		{ npc = "march" },
+		{ npc = "reina" },
+		{ npc = "terithia" },
+	] },
+]
+actions = [
+	{ item = "berries_and_cream" },
+	{ bark = { bark = "sweat_drop", npc = "hayden" } },
+	{ bark = { bark = "sweat_drop", npc = "holt" } },
+	{ bark = { bark = "sweat_drop", npc = "march" } },
+	{ bark = { bark = "sweat_drop", npc = "reina" } },
+	{ bark = { bark = "sweat_drop", npc = "terithia" } },
+]
+writes = [{ dessert_fnati = 1 }]
+speaker = "reina"
+portrait = "happy"
+local = "Oh, I am so excited for this! Welcome everyone! We'll be indulging in a new dessert every week."
+next = "1"
+
+[dessert_1.1]
+speaker = "reina"
+portrait = "wink"
+local = "Our inaugural dish is a local favorite! Mistrian =Berries and Cream=!"
+next = "2"
+
+[dessert_1.2]
+speaker = "terithia"
+portrait = "mad"
+local = "I can tell you, I've traveled far and wide, and I've never seen fluffier cream than this!"
+next = "3"
+
+[dessert_1.3]
+speaker = "holt"
+portrait = "neutral"
+effect = "shock"
+local = "And the berries! That zing! Did you forage these yourself, Hayden?"
+next = "4"
+
+[dessert_1.4]
+speaker = "hayden"
+portrait = "happy"
+local = "Sure did! With a helping hand... er, wing from Henrietta! So what do you think, [Ari]? Pretty good, right?"
+prompts = [
+	{ local = "It's SO good!", next = "5" },
+	{ local = "Is this one of Mistria's signature desserts?", next = "6" },
+]
+
+[dessert_1.5]
+speaker = "march"
+portrait = "mad"
+local = "Even I have to admit it's pretty good."
+next = "7"
+
+[dessert_1.6]
+speaker = "march"
+portrait = "think"
+local = "I'd say so."
+next = "7"
+
+[dessert_1.7]
+speaker = "march"
+portrait = "think"
+local = "Speaking of which, where'd the funding for this dessert club come from?"
+next = "8"
+
+[dessert_1.8]
+speaker = "reina"
+portrait = "wink"
+local = "We have a mysterious benefactor! One who would prefer to remain anonymous."
+next = "9"
+
+[dessert_1.9]
+speaker = "eiland"
+portrait = "embarrassed"
+effect = "sparkles"
+local = "More berries, I say! More cream!"

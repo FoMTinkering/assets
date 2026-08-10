@@ -1,0 +1,943 @@
+# Entires associated with quests to determine how they appear on the request board. If an entry
+# for a quest is not present, it'll never appear on the request board and must be started manually.
+#
+# If you were to create an entry here with no specified requirements, it would appear on the request
+# board immediately on Spring 1.
+[default]
+	# Whether or not this can be selected as a fetch quest
+	randomly_selected = false
+	# The requirements for this to appear on the board
+	requirements = {}
+
+[greet_the_townsfolk]
+
+[do_a_bro_a_favor]
+	requirements = { reached_date = { season = "spring", day = 2 } }
+
+[stinky_stamina_potion]
+	requirements = { reached_date = { season = "spring", day = 5 } }
+
+[cop_some_ore]
+	requirements.opened_mines = true
+
+[somethings_bugging_me]
+	requirements = { reached_date = { season = "spring", day = 4 } }
+
+[jos_cooking_class]
+	requirements = { reached_date = { season = "spring", day = 13 } }
+
+[tall_dark_and_mysterious]
+	requirements = { reached_heart_level = { balor = 2 }, completed_quest = "repair_the_bridge" }
+
+[becoming_junipers_guinea_pig]
+	requirements = { reached_heart_level = { juniper = 2 } }
+
+[the_annual_check_up]
+	requirements = { reached_heart_level = { valen = 2 } }
+
+[gossip_for_elsie]
+	requirements = { reached_date = { season = "summer", day = 1 } }
+
+[request_for_berries]
+	randomly_selected = true
+	requirements = { is_season = "spring" }
+
+[request_for_fennel]
+	randomly_selected = true
+	requirements = { acquired_item = "fennel", is_season = "spring" }
+
+[request_for_catfish]
+	randomly_selected = true
+	requirements = { reached_skill_level = { fishing = 2 }, is_season = "spring" }
+
+[request_for_blueberries]
+	randomly_selected = true
+	requirements = { is_season = "spring" }
+
+[request_for_lemon]
+	randomly_selected = true
+	requirements = { acquired_item = "lemon", is_season = "spring" }
+
+[request_for_baked_potato]
+	randomly_selected = true
+	requirements = { reached_skill_level = { cooking = 18 }, is_season = "spring" }
+
+[request_for_trout]
+	randomly_selected = true
+	requirements = { is_season = "spring" }
+
+[request_for_more_wildberries]
+	randomly_selected = true
+	requirements = { reached_skill_level = { cooking = 12 }, is_season = "spring" }
+
+[request_for_strawberries]
+	randomly_selected = true
+	requirements = { reached_skill_level = { cooking = 20 }, is_season = "spring" }
+
+[request_for_strawberries_cream]
+	randomly_selected = true
+	requirements = { acquired_item = "strawberry", is_season = "spring" }
+
+[request_for_berries_gold]
+	randomly_selected = true
+	requirements = { is_season = "spring" }
+
+[request_for_materials]
+	randomly_selected = true
+
+[request_for_wood]
+	randomly_selected = true
+
+[request_for_gardening_supplies]
+	randomly_selected = true
+	requirements = { acquired_item = "pick_axe_worn", is_season = "spring" }
+
+[request_for_copper]
+	randomly_selected = true
+	requirements = { acquired_item = "ore_copper", completed_quest = "cop_some_ore" }
+
+[request_for_hay]
+	randomly_selected = true
+	requirements = { acquired_item = "hay" }
+
+[request_for_copper_beetle]
+	randomly_selected = true
+	requirements = { acquired_item = "copper_beetle" }
+
+[request_for_wild_leek]
+	randomly_selected = true
+	requirements = { is_season = "spring" }
+
+[request_for_clay]
+	randomly_selected = true
+	requirements = { acquired_item = "pick_axe_worn" }
+
+[request_for_salmon]
+	randomly_selected = true
+	requirements = { acquired_item = "fishing_rod_worn", is_season = "spring" }
+
+[request_for_wood_fence]
+	randomly_selected = true
+	requirements = { acquired_item = "starter_wood_fence" }
+
+[request_for_a_rock]
+	randomly_selected = true
+	requirements = { acquired_item = "ore_stone" }
+
+[request_for_a_red_toadstool]
+	randomly_selected = true
+	requirements = { acquired_item = "red_toadstool" }
+
+[request_for_bait]
+	randomly_selected = true
+	requirements = { acquired_item = "worm" }
+
+[request_for_pink_scallop_shell]
+	randomly_selected = true
+	requirements = { is_season = "summer" }
+
+[request_for_turnip]
+	randomly_selected = true
+	requirements = { is_season = "spring" }
+
+[request_for_morel_mushroom]
+	randomly_selected = true
+	requirements = { is_season = "spring" }
+
+[request_for_shards]
+	randomly_selected = true
+	requirements = { acquired_item = "pick_axe_worn" }
+
+[request_for_ruby]
+	requirements = { opened_mines = true, acquired_item = "pick_axe_worn" }
+	randomly_selected = true
+
+[request_for_caterpillar]
+	randomly_selected = true
+	requirements = { acquired_item = "net_worn" }
+
+[request_for_snowdrop_anemone]
+	randomly_selected = true
+	requirements = { reached_date = { season = "spring", day = 4 }, is_season = "spring" }
+
+[request_for_monster_powder]
+	requirements = { opened_mines = true, acquired_item = "monster_powder" }
+	randomly_selected = true
+
+[request_for_monster_shell]
+	requirements = { opened_mines = true, acquired_item = "monster_shell" }
+	randomly_selected = true
+
+[request_for_basil_thyme]
+	randomly_selected = true
+	requirements = { is_season = "summer" }
+
+# NOT ORGANIZED YET-----------------------------
+[request_for_garlic]
+	randomly_selected = true
+	requirements = { is_season = "fall" }
+
+[request_for_horseradish_salmon]
+	randomly_selected = true
+	requirements = { is_season = "fall" }
+
+[request_for_eel]
+	randomly_selected = true
+	requirements = { is_season = "winter" }
+
+[request_for_seaweed]
+	randomly_selected = true
+	requirements = { is_season = "summer" }
+
+[request_for_cranberry_orange]
+	randomly_selected = true
+	requirements = { is_season = "fall" }
+
+[request_for_rose_hip]
+	randomly_selected = true
+	requirements = { is_season = "winter" }
+
+[request_for_tomato]
+	randomly_selected = true
+	requirements = { is_season = "summer" }
+
+[request_for_coconuts]
+	randomly_selected = true
+	requirements = { is_season = "summer" }
+
+[request_for_blackberries]
+	randomly_selected = true
+	requirements = { is_season = "fall" }
+
+[request_for_chestnuts]
+	randomly_selected = true
+	requirements = { is_season = "fall" }
+
+[request_for_pineshrooms]
+	randomly_selected = true
+	requirements = { is_season = "winter" }
+
+[request_for_shadow_flower]
+	requirements.opened_mines = true
+	randomly_selected = true
+
+[request_for_a_miners_pickaxe]
+	requirements.opened_mines = true
+	randomly_selected = true
+
+[request_for_glass]
+	requirements.opened_mines = true
+	randomly_selected = true
+
+[request_for_iron]
+	requirements.broke_water_seal = true
+	randomly_selected = true
+
+[request_for_coral]
+	requirements.broke_water_seal = true
+	randomly_selected = true
+
+[request_for_sapphire]
+	requirements.broke_water_seal = true
+	randomly_selected = true
+
+[request_for_underseaweed]
+	requirements.broke_water_seal = true
+	randomly_selected = true
+
+[request_for_tidestone]
+	requirements.broke_water_seal = true
+	randomly_selected = true
+
+[request_for_crystal]
+	requirements.broke_earth_seal = true
+	randomly_selected = true
+
+[request_for_emerald]
+	requirements.broke_earth_seal = true
+	randomly_selected = true
+
+[request_for_silver_ore]
+	requirements.broke_earth_seal = true
+	randomly_selected = true
+
+[request_for_round_rock]
+	requirements.broke_earth_seal = true
+	randomly_selected = true
+
+[request_for_deep_earthworm]
+	requirements.broke_earth_seal = true
+	randomly_selected = true
+
+[request_for_striped_bass]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_mullet]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_rosemary]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_heather]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_fog_orchid]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_tilapia]
+	requirements = { is_season = "winter" }
+	randomly_selected = true
+
+[request_for_frog]
+	requirements = { is_season = "winter" }
+	randomly_selected = true
+
+[request_for_ice]
+	requirements = { is_season = "winter" }
+	randomly_selected = true
+
+[request_for_burdock_root]
+	requirements = { is_season = "winter" }
+	randomly_selected = true
+
+[request_for_glowberry]
+	requirements = { is_season = "winter" }
+	randomly_selected = true
+
+[request_for_egg]
+	requirements.has_coop = true
+	randomly_selected = true
+
+[request_for_milk]
+	requirements.has_barn = true
+	randomly_selected = true
+
+[request_for_rooster_feather]
+	requirements.has_coop = true
+	randomly_selected = true
+
+[request_for_bull_horn]
+	requirements.has_barn = true
+	randomly_selected = true
+
+[request_for_horse_hair]
+	requirements.repaired_haydens_farm = true
+	randomly_selected = true
+
+[request_for_duck_egg]
+	requirements.repaired_haydens_farm = true
+	randomly_selected = true
+
+[request_for_sheep_wool]
+	requirements.repaired_haydens_farm = true
+	randomly_selected = true
+
+[request_for_rabbit_wool]
+	requirements.repaired_haydens_farm = true
+	randomly_selected = true
+
+[request_for_bristles]
+	requirements.repaired_haydens_farm = true
+	randomly_selected = true
+
+[request_for_copper_ingot]
+	requirements.opened_mines = true
+	randomly_selected = true
+
+[request_for_copper_shovel]
+	requirements.opened_mines = true
+	randomly_selected = true
+
+[request_for_iron_ingot]
+	requirements.broke_water_seal = true
+	randomly_selected = true
+
+[request_for_iron_armor]
+	requirements.broke_water_seal = true
+	randomly_selected = true
+
+[request_for_silver_ingot]
+	requirements.broke_earth_seal = true
+	randomly_selected = true
+
+[request_for_silver_sword]
+	requirements.broke_earth_seal = true
+	randomly_selected = true
+
+[request_for_pond_skater]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_trail_mix]
+	requirements = { is_season = "spring" }
+	randomly_selected = true
+
+[request_for_tea]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_onion]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_beet]
+	requirements = { is_season = "winter" }
+	randomly_selected = true
+
+[request_for_wild_berry]
+	requirements = { is_season = "spring" }
+	randomly_selected = true
+
+[request_for_orange]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_roasted_chestnuts]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_broccoli]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_earthshroom]
+	requirements.broke_earth_seal = true
+	randomly_selected = true
+
+[request_for_perch]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_moon_fruit]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_daikon]
+	requirements = { is_season = "winter" }
+	randomly_selected = true
+
+[request_for_water_chestnuts]
+	requirements = { is_season = "spring" }
+	randomly_selected = true
+
+[request_for_clam]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_sesame]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_cod]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_moon]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+# ANY SEASON REQUESTS
+[request_for_sap]
+	requirements.opened_mines = true
+	randomly_selected = true
+
+[request_for_monster_fang]
+	requirements = { completed_quest = "greet_the_vendors", opened_mines = true }
+	randomly_selected = true
+
+[request_for_monster_core]
+	requirements.opened_mines = true
+	randomly_selected = true
+
+[request_for_monster_horn]
+	requirements.opened_mines = true
+	randomly_selected = true
+
+[request_for_crystal_berries]
+	requirements.broke_earth_seal = true
+	randomly_selected = true
+
+[request_for_ultimate_hay]
+	requirements = { completed_quest = "repair_the_mill", has_any_animal = true }
+	randomly_selected = true
+
+[request_for_ultimate_small_animal_feed]
+	requirements = { completed_quest = "repair_the_mill", has_any_animal = true }
+	randomly_selected = true
+
+[request_for_butter]
+	requirements = { completed_quest = "repair_the_mill" }
+	randomly_selected = true
+
+[request_for_golden_butter]
+	requirements = { completed_quest = "repair_the_mill", has_barn = true }
+	randomly_selected = true
+
+[request_for_cheese]
+	requirements = { completed_quest = "repair_the_mill" }
+	randomly_selected = true
+
+[request_for_pomegranate_juice]
+	requirements = { completed_quest = "greet_the_vendors" }
+	randomly_selected = true
+
+[request_for_noodles]
+	randomly_selected = true
+
+[request_for_tuna_sashimi]
+	requirements = { reached_skill_level = { fishing = 2 } }
+	randomly_selected = true
+
+[request_for_riceball]
+	requirements = { completed_quest = "greet_the_vendors", reached_skill_level = { cooking = 14 } }
+	randomly_selected = true
+
+[request_for_pudding]
+	requirements = { reached_skill_level = { cooking = 10 } }
+	randomly_selected = true
+
+[request_for_haybale]
+	requirements = { completed_quest = "greet_the_vendors" }
+	randomly_selected = true
+
+[request_for_bird_house]
+	requirements = { reached_skill_level = { woodcrafting = 4 } }
+	randomly_selected = true
+
+[request_for_scarecrow]
+	requirements = { reached_skill_level = { woodcrafting = 4 } }
+	randomly_selected = true
+
+[request_for_potted_plant]
+	randomly_selected = true
+
+[request_for_shipping_bin]
+	requirements = { reached_skill_level = { woodcrafting = 4 } }
+	randomly_selected = true
+
+[request_for_smallmouth_bass]
+	requirements = { reached_skill_level = { fishing = 2 } }
+	randomly_selected = true
+
+[request_for_pike]
+	requirements = { reached_skill_level = { fishing = 2 } }
+	randomly_selected = true
+
+[request_for_goby]
+	requirements = { reached_skill_level = { fishing = 2 } }
+	randomly_selected = true
+
+[request_for_freshwater_oyster]
+	randomly_selected = true
+
+[request_for_snail]
+	requirements = { acquired_item = "net_worn" }
+	randomly_selected = true
+
+[request_for_walnut]
+	requirements = { unlocked_deep_woods = true }
+	randomly_selected = true
+
+[request_for_spirit_mushroom_tea]
+	requirements = { unlocked_deep_woods = true }
+	randomly_selected = true
+
+[request_for_dragon_horn_beetle]
+	requirements = { unlocked_deep_woods = true }
+	randomly_selected = true
+
+[request_for_singing_katydid]
+	requirements = { unlocked_deep_woods = true }
+	randomly_selected = true
+
+[request_for_temple_flower]
+	requirements = { unlocked_deep_woods = true }
+	randomly_selected = true
+
+[request_for_breath_of_flame]
+	requirements = { completed_quest = "breaking_the_fire_seal" }
+	randomly_selected = true
+
+[request_for_diamond]
+	requirements = { completed_quest = "breaking_the_fire_seal" }
+	randomly_selected = true
+
+[request_for_lake_trout]
+	requirements = { unlocked_deep_woods = true }
+	randomly_selected = true
+
+[request_for_bell_berry_bakewell]
+	requirements = { unlocked_deep_woods = true }
+	randomly_selected = true
+
+[request_for_thorn_vine]
+	requirements = { unlocked_deep_woods = true }
+	randomly_selected = true
+
+[request_for_obsidian]
+	requirements = { completed_quest = "breaking_the_fire_seal" }
+	randomly_selected = true
+
+[request_for_gold_ore]
+	requirements = { completed_quest = "breaking_the_fire_seal" }
+	randomly_selected = true
+
+[request_for_armored_bass]
+	requirements = { completed_quest = "breaking_the_fire_seal" }
+	randomly_selected = true
+
+[request_for_chili_pepper]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_pear]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_sunflower]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_coconuts_2]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_wild_grapes]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_watermelon]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_corn]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_apple]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_rice]
+	requirements = { is_season = "fall", reached_date = { season = "spring", day = 1, year = 2 } }
+	randomly_selected = true
+
+[request_for_acorn]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_sweet_potato]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+	# Update 3 requests
+
+[request_for_cabbage]
+	requirements = { is_season = "spring" }
+	randomly_selected = true
+
+[request_for_fiddlehead]
+	requirements = { is_season = "spring", reached_date = { season = "spring", day = 1, year = 2 }, completed_quest = "greet_the_vendors" }
+	randomly_selected = true
+
+[request_for_carrot]
+	requirements = { is_season = "spring", reached_date = { season = "spring", day = 1, year = 2 } }
+	randomly_selected = true
+
+[request_for_middlemist]
+	requirements = { is_season = "spring", reached_date = { season = "spring", day = 1, year = 2 }, completed_quest = "greet_the_vendors" }
+	randomly_selected = true
+
+[request_for_peas]
+	requirements = { is_season = "spring", reached_date = { season = "spring", day = 1, year = 2 } }
+	randomly_selected = true
+
+[request_for_cucumbers]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_peaches]
+	requirements = { is_season = "summer", completed_quest = "greet_the_vendors" }
+	randomly_selected = true
+
+[request_for_dill]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_night_queen]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_roses]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_salted_watermelon]
+	requirements = { is_season = "summer", completed_quest = "greet_the_vendors" }
+	randomly_selected = true
+
+[request_for_grilled_corn]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_tomato_soup]
+	requirements = { is_season = "summer" }
+	randomly_selected = true
+
+[request_for_sugar_cane]
+	requirements = { is_season = "summer", reached_date = { season = "spring", day = 1, year = 2 } }
+	randomly_selected = true
+
+[request_for_pumpkin]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_cauliflower]
+	requirements = { is_season = "winter" }
+	randomly_selected = true
+
+[request_for_crocus]
+	requirements = { is_season = "winter" }
+	randomly_selected = true
+
+[request_for_holly]
+	requirements = { is_season = "winter", completed_quest = "greet_the_vendors" }
+	randomly_selected = true
+
+[request_for_pomegranate]
+	requirements = { is_season = "winter", completed_quest = "greet_the_vendors" }
+	randomly_selected = true
+
+[request_for_oyster_mushrooms]
+	requirements = { is_season = "winter" }
+	randomly_selected = true
+
+[request_for_red_wine]
+	requirements = { completed_quest = "upgrade_the_saturday_market", is_day_type = "saturday" }
+	randomly_selected = true
+
+[request_for_spring_galette]
+	requirements = { completed_quest = "upgrade_the_saturday_market", is_day_type = "saturday" }
+	randomly_selected = true
+
+[request_for_beet_soup]
+	requirements = { completed_quest = "beet_soup_challenge", is_day_type = "saturday" }
+	randomly_selected = true
+
+[request_for_gold_ingots]
+	requirements = { completed_quest = "upgrade_the_saturday_market", is_day_type = "saturday" }
+	randomly_selected = true
+
+[request_for_emeralds]
+	requirements = { completed_quest = "upgrade_the_saturday_market", is_day_type = "saturday" }
+	randomly_selected = true
+
+[request_for_golden_cookies]
+	requirements = { completed_quest = "upgrade_the_saturday_market", is_day_type = "saturday" }
+	randomly_selected = true
+
+[request_for_premium_honey]
+	requirements = { completed_quest = "apiaries_and_terrariums" }
+	randomly_selected = true
+
+[request_for_deluxe_honey]
+	requirements = { completed_quest = "apiaries_and_terrariums" }
+	randomly_selected = true
+
+[request_for_legendary_honey]
+	requirements = { completed_quest = "apiaries_and_terrariums" }
+	randomly_selected = true
+
+[request_for_common_pheromone]
+	requirements = { completed_quest = "apiaries_and_terrariums" }
+	randomly_selected = true
+
+[request_for_uncommon_pheromone]
+	requirements = { completed_quest = "request_for_common_pheromone" }
+	randomly_selected = true
+
+[request_for_rare_pheromone]
+	requirements = { completed_quest = "request_for_uncommon_pheromone" }
+	randomly_selected = true
+
+[request_for_common_bait]
+	requirements = { completed_quest = "apiaries_and_terrariums" }
+	randomly_selected = true
+
+[request_for_uncommon_bait]
+	requirements = { completed_quest = "request_for_common_bait" }
+	randomly_selected = true
+
+[request_for_rare_bait]
+	requirements = { completed_quest = "request_for_uncommon_bait" }
+	randomly_selected = true
+
+[request_for_mistril_ore]
+	requirements.broke_ruins_seal = true
+	randomly_selected = true
+
+[request_for_mistril_ingot]
+	requirements.broke_ruins_seal = true
+	randomly_selected = true
+
+[request_for_pink_diamond]
+	requirements.broke_ruins_seal = true
+	randomly_selected = true
+
+[request_for_corrupted_mistril_sword]
+	requirements.broke_ruins_seal = true
+	randomly_selected = true
+
+[request_for_coelacanth]
+	requirements.broke_ruins_seal = true
+	randomly_selected = true
+
+[request_for_dragon_forged_bracelet]
+	requirements.broke_ruins_seal = true
+	randomly_selected = true
+
+[request_for_spell_fruit]
+	requirements.broke_ruins_seal = true
+	randomly_selected = true
+
+[request_for_voidite]
+	requirements.broke_ruins_seal = true
+	randomly_selected = true
+
+[request_for_written_root]
+	requirements = { broke_ruins_seal = true, completed_quest = "upgrade_the_saturday_market" }
+	randomly_selected = true
+
+[request_for_wood_2]
+	requirements = { completed_quest = "greet_the_vendors", is_season = "fall" }
+	randomly_selected = true
+
+[request_for_hard_wood]
+	requirements = { completed_quest = "greet_the_vendors", is_season = "fall" }
+	randomly_selected = true
+
+[request_for_copper_net]
+	requirements.opened_mines = true
+	randomly_selected = true
+
+[request_for_iron_watering_can]
+	requirements.broke_water_seal = true
+	randomly_selected = true
+
+[request_for_void_stone]
+	requirements.seridia_house_open = true
+	randomly_selected = true
+
+[request_for_mont_blanc]
+	requirements.seridia_house_open = true
+	randomly_selected = true
+
+[request_for_dragon_forged_core]
+	requirements.seridia_house_open = true
+	randomly_selected = true
+
+[request_for_fire_wasp]
+	requirements.seridia_house_open = true
+	randomly_selected = true
+
+[request_for_latte]
+	requirements.seridia_house_open = true
+	randomly_selected = true
+
+[request_for_iron_shovel]
+	requirements.seridia_house_open = true
+	randomly_selected = true
+
+[request_for_bomb]
+	requirements.seridia_house_open = true
+	randomly_selected = true
+
+[request_for_monster_mash]
+	requirements.seridia_house_open = true
+	randomly_selected = true
+
+[request_for_fried_rice]
+	requirements.seridia_house_open = true
+	randomly_selected = true
+
+[request_for_sushi_platter]
+	requirements.seridia_house_open = true
+	randomly_selected = true
+
+[request_for_pumpkin_pie]
+	requirements.seridia_house_open = true
+	randomly_selected = true
+
+[request_for_dog_treat]
+	requirements.seridia_house_open = true
+	randomly_selected = true
+
+[request_for_lobster]
+	requirements.seridia_house_open = true
+	requirements.is_season = "spring"
+	randomly_selected = true
+
+[request_for_blackberries_2]
+	requirements.has_any_animal = true
+	requirements.is_season = "fall"
+	randomly_selected = true
+
+# 1.0 additions
+
+[request_for_coffee]
+	requirements = { completed_quest = "upgrade_the_saturday_market", is_day_type = "saturday" } # need real quest name, plaza quest
+	randomly_selected = true
+
+[request_for_fire_crystal]
+	requirements = { completed_quest = "upgrade_the_saturday_market", is_day_type = "saturday" } # need real quest name, plaza quest
+	randomly_selected = true
+
+[request_for_poached_pear]
+	requirements = { completed_quest = "upgrade_the_saturday_market", is_day_type = "saturday", is_season = "summer" } # need real quest name, plaza quest
+	randomly_selected = true
+
+[request_for_mushroom_rice]
+	requirements = { completed_quest = "upgrade_the_saturday_market", is_day_type = "saturday", is_season = "spring" } # need real quest name, plaza quest
+	randomly_selected = true
+
+[request_for_glowing_mushroom]
+	requirements = { completed_quest = "upgrade_the_saturday_market", is_day_type = "saturday" } # need real quest name, plaza quest
+	randomly_selected = true
+
+[request_for_bell_berries]
+	requirements = { completed_quest = "upgrade_the_saturday_market", is_day_type = "saturday", unlocked_deep_woods = true } # need real quest name, plaza quest
+	randomly_selected = true
+
+[request_for_duck_mayonnaise]
+	requirements = { completed_quest = "upgrade_the_saturday_market", is_day_type = "saturday" }
+	randomly_selected = true
+
+[request_for_golden_duck_mayonnaise]
+	requirements = { completed_quest = "request_for_duck_mayonnaise", is_day_type = "saturday" }
+	randomly_selected = true
+
+[request_for_apple_pie]
+	requirements = { completed_quest = "greet_the_vendors", is_day_type = "saturday", is_season = "fall" }
+	randomly_selected = true
+
+[request_for_crab]
+	requirements = { is_season = "fall" }
+	randomly_selected = true
+
+[request_for_butterfly]
+	requirements.seridia_house_open = true
+	requirements.is_season = "spring"
+	randomly_selected = true
+
+[request_for_cherry_tart]
+	requirements = { reached_date = { season = "spring", day = 1, year = 2 } }
+	randomly_selected = true
+
+[request_for_blueberry_jam]
+	requirements = { reached_date = { season = "spring", day = 1, year = 2 } }
+	randomly_selected = true

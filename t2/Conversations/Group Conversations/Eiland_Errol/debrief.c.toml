@@ -1,0 +1,24 @@
+[debrief]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "errol" }] },
+	{ eiland_zone = "<errol_zone>" },
+	{ time_of_day = "morning", comparator = "!=" },
+	{ eiland_dig_day_wr = false },
+	{ errol_dig_day_wr = true },
+	{ location = "western_ruins", comparator = "!=" },
+	{ any = [
+		{ archaeology_discussion_inn = true },
+		{ archaeology_discussion_museum = true },
+		{ location = "eilands_office" }
+	] }
+]
+speaker = "errol"
+portrait = "neutral"
+local = "I found a small cache of pottery fragments at the Western dig site. I have some here, but we'll have to take our time excavating the rest."
+next = "1"
+
+[debrief.1]
+speaker = "eiland"
+portrait = "mad"
+local = "Look here! This stain indicates it might have been used to store food. Honey, perhaps? I have a file on ancient Aldarian apiaries somewhere here."

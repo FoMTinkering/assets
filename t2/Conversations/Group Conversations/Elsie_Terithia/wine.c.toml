@@ -1,0 +1,23 @@
+[underwater_wine]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "elsie" }, { npc = "terithia" }] },
+	{ elsie_zone = "<terithia_zone>" },
+	{ elsie_activity = "drink" },
+	{ terithia_activity = "drink" }
+]
+speaker = "elsie"
+portrait = "happy"
+local = "I'm so glad you're enjoying the wine, Terithia! I tried to find a vintage you'd like."
+next = "1"
+
+[underwater_wine.1]
+speaker = "elsie"
+portrait = "wink"
+local = "You know, they age this one by submerging it in the sea! They call it underwater wine."
+next = "2"
+
+[underwater_wine.2]
+speaker = "terithia"
+portrait = "wink"
+local = "No wonder I like it so much!"

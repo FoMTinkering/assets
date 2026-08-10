@@ -1,0 +1,41 @@
+# The max number of floors in a dungeon
+max_floors = 100
+# The frequency at which elevators spawn. For example, with a value of 5, an elevator
+# will spawn on floors, 5, 10, 15, etc
+elevator_frequency = 5
+# The higher the number, the more likely a ladder is to spawn when you destroy an
+# object or defeat an enemy. No matter what, ladders are very unlikely to spawn at
+# first, and become progressively more likely as more objects are destroyed.
+# This should always be a number between 0 and 1.
+ladder_spawn_modifier = 0.25
+# The chance that a ground variant will spawn. This chance is rolled on every single
+# full ground tile we place (index 46).
+# This should always be a number between 0 and 100.
+ground_variant_chance = 3
+# The values each tile on the chance tileset corresponds to, per index on a given row.
+chance_tiles = [0, 100, 75, 50, 25, 10, 5, 1]
+# A value between 0 and 1 that allows the dungeon to prefer dungeon impls that haven't
+# been seen recently. The higher the number, the less likely a given impl is to be repeated.
+impl_dampening = 0.25
+# The number of levels it takes for the dungeon to decay the modifier above. For example, if
+# the `impl_dampening` is 1, and this number is 2, it will take 2 levels for the dampening
+# to decay (starting at 1, then 0.5, then 0).
+impl_dampening_decay = 10
+# How many bugs spawn per dungeon room
+bug_count = [0, 1]
+# Range that we spawn a treasure floor based on starting location. Players rarely go more than
+# 20 floors even when backtracking, so think of this as a 50% chance
+treasure_range = 40
+# Range that we spawn a treasure floor based on starting location. Players rarely go more than
+# 20 floors even when backtracking, so think of this as a 50% chance
+# 
+# LostToHistory2 divides this by half
+ritual_range = 40
+
+# These are the indices of corner tiles on our wall tilesets. Modifying these changes
+# how the collisions will spawn on the given tiles.
+[corner_tiles]
+	bottom_left = [34, 40, 41, 42, 43]  # └
+	bottom_right = [35, 36, 37, 38, 39] # ┘
+	top_left = [12, 29, 30, 31, 32]     # ┌
+	top_right = [8, 24, 25, 26, 27]     # ┐

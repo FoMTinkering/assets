@@ -1,0 +1,168 @@
+[valen_ancestral_medical_journal_1]
+refresh = "1y"
+requires = [
+	{ npc = "valen" },
+	{ thread_mutex = "undefined" },
+	{ thread_delay = false },
+	{ valen_ancestral_medical_journal_finished = false },
+	{ valen_heart_level = 3, comparator = ">=" },
+	{ valen_heart_level = 8, comparator = "<" },
+]
+writes = [
+	{ thread_mutex = "valen_ancestral_medical_journal_1", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+local = "My family has a long tradition of keeping records of various medical cases, for the benefit of future generations of doctors."
+next = "1"
+
+[valen_ancestral_medical_journal_1.1]
+portrait = "think"
+local = "Some journal entries are rather outlandish, listen to this:"
+next = "2"
+
+[valen_ancestral_medical_journal_1.2]
+portrait = "raised_eyebrow"
+local = """"Punmania, a most grievous affliction that causes the victim to uncontrollably spout wordplay of a most disagreeable variety." Ridiculous!"""
+next = "3"
+
+[valen_ancestral_medical_journal_1.3]
+portrait = "mad"
+local = "Wait."
+next = "4"
+
+[valen_ancestral_medical_journal_1.4]
+portrait = "happy"
+effect = "drop"
+local = "I need to talk to Holt."
+
+[valen_ancestral_medical_journal_2]
+refresh = "instantly"
+requires = [
+	{ npc = "valen" },
+	{ thread_mutex = "valen_ancestral_medical_journal_1" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "valen_ancestral_medical_journal_2", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+local = "I came upon another case record from my great great grandmother, a respected physician in her time..."
+next = "1"
+
+[valen_ancestral_medical_journal_2.1]
+portrait = "mad"
+local = """But the case itself seems a little light on the science. A disease that causes "churlish behavior disruptive to family and society"."""
+next = "2"
+
+[valen_ancestral_medical_journal_2.2]
+portrait = "think"
+local = "Then again..."
+next = "3"
+
+[valen_ancestral_medical_journal_2.3]
+portrait = "think"
+effect = "drop"
+local = "I should pay March a visit..."
+
+[valen_ancestral_medical_journal_3]
+refresh = "instantly"
+requires = [
+	{ npc = "valen" },
+	{ thread_mutex = "valen_ancestral_medical_journal_2" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "undefined" },
+	{ thread_delay = true, expires = "1d" },
+	{ valen_ancestral_medical_journal_finished = true },
+	{ valen_ancestral_medical_journal_day = true, expires = "1d" },
+]
+local = "I've been combing over some of the old family medical journals and found another oddity..."
+next = "1"
+
+[valen_ancestral_medical_journal_3.1]
+portrait = "think"
+local = "My great grandmother describes a type of laughing sickness..."
+next = "2"
+
+[valen_ancestral_medical_journal_3.2]
+portrait = "mad"
+local = """"Wherein one laughs uncontrollably, at a high, piercing volume, as though with their entire being and in a manner that spreads malaise in the receiver"."""
+next = "3"
+
+[valen_ancestral_medical_journal_3.3]
+portrait = "ugh"
+local = "Now this one definitely feels familiar... I wonder why."
+
+[holt_ancestral_medical_journal]
+refresh = "1y"
+requires = [
+	{ npc = "holt" },
+	{ thread_mutex = "valen_ancestral_medical_journal_1" },
+]
+portrait = "wink"
+local = "Valen came by earlier and asked me a laundry list of questions about my puns..."
+next = "1"
+
+[holt_ancestral_medical_journal.1]
+portrait = "happy"
+local = "Do you suppose the doctor is working on her sense of humor, [Ari]? It does go hand-in-hand with bedside manner..."
+
+[march_ancestral_medical_journal]
+refresh = "1y"
+requires = [
+	{ npc = "march" },
+	{ thread_mutex = "valen_ancestral_medical_journal_2" },
+]
+portrait = "mad"
+local = """Valen came by and asked me how often I engage in "uncivil" and "surly" behavior. Then she wrote a bunch of notes..."""
+next = "1"
+
+[march_ancestral_medical_journal.1]
+portrait = "ugh"
+local = "Uncivil? There's no one more civil than me!"
+prompts = [
+	{ local = "You're SO civil, March.", next = "2" },
+	{ local = "Uh-huh... sure...", next = "3" },
+]
+
+[march_ancestral_medical_journal.2]
+portrait = "unimpressed"
+local = "I know I am, but why'd you say it like that..."
+next = "3"
+
+[march_ancestral_medical_journal.3]
+portrait = "mad"
+local = "Hmph!"
+
+[juniper_ancestral_medical_journal]
+refresh = "1y"
+requires = [
+	{ npc = "juniper" },
+	{ valen_ancestral_medical_journal_finished = true },
+	{ valen_ancestral_medical_journal_day = true },
+]
+portrait = "sly"
+local = "Valen spoke to me earlier... she seemed fixated on my laugh."
+prompts = [
+	{ local = "Do you laugh like that to annoy Valen?", next = "1" },
+	{ local = "Valen thinks you might be afflicted with laughing sickness...", next = "3" },
+]
+
+[juniper_ancestral_medical_journal.1]
+portrait = "think"
+local = "Wouldn't you like to know."
+next = "2"
+
+[juniper_ancestral_medical_journal.2]
+portrait = "laugh"
+local = "OH HO HO HO!"
+
+[juniper_ancestral_medical_journal.3]
+portrait = "happy"
+local = "Oh, was she concerned?"
+next = "4"
+
+[juniper_ancestral_medical_journal.4]
+portrait = "wild_laugh"
+local = "OH HO HO HO!"

@@ -1,0 +1,157 @@
+[kid_cuisine_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { day_of_the_week = "friday" },
+    { celine_zone = "inn/bar" },
+    { dell_zone = "inn/bar" },
+    { hemlock_zone = "inn/bar" },
+    { holt_zone = "inn/bar" },
+    { josephine_zone = "inn/bar" },
+    { luc_zone = "inn/bar" },
+    { maple_zone = "inn/bar" },
+    { nora_zone = "inn/bar" },
+    { reina_zone = "inn/bar" },
+    { any = [
+        { npc = "celine" },
+        { npc = "dell" },
+        { npc = "hemlock" },
+        { npc = "holt" },
+        { npc = "josephine" },
+        { npc = "luc" },
+        { npc = "maple" },
+        { npc = "nora" },
+        { npc = "reina" },
+    ] },
+    { kid_cuisine_fnati = 0 }
+]
+writes = [{ kid_cuisine_fnati = 1 }]
+actions = [
+    { bark = { bark = "cute_face", npc = "celine" } },
+    { bark = { bark = "cute_face", npc = "dell" } },
+    { bark = { bark = "cute_face", npc = "hemlock" } },
+    { bark = { bark = "cute_face", npc = "holt" } },
+    { bark = { bark = "cute_face", npc = "josephine" } },
+    { bark = { bark = "cute_face", npc = "luc" } },
+    { bark = { bark = "cute_face", npc = "maple" } },
+    { bark = { bark = "cute_face", npc = "nora" } },
+    { bark = { bark = "cute_face", npc = "reina" } },
+]
+speaker = "reina"
+portrait = "happy"
+local = "Friends and family, welcome to the first session of a very special supper club series!"
+next = "1"
+
+[kid_cuisine_1.1]
+speaker = "reina"
+portrait = "neutral"
+local = "We will be enjoying some delectably scrumptious meals made by Mistria's very own rising culinary stars... the Dragonguard!"
+next = "2"
+
+[kid_cuisine_1.2]
+speaker = "nora"
+portrait = "happy"
+local = "Wow!"
+next = "3"
+
+[kid_cuisine_1.3]
+speaker = "hemlock"
+portrait = "happy"
+local = "Hear, hear!"
+next = "4"
+
+[kid_cuisine_1.4]
+speaker = "luc"
+portrait = "neutral"
+local = "You'll join us and have some too, won't you [Ari]?"
+prompts = [
+    { local = "Of course! Thanks, Luc!", next = "5" },
+    { local = "Well, maybe just a nibble...", next = "6" }
+]
+
+[kid_cuisine_1.5]
+speaker = "luc"
+portrait = "happy"
+local = "You're very welcome!"
+next = "7"
+
+[kid_cuisine_1.6]
+speaker = "maple"
+portrait = "neutral"
+local = "You won't keep it to just a nibble after you hear what we're having this week!"
+next = "7"
+
+[kid_cuisine_1.7]
+speaker = "dell"
+portrait = "neutral"
+local = "May I present our esteemed guests with $Peanut Butter and Something Sandwiches$!"
+next = "8"
+
+[kid_cuisine_1.8]
+speaker = "josephine"
+portrait = "think"
+local = "Something, huh? I've never heard of this recipe!"
+next = "9"
+
+[kid_cuisine_1.9]
+speaker = "dell"
+portrait = "happy"
+local = "That's cause we made it up!"
+next = "10"
+
+[kid_cuisine_1.10]
+speaker = "maple"
+portrait = "happy"
+local = "Try it, try it!"
+next = "11"
+
+[kid_cuisine_1.11]
+speaker = "holt"
+portrait = "think"
+local = "Hmm..."
+next = "12"
+
+[kid_cuisine_1.12]
+speaker = "holt"
+portrait = "happy"
+local = "Oho, mine is $Peanut Butter and Jelly... Beans$!"
+next = "13"
+
+[kid_cuisine_1.13]
+speaker = "celine"
+portrait = "happy"
+local = "Ooh, I got $Peanut Butter and Chocolate Chips$!"
+next = "14"
+
+[kid_cuisine_1.14]
+speaker = "nora"
+portrait = "happy"
+local = "Well isn't this fun! Great work, Dragonguard."
+next = "15"
+
+[kid_cuisine_1.15]
+speaker = "josephine"
+portrait = "neutral"
+local = "How about you, [Ari]? What flavor did you get?"
+prompts = [
+    { local = "Peanut Butter and Marshmallow, yum!", next = "16" },
+    { local = "Peanut Butter, Jalapeno and Tuna...", next = "17" }
+]
+
+[kid_cuisine_1.16]
+actions = [{ item = "pbm_sandwich"}]
+speaker = "maple"
+portrait = "neutral"
+local = "That's a good one!"
+
+[kid_cuisine_1.17]
+actions = [{ item = "pbjt_sandwich"}]
+speaker = "reina"
+portrait = "ugh"
+local = "What?"
+next = "18"
+
+[kid_cuisine_1.18]
+speaker = "josephine"
+portrait = "sad"
+local = "How... how is it?"

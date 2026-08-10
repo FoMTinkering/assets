@@ -1,0 +1,21 @@
+[dig_breakfast]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "errol" }] },
+	{ eiland_zone = "<errol_zone>" },
+	{ time_of_day = "morning" },
+	{ eiland_dig_day_wr = true },
+	{ errol_dig_day_wr = true },
+	{ location = "inn" },
+	{ eiland_activity = "eat" },
+	{ errol_activity = "eat" }
+]
+speaker = "errol"
+portrait = "neutral"
+local = "Eat up, Lord Eiland! It's important to have a hearty breakfast before a dig. That's no different from when I worked the Mines!"
+next = "1"
+
+[dig_breakfast.1]
+speaker = "eiland"
+portrait = "happy"
+local = "When you put it like that, it would be irresponsible to not have seconds!"

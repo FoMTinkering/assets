@@ -1,0 +1,224 @@
+[cop_some_ore_anticipation_1]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ quest_cop_some_ore_in_progress = true },
+	{ ryis_zone = "<march_zone>", comparator = "!=" },
+]
+local = "Not that you need to bother, but March might warm up to you if you bring him that ore he needs."
+next = "1"
+
+[cop_some_ore_anticipation_1.1]
+portrait = "happy"
+effect = "drop"
+local = "He may not show it, but he appreciates when people pitch in."
+
+[cop_some_ore_anticipation_2]
+refresh = "never"
+requires = [{ npc = "olric" }, { quest_cop_some_ore_in_progress = true }]
+local = "Are you headed into the Mines for that copper? Now [Ari], this is important:"
+next = "1"
+
+[cop_some_ore_anticipation_2.1]
+portrait = "mad"
+local = "Tell me if you see a cool rock."
+
+[cop_some_ore_follow_up_1]
+refresh = "never"
+requires = [
+	{ npc = "olric" },
+	{ quest_cop_some_ore_complete = true },
+	{ cso = true },
+]
+local = "Between you and me, you really helped March out of a tough spot with that copper. Thanks, [Ari]!"
+
+[cop_some_ore_follow_up_2]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ quest_cop_some_ore_complete = true },
+	{ cso = true },
+]
+portrait = "wink"
+local = "I wouldn't call March gracious, but he'll remember that you ventured into the Mines for his copper."
+next = "1"
+
+[cop_some_ore_follow_up_2.1]
+portrait = "happy"
+local = "Probably. I think."
+
+[cop_some_ore_follow_up_3]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ quest_cop_some_ore_complete = true },
+	{ cso = true },
+]
+local = "Wow, you went into the Mines? You're so brave, [Ari]!"
+
+[cop_some_ore_follow_up_4]
+refresh = "never"
+requires = [
+	{ npc = "nora" },
+	{ quest_cop_some_ore_complete = true },
+	{ cso = true },
+]
+local = "Dell's going to ask you to take her into the Mines next time."
+next = "1"
+
+[cop_some_ore_follow_up_4.1]
+portrait = "happy"
+local = "In case she asks: absolutely not."
+
+[cop_some_ore_follow_up_5]
+refresh = "never"
+requires = [
+	{ npc = "dell" },
+	{ quest_cop_some_ore_complete = true },
+	{ cso = true },
+]
+portrait = "mad"
+local = "You went into the Mines? Take me next time! Pleaaaase!"
+
+[cop_some_ore_turn_in]
+kind = "gameplay_triggered"
+speaker = "march"
+portrait = "neutral"
+local = "What the- YOU completed my request?"
+next = "1"
+actions = [{ cutscene = "cop_some_ore" }]
+
+[cop_some_ore_turn_in.1]
+speaker = "march"
+portrait = "neutral"
+local = "Fine, let's go get your reward..."
+
+[cop_some_ore]
+kind = "gameplay_triggered"
+writes = [{ cso = true, expires = "4d" }]
+speaker = "march"
+portrait = "mad"
+local = "There! Now scram, I've got work to do."
+next = "1"
+
+[cop_some_ore.1]
+speaker = "adeline"
+portrait = "happy"
+local = "It's good to hear you back at work, March! I guess that means someone completed your request?"
+next = "2"
+
+[cop_some_ore.2]
+speaker = "march"
+portrait = "neutral"
+local = "Lady Adeline! Uh... yes, it does."
+prompts = [
+	{ local = "Happy to help out!", next = "3" },
+	{ local = "Yeah, by me! And March has been a real jerk about it!", next = "4" },
+]
+
+[cop_some_ore.3]
+speaker = "adeline"
+portrait = "neutral"
+local = "Oh how wonderful! Thank you [Ari]!"
+next = "5"
+
+[cop_some_ore.4]
+speaker = "adeline"
+portrait = "happy"
+local = "Haha, March isn't great at expressing himself, but I'm sure he was thrilled. Isn't that right, March?"
+next = "5"
+
+[cop_some_ore.5]
+speaker = "march"
+portrait = "tsundere"
+local = "Thanks, [Ari]."
+next = "6"
+
+[cop_some_ore.6]
+speaker = "adeline"
+portrait = "happy"
+local = "I have an idea! As an extra reward, why don't you give [Ari] a quick lesson in $Blacksmithing$? Doesn't that sound like fun?"
+next = "7"
+
+[cop_some_ore.7]
+speaker = "march"
+portrait = "ugh"
+local = "..."
+next = "8"
+
+[cop_some_ore.8]
+speaker = "march"
+portrait = "ugh"
+effect = "angry"
+local = "S-sure."
+next = "9"
+
+[cop_some_ore.9]
+speaker = "march"
+portrait = "neutral"
+local = "Blacksmithing is a craft that takes time, skill and good materials."
+next = "10"
+
+[cop_some_ore.10]
+speaker = "march"
+portrait = "neutral"
+local = "With enough practice, anyone can be a passable blacksmith."
+next = "11"
+
+[cop_some_ore.11]
+speaker = "march"
+portrait = "happy"
+local = "But a true artisan like myself can take it a step further and infuse the metal with new power! You're not ready for that."
+next = "12"
+
+[cop_some_ore.12]
+no_speaker = true
+local = "Would you like to view the $Blacksmithing Tutorial$?"
+prompts = [{ local = "Yes", next = "15" }, { local = "No", next = "15" }]
+
+[cop_some_ore.15]
+speaker = "march"
+portrait = "sly"
+local = "Go on, pick it up."
+next = "16"
+
+[cop_some_ore.16]
+speaker = "adeline"
+portrait = "happy"
+local = "You're giving it to [Ari]? How generous, March!"
+next = "17"
+
+[cop_some_ore.17]
+speaker = "march"
+portrait = "mad"
+local = "I-"
+next = "18"
+
+[cop_some_ore.18]
+speaker = "march"
+portrait = "mad"
+local = "Y-yeah."
+next = "19"
+
+[cop_some_ore.19]
+speaker = "march"
+portrait = "ugh"
+local = "Sure! Why not!"
+next = "20"
+
+[cop_some_ore.20]
+speaker = "adeline"
+portrait = "wink"
+local = "What did I tell you, [Ari]? He's a big softy, really. I'm sure he'll be happy to let you use this $Forge$ whenever you want to work on your $Blacksmithing$."
+next = "21"
+
+[cop_some_ore.21]
+speaker = "march"
+portrait = "tsundere"
+local = "I... I..."
+next = "22"
+
+[cop_some_ore.22]
+speaker = "march"
+portrait = "mad"
+local = "Fine! I have other work to take care of!"

@@ -1,0 +1,44 @@
+[poisoned_wine]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "elsie" }, { npc = "juniper" }, { npc = "terithia" }] },
+	{ elsie_zone = "<juniper_zone>" },
+	{ elsie_zone = "<terithia_zone>" },
+	{ day_time = "6:00pm", comparator = ">=" },
+	{ elsie_activity = "drink" },
+	{ juniper_activity = "drink" },
+	{ terithia_activity = "drink" }
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "elsie" } },
+	{ bark = { bark = "cute_face", npc = "juniper" } },
+	{ bark = { bark = "cute_face", npc = "terithia" } },
+]
+speaker = "elsie"
+portrait = "think"
+local = "Oh, it hasn't all been fun and romance..."
+next = "1"
+
+[poisoned_wine.1]
+speaker = "elsie"
+portrait = "ugh"
+local = "A jilted lover once sent me a bottle of poisoned wine."
+next = "2"
+
+[poisoned_wine.2]
+speaker = "juniper"
+portrait = "sly"
+local = "Well now! You can count on me to taste the first glass tonight, Elsie."
+next = "3"
+
+[poisoned_wine.3]
+speaker = "terithia"
+portrait = "wink"
+effect = "sparkles"
+local = "In fact, we'd better check the whole bottle just to be safe!"
+next = "4"
+
+[poisoned_wine.4]
+speaker = "terithia"
+portrait = "happy"
+local = "KYA HA HA!"

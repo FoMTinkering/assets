@@ -1,0 +1,28 @@
+[find_frog]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ is_inside = false }
+]
+speaker = "maple"
+portrait = "mad"
+local = "Find me another frog!"
+next = "1"
+
+[find_frog.1]
+speaker = "dell"
+local = "I'm on it!"
+next = "2"
+
+[find_frog.2]
+speaker = "luc"
+portrait = "sad"
+local = "I keep telling you, the story says that'll only work if you're a princess!"
+next = "3"
+
+[find_frog.3]
+speaker = "luc"
+portrait = "ugh"
+local = "Come on, I want to play pirates instead!"

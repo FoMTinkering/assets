@@ -1,0 +1,22 @@
+[farm_groceries]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "reina" }] },
+	{ hayden_zone = "<reina_zone>" },
+	{ any = [{ location = "haydens_farm" }, { location = "haydens_house" }] },
+	{ hayden_zone = "<hemlock_zone>", comparator = "!=" },
+	{ hayden_zone = "<josephine_zone>", comparator = "!=" },
+]
+writes = [
+	{ farm_groceries = true, expires = "1w" },
+	{ reina_visited_hayden_farm = true, expires = "2d" }
+]
+speaker = "reina"
+portrait = "neutral"
+local = "Thank you kindly, Hayden! This should be more than enough eggs and milk to get the Inn through the week."
+next = "1"
+
+[farm_groceries.1]
+speaker = "hayden"
+portrait = "happy"
+local = "You're welcome kindly, friend! Say hi to your folks for me!"

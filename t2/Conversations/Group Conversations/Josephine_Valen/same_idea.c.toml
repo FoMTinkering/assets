@@ -1,0 +1,18 @@
+[same_idea]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "josephine" }, { npc = "valen" }] },
+	{ josephine_zone = "<valen_zone>" },
+	{ location = "bathhouse_change_room" },
+	{ bathhouse_counter = 3, comparator = ">=" },
+	{ juniper_is_at_location = "bathhouse_change_room", comparator = "!=" },
+]
+speaker = "josephine"
+portrait = "happy"
+local = "I see we all had the same idea, coming to the Bathhouse. How fun!"
+next = "1"
+
+[same_idea.1]
+speaker = "valen"
+portrait = "think"
+local = "The bathhouse is quite rejuvenating. The proprietor, however..."

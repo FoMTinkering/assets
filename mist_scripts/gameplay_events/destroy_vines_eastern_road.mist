@@ -1,0 +1,33 @@
+animate(ari, idle);
+face(ari, north);
+allow_ari_fire_breath();
+
+//
+free pan_camera(2, 1072, 154);
+walk(ari, destroy_vines_ari);
+face(ari, north);
+
+//
+__start_destroying_vines();
+
+free {
+	wait(0.2);
+	play_sound("SoundEffects/SpecialEvents/BurnRise");
+	wait(2);
+	play_sound("SoundEffects/SpecialEvents/BurnRise");
+	wait(2);
+	play_sound("SoundEffects/SpecialEvents/BurnRiseLast");
+}
+
+wait(5);
+fade_out(2);
+__end_ari_breath_fire();
+__finish_destroying_vines();
+override_requirement("unlocked_deep_woods");
+refresh_room_layers();
+wait(1);
+fade_in(2);
+play_sound("SoundEffects/SpecialEvents/RevealJingle");
+wait(1);
+pan_camera(1, ari);
+wait(1);

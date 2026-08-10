@@ -1,0 +1,155 @@
+[crochet_club_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ adeline_zone = "inn/north_table" },
+	{ errol_zone = "inn/north_table" },
+	{ hayden_zone = "inn/north_table" },
+	{ juniper_zone = "inn/north_table" },
+	{ landen_zone = "inn/north_table" },
+	{ march_zone = "inn/north_table" },
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "errol" },
+		{ npc = "hayden" },
+		{ npc = "juniper" },
+		{ npc = "landen" },
+		{ npc = "march" },
+	] },
+    { crochet_club_fnati = 1 }
+]
+writes = [{ crochet_club_fnati = 2 }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "adeline" } },
+	{ bark = { bark = "cute_face", npc = "errol" } },
+	{ bark = { bark = "cute_face", npc = "hayden" } },
+	{ bark = { bark = "cute_face", npc = "juniper" } },
+	{ bark = { bark = "cute_face", npc = "landen" } },
+	{ bark = { bark = "cute_face", npc = "march" } },
+]
+speaker = "adeline"
+portrait = "happy"
+local = "So how is everyone's crochet project coming along?"
+next = "1"
+
+[crochet_club_2.1]
+speaker = "juniper"
+portrait = "neutral"
+local = "It's certainly a relaxing way to enjoy an evening."
+next = "2"
+
+[crochet_club_2.2]
+speaker = "hayden"
+portrait = "happy_arm_down"
+local = "Henrietta's been really enjoying the new bow I made for her!"
+next = "3"
+
+[crochet_club_2.3]
+speaker = "landen"
+portrait = "neutral"
+local = "Hey March! Your tea cozy could use some more shape to it. Do you need some advice from a master mitten maker?"
+next = "4"
+
+[crochet_club_2.4]
+speaker = "march"
+portrait = "think"
+local = "Oh, I uh... switched projects."
+next = "5"
+
+[crochet_club_2.5]
+speaker = "errol"
+portrait = "neutral"
+local = "Why I believe you're making granny squares. I used quite a few on my scarf last week."
+next = "6"
+
+[crochet_club_2.6]
+speaker = "march"
+portrait = "neutral"
+local = "Yeah. I thought I'd try making a blanket."
+next = [
+    { target = "7_quest", requires = [
+        { quest_crown_request_tables_and_chairs_complete = true }
+    ] },
+    { target = "7_normal", requires = [] }
+]
+
+[crochet_club_2.7_quest]
+speaker = "march"
+portrait = "eight_heart_think"
+local = "I heard that [Ari] donated some tables and chairs to the Capital Orphanage... So I looked into it, and they really could use some more blankets too..."
+next = "8"
+
+[crochet_club_2.7_normal]
+speaker = "march"
+portrait = "eight_heart_think"
+local = "I... I heard the Capital Orphanage is short on blankets..."
+next = "8"
+
+[crochet_club_2.8]
+speaker = "march"
+portrait = "eight_heart_flustered"
+local = "And I figured since I'm doing crochet anyway..."
+next = "9"
+
+[crochet_club_2.9]
+speaker = "march"
+portrait = "mad"
+local = "What? Why are you all looking at me like that?"
+next = "10"
+
+[crochet_club_2.10]
+speaker = "landen"
+portrait = "neutral"
+local = "Well now, I had been looking for a new project, so maybe I'll crochet some granny squares tonight too!"
+next = "11"
+
+[crochet_club_2.11]
+speaker = "errol"
+portrait = "neutral"
+local = "An excellent idea, you do need an awful lot of granny squares to make a blanket."
+next = "12"
+
+[crochet_club_2.12]
+speaker = "hayden"
+portrait = "happy"
+local = "Many hands make light work!"
+next = "13"
+
+[crochet_club_2.13]
+speaker = "juniper"
+portrait = "neutral"
+local = "I call dibs on the purple yarn!"
+next = "14"
+
+[crochet_club_2.14]
+speaker = "adeline"
+portrait = "neutral"
+local = "Ooh, then I want pink yarn!"
+prompts = [
+    { local = "Let's get crocheting some granny squares!", next = "15" },
+    { local = "It's really nice of you, March.", next = "16" }
+]
+
+[crochet_club_2.15]
+speaker = "march"
+portrait = "embarrassed"
+local = "......"
+next = "17"
+
+[crochet_club_2.16]
+speaker = "march"
+portrait = "embarrassed"
+local = "I... I mean..."
+next = "17"
+
+[crochet_club_2.17]
+speaker = "march"
+portrait = "eight_heart_happy_blush"
+local = "Thanks for helping, everyone."
+next = "18"
+
+[crochet_club_2.18]
+actions = [{ blackout = 60 }]
+no_speaker = true
+local = "You had a fun time crocheting with everyone."

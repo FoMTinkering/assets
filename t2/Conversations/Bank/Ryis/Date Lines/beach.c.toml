@@ -1,0 +1,107 @@
+[beach_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "ryis" },
+	{ date = "beach" },
+	{ da_ryis_beach = 0 },
+	{ ryis_is_spouse = false }
+]
+writes = [
+	{ da_ryis_beach = 1 },
+	{ da_ryis_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "Would you like to come out to the Beach with me, [Ari]?"
+next = "1"
+
+[beach_accept_1.1]
+speaker = "ryis"
+portrait = "blush_special"
+local = "I figured we could take a walk, enjoy the nice view."
+next = "2"
+
+[beach_accept_1.2]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "Yeah? Great!"
+
+[beach_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "ryis" },
+	{ date = "beach" },
+	{ ryis_has_child = false },
+	{ any = [
+		{ ryis_is_spouse = true },
+		{ da_ryis_beach = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_ryis_beach = 2 },
+	{ da_ryis_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "ryis"
+portrait = "blush_special"
+local = "You want to go out to the Beach?"
+next = "1"
+
+[beach_accept_2.1]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "Of course! I'd love to."
+
+[beach_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ da_ryis_beach = 1 },
+	{ da_ryis_beach_follow_up_gate = true },
+	{ ryis_is_spouse = false }
+]
+writes = [{ da_ryis_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "blush_special"
+local = "That was nice, [Ari]."
+next = "1"
+
+[beach_follow_up_1.1]
+portrait = "happy_blush"
+local = "Nothing beats an ocean breeze."
+next = "2"
+
+[beach_follow_up_1.2]
+portrait = "blush_special"
+local = "It's a shame we didn't have access to a beach back in the Capital, huh?"
+prompts = [
+	{ local = "Definitely one of the benefits of living here!", next = "3" },
+	{ local = "Aren't you glad we moved to Mistria?", next = "4" },
+]
+
+[beach_follow_up_1.3]
+portrait = "blush_special"
+local = "Just one of the many."
+
+[beach_follow_up_1.4]
+portrait = "blush_special"
+local = "Every day."
+
+[beach_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_has_child = false },
+	{ any = [{ ryis_is_spouse = true }, { da_ryis_beach = 2 }] },
+	{ da_ryis_beach_follow_up_gate = true }
+]
+writes = [{ da_ryis_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "blush_special"
+local = "Thanks for inviting me out, [Ari]."
+next = "1"
+
+[beach_follow_up_2.1]
+portrait = "happy_blush"
+local = "I'm always up for a trip to the Beach with you!"

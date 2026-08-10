@@ -1,0 +1,3653 @@
+# adeline
+[wedding_planning_adeline_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_fiance = true },
+	{ engagement_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy_blush"
+local = "I'm so happy, [Ari]..."
+next = "1"
+
+[wedding_planning_adeline_0.1]
+portrait = "blush"
+local = "This is a dream come true. We're getting married!"
+next = "2"
+
+[wedding_planning_adeline_0.2]
+portrait = "embarrassed"
+local = "I just know we're going to have the most beautiful wedding..."
+next = "3"
+
+[wedding_planning_adeline_0.3]
+portrait = "happy_blush"
+local = "I can't wait to plan everything with you!"
+
+[wedding_planning_adeline_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 0 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy"
+effect = "cheery"
+local = "[Ari]! Your timing is perfect. I was just thinking about some plans for our wedding..."
+next = "1"
+
+[wedding_planning_adeline_1.1]
+portrait = "wink"
+local = "What color $flowers$ do you think we should use for our decorations?"
+prompts = [
+	{ local = "Red flowers!", next = "2" },
+	{ local = "White flowers!", next = "4" },
+	{ local = "Pink flowers!", next = "6" }
+]
+
+[wedding_planning_adeline_1.2]
+writes = [{ wedding_flower_color = "red" }]
+portrait = "blush"
+local = "$Red flowers$? That's a great choice... so romantic!"
+next = "3"
+
+[wedding_planning_adeline_1.3]
+portrait = "happy_blush"
+local = "Perfect, let's go with red! I'll let Celine know.  Thanks [Ari]!"
+
+[wedding_planning_adeline_1.4]
+writes = [{ wedding_flower_color = "white" }]
+portrait = "blush"
+local = "$White flowers$? That's a great choice... so elegant!"
+next = "5"
+
+[wedding_planning_adeline_1.5]
+portrait = "happy_blush"
+local = "Perfect, let's go with white! I'll let Celine know. Thanks [Ari]!"
+
+[wedding_planning_adeline_1.6]
+writes = [{ wedding_flower_color = "pink" }]
+portrait = "blush"
+local = "$Pink flowers$? I love that idea!"
+next = "7"
+
+[wedding_planning_adeline_1.7]
+portrait = "happy_blush"
+local = "Pink is my favorite color, after all."
+next = "8"
+
+[wedding_planning_adeline_1.8]
+portrait = "embarrassed"
+local = "I'm glad you like the idea too, [Ari]. Let's go with pink! I'll let Celine know."
+
+[wedding_planning_adeline_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 1 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy"
+effect = "cheery"
+local = "Do you have a minute, [Ari]? I have another wedding planning question for you!"
+next = "1"
+
+[wedding_planning_adeline_2.1]
+portrait = "wink"
+local = "What flavor $cake$ do you think we should serve at the reception?"
+prompts = [
+	{ local = "Vanilla!", next = "2" },
+	{ local = "Chocolate!", next = "5" },
+	{ local = "Lemon!", next = "8" }
+]
+
+[wedding_planning_adeline_2.2]
+writes = [{ wedding_cake_flavor = "vanilla" }]
+portrait = "happy_blush"
+local = "$Vanilla Cake$? The kind decorated with white buttercream piping?"
+next = "3"
+
+[wedding_planning_adeline_2.3]
+portrait = "blush"
+local = "Oooh, that will be so classic and pretty, I love it!"
+next = "4"
+
+[wedding_planning_adeline_2.4]
+portrait = "wink"
+local = "$Vanilla Cake$ it is! I'll let Darcy know!"
+
+[wedding_planning_adeline_2.5]
+writes = [{ wedding_cake_flavor = "chocolate" }]
+portrait = "happy_blush"
+local = "$Chocolate Cake$? With dark chocolate piping?"
+next = "6"
+
+[wedding_planning_adeline_2.6]
+portrait = "blush"
+local = "Oooh, that sounds so delicious!"
+next = "7"
+
+[wedding_planning_adeline_2.7]
+portrait = "happy_blush"
+local = "$Chocolate Cake$ it is! I'll let Darcy know!"
+
+[wedding_planning_adeline_2.8]
+writes = [{ wedding_cake_flavor = "lemon" }]
+portrait = "embarrassed"
+local = "=Lemon Cake=? Ohhh... my favorite!"
+next = "9"
+
+[wedding_planning_adeline_2.9]
+portrait = "happy_blush"
+local = "My whole family likes it too. Mother especially! So it's sure to be popular..."
+next = "10"
+
+[wedding_planning_adeline_2.10]
+portrait = "blush"
+local = "I'm so glad you like it too. =Lemon Cake= it is! I'll let Darcy know!"
+
+[wedding_planning_adeline_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 2 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy"
+effect = "cheery"
+local = "[Ari]! Can I grab you for a second? There's one final detail to decide on for the wedding..."
+next = "1"
+
+[wedding_planning_adeline_3.1]
+portrait = "blush"
+local = "What kind of $meal$ should we serve at the reception?"
+prompts = [
+	{ local = "Harvest Plate!", next = "2" },
+	{ local = "Mushroom Steak Dinner!", next = "5" },
+	{ local = "Vegetable Soup!", next = "8" }
+]
+
+[wedding_planning_adeline_3.2]
+writes = [{ wedding_dinner_dish = "harvest_plate" }]
+portrait = "happy_blush"
+local = "$Harvest Plate$? That's a great idea!"
+next = "3"
+
+[wedding_planning_adeline_3.3]
+portrait = "blush"
+local = "It's appropriately festive and it's sure to be popular."
+next = "4"
+
+[wedding_planning_adeline_3.4]
+portrait = "happy_blush"
+local = "$Harvest plate$ it is! I'll let Reina know!"
+
+[wedding_planning_adeline_3.5]
+writes = [{ wedding_dinner_dish = "mushroom_steak_dinner" }]
+portrait = "cartoon_embarrassed"
+local = "$Mushroom Steak Dinner$? Are you sure?"
+next = "6"
+
+[wedding_planning_adeline_3.6]
+portrait = "embarrassed"
+local = "Well, if that's what you have your heart set on..."
+next = "7"
+
+[wedding_planning_adeline_3.7]
+portrait = "happy_blush"
+local = "$Mushroom Steak Dinner$ it is! I'll let Reina know!"
+
+[wedding_planning_adeline_3.8]
+writes = [{ wedding_dinner_dish = "vegetable_soup" }]
+portrait = "embarrassed"
+local = "=Vegetable Soup=? Oh, [Ari], that's so sweet..."
+next = "9"
+
+[wedding_planning_adeline_3.9]
+portrait = "happy_blush"
+local = "Is it because I brought you =Vegetable Soup= on your first night in Mistria?"
+next = "10"
+
+[wedding_planning_adeline_3.10]
+portrait = "blush"
+local = "I think that's perfect. I'll let Reina know!"
+
+[wedding_planning_adeline_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_fiance = true },
+	{ wedding_is_tomorrow = true }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy_blush"
+local = "Can you believe it, [Ari]? Tomorrow is the big day!"
+next = "1"
+
+[wedding_planning_adeline_4.1]
+portrait = "blush"
+effect = "cheery"
+local = "I'm so excited I can hardly stand it!"
+prompts = [
+	{ local = "What are you most excited about?", next = "2" },
+	{ local = "I'm excited too! There's so much to look forward to!", next = "6" }
+]
+
+[wedding_planning_adeline_4.2]
+portrait = "happy_blush"
+local = "Gosh, there's so much!"
+next = "3"
+
+[wedding_planning_adeline_4.3]
+portrait = "hope_special"
+local = "My parents will be arriving in the morning to help me get ready, Celine's been arranging all the flowers, Reina's been cooking up a storm..."
+next = "4"
+
+[wedding_planning_adeline_4.4]
+portrait = "cartoon_embarrassed"
+local = "Wait... Was that a trick question, [Ari]?"
+next = "5"
+
+[wedding_planning_adeline_4.5]
+portrait = "embarrassed"
+local = "You know I'm most excited about becoming your wife!"
+next = "10"
+
+[wedding_planning_adeline_4.6]
+portrait = "happy_blush"
+local = "Right? Where do I even start?"
+next = "7"
+
+[wedding_planning_adeline_4.7]
+portrait = "blush"
+local = "My parents will be arriving in the morning to help me get ready, Celine's been arranging all the flowers, Reina's been cooking up a storm..."
+next = "8"
+
+[wedding_planning_adeline_4.8]
+portrait = "hope_special"
+local = "But you know what I'm looking forward to the most?"
+next = "9"
+
+[wedding_planning_adeline_4.9]
+portrait = "happy_blush"
+local = "Becoming your wife! Hehe!"
+next = "10"
+
+[wedding_planning_adeline_4.10]
+portrait = "blush"
+local = "It's going to be so magical, [Ari], I just know it."
+next = "11"
+
+[wedding_planning_adeline_4.11]
+portrait = "happy_blush"
+local = "It feels like all my dreams are coming true..."
+next = "12"
+
+[wedding_planning_adeline_4.12]
+portrait = "embarrassed"
+effect = "cheery"
+local = "Tomorrow can't come soon enough!"
+
+# balor
+[wedding_planning_balor_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_fiance = true },
+	{ engagement_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "blush"
+local = "I can't believe we're going to be married soon..."
+next = "1"
+
+[wedding_planning_balor_0.1]
+portrait = "embarrassed"
+local = "I never thought I'd share a love like this."
+next = "2"
+
+[wedding_planning_balor_0.2]
+portrait = "shocked_special"
+local = "I suppose my wandering days are finally over. And I'll even be moving out of my little room at the Inn!"
+next = "3"
+
+[wedding_planning_balor_0.3]
+portrait = "happy_blush"
+local = "I can't wait to share a hearth and home with you, [Ari]."
+
+[wedding_planning_balor_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 0 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "[Ari]! It looks like we have some wedding decisions to make!"
+next = "1"
+
+[wedding_planning_balor_1.1]
+portrait = "think"
+local = "For the ceremony... what color $flowers$ would you like?"
+prompts = [
+	{ local = "Red flowers!", next = "2" },
+	{ local = "White flowers!", next = "4" },
+	{ local = "Blue flowers!", next = "6" }
+]
+
+[wedding_planning_balor_1.2]
+writes = [{ wedding_flower_color = "red" }]
+portrait = "happy"
+local = "$Red flowers$? Yes, that's a good choice. The color of a flawless ruby... and romance."
+next = "3"
+
+[wedding_planning_balor_1.3]
+portrait = "blush"
+local = "I love the way your mind works. I'll tell Celine we're going with red!"
+
+[wedding_planning_balor_1.4]
+writes = [{ wedding_flower_color = "white" }]
+portrait = "happy"
+local = "$White flowers$? Yes, that's a good choice. The color of a flawless diamond... and a pure heart."
+next = "5"
+
+[wedding_planning_balor_1.5]
+portrait = "blush"
+local = "I love the way your mind works. I'll tell Celine we're going with white!"
+
+[wedding_planning_balor_1.6]
+writes = [{ wedding_flower_color = "blue" }]
+portrait = "shocked"
+local = "Oho, $blue flowers$?"
+next = "7"
+
+[wedding_planning_balor_1.7]
+portrait = "happy"
+local = "The color of fair weather and calm seas... an auspicious color for a merchant. A perfect way to mark the beginning of a new journey."
+next = "8"
+
+[wedding_planning_balor_1.8]
+portrait = "blush"
+local = "I love the way your mind works. I'll tell Celine we're going with $sapphire blue flowers$!"
+
+[wedding_planning_balor_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 1 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "Do you have a moment, [Ari]? There's an important wedding decision I can't possibly make without your input..."
+next = "1"
+
+[wedding_planning_balor_2.1]
+portrait = "think"
+local = "What sort of $cake$ should we serve at the reception?"
+prompts = [
+	{ local = "Vanilla!", next = "2" },
+	{ local = "Chocolate!", next = "5" },
+	{ local = "Golden Cheesecake!", next = "8" }
+]
+
+[wedding_planning_balor_2.2]
+writes = [{ wedding_cake_flavor = "vanilla" }]
+portrait = "neutral"
+local = "$Vanilla Cake$? Oho, with buttercream frosting on top?"
+next = "3"
+
+[wedding_planning_balor_2.3]
+portrait = "wink"
+local = "You appreciate the classics... I love learning new things about you."
+next = "4"
+
+[wedding_planning_balor_2.4]
+portrait = "happy"
+local = "$Vanilla Cake$ sounds perfect. I'll contact Darcy right away!"
+
+[wedding_planning_balor_2.5]
+writes = [{ wedding_cake_flavor = "chocolate" }]
+portrait = "neutral"
+local = "$Chocolate Cake$? The kind with dark chocolate ganache?"
+next = "6"
+
+[wedding_planning_balor_2.6]
+portrait = "wink"
+local = "You know me... whether it's food or treasure, I can't resist anything rich!"
+next = "7"
+
+[wedding_planning_balor_2.7]
+portrait = "happy"
+local = "$Chocolate Cake$ sounds perfect. I'll contact Darcy right away."
+
+[wedding_planning_balor_2.8]
+writes = [{ wedding_cake_flavor = "golden_cheesecake" }]
+portrait = "hope_special"
+local = "=Golden Cheesecake=? I see you're trying to spoil me."
+next = "9"
+
+[wedding_planning_balor_2.9]
+portrait = "happy_blush"
+local = "You know me... whether it's food or treasure, I can't resist anything luxurious!"
+next = "10"
+
+[wedding_planning_balor_2.10]
+portrait = "embarrassed"
+local = "=Golden Cheesecake= sounds perfect. I'll contact Darcy right away."
+
+[wedding_planning_balor_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 2 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "think"
+local = "You know, planning a wedding is so much more complicated than I imagined! I'm glad the townsfolk are around to lend us a hand."
+next = "1"
+
+[wedding_planning_balor_3.1]
+portrait = "neutral"
+local = "On that note, we're serving a $meal$ at the reception, right? What should we have?"
+prompts = [
+	{ local = "Harvest Plate!", next = "2" },
+	{ local = "Mushroom Steak Dinner!", next = "5" },
+	{ local = "Deluxe Curry!", next = "8" }
+]
+
+[wedding_planning_balor_3.2]
+writes = [{ wedding_dinner_dish = "harvest_plate" }]
+portrait = "think"
+local = "$Harvest Plate$? Ah yes, that's a good choice."
+next = "3"
+
+[wedding_planning_balor_3.3]
+portrait = "happy"
+local = "It's a bright and festive dish that's sure to put everyone in a good mood."
+next = "4"
+
+[wedding_planning_balor_3.4]
+portrait = "neutral"
+local = "Then it's decided! I'll let Reina know we'll go for the $Harvest plate$."
+
+[wedding_planning_balor_3.5]
+writes = [{ wedding_dinner_dish = "mushroom_steak_dinner" }]
+portrait = "think"
+local = "$Mushroom Steak Dinner$? Ah yes, that's a good choice."
+next = "6"
+
+[wedding_planning_balor_3.6]
+portrait = "happy"
+local = "It's a classy dish that's sure to impress our guests."
+next = "7"
+
+[wedding_planning_balor_3.7]
+portrait = "neutral"
+local = "Then it's decided! I'll let Reina know we'll go for the $Mushroom Steak Dinner$."
+
+[wedding_planning_balor_3.8]
+writes = [{ wedding_dinner_dish = "deluxe_curry" }]
+portrait = "blush_special"
+local = "=Deluxe Curry=? Really? You know me so well."
+next = "9"
+
+[wedding_planning_balor_3.9]
+portrait = "happy"
+local = "I can't say no to my favorite food... especially not an opportunity to share it with all my favorite people!"
+next = "10"
+
+[wedding_planning_balor_3.10]
+portrait = "wink"
+local = "Then it's decided! I'll let Reina know we'll go for the =Deluxe Curry=!"
+
+[wedding_planning_balor_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_fiance = true },
+	{ wedding_is_tomorrow = true }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "blush"
+local = "Tomorrow's the big day..."
+next = "1"
+
+[wedding_planning_balor_4.1]
+portrait = "embarrassed"
+local = "I'm excited, but a little nervous. How about you?"
+prompts = [
+	{ local = "You? Nervous? But why?", next = "2" },
+	{ local = "I'm also feeling a little jittery... but in a good way.", next = "8" }
+]
+
+[wedding_planning_balor_4.2]
+portrait = "think"
+local = "Why indeed...?"
+next = "3"
+
+[wedding_planning_balor_4.3]
+portrait = "embarrassed"
+local = "Well, maybe because it'll be a big change for someone like me."
+next = "4"
+
+[wedding_planning_balor_4.4]
+portrait = "blush_special"
+local = "To settle down, to have someone by my side from now on... someone I love deeply."
+next = "5"
+
+[wedding_planning_balor_4.5]
+portrait = "embarrassed"
+local = "How can a guy get so lucky?"
+next = "6"
+
+[wedding_planning_balor_4.6]
+portrait = "blush"
+local = "My heart is fuller than it's ever been... and it's made up, too."
+next = "7"
+
+[wedding_planning_balor_4.7]
+portrait = "happy_blush"
+local = "I can't wait to begin our life together, [Ari]."
+
+[wedding_planning_balor_4.8]
+portrait = "embarrassed"
+local = "Exactly! It's a good kind of nervous."
+next = "9"
+
+[wedding_planning_balor_4.9]
+portrait = "blush_special"
+local = "To settle down, to have someone by my side from now on... someone I love deeply."
+next = "10"
+
+[wedding_planning_balor_4.10]
+portrait = "embarrassed"
+local = "How can a guy get so lucky?"
+next = "11"
+
+[wedding_planning_balor_4.11]
+portrait = "blush"
+local = "My heart is fuller than it's ever been... and it's made up, too."
+next = "12"
+
+[wedding_planning_balor_4.12]
+portrait = "happy_blush"
+local = "I can't wait to begin our life together, [Ari]."
+
+# caldarus
+[wedding_planning_caldarus_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_fiance = true },
+	{ engagement_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "embarrassed"
+local = "I did not think I could feel such excitement, [Ari]."
+next = "1"
+
+[wedding_planning_caldarus_0.1]
+portrait = "serious_blush"
+local = "Joining our light in a traditional ceremony... I will have to consult with many people. Eiland will catch me up on updated practices, and Elsie..."
+next = "2"
+
+[wedding_planning_caldarus_0.2]
+portrait = "think_special"
+local = "Perhaps I should make a list."
+next = "3"
+
+[wedding_planning_caldarus_0.3]
+portrait = "laugh_special"
+local = "I will make a list!"
+
+[wedding_planning_caldarus_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 0 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "A moment, [Ari]."
+next = "1"
+
+[wedding_planning_caldarus_1.1]
+portrait = "laugh"
+local = "It seems that floral decorations are still popular for wedding ceremonies. What color $flowers$ would you like?"
+prompts = [
+	{ local = "Red flowers!", next = "2" },
+	{ local = "White flowers!", next = "4" },
+	{ local = "Yellow flowers!", next = "6" }
+]
+
+[wedding_planning_caldarus_1.2]
+writes = [{ wedding_flower_color = "red" }]
+portrait = "smile"
+local = "$Red flowers$? Red is the color of a dragon's flame... and romance. It is a good choice."
+next = "3"
+
+[wedding_planning_caldarus_1.3]
+portrait = "laugh"
+local = "We will go with red. I shall confirm our choice with Celine!"
+
+[wedding_planning_caldarus_1.4]
+writes = [{ wedding_flower_color = "white" }]
+portrait = "smile"
+local = "$White flowers$? They tell of history, and tradition. It is a fitting choice."
+next = "5"
+
+[wedding_planning_caldarus_1.5]
+portrait = "laugh"
+local = "We will go with white. I shall confirm our choice with Celine!"
+
+[wedding_planning_caldarus_1.6]
+writes = [{ wedding_flower_color = "yellow" }]
+portrait = "happy"
+local = "$Yellow flowers$? Is it because you noticed the garlands in my home?"
+next = "7"
+
+[wedding_planning_caldarus_1.7]
+portrait = "laugh"
+local = "You are most thoughtful, [Ari]."
+next = "8"
+
+[wedding_planning_caldarus_1.8]
+portrait = "smile"
+local = "We will go with yellow. I shall confirm our choice with Celine!"
+
+[wedding_planning_caldarus_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 1 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "[Ari], I have a question of seismic importance for you."
+next = "1"
+
+[wedding_planning_caldarus_2.1]
+portrait = "happy"
+effect = "sparkles"
+local = "What type of $cake$ should we serve at the reception?"
+prompts = [
+	{ local = "Vanilla!", next = "2" },
+	{ local = "Chocolate!", next = "5" },
+	{ local = "Mont Blanc!", next = "8" }
+]
+
+[wedding_planning_caldarus_2.2]
+writes = [{ wedding_cake_flavor = "vanilla" }]
+portrait = "smile"
+local = "$Vanilla Cake$? Coated in buttercream frosting?"
+next = "3"
+
+[wedding_planning_caldarus_2.3]
+portrait = "think"
+local = "Is this the classic choice for weddings today? Fascinating."
+next = "4"
+
+[wedding_planning_caldarus_2.4]
+portrait = "smile"
+local = "And it sounds delicious. I will inform Darcy that we have chosen $Vanilla Cake$ for our wedding day."
+
+[wedding_planning_caldarus_2.5]
+writes = [{ wedding_cake_flavor = "chocolate" }]
+portrait = "smile"
+local = "$Chocolate Cake$? With layers of dark chocolate mousse, perhaps?"
+next = "6"
+
+[wedding_planning_caldarus_2.6]
+portrait = "laugh"
+local = "Ah. I have made myself hungry simply thinking of it."
+next = "7"
+
+[wedding_planning_caldarus_2.7]
+portrait = "smile"
+local = "I will inform Darcy that we have chosen $Chocolate Cake$ for our wedding day, then."
+
+[wedding_planning_caldarus_2.8]
+writes = [{ wedding_cake_flavor = "mont_blanc" }]
+portrait = "laugh"
+local = "Oh! A rich, decadent =Mont Blanc= cake?"
+next = "9"
+
+[wedding_planning_caldarus_2.9]
+portrait = "embarrassed"
+local = "One big enough for all of our guests to enjoy?"
+next = "10"
+
+[wedding_planning_caldarus_2.10]
+portrait = "laugh"
+local = "Ahem. I will inform Darcy that we have chosen a =Mont Blanc= cake for our wedding day, then."
+
+[wedding_planning_caldarus_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 2 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "[Ari]... it is traditional to serve a meal after a wedding ceremony, is it not?"
+next = "1"
+
+[wedding_planning_caldarus_3.1]
+portrait = "think"
+local = "What kind of $meal$ shall we serve?"
+prompts = [
+	{ local = "Harvest Plate!", next = "2" },
+	{ local = "Mushroom Steak Dinner!", next = "5" },
+	{ local = "Spring Galette!", next = "8" }
+]
+
+[wedding_planning_caldarus_3.2]
+writes = [{ wedding_dinner_dish = "harvest_plate" }]
+portrait = "smile"
+local = "=Harvest Plate=? I like that idea!"
+next = "3"
+
+[wedding_planning_caldarus_3.3]
+portrait = "happy"
+local = "Such an option puts the bounty of Mistria on display. I believe our guests would enjoy it."
+next = "4"
+
+[wedding_planning_caldarus_3.4]
+portrait = "smile"
+local = "I will inform Reina that we have chosen the =Harvest Plate= as our dinner entrée."
+
+[wedding_planning_caldarus_3.5]
+writes = [{ wedding_dinner_dish = "mushroom_steak_dinner" }]
+portrait = "neutral"
+local = "=Mushroom Steak Dinner=? A fine choice."
+next = "6"
+
+[wedding_planning_caldarus_3.6]
+portrait = "happy"
+local = "Such a meal is a bounty for the eyes as well as the stomach."
+next = "7"
+
+[wedding_planning_caldarus_3.7]
+portrait = "smile"
+local = "I will inform Reina that we have chosen the =Mushroom Steak Dinner= as our dinner entrée."
+
+[wedding_planning_caldarus_3.8]
+writes = [{ wedding_dinner_dish = "spring_galette" }]
+portrait = "smile"
+local = "Oh! I do enjoy a =Spring Galette=..."
+next = "9"
+
+[wedding_planning_caldarus_3.9]
+portrait = "happy"
+local = "Such an option puts the bounty of Mistria on display. I believe our guests would enjoy it, too."
+next = "10"
+
+[wedding_planning_caldarus_3.10]
+portrait = "laugh"
+local = "I will inform Reina that we have chosen the =Spring Galette= as our dinner entrée."
+
+[wedding_planning_caldarus_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_fiance = true },
+	{ wedding_is_tomorrow = true }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "caring_special"
+local = "Tomorrow, we will join our light in matrimony..."
+next = "1"
+
+[wedding_planning_caldarus_4.1]
+portrait = "unsure_special"
+local = "It may surprise you, but... I am nervous."
+prompts = [
+	{ local = "Why are you nervous?", next = "2" },
+	{ local = "I'm nervous too...", next = "5" }
+]
+
+[wedding_planning_caldarus_4.2]
+portrait = "sigh"
+local = "Because... the depth of my feelings for you..."
+next = "3"
+
+[wedding_planning_caldarus_4.3]
+portrait = "serious_blush"
+local = "I wish for you to understand it, and for others to witness it."
+next = "4"
+
+[wedding_planning_caldarus_4.4]
+portrait = "caring_special"
+local = "Do not worry. Nerves are merely a reminder of the importance of this moment..."
+next = "8"
+
+[wedding_planning_caldarus_4.5]
+portrait = "sigh"
+local = "Is that so?"
+next = "6"
+
+[wedding_planning_caldarus_4.6]
+portrait = "happy"
+local = "Then... take my hand, and hear my words."
+next = "7"
+
+[wedding_planning_caldarus_4.7]
+portrait = "caring_special"
+local = "There is nothing to worry about. Nerves are merely a reminder of the importance of this moment..."
+next = "8"
+
+[wedding_planning_caldarus_4.8]
+portrait = "laugh_special"
+effect = "cheery"
+local = "We will see it through together."
+
+# celine
+[wedding_planning_celine_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_fiance = true },
+	{ engagement_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "embarrassed"
+local = "I'm so excited, [Ari]!"
+next = "1"
+
+[wedding_planning_celine_0.1]
+portrait = "blush"
+local = "Our wedding will be here before we know it!"
+next = "2"
+
+[wedding_planning_celine_0.2]
+portrait = "blush_closed_eyes"
+local = "And then we'll be living together, spending the rest of our lives together..."
+next = "3"
+
+[wedding_planning_celine_0.3]
+portrait = "shy_blush"
+local = "It can't come soon enough!"
+
+[wedding_planning_celine_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 0 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "neutral"
+local = "[Ari], I've been thinking more about our wedding..."
+next = "1"
+
+[wedding_planning_celine_1.1]
+portrait = "embarrassed"
+local = "What color $flowers$ do you think we should use for our decorations? It's hard to pick just one..."
+prompts = [
+	{ local = "Red flowers!", next = "2" },
+	{ local = "White flowers!", next = "4" },
+	{ local = "Multicolor flowers!", next = "6" }
+]
+
+[wedding_planning_celine_1.2]
+writes = [{ wedding_flower_color = "red" }]
+portrait = "very_happy"
+local = "$Red flowers$? So romantic."
+next = "3"
+
+[wedding_planning_celine_1.3]
+portrait = "blush"
+local = "I think that's a lovely idea! Red it is!"
+
+[wedding_planning_celine_1.4]
+writes = [{ wedding_flower_color = "white" }]
+portrait = "very_happy"
+local = "$White flowers$? Traditional, understated... they'll be pretty but not overwhelming."
+next = "5"
+
+[wedding_planning_celine_1.5]
+portrait = "blush"
+local = "I like it! White it is!"
+
+[wedding_planning_celine_1.6]
+writes = [{ wedding_flower_color = "multicolor" }]
+portrait = "very_happy"
+local = "$Multicolor flowers$? Oooh, then we don't have to choose!"
+next = "7"
+
+[wedding_planning_celine_1.7]
+portrait = "blush"
+local = "That's such a good idea."
+next = "8"
+
+[wedding_planning_celine_1.8]
+portrait = "blush_closed_eyes"
+local = "Perfect, let's do that!"
+
+[wedding_planning_celine_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 1 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "happy"
+local = "[Ari], do you have some time to talk $cakes$?"
+next = "1"
+
+[wedding_planning_celine_2.1]
+portrait = "neutral"
+local = "We need to choose a flavor for our wedding!"
+prompts = [
+	{ local = "Vanilla!", next = "2" },
+	{ local = "Chocolate!", next = "5" },
+	{ local = "Rose!", next = "8" }
+]
+
+[wedding_planning_celine_2.2]
+writes = [{ wedding_cake_flavor = "vanilla" }]
+portrait = "happy"
+local = "$Vanilla cake$? Maybe with a thick layer of white buttercream frosting?"
+next = "3"
+
+[wedding_planning_celine_2.3]
+portrait = "laugh"
+local = "That classic wedding cake look is so elegant!"
+next = "4"
+
+[wedding_planning_celine_2.4]
+portrait = "blush"
+local = "I love it. $Vanilla Cake$ it is, I'll let Darcy know!"
+
+[wedding_planning_celine_2.5]
+writes = [{ wedding_cake_flavor = "chocolate" }]
+portrait = "happy"
+local = "$Chocolate cake$? With dark chocolate icing?"
+next = "6"
+
+[wedding_planning_celine_2.6]
+portrait = "laugh"
+local = "That does sound decadent, doesn't it..."
+next = "7"
+
+[wedding_planning_celine_2.7]
+portrait = "blush"
+local = "Yeah, let's have a $Chocolate Cake$! I'll let Darcy know!"
+
+[wedding_planning_celine_2.8]
+writes = [{ wedding_cake_flavor = "rose" }]
+portrait = "happy"
+local = "Oh! That's such a fun idea! =Rose= cake, with a layer of Mistrian Berry preserves!"
+next = "9"
+
+[wedding_planning_celine_2.9]
+portrait = "blush"
+local = """It'll be so memorable... something that really says "Celine and [Ari]"."""
+next = "10"
+
+[wedding_planning_celine_2.10]
+portrait = "neutral"
+local = "I'll talk to Darcy right away, I bet she'll love the challenge of making a =Rose= cake!"
+
+[wedding_planning_celine_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 2 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "happy"
+local = "[Ari], we've got a very important decision to make for our wedding."
+next = "1"
+
+[wedding_planning_celine_3.1]
+portrait = "think"
+local = "What kind of $meal$ should we serve at the reception? It's hard to decide what will make everyone happy..."
+prompts = [
+	{ local = "Harvest Plate!", next = "2" },
+	{ local = "Mushroom Steak Dinner!", next = "5" },
+	{ local = "Spring Galette!", next = "8" }
+]
+
+[wedding_planning_celine_3.2]
+writes = [{ wedding_dinner_dish = "harvest_plate" }]
+portrait = "neutral"
+local = "$Harvest Plate$? That sounds yummy!"
+next = "3"
+
+[wedding_planning_celine_3.3]
+portrait = "happy"
+local = "It's both hearty and festive... Plus, all the different colored vegetables make such a pretty plate!"
+next = "4"
+
+[wedding_planning_celine_3.4]
+portrait = "blush"
+local = "Yeah, let's go with $Harvest plates$! I'll let Reina know!"
+
+[wedding_planning_celine_3.5]
+writes = [{ wedding_dinner_dish = "mushroom_steak_dinner" }]
+portrait = "laugh"
+local = "$Mushroom Steak Dinner$? That sounds fancy!"
+next = "6"
+
+[wedding_planning_celine_3.6]
+portrait = "embarrassed"
+local = "But, it is our wedding after all! So a fancy dish makes perfect sense!"
+next = "7"
+
+[wedding_planning_celine_3.7]
+portrait = "blush"
+local = "Yeah, let's go with $Mushroom Steak Dinners$! I'll let Reina know!"
+
+[wedding_planning_celine_3.8]
+writes = [{ wedding_dinner_dish = "spring_galette" }]
+portrait = "very_happy"
+local = "I love $Spring Galette$!"
+next = "9"
+
+[wedding_planning_celine_3.9]
+portrait = "neutral"
+local = "Why didn't I think of it before? It's sophisticated, delicious, everything our wedding guests could want!"
+next = "10"
+
+[wedding_planning_celine_3.10]
+portrait = "blush"
+local = "I'll go ahead and tell Reina that we want enough $Spring Galettes$ to feed the whole town!"
+
+[wedding_planning_celine_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_fiance = true },
+	{ wedding_is_tomorrow = true }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "blush"
+local = "It's almost time, [Ari]! Tomorrow is the big day!"
+next = "1"
+
+[wedding_planning_celine_4.1]
+portrait = "sweat"
+local = "I... I'm so excited I don't know if I'll be able to sleep tonight."
+prompts = [
+	{ local = "I'm really excited too.", next = "2" },
+	{ local = "I'm planning to go to bed early so tomorrow will come faster.", next = "4" }
+]
+
+[wedding_planning_celine_4.2]
+portrait = "embarrassed"
+local = "Really? You always seem so calm and collected!"
+next = "3"
+
+[wedding_planning_celine_4.3]
+portrait = "happy"
+local = "It does make me feel better that you're excited too."
+next = "6"
+
+[wedding_planning_celine_4.4]
+portrait = "laugh"
+local = "Haha, that's what Dell says the night before her birthday!"
+next = "5"
+
+[wedding_planning_celine_4.5]
+portrait = "embarrassed"
+local = "Still, you're right."
+next = "6"
+
+[wedding_planning_celine_4.6]
+portrait = "blush_closed_eyes"
+local = "I'll try to get plenty of rest for your sake, and you should do the same for me."
+
+# eiland
+[wedding_planning_eiland_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_fiance = true },
+	{ engagement_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "happy_blush"
+local = "[Ari], I'm so excited!"
+next = "1"
+
+[wedding_planning_eiland_0.1]
+portrait = "embarrassed"
+local = "Knowing that I'm to be your husband... what an amazing feeling!"
+next = "2"
+
+[wedding_planning_eiland_0.2]
+portrait = "neutral"
+local = "I've been doing a little reading about famous weddings in the past."
+next = "3"
+
+[wedding_planning_eiland_0.3]
+portrait = "think"
+local = "While I confess that most of them seem gaudy and over the top..."
+next = "4"
+
+[wedding_planning_eiland_0.4]
+portrait = "hope_special"
+local = "I still hope to draw some inspiration for our own. I want our wedding to be one for the ages!"
+
+[wedding_planning_eiland_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 0 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "happy"
+local = "Ah, [Ari]! Your timing is perfect. I was just thinking about some plans for our wedding..."
+next = "1"
+
+[wedding_planning_eiland_1.1]
+portrait = "neutral"
+local = "What color $flowers$ do you think we should use for our decorations?"
+prompts = [
+	{ local = "Red flowers!", next = "2" },
+	{ local = "White flowers!", next = "4" },
+	{ local = "Purple flowers!", next = "6" }
+]
+
+[wedding_planning_eiland_1.2]
+writes = [{ wedding_flower_color = "red" }]
+portrait = "embarrassed"
+local = "$Red flowers$? It's certainly a timelessly romantic color..."
+next = "3"
+
+[wedding_planning_eiland_1.3]
+portrait = "happy_blush"
+local = "Excellent, let's go with red! I'll let Celine know. Thank you, [Ari]!"
+
+[wedding_planning_eiland_1.4]
+writes = [{ wedding_flower_color = "white" }]
+portrait = "blush"
+local = "$White flowers$? Truly a classic throughout the ages."
+next = "5"
+
+[wedding_planning_eiland_1.5]
+portrait = "happy_blush"
+local = "Excellent, let's go with white! I'll let Celine know. Thank you, [Ari]!"
+
+[wedding_planning_eiland_1.6]
+writes = [{ wedding_flower_color = "purple" }]
+portrait = "happy_blush"
+local = "$Purple flowers$? I love that idea!"
+next = "7"
+
+[wedding_planning_eiland_1.7]
+portrait = "embarrassed"
+local = "The color of the $Dragonsworn Armor$ always makes me think of you, after all."
+next = "8"
+
+[wedding_planning_eiland_1.8]
+portrait = "hope_special"
+local = "Let's go with purple! I'll let Celine know."
+
+[wedding_planning_eiland_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 1 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "happy_blush"
+local = "Do you have a minute, [Ari]? I have a VERY important wedding planning question for you!"
+next = "1"
+
+[wedding_planning_eiland_2.1]
+portrait = "embarrassed"
+local = "What flavor $cake$ do you think we should serve at the reception? Think carefully!"
+prompts = [
+	{ local = "Vanilla!", next = "2" },
+	{ local = "Chocolate!", next = "5" },
+	{ local = "Golden Cheesecake!", next = "8" }
+]
+
+[wedding_planning_eiland_2.2]
+writes = [{ wedding_cake_flavor = "vanilla" }]
+portrait = "happy_blush"
+local = "$Vanilla Cake$? The kind decorated with white buttercream?"
+next = "3"
+
+[wedding_planning_eiland_2.3]
+portrait = "embarrassed"
+local = "Classic and delicious, it sounds perfect!"
+next = "4"
+
+[wedding_planning_eiland_2.4]
+portrait = "happy_blush"
+local = "$Vanilla Cake$ it is! I'll let Darcy know!"
+
+[wedding_planning_eiland_2.5]
+writes = [{ wedding_cake_flavor = "chocolate" }]
+portrait = "happy_blush"
+local = "=Chocolate Cake=? With dark chocolate frosting?"
+next = "6"
+
+[wedding_planning_eiland_2.6]
+portrait = "embarrassed"
+local = "Well... as you know, I'm certainly a fan. An excellent choice."
+next = "7"
+
+[wedding_planning_eiland_2.7]
+portrait = "happy_blush"
+local = "=Chocolate Cake= it is! I'll let Darcy know!"
+
+[wedding_planning_eiland_2.8]
+writes = [{ wedding_cake_flavor = "golden_cheesecake" }]
+portrait = "surprised"
+effect = "shock"
+local = "=Golden Cheesecake=!?"
+next = "9"
+
+[wedding_planning_eiland_2.9]
+portrait = "hope_special"
+local = "[Ari]... Did you pick that because it's my favorite? You're so sweet!"
+next = "10"
+
+[wedding_planning_eiland_2.10]
+portrait = "embarrassed"
+local = "It's the perfect dessert to celebrate our wedding with! =Golden Cheesecake= it is! I'll let Darcy know!"
+
+[wedding_planning_eiland_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 2 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "happy"
+local = "[Ari]! Can I grab you for a second? There's one final detail to decide on for the wedding..."
+next = "1"
+
+[wedding_planning_eiland_3.1]
+portrait = "embarrassed"
+local = "What kind of $meal$ should we serve at the reception?"
+prompts = [
+	{ local = "Harvest Plate!", next = "2" },
+	{ local = "Mushroom Steak Dinner!", next = "5" },
+	{ local = "Ice Cream Sundaes!", next = "8" }
+]
+
+[wedding_planning_eiland_3.2]
+writes = [{ wedding_dinner_dish = "harvest_plate" }]
+portrait = "happy_blush"
+local = "$Harvest Plate$? An excellent idea!"
+next = "3"
+
+[wedding_planning_eiland_3.3]
+portrait = "embarrassed"
+local = "It's certainly festive, and our guests are sure to enjoy it."
+next = "4"
+
+[wedding_planning_eiland_3.4]
+portrait = "happy_blush"
+local = "$Harvest plate$ it is! I'll let Reina know!"
+
+[wedding_planning_eiland_3.5]
+writes = [{ wedding_dinner_dish = "mushroom_steak_dinner" }]
+portrait = "think"
+local = "$Mushroom Steak Dinner$ you say?"
+next = "6"
+
+[wedding_planning_eiland_3.6]
+portrait = "embarrassed"
+local = "Yes, I think that will be quite memorable."
+next = "7"
+
+[wedding_planning_eiland_3.7]
+portrait = "happy_blush"
+local = "$Mushroom Steak Dinner$ it is! I'll let Reina know!"
+
+[wedding_planning_eiland_3.8]
+writes = [{ wedding_dinner_dish = "ice_cream_sundae" }]
+portrait = "embarrassed"
+local = "=Ice Cream Sundaes=? You mean that you'd like to serve nothing but cake and ice cream at our wedding?"
+next = "9"
+
+[wedding_planning_eiland_3.9]
+portrait = "happy_blush"
+local = "[Ari], you're truly my perfect match."
+next = "10"
+
+[wedding_planning_eiland_3.10]
+portrait = "hope_special"
+local = "This will be an unforgettable celebration! I'll let Reina know!"
+
+[wedding_planning_eiland_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_fiance = true },
+	{ wedding_is_tomorrow = true }
+]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "happy_blush"
+local = "Can you believe it, [Ari]? Tomorrow is the big day!"
+next = "1"
+
+[wedding_planning_eiland_4.1]
+portrait = "embarrassed"
+local = "I'm just so excited! How are you feeling?"
+prompts = [
+	{ local = "I'm excited, too.", next = "2" },
+	{ local = "Maybe we should have eloped...", next = "7" }
+]
+
+[wedding_planning_eiland_4.2]
+portrait = "happy_blush"
+local = "I think I can say with a strong degree of certainty that the whole town shares our excitement."
+next = "3"
+
+[wedding_planning_eiland_4.3]
+portrait = "hope_special"
+local = "It will be a day to remember in Mistria!"
+next = "4"
+
+[wedding_planning_eiland_4.4]
+portrait = "happy"
+local = "I've had word from my parents that they will be arriving in the morning to celebrate with us..."
+next = "5"
+
+[wedding_planning_eiland_4.5]
+portrait = "hope_special"
+local = "The Inn is busily preparing all our favorites..."
+next = "6"
+
+[wedding_planning_eiland_4.6]
+portrait = "embarrassed"
+local = "It will be the perfect day to celebrate our love."
+next = "12"
+
+[wedding_planning_eiland_4.7]
+portrait = "happy_blush"
+local = "Haha, the wait has felt impossibly long hasn't it?"
+next = "8"
+
+[wedding_planning_eiland_4.8]
+portrait = "hope_special"
+local = "Still, I'm glad we've had time to get all the details just so."
+next = "9"
+
+[wedding_planning_eiland_4.9]
+portrait = "happy"
+local = "I've had word from my parents that they will be arriving in the morning to celebrate with us..."
+next = "10"
+
+[wedding_planning_eiland_4.10]
+portrait = "hope_special"
+local = "The Inn is busily preparing all our favorites..."
+next = "11"
+
+[wedding_planning_eiland_4.11]
+portrait = "embarrassed"
+local = "It will be the perfect day to celebrate our love."
+next = "12"
+
+[wedding_planning_eiland_4.12]
+portrait = "happy_blush"
+local = "And then our lives together will begin at last."
+next = "13"
+
+[wedding_planning_eiland_4.13]
+portrait = "embarrassed"
+local = "I love you, [Ari]."
+
+# hayden
+[wedding_planning_hayden_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_fiance = true },
+	{ engagement_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "confident_blush"
+local = "I'm so happy, [Ari]..."
+next = "1"
+
+[wedding_planning_hayden_0.1]
+portrait = "happy_arm_down_blush"
+local = "I can hardly contain it!"
+next = "2"
+
+[wedding_planning_hayden_0.2]
+portrait = "shy_blush"
+local = "Imagining our lives together..."
+next = "3"
+
+[wedding_planning_hayden_0.3]
+portrait = "happy_arm_down_blush"
+local = "Our wedding can't come soon enough!"
+
+[wedding_planning_hayden_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 0 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "happy_arm_down"
+local = "[Ari]! Got a minute? Figure we ought to start nailing down some details for the wedding..."
+next = "1"
+
+[wedding_planning_hayden_1.1]
+portrait = "confident_blush"
+local = "What color $flowers$ do you think we should use for our decorations?"
+prompts = [
+	{ local = "Red flowers!", next = "2" },
+	{ local = "White flowers!", next = "4" },
+	{ local = "Yellow flowers!", next = "6" }
+]
+
+[wedding_planning_hayden_1.2]
+writes = [{ wedding_flower_color = "red" }]
+portrait = "happy_arm_down"
+local = "$Red flowers$? Sure, that sounds great to me! I bet they'll look real pretty."
+next = "3"
+
+[wedding_planning_hayden_1.3]
+portrait = "neutral_fist"
+local = "I'll let Celine know we decided on red. She already volunteered to grow whatever we want!"
+
+[wedding_planning_hayden_1.4]
+writes = [{ wedding_flower_color = "white" }]
+portrait = "happy_arm_down"
+local = "$White flowers$? That'd be real pretty, wouldn't it? Traditional, too."
+next = "5"
+
+[wedding_planning_hayden_1.5]
+portrait = "neutral_fist"
+local = "I'll let Celine know we decided on white. She already volunteered to grow whatever we want!"
+
+[wedding_planning_hayden_1.6]
+writes = [{ wedding_flower_color = "yellow" }]
+portrait = "happy_arm_down"
+local = "$Yellow flowers$? Now there's an idea!"
+next = "7"
+
+[wedding_planning_hayden_1.7]
+portrait = "shy_special"
+local = "Grandma loved yellow flowers, you know... said they were full of sunshine."
+next = "8"
+
+[wedding_planning_hayden_1.8]
+portrait = "happy_arm_down_blush"
+local = "It'd be nice to have a little reminder of her there with us on the big day..."
+next = "9"
+
+[wedding_planning_hayden_1.9]
+portrait = "confident_blush"
+local = "Thanks for suggesting it, [Ari]. I'll let Celine know we want to go with yellow!"
+
+[wedding_planning_hayden_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 1 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "happy_arm_down"
+local = "We've got another important decision to make today, [Ari]!"
+next = "1"
+
+[wedding_planning_hayden_2.1]
+portrait = "confident_blush"
+local = "What flavor $cake$ do you think we should serve at the reception?"
+prompts = [
+	{ local = "Vanilla!", next = "2" },
+	{ local = "Chocolate!", next = "5" },
+	{ local = "What about a wedding pie? Pumpkin, perhaps?", next = "8" }
+]
+
+[wedding_planning_hayden_2.2]
+writes = [{ wedding_cake_flavor = "vanilla" }]
+portrait = "happy_arm_down"
+local = "$Vanilla Cake$? Draped with white fondant?"
+next = "3"
+
+[wedding_planning_hayden_2.3]
+portrait = "neutral_fist"
+local = """That's perfect! It's exactly what I picture when I think "wedding cake"."""
+next = "4"
+
+[wedding_planning_hayden_2.4]
+portrait = "happy_arm_down_blush"
+local = "$Vanilla Cake$ it is! I'll go ahead and get our order in with Darcy!"
+
+[wedding_planning_hayden_2.5]
+writes = [{ wedding_cake_flavor = "chocolate" }]
+portrait = "happy_arm_down"
+local = "$Chocolate Cake$? With a dark chocolate ganache?"
+next = "6"
+
+[wedding_planning_hayden_2.6]
+portrait = "neutral_fist"
+local = "Mmm... sounds great to me! I think our guests will love it, too."
+next = "7"
+
+[wedding_planning_hayden_2.7]
+portrait = "happy_arm_down_blush"
+local = "$Chocolate Cake$ it is! I'll go ahead and get our order in with Darcy!"
+
+[wedding_planning_hayden_2.8]
+writes = [{ wedding_cake_flavor = "pumpkin_pie" }]
+portrait = "laugh_blush"
+local = "Gya ha ha ha!"
+next = "9"
+
+[wedding_planning_hayden_2.9]
+portrait = "neutral_fist"
+local = "A wedding =Pumpkin Pie=? Now there's an idea! Well... why not? It's our wedding after all!"
+next = "10"
+
+[wedding_planning_hayden_2.10]
+portrait = "happy_arm_down_blush"
+local = "=Pumpkin Pie=  it is! I'll go ahead and get our order in with Darcy!"
+
+[wedding_planning_hayden_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 2 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "happy_arm_down"
+local = "Our big day sure is coming up fast, huh?"
+next = "1"
+
+[wedding_planning_hayden_3.1]
+portrait = "confident_blush"
+local = "What kind of $meal$ do you think we should serve at the reception?"
+prompts = [
+	{ local = "Harvest Plate!", next = "2" },
+	{ local = "Mushroom Steak Dinner!", next = "6" },
+	{ local = "It's gotta be Vegetable Quiche!", next = "9" }
+]
+
+[wedding_planning_hayden_3.2]
+writes = [{ wedding_dinner_dish = "harvest_plate" }]
+portrait = "happy_arm_down"
+local = "$Harvest Plate$? Sure, that's a great idea!"
+next = "3"
+
+[wedding_planning_hayden_3.3]
+portrait = "neutral_fist"
+local = "All of our guests can enjoy it, and I doubt anyone will complain about the portion size!"
+next = "4"
+
+[wedding_planning_hayden_3.4]
+portrait = "laugh"
+local = "Gya ha ha ha!"
+next = "5"
+
+[wedding_planning_hayden_3.5]
+portrait = "happy_arm_down_blush"
+local = "Let's go with $Harvest plate$, then! I'll let Reina know!"
+
+[wedding_planning_hayden_3.6]
+writes = [{ wedding_dinner_dish = "mushroom_steak_dinner" }]
+portrait = "happy_arm_down"
+local = "=Mushroom Steak Dinner=? Ohhh, that's one of my favorites!"
+next = "7"
+
+[wedding_planning_hayden_3.7]
+portrait = "neutral_fist"
+local = "It seems like it'd be a great fit for serving at a wedding, too. Equal parts fancy and tasty!"
+next = "8"
+
+[wedding_planning_hayden_3.8]
+portrait = "happy_arm_down_blush"
+local = "Let's go with =Mushroom Steak Dinner=! I'll let Reina know!"
+
+[wedding_planning_hayden_3.9]
+writes = [{ wedding_dinner_dish = "vegetable_quiche" }]
+portrait = "happy_arm_down_blush"
+local = "=Vegetable Quiche=? I guess that's kind of our thing, isn't it...?"
+next = "10"
+
+[wedding_planning_hayden_3.10]
+portrait = "embarrassed"
+local = "That's so sweet, [Ari]! I can't believe I didn't think of it first!"
+next = "11"
+
+[wedding_planning_hayden_3.11]
+portrait = "happy_arm_down_blush"
+local = "Let's go with =Vegetable Quiche=! I'll let Reina know!"
+
+[wedding_planning_hayden_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_fiance = true },
+	{ wedding_is_tomorrow = true }
+]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "confident_blush"
+local = "Tomorrow's our big day, [Ari]..."
+next = "1"
+
+[wedding_planning_hayden_4.1]
+portrait = "happy_arm_down_blush"
+local = "How are you feeling? Excited?"
+prompts = [
+	{ local = "Yes! But I'm kind of nervous, too...", next = "2" },
+	{ local = "I'm so excited!", next = "6" }
+]
+
+[wedding_planning_hayden_4.2]
+portrait = "laugh_blush"
+local = "Gya ha ha ha!"
+next = "3"
+
+[wedding_planning_hayden_4.3]
+portrait = "embarrassed"
+local = "Awww, [Ari]... you're so cute."
+next = "4"
+
+[wedding_planning_hayden_4.4]
+portrait = "blush"
+local = "Don't you worry, there's nothing to be nervous about."
+next = "5"
+
+[wedding_planning_hayden_4.5]
+portrait = "confident_blush"
+local = "I'll be right there next to you the whole time."
+next = "9"
+
+[wedding_planning_hayden_4.6]
+portrait = "laugh_blush"
+local = "Gya ha ha ha!"
+next = "7"
+
+[wedding_planning_hayden_4.7]
+portrait = "embarrassed"
+local = "Me too! I'm full of butterflies, to be honest..."
+next = "8"
+
+[wedding_planning_hayden_4.8]
+portrait = "confident_blush"
+local = "But I know there's no need to be nervous."
+next = "9"
+
+[wedding_planning_hayden_4.9]
+portrait = "happy_arm_down_blush"
+local = "We're going to have an amazing time!"
+next = "10"
+
+[wedding_planning_hayden_4.10]
+portrait = "shy_special"
+local = "The ceremony will be beautiful, the reception will be a blast..."
+next = "11"
+
+[wedding_planning_hayden_4.11]
+portrait = "happy_arm_down_blush"
+local = "There's nothing for us to do now but look forward to enjoying ourselves!"
+
+# juniper
+[wedding_planning_juniper_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_fiance = true },
+	{ engagement_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+writes = [{ juniper_told_dozy_about_engagement = true }]
+portrait = "happy_blush"
+local = "I'm so excited, [Ari]!"
+next = "1"
+
+[wedding_planning_juniper_0.1]
+portrait = "embarrassed"
+local = "Just wait until I tell Dozy that you and I are getting married!"
+next = "2"
+
+[wedding_planning_juniper_0.2]
+portrait = "think_special"
+local = "I've got to find the right moment to tell him."
+next = "3"
+
+[wedding_planning_juniper_0.3]
+portrait = "happy_blush"
+local = "He'll be so excited to move to [farm_name] with me!"
+
+[wedding_planning_juniper_follow_up_dozy]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "dozy" },
+	{ juniper_is_fiance = true },
+	{ engagement_bump = true },
+	{ juniper_told_dozy_about_engagement = true }
+]
+portrait = "neutral"
+local = "(Dozy looks at you as if he already considers you family.)"
+next = "1"
+
+[wedding_planning_juniper_follow_up_dozy.1]
+portrait = "happy"
+local = "(You can tell this is his way of saying congratulations on your engagement with Juniper!)"
+
+[wedding_planning_juniper_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 0 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "think_special"
+local = "[Ari]! Good timing. I've been thinking more about our wedding plans..."
+next = "1"
+
+[wedding_planning_juniper_1.1]
+portrait = "happy_blush"
+local = "What color $flowers$ do you think we should use for our decorations?"
+prompts = [
+	{ local = "Red flowers!", next = "2" },
+	{ local = "White flowers!", next = "4" },
+	{ local = "Purple flowers!", next = "6" }
+]
+
+[wedding_planning_juniper_1.2]
+writes = [{ wedding_flower_color = "red" }]
+portrait = "think_special"
+local = "$Red flowers$? Hmmm, yes. Classic and romantic. I like it!"
+next = "3"
+
+[wedding_planning_juniper_1.3]
+portrait = "happy_blush"
+local = "Red it is!"
+
+[wedding_planning_juniper_1.4]
+writes = [{ wedding_flower_color = "white" }]
+portrait = "think_special"
+local = "$White flowers$? Yes, there is something nice about sticking with tradition."
+next = "5"
+
+[wedding_planning_juniper_1.5]
+portrait = "happy_blush"
+local = "White it is!"
+
+[wedding_planning_juniper_1.6]
+writes = [{ wedding_flower_color = "purple" }]
+portrait = "happy_blush"
+local = "Oooh $purple flowers$? Really?"
+next = "7"
+
+[wedding_planning_juniper_1.7]
+portrait = "think_special"
+local = "I wanted to suggest purple, but I know it's a little unorthodox."
+next = "8"
+
+[wedding_planning_juniper_1.8]
+portrait = "happy_blush"
+local = "I'm so glad we're on the same page! Purple it is!"
+
+[wedding_planning_juniper_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 1 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "think_special"
+local = "[Ari]! There you are! I have another wedding question for you..."
+next = "1"
+
+[wedding_planning_juniper_2.1]
+portrait = "happy_blush"
+local = "What flavor $cake$ do you think we should serve at the reception?"
+prompts = [
+	{ local = "Vanilla!", next = "2" },
+	{ local = "Chocolate!", next = "5" },
+	{ local = "Moon Fruit!", next = "8" }
+]
+
+[wedding_planning_juniper_2.2]
+writes = [{ wedding_cake_flavor = "vanilla" }]
+portrait = "think_special"
+local = "$Vanilla Cake$? With white buttercream frosting?"
+next = "3"
+
+[wedding_planning_juniper_2.3]
+portrait = "happy_blush"
+local = "You like the classic wedding cake look, huh?"
+next = "4"
+
+[wedding_planning_juniper_2.4]
+portrait = "neutral_blush"
+local = "Sounds good to me. $Vanilla Cake$ it is! I'll let Darcy know!"
+
+[wedding_planning_juniper_2.5]
+writes = [{ wedding_cake_flavor = "chocolate" }]
+portrait = "think_special"
+local = "$Chocolate Cake$? The kind with dark chocolate frosting?"
+next = "6"
+
+[wedding_planning_juniper_2.6]
+portrait = "happy_blush"
+local = "Mmm... that sounds really good."
+next = "7"
+
+[wedding_planning_juniper_2.7]
+portrait = "neutral_blush"
+local = "$Chocolate Cake$ it is! I'll let Darcy know!"
+
+[wedding_planning_juniper_2.8]
+writes = [{ wedding_cake_flavor = "moon_fruit" }]
+portrait = "happy_blush"
+local = "Oooh like a giant =Moon Fruit= cake?"
+next = "9"
+
+[wedding_planning_juniper_2.9]
+portrait = "angry_blush"
+local = "[Ari]..."
+next = "10"
+
+[wedding_planning_juniper_2.10]
+portrait = "embarrassed"
+local = "You're a genius!"
+next = "11"
+
+[wedding_planning_juniper_2.11]
+portrait = "happy_blush"
+local = "Everyone will be so surprised! I'll go ahead and tell Darcy we want a =Moon Fruit= wedding cake!"
+
+[wedding_planning_juniper_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 2 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "think_special"
+local = "[Ari]! We have another decision to make for the wedding!"
+next = "1"
+
+[wedding_planning_juniper_3.1]
+portrait = "happy_blush"
+local = "What kind of $meal$ should we serve at the reception?"
+prompts = [
+	{ local = "Harvest Plate!", next = "2" },
+	{ local = "Mushroom Steak Dinner!", next = "5" },
+	{ local = "Pizza", next = "8" }
+]
+
+[wedding_planning_juniper_3.2]
+writes = [{ wedding_dinner_dish = "harvest_plate" }]
+portrait = "think_special"
+local = "$Harvest Plate$? That's not a bad idea!"
+next = "3"
+
+[wedding_planning_juniper_3.3]
+portrait = "happy_blush"
+local = "It is a festive option and the portions are generous. I think our guests should be happy with that."
+next = "4"
+
+[wedding_planning_juniper_3.4]
+portrait = "neutral_blush"
+local = "$Harvest plate$ it is! I'll let Reina know!"
+
+[wedding_planning_juniper_3.5]
+writes = [{ wedding_dinner_dish = "mushroom_steak_dinner" }]
+portrait = "think_special"
+local = "$Mushroom Steak Dinner$? Oooh, fancy!"
+next = "6"
+
+[wedding_planning_juniper_3.6]
+portrait = "happy_blush"
+local = "It's a classy option and not too heavy. Plus, our guests will have plenty of room left for cake!"
+next = "7"
+
+[wedding_planning_juniper_3.7]
+portrait = "neutral_blush"
+local = "$Mushroom Steak Dinner$ it is! I'll let Reina know!"
+
+[wedding_planning_juniper_3.8]
+writes = [{ wedding_dinner_dish = "pizza" }]
+portrait = "angry_blush"
+local = "[Ari]... You want to serve =Pizza= to our wedding guests?"
+next = "9"
+
+[wedding_planning_juniper_3.9]
+portrait = "embarrassed"
+local = "..."
+next = "10"
+
+[wedding_planning_juniper_3.10]
+portrait = "happy_blush"
+local = "That's so like you... You always know just what I want!"
+next = "11"
+
+[wedding_planning_juniper_3.11]
+portrait = "wink"
+local = "I'll go ahead and tell Reina we want enough =Pizza= to feed the whole town!"
+
+[wedding_planning_juniper_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_fiance = true },
+	{ wedding_is_tomorrow = true }
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "happy_blush"
+local = "Tomorrow is the big day! I can't believe it's already here!"
+next = "1"
+
+[wedding_planning_juniper_4.1]
+portrait = "think_special"
+local = "I'm... a little bit nervous, to be honest."
+prompts = [
+	{ local = "Why are you nervous?", next = "2" },
+	{ local = "It's okay, I'm a little nervous too.", next = "3" }
+]
+
+[wedding_planning_juniper_4.2]
+portrait = "embarrassed"
+local = "It's not like I'm getting cold feet or anything!"
+next = "4"
+
+[wedding_planning_juniper_4.3]
+portrait = "think_special"
+local = "Don't get me wrong, it's not like I'm getting cold feet or anything..."
+next = "4"
+
+[wedding_planning_juniper_4.4]
+portrait = "ugh"
+local = "It's just... the whole town is going to be there. What if I mess something up in front of everyone?"
+prompts = [
+	{ local = "Well as long as you don't turn me into a horse...", next = "5" },
+	{ local = "You'll be okay! I'll be right there beside you!", next = "9" }
+]
+
+[wedding_planning_juniper_4.5]
+portrait = "laugh"
+local = "Oh ho ho ho!"
+next = "6"
+
+[wedding_planning_juniper_4.6]
+portrait = "think_special"
+local = "Fair enough. I guess I can't mess things up that badly, can I?"
+next = "7"
+
+[wedding_planning_juniper_4.7]
+portrait = "happy_blush"
+local = "Thanks, [Ari]."
+next = "8"
+
+[wedding_planning_juniper_4.8]
+portrait = "blush"
+local = "You always know just what to say."
+
+[wedding_planning_juniper_4.9]
+portrait = "happy_blush"
+local = "That's true..."
+next = "10"
+
+[wedding_planning_juniper_4.10]
+portrait = "embarrassed"
+local = "Cover for me if I make a mistake, okay?"
+next = "11"
+
+[wedding_planning_juniper_4.11]
+portrait = "happy_blush"
+local = "I promise not to turn you into a horse, at least."
+next = "12"
+
+[wedding_planning_juniper_4.12]
+portrait = "laugh"
+local = "Oh ho ho ho!"
+
+# march
+[wedding_planning_march_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_is_fiance = true },
+	{ engagement_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "eight_heart_happy_blush"
+local = "[Ari]..."
+next = "1"
+
+[wedding_planning_march_0.1]
+portrait = "eight_heart_flustered"
+local = "My heart is still pounding..."
+next = "2"
+
+[wedding_planning_march_0.2]
+portrait = "drunk"
+local = "I'm so happy!"
+next = "3"
+
+[wedding_planning_march_0.3]
+portrait = "eight_heart_happy_blush"
+local = "And I promise to make you just as happy, from now on..."
+
+[wedding_planning_march_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 0 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "tsundere"
+local = "Hey uh... you free to talk about some wedding plans, [Ari]?"
+next = "1"
+
+[wedding_planning_march_1.1]
+portrait = "eight_heart_blush"
+local = "What color $flowers$ do you think we should use for our decorations?"
+prompts = [
+	{ local = "Red flowers!", next = "2" },
+	{ local = "White flowers!", next = "4" },
+	{ local = "Blue flowers!", next = "6" }
+]
+
+[wedding_planning_march_1.2]
+writes = [{ wedding_flower_color = "red" }]
+portrait = "eight_heart_happy"
+local = "$Red flowers$? Yeah, that sounds good!"
+next = "3"
+
+[wedding_planning_march_1.3]
+portrait = "drunk"
+local = "Thanks, [Ari]. I'm not great with this kind of thing, so I appreciate your help. I'll let Celine know we want to go with red!"
+
+[wedding_planning_march_1.4]
+writes = [{ wedding_flower_color = "white" }]
+portrait = "eight_heart_happy"
+local = "$White flowers$? Cool, I'm good with that!"
+next = "5"
+
+[wedding_planning_march_1.5]
+portrait = "drunk"
+local = "Thanks, [Ari]. I'm not great with this kind of thing, so I appreciate your help. I'll let Celine know we want to go with white!"
+
+[wedding_planning_march_1.6]
+writes = [{ wedding_flower_color = "blue" }]
+portrait = "eight_heart_happy"
+local = "$Blue flowers$? Yeah... I like the sound of that!"
+next = "7"
+
+[wedding_planning_march_1.7]
+portrait = "drunk"
+local = "Funny, I didn't think I cared much about the flowers... but I actually think blue will look great!"
+next = "8"
+
+[wedding_planning_march_1.8]
+portrait = "eight_heart_happy"
+local = "Thanks for your help, [Ari]. I'll let Celine know we want to go with blue!"
+
+[wedding_planning_march_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 1 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "[Ari]! I want to get our order in with Darcy soon, so let me ask you..."
+next = "1"
+
+[wedding_planning_march_2.1]
+portrait = "think"
+local = "What flavor $cake$ do you think we should serve at our wedding reception?"
+prompts = [
+	{ local = "Vanilla!", next = "2" },
+	{ local = "Chocolate!", next = "5" },
+	{ local = "Triple Chocolate!!!", next = "8" }
+]
+
+[wedding_planning_march_2.2]
+writes = [{ wedding_cake_flavor = "vanilla" }]
+portrait = "eight_heart_happy"
+local = "$Vanilla Cake$? One of those three-tier fancy white ones?"
+next = "3"
+
+[wedding_planning_march_2.3]
+portrait = "think"
+local = "Yeah... yeah!"
+next = "4"
+
+[wedding_planning_march_2.4]
+portrait = "eight_heart_happy"
+local = "That'll be perfect. Let's do $Vanilla Cake$! I'll go ahead and tell Darcy."
+
+[wedding_planning_march_2.5]
+writes = [{ wedding_cake_flavor = "chocolate" }]
+portrait = "eight_heart_happy"
+local = "=Chocolate Cake=? The three-tier kind with chocolate glaze?"
+next = "6"
+
+[wedding_planning_march_2.6]
+portrait = "drunk"
+local = "Yeah... I love =Chocolate=."
+next = "7"
+
+[wedding_planning_march_2.7]
+portrait = "eight_heart_happy"
+local = "That'll be delicious. Let's do =Chocolate Cake=! I'll go ahead and tell Darcy."
+
+[wedding_planning_march_2.8]
+writes = [{ wedding_cake_flavor = "triple_chocolate" }]
+portrait = "eight_heart_happy"
+local = "Triple =Chocolate Cake=? Wow..."
+next = "9"
+
+[wedding_planning_march_2.9]
+portrait = "drunk"
+local = "I didn't know Darcy could do that! I do love =Chocolate=..."
+next = "10"
+
+[wedding_planning_march_2.10]
+portrait = "eight_heart_happy"
+local = "Yeah, I want that. Let's do Triple =Chocolate Cake=! I'll go ahead and tell Darcy."
+
+[wedding_planning_march_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 2 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "think"
+local = "Hm. Help me out, [Ari]... I don't know what we should pick."
+next = "1"
+
+[wedding_planning_march_3.1]
+portrait = "eight_heart_happy"
+local = "What kind of $meal$ do you think we should serve at the reception?"
+prompts = [
+	{ local = "Harvest Plate!", next = "2" },
+	{ local = "Mushroom Steak Dinner!", next = "5" },
+	{ local = "Sushi Platter!", next = "8" }
+]
+
+[wedding_planning_march_3.2]
+writes = [{ wedding_dinner_dish = "harvest_plate" }]
+portrait = "eight_heart_happy"
+local = "$Harvest Plate$? Yeah, that works!"
+next = "3"
+
+[wedding_planning_march_3.3]
+portrait = "think"
+local = "Seems like the kind of thing people would want to eat at a celebration..."
+next = "4"
+
+[wedding_planning_march_3.4]
+portrait = "eight_heart_happy"
+local = "$Harvest plate$ sounds good to me! I'll let Reina know. Thanks, [Ari]."
+
+[wedding_planning_march_3.5]
+writes = [{ wedding_dinner_dish = "mushroom_steak_dinner" }]
+portrait = "eight_heart_happy"
+local = "$Mushroom Steak Dinner$? Cool, I'm good with that!"
+next = "6"
+
+[wedding_planning_march_3.6]
+portrait = "think"
+local = "Seems kind of fancy, which seems appropriate for a wedding..."
+next = "7"
+
+[wedding_planning_march_3.7]
+portrait = "eight_heart_happy"
+local = "$Mushroom Steak Dinner$ it is! I'll let Reina know. Thanks, [Ari]."
+
+[wedding_planning_march_3.8]
+writes = [{ wedding_dinner_dish = "sushi_platter" }]
+portrait = "eight_heart_happy"
+local = "=Sushi Platter=? Do you think everyone would like that?"
+next = "9"
+
+[wedding_planning_march_3.9]
+portrait = "drunk"
+local = "I know I would! Definitely!"
+next = "10"
+
+[wedding_planning_march_3.10]
+portrait = "eight_heart_happy"
+local = "Since you want it too, I think we should go for it. I'll tell Reina we decided on =Sushi Platter=!"
+
+[wedding_planning_march_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_is_fiance = true },
+	{ wedding_is_tomorrow = true }
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "eight_heart_happy_blush"
+local = "Tomorrow's the day, [Ari]. Are you excited?"
+next = "1"
+
+[wedding_planning_march_4.1]
+portrait = "eight_heart_flustered"
+local = "I kind of... can't believe it's really happening."
+prompts = [
+	{ local = "I'm so nervous!", next = "2" },
+	{ local = "I'm so excited!", next = "5" }
+]
+
+[wedding_planning_march_4.2]
+portrait = "eight_heart_blush"
+local = "Y-Yeah. Honestly, I am too."
+next = "3"
+
+[wedding_planning_march_4.3]
+portrait = "tsundere"
+local = "Not that I'm doubting our decision to do this. Not one bit."
+next = "4"
+
+[wedding_planning_march_4.4]
+portrait = "eight_heart_happy_blush"
+local = "I just... Is it really okay for me to be this happy?"
+next = "8"
+
+[wedding_planning_march_4.5]
+portrait = "eight_heart_happy_blush"
+local = "Yeah, me too."
+next = "6"
+
+[wedding_planning_march_4.6]
+portrait = "tsundere"
+local = "I just keep wondering..."
+next = "7"
+
+[wedding_planning_march_4.7]
+portrait = "eight_heart_happy_blush"
+local = "Is it really okay for me to be this happy?"
+next = "8"
+
+[wedding_planning_march_4.8]
+portrait = "drunk"
+local = "It feels like my whole life is about to change for the better."
+next = "9"
+
+[wedding_planning_march_4.9]
+portrait = "eight_heart_happy_blush"
+local = "This will be my last day, my last night without you by my side..."
+next = "10"
+
+[wedding_planning_march_4.10]
+portrait = "drunk"
+local = "Tomorrow can't come soon enough!"
+
+# reina
+[wedding_planning_reina_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_fiance = true },
+	{ engagement_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush"
+effect = "cheery"
+local = "This is sooo exciting, [Ari]!"
+next = "1"
+
+[wedding_planning_reina_0.1]
+portrait = "blush_think"
+local = "I can't wait to tell everyone..."
+next = "2"
+
+[wedding_planning_reina_0.2]
+portrait = "blush_open_eyes"
+local = "I can't wait to plan everything!"
+next = "3"
+
+[wedding_planning_reina_0.3]
+portrait = "blush"
+local = "Most of all, I can't wait to marry you! Hehe!"
+
+[wedding_planning_reina_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 0 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush_open_eyes"
+local = "Question for you, [Ari]! I'm working on some wedding plans..."
+next = "1"
+
+[wedding_planning_reina_1.1]
+portrait = "blush_think"
+local = "What color $flowers$ do you think we should use for our decorations?"
+prompts = [
+	{ local = "Red flowers!", next = "2" },
+	{ local = "White flowers!", next = "4" },
+	{ local = "Yellow flowers!", next = "6" }
+]
+
+[wedding_planning_reina_1.2]
+writes = [{ wedding_flower_color = "red" }]
+portrait = "blush_open_eyes"
+local = "$Red flowers$? That sounds great to me! I'm sure they'll make the ambiance very romantic!"
+next = "3"
+
+[wedding_planning_reina_1.3]
+portrait = "blush"
+local = "Red it is! I'll let Celine know. Thanks, [Ari]!"
+
+[wedding_planning_reina_1.4]
+writes = [{ wedding_flower_color = "white" }]
+portrait = "blush_open_eyes"
+local = "$White flowers$? That sounds perfect to me! I'm sure they'll make the ambiance very classic!"
+next = "5"
+
+[wedding_planning_reina_1.5]
+portrait = "blush"
+local = "White it is! I'll let Celine know. Thanks, [Ari]!"
+
+[wedding_planning_reina_1.6]
+writes = [{ wedding_flower_color = "yellow" }]
+portrait = "blush_open_eyes"
+local = "$Yellow flowers$? Ooooh that sounds so fun! I love that idea!"
+next = "7"
+
+[wedding_planning_reina_1.7]
+portrait = "blush_think"
+local = "It's not exactly traditional, but that's what I like about it."
+next = "8"
+
+[wedding_planning_reina_1.8]
+portrait = "blush"
+local = "What a great suggestion. Thanks, [Ari]! I'll let Celine know we're going with yellow!"
+
+[wedding_planning_reina_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 1 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush_open_eyes"
+local = "We have an important decision to make today, [Ari]!"
+next = "1"
+
+[wedding_planning_reina_2.1]
+portrait = "blush_think"
+local = "What flavor $cake$ do you think we should serve at the reception?"
+prompts = [
+	{ local = "Vanilla!", next = "2" },
+	{ local = "Chocolate!", next = "5" },
+	{ local = "What about... Wildberry?", next = "8" }
+]
+
+[wedding_planning_reina_2.2]
+writes = [{ wedding_cake_flavor = "vanilla" }]
+portrait = "blush"
+local = "$Vanilla Cake$? Oooh with a white buttercream frosting?"
+next = "3"
+
+[wedding_planning_reina_2.3]
+portrait = "blush_open_eyes"
+local = "I do love a classic wedding cake!"
+next = "4"
+
+[wedding_planning_reina_2.4]
+portrait = "blush"
+local = "$Vanilla Cake$ it is! I'll go ahead and get our order in with Darcy!"
+
+[wedding_planning_reina_2.5]
+writes = [{ wedding_cake_flavor = "chocolate" }]
+portrait = "blush"
+local = "$Chocolate Cake$? With a nice dark chocolate frosting?"
+next = "6"
+
+[wedding_planning_reina_2.6]
+portrait = "blush_open_eyes"
+local = "That sounds great! Equal parts elegant and delicious."
+next = "7"
+
+[wedding_planning_reina_2.7]
+portrait = "blush"
+local = "$Chocolate Cake$ it is! I'll go ahead and get our order in with Darcy!"
+
+[wedding_planning_reina_2.8]
+writes = [{ wedding_cake_flavor = "wildberry" }]
+portrait = "blush"
+local = "=Wildberry Cake=? Oh! A cake flavor based on my pie recipe? That's such a cute idea..."
+next = "9"
+
+[wedding_planning_reina_2.9]
+portrait = "blush_open_eyes"
+local = "You're such a romantic, [Ari]! Hehe!"
+next = "10"
+
+[wedding_planning_reina_2.10]
+portrait = "blush"
+local = "=Wildberry Cake= it is! I'll share some notes with Darcy and we'll see what she can do!"
+
+[wedding_planning_reina_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 2 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush_open_eyes"
+local = "Have a minute, [Ari]? We have one more wedding decision to make... And it's a big one."
+next = "1"
+
+[wedding_planning_reina_3.1]
+portrait = "blush"
+local = "What kind of $meal$ should we serve at the reception?"
+prompts = [
+	{ local = "Harvest Plate!", next = "2" },
+	{ local = "Mushroom Steak Dinner!", next = "5" },
+	{ local = "Rosemary Garlic Noodles!", next = "8" }
+]
+
+[wedding_planning_reina_3.2]
+writes = [{ wedding_dinner_dish = "harvest_plate" }]
+portrait = "blush_open_eyes"
+local = "$Harvest Plate$? Nice, I think our guests will be happy with that!"
+next = "3"
+
+[wedding_planning_reina_3.3]
+portrait = "blush_think"
+local = "It's tasty, festive, and there'll be plenty to go around!"
+next = "4"
+
+[wedding_planning_reina_3.4]
+portrait = "blush"
+local = "$Harvest plate$ it is! I'll let Ma and Pa know, since they volunteered to handle the cooking for the big day!"
+
+[wedding_planning_reina_3.5]
+writes = [{ wedding_dinner_dish = "mushroom_steak_dinner" }]
+portrait = "blush_open_eyes"
+local = "$Mushroom Steak Dinner$? Mmm, that sounds great!"
+next = "6"
+
+[wedding_planning_reina_3.6]
+portrait = "blush_think"
+local = """It's got a "fine dining" feel to it, but the flavors make it such a comfort food!"""
+next = "7"
+
+[wedding_planning_reina_3.7]
+portrait = "blush"
+local = "$Mushroom Steak Dinner$ it is! I'll let Ma and Pa know, since they volunteered to handle the cooking for the big day!"
+
+[wedding_planning_reina_3.8]
+writes = [{ wedding_dinner_dish = "rosemary_garlic_noodles" }]
+portrait = "blush"
+local = "Ooooh $Rosemary Garlic Noodles$? Are you suggesting it because you know it's my favorite?"
+next = "9"
+
+[wedding_planning_reina_3.9]
+portrait = "blush_open_eyes"
+local = "You're so sweet, [Ari]! Well, if you're sure that's what you want, too..."
+next = "10"
+
+[wedding_planning_reina_3.10]
+portrait = "blush"
+local = "$Rosemary Garlic Noodles$ it is! I'll let Ma and Pa know, since they volunteered to handle the cooking for the big day!"
+
+[wedding_planning_reina_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_fiance = true },
+	{ wedding_is_tomorrow = true }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush_open_eyes"
+local = "I can't believe it... we're getting married tomorrow!"
+next = "1"
+
+[wedding_planning_reina_4.1]
+portrait = "blush_special"
+local = "T-Tomorrow..."
+next = "2"
+
+[wedding_planning_reina_4.2]
+portrait = "embarrassed"
+local = "Oh no, I suddenly feel super nervous!"
+prompts = [
+	{ local = "What's there to be anxious about?", next = "3" },
+	{ local = "I'm feeling nervous too... I think that's normal.", next = "6" }
+]
+
+[wedding_planning_reina_4.3]
+portrait = "blush_special"
+local = "Well, when you put it that way..."
+next = "4"
+
+[wedding_planning_reina_4.4]
+portrait = "blush_think"
+local = "..."
+next = "5"
+
+[wedding_planning_reina_4.5]
+portrait = "embarrassed"
+local = "Ahhh, I'm still nervous!"
+next = "8"
+
+[wedding_planning_reina_4.6]
+portrait = "blush_special"
+local = "Really?"
+next = "7"
+
+[wedding_planning_reina_4.7]
+portrait = "embarrassed"
+local = "Ahhh, I'm glad it's not just me!"
+next = "8"
+
+[wedding_planning_reina_4.8]
+portrait = "blush_special"
+local = "But you know, I'm really excited too..."
+next = "9"
+
+[wedding_planning_reina_4.9]
+portrait = "blush_open_eyes"
+local = "We're really doing this, [Ari]!"
+next = "10"
+
+[wedding_planning_reina_4.10]
+portrait = "blush"
+effect = "cheery"
+local = "We're going to get married tomorrow!"
+
+# ryis
+[wedding_planning_ryis_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_fiance = true },
+	{ engagement_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "embarrassed"
+local = "You're all I can think about, [Ari]! I'm so excited."
+next = "1"
+
+[wedding_planning_ryis_0.1]
+portrait = "thoughtful_blush"
+local = "I already sent letters to my family, but I should tell Uncle Landen soon, too."
+next = "2"
+
+[wedding_planning_ryis_0.2]
+portrait = "happy_blush"
+local = "He'll be buying people rounds at the Inn for weeks!"
+next = "3"
+
+[wedding_planning_ryis_0.3]
+portrait = "embarrassed"
+local = "I might be, too. Oh man. I'm so happy!"
+
+[wedding_planning_ryis_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 0 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy"
+local = "Just who I wanted to see. I was just going over our wedding plans, [Ari]."
+next = "1"
+
+[wedding_planning_ryis_1.1]
+portrait = "neutral"
+local = "What color $flowers$ do you think we should use for our decorations?"
+prompts = [
+	{ local = "Red flowers!", next = "2" },
+	{ local = "White flowers!", next = "4" },
+	{ local = "Blue flowers!", next = "6" }
+]
+
+[wedding_planning_ryis_1.2]
+writes = [{ wedding_flower_color = "red" }]
+portrait = "thoughtful"
+local = "$Red flowers$? Super romantic choice."
+next = "3"
+
+[wedding_planning_ryis_1.3]
+portrait = "closed_eyes_smile"
+local = "Red... Yeah, I like that. I love it!"
+
+[wedding_planning_ryis_1.4]
+writes = [{ wedding_flower_color = "white" }]
+portrait = "thoughtful"
+local = "$White flowers$? That's classic."
+next = "5"
+
+[wedding_planning_ryis_1.5]
+portrait = "wink"
+local = "You have good taste, [Ari]. Let's go with white!"
+
+[wedding_planning_ryis_1.6]
+writes = [{ wedding_flower_color = "blue" }]
+portrait = "thoughtful"
+local = "$Blue flowers$?"
+next = "7"
+
+[wedding_planning_ryis_1.7]
+portrait = "happy"
+local = "Nice, I was also thinking blue."
+next = "8"
+
+[wedding_planning_ryis_1.8]
+portrait = "wink"
+local = "Blue it is!"
+
+[wedding_planning_ryis_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 1 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy"
+local = "[Ari], hey! Nice timing. Got another wedding question for you..."
+next = "1"
+
+[wedding_planning_ryis_2.1]
+portrait = "thoughtful"
+local = "What flavor of $cake$ do you want at the reception?"
+prompts = [
+	{ local = "Vanilla!", next = "2" },
+	{ local = "Chocolate!", next = "5" },
+	{ local = "Golden Cheesecake!", next = "8" }
+]
+
+[wedding_planning_ryis_2.2]
+writes = [{ wedding_cake_flavor = "vanilla" }]
+portrait = "neutral"
+local = "$Vanilla Cake$? With buttercream frosting?"
+next = "3"
+
+[wedding_planning_ryis_2.3]
+portrait = "happy"
+local = "Can't beat the classics. And I know Uncle Landen will love that buttercream."
+next = "4"
+
+[wedding_planning_ryis_2.4]
+portrait = "thoughtful"
+local = "$Vanilla Cake$ sounds great. I'll tell my sisters... I know they'll want to bake this one themselves."
+
+[wedding_planning_ryis_2.5]
+writes = [{ wedding_cake_flavor = "chocolate" }]
+portrait = "neutral"
+local = "$Chocolate Cake$? The kind with dark chocolate ganache?"
+next = "6"
+
+[wedding_planning_ryis_2.6]
+portrait = "happy"
+local = "That honestly sounds so good."
+next = "7"
+
+[wedding_planning_ryis_2.7]
+portrait = "thoughtful"
+local = "$Chocolate Cake$ sounds great. I'll tell my sisters... I know they'll want to bake this one themselves."
+
+[wedding_planning_ryis_2.8]
+writes = [{ wedding_cake_flavor = "golden_cheesecake" }]
+portrait = "happy_blush"
+local = "=Golden Cheesecake=? You don't have to pick that on my account..."
+next = "9"
+
+[wedding_planning_ryis_2.9]
+portrait = "embarrassed"
+local = "But honestly, that sounds really great to me."
+next = "10"
+
+[wedding_planning_ryis_2.10]
+portrait = "happy_blush"
+local = "=Golden Cheesecake= it is. I'll tell my sisters... I know they'll want to make this one themselves."
+
+[wedding_planning_ryis_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 2 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy"
+local = "[Ari]! Got another wedding decision for us to make."
+next = "1"
+
+[wedding_planning_ryis_3.1]
+portrait = "thoughtful"
+local = "What kind of $meal$ should we serve at the reception?"
+prompts = [
+	{ local = "Harvest Plate!", next = "2" },
+	{ local = "Mushroom Steak Dinner!", next = "5" },
+	{ local = "Lobster Rolls!", next = "8" }
+]
+
+[wedding_planning_ryis_3.2]
+writes = [{ wedding_dinner_dish = "harvest_plate" }]
+portrait = "neutral"
+local = "$Harvest Plate$? Yeah, I like that."
+next = "3"
+
+[wedding_planning_ryis_3.3]
+portrait = "thoughtful"
+local = "Colorful, fresh... little bit of everything. I think our guests will like that!"
+next = "4"
+
+[wedding_planning_ryis_3.4]
+portrait = "happy"
+local = "Then I'll put us down for the $Harvest Plate$ and pass it on to Reina."
+
+[wedding_planning_ryis_3.5]
+writes = [{ wedding_dinner_dish = "mushroom_steak_dinner" }]
+portrait = "neutral"
+local = "$Mushroom Steak Dinner$? Pretty fancy."
+next = "6"
+
+[wedding_planning_ryis_3.6]
+portrait = "happy"
+local = "I like it! The meal meets the moment, and sets the stage for cake."
+next = "7"
+
+[wedding_planning_ryis_3.7]
+portrait = "neutral"
+local = "Then I'll put us down for $Mushroom Steak Dinner$ and pass it on to Reina!"
+
+[wedding_planning_ryis_3.8]
+writes = [{ wedding_dinner_dish = "lobster_roll" }]
+portrait = "surprised"
+local = "Really? You're cool with =Lobster Rolls=?"
+next = "9"
+
+[wedding_planning_ryis_3.9]
+portrait = "happy"
+local = "That's why I'm marrying you... you're always thinking of me."
+next = "10"
+
+[wedding_planning_ryis_3.10]
+portrait = "wink"
+local = "I'll put us down for =Lobster Rolls= and pass it on to Reina!"
+
+[wedding_planning_ryis_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_fiance = true },
+	{ wedding_is_tomorrow = true }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "blush_special"
+local = "Tomorrow's the big day, [Ari]. Can't believe it's already here."
+next = "1"
+
+
+[wedding_planning_ryis_4.1]
+portrait = "thoughtful_blush"
+local = "I'm so excited, but I'm also kind of nervous..."
+prompts = [
+	{ local = "But you look so relaxed!", next = "2" },
+	{ local = "It's okay... I'm also nervous.", next = "6" }
+]
+
+
+[wedding_planning_ryis_4.2]
+portrait = "blush_special"
+local = "You think so?"
+next = "3"
+
+
+[wedding_planning_ryis_4.3]
+portrait = "embarrassed"
+local = "I always try to keep it cool, on the outside at least."
+next = "4"
+
+
+[wedding_planning_ryis_4.4]
+portrait = "happy_blush"
+local = "It helps to know that you'll be there by my side."
+next = "5"
+
+[wedding_planning_ryis_4.5]
+portrait = "embarrassed"
+local = "Plus, my dad and big sister are coming in from the Capital for the day, too!"
+next = "9"
+
+
+[wedding_planning_ryis_4.6]
+portrait = "embarrassed"
+local = "Really? That makes me feel better..."
+next = "7"
+
+
+[wedding_planning_ryis_4.7]
+portrait = "happy_blush"
+local = "It helps to remember you'll be there by my side, too."
+next = "8"
+
+
+[wedding_planning_ryis_4.8]
+portrait = "blush_special"
+local = "Plus, my dad and big sister are coming in from the Capital to celebrate with us!"
+next = "9"
+
+
+[wedding_planning_ryis_4.9]
+portrait = "happy_blush"
+local = "It's going to be a perfect day. I'm sure of it!"
+
+
+# seridia
+[wedding_planning_seridia_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_fiance = true },
+	{ engagement_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "blush"
+local = "You have made my heart wild again, [Ari]."
+next = "1"
+
+[wedding_planning_seridia_0.1]
+portrait = "happy_blush"
+local = "I am not usually one for tradition, but the joining of light ceremony..."
+next = "2"
+
+[wedding_planning_seridia_0.2]
+portrait = "blush_think"
+local = "It is meaningful to me."
+next = "3"
+
+[wedding_planning_seridia_0.3]
+portrait = "embarrassed"
+local = "I cannot wait to share in it with you."
+
+[wedding_planning_seridia_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 0 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "neutral"
+local = "[Ari]. It has been an age since I have attended a mortal wedding, let alone participated in one... I require your wisdom."
+next = "1"
+
+[wedding_planning_seridia_1.1]
+portrait = "happy"
+local = "What color $flowers$ would suit the ceremony of our binding?"
+prompts = [
+	{ local = "Red flowers!", next = "2" },
+	{ local = "White flowers!", next = "4" },
+	{ local = "Ebony flowers!", next = "6" }
+]
+
+[wedding_planning_seridia_1.2]
+writes = [{ wedding_flower_color = "red" }]
+portrait = "sly_think"
+local = "$Red flowers$? Yes... I do like the look of crimson. There is something striking about it."
+next = "3"
+
+[wedding_planning_seridia_1.3]
+portrait = "sly"
+local = "Let us have red flowers, then. I will make the necessary arrangements."
+
+[wedding_planning_seridia_1.4]
+writes = [{ wedding_flower_color = "white" }]
+portrait = "sly_think"
+local = "$White flowers$? Yes... blossoms like the pinpricks of stars. A fine choice."
+next = "5"
+
+[wedding_planning_seridia_1.5]
+portrait = "sly"
+local = "Let us have white flowers, then. I will make the necessary arrangements."
+
+[wedding_planning_seridia_1.6]
+writes = [{ wedding_flower_color = "ebony" }]
+portrait = "surprise"
+local = "$Ebony Flowers$? Like the absence of light in the infinite void?"
+next = "7"
+
+[wedding_planning_seridia_1.7]
+portrait = "blush"
+local = "You know my tastes... as well as my heart."
+next = "8"
+
+[wedding_planning_seridia_1.8]
+portrait = "embarrassed"
+local = "Yes. Ebony flowers would suit us. I will make the necessary arrangements."
+
+[wedding_planning_seridia_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 1 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "closed_eyes"
+local = "[Ari]. The time has come to make a gravely important decision..."
+next = "1"
+
+[wedding_planning_seridia_2.1]
+portrait = "sly"
+local = "What flavor of $cake$ shall we serve at our reception?"
+prompts = [
+	{ local = "Vanilla!", next = "2" },
+	{ local = "Chocolate!", next = "5" },
+	{ local = "Spellfruit!", next = "8" }
+]
+
+[wedding_planning_seridia_2.2]
+writes = [{ wedding_cake_flavor = "vanilla" }]
+portrait = "sly_think"
+local = "$Vanilla Cake$? With buttercream frosting? And little buttercream florets?"
+next = "3"
+
+[wedding_planning_seridia_2.3]
+portrait = "sly"
+local = "How classic. Such a confection sounds delightful."
+next = "4"
+
+[wedding_planning_seridia_2.4]
+portrait = "happy"
+local = "Yes... we shall have $Vanilla Cake$ for our celebration. Darcy will be made aware."
+
+[wedding_planning_seridia_2.5]
+writes = [{ wedding_cake_flavor = "chocolate" }]
+portrait = "sly_think"
+local = "$Chocolate Cake$? With chocolate ganache frosting? And edible flowers adorning it?"
+next = "6"
+
+[wedding_planning_seridia_2.6]
+portrait = "sly"
+local = "Such a confection will surely thrill and delight."
+next = "7"
+
+[wedding_planning_seridia_2.7]
+portrait = "happy"
+local = "Yes... we shall have $Chocolate Cake$ for our celebration. Darcy will be made aware."
+
+[wedding_planning_seridia_2.8]
+writes = [{ wedding_cake_flavor = "spellfruit" }]
+portrait = "sly_think"
+local = "=Spellfruit= cake? What a fine suggestion..."
+next = "9"
+
+[wedding_planning_seridia_2.9]
+portrait = "sly"
+local = "Such a cake is sure to be delicious, as well as auspicious."
+next = "10"
+
+[wedding_planning_seridia_2.10]
+portrait = "angry_brows"
+local = "I will inform Darcy we are to have a =Spellfruit= cake. Surely she will rise to the occasion."
+
+[wedding_planning_seridia_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 2 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "closed_eyes"
+local = "[Ari]. Any decision about our wedding must be made as a united front. Strong and resolute."
+next = "1"
+
+[wedding_planning_seridia_3.1]
+portrait = "smile"
+local = "As such... what sort of $meal$ shall we serve at our reception?"
+prompts = [
+	{ local = "Harvest Plate!", next = "2" },
+	{ local = "Mushroom Steak Dinner!", next = "5" },
+	{ local = "Monster Mash!", next = "8" }
+]
+
+[wedding_planning_seridia_3.2]
+writes = [{ wedding_dinner_dish = "harvest_plate" }]
+portrait = "think"
+local = "$Harvest Plate$? Yes, this is a good choice."
+next = "3"
+
+[wedding_planning_seridia_3.3]
+portrait = "sly"
+local = "Such a dish showcases the finest that Mistria has to offer. It is sure to impress."
+next = "4"
+
+[wedding_planning_seridia_3.4]
+portrait = "happy"
+local = "Yes, we shall serve $Harvest plate$. Reina will be made aware of our decision."
+
+[wedding_planning_seridia_3.5]
+writes = [{ wedding_dinner_dish = "mushroom_steak_dinner" }]
+portrait = "think"
+local = "$Mushroom Steak Dinner$? Yes, this is a fine choice."
+next = "6"
+
+[wedding_planning_seridia_3.6]
+portrait = "sly"
+local = "Such a plate is both impressive and elegant. A meal fit for a queen."
+next = "7"
+
+[wedding_planning_seridia_3.7]
+portrait = "happy"
+local = "Yes, we shall serve $Mushroom Steak Dinner$. Reina will be made aware of our decision."
+
+[wedding_planning_seridia_3.8]
+writes = [{ wedding_dinner_dish = "monster_mash" }]
+portrait = "surprise"
+local = "[Ari]! You are also a connoisseur of the subtleties of $Monster Mash$?"
+next = "9"
+
+[wedding_planning_seridia_3.9]
+portrait = "embarrassed"
+local = "We are truly well-matched."
+next = "10"
+
+[wedding_planning_seridia_3.10]
+portrait = "happy_blush"
+local = "Yes, we shall serve $Monster Mash$. Reina will be made aware of our decision."
+
+[wedding_planning_seridia_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_fiance = true },
+	{ wedding_is_tomorrow = true }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "smile"
+local = "It is the eve of our ceremony, [Ari]."
+next = "1"
+
+[wedding_planning_seridia_4.1]
+portrait = "surprise"
+local = "Are you nervous?"
+prompts = [
+	{ local = "Are you?", next = "2" },
+	{ local = "A little bit. I want everything to go smoothly.", next = "6" }
+]
+
+[wedding_planning_seridia_4.2]
+portrait = "closed_eyes"
+local = "About joining with you in matrimony? Never."
+next = "3"
+
+[wedding_planning_seridia_4.3]
+portrait = "embarrassed"
+local = "I do not hesitate to pursue the things I desire."
+next = "4"
+
+[wedding_planning_seridia_4.4]
+portrait = "blush_think"
+local = "No, it is not nervousness I feel..."
+next = "5"
+
+[wedding_planning_seridia_4.5]
+portrait = "blush"
+local = "It is exhilaration."
+
+[wedding_planning_seridia_4.6]
+portrait = "closed_eyes"
+local = "As do I. But [Ari]..."
+next = "7"
+
+[wedding_planning_seridia_4.7]
+portrait = "embarrassed"
+local = "Even if things do not go smoothly, we will be together."
+next = "8"
+
+[wedding_planning_seridia_4.8]
+portrait = "blush_think"
+local = "No matter what happens, I will take your hand in mine, and we will join our light..."
+next = "9"
+
+[wedding_planning_seridia_4.9]
+portrait = "sinister_blush"
+local = "And if chaos comes, we will revel in it together."
+
+# valen
+[wedding_planning_valen_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_fiance = true },
+	{ engagement_bump = true }
+]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "happy_blush"
+local = "I can't find words to express how excited I am for our wedding..."
+next = "1"
+
+[wedding_planning_valen_0.1]
+portrait = "embarrassed"
+local = "I'm so distracted that I can barely get any work done."
+next = "2"
+
+[wedding_planning_valen_0.2]
+portrait = "think_blush"
+local = "Perhaps I can treat wedding planning as a research project..."
+next = "3"
+
+[wedding_planning_valen_0.3]
+portrait = "happy_blush"
+local = "Yes! I'll begin compiling notes."
+
+[wedding_planning_valen_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 0 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "think_smile"
+local = "[Ari]! There's an important issue that I can't possibly decide alone..."
+next = "1"
+
+[wedding_planning_valen_1.1]
+portrait = "neutral"
+local = "What color $flowers$ should we have at our ceremony?"
+prompts = [
+	{ local = "Red flowers!", next = "2" },
+	{ local = "White flowers!", next = "4" },
+	{ local = "Lavender flowers!", next = "6" }
+]
+
+[wedding_planning_valen_1.2]
+writes = [{ wedding_flower_color = "red" }]
+portrait = "happy"
+local = "$Red flowers$? How romantic... the color of both the metaphorical and literal heart."
+next = "3"
+
+[wedding_planning_valen_1.3]
+portrait = "neutral_blush"
+local = "A pragmatic choice. I'll make sure Celine knows we've chosen $red$."
+
+[wedding_planning_valen_1.4]
+writes = [{ wedding_flower_color = "white" }]
+portrait = "happy"
+local = "$White flowers$? How elegant... there's something so classic about it."
+next = "5"
+
+[wedding_planning_valen_1.5]
+portrait = "neutral_blush"
+local = "A pragmatic choice. I'll make sure Celine knows we've chosen $white$."
+
+[wedding_planning_valen_1.6]
+writes = [{ wedding_flower_color = "purple" }]
+portrait = "happy"
+local = "$Lavender flowers$? What a lovely suggestion..."
+next = "7"
+
+[wedding_planning_valen_1.7]
+portrait = "embarrassed"
+local = "Ah. Did you choose that color because you know I'm partial to it?"
+next = "8"
+
+[wedding_planning_valen_1.8]
+portrait = "happy_blush"
+local = "I'm touched. I'll make sure Celine knows we've chosen $lavender$."
+
+[wedding_planning_valen_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 1 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "embarrassed"
+local = "[Ari], I have a confession to make. My knowledge of desserts is actually quite poor... I'm in need of your expertise."
+next = "1"
+
+[wedding_planning_valen_2.1]
+portrait = "think_smile"
+local = "What sort of $cake$ should we serve at the reception?"
+prompts = [
+	{ local = "Vanilla!", next = "2" },
+	{ local = "Chocolate!", next = "5" },
+	{ local = "Rose Hip cake!", next = "8" }
+]
+
+[wedding_planning_valen_2.2]
+writes = [{ wedding_cake_flavor = "vanilla" }]
+portrait = "neutral"
+local = "$Vanilla Cake$? With buttercream frosting?"
+next = "3"
+
+[wedding_planning_valen_2.3]
+portrait = "happy"
+local = "Yes, that sounds lovely. Traditions exist for a reason, after all... I'm certain everyone will love it."
+next = "4"
+
+[wedding_planning_valen_2.4]
+portrait = "neutral"
+local = "Perfect. I'll make certain Darcy knows we've decided on $Vanilla Cake$."
+
+[wedding_planning_valen_2.5]
+writes = [{ wedding_cake_flavor = "chocolate" }]
+portrait = "neutral"
+local = "$Chocolate Cake$? The type with a ganache coating?"
+next = "6"
+
+[wedding_planning_valen_2.6]
+portrait = "happy"
+local = "Yes, that's certain to be a crowd-pleaser. I doubt we'll have any leftovers to bring home."
+next = "7"
+
+[wedding_planning_valen_2.7]
+portrait = "neutral"
+local = "Perfect. I'll make certain Darcy knows we've decided on $Chocolate Cake$."
+
+[wedding_planning_valen_2.8]
+writes = [{ wedding_cake_flavor = "rose_hip" }]
+portrait = "neutral"
+local = "Oh! =Rose Hip= cake?"
+next = "9"
+
+[wedding_planning_valen_2.9]
+portrait = "happy"
+local = "How did you know that's one of my very favorite flavors? That type of cake isn't so common here... I haven't had it in ages."
+next = "10"
+
+[wedding_planning_valen_2.10]
+portrait = "neutral_blush"
+local = "It sounds wonderful. I'll make certain Darcy knows we've decided on =Rose Hip= cake."
+
+[wedding_planning_valen_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_fiance = true },
+	{ post_10h_gate = false },
+	{ post_10h_progression = 2 }
+]
+writes = [
+	{ post_10h_gate = true, expires = "18h" },
+	{ post_10h_progression = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "raised_eyebrow"
+local = "There are so many steps to planning a wedding, aren't there? We have another decision to make..."
+next = "1"
+
+[wedding_planning_valen_3.1]
+portrait = "think_smile"
+local = "What sort of $meal$ would you like to serve at the reception?"
+prompts = [
+	{ local = "Harvest Plate!", next = "2" },
+	{ local = "Mushroom Steak Dinner!", next = "5" },
+	{ local = "Rosemary Garlic Noodles!", next = "8" }
+]
+
+[wedding_planning_valen_3.2]
+writes = [{ wedding_dinner_dish = "harvest_plate" }]
+portrait = "happy"
+local = "Ah, one of my favorites! I enjoy a nice =Harvest Plate=."
+next = "3"
+
+[wedding_planning_valen_3.3]
+portrait = "neutral"
+local = "It's festive, and it shows off the best Mistria has to offer. Perfect for a celebration."
+next = "4"
+
+[wedding_planning_valen_3.4]
+portrait = "happy"
+local = "Wonderful. I'll pass on to Reina that we've selected the =Harvest Plate=."
+
+[wedding_planning_valen_3.5]
+writes = [{ wedding_dinner_dish = "mushroom_steak_dinner" }]
+portrait = "happy"
+local = "$Mushroom Steak Dinner$? Yes, an excellent choice."
+next = "6"
+
+[wedding_planning_valen_3.6]
+portrait = "neutral"
+local = "It's the kind of dish that's as lovely to look at as it is to eat."
+next = "7"
+
+[wedding_planning_valen_3.7]
+portrait = "happy"
+local = "Wonderful. I'll pass on to Reina that we've selected the $Mushroom Steak Dinner$."
+
+[wedding_planning_valen_3.8]
+writes = [{ wedding_dinner_dish = "rosemary_garlic_noodles" }]
+portrait = "think_smile"
+local = "Oh! You'd like to serve =Rosemary Garlic Noodles=?"
+next = "9"
+
+[wedding_planning_valen_3.9]
+portrait = "neutral"
+local = "It's one of my favorite dishes from childhood... I think it's something everyone can enjoy."
+next = "10"
+
+[wedding_planning_valen_3.10]
+portrait = "happy_blush"
+local = "Wonderful. I'll pass on to Reina that we've selected the =Rosemary Garlic Noodles=."
+
+[wedding_planning_valen_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_fiance = true },
+	{ wedding_is_tomorrow = true }
+]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "think"
+local = "Our wedding is tomorrow..."
+next = "1"
+
+[wedding_planning_valen_4.1]
+portrait = "embarrassed"
+local = "Everything's in order, and yet... I'm a little nervous."
+prompts = [
+	{ local = "Nervous? Why?", next = "2" },
+	{ local = "Don't worry... it takes two to get married.", next = "6" }
+]
+
+[wedding_planning_valen_4.2]
+portrait = "think"
+local = "I suppose it's a matter of circumstance and biology."
+next = "3"
+
+[wedding_planning_valen_4.3]
+portrait = "neutral"
+local = "But telling you what I'm feeling soothes me. Thank you for asking."
+next = "4"
+
+[wedding_planning_valen_4.4]
+portrait = "caring_special"
+local = "Looking at you soothes me too... and tomorrow, you'll be the only thing I see."
+next = "5"
+
+[wedding_planning_valen_4.5]
+portrait = "happy_blush"
+local = "I can't wait."
+
+[wedding_planning_valen_4.6]
+portrait = "raised_eyebrow"
+local = "Is that your way of saying you'll be right next to me?"
+next = "7"
+
+[wedding_planning_valen_4.7]
+portrait = "think_smile"
+local = "It is... logical. And thus, reassuring."
+next = "8"
+
+[wedding_planning_valen_4.8]
+portrait = "caring_special"
+local = "Thank you, [Ari]. You're right. Tomorrow, we'll get married..."
+next = "9"
+
+[wedding_planning_valen_4.9]
+portrait = "happy_blush"
+local = "Together."

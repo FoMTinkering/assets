@@ -1,0 +1,96 @@
+multiply_by_light_count = 0
+min_multiply_level = 0
+
+# what we start at
+init.shading.vivid = [132, 0, 219, 30]
+init.shading.multiply = [105, 143, 221, 89]
+init.shading.levels = { black = 0, grey = 232, white = 230 }
+
+init.light = [1.0, 1.0, 0.6, 0.14]
+init.shadow = [142, 146, 213, 130]
+
+# sunrise
+["7:00am".shading]
+	vivid = { kind = "linear", value = [198, 21, 184, 22] }
+	multiply = { kind = "linear", value = [221, 105, 201, 45] }
+	levels = { kind = "linear", value = { black = 0, grey = 224, white = 235 } }
+
+["7:00am".light]
+	kind = "linear"
+	value = [1.0, 1.0, 1.0, 1.0]
+	stop_time = "7:30am"
+
+["7:00am".shadow]
+	kind = "linear"
+	value = [190, 180, 200, 230]
+	stop_time = "9:00am"
+
+# morning's start
+["7:30am".shading]
+	vivid = { kind = "linear", value = [255, 4, 255, 17] }
+	multiply = { kind = "linear", value = [255, 255, 255, 45] }
+	levels = { kind = "linear", value = { black = 0, grey = 255, white = 240 } }
+
+# morning's end
+["9:00am".shading]
+	vivid = { kind = "linear", value = [255, 4, 255, 0] }
+	multiply = { kind = "constant", value = [255, 255, 255, 0] }
+	levels = { kind = "linear", value = { black = 0, grey = 255, white = 255 } }
+
+# asset noon
+["10:00am".shading]
+	vivid = { kind = "constant", value = [0, 0, 0, 0] }
+	multiply = { kind = "constant", value = [255, 255, 255, 0] }
+	levels = { kind = "constant", value = { black = 0, grey = 255, white = 255 } }
+
+["11:00am".shadow]
+	kind = "linear"
+	value = [180, 170, 190, 230]
+	stop_time = "12:00pm"
+
+["3:00pm".shadow]
+	kind = "linear"
+	value = [190, 180, 200, 230]
+
+# golden hour baybeee
+["5:00pm".shading]
+	vivid = { kind = "linear", value = [216, 91, 42, 33] }
+	multiply = { kind = "linear", value = [255, 76, 127, 25] }
+	levels = { kind = "linear", value = { black = 20, grey = 265, white = 245 } }
+
+["5:00pm".shadow]
+	kind = "linear"
+	value = [190, 180, 240, 230]
+	stop_time = "6:30pm"
+
+# sunset
+["7:00pm".shading]
+	vivid = { kind = "linear", value = [245, 80, 192, 38] }
+	multiply = { kind = "linear", value = [221, 105, 128, 96] }
+	levels = { kind = "linear", value = { black = 0, grey = 232, white = 240 } }
+
+["7:30pm".shadow]
+	kind = "linear"
+	value = [200, 200, 200, 255]
+	stop_time = "8:00pm"
+
+# sunset.pt2
+["7:30pm".shading]
+	vivid = { kind = "linear", value = [80, 70, 255, 25] }
+	multiply = { kind = "linear", value = [37, 0, 114, 114] }
+	levels = { kind = "constant", value = { black = 0, grey = 232, white = 240 } }
+
+["7:45pm".light]
+	kind = "linear"
+	value = [1.0, 1.0, 0.90, 0.75]
+
+["8:15pm".light]
+	kind = "linear"
+	value = [1.0, 0.9, 0.75, 0.55]
+	stop_time = "8:30pm"
+
+# go to sleep
+["9:00pm".shading]
+	vivid = { kind = "constant", value = [80, 70, 255, 25] }
+	multiply = { kind = "constant", value = [37, 0, 114, 114] }
+	levels = { kind = "constant", value = { black = 0, grey = 232, white = 240 } }

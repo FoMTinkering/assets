@@ -1,0 +1,25 @@
+requires = [
+	{ weather = "pleasant" },
+	{ caldarus_seridia_town = true },
+	{ seridia_is_human = true },
+	{ seridia_counter = 2 },
+	{ season = "summer", comparator = "!=", ignore_priority = true }
+]
+end_writes = [{ seridia_counter = 0 }]
+
+# Seridia
+[seridia."6:00am"]
+destination = "beach/seridia_beach_wander_1"
+on_arrival_actions = [{ routine = "seridia_beach_wander" }]
+
+[seridia."11:08am"]
+destination = "narrows/narrows_ruins_routine_entrance"
+on_arrival_actions = [{ routine = "seridia_narrows_ruins_wander"}]
+
+[seridia."5:22pm"]
+destination = "western_ruins/western_ruins_digsite_routine_entrance"
+on_arrival_actions = [{ routine = "seridia_dig_site_wander" }]
+
+[seridia."9:12pm"]
+destination = "seridias_house_back/Seridia Throne"
+on_arrival_actions = [{ activity = "drink" }]

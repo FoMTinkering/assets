@@ -1,0 +1,29 @@
+[ladder]
+	icon_sprite = "spr_ui_item_object_ladder"
+	name = "House Ladder"
+	description = "When placed, this ladder allows you to climb to your home's second floor."
+	object = "ladder"
+	tags = ["furniture"]
+	value = { bin = 500, store = 1000 }
+
+
+[stairs]
+	icon_sprite = "spr_ui_item_object_stairs"
+	name = "House Stairs"
+	description = "When placed, these stairs allow you to climb to your home's second floor."
+	object = "stairs"
+	tags = ["furniture", "misc_functional"]
+	value = { bin = "self.recipe * 1.1", store = 1000 }
+	crafting_level_requirement = 10
+	recipe = [
+		{ count = 50, item = "hard_wood" },
+		{ hours = 0, minutes = 10 },
+	]
+
+[teleportation_pad]
+	icon_sprite = "spr_ui_item_object_teleportation_pad"
+	name = "Teleportation Circle"
+	description = "When placed, this magic circle allows you to teleport to your home's second floor."
+	object = "teleportation_pad"
+	tags = ["furniture"]
+	value = { bin = 5000, store = 8000 }

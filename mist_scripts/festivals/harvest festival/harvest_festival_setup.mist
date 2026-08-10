@@ -1,0 +1,259 @@
+scene(farm);
+request_music_play("Music/Events/Cutscene");
+camera_position(hfs_camera_1);
+place_actor(ari, south, hfm_ari_door);
+
+var speaker = "undefined";
+
+if past_year_one() and read_world_fact("harvest_festival_attended") == true and read_world_fact("reina_is_spouse") == true {
+	speaker = "josephine";
+	set_conversation("Cutscenes/Festival Events/harvest_festival/harvest_festival_setup_alt");
+	place_actor(speaker, west, hfs_reina_entrance);
+	sim {
+		fade_in(2);
+		{
+			walk(ari, hfs_ari_entrance);
+			face(ari, south);
+		}
+		{
+			wait(0.5);
+			free bark_speech(ari, exclamation_mark);
+			wait(0.25);
+			face(ari, east);
+		}
+		{
+			wait(1);
+			free bark_speech(speaker, exclamation_mark);
+			face(speaker, west);
+		}
+		{
+			wait(1.25);
+			pan_camera(2, hfs_camera_2);
+		}
+		{
+			wait(3);
+			next_line(); //
+		}
+	}
+	close_textbox();
+	wait(0.5);
+	free bark_speech(ari, music);
+	wait(1);
+	free bark_speech(speaker, cute_face);
+	wait(1);
+	wait(0.5);
+	sim {
+		pan_camera(2, hfs_camera_3);
+		{
+			walk_slow(speaker, hfs_reina_start);
+			face(speaker, west);
+		}
+		{
+			wait(1);
+			next_line(); //
+			next_line(); //
+			next_line(); //
+		}
+	}
+	//
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(speaker, cute_face);
+		}
+		{
+			next_line(); //
+		}
+	}
+
+	next_line(); //
+	//
+	//
+	//
+	//
+	next_line(); //
+	close_textbox();
+	wait(0.5);
+	free bark_speech(speaker, cute_face);
+	wait(1);
+	free bark_speech(ari, cute_face);
+	wait(0.5);
+	fade_out(2);
+} else if past_year_one() and read_world_fact("harvest_festival_attended") == true and read_world_fact("reina_is_spouse") == false {
+	speaker = "reina";
+	set_conversation("Cutscenes/Festival Events/harvest_festival/harvest_festival_setup");
+	place_actor(speaker, west, hfs_reina_entrance);
+	sim {
+		fade_in(2);
+		{
+			walk(ari, hfs_ari_entrance);
+			face(ari, south);
+		}
+		{
+			wait(0.5);
+			free bark_speech(ari, exclamation_mark);
+			wait(0.25);
+			face(ari, east);
+		}
+		{
+			wait(1);
+			free bark_speech(speaker, exclamation_mark);
+			face(speaker, west);
+		}
+		{
+			wait(1.25);
+			pan_camera(2, hfs_camera_2);
+		}
+		{
+			wait(3);
+			next_line(); //
+		}
+	}
+	close_textbox();
+	wait(0.5);
+	free bark_speech(ari, music);
+	wait(1);
+	free bark_speech(speaker, cute_face);
+	wait(1);
+	wait(0.5);
+	sim {
+		pan_camera(2, hfs_camera_3);
+		{
+			walk_slow(speaker, hfs_reina_start);
+			face(speaker, west);
+		}
+		{
+			wait(1);
+			next_line(); //
+			next_line(); //
+			next_line(); //
+		}
+	}
+	//
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(speaker, cute_face);
+		}
+		{
+			next_line(); //
+		}
+	}
+
+	next_line(); //
+	//
+	//
+	//
+	//
+	next_line(); //
+	close_textbox();
+	wait(0.5);
+	free bark_speech(speaker, cute_face);
+	wait(1);
+	free bark_speech(ari, cute_face);
+	wait(0.5);
+	fade_out(2);
+} else {
+	speaker = "reina";
+	set_conversation("Cutscenes/Festival Events/harvest_festival/harvest_festival_setup");
+	place_actor(speaker, west, hfs_reina_entrance);
+	sim {
+		fade_in(2);
+		{
+			walk(ari, hfs_ari_entrance);
+			face(ari, south);
+		}
+		{
+			wait(0.5);
+			free bark_speech(ari, exclamation_mark);
+			wait(0.25);
+			face(ari, east);
+		}
+		{
+			wait(1);
+			free bark_speech(speaker, exclamation_mark);
+			face(speaker, west);
+		}
+		{
+			wait(1.25);
+			pan_camera(2, hfs_camera_2);
+		}
+		{
+			wait(3);
+			next_line(); //
+		}
+	}
+	close_textbox();
+	wait(0.5);
+	free bark_speech(ari, music);
+	wait(1);
+	free bark_speech(speaker, cute_face);
+	wait(1);
+	wait(0.5);
+	sim {
+		pan_camera(2, hfs_camera_3);
+		{
+			walk_slow(speaker, hfs_reina_start);
+			face(speaker, west);
+		}
+		{
+			wait(1);
+			next_line(); //
+			next_line(); //
+			next_line(); //
+			next_line(); //
+			next_line(); //
+		}
+	}
+	if read_world_fact("shooting_star_reina_attended") == true {
+		close_textbox();
+		wait(0.5);
+		free bark_speech(speaker, blush);
+		wait(1.5);
+	}
+	next_line(); //
+
+	//
+	if get_response() == 0 {
+		sim {
+			{
+				wait(0.75);
+				free bark_speech(speaker, cute_face);
+			}
+			{
+				next_line(); //
+			}
+		}
+	} else {
+		sim {
+			{
+				wait(0.75);
+				free bark_speech(speaker, exclamation_mark);
+			}
+			{
+				next_line(); //
+			}
+		}
+	}
+	next_line(); //
+	close_textbox();
+	wait(0.5);
+	free bark_speech(ari, question_mark);
+	wait(1);
+	next_line(); //
+	next_line(); //
+	next_line(); //
+	next_line(); //
+	//
+	//
+	//
+	//
+	next_line(); //
+	close_textbox();
+	wait(0.5);
+	free bark_speech(speaker, cute_face);
+	wait(1);
+	free bark_speech(ari, cute_face);
+	wait(0.5);
+	fade_out(2);
+}

@@ -1,0 +1,257 @@
+[shooting_star_celine_invited_anticipation_celine_nora]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "nora" }] },
+	{ celine_zone = "<nora_zone>" },
+	{ shooting_star_date_status = "celine_invited" },
+	{ time_of_day = "morning" },
+	{ celine_is_fiance = false },
+	{ celine_is_spouse = false }
+]
+speaker = "nora"
+portrait = "neutral"
+local = "I'm telling you, Celine, life has a way of sneaking up on you!"
+next = "1"
+
+[shooting_star_celine_invited_anticipation_celine_nora.1]
+speaker = "nora"
+portrait = "think"
+local = "One day you're leaving home for the first time..."
+next = "2"
+
+[shooting_star_celine_invited_anticipation_celine_nora.2]
+speaker = "nora"
+portrait = "embarrassed"
+local = "And before you know it, you're running a store with a family of your own!"
+next = "3"
+
+[shooting_star_celine_invited_anticipation_celine_nora.3]
+speaker = "celine"
+portrait = "ugh"
+local = "Mom... you know I don't want to run the store..."
+next = "4"
+
+[shooting_star_celine_invited_anticipation_celine_nora.4]
+speaker = "nora"
+portrait = "neutral"
+local = "Ah, I think you're missing my point, dear."
+
+[shooting_star_errol_landen_terithia]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "landen" }, { npc = "terithia" }] },
+	{ errol_zone = "<landen_zone>" },
+	{ errol_zone = "<terithia_zone>" },
+	{ errol_is_at = "town/star_festival_errol" },
+	{ landen_is_at = "town/star_festival_landen" },
+	{ terithia_is_at = "town/star_festival_terithia" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "errol" } },
+	{ bark = { bark = "cute_face", npc = "landen" } },
+	{ bark = { bark = "cute_face", npc = "terithia" } },
+]
+speaker = "landen"
+portrait = "happy"
+local = "Well now, aren't those stars something? This really takes me back..."
+next = "1"
+
+[shooting_star_errol_landen_terithia.1]
+speaker = "errol"
+portrait = "happy"
+local = "Indeed! I recall how I used to rush out of the Mines just in time to catch the show."
+next = "2"
+
+[shooting_star_errol_landen_terithia.2]
+speaker = "terithia"
+portrait = "happy"
+local = "Remember the time we watched them from the boat?"
+next = "3"
+
+[shooting_star_errol_landen_terithia.3]
+speaker = "terithia"
+portrait = "happy"
+local = "The stars doubled in the water... I'll never forget it."
+
+[shooting_star_hayden_henrietta]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "henrietta" }] },
+	{ hayden_zone = "<henrietta_zone>" },
+	{ hayden_is_at = "town/star_festival_hayden" },
+	{ henrietta_is_at = "town/star_festival_henrietta" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "hayden_invited", comparator = "!=" },
+]
+speaker = "hayden"
+portrait = "think"
+local = "Wow... the stars almost look like birds soaring through the sky!"
+next = "1"
+
+[shooting_star_hayden_henrietta.1]
+speaker = "henrietta"
+portrait = "neutral"
+local = "(Henrietta seems to disagree.)"
+
+[shooting_star_hemlock_josephine]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "hemlock" }, { npc = "josephine" }] },
+	{ hemlock_zone = "<josephine_zone>" },
+	{ hemlock_is_at = "town/star_festival_hemlock" },
+	{ josephine_is_at = "town/star_festival_josephine" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+]
+actions = [
+	{ bark = { bark = "heart", npc = "hemlock" } },
+	{ bark = { bark = "heart", npc = "josephine" } },
+]
+speaker = "josephine"
+portrait = "happy"
+local = "I still remember the very first time I asked you to watch the stars with me, Hemlock."
+next = "1"
+
+[shooting_star_hemlock_josephine.1]
+speaker = "josephine"
+portrait = "wink"
+local = "You were so cute, the way you blushed and tripped over your words..."
+next = "2"
+
+[shooting_star_hemlock_josephine.2]
+speaker = "hemlock"
+portrait = "embarrassed"
+local = "J-Josie..."
+next = "3"
+
+[shooting_star_hemlock_josephine.3]
+speaker = "josephine"
+portrait = "happy"
+local = "Hehehe!"
+
+[shooting_star_holt_nora]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "nora" }] },
+	{ holt_zone = "<nora_zone>" },
+	{ holt_is_at = "town/star_festival_holt" },
+	{ nora_is_at = "town/star_festival_nora" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+]
+actions = [
+	{ bark = { bark = "heart", npc = "holt" } },
+	{ bark = { bark = "heart", npc = "nora" } },
+]
+speaker = "holt"
+portrait = "happy"
+local = "Doesn't this just take you back, Nora?"
+next = "1"
+
+[shooting_star_holt_nora.1]
+speaker = "holt"
+portrait = "wink"
+local = "How many years do you suppose we've watched these stars together now?"
+next = "2"
+
+[shooting_star_holt_nora.2]
+speaker = "nora"
+portrait = "embarrassed"
+local = "Holt..."
+next = "3"
+
+[shooting_star_holt_nora.3]
+speaker = "holt"
+portrait = "happy"
+local = "Here's to many more!"
+
+[shooting_star_luc_maple]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "luc" }, { npc = "maple" }] },
+	{ luc_zone = "<maple_zone>" },
+	{ luc_is_at = "town/star_festival_luc" },
+	{ maple_is_at = "town/star_festival_maple" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+]
+speaker = "luc"
+portrait = "think"
+local = "What do you think the shooting stars are, Maple?"
+next = "1"
+
+[shooting_star_luc_maple.1]
+speaker = "maple"
+portrait = "think"
+local = "I think they're the queens of the past... watching over us."
+next = "2"
+
+[shooting_star_luc_maple.2]
+speaker = "luc"
+portrait = "think"
+local = "Oh."
+next = "3"
+
+[shooting_star_luc_maple.3]
+speaker = "luc"
+portrait = "happy"
+local = "I thought they might be really big fireflies!"
+
+[shooting_star_march_olric]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }] },
+	{ march_zone = "<olric_zone>" },
+	{ march_is_at = "town/star_festival_march" },
+	{ olric_is_at = "town/star_festival_olric" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "march_invited", comparator = "!=" },
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "march" } },
+	{ bark = { bark = "cute_face", npc = "olric" } },
+]
+speaker = "olric"
+portrait = "think"
+local = "I have a theory..."
+next = "1"
+
+[shooting_star_march_olric.1]
+speaker = "olric"
+portrait = "happy"
+local = "I bet these stars are actually very powerful rocks!"
+next = "2"
+
+[shooting_star_march_olric.2]
+speaker = "march"
+portrait = "think"
+local = "Yeah... I think you're right, in a way."
+
+[shooting_star_reina_invited_anticipation_luc_maple]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "luc" }, { npc = "maple" }] },
+	{ luc_zone = "<maple_zone>" },
+	{ shooting_star_date_status = "reina_invited" },
+]
+speaker = "maple"
+portrait = "wink"
+local = "Oooooh! I heard [Ari] is going out with Reina tonight! The court is simply ablaze with gossip!"
+next = "1"
+
+[shooting_star_reina_invited_anticipation_luc_maple.1]
+speaker = "luc"
+portrait = "neutral"
+local = "Going out where?"
+next = "2"
+
+[shooting_star_reina_invited_anticipation_luc_maple.2]
+speaker = "maple"
+portrait = "ugh"
+local = "Nevermind, Luc..."

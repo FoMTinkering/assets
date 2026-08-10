@@ -1,0 +1,225 @@
+requires = [
+	{ weather = "pleasant" },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+	{ season = "spring" },
+	{ day_of_the_week = "thursday" }
+]
+
+# dell
+[dell."6:00am"]
+destination = "eastern_road/kids_1"
+
+[dell."7:24am"]
+destination = "eastern_road/hgs_1"
+
+[dell."9:23am"]
+destination = "eastern_road/kids_1"
+on_arrival_writes = [{ dell_zone = "kids_zone" }]
+clear_zone = false
+
+[dell."9:45am"]
+destination = "town/south_fountain_1"
+on_arrival_writes = [{ fountain_play = true }]
+on_departure_writes = [{ fountain_play = false }]
+clear_zone = false
+
+[dell."4:22pm"]
+destination = "inn/Story Listener 2"
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[dell."8:41pm"]
+destination = "dells_bedroom/Dell Bed"
+
+# elsie
+[elsie."6:00am"]
+destination = "elsies_bedroom/Bed"
+
+[elsie."6:52am"]
+destination = "manor_house_entry/east_chat_1"
+
+[elsie."11:22am"]
+destination = "town/Gazebo Hang Left"
+
+[elsie."6:45pm"]
+destination = "manor_house_dining_room/Table Right Seat 1"
+on_arrival_actions = [{ activity = "drink" }]
+
+[elsie."12:23am"]
+destination = "elsies_bedroom/Chaise Right Seat"
+
+# juniper
+[juniper."6:00am"]
+destination = "bathhouse/Cauldron 3"
+
+[juniper."6:01am"]
+destination = "deep_woods/eastern_road_routine_entrance"
+on_arrival_actions = [{ routine = "deep_woods_west_forage"}]
+
+[juniper."10:44am"]
+destination = "town/Gazebo Hang Right"
+
+[juniper."6:43pm"]
+destination = "manor_house_dining_room/Table Right Seat 2"
+on_arrival_actions = [{ activity = "drink" }]
+
+[juniper."12:21am"]
+destination = "bathhouse_bedroom/Crystal Ball Seat"
+
+# luc
+[luc."6:00am"]
+destination = "eastern_road/kids_3"
+clear_zone = false
+on_departure_writes = [{ hide_and_go_seek = true }]
+
+[luc."7:25am"]
+destination = "eastern_road/hgs_2"
+
+[luc."9:23am"]
+destination = "eastern_road/kids_3"
+on_arrival_writes = [{ luc_zone = "kids_zone" }, { hide_and_go_seek = false }]
+clear_zone = false
+
+[luc."9:46am"]
+destination = "town/south_fountain_4"
+clear_zone = false
+
+[luc."4:21pm"]
+destination = "inn/Story Listener 1"
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[luc."8:29pm"]
+destination = "lucs_room/Luc Bed"
+
+# maple
+[maple."6:00am"]
+destination = "eastern_road/kids_2"
+
+[maple."7:45am"]
+destination = "eastern_road/kids_2"
+on_arrival_actions = [{ routine = "hgs_it" }]
+
+[maple."9:26am"]
+destination = "eastern_road/kids_2"
+on_arrival_writes = [{ maple_zone = "kids_zone" }]
+clear_zone = false
+
+[maple."9:46am"]
+destination = "town/south_fountain_3"
+clear_zone = false
+
+[maple."4:23pm"]
+destination = "inn/Story Listener 3"
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[maple."8:28pm"]
+destination = "maples_room/Maple Wake Point"
+
+# march
+[march."6:00am"]
+destination = "blacksmith_room_left/March Bed"
+
+[march."6:15am"]
+destination = "town/Anvil Olric Helping"
+
+[march."8:12am"]
+destination = "town/forge_observation_3"
+
+[march."9:59am"]
+destination = "town/business_blacksmith"
+
+[march."11:35am"]
+destination = "town/forge_observation_2"
+
+[march."12:41pm"]
+destination = "blacksmith_store/Blacksmith Till"
+
+[march."5:51pm"]
+destination = "blacksmith_store/Store Chatting Left"
+
+[march."10:53pm"]
+destination = "blacksmith_room_left/March Bed"
+
+# olric
+[olric."6:00am"]
+destination = "blacksmith_room_right/Olric Wake Point"
+
+[olric."6:12am"]
+destination = "town/Anvil"
+on_arrival_actions = [{ animation = "hammer" }]
+
+[olric."8:11am"]
+destination = "town/forge_observation_1"
+
+[olric."12:35pm"]
+destination = "town/forge_observation_1"
+on_arrival_actions = [{ routine = "forge_work_principal" }]
+
+[olric."2:23pm"]
+destination = "clinic_f1/Bothering Valen"
+on_arrival_writes = [{ clinic_counter = 1, operator = "+=" }]
+on_departure_writes = [{ clinic_counter = 1, operator = "-=" }]
+
+[olric."7:21pm"]
+destination = "blacksmith_store/Store Chatting Bottom"
+
+[olric."10:52pm"]
+destination = "blacksmith_room_right/Olric Wake Point"
+
+# reina
+[reina."6:00am"]
+destination = "eastern_road/supervising_1"
+
+[reina."9:47am"]
+destination = "inn/food_service_entrance"
+on_arrival_actions = [{ routine = "inn_solo_reina" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[reina."3:42pm"]
+destination = "town/Town South Meetup 1"
+
+[reina."4:14pm"]
+destination = "beach/Picnic Bench Bottom Right"
+
+[reina."9:04pm"]
+destination = "beach/Chat Below Towels 1"
+
+[reina."10:41pm"]
+destination = "beach/Left Bench Seat"
+
+[reina."12:35am"]
+destination = "reinas_room/Reina Wake Point"
+
+# seridia
+[seridia."6:00am"]
+destination = "narrows/mines_chat_1"
+
+[seridia."6:03am"]
+destination = "town/forge_explanation"
+
+[seridia."8:13am"]
+destination = "town/forge_observation_2"
+
+[seridia."10:01am"]
+destination = "town/forge_observation_3"
+
+[seridia."12:36pm"]
+destination = "town/forge_explanation"
+
+[seridia."1:18pm"]
+destination = "town/south_fountain_2"
+on_arrival_writes = [{ seridia_zone = "kids_zone" }]
+
+[seridia."4:19pm"]
+destination = "town/Manor Gazebo"
+
+[seridia."6:42pm"]
+destination = "manor_house_dining_room/Table Left Seat 1"
+on_arrival_actions = [{ activity = "drink" }]
+
+[seridia."12:22am"]
+destination = "narrows/western_ruins_cutscene_exit"

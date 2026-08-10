@@ -1,0 +1,96 @@
+[park_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "juniper" },
+	{ date = "park" },
+	{ da_juniper_park = 0 },
+	{ juniper_is_spouse = false }
+]
+writes = [
+	{ da_juniper_park = 1 },
+	{ da_juniper_park_follow_up_gate = true, expires = "1d" }
+]
+speaker = "juniper"
+portrait = "sly"
+local = "Ooh, I know that look."
+next = "1"
+
+[park_accept_1.1]
+speaker = "juniper"
+portrait = "happy"
+local = "Where would you like to whisk me away to, [Ari]?"
+next = "2"
+
+[park_accept_1.2]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "The... $Park$?"
+next = "3"
+
+[park_accept_1.3]
+speaker = "juniper"
+portrait = "blush"
+local = "Well, you always manage to surprise me, so... sure."
+
+[park_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "juniper" },
+	{ date = "park" },
+	{ juniper_has_child = false },
+	{ any = [
+		{ juniper_is_spouse = true },
+		{ da_juniper_park = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_juniper_park = 2 },
+	{ da_juniper_park_follow_up_gate = true, expires = "1d" }
+]
+speaker = "juniper"
+portrait = "sly"
+local = "Hey."
+next = "1"
+
+[park_accept_2.1]
+speaker = "juniper"
+portrait = "blush"
+local = "You. Me. The park."
+
+[park_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ da_juniper_park = 1 },
+	{ da_juniper_park_follow_up_gate = true },
+	{ juniper_is_spouse = false }
+]
+writes = [{ da_juniper_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "happy"
+local = "Alright, I admit it. I had a lot of fun with you at the $Park$."
+next = "1"
+
+[park_follow_up_1.1]
+portrait = "blush"
+local = "You got lucky this time, [Ari]."
+
+[park_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_has_child = false },
+	{ any = [{ juniper_is_spouse = true }, { da_juniper_park = 2 }] },
+	{ da_juniper_park_follow_up_gate = true }
+]
+writes = [{ da_juniper_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "think"
+local = "Strange to think how often I've walked past that $Park$ and never thought twice about it."
+next = "1"
+
+[park_follow_up_2.1]
+portrait = "blush"
+local = "And now it's one of my favorite places."

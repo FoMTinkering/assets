@@ -1,0 +1,366 @@
+[core]
+	name = "Sheep"
+	plural_name = "Sheep"
+	female_other = "a female sheep"
+	male_other = "a male sheep"
+	new_baby_born = "A new Sheep was born! Enter new name"
+	size = "large"
+	default_icon_variant = "white"
+	cosmetic_sub_icon = "spr_ui_item_sub_animal_sheep"
+	requirements = { repaired_haydens_farm = true }
+
+[behavior]
+	can_wander_in_home = false
+
+[celebration_data]
+	baby_animation = "happy"
+	adult_animation = "happy"
+
+[production.male]
+	days_to_produce = 3
+	normal_product = "sheep_wool"
+	golden_product = "golden_sheep_wool"
+
+[production.female]
+	days_to_produce = 3
+	normal_product = "sheep_wool"
+	golden_product = "golden_sheep_wool"
+
+[breeding]
+	uses_egg = false
+	treat = "heart_shaped_sheep_treat"
+
+[eating]
+	kind = "hay"
+	offset = [12, -2]
+	baby_offset = [10, -2]
+	shake_frames = [1, 9]
+
+[petting]
+	kind = "pet"
+
+[pricing]
+	buy_price = 2000
+	baby_sell_price = 500
+	adult_sell_prices = [
+		700,
+		750,
+		900,
+		1000,
+		1100,
+		1200,
+		1400,
+		1600,
+		2000,
+		2200,
+		2300,
+	]
+
+[mounting]
+	is_mount = true
+
+[bark_offsets]
+	adult = { north = [1, -36], south = [1, -35], east = [5, -32], west = [-3, -32] }
+	baby = { north = [1, -28], south = [1, -28], east = [6, -25], west = [-2, -25] }
+
+[[sounds.baby]]
+	ambient = "SoundEffects/Animals/BabySheepAmbient"
+	positive_react = "SoundEffects/Animals/BabySheepPositiveReact"
+	negative_react = "SoundEffects/Animals/BabySheepNegativeReact"
+
+[[sounds.adult]]
+	ambient = "SoundEffects/Animals/SheepAmbient"
+	positive_react = "SoundEffects/Animals/SheepPositiveReact"
+	negative_react = "SoundEffects/Animals/SheepNegativeReact"
+
+[animations.idle]
+	player_offsets.south = [
+		[0, -8],
+	]
+	player_offsets.east = [
+		[-1, -8],
+	]
+	player_offsets.north = [
+		[0, -8],
+	]
+	randomly_selected = false
+	duration = [3, 7]
+	play_ambient_sounds = true
+
+[animations.idle_2]
+	player_offsets.south = [
+		[0, -8],
+	]
+	player_offsets.east = [
+		[-1, -8],
+	]
+	player_offsets.north = [
+		[0, -8],
+	]
+	end_with_animation = true
+	valid_for = ["male", "female", "baby"]
+
+[animations.blink]
+	player_offsets.south = [
+		[0, -8],
+	]
+	player_offsets.east = [
+		[-1, -8],
+	]
+	player_offsets.north = [
+		[0, -8],
+	]
+	end_with_animation = true
+
+[animations.walk]
+	player_offsets.south = [
+		[0, -7],
+		[0, -8],
+		[0, -7],
+		[0, -8],
+	]
+	player_offsets.east = [
+		[-1, -7],
+		[-1, -8],
+		[-1, -7],
+		[-1, -8],
+	]
+	player_offsets.north = [
+		[0, -7],
+		[0, -8],
+		[0, -7],
+		[0, -8],
+	]
+	randomly_selected = false
+	duration = [1, 2]
+
+[animations.run]
+	player_offsets.south = [
+		[0, -7],
+		[0, -8],
+		[0, -9],
+		[0, -8],
+	]
+	player_offsets.east = [
+		[-1, -8],
+		[-1, -9],
+		[-1, -10],
+		[-1, -9],
+	]
+	player_offsets.north = [
+		[0, -7],
+		[0, -10],
+		[0, -11],
+		[0, -8],
+	]
+	randomly_selected = false
+	valid_for = ["male", "female"]
+
+[animations.jump]
+	player_offsets.south = [
+		[0, -9],
+		[0, -11],
+		[0, -9],
+		[0, -6],
+	]
+	player_offsets.east = [
+		[-1, -9],
+		[-1, -10],
+		[-1, -11],
+		[-1, -7],
+	]
+	player_offsets.north = [
+		[0, -11],
+		[0, -13],
+		[0, -12],
+		[0, -8],
+	]
+	randomly_selected = false
+	valid_for = ["male", "female"]
+
+[animations.happy]
+	randomly_selected = false
+
+[animations.playball]
+	randomly_selected = false
+	valid_for = ["male", "female"]
+
+# Variants
+[variants.default]
+	lut = "spr_animal_sheep_lut"
+
+	[variants.default.male]
+		key = "basic_male_base"
+		ui_key = "basic_male"
+		top_key = "basic_male_top"
+
+	[variants.default.female]
+		key = "basic_female_base"
+		ui_key = "basic_female"
+		top_key = "basic_female_top"
+
+	[variants.default.baby]
+		key = "basic_baby_lamb"
+		top_key = "<n/a>"
+
+# White
+[variants.white]
+	name = "White"
+	default_unlocked = true
+	lut_index = 1
+
+# Black
+[variants.black]
+	name = "Black"
+	default_unlocked = true
+	lut_index = 2
+
+# Brown
+[variants.brown]
+	name = "Brown"
+	default_unlocked = true
+	lut_index = 3
+
+# Black Nosed
+[variants.black_nosed]
+	name = "Black Nosed"
+	tier = 2
+	lut_index = 4
+
+# Beige
+[variants.beige]
+	name = "Beige"
+	tier = 2
+	lut_index = 5
+
+# White Nosed
+[variants.white_nosed]
+	name = "White Nosed"
+	tier = 2
+	lut_index = 6
+
+# Blue
+[variants.blue]
+	name = "Blue"
+	tier = 3
+	lut_index = 7
+
+# Purple
+[variants.purple]
+	name = "Purple"
+	tier = 3
+	lut_index = 8
+
+# Pink
+[variants.pink]
+	name = "Pink"
+	tier = 3
+	lut_index = 9
+
+# Silver
+[variants.silver]
+	name = "Silver"
+	tier = 4
+	lut_index = 10
+
+# Gold
+[variants.gold]
+	name = "Gold"
+	tier = 5
+	lut_index = 11
+
+# Spring
+[variants.spring]
+	name = "Spring"
+	born_in = "spring"
+	default_cosmetic = "flower_crown"
+	tier = 6
+	lut_index = 12
+
+# Summer
+[variants.summer]
+	name = "Summer"
+	born_in = "summer"
+	default_cosmetic = "palm_tree"
+	tier = 6
+	lut_index = 13
+
+# Fall
+[variants.fall]
+	name = "Fall"
+	born_in = "fall"
+	default_cosmetic = "horns"
+	tier = 6
+	lut = "<n/a>"
+
+	[variants.fall.male]
+		key = "fall_male_base"
+		ui_key = "fall_male"
+		top_key = "fall_male_top"
+
+	[variants.fall.female]
+		key = "fall_female_base"
+		ui_key = "fall_female"
+		top_key = "fall_female_top"
+
+	[variants.fall.baby]
+		key = "fall_baby_lamb"
+
+# Winter
+[variants.winter]
+	name = "Winter"
+	born_in = "winter"
+	default_cosmetic = "winter_hat"
+	tier = 6
+	lut_index = 14
+
+# Cosmetics
+[cosmetics.default.male]
+	key = "base"
+	top_key = "top"
+
+[cosmetics.default.female]
+	key = "base"
+	top_key = "top"
+
+[cosmetics.flower_crown]
+	name = "Sheep Flower Crown"
+
+[cosmetics.palm_tree]
+	name = "Sheep Palm Tree Hat"
+
+[cosmetics.party_hat]
+	name = "Sheep Party Hat"
+
+[cosmetics.pink_bow]
+	name = "Pink Sheep Bow"
+
+[cosmetics.mushroom_hat]
+	name = "Sheep Mushroom Hat"
+
+[cosmetics.horns]
+	name = "Sheep Horns"
+
+[cosmetics.winter_hat]
+	name = "Sheep Winter Hat"
+
+[cosmetics.ribbon_blue]
+	name = "Sheep Blue Ribbon"
+
+[cosmetics.ribbon_red]
+	name = "Sheep Red Ribbon"
+
+[cosmetics.ribbon_white]
+	name = "Sheep White Ribbon"
+
+[cosmetics.tartan_beret]
+	name = "Sheep Tartan Beret"
+
+[cosmetics.unicorn_horn]
+	name = "Sheep Unicorn Horn"
+
+[cosmetics.hot_water_bottle]
+	name = "Sheep Hot Water Bottle"
+
+[cosmetics.green_visor]
+	name = "Sheep Green Visor"

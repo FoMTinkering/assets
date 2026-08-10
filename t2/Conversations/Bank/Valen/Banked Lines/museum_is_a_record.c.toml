@@ -1,0 +1,38 @@
+[museum_is_a_record]
+refresh = "2m"
+requires = [
+	{ npc = "valen" },
+	{ building = "museum" },
+	{ museum_total_count = 10, comparator = ">=" }
+]
+portrait = "think"
+local = "It's good that Eiland and Errol are creating a record of things."
+next = "1"
+
+[museum_is_a_record.1]
+local = "Speaking as a doctor, knowledge of the past helps me address problems of the present."
+
+[museum_is_a_record_2]
+refresh = "2m"
+requires = [
+	{ npc = "valen" },
+	{ building = "museum" },
+	{ museum_total_count = 10, comparator = ">=" }
+]
+portrait = "neutral"
+local = "It's always nice and quiet here. It's easy to be contemplative, hand-in-hand with nature and the past."
+
+[museum_is_a_record_3]
+refresh = "1y"
+requires = [
+	{ npc = "valen" },
+	{ building = "museum" },
+	{ museum_total_count = 50, comparator = ">=" }
+]
+portrait = "neutral"
+local = "The Museum's collection has grown since the last time I was here."
+next = "1"
+
+[museum_is_a_record_3.1]
+portrait = "happy"
+local = "Impressive."

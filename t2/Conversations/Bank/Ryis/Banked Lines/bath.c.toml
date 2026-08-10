@@ -1,0 +1,25 @@
+[bath]
+refresh = "1m"
+requires = [
+	{ npc = "ryis" },
+	{ building = "bathhouse" },
+	{ any = [
+		{ location = "bathhouse_change_room" },
+		{ ryis_is_traveling_to_location = "bathhouse_change_room" },
+	] },
+]
+portrait = "happy"
+local = "Headed to the bath?"
+
+[bath_2]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ building = "bathhouse" },
+	{ any = [
+		{ location = "bathhouse_change_room" },
+		{ ryis_is_traveling_from_location = "bathhouse_change_room" },
+	] },
+]
+portrait = "neutral"
+local = "That dragon statue in the bath sure is pretty."

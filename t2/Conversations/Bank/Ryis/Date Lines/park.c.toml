@@ -1,0 +1,97 @@
+[park_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "ryis" },
+	{ date = "park" },
+	{ da_ryis_park = 0 },
+	{ ryis_is_spouse = false }
+]
+writes = [
+	{ da_ryis_park = 1 },
+	{ da_ryis_park_follow_up_gate = true, expires = "1d" },
+]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "[Ari], can I take you on a date to the $Park$?"
+next = "1"
+
+[park_accept_1.1]
+speaker = "ryis"
+portrait = "blush_special"
+local = "You want to? Great!"
+
+[park_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "ryis" },
+	{ date = "park" },
+	{ ryis_has_child = false },
+	{ any = [
+		{ ryis_is_spouse = true },
+		{ da_ryis_park = 1, comparator = ">=" },
+	] }
+]
+writes = [
+	{ da_ryis_park = 2 },
+	{ da_ryis_park_follow_up_gate = true, expires = "1d" },
+]
+speaker = "ryis"
+portrait = "happy"
+local = "Hey [Ari], what's up?"
+next = "1"
+
+[park_accept_2.1]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "You want to go on a date to the $Park$?"
+next = "2"
+
+[park_accept_2.2]
+speaker = "ryis"
+portrait = "blush_special"
+local = "Sure!"
+
+[park_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ da_ryis_park = 1 },
+	{ da_ryis_park_follow_up_gate = true },
+	{ ryis_is_spouse = false }
+]
+writes = [{ da_ryis_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "embarrassed"
+local = "I had a lot of fun at the $Park$ with you, [Ari]."
+prompts = [
+	{ local = "It was really nice just spending time together.", next = "1" },
+	{ local = "We saw so many cool birds!", next = "2" },
+]
+
+[park_follow_up_1.1]
+portrait = "happy_blush"
+local = "Yeah! We'll have to do that more often."
+
+[park_follow_up_1.2]
+portrait = "happy_blush"
+local = "Wasn't it great? We'll have to do that more often."
+
+[park_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_has_child = false },
+	{ any = [{ ryis_is_spouse = true }, { da_ryis_park = 2 }] },
+	{ da_ryis_park_follow_up_gate = true },
+]
+writes = [{ da_ryis_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "embarrassed"
+local = "I always have such a good time with you at the $Park$."
+next = "1"
+
+[park_follow_up_2.1]
+portrait = "happy_blush"
+local = "It's the perfect place to birdwatch, isn't it?"

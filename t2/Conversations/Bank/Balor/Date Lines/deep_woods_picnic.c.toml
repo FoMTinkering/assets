@@ -1,0 +1,200 @@
+[deep_woods_picnic_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "balor" },
+	{ date = "deep_woods_picnic" },
+	{ da_balor_deep_woods_picnic = 0 },
+	{ balor_is_spouse = false }
+]
+writes = [
+	{ da_balor_deep_woods_picnic = 1 },
+	{ da_balor_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "balor"
+portrait = "embarrassed"
+local = "A picnic? Out in the $Deep Woods$?"
+next = "1"
+
+[deep_woods_picnic_accept_1.1]
+speaker = "balor"
+portrait = "happy"
+local = "Hahaha!"
+next = "2"
+
+[deep_woods_picnic_accept_1.2]
+speaker = "balor"
+portrait = "embarrassed"
+local = "Sorry, sorry..."
+next = "3"
+
+[deep_woods_picnic_accept_1.3]
+speaker = "balor"
+portrait = "happy"
+local = "It's just... you're cute!"
+next = "4"
+
+[deep_woods_picnic_accept_1.4]
+speaker = "balor"
+portrait = "blush_special"
+local = "Of course I'll go with you."
+
+[deep_woods_picnic_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "balor" },
+	{ date = "deep_woods_picnic" },
+	{ da_balor_deep_woods_picnic = 1 },
+	{ balor_is_spouse = false }
+]
+writes = [
+	{ da_balor_deep_woods_picnic = 2 },
+	{ da_balor_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "balor"
+portrait = "embarrassed"
+local = "Hey [Ari]. I was wondering..."
+next = "1"
+
+[deep_woods_picnic_accept_2.1]
+speaker = "balor"
+portrait = "happy"
+local = "I had a really nice time on our last $Deep Woods$ picnic-"
+next = "2"
+
+[deep_woods_picnic_accept_2.2]
+speaker = "balor"
+portrait = "embarrassed"
+local = "Would you like to go on another one?"
+next = "3"
+
+[deep_woods_picnic_accept_2.3]
+speaker = "balor"
+portrait = "happy"
+local = "I picked up some food from the Inn that we can share."
+
+[deep_woods_picnic_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "balor" },
+	{ date = "deep_woods_picnic" },
+	{ balor_has_child = false },
+	{ any = [
+		{ balor_is_spouse = true },
+		{ da_balor_deep_woods_picnic = 2, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_balor_deep_woods_picnic = 3 },
+	{ da_balor_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "balor"
+portrait = "happy"
+effect = "cheery"
+local = "[Ari]!"
+next = "1"
+
+[deep_woods_picnic_accept_3.1]
+speaker = "balor"
+portrait = "neutral"
+local = "Would you like to go on another picnic?"
+next = "2"
+
+[deep_woods_picnic_accept_3.2]
+speaker = "balor"
+portrait = "wink"
+local = "I prepared everything myself."
+
+[deep_woods_picnic_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ da_balor_deep_woods_picnic = 1 },
+	{ da_balor_deep_woods_picnic_follow_up_gate = true },
+	{ balor_is_spouse = false }
+]
+writes = [{ da_balor_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "blush"
+local = "You know? I really enjoyed that picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_1.1]
+portrait = "embarrassed"
+local = "Sorry for teasing you about it..."
+next = "2"
+
+[deep_woods_picnic_follow_up_1.2]
+portrait = "happy"
+effect = "hearts"
+local = "Let's do it again soon, eh?"
+
+[deep_woods_picnic_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ da_balor_deep_woods_picnic = 2 },
+	{ da_balor_deep_woods_picnic_follow_up_gate = true },
+	{ balor_is_spouse = false }
+]
+writes = [{ da_balor_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "happy"
+local = "Thanks for coming with me on the picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_2.1]
+portrait = "embarrassed"
+local = "I hope it was okay that I ordered the food instead of making it myself..."
+prompts = [
+	{ local = "I didn't mind at all!", next = "2" },
+	{ local = "Well, now I want to try your version!", next = "5" },
+]
+
+[deep_woods_picnic_follow_up_2.2]
+portrait = "happy"
+local = "Whew!"
+next = "3"
+
+[deep_woods_picnic_follow_up_2.3]
+portrait = "think"
+local = "Honestly, I don't really cook all that much."
+next = "4"
+
+[deep_woods_picnic_follow_up_2.4]
+portrait = "embarrassed"
+local = "But if you like, I can try making something for us next time."
+
+[deep_woods_picnic_follow_up_2.5]
+portrait = "happy"
+local = "Haha!"
+next = "6"
+
+[deep_woods_picnic_follow_up_2.6]
+portrait = "think"
+local = "Well honestly, I don't really cook all that much."
+next = "7"
+
+[deep_woods_picnic_follow_up_2.7]
+portrait = "embarrassed"
+local = "But if you like, I can try making something for us next time."
+
+[deep_woods_picnic_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "balor" },
+	{ balor_has_child = false },
+	{ any = [{ balor_is_spouse = true }, { da_balor_deep_woods_picnic = 3 }] },
+	{ da_balor_deep_woods_picnic_follow_up_gate = true }
+]
+writes = [{ da_balor_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "blush"
+local = "That was a nice picnic, wasn't it?"
+next = "1"
+
+[deep_woods_picnic_follow_up_3.1]
+portrait = "happy"
+local = "I was glad to see you enjoyed the food!"

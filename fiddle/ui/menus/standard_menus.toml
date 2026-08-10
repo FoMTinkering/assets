@@ -1,0 +1,201 @@
+# Standard menus in the game, such as the journal, the blacksmith, the dragon shrine, etc.
+# Documentation on each property is available
+[default]
+	canvas_kind = "minspec"
+	listen_for_exit = true
+	open_transition = true
+	close_transition = true
+	sounds = { open = "SoundEffects/UI/UIPopUp", close = "SoundEffects/UI/UIPopDown" }
+	has_background = true
+	pause = "main"
+	hides_hud = true
+
+# The journal is the base "book" of the menu with Ari's sub_menus such as
+# the inventory, almanac, etc.
+#
+# The journal additionally defines its pages in `ui/journal_pages.toml
+[journal]
+	backplate_name = "book"
+	run_tests = false
+	page_offset = [16, 8]
+	page_size = [189, 218]
+	header_size = [176, 21]
+	header_offset = [9, 9]
+	body_size = [176, 178]
+	body_offset = [9, 31]
+
+# This is a slimmed down version of the journal. It does not contain the
+# tabs that are used to navigate to other menus, and instead just provides
+# the core layout for menus that can appear both in the journal and
+# elsewhere, or any menu that uses a two-page layout in general.
+#
+# That said, this is a relic, and these menus can be made using
+# `create_journal_nodes` for a far simpler set up. A task for another day!
+[baby_journal]
+	backplate_name = "book"
+	run_tests = false
+
+# The menu Ari uses to purchase new perks.
+[dragon_shrine]
+	backplate_name = "backplate"
+	# This is a menu with multiple "levels" so it handles MenuBack itself.
+	listen_for_exit = false
+
+# The menu for shopping in stores (general store, inn, etc).
+[store]
+	[store.carousel_layout]
+		items = 5
+		icon_size = 14
+		icon_padding = 6
+		slide_duration = 8
+		arrow_left_button_size = 18
+		arrow_right_button_size = 18
+		arrow_button_offset = 8
+
+# The menu used for chest-like objects.
+[storage]
+
+# The menu to get renown rewards.
+[renown_chest]
+
+# The menu for Ari's mailbox.
+[inbox]
+
+# The menu Ari uses to place animals from her farm in Hayden's care.
+[daycare]
+	backplate_name = "book"
+
+# The menu Ari uses to adopt new animals.
+[adoption]
+	backplate_name = "book"
+
+# The menu Ari uses to sell animals.
+[sell_animals]
+	backplate_name = "book"
+
+# The menu in the mines used to travel between floors.
+[elevator]
+	backplate_name = "backplate"
+
+# The menu that displays the calendar.
+[calendar]
+	backplate_name = "backplate"
+
+# The menu used to render dialogue and portraits. Somewhat unique due to how flexible it is,
+# so it disables some things in favor of handling them itself.
+[textbox]
+	has_background = false
+	run_tests = false
+	listen_for_exit = false
+	open_transition = false
+	close_transition = false
+	sounds = "<n/a>"
+
+# This is the crafting menu used for cooking, blacksmithing, and woodcrafting.
+[crafting]
+    run_test_once = true
+
+# The menu that displays the various wings of the museum.
+[museum]
+	backplate_name = "book"
+	wings = [
+		{ wing = "archaeology", icon_key = "spr_ui_museum_archaeology_wing_button" },
+		{ wing = "fish", icon_key = "spr_ui_museum_fish_wing_button" },
+		{ wing = "flora", icon_key = "spr_ui_museum_flora_wing_button" },
+		{ wing = "insect", icon_key = "spr_ui_museum_insects_wing_button" },
+	]
+	archaeology_order = [
+		"common_finds",
+		"prehistoric",
+		"ancient",
+		"alda",
+		"caldosian",
+		"aldarian",
+		"oopart",
+		"aquatic",
+		"sunken",
+		"deep_woods",
+		"fish_trap",
+		"mine",
+		"upper_mines_artifacts",
+		"tide_caverns",
+		"deep_earth",
+		"lava_caves",
+		"dragon",
+		"ritual",
+		"mist",
+		"vintage_farm_tools",
+		"metals_of_mistria",
+		"gems_of_mistria",
+	]
+	fish_order = [
+		"multi_season_fish",
+		"spring_river",
+		"spring_pond",
+		"spring_ocean",
+		"summer_river",
+		"summer_pond",
+		"summer_ocean",
+		"fall_river",
+		"fall_pond",
+		"fall_ocean",
+		"winter_river",
+		"winter_pond",
+		"winter_ocean",
+		"fish_bait",
+		"fish_trap",
+		"deep_woods",
+		"upper_mines",
+		"tide_caverns",
+		"deep_earth",
+		"lava_caves",
+		"ruins",
+		"legendary",
+	]
+	flora_order = [
+		"spring_crops",
+		"spring_flowers",
+		"spring_forage",
+		"summer_crops",
+		"summer_flowers",
+		"summer_forage",
+		"fall_crops",
+		"fall_flowers",
+		"fall_forage",
+		"winter_crops",
+		"winter_flowers",
+		"winter_forage",
+		"deep_woods",
+		"upper_mines",
+		"tide_caverns",
+		"deep_earth",
+		"lava_caves",
+		"ruins",
+		"void",
+
+	]
+	insect_order = [
+		"multi_season",
+		"spring",
+		"summer",
+		"fall",
+		"winter",
+		"rare",
+		"bee",
+		"honey",
+		"bug_pheromone",
+		"terrarium",
+		"grass",
+		"beach",
+		"deep_woods",
+		"upper_mines",
+		"tide_caverns",
+		"deep_earth",
+		"lava_caves",
+		"ruins",
+		"legendary",
+
+	]
+
+# Elsie's gossip menu
+[gossip]

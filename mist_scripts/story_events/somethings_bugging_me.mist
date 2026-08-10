@@ -1,0 +1,129 @@
+fun ari_swing() {
+	play_sound("SoundEffects/Tools/AxeAndPickSwing");
+	animate(ari, net);
+	ari_set_attachment(net_worn);
+	await_ari_animation();
+	animate(ari, idle);
+}
+
+fun item_give_sequence(actor, start_location) {
+	walk_slow(actor, sbm_luc_gift);
+	face(actor, south);
+	wait(0.25);
+	ari_hold_item(net_worn);
+	wait(1);
+	walk_slow(actor, start_location);
+	face(actor, south);
+}
+scene(inn);
+place_actor(luc, west, sbm_luc_start);
+place_actor(hemlock, east, sbm_hemlock_start);
+place_actor(ari, north, sbm_ari_entrance);
+camera_position(sbm_camera_2);
+request_music_play("Music/Events/Cutscene");
+
+//
+sim {
+	fade_in(2);
+	pan_camera(4, sbm_camera_1);
+	{
+		wait(1.5);
+		animate(luc, net);
+	}
+	{
+		wait(1.5);
+		free bark_speech(hemlock, exclamation_mark);
+		walk(hemlock, sbm_hemlock_back);
+		face(hemlock, east);
+	}
+}
+
+next_line(); //
+
+next_line(); //
+close_textbox();
+sim {
+	{
+		free bark_speech(luc, exclamation_mark);
+		animate(luc, idle);
+		wait(0.5);
+		face(luc, south);
+		wait(0.5);
+		face(hemlock, south);
+	}
+	{
+		wait(1);
+		pan_camera(2, sbm_camera_2);
+	}
+	{
+		walk_slow(ari, sbm_ari_approach);
+		face(ari, north);
+	}
+}
+wait(0.01);
+free sim {
+		{
+			wait(0.5);
+			walk_slow(luc, sbm_luc);
+			face(luc, south);
+		}
+		{
+			wait(1);
+			walk_slow(hemlock, sbm_hemlock);
+			face(hemlock, south);
+		}
+		{
+			walk_slow(ari, sbm_ari);
+			face(ari, north);
+		}
+		{
+			pan_camera(2, sbm_camera_4);
+		}
+}
+next_line(); //
+free bark_speech(ari, question_mark);
+next_line(); //
+wait(0.5);
+face(luc, west);
+next_line(); //
+face(luc, south);
+next_line(); //
+next_line(); //
+//
+//
+//
+//
+next_line(); //
+
+//
+if get_response() == 0 {
+	free bark_speech(luc, cute_face);
+} else {
+	free bark_speech(ari, sweat_drop);
+}
+//
+//
+//
+//
+next_line(); //
+free item_give_sequence(luc, sbm_luc);
+next_line(); //
+close_textbox();
+
+//
+wait(0.5);
+face(ari, east);
+wait(0.5);
+ari_swing();
+free bark_speech(luc, exclamation_mark);
+wait(0.5);
+face(ari, north);
+next_line(); //
+next_line(); //
+
+next_line(); //
+close_textbox();
+free bark_speech(luc, cute_face);
+free bark_speech(hemlock, cute_face);
+wait(1);
+fade_out(2);

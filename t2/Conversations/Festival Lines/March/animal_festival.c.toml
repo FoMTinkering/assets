@@ -1,0 +1,61 @@
+[animal_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ animal_festival_today = true },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+]
+portrait = "unimpressed"
+local = "Why would they sell a sophisticated drink like =Hot Chocolate= in such a silly mug?"
+next = "1"
+
+[animal_festival_0.1]
+portrait = "sigh"
+local = "I suppose I should get one, those sales help fund the festival."
+
+[animal_festival_first]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ animal_festival_today = true },
+	{ any = [
+		{ small_animal_place = 3 },
+		{ large_animal_place = 3 },
+	] },
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "neutral"
+local = "Congrats."
+next = "1"
+
+[animal_festival_first.1]
+portrait = "happy"
+local = "I crafted your award myself. Pretty nice, huh?"
+
+[animal_festival_chicken_cutout]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ animal_festival_today = true },
+	{ march_is_at = "town/af_chicken_cutout" },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "sigh"
+local = "Olric said it could count as his birthday present next month if I stood in the cutout."
+next = "1"
+
+[animal_festival_chicken_cutout.1]
+portrait = "unimpressed"
+local = "He knows me too well, he's still getting the rock he asked for anyway!"

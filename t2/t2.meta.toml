@@ -1,0 +1,1475 @@
+[meta_properties]
+id = "728648cf2ac59314"
+asset_kind = "T2"
+
+[asset_properties.initial_data]
+# put all the initial values for everything you need in the game here
+#
+# # Format
+# You just do `key = value`. The Value can be a number or a string, and cannot be
+# a template (like `<>`).
+#
+# # Priority Value
+# The assumed priority value is 2. This is greater than the generic `1` which
+# most NPC conditions have.
+
+weather = { value = "pleasant", priority_value = 1 }
+weather_is_strong = { value = false, priority_value = 1 }
+
+# location_data
+is_inside = { value = false, priority_value = 1 }
+building = { value = "undefined", priority_value = 1 }
+
+# can be `morning`, `afternoon`, `evening`, `night`.
+time_of_day = { value = "morning", validator = "time_of_day", priority_value = 1 }
+
+# museum stuff
+museum_total_count = 0
+museum_archaeology_count = 0
+museum_fish_count = 0
+museum_flora_count = 0
+museum_insect_count = 0
+
+# skills
+archaeology_level = 1
+blacksmithing_level = 1
+cooking_level = 1
+farming_level = 1
+fishing_level = 1
+ranching_level = 1
+woodcrafting_level = 1
+
+# animals
+alpaca_count = 0
+capybara_count = 0
+chicken_count = 0
+cow_count = 0
+duck_count = 0
+horse_count = 0
+
+# ari stats
+gold = 0
+health = 0
+essence = 0
+is_ari_birthday = { value = false, priority_value = 10 }
+health_percent = 1
+held_item = { value = "undefined", validator = "item" }
+fainted = false
+died = false
+
+# time
+date_time = { value = 0, priority_value = 1 }
+day_of_the_week = { value = 0, priority_value = 1 }
+day_time = { value = 0, priority_value = 1 }
+year_time = { value = 0, priority_value = 1 }
+season = { value = 0, priority_value = 1 }
+location = { value = "player_home", validator = "location", priority_value = 1 }
+
+# perks
+perk_count = 0
+
+# normal NPC stuff
+most_liked_npc = { value = "eiland", validator = "npc", priority_value = 2 }
+most_liked_dateable = { value = "eiland", validator = "npc", priority_value = 2 }
+most_special_human = { value = "eiland", validator = "npc", priority_value = 2 }
+
+# these are overrides for some nonsense
+adeline_has_met = { value = true, priority_value = 15 }
+balor_has_met = { value = true, priority_value = 15 }
+eiland_has_met = { value = true, priority_value = 15 }
+
+# cutscene gamer time:
+cutscene_seen_prologue = { value = true, priority_value = 2 }
+cutscene_seen_day_zero = { value = true, priority_value = 2 }
+cutscene_seen_farm_introduction = { value = true, priority_value = 2 }
+
+# festivals
+# all stuff for me to fix!
+spring_festival_items_turned_in = 0 # {}_festival_items_turned_in
+
+spring_festival_setup = false
+sf_no_place = false
+sf_third_place = false
+sf_second_place = false
+sf_first_place = false
+sf_first_place_plus = false
+
+shooting_star_date_partner = "undefined"
+shooting_star_date_status = { value = "undefined", priority_value = 4 }
+# set as undefined, <NPC>_invited, or <NPC>_went
+
+# set true if ever attended with someone
+shooting_star_adeline_attended = false
+shooting_star_balor_attended = false
+shooting_star_caldarus_attended = false
+shooting_star_celine_attended = false
+shooting_star_eiland_attended = false
+shooting_star_hayden_attended = false
+shooting_star_juniper_attended = false
+shooting_star_march_attended = false
+shooting_star_reina_attended = false
+shooting_star_ryis_attended = false
+shooting_star_seridia_attended = false
+shooting_star_valen_attended = false
+
+shooting_star_festival_day = false
+shooting_star_gate = false
+
+shooting_star_seridia_cheesecake = { value = false, priority_value = 5 }
+
+# harvest festival
+harvest_festival_dance_partner = { value = "undefined", priority_value = 10 }
+harvest_festival_setup = { value = false, priority_value = 3 }
+hf_no_place = { value = false, priority_value = 5 }
+hf_third_place = { value = false, priority_value = 5 }
+hf_second_place = { value = false, priority_value = 5 }
+hf_first_place = { value = false, priority_value = 5 }
+harvest_festival_attended = false
+
+# animal festival
+animal_festival_today = false                                    # this exists because in an edge case the festival can be canceled :/
+large_animal_place = { value = "undefined", priority_value = 5 }
+small_animal_place = { value = "undefined", priority_value = 5 }
+jo_explained_animal_festival = false
+
+# general dateable threads
+thread_mutex = { value = "undefined", priority_value = 1 }
+thread_delay = { value = false, priority_value = 1 }
+
+# town rank
+mistril_rank = { value = false, priority_value = 10 }
+
+# specific dateable threads
+adeline_family_history_finished = false
+adeline_relaxation_finished = false
+adeline_hot_off_the_press_finished = false
+balor_deal_gone_wrong_finished = false
+balor_strange_places_to_sleep_finished = false
+balor_business_ideas_finished = false
+balors_horse_finished = false
+celine_dells_bedtime_stories_finished = false
+celine_strange_noises_at_night_finished = false
+celine_holtification_finished = false
+eiland_cake_conundrum_finished = false
+eiland_cake_conundrum_day = false
+hayden_henrietta_tales_finished = false
+hayden_mistria_tales_finished = false
+hayden_noises_finished = false
+juniper_super_smart_frog_finished = false
+juniper_super_smart_frog_gift_line = false
+march_marchsmithing_finished = false
+reina_bug_facts_finished = false
+reina_bug_facts_day = false
+ryis_unavailable_nails_finished = false
+ryis_unavailable_nails_adeline = false
+ryis_unavailable_nails_balor = false
+ryis_unavailable_nails_eiland = false
+ryis_unavailable_nails_errol = false
+ryis_unavailable_nails_juniper = false
+ryis_unavailable_nails_march = false
+valen_ancestral_medical_journal_finished = false
+valen_ancestral_medical_journal_day = false
+
+# general non-dateable threads
+nd_thread_mutex = "undefined"
+nd_thread_delay = false
+
+# specific non-dateable threads
+luc_bee_facts_finished = false
+luc_bee_facts_day = false
+olric_in_the_mines_finished = false
+terithia_fishing_tips_finished = false
+
+# ward facts, to be organized later
+rain_counter = 0
+rain_group_0 = 0
+rain_group_1 = 0
+rain_group_2 = 0
+fall_day = "day_1"
+winter_day = "day_1"
+
+fnati = 0
+fnati_discussion = 0
+dnd_fnati_discussion = 0
+
+cards_fnati = 0
+dnd_fnati = 0
+drinkers_fnati = 0
+kids_plot_fnati = 0
+josephine_first_fnati = 0
+hemlock_first_fnati = 0
+reina_first_fnati = 0
+
+drawing_fnati = 0
+balcony_fnati = 0
+balcony_reina = false
+balcony_hayden = false
+balcony_kids = false
+balcony_elsie = false
+balcony_hayden_again = false
+balcony_celine = false
+cocktails_fnati = 0
+josephine_second_fnati = 0
+maple_first_fnati = 0
+luc_first_fnati = 0
+balors_gate_fnati = 0
+
+board_games_fnati = 0
+book_club_fnati = 0
+maples_reign_fnati = 0
+dragonguard_fnati = 0
+
+operation_lovestruck_fnati = 0
+dessert_fnati = 0
+detectives_fnati = 0
+charades_fnati = 0
+
+dnd_dragons_fnati = 0
+crochet_club_fnati = 0
+capital_club_fnati = 0
+kid_cuisine_fnati = 0
+
+fnati_follow_up = false
+
+# ward facts
+adeline_inn_work = false
+girls_night = false
+group_one_beach_day = false
+group_two_beach_day = false
+group_three_beach_day = false
+hayden_house_dinner = false
+adeline_playing_poker = false
+celine_playing_poker = false
+reina_playing_poker = false
+hemlock_playing_poker = false
+balor_playing_poker = false
+march_playing_poker = false
+terithia_playing_poker = false
+holt_just_punned = 0
+rainy_inn_night = false
+eiland_dig_day_wr = false
+eiland_dig_day_n = false
+eiland_dig_day_er = false
+errol_dig_day_wr = false
+errol_dig_day_n = false
+errol_dig_day_er = false
+archaeology_discussion_inn = false
+archaeology_discussion_museum = false
+old_boy_hang = false
+old_boy_hang_future = false
+manor_dinner_eeea = false
+manor_dinner_argument = false
+# revisit hayden week
+hayden_injured_week = false
+reina_visited_hayden_farm = false
+terithia_story_time = false
+jo_and_hem_performance_night = false
+jo_and_hem_performance = false
+kids_beach_day = false
+hemlock_made_tea = false
+fountain_play = false
+swing_play = false
+wagon_needs_repairs = false
+holt_snacked = false
+inn_day_drinking = false
+na_work_date = false
+nh_date_night = false
+nora_tidy_celines_cottage = false
+olric_workout = false
+inn_counter = 0
+bathhouse_counter = 0
+landen_advice = 0
+march_was_mean = 0
+carpenter_counter = 0
+ryis_owes_a_cookie = 0
+rainy_soup = false
+clinic_counter = 0
+valen_outdoor_work = false
+errol_museum_day = false
+jh_date_night = false
+juniper_babysits = false
+valen_babysits = false
+ryis_injured_day = false
+adeline_business_review = false
+register_tutorial = 0
+hide_and_go_seek = true
+march_forge_work_day = true
+olric_forge_work_day = true
+archaeology_tutorial = 0
+bug_tutorial = 0
+summer_tuesday_progress = false
+dell_taste_test = false
+luc_taste_test = false
+maple_taste_test = false
+hemlock_beach_day = false
+holt_beach_day = false
+maple_has_a_list = false
+cottage_is_armory = false
+kids_got_chocolate = 0
+terithia_hook_project = false
+market_is_back = false
+elsie_big_night = false
+rained_yesterday = false
+more_funding = { value = false, priority_value = 5 }
+more_funding_delay = { value = false, priority_value = 5 }
+farm_groceries = false
+queen_bee = false
+queen_maple = false
+taste_testing_day = false
+carpenter_business = false
+ryis_carpenter_business = false
+blacksmith_business = false
+inn_business = false
+general_store_business = false
+dragonguard_business = false
+hemlock_tired_after_performance = false
+march_is_in_bed = false
+early_morning_delay = false
+late_night_delay = false
+seasonal_transition_delay = false
+olrics_shorts = false
+baked_goods_taste_test = false
+baked_goods_taste_test_day = false
+wall_inspection = false
+dozy_checkup = false
+hayden_town_work_day = false
+ryis_town_work_day = false
+etching = false
+brewing_supplies = false
+new_vintage = false
+olric_piano_prodigy = false
+olric_piano_lessons = false
+march_taking_orders = false
+elsie_performance_night = false
+elsie_performance = false
+balor_taste_test = false
+josephine_taste_test = false
+hemlock_taste_test = false
+asked_for_nails = false
+landen_museum_visit = false
+maple_shadowing_adeline = false
+olric_new_muscle = { value = false, priority_value = 10 }
+inn_silverware = { value = false, priority_value = 10 }
+celine_new_tools = false
+sand_to_glass = { value = false, priority_value = 10 }
+shell_competition = { value = false, priority_value = 10 }
+cauldron_emergency = { value = false, priority_value = 10 }
+valen_book_reviews = { value = false, priority_value = 10 }
+hayden_inn_breakfast_farm_work = false
+seridia_holt_pun = { value = 0, priority_value = 5 }
+seridia_juniper_bath_follow_up = { value = false, priority_value = 5 }
+elsie_has_performed = { value = false, priority_value = 3 }
+caldarus_hayden_chores_follow_up = { value = false, priority_value = 5 }
+hayden_ranching_tips = { value = false, priority_value = 5 }
+dell_skeleton = { value = false, priority_value = 3 }
+
+# heart events
+adeline_heart_event = { value = "undefined", priority_value = 5 }
+balor_heart_event = { value = "undefined", priority_value = 5 }
+caldarus_heart_event = { value = "undefined", priority_value = 5 }
+celine_heart_event = { value = "undefined", priority_value = 5 }
+eiland_heart_event = { value = "undefined", priority_value = 5 }
+hayden_heart_event = { value = "undefined", priority_value = 5 }
+juniper_heart_event = { value = "undefined", priority_value = 5 }
+march_heart_event = { value = "undefined", priority_value = 5 }
+reina_heart_event = { value = "undefined", priority_value = 5 }
+ryis_heart_event = { value = "undefined", priority_value = 5 }
+seridia_heart_event = { value = "undefined", priority_value = 5 }
+valen_heart_event = { value = "undefined", priority_value = 5 }
+
+adeline_four_hearts_supplies = true
+adeline_four_hearts_cookie = false
+juniper_seeks_out_caldarus = { value = false, priority_value = 8 }
+juniper_seeks_out_caldarus_gate = { value = false, priority_value = 8 }
+
+# eight heart follow up lines priority bump
+adeline_eight_heart_priority_bump = { value = false, priority_value = 10 }
+balor_eight_heart_priority_bump = { value = false, priority_value = 10 }
+caldarus_eight_heart_priority_bump = { value = false, priority_value = 10 }
+celine_eight_heart_priority_bump = { value = false, priority_value = 10 }
+eiland_eight_heart_priority_bump = { value = false, priority_value = 10 }
+hayden_eight_heart_priority_bump = { value = false, priority_value = 10 }
+juniper_eight_heart_priority_bump = { value = false, priority_value = 10 }
+march_eight_heart_priority_bump = { value = false, priority_value = 10 }
+reina_eight_heart_priority_bump = { value = false, priority_value = 10 }
+ryis_eight_heart_priority_bump = { value = false, priority_value = 10 }
+seridia_eight_heart_priority_bump = { value = false, priority_value = 10 }
+valen_eight_heart_priority_bump = { value = false, priority_value = 10 }
+
+elsie_date_tutorial_gate = false
+
+# relationship status, can be undefined, best_friend, dating, or spouse
+# note that we only reference these directly when writing and instead read from the ones below
+adeline_status = "undefined"
+balor_status = "undefined"
+caldarus_status = "undefined"
+celine_status = "undefined"
+eiland_status = "undefined"
+hayden_status = "undefined"
+juniper_status = "undefined"
+march_status = "undefined"
+reina_status = "undefined"
+ryis_status = "undefined"
+seridia_status = "undefined"
+valen_status = "undefined"
+
+# making this fact for the engagement lines, maybe worth making a marriage one for the wedding
+ari_is_engaged = { value = false, priority_value = 5 }
+ari_is_married = { value = false, priority_value = 5 }
+
+# these all are provided by the runtime
+adeline_is_dating = false
+balor_is_dating = false
+caldarus_is_dating = false
+celine_is_dating = false
+eiland_is_dating = false
+hayden_is_dating = false
+juniper_is_dating = false
+march_is_dating = false
+reina_is_dating = false
+ryis_is_dating = false
+seridia_is_dating = false
+valen_is_dating = false
+adeline_is_best_friend = false
+balor_is_best_friend = false
+caldarus_is_best_friend = false
+celine_is_best_friend = false
+eiland_is_best_friend = false
+hayden_is_best_friend = false
+juniper_is_best_friend = false
+march_is_best_friend = false
+reina_is_best_friend = false
+ryis_is_best_friend = false
+seridia_is_best_friend = false
+valen_is_best_friend = false
+adeline_is_spouse = false
+balor_is_spouse = false
+caldarus_is_spouse = false
+celine_is_spouse = false
+eiland_is_spouse = false
+hayden_is_spouse = false
+juniper_is_spouse = false
+march_is_spouse = false
+reina_is_spouse = false
+ryis_is_spouse = false
+seridia_is_spouse = false
+valen_is_spouse = false
+adeline_is_partner = false
+balor_is_partner = false
+caldarus_is_partner = false
+celine_is_partner = false
+eiland_is_partner = false
+hayden_is_partner = false
+juniper_is_partner = false
+march_is_partner = false
+reina_is_partner = false
+ryis_is_partner = false
+seridia_is_partner = false
+valen_is_partner = false
+adeline_is_fiance = false
+balor_is_fiance = false
+caldarus_is_fiance = false
+celine_is_fiance = false
+eiland_is_fiance = false
+hayden_is_fiance = false
+juniper_is_fiance = false
+march_is_fiance = false
+reina_is_fiance = false
+ryis_is_fiance = false
+seridia_is_fiance = false
+valen_is_fiance = false
+adeline_is_ex = false
+balor_is_ex = false
+caldarus_is_ex = false
+celine_is_ex = false
+eiland_is_ex = false
+hayden_is_ex = false
+juniper_is_ex = false
+march_is_ex = false
+reina_is_ex = false
+ryis_is_ex = false
+seridia_is_ex = false
+valen_is_ex = false
+adeline_has_child = false
+balor_has_child = false
+caldarus_has_child = false
+celine_has_child = false
+eiland_has_child = false
+hayden_has_child = false
+juniper_has_child = false
+march_has_child = false
+reina_has_child = false
+ryis_has_child = false
+seridia_has_child = false
+valen_has_child = false
+has_spouse = false
+has_fiance = false
+adeline_can_drink = true
+balor_can_drink = true
+caldarus_can_drink = true
+celine_can_drink = true
+eiland_can_drink = true
+hayden_can_drink = true
+juniper_can_drink = true
+march_can_drink = true
+reina_can_drink = true
+ryis_can_drink = true
+seridia_can_drink = true
+valen_can_drink = true
+
+# added condition for post 10h scenes
+breakup_bump = { value = false, priority_value = 20 }
+engagement_bump = { value = false, priority_value = 25 }
+engagement_delay = { value = false, priority_value = 10 }
+engagement_cap = true
+post_10h_gate = { value = false, priority_value = 8 }
+post_10h_progression = { value = false, priority_value = 8 }
+
+# wedding choices
+wedding_flower_color = "undefined"
+wedding_cake_flavor = "undefined"
+wedding_dinner_dish = "undefined"
+
+disabled_break_up_content = false
+
+# romance line conditions
+
+adeline_post_8h_romantic_gate = false
+adeline_post_8h_romantic_progression = false
+adeline_post_8h_romantic_grouping = 0
+
+balor_post_8h_romantic_gate = false
+balor_post_8h_romantic_progression = false
+balor_post_8h_romantic_grouping = 0
+
+caldarus_post_8h_romantic_gate = false
+caldarus_post_8h_romantic_progression = false
+caldarus_post_8h_romantic_grouping = 0
+
+celine_post_8h_romantic_gate = false
+celine_post_8h_romantic_progression = false
+celine_post_8h_romantic_grouping = 0
+
+eiland_post_8h_romantic_gate = false
+eiland_post_8h_romantic_progression = false
+eiland_post_8h_romantic_grouping = 0
+
+hayden_post_8h_romantic_gate = false
+hayden_post_8h_romantic_progression = false
+hayden_post_8h_romantic_grouping = 0
+
+juniper_post_8h_romantic_gate = false
+juniper_post_8h_romantic_progression = false
+juniper_post_8h_romantic_grouping = 0
+
+march_post_8h_romantic_gate = false
+march_post_8h_romantic_progression = false
+march_post_8h_romantic_grouping = 0
+
+reina_post_8h_romantic_gate = false
+reina_post_8h_romantic_progression = false
+reina_post_8h_romantic_grouping = 0
+
+ryis_post_8h_romantic_gate = false
+ryis_post_8h_romantic_progression = false
+ryis_post_8h_romantic_grouping = 0
+
+seridia_post_8h_romantic_gate = false
+seridia_post_8h_romantic_progression = false
+seridia_post_8h_romantic_grouping = 0
+
+valen_post_8h_romantic_gate = false
+valen_post_8h_romantic_progression = false
+valen_post_8h_romantic_grouping = 0
+
+adeline_post_8h_best_friend_gate = false
+adeline_post_8h_best_friend_grouping = 0
+
+balor_post_8h_best_friend_gate = false
+balor_post_8h_best_friend_grouping = 0
+
+caldarus_post_8h_best_friend_gate = false
+caldarus_post_8h_best_friend_grouping = 0
+
+celine_post_8h_best_friend_gate = false
+celine_post_8h_best_friend_grouping = 0
+
+eiland_post_8h_best_friend_gate = false
+eiland_post_8h_best_friend_grouping = 0
+
+hayden_post_8h_best_friend_gate = false
+hayden_post_8h_best_friend_grouping = 0
+
+juniper_post_8h_best_friend_gate = false
+juniper_post_8h_best_friend_grouping = 0
+
+march_post_8h_best_friend_gate = false
+march_post_8h_best_friend_grouping = 0
+
+reina_post_8h_best_friend_gate = false
+reina_post_8h_best_friend_grouping = 0
+
+ryis_post_8h_best_friend_gate = false
+ryis_post_8h_best_friend_grouping = 0
+
+seridia_post_8h_best_friend_gate = false
+seridia_post_8h_best_friend_grouping = 0
+
+valen_post_8h_best_friend_gate = false
+valen_post_8h_best_friend_grouping = 0
+proposed_today = false
+wedding_is_tomorrow = { value = false, priority_value = 10 }
+
+# romance line follow up facts
+march_post_8h_steak = { value = false, priority_value = 6 }
+march_post_8h_helmet = { value = false, priority_value = 6 }
+ryis_post_8h_landen_follow_up = { value = false, priority_value = 6 }
+seridia_post_8h_platform_heels = { value = false, priority_value = 8 }
+
+# activity info
+adeline_activity_object = { value = "undefined", priority_value = 10 }
+balor_activity_object = { value = "undefined", priority_value = 10 }
+caldarus_activity_object = { value = "undefined", priority_value = 10 }
+celine_activity_object = { value = "undefined", priority_value = 10 }
+eiland_activity_object = { value = "undefined", priority_value = 10 }
+hayden_activity_object = { value = "undefined", priority_value = 10 }
+juniper_activity_object = { value = "undefined", priority_value = 10 }
+march_activity_object = { value = "undefined", priority_value = 10 }
+reina_activity_object = { value = "undefined", priority_value = 10 }
+ryis_activity_object = { value = "undefined", priority_value = 10 }
+seridia_activity_object = { value = "undefined", priority_value = 10 }
+valen_activity_object = { value = "undefined", priority_value = 10 }
+
+# gifts
+celine_temple_flower_received = false
+
+# story cutscenes
+
+# intro
+tut = "undefined"
+ssp = false
+mdw = false
+cso = false
+sbm = false
+jcc = false
+
+# mines
+utm = "undefined"
+utm_celine_line_delay = { value = false, priority_value = 2 }
+sr = "undefined"
+floor_10 = "undefined"
+water_seal = "undefined"
+earth_seal = "undefined"
+fire_seal = "undefined"
+ruins_seal = { value = "undefined", priority_value = 5 }
+ruins_seal_follow_up_bump = { value = false, priority_value = 5 }
+tet = false
+tft = false
+bes = false
+bws = false
+bfs = false
+pq = { value = "undefined", priority_value = 5 }
+read_pq_scroll = false
+read_pq_tablet = false
+dt = { value = "undefined", priority_value = 20 }
+read_tablet_delay = { value = "undefined", priority_value = 10 }
+archerfish_hint_bump = { value = true, priority_value = 2 }
+caldarus_mines_tips_and_tricks = { value = false, priority_value = 5 }
+broken_bell = false
+
+# repair
+rtb = { value = "undefined", priority_value = 3 }
+rmfr1 = { value = "undefined", priority_value = 3 }
+rmfr1_seeds = { value = false, priority_value = 3 }
+rmfr2 = { value = "undefined", priority_value = 3 }
+rtgs = { value = "undefined", priority_value = 3 }
+rhb = { value = "undefined", priority_value = 3 }
+rtbb = { value = "undefined", priority_value = 3 }
+rti = { value = "undefined", priority_value = 3 }
+utcs = { value = "undefined", priority_value = 3 }
+utsm = { value = "undefined", priority_value = 3 }
+aat = { value = "undefined", priority_value = 3 }
+laf = false
+utsmp = { value = "undefined", priority_value = 3 }
+rtbt = { value = "undefined", priority_value = 3 }
+
+
+# revisit post alpha
+caldarus_is_human = false
+caldarus_first_conversation = false
+caldarus_home = false
+caldarus_counter = 0
+caldarus_recovery_delay = { value = "undefined", priority_value = 2 }
+balor_caldarus_encounter = { value = false, priority_value = 10 }
+balor_caldarus_orders = false
+celine_caldarus_encounter = { value = false, priority_value = 10 }
+dell_caldarus_encounter = { value = false, priority_value = 10 }
+juniper_caldarus_encounter = { value = false, priority_value = 10 }
+ryis_caldarus_encounter = { value = false, priority_value = 10 }
+caldarus_villager_delay = false
+caldarus_lore_delay = false
+caldarus_lore_mutex = "undefined"
+caldarus_post_recovery_conversation = { value = "undefined", priority_value = 10 }
+caldarus_seridia_town = false
+caldarus_seridia_town_timer = false
+seridia_pie_follow_up = false
+dragon_market = "undefined"
+caldarus_market_count = 0
+seridia_market_count = 0
+seridia_is_human = false
+seridia_casting_spells = false
+seridia_villager_cooldown = false
+juniper_seridia_first_convo = { value = false, priority_value = 10 }
+elsie_seridia_friends = true
+seridia_counter = 0
+post_endgame_romanceable_timer = { value = false, priority_value = 50 }
+post_endgame_villager_timer = { value = false, priority_value = 50 }
+march_endgame_line_seen = false
+completed_museum = { value = false, priority_value = 10 }
+
+# graves
+grave_text_delay = false
+jade_and_olin = { value = "undefined", priority_value = 8 }
+greta = { value = "undefined", priority_value = 8 }
+
+# gossip
+heard_balor_gossip = false
+heard_juniper_gossip = false
+heard_dell_gossip = false
+
+# FETCH QUEST FOLLOW UP LINE FACTS
+fq_usaf = "undefined"
+fq_c = "undefined"
+fq_n = "undefined"
+fq_fo = "undefined"
+fq_s = "undefined"
+fq_a = "undefined"
+fq_cro = "undefined"
+fq_oys = "undefined"
+fq_up = "undefined"
+fq_mb = "undefined"
+fq_mm = "undefined"
+fq_pp = "undefined"
+fq_ct = "undefined"
+# crown request follow up line facts
+cq_tac = "undefined"
+cq_mf = "undefined"
+cq_f = "undefined"
+cq_am = "undefined"
+cq_s = "undefined"
+cq_st = "undefined"
+cq_as = "undefined"
+cq_md = "undefined"
+cq_fl = "undefined"
+# taliferro cooking challenge follow up line facts
+cc_m = { value = false, priority_value = 4 }
+cc_e = { value = false, priority_value = 4 }
+cc_o = { value = false, priority_value = 4 }
+cc_d = { value = false, priority_value = 4 }
+cc_v = { value = false, priority_value = 4 }
+cc_h = { value = false, priority_value = 4 }
+cc_j = { value = false, priority_value = 4 }
+cc_t = { value = false, priority_value = 4 }
+
+# date acceptance lines
+da_adeline_inn_meal = 0
+da_balor_inn_meal = 0
+da_caldarus_inn_meal = 0
+da_caldarus_eog_inn_meal = 0
+da_celine_inn_meal = 0
+da_eiland_inn_meal = 0
+da_hayden_inn_meal = 0
+da_juniper_inn_meal = 0
+da_march_inn_meal = 0
+da_reina_inn_meal = 0
+da_ryis_inn_meal = 0
+da_seridia_inn_meal = 0
+da_valen_inn_meal = 0
+da_adeline_deep_woods_picnic = 0
+da_balor_deep_woods_picnic = 0
+da_caldarus_deep_woods_picnic = 0
+da_celine_deep_woods_picnic = 0
+da_eiland_deep_woods_picnic = 0
+da_hayden_deep_woods_picnic = 0
+da_juniper_deep_woods_picnic = 0
+da_march_deep_woods_picnic = 0
+da_reina_deep_woods_picnic = 0
+da_ryis_deep_woods_picnic = 0
+da_seridia_deep_woods_picnic = 0
+da_valen_deep_woods_picnic = 0
+da_adeline_beach = 0
+da_balor_beach = 0
+da_caldarus_beach = 0
+da_caldarus_eog_beach = 0
+da_celine_beach = 0
+da_eiland_beach = 0
+da_hayden_beach = 0
+da_juniper_beach = 0
+da_march_beach = 0
+da_reina_beach = 0
+da_ryis_beach = 0
+da_seridia_beach = 0
+da_valen_beach = 0
+da_adeline_park = 0
+da_balor_park = 0
+da_caldarus_park = 0
+da_caldarus_eog_park = 0
+da_celine_park = 0
+da_eiland_park = 0
+da_hayden_park = 0
+da_juniper_park = 0
+da_march_park = 0
+da_reina_park = 0
+da_ryis_park = 0
+da_seridia_park = 0
+da_valen_park = 0
+da_adeline_gem_cutting = 0
+da_balor_gem_cutting = 0
+da_caldarus_gem_cutting = 0
+da_caldarus_eog_gem_cutting = 0
+da_celine_gem_cutting = 0
+da_eiland_gem_cutting = 0
+da_hayden_gem_cutting = 0
+da_juniper_gem_cutting = 0
+da_march_gem_cutting = 0
+da_reina_gem_cutting = 0
+da_ryis_gem_cutting = 0
+da_seridia_gem_cutting = 0
+da_valen_gem_cutting = 0
+da_adeline_bathhouse = 0
+da_balor_bathhouse = 0
+da_caldarus_bathhouse = 0
+da_caldarus_eog_bathhouse = 0
+da_celine_bathhouse = 0
+da_eiland_bathhouse = 0
+da_hayden_bathhouse = 0
+da_juniper_bathhouse = 0
+da_march_bathhouse = 0
+da_reina_bathhouse = 0
+da_ryis_bathhouse = 0
+da_seridia_bathhouse = 0
+da_valen_bathhouse = 0
+
+# date follow up lines
+da_adeline_inn_meal_follow_up_gate = false
+da_balor_inn_meal_follow_up_gate = false
+da_caldarus_inn_meal_follow_up_gate = false
+da_caldarus_eog_inn_meal_follow_up_gate = false
+da_celine_inn_meal_follow_up_gate = false
+da_eiland_inn_meal_follow_up_gate = false
+da_hayden_inn_meal_follow_up_gate = false
+da_juniper_inn_meal_follow_up_gate = false
+da_march_inn_meal_follow_up_gate = false
+da_reina_inn_meal_follow_up_gate = false
+da_ryis_inn_meal_follow_up_gate = false
+da_seridia_inn_meal_follow_up_gate = false
+da_valen_inn_meal_follow_up_gate = false
+da_adeline_deep_woods_picnic_follow_up_gate = false
+da_balor_deep_woods_picnic_follow_up_gate = false
+da_caldarus_deep_woods_picnic_follow_up_gate = false
+da_celine_deep_woods_picnic_follow_up_gate = false
+da_eiland_deep_woods_picnic_follow_up_gate = false
+da_hayden_deep_woods_picnic_follow_up_gate = false
+da_juniper_deep_woods_picnic_follow_up_gate = false
+da_march_deep_woods_picnic_follow_up_gate = false
+da_reina_deep_woods_picnic_follow_up_gate = false
+da_ryis_deep_woods_picnic_follow_up_gate = false
+da_seridia_deep_woods_picnic_follow_up_gate = false
+da_valen_deep_woods_picnic_follow_up_gate = false
+da_adeline_beach_follow_up_gate = false
+da_balor_beach_follow_up_gate = false
+da_caldarus_beach_follow_up_gate = false
+da_caldarus_eog_beach_follow_up_gate = false
+da_celine_beach_follow_up_gate = false
+da_eiland_beach_follow_up_gate = false
+da_hayden_beach_follow_up_gate = false
+da_juniper_beach_follow_up_gate = false
+da_march_beach_follow_up_gate = false
+da_reina_beach_follow_up_gate = false
+da_ryis_beach_follow_up_gate = false
+da_seridia_beach_follow_up_gate = false
+da_valen_beach_follow_up_gate = false
+da_adeline_park_follow_up_gate = false
+da_balor_park_follow_up_gate = false
+da_caldarus_park_follow_up_gate = false
+da_caldarus_eog_park_follow_up_gate = false
+da_celine_park_follow_up_gate = false
+da_eiland_park_follow_up_gate = false
+da_hayden_park_follow_up_gate = false
+da_juniper_park_follow_up_gate = false
+da_march_park_follow_up_gate = false
+da_reina_park_follow_up_gate = false
+da_ryis_park_follow_up_gate = false
+da_seridia_park_follow_up_gate = false
+da_valen_park_follow_up_gate = false
+da_adeline_gem_cutting_follow_up_gate = false
+da_balor_gem_cutting_follow_up_gate = false
+da_caldarus_gem_cutting_follow_up_gate = false
+da_caldarus_eog_gem_cutting_follow_up_gate = false
+da_celine_gem_cutting_follow_up_gate = false
+da_eiland_gem_cutting_follow_up_gate = false
+da_hayden_gem_cutting_follow_up_gate = false
+da_juniper_gem_cutting_follow_up_gate = false
+da_march_gem_cutting_follow_up_gate = false
+da_reina_gem_cutting_follow_up_gate = false
+da_ryis_gem_cutting_follow_up_gate = false
+da_seridia_gem_cutting_follow_up_gate = false
+da_valen_gem_cutting_follow_up_gate = false
+da_adeline_bathhouse_follow_up_gate = false
+da_balor_bathhouse_follow_up_gate = false
+da_caldarus_bathhouse_follow_up_gate = false
+da_caldarus_eog_bathhouse_follow_up_gate = false
+da_celine_bathhouse_follow_up_gate = false
+da_eiland_bathhouse_follow_up_gate = false
+da_hayden_bathhouse_follow_up_gate = false
+da_juniper_bathhouse_follow_up_gate = false
+da_march_bathhouse_follow_up_gate = false
+da_reina_bathhouse_follow_up_gate = false
+da_ryis_bathhouse_follow_up_gate = false
+da_seridia_bathhouse_follow_up_gate = false
+da_valen_bathhouse_follow_up_gate = false
+
+# post baby
+da_adeline_post_baby_follow_up_gate = false
+da_balor_post_baby_follow_up_gate = false
+da_caldarus_post_baby_follow_up_gate = false
+da_celine_post_baby_follow_up_gate = false
+da_eiland_post_baby_follow_up_gate = false
+da_hayden_post_baby_follow_up_gate = false
+da_juniper_post_baby_follow_up_gate = false
+da_march_post_baby_follow_up_gate = false
+da_reina_post_baby_follow_up_gate = false
+da_ryis_post_baby_follow_up_gate = false
+da_seridia_post_baby_follow_up_gate = false
+da_valen_post_baby_follow_up_gate = false
+
+
+# multispeaker breakout
+fnati_follow_up_1_ms_line = false
+furniture_pickaxe_ms_line = false
+the_unusual_tree_pt_1_follow_up_3_ms_line = false
+unlocking_the_mines_pt_1_follow_up_ms_line = false
+archaeology_1_ms_line = false
+archaeology_2_ms_line = false
+archaeology_3_ms_line = false
+archaeology_4_ms_line = false
+archaeology_5_ms_line = false
+archaeology_6_ms_line = false
+archaeology_7_ms_line = false
+archaeology_8_ms_line = false
+archaeology_9_ms_line = false
+archaeology_10_ms_line = false
+archaeology_11_ms_line = false
+archaeology_12_ms_line = false
+archaeology_13_ms_line = false
+archaeology_14_ms_line = false
+archaeology_15_ms_line = false
+archaeology_16_ms_line = false
+archaeology_17_ms_line = false
+archaeology_18_ms_line = false
+archaeology_19_ms_line = false
+archaeology_20_ms_line = false
+archaeology_21_ms_line = false
+archaeology_22_ms_line = false
+archaeology_23_ms_line = false
+archaeology_24_ms_line = false
+archaeology_25_ms_line = false
+archaeology_26_ms_line = false
+archaeology_27_ms_line = false
+archaeology_28_ms_line = false
+archaeology_29_ms_line = false
+archaeology_30_ms_line = false
+archaeology_31_ms_line = false
+archaeology_32_ms_line = false
+archaeology_33_ms_line = false
+archaeology_34_ms_line = false
+archaeology_35_ms_line = false
+adeline_birthday_anticipation_ms_line = false
+balor_birthday_anticipation_ms_line = false
+caldarus_birthday_anticipation_ms_line = false
+celine_birthday_anticipation_ms_line = false
+darcy_birthday_anticipation_ms_line = false
+dell_birthday_anticipation_ms_line = false
+eiland_birthday_anticipation_ms_line = false
+elsie_birthday_anticipation_ms_line = false
+errol_birthday_anticipation_ms_line = false
+hayden_birthday_anticipation_ms_line = false
+hemlock_birthday_anticipation_ms_line = false
+holt_birthday_anticipation_ms_line = false
+josephine_birthday_anticipation_ms_line = false
+juniper_birthday_anticipation_ms_line = false
+landen_birthday_anticipation_ms_line = false
+louis_birthday_anticipation_ms_line = false
+luc_birthday_anticipation_ms_line = false
+maple_birthday_anticipation_ms_line = false
+march_birthday_anticipation_ms_line = false
+merri_birthday_anticipation_ms_line = false
+nora_birthday_anticipation_ms_line = false
+olric_birthday_anticipation_ms_line = false
+reina_birthday_anticipation_ms_line = false
+ryis_birthday_anticipation_ms_line = false
+seridia_birthday_anticipation_ms_line = false
+stillwell_birthday_anticipation_ms_line = false
+taliferro_birthday_anticipation_ms_line = false
+terithia_birthday_anticipation_ms_line = false
+valen_birthday_anticipation_ms_line = false
+vera_birthday_anticipation_ms_line = false
+wheedle_birthday_anticipation_ms_line = false
+zorel_birthday_anticipation_ms_line = false
+fun_in_the_sun_ms_line = false
+beach_breeze_ms_line = false
+love_the_beach_ms_line = false
+step_away_ms_line = false
+collecting_shells_ms_line = false
+cold_drinks_ms_line = false
+taking_off_work_ms_line = false
+bathhouse_soak_ms_line = false
+waves_and_light_ms_line = false
+lounge_ms_line = false
+flower_boxes_ms_line = false
+perspiration_ms_line = false
+beach_with_friends_ms_line = false
+cumulonimbus_ms_line = false
+charming_beach_ms_line = false
+ocean_breeze_ms_line = false
+summer_ms_line = false
+best_beaches_ms_line = false
+islands_ms_line = false
+ocean_view_ms_line = false
+sun_feels_good_ms_line = false
+hermit_crab_ms_line = false
+dragon_bone_ms_line = false
+grains_of_sand_ms_line = false
+rhythm_of_the_water_ms_line = false
+coconut_tree_ms_line = false
+fire_pit_ms_line = false
+only_coconut_trees_ms_line = false
+vast_ms_line = false
+salty_air_ms_line = false
+sand_gets_hot_ms_line = false
+summertime_with_friends_ms_line = false
+middle_place_1_ms_line = false
+middle_place_2_ms_line = false
+middle_place_3_ms_line = false
+stinky_stamina_potion_lilac_ms_line = false
+
+# birthday lines
+hemlock_birthday_gate = false
+holt_birthday_gate = false
+josephine_birthday_gate = false
+nora_birthday_gate = false
+
+adeline_birthday_gate = false
+balor_birthday_gate = false
+caldarus_birthday_gate = false
+celine_birthday_gate = false
+eiland_birthday_gate = false
+hayden_birthday_gate = false
+juniper_birthday_gate = false
+march_birthday_gate = false
+reina_birthday_gate = false
+ryis_birthday_gate = false
+seridia_birthday_gate = false
+valen_birthday_gate = false
+
+# gift line follow ups
+void_cake_given = { value = false, priority_value = 3 }
+void_cake_follow_up_delay = { value = false, priority_value = 3 }
+void_newt_given = { value = false, priority_value = 3 }
+void_newt_follow_up_delay = { value = false, priority_value = 3 }
+
+has_given_seridia_essence = false
+
+# post mines alt lines
+eog_cooking_10 = false
+eog_cooking_12 = false
+eog_fish_out_of_water_7 = false
+eog_fish_out_of_water_12 = false
+eog_fish_out_of_water_14 = false
+eog_fish_out_of_water_20 = false
+eog_fish_out_of_water_24 = false
+eog_nature_6 = false
+eog_nature_12 = false
+eog_winter_3 = false
+
+eog_caldarus_post_8h_best_friend_4 = false
+eog_caldarus_post_8h_best_friend_10 = false
+eog_caldarus_post_8h_romantic_1 = false
+eog_caldarus_post_8h_romantic_3 = false
+
+eog_unknown_dragon_statuette = false
+eog_impressive_ruins = false
+eog_juniper_tell_me_more = false
+eog_more_funding = false
+eog_witchspeak_2 = false
+eog_dragon_pact_tablet = false
+eog_statuette_of_caldarus = false
+eog_not_seeing_everything = false
+eog_western_ruins = false
+
+# marriage speculative facts
+juniper_told_dozy_about_engagement = { value = false, priority_value = 5 }
+
+# general
+ari_has_double_bed_placed = false
+# this feels unlikely, and honestly line can do without it, see note on marriage_daily_dialogue.c.toml
+spouse_slept_in_double_bed_night_before = false
+# maybe activate by schedule if we have a wedding day schedule rather than by cutscene? that way we can guarantee the time gap
+# or do it programmatically
+wedding_was_yesterday = { value = false, priority_value = 20 }
+# preemptively making this fact as a way to make it so people can comment on the wedding recently within like a couple of weeks
+post_wedding_bump = { value = false, priority_value = 30 }
+post_wedding_timer = false
+is_anniversary = false
+family_planning_gate = false
+pending_stork_visit = false
+# whether or not ari's spouse can be pregnant
+spouse_can_carry_child = false
+post_wedding_gate = { value = false, priority_value = 3 }
+post_wedding_grouping = { value = 0, priority_value = 3 }
+pregnant_line_gate = { value = false, priority_value = 3 }
+pregnant_line_grouping = { value = -1, priority_value = 3 }
+utero_choice = "undefined"                                     # signal set by great_bird_1 scene, used in Mist.gml
+ari_has_child = { value = false, priority_value = 8 }          # if ari has any child
+ari_has_infant = { value = false, priority_value = 8 }         # if ari currently has an infant
+ari_has_toddler = { value = false, priority_value = 8 }        # if ari currently has a toddler
+child_in_utero = false                                         # if ari is currently expecting (be it herself, her spouse, or stork)
+ari_utero = false                                              # if ari is pregnant
+spouse_utero = false                                           # if ari's spouse is pregnant
+stork_utero = false                                            # if the stork is preggers
+child_0_has_default_name = false                               # whether or not the player chose the default name for child 0
+child_1_has_default_name = false                               # whether or not the player chose the default name for child 1
+child_0_status = "undefined"                                   # undefined, utero, infant, toddler
+child_1_status = "undefined"                                   # undefined, utero, ifnant, toddler
+child_0_location = { value = "undefined", priority_value = 8 } # undefined, with_ari, with_spouse, in_crib
+child_1_location = "undefined"                                 # undefined, with_ari, with_spouse, in_crib
+is_child_0_birthday = { value = false, priority_value = 8 }
+is_child_1_birthday = false
+ari_holding_child = { value = false, priority_value = 8 }
+spouse_holding_child = { value = false, priority_value = 8 }
+child_is_held = { value = false, priority_value = 8 }
+
+# i'll write this true in the baby cutscene and then make it expire in like 1w-2w
+# note from gabe -- in the future, i could write these myself when a child is born if we want to
+# be able to reset them for child_1, still respeciting w/e refresh rules we have
+baby_born_timer = false
+post_birth_gate = { value = false, priority_value = 3 }
+post_birth_grouping = { value = 0, priority_value = 3 }
+# same as wedding_was_yesterday
+child_born_today = { value = false, priority_value = 20 }
+child_born_bump = { value = false, priority_value = 30 }
+
+
+# adeline
+adeline_morning_greeting = false
+adeline_planning_line = "undefined"
+adeline_evening_greeting = false
+adeline_in_bed = false
+# @gabe
+adeline_desk_placed = false
+adeline_chair_placed = false
+adeline_hobby_table_placed = false
+
+
+# balor
+balor_morning_greeting = false
+balor_planning_line = "undefined"
+balor_evening_greeting = false
+balor_in_bed = false
+# @gabe
+balor_desk_placed = false
+balor_chair_placed = false
+balor_gem_station_placed = false
+
+
+# caldarus
+caldarus_morning_greeting = false
+caldarus_planning_line = "undefined"
+caldarus_evening_greeting = false
+caldarus_in_bed = false
+# @gabe
+caldarus_desk_placed = false
+caldarus_chair_placed = false
+caldarus_music_station_placed = false
+
+
+# celine
+celine_morning_greeting = false
+celine_planning_line = "undefined"
+celine_evening_greeting = false
+celine_in_bed = false
+# @gabe
+celine_desk_placed = false
+celine_chair_placed = false
+celine_garden_shelf_placed = false
+
+
+# eiland
+eiland_morning_greeting = false
+eiland_planning_line = "undefined"
+eiland_evening_greeting = false
+eiland_in_bed = false
+# @gabe
+eiland_desk_placed = false
+eiland_chair_placed = false
+eiland_artifact_shelf_placed = false
+
+
+# hayden
+hayden_morning_greeting = false
+hayden_planning_line = "undefined"
+hayden_evening_greeting = false
+hayden_in_bed = false
+# @gabe
+hayden_desk_placed = false
+hayden_chair_placed = false
+hayden_indoor_garden_placed = false
+
+
+# juniper
+juniper_morning_greeting = false
+juniper_planning_line = "undefined"
+juniper_evening_greeting = false
+juniper_in_bed = false
+# @gabe
+juniper_desk_placed = false
+juniper_chair_placed = false
+juniper_cauldron_placed = false
+
+# this is a special juniper fact, hayden will have a similar one
+juniper_dozy_pet_bed_placed = false
+
+
+# march
+march_morning_greeting = false
+march_planning_line = "undefined"
+march_evening_greeting = false
+march_in_bed = false
+# @gabe
+march_desk_placed = false
+march_chair_placed = false
+march_forge_placed = false
+
+
+# reina
+reina_morning_greeting = false
+reina_planning_line = "undefined"
+reina_evening_greeting = false
+reina_in_bed = false
+# @gabe
+reina_desk_placed = false
+reina_chair_placed = false
+reina_test_kitchen_placed = false
+
+
+# ryis
+ryis_morning_greeting = false
+ryis_planning_line = "undefined"
+ryis_evening_greeting = false
+ryis_in_bed = false
+# @gabe
+ryis_desk_placed = false
+ryis_chair_placed = false
+ryis_crafting_station_placed = false
+
+
+# seridia
+seridia_morning_greeting = false
+seridia_planning_line = "undefined"
+seridia_evening_greeting = false
+seridia_in_bed = false
+# @gabe
+seridia_desk_placed = false
+seridia_chair_placed = false
+seridia_magic_fire_placed = false
+
+
+# valen
+valen_morning_greeting = false
+valen_planning_line = "undefined"
+valen_evening_greeting = false
+valen_in_bed = false
+# @gabe
+valen_desk_placed = false
+valen_chair_placed = false
+valen_workstation_placed = false
+
+
+# baby born best friend
+baby_friends_and_family_bump = { value = true, priority_value = 5 }
+baby_born_best_friend_adeline = false
+baby_born_best_friend_balor = false
+baby_born_best_friend_caldarus = false
+baby_born_best_friend_celine = false
+baby_born_best_friend_eiland = false
+baby_born_best_friend_hayden = false
+baby_born_best_friend_juniper = false
+baby_born_best_friend_march = false
+baby_born_best_friend_reina = false
+baby_born_best_friend_ryis = false
+baby_born_best_friend_seridia = false
+baby_born_best_friend_valen = false
+
+# test related facts
+rjt_active = false
+rjt_start_write = false
+rjt_end_write = false
+rjt_a_d = false
+rjt_b_a = false
+rjt_b_d = false
+rjt_c_a = false
+rjt_c_d = false
+rjt_d_a = false
+rjt_d_d = false
+rjt_e_a = false
+rjt_e_d = false
+rjt_f_a = false
+
+[asset_properties.auto_generated.single_npc_data."<npc>_birthday"]
+value = 0          # note: for this one, we find the birthdays from the TOML files
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_zone"]
+value = "personal/<npc>"
+validator = "zone"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_was_last_spoken_to"]
+# 6am in unix time:
+value = 21600
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_heart_level"]
+value = 0
+priority_value = 2
+
+[asset_properties.auto_generated.single_npc_data."<npc>_outfit"]
+value = "spring"
+validator = "outfit"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_animation"]
+value = "idle"
+validator = "animation"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_activity"]
+value = "undefined"
+validator = "activity"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_routine"]
+value = "undefined"
+validator = "routine"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_has_met"]
+value = false
+priority_value = 15
+
+[asset_properties.auto_generated.single_npc_data."<npc>_is_traveling"]
+value = false
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_is_traveling_to"]
+value = "undefined"
+validator = "trellis_point"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_is_traveling_to_location"]
+value = "undefined"
+validator = "location"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_is_traveling_to_building"]
+value = "undefined"
+validator = "building"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_is_traveling_to_zone"]
+value = "undefined"
+validator = "zone"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_is_traveling_from_zone"]
+value = "undefined"
+validator = "zone"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_is_traveling_to_inside"]
+value = "undefined"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_is_traveling_from"]
+value = "undefined"
+validator = "trellis_point"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_is_traveling_from_location"]
+value = "undefined"
+validator = "location"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_is_traveling_from_building"]
+value = "undefined"
+validator = "building"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_is_traveling_from_inside"]
+value = "undefined"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_is_at"]
+value = "undefined"
+validator = "trellis_point"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_is_at_location"]
+value = "undefined"
+validator = "location"
+priority_value = 1
+
+[asset_properties.auto_generated.single_npc_data."<npc>_is_inside"]
+value = "undefined"
+priority_value = 1
+
+# a valid building identifier
+[asset_properties.auto_generated.single_npc_data."<npc>_building"]
+value = "undefined"
+validator = "building"
+priority_value = 1
+
+# the name of the thing they're drinking:
+# options are: [beer, coffee, wine, juice, water]
+[asset_properties.auto_generated.single_npc_data."<npc>_drinking"]
+value = "undefined"
+priority_value = 1
+
+# the name of the item they're eating:
+[asset_properties.auto_generated.single_npc_data."<npc>_eating"]
+value = "undefined"
+priority_value = 1
+
+[asset_properties.auto_generated.museum_set_data]
+"museum_set_<set_name>_count" = { value = 0, priority_value = 2 }
+
+[asset_properties.auto_generated.museum_item_data]
+"museum_donated_<item_name>" = { value = false, priority_value = 2 }
+
+[asset_properties.auto_generated.perk_data]
+"perk_unlocked_<perk_name>" = { value = false, priority_value = 2 }
+
+[asset_properties.auto_generated.quests]
+"quest_<quest_name>_complete" = { value = false, priority_value = 2 }
+"quest_<quest_name>_in_progress" = { value = false, priority_value = 2 }
+
+[asset_properties.auto_generated.all_items]
+"had_item_<item_name>" = { value = false, priority_value = 2 }
+
+[asset_properties.auto_generated.cutscene]
+"cutscene_seen_<cutscene_name>" = { value = false, priority_value = 2 }
+
+[asset_properties.auto_generated.festivals."<festival>_festival_date"]
+# note: for this one, we find the data from the TOML files
+value = 0
+priority_value = 2

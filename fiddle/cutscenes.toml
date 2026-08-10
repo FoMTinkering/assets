@@ -1,0 +1,1608 @@
+# This contains the default values for all fields a cutscene can have. If you omit any of them from your
+# entry, then these values will be what it has!
+[default]
+	# If the user can skip the cutscene with ESC while it runs
+	can_skip = true
+	# Whether or not the cutscene should spawn a popup confirmation when the user tries to skip
+	confirm_skip = true
+	# If true, we use the conversation
+	has_conversation = false
+	# The physical location in the game that will trigger this cutscene when Ari walks into it (if there is one)
+	# You can provide just a location, which will treat the entire room as the boundary box, or supply a boundary box
+	# yourself
+	trigger = -1
+	# The trellis point Ari is placed at when this scene finishes. If -1, she is left wherever the scene placed her
+	#
+	# If you set this to "previous", Ari will go back to wherever she was when the scene was triggered.
+	# also `"bed"` is special to go to Ari's bed for the dying cutscene
+	end_position = -1
+	# Whether or not this scene can only be played in story mode. This is just to save us developers
+	# annoyances when we're not playing in story mode.
+	requires_story_mode = false
+	# Most cutscenes want the screen to fade out before the scene begins, but some atypical ones won't.
+	# Keep in mind that in our game, if the screen is already faded out, a fade out request instantly resolves.
+	begin_with_fade_out = true
+	# The test that this scene should run in. This must be defined
+	test_target = "<n/a>"
+	# A quest to start once the scene is finished
+	quest_to_start = "<n/a>"
+	# A quest to progress once the scene is finished
+	quest_to_progress = "<n/a>"
+	# confusingly named, this means that when Ari starts the cutscene, she won't automagically
+	# be in idle. Use only for cutscenes that are triggered via gameplay so you know what animation
+	# she's in.
+	do_not_set_idle = false
+	# Unlocks a spell after the scene
+	spell_to_unlock = "<n/a>"
+	# Raises Ari's mana after the scene to the provided number
+	mana_to_set = "<n/a>"
+	# How many frames into the scene the Skip prompt will show (if the scene is skippable)
+	frames_before_skip_prompt = 80
+	# How many frames the skip prompt stays visible
+	skip_prompt_length = 180
+	# If this cutscene is meant to trigger overnight specifically (the caldarus scenes)
+	when_sleeping = false
+	# Whether or not this cutscene can happen more than once.
+	can_repeat = false
+	# A specified menu to close after the cutscene, look in GeneratedEnums.gml(control F "Menu") for valid menus to close
+	menu_close = -1
+	# Allows items to be "dropped" in cutscenes, the objects in items array should have a location (tp/npc/ari).  Items are used in scene as dictated by order
+	# So if you have 2 potatos, and the first potato spawns on ari, and the second potato spawns on hayden in the list, the first instance of drop_item will drop to ari,
+	# and the second instance will drop on hayden.
+	drop_items = []
+	# Items that are directly stuffed into Ari's inventory
+	# Item objects must have an "item_id", optional fields are "quantity" and "infusion".  Check infusions.toml for valid infusion names.
+	given_items = []
+	# A list status effects to give a player
+	# It must have an "effect", check infusions.toml for valid effect names.
+	# It must have an "amount" which modifies the effectiveness of the ailment
+	status_effects = []
+	# How many free baths you get after a scene (stinky stamina potion)
+	baths = 0
+	# Sets stats to max
+	set_max_hp = false
+	set_max_stamina = false
+	# Sets stats to a specific value
+	set_health_to = -1
+	set_stamina_to = -1
+	# Sets ari to a valid animation name (Look in PlayerAnimationUtils.gml and control F enum AnimationName for a list of valid names)
+	animate = -1
+	# Resets the post process, must be set to true if the scene is given a post process in the mist file
+	post_process_time_override_reset = false
+	# If true, this scene will end the day when its complete
+	ends_day = false
+	# If set, the clock will jump to the target time after the scene (unless the time has already passed)
+	end_time_jump = "<n/a>"
+	# A list of sprites correlating to sprites used by assets in the given scene so that they can be made invisible in scene
+	invisible_assets = []
+	# A list of objects that can be made invisible in a scene
+	invisible_objects = []
+	# Prevents the EoD menu from shutting down music, so the music in this scene continues through
+	# the pan over the farm
+	prevent_eod_music_stop = false
+	# Forces a heart level to be set, used for seridia and caldarus heart progression until level 6
+	heart_level_changes = []
+	# If set to false, music that was previously playing in the world is allowed to continue
+	cut_off_music = true
+	# Whether or not the glyph guide is allowed to render. This does NOT apply to the "Skip" prompt.
+	allow_glyph_guide = false
+	# Prevents music from playing immediately after the scene and until the next room swap.
+	silence_music_after_scene = false
+	# The requirements for this scene to fire
+	requirements = {}
+	# An extra skip confirmation for eight heart events
+	romantic_choice_warning = "<n/a>"
+	# A tutorial to run after this scene (if it hasn't been seen before)
+	post_scene_tutorial = "<n/a>"
+	# Objects to be removed after (or during) a scene.
+	object_removals = []
+	# refreshes the music at the end of the scene
+	refresh_music = true
+	# a marker for any scene that wants to use `refresh_room_layers()`. additionally makes the scene
+	# refresh the room layers once it finishes in case the user skips.
+	refreshes_room_layers = false
+	# Does all of Ari's chores when the scene is done. Meant for scenes that end your day without
+	# the player's knowledge.
+	handle_farm_chores = false
+	# Ensures that the given_items for a scene only are granted once for scenes that repeat.
+	give_items_once = false
+    # don't use this unless you're supposed to use this
+    manually_triggered_in_morning = true
+    # when set, we  kill all objects within the [left, top, right, bottom] area.
+    # note: these coordinates should be in *pixels*.
+    nuke = false
+
+[cutscene_basement]
+	end_position = "previous"
+	has_conversation = true
+	test_target = "none"
+
+[unit_test]
+	test_target = "none" # ironic
+
+[arena]
+	can_skip = false
+	test_target = "none"
+	cut_off_music = false
+	begin_with_fade_out = false
+	refresh_music = false
+
+[arena_end]
+	can_skip = false
+	test_target = "none"
+	cut_off_music = true
+	begin_with_fade_out = false
+
+[crafting]
+	can_skip = false
+	test_target = "none"
+	cut_off_music = false
+
+[sleep]
+	can_skip = false            # TODO: handle this
+	test_target = "none"
+	ends_day = true
+	begin_with_fade_out = false
+
+[destroy_vines_eastern_road]
+	can_skip = false
+	test_target = "none"
+	begin_with_fade_out = false
+	cut_off_music = false
+	refreshes_room_layers = true
+
+[narrows_secret]
+	can_skip = false
+	test_target = "none"
+	begin_with_fade_out = false
+	cut_off_music = false
+	refreshes_room_layers = true
+
+[beach_secret]
+	can_skip = false
+	test_target = "none"
+	begin_with_fade_out = false
+	cut_off_music = false
+	refreshes_room_layers = true
+
+[balor_two_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/b2h_ari_exit"
+
+[full_restore]
+	has_conversation = true
+	begin_with_fade_out = false            # done manually to match sleeping fade
+	test_target = "dragon_story"
+	when_sleeping = true
+	do_not_set_idle = true
+	spell_to_unlock = "full_restore"
+	mana_to_set = 4
+	frames_before_skip_prompt = 360
+	menu_close = "caldarus_statue_overlay"
+	requirements.reached_mines_level = 10
+
+[bathhouse]
+	end_position = "bathhouse/customer"
+	confirm_skip = false
+	test_target = "none"
+	set_max_hp = true
+	set_max_stamina = true
+
+[adeline_quest_board]
+	has_conversation = true
+	trigger = { location = "town", bbox = [54, 97, 206, 244] }
+	requires_story_mode = true
+	test_target = "main_story"
+	quest_to_start = "greet_the_townsfolk"
+	menu_close = "baby_journal"
+	end_position = "town/aqb_ari_board"
+
+[farm_introduction]
+	test_target = "main_story"
+	has_conversation = true
+	trigger = { location = "farm" }
+	begin_with_fade_out = false
+	requires_story_mode = true
+	end_position = "farm/fi_ari_wander"
+	given_items = [
+		{ item_id = "hoe_worn" },
+		{ item_id = "watering_can_worn" },
+		{ item_id = "seed_tulip", quantity = 3 },
+		{ item_id = "seed_turnip", quantity = 3 },
+	]
+
+[do_a_bro_a_favor]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/blacksmith front door"
+
+[stinky_stamina_potion]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/bathhouse front door"
+	baths = 5
+	set_max_hp = true
+	set_max_stamina = true
+
+[museum_donation_wanted]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "narrows/museum front door"
+
+[cop_some_ore]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/cso_ari_start"
+	given_items = [{ item_id = "copper_ingot" }]
+
+[somethings_bugging_me]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/inn front door"
+
+[repair_the_mill_pt_1]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "manor_house_entry/adeline_office_cutscene_exit"
+
+[repair_the_mill_pt_2]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/mill front door"
+	refreshes_room_layers = true
+
+[jos_cooking_class]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/inn front door"
+
+[the_unusual_tree_pt_1]
+	test_target = "main_story"
+	has_conversation = true
+	trigger = { location = "farm" }
+	begin_with_fade_out = false
+	end_position = "farm/tut_ari_talk"
+	requires_story_mode = true
+	given_items = [{ item_id = "axe_worn" }]
+	heart_level_changes = [{ npc_id = "caldarus", heart_level = 1 }]
+	requirements = { reached_date = { season = "spring", day = 2, exact = false } }
+	object_removals = [{ location = "farm", object = "tree_pine_special" }]
+
+[the_unusual_tree_pt_2]
+	test_target = "main_story"
+	has_conversation = true
+	when_sleeping = true
+	# done manually to match sleeping fade
+	begin_with_fade_out = false
+	do_not_set_idle = true
+	requires_story_mode = true
+	frames_before_skip_prompt = 340
+	prevent_eod_music_stop = true
+	menu_close = "caldarus_statue_overlay"
+	requirements.seen_cutscene = "the_unusual_tree_pt_1"
+
+[tea_with_hayden]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "haydens_farm/hayden's front door"
+
+[hayden_two_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "haydens_farm/hayden's front door"
+
+[juniper_two_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/bathhouse front door"
+
+[celine_two_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/celine's front door"
+	given_items = [{ item_id = "peat", quantity = 5 }, { item_id = "sod", quantity = 5 }]
+
+[adeline_two_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "manor_house_entry/adeline_office_cutscene_exit"
+
+[eiland_two_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/manor house front door"
+
+[march_two_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/blacksmith front door"
+	given_items = [{ item_id = "hoe_copper", infusion = "lightweight" }]
+
+[reina_two_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/inn front door"
+	set_max_hp = true
+	set_max_stamina = true
+
+[valen_two_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/clinic front door"
+	set_max_hp = true
+	set_max_stamina = true
+
+[ryis_two_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "eastern_road/carpenter's shop front door"
+
+[adeline_four_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "manor_house_entry/adeline_office_cutscene_exit"
+
+[celine_four_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/celine's front door"
+
+[march_four_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/blacksmith front door"
+
+[reina_four_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/inn front door"
+	set_max_hp = true
+	set_max_stamina = true
+
+[eiland_four_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "narrows/western_ruins_cutscene_exit"
+
+[valen_four_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/clinic front door"
+	set_max_hp = true
+	set_max_stamina = true
+
+[day_zero]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "bed"
+	frames_before_skip_prompt = 180
+	post_process_time_override_reset = true
+	given_items = [{ item_id = "vegetable_soup" }]
+	animate = "idle"
+
+[unlocking_the_mines_pt_1]
+	test_target = "dragon_story"
+	has_conversation = true
+	end_position = "narrows/museum front door"
+
+[unlocking_the_mines_pt_2]
+	test_target = "dragon_story"
+	has_conversation = true
+	end_position = "mines_entry/utm2_ari_mines_statue"
+	object_removals = [{ location = "narrows", object = "mines_blocked_door" }]
+
+[translating_the_water_tablet]
+	test_target = "dragon_story"
+	has_conversation = true
+	end_position = "town/bathhouse front door"
+
+[dying]
+	has_conversation = false
+	confirm_skip = false
+	test_target = "none"
+	ends_day = true
+	cut_off_music = false
+
+[repair_the_bridge_pt_1]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "eastern_road/rtb1_ari_start"
+
+[repair_the_bridge_pt_2]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "eastern_road/rtb2_ari_group"
+	refreshes_room_layers = true
+
+[water_seal]
+	test_target = "dragon_story"
+	end_position = "water_seal/ws_ari_tablet"
+	has_conversation = true
+	trigger = { location = "water_seal" }
+	quest_to_start = "the_water_tablet"
+	requires_story_mode = true
+	cut_off_music = false
+
+[break_water_seal]
+	test_target = "dragon_story"
+	has_conversation = true
+	begin_with_fade_out = false
+	drop_items = [
+		{ location = "water_seal/ws_priestess", item_id = "heart_crystal" },
+	]
+	heart_level_changes = [{ npc_id = "caldarus", heart_level = 2 }, { npc_id = "seridia", heart_level = 1 }]
+	object_removals = [{ location = "water_seal", object = "water_seal_door" }]
+
+[post_water_seal]
+	test_target = "dragon_story"
+	has_conversation = true
+	trigger = { location = "farm" }
+	begin_with_fade_out = false
+	spell_to_unlock = "summon_rain"
+	mana_to_set = 8
+	requires_story_mode = true
+	frames_before_skip_prompt = 360
+	set_max_hp = true
+	set_max_stamina = true
+	end_position = "farm/pws_ari_entrance"
+	requirements.broke_water_seal = true
+
+[earth_seal]
+	test_target = "dragon_story"
+	has_conversation = true
+	end_position = "earth_seal/es_ari_back"
+	trigger = { location = "earth_seal" }
+	quest_to_start = "the_earth_tablet"
+	requires_story_mode = true
+	cut_off_music = false
+
+[break_earth_seal]
+	test_target = "dragon_story"
+	has_conversation = true
+	begin_with_fade_out = false
+	drop_items = [
+		{ location = "earth_seal/es_priestess", item_id = "heart_crystal" },
+	]
+	heart_level_changes = [{ npc_id = "caldarus", heart_level = 3 }, { npc_id = "seridia", heart_level = 2 }]
+	object_removals = [{ location = "earth_seal", object = "earth_seal_door" }]
+
+[post_earth_seal]
+	test_target = "dragon_story"
+	has_conversation = true
+	trigger = { location = "farm" }
+	begin_with_fade_out = false
+	spell_to_unlock = "growth"
+	mana_to_set = 12
+	requires_story_mode = true
+	frames_before_skip_prompt = 360
+	set_max_hp = true
+	set_max_stamina = true
+	end_position = "farm/pws_ari_entrance"
+	requirements.broke_earth_seal = true
+
+[break_fire_seal]
+	test_target = "dragon_story"
+	has_conversation = true
+	begin_with_fade_out = false
+	spell_to_unlock = "fire_breath"
+	drop_items = [
+		{ location = "fire_seal/fs_priestess", item_id = "heart_crystal" },
+	]
+	set_health_to = 1
+	set_stamina_to = 1
+	heart_level_changes = [{ npc_id = "caldarus", heart_level = 6 }, { npc_id = "seridia", heart_level = 4 }]
+	silence_music_after_scene = true
+	mana_to_set = 16
+	end_position = "fire_seal/bfs_ari_escape"
+	object_removals = [{ location = "fire_seal", object = "fire_seal_door" }]
+
+[juniper_four_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/bathhouse front door"
+
+[translating_the_earth_tablet]
+	test_target = "dragon_story"
+	has_conversation = true
+	end_position = "town/celine's front door"
+
+[spring_festival_setup]
+	test_target = "general"
+	trigger = { location = "farm" }
+	quest_to_start = "the_spring_festival"
+
+	[spring_festival_setup.requirements]
+		reached_date = { season = "spring", day = 14, exact = true }
+		invert.completed_quest = "the_spring_festival"
+
+[spring_festival_setup_year_2]
+	test_target = "general"
+	trigger = { location = "farm" }
+	quest_to_start = "the_spring_festival"
+	can_repeat = true
+
+	[spring_festival_setup_year_2.requirements]
+		reached_date = { season = "spring", day = 14, exact = true }
+		completed_quest = "the_spring_festival"
+
+[spring_festival_morning]
+	test_target = "general"
+	trigger = { location = "farm" }
+	quest_to_progress = "the_spring_festival"
+	can_repeat = true
+	requirements = { reached_date = { season = "spring", day = 17, exact = true } }
+
+[spring_festival_no_place]
+	has_conversation = true
+	test_target = "general"
+	trigger = { location = "town", bbox = [54, 97, 206, 247], manually_activated = true }
+	end_position = "town/sf_ari_exit"
+	quest_to_progress = "the_spring_festival"
+	cut_off_music = false
+
+[spring_festival_third_place]
+	has_conversation = true
+	test_target = "general"
+	trigger = { location = "town", bbox = [54, 97, 206, 247], manually_activated = true }
+	end_position = "town/sf_ari_exit"
+	quest_to_progress = "the_spring_festival"
+	cut_off_music = false
+
+[spring_festival_second_place]
+	has_conversation = true
+	test_target = "general"
+	trigger = { location = "town", bbox = [54, 97, 206, 247], manually_activated = true }
+	end_position = "town/sf_ari_exit"
+	quest_to_progress = "the_spring_festival"
+	cut_off_music = false
+
+[spring_festival_first_place]
+	has_conversation = true
+	test_target = "general"
+	trigger = { location = "town", bbox = [54, 97, 206, 247], manually_activated = true }
+	end_position = "town/sf_ari_exit"
+	quest_to_progress = "the_spring_festival"
+	cut_off_music = false
+
+[spring_festival_first_place_plus]
+	has_conversation = true
+	test_target = "general"
+	trigger = { location = "town", bbox = [54, 97, 206, 247], manually_activated = true }
+	end_position = "town/sf_ari_exit"
+	quest_to_progress = "the_spring_festival"
+	cut_off_music = false
+
+[harvest_festival_setup]
+	test_target = "general"
+	trigger = { location = "farm" }
+	quest_to_start = "the_harvest_festival"
+	can_repeat = true
+	requirements = { reached_date = { season = "fall", day = 7, exact = true } }
+
+[harvest_festival_morning]
+	test_target = "general"
+	trigger = { location = "farm" }
+	quest_to_progress = "the_harvest_festival"
+	can_repeat = true
+	requirements = { reached_date = { season = "fall", day = 10, exact = true } }
+
+[harvest_festival_no_place]
+	test_target = "general"
+	has_conversation = true
+	trigger = { location = "town", bbox = [54, 97, 206, 247], manually_activated = true }
+	end_position = "town/sf_ari_exit"
+	quest_to_progress = "the_harvest_festival"
+	cut_off_music = false
+
+[harvest_festival_third_place]
+	test_target = "general"
+	has_conversation = true
+	trigger = { location = "town", bbox = [54, 97, 206, 247], manually_activated = true }
+	end_position = "town/sf_ari_exit"
+	quest_to_progress = "the_harvest_festival"
+	cut_off_music = false
+
+[harvest_festival_second_place]
+	test_target = "general"
+	has_conversation = true
+	trigger = { location = "town", bbox = [54, 97, 206, 247], manually_activated = true }
+	end_position = "town/sf_ari_exit"
+	quest_to_progress = "the_harvest_festival"
+	cut_off_music = false
+
+[harvest_festival_first_place]
+	test_target = "general"
+	has_conversation = true
+	trigger = { location = "town", bbox = [54, 97, 206, 247], manually_activated = true }
+	end_position = "town/sf_ari_exit"
+	quest_to_progress = "the_harvest_festival"
+	cut_off_music = false
+
+[animal_festival_upcoming_eligible_year_one]
+	test_target = "general"
+	trigger = { location = "farm" }
+
+	[animal_festival_upcoming_eligible_year_one.requirements]
+		reached_date = { season = "winter", day = 7, exact = true }
+		has_any_animal = true
+
+[animal_festival_upcoming_ineligible_year_one]
+	test_target = "general"
+	trigger = { location = "farm" }
+
+	[animal_festival_upcoming_ineligible_year_one.requirements]
+		reached_date = { season = "winter", day = 7, exact = true }
+		invert.has_any_animal = true
+
+[animal_festival_upcoming_eligible_year_two]
+	test_target = "general"
+	trigger = { location = "farm" }
+	can_repeat = true
+
+	[animal_festival_upcoming_eligible_year_two.requirements]
+		completed_quest = "the_animal_festival"
+		reached_date = { season = "winter", day = 7, exact = true }
+		has_any_animal = true
+
+[animal_festival_upcoming_ineligible_year_two]
+	test_target = "general"
+	trigger = { location = "farm" }
+	can_repeat = true
+
+	[animal_festival_upcoming_ineligible_year_two.requirements]
+		completed_quest = "the_animal_festival"
+		reached_date = { season = "winter", day = 7, exact = true }
+		invert.has_any_animal = true
+
+
+[the_animal_festival]
+	test_target = "general"
+	cut_off_music = false
+
+[shooting_star_morning]
+	test_target = "shooting_star"
+	trigger = { location = "farm" }
+	quest_to_start = "the_shooting_star_festival"
+	can_repeat = true
+	given_items = [{ item_id = "star_brooch" }]
+
+	[shooting_star_morning.requirements]
+		reached_date = { season = "summer", day = 28, exact = true }
+		unlocked_summit = true
+
+[shooting_star_blocked]
+	test_target = "shooting_star"
+	has_conversation = true
+	trigger = { location = "farm" }
+	can_repeat = true
+
+	[shooting_star_blocked.requirements]
+		reached_date = { season = "summer", day = 28, exact = true }
+		invert.unlocked_summit = true
+
+[shooting_star_solo]
+	test_target = "shooting_star"
+	has_conversation = true
+	trigger = { location = "summit", manually_activated = true }
+	prevent_eod_music_stop = true
+	quest_to_progress = "the_shooting_star_festival"
+	ends_day = true
+	post_process_time_override_reset = true
+
+[shooting_star_adeline]
+	test_target = "shooting_star"
+	has_conversation = true
+	prevent_eod_music_stop = true
+	trigger = { location = "summit", manually_activated = true }
+	quest_to_progress = "the_shooting_star_festival"
+	ends_day = true
+	post_process_time_override_reset = true
+
+[shooting_star_balor]
+	test_target = "shooting_star"
+	has_conversation = true
+	prevent_eod_music_stop = true
+	trigger = { location = "summit", manually_activated = true }
+	quest_to_progress = "the_shooting_star_festival"
+	ends_day = true
+	post_process_time_override_reset = true
+
+[shooting_star_caldarus]
+	test_target = "shooting_star"
+	has_conversation = true
+	prevent_eod_music_stop = true
+	trigger = { location = "summit", manually_activated = true }
+	quest_to_progress = "the_shooting_star_festival"
+	ends_day = true
+	post_process_time_override_reset = true
+
+[shooting_star_celine]
+	test_target = "shooting_star"
+	has_conversation = true
+	prevent_eod_music_stop = true
+	trigger = { location = "summit", manually_activated = true }
+	quest_to_progress = "the_shooting_star_festival"
+	ends_day = true
+	post_process_time_override_reset = true
+
+[shooting_star_eiland]
+	test_target = "shooting_star"
+	has_conversation = true
+	prevent_eod_music_stop = true
+	trigger = { location = "summit", manually_activated = true }
+	quest_to_progress = "the_shooting_star_festival"
+	ends_day = true
+	post_process_time_override_reset = true
+
+[shooting_star_hayden]
+	test_target = "shooting_star"
+	has_conversation = true
+	prevent_eod_music_stop = true
+	trigger = { location = "summit", manually_activated = true }
+	quest_to_progress = "the_shooting_star_festival"
+	ends_day = true
+	post_process_time_override_reset = true
+
+[shooting_star_juniper]
+	test_target = "shooting_star"
+	has_conversation = true
+	prevent_eod_music_stop = true
+	trigger = { location = "summit", manually_activated = true }
+	quest_to_progress = "the_shooting_star_festival"
+	ends_day = true
+	post_process_time_override_reset = true
+
+[shooting_star_march]
+	test_target = "shooting_star"
+	has_conversation = true
+	prevent_eod_music_stop = true
+	trigger = { location = "summit", manually_activated = true }
+	quest_to_progress = "the_shooting_star_festival"
+	ends_day = true
+	post_process_time_override_reset = true
+
+[shooting_star_reina]
+	test_target = "shooting_star"
+	has_conversation = true
+	prevent_eod_music_stop = true
+	trigger = { location = "summit", manually_activated = true }
+	quest_to_progress = "the_shooting_star_festival"
+	ends_day = true
+	post_process_time_override_reset = true
+	given_items = [{ item_id = "star_shaped_cookie" }]
+
+[shooting_star_ryis]
+	test_target = "shooting_star"
+	has_conversation = true
+	prevent_eod_music_stop = true
+	trigger = { location = "summit", manually_activated = true }
+	quest_to_progress = "the_shooting_star_festival"
+	ends_day = true
+	post_process_time_override_reset = true
+
+[shooting_star_seridia]
+	test_target = "shooting_star"
+	has_conversation = true
+	prevent_eod_music_stop = true
+	trigger = { location = "summit", manually_activated = true }
+	quest_to_progress = "the_shooting_star_festival"
+	ends_day = true
+	post_process_time_override_reset = true
+
+[shooting_star_valen]
+	test_target = "shooting_star"
+	has_conversation = true
+	prevent_eod_music_stop = true
+	trigger = { location = "summit", manually_activated = true }
+	quest_to_progress = "the_shooting_star_festival"
+	ends_day = true
+	post_process_time_override_reset = true
+
+[shooting_star_romantic]
+	test_target = "shooting_star"
+	prevent_eod_music_stop = true
+	trigger = { location = "summit", manually_activated = true }
+	quest_to_progress = "the_shooting_star_festival"
+	ends_day = true
+	post_process_time_override_reset = true
+
+[replenishing_mistrias_food_reserves_1]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/manor house front door"
+	given_items = [{ item_id = "seed_potato", quantity = 10 }]
+
+[balor_four_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "inn/balors_room_cutscene_exit"
+
+[repair_the_general_store_pt_1]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/general store front door"
+
+[repair_the_general_store_pt_2]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/general store front door"
+	refreshes_room_layers = true
+
+[crafting_tutorial]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "eastern_road/crafting_tutorial_cutscene_finish"
+
+[repair_the_summit_stairs]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "narrows/narrows_summit_cutscene_exit"
+	refreshes_room_layers = true
+
+[repair_haydens_barn_pt_1]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "haydens_farm/farm_cutscene_exit"
+	trigger = { location = "haydens_farm", bbox = [110, 32, 180, 76], manually_activated = true }
+
+[repair_haydens_barn_pt_2]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "haydens_farm/farm_cutscene_exit"
+	refreshes_room_layers = true
+
+[find_the_weathervane_setup]
+	test_target = "main_story"
+	has_conversation = true
+	requires_story_mode = true
+	when_sleeping = true
+	begin_with_fade_out = false
+	do_not_set_idle = true
+	skip_prompt_length = 0
+	requirements.repaired_haydens_farm = true
+
+[find_the_weathervane]
+	test_target = "main_story"
+	has_conversation = true
+	trigger = { location = "farm" }
+	quest_to_start = "find_the_weathervane"
+	requires_story_mode = true
+	requirements.seen_cutscene = "find_the_weathervane_setup"
+
+[prologue]
+	has_conversation = true
+	frames_before_skip_prompt = 260
+	post_process_time_override_reset = true
+	test_target = "main_story"
+
+[ryis_four_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "eastern_road/r4h_ari_er_entrance"
+
+[replenishing_mistrias_food_reserves_2_pt_1]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "haydens_farm/farm_cutscene_exit"
+	trigger = { location = "haydens_farm", bbox = [110, 32, 180, 76], manually_activated = true }
+
+[replenishing_mistrias_food_reserves_2_pt_2]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/inn front door"
+
+[repair_the_beach_bridge_pt_1]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "beach/rtbb1_ari_bridge"
+
+[repair_the_beach_bridge_pt_2]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "beach/rtbb2_ari_start"
+	refreshes_room_layers = true
+
+[repair_the_inn_pt_1]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/inn front door"
+
+[repair_the_inn_pt_2]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/inn front door"
+	refreshes_room_layers = true
+
+[hayden_four_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "haydens_farm/farm_cutscene_exit"
+	trigger = { location = "haydens_farm", bbox = [110, 32, 180, 76], manually_activated = true }
+	given_items = [{ item_id = "quality_small_animal_feed", quantity = 3 }]
+
+[valen_six_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/bathhouse front door"
+
+[hayden_six_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "eastern_road/north_cutscene_exit"
+
+[eiland_six_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "manor_house_entry/adeline_office_cutscene_exit"
+
+[balor_six_hearts]
+	test_target = "none"
+	has_conversation = true
+	set_max_hp = true
+	set_max_stamina = true
+	end_position = "town/inn front door"
+
+[celine_six_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/general store front door"
+	set_max_hp = true
+	set_max_stamina = true
+	invisible_assets = ["spr_generalstore_home_tableflowers_spring"]
+	invisible_objects = ["obj_celine_pot"]
+
+[reina_six_hearts]
+	test_target = "none"
+	has_conversation = true
+	invisible_assets = ["spr_inn_candle_north_broken_on", "spr_inn_candle_north_main_on"]
+	end_position = "town/inn front door"
+	set_max_hp = true
+	set_max_stamina = true
+
+[juniper_six_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/bathhouse front door"
+
+[adeline_six_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/inn front door"
+	set_max_hp = true
+	set_max_stamina = true
+	trigger = { location = "town", bbox = [142, 191, 207, 231], manually_activated = true }
+
+[reveal_mistmare]
+	test_target = "general"
+	has_conversation = false
+	begin_with_fade_out = false
+	skip_prompt_length = 0
+	cut_off_music = false
+	end_position = "narrows/reveal_mistmare_ari_approach"
+
+[march_six_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/blacksmith front door"
+
+[ryis_six_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "eastern_road/carpenter's shop front door"
+	set_max_hp = true
+	set_max_stamina = true
+	given_items = [{ item_id = "coconut_cream_pie", quantity = 1 }]
+
+[procuring_the_sealing_scroll]
+	test_target = "dragon_story"
+	has_conversation = true
+	end_position = "inn/balors_room_cutscene_exit"
+
+[delivering_the_sealing_scroll]
+	test_target = "dragon_story"
+	has_conversation = true
+	trigger = { location = "farm" }
+	given_items = [{ item_id = "sealing_scroll" }]
+	quest_to_progress = "delivering_the_sealing_scroll"
+	requirements = { completed_quest = { quest = "procuring_the_sealing_scroll", days_after = 1 } }
+
+[translating_the_fire_tablet]
+	test_target = "dragon_story"
+	has_conversation = true
+	end_position = "inn/balors_room_cutscene_exit"
+	quest_to_start = ["procuring_the_sealing_scroll", "breaking_the_fire_seal"]
+
+[fire_seal]
+	test_target = "dragon_story"
+	heart_level_changes = [{ npc_id = "caldarus", heart_level = 4 }]
+	has_conversation = true
+	trigger = { location = "fire_seal" }
+	end_position = "fire_seal/fs_ari_back"
+	quest_to_start = "the_fire_tablet"
+	requires_story_mode = true
+
+[caldarus_recovery]
+	test_target = "dragon_story"
+	has_conversation = true
+	trigger = { location = "caldarus_house" }
+	end_position = "deep_woods/caldarus' front door"
+	requirements = { seen_cutscene = "break_fire_seal" }
+
+[stone_refinery_pt_1]
+	test_target = "main_story"
+	has_conversation = true
+	trigger = { location = "narrows", bbox = [68, 43, 118, 73], manually_activated = true }
+	end_position = "narrows/utm2_ari_start"
+
+[stone_refinery_pt_2]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "mines_entry/sr2_olric_chalice"
+	refreshes_room_layers = true
+
+[adeline_eight_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/manor house front door"
+	invisible_assets = [
+		"spr_manor_dining_candelabra_spring_top_on",
+		"spr_manor_adeline_room_armchair_spring",
+		"spr_manor_adeline_room_armchair_spring_top",
+		"spr_manor_adeline_room_armchair_shadow",
+	]
+	given_items = [{ item_id = "heros_ring", quantity = 1 }]
+	romantic_choice_warning = "adeline"
+
+[pet_dream]
+	test_target = "main_story"
+	has_conversation = true
+	when_sleeping = true
+	begin_with_fade_out = false
+	do_not_set_idle = true
+	requires_story_mode = true
+	can_skip = false
+	prevent_eod_music_stop = true
+	allow_glyph_guide = true
+	requirements = { reached_date = { season = "spring", day = 7 } }
+
+[pet_arrival]
+	test_target = "main_story"
+	trigger = { location = "farm" }
+	has_conversation = true
+	begin_with_fade_out = false
+	requires_story_mode = true
+	requirements = { seen_cutscene = "pet_dream" }
+	end_position = "farm/pa_ari_stepback"
+
+[balor_eight_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/inn front door"
+	set_max_hp = true
+	set_max_stamina = true
+	romantic_choice_warning = "balor"
+
+[celine_eight_hearts]
+	test_target = "none"
+	has_conversation = true
+	set_max_hp = true
+	set_max_stamina = true
+	invisible_assets = ["spr_celinecottage_basket_spring"]
+	invisible_objects = ["obj_celine_pot"]
+	end_position = "narrows/narrows_summit_cutscene_exit"
+	romantic_choice_warning = "celine"
+
+[hayden_eight_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "beach/cutscene_exit"
+	romantic_choice_warning = "hayden"
+
+[juniper_eight_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/bathhouse front door"
+	romantic_choice_warning = "juniper"
+
+[inn_meal_date]
+	begin_with_fade_out = false
+	test_target = "none"
+	cut_off_music = false
+	end_position = "blackboard"
+
+[deep_woods_picnic_date]
+	begin_with_fade_out = false
+	test_target = "none"
+	cut_off_music = false
+	end_position = "blackboard"
+
+[beach_date]
+	begin_with_fade_out = false
+	test_target = "none"
+	cut_off_music = false
+	end_position = "blackboard"
+
+[park_date]
+	begin_with_fade_out = false
+	test_target = "none"
+	cut_off_music = false
+	end_position = "blackboard"
+
+[gem_cutting_date]
+	begin_with_fade_out = false
+	test_target = "none"
+	cut_off_music = false
+	end_position = "blackboard"
+
+[bathhouse_date]
+	begin_with_fade_out = false
+	test_target = "none"
+	cut_off_music = false
+	end_position = "blackboard"
+	invisible_assets = ["spr_easternroad_lily_pad_medium_spring"]
+
+[reina_eight_hearts]
+	test_target = "none"
+	has_conversation = true
+	invisible_assets = ["spr_inn_candle_north_broken_on", "spr_inn_candle_north_main_on"]
+	end_position = "town/inn front door"
+	set_max_hp = true
+	set_max_stamina = true
+	romantic_choice_warning = "reina"
+
+[harvest_festival_dance]
+	has_conversation = false
+	test_target = "none"
+
+[eiland_eight_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "eastern_road/deep_woods_cutscene_exit"
+	romantic_choice_warning = "eiland"
+	refreshes_room_layers = true
+
+[march_eight_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "farm/farm_cutscene_exit"
+	invisible_assets = ["spr_forage_upper_mines_mushroom_stage1"]
+	romantic_choice_warning = "march"
+	trigger = { location = "farm" }
+	end_time_jump = { hour = 24, minute = 0 }
+	post_process_time_override_reset = true
+	handle_farm_chores = true
+
+	[march_eight_hearts.requirements]
+		reached_heart_level.march = 8
+		invert.or = [
+			{ has_left_house_today = true },
+			{ is_festival_day = true },
+		]
+		broke_fire_seal = true
+		completed_quest = "shield_of_the_realm"
+		or = [
+			{ completed_quest = { quest = "breaking_the_final_seal", days_after = 2 } },
+			{ invert.completed_quest = "breaking_the_final_seal" },
+		]
+
+[caldarus_eight_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "deep_woods/caldarus' front door"
+	romantic_choice_warning = "caldarus"
+
+[upgrade_the_carpenters_shop_pt_1]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "eastern_road/carpenter's shop front door"
+
+[upgrade_the_carpenters_shop_pt_2]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "eastern_road/carpenter's shop front door"
+	refreshes_room_layers = true
+
+[upgrade_the_saturday_market]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/general store front door"
+
+[elsie_dating_tutorial]
+	test_target = "general"
+	has_conversation = true
+	trigger = { location = "farm" }
+	given_items = [
+		{ item_id = "inn_menu" },
+		{ item_id = "picnic_set", requirements = { world_fact_is.caldarus_home = true } },
+	]
+
+	[[elsie_dating_tutorial.requirements.or]]
+		is_dating = "adeline"
+		completed_quest = { quest = "lost_track_of_time", days_after = 1 }
+
+	[[elsie_dating_tutorial.requirements.or]]
+		is_dating = "balor"
+		completed_quest = { quest = "for_good", days_after = 1 }
+
+	[[elsie_dating_tutorial.requirements.or]]
+		is_dating = "caldarus"
+		completed_quest = { quest = "life_in_this_form", days_after = 1 }
+
+	[[elsie_dating_tutorial.requirements.or]]
+		is_dating = "celine"
+		completed_quest = { quest = "a_lost_flower", days_after = 1 }
+
+	[[elsie_dating_tutorial.requirements.or]]
+		is_dating = "eiland"
+		completed_quest = { quest = "the_glade", days_after = 1 }
+
+	[[elsie_dating_tutorial.requirements.or]]
+		is_dating = "hayden"
+		completed_quest = { quest = "a_little_while_longer", days_after = 1 }
+
+	[[elsie_dating_tutorial.requirements.or]]
+		is_dating = "juniper"
+		completed_quest = { quest = "potions_and_errands", days_after = 1 }
+
+	[[elsie_dating_tutorial.requirements.or]]
+		is_dating = "march"
+		seen_cutscene = "march_eight_hearts"
+		# march doesn't have a quest associated with his heart event so we can't easily ask for
+		# "days_after". ideally we could have a t2 expirator on a fact called "next_day", but in
+		# leu of that we can take advantage of the fact that his scene jumps time to 24:00 when it
+		# finishes.
+		invert.in_time_range = [24, 26]
+
+	[[elsie_dating_tutorial.requirements.or]]
+		is_dating = "reina"
+		completed_quest = { quest = "the_aldarian_cooking_contest", days_after = 1 }
+
+	[[elsie_dating_tutorial.requirements.or]]
+		is_dating = "ryis"
+		completed_quest = { quest = "a_duet", days_after = 1 }
+
+	[[elsie_dating_tutorial.requirements.or]]
+		is_dating = "seridia"
+		completed_quest = { quest = "whatever_your_heart_desires", days_after = 1 }
+
+	[[elsie_dating_tutorial.requirements.or]]
+		is_dating = "valen"
+		completed_quest = { quest = "the_panacea", days_after = 1 }
+
+[ryis_eight_hearts]
+	test_target = "none"
+	has_conversation = true
+	romantic_choice_warning = "ryis"
+	end_position = "eastern_road/carpenter's shop front door"
+	trigger = { location = "eastern_road", bbox = [102, 132, 152, 176], manually_activated = true }
+
+[valen_eight_hearts]
+	test_target = "none"
+	has_conversation = true
+	romantic_choice_warning = "valen"
+	end_position = "town/clinic front door"
+	set_max_hp = true
+	set_max_stamina = true
+
+[lost_and_found]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "manor_house_entry/dining_room_cutscene_exit"
+	post_scene_tutorial = "lost_and_found"
+
+[apiaries_and_terrariums]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/inn front door"
+
+[priestess_quarters_pt_1]
+	test_target = "dragon_story"
+	trigger = { location = "priestess_quarters" }
+	quest_to_start = "find_the_magic_key"
+	requires_story_mode = true
+	cut_off_music = false
+	has_conversation = true
+
+[priestess_quarters_pt_2]
+	test_target = "dragon_story"
+	has_conversation = true
+	begin_with_fade_out = false
+	cut_off_music = false
+	quest_to_progress = "find_the_magic_key"
+	spell_to_unlock = "sacred_light"
+	post_scene_tutorial = "sacred_light"
+	refreshes_room_layers = true
+
+[unlock_pq_ne]
+	test_target = "dragon_story"
+	cut_off_music = false
+	begin_with_fade_out = false
+	quest_to_progress = "find_the_magic_key"
+	refreshes_room_layers = true
+
+[break_ruins_seal_pt_1]
+	test_target = "dragon_story"
+	has_conversation = true
+	end_position = "void_seal/rs1_ari_void_start"
+	trigger = { location = "ruins_seal" }
+	quest_to_start = "creating_the_void_mass"
+	requires_story_mode = true
+	cut_off_music = false
+	post_scene_tutorial = "void_sight"
+	refreshes_room_layers = true
+
+[break_ruins_seal_pt_2]
+	test_target = "dragon_story"
+	has_conversation = true
+	end_position = "ruins_seal/rs2_ari_ruins_start"
+	quest_to_start = "breaking_the_ruins_seal"
+	requires_story_mode = true
+	cut_off_music = false
+
+[break_ruins_seal_pt_3]
+	test_target = "dragon_story"
+	has_conversation = true
+	requires_story_mode = true
+	cut_off_music = false
+	begin_with_fade_out = false
+	object_removals = [{ location = "ruins_seal", object = "ruins_seal_door" }]
+	drop_items = [
+		{ location = "ruins_seal/rs3_priestess_exit", item_id = "heart_crystal" },
+	]
+
+[dragon_tablet_pt_1]
+	test_target = "dragon_story"
+	has_conversation = true
+	cut_off_music = false
+	quest_to_start = "the_dragonsworn_tablet"
+	trigger = { location = "seridias_chamber" }
+	requires_story_mode = true
+
+[dragon_tablet_pt_2]
+	test_target = "dragon_story"
+	has_conversation = true
+	begin_with_fade_out = false
+	cut_off_music = false
+	quest_to_progress = "the_dragonsworn_tablet"
+
+[dragon_tablet_pt_3]
+	test_target = "dragon_story"
+	has_conversation = true
+	end_position = "narrows/museum front door"
+
+[dragon_tablet_pt_4]
+	test_target = "dragon_story"
+	has_conversation = true
+	heart_level_changes = [{ npc_id = "seridia", heart_level = 6 }]
+	ends_day = true
+	post_process_time_override_reset = true
+	refreshes_room_layers = true
+	drop_items = [
+		{ player_home = true, item_id = "heart_crystal" },
+	]
+
+[seridia_eight_hearts]
+	test_target = "none"
+	has_conversation = true
+	end_position = "narrows/narrows_summit_cutscene_exit"
+	romantic_choice_warning = "seridia"
+	given_items = [{ item_id = "strawberry_shortcake" }]
+
+[engagement_tutorial]
+	test_target = "none"
+	has_conversation = true
+	begin_with_fade_out = false
+	trigger.location = "farm"
+    post_scene_tutorial = "engagement"
+	given_items = [{ item_id = "engagement_ring_recipe_scroll" }]
+	requirements.or = [
+		{ reached_heart_level.adeline = 10, is_dating = "adeline" },
+		{ reached_heart_level.balor = 10, is_dating = "balor" },
+		{ reached_heart_level.caldarus = 10, is_dating = "caldarus" },
+		{ reached_heart_level.celine = 10, is_dating = "celine" },
+		{ reached_heart_level.eiland = 10, is_dating = "eiland" },
+		{ reached_heart_level.hayden = 10, is_dating = "hayden" },
+		{ reached_heart_level.juniper = 10, is_dating = "juniper" },
+		{ reached_heart_level.march = 10, is_dating = "march" },
+		{ reached_heart_level.reina = 10, is_dating = "reina" },
+		{ reached_heart_level.ryis = 10, is_dating = "ryis" },
+		{ reached_heart_level.seridia = 10, is_dating = "seridia" },
+		{ reached_heart_level.valen = 10, is_dating = "valen" },
+	]
+	requirements.invert.or = [{ has_left_house_today = true }, { seen_cutscene = "engagement_tutorial" }]
+
+[great_bird_0]
+	test_target = "none"
+	has_conversation = true
+	when_sleeping = true
+	begin_with_fade_out = false
+	requirements.has_spouse = true
+	requirements.world_fact_is.family_planning_gate = false
+	given_items = [{ item_id = "mystical_feather" }]
+	can_skip = false
+	post_process_time_override_reset = true
+
+[great_bird_1]
+	test_target = "none"
+	has_conversation = false
+	when_sleeping = true
+	requirements.world_fact_is.pending_stork_visit = true
+	can_skip = false
+	can_repeat = true
+	post_process_time_override_reset = true
+
+[stork_delivery]
+	test_target = "none"
+    manually_triggered_in_morning = true
+	can_repeat = true
+	can_skip = false
+	post_process_time_override_reset = true
+    end_position = "bed"
+    end_time_jump = { hour = 7, minute = 0 }
+
+[spouse_delivery]
+	test_target = "none"
+    manually_triggered_in_morning = true
+	can_repeat = true
+	can_skip = false
+    end_position = "bed"
+    end_time_jump = { hour = 7, minute = 0 }
+
+[player_delivery]
+	test_target = "none"
+    manually_triggered_in_morning = true
+	can_repeat = true
+	can_skip = false
+    end_position = "bed"
+    end_time_jump = { hour = 7, minute = 0 }
+
+[wedding]
+	test_target = "none"
+    manually_triggered_in_morning = true
+	ends_day = true
+	post_process_time_override_reset = true
+	can_repeat = true
+	handle_farm_chores = true
+
+[mistril_rank]
+	has_conversation = true
+	trigger = { location = "town", bbox = [54, 97, 206, 244] }
+	requires_story_mode = true
+	test_target = "main_story"
+	end_position = "town/mr_ari_rank_forward"
+	requirements.reached_renown_level = 100
+    given_items = [{ item_id = "mistril_star_trophy", quantity = 1 }]
+
+[adeline_ten_hearts]
+	test_target = "none"
+	has_conversation = true
+	romantic_choice_warning = "adeline"
+	begin_with_fade_out = false
+	end_position = "narrows/narrows_summit_cutscene_exit"
+	given_items = [{ item_id = "adelines_lifetime_planner", quantity = 1 }]
+	give_items_once = true
+
+[balor_ten_hearts]
+	test_target = "none"
+	has_conversation = true
+	romantic_choice_warning = "balor"
+	begin_with_fade_out = false
+	end_position = "eastern_road/rtb1_ari_start"
+	given_items = [{ item_id = "balors_polished_gem", quantity = 1 }]
+	give_items_once = true
+
+[caldarus_ten_hearts]
+	test_target = "none"
+	has_conversation = true
+	romantic_choice_warning = "caldarus"
+	begin_with_fade_out = false
+	end_position = "eastern_road/deep_woods_cutscene_exit"
+	given_items = [{ item_id = "caldarus_dragonsworn_statue", quantity = 1 }]
+	give_items_once = true
+
+[celine_ten_hearts]
+	test_target = "none"
+	has_conversation = true
+	romantic_choice_warning = "celine"
+	begin_with_fade_out = false
+	end_position = "narrows/narrows_summit_cutscene_exit"
+	given_items = [{ item_id = "celines_revived_flower", quantity = 1 }]
+	give_items_once = true
+
+[eiland_ten_hearts]
+	test_target = "none"
+	has_conversation = true
+	romantic_choice_warning = "eiland"
+	begin_with_fade_out = false
+	end_position = "town/manor house front door"
+	given_items = [{ item_id = "eilands_legacy_stele", quantity = 1 }]
+	give_items_once = true
+
+[hayden_ten_hearts]
+	test_target = "none"
+	has_conversation = true
+	romantic_choice_warning = "hayden"
+	begin_with_fade_out = false
+	end_position = "narrows/narrows_summit_cutscene_exit"
+	given_items = [{ item_id = "haydens_carved_nest", quantity = 1 }]
+	give_items_once = true
+
+[juniper_ten_hearts]
+	test_target = "none"
+	has_conversation = true
+	romantic_choice_warning = "juniper"
+	begin_with_fade_out = false
+	end_position = "narrows/narrows_summit_cutscene_exit"
+	given_items = [{ item_id = "junipers_protection_scroll", quantity = 1 }]
+	give_items_once = true
+
+[march_ten_hearts]
+	test_target = "none"
+	has_conversation = true
+	romantic_choice_warning = "march"
+	begin_with_fade_out = false
+	end_position = "narrows/narrows_summit_cutscene_exit"
+	given_items = [{ item_id = "marchs_mistrian_shield", quantity = 1 }]
+	give_items_once = true
+
+[reina_ten_hearts]
+	test_target = "none"
+	has_conversation = true
+	romantic_choice_warning = "reina"
+	begin_with_fade_out = false
+	end_position = "eastern_road/north_cutscene_exit"
+	given_items = [{ item_id = "reinas_cookbook_manuscript", quantity = 1 }]
+	give_items_once = true
+
+[ryis_ten_hearts]
+	test_target = "none"
+	has_conversation = true
+	romantic_choice_warning = "ryis"
+	begin_with_fade_out = false
+	end_position = "eastern_road/north_cutscene_exit"
+	given_items = [{ item_id = "ryis_hawthorn_tree", quantity = 1 }]
+	give_items_once = true
+
+[seridia_ten_hearts]
+	test_target = "none"
+	has_conversation = true
+	romantic_choice_warning = "seridia"
+	begin_with_fade_out = false
+	end_position = "narrows/utm2_ari_start"
+	given_items = [{ item_id = "seridias_dragonsworn_armor", quantity = 1 }]
+	give_items_once = true
+
+[valen_ten_hearts]
+	test_target = "none"
+	has_conversation = true
+	romantic_choice_warning = "valen"
+	begin_with_fade_out = false
+	end_position = "narrows/western_ruins_cutscene_exit"
+	given_items = [{ item_id = "valens_panacea_jar", quantity = 1 }]
+	give_items_once = true
+
+[upgrade_the_saturday_market_plaza]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/manor house front door"
+	refreshes_room_layers = true
+	nuke = [112, 768, 440, 952]
+[repair_the_bell_tower_pt_1]
+	test_target = "main_story"
+	has_conversation = true
+	end_position = "town/bell_tower_cutscene_exit"
+	trigger = { location = "town", bbox = [52, 158, 83, 174], manually_activated = true }
+	refreshes_room_layers = true
+
+[repair_the_bell_tower_pt_2]
+	test_target = "none"
+	has_conversation = true
+	end_position = "town/bell_tower_cutscene_exit"
+	refreshes_room_layers = true
+
+[big_chicken]
+	test_target = "none"
+	can_skip = false
+	begin_with_fade_out = false
+	silence_music_after_scene = true

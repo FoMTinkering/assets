@@ -1,0 +1,113 @@
+scene(farm);
+request_music_play("Music/Events/Cutscene");
+camera_position(ftw_camera_1);
+place_actor(ari, south, ftw_ari_door);
+place_actor(hayden, east, ftw_hayden_entrance);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		walk_slow(hayden, ftw_hayden_start);
+		face(hayden, east);
+	}
+	{
+		wait(0.5);
+		free bark_speech(hayden, exclamation_mark);
+		wait(0.5);
+		face(ari, west);
+	}
+	{
+		walk_slow(ari, ftw_ari_entrance);
+		face(ari, south);
+	}
+	{
+		wait(2);
+		next_line(); //
+	}
+	pan_camera(1.5, ftw_camera_2);
+}
+sim {
+	{
+		wait(1.5);
+		face(hayden, south);
+		wait(1);
+		face(hayden, north);
+		wait(1);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+free bark_speech(hayden, cute_face);
+wait(1.5);
+sim {
+	{
+		wait(1.5);
+		face(hayden, west);
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(hayden, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+free bark_speech(ari, cute_face);
+wait(0.5);
+free bark_speech(hayden, cute_face);
+wait(1.5);
+sim {
+	{
+		wait(1);
+		face(hayden, west);
+	}
+	{
+		next_line(); //
+	}
+	{
+		wait(0.5);
+		pan_camera(2, ftw_camera_3);
+	}
+}
+
+sim {
+	{
+		wait(0.75);
+		face(hayden, east);
+	}
+	{
+		pan_camera(1, ftw_camera_2);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(hayden, cute_face);
+wait(1);
+free bark_speech(ari, cute_face);
+wait(1);
+sim {
+	fade_out(2);
+	{
+		wait(0.5);
+		walk_slow(hayden, ftw_hayden_exit);
+		face(hayden, west);
+	}
+}

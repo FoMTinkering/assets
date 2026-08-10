@@ -1,0 +1,20 @@
+[forest_perch]
+refresh = "1y"
+requires = [
+	{ npc = "ryis" },
+	{ museum_donated_forest_perch = true },
+	{ building = "museum", comparator = "!=" },
+]
+portrait = "neutral"
+local = "I heard there was a $Forest Perch$ over at the Museum, so I raced over."
+next = "1"
+
+[forest_perch.1]
+portrait = "think"
+local = "I thought they opened a bird wing."
+next = "2"
+
+[forest_perch.2]
+portrait = "happy"
+effect = "drop"
+local = "Turns out a Forest Perch is a fish. That's cool, I guess."

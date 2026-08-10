@@ -1,0 +1,213 @@
+scene(inn);
+place_actor(josephine, east, jcc_jo_start);
+place_actor(balor, east, jcc_balor_veggies);
+place_actor(celine, north, "Soup Pot");
+place_actor(reina, south, "Cutting Board");
+animate(reina, chop);
+place_actor(ari, north, jcc_ari_start);
+camera_position(jcc_camera_1);
+request_music_play("Music/Events/Cutscene");
+animate(balor, action); //
+animate(celine, action); //
+
+
+//
+free {
+	wait(1);
+	face(josephine, north);
+	wait(0.5);
+	free bark_speech(josephine, cute_face);
+}
+fade_in(2);
+wait(1);
+free walk_slow(ari, jcc_ari_meet);
+wait(1.5);
+face(josephine, south);
+free bark_speech(josephine, exclamation_mark);
+free sim {
+	{
+		wait(0.5);
+		walk_slow(josephine, jcc_jo_meet);
+		face(josephine, south);
+	}
+	{
+		wait(0.5);
+		pan_camera(3, jcc_camera_2);
+	}
+}
+next_line(); //
+next_line(); //
+
+//
+next_line(); //
+free sim {
+	{
+		walk_slow(josephine, jcc_jo);
+		face(josephine, west);
+	}
+	{
+		wait(0.5);
+		walk_slow(ari, jcc_ari);
+		face(ari, west);
+	}
+	pan_camera(4, jcc_camera_3);
+}
+
+next_line(); //
+free {
+	wait(0.5);
+	face(balor, south);
+}
+next_line(); //
+free sim {
+	{
+		wait(0.5);
+		face(balor, east);
+		wait(0.5);
+		animate(balor, action);
+	}
+	{
+		face(josephine, east);
+		wait(0.75);
+		face(ari, east);
+	}
+}
+next_line(); //
+free {
+	animate(celine, idle);
+	wait(0.5);
+	face(celine, west);
+}
+next_line(); //
+free sim {
+	{
+		wait(0.5);
+		face(celine, north);
+		wait(0.5);
+		animate(celine, action);
+	}
+	{
+		face(josephine, west);
+		wait(0.75);
+		face(ari, west);
+	}
+}
+sim {
+	{
+		wait(0.5);
+		animate(reina, idle);
+		wait(0.5);
+		face(reina, east);
+	}
+	{
+		next_line(); //
+	}
+}
+next_line(); //
+place_actor(march, north, jcc_ari_start);
+close_textbox();
+free {
+	walk_slow(march, jcc_jo_meet);
+	face(march, north);
+}
+free {
+	free bark_speech(ari, cute_face);
+	walk_slow(ari, jcc_ari_reina);
+	face(ari, south);
+}
+face(josephine, south);
+wait(2);
+free sim {
+	{
+		face(reina, south);
+	}
+	{
+		wait(0.5);
+		pan_camera(2, jcc_camera_6);
+	}
+	{
+		wait(1);
+		bark_speech(josephine, exclamation_mark);
+	}
+	{
+		wait(1.25);
+		animate(balor, idle);
+		wait(0.5);
+		face(balor, south);
+	}
+	{
+		wait(1);
+		animate(celine, idle);
+		wait(0.5);
+		face(celine, south);
+	}
+
+}
+next_line(); //
+sim {
+	{
+		next_line(); //
+	}
+	{
+		pan_camera(2, jcc_camera_5);
+	}
+}
+close_textbox();
+free sim {
+	bark_speech(josephine, cute_face);
+	bark_speech(reina, cute_face);
+	bark_speech(celine, cute_face);
+	bark_speech(balor, cute_face);
+	bark_speech(ari, cute_face);
+	{
+		wait(1);
+		bark_speech(march, sweat_drop);
+	}
+}
+wait(2);
+fade_out(2);
+__raise_textbox();
+//
+next_line(); //
+close_textbox();
+if get_response() == 0 {
+	wait(0.25);
+	run_tutorial("cooking");
+}
+camera_out();
+__lower_textbox();
+
+//
+place_actor(josephine, south, "North Table Top 2");
+eat_item(josephine, "vegetable_soup");
+place_actor(reina, south, "North Table Top 1");
+eat_item(reina, "vegetable_soup");
+place_actor(march, south, "North Table Top 3");
+eat_item(march, "vegetable_soup");
+place_actor(balor, north, "North Table Bottom 3");
+eat_item(balor, "vegetable_soup");
+place_actor(celine, north, "North Table Bottom 1");
+eat_item(celine, "vegetable_soup");
+place_actor(ari, north, "North Table Bottom 2");
+animate(ari, sit);
+setup_prop(jcc_vegetable_soup);
+camera_position(jcc_camera_4);
+fade_in(2);
+
+//
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+free bark_speech(josephine, cute_face);
+free bark_speech(reina, cute_face);
+free bark_speech(celine, cute_face);
+free bark_speech(balor, cute_face);
+free bark_speech(ari, cute_face);
+free bark_speech(march, cute_face);
+wait(0.5);
+fade_out(2);

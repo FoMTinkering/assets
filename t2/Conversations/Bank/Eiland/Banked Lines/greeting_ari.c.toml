@@ -1,0 +1,40 @@
+[greeting_ari]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ date_time = "2d", comparator = "<=" },
+	{ any = [
+		{ eiland_building = "inn" },
+		{ eiland_building = "bathhouse" },
+		{ eiland_building = "manor_house" },
+		{ eiland_building = "general_store" },
+		{ eiland_building = "clinic" },
+		{ eiland_building = "blacksmith" },
+		{ location = "town" },
+	] },
+]
+portrait = "neutral"
+local = "Hello! Out exploring the town?"
+next = "1"
+
+[greeting_ari.1]
+portrait = "think"
+local = "Mistria has a number of historical sites you may come across on your travels."
+next = "2"
+
+[greeting_ari.2]
+portrait = "happy"
+local = "This area is a hot spot for $Archaeology$, you know!"
+next = "3"
+
+
+[greeting_ari.3]
+portrait = "think"
+local = "If you notice any $raised areas in the ground$, try using a $Shovel$ or $Pickaxe$ on them."
+next = "4"
+
+[greeting_ari.4]
+portrait = "happy"
+effect = "cheery"
+local = "You never know what you might excavate!"

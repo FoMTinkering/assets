@@ -1,0 +1,105 @@
+[dessert_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ eiland_zone = "inn/bar" },
+	{ hayden_zone = "inn/bar" },
+	{ holt_zone = "inn/bar" },
+	{ march_zone = "inn/bar" },
+	{ reina_zone = "inn/bar" },
+	{ terithia_zone = "inn/bar" },
+	{ dessert_fnati = 2 },
+	{ any = [
+		{ npc = "eiland" },
+		{ npc = "hayden" },
+		{ npc = "holt" },
+		{ npc = "march" },
+		{ npc = "reina" },
+		{ npc = "terithia" },
+	] },
+]
+actions = [
+	{ item = "salted_watermelon" },
+	{ bark = { bark = "heart", npc = "eiland" } },
+	{ bark = { bark = "cute_face", npc = "hayden" } },
+	{ bark = { bark = "cute_face", npc = "holt" } },
+	{ bark = { bark = "cute_face", npc = "march" } },
+	{ bark = { bark = "cute_face", npc = "reina" } },
+	{ bark = { bark = "cute_face", npc = "terithia" } },
+]
+writes = [{ dessert_fnati = 3 }]
+speaker = "march"
+portrait = "sly"
+local = "Listen up! This is the March takeover of the dessert club. This time we're eating something I've been meaning to try..."
+next = "1"
+
+[dessert_3.1]
+speaker = "march"
+portrait = "mad"
+local = "$Salted Watermelon$!"
+next = "2"
+
+[dessert_3.2]
+speaker = "eiland"
+portrait = "ugh"
+local = "He's mad! Salt? In dessert?"
+next = "3"
+
+[dessert_3.3]
+speaker = "terithia"
+portrait = "think"
+local = "I've salted fish, but on watermelon? I wonder."
+prompts = [
+	{ local = "Salt makes sweet flavors more balanced, doesn't it?", next = "4" },
+	{ local = "March is ruining dessert for everyone!", next = "5" },
+]
+
+[dessert_3.4]
+speaker = "reina"
+portrait = "neutral"
+local = "That's right, [Ari]! Darcy and I both use salt in most of our baked goods."
+next = "6"
+
+[dessert_3.5]
+speaker = "march"
+portrait = "unimpressed"
+local = "I guess this is what I get for trying something new."
+next = "6"
+
+[dessert_3.6]
+speaker = "hayden"
+portrait = "neutral"
+local = "We grew up putting salt on our watermelon! According to Valen, both salt and watermelon replenish your electrolytes. Great on a hot summer's day!"
+next = "7"
+
+[dessert_3.7]
+speaker = "holt"
+portrait = "think"
+local = "At first I was with Eiland, but have you tried it?"
+next = "8"
+
+[dessert_3.8]
+speaker = "holt"
+portrait = "mad"
+effect = "sparkles"
+local = "It's so sweet it's making my mustache spin!"
+next = "9"
+
+[dessert_3.9]
+speaker = "eiland"
+portrait = "ugh"
+local = "Fine, I'll try it..."
+next = "10"
+
+[dessert_3.10]
+speaker = "eiland"
+portrait = "mad"
+effect = "sparkles"
+local = "Oh! Oh! Intriguing!"
+next = "11"
+
+[dessert_3.11]
+speaker = "reina"
+portrait = "happy"
+local = "We're all very proud of you, Eiland."

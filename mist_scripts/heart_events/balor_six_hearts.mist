@@ -1,0 +1,413 @@
+var lemonade = false;
+
+scene(inn);
+place_actor(ari, north, b6h_ari_entrance);
+place_actor(balor, west, b6h_balor_entrance);
+place_actor(hemlock, east, "Bartender 2");
+animate(hemlock, polish);
+camera_position(b6h_camera_1);
+request_music_play(balor);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		wait(0.5);
+		free bark_speech(hemlock, cooking);
+		wait(1);
+		free bark_speech(balor, coin);
+		wait(1);
+		free bark_speech(hemlock, cute_face);
+	}
+	{
+		walk_slow(ari, b6h_ari_start);
+		face(ari, north);
+	}
+	{
+		pan_camera(4, b6h_camera_2);
+	}
+	{
+		wait(3);
+		free bark_speech(balor, exclamation_mark);
+		wait(0.5);
+		face(balor, south);
+	}
+	{
+		wait(4);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+sim {
+	{
+		wait(0.5);
+		pan_camera(2, b6h_camera_3);
+	}
+	{
+		wait(1);
+		walk_slow(ari, b6h_ari_chat);
+		face(ari, north);
+	}
+	{
+		wait(0.75);
+		face(balor, west);
+	}
+	{
+		wait(1.25);
+		animate(hemlock, idle);
+		face(hemlock, east);
+	}
+	{
+		wait(0.5);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(2.25);
+		face(balor, south);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(balor, cute_face);
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+sim {
+	{
+		walk(hemlock, "Kitchen Shelf");
+		face(hemlock, west);
+		animate(hemlock, action);
+		wait(0.5);
+		animate(hemlock, idle);
+		wait(0.25);
+		walk(hemlock, "North Table Service");
+		face(hemlock, east);
+		animate(hemlock, action);
+		wait(0.5);
+		setup_prop(b6h_wine_glass_balor);
+		setup_prop(b6h_wine_glass_ari);
+		animate(hemlock, idle);
+		wait(0.5);
+		animate(hemlock, action);
+		wait(0.5);
+		setup_prop(b6h_wine);
+		animate(hemlock, idle);
+		wait(0.5);
+	}
+	{
+		wait(0.5);
+		walk_slow(balor, "North Table Top 1");
+		animate(balor, sit);
+		face(balor, south);
+	}
+	{
+		wait(1);
+		walk_slow(ari, "North Table Bottom 1");
+		animate(ari, sit);
+		face(ari, north);
+	}
+	{
+		wait(1);
+		pan_camera(3, b6h_camera_4);
+	}
+	{
+		wait(7);
+		next_line(); //
+		next_line(); //
+	}
+}
+//
+if get_response() == 1 {
+	sim {
+		{
+			wait(0.75);
+			face(hemlock, south);
+			wait(1);
+			face(balor, west);
+			wait(0.5);
+			face(hemlock, east);
+		}
+		{
+			next_line(); //
+			close_textbox();
+		}
+	}
+	face(balor, south);
+} else {
+	next_line();
+	close_textbox();
+}
+if get_response() == 1 {
+	lemonade = true;
+	sim {
+		{
+			wait(0.5);
+			walk_slow(hemlock, b6h_hemlock_lemonade_grab);
+			face(hemlock, east);
+			animate(hemlock, action);
+			wait(0.5);
+			destroy_prop(b6h_wine_glass_ari);
+			animate(hemlock, idle);
+			walk(hemlock, "Bartender 2");
+			face(hemlock, east);
+			animate(hemlock, action);
+			wait(0.5);
+			animate(hemlock, idle);
+			walk(hemlock, b6h_hemlock_lemonade_grab);
+			face(hemlock, east);
+			animate(hemlock, action);
+			wait(0.5);
+			setup_prop(b6h_lemonade_ari);
+			animate(hemlock, idle);
+			wait(1);
+		}
+		{
+			wait(2);
+			pan_camera(2.5, b6h_camera_3);
+			wait(1);
+			pan_camera(2.5, b6h_camera_4);
+		}
+		{
+			wait(2.5);
+			free bark_speech(balor, cold_drink);
+			wait(1.5);
+			free bark_speech(balor, question_mark);
+			wait(1.5);
+			free bark_speech(ari, celebration);
+			wait(1.5);
+			free bark_speech(balor, cute_face);
+			wait(1.5);
+			free bark_speech(ari, cute_face);
+		}
+	}
+}
+wait(1.5);
+
+sim {
+	drink_item(balor, "wine");
+	destroy_prop(b6h_wine_glass_balor);
+	if lemonade == true {
+		destroy_prop(b6h_lemonade_ari);
+	} else {
+		destroy_prop(b6h_wine_glass_ari);
+	}
+}
+wait(1.5);
+animate(balor, idle);
+setup_prop(b6h_wine_glass_balor);
+if lemonade == true {
+		setup_prop(b6h_lemonade_ari);
+	} else {
+		setup_prop(b6h_wine_glass_ari);
+	}
+wait(1);
+free bark_speech(ari, cute_face);
+free bark_speech(balor, cute_face);
+free bark_speech(hemlock, cute_face);
+wait(1);
+free {
+	walk(hemlock, b6h_hemlock_pause);
+	face(hemlock, west);
+}
+
+//
+sim {
+	{
+		place_actor(wheedle, north, b6h_ari_entrance);
+		wait(0.25);
+		walk(wheedle, b6h_wheedle_start);
+		face(wheedle, north);
+		wait(0.75);
+		face(wheedle, west);
+		wait(0.75);
+		face(wheedle, east);
+		wait(0.75);
+		face(wheedle, north);
+		wait(0.5);
+		free bark_speech(wheedle, exclamation_mark);
+		wait(0.5);
+	}
+	play_sound("SoundEffects/Entrances/DoorSlamOpen");
+	{
+		wait(0.25);
+		free bark_speech(ari, exclamation_mark);
+		free bark_speech(balor, exclamation_mark);
+	}
+	{
+		wait(0.25);
+		free bark_speech(hemlock, exclamation_mark);
+		wait(1);
+		face(hemlock, south);
+	}
+	{
+		wait(0.25);
+		pan_camera(1, b6h_camera_5);
+	}
+}
+
+sim {
+	{
+		walk(wheedle, b6h_wheedle_stand);
+		face(wheedle, east);
+	}
+	{
+		wait(0.5);
+		free {
+			walk(hemlock, "Bartender 2");
+			face(hemlock, east);
+			animate(hemlock, polish);
+		}
+	}
+	{
+		pan_camera(3, b6h_camera_4);
+	}
+	{
+		wait(2.5);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+
+sim {
+	{
+		walk_slow(wheedle, "North Table Left End");
+		animate(wheedle, sit);
+		face(wheedle, east);
+	}
+	{
+		pan_camera(1, b6h_camera_6);
+	}
+	{
+		wait(1);
+		free bark_speech(balor, annoyed);
+		wait(1);
+		free bark_speech(wheedle, cute_face);
+		wait(1.5);
+	}
+}
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+setup_prop(b6h_contract);
+wait(0.5);
+next_line(); //
+next_line(); //
+next_line(); //
+
+//
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(balor, ellipses);
+wait(1.5);
+sim {
+	{
+		wait(1);
+		walk_slow(wheedle, "North Table Service");
+		face(wheedle, east);
+	}
+	{
+		wait(0.75);
+		pan_camera(1.5, b6h_camera_4);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(wheedle, cute_face);
+wait(1.5);
+walk(wheedle, b6h_wheedle_pause);
+face(wheedle, south);
+wait(0.5);
+walk(wheedle, b6h_wheedle_wine_grab);
+face(wheedle, east);
+animate(wheedle, action);
+wait(0.5);
+destroy_prop(b6h_wine);
+animate(wheedle, idle);
+wait(0.1);
+free bark_speech(balor, exclamation_mark);
+free {
+	walk(wheedle, b6h_ari_entrance);
+	remove_actor(wheedle);
+}
+wait(1);
+face(ari, south);
+
+wait(1);
+sim {
+	{
+		wait(0.5);
+		face(ari, north);
+	}
+	{
+		wait(0.5);
+		pan_camera(1, b6h_camera_6);
+	}
+}
+wait(0.5);
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(balor, ellipses);
+wait(1.5);
+next_line(); //
+
+//
+next_line(); //
+close_textbox();
+wait(1.5);
+sim {
+	{
+		walk_slow(ari, b6h_ari_start);
+		face(ari, south);
+		free bark_speech(ari, ellipses);
+		wait(0.5);
+		face(ari, north);
+		wait(1.5);
+		free walk(ari, b6h_ari_entrance);
+	}
+	{
+		pan_camera(3, b6h_camera_7);
+	}
+}
+sim {
+	{
+		wait(2);
+		free bark_speech(balor, ellipses);
+	}
+	pan_camera(2, b6h_camera_6);
+	{
+		wait(4);
+		next_line(); //
+	}
+	{
+		wait(4.5);
+		animate(hemlock, idle);
+		face(hemlock, east);
+	}
+}
+close_textbox();
+wait(1);
+fade_out(2);

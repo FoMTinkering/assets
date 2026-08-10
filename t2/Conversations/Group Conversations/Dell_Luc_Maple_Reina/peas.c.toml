@@ -1,0 +1,38 @@
+[peas]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "reina" },
+	] },
+	{ dell_activity = "eat" },
+	{ luc_activity = "eat" },
+	{ maple_activity = "eat" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "<reina_zone>" },
+]
+speaker = "reina"
+portrait = "neutral"
+local = "You want more peas, Dell?"
+next = "1"
+
+[peas.1]
+speaker = "dell"
+portrait = "mad"
+local = "I would like less peas, Miss Reina."
+next = "2"
+
+[peas.2]
+speaker = "luc"
+portrait = "neutral"
+local = "Then eat the peas you already have, Dell. Trust me."
+next = "3"
+
+[peas.3]
+speaker = "maple"
+portrait = "sad"
+local = "The more you complain about peas, the more peas you'll get."

@@ -1,0 +1,53 @@
+[dares]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "juniper" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ location = "bathhouse" },
+	{ any = [
+		{ juniper_is_at_location = "bathhouse" },
+		{ dell_zone = "<juniper_zone>" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "bathhouse/cauldron" },
+	{ date_time = "1y", comparator = ">=" },
+	{ season = "winter" }
+]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Don't let yourselves freeze, children."
+next = "1"
+
+[dares.1]
+speaker = "juniper"
+portrait = "ugh"
+local = "Warm yourselves by the cauldron, or I'll get a lecture from your parents."
+next = "2"
+
+[dares.2]
+speaker = "dell"
+portrait = "neutral"
+local = "Can I get IN the cauldron?"
+next = "3"
+
+[dares.3]
+speaker = "maple"
+portrait = "neutral"
+local = "I dare you, Dell. I double dare you."
+next = "4"
+
+[dares.4]
+speaker = "luc"
+portrait = "mad"
+local = "I double dog dragon dare you!"
+next = "5"
+
+[dares.5]
+speaker = "juniper"
+portrait = "mad"
+local = "No dares in the Bathhouse! Don't make me put up a new sign!"

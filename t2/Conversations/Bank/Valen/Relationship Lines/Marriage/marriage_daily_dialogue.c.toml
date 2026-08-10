@@ -1,0 +1,1146 @@
+[morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "think"
+local = "I normally consider myself an early riser..."
+next = "1"
+
+[morning_0.1]
+portrait = "embarrassed"
+local = "But waking up next to you does make me reconsider."
+next = "2"
+
+[morning_0.2]
+portrait = "neutral_blush"
+local = "Lounging in bed with you is vastly preferable to an early start."
+
+[morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "happy"
+local = "Good morning, dearest. I do hope you slept well."
+next = "1"
+
+[morning_1.1]
+portrait = "neutral"
+local = "If not... why don't we make a pot of =Coffee=? I picked up a new blend recently."
+
+[dreams_0]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "blush", npc = "valen" } }]
+portrait = "sad"
+local = "I haven't been a student in years..."
+next = "1"
+
+[dreams_0.1]
+portrait = "ugh"
+local = "So why do I still have dreams about arriving late to class and forgetting to study for a test?"
+next = "2"
+
+[dreams_0.2]
+portrait = "embarrassed"
+effect = "sigh"
+local = "It's embarrassing, really."
+
+[ari_plans_0]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false },
+	{ valen_planning_line = "undefined" }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "neutral"
+local = "Before we part for the day... what's your schedule looking like?"
+next = "1"
+
+[ari_plans_0.1]
+portrait = "think"
+local = "If you're planning on venturing into the Mines, I'd like to be mentally prepared."
+prompts = [
+	{ local = "I'm going to take care of the farm for a bit.", next = "2" },
+	{ local = "I was thinking of doing some foraging!", next = "5" },
+	{ local = "Yeah, I might go down into the Mines...", next = "7" }
+]
+
+[ari_plans_0.2]
+writes = [{ valen_planning_line = "farming", expires = "20h" }]
+portrait = "happy"
+local = "Of course. I suppose it's only natural when you live one."
+next = "3"
+
+[ari_plans_0.3]
+portrait = "neutral"
+local = "Do say hello to the animals for me."
+next = "4"
+
+[ari_plans_0.4]
+portrait = "raised_eyebrow"
+local = "The plants as well, if you're feeling whimsical."
+
+[ari_plans_0.5]
+writes = [{ valen_planning_line = "foraging", expires = "20h" }]
+portrait = "happy"
+local = "Wonderful. You're ever adept at finding unusual plants on the outskirts of town."
+next = "6"
+
+[ari_plans_0.6]
+portrait = "raised_eyebrow"
+local = "If you do find anything interesting... well, you know what I like."
+
+[ari_plans_0.7]
+writes = [{ valen_planning_line = "mining", expires = "20h" }]
+portrait = "happy"
+local = "Of course. I'm not one to stand in your way, but do take care of yourself."
+next = "8"
+
+[ari_plans_0.8]
+portrait = "wink"
+local = "If you don't... I'll be the first one to find out."
+
+[sleepy_0]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] }
+]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "sincere_special"
+local = "It was too difficult getting out of bed this morning..."
+next = "1"
+
+[sleepy_0.1]
+portrait = "think"
+effect = "sigh"
+local = "I'm waiting for the =Coffee= to wake me up."
+next = "2"
+
+[sleepy_0.2]
+portrait = "neutral_blush"
+local = "Though... perhaps a kiss would help more."
+
+[spouse_plans_0]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "think"
+local = "Look at the time... I'll be off to the Clinic soon."
+next = "1"
+
+[spouse_plans_0.1]
+portrait = "raised_eyebrow"
+local = "If you'd like to stop by later... I wouldn't be against it."
+
+[spring_morning_0]
+refresh = "14d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "sweat_drop", npc = "valen" } }]
+portrait = "neutral"
+local = "I do enjoy spring..."
+next = "1"
+
+[spring_morning_0.1]
+portrait = "think"
+local = "However..."
+next = "2"
+
+[spring_morning_0.2]
+portrait = "sincere_special"
+local = "It's difficult to find peace when half the town comes into the Clinic with hayfever."
+next = "3"
+
+[spring_morning_0.3]
+portrait = "think_smile"
+effect = "sigh"
+local = "It's what I signed up for, I suppose."
+
+[spring_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "think"
+local = "Spring is calving season, isn't it?"
+next = "1"
+
+[spring_morning_1.1]
+portrait = "neutral"
+local = "Tell me if any of the cows have trouble. I know how to manage a challenging birth."
+next = "2"
+
+[spring_morning_1.2]
+portrait = "wink"
+local = "The benefits of marrying a doctor."
+
+[summer_morning_0]
+refresh = "14d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+portrait = "happy"
+local = "Another beautiful summer morning."
+next = "1"
+
+[summer_morning_0.1]
+portrait = "think_smile"
+local = "Hm..."
+next = "2"
+
+[summer_morning_0.2]
+portrait = "think"
+local = "I hope fewer people will come in to the Clinic overheated today."
+
+[summer_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "think"
+local = "Oh, the weather is already heating up."
+next = "1"
+
+[summer_morning_1.1]
+portrait = "neutral_blush"
+local = "Quickly, [Ari]... give me a kiss before the lethargy sets in."
+
+[fall_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+portrait = "happy"
+local = "I do wish I could stay here and enjoy the autumn colors with you..."
+next = "1"
+
+[fall_morning_0.1]
+portrait = "think"
+local = "But the wellbeing of the town calls."
+next = "2"
+
+[fall_morning_0.2]
+portrait = "neutral"
+local = "I'd better head off to the Clinic soon."
+
+[fall_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "neutral"
+local = "Finally, we've come to my favorite time of year... the season of hot drinks."
+next = "1"
+
+[fall_morning_1.1]
+portrait = "wink"
+local = "I do hope you'll join me. We'll be celebrating every day."
+
+[winter_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "think"
+local = "The cold weather does make it especially difficult to get out of bed..."
+next = "1"
+
+[winter_morning_0.1]
+portrait = "caring_special"
+local = "Especially considering my charming company."
+
+[winter_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "think"
+local = "It looks chilly out there. Are you bundled properly for the day?"
+next = "1"
+
+[winter_morning_1.1]
+portrait = "raised_eyebrow"
+local = "If anything's amiss, come visit me at the Clinic. Whatever you need, I'll take care of you."
+
+[rainy_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ weather = "rainy" },
+	{ valen_is_spouse = true },
+	{ building = "player_home" },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "neutral"
+local = "It's been raining all morning."
+next = "1"
+
+[rainy_morning_0.1]
+portrait = "happy_blush"
+local = "The farm looks enchanting, doesn't it? It's like something out of a storybook."
+
+[snowy_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "morning" },
+	{ weather = "snowy" },
+	{ valen_is_spouse = true },
+	{ building = "player_home" },
+	{ valen_morning_greeting = false }
+]
+writes = [{ valen_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "embarrassed"
+local = "The snowfall is rather beautiful, isn't it?"
+next = "1"
+
+[snowy_morning_0.1]
+portrait = "think_blush"
+local = "I could never see such pristine snow while living over the Clinic. By closing time, it would mostly be trampled."
+next = "2"
+
+[snowy_morning_0.2]
+portrait = "happy_blush"
+local = "It's wonderful to share this with you."
+
+# basement
+[basement_0]
+
+refresh = "1w"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" },
+	{ valen_was_last_spoken_to = "4h", time = "after", comparator = ">" }
+]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "neutral"
+local = "[Ari]! I wasn't expecting to run into you."
+next = "1"
+
+[basement_0.1]
+portrait = "raised_eyebrow"
+local = "You seem to be in one piece. Excellent."
+next = "2"
+
+[basement_0.2]
+portrait = "caring_special"
+local = "See you tonight? I'm looking forward to it."
+
+[basement_1]
+
+refresh = "1w"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" },
+	{ building = "general_store", comparator = "!=" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "think"
+local = "Do we need any groceries? I can stop by the General Store on the way home from the Clinic."
+next = "1"
+
+[basement_1.1]
+portrait = "wink"
+local = "And don't worry. I'll bravely weather any pun Holt throws my way."
+
+[basement_2]
+
+refresh = "1w"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" },
+	{ building = "inn", comparator = "!=" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "think"
+local = "Remind me... was there something we planned on cooking tonight?"
+next = "1"
+
+[basement_2.1]
+portrait = "happy"
+local = "Or we can stop by the Inn instead, if you'd like. My treat."
+
+[basement_3]
+
+refresh = "1w"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "embarrassed"
+local = "I'm ashamed to say I've never been particularly adept at laundry..."
+next = "1"
+
+[basement_3.1]
+portrait = "think_blush"
+local = "But if it frees up your day, I'm happy to take over the task."
+
+[basement_4]
+
+refresh = "1w"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "raised_eyebrow"
+local = "Goodness, [Ari]..."
+next = "1"
+
+[basement_4.1]
+portrait = "neutral_blush"
+local = "You didn't come all the way out here just to give me a kiss, did you?"
+next = "2"
+
+[basement_4.2]
+portrait = "caring_special"
+local = "You're incorrigible."
+
+[basement_5]
+
+refresh = "1w"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "embarrassed"
+local = "It's a wonder to see you and think..."
+next = "1"
+
+[basement_5.1]
+portrait = "neutral_blush"
+local = """"Ah, there <he>he is</he><she>she is</she><they>they are</they><it>it is</it><none>[Ari] is</none>. <he>He's</he><she>She's</she><they>They're</they><it>It's</it><none>[Ari]'s</none> mine." """
+next = "2"
+
+[basement_5.2]
+portrait = "caring_special"
+local = "I do hope you know, I'm yours as well."
+
+[basement_6]
+
+refresh = "1w"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "neutral_blush"
+local = "You're such a darling, coming out to see me."
+next = "1"
+
+[basement_6.1]
+portrait = "caring_special"
+local = "Thank you for making the time. I do love to see your face."
+
+# evening
+[evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "valen" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_evening_greeting = false },
+	{ valen_in_bed = false }
+]
+writes = [{ valen_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "neutral"
+local = "[Ari], there you are. I was thinking of getting ready for bed soon."
+next = "1"
+
+[evening_0.1]
+portrait = "caring_special"
+local = "Would you care to join me?"
+
+[evening_1]
+refresh = "8d"
+requires = [
+	{ npc = "valen" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_evening_greeting = false },
+	{ valen_in_bed = false }
+]
+writes = [{ valen_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "neutral"
+local = "[Ari], welcome home. I hope you weren't too rough on your body today..."
+next = "1"
+
+[evening_1.1]
+portrait = "raised_eyebrow"
+local = "I suppose I could extend my office hours, if you feel yourself in need of a proper examination?"
+
+[evening_2]
+refresh = "8d"
+requires = [
+	{ npc = "valen" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_evening_greeting = false },
+	{ valen_in_bed = false }
+]
+writes = [{ valen_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "neutral"
+local = "How has your day been? Come on, I'll make some tea and you can tell me all about it."
+next = "1"
+
+[evening_2.1]
+portrait = "think_smile"
+local = "And if it was uneventful, feel free to add as many outlandish embellishments as you'd like."
+next = "2"
+
+[evening_2.2]
+portrait = "happy"
+local = "I always enjoy a good yarn."
+
+[evening_3]
+refresh = "8d"
+requires = [
+	{ npc = "valen" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_evening_greeting = false },
+	{ valen_in_bed = false }
+]
+writes = [{ valen_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "neutral_blush"
+local = "I was thinking about you all day."
+next = "1"
+
+[evening_3.1]
+portrait = "caring_special"
+local = "It's a dream to have you and our wonderful home to return to..."
+next = "2"
+
+[evening_3.2]
+portrait = "happy_blush"
+local = "Thank you for sharing this with me, [Ari]. I adore you."
+
+[spring_evening_0]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_evening_greeting = false },
+	{ valen_in_bed = false },
+	{ season = "spring" }
+]
+writes = [{ valen_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "think"
+local = "The evenings still have a wintery chill, don't they?"
+next = "1"
+
+[spring_evening_0.1]
+portrait = "smile"
+local = "Why don't we get under the blankets, and you can tell me all about your day."
+
+[spring_evening_1]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_evening_greeting = false },
+	{ valen_in_bed = false },
+	{ season = "spring" }
+]
+writes = [{ valen_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "think"
+local = "Spring calls for poetry, doesn't it? Or so they say."
+next = "1"
+
+[spring_evening_1.1]
+portrait = "caring_special"
+local = "Josephine insisted I borrow her collection. Would you like me to read you something tonight?"
+
+[summer_evening_0]
+refresh = "14d"
+requires = [
+	{ npc = "valen" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_evening_greeting = false },
+	{ valen_in_bed = false },
+	{ season = "summer" }
+]
+writes = [{ valen_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "ellipses", npc = "valen" } }]
+portrait = "sad"
+local = "I like when we get to relax in bed in the evening, but this summer heat..."
+next = "1"
+
+[summer_evening_0.1]
+portrait = "mad"
+effect = "sparkles"
+local = "Obviously, this is an emergency. Time to break out the breezy linen sheets."
+
+[summer_evening_1]
+refresh = "8d"
+requires = [
+	{ npc = "valen" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_evening_greeting = false },
+	{ valen_in_bed = false },
+	{ season = "summer" }
+]
+writes = [{ valen_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "neutral"
+local = "It's so lovely on the farm after the sun sets..."
+next = "1"
+
+[summer_evening_1.1]
+portrait = "happy"
+local = "I do appreciate that cool summer breeze after a long hot day."
+
+[fall_evening_0]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_evening_greeting = false },
+	{ valen_in_bed = false },
+	{ season = "fall" }
+]
+writes = [{ valen_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "think"
+local = "I always get a bit anxious when the flu season comes around..."
+next = "1"
+
+[fall_evening_0.1]
+portrait = "neutral"
+local = "But I'm relieved that you always seem healthy as a horse."
+next = "2"
+
+[fall_evening_0.2]
+portrait = "happy"
+effect = "sparkles"
+local = "In fact, now that I'm living on a farm, I can confidently say you're healthier than most horses."
+
+[fall_evening_1]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_evening_greeting = false },
+	{ valen_in_bed = false },
+	{ season = "fall" }
+]
+writes = [{ valen_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "neutral"
+local = "In honor of the season, I've borrowed a collection of ghost stories from Elsie. She's assured me they're all terribly melancholy."
+next = "1"
+
+[fall_evening_1.1]
+portrait = "happy"
+effect = "cheery"
+local = "Would you like to join me? I'll read one to you, and we can be melancholy together."
+
+[winter_evening_0]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_evening_greeting = false },
+	{ valen_in_bed = false },
+	{ season = "winter" }
+]
+writes = [{ valen_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "think"
+local = "The winter nights get so chilly now..."
+next = "1"
+
+[winter_evening_0.1]
+portrait = "caring_special"
+local = "Come here. Let's warm each other up."
+
+[winter_evening_1]
+refresh = "12d"
+requires = [
+	{ npc = "valen" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_is_spouse = true },
+	{ building = "player_home" },
+	{ valen_evening_greeting = false },
+	{ valen_in_bed = false },
+	{ season = "winter" }
+]
+writes = [{ valen_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "think"
+local = "Nights are so quiet in the winter..."
+next = "1"
+
+[winter_evening_1.1]
+portrait = "sad"
+local = "Quiet like this used to be a bit daunting."
+next = "2"
+
+[winter_evening_1.2]
+portrait = "happy"
+local = "But out here on the farm, with you... it all feels rather tranquil."
+
+[rainy_evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "valen" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ valen_evening_greeting = false },
+	{ valen_in_bed = false },
+	{ weather = "rainy" }
+]
+writes = [{ valen_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "neutral"
+local = "I do always love a quiet rainy day."
+next = "1"
+
+[rainy_evening_0.1]
+portrait = "happy"
+local = "Somehow, the sound of the rain is even more peaceful here on the farm."
+
+[snowy_evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "valen" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_is_spouse = true },
+	{ building = "player_home" },
+	{ valen_evening_greeting = false },
+	{ valen_in_bed = false },
+	{ weather = "snowy" }
+]
+writes = [{ valen_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "think"
+local = "How is the snow looking outside?"
+next = "1"
+
+[snowy_evening_0.1]
+portrait = "neutral"
+local = "Let's make some warm drinks and watch it come down together."
+
+# domestic flavor
+[domestic_flavor_0]
+refresh = "30d"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ cutscene_seen_pet_arrival = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "raised_eyebrow"
+local = "Don't let [pet_name] fool you... I've already fed them."
+next = "1"
+
+[domestic_flavor_0.1]
+portrait = "think_smile"
+local = "Though, they are always asking for additional pets. I suppose there's no harm in indulging that as much as you'd like."
+
+[domestic_flavor_1]
+refresh = "30d"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ cutscene_seen_pet_arrival = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "think"
+local = "I had never considered having a pet before [pet_name]..."
+next = "1"
+
+[domestic_flavor_1.1]
+portrait = "raised_eyebrow"
+local = "But watching them trot around the house like they own the place... it's admittedly very charming."
+next = "2"
+
+[domestic_flavor_1.2]
+portrait = "smile"
+local = "I admire the self-assurance of a creature who doesn't pay rent."
+
+[domestic_flavor_2]
+refresh = "30d"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ ari_has_double_bed_placed = false },
+	{ spouse_slept_in_double_bed_night_before = false },
+	{ wedding_was_yesterday = false, ignore_priority = true }
+]
+actions = [{ bark = { bark = "annoyed", npc = "valen" } }]
+portrait = "mad"
+local = "[Ari]..."
+next = "1"
+
+[domestic_flavor_2.1]
+portrait = "sincere_special"
+local = "If you'd like to sleep in the same bed together, you need to get us a double-sized bed."
+next = "2"
+
+[domestic_flavor_2.2]
+portrait = "think"
+local = "Come, now. We're not living the bachelor life anymore."
+
+[domestic_flavor_3]
+refresh = "30d"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ valen_desk_placed = true },
+	{ valen_workstation_placed = true },
+	{ wedding_was_yesterday = false, ignore_priority = true }
+]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "neutral"
+local = "The farmhouse has been looking pleasantly lived-in lately. And it's been nice to have a space to do work as the mood takes me."
+next = "1"
+
+[domestic_flavor_3.1]
+portrait = "happy"
+local = "I appreciate you humoring my... idiosyncrasies."
+
+[domestic_flavor_4]
+refresh = "30d"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ valen_chair_placed = false },
+	{ valen_desk_placed = false },
+	{ valen_workstation_placed = false },
+	{ wedding_was_yesterday = false, ignore_priority = true }
+]
+actions = [{ bark = { bark = "ellipses", npc = "valen" } }]
+portrait = "mad"
+local = "[Ari]..."
+next = "1"
+
+[domestic_flavor_4.1]
+portrait = "think"
+local = "While it's lovely living here, I do need a space to indulge my own interests now and again. Would you mind making a place for my things?"
+next = "2"
+
+[domestic_flavor_4.2]
+portrait = "raised_eyebrow"
+local = "I don't suppose you expect me to move my study back into the Clinic's root cellar, do you?"
+
+# workstation
+[workstation_0]
+refresh = "14d"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ valen_activity_object = "valen_desk" }
+]
+portrait = "happy"
+local = "Just getting caught up on my clinical notes."
+next = "1"
+
+[workstation_0.1]
+portrait = "raised_eyebrow"
+local = "Keeping patient files up-to-date is one of the most important parts of clinic work... unfortunately, it's also the most tedious."
+
+[workstation_1]
+refresh = "9d"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ valen_activity_object = "valen_desk" }
+]
+actions = [{ bark = { bark = "ellipses", npc = "valen" } }]
+portrait = "neutral"
+local = "Ah, [Ari]. I'm writing to a colleague to ask after some clinical trial results."
+next = "1"
+
+[workstation_1.1]
+portrait = "raised_eyebrow"
+local = "It's all terribly dry. I'll be done soon."
+
+[workstation_2]
+refresh = "9d"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ valen_activity_object = "valen_desk" }
+]
+actions = [{ bark = { bark = "ellipses", npc = "valen" } }]
+portrait = "think"
+effect = "sigh"
+local = "The paperwork never ends, does it?"
+next = "1"
+
+[workstation_2.1]
+portrait = "raised_eyebrow"
+local = "Don't worry, I'll persevere. But keep me in your thoughts, will you?"
+
+[workstation_3]
+refresh = "9d"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ any = [
+		{ valen_activity = "roommate_read_sitting" },
+		{ valen_activity = "roommate_sitting" }
+	] },
+	{ valen_animation = "read_sit" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "embarrassed"
+local = "I'll be with you in a moment, [Ari]..."
+next = "1"
+
+[workstation_3.1]
+portrait = "happy_blush"
+local = "This one is a real pageturner, and they're about to reveal the killer's identity..."
+
+[workstation_4]
+refresh = "9d"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ any = [
+		{ valen_activity = "roommate_read_sitting" },
+		{ valen_activity = "roommate_sitting" },
+		{ valen_activity = "roommate_write_sitting" }
+	] }
+]
+actions = [{ bark = { bark = "ellipses", npc = "valen" } }]
+portrait = "think"
+local = "Is it gauche to write a publisher when a novel gets medical details wrong?"
+next = "1"
+
+[workstation_4.1]
+portrait = "ugh"
+local = "I'm trying to lose myself in the fiction of it all, but the prose keeps breaking my suspension of disbelief."
+next = "2"
+
+[workstation_4.2]
+portrait = "mad"
+local = "For one, if someone were to transform into a werewolf, their knees would not bend backward. That is absurd... and also incorrect."
+
+[workstation_5]
+refresh = "9d"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ any = [
+		{ valen_activity = "roommate_read_sitting" },
+		{ valen_activity = "roommate_sitting" }
+	] },
+	{ valen_animation = "read_sit" }
+]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "think"
+local = "I can't say that I'm fully aligned with Elsie's taste in romance books, but she certainly never reads anything dull."
+next = "1"
+
+[workstation_5.1]
+portrait = "neutral_blush"
+local = "And they do put ideas in your head..."
+
+[workstation_6]
+refresh = "9d"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ valen_activity_object = "valen_workstation" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "neutral"
+local = "I'm in the middle of distilling a new batch of syrups to replenish the Clinic's inventory."
+next = "1"
+
+[workstation_6.1]
+portrait = "think"
+local = "They're fairly concentrated at this stage, and haven't been flavored yet."
+next = "2"
+
+[workstation_6.2]
+portrait = "raised_eyebrow"
+local = "So no sampling, unless you'd like an upset stomach."
+
+[workstation_7]
+refresh = "9d"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ valen_activity_object = "valen_workstation" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "think"
+local = "Some toxins, given the correct preparation and dosage, can become powerful medicines."
+next = "1"
+
+[workstation_7.1]
+portrait = "happy"
+local = "But they're still poisonous. So do be careful around my station."
+
+[workstation_8]
+refresh = "9d"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = true },
+	{ valen_activity_object = "valen_workstation" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "neutral"
+local = "What am I doing, you ask?"
+next = "1"
+
+[workstation_8.1]
+portrait = "think_smile"
+local = "Just distilling some water."
+next = "2"
+
+[workstation_8.2]
+portrait = "raised_eyebrow"
+local = "Did you expect some mad science?"

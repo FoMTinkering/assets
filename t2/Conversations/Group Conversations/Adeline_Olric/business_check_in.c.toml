@@ -1,0 +1,18 @@
+[business_check_in]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "olric" }] },
+	{ adeline_zone = "town/blacksmith_business" },
+	{ olric_zone = "town/blacksmith_business" },
+	{ adeline_business_review = true },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "olric"
+portrait = "think"
+local = "The forge is doing super well right now, but if something comes up I'll let you know. Thanks for checking in, Adeline!"
+next = "1"
+
+[business_check_in.1]
+speaker = "adeline"
+portrait = "happy"
+local = "Of course! And just say the word! If you don't run into me, you can leave a note in my office any time."

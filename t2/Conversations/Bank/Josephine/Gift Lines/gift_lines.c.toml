@@ -1,0 +1,162 @@
+# Loved gift
+[crayfish_etouffee]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "josephine" },
+	{ gift_desire = "loved" },
+	{ gift_given = "crayfish_etouffee" },
+]
+portrait = "happy"
+effect = "hearts"
+local = "Oh, =Etouffee=! I love etouffee! I'm going to share this with Hemlock, he loves it too!"
+
+# Hated gift
+[worm]
+kind = "gift"
+requires = [
+	{ npc = "josephine" },
+	{ gift_desire = "hated" },
+	{ gift_given = "worm" },
+]
+portrait = "sad"
+effect = "sick"
+local = "I get bugs two, sometimes three times a day from Luc. I don't need a $Worm$ from you!"
+
+# Generic lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "josephine" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "hearts"
+local = "Oh, that smells wonderful! Thank you so much, dear!"
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "josephine" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "sparkles"
+local = "Aren't you a good egg, [Ari]! You know just what I like!"
+
+[loved_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "josephine" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "chili_coconut_curry" },
+		{ gift_given = "crayfish_etouffee" },
+		{ gift_given = "incredibly_hot_pot" },
+		{ gift_given = "quiche" },
+	] }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "Mm, smell those spices! Incredible! Thank you for sharing, [Ari]. You have a big heart!"
+
+[loved_gift_tea]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "josephine" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "cup_of_tea" },
+		{ gift_given = "green_tea" },
+		{ gift_given = "jasmine_tea" },
+		{ gift_given = "lavender_tea" },
+		{ gift_given = "roasted_rice_tea" },
+		{ gift_given = "rose_tea" },
+	] }
+]
+portrait = "happy"
+effect = "cheery"
+local = "Goodness, the fragrance of this tea is divine! Perfect for my next break. Thank you!"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "josephine" }, { gift_desire = "liked" }]
+portrait = "happy"
+local = "Oh, aren't you a good one. Thank you, [Ari]."
+
+[liked_gift_2]
+kind = "gift"
+requires = [{ npc = "josephine" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "Oh, how helpful! Thank you, [Ari]."
+
+[liked_gift_flowers]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "josephine" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "breath_of_fire" },
+		{ gift_given = "essence_blossom" },
+		{ gift_given = "jasmine" },
+		{ gift_given = "rose" },
+		{ gift_given = "sunflower" },
+	] }
+]
+portrait = "happy"
+local = "Flowers! For me? Why thank you, [Ari]."
+next = "1"
+
+[liked_gift_flowers.1]
+portrait = "wink"
+local = "You know, he still surprises me with flowers! It's like he's still courting me, and I don't mind one bit."
+
+[liked_gift_ingredients]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "josephine" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "chili_pepper" },
+		{ gift_given = "curry_powder" },
+		{ gift_given = "flour" },
+		{ gift_given = "honey" },
+		{ gift_given = "oil" },
+		{ gift_given = "rice" },
+		{ gift_given = "soy_sauce" },
+		{ gift_given = "sugar" }
+	] }
+]
+portrait = "neutral"
+local = "Thank you, [Ari]! This is perfect for the kitchen."
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "josephine" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Thank you!"
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "josephine" }, { gift_desire = "disliked" }]
+portrait = "think"
+local = "I see. Well, maybe Luc or Maple can do something with this..."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "josephine" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ josephine_birthday = "1d", time = "after" },
+	{  },
+]
+portrait = "happy"
+local = "A birthday gift? Aren't you a sweetheart!"
+next = "1"
+
+[birthday_gift.1]
+portrait = "neutral"
+local = "Thank you, [Ari]."

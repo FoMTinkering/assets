@@ -1,0 +1,22 @@
+[general_store]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "nora" }] },
+	{ adeline_zone = "<nora_zone>" },
+	{ quest_repair_the_general_store_complete = true }
+]
+speaker = "adeline"
+portrait = "think"
+local = "You know, I don't think I've seen an empty shelf in here for many seasons now."
+next = "1"
+
+[general_store.1]
+speaker = "nora"
+portrait = "neutral"
+local = "We had a bit of scarcity after the earthquake, but ever since Balor started sourcing food from both Hayden and [Ari]'s farms..."
+next = "2"
+
+[general_store.2]
+speaker = "nora"
+portrait = "happy"
+local = "We've been well-stocked!"

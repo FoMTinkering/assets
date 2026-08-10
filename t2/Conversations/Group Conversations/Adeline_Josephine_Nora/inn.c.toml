@@ -1,0 +1,26 @@
+[inn]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "josephine" }, { npc = "nora" }] },
+	{ adeline_zone = "<josephine_zone>" },
+	{ adeline_zone = "<nora_zone>" },
+	{ location = "inn", comparator = "!=" },
+	{ location = "general_store_store", comparator = "!=" },
+	{ date_time = "1y", comparator = ">=" },
+	{ quest_repair_the_inn_complete = true }
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "How are things going at the Inn, Josephine?"
+next = "1"
+
+[inn.1]
+speaker = "josephine"
+portrait = "happy"
+local = "Oh, it's been good! And busy as ever, with Reina in the kitchen and Balor turning his room into a makeshift office."
+next = "2"
+
+[inn.2]
+speaker = "nora"
+portrait = "happy"
+local = "The General Store's been bustling, too. Mistria's come a long way since the earthquake!"

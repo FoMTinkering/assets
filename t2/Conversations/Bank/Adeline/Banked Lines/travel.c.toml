@@ -1,0 +1,59 @@
+[clipboard]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_animation = "write" },
+		{ adeline_animation = "write_sit" }
+	] }
+]
+portrait = "happy"
+local = "Have you ever thought about using a clipboard to help plan your day?"
+next = "1"
+
+[clipboard.1]
+portrait = "wink"
+effect = "sparkles"
+local = "Yeah... I don't want to brag, but this thing can take SO many notes."
+
+[travel_0]
+refresh = "2m"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_traveling = true },
+	{ adeline_is_inside = false }
+]
+portrait = "happy"
+local = "Even though I grew up in Mistria, I always see something new when I'm out and about."
+
+[travel_1]
+refresh = "2m"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_traveling = true },
+	{ time_of_day = "night", comparator = "!=" }
+]
+portrait = "neutral"
+local = "Pardon me, [Ari]!"
+next = "1"
+
+[travel_1.1]
+portrait = "happy"
+effect = "drop"
+local = "I'm exactly three minutes behind schedule, so I'm in a bit of a rush!"
+
+[travel_2]
+refresh = "2m"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_traveling = true },
+	{ adeline_is_inside = false },
+	{ adeline_heart_level = 8, comparator = "<" }
+]
+portrait = "neutral"
+local = "You look so busy, [Ari]!"
+next = "1"
+
+[travel_2.1]
+portrait = "happy"
+local = "Where are you off to next?"

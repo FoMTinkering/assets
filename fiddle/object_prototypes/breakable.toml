@@ -1,0 +1,816 @@
+[default]
+	collideable = true
+	hits = 1
+	size = [2, 2]
+	offset = [0, -2]
+	# this means it never uses the debris emitter
+	debris_emitter = false
+	# treasure chests and barrels override this to true
+	dungeon_only = false
+	# only really wilted_plants have this and the game only really cares if wilted plants have this
+	sound_on_collide = false
+	# minimum tool quality to hit this -- this is a requirement
+	# mostly for code cleanliness. no breakable should override this
+	minimum_quality = "tier1"
+	# this is odd code to dieal with being EITHER a normal seasonal or a dungeon object
+	drops = { spring = [], biome_1 = [] }
+	sprites = { spring = ["spr_illegal_16"], biome_1 = ["spr_illegal_16"] }
+	destruction_sfx = "SoundEffects/Objects/SmallBushDestroy"
+
+	# this means in the mines a ladder can spawn under it
+	ladder_candidate = false
+
+	[default.on_destruction_particles]
+		spring = ["spr_illegal_16"]
+		biome_1 = ["spr_illegal_16"]
+
+[weed]
+	collideable = true
+	size = [2, 2]
+	offset = [0, -2]
+	debris_emitter = "bush"
+
+	[weed.drops]
+		spring = [
+			{ item = "fiber", chance = 50.0 },
+		]
+
+	[weed.on_destruction_particles]
+		spring = [
+			"spr_part_weed_small_spring_1",
+			"spr_part_weed_small_spring_2",
+		]
+		summer = [
+			"spr_part_weed_small_summer_1",
+			"spr_part_weed_small_summer_2",
+		]
+		fall = [
+			"spr_part_weed_small_autumn_1",
+			"spr_part_weed_small_autumn_2",
+		]
+		winter = [
+			"spr_part_weed_small_winter_1",
+			"spr_part_weed_small_winter_2",
+		]
+
+	[weed.sprites]
+		spring = ["spr_weed_small_spring_1", "spr_weed_small_spring_2"]
+		summer = ["spr_weed_small_summer_1", "spr_weed_small_summer_2"]
+		fall = ["spr_weed_small_autumn_1", "spr_weed_small_autumn_2"]
+		winter = ["spr_weed_small_winter_1", "spr_weed_small_winter_2"]
+
+[leaf_pile]
+	collideable = false
+	size = [4, 3]
+	offset = [8, -3]
+	debris_emitter = "leaf_pile"
+
+	[leaf_pile.on_destruction_particles]
+		spring = ["spr_illegal_16"]
+		fall = [
+			"spr_part_weed_small_autumn_1",
+			"spr_part_weed_small_autumn_2",
+		]
+
+	[leaf_pile.sprites]
+		fall = ["spr_farm_leafpile_c1_autumn", "spr_farm_leafpile_c2_autumn"]
+		spring = ["spr_illegal_16"]
+
+	[leaf_pile.drops]
+		# no drops in spring, but required to have a spring generally right now
+		spring = []
+
+		[[leaf_pile.drops.fall]]
+			item = "wild_mushroom"
+			chance = 20.0
+			exclusive = false
+
+[barrel]
+	collideable = true
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	destruction_sfx = "SoundEffects/Objects/BoxDestroy"
+	ladder_candidate = true
+
+	[barrel.on_destruction_particles]
+		biome_1 = ["spr_part_farm_stump_small"]
+
+	[barrel.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_1_breakable_spring",
+			"spr_dungeon_mines_biome_1_breakable_barrel_2_spring",
+		]
+		biome_2 = [
+			"spr_dungeon_mines_biome_2_breakable_spring",
+			"spr_dungeon_mines_biome_2_breakable_barrel_2_spring",
+		]
+		biome_3 = [
+			"spr_dungeon_mines_biome_3_breakable_spring",
+			"spr_dungeon_mines_biome_3_breakable_barrel_2_spring",
+		]
+		biome_4 = [
+			"spr_dungeon_mines_biome_4_breakable_spring",
+			"spr_dungeon_mines_biome_4_breakable_barrel_2_spring",
+		]
+		biome_5 = ["spr_dungeon_mines_biome_5_breakable_spring"]
+
+	[[barrel.drops.biome_1]]
+		item = "basic_wood"
+		chance = 25
+		exclusive = false
+
+	[[barrel.drops.biome_1]]
+		item = "glass"
+		chance = 10
+		exclusive = false
+
+	[[barrel.drops.biome_2]]
+		item = "basic_wood"
+		chance = 25
+		exclusive = false
+
+	[[barrel.drops.biome_2]]
+		item = "glass"
+		chance = 10
+		exclusive = false
+
+	[[barrel.drops.biome_3]]
+		item = "basic_wood"
+		chance = 25
+		exclusive = false
+
+	[[barrel.drops.biome_3]]
+		item = "glass"
+		chance = 10
+		exclusive = false
+
+	[[barrel.drops.biome_4]]
+		item = "basic_wood"
+		chance = 25
+		exclusive = false
+
+	[[barrel.drops.biome_4]]
+		item = "glass"
+		chance = 10
+		exclusive = false
+
+[crate]
+	collideable = true
+	hits = 1
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	destruction_sfx = "SoundEffects/Objects/BoxDestroy"
+	ladder_candidate = true
+
+	[crate.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_1_breakable_crate_1_spring",
+			"spr_dungeon_mines_biome_1_breakable_crate_2_spring",
+		]
+		biome_2 = [
+			"spr_dungeon_mines_biome_2_breakable_crate_1_spring",
+			"spr_dungeon_mines_biome_2_breakable_crate_2_spring",
+		]
+		biome_3 = [
+			"spr_dungeon_mines_biome_3_breakable_crate_1_spring",
+			"spr_dungeon_mines_biome_3_breakable_crate_2_spring",
+		]
+		biome_4 = [
+			"spr_dungeon_mines_biome_4_breakable_crate_1_spring",
+			"spr_dungeon_mines_biome_4_breakable_crate_2_spring",
+		]
+		biome_5 = [
+			"spr_dungeon_mines_biome_1_breakable_crate_1_spring",
+			"spr_dungeon_mines_biome_1_breakable_crate_2_spring",
+		]
+
+	[[crate.drops.biome_1]]
+		item = "basic_wood"
+		exclusive = false
+
+	[[crate.drops.biome_1]]
+		item = "glass"
+		chance = 5
+		exclusive = false
+
+	[[crate.drops.biome_2]]
+		item = "basic_wood"
+		exclusive = false
+
+	[[crate.drops.biome_2]]
+		item = "glass"
+		chance = 5
+		exclusive = false
+
+	[[crate.drops.biome_3]]
+		item = "basic_wood"
+		exclusive = false
+
+	[[crate.drops.biome_3]]
+		item = "glass"
+		chance = 5
+		exclusive = false
+
+	[[crate.drops.biome_4]]
+		item = "basic_wood"
+		exclusive = false
+
+	[[crate.drops.biome_4]]
+		item = "glass"
+		chance = 5
+		exclusive = false
+
+[crate.on_destruction_particles]
+	biome_1 = ["spr_part_farm_stump_small"]
+
+[box]
+	collideable = true
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	destruction_sfx = "SoundEffects/Objects/BoxDestroy"
+	ladder_candidate = true
+
+	[box.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_1_breakable_crate_4_spring",
+			"spr_dungeon_mines_biome_1_breakable_crate_3_spring",
+		]
+		biome_2 = ["spr_dungeon_mines_biome_1_breakable_crate_3_spring"] #temp
+		biome_3 = ["spr_dungeon_mines_biome_1_breakable_crate_3_spring"] #temp
+		biome_4 = ["spr_dungeon_mines_biome_1_breakable_crate_3_spring"] #temp
+		biome_5 = ["spr_dungeon_mines_biome_1_breakable_crate_3_spring"] #temp
+
+	[[box.drops.biome_1]]
+		item = "basic_wood"
+		chance = 25
+		exclusive = false
+
+	[[box.drops.biome_1]]
+		item = "sweetroot"
+		chance = 5
+		exclusive = false
+
+	[[box.drops.biome_1]]
+		item = "upper_mines_mushroom"
+		chance = 1
+		exclusive = false
+
+[box.on_destruction_particles]
+	biome_1 = ["spr_part_farm_stump_small"]
+
+[debris]
+	collideable = true
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	destruction_sfx = "SoundEffects/Objects/BoxDestroy"
+
+	[debris.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_1_debris_1_spring",
+			"spr_dungeon_mines_biome_1_debris_2_spring",
+			"spr_dungeon_mines_biome_1_debris_3_spring",
+			"spr_dungeon_mines_biome_1_debris_4_spring",
+		]
+		biome_2 = [
+			"spr_dungeon_mines_biome_1_debris_1_spring",
+			"spr_dungeon_mines_biome_1_debris_2_spring",
+			"spr_dungeon_mines_biome_1_debris_3_spring",
+			"spr_dungeon_mines_biome_1_debris_4_spring",
+		]
+		biome_3 = [
+			"spr_dungeon_mines_biome_1_debris_1_spring",
+			"spr_dungeon_mines_biome_1_debris_2_spring",
+			"spr_dungeon_mines_biome_1_debris_3_spring",
+			"spr_dungeon_mines_biome_1_debris_4_spring",
+		]
+		biome_4 = [
+			"spr_dungeon_mines_biome_1_debris_1_spring",
+			"spr_dungeon_mines_biome_1_debris_2_spring",
+			"spr_dungeon_mines_biome_1_debris_3_spring",
+			"spr_dungeon_mines_biome_1_debris_4_spring",
+		]
+		biome_5 = [
+			"spr_dungeon_mines_biome_1_debris_1_spring",
+			"spr_dungeon_mines_biome_1_debris_2_spring",
+			"spr_dungeon_mines_biome_1_debris_3_spring",
+			"spr_dungeon_mines_biome_1_debris_4_spring",
+		]
+
+	[[debris.drops.biome_1]]
+		item = "basic_wood"
+		chance = 12
+		exclusive = false
+
+[debris.on_destruction_particles]
+	biome_1 = ["spr_part_farm_stump_small"]
+
+[coral_small]
+	collideable = true
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	on_destruction_particles = { biome_1 = [], biome_2 = ["spr_part_mines_coral"] }
+	destruction_sfx = "SoundEffects/Objects/CoralBreak"
+
+	[coral_small.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_2_breakable_coral_1_spring",
+			"spr_dungeon_mines_biome_2_breakable_coral_2_spring",
+		]
+		biome_2 = [
+			"spr_dungeon_mines_biome_2_breakable_coral_1_spring",
+			"spr_dungeon_mines_biome_2_breakable_coral_2_spring",
+		]
+	[[coral_small.drops.biome_1]]
+		item = "coral"
+		chance = 10
+		exclusive = false
+	[[coral_small.drops.biome_2]]
+		item = "coral"
+		chance = 10
+		exclusive = false
+
+[coral_large]
+	collideable = true
+	hits = 1
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	on_destruction_particles = { biome_1 = [], biome_2 = ["spr_part_mines_coral"] }
+	destruction_sfx = "SoundEffects/Objects/CoralBreak"
+
+	[coral_large.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_2_breakable_coral_3_spring",
+			"spr_dungeon_mines_biome_2_breakable_coral_4_spring",
+		]
+		biome_2 = [
+			"spr_dungeon_mines_biome_2_breakable_coral_3_spring",
+			"spr_dungeon_mines_biome_2_breakable_coral_4_spring",
+		]
+	[[coral_large.drops.biome_1]]
+		item = "coral"
+		chance = 10
+		exclusive = false
+	[[coral_large.drops.biome_2]]
+		item = "coral"
+		chance = 10
+		exclusive = false
+
+
+
+[crystal_small]
+	collideable = true
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	on_destruction_particles = { biome_1 = [], biome_3 = ["spr_part_mines_coral"] }
+	destruction_sfx = "SoundEffects/Objects/CoralBreak"
+
+	[crystal_small.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_3_breakable_crystal_small_pink",
+			"spr_dungeon_mines_biome_3_breakable_crystal_small_green",
+			"spr_dungeon_mines_biome_3_breakable_crystal_small_purple",
+		]
+		biome_3 = [
+			"spr_dungeon_mines_biome_3_breakable_crystal_small_pink",
+			"spr_dungeon_mines_biome_3_breakable_crystal_small_green",
+			"spr_dungeon_mines_biome_3_breakable_crystal_small_purple",
+		]
+	[[crystal_small.drops.biome_1]]
+		item = "crystal"
+		chance = 10
+		exclusive = false
+	[[crystal_small.drops.biome_3]]
+		item = "crystal"
+		chance = 10
+		exclusive = false
+
+[crystal_large]
+	collideable = true
+	hits = 1
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	on_destruction_particles = { biome_1 = [], biome_3 = ["spr_part_mines_coral"] }
+	destruction_sfx = "SoundEffects/Objects/CoralBreak"
+
+	[crystal_large.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_3_breakable_crystal_large_pink",
+			"spr_dungeon_mines_biome_3_breakable_crystal_large_green",
+			"spr_dungeon_mines_biome_3_breakable_crystal_large_purple",
+		]
+		biome_3 = [
+			"spr_dungeon_mines_biome_3_breakable_crystal_large_pink",
+			"spr_dungeon_mines_biome_3_breakable_crystal_large_green",
+			"spr_dungeon_mines_biome_3_breakable_crystal_large_purple",
+		]
+	[[crystal_large.drops.biome_1]]
+		item = "crystal"
+		chance = 10
+		exclusive = false
+	[[crystal_large.drops.biome_3]]
+		item = "crystal"
+		chance = 10
+		exclusive = false
+
+[obsidian_small]
+	collideable = true
+	hits = 1
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	on_destruction_particles = { biome_1 = [], biome_4 = ["spr_part_mines_coral"] }
+	destruction_sfx = "SoundEffects/Objects/CoralBreak"
+
+	[obsidian_small.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_4_breakable_obsidian_small_blue",
+			"spr_dungeon_mines_biome_4_breakable_obsidian_small_purple",
+		]
+		biome_4 = [
+			"spr_dungeon_mines_biome_4_breakable_obsidian_small_blue",
+			"spr_dungeon_mines_biome_4_breakable_obsidian_small_purple",
+		]
+	[[obsidian_small.drops.biome_1]]
+		item = "obsidian"
+		chance = 10
+		exclusive = false
+	[[obsidian_small.drops.biome_4]]
+		item = "obsidian"
+		chance = 10
+		exclusive = false
+
+[obsidian_large]
+	collideable = true
+	hits = 1
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	on_destruction_particles = { biome_1 = [], biome_4 = ["spr_part_mines_coral"] }
+	destruction_sfx = "SoundEffects/Objects/CoralBreak"
+
+	[obsidian_large.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_4_breakable_obsidian_large_blue",
+			"spr_dungeon_mines_biome_4_breakable_obsidian_large_purple",
+		]
+		biome_4 = [
+			"spr_dungeon_mines_biome_4_breakable_obsidian_large_blue",
+			"spr_dungeon_mines_biome_4_breakable_obsidian_large_purple",
+		]
+	[[obsidian_large.drops.biome_1]]
+		item = "obsidian"
+		chance = 10
+		exclusive = false
+	[[obsidian_large.drops.biome_4]]
+		item = "obsidian"
+		chance = 10
+		exclusive = false
+
+[voidite_small]
+	collideable = true
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	on_destruction_particles = { biome_1 = [], biome_5 = ["spr_part_mines_voidite"] }
+	destruction_sfx = "SoundEffects/Objects/CoralBreak"
+
+	[voidite_small.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_5_breakable_voidite_small_v1_main",
+			"spr_dungeon_mines_biome_5_breakable_voidite_small_v2_main",
+		]
+		biome_5 = [
+			"spr_dungeon_mines_biome_5_breakable_voidite_small_v1_main",
+			"spr_dungeon_mines_biome_5_breakable_voidite_small_v2_main",
+		]
+	[[voidite_small.drops.biome_1]]
+		item = "voidite"
+		chance = 10
+		exclusive = false
+	[[voidite_small.drops.biome_5]]
+		item = "voidite"
+		chance = 10
+		exclusive = false
+
+[voidite_large]
+	collideable = true
+	hits = 1
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	on_destruction_particles = { biome_1 = [], biome_5 = ["spr_part_mines_voidite"] }
+	destruction_sfx = "SoundEffects/Objects/CoralBreak"
+
+	[voidite_large.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_5_breakable_voidite_large_v1_main",
+			"spr_dungeon_mines_biome_5_breakable_voidite_large_v2_main",
+		]
+		biome_5 = [
+			"spr_dungeon_mines_biome_5_breakable_voidite_large_v1_main",
+			"spr_dungeon_mines_biome_5_breakable_voidite_large_v2_main",
+		]
+	[[voidite_large.drops.biome_1]]
+		item = "voidite"
+		chance = 10
+		exclusive = false
+	[[voidite_large.drops.biome_5]]
+		item = "voidite"
+		chance = 10
+		exclusive = false
+
+[ruins_pot_white]
+	collideable = true
+	hits = 1
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	on_destruction_particles = { biome_1 = [], biome_5 = ["spr_part_mines_ruins_pot_white"] }
+	destruction_sfx = "SoundEffects/Objects/CoralBreak"
+
+	[ruins_pot_white.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_5_breakable_pot_1_main",
+			"spr_dungeon_mines_biome_5_breakable_pot_4_main",
+			"spr_dungeon_mines_biome_5_breakable_pot_8_main",
+		]
+		biome_5 = [
+			"spr_dungeon_mines_biome_5_breakable_pot_1_main",
+			"spr_dungeon_mines_biome_5_breakable_pot_4_main",
+			"spr_dungeon_mines_biome_5_breakable_pot_8_main",
+		]
+	[[ruins_pot_white.drops.biome_1]]
+		item = "basic_wood"
+		chance = 75
+		exclusive = false
+	[[ruins_pot_white.drops.biome_5]]
+		item = "basic_wood"
+		chance = 75
+		exclusive = false
+	[[ruins_pot_white.drops.biome_5]]
+		item = "glass"
+		chance = 7
+		exclusive = false
+	[[ruins_pot_white.drops.biome_5]]
+		item = "hard_wood"
+		chance = 1
+		exclusive = false
+	[[ruins_pot_white.drops.biome_5]]
+		item = "refined_stone"
+		chance = 1
+		exclusive = false
+	[[ruins_pot_white.drops.biome_5]]
+		item = "shards"
+		chance = 1
+		exclusive = false
+
+[ruins_pot_red]
+	collideable = true
+	hits = 1
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	on_destruction_particles = { biome_1 = [], biome_5 = ["spr_part_mines_ruins_pot_red"] }
+	destruction_sfx = "SoundEffects/Objects/CoralBreak"
+
+	[ruins_pot_red.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_5_breakable_pot_2_main",
+			"spr_dungeon_mines_biome_5_breakable_pot_3_main",
+			"spr_dungeon_mines_biome_5_breakable_pot_9_main",
+		]
+		biome_5 = [
+			"spr_dungeon_mines_biome_5_breakable_pot_2_main",
+			"spr_dungeon_mines_biome_5_breakable_pot_3_main",
+			"spr_dungeon_mines_biome_5_breakable_pot_9_main",
+		]
+	[[ruins_pot_red.drops.biome_1]]
+		item = "basic_wood"
+		chance = 75
+		exclusive = false
+	[[ruins_pot_red.drops.biome_5]]
+		item = "basic_wood"
+		chance = 75
+		exclusive = false
+	[[ruins_pot_red.drops.biome_5]]
+		item = "glass"
+		chance = 7
+		exclusive = false
+	[[ruins_pot_red.drops.biome_5]]
+		item = "hard_wood"
+		chance = 1
+		exclusive = false
+	[[ruins_pot_red.drops.biome_5]]
+		item = "refined_stone"
+		chance = 1
+		exclusive = false
+	[[ruins_pot_red.drops.biome_5]]
+		item = "shards"
+		chance = 1
+		exclusive = false
+
+[ruins_pot_purple]
+	collideable = true
+	hits = 1
+	size = [2, 2]
+	dungeon_only = true
+	offset = [8, 8]
+	debris_emitter = "branch"
+	on_destruction_particles = { biome_1 = [], biome_5 = ["spr_part_mines_ruins_pot_purple"] }
+	destruction_sfx = "SoundEffects/Objects/CoralBreak"
+
+	[ruins_pot_purple.sprites]
+		biome_1 = [
+			"spr_dungeon_mines_biome_5_breakable_pot_5_main",
+			"spr_dungeon_mines_biome_5_breakable_pot_6_main",
+			"spr_dungeon_mines_biome_5_breakable_pot_7_main",
+		]
+		biome_5 = [
+			"spr_dungeon_mines_biome_5_breakable_pot_5_main",
+			"spr_dungeon_mines_biome_5_breakable_pot_6_main",
+			"spr_dungeon_mines_biome_5_breakable_pot_7_main",
+		]
+	[[ruins_pot_purple.drops.biome_1]]
+		item = "basic_wood"
+		chance = 75
+		exclusive = false
+	[[ruins_pot_purple.drops.biome_5]]
+		item = "basic_wood"
+		chance = 75
+		exclusive = false
+	[[ruins_pot_purple.drops.biome_5]]
+		item = "glass"
+		chance = 7
+		exclusive = false
+	[[ruins_pot_purple.drops.biome_5]]
+		item = "hard_wood"
+		chance = 1
+		exclusive = false
+	[[ruins_pot_purple.drops.biome_5]]
+		item = "refined_stone"
+		chance = 1
+		exclusive = false
+	[[ruins_pot_purple.drops.biome_5]]
+		item = "shards"
+		chance = 1
+		exclusive = false
+
+[treasure_chest_wood]
+	hits = 10000
+	collideable = true
+	size = [2, 2]
+	offset = [8, 8]
+	dungeon_only = true
+	interact_mask = "spr_mask_chest"
+
+	[treasure_chest_wood.chest]
+		open_sprite = "spr_dungeon_mines_chest_wood_spring_opened"
+		opening_sprite = "spr_dungeon_mines_chest_wood_spring_opening"
+		closed_sprite = "spr_dungeon_mines_chest_wood_spring_closed"
+		ore_count = [1, 3]
+		mana_chance = 0
+		extras_chance = 5
+		essence_stone = "essence_stone_tiny"
+
+	[treasure_chest_wood.on_destruction_particles]
+		biome_1 = ["spr_illegal_16"]
+
+[treasure_chest_copper]
+	hits = 10000
+	collideable = true
+	size = [2, 2]
+	offset = [8, 8]
+	dungeon_only = true
+	interact_mask = "spr_mask_chest"
+
+	[treasure_chest_copper.chest]
+		open_sprite = "spr_dungeon_mines_chest_copper_spring_opened"
+		opening_sprite = "spr_dungeon_mines_chest_copper_spring_opening"
+		closed_sprite = "spr_dungeon_mines_chest_copper_spring_closed"
+		ore_count = [2, 4]
+		mana_chance = 5
+		extras_chance = 10
+		essence_stone = "essence_stone_small"
+
+	[treasure_chest_copper.on_destruction_particles]
+		biome_1 = ["spr_illegal_16"]
+
+[treasure_chest_silver]
+	hits = 10000
+	collideable = true
+	size = [2, 2]
+	offset = [8, 8]
+	dungeon_only = true
+	interact_mask = "spr_mask_chest"
+
+	[treasure_chest_silver.chest]
+		open_sprite = "spr_dungeon_mines_chest_silver_spring_opened"
+		opening_sprite = "spr_dungeon_mines_chest_silver_spring_opening"
+		closed_sprite = "spr_dungeon_mines_chest_silver_spring_closed"
+		ore_count = [3, 6]
+		mana_chance = 10
+		extras_chance = 15
+		essence_stone = "essence_stone_medium"
+
+	[treasure_chest_silver.on_destruction_particles]
+		biome_1 = ["spr_illegal_16"]
+
+[treasure_chest_gold]
+	hits = 10000
+	collideable = true
+	size = [2, 2]
+	offset = [8, 8]
+	dungeon_only = true
+	interact_mask = "spr_mask_chest"
+
+	[treasure_chest_gold.chest]
+		open_sprite = "spr_dungeon_mines_chest_gold_spring_opened"
+		opening_sprite = "spr_dungeon_mines_chest_gold_spring_opening"
+		closed_sprite = "spr_dungeon_mines_chest_gold_spring_closed"
+		ore_count = [5, 10]
+		mana_chance = 15
+		extras_chance = 30
+		essence_stone = "essence_stone_large"
+
+	[treasure_chest_gold.on_destruction_particles]
+		biome_1 = ["spr_illegal_16"]
+
+[wilted_plant]
+	collideable = false
+	size = [2, 2]
+	offset = [8, 8]
+	debris_emitter = "bush"
+	sound_on_collide = "SoundEffects/Objects/TallGrassRustle"
+
+	[wilted_plant.drops]
+		spring = [
+			{ item = "fiber", chance = 10.0, exclusive = false },
+		]
+
+	[wilted_plant.on_destruction_particles]
+		fall = ["spr_part_wilted_plant"]
+		spring = ["spr_part_wilted_plant"]
+		summer = ["spr_part_wilted_plant"]
+		winter = ["spr_part_wilted_plant"]
+
+	[wilted_plant.sprites]
+		fall = [
+			"spr_wilted_plant_1_stage1",
+			"spr_wilted_plant_2_stage1",
+			"spr_wilted_plant_3_stage1",
+		]
+		spring = [
+			"spr_wilted_plant_1_stage1",
+			"spr_wilted_plant_2_stage1",
+			"spr_wilted_plant_3_stage1",
+		]
+		summer = [
+			"spr_wilted_plant_1_stage1",
+			"spr_wilted_plant_2_stage1",
+			"spr_wilted_plant_3_stage1",
+		]
+		winter = [
+			"spr_wilted_plant_1_stage1",
+			"spr_wilted_plant_2_stage1",
+			"spr_wilted_plant_3_stage1",
+		]
+
+[treasure_chest_secret]
+	hits = 10000
+	collideable = true
+	size = [2, 2]
+	offset = [8, 8]
+	dungeon_only = false
+	interact_mask = "spr_mask_chest"
+
+	[treasure_chest_secret.chest]
+		open_sprite = "spr_dungeon_mines_chest_gold_spring_opened"
+		opening_sprite = "spr_dungeon_mines_chest_gold_spring_opening"
+		closed_sprite = "spr_dungeon_mines_chest_gold_spring_closed"
+		essence_stone = false
+		extras_chance = 0
+
+	[treasure_chest_secret.on_destruction_particles]
+		biome_1 = ["spr_illegal_16"]

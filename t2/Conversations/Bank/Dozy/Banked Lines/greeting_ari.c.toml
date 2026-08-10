@@ -1,0 +1,21 @@
+[greeting_ari]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "dozy" },
+	{ dozy_has_met = false },
+]
+local = "Woof!"
+next = "1"
+
+[greeting_ari.1]
+portrait = "happy"
+local = """(His collar says "Dozy".)"""
+prompts = [
+	{ local = "Nice to meet you, Dozy.", next = "2" },
+	{ local = "Good boy, Dozy.", next = "2" },
+]
+
+[greeting_ari.2]
+portrait = "happy"
+local = "(Dozy wags his tail.)"

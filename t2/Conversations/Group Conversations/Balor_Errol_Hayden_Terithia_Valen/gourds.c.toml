@@ -1,0 +1,50 @@
+[gourds]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "balor" },
+		{ npc = "errol" },
+		{ npc = "hayden" },
+		{ npc = "terithia" },
+		{ npc = "valen" }
+	] },
+	{ balor_zone = "<errol_zone>" },
+	{ balor_zone = "<hayden_zone>" },
+	{ balor_zone = "<terithia_zone>" },
+	{ balor_zone = "<valen_zone>" },
+	{ season = "fall" },
+	{ year_time = "2m 7d", comparator = ">=", parser = "date_time" },
+]
+speaker = "balor"
+portrait = "neutral"
+local = "Hayden, I'm but a humble merchant, so farming is well outside my wheelhouse."
+next = "1"
+
+[gourds.1]
+speaker = "balor"
+portrait = "mad"
+local = "However, I have to know. How do you get your pumpkins so big?"
+next = "2"
+
+[gourds.2]
+speaker = "valen"
+portrait = "think"
+local = "Well, Hayden's always had a green thumb, ever since we were kids."
+next = "3"
+
+[gourds.3]
+speaker = "terithia"
+portrait = "happy"
+local = "Sure, but judging by the size of those gourds, I'd say Hayden's got a whole green arm!"
+next = "4"
+
+[gourds.4]
+speaker = "errol"
+portrait = "mad"
+local = "And they're so brilliantly orange! Surely you have an explanation for that! Explain yourself, sir!"
+next = "5"
+
+[gourds.5]
+speaker = "hayden"
+portrait = "happy"
+local = "Now now! I'm just glad you appreciate them! Come by the farm any time and take a gander!"

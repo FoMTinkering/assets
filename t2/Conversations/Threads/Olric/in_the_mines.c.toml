@@ -1,0 +1,58 @@
+[olric_in_the_mines_1]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ nd_thread_mutex = "undefined" },
+	{ nd_thread_delay = false },
+	{ olric_in_the_mines_finished = false },
+	{ olric_heart_level = 3, comparator = ">=" },
+	{ quest_unlocking_the_mines_pt_2_complete = true }
+]
+writes = [
+	{ nd_thread_mutex = "olric_in_the_mines_1", expires = "1w" },
+	{ nd_thread_delay = true, expires = "1d" },
+]
+local = "When I was learning the ropes, it was Errol who walked me through the ins and outs of mining. He's super nice!"
+next = "1"
+
+[olric_in_the_mines_1.1]
+portrait = "wink"
+local = "Like, he showed me how to get copper ore out of seams in the rock! It's all in the wrist, [Ari]."
+
+[olric_in_the_mines_2]
+refresh = "instantly"
+requires = [
+	{ npc = "olric" },
+	{ nd_thread_mutex = "olric_in_the_mines_1" },
+	{ nd_thread_delay = false },
+]
+writes = [
+	{ nd_thread_mutex = "olric_in_the_mines_2", expires = "1w" },
+	{ nd_thread_delay = true, expires = "1d" },
+]
+local = "I was thinking about the old days in the Mines, back before the quake... I loved jumping into those whirlpools in the underground springs."
+next = "1"
+
+[olric_in_the_mines_2.1]
+portrait = "happy"
+local = "Nature combined a bath and a shortcut. What's better than that?"
+
+[olric_in_the_mines_3]
+refresh = "instantly"
+requires = [
+	{ npc = "olric" },
+	{ nd_thread_mutex = "olric_in_the_mines_2" },
+	{ nd_thread_delay = false },
+]
+writes = [
+	{ nd_thread_mutex = "undefined" },
+	{ nd_thread_delay = true, expires = "1d" },
+	{ olric_in_the_mines_finished = true }
+]
+portrait = "think"
+local = "There were these shrines down in the Mines, and I don't know who they were for or who made them..."
+next = "1"
+
+[olric_in_the_mines_3.1]
+portrait = "happy"
+local = "But it always made me feel good to leave them my coolest rocks."

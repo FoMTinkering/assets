@@ -1,0 +1,508 @@
+var fruity = false;
+var bitter = false;
+var water = false;
+
+scene(inn);
+place_actor(adeline, north, rti1_adeline_entrance);
+place_actor(hemlock, south, rti1_hemlock_entrance);
+place_actor(josephine, south, rti1_josephine_entrance);
+place_actor(ari, north, rti1_ari_entrance);
+camera_position(rti1_camera_1);
+request_music_play("Music/Events/Cutscene");
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		free bark_speech(hemlock, question_mark);
+		wait(0.75);
+		free bark_speech(josephine, hot_drink);
+		wait(0.75);
+		free bark_speech(adeline, sweat_drop);
+		wait(1);
+		free bark_speech(hemlock, exclamation_mark);
+	}
+	{
+		wait(3.75);
+		face(adeline, south);
+	}
+	{
+		walk_slow(ari, rti1_ari_pause);
+		face(ari, north);
+	}
+	{
+		pan_camera(4, rti1_camera_2);
+	}
+	{
+		wait(3);
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.75);
+		walk_slow(adeline, rti1_adeline_start);
+		face(adeline, north);
+	}
+	{
+		wait(0.5);
+		walk_slow(ari, rti1_ari_start);
+		face(ari, north);
+	}
+	{
+		pan_camera(2, rti1_camera_3);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+//
+sim {
+	{
+		wait(1);
+		face(adeline, west);
+	}
+	{
+		wait(0.75);
+		face(josephine, west);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(adeline, north);
+	}
+	{
+		wait(1);
+		face(josephine, south);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(hemlock, cute_face);
+free bark_speech(josephine, cute_face);
+wait(1.5);
+sim {
+	free {
+		walk(hemlock, "Hot Pass");
+		face(hemlock, west);
+		animate(hemlock, action);
+		wait(1.25);
+		animate(hemlock, idle);
+		walk(hemlock, "Bartender 2");
+		face(hemlock, east);
+		animate(hemlock, polish);
+		wait(2);
+		animate(hemlock, action);
+		wait(0.5);
+		if get_response() == 0 {
+			setup_prop(rti1_drink_adeline_1);
+			setup_prop(rti1_drink_ari_1);
+			fruity = true;
+		} else if get_response() == 1 {
+			setup_prop(rti1_drink_adeline_2);
+			setup_prop(rti1_drink_ari_2);
+			bitter = true;
+		} else {
+			setup_prop(rti1_drink_adeline_3);
+			setup_prop(rti1_drink_ari_3);
+			water = true;
+		}
+		free bark_speech(adeline, cute_face);
+		free bark_speech(ari, cute_face);
+		animate(hemlock, idle);
+	}
+	{
+		walk_slow(josephine, "Bartender 1");
+		face(josephine, east);
+	}
+	{
+		wait(0.5);
+		walk_slow(ari, "Top-Middle Bar Seat");
+		face(ari, west);
+		animate(ari, sit);
+	}
+	{
+		wait(1);
+		walk_slow(adeline, "Top Bar Seat");
+		face(adeline, west);
+		animate(adeline, sit);
+	}
+	{
+		pan_camera(3, rti1_camera_4);
+	}
+	{
+		wait(3);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+face(hemlock, north);
+wait(0.25);
+face(josephine, south);
+free bark_speech(josephine, ellipses);
+free bark_speech(hemlock, ellipses);
+wait(1.5);
+sim {
+	{
+		wait(1.5);
+		face(hemlock, east);
+	}
+	{
+		wait(2);
+		face(josephine, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+//
+sim {
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+request_music_stop();
+sim {
+	{
+		place_actor(reina, north, rti1_ari_entrance);
+		sim {
+			walk(reina, rti1_reina_entrance);
+			set_move_speed(reina, 1.2);
+		}
+		face(reina, north);
+	}
+	{
+		wait(0.5);
+		next_line(); //
+	}
+	{
+		wait(1.25);
+		pan_camera(1, rti1_camera_2);
+	}
+	{
+		wait(1);
+		free bark_speech(josephine, exclamation_mark);
+		free bark_speech(hemlock, exclamation_mark);
+		free bark_speech(adeline, exclamation_mark);
+		free bark_speech(ari, exclamation_mark);
+	}
+	{
+		wait(1.5);
+		face(josephine, south);
+	}
+	{
+		wait(1.5);
+		face(ari, south);
+	}
+	{
+		wait(1.75);
+		face(adeline, south);
+	}
+	{
+		wait(2);
+		face(hemlock, south);
+	}
+}
+close_textbox();
+wait(0.5);
+sim {
+	{
+		request_music_play(reina);
+	}
+	{
+		pan_camera(4, rti1_camera_5);
+	}
+	{
+		walk(reina, "Top Bar Hang");
+		face(reina, south);
+	}
+	{
+		wait(2);
+		face(josephine, east);
+		wait(1);
+		face(josephine, north);
+	}
+	{
+		wait(1.5);
+		face(hemlock, east);
+		wait(1);
+		face(hemlock, north);
+	}
+	{
+		wait(1.75);
+		face(ari, west);
+		wait(2);
+		face(ari, north);
+	}
+	{
+		wait(2.5);
+		face(adeline, west);
+		wait(1.25);
+		face(adeline, north);
+	}
+	{
+		wait(1);
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.75);
+		face(adeline, west);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.75);
+		face(adeline, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.25);
+animate(reina, action);
+wait(0.5);
+if fruity == true {
+	destroy_prop(rti1_drink_adeline_1);
+} else if bitter == true {
+	destroy_prop(rti1_drink_adeline_2);
+} else if water == true {
+	destroy_prop(rti1_drink_adeline_3);
+}
+free bark_speech(adeline, exclamation_mark);
+face(adeline, west);
+animate(reina, idle);
+animate(reina, action);
+wait(0.5);
+setup_prop(rti1_proposal);
+animate(reina, idle);
+wait(0.5);
+sim {
+	{
+		wait(0.5);
+		face(josephine, east);
+	}
+	{
+		wait(1);
+		face(hemlock, east);
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(1);
+		face(reina, west);
+	}
+	{
+		wait(0.5);
+		face(hemlock, north);
+	}
+	{
+		wait(1.5);
+		face(josephine, north);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(josephine, east);
+		wait(2);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(josephine, east);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.75);
+		face(josephine, north);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(adeline, north);
+	}
+	{
+		wait(1);
+		face(reina, east);
+	}
+	{
+		next_line(); //
+	}
+}
+//
+
+if get_response() == 0 {
+	sim {
+		{
+			wait(1.25);
+			face(reina, south);
+		}
+		{
+			wait(0.75);
+			face(adeline, south);
+		}
+		{
+			wait(1);
+			face(hemlock, east);
+		}
+		{
+			wait(1.25);
+			face(josephine, east);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	sim {
+		{
+			wait(0.75);
+			face(ari, west);
+		}
+		{
+			wait(1);
+			face(adeline, south);
+		}
+		{
+			wait(1.25);
+			face(hemlock, east);
+		}
+		{
+			wait(1.5);
+			face(josephine, east);
+		}
+		{
+			wait(1.75);
+			face(reina, west);
+		}
+		{
+			next_line(); //
+		}
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(adeline, west);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(josephine, north);
+	}
+	{
+		wait(0.75);
+		face(reina, west);
+	}
+	{
+		wait(1);
+		face(hemlock, north);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		next_line(); //
+	}
+	{
+		wait(2.5);
+		face(adeline, south);
+	}
+	{
+		wait(3);
+		face(ari, north);
+	}
+	{
+		wait(0.5);
+		face(hemlock, east);
+	}
+	{
+		wait(1);
+		face(josephine, east);
+	}
+	{
+		wait(1.25);
+		face(reina, south);
+	}
+}
+close_textbox();
+wait(0.5);
+sim {
+	{
+		free bark_speech(ari, cute_face);
+		wait(1);
+		face(ari, west);
+	}
+	{
+		wait(0.5);
+		free bark_speech(adeline, cute_face);
+	}
+	{
+		wait(1.25);
+		free bark_speech(josephine, cute_face);
+		free bark_speech(hemlock, cute_face);
+		free bark_speech(reina, cute_face);
+	}
+	{
+		wait(2.5);
+		fade_out(2);
+	}
+}

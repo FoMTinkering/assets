@@ -1,0 +1,23 @@
+[clinic_supplies]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "hayden" }, { npc = "valen" }] },
+	{ balor_zone = "<hayden_zone>" },
+	{ balor_zone = "<valen_zone>" },
+	{ location = "clinic_f1", comparator = "!=" }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "How's the Clinic, Valen? Anything I can special order for you?"
+next = "1"
+
+[clinic_supplies.1]
+speaker = "hayden"
+portrait = "happy"
+local = "You really do have a knack for rustling up the rarest of goods, Balor."
+next = "2"
+
+[clinic_supplies.2]
+speaker = "valen"
+portrait = "think"
+local = "I think I've got everything I need, but I'll keep it in mind."

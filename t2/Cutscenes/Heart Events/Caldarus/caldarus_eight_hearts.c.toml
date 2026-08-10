@@ -1,0 +1,778 @@
+[caldarus_eight_heart_follow_up_caldarus_best_friend]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_heart_event = "eight_heart" },
+	{ caldarus_is_best_friend = true },
+	{ caldarus_eight_heart_priority_bump = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "caldarus" } }]
+portrait = "smile"
+local = "I had a wonderful time with you, [Ari]."
+next = "1"
+
+[caldarus_eight_heart_follow_up_caldarus_best_friend.1]
+portrait = "laugh"
+local = "I look forward to having you over again soon."
+
+[caldarus_eight_heart_follow_up_caldarus_romantic]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_heart_event = "eight_heart" },
+	{ caldarus_is_partner = true },
+	{ caldarus_eight_heart_priority_bump = true }
+]
+actions = [{ bark = { bark = "blush", npc = "caldarus" } }]
+portrait = "caring_special"
+local = "I had a wonderful time with you, [Ari]."
+next = "1"
+
+[caldarus_eight_heart_follow_up_caldarus_romantic.1]
+portrait = "think_special"
+local = "I look forward to having you over again soon."
+
+[caldarus_eight_heart_follow_up_celine]
+refresh = "never"
+requires = [{ npc = "celine" }, { caldarus_heart_event = "eight_heart" }]
+actions = [{ bark = { bark = "cute_face", npc = "celine" } }]
+portrait = "neutral"
+local = "There seems to be something in the air today, [Ari]."
+next = "1"
+
+[caldarus_eight_heart_follow_up_celine.1]
+portrait = "blush_closed_eyes"
+local = "The trees, the flowers... even the wind, and the birds."
+next = "2"
+
+[caldarus_eight_heart_follow_up_celine.2]
+portrait = "blush_special"
+local = "I hope I don't sound ridiculous, but-"
+next = "3"
+
+[caldarus_eight_heart_follow_up_celine.3]
+portrait = "embarrassed"
+local = "I just have this sense that nature itself is somehow... overjoyed."
+
+[caldarus_eight_hearts]
+kind = "gameplay_triggered"
+writes = [
+	{ caldarus_heart_event = "eight_heart", expires = "4d" },
+	{ caldarus_eight_heart_priority_bump = true, expires = "4d" }
+]
+speaker = "caldarus"
+portrait = "happy"
+local = "Welcome, [Ari]!"
+next = "0"
+
+[caldarus_eight_hearts.0]
+speaker = "caldarus"
+portrait = "smile"
+local = "I am glad that you could make it."
+next = "1"
+
+[caldarus_eight_hearts.1]
+speaker = "caldarus"
+portrait = "think"
+local = "Please, take a seat. I am nearly done preparing our meal."
+next = "2"
+
+[caldarus_eight_hearts.2]
+speaker = "caldarus"
+portrait = "think"
+local = "Ah... yes, I think that should do it."
+next = "3"
+
+[caldarus_eight_hearts.3]
+speaker = "caldarus"
+portrait = "smile"
+local = "Here you are. Freshly made $Onion Soup$."
+next = "4"
+
+[caldarus_eight_hearts.4]
+speaker = "caldarus"
+portrait = "think"
+local = "It is customary to serve soup first in this era, is it not?"
+next = [
+	{ target = "5r", requires = [{ shooting_star_caldarus_attended = true }] },
+	{ target = "5f", requires = [] }
+]
+
+[caldarus_eight_hearts.5r]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "I hope that it is to your taste, [Ari]."
+prompts = [
+	{ local = "Mmm, it's good!", next = "6" },
+	{ local = "Keeping the onions whole and unpeeled was... creative!", next = "9" }
+]
+
+[caldarus_eight_hearts.5f]
+speaker = "caldarus"
+portrait = "smile"
+local = "I hope that it is to your taste, [Ari]."
+prompts = [
+	{ local = "Mmm, it's good!", next = "6" },
+	{ local = "Keeping the onions whole and unpeeled was... creative!", next = "9" }
+]
+
+[caldarus_eight_hearts.6]
+speaker = "caldarus"
+portrait = "happy"
+local = "Is it really? I admit that the onions were somewhat challenging to work with."
+next = "7"
+
+[caldarus_eight_hearts.7]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "I am glad that leaving them whole and unpeeled preserved their flavor."
+next = "8"
+
+[caldarus_eight_hearts.8]
+speaker = "caldarus"
+portrait = "smile"
+local = "Please, have as much as you like."
+next = [
+	{ target = "12r", requires = [{ shooting_star_caldarus_attended = true }] },
+	{ target = "12f", requires = [] }
+]
+
+[caldarus_eight_hearts.9]
+speaker = "caldarus"
+portrait = "happy"
+local = "Creative? Do you really think so?"
+next = "10"
+
+[caldarus_eight_hearts.10]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "They are more difficult to consume whole in my current form. Perhaps I should have diced them..."
+next = "11"
+
+[caldarus_eight_hearts.11]
+speaker = "caldarus"
+portrait = "smile"
+local = "I think I shall try that next time."
+next = [
+	{ target = "12r", requires = [{ shooting_star_caldarus_attended = true }] },
+	{ target = "12f", requires = [] }
+]
+
+[caldarus_eight_hearts.12r]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "You know, lately I-"
+next = "13"
+
+[caldarus_eight_hearts.12f]
+speaker = "caldarus"
+portrait = "think"
+local = "You know, lately I-"
+next = "13"
+
+[caldarus_eight_hearts.13]
+speaker = "caldarus"
+portrait = "neutral"
+local = "I have been making an effort to learn more about human customs."
+next = "14"
+
+[caldarus_eight_hearts.14]
+speaker = "caldarus"
+portrait = "think"
+local = "I gather there are limits to what one can glean from observation alone."
+next = "15"
+
+[caldarus_eight_hearts.15]
+speaker = "caldarus"
+portrait = "smile"
+local = "I believe that more firsthand experiences will be essential-"
+next = "16"
+
+[caldarus_eight_hearts.16]
+speaker = "caldarus"
+portrait = "think"
+local = "To understand the many intricacies of my new... situation."
+next = [
+	{ target = "17r", requires = [{ shooting_star_caldarus_attended = true }] },
+	{ target = "17f", requires = [] }
+]
+
+[caldarus_eight_hearts.17r]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "I am grateful that you are here, [Ari]. I feel that I can truly rely on you."
+prompts = [
+	{ local = "Of course! Anything in particular I can help with?", next = "18r" },
+	{ local = "You mentioned there was something you wanted to talk about?", next = "19r" }
+]
+
+[caldarus_eight_hearts.17f]
+speaker = "caldarus"
+portrait = "smile"
+local = "I am grateful that you are here, [Ari]. I feel that I can truly rely on you."
+prompts = [
+	{ local = "Of course! Anything in particular I can help with?", next = "18f" },
+	{ local = "You mentioned there was something you wanted to talk about?", next = "19f" }
+]
+
+[caldarus_eight_hearts.18r]
+speaker = "caldarus"
+portrait = "unsure_special"
+local = "Perhaps there is. But first..."
+next = "20r"
+
+[caldarus_eight_hearts.18f]
+speaker = "caldarus"
+portrait = "think"
+local = "Perhaps there is. But first..."
+next = "20f"
+
+[caldarus_eight_hearts.19r]
+speaker = "caldarus"
+portrait = "unsure_special"
+local = "Well, yes. There is. But first..."
+next = "20r"
+
+[caldarus_eight_hearts.19f]
+speaker = "caldarus"
+portrait = "think"
+local = "Well, yes. There is. But first..."
+next = "20f"
+
+[caldarus_eight_hearts.20r]
+speaker = "caldarus"
+portrait = "laugh_special"
+effect = "drop"
+local = "I seem to be forgetting my manners."
+next = "21"
+
+[caldarus_eight_hearts.20f]
+speaker = "caldarus"
+portrait = "laugh"
+effect = "drop"
+local = "I seem to be forgetting my manners."
+next = "21"
+
+[caldarus_eight_hearts.21]
+speaker = "caldarus"
+portrait = "smile"
+local = "Allow me to serve you the next dish I have prepared."
+next = "22"
+
+[caldarus_eight_hearts.22]
+speaker = "caldarus"
+portrait = "happy"
+local = "There we are. I believe this $Mushroom Rice$ is fittingly substantial for a main dish."
+next = "23"
+
+[caldarus_eight_hearts.23]
+speaker = "caldarus"
+portrait = "think"
+local = "Do you find it... agreeable?"
+prompts = [
+	{ local = "Indeed!", next = "24" },
+	{ local = "Um. How much soy sauce did you use?", next = "29" }
+]
+
+[caldarus_eight_hearts.24]
+speaker = "caldarus"
+portrait = "smile"
+local = "Wonderful."
+next = "25"
+
+[caldarus_eight_hearts.25]
+speaker = "caldarus"
+portrait = "happy"
+local = "I am glad that Balor was able to secure a case of $Soy Sauce$ for me."
+next = "26"
+
+[caldarus_eight_hearts.26]
+speaker = "caldarus"
+portrait = "think"
+local = "I was uncertain how much to use for this preparation."
+next = "27"
+
+[caldarus_eight_hearts.27]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "Perhaps it did not require all three bottles."
+next = "28"
+
+[caldarus_eight_hearts.28]
+speaker = "caldarus"
+portrait = "smile"
+local = "But I am glad that you find the result to be palatable."
+next = "34"
+
+[caldarus_eight_hearts.29]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Two, maybe three-"
+next = "30"
+
+[caldarus_eight_hearts.30]
+speaker = "caldarus"
+portrait = "happy"
+local = "Bottles."
+next = "31"
+
+[caldarus_eight_hearts.31]
+speaker = "caldarus"
+portrait = "think"
+local = "..."
+next = "32"
+
+[caldarus_eight_hearts.32]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "Perhaps it is... rather salty."
+next = "33"
+
+[caldarus_eight_hearts.33]
+speaker = "caldarus"
+portrait = "smile"
+local = "I shall adjust the amount in the future."
+next = "34"
+
+[caldarus_eight_hearts.34]
+speaker = "caldarus"
+portrait = "happy"
+local = "It was a pleasure to share this repast with you."
+next = [
+	{ target = "35r", requires = [{ shooting_star_caldarus_attended = true }] },
+	{ target = "35f", requires = [] }
+]
+
+[caldarus_eight_hearts.35r]
+speaker = "caldarus"
+portrait = "unsure_special"
+local = "I have little experience playing the role of host."
+next = "36"
+
+[caldarus_eight_hearts.35f]
+speaker = "caldarus"
+portrait = "think"
+local = "I have little experience playing the role of host."
+next = "36"
+
+[caldarus_eight_hearts.36]
+speaker = "caldarus"
+portrait = "happy"
+local = "But thanks to you, I have learned much today."
+next = [
+	{ target = "37r", requires = [{ shooting_star_caldarus_attended = true }] },
+	{ target = "37f", requires = [] }
+]
+
+[caldarus_eight_hearts.37r]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "Would you care to join me in the courtyard, [Ari]?"
+next = "38r"
+
+[caldarus_eight_hearts.37f]
+speaker = "caldarus"
+portrait = "smile"
+local = "Would you care to join me in the courtyard, [Ari]?"
+next = "38f"
+
+[caldarus_eight_hearts.38r]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "I find that a little fresh air and music are most enjoyable after a meal."
+next = "39r"
+
+[caldarus_eight_hearts.38f]
+speaker = "caldarus"
+portrait = "laugh"
+local = "I find that a little fresh air and music are most enjoyable after a meal."
+next = "39f"
+
+[caldarus_eight_hearts.39r]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "Thank you for coming today, [Ari]."
+next = "40r"
+
+[caldarus_eight_hearts.39f]
+speaker = "caldarus"
+portrait = "smile"
+local = "Thank you for coming today, [Ari]."
+next = "40f"
+
+[caldarus_eight_hearts.40r]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "I have thoroughly enjoyed spending this time together."
+next = "41r"
+
+[caldarus_eight_hearts.40f]
+speaker = "caldarus"
+portrait = "laugh"
+local = "I have thoroughly enjoyed spending this time together."
+next = "41f"
+
+[caldarus_eight_hearts.41r]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "I-"
+next = "42r"
+
+[caldarus_eight_hearts.41f]
+speaker = "caldarus"
+portrait = "smile"
+local = "I-"
+next = "42f"
+
+[caldarus_eight_hearts.42r]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "There is a matter I have been meaning to discuss with you..."
+next = "43"
+
+[caldarus_eight_hearts.42f]
+speaker = "caldarus"
+portrait = "think"
+local = "There is a matter I have been meaning to discuss with you..."
+next = "43"
+
+[caldarus_eight_hearts.43]
+speaker = "caldarus"
+portrait = "sad"
+local = "It has been difficult at times, adjusting to life in this form."
+next = "44"
+
+[caldarus_eight_hearts.44]
+speaker = "caldarus"
+portrait = "pained"
+local = "Do not misunderstand me. I do not regret my decision."
+next = "45"
+
+[caldarus_eight_hearts.45]
+speaker = "caldarus"
+portrait = "sigh"
+local = "Not in the least. The truth is..."
+next = "46"
+
+[caldarus_eight_hearts.46]
+speaker = "caldarus"
+portrait = "think"
+local = "Everything I thought I knew has changed."
+next = "47"
+
+[caldarus_eight_hearts.47]
+speaker = "caldarus"
+portrait = "sad"
+local = "Not just my body. My mind and my heart have, too."
+next = "48"
+
+[caldarus_eight_hearts.48]
+speaker = "caldarus"
+portrait = "think"
+local = "It may seem unthinkable, given a dragon's long lifespan-"
+next = "49"
+
+[caldarus_eight_hearts.49]
+speaker = "caldarus"
+portrait = "unsure_special"
+local = "But lately, everything feels brand new."
+next = [
+	{ target = "50r", requires = [{ shooting_star_caldarus_attended = true }] },
+	{ target = "50f", requires = [] }
+]
+
+[caldarus_eight_hearts.50r]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "Every meal, every song, every emotion..."
+next = "51r"
+
+[caldarus_eight_hearts.50f]
+speaker = "caldarus"
+portrait = "smile"
+local = "Every meal, every song, every emotion..."
+next = "51f"
+
+[caldarus_eight_hearts.51r]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "There is a new dimension to all of it. As if I am experiencing them for the first time."
+next = "52"
+
+[caldarus_eight_hearts.51f]
+speaker = "caldarus"
+portrait = "happy"
+local = "There is a new dimension to all of it. As if I am experiencing them for the first time."
+next = "52"
+
+[caldarus_eight_hearts.52]
+speaker = "caldarus"
+portrait = "think"
+local = "I suppose it makes sense, considering that I am now-"
+next = "53"
+
+[caldarus_eight_hearts.53]
+speaker = "caldarus"
+portrait = "sigh"
+local = "..."
+next = "54"
+
+[caldarus_eight_hearts.54]
+speaker = "caldarus"
+portrait = "neutral"
+local = "What I am trying to say, [Ari]-"
+next = [
+	{ target = "55r", requires = [{ shooting_star_caldarus_attended = true }] },
+	{ target = "55f", requires = [] }
+]
+
+[caldarus_eight_hearts.55r]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "Is that I do not always know how to put into words what I am feeling."
+next = "56r"
+
+[caldarus_eight_hearts.55f]
+speaker = "caldarus"
+portrait = "think"
+local = "Is that I do not always know how to put into words what I am feeling."
+next = "56f"
+
+[caldarus_eight_hearts.56r]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "And... I was hoping that you might be able to help me articulate it."
+prompts = [
+	{ local = "Of course I'll help you!", next = "57r" },
+	{ local = "What is it you're feeling?", next = "57r" }
+]
+
+[caldarus_eight_hearts.56f]
+speaker = "caldarus"
+portrait = "neutral"
+local = "And... I was hoping that you might be able to help me articulate it."
+prompts = [
+	{ local = "Of course I'll help you!", next = "57f" },
+	{ local = "What is it you're feeling?", next = "57f" }
+]
+
+[caldarus_eight_hearts.57r]
+speaker = "caldarus"
+portrait = "think"
+local = "Well, since the night we celebrated the $Starbinding Ceremony$ together..."
+next = "58r"
+
+[caldarus_eight_hearts.57f]
+speaker = "caldarus"
+portrait = "think"
+local = "Well..."
+next = "58f"
+
+[caldarus_eight_hearts.58r]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "I have begun to feel an ache in my chest when I am alone for a time."
+next = "59"
+
+[caldarus_eight_hearts.58f]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Lately, I have begun to feel an ache in my chest when I am alone for a time."
+next = "59"
+
+[caldarus_eight_hearts.59]
+speaker = "caldarus"
+portrait = "sigh"
+local = "Perhaps it is... loneliness?"
+next = [
+	{ target = "60r", requires = [{ shooting_star_caldarus_attended = true }] },
+	{ target = "60f", requires = [] }
+]
+
+[caldarus_eight_hearts.60r]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "However, I find that I am reprieved of this pain-"
+next = "61r"
+
+[caldarus_eight_hearts.60f]
+speaker = "caldarus"
+portrait = "think"
+local = "However, I find that I am reprieved of this pain-"
+next = "61f"
+
+[caldarus_eight_hearts.61r]
+speaker = "caldarus"
+portrait = "smile"
+local = "Whenever you are near to me, [Ari]."
+next = "62r"
+
+[caldarus_eight_hearts.61f]
+speaker = "caldarus"
+portrait = "smile"
+local = "Whenever you come to visit me, [Ari]."
+next = "62f"
+
+[caldarus_eight_hearts.62r]
+speaker = "caldarus"
+portrait = "happy"
+local = "Instead, I feel a great warmth in its place. It spreads throughout my body in an instant."
+next = "63"
+
+[caldarus_eight_hearts.62f]
+speaker = "caldarus"
+portrait = "happy"
+local = "Instead, I feel a great warmth in its place."
+next = "63"
+
+[caldarus_eight_hearts.63]
+speaker = "caldarus"
+portrait = "laugh"
+local = "It is... a joyous feeling. I do not know quite what to make of it."
+
+[[caldarus_eight_hearts.63.prompts]]
+local = "I feel the same way! It's because we're best friends!"
+next = [
+	{ target = "64r", requires = [{ shooting_star_caldarus_attended = true }] },
+	{ target = "64f", requires = [] }
+]
+
+[[caldarus_eight_hearts.63.prompts]]
+local = "I think it's because we have... romantic feelings for each other."
+next = [
+	{ target = "74", requires = [{ shooting_star_caldarus_attended = true }] },
+	{ target = "74", requires = [] }
+]
+
+[caldarus_eight_hearts.64r]
+actions = [{ update_status = { npc = "caldarus", status = "best_friend" } }]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "Best friends...?"
+next = "65r"
+
+[caldarus_eight_hearts.64f]
+actions = [{ update_status = { npc = "caldarus", status = "best_friend" } }]
+speaker = "caldarus"
+portrait = "smile"
+local = "Best friends...?"
+next = "65f"
+
+[caldarus_eight_hearts.65r]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "Yes... best friends! That is one way to describe it, certainly."
+next = "66"
+
+[caldarus_eight_hearts.65f]
+speaker = "caldarus"
+portrait = "laugh"
+local = "Yes... best friends! That is the perfect way to describe it."
+next = "66"
+
+[caldarus_eight_hearts.66]
+speaker = "caldarus"
+portrait = "smile"
+local = "I think I understand, now."
+next = "67"
+
+[caldarus_eight_hearts.67]
+speaker = "caldarus"
+portrait = "happy"
+local = "I knew that I could count on your help, [Ari]."
+next = "68"
+
+[caldarus_eight_hearts.68]
+speaker = "caldarus"
+portrait = "smile"
+local = "I am reminded once more that I made the right decision..."
+next = "69"
+
+[caldarus_eight_hearts.69]
+speaker = "caldarus"
+portrait = "laugh"
+local = "Choosing you as my Dragonsworn-"
+next = "70"
+
+[caldarus_eight_hearts.70]
+speaker = "caldarus"
+portrait = "happy"
+local = "And as my dearest friend."
+next = "71"
+
+[caldarus_eight_hearts.71]
+speaker = "caldarus"
+portrait = "smile"
+local = "Now, shall we head back inside?"
+next = "72"
+
+[caldarus_eight_hearts.72]
+speaker = "caldarus"
+portrait = "happy"
+local = "All this fresh air has reminded me-"
+next = "73"
+
+[caldarus_eight_hearts.73]
+speaker = "caldarus"
+portrait = "laugh"
+local = "It is about time I prepared some tea and dessert."
+
+[caldarus_eight_hearts.74]
+actions = [{ update_status = { npc = "caldarus", status = "dating" } }]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "Romantic feelings...?"
+next = "75"
+
+[caldarus_eight_hearts.75]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "Yes... I believe that you are correct. It feels different, in this form."
+next = "76"
+
+[caldarus_eight_hearts.76]
+speaker = "caldarus"
+portrait = "unsure_special"
+local = "I suppose that is why my heart beats faster when you are near."
+next = "77"
+
+[caldarus_eight_hearts.77]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "And a heat in my chest seems to rise, like a breath of flame."
+next = "78"
+
+[caldarus_eight_hearts.78]
+speaker = "caldarus"
+portrait = "unsure_special"
+local = "To know that you feel the same way... it must be destiny."
+next = "79"
+
+[caldarus_eight_hearts.79]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "Not only that you would become my Dragonsworn-"
+next = "80"
+
+[caldarus_eight_hearts.80]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "But also my mate."
+next = "81"
+
+[caldarus_eight_hearts.81]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "What a delightful sensation... the softness of your lips on mine."
+next = "82"
+
+[caldarus_eight_hearts.82]
+speaker = "caldarus"
+portrait = "think_special"
+local = "I should like to repeat it. Many times."
+next = "83"
+
+[caldarus_eight_hearts.83]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "For now, shall we head back inside? It is about time I prepared some tea... and dessert, of course."

@@ -1,0 +1,341 @@
+[engagement_ring_eiland]
+kind = "gameplay_triggered"
+actions = [
+	{ bark = { bark = "cute_face", npc = "eiland" } },
+	{ cutscene = "eiland_ten_hearts" }
+]
+speaker = "eiland"
+portrait = "neutral"
+local = "Ah, [Ari]!"
+next = "1"
+
+[engagement_ring_eiland.1]
+speaker = "eiland"
+portrait = "think"
+local = "There's something on your mind?"
+next = "2"
+
+[engagement_ring_eiland.2]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "Well why don't we take a stroll and talk about it?"
+
+# 10 h scene
+[eiland_ten_hearts]
+kind = "gameplay_triggered"
+speaker = "eiland"
+portrait = "neutral"
+local = "Back where it all started..."
+next = "1"
+
+[eiland_ten_hearts.1]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "Funny that our steps naturally took us here, isn't it?"
+next = "2"
+
+[eiland_ten_hearts.2]
+speaker = "eiland"
+portrait = "think"
+local = "Thinking about our first discovery together..."
+next = "3"
+
+[eiland_ten_hearts.3]
+speaker = "eiland"
+portrait = "neutral"
+local = "More than anything, I was so happy to find someone taking an interest in Mistria's history."
+next = "4"
+
+[eiland_ten_hearts.4]
+speaker = "eiland"
+portrait = "happy"
+local = "And then finding a piece of the $Dragonsworn Armor$! I was so thrilled I just... dashed off."
+next = "5"
+
+[eiland_ten_hearts.5]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "Looking back... I am sorry about that. I'm sure by now you know I sometimes get... over enthusiastic."
+prompts = [
+	{ local = "Your enthusiasm is one of my favorite things about you.", next = "6" },
+	{ local = "I'd forgotten about that! Well, you're forgiven.", next = "8" }
+]
+
+[eiland_ten_hearts.6]
+speaker = "eiland"
+portrait = "happy_blush"
+effect = "surprise"
+local = "Oh!"
+next = "7"
+
+[eiland_ten_hearts.7]
+speaker = "eiland"
+portrait = "hope_special"
+local = "Hearing you say that makes me even more grateful that we found each other."
+next = "10"
+
+[eiland_ten_hearts.8]
+speaker = "eiland"
+portrait = "happy_blush"
+effect = "surprise"
+local = "Oh!"
+next = "9"
+
+[eiland_ten_hearts.9]
+speaker = "eiland"
+portrait = "hope_special"
+local = "Well, that's a weight off my mind anyway."
+next = "10"
+
+[eiland_ten_hearts.10]
+speaker = "eiland"
+portrait = "neutral_closed"
+local = "..."
+next = "11"
+
+[eiland_ten_hearts.11]
+speaker = "eiland"
+portrait = "think"
+local = "I've always been struck by how the creators of these steles viewed them as a form of communication."
+next = "12"
+
+[eiland_ten_hearts.12]
+speaker = "eiland"
+portrait = "neutral"
+local = "A great big stone monument, with iconography meant to pass on important information..."
+next = "13"
+
+[eiland_ten_hearts.13]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "Yet the messages they were designed to pass on remained out of our reach for so long!"
+next = "14"
+
+[eiland_ten_hearts.14]
+speaker = "eiland"
+portrait = "neutral"
+local = "In archaeology, there is so much that only becomes evident after you've assembled the whole picture."
+next = "15"
+
+[eiland_ten_hearts.15]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "Now that I think of it... Perhaps life is like that, too."
+next = "16"
+
+[eiland_ten_hearts.16]
+speaker = "eiland"
+portrait = "hope_special"
+local = "I was so lost in the hunt for the $Dragonsworn Armor$, that I didn't initially see the treasure right in front of me."
+next = "17"
+
+[eiland_ten_hearts.17]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "I'm referring to you, [Ari]."
+prompts = [
+	{ local = "I treasure you as well, Eiland.", next = "18" },
+	{ local = "Well, as long as you promise to treasure me from now on...!", next = "19" }
+]
+
+[eiland_ten_hearts.18]
+speaker = "eiland"
+portrait = "hope_special"
+local = "[Ari]..."
+next = [
+    { target = "20_second", requires = [
+        { cutscene_seen_eiland_ten_hearts = true }
+    ] },
+    { target = "20_first", requires = [] }
+]
+
+[eiland_ten_hearts.19]
+speaker = "eiland"
+portrait = "hope_special"
+local = "That's a promise I'm happy to make."
+next = [
+    { target = "20_second", requires = [
+        { cutscene_seen_eiland_ten_hearts = true }
+    ] },
+    { target = "20_first", requires = [] }
+]
+
+[eiland_ten_hearts.20_second]
+speaker = "eiland"
+portrait = "neutral"
+local = "I suppose that's why..."
+next = "21_second"
+
+[eiland_ten_hearts.21_second]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "I had the $Legacy Stele$ commissioned for you."
+next = "22_second"
+
+[eiland_ten_hearts.22_second]
+speaker = "eiland"
+portrait = "hope_special"
+local = "I wanted to commemorate our adventures in a way that was more permanent than a record in a book."
+next = "23_second"
+
+[eiland_ten_hearts.23_second]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "I hope you didn't think it was too forward of me."
+next = "24_second"
+
+[eiland_ten_hearts.24_second]
+speaker = "eiland"
+portrait = "bashful"
+local = "I know it was a bit over the top!"
+next = "25"
+
+[eiland_ten_hearts.20_first]
+speaker = "eiland"
+portrait = "neutral"
+local = "Actually, that reminds me..."
+next = "21_first"
+
+[eiland_ten_hearts.21_first]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "Well, I hope you won't think this too forward of me."
+next = "22_first"
+
+[eiland_ten_hearts.22_first]
+speaker = "eiland"
+portrait = "hope_special"
+local = "But I wanted to commemorate our adventures together in a way that was more permanent than a record in a book."
+next = "23_first"
+
+[eiland_ten_hearts.23_first]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "So I had this $Legacy Stele$ commissioned."
+next = "24_first"
+
+[eiland_ten_hearts.24_first]
+speaker = "eiland"
+portrait = "bashful"
+local = "I know it's a bit over the top!"
+next = "25"
+
+[eiland_ten_hearts.25]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "But when I think about us... well..."
+next = "26"
+
+[eiland_ten_hearts.26]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "I don't feel shy in saying that I want our story to last forever."
+next = "27"
+
+[eiland_ten_hearts.27]
+speaker = "eiland"
+portrait = "hope_special"
+local = "[Ari]... there's something I want to ask you."
+next = "28"
+
+[eiland_ten_hearts.28]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "But before that, there was something you wanted to talk to me about, wasn't there?"
+next = "29"
+
+[eiland_ten_hearts.29]
+speaker = "eiland"
+portrait = "hope_special"
+local = "Sorry for going on and on. I'll save my question for... for us to discuss another time."
+prompts = [
+	{ local = "There's no need for us to wait.", next = "30" },
+	{ local = "Let's talk about it another time...", next = "41" }
+]
+
+[eiland_ten_hearts.30]
+speaker = "eiland"
+portrait = "surprised"
+effect = "shock"
+local = "[Ari]..."
+next = "31"
+
+[eiland_ten_hearts.31]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "Do you mean to say that you also...?"
+prompts = [
+	{ local = "I love you, Eiland. Will you marry me?", next = "32" },
+	{ local = "Actually, let's talk about it more another day.", next = "41" }
+]
+
+[eiland_ten_hearts.32]
+speaker = "eiland"
+writes = [
+	{ breakup_bump = true, expires = "3d" },
+	{ engagement_bump = true, expires = "2d" },
+	{ engagement_delay = true, expires = "20h" },
+	{ engagement_cap = false, expires = "3d" }
+]
+actions = [{ can_talk = "eiland" }]
+portrait = "surprised"
+local = "[Ari]!"
+next = "33"
+
+[eiland_ten_hearts.33]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "Oh, [Ari]..."
+next = "34"
+
+[eiland_ten_hearts.34]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "It is the greatest honor of my life to say... yes!"
+next = "35"
+
+[eiland_ten_hearts.35]
+speaker = "eiland"
+portrait = "hope_special"
+local = "I want nothing more than to spend the rest of my days by your side."
+next = "36"
+
+[eiland_ten_hearts.36]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "This feeling..."
+next = "37"
+
+[eiland_ten_hearts.37]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "It's indescribable. I've never felt so happy!"
+next = "38"
+
+[eiland_ten_hearts.38]
+speaker = "eiland"
+portrait = "hope_special"
+local = "I love you, [Ari]."
+next = "39"
+
+[eiland_ten_hearts.39]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "I can't believe we both hoped to propose today. What are the chances?"
+next = "40"
+
+[eiland_ten_hearts.40]
+speaker = "eiland"
+portrait = "hope_special"
+local = "There's no doubt about it... This is fate, [Ari]. We were always destined to share a shining future together."
+
+[eiland_ten_hearts.41]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "Oh! Of course, [Ari]."
+next = "42"
+
+[eiland_ten_hearts.42]
+speaker = "eiland"
+portrait = "happy"
+local = "Just let me know when you want to talk again, this was a lovely walk."

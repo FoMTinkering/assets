@@ -1,0 +1,48 @@
+[harvest_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "reina" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" }
+]
+portrait = "neutral"
+local = "Have you tried the food yet, [Ari]?"
+next = "1"
+
+[harvest_festival_0.1]
+portrait = "happy"
+local = "I used to dream about running the Harvest Festival kitchen when I was kid."
+next = "2"
+
+[harvest_festival_0.2]
+portrait = "blush_open_eyes"
+local = "It makes me so happy to see everyone enjoying my cooking."
+
+[harvest_festival_place_follow_up]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "reina" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ any = [
+		{ hf_third_place = true },
+		{ hf_second_place = true },
+		{ hf_first_place = true },
+	] },
+	{ },
+	{ }
+]
+portrait = "happy"
+local = "Congrats, [Ari]!"
+next = "1"
+
+[harvest_festival_place_follow_up.1]
+portrait = "neutral"
+local = "I can't thank you enough for picking so many berries!"
+next = "2"
+
+[harvest_festival_place_follow_up.2]
+portrait = "happy"
+local = "You made my time in the kitchen a lot more fun."

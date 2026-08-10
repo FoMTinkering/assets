@@ -1,0 +1,29 @@
+[quiet_time]
+priority = "max"
+refresh = "never"
+actions = [
+	{ bark = { bark = "ellipses", npc = "ryis" } }
+]
+requires = [
+	{ npc = "ryis" },
+	{ date_time = "7d", comparator = ">" },
+	{ location = "landens_house_f1" },
+	{ ryis_heart_level = 4, comparator = "<" }
+]
+portrait = "neutral"
+local = "Hey, [Ari]. Thanks for stopping by."
+next = "1"
+
+[quiet_time.1]
+portrait = "think"
+local = "Gets a little quiet out here sometimes."
+next = "2"
+
+[quiet_time.2]
+portrait = "neutral"
+local = "It's nice in its own way, good for focusing."
+next = "3"
+
+[quiet_time.3]
+portrait = "sincere_special"
+local = "But sometimes I miss the bustling sounds of my family's bakery back in the Capital."

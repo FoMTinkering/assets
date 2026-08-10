@@ -1,0 +1,222 @@
+[shooting_star_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ march_heart_level = 8, comparator = "<" },
+]
+portrait = "neutral"
+local = "The Shooting Star Festival...?"
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "think"
+local = "Yeah, it's coming up soon. What about it?"
+
+[shooting_star_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ march_is_at = "town/star_festival_march" },
+	{ march_heart_level = 8, comparator = "<" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "march_invited" },
+]
+portrait = "unimpressed"
+local = "Hey..."
+next = "1"
+
+[shooting_star_invited.1]
+portrait = "think"
+local = "Are you ready to go?"
+
+[shooting_star_invited_romance]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 8, comparator = ">=" },
+	{ march_is_at = "town/star_festival_march" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "march_invited" },
+]
+portrait = "eight_heart_happy"
+local = "Hey..."
+next = "1"
+
+[shooting_star_invited_romance.1]
+portrait = "drunk"
+local = "Are you ready to go?"
+
+[shooting_star_invited_anticipation]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ shooting_star_date_status = "march_invited" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ march_is_at = "town/star_festival_march", comparator = "!=" },
+	{ march_is_partner = false }
+]
+portrait = "neutral"
+local = "I'll see you at 8 pm..."
+next = "1"
+
+[shooting_star_invited_anticipation.1]
+portrait = "unimpressed"
+local = "Don't be late."
+
+[shooting_star_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ shooting_star_date_status = "march_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ march_is_partner = false },
+]
+portrait = "think"
+local = "Hey [Ari]."
+next = "1"
+
+[shooting_star_follow_up.1]
+portrait = "neutral"
+local = "I've been told I should thank you for inviting me out yesterday so... uh..."
+next = "2"
+
+[shooting_star_follow_up.2]
+portrait = "embarrassed"
+local = "Thanks."
+next = "3"
+
+[shooting_star_follow_up.3]
+portrait = "tsundere"
+local = "Now don't let it go to your head."
+
+[shooting_star_8h_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ shooting_star_date_status = "march_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ march_is_partner = true },
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "eight_heart_happy_blush"
+local = "I had fun last night, [Ari]."
+next = "1"
+
+[shooting_star_8h_follow_up.1]
+portrait = "drunk"
+local = "I'm already looking forward to next year."
+
+[shooting_star_missed_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ shooting_star_date_status = "march_invited" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ march_is_partner = false },
+]
+portrait = "mad"
+local = "[Ari]..."
+next = "1"
+
+[shooting_star_missed_follow_up.1]
+portrait = "unimpressed"
+local = "I don't know why I'm surprised you didn't show last night."
+next = "2"
+
+[shooting_star_missed_follow_up.2]
+portrait = "ugh"
+local = "I should have expected that..."
+
+[shooting_star_missed_8h_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ shooting_star_date_status = "march_invited" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ march_is_partner = true },
+]
+portrait = "sad_special"
+local = "[Ari]... What happened last night?"
+next = "1"
+
+[shooting_star_missed_8h_follow_up.1]
+portrait = "embarrassed"
+local = "Did I do something to make you mad...?"
+
+[shooting_star_follow_up_not_invited]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ shooting_star_date_status = "march_invited", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "march_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "unimpressed"
+local = "You look exhausted. Stay up too late?"
+
+# NEW ROMANCE LINE FOLLOW UPS
+
+[shooting_star_romantic_follow_up_A]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ shooting_star_date_status = "march_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+	{ march_is_partner = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "sweat_drop", npc = "march" } },
+]
+portrait = "think"
+local = "[Ari]... Hey."
+next = "1"
+
+[shooting_star_romantic_follow_up_A.1]
+portrait = "neutral"
+local = "We got some extra material in Balor's latest supply run."
+next = "2"
+
+[shooting_star_romantic_follow_up_A.2]
+portrait = "tsundere"
+actions = [{ item = "iron_ingot" }]
+local = "H-here... just take it..."
+
+
+[shooting_star_romantic_follow_up_B]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ shooting_star_date_status = "march_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+	{ march_is_partner = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "blush", npc = "march" } },
+]
+portrait = "think"
+local = "Huh, something seems different about you today..."
+next = "1"
+
+[shooting_star_romantic_follow_up_B.1]
+portrait = "tsundere"
+local = "I mean... no, forget it."

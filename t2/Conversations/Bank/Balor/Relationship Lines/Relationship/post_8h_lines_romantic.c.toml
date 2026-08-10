@@ -1,0 +1,522 @@
+[balor_post_8h_romantic_0]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_dating = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_grouping = 0 },
+	{ balor_post_8h_romantic_progression = false }
+]
+writes = [
+	{ balor_post_8h_romantic_gate = true, expires = "20h" },
+	{ balor_post_8h_romantic_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "think"
+local = "Leaving for a supply run feels different when you've got someone-"
+next = "1"
+
+[balor_post_8h_romantic_0.1]
+portrait = "embarrassed"
+local = "Someone that you're looking forward to coming back to."
+
+[balor_post_8h_romantic_question_0]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_dating = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_grouping = 1 },
+	{ balor_post_8h_romantic_progression = false }
+]
+writes = [
+	{ balor_post_8h_romantic_gate = true, expires = "20h" },
+	{ balor_post_8h_romantic_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "think"
+local = "I've been wondering, [Ari]..."
+next = "1"
+
+[balor_post_8h_romantic_question_0.1]
+portrait = "concerned"
+local = "Those things Wheedle said, about my past... they don't bother you, do they?"
+prompts = [
+	{ local = "Not at all! But I am curious.", next = "2" },
+	{ local = "I believe in you! You can tell me when you're ready.", next = "6" }
+]
+
+[balor_post_8h_romantic_question_0.2]
+portrait = "sigh"
+local = "There was a bit of theft, a bit of espionage..."
+next = "3"
+
+[balor_post_8h_romantic_question_0.3]
+portrait = "think"
+local = "I thought I was maintaining some kind of moral code at first, but the deeper you get, the grayer it all becomes."
+next = "4"
+
+[balor_post_8h_romantic_question_0.4]
+portrait = "neutral"
+local = "I'm happy to have left that world behind."
+next = "5"
+
+[balor_post_8h_romantic_question_0.5]
+portrait = "blush"
+local = "I'm happier still that I'm here now, with you."
+
+[balor_post_8h_romantic_question_0.6]
+portrait = "blush"
+local = "Thank you, [Ari]. One of these days, I'll sit you down and tell you all about it."
+next = "7"
+
+[balor_post_8h_romantic_question_0.7]
+portrait = "embarrassed"
+local = "And maybe you can tell me all about your past, too."
+
+[balor_post_8h_romantic_1]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_dating = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_grouping = 2 },
+	{ balor_post_8h_romantic_progression = false }
+]
+writes = [
+	{ balor_post_8h_romantic_gate = true, expires = "20h" },
+	{ balor_post_8h_romantic_grouping = 3 }
+]
+actions = [{ bark = { bark = "blush", npc = "balor" } }]
+portrait = "concerned"
+local = "For all that my line of work requires a level of skill in the art of flattery..."
+next = "1"
+
+[balor_post_8h_romantic_1.1]
+portrait = "think"
+local = "I find myself lost for words when it comes to you."
+next = "2"
+
+[balor_post_8h_romantic_1.2]
+portrait = "angry_blush"
+local = "I want you to know how I really feel, but it's not always easy to say it."
+next = "3"
+
+[balor_post_8h_romantic_1.3]
+portrait = "blush_special"
+local = "All that to say... ah..."
+next = "4"
+
+[balor_post_8h_romantic_1.4]
+portrait = "embarrassed"
+local = "You look... really nice today, [Ari]."
+
+[balor_post_8h_romantic_question_1]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_dating = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_grouping = 3 },
+	{ balor_post_8h_romantic_progression = false }
+]
+writes = [
+	{ balor_post_8h_romantic_gate = true, expires = "2d" },
+	{ balor_post_8h_romantic_grouping = 4 }
+]
+actions = [{ bark = { bark = "blush", npc = "balor" } }]
+portrait = "think"
+local = "I've been trying to make my room at the Inn feel more welcoming... the kind of place you'd want to visit."
+next = "1"
+
+[balor_post_8h_romantic_question_1.1]
+portrait = "neutral"
+local = "How do you go about making a place feel like a home?"
+prompts = [
+	{ local = "Add some touches that reflect your interests!", next = "2" },
+	{ local = "Add something that makes you feel happy!", next = "5" }
+]
+
+[balor_post_8h_romantic_question_1.2]
+portrait = "think"
+local = "Perhaps a wine rack? A gemstone case?"
+next = "3"
+
+[balor_post_8h_romantic_question_1.3]
+portrait = "ugh"
+local = "Hmmm... I'm not sure."
+next = "4"
+
+[balor_post_8h_romantic_question_1.4]
+portrait = "embarrassed"
+local = "Maybe you can come over some time and help me decide?"
+
+[balor_post_8h_romantic_question_1.5]
+portrait = "think"
+local = "Something that makes me feel happy...?"
+next = "6"
+
+[balor_post_8h_romantic_question_1.6]
+portrait = "embarrassed"
+local = "Well in that case... Maybe you can come over some time?"
+
+[balor_post_8h_romantic_2]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_partner = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_progression = false },
+	{ balor_post_8h_romantic_grouping = 4 }
+]
+writes = [{ balor_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "think"
+local = "I know you're the only one who can go down into the Mines and ferry up its treasures..."
+next = "1"
+
+[balor_post_8h_romantic_2.1]
+portrait = "concerned"
+local = "But be safe, okay?"
+next = "2"
+
+[balor_post_8h_romantic_2.2]
+portrait = "angry_blush"
+local = "You're more precious than any jewel."
+
+[balor_post_8h_romantic_3]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_dating = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_progression = false },
+	{ balor_post_8h_romantic_grouping = 4 }
+]
+writes = [{ balor_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "concerned"
+local = "It's funny... Seeing a beautiful =Diamond= or =Ruby= always manages to make my heart skip a beat."
+next = "1"
+
+[balor_post_8h_romantic_3.1]
+portrait = "embarrassed"
+local = "This is the first time a person's managed it."
+
+[balor_post_8h_romantic_4]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_dating = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_progression = false },
+	{ balor_post_8h_romantic_grouping = 4 }
+]
+writes = [{ balor_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "balor" } }]
+portrait = "think"
+local = "You know, I try to be as quiet as possible when I'm clearing out your shipping bin overnight..."
+next = "1"
+
+[balor_post_8h_romantic_4.1]
+portrait = "embarrassed"
+local = "But I'm always tempted to knock and say hello."
+
+# Last Line
+[balor_post_8h_romantic_5]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_dating = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_grouping = 4 }
+]
+writes = [
+	{ balor_post_8h_romantic_gate = true, expires = "2d" },
+	{ balor_post_8h_best_friend_gate = true, expires = "2d" },
+	{ balor_post_8h_romantic_progression = true }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "think"
+local = "You know, that first day, when I saw you across the collapsed bridge..."
+next = "1"
+
+[balor_post_8h_romantic_5.1]
+portrait = "neutral"
+local = "I asked myself if it was the start of something special, and then I flipped a coin."
+next = "2"
+
+[balor_post_8h_romantic_5.2]
+portrait = "embarrassed"
+local = "I just wanted you to know... I keep that coin in a safe place."
+
+[balor_post_8h_romantic_6]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_dating = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_progression = false },
+	{ balor_post_8h_romantic_grouping = 4 }
+]
+writes = [{ balor_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "balor" } }]
+portrait = "think"
+local = "Hemlock has a real knack for relationship advice."
+next = "1"
+
+[balor_post_8h_romantic_6.1]
+portrait = "embarrassed"
+local = "Not that I need advice."
+next = "2"
+
+[balor_post_8h_romantic_6.2]
+portrait = "angry_blush"
+local = "Not that I was asking!"
+
+[balor_post_8h_romantic_7]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_dating = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ any = [
+		{ balor_post_8h_romantic_progression = false },
+		{ balor_post_8h_best_friend_grouping = 0 },
+		{ balor_post_8h_best_friend_grouping = 4 }
+	] },
+	{ balor_post_8h_romantic_grouping = 4 },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+]
+writes = [{ balor_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "I know the work is never done, but I hope you're taking time to sit back and enjoy the little things."
+next = "1"
+
+[balor_post_8h_romantic_7.1]
+portrait = "think"
+local = "It takes practice..."
+next = "2"
+
+[balor_post_8h_romantic_7.2]
+portrait = "embarrassed"
+local = "We can practice right now, if you want."
+
+[balor_post_8h_romantic_8]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_dating = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_progression = false },
+	{ balor_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ balor_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "balor" } }]
+portrait = "embarrassed"
+local = "It's hard leaving for the city when you're here with me..."
+next = "1"
+
+[balor_post_8h_romantic_8.1]
+portrait = "angry_blush"
+local = "Don't worry... I'll be home before you know it!"
+
+[balor_post_8h_romantic_9]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_partner = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_progression = false },
+	{ balor_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ balor_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "balor" } }]
+portrait = "think"
+local = "The Capital always felt cold to me, but Mistria is... warm."
+next = "1"
+
+[balor_post_8h_romantic_9.1]
+portrait = "embarrassed"
+local = "Warmer, these days."
+
+[balor_post_8h_romantic_10]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_partner = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_progression = false },
+	{ balor_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ balor_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "You're the wind at my back, [Ari]."
+next = "1"
+
+[balor_post_8h_romantic_10.1]
+portrait = "embarrassed"
+local = "Gently pushing me towards better things."
+
+[balor_post_8h_romantic_11]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_partner = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_progression = false },
+	{ balor_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ balor_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "balor" } }]
+portrait = "neutral"
+local = "Business is easier when you have a partner..."
+next = "1"
+
+[balor_post_8h_romantic_11.1]
+portrait = "embarrassed"
+local = "Life is too, I suppose."
+
+[balor_post_8h_romantic_12]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_dating = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_progression = false },
+	{ balor_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ balor_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "balor" } }]
+portrait = "neutral"
+local = "I recently got my first houseplant."
+next = "1"
+
+[balor_post_8h_romantic_12.1]
+portrait = "think"
+local = "Never thought I'd stay somewhere long enough to keep one alive."
+next = "2"
+
+[balor_post_8h_romantic_12.2]
+portrait = "neutral"
+local = "It feels good to feel like I'm becoming the kind of person that someone-"
+next = "3"
+
+[balor_post_8h_romantic_12.3]
+portrait = "embarrassed"
+local = "Er, that something can depend on."
+
+[balor_post_8h_romantic_question_2]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_dating = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_progression = false },
+	{ balor_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ balor_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "balor" } }]
+portrait = "think"
+local = "It's a strange feeling... really opening up to another person."
+next = "1"
+
+[balor_post_8h_romantic_question_2.1]
+portrait = "concerned"
+local = "For so much of my life, it felt safer to keep others at arm's length."
+next = "2"
+
+[balor_post_8h_romantic_question_2.2]
+portrait = "embarrassed"
+local = "Sometimes I feel out of sorts if I'm not putting on my merchant's charm."
+next = "3"
+
+[balor_post_8h_romantic_question_2.3]
+portrait = "blush_special"
+local = "I hope you'll forgive me if it still slips through now and then."
+prompts = [
+	{ local = "I don't mind, I think it's cute!", next = "4" },
+	{ local = "I'm enjoying this new side of you!", next = "7" }
+]
+
+[balor_post_8h_romantic_question_2.4]
+portrait = "embarrassed"
+local = "Oh! Y-you do?"
+next = "5"
+
+[balor_post_8h_romantic_question_2.5]
+portrait = "blush"
+local = "Thank you, [Ari]."
+next = "6"
+
+[balor_post_8h_romantic_question_2.6]
+portrait = "embarrassed"
+local = "I'm glad you feel that way."
+
+[balor_post_8h_romantic_question_2.7]
+portrait = "blush_special"
+local = "It's hard work sometimes, I won't lie."
+next = "8"
+
+[balor_post_8h_romantic_question_2.8]
+portrait = "embarrassed"
+local = "But, well... I suppose neither of us are strangers to hard work."
+
+[balor_post_8h_romantic_question_3]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_dating = true },
+	{ balor_post_8h_romantic_gate = false },
+	{ balor_post_8h_romantic_progression = false },
+	{ balor_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ balor_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "balor" } }]
+portrait = "neutral"
+local = "You know, Hemlock's started teasing me a bit lately."
+next = "1"
+
+[balor_post_8h_romantic_question_3.1]
+portrait = "happy"
+effect = "drop"
+local = "This morning he asked if I'd ever consider becoming a farmer!"
+next = "2"
+
+[balor_post_8h_romantic_question_3.2]
+portrait = "wink"
+local = "What do you think, [Ari]? Do I have what it takes?"
+prompts = [
+	{ local = "Do you want to be a farmer?", next = "3" },
+	{ local = "You're better off dating a farmer than becoming one yourself.", next = "7" }
+]
+
+[balor_post_8h_romantic_question_3.3]
+portrait = "think"
+local = "Oh, I don't know..."
+next = "4"
+
+[balor_post_8h_romantic_question_3.4]
+portrait = "blush"
+local = "Toiling side by side, sweating and laughing under the hot sun..."
+next = "5"
+
+[balor_post_8h_romantic_question_3.5]
+portrait = "embarrassed"
+local = "There is something romantic about the idea."
+next = "6"
+
+[balor_post_8h_romantic_question_3.6]
+portrait = "angry_blush"
+local = "Just, um... don't tell Hemlock I said that, okay?"
+
+[balor_post_8h_romantic_question_3.7]
+portrait = "blush"
+local = "Hmmm... you don't say."
+next = "8"
+
+[balor_post_8h_romantic_question_3.8]
+portrait = "embarrassed"
+local = "Yeah, I guess that does sound more my speed."

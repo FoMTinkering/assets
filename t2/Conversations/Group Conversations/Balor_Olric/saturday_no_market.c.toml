@@ -1,0 +1,22 @@
+[saturday_no_market]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "olric" }] },
+	{ balor_zone = "<olric_zone>" },
+	{ quest_repair_the_bridge_complete = false },
+	{ quest_repair_the_bridge_in_progress = true },
+]
+speaker = "balor"
+portrait = "think"
+local = "I came out to Mistria for the Saturday Market, among other reasons. I sure hope Adeline and Nora can get it sorted out."
+next = "1"
+
+[saturday_no_market.1]
+speaker = "olric"
+local = "C'mon, Balor! Nothing stops those two when they set their mind to something."
+next = "2"
+
+[saturday_no_market.2]
+speaker = "olric"
+portrait = "happy"
+local = "And you're helping too, right [Ari]? The Market's totally coming back!"

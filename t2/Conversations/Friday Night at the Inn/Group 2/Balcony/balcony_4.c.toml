@@ -1,0 +1,115 @@
+[balcony_4_follow_up_hayden]
+refresh = "never"
+requires = [{ npc = "hayden" }, { balcony_fnati = 4 }, { balcony_hayden_again = true }]
+portrait = "neutral_arm_down"
+local = "Juniper asked if I wanted to become her assistant! I said no, of course, I'm too busy with the farm."
+next = "1"
+
+[balcony_4_follow_up_hayden.1]
+portrait = "think"
+local = "When I asked if she wanted to be MY assistant, she looked like she might faint! Well, I doubt she has the shoes for it anyway."
+
+[balcony_4_follow_up_celine]
+refresh = "never"
+requires = [{ npc = "celine" }, { balcony_fnati = 4 }, { balcony_celine = true }]
+portrait = "think"
+local = "Juniper asked if I wanted her old hand-me-downs. I told her thank you, but they're not really my style..."
+next = "1"
+
+[balcony_4_follow_up_celine.1]
+portrait = "sad"
+effect = "drop"
+local = "I think she agreed a little too quickly, though!"
+
+[balcony_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ juniper_zone = "inn/balcony_hang" },
+	{ terithia_zone = "inn/balcony_hang" },
+	{ any = [
+		{ npc = "juniper" },
+		{ npc = "terithia" },
+	] },
+	{ balcony_fnati = 3 },
+]
+writes = [{ fnati = 2 }, { balcony_fnati = 4 }]
+speaker = "juniper"
+local = "My, look at all those people down there. We've got a full house. I wonder which of them would make the best sorcerer?"
+next = "1"
+
+[balcony_4.1]
+speaker = "terithia"
+local = "Sorcerers? That's a fairy tale, Juniper."
+next = "2"
+
+[balcony_4.2]
+speaker = "juniper"
+local = "Of course, of course. But Terithia, we proposed starting a pirate crew last week! Work with me here."
+next = "3"
+
+[balcony_4.3]
+speaker = "terithia"
+local = "Fair enough. Let's see now, Eiland's read a lot of old books about the Witch Queens... but I'd say that's where his interest ends."
+next = "4"
+
+[balcony_4.4]
+speaker = "juniper"
+local = "March has a knack for creating things, but he's a bit rigid otherwise."
+next = "5"
+
+[balcony_4.5]
+speaker = "juniper"
+local = "Josephine does give me pause. She has a way of moving through the world."
+next = "6"
+
+[balcony_4.6]
+speaker = "terithia"
+local = "What about Valen?"
+next = "7"
+
+[balcony_4.7]
+speaker = "juniper"
+portrait = "annoyed"
+local = "I won't even dignify that with a response. [Ari], speak up! Your thoughts are wanted. And no picking yourself!"
+prompts = [
+	{ local = "Hayden! Henrietta is like his familiar!", next = "8" },
+	{ local = "Celine! The way her flowers bloom is magical!", next = "11" },
+]
+
+[balcony_4.8]
+writes = [{ balcony_hayden_again = true }]
+speaker = "juniper"
+portrait = "think"
+local = "Interesting. And I do see it. He has a strong connection to his animals, and a connection to the land as well."
+next = "9"
+
+[balcony_4.9]
+speaker = "juniper"
+portrait = "sly"
+local = "But I frankly don't think he could pull off the wardrobe."
+next = "10"
+
+[balcony_4.10]
+speaker = "terithia"
+portrait = "wink"
+local = "Hmm. Bet he could."
+
+[balcony_4.11]
+writes = [{ balcony_celine = true }]
+speaker = "juniper"
+portrait = "think"
+local = "I can see it. She has a curious mind, and an eye for herbs, which are two of the basic tenets of potion-making."
+next = "12"
+
+[balcony_4.12]
+speaker = "juniper"
+portrait = "sly"
+local = "But I frankly don't think she could pull off the wardrobe."
+next = "13"
+
+[balcony_4.13]
+speaker = "terithia"
+portrait = "wink"
+local = "Hmm. Bet she could."

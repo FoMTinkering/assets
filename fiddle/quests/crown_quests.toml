@@ -1,0 +1,281 @@
+[crown_request_crops]
+	name = "Crown Request: Crops"
+	description = """Not every place in Aldaria is as bountiful as Mistria, and fresh crops would go a long way to help out areas that are still struggling to recover after the earthquake."""
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_crops.stages]]
+		objective_description = "Ship 30 crops of any kind, then talk to Adeline."
+		requirements = { shipped_tag = { crop = 30 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_crops_turn_in" },
+		]
+
+
+[crown_request_tables_and_chairs]
+	name = "Crown Request: Tables and Chairs"
+	description = """The Capital is constructing a brand new orphanage, but has run into issues with not having enough woodworkers available.
+
+Help supply new furniture so the children can be moved into their new home as quickly as possible."""
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_tables_and_chairs.stages]]
+		objective_description = "Ship 6 Dining Tables and 12 Dining Chairs of any kind, then talk to Adeline."
+		requirements = { shipped_tag = [{ dining_table = 6 }, { dining_chair = 12 }] }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_tables_and_chairs_turn_in" },
+		]
+
+[crown_request_mine_forageables]
+	name = "Crown Request: Mine Forageables"
+	description = "The Royal Physician is requesting rare and unusual underground materials to see if any would be useful to his work."
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_mine_forageables.stages]]
+		objective_description = "Ship 30 forageables from the Mines, then talk to Adeline."
+		requirements = { shipped_tag = { mines_forageable = 30 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_mine_forageables_turn_in" },
+		]
+
+[crown_request_fish]
+	name = "Crown Request: Fish"
+	description = "Bad weather up the coast has kept fishing boats from sailing out. Shipments of fish would go a long way to help until the storms clear up."
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_fish.stages]]
+		objective_description = "Ship 40 fish of any kind, then talk to Adeline."
+		requirements = { shipped_tag = { fishy = 40 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_fish_turn_in" },
+		]
+
+[crown_request_berries]
+	name = "Crown Request: Berries"
+	description = """The Capital Market has put out a request for fresh berries. They're always in high demand!
+
+I know it doesn't seem like much, but shipping out some berries would be a big help."""
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_berries.stages]]
+		objective_description = "Ship 30 berries of any kind, then talk to Adeline."
+		requirements = { shipped_tag = { berry = 30 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_berries_turn_in" },
+		]
+
+[crown_request_ingots]
+	name = "Crown Request: Ingots"
+	description = """Quality metal ingots are vital for work all over Aldaria, but supply simply hasn't kept up with demand.
+
+Shipping ingots would help projects that have stalled out."""
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_ingots.stages]]
+		objective_description = "Ship 10 Iron Ingots and 5 Silver Ingots, then talk to Adeline."
+		requirements = { shipped_item = [{ iron_ingot = 10 }, { silver_ingot = 5 }] }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_ingots_turn_in" },
+		]
+
+[crown_request_animal_materials]
+	name = "Crown Request: Animal Materials"
+	description = "The Crown has requested an additional supply of feathers and wool to help make bedding and blankets for those in need."
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_animal_materials.stages]]
+		objective_description = "Ship 10 feathers and 10 wool of any kind, then talk to Adeline."
+		requirements = { shipped_tag = [{ feather = 10 }, { wool = 10 }] }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_animal_materials_turn_in" },
+		]
+
+[crown_request_soup]
+	name = "Crown Request: Soup"
+	description = "The Capital's soup kitchen has requested regional soups to help replenish its larder."
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_soup.stages]]
+		objective_description = "Ship 15 soups of any kind, then talk to Adeline."
+		requirements = { shipped_tag = { soup = 15 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_soup_turn_in" },
+		]
+
+[crown_request_stone]
+	name = "Crown Request: Stone"
+	description = """An old stone retaining wall recently collapsed along a well traveled road in the northeast.
+
+The surveyors want to build it back even better, so as much stone as can be spared is requested."""
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_stone.stages]]
+		objective_description = "Ship 250 stone, then talk to Adeline."
+		requirements = { shipped_item = { ore_stone = 250 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_stone_turn_in" },
+		]
+
+[crown_request_archaeology_shards]
+	name = "Crown Request: Archaeology Shards"
+	description = "The Capital Museum has requested local artifact shards from all around Aldaria as it conducts a research project."
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_archaeology_shards.stages]]
+		objective_description = "Ship 15 Shards and 5 Shard Masses, then talk to Adeline."
+		requirements = { shipped_item = [{ shards = 15 }, { shard_mass = 5 }] }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_arch_turn_in" },
+		]
+
+[crown_request_copper_tools]
+	name = "Crown Request: Copper Tools"
+	description = """An increase in the number of farms being established across rural Aldaria has meant that copper tools are in high demand.
+
+Shipping some out would help support these newer farms."""
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_copper_tools.stages]]
+		objective_description = "Ship any 5 Copper Tools, then talk to Adeline."
+		requirements = { shipped_tag = { copper_tool = 5 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_copper_turn_in" },
+		]
+
+
+[crown_request_golden_ingredients]
+	name = "Crown Request: Golden Ingredients"
+	description = """There's no better way to show foreign dignitaries that Aldaria is back on its feet than to give them a meal made with all Aldarian ingredients!
+
+But to do that, chefs in the Capital will need the very best."""
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_golden_ingredients.stages]]
+		objective_description = "Ship 5 Golden Cheese and 5 Golden Mayonnaise of any kind, then talk to Adeline."
+		requirements = { shipped_item = { golden_cheese = 5 }, shipped_tag = { golden_mayonnaise = 5}}
+
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_golden_turn_in" },
+		]
+
+[crown_request_baked_dishes]
+	name = "Crown Request: Baked Main Dishes"
+	description = "The Crown has put out a request for hearty main dishes to be shipped out to villages in the Western Mountains of Aldaria, to help offset a poor harvest in the region."
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_baked_dishes.stages]]
+		objective_description = "Ship 5 Baked Main Dishes of any kind, then talk to Adeline."
+		requirements = { shipped_tag = { baked_dish = 5 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_dishes_turn_in" },
+		]
+
+[crown_request_stone_paths]
+	name = "Crown Request: Stone Paths"
+	description = "Repairs and upgrades to the roads of Aldaria is an ongoing task. Additional paving materials would help to speed up the work!"
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_stone_paths.stages]]
+		objective_description = "Ship any 100 Stone Paths, then talk to Adeline."
+		requirements = { shipped_tag = { stone_path = 100 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_path_turn_in" },
+		]
+
+
+[crown_request_flowers]
+	name = "Crown Request: Flowers"
+	description = """Princess Delaphine has heard that there are no finer flowers in Aldaria than in Mistria!
+
+This is a special request to help supply the floral arrangements for her birthday celebration."""
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_flowers.stages]]
+		objective_description = "Ship any 30 Flowers, then talk to Adeline."
+		requirements = { shipped_tag = { flower = 30 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_flower_turn_in" },
+		]
+
+[crown_request_monster_materials]
+	name = "Crown Request: Monster Materials"
+	description = """Linsberry Island has been reporting the appearance of unusually aggressive wildlife that the Capital has no previous record of.
+
+They're issuing a call to see if anyone has physical examples of something similar in the kingdom."""
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_monster_materials.stages]]
+		objective_description = "Ship any 30 Monster Drops, then talk to Adeline."
+		requirements = { shipped_tag = { monster_part = 30 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_monster_turn_in" },
+		]
+
+		# update 2
+
+[crown_request_grass_starter]
+	name = "Crown Request: Grass Starters"
+	description = "Grass Starters are needed to help combat topsoil erosion along the edge of the badlands."
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_grass_starter.stages]]
+		objective_description = "Ship 10 Grass Starters, then report to Adeline."
+		requirements = { shipped_item = { small_grass_starter = 10 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_grass_starter_turn_in" },
+		]
+
+[crown_request_refined_stone]
+	name = "Crown Request: Refined Stone"
+	description = "Shipments of Refined Stone from Mistria would help to provide high quality materials for various building projects across the kingdom."
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_refined_stone.stages]]
+		objective_description = "Ship 20 Refined Stone, then report to Adeline."
+		requirements = { shipped_item = { refined_stone = 20 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_refined_stone_turn_in" },
+		]
+
+[crown_request_bell_berries]
+	name = "Crown Request: Bell Berries"
+	description = "The Crown believes it is important to assess the emerging specialities of its towns for export potential, and Bell Berries are one of Mistria's."
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_bell_berries.stages]]
+		objective_description = "Ship 20 Bell Berries, then report to Adeline."
+		requirements = { shipped_item = { bell_berry = 20 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_bell_berries_turn_in" },
+		]
+
+[crown_request_gold_ingots]
+	name = "Crown Request: Gold Ingots"
+	description = "The Crown is searching for new sources of gold within Aldaria."
+	npc_for_icon = "adeline"
+	rewards = [{ renown = 75 }, { item = "treasure_box_gold" }]
+
+	[[crown_request_gold_ingots.stages]]
+		objective_description = "Ship 10 Gold Ingots, then report to Adeline."
+		requirements = { shipped_item = { gold_ingot = 10 } }
+		queries = [
+			{ npc = "adeline", npc_conversation = "crown_request_gold_ingots_turn_in" },
+		]

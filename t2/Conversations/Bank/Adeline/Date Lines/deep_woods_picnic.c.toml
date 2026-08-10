@@ -1,0 +1,161 @@
+[deep_woods_picnic_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "adeline" },
+	{ date = "deep_woods_picnic" },
+	{ da_adeline_deep_woods_picnic = 0 },
+	{ adeline_is_spouse = false }
+]
+writes = [
+	{ da_adeline_deep_woods_picnic = 1 },
+	{ da_adeline_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "adeline"
+portrait = "happy"
+local = "Oooh you want to go on a picnic, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_accept_1.1]
+speaker = "adeline"
+portrait = "blush"
+local = "That sounds fun! I don't get out to the $Deep Woods$ too often!"
+
+[deep_woods_picnic_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "adeline" },
+	{ date = "deep_woods_picnic" },
+	{ da_adeline_deep_woods_picnic = 1 },
+	{ adeline_is_spouse = false }
+]
+writes = [
+	{ da_adeline_deep_woods_picnic = 2 },
+	{ da_adeline_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "adeline"
+portrait = "blush"
+local = "Seems like a nice day to go for a picnic, don't you think?"
+next = "1"
+
+[deep_woods_picnic_accept_2.1]
+speaker = "adeline"
+portrait = "hope_special"
+local = "And I had so much fun with you last time..."
+next = "2"
+
+[deep_woods_picnic_accept_2.2]
+speaker = "adeline"
+portrait = "happy"
+effect = "hearts"
+local = "Oooh you'll come with me? Yay!"
+
+[deep_woods_picnic_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "adeline" },
+	{ date = "deep_woods_picnic" },
+	{ adeline_has_child = false },
+	{ any = [
+		{ adeline_is_spouse = true },
+		{ da_adeline_deep_woods_picnic = 2, comparator = ">=" },
+	] }
+]
+writes = [
+	{ da_adeline_deep_woods_picnic = 3 },
+	{ da_adeline_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "adeline"
+portrait = "blush"
+local = "What do you think about going on a picnic, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_accept_3.1]
+speaker = "adeline"
+portrait = "happy"
+effect = "hearts"
+local = "Yay! Let's go!"
+
+[deep_woods_picnic_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ da_adeline_deep_woods_picnic = 1 },
+	{ da_adeline_deep_woods_picnic_follow_up_gate = true },
+	{ adeline_is_spouse = false }
+]
+writes = [{ da_adeline_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "blush"
+local = "That picnic was super relaxing, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_1.1]
+portrait = "hope_special"
+local = "It's like you knew just what I needed."
+next = "2"
+
+[deep_woods_picnic_follow_up_1.2]
+portrait = "happy"
+effect = "hearts"
+local = "Thank you for inviting me!"
+
+[deep_woods_picnic_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ da_adeline_deep_woods_picnic = 2 },
+	{ da_adeline_deep_woods_picnic_follow_up_gate = true },
+	{ adeline_is_spouse = false }
+]
+writes = [{ da_adeline_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy"
+local = "Wasn't that fun, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_follow_up_2.1]
+portrait = "embarrassed"
+local = "Thank you for indulging me, hehe."
+prompts = [
+	{ local = "Of course, Adeline. I love talking with you!", next = "2" },
+	{ local = "Of course, Adeline. I love relaxing with you!", next = "4" },
+]
+
+[deep_woods_picnic_follow_up_2.2]
+portrait = "happy"
+local = "Me too. It's so nice to have someone I can talk to about-"
+next = "3"
+
+[deep_woods_picnic_follow_up_2.3]
+portrait = "embarrassed"
+local = "Well, just about anything!"
+
+[deep_woods_picnic_follow_up_2.4]
+portrait = "happy"
+effect = "hearts"
+local = "Me too. A picnic is such a great way to unwind!"
+
+[deep_woods_picnic_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_has_child = false },
+	{ any = [
+		{ adeline_is_spouse = true },
+		{ da_adeline_deep_woods_picnic = 3 }
+	] },
+	{ da_adeline_deep_woods_picnic_follow_up_gate = true },
+]
+writes = [{ da_adeline_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "blush"
+local = "Ahhh, that's just what I needed."
+next = "1"
+
+[deep_woods_picnic_follow_up_3.1]
+portrait = "sly"
+effect = "hearts"
+local = "I'm looking forward to next time!"

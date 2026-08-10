@@ -1,0 +1,29 @@
+[shield]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "olric" }] },
+	{ eiland_zone = "<olric_zone>" },
+	{ museum_archaeology_count = 20, comparator = ">=" },
+	{ any = [
+		{ eiland_zone = "town/blacksmith_forge" },
+		{ eiland_zone = "town/forge_lesson" },
+		{ eiland_zone = "town/blacksmith_business" },
+		{ location = "blacksmith_store" }
+	] },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "olric"
+portrait = "neutral"
+local = "Oh, this is an interesting work order! It's a replica of a shield?"
+next = "1"
+
+[shield.1]
+speaker = "eiland"
+portrait = "neutral"
+local = "That's right! I've included my notes, but March can come by the Museum any time to take a look at the fragments we've turned up."
+next = "2"
+
+[shield.2]
+speaker = "eiland"
+portrait = "happy"
+local = "And I've told Errol to give him special dispensation if he needs to bring anything from our archive back to his workshop."

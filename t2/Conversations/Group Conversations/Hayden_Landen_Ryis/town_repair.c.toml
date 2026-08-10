@@ -1,0 +1,56 @@
+[town_repair]
+refresh = "1m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "landen" }, { npc = "ryis" }] },
+	{ hayden_zone = "<landen_zone>" },
+	{ hayden_zone = "<ryis_zone>" },
+	{ date_time = "1m", comparator = ">=" },
+	{ quest_repair_the_bridge_complete = true }
+]
+speaker = "landen"
+portrait = "neutral"
+local = "You two are doing a bang-up job restoring the town!"
+next = "1"
+
+[town_repair.1]
+speaker = "ryis"
+portrait = "happy"
+local = "Thanks, Uncle. I couldn't get it done without Hayden or Adeline."
+next = "2"
+
+[town_repair.2]
+speaker = "hayden"
+portrait = "wink"
+local = "Or [Ari], for that matter!"
+
+[town_repair_2]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "landen" }, { npc = "ryis" }] },
+	{ hayden_zone = "<landen_zone>" },
+	{ hayden_zone = "<ryis_zone>" },
+	{ date_time = "1m", comparator = ">=" },
+	{ quest_repair_the_bridge_complete = true }
+]
+speaker = "ryis"
+portrait = "neutral"
+local = "You're a huge help, Hayden. Thanks for all the help doing repairs around town."
+next = "1"
+
+[town_repair_2.1]
+speaker = "landen"
+portrait = "wink"
+local = "You'd make for a great carpenter, Hayden."
+next = "2"
+
+[town_repair_2.2]
+speaker = "hayden"
+portrait = "happy"
+local = "That means a lot coming from you two. But I bet if I mentioned a career change to Henrietta, she'd peck the hammer right out of my hand!"
+next = "3"
+
+[town_repair_2.3]
+speaker = "hayden"
+portrait = "laugh"
+local = "GYA HA HA!"
+

@@ -1,0 +1,32 @@
+[general_store_shopping]
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ balor_routine = "general_store_shopping" },
+	{ balor_heart_level = 2, comparator = ">=" },
+	{ date_time = "1y", comparator = ">=" },
+	{ season = "winter", comparator = "!=" }
+]
+portrait = "neutral"
+local = "I know what you're thinking. Curry is more of a winter dish, but I like it year round!"
+next = "1"
+
+[general_store_shopping.1]
+portrait = "think"
+local = "Now if you'll excuse me, I've got to scrounge up the last few ingredients..."
+
+[general_store_shopping_2]
+refresh = "2m"
+requires = [
+	{ npc = "balor" },
+	{ balor_routine = "general_store_shopping" },
+	{ balor_heart_level = 2, comparator = ">=" },
+	{ time_of_day = "night", comparator = "!=" }
+]
+portrait = "think"
+local = "Why do I always think I can go shopping without a list...?"
+next = "1"
+
+[general_store_shopping_2.1]
+portrait = "sigh"
+local = "I guess it's a single turnip and wine kind of night."

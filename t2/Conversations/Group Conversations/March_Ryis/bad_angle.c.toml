@@ -1,0 +1,27 @@
+[bad_angle]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "ryis" }] },
+	{ march_zone = "<ryis_zone>" },
+	{ any = [
+		{ location = "blacksmith_store" },
+		{ march_zone = "town/forge_lesson" },
+		{ march_zone = "town/blacksmith_forge" },
+		{ march_zone = "town/blacksmith_business" }
+	] }
+]
+speaker = "march"
+portrait = "neutral"
+local = "That's a bad angle on the bracket. See how it creased?"
+next = "1"
+
+[bad_angle.1]
+speaker = "ryis"
+portrait = "mad"
+local = "Ugh, you're right."
+next = "2"
+
+[bad_angle.2]
+speaker = "ryis"
+portrait = "neutral"
+local = "Let's try it again."

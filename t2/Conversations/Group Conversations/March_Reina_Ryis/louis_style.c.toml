@@ -1,0 +1,25 @@
+[louis_style]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "reina" }, { npc = "ryis" }] },
+	{ march_zone = "<reina_zone>" },
+	{ march_zone = "<ryis_zone>" },
+	{ market_is_back = true },
+	{ date_time = "1y", comparator = ">=" },
+	{ day_of_the_week = "saturday", comparator = "!=" }
+]
+speaker = "reina"
+portrait = "neutral"
+local = "Louis complimented your style the last time I talked to him at the Saturday Market, Ryis."
+next = "1"
+
+[louis_style.1]
+speaker = "ryis"
+portrait = "neutral"
+local = "Really? That's cool. He's got a lot of stuff I've never seen when I went thrifting in the Capital."
+next = "2"
+
+[louis_style.2]
+speaker = "march"
+portrait = "think"
+local = "You always stop by his booth when he's in town, don't you? Huh."

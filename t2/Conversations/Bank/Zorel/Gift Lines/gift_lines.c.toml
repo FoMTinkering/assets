@@ -1,0 +1,188 @@
+# Generic lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "zorel" }, { gift_desire = "loved" }]
+portrait = "wink"
+effect = "sparkles"
+local = "Thanks, [Ari]. This is really special."
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "zorel" }, { gift_desire = "loved" }]
+portrait = "happy"
+local = "[Ari]! This is super thoughtful!"
+next = "1"
+
+[loved_gift_2.1]
+portrait = "neutral"
+effect = "cheery"
+local = "I'm glad we're on the same wavelength. Very cool of you!"
+
+[loved_gift_artifact]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "zorel" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "ancient_crystal_goblet" },
+		{ gift_given = "crystal_apple" },
+		{ gift_given = "metal_leaf" }
+	] }
+]
+portrait = "neutral"
+effect = "sparkles"
+local = "Hey, this is nice. I'll tuck it into the corner of my lute-case, so I'll always have it with me."
+
+[loved_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "zorel" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "crispy_fried_earthshroom" },
+		{ gift_given = "crystal_berry_pie" },
+		{ gift_given = "miners_mushroom_stew" },
+		{ gift_given = "mushroom_brew" },
+		{ gift_given = "mushroom_rice" },
+		{ gift_given = "mushroom_steak_dinner" },
+		{ gift_given = "pineshroom_toast" }
+	] }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "Oh, nice. I'm partial to meals like this. Thanks, [Ari]."
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "zorel" }, { gift_desire = "liked" }]
+portrait = "happy"
+local = "Oh, nice. I like it... thanks, you."
+
+[liked_gift_2]
+kind = "gift"
+requires = [{ npc = "zorel" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "Oh, this is cool. Thanks, [Ari]."
+
+[liked_gift_3]
+kind = "gift"
+requires = [{ npc = "zorel" }, { gift_desire = "liked" }]
+portrait = "happy"
+local = "Oh! This is so nice!"
+next = "1"
+
+[liked_gift_3.1]
+portrait = "wink"
+local = "Thanks, [Ari]."
+
+[liked_gift_crystal]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "zorel" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "crystal" },
+		{ gift_given = "crystal_berries" },
+		{ gift_given = "crystal_rose" },
+		{ gift_given = "crystal_wing_moth" },
+		{ gift_given = "crystalline_cricket" },
+	] }
+]
+portrait = "think"
+local = "Crystalline stuff like this always makes me think of music, y'know? Something about the way it shimmers. Thanks, [Ari]."
+
+[liked_gift_mushroom]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "zorel" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "ash_mushroom" },
+		{ gift_given = "glowing_mushroom" },
+		{ gift_given = "morel_mushroom" },
+		{ gift_given = "oyster_mushroom" },
+		{ gift_given = "pineshroom" },
+		{ gift_given = "red_toadstool" },
+		{ gift_given = "upper_mines_mushroom" },
+		{ gift_given = "wild_mushroom" }
+	] }
+]
+portrait = "neutral"
+local = "Oh, nice. Mushrooms are my jam."
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "zorel" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Heeey, thanks."
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "zorel" }, { gift_desire = "disliked" }]
+portrait = "think"
+local = "Can you leave it over there? I'll check it out once I'm done tuning..."
+
+[disliked_gift_2]
+kind = "gift"
+requires = [{ npc = "zorel" }, { gift_desire = "disliked" }]
+portrait = "sad"
+local = "I dunno [Ari]... do you think this is really my deal?"
+next = "1"
+
+[disliked_gift_2.1]
+portrait = "think"
+local = "I'm not feeling it, but I'll do some soul searching."
+
+[hated_gift]
+kind = "gift"
+requires = [{ npc = "zorel" }, { gift_desire = "hated" }]
+portrait = "ugh"
+local = "This gift, [Ari]... the vibes are in shambles."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "zorel" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ zorel_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "neutral"
+local = "You got me something for my birthday? That's cool."
+next = "1"
+
+[birthday_gift.1]
+portrait = "embarrassed"
+effect = "sparkles"
+local = "Thanks, [Ari]."
+
+[birthday_gift_2]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "zorel" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ zorel_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "happy"
+local = "A birthday gift? That's so cool of you!"
+next = "1"
+
+[birthday_gift_2.1]
+portrait = "neutral"
+effect = "cheery"
+local = "Thanks so much, [Ari]!"

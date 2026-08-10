@@ -1,0 +1,628 @@
+[march_post_8h_best_friend_0]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = false },
+	{ any = [
+		{ march_post_8h_romantic_progression = true },
+		{ march_is_best_friend = true }
+	] },
+	{ march_post_8h_best_friend_gate = false },
+	{ march_post_8h_best_friend_grouping = 0 }
+]
+writes = [
+	{ march_post_8h_best_friend_gate = true, expires = "20h" },
+	{ march_post_8h_best_friend_grouping = 1 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "march" } }]
+portrait = "think"
+local = "I'm, uh.... really glad you stuck it out in Mistria, [Ari]."
+next = "1"
+
+[march_post_8h_best_friend_0.1]
+portrait = "unimpressed"
+local = "It was hard seeing so many people leave after the earthquake."
+next = "2"
+
+[march_post_8h_best_friend_0.2]
+portrait = "eight_heart_closed_eyes"
+local = "I thought you'd leave once things got tough, like everyone else."
+next = [
+	{ target = "3r", requires = [{ march_is_partner = true }] },
+	{ target = "3f", requires = [] }
+]
+
+[march_post_8h_best_friend_0.3r]
+portrait = "eight_heart_happy_blush"
+local = "Glad to be proven wrong."
+
+[march_post_8h_best_friend_0.3f]
+portrait = "eight_heart_happy"
+local = "Glad to be proven wrong."
+
+[march_post_8h_best_friend_1]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = false },
+	{ any = [
+		{ march_post_8h_romantic_progression = true },
+		{ march_is_best_friend = true }
+	] },
+	{ march_post_8h_best_friend_gate = false },
+	{ march_post_8h_best_friend_grouping = 1 }
+]
+writes = [
+	{ march_post_8h_best_friend_gate = true, expires = "20h" },
+	{ march_post_8h_best_friend_grouping = 2 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "march" } }]
+portrait = "neutral"
+local = "So, you were in the Adventurer's Guild before you came here, huh."
+next = "1"
+
+[march_post_8h_best_friend_1.1]
+portrait = "think"
+local = "What does that mean, exactly?"
+next = "2"
+
+[march_post_8h_best_friend_1.2]
+portrait = "eight_heart_think"
+local = "You were some kind of professional... hero?"
+prompts = [
+	{ local = "Yeah, I took on all sorts of jobs helping people!", next = "3" },
+	{ local = "It was more of a gig job.", next = "6" }
+]
+
+[march_post_8h_best_friend_1.3]
+portrait = "happy"
+local = "Hah! That does sound like you."
+next = "4"
+
+[march_post_8h_best_friend_1.4]
+portrait = "sly"
+local = "Saving cats out of trees... and blacksmiths out of collapsed mine pits."
+next = "5"
+
+[march_post_8h_best_friend_1.5]
+portrait = "eight_heart_happy"
+local = "Well, I'm glad you're the resident hero of Mistria now."
+
+[march_post_8h_best_friend_1.6]
+portrait = "neutral"
+local = "Following the money, huh?"
+next = "7"
+
+[march_post_8h_best_friend_1.7]
+portrait = "eight_heart_think"
+local = "Sounds kind of like what my parents-"
+next = "8"
+
+[march_post_8h_best_friend_1.8]
+portrait = "embarrassed"
+local = "Um. I mean, I've heard that's pretty common."
+next = "9"
+
+[march_post_8h_best_friend_1.9]
+portrait = "eight_heart_think"
+local = "But I figure there's usually more to it than that, right?"
+next = "10"
+
+[march_post_8h_best_friend_1.10]
+portrait = "eight_heart_happy"
+local = "Otherwise, I think you would have skipped town when the job proved tough-"
+next = "11"
+
+[march_post_8h_best_friend_1.11]
+portrait = "wink"
+local = "Instead of staying to help for the long haul."
+
+[march_post_8h_best_friend_2]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_post_8h_romantic_progression = true },
+		{ march_is_best_friend = true }
+	] },
+	{ march_post_8h_best_friend_gate = false },
+	{ march_post_8h_best_friend_grouping = 2 }
+]
+writes = [
+	{ march_post_8h_best_friend_gate = true, expires = "20h" },
+	{ march_post_8h_best_friend_grouping = 3 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "I've been feeling inspired to craft a new showpiece. Just for the fun of it."
+next = "1"
+
+[march_post_8h_best_friend_2.1]
+portrait = "eight_heart_think"
+local = "It's been a while since I had enough free time to do that kind of thing."
+next = "2"
+
+[march_post_8h_best_friend_2.2]
+portrait = "think"
+local = "It's tough to think creatively when everything's on fire."
+next = [
+	{ target = "3r", requires = [{ march_is_partner = true }] },
+	{ target = "3f", requires = [] }
+]
+
+[march_post_8h_best_friend_2.3r]
+portrait = "eight_heart_happy_blush"
+local = "Figuratively, I mean."
+next = "4"
+
+[march_post_8h_best_friend_2.3f]
+portrait = "eight_heart_happy"
+local = "Figuratively, I mean."
+next = "4"
+
+[march_post_8h_best_friend_2.4]
+portrait = "wink"
+local = "Between us, it seems we've finally got things contained."
+
+[march_post_8h_best_friend_3]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = false },
+	{ any = [
+		{ march_post_8h_romantic_progression = true },
+		{ march_is_best_friend = true }
+	] },
+	{ march_post_8h_best_friend_gate = false },
+	{ march_post_8h_best_friend_grouping = 3 }
+]
+writes = [
+	{ march_post_8h_best_friend_gate = true, expires = "2d" },
+	{ march_post_8h_romantic_gate = true, expires = "2d" },
+	{ march_post_8h_best_friend_grouping = 4 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "march" } }]
+portrait = "think"
+local = "I've been living in Mistria since I was pretty young, but I don't recall anyone ever living on that farmland before you arrived."
+next = "1"
+
+[march_post_8h_best_friend_3.1]
+portrait = "eight_heart_happy"
+local = "We used to play hide and seek down there when we were kids. It was basically a forest."
+next = "2"
+
+[march_post_8h_best_friend_3.2]
+portrait = "neutral"
+local = "I can't imagine it was in great shape when you first arrived..."
+prompts = [
+	{ local = "It was rough, but I could see it had potential.", next = "3" },
+	{ local = "It was so overgrown! I was intimidated.", next = "6" }
+]
+
+[march_post_8h_best_friend_3.3]
+portrait = "eight_heart_happy"
+local = "Yeah... there's something about taking a rough material with your hands and forming it into something new."
+next = "4"
+
+[march_post_8h_best_friend_3.4]
+portrait = "eight_heart_think"
+local = "And it's cool that you took all that lumber and stone and used it for the benefit of the town..."
+next = "5"
+
+[march_post_8h_best_friend_3.5]
+portrait = "tsundere"
+local = "So um, good work."
+
+[march_post_8h_best_friend_3.6]
+portrait = "wink"
+local = "Hah, I bet!"
+next = "7"
+
+[march_post_8h_best_friend_3.7]
+portrait = "eight_heart_happy"
+local = "Well, now that land's feeding half the town, so I guess you did something right."
+next = "8"
+
+[march_post_8h_best_friend_3.8]
+portrait = "eight_heart_think"
+local = "And it's cool that you took all that lumber and stone and used it for the benefit of the town..."
+next = "9"
+
+[march_post_8h_best_friend_3.9]
+portrait = "tsundere"
+local = "So um, good work."
+
+[march_post_8h_best_friend_4]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = false },
+	{ any = [
+		{ march_post_8h_romantic_progression = true },
+		{ march_is_best_friend = true }
+	] },
+	{ march_post_8h_best_friend_gate = false },
+	{ march_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ march_post_8h_best_friend_gate = true, expires = "2d" },
+	{ march_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "neutral"
+local = "Hey [Ari]."
+next = "1"
+
+[march_post_8h_best_friend_4.1]
+portrait = "eight_heart_happy"
+local = "Have you crafted anything interesting lately?"
+next = "2"
+
+[march_post_8h_best_friend_4.2]
+portrait = "think"
+local = "Hemlock asked me about a new door knocker for the Inn, so I might sketch that out later."
+next = "3"
+
+[march_post_8h_best_friend_4.3]
+portrait = "eight_heart_happy"
+local = "Maybe I'll run it by you when I'm finished?"
+
+[march_post_8h_best_friend_5]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = false },
+	{ any = [
+		{ march_post_8h_romantic_progression = true },
+		{ march_is_best_friend = true }
+	] },
+	{ march_post_8h_best_friend_gate = false },
+	{ march_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ march_post_8h_best_friend_gate = true, expires = "2d" },
+	{ march_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "march" } }]
+portrait = "eight_heart_think"
+local = "You've been pretty busy with the farm, huh."
+next = "1"
+
+[march_post_8h_best_friend_5.1]
+portrait = "eight_heart_happy"
+local = "I'm glad you're able to make time to stop by."
+
+[march_post_8h_best_friend_6]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = false },
+	{ any = [
+		{ march_post_8h_romantic_progression = true },
+		{ march_is_best_friend = true }
+	] },
+	{ march_post_8h_best_friend_gate = false },
+	{ march_post_8h_best_friend_grouping = 4 },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" }
+	] }
+]
+writes = [
+	{ march_post_8h_best_friend_gate = true, expires = "2d" },
+	{ march_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "relationship_status", npc = "march" } },
+	{ item = "gold_ingot" }
+]
+portrait = "eight_heart_happy"
+local = "Got a new shipment of ingots in from the Capital!"
+next = "1"
+
+[march_post_8h_best_friend_6.1]
+portrait = "think"
+local = "The supplier sent us extra, so I figured I'd share."
+next = "2"
+
+[march_post_8h_best_friend_6.2]
+portrait = "tsundere"
+local = "Don't go wasting them now, okay?"
+
+[march_post_8h_best_friend_7]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_post_8h_romantic_progression = true },
+		{ march_is_best_friend = true }
+	] },
+	{ march_post_8h_best_friend_gate = false },
+	{ march_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ march_post_8h_best_friend_gate = true, expires = "2d" },
+	{ march_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "blush", npc = "march" } }]
+portrait = "neutral"
+local = "Did you know that Darcy didn't figure out Olric and I were brothers until recently?"
+next = "1"
+
+[march_post_8h_best_friend_7.1]
+portrait = "tsundere"
+local = "I mean, obviously we're siblings. We're so much alike!"
+prompts = [
+	{ local = "Except that your personalities are completely different.", next = "2" },
+	{ local = "Except that your hair colors are completely different.", next = "5" }
+]
+
+[march_post_8h_best_friend_7.2]
+portrait = "shock_special"
+effect = "surprise"
+local = "What? No way!"
+next = "3"
+
+[march_post_8h_best_friend_7.3]
+portrait = "mad"
+local = "I'm personable! I'm outgoing!"
+next = "4"
+
+[march_post_8h_best_friend_7.4]
+portrait = "tsundere"
+local = "That wasn't a joke, stop laughing!"
+
+[march_post_8h_best_friend_7.5]
+portrait = "neutral"
+local = "Well, not exactly..."
+next = "6"
+
+[march_post_8h_best_friend_7.6]
+portrait = "think"
+local = "No one in our family is a natural Red Number 024."
+next = "7"
+
+[march_post_8h_best_friend_7.7]
+portrait = "eight_heart_happy"
+local = "Speaking of which, I wonder if Vera has any openings soon..."
+
+[march_post_8h_best_friend_8]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_post_8h_romantic_progression = true },
+		{ march_is_best_friend = true }
+	] },
+	{ march_post_8h_best_friend_gate = false },
+	{ march_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ march_post_8h_best_friend_gate = true, expires = "2d" },
+	{ march_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "think"
+local = "I'm glad we wound up living by the ocean."
+next = "1"
+
+[march_post_8h_best_friend_8.1]
+portrait = "eight_heart_happy"
+local = "Having fresh sushi whenever I want is one of my favorite things about Mistria."
+next = "2"
+
+[march_post_8h_best_friend_8.2]
+portrait = "neutral"
+local = "When you get a dish that's well-made and thoughtfully plated... It's a form of art."
+prompts = [
+	{ local = "It's kind of like metalworking, isn't it?", next = "3" },
+	{ local = "I can tell that you like things that require skill to make.", next = "6" }
+]
+
+[march_post_8h_best_friend_8.3]
+portrait = "think"
+local = "Yeah, I guess it is."
+next = "4"
+
+[march_post_8h_best_friend_8.4]
+portrait = "neutral"
+local = "Sushi making is a skill that looks deceptively simple-"
+next = "5"
+
+[march_post_8h_best_friend_8.5]
+portrait = "eight_heart_happy"
+local = "But takes years to master. I respect that."
+
+[march_post_8h_best_friend_8.6]
+portrait = "think"
+local = "Yeah, I guess so."
+next = "7"
+
+[march_post_8h_best_friend_8.7]
+portrait = "neutral"
+local = "Sushi making is a skill that looks deceptively simple-"
+next = "8"
+
+[march_post_8h_best_friend_8.8]
+portrait = "eight_heart_happy"
+local = "But takes years to master. I respect that."
+
+[march_post_8h_best_friend_9]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_post_8h_romantic_progression = true },
+		{ march_is_best_friend = true }
+	] },
+	{ march_post_8h_best_friend_gate = false },
+	{ march_post_8h_best_friend_grouping = 4 },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" }
+	] }
+]
+writes = [
+	{ march_post_8h_best_friend_gate = true, expires = "2d" },
+	{ march_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "relationship_status", npc = "march" } },
+	{ item = "pizza" }
+]
+portrait = "think"
+local = "Hey, [Ari]..."
+next = "1"
+
+[march_post_8h_best_friend_9.1]
+portrait = "neutral"
+local = "Work's a little slow right now."
+next = "2"
+
+[march_post_8h_best_friend_9.2]
+portrait = "sly"
+local = "Want to try some... forge cooking?"
+prompts = [
+	{ local = "Absolutely!", next = "3" },
+	{ local = "I thought you'd be more strict about how the forge is used.", next = "7" }
+]
+
+[march_post_8h_best_friend_9.3]
+portrait = "eight_heart_happy"
+local = "Nice! I used to do this with Olric and Ryis a lot."
+next = "4"
+
+[march_post_8h_best_friend_9.4]
+portrait = "think"
+local = "The forge is way hotter than a regular stove, so food burns easily."
+next = "5"
+
+[march_post_8h_best_friend_9.5]
+portrait = "eight_heart_happy"
+local = "The challenge of making it is usually more fun than eating it."
+next = "6"
+
+[march_post_8h_best_friend_9.6]
+portrait = "wink"
+local = "Here... let's give it a go!"
+
+[march_post_8h_best_friend_9.7]
+portrait = "eight_heart_happy"
+local = "What? We're just having some fun! I used to do this with Olric and Ryis a lot."
+next = "8"
+
+[march_post_8h_best_friend_9.8]
+portrait = "think"
+local = "The forge is way hotter than a regular stove, so food burns easily."
+next = "9"
+
+[march_post_8h_best_friend_9.9]
+portrait = "eight_heart_happy"
+local = "The challenge of making it is usually more fun than eating it."
+next = "10"
+
+[march_post_8h_best_friend_9.10]
+portrait = "wink"
+local = "So let's have fun making it."
+
+[march_post_8h_best_friend_10]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = false },
+	{ any = [
+		{ march_post_8h_romantic_progression = true },
+		{ march_is_best_friend = true }
+	] },
+	{ march_post_8h_best_friend_gate = false },
+	{ march_post_8h_best_friend_grouping = 4 },
+	{ march_zone = "inn/bar" }
+]
+writes = [
+	{ march_post_8h_best_friend_gate = true, expires = "2d" },
+	{ march_post_8h_romantic_gate = true, expires = "2d" }
+]
+portrait = "happy"
+local = "Hey, I was hoping you'd stop by."
+next = "1"
+
+[march_post_8h_best_friend_10.1]
+portrait = "eight_heart_think"
+local = "Hemlock brewed a new beer... really hoppy."
+next = "2"
+
+[march_post_8h_best_friend_10.2]
+portrait = "neutral"
+local = "I saved one for you... if you want it?"
+prompts = [
+	{ local = "Sure! Thanks, March.", next = "3" },
+	{ local = "I'm not much for drinking alcohol, actually.", next = "7" }
+]
+
+[march_post_8h_best_friend_10.3]
+portrait = "eight_heart_happy"
+local = "For sure... curious what you think."
+next = "4"
+
+[march_post_8h_best_friend_10.4]
+portrait = "think"
+local = "Next time you and me and Ryis are all in the same place, let's talk about it."
+next = "5"
+
+[march_post_8h_best_friend_10.5]
+portrait = "sly"
+local = "He and I actually have pretty different tastes in beer, so maybe you can be our tiebreaker."
+next = "6"
+
+[march_post_8h_best_friend_10.6]
+actions = [{ item = "beer" }]
+portrait = "wink"
+local = "Cheers, [Ari]."
+
+[march_post_8h_best_friend_10.7]
+portrait = "eight_heart_happy"
+local = "Oh? No problem."
+next = "8"
+
+[march_post_8h_best_friend_10.8]
+portrait = "eight_heart_think"
+local = "Actually, I think Hemlock mentioned he had a new coffee blend in today too."
+next = "9"
+
+[march_post_8h_best_friend_10.9]
+actions = [{ item = "coffee" }]
+portrait = "wink"
+local = "I'll buy you one. Cheers, [Ari]."
+
+# last line
+[march_post_8h_best_friend_11]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+
+	{ any = [
+		{ march_post_8h_romantic_progression = true },
+		{ march_is_best_friend = true }
+	] },
+	{ march_post_8h_best_friend_gate = false },
+	{ march_post_8h_best_friend_grouping = 4, ignore_priority = true }
+]
+writes = [
+	{ march_post_8h_best_friend_gate = true, expires = "2d" },
+	{ march_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "march" } }]
+portrait = "neutral"
+local = "When Olric and I were kids, Jo and Hemlock really stepped up when we needed help..."
+next = "1"
+
+[march_post_8h_best_friend_11.1]
+portrait = "think"
+local = "They stepped up when we didn't need help, too."
+next = "2"
+
+[march_post_8h_best_friend_11.2]
+portrait = "eight_heart_happy"
+local = "I guess that's what family does, huh."

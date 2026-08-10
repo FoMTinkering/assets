@@ -1,0 +1,76 @@
+[more_funding]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ location = "eilands_office" },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ more_funding_delay = true, expires = "1d" },
+	{ more_funding = true },
+	{ eog_more_funding = true, expires = "1y" }
+]
+portrait = "mad"
+local = "Wish me luck, [Ari]! I'm proposing an increase in funding for the excavation site in the Western Ruins."
+next = "1"
+
+[more_funding.1]
+portrait = "think"
+effect = "drop"
+local = "I hope Adeline goes for it..."
+
+[more_funding_follow_up]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ more_funding = true },
+	{ more_funding_delay = false },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ more_funding = false }]
+portrait = "happy"
+effect = "sparkles"
+local = "Adeline says I can have more funding for the Western Ruins dig site."
+
+[more_funding_alt]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ location = "eilands_office" },
+	{ caldarus_seridia_town = true },
+	{ eog_more_funding = false }
+]
+writes = [
+	{ more_funding_delay = true, expires = "1d" },
+	{ more_funding = true }
+]
+portrait = "mad"
+local = "Wish me luck, [Ari]! I'm proposing an expansion of the excavation site in the Western Ruins."
+next = "1"
+
+[more_funding_alt.1]
+portrait = "think"
+effect = "drop"
+local = "I hope Adeline and Seridia will go for it..."
+
+[more_funding_follow_up_alt]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ more_funding = true },
+	{ more_funding_delay = false },
+	{ caldarus_seridia_town = true }
+]
+writes = [{ more_funding = false }]
+portrait = "gloomy_special"
+local = "Adeline was on board to fund my proposed expansion of the Western Ruins dig site..."
+next = "1"
+
+[more_funding_follow_up_alt.1]
+portrait = "sad"
+local = "Seridia, on the other hand, well..."
+next = "2"
+
+[more_funding_follow_up_alt.2]
+portrait = "ugh"
+local = "Suffice to say, the initiative has been shelved due to personal safety concerns."

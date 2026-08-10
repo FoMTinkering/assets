@@ -1,0 +1,372 @@
+scene(bathhouse);
+camera_position(j4h_camera_1);
+place_actor(ari, north, j4h_ari_entrance);
+place_actor(juniper, south, "Front Desk");
+animate(juniper, snooze);
+place_actor(dozy, east, "Dozy");
+animate(dozy, doze_2);
+request_music_play(juniper);
+
+sim {
+	pan_camera(4, j4h_camera_2);
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		walk_slow(ari, j4h_ari_start);
+		face(ari, north);
+	}
+	{
+		wait(2.75);
+		free bark(dozy, exclamation_mark);
+		wait(0.25);
+		animate(dozy, idle);
+		face(dozy, south);
+		wait(0.5);
+		animate(dozy, tailwag);
+		wait(1);
+		animate(dozy, idle);
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+	}
+	{
+		wait(3);
+		free bark_speech(juniper, exclamation_mark);
+		wait(0.5);
+		animate(juniper, idle);
+	}
+	{
+		wait(4);
+		next_line(); //
+	}
+}
+close_textbox();
+free bark_speech(ari, question_mark);
+wait(1);
+sim {
+	{
+		wait(2.5);
+		face(juniper, west);
+		wait(1);
+		face(juniper, south);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	animate(juniper, laugh);
+	next_line(); //
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, annoyed);
+wait(0.5);
+animate(dozy, tailwag);
+wait(1);
+animate(dozy, idle);
+wait(0.5);
+sim {
+	{
+		wait(0.5);
+		animate(juniper, idle);
+		wait(0.5);
+		walk_slow(juniper, j4h_juniper_start);
+		face(juniper, west);
+	}
+	{
+		wait(2.25);
+		walk_slow(ari, j4h_ari_talk);
+		face(ari, east);
+	}
+	{
+		wait(0.5);
+		walk_slow(dozy, j4h_dozy_start);
+	}
+	pan_camera(3, j4h_camera_3);
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(juniper, east);
+	}
+	pan_camera(2, j4h_camera_4);
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+free bark_speech(ari, exclamation_mark);
+wait(1);
+free pan_camera(1, j4h_camera_3);
+wait(0.5);
+sim {
+	{
+		wait(0.5);
+		face(juniper, west);
+	}
+	{
+		next_line(); //
+		//
+	}
+}
+if get_response() == 0 {
+	next_line(); //
+} else {
+	next_line(); //
+	next_line(); //
+}
+next_line(); //
+close_textbox();
+sim {
+	{
+		wait(0.5);
+		walk_slow(ari, j4h_ari_potion);
+		face(ari, south);
+	}
+	pan_camera(4, j4h_camera_5);
+	{
+		walk_slow(juniper, j4h_juniper_back);
+		face(juniper, west);
+	}
+}
+sim {
+	{
+		animate(ari, pickup);
+		__ari_hold_item(horse_potion);
+		//
+		//
+	}
+	{
+		wait(2);
+		walk_slow(juniper, j4h_juniper_step_back);
+		face(juniper, west);
+	}
+}
+wait(1);
+use_item(horse_potion);
+wait(0.5);
+bark_speech(ari, exclamation_mark);
+sim {
+	create_animation(spr_fx_poof1_dirt_once, j4h_dust_poof, 0, 0, 0, -500);
+	place_actor(ari, south, j4h_ari_hide);
+	animate(ari, idle);
+	setup_prop(j4h_horse_south);
+	{
+		free bark_speech(juniper, exclamation_mark);
+		free bark(dozy, exclamation_mark);
+		wait(0.1);
+		place_actor(juniper, west, j4h_juniper_jump_back);
+	}
+}
+wait(1);
+sim {
+	destroy_prop(j4h_horse_south);
+	setup_prop(j4h_horse_east_1);
+}
+wait(1);
+sim {
+	destroy_prop(j4h_horse_east_1);
+	setup_prop(j4h_horse_east_2);
+}
+wait(1);
+sim {
+	destroy_prop(j4h_horse_east_2);
+	setup_prop(j4h_horse_east_1);
+}
+sim {
+	{
+		wait(1);
+		sim {
+			walk(juniper, j4h_juniper_inspect);
+			set_move_speed(juniper, 1.25);
+		}
+		face(juniper, east);
+		wait(0.25);
+		free bark_speech(juniper, question_mark);
+		wait(0.5);
+		sim {
+			walk(juniper, j4h_juniper_step_back);
+			set_move_speed(juniper, 1.25);
+		}
+		face(juniper, west);
+	}
+	{
+		wait(1);
+		next_line(); //
+		close_textbox();
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(juniper, south);
+		free bark_speech(juniper, ellipses);
+	}
+	{
+		wait(2.5);
+		sim {
+			destroy_prop(j4h_horse_east_1);
+			setup_prop(j4h_horse_east_3);
+		}
+		wait(1.5);
+		sim {
+			destroy_prop(j4h_horse_east_3);
+			setup_prop(j4h_horse_east_1);
+		}
+	}
+	{
+		wait(1.5);
+		next_line(); //
+	}
+}
+close_textbox();
+play_sound("SoundEffects/Animals/HorseNeigh");
+wait(0.5);
+face(juniper, west);
+wait(1.5);
+next_line(); //
+//
+next_line(); //
+close_textbox();
+wait(0.5);
+face(juniper, south);
+wait(1);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(juniper, sweat_drop);
+wait(0.5);
+sim {
+	{
+		wait(0.25);
+		walk(dozy, j4h_dozy_cheer);
+		face(dozy, east);
+		wait(0.5);
+		animate(dozy, tailwag);
+		wait(1);
+		animate(dozy, idle);
+	}
+	{
+		wait(1);
+		next_line(); //
+		//
+		next_line(); //
+		close_textbox();
+	}
+}
+play_sound("SoundEffects/Animals/HorseNeigh");
+wait(0.5);
+free bark_speech(juniper, exclamation_mark);
+face(juniper, west);
+face(dozy, west);
+wait(1);
+next_line(); //
+close_textbox();
+sim {
+	{
+		wait(0.5);
+		sim {
+			destroy_prop(j4h_horse_east_1);
+			setup_prop(j4h_horse_east_4);
+		}
+		wait(2);
+		sim {
+			destroy_prop(j4h_horse_east_4);
+			setup_prop(j4h_horse_east_1);
+		}
+	}
+	{
+		wait(2.25);
+		free bark(dozy, heart);
+	}
+}
+sim {
+	{
+		wait(0.5);
+		animate(juniper, laugh);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		animate(juniper, idle);
+		face(juniper, west);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+sim {
+	destroy_prop(j4h_horse_east_1);
+	setup_prop(j4h_horse_south);
+}
+wait(0.5);
+animate(juniper, spell_cast);
+wait(2);
+sim {
+	create_animation(spr_fx_poof1_dirt_once, j4h_dust_poof, 0, 0, 0, -500);
+	destroy_prop(j4h_horse_south);
+	place_actor(ari, south, j4h_ari_potion);
+}
+wait(0.5);
+animate(juniper, idle);
+wait(0.5);
+face(ari, east);
+next_line(); //
+next_line(); //
+close_textbox();
+
+sim {
+	free bark_speech(ari, cute_face);
+	{
+		wait(0.5);
+		free bark_speech(juniper, cute_face);
+	}
+	{
+		wait(1);
+		walk(dozy, j4h_dozy_pet);
+		face(dozy, east);
+		wait(0.25);
+		face(ari, west);
+		animate(ari, action);
+		wait(1);
+		animate(dozy, tailwag);
+		wait(0.5);
+		animate(ari, idle);
+		wait(0.5);
+		free walk_slow(ari, j4h_ari_entrance);
+	}
+	{
+		wait(4);
+		fade_out(2);
+	}
+}

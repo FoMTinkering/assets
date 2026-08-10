@@ -1,0 +1,187 @@
+[animal_festival_anticipation]
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ animal_festival_date = "3d", time = "before" },
+]
+portrait = "neutral"
+local = "Can't believe it's time for the Animal Festival again! I need to talk to Henrietta about her training regiment."
+
+[animal_festival_0]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ animal_festival_today = true },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+]
+portrait = "happy"
+local = "It's the greatest day of the year, yahoo!"
+next = "1"
+
+[animal_festival_0.1]
+portrait = "neutral"
+local = "Take it all in, [Ari]! It's a day to celebrate the best part of life, cute animals and lots of them!"
+
+[animal_festival_small_first_place]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ animal_festival_today = true },
+	{ small_animal_place = 3 },
+]
+portrait = "neutral_arm_down"
+local = "Well now, congrats on the big win with [festival_small_animal_name], [Ari]!"
+next = "1"
+
+[animal_festival_small_first_place.1]
+portrait = "neutral_fist"
+local = "Have to admit, I'm impressed. You really shook up this year's festival!"
+next = "2"
+
+[animal_festival_small_first_place.2]
+portrait = "wink"
+local = "I'm gonna be looking forward to challenging you again next year!"
+
+[animal_festival_small_second_place]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ animal_festival_today = true },
+	{ small_animal_place = 2 },
+]
+portrait = "happy"
+local = "Congrats on taking second place in the small animal bracket, [Ari]!"
+next = "1"
+
+[animal_festival_small_second_place.1]
+portrait = "neutral"
+local = "That [festival_small_animal_type] of yours is something special, right enough."
+
+[animal_festival_small_third_place]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ animal_festival_today = true },
+	{ small_animal_place = 1 },
+]
+portrait = "happy"
+local = "Congrats on taking third place in the small animal bracket, [Ari]!"
+next = "1"
+
+[animal_festival_small_third_place.1]
+portrait = "neutral"
+local = "That [festival_small_animal_type] of yours is something special, right enough."
+
+[animal_festival_small_dnp]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ animal_festival_today = true },
+	{ small_animal_place = 0 },
+]
+portrait = "happy"
+local = "Well now, that was a surprise!"
+prompts = [
+	{ local = "Congrats Hayden, it's well deserved!", next = "1" },
+	{ local = "Just wait till next year!", next = "2" },
+]
+
+[animal_festival_small_dnp.1]
+portrait = "wink_fist"
+local = "Aww, shucks! Thank you, [Ari]!"
+
+[animal_festival_small_dnp.2]
+portrait = "wink_fist"
+local = "Hoho, I'll be looking forward to it!"
+
+[animal_festival_large_first_place]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ animal_festival_today = true },
+	{ large_animal_place = 3 },
+]
+portrait = "neutral_fist"
+local = "Outstanding, [Ari]! You and [festival_large_animal_name] really earned that first place!"
+next = "1"
+
+[animal_festival_large_first_place.1]
+portrait = "happy_arm_down"
+local = "I'll be looking forward to next year's competition, you can be sure of that!"
+
+[animal_festival_large_second_place]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ animal_festival_today = true },
+	{ large_animal_place = 2 },
+]
+portrait = "neutral_fist"
+local = "Second place in the large animal bracket! Wow, [Ari]!"
+next = "1"
+
+[animal_festival_large_second_place.1]
+portrait = "happy_arm_down"
+local = "I'll be looking forward to next year's competition, you can be sure of that!"
+
+[animal_festival_large_third_place]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ animal_festival_today = true },
+	{ large_animal_place = 1 },
+]
+portrait = "neutral_fist"
+local = "Third place in the large animal bracket! That ain't nothing to be ashamed of, [Ari]!"
+next = "1"
+
+[animal_festival_large_third_place.1]
+portrait = "happy_arm_down"
+local = "I'll be looking forward to next year's competition, you can be sure of that!"
+
+[animal_festival_large_dnp]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ animal_festival_today = true },
+	{ large_animal_place = 0 },
+]
+portrait = "happy"
+local = "What a surprise! Sunshine's always been a good cow, but she's really come a long way."
+next = "1"
+
+[animal_festival_large_dnp.1]
+portrait = "think"
+local = "Although I do see her spending time with Henrietta, so maybe she's picked up a thing or two from her."
+next = "2"
+
+[animal_festival_large_dnp.2]
+portrait = "laugh"
+local = "Gya ha ha!"
+
+[animal_festival_cow_cutout]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "hayden" },
+	{ animal_festival_today = true },
+	{ hayden_is_at = "town/af_cow_cutout" },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "happy"
+local = "Yeehaw! Look at me, [Ari]! I'm a real cowboy!"

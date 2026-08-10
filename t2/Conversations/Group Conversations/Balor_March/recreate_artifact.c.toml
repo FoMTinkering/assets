@@ -1,0 +1,18 @@
+[recreate_artifact]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "march" }] },
+	# { location = "museum_entry" },
+	# { museum_archaeology_count = 3, comparator = ">=" },
+	{ balor_zone = "town/wagon" },
+	{ balor_zone = "<march_zone>" },
+]
+speaker = "balor"
+portrait = "sly"
+local = "So can you replicate the style of the piece? I'll pay handsomely, and I'll supply the gems for the settings."
+next = "1"
+
+[recreate_artifact.1]
+speaker = "march"
+portrait = "sly"
+local = "Not a problem. In fact, there's some detail work I could do to make it even more authentic looking than the original."

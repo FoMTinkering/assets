@@ -1,0 +1,20 @@
+[glass_of_wine]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "elsie" }, { npc = "juniper" }] },
+	{ elsie_zone = "<juniper_zone>" },
+	{ time_of_day = "morning", comparator = "!=" },
+	{ elsie_activity = "drink", comparator = "!=" },
+	{ juniper_activity = "drink", comparator = "!=" },
+	{ juniper_can_drink = true }
+]
+speaker = "juniper"
+portrait = "sly"
+local = "I won't lie to you, Elsie... I could use a glass of wine."
+next = "1"
+
+[glass_of_wine.1]
+speaker = "elsie"
+portrait = "happy"
+effect = "sparkles"
+local = "Juniper, dear... you're among friends."

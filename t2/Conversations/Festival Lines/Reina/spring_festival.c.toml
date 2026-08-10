@@ -1,0 +1,25 @@
+[stop_by]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "reina" },
+	{ spring_festival_date = "1d", time = "after" },
+]
+portrait = "neutral"
+local = "Be sure to stop by Maple's refreshment stand! She worked really hard on it."
+next = "1"
+
+[stop_by.1]
+portrait = "happy"
+local = "And I really worked hard mixing up all the yummy things she's selling!"
+
+[first_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "reina" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ any = [{ sf_first_place = true }, { sf_first_place_plus = true }] },
+]
+portrait = "happy"
+local = "First place! I can't believe you knocked Celine off her throne! Next year I bet you're going to have a real fight on your hands."

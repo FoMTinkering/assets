@@ -1,0 +1,150 @@
+birthday = { season = "winter", day = 7 }
+loved_gifts = [
+	"berry_bowl",
+	"animal_currency",
+	"corn",
+	"glowberry",
+	"grilled_corn",
+	"strawberry",
+	"watermelon",
+	"quality_small_animal_feed",
+	"deluxe_small_animal_feed",
+	"ultimate_small_animal_feed",
+]
+liked_gifts = [
+	"apple",
+	"blackberry",
+	"blueberry",
+	"broccoli",
+	"cherry",
+	"chestnut",
+	"coconut",
+	"cranberry",
+	"cucumber",
+	"grass_seed",
+	"moon_fruit",
+	"orange",
+	"peach",
+	"pear",
+	"peas",
+	"pomegranate",
+	"pumpkin",
+	"wild_berries",
+	"wild_grapes",
+	"wintergreen_berry",
+
+
+]
+disliked_gift_tags = ["junk", "citrus", "choco", "caffeine", "alcohol", "weird_gift"]
+hated_gift = "garlic"
+banned_gift_tags = ["alcohol", "caffeine", "choco", "bomb"]
+name = "Henrietta"
+aldarian_name = "HNRYT"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["townsfolk", "animal"]
+job = "Prize-Winning Chicken"
+journal_portrait_offset = [-120, -93]
+journal_background_color = [255, 205, 174]
+date_photo_offset = [0, 0]
+journal_person_offset = [8, 10]
+icon_sprite = "spr_ui_generic_icon_npc_henrietta"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_henrietta"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_henrietta"
+dateable = false
+roommate_routine = "henrietta_roommate"
+
+[gossip]
+	line = "henrietta_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["coffee"]
+	"17" = ["wine"]
+
+[offsets]
+	portrait = [-114, -63]
+	sweat = [34, 83]
+	hearts = [34, 83]
+	angry = [14, 84]
+	sparkles = [1, 76]
+	sparkles_dark = [1, 76]
+	sick = [21, 84]
+	music_notes = [-3, 61]
+	intensity = [16, 57]
+	surprise = [14, 93]
+	shock = [7, 80]
+	sigh = [11, 58]
+	loud = [11, 82]
+	cheery = [9, 68]
+	drop = [24, 77]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	neutral_closed = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.sleep]
+	default_direction = "east"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "idle"
+
+[cycles.crow]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "idle"
+
+[cycles.flap]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.jump]
+	default_direction = "east"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "idle"
+
+[cycles.hammer]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "idle"

@@ -1,0 +1,33 @@
+[tea]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "hemlock" }] },
+	{ celine_zone = "<hemlock_zone>" },
+	{ celine_zone = "<josephine_zone>", comparator = "!=" }
+]
+speaker = "celine"
+portrait = "neutral"
+local = "How did the tea-making go? Did Josephine like your special blend?"
+next = "1"
+
+[tea.1]
+speaker = "hemlock"
+portrait = "happy"
+local = "She loved it. Thanks again for letting me raid your garden, I've always wanted to make her fresh tea!"
+
+[tea_2]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "hemlock" }] },
+	{ celine_zone = "<hemlock_zone>" },
+	{ celine_zone = "<josephine_zone>", comparator = "!=" }
+]
+speaker = "celine"
+portrait = "neutral"
+local = "How did Josephine like the new tea?"
+next = "1"
+
+[tea_2.1]
+speaker = "hemlock"
+portrait = "happy"
+local = "It went over great! Thanks again for telling me where I could forage that stuff... doing it all myself made it more special."

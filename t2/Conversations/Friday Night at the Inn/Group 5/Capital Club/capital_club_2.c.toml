@@ -1,0 +1,101 @@
+[capital_club_2]
+priority = "max"
+refresh = "never"
+requires = [
+    { day_of_the_week = "friday" },
+    { elsie_zone = "inn/capital_club" },
+    { ryis_zone = "inn/capital_club" },
+    { valen_zone = "inn/capital_club" },
+    { any = [{ npc = "elsie" }, { npc = "ryis" }, { npc = "valen" }] },
+    { capital_club_fnati = 1 }
+]
+writes = [{ capital_club_fnati = 2 }]
+actions = [
+    { bark = { bark = "cute_face", npc = "elsie" } },
+    { bark = { bark = "cute_face", npc = "ryis" } },
+    { bark = { bark = "cute_face", npc = "valen" } },
+]
+speaker = "valen"
+portrait = "happy"
+local = "[Ari], what good timing!"
+next = "1"
+
+[capital_club_2.1]
+speaker = "valen"
+portrait = "neutral"
+local = "An old patient of mine sent me a box of thank you chocolates from Charlie's Confections."
+next = "2"
+
+[capital_club_2.2]
+speaker = "valen"
+portrait = "neutral"
+local = "I thought I'd share them out with folks who might be missing a taste of the Capital."
+next = "3"
+
+[capital_club_2.3]
+speaker = "ryis"
+portrait = "mad"
+effect = "surprise"
+local = "It's... a Select Reserve box! I've only ever heard about them!"
+next = "4"
+
+[capital_club_2.4]
+speaker = "ryis"
+portrait = "neutral"
+local = "Supposedly you can't even get on the waiting list anymore."
+next = "5"
+
+[capital_club_2.5]
+speaker = "elsie"
+portrait = "neutral"
+local = "How very generous of you to share, Valen. I'm not sure I would have!"
+next = "6"
+
+[capital_club_2.6]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "Well, they are nice, but..."
+next = "7"
+
+[capital_club_2.7]
+speaker = "valen"
+portrait = "wink"
+local = "Seeing the delighted looks on all your faces is nicer, I think."
+next = "8"
+
+[capital_club_2.8]
+speaker = "ryis"
+portrait = "happy"
+local = "In that case... I'll try this one! How about you, [Ari]?"
+prompts = [
+    { local = "Choose a dark chocolate.", next = "9" },
+    { local = "Choose a milk chocolate.", next = "10" },
+    { local = "Choose a white chocolate.", next = "11" }
+]
+
+[capital_club_2.9]
+actions = [{ item = "dark_chocolate" }]
+speaker = "valen"
+portrait = "neutral"
+local = "That's a good choice!"
+next = "12"
+
+[capital_club_2.10]
+actions = [{ item = "milk_chocolate" }]
+speaker = "valen"
+portrait = "neutral"
+local = "That's a good choice!"
+next = "12"
+
+[capital_club_2.11]
+actions = [{ item = "white_chocolate" }]
+speaker = "valen"
+portrait = "neutral"
+local = "That's a good choice!"
+next = "12"
+
+[capital_club_2.12]
+speaker = "elsie"
+portrait = "happy"
+effect = "hearts"
+local = "What a heavenly flavor! Thank you, Valen."

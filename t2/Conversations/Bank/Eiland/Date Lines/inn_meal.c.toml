@@ -1,0 +1,151 @@
+[inn_meal_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "eiland" },
+	{ date = "inn_meal" },
+	{ da_eiland_inn_meal = 0 },
+	{ eiland_is_spouse = false }
+]
+writes = [
+	{ da_eiland_inn_meal = 1 },
+	{ da_eiland_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "[Ari]..."
+next = "1"
+
+[inn_meal_accept_1.1]
+speaker = "eiland"
+portrait = "hope_special"
+local = "Would you like to join me for tea and a treat at the Inn?"
+next = "2"
+
+[inn_meal_accept_1.2]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "I mean... you can order whatever you like, of course!"
+next = "3"
+
+[inn_meal_accept_1.3]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "I was just hoping to spend some time with you!"
+
+[inn_meal_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "eiland" },
+	{ date = "inn_meal" },
+	{ da_eiland_inn_meal = 1 },
+	{ eiland_is_spouse = false }
+]
+writes = [
+	{ da_eiland_inn_meal = 2 },
+	{ da_eiland_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "You're inviting me out for a meal?"
+next = "1"
+
+[inn_meal_accept_2.1]
+speaker = "eiland"
+portrait = "embarrassed"
+effect = "hearts"
+local = "Of course! I really enjoyed myself last time."
+
+[inn_meal_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "eiland" },
+	{ date = "inn_meal" },
+	{ eiland_has_child = false },
+	{ any = [
+		{ eiland_is_spouse = true },
+		{ da_eiland_inn_meal = 2, comparator = ">=" }
+	] },
+]
+writes = [
+	{ da_eiland_inn_meal = 3 },
+	{ da_eiland_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "Shall we go get a table at the Inn?"
+next = "1"
+
+[inn_meal_accept_3.1]
+speaker = "eiland"
+portrait = "hope_special"
+effect = "hearts"
+local = "I've been thinking about it all week!"
+
+[inn_meal_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ da_eiland_inn_meal = 1 },
+	{ da_eiland_inn_meal_follow_up_gate = true },
+	{ eiland_is_spouse = false }
+]
+writes = [{ da_eiland_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "embarrassed"
+local = "Thank you for spending time with me, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_1.1]
+portrait = "happy_blush"
+local = "Has anyone ever told you that you're cute when you eat?"
+next = "2"
+
+[inn_meal_follow_up_1.2]
+portrait = "hope_special"
+local = "I mean, um... I had a really nice time!"
+
+[inn_meal_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ da_eiland_inn_meal = 2 },
+	{ da_eiland_inn_meal_follow_up_gate = true },
+	{ eiland_is_spouse = false }
+]
+writes = [{ da_eiland_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "happy_blush"
+local = "I really enjoyed talking with you, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_2.1]
+portrait = "embarrassed"
+local = "The food was good too, of course..."
+next = "2"
+
+[inn_meal_follow_up_2.2]
+portrait = "hope_special"
+local = "But the real treat is getting to learn more about you!"
+
+[inn_meal_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_has_child = false },
+	{ any = [{ eiland_is_spouse = true }, { da_eiland_inn_meal = 3 }] },
+	{ da_eiland_inn_meal_follow_up_gate = true }
+]
+writes = [{ da_eiland_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "happy_blush"
+local = "I had a great time at the Inn, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_3.1]
+portrait = "hope_special"
+effect = "hearts"
+local = "Let's plan on doing it again soon."

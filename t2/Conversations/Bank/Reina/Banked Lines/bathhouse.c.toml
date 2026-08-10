@@ -1,0 +1,64 @@
+[bathhouse]
+refresh = "2m"
+requires = [{ npc = "reina" }, { location = "bathhouse_change_room" }]
+portrait = "happy"
+effect = "cheery"
+local = "Juniper always keeps the water at the perfect temperature! It's so nice!"
+
+[bathhouse_2]
+refresh = "2m"
+requires = [{ npc = "reina" }, { location = "bathhouse_change_room" }]
+portrait = "happy"
+effect = "cheery"
+local = "Ohhh, that was so relaxing. I swear, sometimes a bath is like magic!"
+
+[bathhouse_3]
+refresh = "2m"
+requires = [{ npc = "reina" }, { location = "bathhouse_change_room" }]
+portrait = "happy"
+local = "The bath smelled like pine today. It was like bathing in a mountain spring!"
+
+[bathhouse_4]
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ any = [
+		{ reina_is_traveling_from_building = "bathhouse" },
+		{ location = "bathhouse_change_room" }
+	] },
+	{ season = "fall" }
+]
+portrait = "happy"
+local = "I love to take a steaming hot bath and then step out into the crisp fall weather."
+next = "1"
+
+[bathhouse_4.1]
+portrait = "wink"
+local = "It's so refreshing!"
+
+[bathhouse_5]
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ any = [
+		{ reina_is_traveling_to_building = "bathhouse" },
+		{ location = "bathhouse_change_room" }
+	] },
+	{ season = "winter" }
+]
+portrait = "wink"
+local = "Getting out to the Bathhouse in the snow is a trek, but it's sooo worth it!"
+
+[bathhouse_6]
+refresh = "2m"
+requires = [
+	{ npc = "reina" },
+	{ any = [
+		{ building = "bathhouse" },
+		{ reina_is_traveling_from_building = "bathhouse" },
+		{ reina_is_traveling_to_building = "bathhouse" }
+	] },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "happy"
+local = "It's so nice that Dozy and Juniper keep those towels out for us! It would be such a pain to carry them back and forth from the Inn."

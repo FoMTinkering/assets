@@ -1,0 +1,96 @@
+[park_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "march" },
+	{ date = "park" },
+	{ da_march_park = 0 },
+	{ march_is_spouse = false }
+]
+writes = [
+	{ da_march_park = 1 },
+	{ da_march_park_follow_up_gate = true, expires = "1d" },
+]
+speaker = "march"
+portrait = "eight_heart_think"
+local = "I've got some free time, if you want to go do something together..."
+next = "1"
+
+[park_accept_1.1]
+speaker = "march"
+portrait = "eight_heart_happy"
+local = "You want to go to the $Park$? Sure, let's do it."
+
+[park_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "march" },
+	{ date = "park" },
+	{ march_has_child = false },
+	{ any = [
+		{ march_is_spouse = true },
+		{ da_march_park = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_march_park = 2 },
+	{ da_march_park_follow_up_gate = true, expires = "1d" },
+]
+speaker = "march"
+portrait = "eight_heart_flustered"
+local = "If you've got some free time..."
+next = "1"
+
+[park_accept_2.1]
+speaker = "march"
+portrait = "eight_heart_happy_blush"
+local = "Want to go to the $Park$ with me?"
+
+[park_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ da_march_park = 1 },
+	{ da_march_park_follow_up_gate = true },
+	{ march_is_spouse = false }
+]
+writes = [{ da_march_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "Going to the $Park$ with you was really nice."
+next = "1"
+
+[park_follow_up_1.1]
+portrait = "eight_heart_happy_blush"
+local = "It was fun hearing stories about when you were a kid."
+prompts = [
+	{ local = "I want to hear some kid March stories next time!", next = "2" },
+	{ local = "I've got a million of them!", next = "3" },
+]
+
+[park_follow_up_1.2]
+portrait = "eight_heart_flustered"
+local = "Y-Yeah! Fairs fair."
+
+[park_follow_up_1.3]
+portrait = "eight_heart_happy"
+local = "And I can't wait to hear 'em all."
+
+[park_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "march" },
+	{ march_has_child = false },
+	{ any = [{ march_is_spouse = true }, { da_march_park = 2 }] },
+	{ da_march_park_follow_up_gate = true },
+]
+writes = [{ da_march_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "The $Park$ was fun."
+next = "1"
+
+[park_follow_up_2.1]
+portrait = "eight_heart_flustered"
+local = "Let's plan another date there soon."

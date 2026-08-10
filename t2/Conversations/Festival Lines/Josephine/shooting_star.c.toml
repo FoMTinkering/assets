@@ -1,0 +1,134 @@
+[shooting_star_anticipation]
+refresh = "3m"
+requires = [
+	{ npc = "josephine" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+	{ has_spouse = false },
+	{ has_fiance = false }
+]
+portrait = "neutral"
+local = "Planning to celebrate the Shooting Star Festival, [Ari]?"
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "happy"
+local = "Whether you watch it solo or with a date, it really is a magical experience."
+
+[shooting_star_anticipation_no_summit]
+refresh = "3m"
+requires = [
+	{ npc = "josephine" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = false },
+]
+portrait = "neutral"
+local = "Looking forward to the Shooting Star Festival, [Ari]?"
+next = "1"
+
+[shooting_star_anticipation_no_summit.1]
+portrait = "happy"
+local = "It might not be possible to view them from the Summit with a date this year, but we can still enjoy the atmosphere around town with friends and family!"
+
+[shooting_star_day_of]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "josephine" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ josephine_is_at = "town/star_festival_josephine", comparator = "!=" },
+]
+portrait = "neutral"
+local = "Reina was busy in the kitchen again this morning."
+next = "1"
+
+[shooting_star_day_of.1]
+portrait = "happy"
+local = "She always makes some snacks to enjoy while we watch the stars!"
+
+[shooting_star_balor_follow_up_josephine]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "josephine" },
+	{ shooting_star_date_status = "balor_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ balor_is_partner = false },
+]
+portrait = "think"
+local = "I noticed the light was on in Balor's room late into the night... Maybe he couldn't sleep?"
+
+[shooting_star_balor_8h_follow_up_josephine]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "josephine" },
+	{ shooting_star_date_status = "balor_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ balor_is_partner = true },
+]
+portrait = "happy"
+local = "It does my heart good to see you and Balor taking care of each other."
+next = "1"
+
+[shooting_star_balor_8h_follow_up_josephine.1]
+portrait = "wink"
+local = "It means I can worry less... about both of you!"
+
+[shooting_star_march_follow_up_josephine]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "josephine" },
+	{ shooting_star_date_status = "march_went" },
+	{ shooting_star_festival_date = "6d", time = "after" },
+	{ march_is_partner = false },
+]
+portrait = "neutral"
+local = "Oh, you wanted to ask me something? What is it, dear?"
+prompts = [
+	{ local = "What exactly is the deal with March?", next = "1" },
+	{ local = "Is there something I should know about March's family?", next = "1" },
+]
+
+[shooting_star_march_follow_up_josephine.1]
+portrait = "think"
+local = "Ah... well, I suppose you wouldn't know, would you?"
+next = "2"
+
+[shooting_star_march_follow_up_josephine.2]
+portrait = "sad"
+local = "Despite how things might seem, March hasn't always had it easy. He and Olric lost their parents pretty young, back when they were still new to town."
+next = "3"
+
+[shooting_star_march_follow_up_josephine.3]
+portrait = "think"
+local = "Don't let March's attitude get to you, [Ari]. He's been through a lot, and he's a kinder person than he lets on..."
+next = "4"
+
+[shooting_star_march_follow_up_josephine.4]
+portrait = "neutral"
+local = "You just have to give him time."
+
+[shooting_star_reina_follow_up_josephine]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "josephine" },
+	{ shooting_star_date_status = "reina_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ reina_is_spouse = false }
+]
+portrait = "neutral"
+local = "Hi, [Ari]!"
+next = "1"
+
+[shooting_star_reina_follow_up_josephine.1]
+portrait = "happy"
+local = "Did you have a nice time with Reina yesterday?"
+next = "2"
+
+[shooting_star_reina_follow_up_josephine.2]
+portrait = "neutral"
+local = "Thanks for making sure to walk her home."

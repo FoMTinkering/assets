@@ -1,0 +1,21 @@
+[shovel]
+refresh = "1y"
+requires = [
+	{ npc = "holt" },
+	{ any = [
+		{ had_item_shovel_worn = false },
+		{ had_item_shovel_copper = false },
+		{ had_item_shovel_gold = false },
+		{ had_item_shovel_iron = false },
+		{ had_item_shovel_mistril = false },
+		{ had_item_shovel_silver = false },
+	] }
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+portrait = "neutral"
+local = "Every farmer needs a shovel, eh [Ari]?"
+next = "1"
+
+[shovel.1]
+portrait = "wink"
+local = "It's a ground-breaking invention."

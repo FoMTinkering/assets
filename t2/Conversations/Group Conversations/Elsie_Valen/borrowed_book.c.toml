@@ -1,0 +1,40 @@
+[borrowed_book]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "elsie" }, { npc = "valen" }] },
+	{ elsie_zone = "<valen_zone>" },
+	{ valen_book_reviews = true }
+]
+writes = [{ valen_book_reviews = false }]
+speaker = "elsie"
+local = "What did you think of the book I lent you?"
+next = "1"
+
+[borrowed_book.1]
+speaker = "valen"
+portrait = "think"
+local = "The heroine's actions make no sense at all. Being passionate is one thing, but a love potion? Think of the side effects!"
+next = "2"
+
+[borrowed_book.2]
+speaker = "elsie"
+portrait = "wink"
+local = "Well, sometimes you need a little drama to get the plot moving, darling."
+
+[borrowed_book_2]
+refresh = "1m"
+requires = [
+	{ any = [{ npc = "elsie" }, { npc = "valen" }] },
+	{ elsie_zone = "<valen_zone>" },
+	{ date_time = "2m", comparator = ">=" }
+]
+writes = [{ valen_book_reviews = true }]
+speaker = "valen"
+portrait = "neutral"
+local = "You really do have an endless supply of books, Elsie. And an endless well of generosity for lending them out."
+next = "1"
+
+[borrowed_book_2.1]
+speaker = "elsie"
+portrait = "wink"
+local = "Of course! All I ask is that you share your thoughts with me when you're done reading!"

@@ -1,0 +1,39 @@
+[peat]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ eiland_animation = "pickaxe" },
+		{ eiland_animation = "magnify" },
+		{ eiland_animation = "brush" },
+		{ eiland_animation = "trowel" },
+	] }
+]
+actions = [{ bark = { bark = "ellipses", npc = "eiland" } }]
+portrait = "neutral"
+effect = "shock"
+local = "Oh! I've found something! This is... this is..."
+next = "1"
+
+[peat.1]
+portrait = "ugh"
+local = "Ahh, it's a clump of peat."
+
+[peat_2]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ eiland_animation = "pickaxe" },
+		{ eiland_animation = "brush" },
+		{ eiland_animation = "trowel" },
+	] }
+]
+actions = [{ item = "peat" }]
+portrait = "mad"
+local = "Finding a lot of peat today. Too much peat!"
+next = "1"
+
+[peat_2.1]
+portrait = "ugh"
+local = "[Ari], you've got to help me! Here, take some!"

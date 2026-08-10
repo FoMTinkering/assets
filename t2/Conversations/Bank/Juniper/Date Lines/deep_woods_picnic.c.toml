@@ -1,0 +1,196 @@
+[deep_woods_picnic_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "juniper" },
+	{ date = "deep_woods_picnic" },
+	{ da_juniper_deep_woods_picnic = 0 },
+	{ juniper_is_spouse = false }
+]
+writes = [
+	{ da_juniper_deep_woods_picnic = 1 },
+	{ da_juniper_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "You want to go to the $Deep Woods$?"
+next = "1"
+
+[deep_woods_picnic_accept_1.1]
+speaker = "juniper"
+portrait = "embarrassed"
+local = "On a picnic?"
+next = "2"
+
+[deep_woods_picnic_accept_1.2]
+speaker = "juniper"
+portrait = "blush"
+local = "With me?"
+next = "3"
+
+[deep_woods_picnic_accept_1.3]
+speaker = "juniper"
+portrait = "think_special"
+local = "Okay."
+next = "4"
+
+[deep_woods_picnic_accept_1.4]
+speaker = "juniper"
+portrait = "wink"
+local = "But you're bringing the food."
+next = "5"
+
+[deep_woods_picnic_accept_1.5]
+speaker = "juniper"
+portrait = "laugh"
+local = "Oh ho ho ho!"
+
+[deep_woods_picnic_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "juniper" },
+	{ date = "deep_woods_picnic" },
+	{ da_juniper_deep_woods_picnic = 1 },
+	{ juniper_is_spouse = false }
+]
+writes = [
+	{ da_juniper_deep_woods_picnic = 2 },
+	{ da_juniper_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "juniper"
+portrait = "closed_eyes"
+local = "[Ari]."
+next = "1"
+
+[deep_woods_picnic_accept_2.1]
+speaker = "juniper"
+portrait = "embarrassed"
+local = "We're going on a picnic. Come."
+next = "2"
+
+[deep_woods_picnic_accept_2.2]
+speaker = "juniper"
+portrait = "blush"
+local = "Dozy helped me make up the basket for us."
+
+[deep_woods_picnic_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "juniper" },
+	{ date = "deep_woods_picnic" },
+	{ juniper_has_child = false },
+	{ any = [
+		{ juniper_is_spouse = true },
+		{ da_juniper_deep_woods_picnic = 2, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_juniper_deep_woods_picnic = 3 },
+	{ da_juniper_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+speaker = "juniper"
+portrait = "think"
+local = "You want to go on another picnic?"
+next = "1"
+
+[deep_woods_picnic_accept_3.1]
+speaker = "juniper"
+portrait = "blush"
+local = "Sure, [Ari]. I'd be happy to."
+
+[deep_woods_picnic_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ da_juniper_deep_woods_picnic = 1 },
+	{ da_juniper_deep_woods_picnic_follow_up_gate = true },
+	{ juniper_is_spouse = false }
+]
+writes = [{ da_juniper_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "think"
+local = "Hmmm you know... that picnic was more fun than I expected."
+next = "1"
+
+[deep_woods_picnic_follow_up_1.1]
+portrait = "blush"
+local = "Thanks for taking me out there, [Ari]."
+next = "2"
+
+[deep_woods_picnic_follow_up_1.2]
+portrait = "think_special"
+local = "Maybe we can do it again sometime."
+
+[deep_woods_picnic_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ da_juniper_deep_woods_picnic = 2 },
+	{ da_juniper_deep_woods_picnic_follow_up_gate = true },
+	{ juniper_is_spouse = false }
+]
+writes = [{ da_juniper_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "happy"
+local = "Oh, [Ari]... there's no need to thank me."
+next = "1"
+
+[deep_woods_picnic_follow_up_2.1]
+portrait = "think_special"
+local = "I'm just glad you had a nice time on our picnic."
+prompts = [
+	{ local = "Did Dozy really help you make the food?", next = "2" },
+	{ local = "Dozy is a pretty good cook...", next = "5" },
+]
+
+[deep_woods_picnic_follow_up_2.2]
+portrait = "wild_laugh"
+local = "Oh ho ho ho!"
+next = "3"
+
+[deep_woods_picnic_follow_up_2.3]
+portrait = "sly"
+local = "What, did you expect me to prepare it all myself?"
+next = "4"
+
+[deep_woods_picnic_follow_up_2.4]
+portrait = "embarrassed"
+local = "Don't be ridiculous!"
+
+[deep_woods_picnic_follow_up_2.5]
+portrait = "wink"
+local = "He is, isn't he?"
+next = "6"
+
+[deep_woods_picnic_follow_up_2.6]
+portrait = "sly"
+local = "There's no way I was going to do all that myself..."
+next = "7"
+
+[deep_woods_picnic_follow_up_2.7]
+portrait = "embarrassed"
+local = "That would be ridiculous!"
+
+[deep_woods_picnic_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_has_child = false },
+	{ any = [
+		{ juniper_is_spouse = true },
+		{ da_juniper_deep_woods_picnic = 3 }
+	] },
+	{ da_juniper_deep_woods_picnic_follow_up_gate = true },
+]
+writes = [{ da_juniper_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "happy"
+local = "I had a nice time on our picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_3.1]
+portrait = "think_special"
+local = "I wouldn't mind doing that again."

@@ -1,0 +1,21 @@
+[deep_woods_nettle]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "valen" }] },
+	{ celine_zone = "<valen_zone>" },
+	{ location = "deep_woods", comparator = "!=" },
+	{ quest_breaking_the_fire_seal_complete = false }
+]
+speaker = "celine"
+portrait = "think"
+local = "Nettle grows everywhere in Mistria, but you're most likely to find them in the Deep Woods, Valen. Why do you ask?"
+next = "1"
+
+[deep_woods_nettle.1]
+speaker = "valen"
+local = "=Nettle= has a long history of being used to treat muscle and joint pain, as well as problems of the skin."
+next = "2"
+
+[deep_woods_nettle.2]
+portrait = "ugh"
+local = "The Deep Woods have been blocked since the earthquake. Looks like I'll have to keep importing it from the Capital for now!"

@@ -1,0 +1,141 @@
+[garden_0]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "seridia" }] },
+	{ celine_zone = "<seridia_zone>" },
+	{ celine_zone = "town/celine_garden" },
+	{ caldarus_seridia_town = true },
+]
+speaker = "seridia"
+portrait = "neutral"
+local = "You have imbued much power into this little plot of land, Celine. To what end?"
+next = "1"
+
+[garden_0.1]
+speaker = "celine"
+portrait = "happy"
+effect = "cheery"
+local = "To grow flowers! So I can share them with the people I love!"
+next = "2"
+
+[garden_0.2]
+speaker = "seridia"
+portrait = "mad"
+local = "Ugh!"
+next = "3"
+
+[garden_0.3]
+speaker = "seridia"
+portrait = "closed_eyes_brow"
+local = "What a waste..."
+
+[garden_1]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "seridia" }] },
+	{ celine_zone = "<seridia_zone>" },
+	{ celine_zone = "town/celine_garden" },
+	{ caldarus_seridia_town = true },
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "celine" } },
+	{ bark = { bark = "angry", npc = "seridia" } }
+]
+speaker = "celine"
+portrait = "think_special"
+local = "Seridia, you're really really ancient, right?"
+next = "1"
+
+[garden_1.1]
+speaker = "celine"
+portrait = "sweat"
+local = "Like, unbelievably old?"
+next = "2"
+
+[garden_1.2]
+speaker = "seridia"
+portrait = "mad"
+local = "Excuse me?"
+next = "3"
+
+[garden_1.3]
+speaker = "celine"
+portrait = "neutral"
+local = "I've been studying archaic flora in the Codex Mistria, so I've been wondering if maybe you've seen any of them firsthand!"
+next = "4"
+
+[garden_1.4]
+speaker = "celine"
+portrait = "think"
+local = "Can you think of any flowers from back then that are extinct now?"
+next = "5"
+
+[garden_1.5]
+speaker = "seridia"
+portrait = "closed_eyes_brow"
+local = "I am about to make YOU extinct, gardener."
+next = "6"
+
+[garden_1.6]
+speaker = "celine"
+portrait = "happy"
+local = "Haha, you're so funny!"
+next = "7"
+
+[garden_1.7]
+speaker = "celine"
+portrait = "neutral"
+local = "Hold on, let me get my notebook ready! I don't want to miss any details."
+
+[garden_2]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "seridia" }] },
+	{ celine_zone = "<seridia_zone>" },
+	{ celine_zone = "town/celine_garden" },
+	{ caldarus_seridia_town = true },
+	{ seridia_status = "undefined" }
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "celine" } },
+	{ bark = { bark = "angry", npc = "seridia" } }
+]
+speaker = "celine"
+portrait = "think"
+local = "You're always coming by and watching me work in the garden."
+next = "1"
+
+[garden_2.1]
+speaker = "celine"
+portrait = "neutral"
+local = "Do you want to try planting something, Seridia?"
+next = "2"
+
+[garden_2.2]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "Do not be ridiculous. I am not the nurturing type."
+next = "3"
+
+[garden_2.3]
+speaker = "celine"
+portrait = "sweat"
+local = "Oh. So you're here because you want to be friends?"
+next = "4"
+
+[garden_2.4]
+speaker = "seridia"
+portrait = "angry_brows"
+local = "I am here because watching one of your bloodline scrabble in the dirt amuses me."
+next = "5"
+
+[garden_2.5]
+speaker = "celine"
+portrait = "concerned"
+local = "So you ARE lonely..."
+next = "6"
+
+[garden_2.6]
+speaker = "seridia"
+portrait = "closed_eyes_brow"
+local = "Stop that."

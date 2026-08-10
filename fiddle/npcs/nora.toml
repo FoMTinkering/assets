@@ -1,0 +1,170 @@
+bio = "Stern, business-minded shopkeep who runs the General Store. Mother to Celine and Dell, married to Holt. "
+birthday = { season = "summer", day = 24 }
+loved_gifts = [
+	"ancient_gold_coin",
+	"cherry_cobbler",
+	"fried_rice",
+	"onion_soup",
+	"peaches_and_cream",
+	"pumpkin_stew",
+	"roasted_cauliflower",
+	"roasted_sweet_potato",
+	"sauteed_snow_peas",
+	"toasted_sunflower_seeds",
+
+]
+
+liked_gifts = [
+	"baked_potato",
+	"beet_salad",
+	"braised_burdock",
+	"braised_carrots",
+	"butter",
+	"cabbage_slaw",
+	"candied_lemon_peel",
+	"coconut_milk",
+	"coffee",
+	"cucumber_salad",
+	"grilled_corn",
+	"latte",
+	"poached_pear",
+	"salted_watermelon",
+	"sesame_broccoli",
+	"simmered_daikon",
+	"sliced_turnip",
+	"spicy_water_chestnuts",
+	"strawberries_and_cream",
+	"tomato_soup",
+
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "narrows_moss"
+name = "Nora"
+aldarian_name = "NR"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["townsfolk", "general_store_family"]
+journal_portrait_offset = [-115, -40]
+journal_background_color = [204, 225, 255]
+date_photo_offset = [0, 0]
+job = "General Store Co-Owner"
+icon_sprite = "spr_ui_generic_icon_npc_nora"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_nora"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_nora"
+dateable = false
+
+[gossip]
+	line = "nora_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["latte"]
+	"12" = ["water"]
+	"16" = ["white_wine", "rose_wine"]
+	"20" = ["white_wine", "cocktail"]
+
+[offsets]
+	portrait = [-130, -65]
+	sweat = [-5, 9]
+	hearts = [-5, 9]
+	angry = [-1, 8]
+	sparkles = [1, 5]
+	sparkles_dark = [1, 5]
+	sick = [5, 9]
+	music_notes = [1, 5]
+	intensity = [0, 1]
+	surprise = [0, 7]
+	shock = [2, 2]
+	sigh = [-3, 6]
+	loud = [5, 5]
+	cheery = [0, 11]
+	drop = [5, 4]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.shocked]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.sweep]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	on_pause_speaking = "idle"
+
+[cycles.write_sit]
+	default_direction = "east"
+	directions = ["east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+
+[cycles.tap]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"

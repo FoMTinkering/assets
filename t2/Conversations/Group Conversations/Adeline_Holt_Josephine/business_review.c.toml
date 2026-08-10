@@ -1,0 +1,50 @@
+[business_review]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "holt" }, { npc = "josephine" }] },
+	{ adeline_business_review = true },
+	{ adeline_zone = "<holt_zone>" },
+	{ adeline_zone = "<josephine_zone>" },
+	{ quest_repair_the_bridge_complete = true },
+	{ date_time = "1m", comparator = ">=" }
+]
+speaker = "adeline"
+portrait = "think"
+local = "How are things looking? Do you have everything you need?"
+next = "1"
+
+[business_review.1]
+speaker = "josephine"
+local = "We've got a happy equilibrium going on at the Inn. And Olric is working out great as a part-timer!"
+next = "2"
+
+[business_review.2]
+speaker = "holt"
+portrait = "think"
+local = "Maybe I should have a chat with him! We always get stretched a bit thin at the end of the week, when Nora turns her attention to the Saturday Market."
+
+[business_review_2]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "holt" }, { npc = "josephine" }] },
+	{ adeline_business_review = true },
+	{ adeline_zone = "<holt_zone>" },
+	{ adeline_zone = "<josephine_zone>" },
+	{ quest_repair_the_bridge_complete = true },
+	{ date_time = "1m", comparator = ">=" }
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "Is there anything the Inn or General Store need? Just say the word!"
+next = "1"
+
+[business_review_2.1]
+speaker = "josephine"
+portrait = "think"
+local = "Hemlock's been sourcing new wines through Balor lately, but I think that's their little side project."
+next = "2"
+
+[business_review_2.2]
+speaker = "holt"
+portrait = "wink"
+local = "Wine, you say? Maybe I should start my own side project!"

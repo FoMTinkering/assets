@@ -1,0 +1,409 @@
+scene(clinic_f1);
+place_actor(valen, west, v4h_valen_entrance);
+place_actor(ari, east, v4h_ari_entrance);
+camera_position(v4h_camera_1);
+request_music_play(valen);
+
+sim {
+	fade_in(2);
+	pan_camera(3.5, v4h_camera_2);
+	{
+		wait(1.5);
+		next_line(); //
+	}
+	{
+		wait(1.5);
+		animate(valen, action);
+		wait(0.5);
+		animate(valen, idle);
+	}
+	{
+		wait(2);
+		free bark_speech(ari, cute_face);
+	}
+}
+
+//
+
+if get_response() == 1 {
+	sim {
+		{
+			wait(1);
+			face(valen, north);
+			wait(1);
+			face(valen, west);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	next_line(); //
+}
+sim {
+	{
+		wait(0.5);
+		face(valen, north);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(valen, west);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+sim {
+	pan_camera(3, v4h_camera_3);
+	{
+		wait(0.5);
+		fade_out(2);
+	}
+	{
+		free walk_slow(valen, v4h_valen_exit);
+		wait(0.5);
+		walk_slow(ari, v4h_ari_exit);
+	}
+}
+wait(1);
+
+//
+scene(clinic_b1);
+place_actor(ari, north, v4h_ari_wander_1);
+place_actor(valen, south, v4h_valen_start);
+camera_position(v4h_camera_4);
+
+sim {
+	pan_camera(3, v4h_camera_5);
+	{
+		wait(0.5);
+		fade_in(2);
+	}
+	free {
+		wait(2);
+		walk_slow(ari, v4h_ari_wander_2);
+		face(ari, south);
+		free bark_speech(ari, exclamation_mark);
+		wait(0.5);
+		animate(ari, action);
+		wait(0.5);
+		animate(ari, idle);
+		wait(1.5);
+		walk_slow(ari, v4h_ari_wander_3);
+		face(ari, north);
+	}
+	{
+		wait(2);
+		next_line(); //
+	}
+}
+sim {
+	{
+		walk_slow(valen, v4h_valen_journal);
+		face(valen, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+free bark_speech(ari, exclamation_mark);
+wait(1);
+face(valen, south);
+next_line(); //
+
+sim {
+	pan_camera(3, v4h_camera_6);
+	{
+		wait(0.5);
+		walk_slow(valen, v4h_valen_science_1);
+		face(valen, north);
+		wait(0.5);
+		animate(valen, action);
+		wait(0.5);
+		animate(valen, idle);
+		wait(0.5);
+		animate(valen, action);
+		wait(0.5);
+		animate(valen, idle);
+		wait(0.5);
+		walk_slow(valen, v4h_valen_science_2);
+		face(valen, north);
+		wait(0.5);
+		animate(valen, action);
+	}
+	{
+		wait(1.75);
+		face(ari, west);
+		wait(2.75);
+		face(ari, east);
+		wait(0.75);
+		walk_slow(ari, v4h_ari_stand_back);
+		face(ari, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+
+
+//
+
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.5);
+			animate(valen, idle);
+			wait(0.5);
+			face(valen, west);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	sim {
+		free bark_speech(valen, exclamation_mark);
+		{
+			wait(0.5);
+			animate(valen, idle);
+			face(valen, west);
+		}
+		{
+			next_line(); //
+		}
+	}
+}
+close_textbox();
+wait(0.25);
+face(valen, north);
+wait(0.5);
+animate(valen, action);
+wait(0.5);
+setup_prop(valen_potion);
+animate(valen, idle);
+wait(0.5);
+face(valen, west);
+next_line(); //
+sim {
+	{
+		wait(0.5);
+		face(valen, north);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(valen, west);
+	}
+	{
+		next_line(); //
+	}
+}
+
+//
+
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+face(valen, south);
+wait(0.5);
+animate(valen, write);
+wait(0.5);
+next_line(); //
+close_textbox();
+walk_slow(ari, v4h_ari_take_potion);
+face(ari, north);
+wait(0.5);
+animate(ari, action);
+wait(0.5);
+destroy_prop(valen_potion);
+animate(ari, idle);
+walk_slow(ari, v4h_ari_experiment);
+face(ari, south);
+use_item(lurid_colored_drink); //
+wait(1);
+sim {
+	{
+		play_sound("SoundEffects/Ari/TakeDamage");
+		show_menu(vitals);
+		set_ari_health(__get_ari_max_health() / 2);
+		set_ari_stamina(__get_ari_max_stamina() / 2);
+		await_ari_animation();
+		animate(ari, blink);
+		wait(0.2);
+		freeze_ari();
+	}
+	{
+		wait(0.5);
+		free bark_speech(valen, exclamation_mark);
+		wait(0.5);
+		animate(valen, idle);
+	}
+}
+sim {
+	{
+		wait(3.25);
+		pan_camera(2, v4h_camera_7);
+	}
+	{
+		wait(1);
+		free bark_speech(valen, sweat_drop);
+		wait(0.25);
+		animate(valen, write);
+		wait(2);
+		animate(valen, idle);
+		walk(valen, v4h_valen_barrel);
+		face(valen, west);
+		animate(valen, action);
+		wait(0.5);
+		animate(valen, idle);
+		wait(0.2);
+		walk(valen, v4h_valen_cure);
+		face(valen, east);
+	}
+	{
+		next_line(); //
+		close_textbox();
+	}
+	{
+		wait(2);
+		unfreeze_ari();
+		set_ari_health(1);
+		set_ari_stamina(1);
+		await_ari_animation();
+		animate(ari, faint);
+		freeze_ari_on_last_frame();
+		//
+		//
+		//
+		hide_menu(vitals);
+	}
+}
+sim {
+	{
+		wait(1);
+		pan_camera(2, v4h_camera_4);
+	}
+	{
+		animate(valen, heal);
+		wait(1);
+		animate(valen, idle);
+		create_animation(spr_npc_effect_heal, v4h_heal_animation, 0, 0, 0, -1000);
+		//
+		set_ari_health(__get_ari_max_health());
+		set_ari_stamina(__get_ari_max_stamina());
+		//
+	}
+	{
+		wait(1);
+		fade_out(2);
+	}
+}
+wait(1);
+
+//
+
+scene(clinic_f1);
+place_actor(ari, south, v4h_ari_bed);
+place_actor(valen, east, v4h_valen_bed);
+animate(valen, write);
+animate(ari, blink);
+wait(0.2);
+freeze_ari();
+camera_position(v4h_camera_8);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		pan_camera(3, v4h_camera_9);
+	}
+	{
+		wait(2);
+		animate(ari, idle);
+		wait(1.25);
+		face(ari, west);
+	}
+	{
+		wait(2.25);
+		free bark_speech(valen, exclamation_mark);
+		wait(0.5);
+		animate(valen, idle);
+		face(valen, east);
+	}
+	{
+		wait(3);
+		next_line(); //
+	}
+}
+//
+
+next_line(); //
+sim {
+	{
+		wait(0.5);
+		face(valen, west);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(valen, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+walk(ari, v4h_ari_standing);
+face(ari, west);
+free bark_speech(ari, cute_face);
+wait(1);
+free bark_speech(valen, cute_face);
+wait(1);
+next_line(); //
+next_line(); //
+sim {
+	{
+		wait(1);
+		animate(valen, write);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(1);
+animate(valen, idle);
+face(valen, east);
+wait(0.5);
+free bark_speech(valen, cute_face);
+sim {
+	fade_out(2);
+	free {
+		wait(1);
+		walk(valen, v4h_valen_entrance);
+	}
+}
+wait_one_tick();

@@ -1,0 +1,460 @@
+[adeline_eight_hearts_follow_up_adeline]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_heart_event = "eight_heart" },
+	{ adeline_eight_heart_priority_bump = true },
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "neutral"
+local = "Thanks again for everything [Ari]."
+next = "1"
+
+[adeline_eight_hearts_follow_up_adeline.1]
+portrait = "blush"
+local = "I'm feeling a lot better now. I promise I'll try to take it easy."
+
+[adeline_eight_hearts_follow_up_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_partner = false },
+	{ adeline_heart_event = "eight_heart" },
+]
+actions = [{ bark = { bark = "cute_face", npc = "eiland" } }]
+portrait = "sad"
+local = "I heard that Adeline collapsed while you were visiting..."
+next = "1"
+
+[adeline_eight_hearts_follow_up_eiland.1]
+portrait = "neutral"
+local = "Thank goodness you were there to help her!"
+next = "2"
+
+[adeline_eight_hearts_follow_up_eiland.2]
+portrait = "happy"
+local = "I appreciate it, [Ari]."
+
+[adeline_eight_hearts_follow_up_elsie_romantic]
+refresh = "never"
+requires = [
+	{ npc = "elsie" },
+	{ adeline_heart_event = "eight_heart" },
+	{ adeline_is_partner = true },
+]
+portrait = "think"
+local = "My, I can't believe Adeline fainted during your date!"
+next = "1"
+
+[adeline_eight_hearts_follow_up_elsie_romantic.1]
+portrait = "neutral"
+local = "And you carried her all the way up to her room!"
+next = "2"
+
+[adeline_eight_hearts_follow_up_elsie_romantic.2]
+portrait = "blush"
+effect = "hearts"
+local = "And then took care of her until she felt better!"
+next = "3"
+
+[adeline_eight_hearts_follow_up_elsie_romantic.3]
+portrait = "happy"
+local = "What a romantic. Thank you, [Ari]. Adeline is lucky to have you."
+
+[adeline_eight_hearts_follow_up_elsie_best_friend]
+refresh = "never"
+requires = [
+	{ npc = "elsie" },
+	{ adeline_heart_event = "eight_heart" },
+	{ adeline_is_best_friend = true },
+]
+portrait = "think"
+local = "My, I can't believe Adeline fainted during your tea party!"
+next = "1"
+
+[adeline_eight_hearts_follow_up_elsie_best_friend.1]
+portrait = "neutral"
+local = "And you carried her all the way up to her room!"
+next = "2"
+
+[adeline_eight_hearts_follow_up_elsie_best_friend.2]
+portrait = "blush"
+effect = "hearts"
+local = "And then took care of her until she felt better!"
+next = "3"
+
+[adeline_eight_hearts_follow_up_elsie_best_friend.3]
+portrait = "happy"
+local = "What a good friend. Thank you, [Ari]. Adeline is lucky to have you."
+
+[adeline_eight_hearts]
+kind = "gameplay_triggered"
+writes = [
+	{ adeline_heart_event = "eight_heart", expires = "4d" },
+	{ adeline_eight_heart_priority_bump = true, expires = "4d" },
+]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "Oh, [Ari]!"
+next = [
+	{ target = "1_insert_r", requires = [
+		{ shooting_star_adeline_attended = true },
+	] },
+	{ target = "1_insert_f" },
+]
+
+[adeline_eight_hearts.1_insert_r]
+speaker = "adeline"
+portrait = "embarrassed_tired"
+local = "You're here for our date!"
+next = "1"
+
+[adeline_eight_hearts.1_insert_f]
+speaker = "adeline"
+portrait = "neutral_tired"
+local = "You're here for tea!"
+next = "1"
+
+[adeline_eight_hearts.1]
+speaker = "adeline"
+portrait = "embarrassed_tired"
+local = "I-I'm sorry. I must have lost track of time."
+next = "2"
+
+[adeline_eight_hearts.2]
+speaker = "adeline"
+portrait = "evasive_tired"
+local = "Let me just finish up this page and I'll put the kettle on."
+next = "3"
+
+[adeline_eight_hearts.3]
+speaker = "adeline"
+portrait = "happy"
+local = "There we are! Two hot cups of tea and some fresh made =Lemon Pie=."
+next = "4"
+
+[adeline_eight_hearts.4]
+speaker = "adeline"
+portrait = "evasive_tired"
+local = "I had to hide it so Eiland wouldn't get into it first..."
+next = "5"
+
+[adeline_eight_hearts.5]
+speaker = "adeline"
+portrait = "happy"
+local = "Hehe."
+prompts = [
+	{ local = "Wow, did you make it yourself?", next = "6" },
+	{ local = "Oh, it looks wonderful!", next = "7" },
+]
+
+[adeline_eight_hearts.6]
+speaker = "adeline"
+portrait = "embarrassed_tired"
+local = "I did! It's actually one of the first things I ever learned to bake..."
+next = "8"
+
+[adeline_eight_hearts.7]
+speaker = "adeline"
+portrait = "embarrassed_tired"
+local = "Do you really think so? It's actually one of the first things I ever learned to bake..."
+next = "8"
+
+[adeline_eight_hearts.8]
+speaker = "adeline"
+portrait = "sick_smile"
+local = "Mother used to take me up to the Summit for picnics in the spring."
+next = "9"
+
+[adeline_eight_hearts.9]
+speaker = "adeline"
+portrait = "neutral_tired"
+local = "Sometimes we'd pick lemons right from the tree on our way home, then spend the afternoon baking together. Eiland always liked that part!"
+next = "10"
+
+[adeline_eight_hearts.10]
+speaker = "adeline"
+portrait = "evasive_tired"
+local = "..."
+next = "11"
+
+[adeline_eight_hearts.11]
+speaker = "adeline"
+portrait = "embarrassed_tired"
+local = "Can I ask you something, [Ari]?"
+next = "12"
+
+[adeline_eight_hearts.12]
+speaker = "adeline"
+portrait = "sick_eyes_closed"
+local = "I-"
+next = "13"
+
+[adeline_eight_hearts.13]
+speaker = "adeline"
+portrait = "sick_eyes_open"
+local = "Gosh, it's a bit... stuffy in here, isn't it?"
+next = "14"
+
+[adeline_eight_hearts.14]
+speaker = "adeline"
+portrait = "sick_eyes_open"
+local = "[Ari]? What- what happened?"
+next = "15"
+
+[adeline_eight_hearts.15]
+speaker = "adeline"
+portrait = "sick_eyes_closed"
+local = "I... fainted?"
+prompts = [
+	{ local = "Should I go get Doctor Valen?", next = "16" },
+	{ local = "Should I go get Elsie?", next = "16" },
+]
+
+[adeline_eight_hearts.16]
+speaker = "adeline"
+portrait = "sick_eyes_open"
+local = "No, no, I'm fine. It's just a little fever... I just need some rest."
+
+[[adeline_eight_hearts.16.next]]
+target = "17r"
+requires = [{ shooting_star_adeline_attended = true, comparator = "==" }]
+
+[[adeline_eight_hearts.16.next]]
+target = "17f"
+requires = []
+
+[adeline_eight_hearts.17r]
+speaker = "adeline"
+portrait = "sick_eyes_closed"
+local = "I'm sorry I spoiled our date..."
+next = "18"
+
+[adeline_eight_hearts.17f]
+portrait = "sick_eyes_closed"
+local = "I'm sorry I spoiled our get together..."
+next = "18"
+
+[adeline_eight_hearts.18]
+speaker = "adeline"
+portrait = "sick_think"
+local = "..."
+prompts = [
+	{ local = "Would you like me to stay with you until you feel better?", next = "19" },
+	{ local = "How about I bring you a fresh cup of tea?", next = "21" },
+]
+
+[adeline_eight_hearts.19]
+speaker = "adeline"
+portrait = "sick_smile"
+local = "Really, [Ari]? ... I would like that."
+next = "20"
+
+[adeline_eight_hearts.20]
+speaker = "adeline"
+portrait = "embarrassed_tired"
+local = "Why don't you bring our tea up and we'll have it here? I'm parched!"
+next = "23"
+
+[adeline_eight_hearts.21]
+speaker = "adeline"
+portrait = "sick_smile"
+local = "Thank you, [Ari]..."
+next = "22"
+
+[adeline_eight_hearts.22]
+speaker = "adeline"
+portrait = "embarrassed_tired"
+local = "I wouldn't say no to a slice of that pie either, if you're up for it..."
+next = "23"
+
+[adeline_eight_hearts.23]
+speaker = "adeline"
+portrait = "happy"
+local = "Mmm... that was delicious, wasn't it? I'm starting to feel better already."
+
+[[adeline_eight_hearts.23.next]]
+target = "24r"
+requires = [{ shooting_star_adeline_attended = true, comparator = "==" }]
+
+[[adeline_eight_hearts.23.next]]
+target = "24f"
+requires = []
+
+[adeline_eight_hearts.24r]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "Thank you for taking care of me..."
+next = "25r"
+
+[adeline_eight_hearts.24f]
+speaker = "adeline"
+portrait = "neutral"
+local = "Thank you for staying with me..."
+next = "25f"
+
+[adeline_eight_hearts.25r]
+speaker = "adeline"
+portrait = "hope_special"
+local = "Earlier... there was something I wanted to talk to you about."
+next = "26r"
+
+[adeline_eight_hearts.25f]
+speaker = "adeline"
+portrait = "happy"
+local = "Earlier... there was something I wanted to talk to you about."
+next = "26f"
+
+[adeline_eight_hearts.26r]
+speaker = "adeline"
+portrait = "hope_special"
+local = "Do you think you'll stay here in Mistria? I know it's been hard work and I'm always asking for your help, but-"
+next = "27r"
+
+[adeline_eight_hearts.26f]
+speaker = "adeline"
+portrait = "think"
+local = "Do you think you'll stay here in Mistria? I know it's been hard work and I'm always asking for your help, but I-"
+next = "27f"
+
+[adeline_eight_hearts.27r]
+speaker = "adeline"
+portrait = "gloomy_special"
+local = "Do you think you'll stay here... with me?"
+prompts = [
+	{ local = "You're one of my best friends, Adeline. I promise I'm not going anywhere.", next = "28r" },
+	{ local = "I adore you Adeline. There's no place I'd rather be, and no one I'd rather be with.", next = "31" },
+]
+
+[adeline_eight_hearts.27f]
+speaker = "adeline"
+portrait = "evasive_tired"
+local = "I-"
+prompts = [
+	{ local = "You're one of my best friends, Adeline. I'm not going anywhere.", next = "28f" },
+	{ local = "I adore you Adeline. There's no one I'd rather be with.", next = "31" },
+]
+
+# option one
+[adeline_eight_hearts.28r]
+actions = [{ update_status = { npc = "adeline", status = "best_friend" } }]
+speaker = "adeline"
+portrait = "hope_special"
+local = "You're my best friend, too, [Ari]."
+next = "29r"
+
+[adeline_eight_hearts.28f]
+actions = [{ update_status = { npc = "adeline", status = "best_friend" } }]
+speaker = "adeline"
+portrait = "happy"
+local = "You're my best friend, too, [Ari]."
+next = "29f"
+
+[adeline_eight_hearts.29r]
+speaker = "adeline"
+portrait = "embarrassed_tired"
+local = "I'm so glad that Mistria has someone like you to depend on..."
+next = "30r"
+
+[adeline_eight_hearts.29f]
+speaker = "adeline"
+portrait = "neutral"
+local = "I'm so glad that Mistria has someone like you to depend on..."
+next = "30f"
+
+[adeline_eight_hearts.30r]
+speaker = "adeline"
+portrait = "happy"
+local = "That I have someone like you to depend on. Even if we just stay friends."
+next = "36r"
+
+[adeline_eight_hearts.30f]
+speaker = "adeline"
+portrait = "happy"
+local = "That I have someone like you to depend on."
+next = "36f"
+
+# option two same for both
+[adeline_eight_hearts.31]
+actions = [{ update_status = { npc = "adeline", status = "dating" } }]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "Do you mean it, [Ari]? I-"
+next = "32"
+
+[adeline_eight_hearts.32]
+speaker = "adeline"
+portrait = "hope_special"
+local = "I feel the same way... I have for some time."
+next = "33"
+
+[adeline_eight_hearts.33]
+speaker = "adeline"
+portrait = "blush"
+local = "In truth, I felt something the first night you came to Mistria."
+next = "34"
+
+[adeline_eight_hearts.34]
+speaker = "adeline"
+portrait = "cartoon_embarrassed"
+local = "I wasn't expecting you to be so cute. I got so flustered, I accidentally smashed your vase of welcome flowers after you walked in on me trying to put your house together."
+next = "35"
+
+[adeline_eight_hearts.35]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "S-sorry about that."
+
+[[adeline_eight_hearts.35.next]]
+target = "36r"
+requires = [{ shooting_star_adeline_attended = true, comparator = "==" }]
+
+[[adeline_eight_hearts.35.next]]
+target = "36f"
+requires = []
+
+[adeline_eight_hearts.36r]
+speaker = "adeline"
+portrait = "blush"
+local = "There's one more thing I wanted to talk about, before you go."
+next = "37r"
+
+[adeline_eight_hearts.36f]
+speaker = "adeline"
+portrait = "neutral"
+local = "There's one more thing I wanted to talk about, before you go."
+next = "37f"
+
+[adeline_eight_hearts.37r]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "I want you to have this. It's called the $Hero's Ring$. It's an heirloom that was passed down to me when I stepped in as the town's leader."
+next = "38r"
+
+[adeline_eight_hearts.37f]
+speaker = "adeline"
+portrait = "happy"
+local = "I want you to have this. It's called the $Hero's Ring$. It's an heirloom that was passed down to me when I stepped in as the town's leader."
+next = "38f"
+
+[adeline_eight_hearts.38r]
+speaker = "adeline"
+portrait = "hope_special"
+local = "Legends say it should be presented to Mistria's protector, to offer protection in turn."
+next = "39r"
+
+[adeline_eight_hearts.38f]
+speaker = "adeline"
+portrait = "think"
+local = "Legends say it should be presented to Mistria's protector, to offer protection in turn."
+next = "39f"
+
+[adeline_eight_hearts.39r]
+speaker = "adeline"
+portrait = "blush"
+local = "There's no doubt about it, [Ari]. This ring belongs to you. May it protect you always."
+
+[adeline_eight_hearts.39f]
+speaker = "adeline"
+portrait = "neutral"
+local = "There's no doubt about it, [Ari]. This ring belongs to you. May it protect you always."

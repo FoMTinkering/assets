@@ -1,0 +1,174 @@
+[inn_meal_accept_1]
+kind = "date_acceptance"
+requires = [
+    { npc = "hayden" },
+    { date = "inn_meal" },
+    { da_hayden_inn_meal = 0 },
+    { hayden_is_spouse = false }
+]
+writes = [
+    { da_hayden_inn_meal = 1 },
+    { da_hayden_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "hayden"
+portrait = "confident_blush"
+local = "So, um, [Ari]..."
+next = "1"
+
+[inn_meal_accept_1.1]
+speaker = "hayden"
+portrait = "shy_special"
+local = "Could I convince you to join me on a date at the Inn?"
+next = "2"
+
+[inn_meal_accept_1.2]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "Sorry... I'm a little rusty at all this."
+next = "3"
+
+[inn_meal_accept_1.3]
+speaker = "hayden"
+portrait = "happy_arm_down_blush"
+local = "Yes?"
+next = "4"
+
+[inn_meal_accept_1.4]
+speaker = "hayden"
+portrait = "confident_blush"
+local = "Well then, let's go!"
+
+[inn_meal_accept_2]
+kind = "date_acceptance"
+requires = [
+    { npc = "hayden" },
+    { date = "inn_meal" },
+    { da_hayden_inn_meal = 1 },
+    { hayden_is_spouse = false }
+]
+writes = [
+    { da_hayden_inn_meal = 2 },
+    { da_hayden_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "hayden"
+portrait = "happy_arm_down_blush"
+local = "How about something to eat, [Ari]?"
+next = "1"
+
+[inn_meal_accept_2.1]
+speaker = "hayden"
+portrait = "shy_special"
+local = "Last time was really fun..."
+next = "2"
+
+[inn_meal_accept_2.2]
+speaker = "hayden"
+portrait = "confident_blush"
+effect = "hearts"
+local = "Alright! Let's do it!"
+
+[inn_meal_accept_3]
+kind = "date_acceptance"
+requires = [
+    { npc = "hayden" },
+    { date = "inn_meal" },
+    { hayden_has_child = false },
+    { any = [
+        { hayden_is_spouse = true },
+        { da_hayden_inn_meal = 2, comparator = ">=" }
+    ] }
+]
+writes = [
+    { da_hayden_inn_meal = 3 },
+    { da_hayden_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "hayden"
+portrait = "confident_blush"
+local = "I've got a table for two waiting for us at the Inn, [Ari]."
+next = "1"
+
+[inn_meal_accept_3.1]
+speaker = "hayden"
+portrait = "happy_arm_down_blush"
+effect = "hearts"
+local = "Let's go enjoy ourselves awhile!"
+
+[inn_meal_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "hayden" },
+    { da_hayden_inn_meal = 1 },
+    { da_hayden_inn_meal_follow_up_gate = true },
+    { hayden_is_spouse = false }
+]
+writes = [{ da_hayden_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "confident_blush"
+local = "Well, I don't know about you..."
+next = "1"
+
+[inn_meal_follow_up_1.1]
+portrait = "embarrassed"
+local = "But I had a real good time on our date."
+next = "2"
+
+[inn_meal_follow_up_1.2]
+portrait = "shy_special"
+local = "It was nice, spending quality time together."
+next = "3"
+
+[inn_meal_follow_up_1.3]
+portrait = "confident_blush"
+effect = "hearts"
+local = "I hope we can do it again soon!"
+
+[inn_meal_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "hayden" },
+    { da_hayden_inn_meal = 2 },
+    { da_hayden_inn_meal_follow_up_gate = true },
+    { hayden_is_spouse = false }
+]
+writes = [{ da_hayden_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "happy_arm_down_blush"
+local = "That was real nice, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_2.1]
+portrait = "shy_special"
+local = "I feel like I'm learning so much about you..."
+next = "2"
+
+[inn_meal_follow_up_2.2]
+portrait = "embarrassed"
+local = "I should have asked you out ages ago!"
+next = "3"
+
+[inn_meal_follow_up_2.3]
+portrait = "confident_blush"
+effect = "hearts"
+local = "We just seem to have so much in common."
+
+[inn_meal_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "hayden" },
+    { hayden_has_child = false },
+    { any = [{ hayden_is_spouse = false }, { da_hayden_inn_meal = 3 }] },
+    { da_hayden_inn_meal_follow_up_gate = true }
+]
+writes = [{ da_hayden_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "confident_blush"
+local = "Nothing beats sharing a meal with you, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_3.1]
+portrait = "hope_special"
+effect = "hearts"
+local = "I'm already looking forward to doing it again soon!"

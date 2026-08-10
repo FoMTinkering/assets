@@ -1,0 +1,49 @@
+[double_lunch]
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "ryis" }] },
+	{ hayden_zone = "<ryis_zone>" },
+	{ location = "inn" },
+	{ any = [{ hayden_activity = "eat" }, { hayden_activity = "order_food" }] },
+	{ any = [{ ryis_activity = "eat" }, { ryis_activity = "order_food" }] },
+	{ hayden_town_work_day = true },
+	{ ryis_town_work_day = true },
+	{ time_of_day = "afternoon" }
+]
+refresh = "2m"
+speaker = "hayden"
+portrait = "wink"
+local = "Whew, I worked up a serious appetite! How do you feel about double lunch, Ryis?"
+next = "1"
+
+[double_lunch.1]
+speaker = "ryis"
+portrait = "happy"
+local = "I'd say I feel pretty good about it!"
+
+[double_lunch_2]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "ryis" }] },
+	{ hayden_zone = "<ryis_zone>" },
+	{ location = "inn" },
+	{ any = [{ hayden_activity = "eat" }, { hayden_activity = "order_food" }] },
+	{ any = [{ ryis_activity = "eat" }, { ryis_activity = "order_food" }] },
+	{ hayden_town_work_day = true },
+	{ ryis_town_work_day = true },
+	{ time_of_day = "afternoon" }
+]
+speaker = "ryis"
+portrait = "neutral"
+local = "Glad you had us break for lunch, Hayden. I was hungrier than I thought."
+next = "1"
+
+[double_lunch_2.1]
+speaker = "hayden"
+portrait = "wink"
+local = "Oho, not a problem! And remember, if you work extra, you gotta eat extra!"
+next = "2"
+
+[double_lunch_2.2]
+speaker = "hayden"
+portrait = "laugh"
+local = "Gya ha ha!"

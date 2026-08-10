@@ -1,0 +1,129 @@
+[piano]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "olric" }] },
+	{ any = [
+		{ eiland_is_at = "manor_house_entry/Piano Bench Seat" },
+		{ eiland_is_at = "manor_house_entry/Piano Teacher" },
+	] },
+	{ any = [
+		{ olric_is_at = "manor_house_entry/Piano Bench Seat" },
+		{ olric_is_at = "manor_house_entry/Piano Teacher" },
+	] },
+	{ olric_piano_prodigy = false }
+]
+writes = [{ olric_piano_lessons = true }]
+speaker = "eiland"
+portrait = "neutral"
+local = "Why the sudden interest in learning piano, Olric?"
+next = "1"
+
+[piano.1]
+speaker = "olric"
+portrait = "think"
+effect = "music_notes"
+local = "I didn't know I liked mining until I started, and so I got to thinking... what else would I like if I tried it?"
+next = "2"
+
+[piano.2]
+speaker = "olric"
+portrait = "happy"
+local = "Life is about the journey, you know?"
+
+[piano_2]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "olric" }] },
+	{ olric_is_at = "manor_house_entry/Piano Bench Seat" },
+	{ eiland_is_at = "manor_house_entry/Piano Teacher" },
+	{ olric_piano_lessons = true }
+]
+speaker = "eiland"
+portrait = "neutral"
+local = "You've really been improving, Olric. I can tell you're taking practice seriously."
+next = "1"
+
+[piano_2.1]
+speaker = "olric"
+portrait = "happy"
+local = "Aw, thanks boss! It's been fun to learn an instrument!"
+
+[eiland_piano]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "olric" }] },
+	{ eiland_is_at = "manor_house_entry/Piano Bench Seat" },
+	{ olric_is_at = "manor_house_entry/Piano Teacher" },
+	{ olric_piano_prodigy = false }
+]
+speaker = "eiland"
+portrait = "mad"
+local = "Try to memorize how I finger the keys, Olric. Observe how I alternate the notes, increasing the tension of the piece!"
+next = "1"
+
+[eiland_piano.1]
+speaker = "olric"
+portrait = "sad"
+local = "The tension... yeah... bro, my head hurts."
+
+[olric_piano]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "olric" }] },
+	{ olric_is_at = "manor_house_entry/Piano Bench Seat" },
+	{ eiland_is_at = "manor_house_entry/Piano Teacher" },
+]
+writes = [{ olric_piano_prodigy = true }]
+speaker = "eiland"
+portrait = "neutral"
+local = "Olric, this is lovely playing. You say you're self-taught? And you don't even use sheet music?"
+next = "1"
+
+[olric_piano.1]
+speaker = "olric"
+portrait = "happy"
+local = "Yeah, bro! You just gotta feel the music... let it flow through you..."
+next = "2"
+
+[olric_piano.2]
+speaker = "eiland"
+portrait = "mad"
+effect = "sparkles"
+local = "Let it flow... yes... I'm feeling it! The ancient, storied call of music!"
+
+[piano_3]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "olric" }] },
+	{ any = [
+		{ eiland_is_at = "manor_house_entry/Piano Bench Seat" },
+		{ eiland_is_at = "manor_house_entry/Piano Teacher" },
+	] },
+	{ any = [
+		{ olric_is_at = "manor_house_entry/Piano Bench Seat" },
+		{ olric_is_at = "manor_house_entry/Piano Teacher" },
+	] },
+]
+speaker = "eiland"
+portrait = "neutral"
+local = "You know, Olric, there are records of ancient music across every civilization."
+next = "1"
+
+[piano_3.1]
+speaker = "olric"
+portrait = "happy"
+effect = "music_notes"
+local = "Whoa. It's like we're all feeling those same deep feelings together, all across space and time and stuff..."
+next = "2"
+
+[piano_3.2]
+speaker = "eiland"
+portrait = "happy"
+local = "Wow, Olric. That was so poetic."
+next = "3"
+
+[piano_3.3]
+speaker = "eiland"
+portrait = "think"
+effect = "drop"
+local = "I think..."

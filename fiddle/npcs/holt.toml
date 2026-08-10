@@ -1,0 +1,167 @@
+birthday = { season = "fall", day = 14 }
+loved_gifts = [
+	"flour",
+	"gazpacho",
+	"hard_wood",
+	"loaded_baked_potato",
+	"baked_potato",
+	"stone_horse",
+	"narrows_moss",
+	"coffee",
+	"watermelon",
+	"wheat",
+]
+liked_gifts = [
+	"potato",
+	"beet",
+	"broccoli",
+	"cabbage",
+	"carrot",
+	"cauliflower",
+	"chili_pepper",
+	"corn",
+	"cranberry",
+	"cucumber",
+	"daikon_radish",
+	"onion",
+	"peas",
+	"pumpkin",
+	"rice_stalk",
+	"snow_peas",
+	"strawberry",
+	"sugar_cane",
+	"sweet_potato",
+	"turnip",
+
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "puddle_spider"
+name = "Holt"
+aldarian_name = "HLT"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["townsfolk", "general_store_family"]
+journal_portrait_offset = [-108, -27]
+journal_background_color = [255, 189, 145]
+date_photo_offset = [0, 0]
+job = "General Store Co-Owner"
+icon_sprite = "spr_ui_generic_icon_npc_holt"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_holt"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_holt"
+dateable = false
+
+[gossip]
+	line = "holt_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["latte", "juice"]
+	"12" = ["lemonade"]
+	"16" = ["beer", "green_bottle"]
+	"20" = ["beer", "whiskey", "cocktail"]
+
+[offsets]
+	portrait = [-130, -65]
+	sweat = [-8, -6]
+	hearts = [-8, -6]
+	angry = [-15, 1]
+	sparkles = [-5, -1]
+	sparkles_dark = [-5, -1]
+	sick = [-8, -3]
+	music_notes = [-7, -1]
+	intensity = [-6, -11]
+	surprise = [-12, -4]
+	shock = [-7, -15]
+	sigh = [-2, -6]
+	loud = [-2, -11]
+	cheery = [-5, 0]
+	drop = [-9, -7]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.shocked]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.sweep]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	on_pause_speaking = "idle"
+
+[cycles.whittle]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "idle"
+
+[cycles.write]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"

@@ -1,0 +1,19 @@
+[merri]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "landen" }, { npc = "ryis" }] },
+	{ landen_zone = "<ryis_zone>" },
+	{ market_is_back = true },
+	{ merri_has_met = true, ignore_priority = true },
+	{ day_of_the_week = "saturday", comparator = "!=" },
+	{ day_of_the_week = "sunday", comparator = "!=" }
+]
+speaker = "landen"
+portrait = "neutral"
+local = "Did I tell you? Merri from the Saturday Market sent an inquiry. She had some questions on refinishing furniture."
+next = "1"
+
+[merri.1]
+speaker = "ryis"
+portrait = "neutral"
+local = "Nice. I'll drop by the market and chat with her some time."

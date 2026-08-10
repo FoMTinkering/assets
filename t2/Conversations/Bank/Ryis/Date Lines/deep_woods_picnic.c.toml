@@ -1,0 +1,180 @@
+[deep_woods_picnic_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "ryis" },
+	{ date = "deep_woods_picnic" },
+	{ da_ryis_deep_woods_picnic = 0 },
+	{ ryis_is_spouse = false }
+]
+writes = [
+	{ da_ryis_deep_woods_picnic = 1 },
+	{ da_ryis_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "ryis"
+portrait = "happy"
+local = "You want to go to the $Deep Woods$? For a picnic?"
+next = "1"
+
+[deep_woods_picnic_accept_1.1]
+speaker = "ryis"
+portrait = "blush_special"
+local = "Sure, that sounds great!"
+next = "2"
+
+[deep_woods_picnic_accept_1.2]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "Maybe we'll get some good birdwatching in, while we're there!"
+
+[deep_woods_picnic_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "ryis" },
+	{ date = "deep_woods_picnic" },
+	{ da_ryis_deep_woods_picnic = 1 },
+	{ ryis_is_spouse = false }
+]
+writes = [
+	{ da_ryis_deep_woods_picnic = 2 },
+	{ da_ryis_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "ryis"
+portrait = "blush_special"
+local = "How about another $Deep Woods$ picnic, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_accept_2.1]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "Just you, me, and the birdsong..."
+next = "2"
+
+[deep_woods_picnic_accept_2.2]
+speaker = "ryis"
+portrait = "blush_special"
+local = "What do you say?"
+
+[deep_woods_picnic_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "ryis" },
+	{ date = "deep_woods_picnic" },
+	{ ryis_has_child = false },
+	{ any = [
+		{ ryis_is_spouse = true },
+		{ da_ryis_deep_woods_picnic = 2, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_ryis_deep_woods_picnic = 3 },
+	{ da_ryis_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "ryis"
+portrait = "blush_special"
+local = "Would you like to go for another picnic, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_accept_3.1]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "I always enjoy the peace and the nature out in the $Deep Woods$!"
+
+[deep_woods_picnic_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ da_ryis_deep_woods_picnic = 1 },
+	{ da_ryis_deep_woods_picnic_follow_up_gate = true },
+	{ ryis_is_spouse = false }
+]
+writes = [{ da_ryis_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "blush_special"
+local = "That was a really great time, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_1.1]
+portrait = "happy_blush"
+local = "Good food, good conversation..."
+next = "2"
+
+[deep_woods_picnic_follow_up_1.2]
+portrait = "embarrassed"
+local = "The shade of the trees and the sound of the birds..."
+next = "3"
+
+[deep_woods_picnic_follow_up_1.3]
+portrait = "happy"
+effect = "hearts"
+local = "Let's do it again soon, okay?"
+
+[deep_woods_picnic_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ da_ryis_deep_woods_picnic = 2 },
+	{ da_ryis_deep_woods_picnic_follow_up_gate = true },
+	{ ryis_is_spouse = false }
+]
+writes = [{ da_ryis_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "blush_special"
+local = "Thanks for coming out with me, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_2.1]
+portrait = "think"
+local = "I wonder what kind of bird was making that strange call?"
+prompts = [
+	{ local = "It might be a totally new species!", next = "2" },
+	{ local = "It sounded almost like whistling.", next = "5" },
+]
+
+[deep_woods_picnic_follow_up_2.2]
+portrait = "happy"
+local = "Wouldn't that be something?"
+next = "3"
+
+[deep_woods_picnic_follow_up_2.3]
+portrait = "think"
+local = "It's funny, it almost sounded like it was whistling."
+next = "4"
+
+[deep_woods_picnic_follow_up_2.4]
+portrait = "blush_special"
+local = "Maybe we'll spot it one of these days!"
+
+[deep_woods_picnic_follow_up_2.5]
+portrait = "happy"
+local = "Hahaha."
+next = "6"
+
+[deep_woods_picnic_follow_up_2.6]
+portrait = "neutral"
+local = "It sort of did, didn't it?"
+next = "7"
+
+[deep_woods_picnic_follow_up_2.7]
+portrait = "blush_special"
+local = "Maybe we'll spot it one of these days!"
+
+[deep_woods_picnic_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_has_child = false },
+	{ any = [{ ryis_is_spouse = true }, { da_ryis_deep_woods_picnic = 3 }] },
+	{ da_ryis_deep_woods_picnic_follow_up_gate = true }
+]
+writes = [{ da_ryis_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy"
+local = "It's always so nice spending time out in nature with you."
+next = "1"
+
+[deep_woods_picnic_follow_up_3.1]
+portrait = "blush_special"
+local = "Thanks for joining me on another great picnic, [Ari]."

@@ -1,0 +1,18 @@
+[found_a_rock]
+refresh = "1m"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }] },
+	{ march_zone = "<olric_zone>" },
+	{ time_of_day = "morning", comparator = "!=" }
+]
+speaker = "march"
+portrait = "neutral"
+local = "What are you so happy about? Did you find a new rock?"
+next = "1"
+
+[found_a_rock.1]
+speaker = "olric"
+portrait = "happy"
+effect = "sparkles"
+local = "Yeah!"
+

@@ -1,0 +1,80 @@
+fun on_scene_end() {
+	__send_pet_to_home();
+}
+
+scene(farm);
+request_music_play("Music/Events/Cutscene");
+camera_position(pa_camera_1);
+place_actor(ari, south, pa_ari_door);
+place_actor(pet, west, pa_pet_entrance);
+
+sim {
+	{
+		fade_in(2);
+	}
+	{
+		walk_slow(pet, pa_pet_start);
+		face(pet, west);
+	}
+	{
+		wait(1);
+		free bark_speech(ari, exclamation_mark);
+		wait(0.25);
+		face(ari, east);
+		wait(1.5);
+		free bark_speech(ari, question_mark);
+		wait(1);
+	}
+	{
+		walk(ari, pa_ari_entrance);
+		face(ari, south);
+	}
+	pan_camera(1.5, pa_camera_2);
+}
+wait(0.5);
+sim {
+	{
+		sim {
+			walk(ari, pa_ari_forward);
+			set_move_speed(ari, 0.3);
+		}
+		face(ari, east);
+	}
+	{
+		pan_camera(1.5, pa_camera_3);
+	}
+}
+wait(0.5);
+free bark(pet, heart);
+play_pet_positive_sound();
+wait(2);
+sim {
+	{
+		use_door(pet);
+	}
+	{
+		wait(0.5);
+		place_actor(ari, south, pa_ari_stepback);
+		face(ari, south);
+		wait(0.5);
+		face(ari, west);
+		wait(2.5);
+		sim {
+			walk(ari, pa_ari_entrance);
+			set_move_speed(ari, 0.4);
+		}
+		face(ari, north);
+	}
+	pan_camera(2, pa_camera_4);
+}
+wait(1.25);
+next_line(); //
+next_line(); //
+close_textbox();
+
+run_tutorial("pets");
+
+wait(0.5);
+free bark_speech(ari, heart);
+wait(1);
+fade_out(2);

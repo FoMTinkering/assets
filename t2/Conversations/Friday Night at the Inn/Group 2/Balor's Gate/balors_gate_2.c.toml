@@ -1,0 +1,64 @@
+[balors_gate_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ balor_zone = "inn/south_table" },
+	{ dell_zone = "inn/south_table" },
+	{ eiland_zone = "inn/south_table" },
+	{ holt_zone = "inn/bar" },
+	{ nora_zone = "inn/south_table" },
+	{ ryis_zone = "inn/south_table" },
+	{ any = [
+		{ npc = "balor" },
+		{ npc = "dell" },
+		{ npc = "eiland" },
+		{ npc = "nora" },
+		{ npc = "ryis" },
+	] },
+	{ balors_gate_fnati = 1 },
+]
+writes = [{ balors_gate_fnati = 2 }]
+actions = [
+	{ bark = { bark = "heart", npc = "holt" } },
+	{ bark = { bark = "heart", npc = "nora" } },
+]
+speaker = "balor"
+local = "Your ragtag group has traveled three floors up the Blood Tower, inexplicably befriending every monster along the way. In fact, I don't think you've fought... anyone?"
+next = "1"
+
+[balors_gate_2.1]
+speaker = "eiland"
+portrait = "happy"
+local = "It's because we're on a journey... of knowledge!"
+next = "2"
+
+[balors_gate_2.2]
+speaker = "dell"
+portrait = "wink"
+effect = "sparkles"
+local = "No, it's because I like making friends with all the cool monsters! They told me I'm half-elf, half-dragon, half-knight, and secretly half-unicorn!"
+next = "3"
+
+[balors_gate_2.3]
+speaker = "ryis"
+local = "You might be the most magical creature of them all, Brightclaw. But your ma is an elf, so was your pa some kind of... Dragon Unicorn Knight?"
+next = "4"
+
+[balors_gate_2.4]
+speaker = "eiland"
+portrait = "think"
+local = "Fascinating question. I'll roll for scholarly insight and draconic knowledge... oh rats, a three. Well, let's inquire with Brightclaw's mother. Grimblade?"
+next = "5"
+
+[balors_gate_2.5]
+speaker = "nora"
+portrait = "happy"
+local = "I suppose I can ask. Holt, are you a Dragon Unicorn Knight?"
+next = "6"
+
+[balors_gate_2.6]
+speaker = "holt"
+portrait = "happy"
+effect = "cheery"
+local = "Whatever you say, honey!"

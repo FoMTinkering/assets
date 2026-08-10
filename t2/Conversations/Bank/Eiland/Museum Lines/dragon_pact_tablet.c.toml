@@ -1,0 +1,46 @@
+[dragon_pact_tablet]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ museum_donated_dragon_pact_tablet = true },
+	{ building = "museum", comparator = "!=" },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ eog_dragon_pact_tablet = true, expires = "1y" }]
+portrait = "neutral"
+local = "I've been using Juniper's notes to further decipher the writing on the $Dragon Pact Tablet$..."
+next = "1"
+
+[dragon_pact_tablet.1]
+portrait = "happy"
+local = "Thank you again for donating it to the Museum's collection. It's been invaluable to my research!"
+
+[dragon_pact_tablet_alt]
+refresh = "1y"
+requires = [
+    { npc = "eiland" },
+    { museum_donated_dragon_pact_tablet = true },
+    { building = "museum", comparator = "!=" },
+	{ caldarus_seridia_town = true },
+	{ eog_dragon_pact_tablet = false }
+]
+portrait = "neutral"
+local = "Do you recall the $Dragon Pact Tablet$ you donated to the Museum?"
+next = "1"
+
+
+[dragon_pact_tablet_alt.1]
+portrait = "happy"
+local = "I asked Seridia about it. Apparently these tablets were used as a type of contract between humans and dragons!"
+next = "2"
+
+
+[dragon_pact_tablet_alt.2]
+portrait = "think"
+local = "Seridia would use them to grant $Magic$ to the members of her court in exchange for their fealty..."
+next = "3"
+
+
+[dragon_pact_tablet_alt.3]
+portrait = "happy"
+local = "Fascinating, isn't it?"

@@ -1,0 +1,122 @@
+[general_store_0]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "seridia" }] },
+	{ holt_zone = "<seridia_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false },
+	{ seridia_holt_pun = 0 }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "holt" } }]
+writes = [
+	{ holt_just_punned = 1, operator = "+=", expires = "24h" },
+	{ seridia_holt_pun = 1 }
+]
+speaker = "holt"
+portrait = "neutral"
+local = "It's real fun having you in town, Seridia!"
+next = "1"
+
+[general_store_0.1]
+speaker = "holt"
+portrait = "wink"
+local = "Before you arrived, things were really starting to... drag-on."
+next = "2"
+
+[general_store_0.2]
+speaker = "seridia"
+portrait = "neutral"
+local = "How delightful."
+next = "3"
+
+[general_store_0.3]
+speaker = "seridia"
+portrait = "serious"
+local = """To drag on... meaning to persist excessively, but also a portmanteau creating the word "dragon"."""
+next = "4"
+
+[general_store_0.4]
+speaker = "seridia"
+portrait = "smile"
+local = "I am amused. Tell me another, you funny little man."
+
+[general_store_1]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "seridia" }] },
+	{ holt_zone = "<seridia_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false },
+	{ seridia_holt_pun = 1 }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "holt" } }]
+writes = [
+	{ holt_just_punned = 1, operator = "+=", expires = "24h" },
+	{ seridia_holt_pun = 2 }
+]
+speaker = "seridia"
+portrait = "mad"
+local = "Shopkeep! I demand entertainment."
+next = "1"
+
+[general_store_1.1]
+speaker = "holt"
+portrait = "neutral"
+local = "Oh! I'll do my best!"
+next = "2"
+
+[general_store_1.2]
+speaker = "holt"
+portrait = "wink"
+local = "But just so you know, I don't have a whole lot of tales... I'm just winging it!"
+next = "3"
+
+[general_store_1.3]
+speaker = "seridia"
+portrait = "neutral"
+local = """Ah. Using "tales" as a homophone for "tails"..."""
+next = "4"
+
+[general_store_1.4]
+speaker = "seridia"
+portrait = "serious"
+local = """And using the word "winging", referring to wings, but also the act of improvising a story in the process of telling it."""
+next = "5"
+
+[general_store_1.5]
+speaker = "seridia"
+portrait = "closed_eyes_smile"
+local = "Wonderful. I am sated."
+
+[general_store_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "seridia" }] },
+	{ holt_zone = "<seridia_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false },
+	{ seridia_holt_pun = 2 }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "holt" } }]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+speaker = "seridia"
+portrait = "smile"
+local = "I am ever impressed by your skills at delivering exquisite pain with words, Holt."
+next = "1"
+
+[general_store_2.1]
+speaker = "seridia"
+portrait = "sly"
+local = "If I were still Witch Queen, you would be the dark jester of my retinue."
+next = "2"
+
+[general_store_2.2]
+speaker = "holt"
+portrait = "wink"
+local = "That's claw-some! I'm glad my jokes are up to scratch!"
+next = "3"
+
+[general_store_2.3]
+speaker = "seridia"
+portrait = "closed_eyes_smile"
+local = "Yes... quite exquisite, my jester."

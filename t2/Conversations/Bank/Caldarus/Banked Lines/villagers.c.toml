@@ -1,0 +1,207 @@
+[balor_0]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_recovery_delay = "undefined" },
+	{ caldarus_is_human = true },
+	{ caldarus_villager_delay = false },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ balor_caldarus_encounter = true, expires = "2d" },
+	{ caldarus_villager_delay = true, expires = "2d" }
+]
+portrait = "neutral"
+local = "I admire that merchant, Balor. He is quite discreet, and respects discretion in kind."
+next = "1"
+
+[balor_0.1]
+portrait = "think"
+local = "Though unconventional, he seems perfectly willing to take orders I have been leaving out near the stairs to town."
+next = "2"
+
+[balor_0.2]
+portrait = "smile"
+effect = "sparkles"
+local = "That is good news for my dwindling pantry."
+
+[celine_0]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ time_of_day = "morning", comparator = "!=" },
+	{ caldarus_recovery_delay = "undefined" },
+	{ location = "deep_woods" },
+	{ caldarus_is_human = true },
+	{ caldarus_villager_delay = false },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ celine_caldarus_encounter = true, expires = "2d" },
+	{ caldarus_villager_delay = true, expires = "2d" }
+]
+portrait = "neutral"
+local = "I noticed Celine foraging by the pond earlier."
+next = "1"
+
+[celine_0.1]
+portrait = "ugh"
+local = "I could not help but intervene with a wind spell when she nearly fell in..."
+
+[dell_0]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_recovery_delay = "undefined" },
+	{ caldarus_is_human = true },
+	{ caldarus_villager_delay = false },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ dell_caldarus_encounter = true, expires = "2d" },
+	{ caldarus_villager_delay = true, expires = "2d" }
+]
+portrait = "neutral"
+local = "That child, Dell, is quite amusing. She is convinced a dragon lives in these woods."
+next = "1"
+
+[dell_0.1]
+portrait = "think"
+local = "She is also convinced that a headless knight, a gryphon, and a mermaid reside here too."
+next = "2"
+
+[dell_0.2]
+portrait = "smile"
+local = "I will have to keep an eye out."
+
+[eiland_0]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_recovery_delay = "undefined" },
+	{ caldarus_is_human = true },
+	{ eiland_heart_level = 4, comparator = ">=" },
+	{ caldarus_villager_delay = false },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ caldarus_villager_delay = true, expires = "2d" }]
+portrait = "think"
+local = "The young Lord Eiland seems to be quite invested in the history of the Dragonsworn."
+next = "1"
+
+[eiland_0.1]
+portrait = "smile"
+local = "I am curious to see his reaction when he discovers that one lives alongside him."
+
+[elsie_0]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_recovery_delay = "undefined" },
+	{ caldarus_is_human = true },
+	{ caldarus_villager_delay = false },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ caldarus_villager_delay = true, expires = "2d" }]
+portrait = "think"
+local = "I have heard tell of Lady Elsie and her vast library."
+next = "1"
+
+[elsie_0.1]
+portrait = "neutral"
+local = "Someday I would like to explore such a collection of knowledge. I am sure I would learn much."
+
+[henrietta_0]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_recovery_delay = "undefined" },
+	{ caldarus_is_human = true },
+	{ caldarus_villager_delay = false },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ caldarus_villager_delay = true, expires = "2d" }]
+portrait = "neutral"
+local = "Henrietta sounds to be a proud and noble creature. I would like to meet her some day."
+
+[juniper_0]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_recovery_delay = "undefined" },
+	{ location = "deep_woods", comparator = "!=" },
+	{ caldarus_is_human = true },
+	{ caldarus_villager_delay = false },
+	{ cutscene_seen_juniper_eight_hearts = false },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ juniper_caldarus_encounter = true, expires = "2d" },
+	{ caldarus_villager_delay = true, expires = "2d" }
+]
+portrait = "think"
+local = "I had an interesting encounter the other day."
+next = "1"
+
+[juniper_0.1]
+portrait = "neutral"
+local = "It seems that Juniper followed a leyline into the Deep Woods."
+next = "2"
+
+[juniper_0.2]
+portrait = "think"
+local = "She lost track of it, so I gave her a hint before I could help myself."
+next = "3"
+
+[juniper_0.3]
+portrait = "sigh"
+local = "I was hidden, though, so I must have given her a fright. Her scream disturbed every bird in the Deep Woods."
+next = "4"
+
+[juniper_0.4]
+portrait = "ugh"
+local = "Every bird, and one dragon."
+
+[ryis_0]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_recovery_delay = "undefined" },
+	{ caldarus_is_human = true },
+	{ caldarus_villager_delay = false },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ ryis_caldarus_encounter = true, expires = "2d" },
+	{ caldarus_villager_delay = true, expires = "2d" }
+]
+portrait = "think"
+local = "That young carpenter, Ryis, recently ventured into the Deep Woods to gather fallen branches."
+next = "1"
+
+[ryis_0.1]
+portrait = "neutral"
+local = "He seems quite at ease in the depths of the forest, and quite taken with the birds. He is able to feed them seed right out of his hand."
+next = "2"
+
+[ryis_0.2]
+portrait = "smile"
+local = "I have begun leaving him bundles of timber, so that he might have more freedom to enjoy his time among the trees."
+
+[vera_0]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_recovery_delay = "undefined" },
+	{ caldarus_is_human = true },
+	{ caldarus_villager_delay = false },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ caldarus_villager_delay = true, expires = "2d" }]
+portrait = "think"
+local = "I am curious about the Saturday Market's hair stylist, Vera."
+next = "1"
+
+[vera_0.1]
+portrait = "happy"
+local = "How do you think I would look with a different hair style?"

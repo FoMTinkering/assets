@@ -1,0 +1,17 @@
+[dnd_follow_up]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ day_of_the_week = "friday", comparator = "!=" },
+	{ dnd_fnati = 3, comparator = "<=" },
+	{ dnd_fnati = 2, comparator = ">=" },
+	{ dnd_fnati_discussion = 2, comparator = "<" }
+]
+writes = [{ dnd_fnati_discussion = 1, operator = "+=", expires = "1w" }]
+portrait = "think"
+local = "That evening of Dragons & Drama was more gripping than I expected. Enough for me to forget about work!"
+next = "1"
+
+[dnd_follow_up.1]
+portrait = "happy"
+local = "I'm looking forward to the next time."

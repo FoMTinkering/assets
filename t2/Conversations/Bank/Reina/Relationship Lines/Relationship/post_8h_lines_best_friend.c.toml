@@ -1,0 +1,673 @@
+[reina_post_8h_best_friend_0]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = false },
+	{ any = [
+		{ reina_post_8h_romantic_progression = true },
+		{ reina_is_best_friend = true }
+	] },
+	{ reina_post_8h_best_friend_gate = false },
+	{ reina_post_8h_best_friend_grouping = 0 }
+]
+writes = [
+	{ reina_post_8h_best_friend_gate = true, expires = "20h" },
+	{ reina_post_8h_best_friend_grouping = 1 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "Want to hear a secret, [Ari]?"
+next = "1"
+
+[reina_post_8h_best_friend_0.1]
+portrait = "think"
+local = "Growing up, my parents always told me stories from their days as traveling musicians."
+next = "2"
+
+[reina_post_8h_best_friend_0.2]
+portrait = "neutral"
+local = "They'd move from town to town, playing shows at each inn as they went."
+next = "3"
+
+[reina_post_8h_best_friend_0.3]
+portrait = "think"
+local = "Some inns were smaller and more run down than others..."
+next = "4"
+
+[reina_post_8h_best_friend_0.4]
+portrait = "neutral"
+local = "But even in the poorest villages, there would always be a smiling face and a hot meal waiting to welcome them."
+next = "5"
+
+[reina_post_8h_best_friend_0.5]
+portrait = "happy"
+local = "Warming their weary hearts and stomachs after a long day on the road."
+next = "6"
+
+[reina_post_8h_best_friend_0.6]
+portrait = "blush_open_eyes"
+local = "I think maybe that's what inspired my love for cooking..."
+next = "7"
+
+[reina_post_8h_best_friend_0.7]
+portrait = "happy"
+local = "It's such a tangible way of showing care for another person."
+next = "8"
+
+[reina_post_8h_best_friend_0.8]
+portrait = "neutral"
+local = "I hope the Sleeping Dragon Inn will always be a place that a traveler can call home, if even just for a night."
+
+
+[reina_post_8h_best_friend_1]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = false },
+	{ any = [
+		{ reina_post_8h_romantic_progression = true },
+		{ reina_is_best_friend = true }
+	] },
+	{ reina_post_8h_best_friend_gate = false },
+	{ reina_post_8h_best_friend_grouping = 1 }
+]
+writes = [
+	{ reina_post_8h_best_friend_gate = true, expires = "20h" },
+	{ reina_post_8h_best_friend_grouping = 2 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "reina" } }]
+portrait = "neutral"
+local = "I loved growing up in a cozy little place like Mistria."
+next = "1"
+
+[reina_post_8h_best_friend_1.1]
+portrait = "happy"
+local = "It's amazing to be surrounded by folks who look out for you."
+next = "2"
+
+[reina_post_8h_best_friend_1.2]
+portrait = "think"
+local = "But I didn't realize what a difference it would make to have someone truly share in my dreams..."
+next = "3"
+
+[reina_post_8h_best_friend_1.3]
+portrait = "neutral"
+local = "Not until you moved to town."
+next = "4"
+
+[reina_post_8h_best_friend_1.4]
+portrait = "happy"
+local = "It makes me so happy!"
+prompts = [
+	{ local = "Me too! I'll always enjoy cooking!", next = "5" },
+	{ local = "Me too! I'll always enjoy eating your food!", next = [
+		{ target = "8r", requires = [{ reina_is_partner = true }] },
+		{ target = "8f", requires = [] }
+	] }
+]
+
+[reina_post_8h_best_friend_1.5]
+portrait = "neutral"
+local = "I'm so glad [Ari]!"
+next = "6"
+
+[reina_post_8h_best_friend_1.6]
+portrait = "happy"
+local = "Let's keep helping each other get better and better."
+next = "7"
+
+[reina_post_8h_best_friend_1.7]
+portrait = "wink"
+local = "I'll taste test for you anytime you need it!"
+
+[reina_post_8h_best_friend_1.8r]
+portrait = "blush"
+local = "I'm so glad [Ari]!"
+next = "9r"
+
+[reina_post_8h_best_friend_1.9r]
+portrait = "blush_open_eyes"
+local = "I promise I'll keep working hard at it."
+next = "10"
+
+[reina_post_8h_best_friend_1.8f]
+portrait = "happy"
+local = "I'm so glad [Ari]!"
+next = "9f"
+
+[reina_post_8h_best_friend_1.9f]
+portrait = "neutral"
+local = "I promise I'll keep working hard at it."
+next = "10"
+
+[reina_post_8h_best_friend_1.10]
+portrait = "wink"
+local = "And you can taste test for me anytime!"
+
+[reina_post_8h_best_friend_2]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ any = [
+		{ reina_post_8h_romantic_progression = true },
+		{ reina_is_best_friend = true }
+	] },
+	{ reina_post_8h_best_friend_gate = false },
+	{ reina_post_8h_best_friend_grouping = 2 }
+]
+writes = [
+	{ reina_post_8h_best_friend_gate = true, expires = "20h" },
+	{ reina_post_8h_best_friend_grouping = 3 }
+]
+actions = [
+	{ bark = { bark = "relationship_status", npc = "reina" } },
+	{ item = "miners_mushroom_stew" }
+]
+portrait = "think"
+local = "It's hard to believe how long we went without access to ingredients from the Mines, after the earthquake."
+next = "1"
+
+[reina_post_8h_best_friend_2.1]
+portrait = "neutral"
+local = "Now Mines forage is always in stock, and you're regularly finding exciting new ingredients, too!"
+next = "2"
+
+[reina_post_8h_best_friend_2.2]
+portrait = "happy"
+local = "I'm so happy that we've reconnected with that aspect of our culinary tradition."
+next = "3"
+
+[reina_post_8h_best_friend_2.3]
+portrait = "wink"
+local = "And it's been fun trying my hand at these old recipes again. Like this one!"
+
+[reina_post_8h_best_friend_3]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = false },
+	{ any = [
+		{ reina_post_8h_romantic_progression = true },
+		{ reina_is_best_friend = true }
+	] },
+	{ reina_post_8h_best_friend_gate = false },
+	{ reina_post_8h_best_friend_grouping = 3 }
+]
+writes = [
+	{ reina_post_8h_best_friend_gate = true, expires = "2d" },
+	{ reina_post_8h_romantic_gate = true, expires = "2d" },
+	{ reina_post_8h_best_friend_grouping = 4 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "Have I ever told you how the Sleeping Dragon Inn got its name?"
+next = "1"
+
+[reina_post_8h_best_friend_3.1]
+portrait = "think"
+local = "Mom told me it was named by her great great grandpa."
+next = "2"
+
+[reina_post_8h_best_friend_3.2]
+portrait = "neutral"
+local = "The story goes that he visited the $Deep Woods$ one day, and got lost after he strayed from his usual path."
+next = "3"
+
+[reina_post_8h_best_friend_3.3]
+portrait = "think"
+local = "He wandered among dense trees for hours, searching for the path home."
+next = "4"
+
+[reina_post_8h_best_friend_3.4]
+portrait = "sad"
+local = "Finally, he came across some old ruins in a clearing. The sun was setting, so he decided to shelter there until the next day."
+next = "5"
+
+[reina_post_8h_best_friend_3.5]
+portrait = "think"
+local = "That night, he dreamed of a huge sleeping dragon. It didn't speak to him, but it seemed to be pointing him home."
+next = "6"
+
+[reina_post_8h_best_friend_3.6]
+portrait = "neutral"
+local = "The next morning, he walked in the direction the dragon had been facing, and made it home safely."
+next = "7"
+
+[reina_post_8h_best_friend_3.7]
+portrait = "happy"
+local = "He named the Inn after that dream dragon who saved him!"
+prompts = [
+	{ local = "Wow! Do you think that really happened?", next = "8" },
+	{ local = "Do you think it was a real dragon?", next = "12" }
+]
+
+[reina_post_8h_best_friend_3.8]
+portrait = "neutral"
+local = "I like to think so!"
+next = "9"
+
+[reina_post_8h_best_friend_3.9]
+portrait = "think"
+local = "Some of the forest around Mistria is so impenetrable... it really feels like anything could be out there."
+next = "10"
+
+[reina_post_8h_best_friend_3.10]
+portrait = "neutral"
+local = "But it's been generations, so I'm sure the story has changed over the years."
+next = "11"
+
+[reina_post_8h_best_friend_3.11]
+portrait = "happy"
+local = "Even if it turns out it wasn't true... it's fun to think about, isn't it?"
+
+[reina_post_8h_best_friend_3.12]
+portrait = "neutral"
+local = "Wouldn't that be amazing?"
+next = "13"
+
+[reina_post_8h_best_friend_3.13]
+portrait = "think"
+local = "Some of the forest around Mistria is so impenetrable... it really feels like anything could be out there."
+next = "14"
+
+[reina_post_8h_best_friend_3.14]
+portrait = "neutral"
+local = "It's been generations, so I'm sure the story has changed over the years. Maybe it never even happened!"
+next = "15"
+
+[reina_post_8h_best_friend_3.15]
+portrait = "think"
+local = "Or maybe there's still a slumbering dragon out there even now!"
+
+[reina_post_8h_best_friend_4]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ any = [
+		{ reina_post_8h_romantic_progression = true },
+		{ reina_is_best_friend = true }
+	] },
+	{ reina_post_8h_best_friend_gate = false },
+	{ reina_post_8h_best_friend_grouping = 4 },
+	{ weather = "rainy" }
+]
+writes = [
+	{ reina_post_8h_best_friend_gate = true, expires = "2d" },
+	{ reina_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "reina" } }]
+portrait = "happy"
+local = "Isn't the sound of the rain so dreamy?"
+next = "1"
+
+[reina_post_8h_best_friend_4.1]
+portrait = "neutral"
+local = "This kind of weather always makes me want to curl up by the hearth with snacks and a book."
+next = "2"
+
+[reina_post_8h_best_friend_4.2]
+portrait = "wink"
+local = "If you bring the book, I'll bring the snacks!"
+next = "3"
+
+[reina_post_8h_best_friend_4.3]
+portrait = "happy"
+local = "I like something with lots of adventure... Ooh, and at least two sword fights!"
+
+[reina_post_8h_best_friend_5]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ any = [
+		{ reina_post_8h_romantic_progression = true },
+		{ reina_is_best_friend = true }
+	] },
+	{ reina_post_8h_best_friend_gate = false },
+	{ reina_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ reina_post_8h_best_friend_gate = true, expires = "2d" },
+	{ reina_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "You ever notice how the paintings in the Inn's rooms are a matching set?"
+next = "1"
+
+[reina_post_8h_best_friend_5.1]
+portrait = "happy"
+local = "That's because I'm the one who picked them!"
+next = "2"
+
+[reina_post_8h_best_friend_5.2]
+portrait = "neutral"
+local = "They reminded me of the covers of my favorite adventure novels."
+next = "3"
+
+[reina_post_8h_best_friend_5.3]
+portrait = "think"
+local = "There was a bit of debate in the family over the dragons in the paintings, though."
+next = "4"
+
+[reina_post_8h_best_friend_5.4]
+portrait = "neutral"
+local = "While it's true that our namesake dragon is sleeping... I think the paintings look more exciting, showing them awake."
+
+[reina_post_8h_best_friend_6]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ any = [
+		{ reina_post_8h_romantic_progression = true },
+		{ reina_is_best_friend = true }
+	] },
+	{ reina_post_8h_best_friend_gate = false },
+	{ reina_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ reina_post_8h_best_friend_gate = true, expires = "2d" },
+	{ reina_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "reina" } }]
+portrait = "think"
+local = "Maybe this is silly..."
+next = "1"
+
+[reina_post_8h_best_friend_6.1]
+portrait = "happy"
+local = "But I love to daydream about pie-in-the-sky additions for the Inn..."
+next = "2"
+
+[reina_post_8h_best_friend_6.2]
+portrait = "neutral"
+local = "Like, what if we had a big outdoor wood-fired oven? Or an extra floor for more guest rooms?"
+next = "3"
+
+[reina_post_8h_best_friend_6.3]
+portrait = "embarrassed"
+local = "The Inn doesn't really need any of that... but lately it feels like anything is possible!"
+
+[reina_post_8h_best_friend_7]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ any = [
+		{ reina_post_8h_romantic_progression = true },
+		{ reina_is_best_friend = true }
+	] },
+	{ reina_post_8h_best_friend_gate = false },
+	{ reina_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ reina_post_8h_best_friend_gate = true, expires = "2d" },
+	{ reina_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "reina" } }]
+portrait = "wink"
+local = "My folks are planning a little get-together and I've deputized myself as Sheriff of Snacks."
+next = "1"
+
+[reina_post_8h_best_friend_7.1]
+portrait = "neutral"
+local = "I can never resist an opportunity to make some treats!"
+next = "2"
+
+[reina_post_8h_best_friend_7.2]
+portrait = "happy"
+local = "Here! Close your eyes, put out your hand, and choose one: spicy or sweet!"
+prompts = [
+	{ local = "Spicy!", next = "3" },
+	{ local = "Sweet!", next = "7" }
+]
+
+[reina_post_8h_best_friend_7.3]
+portrait = "neutral"
+local = "Ooh, good choice!"
+next = "4"
+
+[reina_post_8h_best_friend_7.4]
+portrait = "wink"
+local = "Both my mom and dad love this one."
+next = "5"
+
+[reina_post_8h_best_friend_7.5]
+portrait = "think"
+local = "The trick to making it is to never rub your eyes after cutting the chilis..."
+next = "6"
+
+[reina_post_8h_best_friend_7.6]
+actions = [{ item = "spicy_water_chestnuts" }]
+portrait = "neutral"
+local = "Here, try some!"
+
+[reina_post_8h_best_friend_7.7]
+portrait = "neutral"
+local = "Ooh, good choice!"
+next = "8"
+
+[reina_post_8h_best_friend_7.8]
+portrait = "wink"
+local = "The trick to getting the caramelization right is keeping an eye on the stove."
+next = "9"
+
+[reina_post_8h_best_friend_7.9]
+portrait = "think"
+local = "Sugar loves to burn the second you're looking away..."
+next = "10"
+
+[reina_post_8h_best_friend_7.10]
+actions = [{ item = "caramelized_moon_fruit" }]
+portrait = "neutral"
+local = "Here, try some!"
+
+[reina_post_8h_best_friend_8]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ any = [
+		{ reina_post_8h_romantic_progression = true },
+		{ reina_is_best_friend = true }
+	] },
+	{ reina_post_8h_best_friend_gate = false },
+	{ reina_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ reina_post_8h_best_friend_gate = true, expires = "2d" },
+	{ reina_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "reina" } }]
+portrait = "neutral"
+local = "This might sound strange, but..."
+next = "1"
+
+[reina_post_8h_best_friend_8.1]
+portrait = "happy"
+local = "I'm really looking forward to inheriting the Sleeping Dragon Inn someday."
+next = "2"
+
+[reina_post_8h_best_friend_8.2]
+portrait = "neutral"
+local = "I want to follow my heart, and ensure that my siblings are able to follow theirs."
+next = "3"
+
+[reina_post_8h_best_friend_8.3]
+portrait = "happy"
+local = "Luc and Maple will always have a home here, and our parents will be able to retire in comfort."
+next = "4"
+
+[reina_post_8h_best_friend_8.4]
+portrait = "wink"
+local = "Deep down, I know that's a future I can make happen!"
+prompts = [
+	{ local = "I know you can do it!", next = "5" },
+	{ local = "I'll help you chase your dreams however I can!", next = "7" }
+]
+
+[reina_post_8h_best_friend_8.5]
+portrait = "happy"
+local = "Thank you, [Ari]!"
+next = [
+	{ target = "6r", requires = [{ reina_is_partner = true }] },
+	{ target = "6f", requires = [] }
+]
+
+[reina_post_8h_best_friend_8.6r]
+portrait = "blush_open_eyes"
+local = "Your support means the world to me."
+
+[reina_post_8h_best_friend_8.6f]
+portrait = "neutral"
+local = "Your support means the world to me."
+
+[reina_post_8h_best_friend_8.7]
+portrait = "happy"
+local = "Are you sure about that, [Ari]?"
+next = "8"
+
+[reina_post_8h_best_friend_8.8]
+portrait = "wink"
+local = "Fair warning... I have a lot of dreams!"
+next = [
+	{ target = "9r", requires = [{ reina_is_partner = true }] },
+	{ target = "9f", requires = [] }
+]
+
+[reina_post_8h_best_friend_8.9r]
+portrait = "blush"
+local = "Now you're honor-bound to help me make them real..."
+next = "10"
+
+[reina_post_8h_best_friend_8.9f]
+portrait = "happy"
+local = "Now you're honor-bound to help me make them real..."
+next = "10"
+
+[reina_post_8h_best_friend_8.10]
+portrait = "wink"
+local = "Haha!"
+
+[reina_post_8h_best_friend_9]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = false },
+	{ any = [
+		{ reina_post_8h_romantic_progression = true },
+		{ reina_is_best_friend = true }
+	] },
+	{ reina_post_8h_best_friend_gate = false },
+	{ reina_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ reina_post_8h_best_friend_gate = true, expires = "2d" },
+	{ reina_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "reina" } }]
+portrait = "neutral"
+local = "Your days are pretty busy, huh?"
+next = "1"
+
+[reina_post_8h_best_friend_9.1]
+portrait = "think"
+local = "Lately when I'm busy working at the Inn, I find myself wondering what you're up to."
+next = "2"
+
+[reina_post_8h_best_friend_9.2]
+portrait = "neutral"
+local = "You spend a lot of time in the Mines don't you? What's down there that's so interesting?"
+prompts = [
+	{ local = "Lots of stuff! Ore, artifacts, even treasure!", next = [
+		{ target = "3r", requires = [{ reina_is_partner = true }] },
+		{ target = "3f", requires = [] }
+	] },
+	{ local = "Honestly, the Mines are kind of scary.", next = "6" }
+]
+
+[reina_post_8h_best_friend_9.3r]
+portrait = "blush"
+local = "Really? Wow..."
+next = "4"
+
+[reina_post_8h_best_friend_9.3f]
+portrait = "happy"
+local = "Really? Wow..."
+next = "4"
+
+[reina_post_8h_best_friend_9.4]
+portrait = "neutral"
+local = "I had no idea you were off hunting treasure!"
+next = [
+	{ target = "5r", requires = [{ reina_is_partner = true }] },
+	{ target = "5f", requires = [] }
+]
+
+[reina_post_8h_best_friend_9.5r]
+portrait = "blush_open_eyes"
+local = "It makes you sound like the hero in one of my adventure novels."
+
+[reina_post_8h_best_friend_9.5f]
+portrait = "happy"
+local = "It makes you sound like the hero in one of my adventure novels."
+
+[reina_post_8h_best_friend_9.6]
+portrait = "sad"
+local = "It seems like it... Please be careful, [Ari]."
+next = "7"
+
+[reina_post_8h_best_friend_9.7]
+portrait = "neutral"
+local = "I know mining ore is important for the town..."
+next = "8"
+
+[reina_post_8h_best_friend_9.8]
+portrait = "happy"
+local = "But you're much more important!"
+
+# last line
+[reina_post_8h_best_friend_10]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = false },
+	{ any = [
+		{ reina_post_8h_romantic_progression = true },
+		{ reina_is_best_friend = true }
+	] },
+	{ reina_post_8h_best_friend_gate = false },
+	{ reina_post_8h_best_friend_grouping = 4, ignore_priority = true },
+	{ location = "inn" },
+	{ any = [
+		{ reina_routine = "inn_solo_reina" },
+		{ reina_routine = "inn_table_service" }
+	] }
+]
+writes = [
+	{ reina_post_8h_best_friend_gate = true, expires = "2d" },
+	{ reina_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "relationship_status", npc = "reina" } },
+	{ item = "mixed_fruit_juice" }
+]
+portrait = "neutral"
+local = "Hey [Ari]!"
+next = "1"
+
+[reina_post_8h_best_friend_10.1]
+portrait = "happy"
+local = "It's funny... I was just thinking about the first time you came to the Inn."
+next = "2"
+
+[reina_post_8h_best_friend_10.2]
+portrait = "neutral"
+local = "And that first Friday night you joined the festivities."
+next = "3"
+
+[reina_post_8h_best_friend_10.3]
+portrait = "happy"
+local = "It all feels so long ago, doesn't it? It's hard to imagine this place without you."
+next = "4"
+
+[reina_post_8h_best_friend_10.4]
+portrait = "wink"
+local = "Here, let me mix you up something tasty... for old time's sake!"

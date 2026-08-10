@@ -1,0 +1,23 @@
+[chilly]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "ryis" }, { npc = "valen" }] },
+	{ hayden_zone = "<ryis_zone>" },
+	{ hayden_zone = "<valen_zone>" },
+	{ any = [{ season = "fall" }, { season = "winter" }] }
+]
+speaker = "ryis"
+portrait = "neutral"
+local = "You know that feeling when you're all cozy in bed, and it's a little chilly, so you don't want to get up?"
+next = "1"
+
+[chilly.1]
+speaker = "hayden"
+portrait = "think"
+local = "But you get up because you have to, and the floorboards are cold, and that gets you moving."
+next = "2"
+
+[chilly.2]
+speaker = "valen"
+portrait = "happy"
+local = "I love that feeling, if I'm being honest. This is my favorite time of year."

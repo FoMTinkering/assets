@@ -1,0 +1,227 @@
+[shooting_star_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+	{ ryis_heart_level = 4, comparator = ">=" },
+	{ ryis_heart_level = 8, comparator = "<" },
+]
+portrait = "neutral"
+local = "I've noticed the birds are more active in the evenings lately. They seem to be full of energy."
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "think"
+local = "Do you think it has something to do with the upcoming Shooting Star Festival?"
+next = "2"
+
+[shooting_star_anticipation.2]
+portrait = "happy"
+local = "Animals are sensitive to the cycles of nature..."
+next = "3"
+
+[shooting_star_anticipation.3]
+portrait = "embarrassed"
+local = "People, too, I suppose."
+
+[shooting_star_not_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_at = "town/star_festival_ryis" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "ryis_invited", comparator = "!=" },
+]
+portrait = "neutral"
+local = "The view of the stars is so much clearer out here than in the Capital..."
+next = "1"
+
+[shooting_star_not_invited.1]
+portrait = "happy"
+local = "It's really nice."
+
+[shooting_star_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_at = "town/star_festival_ryis" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "ryis_invited" },
+]
+portrait = "embarrassed"
+local = "Hey [Ari]! Are you ready to head up to the Summit?"
+
+[shooting_star_invited_anticipation]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ shooting_star_date_status = "ryis_invited" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ ryis_is_at = "town/star_festival_ryis", comparator = "!=" },
+]
+portrait = "happy"
+local = "See you at 8 pm?"
+next = "1"
+
+[shooting_star_invited_anticipation.1]
+portrait = "neutral"
+local = "I'm looking forward to it."
+
+[shooting_star_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ shooting_star_date_status = "ryis_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ ryis_is_partner = false },
+]
+portrait = "happy"
+local = "Hey, [Ari]!"
+next = "1"
+
+[shooting_star_follow_up.1]
+portrait = "blush_special"
+local = "Thanks again for inviting me out last night. I really enjoyed talking with you."
+
+[shooting_star_8h_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ shooting_star_date_status = "ryis_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ ryis_is_partner = true },
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "blush_special"
+local = "I had a really great time last night, [Ari]."
+next = "1"
+
+[shooting_star_8h_follow_up.1]
+portrait = "embarrassed"
+local = "I hope we can do it again next year."
+
+[shooting_star_missed_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ shooting_star_date_status = "ryis_invited" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "think"
+local = "..."
+next = "1"
+
+[shooting_star_missed_follow_up.1]
+portrait = "ugh"
+local = "Did something come up yesterday?"
+next = "2"
+
+[shooting_star_missed_follow_up.2]
+portrait = "sad"
+local = "I wasn't sure what happened when you never showed up."
+
+[shooting_star_follow_up_not_invited]
+refresh = "3m"
+requires = [
+	{ npc = "ryis" },
+	{ shooting_star_date_status = "ryis_invited", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "ryis_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "neutral"
+local = "Hey [Ari]."
+next = "1"
+
+[shooting_star_follow_up_not_invited.1]
+portrait = "happy"
+local = "Did you enjoy the stars last night?"
+
+# NEW ROMANCE LINE FOLLOW UPS
+
+[shooting_star_romantic_follow_up_A]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ shooting_star_date_status = "ryis_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+	{ ryis_is_spouse = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "blush", npc = "ryis" } },
+]
+portrait = "neutral"
+local = "Hey [Ari]! I have something for you!"
+next = "1"
+
+[shooting_star_romantic_follow_up_A.1]
+portrait = "happy"
+effect = "drop"
+local = "I was wrapping up an order this morning and before I knew it, I somehow managed to make an extra Birdhouse."
+next = "2"
+
+[shooting_star_romantic_follow_up_A.2]
+portrait = "embarrassed"
+actions = [{ item = "starter_bird_house_red" }]
+local = "It's nothing much, but I was thinking of you when I made it..."
+
+
+[shooting_star_romantic_follow_up_B]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ shooting_star_date_status = "ryis_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "ryis" } },
+]
+portrait = "blush_special"
+local = "You look cute today, [Ari]."
+next = "1"
+
+[shooting_star_romantic_follow_up_B.1]
+portrait = "happy"
+local = "There's that smile, haha!"
+
+[shooting_star_seridia_romantic_follow_up_A_follow_up_ryis]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ shooting_star_date_status = "seridia_went" },
+	{ shooting_star_seridia_cheesecake = true },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false },
+]
+portrait = "think"
+local = "Huh. How strange..."
+next = "1"
+
+[shooting_star_seridia_romantic_follow_up_A_follow_up_ryis.1]
+portrait = "sad"
+local = "I got a care package of $Golden Cheesecake$ from my parents... I was planning to eat it today, but the box was empty when I went to get it!"
+next = "2"
+
+[shooting_star_seridia_romantic_follow_up_A_follow_up_ryis.2]
+portrait = "ugh"
+local = "You don't think uncle Landen..."
+next = "3"
+
+[shooting_star_seridia_romantic_follow_up_A_follow_up_ryis.3]
+portrait = "mad"
+local = "Hmmm."

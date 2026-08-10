@@ -1,0 +1,29 @@
+priority = "max"
+requires = [
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ caldarus_home = true }
+]
+
+# Caldarus
+[caldarus."6:00am"]
+destination = "caldarus_house/Caldarus Wake Point"
+on_arrival_actions = [{ animation = "eyes_closed" }]
+
+[caldarus."6:18am"]
+destination = "caldarus_house/Caldarus Wake Point"
+on_arrival_actions = [{ routine = "caldarus_house_reading" }]
+
+[caldarus."10:28am"]
+destination = "deep_woods/routine_exit"
+on_arrival_actions = [{ routine = "deep_woods_pond_wander" }]
+
+[caldarus."1:51pm"]
+destination = "caldarus_house/routine_entrance"
+on_arrival_actions = [{ routine = "tea_making" }]
+
+[caldarus."4:11pm"]
+destination = "deep_woods/lute_2"
+on_arrival_actions = [{ animation = "lute_play" }]
+
+[caldarus."7:03pm"]
+destination = "deep_woods/Caldarus Bench Left"

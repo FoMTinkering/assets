@@ -1,0 +1,172 @@
+scene(priestess_quarters);
+place_actor(ari, north, pq1_ari_entrance);
+camera_position(pq1_camera_1);
+//
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		sim {
+			walk(ari, pq1_ari_start);
+			set_move_speed(ari, 0.4);
+		}
+		face(ari, north);
+	}
+	{
+		wait(2);
+	}
+	{
+		pan_camera(4, pq1_camera_2);
+	}
+}
+sim {
+	{
+		wait(1);
+		free bark_speech(ari, exclamation_mark);
+	}
+	{
+		place_actor(seridia, south, pq1_priestess_entrance);
+		set_shadow_enabled(seridia, false);
+		play_sound("SoundEffects/NPCs/SeridiaFadeOut");
+		fade_npc_alpha(seridia, 0.0, 1, 180);
+		wait(2.5);
+		set_shadow_enabled(seridia, true);
+	}
+	{
+		wait(3.5);
+		next_line(); //
+		next_line(); //
+	}
+	{
+		pan_camera(2.5, pq1_camera_3);
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, question_mark);
+wait(1);
+free bark_speech(seridia, exclamation_mark);
+wait(1.5);
+next_line(); //
+sim {
+	{
+		pan_camera(3, pq1_camera_4);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+	{
+		wait(2);
+		face(ari, west);
+		wait(2);
+		face(ari, east);
+		wait(2);
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(0.5);
+		free bark_speech(ari, exclamation_mark);
+		wait(0.5);
+		face(ari, north);
+	}
+	{
+		wait(1.5);
+		free bark_speech(seridia, question_mark);
+		wait(1.5);
+	}
+}
+sim {
+	{
+		next_line(); //
+	}
+	//
+	//
+	//
+	//
+}
+close_textbox();
+wait(0.5);
+face(seridia, north);
+wait(0.5);
+free bark_speech(seridia, ellipses);
+wait(2);
+sim {
+	{
+		wait(1);
+		face(seridia, south);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		next_line(); //
+		next_line(); //
+	}
+	{
+		free pan_camera(2.5, pq1_camera_3);
+	}
+	{
+		wait(1);
+		face(seridia, south);
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, ellipses);
+wait(1.25);
+next_line(); //
+next_line(); //
+sim {
+	{
+		wait(2);
+		face(seridia, west);
+		wait(1);
+		face(seridia, east);
+		wait(1);
+		face(seridia, south);
+	}
+	{
+		next_line(); //
+	}
+}
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(seridia, cute_face);
+wait(1);
+free bark_speech(ari, cute_face);
+wait(1.5);
+free sim {
+	{
+		play_sound("SoundEffects/NPCs/SeridiaFadeOut");
+		fade_npc_alpha(seridia, 1.0, 0, 180);
+	}
+	{
+		wait(2.5);
+		set_shadow_enabled(seridia, false);
+	}
+	{
+		wait(3);
+		remove_actor(seridia);
+	}
+}
+
+sim {
+	{
+		wait(2);
+		pan_camera(2, ari);
+	}
+}
+
+

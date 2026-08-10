@@ -1,0 +1,58 @@
+[zero_to_one_0]
+refresh = "1y"
+requires = [{ npc = "eiland" }, { eiland_heart_level = 2, comparator = "<" }, { ari_utero = false }]
+portrait = "neutral"
+local = "If you have any questions about the historical details of Mistria, I'd be happy to answer them."
+next = "1"
+
+[zero_to_one_0.1]
+portrait = "happy"
+local = "Of course, if you've seen any sights of note on your travels, I'd love to hear about them in turn!"
+prompts = [
+	{ local = "I've seen marvels you wouldn't believe!", next = "2" },
+	{ local = "Once on the side of the road, I saw Aldaria's biggest ball of twine.", next = "3" }
+]
+
+[zero_to_one_0.2]
+portrait = "neutral"
+local = "Ooh, let me buy you a drink sometime and you can regale me!"
+
+[zero_to_one_0.3]
+portrait = "neutral"
+effect = "surprise"
+local = "Incredible! This world is full of wonders, isn't it?"
+
+[two_to_three_0]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_heart_level = 4, comparator = "<" },
+	{ eiland_heart_level = 2, comparator = ">=" }
+]
+portrait = "think"
+local = "You wouldn't believe how many people simply aren't interested in discussing the differences between early and late period Alda artifacts."
+next = "1"
+
+[two_to_three_0.1]
+portrait = "happy"
+local = "It's one of the reasons I'm so glad you moved here, [Ari]."
+
+[four_to_five_0]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_heart_level = 6, comparator = "<" },
+	{ eiland_heart_level = 4, comparator = ">=" }
+]
+portrait = "think"
+local = "I've been keeping in touch with my fellow archaeologists, seeing what else has shaken out from the earthquake..."
+next = "1"
+
+[four_to_five_0.1]
+portrait = "neutral"
+local = "It seems the lion's share of new finds have been here in Mistria!"
+next = "2"
+
+[four_to_five_0.2]
+portrait = "happy"
+local = "It makes me wonder just how important this place used to be!"

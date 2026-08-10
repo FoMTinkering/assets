@@ -1,0 +1,1077 @@
+[greet_the_townsfolk]
+	name = "Greet the Townsfolk"
+	npc_for_icon = "adeline"
+	test_target = "main_story"
+	description = """I'm sure you've met some of your neighbors already, but wouldn't it be nice to say hello to everyone?
+
+Don't be shy, introduce yourself!"""
+	rewards = [{ item = "seed_potato", count = 3 }, { gold = 100 }, { renown = 20 }]
+
+	[[greet_the_townsfolk.stages]]
+		objective_description = "Introduce yourself to all the townsfolk and then talk to Adeline. Your map can help you locate everyone!"
+		requirements = { met_npc = [
+			"adeline",
+			"balor",
+			"celine",
+			"dell",
+			"eiland",
+			"elsie",
+			"errol",
+			"hayden",
+			"hemlock",
+			"holt",
+			"josephine",
+			"juniper",
+			"landen",
+			"luc",
+			"maple",
+			"march",
+			"nora",
+			"olric",
+			"reina",
+			"ryis",
+			"terithia",
+			"valen",
+		] }
+		queries = [
+			{ npc = "adeline", npc_conversation = "greet_the_townsfolk_turn_in" },
+		]
+
+[do_a_bro_a_favor]
+	name = "Do a Bro a Favor"
+	npc_for_icon = "olric"
+	test_target = "main_story"
+	description = """Welcome to town!
+
+Have you noticed that Mistria is full of rocks? I've got just the tool for dealing with them, and it's all yours if you can do me a favor!
+
+Come talk to me for the details!"""
+	rewards = [{ item = "pick_axe_worn" }, { renown = 20 }]
+
+	[[do_a_bro_a_favor.stages]]
+		objective_description = "Talk to Olric."
+		queries = [{ npc = "olric", npc_conversation = "do_a_bro_a_favor_turn_in" }]
+
+[stinky_stamina_potion]
+	name = "Stinky Stamina Potion"
+	npc_for_icon = "juniper"
+	description = "Attractive and extremely talented bathhouse owner seeks a gopher to find and hand over a Lilac."
+	test_target = "main_story"
+	rewards = [{ renown = 20 }]
+
+	[[stinky_stamina_potion.stages]]
+		objective_description = "Bring a lilac to Juniper."
+		requirements = { has_item = "lilac" }
+		queries = [
+			{ npc = "juniper", npc_conversation = "stinky_stamina_potion_turn_in" },
+		]
+
+[friday_at_the_sleeping_dragon_inn]
+	name = "Friday at the Sleeping Dragon Inn"
+	npc_for_icon = "reina"
+	description = "Reina asked me to meet her after 6 pm at the Sleeping Dragon Inn, for a Friday night gathering."
+	test_target = "main_story"
+	rewards = [{ item = "mixed_fruit_juice" }, { renown = 20 }]
+
+	[[friday_at_the_sleeping_dragon_inn.stages]]
+		objective_description = "Meet Reina at the Inn after 6 pm on a Friday."
+		requirements = { in_time_range = [18, 26], is_day_type = "friday" }
+		queries = [
+			{ npc = "reina", npc_conversation = "friday_at_the_sleeping_dragon_inn_turn_in" },
+		]
+
+[museum_donation_wanted]
+	name = "Museum Donations Wanted"
+	npc_for_icon = "errol"
+	description = "Errol sent me a letter telling me to meet him at the Museum west of town. He says he is the new curator and wants to talk to me about donations."
+	test_target = "main_story"
+	rewards = [{ gold = 100 }, { renown = 20 }]
+
+	[[museum_donation_wanted.stages]]
+		objective_description = "Meet Errol at the Museum in the Narrows."
+		queries = [{ cutscene = "museum_donation_wanted", location = "museum_entry" }]
+
+[cop_some_ore]
+	name = "Cop Some Ore"
+	npc_for_icon = "march"
+	test_target = "main_story"
+	description = """My ore shipment is running late, and my lazy brother won't go into the \"condemned, super creepy mine\" for me, so someone else has to do it!
+
+Bring me 3 pieces of copper ore! Or don't! Whatever!"""
+	rewards = [{ gold = 100 }, { renown = 20 }]
+
+	[[cop_some_ore.stages]]
+		objective_description = "Bring March some copper ore."
+		requirements = { has_item = { ore_copper = 3 } }
+		queries = [{ npc = "march", npc_conversation = "cop_some_ore_turn_in" }]
+
+[greet_the_vendors]
+	name = "Greet the Vendors"
+	npc_for_icon = "nora"
+	description = "The Saturday Market is finally back! It's set up in the middle of town, around the big fountain. Visit all four vendors, and then report back to me!"
+	test_target = "main_story"
+	rewards = [{ gold = 200 }, { renown = 20 }]
+
+	[[greet_the_vendors.stages]]
+		objective_description = "Talk to Nora after you've introduced yourself to the vendors at the Saturday Market in town."
+		requirements = { met_npc = ["merri", "darcy", "vera", "louis"] }
+		queries = [{ npc = "nora", npc_conversation = "greet_the_vendors_turn_in" }]
+
+[somethings_bugging_me]
+	name = "Something's Bugging Me"
+	npc_for_icon = "luc"
+	description = """I'm concerned that I never see anyone out catching bugs... I must do something about it!
+
+Do YOU want to catch bugs for FUN and SCIENCE? Come to the Inn and I'll help you get started!"""
+	test_target = "main_story"
+	rewards = [{ item = "net_worn" }, { renown = 20 }]
+
+	[[somethings_bugging_me.stages]]
+		objective_description = "Meet Luc at the Inn."
+		queries = [{ cutscene = "somethings_bugging_me", location = "inn" }]
+
+[repair_the_mill]
+	name = "The Mill Restoration Project"
+	npc_for_icon = "adeline"
+	test_target = "main_story"
+	description = """Adeline sent me an official-looking letter asking to meet her in her office at the Manor House.
+
+Sounds like she wants my help restoring the old mill in town."""
+	rewards = [{ renown = 20 }]
+
+	[[repair_the_mill.stages]]
+		objective_description = "Meet Adeline in her office within the Manor House north of town."
+		queries = [{ cutscene = "repair_the_mill_pt_1", location = "adelines_office" }]
+
+	[[repair_the_mill.stages]]
+		objective_description = "Deposit the required materials in the Donation Box outside of the Mill, then bring 1000 tesserae to Adeline."
+		queries = [{ npc = "adeline", npc_conversation = "repair_the_mill_pt_2_turn_in" }]
+
+		[repair_the_mill.stages.requirements]
+			supplied_items.items = { ore_stone = 200, basic_wood = 150, copper_ingot = 2 }
+			supplied_items.point = "town/repair_the_mill"
+			has_gold = 1000
+
+[jos_cooking_class]
+	name = "Jo's Cooking Class"
+	npc_for_icon = "josephine"
+	test_target = "main_story"
+	description = """On your own for the first time and unsure how to feed yourself?
+
+Come to the Sleeping Dragon Inn for a free cooking class with Josephine! Learn the ins and outs of cooking!"""
+	rewards = [{ recipe_scroll = "vegetable_soup" }, { renown = 20 }]
+
+	[[jos_cooking_class.stages]]
+		objective_description = "Meet Josephine at the Sleeping Dragon Inn."
+		queries = [{ cutscene = "jos_cooking_class", location = "inn" }]
+
+[tea_with_hayden]
+	name = "Tea with Hayden"
+	npc_for_icon = "hayden"
+	test_target = "main_story"
+	description = """Can't thank you enough for your work on the Mill, [Ari]!
+
+If you've got some time, come on over to my place. I'll put on the kettle and we can chat about ranching and raising animals!"""
+	rewards = [
+		{ item = "hay", count = 10 },
+		{ item = "grass_seed", count = 10 },
+		{ item = "cup_of_tea", count = 1 },
+		{ renown = 20 },
+	]
+
+	[[tea_with_hayden.stages]]
+		objective_description = "Meet Hayden at his house west of your farm."
+		queries = [{ cutscene = "tea_with_hayden", location = "haydens_house" }]
+
+[unlocking_the_mines_pt_1]
+	name = "The State of the Mines"
+	npc_for_icon = "eiland"
+	description = "Eiland asked me to meet him at the Museum to discuss reopening the Mines."
+	test_target = "dragon_story"
+	rewards = [{ renown = 20 }]
+
+	[[unlocking_the_mines_pt_1.stages]]
+		objective_description = "Meet Eiland at the Museum west of town."
+		queries = [{ cutscene = "unlocking_the_mines_pt_1", location = "museum_entry" }]
+
+[unlocking_the_mines_pt_2]
+	name = "Unlocking the Mines"
+	npc_for_icon = "errol"
+	test_target = "dragon_story"
+	description = """Errol has decided that we have improved the town enough to unlock the Mines!
+
+Meet him and Eiland at the entrance of the Mines."""
+	rewards = [{ renown = 20 }]
+
+	[[unlocking_the_mines_pt_2.stages]]
+		objective_description = "Meet Errol and Eiland outside the Mines entrance."
+		queries = [
+			{ cutscene = "unlocking_the_mines_pt_2", location = "narrows", area = [
+				89,
+				62,
+				103,
+				70,
+			] },
+		]
+
+[repair_the_bridge]
+	name = "Repair the Bridge"
+	npc_for_icon = "adeline"
+	description = "Adeline requested my help in repairing the bridge on the Eastern Road."
+	test_target = "main_story"
+	rewards = [{ renown = 30 }]
+
+	[[repair_the_bridge.stages]]
+		objective_description = "Meet Adeline near the bridge on the Eastern Road."
+		queries = [
+			{ cutscene = "repair_the_bridge_pt_1", location = "eastern_road", area = [
+				112,
+				76,
+				149,
+				107,
+			] },
+		]
+
+	[[repair_the_bridge.stages]]
+		objective_description = "Deposit the required materials in the Donation Box next to the bridge, then talk to Adeline."
+		requirements.supplied_items.items = { ore_stone = 60, basic_wood = 60 }
+		requirements.supplied_items.point = "eastern_road/repair_the_bridge"
+		queries = [
+			{ npc = "adeline", npc_conversation = "repair_the_bridge_pt_2_turn_in" },
+		]
+
+[the_water_tablet]
+	name = "The Water Tablet"
+	npc_for_icon = "eiland"
+	test_target = "dragon_story"
+	description = """I found a tablet with strange markings in the Mines. I'll need to figure out what it means before I can go any further.
+
+Perhaps Eiland could help me translate it?"""
+	rewards = [{ renown = 20 }]
+
+	[[the_water_tablet.stages]]
+		objective_description = "Speak to Eiland about the Water Tablet."
+		queries = [
+			{ npc = "eiland", npc_conversation = "translating_the_water_tablet_turn_in" },
+		]
+
+	[[the_water_tablet.stages]]
+		objective_description = "Offer the required items to the water seal."
+		requirements.supplied_items.items = { lantern_moth = 1, ore_ruby = 1, stone_loach = 1, upper_mines_mushroom = 1 }
+		requirements.supplied_items.seal = "water"
+		queries = [{ manual = true }]
+
+[the_earth_tablet]
+	name = "The Earth Tablet"
+	npc_for_icon = "juniper"
+	description = "I found another tablet with strange markings in the Mines. I should bring it to Juniper to discuss our next steps."
+	test_target = "dragon_story"
+	rewards = [{ renown = 20 }]
+
+	[[the_earth_tablet.stages]]
+		objective_description = "Speak to Juniper about the Earth Tablet."
+		queries = [
+			{ npc = "juniper", npc_conversation = "translating_the_earth_tablet_turn_in" },
+		]
+
+	[[the_earth_tablet.stages]]
+		objective_description = "Offer the required items to the earth seal."
+		requirements.supplied_items.items = { coral_mantis = 1, ore_sapphire = 1, archerfish = 1, cave_kelp = 1 }
+		requirements.supplied_items.seal = "earth"
+		queries = [{ manual = true }]
+
+[the_fire_tablet]
+	name = "The Fire Tablet"
+	npc_for_icon = "juniper"
+	description = "I found another tablet with strange markings in the Mines. I should bring it to Juniper to discuss our next steps."
+	test_target = "dragon_story"
+	rewards = [{ renown = 20 }]
+
+	[[the_fire_tablet.stages]]
+		objective_description = "Speak to Juniper about the Fire Tablet."
+		queries = [
+			{ npc = "juniper", npc_conversation = "translating_the_fire_tablet_turn_in" },
+		]
+
+
+[procuring_the_sealing_scroll]
+	name = "Procuring the Sealing Scroll"
+	npc_for_icon = "balor"
+	description = "To break the next seal I will need four items, including a rare Sealing Scroll. Balor says he may be able to help me acquire one."
+	test_target = "dragon_story"
+	rewards = [{ renown = 20 }, { quest = "delivering_the_sealing_scroll" }]
+
+	[[procuring_the_sealing_scroll.stages]]
+		objective_description = "Wait for Balor to contact you with regards to the Sealing Scroll."
+		queries = [{ manual = true }]
+
+	[[procuring_the_sealing_scroll.stages]]
+		objective_description = "Meet Balor in his room."
+		queries = [{ cutscene = "procuring_the_sealing_scroll", location = "balors_room" }]
+
+	[[procuring_the_sealing_scroll.stages]]
+		objective_description = "Deposit the required items into the chest next to Balor's wagon, then talk to Balor."
+		requirements.supplied_items.items = { silver_ingot = 10, ore_ruby = 10, ore_sapphire = 10, ore_emerald = 10 }
+		requirements.supplied_items.point = "town/sealing_scroll_chest"
+		queries = [{ npc = "balor", npc_conversation = "procuring_the_sealing_scroll_finished" }]
+
+[delivering_the_sealing_scroll]
+	name = "Delivering the Sealing Scroll"
+	npc_for_icon = "balor"
+	test_target = "dragon_story"
+	description = "Balor said he would deliver the Sealing Scroll to me tomorrow. For now, I just need to wait."
+
+	[[delivering_the_sealing_scroll.stages]]
+		objective_description = "Wait for Balor to deliver the Sealing Scroll to you."
+		queries = [{ manual = true }]
+
+
+[breaking_the_fire_seal]
+	name = "Breaking The Fire Seal"
+	npc_for_icon = "seridia"
+	test_target = "dragon_story"
+	description = "Juniper helped me translate the fire tablet. Now I need to offer the required items to break it."
+
+	[[breaking_the_fire_seal.stages]]
+		objective_description = "Break the Fire Seal."
+		requirements.supplied_items.items = { faceted_rock_gem = 1, rockroot = 1, ore_emerald = 1, sealing_scroll = 1 }
+		requirements.supplied_items.seal = "fire"
+		queries = [{ manual = true }]
+
+[the_spring_festival]
+	name = "The Spring Festival"
+	npc_for_icon = "celine"
+	test_target = "festivals"
+	description = """The Spring Festival is soon! Celine wants me to collect as much Breath of Spring as I can which can be found in variety of places around Mistria.
+
+The more I collect, the better the festival will be!"""
+
+	[[the_spring_festival.stages]]
+		objective_description = "Collect Breath of Spring before the upcoming festival."
+		queries = [{ manual = true }]
+
+		[the_spring_festival.stages.requirements]
+			custom = { gather = { item = "breath_of_spring", artifact_key = "spring_festival" } }
+
+	[[the_spring_festival.stages]]
+		objective_description = "Visit the Spring Festival in the town square."
+		queries = [{ manual = true }]
+
+	[[the_spring_festival.rewards]]
+		artifact_key = "spring_festival"
+		cumulative = true
+
+		[[the_spring_festival.rewards.tiers]]
+			required_score = 0
+			rewards = []
+
+		[[the_spring_festival.rewards.tiers]]
+			required_score = 10
+			rewards = [
+				{ item = "spring_festival_planter" },
+			]
+
+		[[the_spring_festival.rewards.tiers]]
+			required_score = 30
+			rewards = [
+				{ item = "spring_festival_basket" },
+			]
+
+		[[the_spring_festival.rewards.tiers]]
+			required_score = 50
+			rewards = [
+				{ player_cosmetic = "head_special_flower_crown" },
+			]
+
+		[[the_spring_festival.rewards.tiers]]
+			required_score = 60
+			rewards = [
+				{ item = "spring_festival_breath_of_spring_wreath" },
+			]
+
+[the_shooting_star_festival]
+	name = "The Shooting Star Festival"
+	npc_for_icon = "elsie"
+	test_target = "none"
+	description = """Today is the Shooting Star Festival! I should head over to the summit at 8pm to witness the gorgeous view. Elsie said that I should invite someone to go with me, as well."""
+
+	[[the_shooting_star_festival.stages]]
+		objective_description = "Visit the Shooting Star Festival at the Summit after 8pm."
+		queries = [{ manual = true }]
+
+[replenishing_mistrias_food_reserves_1]
+	name = "Restocking Mistria's Food Reserves"
+	npc_for_icon = "adeline"
+	description = "Adeline asked me to meet her at the Manor House to discuss Mistria's emergency supply reserves."
+	test_target = "main_story"
+	rewards = [{ renown = 20 }]
+
+	[[replenishing_mistrias_food_reserves_1.stages]]
+		objective_description = "Go to the Manor House to meet with Adeline."
+		queries = [{ cutscene = "replenishing_mistrias_food_reserves_1", location = "manor_house_entry" }]
+
+	[[replenishing_mistrias_food_reserves_1.stages]]
+		objective_description = "Ship 10 crops and then speak to Adeline."
+		requirements = { shipped_tag = { crop = 10 } }
+		queries = [{ npc = "adeline", npc_conversation = "replenishing_mistrias_food_reserves_1_turn_in_complete" }]
+
+[repair_the_general_store]
+	name = "Repair the General Store"
+	npc_for_icon = "adeline"
+	description = """Adeline asked me to meet her at the General Store to talk about "Phase 2" of her plan to revitalize Mistria."""
+	test_target = "main_story"
+	rewards = [{ renown = 50 }]
+
+	[[repair_the_general_store.stages]]
+		objective_description = "Go to the General Store to meet with Adeline."
+		queries = [{ cutscene = "repair_the_general_store_pt_1", location = "general_store_store" }]
+
+	[[repair_the_general_store.stages]]
+		objective_description = "Deposit the required materials in the Donation Box outside of the outside the General Store, then bring Adeline 3000 tesserae."
+		queries = [{ npc = "adeline", npc_conversation = "repair_the_general_store_pt_2_turn_in" }]
+
+		[repair_the_general_store.stages.requirements]
+			supplied_items.items = { ore_stone = 500, basic_wood = 300, copper_ingot = 5, iron_ingot = 5 }
+			supplied_items.point = "town/repair_the_general_store"
+			has_gold = 3000
+
+[crafting_tutorial]
+	name = "Crafting Tutorial"
+	npc_for_icon = "ryis"
+	description = "Ryis asked me to meet him to review crafting."
+	test_target = "main_story"
+	rewards = [{ renown = 20 }, { item = "starter_wood_fence", count = 5 }]
+
+
+	[[crafting_tutorial.stages]]
+		objective_description = "Bring Ryis 10 wood."
+		queries = [{ npc = "ryis", npc_conversation = "crafting_tutorial_turn_in" }]
+		requirements = { has_item = { basic_wood = 10 } }
+
+[repair_the_summit_stairs]
+	name = "Beautification Project"
+	npc_for_icon = "adeline"
+	description = "Adeline asked me to meet her in front of the Manor House to talk about our next project."
+	test_target = "main_story"
+	rewards = [{ renown = 20 }]
+
+	[[repair_the_summit_stairs.stages]]
+		objective_description = "Meet Adeline in front of the Manor House."
+		queries = [
+			{ cutscene = "repair_the_summit_stairs", location = "town", area = [
+				124,
+				76,
+				150,
+				87,
+			] },
+		]
+
+[repair_haydens_barn]
+	name = "Upgrade Hayden's Barn"
+	npc_for_icon = "adeline"
+	description = "Adeline asked me to meet her at Hayden's farm to work on a new project."
+	test_target = "main_story"
+	rewards = [{ renown = 50 }]
+
+	[[repair_haydens_barn.stages]]
+		objective_description = "Meet Adeline at Hayden's Farm."
+		queries = [
+			{ cutscene = "repair_haydens_barn_pt_1", location = "haydens_farm", area = [
+				110,
+				32,
+				180,
+				76,
+			] },
+		]
+	[[repair_haydens_barn.stages]]
+		objective_description = "Deposit the required materials in the Donation Box outside of Hayden's barn, then bring 4000 tesserae to Adeline."
+		queries = [{ npc = "adeline", npc_conversation = "repair_haydens_barn_pt_2_turn_in" }]
+
+		[repair_haydens_barn.stages.requirements]
+			supplied_items.items = { ore_stone = 500, basic_wood = 400, iron_ingot = 8 }
+			supplied_items.point = "haydens_farm/repair_haydens_barn"
+			has_gold = 4000
+
+[replenishing_mistrias_food_reserves_2]
+	name = "Restocking Mistria's Food Reserves 2"
+	npc_for_icon = "adeline"
+	description = "Adeline asked me to meet her at Hayden's farm to go over the plan for Mistria's food reserves."
+	test_target = "main_story"
+	rewards = [
+		{ renown = 30 },
+		{ animal = "cow", animal_cosmetic = "cheese_hat" },
+		{ animal = "chicken", animal_cosmetic = "egg_hat" },
+	]
+
+	[[replenishing_mistrias_food_reserves_2.stages]]
+		objective_description = "Meet Adeline at Hayden's Farm."
+		queries = [
+			{ cutscene = "replenishing_mistrias_food_reserves_2_pt_1", location = "haydens_farm", area = [
+				110,
+				32,
+				180,
+				76,
+			] },
+		]
+
+	[[replenishing_mistrias_food_reserves_2.stages]]
+		objective_description = "Deposit the required materials in the Donation Box outside of the Inn, then talk to Adeline."
+		requirements.supplied_items.items = { cheese = 10, egg = 12 }
+		requirements.supplied_items.point = "town/gucci_chest_location"
+		queries = [{ npc = "adeline", npc_conversation = "replenishing_mistrias_food_reserves_2_pt_2_turn_in" }]
+
+[repair_the_beach_bridge]
+	name = "Repair the Beach Bridge"
+	npc_for_icon = "terithia"
+	description = "Terithia asked me to meet her and Adeline at the Beach to work on a new project."
+	test_target = "main_story"
+	rewards = [{ renown = 20 }]
+
+	[[repair_the_beach_bridge.stages]]
+		objective_description = "Meet Terithia and Adeline at the Beach."
+		queries = [{ cutscene = "repair_the_beach_bridge_pt_1", location = "beach" }]
+
+	[[repair_the_beach_bridge.stages]]
+		objective_description = "Deposit the required materials in the Donation Box near Terithia's house, then bring 1000 tesserae to Terithia."
+		queries = [{ npc = "terithia", npc_conversation = "repair_the_beach_bridge_pt_2_turn_in" }]
+
+		[repair_the_beach_bridge.stages.requirements]
+			supplied_items.items = { ore_stone = 150, basic_wood = 300, fiber = 50 }
+			supplied_items.point = "beach/repair_the_beach_bridge"
+			has_gold = 1000
+
+[repair_the_inn]
+	name = "Upgrade the Inn"
+	npc_for_icon = "adeline"
+	description = "Adeline asked me to meet her at the Inn to talk about what's next for the town."
+	test_target = "main_story"
+	rewards = [{ renown = 50 }]
+
+	[[repair_the_inn.stages]]
+		objective_description = "Meet Adeline at the Inn."
+		queries = [{ cutscene = "repair_the_inn_pt_1", location = "inn" }]
+
+	[[repair_the_inn.stages]]
+		objective_description = "Deposit the required materials in the Donation Box outside of the Inn, then bring 6000 tesserae to Adeline."
+		queries = [{ npc = "adeline", npc_conversation = "repair_the_inn_pt_2_turn_in" }]
+
+		[repair_the_inn.stages.requirements]
+			supplied_items.items = { ore_stone = 500, basic_wood = 600, silver_ingot = 10, glass = 25, peat = 10 }
+			supplied_items.point = "town/gucci_chest_location"
+			has_gold = 6000
+
+[find_the_weathervane]
+	name = "Find the Weathervane"
+	npc_for_icon = "hayden"
+	test_target = "main_story"
+	description = "Hayden asked me to find his weathervane that was blown away in the windstorm. He said it might be somewhere in the Narrows."
+
+	[[find_the_weathervane.stages]]
+		objective_description = "Find Hayden's weathervane in the Narrows and then bring it to him."
+		requirements = { has_item = "haydens_weathervane" }
+		queries = [{ npc = "hayden", npc_conversation = "find_the_weathervane_turn_in" }]
+
+[stone_refinery]
+	name = "Stone Refinery"
+	npc_for_icon = "adeline"
+	description = "Adeline said she had some exciting news to share from the King's Council. Are we improving the Mines somehow?"
+	test_target = "main_story"
+	rewards = [{ renown = 30 }]
+
+	[[stone_refinery.stages]]
+		objective_description = "Meet Adeline at the entrance to the Mines."
+		queries = [
+			{ cutscene = "stone_refinery_pt_1", location = "narrows", area = [
+				68,
+				43,
+				118,
+				73,
+			] },
+		]
+
+	[[stone_refinery.stages]]
+		objective_description = "Deposit the required materials in the Donation Box outside of the Mines, then bring 5000 tesserae to Adeline."
+		queries = [{ npc = "adeline", npc_conversation = "stone_refinery_pt_2_turn_in" }]
+
+		[stone_refinery.stages.requirements]
+			supplied_items.items = { ore_stone = 400, basic_wood = 200, sap = 20 }
+			supplied_items.point = "narrows/stone_refinery"
+			has_gold = 5000
+
+[gossip_for_elsie]
+	name = "Seeking Gossip"
+	npc_for_icon = "elsie"
+	description = "Do you have a nose for news? An ear for the exciting? I love Mistria, but I do miss all the gossip of the big city..."
+	test_target = "main_story"
+	rewards = [{ renown = 20 }]
+
+	[[gossip_for_elsie.stages]]
+		objective_description = "Talk to Balor, Juniper, and Dell to collect gossip. Afterwards, tell Elsie what you learned."
+		requirements.world_fact_is = [
+			{ heard_balor_gossip = true },
+			{ heard_juniper_gossip = true },
+			{ heard_dell_gossip = true },
+		]
+		queries = [{ npc = "elsie", npc_conversation = "gossip_for_elsie_turn_in" }]
+
+
+[the_animal_festival]
+	name = "The Animal Festival"
+	npc_for_icon = "josephine"
+	test_target = "festivals"
+	description = "Today is the Animal Festival! I should head into town to enjoy the festivities."
+
+	[[the_animal_festival.stages]]
+		objective_description = "Speak to Josephine once you are ready to start the Animal Festival judging."
+		turn_in_description = "Would you like to start the judging?"
+		turn_in_button_label = "Start"
+		queries = [{ npc = "josephine", npc_conversation = "the_animal_festival_turn_in" }]
+		requirements = { world_fact_is = { jo_explained_animal_festival = true }, custom = { submit_animal = true } }
+
+	[[the_animal_festival.rewards]]
+		artifact_key = "festival_small_animal_score"
+		cumulative = false
+
+		[[the_animal_festival.rewards.tiers]]
+			required_score = 0
+			rewards = []
+
+		[[the_animal_festival.rewards.tiers]]
+			required_score = 35
+			rewards = [
+				{ lookup_key = "festival_small_placeable" },
+				{ lookup_key = "festival_small_cosmetic" },
+				{ item = "chicken_plushie" },
+				{ item = "duck_plushie" },
+			]
+
+		[[the_animal_festival.rewards.tiers]]
+			required_score = 50
+			rewards = [
+				{ lookup_key = "festival_small_placeable" },
+				{ lookup_key = "festival_small_cosmetic" },
+				{ item = "chicken_plushie" },
+				{ item = "duck_plushie" },
+				{ item = "rabbit_plushie" },
+			]
+
+		[[the_animal_festival.rewards.tiers]]
+			required_score = 65
+			rewards = [
+				{ lookup_key = "festival_small_placeable" },
+				{ lookup_key = "festival_small_cosmetic" },
+				{ item = "chicken_plushie" },
+				{ item = "duck_plushie" },
+				{ item = "rabbit_plushie" },
+				{ item = "capybara_plushie" },
+			]
+
+	[[the_animal_festival.rewards]]
+		artifact_key = "festival_large_animal_score"
+		cumulative = false
+
+		[[the_animal_festival.rewards.tiers]]
+			required_score = 0
+			rewards = []
+
+		[[the_animal_festival.rewards.tiers]]
+			required_score = 35
+			rewards = [
+				{ lookup_key = "festival_large_placeable" },
+				{ lookup_key = "festival_large_cosmetic" },
+				{ item = "cow_plushie" },
+				{ item = "horse_plushie" },
+			]
+
+		[[the_animal_festival.rewards.tiers]]
+			required_score = 50
+			rewards = [
+				{ lookup_key = "festival_large_placeable" },
+				{ lookup_key = "festival_large_cosmetic" },
+				{ item = "cow_plushie" },
+				{ item = "horse_plushie" },
+				{ item = "sheep_plushie" },
+			]
+
+		[[the_animal_festival.rewards.tiers]]
+			required_score = 65
+			rewards = [
+				{ lookup_key = "festival_large_placeable" },
+				{ lookup_key = "festival_large_cosmetic" },
+				{ item = "cow_plushie" },
+				{ item = "horse_plushie" },
+				{ item = "sheep_plushie" },
+				{ item = "alpaca_plushie" },
+			]
+
+[the_harvest_festival]
+	name = "The Harvest Festival"
+	npc_for_icon = "reina"
+	test_target = "festivals"
+	description = """The Harvest Festival is soon! Reina wants me to collect as many Queen Berries as I can which can be found in variety of places around Mistria.
+
+The more I collect, the better the festival will be!"""
+
+	[[the_harvest_festival.stages]]
+		objective_description = "Collect queen berry before the upcoming festival."
+		queries = [{ manual = true }]
+
+		[the_harvest_festival.stages.requirements]
+			custom = { gather = { item = "queen_berry", artifact_key = "harvest_festival" } }
+
+	[[the_harvest_festival.stages]]
+		objective_description = "Visit the Harvest Festival in the town square."
+		queries = [{ manual = true }]
+
+	[[the_harvest_festival.rewards]]
+		artifact_key = "harvest_festival"
+		cumulative = true
+
+		[[the_harvest_festival.rewards.tiers]]
+			required_score = 0
+			rewards = []
+
+		[[the_harvest_festival.rewards.tiers]]
+			required_score = 10
+			rewards = [
+				{ item = "harvest_festival_centerpiece", count = 2 },
+			]
+
+		[[the_harvest_festival.rewards.tiers]]
+			required_score = 30
+			rewards = [
+				{ item = "harvest_festival_arch" },
+			]
+
+		[[the_harvest_festival.rewards.tiers]]
+			required_score = 50
+			rewards = [
+				{ item = "queen_berry_trophy" },
+			]
+
+[upgrade_the_saturday_market]
+	name = "Upgrade the Saturday Market"
+	npc_for_icon = "adeline"
+	description = "Adeline has some exciting news to share with me! I should go find her."
+	test_target = "main_story"
+	rewards = [{ renown = 50 }]
+
+	[[upgrade_the_saturday_market.stages]]
+		objective_description = "Talk to Adeline."
+		queries = [{ npc = "adeline", npc_conversation = "upgrade_the_saturday_market_pre_turn_in" }]
+
+	[[upgrade_the_saturday_market.stages]]
+		objective_description = "Deposit the required materials in the Donation Box outside of the Manor House, then talk to Adeline."
+		queries = [{ npc = "adeline", npc_conversation = "upgrade_the_saturday_market_post_turn_in" }]
+		requirements.supplied_items.items = { gold_ingot = 8, obsidian = 20, crystal = 20, hard_wood = 100, refined_stone = 50 }
+		requirements.supplied_items.point = "town/upgrade_the_saturday_market"
+
+[upgrade_the_carpenters_shop]
+	name = "Upgrade the Carpenter's Shop"
+	npc_for_icon = "adeline"
+	description = """Adeline sent me a letter asking me to meet her at the Carpenter's Shop to talk about the next town upgrade."""
+	test_target = "main_story"
+	rewards = [{ renown = 50 }, { item = "small_greenhouse_white_blueprint" }]
+
+	[[upgrade_the_carpenters_shop.stages]]
+		objective_description = "Meet Adeline at the Carpenter's Shop."
+		queries = [{ cutscene = "upgrade_the_carpenters_shop_pt_1", location = "landens_house_f1" }]
+
+	[[upgrade_the_carpenters_shop.stages]]
+		objective_description = "Deposit the required materials in the Donation Box outside of the Carpenter's Shop, then talk to Adeline."
+		queries = [{ npc = "adeline", npc_conversation = "upgrade_the_carpenters_shop_pt_2_turn_in" }]
+		requirements.supplied_items.items = { glass = 100, refined_stone = 100, crystal = 30, obsidian = 30 }
+		requirements.supplied_items.point = "eastern_road/upgrade_the_carpenters_shop"
+
+[lost_and_found]
+	name = "Lost & Found"
+	npc_for_icon = "adeline"
+	description = """Adeline sent me a letter asking me to meet her at the Manor House Dining Room to attend a town meeting."""
+	test_target = "main_story"
+	rewards = [{ renown = 20 }]
+
+	[[lost_and_found.stages]]
+		objective_description = "Meet Adeline at the Manor House Dining Room."
+		queries = [{ cutscene = "lost_and_found", location = "manor_house_dining_room" }]
+
+[apiaries_and_terrariums]
+	name = "Apiaries and Terrariums"
+	npc_for_icon = "luc"
+	description = """Luc sent me a letter asking me to meet him at the Inn for an "Insect Opportunity". What could that mean...?"""
+	test_target = "main_story"
+	post_complete_tutorial = "apiaries_and_terrariums"
+	rewards = [
+		{ renown = 20 },
+		{ item = "apiary" },
+		{ crafting_scroll = "apiary" },
+		{ item = "terrarium" },
+		{ crafting_scroll = "terrarium" },
+	]
+
+	[[apiaries_and_terrariums.stages]]
+		objective_description = "Meet Luc at the Inn."
+		queries = [{ cutscene = "apiaries_and_terrariums", location = "inn" }]
+
+	[[apiaries_and_terrariums.stages]]
+		objective_description = "Ship 20 Bugs and then speak to Adeline."
+		requirements = { shipped_tag = { bugs = 20 } }
+		queries = [{ npc = "adeline", npc_conversation = "apiaries_and_terrariums_turn_in" }]
+
+[find_the_magic_key]
+	name = "Find the Magic Key"
+	npc_for_icon = "seridia"
+	description = "To proceed further in the Ruins, I will need to find a Magic Key somewhere in the Priestess Quarters."
+	test_target = "dragon_story"
+	rewards = []
+
+	[[find_the_magic_key.stages]]
+		objective_description = "Explore the Northwest Room in the Priestess Quarters."
+		queries = [{ manual = true }]
+
+	[[find_the_magic_key.stages]]
+		objective_description = "Light the Dragon Forge in the southwest room."
+		queries = [{ manual = true }]
+
+	[[find_the_magic_key.stages]]
+		objective_description = "Inspect the Library."
+		queries = [{ manual = true }]
+
+	[[find_the_magic_key.stages]]
+		objective_description = "Offer a Temple Flower and a Marigold at the Priestess Tablet."
+		requirements.supplied_items.items = { temple_flower = 1, marigold = 1 }
+		requirements.supplied_items.seal = "priestess"
+		queries = [{ manual = true }]
+
+	[[find_the_magic_key.stages]]
+		objective_description = "Grow the Seed of Balance in the Field Room."
+		queries = [{ manual = true }]
+
+	[[find_the_magic_key.stages]]
+		objective_description = "Use the Magic Key to unlock the door in the Priestess Quarters."
+		queries = [{ manual = true }]
+
+[creating_the_void_mass]
+	name = "Creating the Void Mass"
+	npc_for_icon = "seridia"
+	test_target = "dragon_story"
+	description = """The Priestess told me I must gather materials to create a Void Mass that will allow me to safely open the Ruins Seal."""
+
+	[[creating_the_void_mass.stages]]
+		objective_description = "Offer the required items to the Cauldron in the Void Seal room."
+		requirements.supplied_items.items = { void_stone = 5, void_powder = 5, void_herb = 5, void_pearl = 5 }
+		requirements.supplied_items.seal = "void"
+		queries = [{ manual = true }]
+
+[breaking_the_ruins_seal]
+	name = "Breaking the Ruins Seal"
+	npc_for_icon = "seridia"
+	test_target = "dragon_story"
+	description = """The Priestess made the Void Decoy, now I need to offer the required items to break the seal."""
+
+	[[breaking_the_ruins_seal.stages]]
+		objective_description = "Break the Ruins Seal."
+		requirements.supplied_items.items = { breath_of_fire = 1, smoke_moth = 1, firesail_fish = 1, obsidian = 1 }
+		requirements.supplied_items.seal = "ruins"
+		queries = [{ manual = true }]
+
+[the_dragonsworn_tablet]
+	name = "The Dragonsworn Tablet"
+	npc_for_icon = "seridia"
+	test_target = "dragon_story"
+	description = "I must uncover the secret of the Dragonsworn Tablet."
+
+	[[the_dragonsworn_tablet.stages]]
+		objective_description = "Investigate the Dragonsworn Tablet on Floor 100."
+		queries = [{ manual = true }]
+
+	[[the_dragonsworn_tablet.stages]]
+		objective_description = "Reach 8 Hearts with Juniper & Eiland and view both 8-Heart events, then talk to Juniper."
+		requirements.seen_cutscene = ["eiland_eight_hearts", "juniper_eight_hearts"]
+		queries = [{ npc = "juniper", npc_conversation = "dragon_tablet_pt_3_turn_in" }]
+		rewards = [
+			{ item = "dragonsworn_helmet_equipment" },
+			{ item = "dragonsworn_armor_equipment" },
+			{ item = "dragonsworn_legplates_equipment" },
+			{ item = "dragonsworn_greaves_equipment" },
+			{ player_cosmetic = "back_gear_dragonsworn_cloak" },
+		]
+
+	[[the_dragonsworn_tablet.stages]]
+		objective_description = "Read the Dragonsworn Tablet."
+		queries = [{ manual = true }]
+
+[breaking_the_final_seal]
+	name = "Breaking The Final Seal"
+	npc_for_icon = "seridia"
+	test_target = "dragon_story"
+	description = "Juniper and Eiland helped me solve the mystery of the Dragonsworn Tablet. Now I need to offer the required items to break the Final Seal."
+
+	[[breaking_the_final_seal.stages]]
+		objective_description = "Craft the necessary items at the Dragon Forge and offer them at the Dragonsworn Tablet to break the Final Seal."
+		requirements.supplied_items.items = { dragon_forged_fang = 1, dragon_forged_horn = 1, dragon_forged_core = 1, dragon_forged_powder = 1 }
+		requirements.supplied_items.seal = "final"
+		queries = [{ manual = true }]
+
+[reach_copper_star_town_rank]
+	name = "Reach Copper Star Town Rank"
+	npc_for_icon = "adeline"
+	test_target = "main_story"
+	description = "Continue to improve Mistria by raising the Town Rank to Copper Star (lvl. 20)"
+
+	[[reach_copper_star_town_rank.stages]]
+		objective_description = "Complete requests, donate items to the Museum, and ship items for Tesserae to increase the Town Rank to Copper Star."
+		requirements.reached_renown_level = 20
+		queries = [{ manual = true }]
+
+[reach_ruby_star_town_rank]
+	name = "Reach Ruby Star Town Rank"
+	npc_for_icon = "adeline"
+	test_target = "main_story"
+	description = "Continue to improve Mistria by raising the Town Rank to Ruby Star (lvl. 30)"
+
+	[[reach_ruby_star_town_rank.stages]]
+		objective_description = "Complete requests, donate items to the Museum, and ship items for Tesserae to increase the Town Rank to Ruby Star."
+		requirements.reached_renown_level = 30
+		queries = [{ manual = true }]
+
+[reach_iron_star_town_rank]
+	name = "Reach Iron Star Town Rank"
+	npc_for_icon = "adeline"
+	test_target = "main_story"
+	description = "Continue to improve Mistria by raising the Town Rank to Iron Star (lvl. 40)"
+
+	[[reach_iron_star_town_rank.stages]]
+		objective_description = "Complete requests, donate items to the Museum, and ship items for Tesserae to increase the Town Rank to Iron Star."
+		requirements.reached_renown_level = 40
+		queries = [{ manual = true }]
+
+[reach_sapphire_star_town_rank]
+	name = "Reach Sapphire Star Town Rank"
+	npc_for_icon = "adeline"
+	test_target = "main_story"
+	description = "Continue to improve Mistria by raising the Town Rank to Sapphire Star (lvl. 50)"
+
+	[[reach_sapphire_star_town_rank.stages]]
+		objective_description = "Complete requests, donate items to the Museum, and ship items for Tesserae to increase the Town Rank to Sapphire Star."
+		requirements.reached_renown_level = 50
+		queries = [{ manual = true }]
+
+[reach_silver_star_town_rank]
+	name = "Reach Silver Star Town Rank"
+	npc_for_icon = "adeline"
+	test_target = "main_story"
+	description = "Continue to improve Mistria by raising the Town Rank to Silver Star (lvl. 60)"
+
+	[[reach_silver_star_town_rank.stages]]
+		objective_description = "Complete requests, donate items to the Museum, and ship items for Tesserae to increase the Town Rank to Silver Star."
+		requirements.reached_renown_level = 60
+		queries = [{ manual = true }]
+
+[reach_emerald_star_town_rank]
+	name = "Reach Emerald Star Town Rank"
+	npc_for_icon = "adeline"
+	test_target = "main_story"
+	description = "Continue to improve Mistria by raising the Town Rank to Emerald Star (lvl. 70)"
+
+	[[reach_emerald_star_town_rank.stages]]
+		objective_description = "Complete requests, donate items to the Museum, and ship items for Tesserae to increase the Town Rank to Emerald Star."
+		requirements.reached_renown_level = 70
+		queries = [{ manual = true }]
+
+[reach_gold_star_town_rank]
+	name = "Reach Gold Star Town Rank"
+	npc_for_icon = "adeline"
+	test_target = "main_story"
+	description = "Continue to improve Mistria by raising the Town Rank to Gold Star (lvl. 80)"
+
+	[[reach_gold_star_town_rank.stages]]
+		objective_description = "Complete requests, donate items to the Museum, and ship items for Tesserae to increase the Town Rank to Gold Star."
+		requirements.reached_renown_level = 80
+		queries = [{ manual = true }]
+
+[reach_diamond_star_town_rank]
+	name = "Reach Diamond Star Town Rank"
+	npc_for_icon = "adeline"
+	test_target = "main_story"
+	description = "Continue to improve Mistria by raising the Town Rank to Diamond Star (lvl. 90)"
+
+	[[reach_diamond_star_town_rank.stages]]
+		objective_description = "Complete requests, donate items to the Museum, and ship items for Tesserae to increase the Town Rank to Diamond Star."
+		requirements.reached_renown_level = 90
+		queries = [{ manual = true }]
+
+[reach_mistril_star_town_rank]
+	name = "Reach Mistril Star Town Rank"
+	npc_for_icon = "adeline"
+	test_target = "main_story"
+	description = "Continue to improve Mistria by raising the Town Rank to Mistril Star (lvl. 100)"
+
+	[[reach_mistril_star_town_rank.stages]]
+		objective_description = "Complete requests, donate items to the Museum, and ship items for Tesserae to increase the Town Rank to Mistril Star."
+		requirements.reached_renown_level = 100
+		queries = [{ manual = true }]
+
+[upgrade_the_saturday_market_plaza]
+	name = "Expanding the Saturday Market"
+	test_target = "main_story"
+	npc_for_icon = "nora"
+	description = "Meet Nora and Adeline at the Manor House to discuss expanding the Saturday Market."
+	rewards = [{ renown = 50 }]
+
+	[[upgrade_the_saturday_market_plaza.stages]]
+		objective_description = "Meet Nora and Adeline at the Manor House."
+		queries = [{ cutscene = "upgrade_the_saturday_market_plaza", location = "manor_house_entry" }]
+
+	[[upgrade_the_saturday_market_plaza.stages]]
+		objective_description = "Donate 50 Voidite, 20 Refined Stone, 5 Mistril Ingots, 10 Monster Cores, 5 Monster Blocks to the Donation Box at the Plaza west of the Blacksmiths, then talk to Adeline."
+		queries = [{ npc = "adeline", npc_conversation = "upgrade_the_saturday_market_plaza_turn_in" }]
+		requirements.supplied_items.items = { voidite = 50, refined_stone = 20, mistril_ingot = 5, monster_core = 10, monster_block = 5 }
+		requirements.supplied_items.point = "town/upgrade_the_saturday_market_plaza"
+
+[meet_the_new_vendors]
+	name = "Meet the New Vendors"
+	test_target = "main_story"
+	npc_for_icon = "nora"
+	description = "Talk to Stillwell and Zorel at the Saturday Market."
+	rewards = [{ gold = 1000 }, { renown = 20 }]
+
+	[[meet_the_new_vendors.stages]]
+		objective_description = "Talk to Nora."
+		requirements = { met_npc = ["stillwell", "zorel"] }
+		queries = [{ npc = "nora", npc_conversation = "meet_the_new_vendors_turn_in" }]
+
+[repair_the_bell_tower]
+	name = "Repair the Bell Tower"
+	test_target = "main_story"
+	npc_for_icon = "zorel"
+	description = """Zorel sent me a letter asking me to help her repair the Bell Tower."""
+	rewards = [{ renown = 50 }]
+
+	[[repair_the_bell_tower.stages]]
+		objective_description = "Meet Zorel, Adeline and Landen at the Bell Tower to discuss its repair."
+		queries = [
+			{ cutscene = "repair_the_bell_tower_pt_1", location = "town", area = [
+				52,
+				158,
+				83,
+				174,
+			] },
+		]
+
+	[[repair_the_bell_tower.stages]]
+		objective_description = "Donate 20 Refined Stone, 30 Hardwood, 1 Dragon-Forged Fang and 1 Dragon-Forged Core to the Donation Box at the Bell Tower, then talk to Adeline."
+		queries = [{ npc = "adeline", npc_conversation = "repair_the_bell_tower_pt_2_turn_in" }]
+		requirements.supplied_items.items = { refined_stone = 20, hard_wood = 30, dragon_forged_fang = 1, dragon_forged_core = 1 }
+		requirements.supplied_items.point = "town/repair_the_bell_tower"
+
+[complete_the_museum]
+	name = "Complete the Museum"
+	test_target = "main_story"
+	npc_for_icon = "errol"
+	description = "Errol asked me for help in completing the Museum's collection."
+	rewards = [{ renown = 20 }, { gold = 10000 }, { item = "mini_museum_blueprint" }]
+
+	[[complete_the_museum.stages]]
+		objective_description = "Complete the Museum's collection."
+		requirements = { completed_museum = true }
+		queries = [{ npc = "errol", npc_conversation = "complete_the_museum_turn_in" }]

@@ -1,0 +1,69 @@
+[shooting_star_evening]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "dell" },
+	{ dell_is_at = "town/star_festival_dell" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+]
+portrait = "happy"
+local = "Aren't the stars cool, [Ari]?"
+next = "1"
+
+[shooting_star_evening.1]
+portrait = "wink"
+local = "Me, Maple, and Luc are going to see if we can find one tomorrow."
+next = "2"
+
+[shooting_star_evening.2]
+portrait = "think"
+local = "So many are falling..."
+next = "3"
+
+[shooting_star_evening.3]
+portrait = "mad"
+effect = "sparkles"
+local = "And I bet we only need one to make a star sword!"
+
+[shooting_star_celine_follow_up_dell]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "dell" },
+	{ shooting_star_date_status = "celine_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "happy"
+local = "[Ari] and Celine, sitting in a tree..."
+next = "1"
+
+[shooting_star_celine_follow_up_dell.1]
+portrait = "wink"
+local = "K-I-Z-Z-I-M-G..."
+next = "2"
+
+[shooting_star_celine_follow_up_dell.2]
+portrait = "think"
+local = "I'm not very good at spelling."
+
+[shooting_star_follow_up]
+refresh = "3m"
+requires = [
+	{ npc = "dell" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ shooting_star_date_status = "celine_went", comparator = "!=" },
+]
+portrait = "ugh"
+local = "Ugh..."
+next = "1"
+
+[shooting_star_follow_up.1]
+portrait = "think"
+local = "I still haven't found any fallen stars yet..."
+next = "2"
+
+[shooting_star_follow_up.2]
+portrait = "mad"
+effect = "sparkles"
+local = "But I'm not going to give up!"

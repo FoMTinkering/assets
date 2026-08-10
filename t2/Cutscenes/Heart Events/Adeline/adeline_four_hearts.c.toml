@@ -1,0 +1,169 @@
+[adeline_four_hearts_follow_up_1]
+refresh = "never"
+requires = [
+	{ npc = "landen" },
+	{ quest_a_rewarding_choice_complete = true },
+	{ adeline_four_hearts_cookie = false },
+	{ adeline_four_hearts_supplies = true },
+]
+local = "[Ari]! Adeline tells me you were instrumental in arranging the stone and wood delivery today. Thank you so much!"
+
+[adeline_four_hearts_follow_up_2]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ quest_a_rewarding_choice_complete = true },
+	{ adeline_four_hearts_cookie = false },
+	{ adeline_four_hearts_supplies = true },
+]
+portrait = "happy"
+local = "Those supplies you and Adeline got us were just what I needed, [Ari]! Henrietta says thank you too."
+
+[adeline_four_hearts_follow_up_3]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ quest_a_rewarding_choice_complete = true },
+	{ adeline_four_hearts_cookie = true },
+	{ adeline_four_hearts_supplies = false },
+]
+local = "Ah, [Ari]! So glad you saw the merit in my proposal! The Really Big Cookie bakery is quite famous, you know."
+next = "1"
+
+[adeline_four_hearts_follow_up_3.1]
+portrait = "embarrassed"
+local = "Well, at least in some circles..."
+
+[adeline_four_hearts_follow_up_4]
+refresh = "never"
+requires = [
+	{ npc = "dell" },
+	{ quest_a_rewarding_choice_complete = true },
+	{ adeline_four_hearts_cookie = true },
+	{ adeline_four_hearts_supplies = false },
+]
+local = "Hey, [Ari]! My mom gave me the BIGGEST cookie and she says it was all your fault! Thank you!"
+
+[adeline_four_hearts]
+kind = "gameplay_triggered"
+speaker = "adeline"
+portrait = "happy"
+local = "[Ari], I have wonderful news! Our careful budgeting efforts and appeals for grants to the Capital have borne fruit!"
+next = "1"
+
+[adeline_four_hearts.1]
+portrait = "neutral"
+local = "We've been granted access to a special earthquake relief fund for rural areas that have been hit particularly hard."
+prompts = [
+	{ local = "Wow, congrats Adeline!", next = "2" },
+	{ local = "Oooh, how much are we getting?", next = "3" },
+]
+
+[adeline_four_hearts.2]
+portrait = "happy"
+local = "Thank you! We couldn't have done it without your help as well, [Ari]."
+next = "4"
+
+[adeline_four_hearts.3]
+portrait = "think"
+local = "Well, it's not a financial fund per say. But I still think it's quite generous!"
+next = "4"
+
+[adeline_four_hearts.4]
+portrait = "neutral"
+local = "We've been given a list of relief options to select from. Obviously liquid assets are rather tight in Aldaria at the moment, but we've narrowed it down to two options."
+next = "5"
+
+[adeline_four_hearts.5]
+portrait = "think"
+local = "For our first choice..."
+next = "6"
+
+[adeline_four_hearts.6]
+portrait = "happy"
+local = "A stockpile of stone and wood for everyone in town!"
+next = "7"
+
+[adeline_four_hearts.7]
+portrait = "neutral"
+local = "I'm sure you can see the obvious value here. Ryis is working hard, but there isn't anyone in town who couldn't make good use of extra materials!"
+next = "8"
+
+[adeline_four_hearts.8]
+portrait = "sly"
+local = "Why I'm sure you yourself have some projects these supplies would help speed along!"
+prompts = [
+	{ local = "Fences! Barns! Coops!", next = "9" },
+	{ local = "Finally, I can start mass producing chicken statues!", next = "10" },
+]
+
+[adeline_four_hearts.9]
+portrait = "happy"
+local = "That's the spirit!"
+next = "11"
+
+[adeline_four_hearts.10]
+portrait = "ugh"
+local = "W-well, that would be up to you..."
+next = "11"
+
+[adeline_four_hearts.11]
+portrait = "concerned"
+local = "And for our second choice, heavily supported by my brother Eiland..."
+next = "12"
+
+[adeline_four_hearts.12]
+portrait = "neutral"
+local = """A cookie care package from the "Really Big Cookie" Bakery in the Capital."""
+next = "13"
+
+[adeline_four_hearts.13]
+portrait = "think"
+local = "Eiland argues that it would give people the morale boost and energy they need to face up to the challenges of rebuilding."
+next = "14"
+
+[adeline_four_hearts.14]
+portrait = "sigh"
+local = "But... I think he just really likes sweets..."
+next = "15"
+
+[adeline_four_hearts.15]
+portrait = "neutral"
+effect = "sigh"
+local = "Still, his proposal has enough merit that I thought it would be worth presenting to you, [Ari]."
+next = "16"
+
+[adeline_four_hearts.16]
+portrait = "neutral"
+local = """There's no "wrong" answer! What do you, as a typical Mistrian, think the townsfolk would benefit from most?"""
+prompts = [
+	{ local = "That extra stone and wood would go a long way!", next = "17" },
+	{ local = "Big cookie! Big cookie, big cookie!", next = "18" },
+]
+
+[adeline_four_hearts.17]
+writes = [
+	{ adeline_four_hearts_supplies = true },
+	{ adeline_four_hearts_cookie = false },
+]
+portrait = "happy"
+local = "Ooh, I think so too!"
+next = "19"
+
+[adeline_four_hearts.18]
+writes = [
+	{ adeline_four_hearts_supplies = false },
+	{ adeline_four_hearts_cookie = true },
+]
+portrait = "happy"
+local = "Haha, well the idea certainly seems to have raised your morale, at least!"
+next = "19"
+
+[adeline_four_hearts.19]
+portrait = "neutral"
+local = "Thank you, [Ari]! I knew you were the right person for the job!"
+next = "20"
+
+[adeline_four_hearts.20]
+portrait = "happy"
+local = "I'll get these forms filled out, with any luck we can expect a delivery soon!"

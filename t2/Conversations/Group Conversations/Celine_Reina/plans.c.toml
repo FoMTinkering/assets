@@ -1,0 +1,28 @@
+[plans]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "reina" }] },
+	{ celine_zone = "<reina_zone>" },
+	{ date_time = "1y", comparator = ">=" },
+]
+speaker = "celine"
+portrait = "neutral"
+local = "How's your seasonal menu coming along, Reina?"
+next = "1"
+
+[plans.1]
+speaker = "reina"
+portrait = "neutral"
+local = "Pretty good! I even figured out how to use up the last of the potatoes in the cellar."
+next = "2"
+
+[plans.2]
+speaker = "reina"
+portrait = "happy"
+local = "What about your plans for the manor garden?"
+next = "3"
+
+[plans.3]
+speaker = "celine"
+portrait = "happy"
+local = "They're coming along. Take a look at the arrangement I sketched out!"

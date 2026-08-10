@@ -1,0 +1,686 @@
+[eiland_post_8h_romantic_0]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_dating = true },
+	{ eiland_post_8h_romantic_gate = false },
+	{ eiland_post_8h_romantic_grouping = 0 },
+	{ eiland_post_8h_romantic_progression = false }
+]
+writes = [
+	{ eiland_post_8h_romantic_gate = true, expires = "20h" },
+	{ eiland_post_8h_romantic_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "think"
+local = "It's strange to think that when my father first started courting my mother, they could only communicate through letters."
+next = "1"
+
+[eiland_post_8h_romantic_0.1]
+portrait = "neutral"
+local = "Of course, this was during his time on the front, before he was raised to peerage."
+next = "2"
+
+[eiland_post_8h_romantic_0.2]
+portrait = "embarrassed"
+local = "It's romantic, in its own way..."
+next = "3"
+
+[eiland_post_8h_romantic_0.3]
+portrait = "hope_special"
+local = "But I'm grateful that I can stay close to the one I care about, and see <she>her</she><he>him</he><they>them</they><it>it</it><none>you</none> every day."
+
+[eiland_post_8h_romantic_1]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_dating = true },
+	{ eiland_post_8h_romantic_gate = false },
+	{ eiland_post_8h_romantic_grouping = 1 },
+	{ eiland_post_8h_romantic_progression = false }
+]
+writes = [
+	{ eiland_post_8h_romantic_gate = true, expires = "20h" },
+	{ eiland_post_8h_romantic_grouping = 2 }
+]
+actions = [
+	{ bark = { bark = "blush", npc = "eiland" } },
+	{ item = "ore_ruby" },
+	{ item = "middlemist" }
+]
+portrait = "neutral"
+local = "I've been meaning to tell you, [Ari]!"
+next = "1"
+
+[eiland_post_8h_romantic_1.1]
+portrait = "happy"
+local = "I recently started a new line of research into the history of Aldarian courtship practices!"
+next = "2"
+
+[eiland_post_8h_romantic_1.2]
+portrait = "think"
+local = "Some customs, such as the $Shooting Star Festival$, have remained largely unchanged over the years..."
+next = "3"
+
+[eiland_post_8h_romantic_1.3]
+portrait = "happy_blush"
+local = "But it's the things that have changed that I find most fascinating!"
+prompts = [
+	{ local = "Ooh, tell me more!", next = "4" },
+	{ local = "And why are you studying courtship practices?", next = "8" }
+]
+
+[eiland_post_8h_romantic_1.4]
+portrait = "think"
+local = "Well, us present-day Aldarians tend to give food as gifts, more so than other things."
+next = "5"
+
+[eiland_post_8h_romantic_1.5]
+portrait = "neutral"
+local = "While our ancestors, the Alda, tended to give more flowers and gems to their partners."
+next = "6"
+
+[eiland_post_8h_romantic_1.6]
+portrait = "embarrassed"
+local = "I, ah... I thought it might be fun to follow the more traditional practice, this time."
+next = "7"
+
+[eiland_post_8h_romantic_1.7]
+portrait = "happy_blush"
+local = "Here, [Ari]. These are for you."
+
+[eiland_post_8h_romantic_1.8]
+portrait = "embarrassed"
+local = "Ah... well, it's a topic that's been on my mind lately."
+next = "9"
+
+[eiland_post_8h_romantic_1.9]
+portrait = "think"
+local = "It's interesting. Present-day Aldarians tend to give food as gifts, more so than other things."
+next = "10"
+
+[eiland_post_8h_romantic_1.10]
+portrait = "neutral"
+local = "While our ancestors, the Alda, tended to give more flowers and gems to their partners."
+next = "11"
+
+[eiland_post_8h_romantic_1.11]
+portrait = "embarrassed"
+local = "I, ah... I thought it might be fun to follow the more traditional practice, this time."
+next = "12"
+
+[eiland_post_8h_romantic_1.12]
+portrait = "happy_blush"
+local = "Here, [Ari]. These are for you."
+
+[eiland_post_8h_romantic_2]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_dating = true },
+	{ eiland_post_8h_romantic_gate = false },
+	{ eiland_post_8h_romantic_grouping = 2 },
+	{ eiland_post_8h_romantic_progression = false }
+]
+writes = [
+	{ eiland_post_8h_romantic_gate = true, expires = "20h" },
+	{ eiland_post_8h_romantic_grouping = 3 }
+]
+actions = [{ bark = { bark = "blush", npc = "eiland" } }]
+portrait = "think"
+local = "Among the competencies I've trained for as a noble, I never considered my speech to be lacking."
+next = "1"
+
+[eiland_post_8h_romantic_2.1]
+portrait = "embarrassed"
+local = "So how is it that I find myself tongue-tied whenever you draw near?"
+
+[eiland_post_8h_romantic_3]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_dating = true },
+	{ eiland_post_8h_romantic_gate = false },
+	{ eiland_post_8h_romantic_grouping = 3 },
+	{ eiland_post_8h_romantic_progression = false }
+]
+writes = [
+	{ eiland_post_8h_romantic_gate = true, expires = "2d" },
+	{ eiland_post_8h_romantic_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "sad"
+local = "..."
+next = "1"
+
+[eiland_post_8h_romantic_3.1]
+portrait = "surprised"
+effect = "shock"
+local = "Oh, [Ari]!"
+next = "2"
+
+[eiland_post_8h_romantic_3.2]
+portrait = "hope_special"
+local = "Sorry, I was lost in thought."
+prompts = [
+	{ local = "What's on your mind?", next = "3" },
+	{ local = "Is everything okay?", next = "3" }
+]
+
+[eiland_post_8h_romantic_3.3]
+portrait = "embarrassed"
+local = "Ah, well. It's just..."
+next = "4"
+
+[eiland_post_8h_romantic_3.4]
+portrait = "think"
+local = "I've been thinking more about the future recently."
+next = "5"
+
+[eiland_post_8h_romantic_3.5]
+portrait = "neutral"
+local = "I've always known that Adeline would be my parents' heir."
+next = "6"
+
+[eiland_post_8h_romantic_3.6]
+portrait = "embarrassed"
+local = "I've always been grateful for that."
+next = "7"
+
+[eiland_post_8h_romantic_3.7]
+portrait = "think"
+local = "But knowing that I have few prospects outside the ones I make for myself..."
+next = "8"
+
+[eiland_post_8h_romantic_3.8]
+portrait = "hope_special"
+local = "How do you feel about that?"
+prompts = [
+	{ local = "I'm happy that you've been able to pursue your passions freely!", next = "9" },
+	{ local = "It doesn't matter. You're a prince to me, Eiland.", next = "13" }
+]
+
+[eiland_post_8h_romantic_3.9]
+portrait = "happy_blush"
+local = "[Ari]... I'm so glad that you understand."
+next = "10"
+
+[eiland_post_8h_romantic_3.10]
+portrait = "neutral"
+local = "Adeline has inherited many responsibilities as the future baroness, while I've been given the grace to explore life at my own pace."
+next = "11"
+
+[eiland_post_8h_romantic_3.11]
+portrait = "embarrassed"
+local = "I hope that someday, if I have children of my own..."
+next = "12"
+
+[eiland_post_8h_romantic_3.12]
+portrait = "happy_blush"
+local = "They will enjoy the same freedom to pursue their dreams."
+
+[eiland_post_8h_romantic_3.13]
+portrait = "happy_blush"
+local = "Ha ha!"
+next = "14"
+
+[eiland_post_8h_romantic_3.14]
+portrait = "embarrassed"
+local = "Oh, [Ari]... thank you."
+next = "15"
+
+[eiland_post_8h_romantic_3.15]
+portrait = "happy_blush"
+local = "I assure you though, I'm far too low in the line of succession to truly make the running for princehood!"
+
+[eiland_post_8h_romantic_4]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_partner = true },
+	{ ryis_is_partner = false },
+	{ eiland_post_8h_romantic_gate = false },
+	{ eiland_post_8h_romantic_progression = false },
+	{ eiland_post_8h_romantic_grouping = 4 }
+]
+writes = [{ eiland_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "heart", npc = "eiland" } },
+	{ item = "golden_cheesecake" }
+]
+portrait = "neutral"
+local = "There you are, [Ari]! I just received a most urgent parcel from the Capital..."
+next = "1"
+
+[eiland_post_8h_romantic_4.1]
+portrait = "happy"
+local = "It's a gift for you from Ladybird, the bakery run by Ryis' family!"
+next = "2"
+
+[eiland_post_8h_romantic_4.2]
+portrait = "happy_blush"
+local = "I thought you might enjoy trying their specialty, the =Golden Cheesecake=."
+next = "3"
+
+[eiland_post_8h_romantic_4.3]
+portrait = "embarrassed"
+local = "Please, enjoy it while it's still fresh."
+
+[eiland_post_8h_romantic_5]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_partner = true },
+	{ eiland_post_8h_romantic_gate = false },
+	{ eiland_post_8h_romantic_progression = false },
+	{ eiland_post_8h_romantic_grouping = 4 }
+]
+writes = [{ eiland_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "think"
+local = "Have I ever played the piano for you, [Ari]?"
+next = "1"
+
+[eiland_post_8h_romantic_5.1]
+portrait = "neutral"
+local = "I was obliged to learn court etiquette growing up, so I learned to play from a young age."
+next = "2"
+
+[eiland_post_8h_romantic_5.2]
+portrait = "think"
+local = "I'm afraid I haven't been keeping up my practice as much as I should..."
+next = "3"
+
+[eiland_post_8h_romantic_5.3]
+portrait = "embarrassed"
+local = "But if you'd like a recital, I wouldn't mind looking a little foolish for you."
+
+[eiland_post_8h_romantic_6]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_partner = true },
+	{ eiland_post_8h_romantic_gate = false },
+	{ any = [
+		{ eiland_post_8h_romantic_progression = false },
+		{ eiland_post_8h_best_friend_grouping = 0 },
+		{ eiland_post_8h_best_friend_grouping = 4 }
+	] },
+	{ eiland_post_8h_romantic_grouping = 4 },
+	{ weather = "pleasant" }
+]
+writes = [
+	{ eiland_post_8h_romantic_gate = true, expires = "2d" },
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "embarrassed"
+local = "It might be all the Mistrian sunshine and ocean air..."
+next = "1"
+
+[eiland_post_8h_romantic_6.1]
+portrait = "hope_special"
+local = "But you look stunningly windswept today, [Ari]."
+
+[eiland_post_8h_romantic_7]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_partner = true },
+	{ eiland_post_8h_romantic_gate = false },
+	{ eiland_post_8h_romantic_progression = false },
+	{ eiland_post_8h_romantic_grouping = 4 }
+]
+writes = [{ eiland_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "heart", npc = "eiland" } },
+	{ item = { item = "chocolate", count = 5 } }
+]
+portrait = "neutral"
+local = "[Ari]! I got you something."
+next = "1"
+
+[eiland_post_8h_romantic_7.1]
+portrait = "happy_blush"
+local = "Balor clued me in on a new chocolatier in the Capital, so I ordered a box of their highly coveted first batch..."
+next = "2"
+
+[eiland_post_8h_romantic_7.2]
+portrait = "embarrassed"
+local = "I'd like to share them with you."
+
+[eiland_post_8h_romantic_8]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_partner = true },
+	{ eiland_post_8h_romantic_gate = false },
+	{ any = [
+		{ eiland_post_8h_romantic_progression = false },
+		{ eiland_post_8h_best_friend_grouping = 0 },
+		{ eiland_post_8h_best_friend_grouping = 4 }
+	] },
+	{ eiland_post_8h_romantic_grouping = 4 },
+	{ any = [{ location = "museum_entry" }, { location = "eilands_office" }] }
+]
+writes = [
+	{ eiland_post_8h_romantic_gate = true, expires = "2d" },
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "eiland" } },
+	{ item = "cranberry_orange_scone" }
+]
+portrait = "neutral"
+local = "[Ari]! I couldn't imagine better timing!"
+next = "1"
+
+[eiland_post_8h_romantic_8.1]
+portrait = "embarrassed"
+local = "Would you like to take a break with me? Have a little snack?"
+next = "2"
+
+[eiland_post_8h_romantic_8.2]
+portrait = "happy_blush"
+local = "These were freshly made this morning. Take this one, it looks the biggest!"
+
+[eiland_post_8h_romantic_9]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_dating = true },
+	{ eiland_post_8h_romantic_gate = false },
+	{ any = [
+		{ eiland_post_8h_romantic_progression = false },
+		{ eiland_post_8h_best_friend_grouping = 0 },
+		{ eiland_post_8h_best_friend_grouping = 4 }
+	] },
+	{ eiland_post_8h_romantic_grouping = 4 },
+	{ day_time = "8:00pm", comparator = ">" }
+]
+writes = [
+	{ eiland_post_8h_romantic_gate = true, expires = "2d" },
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "eiland" } },
+	{ item = "night_queen" }
+]
+portrait = "think"
+local = "It's said that a $Night Queen$ only flowers once, for a single night each year."
+next = "1"
+
+[eiland_post_8h_romantic_9.1]
+portrait = "gloomy_special"
+local = "I wonder how that feels for the $Night Queen$, to expend all its energy for one grand moment, only to go dormant?"
+next = "2"
+
+[eiland_post_8h_romantic_9.2]
+portrait = "happy_blush"
+local = "That's what I like about conserving history. It allows us to look back and appreciate life's fleeting nature."
+next = "3"
+
+[eiland_post_8h_romantic_9.3]
+portrait = "embarrassed"
+local = "Like... this moment here with you. I hope you'll remember it, too."
+
+[eiland_post_8h_romantic_10]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_dating = true },
+	{ eiland_post_8h_romantic_gate = false },
+	{ eiland_post_8h_romantic_progression = false },
+	{ eiland_post_8h_romantic_grouping = 4 }
+]
+writes = [{ eiland_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "eiland" } }]
+portrait = "think"
+local = "These days I consider myself an archaeologist first and a noble second."
+next = "1"
+
+[eiland_post_8h_romantic_10.1]
+portrait = "neutral"
+local = "That means I'm no stranger to working the earth!"
+next = "2"
+
+[eiland_post_8h_romantic_10.2]
+portrait = "happy_blush"
+local = "So, if there ever comes a time when you need help on the farm... know that you can rely on me to roll up my sleeves!"
+prompts = [
+	{ local = "I think you'd make a fine farmer!", next = "3" },
+	{ local = "Have you ever grown anything before?", next = "6" }
+]
+
+[eiland_post_8h_romantic_10.3]
+portrait = "wink"
+local = "Thank you! I can't say I have a tremendous amount of experience, but-"
+next = "4"
+
+[eiland_post_8h_romantic_10.4]
+portrait = "neutral"
+local = "I have a great deal of exuberance for learning new skills!"
+next = "5"
+
+[eiland_post_8h_romantic_10.5]
+portrait = "embarrassed"
+local = "When something or... someone piques my interest."
+
+[eiland_post_8h_romantic_10.6]
+portrait = "think"
+local = "I can't say that I have a tremendous amount of experience, but-"
+next = "7"
+
+[eiland_post_8h_romantic_10.7]
+portrait = "neutral"
+local = "I have a great deal of exuberance for learning new skills!"
+next = "8"
+
+[eiland_post_8h_romantic_10.8]
+portrait = "embarrassed"
+local = "When something or... someone piques my interest."
+
+[eiland_post_8h_romantic_11]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_dating = true },
+	{ eiland_post_8h_romantic_gate = false },
+	{ eiland_post_8h_romantic_progression = false },
+	{ eiland_post_8h_romantic_grouping = 4 }
+]
+writes = [{ eiland_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "neutral"
+local = "Great Aunt Elsie always jumps on the chance to talk about romance when the opportunity arises..."
+next = "1"
+
+[eiland_post_8h_romantic_11.1]
+portrait = "happy"
+effect = "drop"
+local = "But lately she's very keen on offering her insight into what makes a couple compatible."
+next = "2"
+
+[eiland_post_8h_romantic_11.2]
+portrait = "think"
+local = "Apparently it's not just having things in common that makes for a good match."
+next = "3"
+
+[eiland_post_8h_romantic_11.3]
+portrait = "neutral"
+local = "The ways in which you're opposite also makes a difference!"
+next = "4"
+
+[eiland_post_8h_romantic_11.4]
+portrait = "happy_blush"
+local = "She thinks we're well suited for each other, and I'm inclined to agree."
+prompts = [
+	{ local = "Because I'm an adventurer and you're a scholar?", next = "5" },
+	{ local = "Because you're way more into sweets than I am?", next = "8" }
+]
+
+[eiland_post_8h_romantic_11.5]
+portrait = "neutral"
+local = "Well... yes! That is one reason."
+next = "6"
+
+[eiland_post_8h_romantic_11.6]
+portrait = "hope_special"
+local = "Your strength and bravery allow you to explore the depths of the mines..."
+next = "7"
+
+[eiland_post_8h_romantic_11.7]
+portrait = "happy_blush"
+local = "Allowing me to focus on studying and cataloguing the artifacts you bring back!"
+
+[eiland_post_8h_romantic_11.8]
+portrait = "embarrassed"
+local = "Well... yes! That is one reason."
+next = "9"
+
+[eiland_post_8h_romantic_11.9]
+portrait = "think"
+local = "Imagine the potential for dessert drama if we were both like this."
+next = "10"
+
+[eiland_post_8h_romantic_11.10]
+portrait = "happy_blush"
+local = "Though, honestly... I'd let you have the last cookie, if it came down to it."
+
+[eiland_post_8h_romantic_12]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_partner = true },
+	{ eiland_post_8h_romantic_gate = false },
+	{ eiland_post_8h_romantic_progression = false },
+	{ eiland_post_8h_romantic_grouping = 4 }
+]
+writes = [{ eiland_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "think"
+local = "In my studies, I've come to understand that our forebears put a great deal of stock into divine decree... destiny, if you will."
+next = "1"
+
+[eiland_post_8h_romantic_12.1]
+portrait = "neutral"
+local = "It's comforting to think that I was always meant to be exactly as I am, living in these exact circumstances..."
+next = "2"
+
+[eiland_post_8h_romantic_12.2]
+portrait = "embarrassed"
+local = "But I understand why one may find the idea of fate a bit... stifling. What are your thoughts, [Ari]?"
+prompts = [
+	{ local = "I believe in fate.", next = "3" },
+	{ local = "I'm creating my own destiny!", next = "9" }
+]
+
+[eiland_post_8h_romantic_12.3]
+portrait = "happy_blush"
+local = "I also believe in fate."
+next = "4"
+
+[eiland_post_8h_romantic_12.4]
+portrait = "think"
+local = "But I believe we have a hand in creating our destinies, too."
+next = "5"
+
+[eiland_post_8h_romantic_12.5]
+portrait = "neutral"
+local = "Our lives, relationships, and fates..."
+next = "6"
+
+[eiland_post_8h_romantic_12.6]
+portrait = "happy"
+local = "They all form us as we're forming them."
+next = "7"
+
+[eiland_post_8h_romantic_12.7]
+portrait = "embarrassed"
+local = "Just think of all the paths that we took... that lead us both here."
+next = "8"
+
+[eiland_post_8h_romantic_12.8]
+portrait = "hope_special"
+local = "Surely, it's more than serendipity."
+
+[eiland_post_8h_romantic_12.9]
+portrait = "happy_blush"
+local = "I also believe that we form our own destinies."
+next = "10"
+
+[eiland_post_8h_romantic_12.10]
+portrait = "think"
+local = "But I believe in fate, too."
+next = "11"
+
+[eiland_post_8h_romantic_12.11]
+portrait = "neutral"
+local = "Our lives, relationships, and fates..."
+next = "12"
+
+[eiland_post_8h_romantic_12.12]
+portrait = "happy"
+local = "They all form us as we're forming them."
+next = "13"
+
+[eiland_post_8h_romantic_12.13]
+portrait = "embarrassed"
+local = "Just think of all the paths that we took... that lead us both here."
+next = "14"
+
+[eiland_post_8h_romantic_12.14]
+portrait = "hope_special"
+local = " Surely, it's more than serendipity."
+
+# last line
+[eiland_post_8h_romantic_13]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_partner = true },
+	{ eiland_post_8h_romantic_gate = false },
+	{ eiland_post_8h_romantic_grouping = 4 }
+]
+writes = [
+	{ eiland_post_8h_romantic_gate = true, expires = "2d" },
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" },
+	{ eiland_post_8h_romantic_progression = true }
+]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "think"
+local = "Whenever I turn up a fascinating artifact, I always get lost imagining what it would be like to live in the time period it came from."
+next = "1"
+
+[eiland_post_8h_romantic_13.1]
+portrait = "embarrassed"
+local = "But I'm glad that I was born in this one, [Ari]. Being able to discuss these curiosities together..."
+next = "2"
+
+[eiland_post_8h_romantic_13.2]
+portrait = "hope_special"
+local = "Whether at the dig site, walking in the Deep Woods, or over tea and cake..."
+next = "3"
+
+[eiland_post_8h_romantic_13.3]
+portrait = "happy_blush"
+local = "It means everything to me."
+
+[eiland_post_8h_romantic_14]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_partner = true },
+	{ eiland_post_8h_romantic_gate = false },
+	{ eiland_post_8h_romantic_progression = false },
+	{ eiland_post_8h_romantic_grouping = 4 }
+]
+writes = [{ eiland_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "think"
+local = "I've been translating a document that's focused on two historical figures' famous romance."
+next = "1"
+
+[eiland_post_8h_romantic_14.1]
+portrait = "hope_special"
+local = "Frankly, it's not nearly as impressive as our own!"

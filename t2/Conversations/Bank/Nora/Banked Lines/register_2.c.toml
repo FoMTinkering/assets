@@ -1,0 +1,12 @@
+[register_2]
+refresh = "1y"
+requires = [
+	{ npc = "nora" },
+	{ nora_routine = "general_store" },
+	{ location = "general_store_store" },
+	{ celine_is_at_location = "general_store_store", comparator = "!=" },
+	{ celine_routine = "general_store", comparator = "!=" },
+	{ celine_routine = "general_store_outside_chores", comparator = "!=" },
+]
+portrait = "think"
+local = "Are you looking for Celine? She took a different shift this week."

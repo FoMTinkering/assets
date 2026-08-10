@@ -1,0 +1,26 @@
+# i want
+[adeline_posted_a_quest]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "town/quest_board_looking" },
+	{ luc_zone = "town/quest_board_looking" },
+	{ maple_zone = "town/quest_board_looking" },
+]
+speaker = "maple"
+local = "Lady Adeline posted a quest!"
+next = "1"
+
+[adeline_posted_a_quest.1]
+speaker = "luc"
+local = "That's not a quest, it's a request."
+next = "2"
+
+[adeline_posted_a_quest.2]
+speaker = "dell"
+local = "Well, what's the difference?"
+next = "3"
+
+[adeline_posted_a_quest.3]
+speaker = "maple"
+local = """Most quests don't want you to mop, I do enough "questing" at home as it is."""

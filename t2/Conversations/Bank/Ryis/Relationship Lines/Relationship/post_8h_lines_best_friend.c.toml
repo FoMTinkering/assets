@@ -1,0 +1,668 @@
+[ryis_post_8h_best_friend_0]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = false },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 0 }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "20h" },
+	{ ryis_post_8h_best_friend_grouping = 1 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "ryis" } }]
+portrait = "neutral"
+local = "I was thinking about our time together, and making the birdhouse, and everything we talked about..."
+next = "1"
+
+[ryis_post_8h_best_friend_0.1]
+portrait = "think"
+local = "I've got a whole routine these days... repairs around town, minding the shop, filling Adeline's work orders..."
+next = "2"
+
+[ryis_post_8h_best_friend_0.2]
+portrait = "happy"
+local = "I guess I've really settled into life in Mistria. That's nice."
+next = "3"
+
+[ryis_post_8h_best_friend_0.3]
+portrait = "happy"
+effect = "drop"
+local = "I mean, there's no real settling in when you've got an Uncle Landen. He keeps things interesting."
+next = "4"
+
+[ryis_post_8h_best_friend_0.4]
+portrait = "wink"
+local = "But... I'd say I've gotten pretty used to that, too."
+
+[ryis_post_8h_best_friend_1]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 1 }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "20h" },
+	{ ryis_post_8h_best_friend_grouping = 2 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "I really like building stuff..."
+next = "1"
+
+[ryis_post_8h_best_friend_1.1]
+portrait = "happy"
+local = "Turning a pile of materials into a barn or something... it feels good."
+next = "2"
+
+[ryis_post_8h_best_friend_1.2]
+portrait = "think"
+local = "I wonder what my sisters would think if they saw me swinging a hammer around?"
+next = "3"
+
+[ryis_post_8h_best_friend_1.3]
+portrait = "happy"
+local = "They're used to seeing me covered in flour."
+prompts = [
+	{ local = "Now you're covered in sawdust!", next = "4" },
+	{ local = "I bet they'd be as impressed as I am.", next = "6" }
+]
+
+[ryis_post_8h_best_friend_1.4]
+portrait = "happy"
+local = "The more things change, the more they stay the same, right?"
+next = "5"
+
+[ryis_post_8h_best_friend_1.5]
+portrait = "wink"
+local = "No matter what I do, it's always a battle to keep my clothes looking nice."
+
+[ryis_post_8h_best_friend_1.6]
+portrait = "neutral"
+local = "Haha, maybe... but they'd definitely tease me about it."
+next = "7"
+
+[ryis_post_8h_best_friend_1.7]
+portrait = "think"
+local = "Then they'd ask me to build stuff for them."
+next = "8"
+
+[ryis_post_8h_best_friend_1.8]
+portrait = "neutral"
+local = "New display shelf for bread, new cabinets for the pots and pans..."
+next = "9"
+
+[ryis_post_8h_best_friend_1.9]
+portrait = "happy"
+local = "Huh. Maybe I should write them and see if they need anything. A brother should help his sisters out, right?"
+
+[ryis_post_8h_best_friend_2]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 2 }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "20h" },
+	{ ryis_post_8h_best_friend_grouping = 3 }
+]
+actions = [
+	{ bark = { bark = "relationship_status", npc = "ryis" } },
+	{ item = "iced_coffee" }
+]
+portrait = "think"
+local = "Oof... hey, [Ari]."
+next = "1"
+
+[ryis_post_8h_best_friend_2.1]
+portrait = "sad"
+effect = "sigh"
+local = "Ever have one of those days where the second =Iced Coffee= just isn't enough?"
+next = "2"
+
+[ryis_post_8h_best_friend_2.2]
+portrait = "happy"
+effect = "drop"
+local = "I was going to have a third one but... here, take this away before I overdo it."
+
+[ryis_post_8h_best_friend_3]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = false },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 3 }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "2d" },
+	{ ryis_post_8h_romantic_gate = true, expires = "2d" },
+	{ ryis_post_8h_best_friend_grouping = 4 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "ryis" } }]
+portrait = "neutral"
+local = "You know, I spent so much of my life watching wild animals from afar, but never really interacting with them."
+next = "1"
+
+[ryis_post_8h_best_friend_3.1]
+portrait = "think"
+local = "That's the point of birdwatching, right? The number one rule when enjoying nature is to leave it as you found it."
+next = "2"
+
+[ryis_post_8h_best_friend_3.2]
+portrait = "happy"
+local = "But you got me thinking about ranching and taking care of animals. I think it'd be fun to learn!"
+
+[ryis_post_8h_best_friend_4]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "2d" },
+	{ ryis_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "ryis" } }]
+portrait = "neutral"
+local = "[Ari], I got an updated birding guide in from the Capital!"
+next = "1"
+
+[ryis_post_8h_best_friend_4.1]
+portrait = "think"
+local = "The little chapter on Mistria is mostly the same... they still think the Mistrian Bluebirds are gone."
+next = "2"
+
+[ryis_post_8h_best_friend_4.2]
+portrait = "wink"
+local = "Guess that can be our secret for now!"
+
+[ryis_post_8h_best_friend_5]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 4, ignore_priority = true }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "2d" },
+	{ ryis_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "ryis" } }]
+portrait = "think"
+local = "I used to wake up thinking I was still in the city..."
+next = "1"
+
+[ryis_post_8h_best_friend_5.1]
+portrait = "neutral"
+local = "But now, when I wake up to birdsong, it sounds like home."
+next = "2"
+
+[ryis_post_8h_best_friend_5.2]
+portrait = "happy"
+local = "It's been nice, you know?"
+
+[ryis_post_8h_best_friend_6]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "2d" },
+	{ ryis_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "ryis" } }]
+portrait = "neutral"
+local = "Growing up, my mom always said you should compliment someone while you have the chance, so..."
+next = "1"
+
+[ryis_post_8h_best_friend_6.1]
+portrait = "happy"
+local = "You look nice today, [Ari]."
+
+[ryis_post_8h_best_friend_7]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = false },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "2d" },
+	{ ryis_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "relationship_status", npc = "ryis" } },
+	{ item = "golden_cookies" }
+]
+portrait = "neutral"
+local = "My baby sister sent me another cookie care package!"
+next = "1"
+
+[ryis_post_8h_best_friend_7.1]
+portrait = "happy"
+local = "She said I should share these with all my favorite people in town."
+next = "2"
+
+[ryis_post_8h_best_friend_7.2]
+portrait = "wink"
+local = "Eat them while they're fresh, okay?"
+
+[ryis_post_8h_best_friend_8]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "2d" },
+	{ ryis_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "Uncle Landen never took on other apprentices or had kids, so I'm extra glad I came to Mistria to help with the shop."
+next = "1"
+
+[ryis_post_8h_best_friend_8.1]
+portrait = "think"
+local = "There's rumors he's been engaged a half dozen times, but nothing ever came of it."
+next = "2"
+
+[ryis_post_8h_best_friend_8.2]
+portrait = "happy"
+local = "Well, it's never too late for love! I'm rooting for him."
+
+[ryis_post_8h_best_friend_9]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = false },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "2d" },
+	{ ryis_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "You know how my family's bakery is called Ladybird?"
+next = "1"
+
+[ryis_post_8h_best_friend_9.1]
+portrait = "think"
+local = "When I was a kid, I thought it was a cute name for a bird who was a girl, since we had so many girls in the family."
+next = "2"
+
+[ryis_post_8h_best_friend_9.2]
+portrait = "happy"
+local = "Turns out it's a different name for a ladybug! They're cool too, I guess."
+
+[ryis_post_8h_best_friend_10]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = false },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 4 },
+	{ day_of_the_week = "saturday", comparator = "!=" }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "2d" },
+	{ ryis_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "Hey, [Ari]. I was just thinking about the next Saturday Market."
+next = "1"
+
+[ryis_post_8h_best_friend_10.1]
+portrait = "think"
+local = "It's about time I got some more denim, but I kind of want a lighter wash this time."
+next = "2"
+
+[ryis_post_8h_best_friend_10.2]
+portrait = "happy"
+local = "Hopefully Louis has something... otherwise I guess I'll put something on order with him."
+prompts = [
+	{ local = "You're really into fashion, aren't you?", next = "3" },
+	{ local = "Your wardrobe's so stylish.", next = "6" }
+]
+
+[ryis_post_8h_best_friend_10.3]
+portrait = "wink"
+local = "Guilty as charged..."
+next = "4"
+
+[ryis_post_8h_best_friend_10.4]
+portrait = "think"
+local = "I'm not someone who puts fashion before comfort..."
+next = "5"
+
+[ryis_post_8h_best_friend_10.5]
+portrait = "neutral"
+local = "But sometimes fashion is comfort, if that makes sense."
+
+[ryis_post_8h_best_friend_10.6]
+portrait = "neutral"
+local = "Oh, that's nice of you to say. I always thought that about you, actually."
+next = "7"
+
+[ryis_post_8h_best_friend_10.7]
+portrait = "think"
+local = "You've always got something that suits you."
+next = "8"
+
+[ryis_post_8h_best_friend_10.8]
+portrait = "happy"
+local = "I think that's pretty cool, [Ari]."
+
+[ryis_post_8h_best_friend_11]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "2d" },
+	{ ryis_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "Luc sure does like bugs! He was showing me his favorite insects for hours the other day."
+next = "1"
+
+[ryis_post_8h_best_friend_11.1]
+portrait = "think"
+local = "I've been thinking... when he grows up, he'll probably want to go to university in the Capital..."
+next = "2"
+
+[ryis_post_8h_best_friend_11.2]
+portrait = "wink"
+local = "Maybe one of my sisters could put him up. Or my aunt. Or one of my friends downtown..."
+next = "3"
+
+[ryis_post_8h_best_friend_11.3]
+portrait = "neutral"
+local = "I should make time to talk to Josephine... bet I could set up some kind of boarding situation for him."
+prompts = [
+	{ local = "What brought this on?", next = "4" },
+	{ local = "You know a lot of people in the Capital!", next = "6" }
+]
+
+[ryis_post_8h_best_friend_11.4]
+portrait = "neutral"
+local = "I like birds... but Luc REALLY likes insects."
+next = "5"
+
+[ryis_post_8h_best_friend_11.5]
+portrait = "happy"
+local = "And it's not just that he reads all about them... he makes his own observations, too."
+next = "9"
+
+[ryis_post_8h_best_friend_11.6]
+portrait = "wink"
+local = "Hah, I like to keep in touch."
+next = "7"
+
+[ryis_post_8h_best_friend_11.7]
+portrait = "happy"
+local = "And Luc... man, he REALLY likes insects."
+next = "8"
+
+[ryis_post_8h_best_friend_11.8]
+portrait = "neutral"
+local = "And it's not just that he reads all about them... he makes his own observations, too."
+next = "9"
+
+[ryis_post_8h_best_friend_11.9]
+portrait = "think"
+local = "He's really motivated... and if you pursue an education to the fullest, it can take you pretty far."
+next = "10"
+
+[ryis_post_8h_best_friend_11.10]
+portrait = "neutral"
+local = "And, well... I was thinking 'bout how Uncle Landen put me up so I could come out to Mistria and learn a trade."
+next = "11"
+
+[ryis_post_8h_best_friend_11.11]
+portrait = "happy"
+local = "I guess I want to pay that kindness forward. That's what community is about, right?"
+
+[ryis_post_8h_best_friend_12]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "2d" },
+	{ ryis_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "Oh, hey [Ari]. Can you give me a hand?"
+next = "1"
+
+[ryis_post_8h_best_friend_12.1]
+portrait = "happy"
+local = "One of my sisters has her birthday in a few weeks, so I was trying to decide on a gift."
+next = "2"
+
+[ryis_post_8h_best_friend_12.2]
+portrait = "think"
+local = "She really likes painting... what do you think I could make her?"
+prompts = [
+	{ local = "How about some brushes?", next = "3" },
+	{ local = "Maybe a traveling easel?", next = "6" }
+]
+
+[ryis_post_8h_best_friend_12.3]
+portrait = "neutral"
+local = "Hey, yeah! That's a good idea, I could do some woodturning and make her something really ergonomic and symmetrical..."
+next = "4"
+
+[ryis_post_8h_best_friend_12.4]
+portrait = "happy"
+local = "Maybe break out some of my treasured =Golden Horse Hair= for the bristles!"
+next = "5"
+
+[ryis_post_8h_best_friend_12.5]
+portrait = "neutral"
+local = "That would be a great gift. Thanks for the idea, [Ari]!"
+
+[ryis_post_8h_best_friend_12.6]
+portrait = "neutral"
+local = "Hey, yeah! That's a good idea, maybe one with a pull-out drawer to stow paints?"
+next = "7"
+
+[ryis_post_8h_best_friend_12.7]
+portrait = "think"
+local = "Maybe I'll ask March to help design the hardware, some nice carrying handles..."
+next = "8"
+
+[ryis_post_8h_best_friend_12.8]
+portrait = "happy"
+local = "That would be a great gift. Thanks for the idea, [Ari]!"
+
+[ryis_post_8h_best_friend_13]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = false },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "2d" },
+	{ ryis_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "[Ari], don't tell him I told you so, but..."
+next = "1"
+
+[ryis_post_8h_best_friend_13.1]
+portrait = "happy"
+effect = "drop"
+local = "Uncle Landen snores like crazy."
+next = "2"
+
+[ryis_post_8h_best_friend_13.2]
+portrait = "ugh"
+local = "When I first moved in, I thought he was up all night sawing wood, and I was like oh no..."
+next = "3"
+
+[ryis_post_8h_best_friend_13.3]
+portrait = "think"
+local = "But no, it was snoring. He DOES saw wood all day, though. Retired, my left shoe!"
+prompts = [
+	{ local = "Oh no! Did you get used to the noise?", next = "4" },
+	{ local = """I wondered about that... he doesn't exactly seem "retired".""", next = "7" }
+]
+
+[ryis_post_8h_best_friend_13.4]
+portrait = "neutral"
+local = "I did, actually."
+next = "5"
+
+[ryis_post_8h_best_friend_13.5]
+portrait = "think"
+local = "Somehow."
+next = "6"
+
+[ryis_post_8h_best_friend_13.6]
+portrait = "happy"
+effect = "drop"
+local = "Mostly..."
+
+[ryis_post_8h_best_friend_13.7]
+portrait = "neutral"
+local = "Don't get me started, [Ari]."
+next = "8"
+
+[ryis_post_8h_best_friend_13.8]
+portrait = "happy"
+effect = "drop"
+local = "The only thing retirement changed about him is his wardrobe."
+next = "9"
+
+[ryis_post_8h_best_friend_13.9]
+portrait = "think"
+local = "Maybe I should throw him a retirement party... is that what he's waiting for?"
+
+[ryis_post_8h_best_friend_14]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = false },
+	{ any = [
+		{ ryis_post_8h_romantic_progression = true },
+		{ ryis_is_best_friend = true }
+	] },
+	{ ryis_post_8h_best_friend_gate = false },
+	{ ryis_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ ryis_post_8h_best_friend_gate = true, expires = "2d" },
+	{ ryis_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "think"
+local = "What people wear can sometimes say a lot about them..."
+next = "1"
+
+[ryis_post_8h_best_friend_14.1]
+portrait = "neutral"
+local = "Like, I always admire your sense of style, [Ari]. You're always so yourself, you know?"
+next = "2"
+
+[ryis_post_8h_best_friend_14.2]
+portrait = "happy"
+local = "Hit me up if you ever want to talk fashion... it'd be fun to hear your opinions."
+prompts = [
+	{ local = "I love clothes and putting together outfits", next = "3" },
+	{ local = "Actually, I don't think about clothing a lot. I just wear what's convenient.", next = "5" }
+]
+
+[ryis_post_8h_best_friend_14.3]
+portrait = "neutral"
+local = "Right? It's so much fun to put pieces together and play with silhouette and contrast."
+next = "4"
+
+[ryis_post_8h_best_friend_14.4]
+portrait = "happy"
+local = "That's why my favorite times of year are the turning of the seasons... gotta dress to impress!"
+
+[ryis_post_8h_best_friend_14.5]
+portrait = "happy"
+local = "Yeah, I really get that. Comfort and practicality are so important when you're a farmer."
+next = "6"
+
+[ryis_post_8h_best_friend_14.6]
+portrait = "neutral"
+local = "That effortless, nonchalant look... that's real cool, too."

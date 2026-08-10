@@ -1,0 +1,314 @@
+[lost_and_found_follow_up_adeline]
+refresh = "never"
+requires = [{ npc = "adeline" }, { laf = true }]
+portrait = "think"
+local = "Maple successfully negotiated an extra snack for the Dragonguard on town clean-up days."
+next = "1"
+
+[lost_and_found_follow_up_adeline.1]
+portrait = "happy"
+local = "But we negotiated her down from everyone in the Dragonguard getting a patrol pony, so I consider it a win."
+
+[lost_and_found_follow_up_hemlock]
+refresh = "never"
+requires = [{ npc = "hemlock" }, { laf = true }]
+portrait = "happy"
+local = "Those kids! When I told Jo they broke into a council meeting she couldn't stop laughing."
+
+[lost_and_found_follow_up_nora]
+refresh = "never"
+requires = [{ npc = "nora" }, { laf = true }]
+portrait = "neutral"
+local = "I couldn't be happier about Dell and her friends finally doing something useful with their time for the town."
+next = "1"
+
+[lost_and_found_follow_up_nora.1]
+portrait = "happy"
+local = "I guess she's growing up!"
+
+[lost_and_found]
+kind = "gameplay_triggered"
+writes = [{ laf = true, expires = "4d" }]
+speaker = "adeline"
+portrait = "happy"
+local = "[Ari]! I'm so glad you could make it to our meeting!"
+next = "1"
+
+[lost_and_found.1]
+speaker = "eiland"
+portrait = "happy"
+local = "Welcome! Pull up a chair."
+next = "2"
+
+[lost_and_found.2]
+speaker = "adeline"
+portrait = "neutral"
+local = "Thank you all for coming today."
+next = "3"
+
+[lost_and_found.3]
+speaker = "adeline"
+portrait = "happy"
+local = "As I'm sure you're all aware, Mistria's town rank has risen yet again!"
+next = "4"
+
+[lost_and_found.4]
+speaker = "eiland"
+portrait = "happy"
+local = "Congratulations everyone!"
+next = "5"
+
+[lost_and_found.5]
+speaker = "nora"
+portrait = "happy"
+local = "I think special thanks are in order to one Mistrian in particular..."
+next = "6"
+
+[lost_and_found.6]
+speaker = "nora"
+portrait = "neutral"
+local = "Well done [Ari]! We all appreciate your hard work!"
+next = "7"
+
+[lost_and_found.7]
+speaker = "errol"
+portrait = "happy"
+local = "Hear, hear!"
+next = "8"
+
+[lost_and_found.8]
+speaker = "adeline"
+portrait = "think"
+local = "Now, on to new business-"
+next = "9"
+
+[lost_and_found.9]
+speaker = "dell"
+portrait = "mad"
+local = "How about some old business, old people!"
+next = "10"
+
+[lost_and_found.10]
+speaker = "dell"
+portrait = "sad"
+local = "You're really going to leave the Dragonguard out of another meeting!?"
+next = "11"
+
+[lost_and_found.11]
+speaker = "maple"
+portrait = "mad"
+local = "How are we gonna protect Mistria at this rate?"
+next = "12"
+
+[lost_and_found.12]
+speaker = "nora"
+portrait = "think"
+local = "Hemlock, I thought Reina was going to distract them with chocolate bars?"
+next = "13"
+
+[lost_and_found.13]
+speaker = "hemlock"
+portrait = "think"
+effect = "drop"
+local = "She did!"
+next = "14"
+
+[lost_and_found.14]
+speaker = "dell"
+portrait = "neutral"
+local = "Oh yeah, we ate those super fast."
+next = "15"
+
+[lost_and_found.15]
+speaker = "luc"
+portrait = "happy"
+local = "My tummy hurts!"
+next = "16"
+
+[lost_and_found.16]
+speaker = "nora"
+portrait = "mad"
+local = "Now listen you three, you march yourselves right back to the Inn-"
+next = "17"
+
+[lost_and_found.17]
+speaker = "adeline"
+portrait = "sigh"
+local = "No no, it's fine. They can stay."
+next = "18"
+
+[lost_and_found.18]
+speaker = "maple"
+portrait = "happy"
+local = "Yay!"
+next = "19"
+
+[lost_and_found.19]
+speaker = "hemlock"
+portrait = "mad"
+local = "As long as you're all quiet, okay?"
+next = "20"
+
+[lost_and_found.20]
+speaker = "luc"
+portrait = "neutral"
+local = "You got it, Dad!"
+next = "21"
+
+[lost_and_found.21]
+speaker = "adeline"
+portrait = "think"
+local = "Now... where was I..."
+next = "22"
+
+[lost_and_found.22]
+speaker = "adeline"
+portrait = "neutral"
+local = "Oh, yes. We have several items on today's agenda, there's a grant proposal to review, the establishment of a $Lost & Found$, and-"
+next = "23"
+
+[lost_and_found.23]
+speaker = "errol"
+portrait = "neutral"
+local = "If I may interject, I second the $Lost & Found$ proposal."
+next = "24"
+
+[lost_and_found.24]
+speaker = "errol"
+portrait = "sad"
+local = "Last week Olric left a rock outside the museum that Eiland and I were convinced had some archaeological merit before he came back to claim it."
+next = "25"
+
+[lost_and_found.25]
+speaker = "eiland"
+portrait = "sad"
+local = """It was, to quote Olric, "a pretty rad rock", but it certainly wasn't a high water mark for the Historical Society."""
+next = "26"
+
+[lost_and_found.26]
+speaker = "eiland"
+portrait = "neutral"
+local = "At any rate, a $Lost & Found Chest$ would be a net win for the town."
+next = "27"
+
+[lost_and_found.27]
+speaker = "eiland"
+portrait = "think"
+local = "Although we will need some volunteer help gathering the lost items floating around town."
+prompts = [
+	{ local = "Who did you have in mind?", next = "28" },
+	{ local = "Sounds like a lot of work...", next = "30" },
+]
+
+[lost_and_found.28]
+speaker = "eiland"
+portrait = "happy"
+local = "Why, I think the very person might be right in front of us! I nominate-"
+next = "32"
+
+[lost_and_found.30]
+speaker = "eiland"
+portrait = "neutral"
+local = "Oh, I suspect the person I have in mind could take care of it while they were already running around Mistria!"
+next = "31"
+
+[lost_and_found.31]
+speaker = "eiland"
+portrait = "happy"
+local = "I nominate-"
+next = "32"
+
+[lost_and_found.32]
+speaker = "dell"
+portrait = "neutral"
+local = "Way ahead of you, Eiland! The Dragonguard can handle it!"
+next = "33"
+
+[lost_and_found.33]
+speaker = "eiland"
+portrait = "surprised"
+local = "Excuse me?"
+next = "34"
+
+[lost_and_found.34]
+speaker = "dell"
+portrait = "happy"
+local = "Of course! We're out on patrol protecting the town all the time anyway."
+next = "35"
+
+[lost_and_found.35]
+speaker = "maple"
+portrait = "neutral"
+local = "Yeah, you really should let us help."
+next = "36"
+
+[lost_and_found.36]
+speaker = "maple"
+portrait = "happy"
+local = "Then maybe you won't all look so tired!"
+next = "37"
+
+[lost_and_found.37]
+speaker = "hemlock"
+portrait = "ugh"
+local = "Maple..."
+next = "38"
+
+[lost_and_found.38]
+speaker = "nora"
+portrait = "neutral"
+local = "Well, if they're volunteering... I personally don't have an issue accepting their help."
+next = "39"
+
+[lost_and_found.39]
+speaker = "errol"
+portrait = "neutral"
+local = "It's heartening to have such civic minded youths in Mistria! I'm all for it."
+next = "40"
+
+[lost_and_found.40]
+speaker = "adeline"
+portrait = "neutral"
+local = "Very well! I'll officially assign the Dragonguard to this very important project."
+next = "41"
+
+[lost_and_found.41]
+speaker = "dell"
+portrait = "happy"
+local = "We did it, Dragonguard!"
+next = "42"
+
+[lost_and_found.42]
+speaker = "eiland"
+portrait = "neutral"
+local = "I'll set up a $Lost & Found Chest$ south of the $stairs into town$."
+next = "43"
+
+[lost_and_found.43]
+speaker = "adeline"
+portrait = "neutral"
+local = "Children, please gather $any items that have been left around during the week$ into the chest $every Monday$ so that they can be claimed."
+next = "44"
+
+[lost_and_found.44]
+speaker = "luc"
+portrait = "happy"
+local = "Noooo problem!"
+next = "45"
+
+[lost_and_found.45]
+speaker = "adeline"
+portrait = "happy"
+local = "Wonderful! Thank you, Dragonguard. Now, onto the next item-"
+next = "46"
+
+[lost_and_found.46]
+speaker = "maple"
+portrait = "neutral"
+local = "Just a moment, Lady Adeline."
+next = "47"
+
+[lost_and_found.47]
+speaker = "maple"
+portrait = "mad"
+local = "We haven't discussed the Dragonguard's payment yet."

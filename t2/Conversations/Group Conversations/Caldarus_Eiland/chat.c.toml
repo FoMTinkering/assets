@@ -1,0 +1,59 @@
+[chat_0]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "eiland" }] },
+	{ caldarus_zone = "<eiland_zone>" },
+	{ caldarus_seridia_town = true }
+]
+speaker = "eiland"
+portrait = "happy"
+local = "I still have so many questions for you... I hope I'm not taking too much of your time!"
+next = "1"
+
+[chat_0.1]
+speaker = "caldarus"
+portrait = "smile"
+local = "Not at all. I am happy to answer any questions that I can."
+
+[chat_1]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "eiland" }] },
+	{ caldarus_zone = "<eiland_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false }
+]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Thank you for loaning me your history books, Eiland. I am beginning to get a fuller picture of the time I missed."
+next = "1"
+
+[chat_1.1]
+speaker = "caldarus"
+portrait = "think"
+local = "I have many questions forming, but I will save them until after I am done reading the things I have borrowed."
+next = "2"
+
+[chat_1.2]
+speaker = "eiland"
+portrait = "happy"
+local = "I'm thrilled to hear it! And ask me any time... I'm at your disposal!"
+
+[chat_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "eiland" }] },
+	{ caldarus_zone = "<eiland_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "eiland" } }]
+speaker = "caldarus"
+portrait = "think"
+local = "The books you have loaned me are quite illuminating, although reading them has required... practice."
+next = "1"
+
+[chat_2.1]
+speaker = "caldarus"
+portrait = "smile"
+local = "I am used to scrolls, you see. Books are, in many respects, easier to manipulate. I am warming up to this style of reading."

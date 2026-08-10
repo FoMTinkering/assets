@@ -1,0 +1,365 @@
+# engagement ring line
+[engagement_ring_adeline]
+kind = "gameplay_triggered"
+actions = [
+	{ bark = { bark = "cute_face", npc = "adeline" } },
+	{ cutscene = "adeline_ten_hearts" }
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "What's on your mind, [Ari]?"
+next = "1"
+
+[engagement_ring_adeline.1]
+speaker = "adeline"
+portrait = "blush"
+local = "You want to go somewhere to talk...?"
+next = "2"
+
+[engagement_ring_adeline.2]
+speaker = "adeline"
+portrait = "happy_blush"
+local = "Of course! Why don't we go for a walk up to the $Summit$?"
+
+# 10 heart scene
+[adeline_ten_hearts]
+kind = "gameplay_triggered"
+speaker = "adeline"
+portrait = "blush"
+local = "Ahhh that breeze is so nice, isn't it?"
+next = "1"
+
+[adeline_ten_hearts.1]
+speaker = "adeline"
+portrait = "happy_blush"
+local = "And look, we have a view of the whole town from up here!"
+next = "2"
+
+[adeline_ten_hearts.2]
+speaker = "adeline"
+portrait = "blush"
+local = "It's days like this that make you feel glad just to be alive."
+next = "3"
+
+[adeline_ten_hearts.3]
+speaker = "adeline"
+portrait = "happy"
+local = "The clouds drifting in the wide open sky..."
+next = "4"
+
+[adeline_ten_hearts.4]
+speaker = "adeline"
+portrait = "neutral"
+local = "The play of light and shadow on the land below..."
+next = "5"
+
+[adeline_ten_hearts.5]
+speaker = "adeline"
+portrait = "blush"
+local = "Being able to share this moment with you."
+prompts = [
+	{ local = "You make me glad just to be alive, too.", next = "6" },
+	{ local = "It does my heart good to see you so relaxed.", next = "8" }
+]
+
+[adeline_ten_hearts.6]
+speaker = "adeline"
+portrait = "happy_blush"
+local = "Are you teasing me, [Ari]?"
+next = "7"
+
+[adeline_ten_hearts.7]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "I'm being serious, you know!"
+next = "10"
+
+[adeline_ten_hearts.8]
+speaker = "adeline"
+portrait = "happy_blush"
+local = "Aww, [Ari]!"
+next = "9"
+
+[adeline_ten_hearts.9]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "Being with you always makes my stress melt away."
+next = "10"
+
+[adeline_ten_hearts.10]
+speaker = "adeline"
+portrait = "hope_special"
+local = "It feels strange to think there was a time not long ago that I would have felt guilty about going on an unscheduled excursion like this."
+next = "11"
+
+[adeline_ten_hearts.11]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "I was so preoccupied with work, making sure I wouldn't let down my parents or the village..."
+next = "12"
+
+[adeline_ten_hearts.12]
+speaker = "adeline"
+portrait = "hope_special"
+local = "At some point, I found that I couldn't take time for myself anymore without feeling like I was being selfish."
+next = "13"
+
+[adeline_ten_hearts.13]
+speaker = "adeline"
+portrait = "happy"
+local = "But you know, [Ari], I don't feel that way anymore."
+next = "14"
+
+[adeline_ten_hearts.14]
+speaker = "adeline"
+portrait = "neutral"
+local = "You helped me to remember that there's so much more to life."
+next = "15"
+
+[adeline_ten_hearts.15]
+speaker = "adeline"
+portrait = "happy"
+local = "I've rediscovered so many things I enjoy doing, and discovered a bunch of new ones as well."
+next = "16"
+
+[adeline_ten_hearts.16]
+speaker = "adeline"
+portrait = "sly"
+local = "Like all the fun new things we've been doing on our dates together..."
+next = "17"
+
+[adeline_ten_hearts.17]
+speaker = "adeline"
+portrait = "happy_blush"
+local = "If this joy isn't what life's all about, then what is?"
+prompts = [
+	{ local = "For me, it's all about seeing you smile like this.", next = "18" },
+	{ local = "You've taught me that same lesson, Adeline.", next = "18" }
+]
+
+[adeline_ten_hearts.18]
+speaker = "adeline"
+portrait = "blush"
+local = "[Ari]..."
+next = "19"
+
+[adeline_ten_hearts.19]
+speaker = "adeline"
+portrait = "hope_special"
+local = "We're lucky, aren't we?"
+next = "20"
+
+[adeline_ten_hearts.20]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "That we found each other."
+next = "21"
+
+[adeline_ten_hearts.21]
+speaker = "adeline"
+portrait = "hope_special"
+local = "I used to think I couldn't live with myself unless I could meet others' expectations of me."
+next = "22"
+
+[adeline_ten_hearts.22]
+speaker = "adeline"
+portrait = "gloomy_special"
+local = "And while my responsibilities are still important to me..."
+next = "23"
+
+[adeline_ten_hearts.23]
+speaker = "adeline"
+portrait = "hope_special"
+local = "There's only one thing-"
+next = "24"
+
+[adeline_ten_hearts.24]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "One person that I just couldn't live without."
+next = "25"
+
+[adeline_ten_hearts.25]
+speaker = "adeline"
+portrait = "happy_blush"
+local = "As long as you're here with me, I know that everything else will fall into place."
+next = [
+	{ target = "26_second", requires = [
+		{ cutscene_seen_adeline_ten_hearts = true }
+	] },
+	{ target = "26_first", requires = [] }
+]
+
+[adeline_ten_hearts.26_second]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "I guess that's why I made that $Lifetime Planner$ for you."
+next = "27_second"
+
+[adeline_ten_hearts.27_second]
+speaker = "adeline"
+portrait = "hope_special"
+local = "In my own silly way, I wanted to give you some semblance of that same feeling."
+next = "28_second"
+
+[adeline_ten_hearts.28_second]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "To let you know that I'll always be here for you, to help you figure things out as they come."
+next = "29_second"
+
+[adeline_ten_hearts.29_second]
+speaker = "adeline"
+portrait = "blush"
+local = "To be for you, what you are to me."
+next = "30"
+
+[adeline_ten_hearts.26_first]
+speaker = "adeline"
+portrait = "happy_blush"
+local = "Oh, that reminds me! I made something for you. It's one of the new crafts I've been trying lately..."
+next = "27_first"
+
+[adeline_ten_hearts.27_first]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "I put the whole thing together myself. I even cut out and colored all the little tabs! It's a $Lifetime Planner$."
+next = "28_first"
+
+[adeline_ten_hearts.28_first]
+speaker = "adeline"
+portrait = "blush"
+local = "I guess it's my way of saying... I'll always be here for you, [Ari]."
+next = "29_first"
+
+[adeline_ten_hearts.29_first]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "Whatever life may bring, I promise we'll figure it out together."
+next = "30"
+
+[adeline_ten_hearts.30]
+speaker = "adeline"
+portrait = "hope_special"
+local = "Even if the whole world were to suddenly fall apart..."
+next = "31"
+
+[adeline_ten_hearts.31]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "I know I'd get through it with you by my side."
+next = "32"
+
+[adeline_ten_hearts.32]
+speaker = "adeline"
+portrait = "happy_blush"
+local = "Plus, you'd probably put it back together for me better than it was before! Hehe!"
+next = "33"
+
+[adeline_ten_hearts.33]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "You know, [Ari]... there's been something I've been wanting to ask you."
+next = "34"
+
+[adeline_ten_hearts.34]
+speaker = "adeline"
+portrait = "hope_special"
+local = "But now that I have the opportunity, I can't seem to find the words."
+next = "35"
+
+[adeline_ten_hearts.35]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "And um. Anyway... wasn't there something you wanted to talk to me about, too?"
+prompts = [
+	{ local = "I wanted to talk to you about our future together...", next = "36" },
+	{ local = "Let's talk about it another time...", next = "47" }
+]
+
+[adeline_ten_hearts.36]
+speaker = "adeline"
+portrait = "cartoon_embarrassed"
+local = "W-wait-"
+next = "37"
+
+[adeline_ten_hearts.37]
+speaker = "adeline"
+portrait = "blush"
+local = "You don't mean....?"
+prompts = [
+	{ local = "I love you, Adeline. Will you marry me?", next = "38" },
+	{ local = "Actually, let's talk about it more another day.", next = "47" }
+]
+
+[adeline_ten_hearts.38]
+writes = [
+	{ breakup_bump = true, expires = "3d" },
+	{ engagement_bump = true, expires = "2d" },
+	{ engagement_delay = true, expires = "20h" },
+	{ engagement_cap = false, expires = "3d" }
+]
+actions = [{ can_talk = "adeline" }]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "[Ari]!"
+next = "39"
+
+[adeline_ten_hearts.39]
+speaker = "adeline"
+portrait = "blush"
+local = "You were planning to ask me the same thing?"
+next = "40"
+
+[adeline_ten_hearts.40]
+speaker = "adeline"
+portrait = "happy_blush"
+local = "My answer is yes! YES!"
+next = "41"
+
+[adeline_ten_hearts.41]
+speaker = "adeline"
+portrait = "blush"
+effect = "cheery"
+local = "I want to be your wife, [Ari]! I want to spend the rest of our lives together!"
+next = "42"
+
+[adeline_ten_hearts.42]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "My heart is beating so fast..."
+next = "43"
+
+[adeline_ten_hearts.43]
+speaker = "adeline"
+portrait = "happy_blush"
+local = "Oh, [Ari], I'm so happy!"
+next = "44"
+
+[adeline_ten_hearts.44]
+speaker = "adeline"
+portrait = "blush"
+local = "I love you so much!"
+next = "45"
+
+[adeline_ten_hearts.45]
+speaker = "adeline"
+portrait = "happy_blush"
+local = "I can't wait to start planning our wedding..."
+next = "46"
+
+[adeline_ten_hearts.46]
+speaker = "adeline"
+portrait = "wink"
+local = "I think I'm going to need to make myself another planner and color in some more tabs!"
+
+[adeline_ten_hearts.47]
+speaker = "adeline"
+portrait = "hope_special"
+local = "Oh? Of course, [Ari]. Whatever it is, we don't have to talk about it now if you're not ready."
+next = "48"
+
+[adeline_ten_hearts.48]
+speaker = "adeline"
+portrait = "blush"
+local = "Just let me know if you want to talk again. I'm always up for a walk to the Summit!"

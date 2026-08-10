@@ -1,0 +1,550 @@
+[default]
+	# this is the object which will be created. you can find these
+	# names in `fiddle/object_prototypes` various files. most of these are in `furniture.toml`
+	object_id = false # we have this as "false" as a default -- everyone must specific an object
+	# this is the offset from the tile position, as [x_offset, y_offset]. This offset is in 8x8 cell
+	# coordinates, while the tiles themselves are 16x16.
+	pos_offset = [0, 0]
+	# what stage that tree will be made at.
+	#
+	# this field is meaningful for trees only, and ignored otherwise.
+	stage = 0
+	# what variant will be assigned to the given priority object. we pick a number between these two bounds
+	# and assign the variant index accordingly. Note: theses numbers an inclusive on the lower bound and
+	# exclusive on the upper bound, so for [0, 1], `0` may be chosen but `1` will never be chosen.
+	#
+	# NB: never make an index greater than or equal to 1 or less than 0 (so [1, 2] or [-1, 1] will cause crashes)
+	#
+	# this field is meaningful for trees, breakables, and rocks only, and ignored otherwise.
+	variant = [0, 1]
+	# this is a hack to get the journal on the nightstand
+	journal_on_top = false
+
+# this is empty because Gm needs 0 tiles to be empty.
+[0]
+
+[1]
+	object_id = "weed"
+
+[2]
+	object_id = "branch"
+
+[3]
+	object_id = "small_rock_stone_one"
+
+[4]
+	object_id = "large_rock_stone_one"
+
+[5]
+	object_id = "stump_small_oak"
+
+[6]
+	object_id = "stump_large"
+
+[7]
+	object_id = "starter_wood_fence"
+
+[8]
+	object_id = "picket_fence"
+
+[9]
+	object_id = "stone_wall"
+
+[10]
+	object_id = "border_fence"
+
+[11]
+	object_id = "mailbox"
+
+[12]
+	object_id = "tree_pine"
+	pos_offset = [-2, -2]
+	stage = 1
+
+[13]
+	object_id = "tree_pine"
+	pos_offset = [-2, -2]
+	stage = 2
+
+[14]
+	object_id = "tree_pine"
+	pos_offset = [-2, -2]
+	stage = 3
+
+[15]
+	object_id = "tree_pine"
+	pos_offset = [-2, -2]
+	stage = 4
+
+[16]
+	object_id = "tree_oak"
+	pos_offset = [-2, -2]
+	stage = 1
+	variant = [0.0, 0.65]
+
+[17]
+	object_id = "tree_oak"
+	pos_offset = [-2, -2]
+	stage = 2
+	variant = [0.0, 0.65]
+
+[18]
+	object_id = "tree_oak"
+	pos_offset = [-2, -2]
+	stage = 3
+	variant = [0.0, 0.65]
+
+[19]
+	object_id = "tree_oak"
+	pos_offset = [-2, -2]
+	stage = 4
+	variant = [0.0, 0.65]
+
+[20]
+	object_id = "tree_oak"
+	pos_offset = [-2, -2]
+	stage = 1
+	variant = [0.67, 1.0]
+
+[21]
+	object_id = "tree_oak"
+	pos_offset = [-2, -2]
+	stage = 2
+	variant = [0.67, 1.0]
+
+[22]
+	object_id = "tree_oak"
+	pos_offset = [-2, -2]
+	stage = 3
+	variant = [0.67, 1.0]
+
+[23]
+	object_id = "tree_oak"
+	pos_offset = [-2, -2]
+	stage = 4
+	variant = [0.67, 1.0]
+
+[24]
+	object_id = "boulder_rock_stone"
+
+[25]
+	object_id = "water_seal_door"
+
+[26]
+	object_id = "stone_wall_tall"
+
+[27]
+	object_id = "basic_wood_chest_dark"
+	pos_offset = [-2, -1]
+
+[28]
+	object_id = "wild_berry_bush"
+
+[29]
+	object_id = "treasure_chest_gold"
+	pos_offset = [1, 1]
+
+[30]
+	object_id = "fiddlehead"
+
+[31]
+	object_id = "morel_mushroom"
+
+[32]
+	object_id = "nettle"
+
+[33]
+	object_id = "moon_fruit"
+
+[34]
+	object_id = "rosemary"
+
+[35]
+	object_id = "garlic"
+
+[36]
+	object_id = "viola"
+
+[37]
+	object_id = "heather"
+
+[38]
+	object_id = "tree_deep_woods"
+	pos_offset = [-2, -2]
+	stage = 1
+
+[39]
+	object_id = "tree_deep_woods"
+	pos_offset = [-2, -2]
+	stage = 2
+
+[40]
+	object_id = "tree_deep_woods"
+	pos_offset = [-2, -2]
+	stage = 3
+
+[41]
+	object_id = "tree_deep_woods"
+	pos_offset = [-2, -2]
+	stage = 4
+
+[42]
+	object_id = "tree_pine_special"
+	pos_offset = [-2, -2]
+	stage = 1
+
+[43]
+	object_id = "tree_pine_special"
+	pos_offset = [-2, -2]
+	stage = 2
+
+[44]
+	object_id = "tree_pine_special"
+	pos_offset = [-2, -2]
+	stage = 3
+
+[45]
+	object_id = "tree_pine_special"
+	pos_offset = [-2, -2]
+	stage = 4
+
+[48]
+	object_id = "starter_shipping_box"
+
+[49]
+	object_id = "worn_bed"
+	pos_offset = [0, -1]
+
+[50]
+	object_id = "worn_nightstand"
+	journal_on_top = true
+	pos_offset = [0, -1]
+
+[52]
+	object_id = "worn_fireplace"
+
+[53]
+	object_id = "farm_house_calendar"
+	pos_offset = [-1, -2]
+
+[54]
+	object_id = "worn_table"
+
+[55]
+	object_id = "worn_chair"
+
+[56]
+	object_id = "tree_orange"
+	pos_offset = [-2, -2]
+	stage = 4
+
+[57]
+	object_id = "worn_window"
+	pos_offset = [-1, 0]
+
+[58]
+	object_id = "worn_rug"
+	pos_offset = [-3, -3]
+
+[59]
+	object_id = "night_queen"
+
+[60]
+	object_id = "marigold"
+
+[61]
+	object_id = "tulip"
+
+[62]
+	object_id = "lilac"
+
+[63]
+	object_id = "snowdrop_anemone"
+
+[64]
+	object_id = "cabbage"
+
+[65]
+	object_id = "potato"
+
+[66]
+	object_id = "strawberry"
+
+[67]
+	object_id = "dandelion"
+
+[68]
+	object_id = "fennel"
+
+[69]
+	object_id = "wild_leek"
+
+[70]
+	object_id = "daffodil"
+
+[71]
+	object_id = "chickpea"
+
+[72]
+	object_id = "cosmos"
+
+[73]
+	object_id = "catmint"
+
+[74]
+	object_id = "small_rock_priestess_quarters"
+
+[75]
+	object_id = "turnip"
+
+[76]
+	object_id = "mines_blocked_door"
+
+[77]
+	object_id = "tree_apple"
+	pos_offset = [-2, -2]
+	stage = 4
+
+[78]
+	object_id = "tree_cherry"
+	pos_offset = [-2, -2]
+	stage = 4
+
+[79]
+	object_id = "tree_lemon"
+	pos_offset = [-2, -2]
+	stage = 4
+
+[80]
+	object_id = "tree_peach"
+	pos_offset = [-2, -2]
+	stage = 4
+
+[81]
+	object_id = "tree_pear"
+	pos_offset = [-2, -2]
+	stage = 4
+
+[82]
+	object_id = "tree_pomegranate"
+	pos_offset = [-2, -2]
+	stage = 4
+
+[83]
+	# cattail 1
+	object_id = "cattail_one"
+	stage = 1
+
+[84]
+	# cattail 2
+	object_id = "cattail_two"
+	stage = 1
+
+[85]
+	# cattail 3
+	object_id = "cattail_three"
+	stage = 1
+
+[86]
+	object_id = "bush"
+
+[87]
+	object_id = "blackberry_bush"
+
+[88]
+	object_id = "blueberry_bush"
+
+[89]
+	object_id = "hydrangea_bush"
+
+[90]
+	object_id = "wintergreen_bush"
+
+[91]
+	object_id = "tree_plum_blossom"
+	pos_offset = [-2, -2]
+	stage = 4
+
+[92]
+	object_id = "wild_grape_bush"
+
+[93]
+	object_id = "rose_bush"
+
+[94]
+	object_id = "tree_coconut"
+	stage = 4
+
+[95]
+	object_id = "rose_hip_bush"
+
+[96]
+	object_id = "fog_orchid"
+
+[97]
+	object_id = "horseradish"
+
+[98]
+	object_id = "chestnut"
+
+[99]
+	object_id = "frost_lily"
+
+[100]
+	object_id = "poinsettia"
+
+[101]
+	object_id = "burdock_root"
+
+[102]
+	object_id = "snapdragon"
+
+[103]
+	object_id = "jasmine"
+
+[105]
+	object_id = "water_chestnut_one"
+
+[106]
+	object_id = "water_chestnut_two"
+
+[107]
+	object_id = "water_chestnut_three"
+
+[108]
+	object_id = "water_chestnut_four"
+
+[109]
+	object_id = "basil"
+
+[110]
+	object_id = "daisy"
+
+[111]
+	object_id = "dill"
+
+[112]
+	object_id = "iris"
+
+[113]
+	object_id = "oregano"
+
+[114]
+	object_id = "sesame"
+
+[115]
+	object_id = "thyme"
+
+[116]
+	object_id = "sage"
+
+[117]
+	object_id = "woodcrafting_station"
+
+[118]
+	object_id = "campfire"
+	pos_offset = [-1, -1]
+
+[119]
+	object_id = "earth_seal_door"
+
+[120]
+	object_id = "fire_seal_door"
+
+[121]
+	object_id = "crocus"
+
+[122]
+	object_id = "holly"
+
+[123]
+	object_id = "pineshroom"
+
+[124]
+	object_id = "oyster_mushroom"
+
+[125]
+	object_id = "ice_block"
+
+[126]
+	object_id = "glowberry_bush"
+
+[127]
+	object_id = "beet"
+
+[128]
+	object_id = "cauliflower"
+
+[129]
+	object_id = "snow_peas"
+
+[130]
+	object_id = "daikon_radish"
+
+[131]
+	object_id = "sweet_potato"
+
+[132]
+	object_id = "broccoli"
+
+[133]
+	object_id = "pumpkin"
+
+[134]
+	object_id = "ocarina_sprite_statue_base"
+	pos_offset = [0, -1]
+
+[135]
+	object_id = "thorn_vine"
+
+[136]
+	object_id = "spirit_mushroom"
+
+[137]
+	object_id = "temple_flower"
+
+[138]
+	object_id = "walnut"
+
+[139]
+	object_id = "beach_sandcastle"
+
+[140]
+	object_id = "beach_umbrella_yellow"
+
+[141]
+	object_id = "beach_umbrella_pink"
+
+[142]
+	object_id = "stable_window"
+	pos_offset = [-1, -2]
+
+[143]
+	object_id = "stable_storage_chest"
+	pos_offset = [1, 0]
+
+[144]
+	object_id = "ruins_seal_door"
+
+[145]
+	object_id = "water_blocker"
+	pos_offset = [1, 0]
+
+[146]
+	object_id = "water_blocker"
+	pos_offset = [1, 1]
+
+[147]
+	object_id = "auto_feeder_platform"
+
+[148]
+	object_id = "temple_marigold"
+[159]
+	object_id = "bell_berry_bush"
+
+[166]
+	object_id = "node_gold"
+
+[167]
+	object_id = "stable_storage_chest"
+	pos_offset = [0, 0]

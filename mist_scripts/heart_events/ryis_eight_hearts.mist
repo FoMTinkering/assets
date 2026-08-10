@@ -1,0 +1,976 @@
+var ari_start = __get_element_y(ari);
+
+scene(eastern_road);
+if ari_start < 1200 {
+	place_actor(ari, south, r8h_ari_entrance_north);
+	camera_position(r8h_camera_1_north);
+} else {
+	place_actor(ari, north, r8h_ari_entrance_south);
+	camera_position(r8h_camera_1_south);
+}
+request_music_play(ryis);
+place_actor(ryis, west, r8h_ryis_entrance);
+
+if current_season() == "winter" {
+	setup_prop(r8h_berry_bush_winter);
+} else if current_season() == "fall" {
+	setup_prop(r8h_berry_bush_fall);
+} else if current_season() == "summer" {
+	setup_prop(r8h_berry_bush_summer);
+} else {
+	setup_prop(r8h_berry_bush_spring);
+}
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		pan_camera(4, r8h_camera_2);
+	}
+	{
+		walk_slow(ari, r8h_ari_start);
+		face(ari, west);
+	}
+	{
+		wait(2);
+		free bark_speech(ryis, exclamation_mark);
+		wait(0.5);
+		face(ryis, east);
+		wait(0.5);
+		walk_slow(ryis, r8h_ryis_start);
+		face(ryis, east);
+		free bark_speech(ryis, cute_face);
+		wait(0.5);
+		free bark_speech(ari, cute_face);
+		wait(1);
+	}
+}
+next_line(); //
+sim {
+	{
+		wait(0.5);
+		face(ryis, west);
+	}
+	{
+		pan_camera(1.5, r8h_camera_3);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(ryis, east);
+	}
+	{
+		pan_camera(1.5, r8h_camera_2);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+free bark_speech(ryis, cute_face);
+wait(1.5);
+sim {
+	{
+		walk_slow(ryis, r8h_ryis_forward);
+		face(ryis, north);
+	}
+	{
+		wait(0.25);
+		walk_slow(ari, r8h_ari_forward);
+		face(ari, north);
+	}
+	{
+		pan_camera(6, r8h_camera_4);
+	}
+}
+wait(1);
+pan_camera(3, r8h_camera_5);
+wait(0.5);
+free bark_speech(ryis, ellipses);
+wait(1.5);
+sim {
+	{
+		wait(1);
+		face(ari, west);
+	}
+	{
+
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(ryis, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+
+//
+
+sim {
+	{
+		wait(0.75);
+		free bark_speech(ryis, cute_face);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+face(ryis, north);
+wait(0.5);
+face(ari, north);
+wait(2);
+free bark_speech(ryis, ellipses);
+wait(2);
+sim {
+	{
+		walk_slow(ryis, r8h_ryis_feather);
+		face(ryis, north);
+		wait(1);
+		face(ryis, east);
+		wait(1);
+		face(ryis, west);
+	}
+	{
+		pan_camera(3, r8h_camera_4);
+	}
+}
+next_line(); //
+sim {
+	{
+		wait(0.5);
+		face(ryis, south);
+	}
+	{
+		pan_camera(2, r8h_camera_4_extra);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(ryis, north);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(ryis, south);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		walk_slow(ryis, r8h_ryis_forward);
+		face(ryis, north);
+	}
+	{
+		pan_camera(2, r8h_camera_5);
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(ryis, east);
+	}
+	{
+		wait(1);
+		face(ari, west);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+free bark_speech(ryis, cute_face);
+wait(1);
+face(ryis, north);
+wait(0.5);
+face(ari, north);
+wait(2);
+free bark_speech(ryis, ellipses);
+wait(1);
+face(ari, west);
+wait(0.5);
+free bark_speech(ari, question_mark);
+wait(1.5);
+face(ryis, east);
+wait(0.5);
+next_line(); //
+next_line(); //
+sim {
+	{
+		wait(1);
+		face(ryis, north);
+	}
+	{
+		wait(1.5);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+	{
+		pan_camera(2, r8h_camera_4_extra);
+	}
+}
+sim {
+	{
+		pan_camera(2, r8h_camera_5);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+	{
+		wait(0.5);
+		face(ryis, east);
+	}
+	{
+		wait(1);
+		face(ari, west);
+	}
+}
+close_textbox();
+wait(1);
+face(ryis, north);
+wait(1);
+free bark_speech(ryis, ellipses);
+pan_camera(2, r8h_camera_4_extra);
+next_line(); //
+close_textbox();
+pan_camera(2.5, r8h_camera_5);
+free bark_speech(ryis, cute_face);
+wait(3);
+//
+//
+free bark(ari, cute_face);
+wait(2);
+
+sim {
+	{
+		wait(0.5);
+		face(ryis, east);
+	}
+	{
+		wait(1);
+		face(ari, west);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+free bark_speech(ryis, cute_face);
+wait(1.5);
+sim {
+	{
+		wait(1);
+		face(ari, north);
+	}
+	{
+		wait(1.5);
+		face(ryis, north);
+	}
+	{
+		fade_out(2);
+	}
+	{
+		request_music_stop(3);
+	}
+}
+wait(1);
+
+camera_position(r8h_camera_7);
+place_actor(ari, north, r8h_ari_stool);
+animate(ari, sit);
+place_actor(ryis, north, r8h_ryis_stool);
+animate(ryis, sit);
+setup_prop(r8h_stool_ari);
+setup_prop(r8h_stool_ryis);
+
+sim {
+	{
+		wait(0.5);
+		request_music_play("Music/Events/SharedLight");
+	}
+	{
+		fade_in(2);
+		wait(5);
+		fade_out(2);
+	}
+	{
+		free bark_speech(ari, sunny);
+		wait(1.5);
+		free bark_speech(ryis, cold_drink);
+		wait(1.5);
+		free bark_speech(ari, question_mark);
+		wait(1.5);
+		free bark_speech(ryis, summer);
+		wait(1);
+		free bark_speech(ryis, woodcrafting);
+		wait(1.5);
+		free bark_speech(ari, cute_face);
+		wait(1);
+		free bark_speech(ryis, cute_face);
+	}
+}
+destroy_prop(r8h_stool_ari);
+destroy_prop(r8h_stool_ryis);
+wait(0.5);
+camera_position(r8h_camera_9);
+place_actor(ari, east, r8h_ari_berry);
+animate(ari, idle);
+place_actor(ryis, north, r8h_ryis_berry);
+animate(ryis, idle);
+
+
+
+sim {
+	{
+		wait(0.5);
+		animate(ari, action);
+		wait(1);
+		if current_season() == "winter" {
+			destroy_prop(r8h_berry_bush_winter);
+			setup_prop(r8h_berry_bush_winter_empty);
+		} else if current_season() == "fall" {
+			destroy_prop(r8h_berry_bush_fall);
+			setup_prop(r8h_berry_bush_fall_empty);
+		} else if current_season() == "summer" {
+			destroy_prop(r8h_berry_bush_summer);
+			setup_prop(r8h_berry_bush_summer_empty);
+		} else {
+			destroy_prop(r8h_berry_bush_spring);
+			setup_prop(r8h_berry_bush_spring_empty);
+		}
+		animate(ari, idle);
+	}
+	{
+		fade_in(2);
+	}
+}
+sim {
+	{
+		walk_slow(ari, r8h_ari_berry_forward);
+		face(ari, west);
+	}
+	{
+		pan_camera(7, r8h_camera_10);
+	}
+	{
+		wait(6);
+		face(ryis, east);
+		wait(0.5);
+		free bark_speech(ryis, question_mark);
+		wait(1);
+	}
+}
+animate(ari, action);
+wait(0.1);
+animate(ryis, action);
+wait(0.4);
+animate(ari, idle);
+wait(0.1);
+animate(ryis, idle);
+wait(0.5);
+free bark_speech(ryis, cute_face);
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+sim {
+	{
+		wait(1);
+		face(ryis, north);
+	}
+	{
+		wait(1.5);
+		face(ari, north);
+	}
+	{
+		wait(0.5);
+		fade_out(2);
+	}
+	//
+	//
+	//
+	//
+}
+
+wait(0.5);
+place_actor(ari, north, r8h_ari_bird);
+place_actor(ryis, north, r8h_ryis_bird);
+camera_position(r8h_camera_12);
+fade_in(2);
+sim {
+	{
+		wait(0.5);
+		face(ryis, east);
+	}
+	{
+		wait(1);
+		face(ari, west);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+free bark_speech(ryis, cute_face);
+wait(1.5);
+
+sim {
+	{
+		wait(0.5);
+		face(ryis, north);
+	}
+	{
+		next_line(); //
+	}
+}
+//
+
+if get_response() == 0 {
+	close_textbox();
+	wait(0.5);
+	free bark_speech(ryis, exclamation_mark);
+	wait(0.5);
+	face(ryis, east);
+	wait(0.25);
+	next_line(); //
+} else {
+	close_textbox();
+	wait(0.75);
+	free bark_speech(ryis, cute_face);
+	wait(0.5);
+	face(ryis, east);
+	wait(0.25);
+	next_line(); //
+}
+next_line(); //
+close_textbox();
+//
+//
+//
+//
+pan_camera(1, r8h_camera_13);
+
+
+free {
+	set_on_blackboard("command", "girl_appear");
+	wait(0.15);
+	play_sound("SoundEffects/SpecialEvents/Bluebird1");
+	set_on_blackboard("command", "girl_chirp");
+	wait(0.6);
+	set_on_blackboard("command", "girl_idle");
+	wait(1.3);
+	set_on_blackboard("command", "girl_chirp");
+	wait(2.5);
+	set_on_blackboard("command", "girl_idle");
+}
+wait(0.25);
+free bark_speech(ari, exclamation_mark);
+free bark_speech(ryis, exclamation_mark);
+wait(0.5);
+face(ari, north);
+face(ryis, north);
+wait(0.5);
+
+sim {
+	{
+		wait(0.5);
+		walk(ryis, r8h_ryis_forward);
+		face(ryis, north);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+	{
+		pan_camera(3, r8h_camera_14);
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(ryis, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+face(ryis, north);
+wait(1);
+free bark_speech(ryis, ellipses);
+wait(1);
+sim {
+	{
+		walk_slow(ryis, r8h_ryis_feather);
+		face(ryis, north);
+	}
+	{
+		wait(1.5);
+		free bark_speech(ryis, exclamation_mark);
+		wait(0.5);
+	}
+	{
+		wait(2);
+		next_line(); //
+	}
+	{
+		pan_camera(2.25, r8h_camera_15);
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(ryis, south);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1.5);
+sim {
+	{
+		wait(1);
+		face(ryis, north);
+	}
+	{
+		pan_camera(2, r8h_camera_4_extra);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ryis, ellipses);
+wait(2);
+set_on_blackboard("command", "fly_boy");
+play_sound("SoundEffects/SpecialEvents/Bluebird2");
+walk_slow(ryis, r8h_ryis_forward);
+face(ryis, south);
+free bark_speech(ari, exclamation_mark);
+wait(0.5);
+face(ryis, north);
+wait(0.25);
+free bark_speech(ryis, exclamation_mark);
+wait(0.5);
+free pan_camera(1, r8h_camera_6);
+wait(2);
+next_line(); //
+next_line(); //
+
+sim {
+	{
+		wait(0.5);
+		face(ryis, east);
+	}
+	{
+		free pan_camera(3, r8h_camera_4_extra);
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(ryis, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ryis, cute_face);
+wait(3);
+free bark_speech(ryis, ellipses);
+wait(3);
+
+//
+
+sim {
+	{
+		sim {
+			walk(ryis, r8h_ryis_bird);
+			set_move_speed(ryis, 0.4);
+		}
+		face(ryis, north);
+	}
+	{
+		pan_camera(2, r8h_camera_12);
+	}
+}
+wait(1.5);
+sim {
+	{
+		wait(0.5);
+		face(ryis, east);
+	}
+	{
+		wait(1);
+		face(ari, west);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+
+
+close_textbox();
+wait(0.5);
+free bark_speech(ari, exclamation_mark);
+wait(1.5);
+free bark_speech(ryis, ellipses);
+wait(2);
+face(ryis, north);
+wait(1.5);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(1);
+free bark_speech(ryis, ellipses);
+wait(2);
+if read_world_fact("shooting_star_ryis_attended") == true {
+	sim {
+		{
+			wait(0.5);
+			face(ryis, east);
+		}
+		{
+			next_line(); //
+		}
+	}
+	sim {
+		{
+			wait(0.5);
+			face(ryis, north);
+		}
+		{
+			wait(1);
+			face(ari, north);
+		}
+		{
+			pan_camera(6, r8h_camera_15);
+		}
+		{
+			next_line(); //
+			next_line(); //
+			next_line(); //
+		}
+	}
+} else {
+	sim {
+		{
+			wait(1);
+			face(ari, north);
+		}
+		{
+			pan_camera(6, r8h_camera_15);
+		}
+		{
+			next_line(); //
+			next_line(); //
+			next_line(); //
+			next_line(); //
+		}
+	}
+}
+close_textbox();
+wait(1.5);
+face(ari, west);
+wait(0.5);
+sim {
+	{
+		free pan_camera(4, r8h_camera_12);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.75);
+		face(ryis, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		make_next_prompt_pink(1);
+		next_line(); //
+	}
+}
+
+//
+if get_response() == 0 {
+	close_textbox();
+	wait(0.5);
+	free bark_speech(ryis, exclamation_mark);
+	wait(0.5);
+	next_line(); //
+	close_textbox();
+	wait(0.5);
+	free bark_speech(ryis, cute_face);
+	wait(0.5);
+	free bark_speech(ari, cute_face);
+	wait(1);
+	next_line(); //
+	sim {
+		{
+			wait(2);
+			face(ryis, north);
+		}
+		{
+			wait(2.5);
+			face(ari, north);
+		}
+		{
+			wait(2);
+			pan_camera(2, r8h_camera_14);
+		}
+		{
+			next_line(); //
+		}
+	}
+	sim {
+		{
+			wait(0.5);
+			face(ryis, east);
+		}
+		{
+			wait(1);
+			face(ari, west);
+		}
+		{
+			next_line(); //
+		}
+		{
+			pan_camera(2, r8h_camera_12);
+		}
+	}
+	next_line(); //
+	close_textbox();
+	wait(0.5);
+	free bark_speech(ari, cute_face);
+	free bark_speech(ryis, cute_face);
+	wait(2);
+	pan_camera(2, r8h_camera_15);
+	sim {
+		{
+			wait(0.5);
+			face(ryis, north);
+		}
+		{
+			wait(0.5);
+			face(ari, north);
+		}
+		{
+			wait(2);
+			free {
+				play_sound("SoundEffects/SpecialEvents/BluebirdsBoth");
+				set_on_blackboard("command", "both_chirp");
+				wait(4.5);
+				set_on_blackboard("command", "both_idle");
+			}
+		}
+	}
+	free pan_camera(2, r8h_camera_kiss);
+	wait(1.5);
+	face(ryis, east);
+	face(ari, west);
+} else {
+	close_textbox();
+	wait(0.5);
+	free bark_speech(ryis, exclamation_mark);
+	wait(0.5);
+	sim {
+		{
+			wait(1);
+			sim {
+				walk(ryis, r8h_ryis_bird_kiss);
+				set_move_speed(ryis, 0.4);
+			}
+			face(ryis, east);
+		}
+		{
+			wait(1);
+			pan_camera(1, r8h_camera_kiss);
+		}
+		{
+			next_line(); //
+
+		}
+	}
+
+	close_textbox();
+	wait(0.5);
+	free bark_speech(ari, cute_face);
+	wait(0.5);
+	free bark_speech(ryis, cute_face);
+	wait(1);
+	next_line(); //
+	sim {
+		{
+			wait(2);
+			face(ryis, north);
+		}
+		{
+			wait(2.5);
+			face(ari, north);
+		}
+		{
+			wait(2);
+			pan_camera(2, r8h_camera_15_kiss);
+		}
+		{
+			next_line(); //
+		}
+	}
+	sim {
+		{
+			wait(0.5);
+			face(ryis, east);
+		}
+		{
+			wait(1);
+			face(ari, west);
+		}
+		{
+			next_line(); //
+		}
+		{
+			pan_camera(2, r8h_camera_kiss);
+		}
+	}
+	checkpoint("kiss");
+	next_line(); //
+	close_textbox();
+	wait(0.5);
+	kiss_npc(ryis, true, 1);
+	wait(2);
+	pan_camera(2, r8h_camera_15_kiss);
+	sim {
+		{
+			wait(0.5);
+			face(ryis, north);
+		}
+		{
+			wait(0.5);
+			face(ari, north);
+		}
+		{
+			wait(2);
+			free {
+				play_sound("SoundEffects/SpecialEvents/BluebirdsBoth");
+				set_on_blackboard("command", "both_chirp");
+				wait(4.5);
+				set_on_blackboard("command", "both_idle");
+			}
+		}
+	}
+	free pan_camera(2, r8h_camera_kiss);
+	wait(1.5);
+	face(ryis, east);
+	face(ari, west);
+}
+
+wait(0.5);
+next_line(); //
+next_line(); //
+
+sim {
+	{
+		wait(0.5);
+		face(ryis, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+face(ryis, east);
+wait(0.5);
+free bark_speech(ryis, cute_face);
+free bark_speech(ari, cute_face);
+wait(2);
+
+sim {
+	{
+		walk_slow(ari, r8h_ari_exit);
+		face(ari, north);
+	}
+	{
+		wait(0.5);
+		walk_slow(ryis, r8h_ryis_exit);
+		face(ryis, north);
+	}
+	{
+		pan_camera(4, r8h_camera_15);
+	}
+	{
+		wait(4);
+		free {
+			play_sound("SoundEffects/SpecialEvents/BluebirdsBoth");
+			set_on_blackboard("command", "both_chirp");
+			wait(4.5);
+			set_on_blackboard("command", "both_idle");
+		}
+	}
+	{
+		wait(5);
+		fade_out(2);
+	}
+}

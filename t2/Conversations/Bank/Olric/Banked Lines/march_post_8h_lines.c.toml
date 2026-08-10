@@ -1,0 +1,39 @@
+[march_post_8h_follow_up_helmet]
+refresh = "never"
+requires = [
+	{ npc = "olric" },
+	{ march_post_8h_helmet = true },
+]
+portrait = "neutral"
+local = "The other day, March was asking everyone what they thought you'd want as a present."
+next = "1"
+
+[march_post_8h_follow_up_helmet.1]
+portrait = "think"
+local = "He acted like he wasn't sure what you'd like... but he ended up deciding to go with his own idea to make a helmet."
+next = "2"
+
+[march_post_8h_follow_up_helmet.2]
+portrait = "happy"
+effect = "drop"
+local = "I don't get it, why wouldn't he know the preferences of the person he's always talking about?"
+
+[march_post_8h_ambient]
+refresh = "never"
+requires = [
+	{ npc = "olric" },
+	{ march_is_dating = true },
+]
+actions = [{ bark = { bark = "cute_face", npc = "olric" } }]
+portrait = "neutral"
+local = "March seems really happy, lately."
+next = "1"
+
+[march_post_8h_ambient.1]
+portrait = "think"
+local = "He doesn't come out and say it so directly..."
+next = "2"
+
+[march_post_8h_ambient.2]
+portrait = "happy"
+local = "But it's obviously because of you!"

@@ -1,0 +1,49 @@
+[hiking]
+refresh = "never"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "eiland" },
+		{ npc = "elsie" },
+		{ npc = "errol" },
+		{ npc = "valen" }
+	] },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "<elsie_zone>" },
+	{ adeline_zone = "<errol_zone>" },
+	{ adeline_zone = "<valen_zone>" },
+]
+speaker = "errol"
+portrait = "neutral"
+local = "Did your father ever tell you about the time he and I got stuck on the summit in the dead of winter? Baron Wiscar was with us, too."
+next = "1"
+
+[hiking.1]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = """He did not! Was this one of his "hiking excursions"?"""
+next = "2"
+
+[hiking.2]
+speaker = "adeline"
+portrait = "think"
+local = "I think I remember this story! Valen's father was looking for a particular herb, is that right?"
+next = "3"
+
+[hiking.3]
+speaker = "eiland"
+portrait = "neutral"
+local = "But then a snowstorm blocked the path back down?"
+next = "4"
+
+[hiking.4]
+speaker = "elsie"
+portrait = "wink"
+local = "The Baroness single-handedly dug a tunnel all the way up the mountain to bring you three home!"
+next = "5"
+
+[hiking.5]
+speaker = "errol"
+portrait = "happy"
+effect = "drop"
+local = "She really saved our hides! If it wasn't for her, we'd still be popsicles up on that mountain top!"

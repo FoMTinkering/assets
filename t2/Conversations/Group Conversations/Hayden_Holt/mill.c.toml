@@ -1,0 +1,17 @@
+[mill]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "holt" }] },
+	{ hayden_zone = "<holt_zone>" },
+	{ quest_repair_the_mill_complete = true },
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+speaker = "hayden"
+portrait = "think"
+local = "I need to stop in at the Mill at some point. I thought I had enough feed for the weekend, but I'm going to be just short."
+next = "1"
+
+[mill.1]
+speaker = "holt"
+portrait = "wink"
+local = "Sounds like you miscowculated!"

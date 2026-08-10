@@ -1,0 +1,18 @@
+[bedtime_stories]
+refresh = "1y"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_animation = "book_sit" },
+		{ celine_animation = "book_stand" }
+	] },
+	{ date_time = "1y", comparator = ">=" },
+	{ celine_zone = "<dell_zone>", comparator = "!=" },
+]
+portrait = "think"
+local = "I wanted to learn some new bedtime stories for Dell, so I've been doing some reading..."
+next = "1"
+
+[bedtime_stories.1]
+portrait = "happy"
+local = "Dell prefers fairy tales where people become friends with the dragon, and you know what? Me too!"

@@ -1,0 +1,166 @@
+[unlocking_the_mines_pt_2_follow_up_adeline]
+refresh = "never"
+requires = [{ npc = "adeline" }, { utm = "part_2" }]
+portrait = "sad"
+local = "The Mines are open again? Please be careful down there!"
+next = "1"
+
+[unlocking_the_mines_pt_2_follow_up_adeline.1]
+portrait = "sly"
+local = "Oh, but does this mean we'll have a steady source of ore again? We were barely getting by with Balor's connections."
+
+[unlocking_the_mines_pt_2_follow_up_balor]
+refresh = "never"
+requires = [{ npc = "balor" }, { utm = "part_2" }]
+portrait = "sly"
+local = "Eiland, that devil! He got the Mines open, did he?"
+next = "1"
+
+[unlocking_the_mines_pt_2_follow_up_balor.1]
+portrait = "wink"
+local = "Let me know if you come across any gems or precious stones..."
+
+[unlocking_the_mines_pt_2_follow_up_eiland]
+refresh = "never"
+requires = [{ npc = "eiland" }, { utm = "part_2" }]
+local = "I'm thrilled that you're exploring the Mines, [Ari]. Do be careful."
+next = "1"
+
+[unlocking_the_mines_pt_2_follow_up_eiland.1]
+portrait = "mad"
+local = "And let me know if there's anything worth surveying down there!"
+
+[unlocking_the_mines_pt_2_follow_up_errol]
+refresh = "never"
+requires = [{ npc = "errol" }, { utm = "part_2" }]
+portrait = "happy"
+local = "It does my old heart good to see the Mines reopened, even in a provisional capacity."
+
+[unlocking_the_mines_pt_2_follow_up_march]
+refresh = "never"
+requires = [{ npc = "march" }, { utm = "part_2" }]
+local = "You went into the Mines? And you came out in one piece?"
+next = "1"
+
+[unlocking_the_mines_pt_2_follow_up_march.1]
+portrait = "unimpressed"
+local = "I guess there's more to you than I thought."
+
+[unlocking_the_mines_pt_2_follow_up_olric]
+refresh = "never"
+requires = [{ npc = "olric" }, { utm = "part_2" }]
+portrait = "happy"
+local = "I heard you got down into the Mines, [Ari]! That's awesome!"
+next = "1"
+
+[unlocking_the_mines_pt_2_follow_up_olric.1]
+portrait = "think"
+local = "I love working at the Blacksmith's with March, but I do miss breaking rocks."
+next = "2"
+
+[unlocking_the_mines_pt_2_follow_up_olric.2]
+portrait = "wink"
+local = "Break some rocks for me, okay?"
+
+[unlocking_the_mines_pt_2]
+kind = "gameplay_triggered"
+writes = [
+	{ utm = "part_2", expires = "6d" },
+	{ utm_celine_line_delay = true, expires = "2d" }
+]
+actions = [{ heart_points = { amount = 50, npc = "eiland" } }]
+speaker = "errol"
+portrait = "happy"
+local = "[Ari]! What a joyous day! Mistria's Town Rank improvement shows that we're on the right track."
+next = "1"
+
+[unlocking_the_mines_pt_2.1]
+speaker = "errol"
+effect = "drop"
+local = "Why, just think... if we leave the Mines closed we can continue to focus our efforts on other town initiatives-"
+next = "2"
+
+[unlocking_the_mines_pt_2.2]
+speaker = "eiland"
+portrait = "mad"
+local = "Errol, we both know the town's growth will not continue without a reliable source of stone and ore. New artifacts for the Museum would be a boon too!"
+next = "3"
+
+[unlocking_the_mines_pt_2.3]
+speaker = "errol"
+portrait = "think"
+effect = "sigh"
+local = "I can see there is no dissuading you two."
+next = "4"
+
+[unlocking_the_mines_pt_2.4]
+speaker = "errol"
+portrait = "sad"
+local = "Alright, alright. We shall proceed with the reopening."
+next = "5"
+
+[unlocking_the_mines_pt_2.5]
+speaker = "errol"
+portrait = "mad"
+local = "Be careful [Ari]. The earthquake has revealed cave passages beneath the Mines that are yet unexplored."
+next = "6"
+
+[unlocking_the_mines_pt_2.6]
+speaker = "errol"
+portrait = "think"
+local = "I trust you're ready to handle whatever lies below. Keep your wits about you."
+next = "7"
+
+[unlocking_the_mines_pt_2.7]
+speaker = "errol"
+portrait = "mad"
+local = "For Mistria!"
+next = "8"
+
+[unlocking_the_mines_pt_2.8]
+speaker = "errol"
+local = "Good luck. I will do what I can to assist the both of you with your finds at the Museum."
+next = "9"
+
+[unlocking_the_mines_pt_2.9]
+speaker = "eiland"
+local = "With the main shaft collapsed, you'll need to take the ladder down to start your descent."
+next = "10"
+
+[unlocking_the_mines_pt_2.10]
+speaker = "eiland"
+portrait = "think"
+local = "The $Elevator$ isn't working, but Errol believes that if you can rediscover the $Elevator Platforms$ further down that it can be restarted."
+next = "11"
+
+[unlocking_the_mines_pt_2.11]
+speaker = "eiland"
+effect = "surprise"
+local = "Incredible! ANOTHER dragon statue?! This wasn't here before the earthquake!"
+prompts = [
+	{ local = "It looks like the statue on my farm!", next = "12" },
+	{ local = "Another astounding find by [Ari]!", next = "12" }
+]
+
+[unlocking_the_mines_pt_2.12]
+speaker = "eiland"
+portrait = "happy"
+local = "Haha, it seems the archaeologist bug has bit you too!"
+next = "13"
+
+[unlocking_the_mines_pt_2.13]
+speaker = "eiland"
+portrait = "think"
+local = "I need to confer with Errol and begin a thorough search of the Mine's history. It's hard to believe that there's no record of this statue."
+next = "14"
+
+[unlocking_the_mines_pt_2.14]
+speaker = "eiland"
+portrait = "sad"
+local = "I hate to cut and run so soon, but this is of immense archaeological importance. Will you be alright on your own, [Ari]?"
+next = "15"
+
+[unlocking_the_mines_pt_2.15]
+speaker = "eiland"
+portrait = "happy"
+local = "Best of luck! We're all looking forward to your findings!"

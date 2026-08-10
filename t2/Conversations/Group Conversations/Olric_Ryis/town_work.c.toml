@@ -1,0 +1,23 @@
+[town_work]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "olric" }, { npc = "ryis" }] },
+	{ olric_zone = "<ryis_zone>" },
+	{ location = "town" },
+	{ time_of_day = "morning", comparator = "!=" }
+]
+speaker = "olric"
+portrait = "neutral"
+local = "How's the town looking, Ryis?"
+next = "1"
+
+[town_work.1]
+speaker = "ryis"
+portrait = "think"
+local = "Pretty good. I made the rounds and oiled some hinges earlier. Should make time to check some of the town's older stone foundations."
+next = "2"
+
+[town_work.2]
+speaker = "olric"
+portrait = "happy"
+local = "Ooh, exciting!"

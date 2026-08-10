@@ -1,0 +1,389 @@
+priority = "max"
+requires = [{ animal_festival_date = "1d", time = "after" }]
+start_writes = [
+	{ inn_counter = 0 },
+	{ bathhouse_counter = 0 },
+	{ animal_festival_today = true }
+]
+end_writes = [
+	{ animal_festival_today = false }
+]
+
+# adeline
+[adeline."6:00am"]
+destination = "town/af_zoo_1"
+
+[adeline."10:32am"]
+destination = "town/af_chicken_cutout"
+
+[adeline."12:46pm"]
+destination = "town/af_souvenir_booth_shelf"
+
+[adeline."5:53pm"]
+destination = "town/af_south_chat_1"
+
+[adeline."8:42pm"]
+destination = "celines_room/Couch Seat Bottom"
+on_arrival_actions = [{ activity = "drink" }]
+
+[adeline."1:34am"]
+destination = "adelines_bedroom/Bed"
+
+# balor
+[balor."6:00am"]
+destination = "town/af_large_booth_2"
+
+[balor."2:17pm"]
+destination = "town/af_cow_cutout"
+
+[balor."4:35pm"]
+destination = "town/af_zoo_2"
+
+[balor."8:53pm"]
+destination = "inn/Top Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+
+[balor."1:38am"]
+destination = "balors_room/Balor Wake Point"
+
+# celine
+[celine."6:00am"]
+destination = "town/af_zoo_2"
+
+[celine."6:52am"]
+destination = "town/af_horse_cutout"
+
+[celine."9:08am"]
+destination = "town/af_zoo_2"
+
+[celine."4:22pm"]
+destination = "town/af_small_booth_2"
+
+[celine."8:31pm"]
+destination = "celines_room/ArmChair Seat"
+on_arrival_actions = [{ activity = "drink" }]
+
+# dell
+[dell."6:00am"]
+destination = "town/af_zoo_3"
+
+[dell."1:11pm"]
+destination = "town/af_small_booth_3"
+
+[dell."8:07pm"]
+destination = "dells_bedroom/Dell Bed"
+
+# dozy
+[dozy."6:00am"]
+destination = "town/af_large_booth_4"
+
+[dozy."11:37am"]
+destination = "town/af_souvenir_booth_3"
+
+[dozy."4:33pm"]
+destination = "town/af_east_chat_2"
+
+[dozy."6:11pm"]
+destination = "town/af_east_chat_2"
+on_arrival_actions = [{ routine = "animal_festival_dozy_wander" }]
+
+[dozy."8:32pm"]
+destination = "bathhouse/Dozy"
+on_arrival_actions = [{ routine = "dozy_snooze" }]
+
+# eiland
+[eiland."6:00am"]
+destination = "town/af_souvenir_booth_shelf"
+
+[eiland."8:11am"]
+destination = "town/af_chicken_cutout"
+
+[eiland."10:12am"]
+destination = "town/af_south_chat_2"
+
+[eiland."5:12pm"]
+destination = "town/af_souvenir_booth_1"
+
+[eiland."7:49pm"]
+destination = "manor_house_dining_room/Table Left Seat 1"
+on_arrival_actions = [{ activity = "drink" }]
+
+# elsie
+[elsie."6:00am"]
+destination = "town/af_north_chat_1"
+
+[elsie."11:25am"]
+destination = "town/af_souvenir_booth_4"
+
+[elsie."5:41pm"]
+destination = "town/af_souvenir_booth_3"
+
+[elsie."7:47pm"]
+destination = "manor_house_dining_room/Table Right Seat 1"
+on_arrival_actions = [{ activity = "drink" }]
+
+# errol
+[errol."6:00am"]
+destination = "town/af_souvenir_booth_4"
+
+[errol."9:34am"]
+destination = "town/af_south_chat_1"
+
+[errol."4:58pm"]
+destination = "town/af_large_booth_1"
+
+[errol."8:48pm"]
+destination = "manor_house_dining_room/Table Right Seat 2"
+on_arrival_actions = [{ activity = "drink" }]
+
+[errol."1:22am"]
+destination = "errols_bedroom/Desk Chair"
+
+# hayden
+[hayden."6:00am"]
+destination = "town/af_small_booth_4"
+
+[hayden."9:12am"]
+destination = "town/af_cow_cutout"
+
+[hayden."11:37am"]
+destination = "town/af_north_chat_1"
+
+[hayden."6:12pm"]
+destination = "town/af_large_booth_2"
+
+[hayden."8:52pm"]
+destination = "haydens_house/Couch Seat Right"
+on_arrival_actions = [{ activity = "drink" }]
+
+# hemlock
+[hemlock."6:00am"]
+destination = "town/af_podium_chat"
+
+[hemlock."12:16pm"]
+destination = "town/af_large_booth_4"
+
+[hemlock."8:12pm"]
+destination = "inn/Kid Drop Off"
+on_arrival_actions = [{ routine = "inn_solo_bartend" }]
+
+[hemlock."1:43am"]
+destination = "jo_and_hemlocks_room/Hemlock Wake Point"
+
+# henrietta
+[henrietta."6:00am"]
+destination = "town/af_small_booth_2"
+
+[henrietta."11:08am"]
+destination = "town/af_north_chat_2"
+
+[henrietta."6:11pm"]
+destination = "haydens_house/Hayden Kitchen"
+
+# holt
+[holt."6:00am"]
+destination = "town/af_souvenir_booth_3"
+
+[holt."10:43am"]
+destination = "town/af_zoo_1"
+
+[holt."2:06pm"]
+destination = "town/af_large_booth_3"
+
+[holt."8:13pm"]
+destination = "general_store_home/Upper Couch Right Seat"
+on_arrival_actions = [{ activity = "drink" }]
+
+# josephine
+[josephine."6:00am"]
+destination = "town/af_podium"
+
+[josephine."8:45pm"]
+destination = "town/af_small_booth_dismissal"
+
+[josephine."9:02pm"]
+destination = "town/af_large_booth_dismissal"
+
+[josephine."9:13pm"]
+destination = "town/af_souvenir_booth_dismissal"
+
+[josephine."9:53pm"]
+destination = "inn/Bottom-Middle Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+
+[josephine."1:42am"]
+destination = "jo_and_hemlocks_room/Jo Wake Point"
+
+# juniper
+[juniper."6:00am"]
+destination = "town/af_large_booth_1"
+
+[juniper."11:38am"]
+destination = "town/af_souvenir_booth_1"
+
+[juniper."4:34pm"]
+destination = "town/af_east_chat_1"
+
+[juniper."5:23pm"]
+destination = "town/af_duck_cutout"
+
+[juniper."8:31pm"]
+destination = "bathhouse/Cauldron 3"
+
+# landen
+[landen."6:00am"]
+destination = "town/af_small_animal_booth"
+
+[landen."8:59pm"]
+destination = "inn/Story Listener 2"
+
+[landen."12:51am"]
+destination = "landens_house_f2/Landen Wake Point"
+
+# louis
+[louis."6:00am"]
+destination = "town/af_east_chat_1"
+
+[louis."1:23pm"]
+destination = "town/af_souvenir_booth_2"
+
+[louis."5:42pm"]
+destination = "town/af_south_chat_3"
+
+[louis."8:38pm"]
+destination = "inn/Storyteller Duo 2"
+# destination = "manor_house_dining_room/Table Right Seat 2"
+# on_arrival_actions = [{ activity = "drink" }]
+
+# luc
+[luc."6:00am"]
+destination = "town/af_zoo_4"
+
+[luc."1:11pm"]
+destination = "town/af_small_booth_1"
+
+[luc."8:04pm"]
+destination = "lucs_room/Luc Bed"
+
+# maple
+[maple."6:00am"]
+destination = "town/af_zoo_5"
+
+[maple."1:11pm"]
+destination = "town/af_small_booth_4"
+
+[maple."8:05pm"]
+destination = "maples_room/Maple Wake Point"
+
+# march
+[march."6:00am"]
+destination = "town/af_small_booth_1"
+
+[march."12:55pm"]
+destination = "town/af_zoo_3"
+
+[march."3:18pm"]
+destination = "town/af_chicken_cutout"
+
+[march."5:25pm"]
+destination = "town/af_zoo_4"
+
+[march."8:45pm"]
+destination = "blacksmith_store/Workbench Stool"
+
+[march."11:34pm"]
+destination = "blacksmith_room_left/March Bed"
+
+# merri
+[merri."6:00am"]
+destination = "town/af_east_chat_2"
+
+[merri."2:08pm"]
+destination = "town/af_large_booth_2"
+
+[merri."4:11pm"]
+destination = "town/af_podium_chat"
+
+[merri."8:36pm"]
+destination = "inn/Storyteller Duo 1"
+# destination = "manor_house_dining_room/Table Left Seat 2"
+# on_arrival_actions = [{ activity = "drink" }]
+
+# nora
+[nora."6:00am"]
+destination = "town/af_souvenir_booth"
+
+[nora."9:52pm"]
+destination = "general_store_home/Armchair"
+on_arrival_actions = [{ activity = "drink" }]
+
+# olric
+[olric."6:00am"]
+destination = "town/af_small_booth_3"
+
+[olric."12:56pm"]
+destination = "town/af_zoo_5"
+
+[olric."8:46pm"]
+destination = "blacksmith_room_right/Olric Wake Point"
+
+# reina
+[reina."6:00am"]
+destination = "town/af_souvenir_booth_1"
+
+[reina."11:43am"]
+destination = "town/af_horse_cutout"
+
+[reina."1:59pm"]
+destination = "town/af_zoo_1"
+
+[reina."8:23pm"]
+destination = "celines_room/Couch Seat Upper"
+on_arrival_actions = [{ activity = "drink" }]
+
+# ryis
+[ryis."6:00am"]
+destination = "town/af_north_chat_2"
+
+[ryis."11:26am"]
+destination = "town/af_souvenir_booth_shelf"
+
+[ryis."12:51pm"]
+destination = "town/af_duck_cutout"
+
+[ryis."3:14pm"]
+destination = "town/af_zoo_3"
+
+[ryis."9:12pm"]
+destination = "inn/Top-Middle Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+
+[ryis."12:09am"]
+destination = "landens_house_f2/Ryis Wake Point"
+
+# terithia
+[terithia."6:00am"]
+destination = "town/af_large_animal_booth"
+
+[terithia."9:11pm"]
+destination = "manor_house_dining_room/Table Left Seat 2"
+on_arrival_actions = [{ activity = "drink" }]
+
+[terithia."1:34am"]
+destination = "beach/Fishing"
+
+# valen
+[valen."6:00am"]
+destination = "town/af_large_booth_3"
+
+[valen."10:03am"]
+destination = "town/af_south_chat_3"
+
+[valen."4:57pm"]
+destination = "town/af_horse_cutout"
+
+[valen."7:31pm"]
+destination = "clinic_f1/Research"
+
+[valen."12:55am"]
+destination = "clinic_f2/Valen Wake Point"

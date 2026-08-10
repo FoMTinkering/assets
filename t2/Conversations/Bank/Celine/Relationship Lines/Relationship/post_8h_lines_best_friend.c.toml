@@ -1,0 +1,510 @@
+[celine_post_8h_best_friend_0]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = false },
+	{ any = [
+		{ celine_post_8h_romantic_progression = true },
+		{ celine_is_best_friend = true }
+	] },
+	{ celine_post_8h_best_friend_gate = false },
+	{ celine_post_8h_best_friend_grouping = 0 }
+]
+writes = [
+	{ celine_post_8h_best_friend_gate = true, expires = "20h" },
+	{ celine_post_8h_best_friend_grouping = 1 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
+portrait = "think"
+local = "I was just reminiscing about the day you arrived in town..."
+next = "1"
+
+[celine_post_8h_best_friend_0.1]
+portrait = "embarrassed"
+local = "I was so nervous when Adeline told me I'd be getting a new neighbor!"
+next = "2"
+
+[celine_post_8h_best_friend_0.2]
+portrait = "gloomy"
+local = "What would have happened if we didn't get along?"
+next = "3"
+
+[celine_post_8h_best_friend_0.3]
+portrait = "happy"
+effect = "cheery"
+local = "I feel so lucky that you're the one who moved in."
+
+
+[celine_post_8h_best_friend_1]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = false },
+	{ any = [
+		{ celine_post_8h_romantic_progression = true },
+		{ celine_is_best_friend = true }
+	] },
+	{ celine_post_8h_best_friend_gate = false },
+	{ celine_post_8h_best_friend_grouping = 1 }
+]
+writes = [
+	{ celine_post_8h_best_friend_gate = true, expires = "20h" },
+	{ celine_post_8h_best_friend_grouping = 2 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "celine" } }]
+portrait = "neutral"
+local = "It's funny to think that I moved into my cottage just shortly before you moved to Mistria."
+next = "1"
+
+[celine_post_8h_best_friend_1.1]
+portrait = "think"
+local = "Before that, I shared a bedroom with Dell!"
+next = "2"
+
+[celine_post_8h_best_friend_1.2]
+portrait = "happy"
+effect = "drop"
+local = "It was cramped at the time, but I look back on it fondly now."
+next = "3"
+
+[celine_post_8h_best_friend_1.3]
+portrait = "neutral"
+local = "We read together a lot, and resolved our disagreements by duking it out with pillows."
+next = "4"
+
+[celine_post_8h_best_friend_1.4]
+portrait = "happy"
+local = "What about you, [Ari]? Do you have any siblings?"
+prompts = [{ local = "I do, actually!", next = "5" }, { local = "I'm an only child.", next = "8" }]
+
+[celine_post_8h_best_friend_1.5]
+portrait = "neutral"
+local = "I thought you might!"
+next = "6"
+
+[celine_post_8h_best_friend_1.6]
+portrait = "think"
+local = "Does that mean you had to share a bedroom growing up, too?"
+next = "7"
+
+[celine_post_8h_best_friend_1.7]
+portrait = "neutral"
+local = "I'm so curious!"
+
+[celine_post_8h_best_friend_1.8]
+portrait = "neutral"
+local = "So I'm guessing you had your own bedroom growing up?"
+next = "9"
+
+[celine_post_8h_best_friend_1.9]
+portrait = "blush_closed_eyes"
+local = "Ohh, I'm so jealous!"
+next = "10"
+
+[celine_post_8h_best_friend_1.10]
+portrait = "happy"
+effect = "drop"
+local = "Sharing a room can be fun... except for when it's not."
+
+
+[celine_post_8h_best_friend_2]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = false },
+	{ any = [
+		{ celine_post_8h_romantic_progression = true },
+		{ celine_is_best_friend = true }
+	] },
+	{ celine_post_8h_best_friend_gate = false },
+	{ celine_post_8h_best_friend_grouping = 2 }
+]
+writes = [
+	{ celine_post_8h_best_friend_gate = true, expires = "20h" },
+	{ celine_post_8h_best_friend_grouping = 3 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "celine" } }]
+portrait = "think"
+local = "My parents were just talking about how Dell is so much like my mom when she was little."
+next = "1"
+
+[celine_post_8h_best_friend_2.1]
+portrait = "happy"
+local = "It makes me wonder if I'm more like my mom or more like my dad!"
+next = "2"
+
+[celine_post_8h_best_friend_2.2]
+portrait = "think"
+local = "Who do you think I take after more?"
+prompts = [{ local = "You take after Nora!", next = "3" }, { local = "You take after Holt!", next = "6" }]
+
+[celine_post_8h_best_friend_2.3]
+portrait = "laugh"
+local = "Obviously, right? The blonde hair is a giveaway!"
+next = "4"
+
+[celine_post_8h_best_friend_2.4]
+portrait = "think_special"
+local = "Although... I couldn't make perfect spreadsheets or handle vendor relationships like Mom does."
+next = "5"
+
+[celine_post_8h_best_friend_2.5]
+portrait = "happy"
+local = "Do you think that means that Dell is going to unlock some latent powers of negotiation when she gets older?"
+
+[celine_post_8h_best_friend_2.6]
+portrait = "embarrassed"
+local = "My Dad? No way! That's pun-believable!"
+next = "7"
+
+[celine_post_8h_best_friend_2.7]
+portrait = "ugh"
+local = "Er, I mean... unbelievable!"
+next = "8"
+
+[celine_post_8h_best_friend_2.8]
+portrait = "angry_blush"
+local = "S-stop giggling, [Ari]!"
+
+[celine_post_8h_best_friend_3]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = false },
+	{ any = [
+		{ celine_post_8h_romantic_progression = true },
+		{ celine_is_best_friend = true }
+	] },
+	{ celine_post_8h_best_friend_gate = false },
+	{ celine_post_8h_best_friend_grouping = 3 }
+]
+writes = [
+	{ celine_post_8h_best_friend_gate = true, expires = "2d" },
+	{ celine_post_8h_romantic_gate = true, expires = "2d" },
+	{ celine_post_8h_best_friend_grouping = 4 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
+portrait = "think"
+local = "My mom has been taking an interest in our roots lately."
+next = "1"
+
+[celine_post_8h_best_friend_3.1]
+portrait = "neutral"
+local = "Apparently her side of the family has been living in Mistria even longer than Hayden's family has."
+next = "2"
+
+[celine_post_8h_best_friend_3.2]
+portrait = "sweat"
+local = "Which is a really long time!"
+next = "3"
+
+[celine_post_8h_best_friend_3.3]
+portrait = "think"
+local = "It made me curious..."
+next = "4"
+
+[celine_post_8h_best_friend_3.4]
+portrait = "neutral"
+local = "Did you grow up in the Capital? Or somewhere different?"
+prompts = [
+	{ local = "I'm originally from the Capital.", next = "5" },
+	{ local = "I'm from farther away than that!", next = "8" }
+]
+
+[celine_post_8h_best_friend_3.5]
+portrait = "happy"
+local = "Really? Wow! I guess that makes sense, knowing you came from the Adventurer's Guild."
+next = "6"
+
+[celine_post_8h_best_friend_3.6]
+portrait = "neutral"
+local = "It must have been a faster paced life, growing up in a big city."
+next = "7"
+
+[celine_post_8h_best_friend_3.7]
+portrait = "happy"
+effect = "cheery"
+local = "Of all the places you could have settled down, I'm glad you came to Mistria!"
+
+[celine_post_8h_best_friend_3.8]
+portrait = "neutral"
+local = "So you're well-traveled, then!"
+next = "9"
+
+[celine_post_8h_best_friend_3.9]
+portrait = "think"
+local = "I suppose it must have been the Adventurer's Guild that brought you to the Capital before you moved here, right?"
+next = "10"
+
+[celine_post_8h_best_friend_3.10]
+portrait = "happy"
+effect = "cheery"
+local = "Of all the places you could have settled down, I'm glad you came to Mistria!"
+
+[celine_post_8h_best_friend_4]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = false },
+	{ any = [
+		{ celine_post_8h_romantic_progression = true },
+		{ celine_is_best_friend = true }
+	] },
+	{ celine_post_8h_best_friend_gate = false },
+	{ celine_post_8h_best_friend_grouping = 4 },
+	{ any = [
+		{ celine_routine = "manor_gardening" },
+		{ celine_routine = "celine_gardening" }
+	] }
+]
+writes = [
+	{ celine_post_8h_best_friend_gate = true, expires = "2d" },
+	{ celine_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
+portrait = "laugh"
+local = "Oh [Ari], seeing you is always like a ray of sunshine!"
+next = "1"
+
+[celine_post_8h_best_friend_4.1]
+portrait = "very_happy"
+local = "Even the plants seem extra happy to see you."
+
+
+[celine_post_8h_best_friend_5]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_post_8h_romantic_progression = true },
+		{ celine_is_best_friend = true }
+	] },
+	{ celine_post_8h_best_friend_gate = false },
+	{ celine_post_8h_best_friend_grouping = 4 },
+	{ celine_routine = "general_store" }
+]
+writes = [
+	{ celine_post_8h_best_friend_gate = true, expires = "2d" },
+	{ celine_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
+portrait = "happy"
+local = "You're really inspiring, [Ari]."
+next = "1"
+
+[celine_post_8h_best_friend_5.1]
+portrait = "think"
+local = "It makes me want to work extra hard too..."
+next = "2"
+
+[celine_post_8h_best_friend_5.2]
+portrait = "wink"
+effect = "sparkles"
+local = "So today I've reorganized the shelves and tidied up the shop!"
+
+[celine_post_8h_best_friend_6]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = false },
+	{ any = [
+		{ celine_post_8h_romantic_progression = true },
+		{ celine_is_best_friend = true }
+	] },
+	{ celine_post_8h_best_friend_gate = false },
+	{ celine_post_8h_best_friend_grouping = 4 },
+	{ season = "spring" }
+]
+writes = [
+	{ celine_post_8h_best_friend_gate = true, expires = "2d" },
+	{ celine_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "celine" } }, { item = "lilac" }]
+portrait = "neutral"
+local = "I was out foraging near Hayden's Farm and saw this =Lilac=..."
+next = "1"
+
+[celine_post_8h_best_friend_6.1]
+portrait = "think"
+local = "They're thought to represent renewal since they bloom early in the year."
+next = "2"
+
+[celine_post_8h_best_friend_6.2]
+portrait = "neutral"
+local = "It made me think of you. How you've helped Mistria... and me!"
+next = "3"
+
+[celine_post_8h_best_friend_6.3]
+portrait = "very_happy"
+effect = "cheery"
+local = "Here, I want you to have it!"
+
+
+[celine_post_8h_best_friend_7]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_post_8h_romantic_progression = true },
+		{ celine_is_best_friend = true }
+	] },
+	{ celine_post_8h_best_friend_gate = false },
+	{ celine_post_8h_best_friend_grouping = 4 },
+	{ season = "summer" }
+]
+writes = [
+	{ celine_post_8h_best_friend_gate = true, expires = "2d" },
+	{ celine_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "celine" } }, { item = "marigold" }]
+portrait = "neutral"
+local = "I saw this =Marigold= while foraging outside of town..."
+next = "1"
+
+[celine_post_8h_best_friend_7.1]
+portrait = "very_happy"
+effect = "cheery"
+local = "They represent prosperity and joy, you know."
+next = "2"
+
+[celine_post_8h_best_friend_7.2]
+portrait = "neutral"
+local = "I hope it brightens up your day, just like you always do for me!"
+
+[celine_post_8h_best_friend_8]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_post_8h_romantic_progression = true },
+		{ celine_is_best_friend = true }
+	] },
+	{ celine_post_8h_best_friend_gate = false },
+	{ celine_post_8h_best_friend_grouping = 4 },
+	{ season = "fall" }
+]
+writes = [
+	{ celine_post_8h_best_friend_gate = true, expires = "2d" },
+	{ celine_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "celine" } }, { item = "heather" }]
+portrait = "neutral"
+local = "I was out for a walk in the Narrows and came across this =Heather=."
+next = "1"
+
+[celine_post_8h_best_friend_8.1]
+portrait = "happy"
+local = "It's known to represent resilience, since it can survive harsh conditions."
+next = "2"
+
+[celine_post_8h_best_friend_8.2]
+portrait = "very_happy"
+effect = "cheery"
+local = "You're the most resilient person I know... so I wanted you to have it, [Ari]!"
+
+[celine_post_8h_best_friend_9]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_post_8h_romantic_progression = true },
+		{ celine_is_best_friend = true }
+	] },
+	{ celine_post_8h_best_friend_gate = false },
+	{ celine_post_8h_best_friend_grouping = 4 },
+	{ season = "winter" }
+]
+writes = [
+	{ celine_post_8h_best_friend_gate = true, expires = "2d" },
+	{ celine_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "celine" } }, { item = "poinsettia" }]
+portrait = "neutral"
+local = "I foraged this =Poinsettia= peeking out of the snow earlier..."
+next = "1"
+
+[celine_post_8h_best_friend_9.1]
+portrait = "very_happy"
+effect = "cheery"
+local = "Poinsettias represent hope and good cheer."
+next = "2"
+
+[celine_post_8h_best_friend_9.2]
+portrait = "neutral"
+local = "Here, [Ari]. I want you to have it. I'm hoping it brings you plenty of both!"
+
+# Last line
+[celine_post_8h_best_friend_10]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = false },
+	{ caldarus_seridia_town = false },
+	{ any = [
+		{ celine_post_8h_romantic_progression = true },
+		{ celine_is_best_friend = true }
+	] },
+	{ celine_post_8h_best_friend_gate = false },
+	{ celine_post_8h_best_friend_grouping = 4, ignore_priority = true }
+]
+writes = [
+	{ celine_post_8h_best_friend_gate = true, expires = "2d" },
+	{ celine_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
+portrait = "think"
+local = "This might sound silly but..."
+next = "1"
+
+[celine_post_8h_best_friend_10.1]
+portrait = "neutral"
+local = "Since I was little, I always felt like there was something special about Mistria."
+next = "2"
+
+[celine_post_8h_best_friend_10.2]
+portrait = "happy"
+local = "In the air, and in the earth... something sleeping, on the verge of waking up."
+next = "3"
+
+[celine_post_8h_best_friend_10.3]
+portrait = "think"
+local = "I used to think that I was the only one who felt it."
+next = "4"
+
+[celine_post_8h_best_friend_10.4]
+portrait = "neutral"
+local = "But recently I've been wondering if maybe you can feel it too."
+prompts = [
+	{ local = "Yes, there is definitely something magical about this place.", next = "5" },
+	{ local = "It's the people that make Mistria so magical.", next = "8" }
+]
+
+[celine_post_8h_best_friend_10.5]
+portrait = "happy"
+local = "I'm so glad you think so as well!"
+next = "6"
+
+[celine_post_8h_best_friend_10.6]
+portrait = "think"
+local = "Mistria has been changing so much since you arrived here-"
+next = "7"
+
+[celine_post_8h_best_friend_10.7]
+portrait = "neutral"
+effect = "sparkles"
+local = "And that magical quality seems stronger than ever!"
+
+[celine_post_8h_best_friend_10.8]
+portrait = "laugh"
+local = "I suppose that's true!"
+next = "9"
+
+[celine_post_8h_best_friend_10.9]
+portrait = "neutral"
+local = "The people living here are a major part of what makes Mistria special"
+next = "10"
+
+[celine_post_8h_best_friend_10.10]
+portrait = "neutral"
+effect = "sparkles"
+local = "That goes for you too, [Ari]!"

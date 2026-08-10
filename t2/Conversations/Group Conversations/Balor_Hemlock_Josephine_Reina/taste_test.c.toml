@@ -1,0 +1,43 @@
+[taste_test]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "balor" },
+		{ npc = "hemlock" },
+		{ npc = "josephine" },
+		{ npc = "reina" }
+	] },
+	{ balor_zone = "<hemlock_zone>" },
+	{ balor_zone = "<josephine_zone>" },
+	{ balor_zone = "<reina_zone>" },
+	{ balor_taste_test = true },
+	{ hemlock_taste_test = true },
+	{ josephine_taste_test = true },
+]
+speaker = "reina"
+portrait = "happy"
+local = "Okay, everyone! Tell me what you think!"
+next = "1"
+
+[taste_test.1]
+speaker = "hemlock"
+portrait = "happy"
+local = "Mm! It's delicious."
+next = "2"
+
+[taste_test.2]
+speaker = "balor"
+portrait = "think"
+local = "Oh, this reminds me of something I ate in the Capital, at a little cafe tucked away behind the market."
+next = "3"
+
+[taste_test.3]
+speaker = "josephine"
+portrait = "neutral"
+local = "You sound nostalgic, Balor."
+next = "4"
+
+[taste_test.4]
+speaker = "balor"
+portrait = "wink"
+local = "Not quite. Reina's done the dish better!"

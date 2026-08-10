@@ -1,0 +1,6646 @@
+evaluate_wedding_actors();
+
+//
+var spouse = ceremony_actor("spouse");
+var ari_party_0 = ceremony_actor("ari_party_0");
+var ari_party_1 = ceremony_actor("ari_party_1");
+var spouse_party_0 = ceremony_actor("spouse_party_0");
+var spouse_party_1 = ceremony_actor("spouse_party_1");
+var priority_0 = ceremony_actor("priority_0");
+var priority_1 = ceremony_actor("priority_1");
+var priority_2 = ceremony_actor("priority_2");
+var priority_3 = ceremony_actor("priority_3");
+var priority_4 = ceremony_actor("priority_4");
+var priority_5 = ceremony_actor("priority_5");
+var priority_6 = ceremony_actor("priority_6");
+var priority_7 = ceremony_actor("priority_7");
+var standard_0 = ceremony_actor("standard_0");
+var standard_1 = ceremony_actor("standard_1");
+var standard_2 = ceremony_actor("standard_2");
+var standard_3 = ceremony_actor("standard_3");
+var standard_4 = ceremony_actor("standard_4");
+var standard_5 = ceremony_actor("standard_5");
+var standard_6 = ceremony_actor("standard_6");
+var standard_7 = ceremony_actor("standard_7");
+var standard_8 = ceremony_actor("standard_8");
+var standard_9 = ceremony_actor("standard_9");
+var extra_0 = ceremony_actor("extra_0");
+var extra_1 = ceremony_actor("extra_1");
+
+//
+var north_table_0 = reception_actor("north_table_0");
+var north_table_1 = reception_actor("north_table_1");
+var north_table_2 = reception_actor("north_table_2");
+var north_table_3 = reception_actor("north_table_3");
+var north_table_4 = reception_actor("north_table_4");
+var north_table_5 = reception_actor("north_table_5");
+var north_table_6 = reception_actor("north_table_6");
+var north_table_7 = reception_actor("north_table_7");
+var south_table_0 = reception_actor("south_table_0");
+var south_table_1 = reception_actor("south_table_1");
+var south_table_2 = reception_actor("south_table_2");
+var south_table_3 = reception_actor("south_table_3");
+var south_table_4 = reception_actor("south_table_4");
+var south_table_5 = reception_actor("south_table_5");
+var south_table_6 = reception_actor("south_table_6");
+var south_table_7 = reception_actor("south_table_7");
+var bar_0 = reception_actor("bar_0");
+var bar_1 = reception_actor("bar_1");
+var bar_2 = reception_actor("bar_2");
+var bar_3 = reception_actor("bar_3");
+var bar_4 = reception_actor("bar_4");
+var bar_5 = reception_actor("bar_5");
+var bar_6 = reception_actor("bar_6");
+var bar_7 = reception_actor("bar_7");
+var bartender = reception_actor("bartender");
+var reception_extra_0 = reception_actor("reception_extra_0");
+var reception_extra_1 = reception_actor("reception_extra_1");
+
+//
+fun wedding_setup() {
+
+    //
+    setup_prop(ari_candle_unlit);
+    setup_prop(spouse_candle_unlit);
+    setup_prop(central_candle_unlit);
+
+    //
+    //
+    place_actor(ari, north, ari_wed_entrance);
+    set_ari_to_idle(); //
+    //
+    apply_wedding_outfit();
+
+    set_outfit(spouse, wedding);
+    place_actor(spouse, north, spouse_wed_entrance);
+    //
+
+
+    //
+    place_actor(ari_party_0, south, ari_party_0_wedding_place);
+    place_actor(ari_party_1, south, ari_party_1_wedding_place);
+
+    //
+    place_actor(spouse_party_0, south, spouse_party_0_wedding_place);
+    place_actor(spouse_party_1, south, spouse_party_1_wedding_place);
+
+    //
+    place_actor(elsie, south, elsie_wedding_place);
+
+    //
+
+    //
+    //
+    //
+    //
+    //
+    //
+
+    //
+    place_actor(priority_0, north, priority_0_seat);
+    animate(priority_0, sit);
+    place_actor(priority_1, north, priority_1_seat);
+    animate(priority_1, sit);
+    place_actor(priority_2, north, priority_2_seat);
+    animate(priority_2, sit);
+    place_actor(priority_3, north, priority_3_seat);
+    animate(priority_3, sit);
+    place_actor(priority_4, north, priority_4_seat);
+    animate(priority_4, sit);
+    place_actor(priority_5, north, priority_5_seat);
+    animate(priority_5, sit);
+    place_actor(priority_6, north, priority_6_seat);
+    animate(priority_6, sit);
+    place_actor(priority_7, north, priority_7_seat);
+    animate(priority_7, sit);
+
+    //
+    //
+    //
+    place_actor(standard_0, north, standard_0_seat);
+    animate(standard_0, sit);
+    place_actor(standard_1, north, standard_1_seat);
+    animate(standard_1, sit);
+    place_actor(standard_2, north, standard_2_seat);
+    animate(standard_2, sit);
+    place_actor(standard_3, north, standard_3_seat);
+    animate(standard_3, sit);
+    place_actor(standard_4, north, standard_4_seat);
+    animate(standard_4, sit);
+    place_actor(standard_5, north, standard_5_seat);
+    animate(standard_5, sit);
+    place_actor(standard_6, north, standard_6_seat);
+    animate(standard_6, sit);
+    place_actor(standard_7, north, standard_7_seat);
+    animate(standard_7, sit);
+    if is_defined(standard_8) {
+        place_actor(standard_8, north, standard_8_seat);
+        animate(standard_8, sit);
+    }
+    if is_defined(standard_9) {
+        place_actor(standard_9, north, standard_9_seat);
+        animate(standard_9, sit);
+    }
+
+    //
+
+    if is_defined(extra_0) {
+        place_actor(extra_0, north, extra_0_seat);
+        animate(extra_0, sit);
+    }
+
+    if is_defined(extra_1) {
+        place_actor(extra_1, north, extra_1_seat);
+        animate(extra_1, sit);
+    }
+
+    //
+    if spouse != "hayden" {
+        place_actor(henrietta, north, henrietta_wedding_place);
+    }
+    if spouse != "juniper" {
+        place_actor(dozy, north, dozy_wedding_place);
+    }
+
+
+}
+
+fun wedding_cheer() {
+    free bark_speech(elsie, cute_face);
+
+    free bark_speech(ari_party_0, cute_face);
+    free bark_speech(ari_party_1, cute_face);
+
+    free bark_speech(spouse_party_0, cute_face);
+    if spouse_party_1 == "dozy" or spouse_party_1 == "henrietta" {
+        free bark(spouse_party_1, cute_face);
+    } else {
+        free bark_speech(spouse_party_1, cute_face);
+    }
+
+    free bark_speech(priority_0, cute_face);
+    free bark_speech(priority_1, cute_face);
+    free bark_speech(priority_2, cute_face);
+    free bark_speech(priority_3, cute_face);
+    free bark_speech(priority_4, cute_face);
+    free bark_speech(priority_5, cute_face);
+    free bark_speech(priority_6, cute_face);
+    free bark_speech(priority_7, cute_face);
+
+    free bark_speech(standard_0, cute_face);
+    free bark_speech(standard_1, cute_face);
+    free bark_speech(standard_2, cute_face);
+    free bark_speech(standard_3, cute_face);
+    free bark_speech(standard_4, cute_face);
+    free bark_speech(standard_5, cute_face);
+    free bark_speech(standard_6, cute_face);
+    free bark_speech(standard_7, cute_face);
+    if is_defined(standard_8) {
+        free bark_speech(standard_8, cute_face);
+    }
+    if is_defined(standard_9) {
+        free bark_speech(standard_9, cute_face);
+    }
+
+    if is_defined(extra_0) {
+        free bark_speech(extra_0, cute_face);
+    }
+
+    if is_defined(extra_1) {
+        free bark_speech(extra_1, cute_face);
+    }
+
+    if spouse_party_1 != "dozy" {
+        free bark(dozy, cute_face);
+    }
+
+    if spouse_party_1 != "henrietta" {
+        free bark(henrietta, cute_face);
+    }
+
+}
+fun wedding_party_cheer() {
+    free bark_speech(elsie, cute_face);
+
+    free bark_speech(ari_party_0, cute_face);
+    free bark_speech(ari_party_1, cute_face);
+
+    free bark_speech(spouse_party_0, cute_face);
+    if spouse_party_1 == "dozy" or spouse_party_1 == "henrietta" {
+        free bark(spouse_party_1, cute_face);
+    } else {
+        free bark_speech(spouse_party_1, cute_face);
+    }
+}
+fun wedding_guests_cheer() {
+
+    free bark_speech(priority_0, cute_face);
+    wait(0.1);
+    free bark_speech(standard_2, cute_face);
+    wait(0.1);
+    free bark_speech(priority_7, cute_face);
+    if is_defined(standard_9) {
+        free bark_speech(standard_9, cute_face);
+    }
+    wait(0.1);
+    free bark_speech(priority_2, cute_face);
+    free bark_speech(standard_0, cute_face);
+    wait(0.1);
+    free bark_speech(standard_6, cute_face);
+    wait(0.1);
+    free bark_speech(priority_1, cute_face);
+    wait(0.1);
+    free bark_speech(standard_5, cute_face);
+    wait(0.1);
+    free bark_speech(priority_4, cute_face);
+    free bark_speech(standard_4, cute_face);
+    wait(0.1);
+    free bark_speech(priority_3, cute_face);
+    wait(0.1);
+    free bark_speech(priority_6, cute_face);
+    free bark_speech(standard_1, cute_face);
+    wait(0.1);
+    free bark_speech(standard_7, cute_face);
+    wait(0.1);
+    free bark_speech(priority_5, cute_face);
+    if is_defined(standard_8) {
+        free bark_speech(standard_8, cute_face);
+    }
+    wait(0.1);
+    free bark_speech(standard_3, cute_face);
+    wait(0.1);
+    if is_defined(extra_0) {
+        free bark_speech(extra_0, cute_face);
+    }
+
+    if is_defined(extra_1) {
+        free bark_speech(extra_1, cute_face);
+    }
+    wait(0.1);
+    if spouse_party_1 != "dozy" {
+        free bark(dozy, cute_face);
+    }
+
+    if spouse_party_1 != "henrietta" {
+        free bark(henrietta, cute_face);
+    }
+
+}
+
+fun reception_setup() {
+
+    //
+    set_outfit(spouse, wedding);
+    place_actor(spouse, south, "North Table Top 1");
+    animate(spouse, sit);
+    place_actor(ari, south, "North Table Top 2");
+    apply_wedding_outfit();
+    animate(ari, sit);
+    place_actor(north_table_2, south, "North Table Top 3");
+    animate(north_table_2, sit);
+    place_actor(north_table_3, west, "North Table Right End");
+    animate(north_table_3, sit);
+    place_actor(north_table_4, north, "North Table Bottom 3");
+    animate(north_table_4, sit);
+    place_actor(north_table_5, north, "North Table Bottom 2");
+    animate(north_table_5, sit);
+
+    //
+    place_actor(north_table_6, north, "North Table Bottom 1");
+    animate(north_table_6, sit);
+    place_actor(north_table_7, east, "North Table Left End");
+    animate(north_table_7, sit);
+
+    //
+    place_actor(south_table_0, south, "South Table Top 1");
+    animate(south_table_0, sit);
+    place_actor(south_table_1, south, "South Table Top 2");
+    animate(south_table_1, sit);
+    place_actor(south_table_2, south, "South Table Top 3");
+    animate(south_table_2, sit);
+    place_actor(south_table_3, west, "South Table Right End");
+    animate(south_table_3, sit);
+    place_actor(south_table_4, north, "South Table Bottom 3");
+    animate(south_table_4, sit);
+    place_actor(south_table_5, north, "South Table Bottom 2");
+    animate(south_table_5, sit);
+    place_actor(south_table_6, north, "South Table Bottom 1");
+    animate(south_table_6, sit);
+    place_actor(south_table_7, east, "South Table Left End");
+    animate(south_table_7, sit);
+
+    //
+    if is_defined(bar_0) {
+        place_actor(bar_0, south, "Top Bar Hang");
+    }
+
+    place_actor(bar_1, west, "Top Bar Seat");
+    animate(bar_1, sit);
+    place_actor(bar_2, west, "Top-Middle Bar Seat");
+    animate(bar_2, sit);
+    place_actor(bar_3, west, "Bottom-Middle Bar Seat");
+    animate(bar_3, sit);
+    place_actor(bar_4, west, "Bottom Bar Seat");
+    animate(bar_4, sit);
+
+    place_actor(bar_5, west, "Bar Stand North");
+    place_actor(bar_6, west, "Bar Stand South");
+    if is_defined(bar_7) {
+        place_actor(bar_7, west, "Bar Stand Middle");
+    }
+
+
+
+    place_actor(bartender, east, "Bartender 3");
+
+    //
+
+    //
+    place_actor(henrietta, east, henrietta_reception_place);
+    place_actor(dozy, west, dozy_reception_place);
+
+
+    if is_defined(reception_extra_0) {
+        place_actor(reception_extra_0, east, "Story Listener 1");
+    }
+
+    if is_defined(reception_extra_1) {
+        place_actor(reception_extra_1, west, "Story Listener 3");
+    }
+
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+
+}
+
+fun reception_chat() {
+    sim {
+        //
+        {
+            wait(1.1);
+            free bark_speech(spouse, celebration);
+            wait(1);
+            free bark_speech(north_table_6, cute_face);
+            wait(1);
+            free bark_speech(north_table_7, heart);
+        }
+        {
+            wait(1);
+            free bark_speech(ari, yum);
+            wait(1);
+            free bark_speech(elsie, celebration);
+            wait(1);
+            free bark_speech(ari, cute_face);
+        }
+        {
+            wait(0.9);
+            free bark_speech(north_table_4, music);
+            wait(1);
+            free bark_speech(north_table_3, exclamation_mark);
+            wait(1);
+            free bark_speech(north_table_2, stars);
+        }
+
+
+        //
+        {
+            wait(0.5);
+            free bark_speech(south_table_2, music);
+            wait(1);
+            free bark_speech(south_table_4, yum);
+            wait(1);
+            free bark_speech(south_table_3, cute_face);
+        }
+        {
+            wait(0.75);
+            free bark_speech(south_table_0, cold_drink);
+            wait(1);
+            free bark_speech(south_table_7, music);
+            wait(1);
+            free bark_speech(south_table_6, celebration);
+        }
+        {
+            wait(1.25);
+            free bark_speech(south_table_2, cute_face);
+            wait(1);
+            free bark_speech(north_table_5, heart);
+            wait(1);
+            free bark_speech(north_table_2, music);
+        }
+
+        //
+        {
+            free bark_speech(bar_2, cold_drink);
+            wait(1);
+            free bark_speech(bar_3, cute_face);
+            wait(1);
+            free bark_speech(bar_1, celebration);
+            wait(1);
+            free bark_speech(bar_4, heart);
+        }
+
+        //
+        if is_defined(reception_extra_0) {
+            wait(1.3);
+            free bark_speech(reception_extra_0, music);
+        }
+
+        if is_defined(reception_extra_1) {
+            wait(2.3);
+            free bark_speech(reception_extra_1, hot_drink);
+        }
+
+        {
+            wait(0.8);
+            free bark(dozy, question_mark);
+            wait(1);
+            free bark(henrietta, hay);
+            wait(1);
+            free bark(dozy, yum);
+        }
+    }
+
+}
+
+
+fun reception_cheer() {
+    free bark_speech(north_table_2, cute_face);
+    free bark_speech(north_table_3, cute_face);
+    free bark_speech(north_table_4, cute_face);
+    free bark_speech(north_table_5, cute_face);
+    //
+    if spouse == "balor" or spouse == "caldarus" or spouse == "hayden" or spouse == "march" or spouse == "seridia" or spouse == "valen" {
+        free bark_speech(north_table_6, cute_face);
+    }
+
+    if spouse != "juniper" {
+        free bark_speech(south_table_0, cute_face);
+    }
+    free bark_speech(south_table_1, cute_face);
+    free bark_speech(south_table_2, cute_face);
+    free bark_speech(south_table_3, cute_face);
+    free bark_speech(south_table_4, cute_face);
+    free bark_speech(south_table_5, cute_face);
+    if spouse != "juniper" {
+        free bark_speech(south_table_6, cute_face);
+        free bark_speech(south_table_7, cute_face);
+    }
+    if is_defined(bar_0) {
+        free bark_speech(bar_0, cute_face);
+    }
+    free bark_speech(bar_1, cute_face);
+    free bark_speech(bar_2, cute_face);
+    free bark_speech(bar_3, cute_face);
+    free bark_speech(bar_4, cute_face);
+    free bark_speech(bar_5, cute_face);
+    free bark_speech(bar_6, cute_face);
+    if is_defined(bar_7) {
+        free bark_speech(bar_7, cute_face);
+    }
+    free bark_speech(bartender, cute_face);
+
+    if is_defined(reception_extra_0) {
+        free bark_speech(reception_extra_0, cute_face);
+    }
+
+    if is_defined(reception_extra_1) {
+        free bark_speech(reception_extra_1, cute_face);
+    }
+
+    free bark(dozy, cute_face);
+    free bark(henrietta, cute_face);
+
+}
+
+fun reception_staggered_cheer() {
+    wait(0.1);
+    free bark_speech(north_table_3, music);
+    free bark_speech(south_table_4, music);
+    free bark_speech(bartender, heart);
+    wait(0.1);
+    free bark(dozy, cute_face);
+    free bark_speech(north_table_5, celebration);
+    free bark_speech(south_table_3, cute_face);
+    //
+    if spouse == "balor" or spouse == "caldarus" or spouse == "hayden" or spouse == "march" or spouse == "seridia" or spouse == "valen" {
+        free bark_speech(north_table_6, cute_face);
+    }
+    wait(0.1);
+    free bark_speech(bar_6, celebration);
+    if spouse != "juniper" {
+        free bark_speech(south_table_0, cute_face);
+    }
+    free bark_speech(south_table_1, cute_face);
+    free bark_speech(bar_5, cute_face);
+    free bark_speech(south_table_2, heart);
+    wait(0.1);
+
+    free bark_speech(north_table_4, cute_face);
+    free bark_speech(bar_2, heart);
+    free bark_speech(bar_3, cute_face);
+    wait(0.1);
+    free bark_speech(south_table_5, cute_face);
+    if spouse != "juniper" {
+        free bark_speech(south_table_6, celebration);
+        free bark_speech(south_table_7, cute_face);
+    }
+    if is_defined(bar_0) {
+        free bark_speech(bar_0, music);
+    }
+    free bark_speech(north_table_2, cute_face);
+    wait(0.1);
+    free bark(henrietta, cute_face);
+    free bark_speech(bar_1, cute_face);
+    wait(0.1);
+    free bark_speech(bar_4, celebration);
+
+    wait(0.1);
+    if is_defined(bar_7) {
+        free bark_speech(bar_7, cute_face);
+    }
+    wait(0.1);
+    if is_defined(reception_extra_0) {
+        free bark_speech(reception_extra_0, cute_face);
+    }
+
+    if is_defined(reception_extra_1) {
+        free bark_speech(reception_extra_1, music);
+    }
+
+}
+
+
+//
+
+camera_out();
+
+//
+wait_one_tick();
+var ari_bed_x = __get_new_day_spawn_x();
+var ari_bed_y = __get_new_day_spawn_y();
+var ari_bed_loc = __get_new_day_location_id();
+set_on_blackboard("block_skip", true);
+goto(town);
+__override_post_process_time(12, 0);
+camera_position(wed_camera_wed_2);
+capture_date_photo();
+wait_one_tick();
+set_on_blackboard("block_skip", false);
+goto(ari_bed_loc);
+place_actor(ari, south, ari_bed_x, ari_bed_y);
+
+set_conversation("Cutscenes/Heart Events/Wedding/wedding_0/wedding_0");
+camera_position(ari);
+camera_follow(ari);
+close_ari_eyes();
+
+fade_in(2);
+wait(0.5);
+play_sound("SoundEffects/SpecialEvents/PoliteKnock");
+wait(0.5);
+open_ari_eyes();
+wait(1);
+free bark_speech(ari, question_mark);
+wait(2);
+
+sim {
+    {
+        wait(0.5);
+        fade_out(2);
+    }
+    {
+        walk_slow(ari, ari_house_exit_x(), ari_house_exit_y());
+    }
+}
+play_sound("SoundEffects/Entrances/DoorWoodIndoorOpen2D");
+wait(0.5);
+scene(farm);
+
+if current_season() == "spring" or current_season() == "fall" {
+    set_weather("special");
+} else {
+    set_weather("calm");
+}
+place_actor(ari, south, wed_ari_farm_entrance);
+place_actor(elsie, north, wed_elsie_farm_entrance);
+place_actor(josephine, north, wed_josephine_farm_entrance);
+camera_position(wed_camera_farm_1);
+request_music_play("Music/Events/Cutscene");
+
+sim {
+	fade_in(2);
+	{
+        wait(0.5);
+        free bark_speech(ari, exclamation_mark);
+        wait(1);
+        free bark_speech(elsie, cute_face);
+        free bark_speech(josephine, cute_face);
+
+	}
+	{
+		wait(3);
+		next_line(); //
+        next_line(); //
+	}
+    {
+        pan_camera(1.5, wed_camera_farm_2);
+    }
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(2);
+sim {
+    {
+        wait(0.5);
+        face(elsie, west);
+    }
+    {
+        next_line(); //
+        next_line(); //
+    }
+}
+sim {
+    {
+        wait(0.5);
+        face(elsie, north);
+    }
+    {
+        next_line(); //
+    }
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, exclamation_mark);
+wait(2);
+sim {
+    {
+        wait(0.5);
+        face(elsie, west);
+    }
+    {
+        next_line(); //
+        next_line(); //
+        next_line(); //
+    }
+}
+sim {
+    {
+        wait(1.25);
+        face(elsie, north);
+    }
+    {
+        next_line(); //
+    }
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+free bark_speech(elsie, cute_face);
+free bark_speech(josephine, cute_face);
+wait(0.5);
+fade_out(2);
+
+wait(0.5);
+scene(inn_east_room);
+place_actor(ari, north, wed_ari_wr_entrance);
+place_actor(elsie, north, wed_elsie_wr_entrance);
+place_actor(josephine, north, wed_josephine_wr_entrance);
+camera_position(wed_camera_wr_1);
+
+sim {
+    {
+        wait(0.25);
+        fade_in(3);
+    }
+    {
+        pan_camera(4, wed_camera_wr_2);
+    }
+    {
+        wait(4);
+        next_line(); //
+    }
+}
+close_textbox();
+free pan_camera(1.5, wed_camera_wr_3);
+wait(1);
+face(ari, south);
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+free bark_speech(josephine, cute_face);
+wait(2);
+sim {
+    {
+        wait(0.5);
+        face(elsie, west);
+    }
+    {
+        next_line(); //
+    }
+}
+sim {
+    {
+        wait(1);
+        face(josephine, east);
+    }
+    {
+        next_line(); //
+    }
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, exclamation_mark);
+wait(0.5);
+face(elsie, north);
+wait(0.5);
+face(josephine, north);
+free bark_speech(elsie, cute_face);
+wait(0.5);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(2);
+sim {
+    {
+        wait(0.5);
+        face(elsie, west);
+    }
+    {
+        next_line(); //
+    }
+}
+sim {
+    {
+        wait(0.5);
+        face(elsie, north);
+    }
+    {
+        next_line(); //
+    }
+}
+close_textbox();
+wait(0.5);
+free bark_speech(elsie, cute_face);
+free bark_speech(josephine, cute_face);
+wait(2);
+checkpoint("customize");
+sim {
+    {
+        walk(josephine, wed_wr_exit);
+        face(josephine, west);
+        remove_actor(josephine);
+    }
+    {
+        walk(elsie, wed_wr_exit);
+        face(elsie, west);
+        remove_actor(elsie);
+    }
+    {
+        wait(2);
+        pan_camera(2, wed_camera_wr_2);
+        wait(2);
+        pan_camera(3, wed_camera_wr_4);
+    }
+    {
+        wait(0.75);
+        face(ari, west);
+        wait(1.25);
+        face(ari, north);
+        wait(2);
+        free bark_speech(ari, cute_face);
+        wait(2.5);
+        walk_slow(ari, wed_ari_wr_racks);
+        face(ari, north);
+        animate(ari, action);
+        wait(0.3);
+        freeze_ari();
+    }
+}
+wedding_cosmetic_popup();
+await_menu_close("popup");
+wait(0.25);
+start_character_customization();
+unfreeze_ari();
+animate(ari, idle);
+wait(1);
+face(ari, south);
+wait(0.5);
+apply_wedding_outfit();
+create_animation(spr_fx_poof1_dirt_once, wed_ari_poof, 0, 0, 0, -500);
+play_sound("SoundEffects/SpecialEvents/ConstructionPoof2D");
+wait(0.25);
+animate(ari, celebrate);
+wait(1.25);
+animate(ari, idle);
+wait(0.5);
+play_sound("SoundEffects/SpecialEvents/PoliteKnock");
+free pan_camera(1.5, wed_camera_wr_5);
+wait(0.5);
+face(ari, west);
+wait(0.5);
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1.5);
+sim {
+    {
+        place_actor(elsie, east, wed_wr_exit);
+        walk_slow(elsie, wed_elsie_wr_entrance);
+        face(elsie, north);
+    }
+    {
+        wait(1.5);
+        walk_slow(ari, wed_ari_wr_forward);
+        face(ari, south);
+    }
+    {
+        wait(0.5);
+        place_actor(josephine, east, wed_wr_exit);
+        walk_slow(josephine, wed_josephine_wr_entrance);
+        face(josephine, north);
+        wait(0.5);
+        free bark_speech(josephine, exclamation_mark);
+    }
+    {
+        pan_camera(2, wed_camera_wr_3);
+    }
+}
+sim {
+    {
+        wait(1.5);
+        face(josephine, east);
+    }
+    {
+        wait(2);
+        face(elsie, west);
+    }
+    {
+        next_line(); //
+        next_line(); //
+    }
+}
+
+close_textbox();
+wait(0.5);
+free bark_speech(ari, blush);
+wait(1);
+face(josephine, north);
+wait(0.5);
+face(elsie, north);
+wait(0.5);
+free bark_speech(elsie, cute_face);
+free bark_speech(josephine, cute_face);
+wait(2);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+face(ari, west);
+wait(1);
+free bark_speech(ari, ellipses);
+wait(1);
+free bark_speech(josephine, question_mark);
+wait(1);
+face(ari, south);
+wait(1);
+sim {
+    {
+        walk_slow(josephine, wed_josephine_wr_forward);
+        face(josephine, east);
+    }
+    {
+        wait(0.5);
+        walk_slow(ari, wed_ari_wr_think);
+        face(ari, west);
+    }
+    {
+        pan_camera(2, wed_camera_wr_6);
+    }
+    {
+        next_line(); //
+    }
+}
+//
+close_textbox();
+if get_response() == 0 {
+    wait(0.5);
+    free bark_speech(josephine, exclamation_mark);
+    wait(1.5);
+} else {
+    wait(0.5);
+    free bark_speech(josephine, cute_face);
+    wait(1.5);
+}
+next_line(); //
+next_line(); //
+sim {
+    {
+        wait(1);
+        face(josephine, west);
+    }
+    {
+        next_line(); //
+    }
+}
+sim {
+    {
+        wait(0.5);
+        face(josephine, east);
+    }
+    {
+        next_line(); //
+        next_line(); //
+        next_line(); //
+    }
+}
+close_textbox();
+wait(0.5);
+walk_slow(josephine, wed_josephine_wr_back);
+face(josephine, east);
+wait(0.5);
+sim {
+    {
+        pan_camera(3, wed_camera_wr_7);
+    }
+    {
+        walk_slow(ari, wed_ari_wr_double_pause);
+        face(ari, west);
+        walk_slow(ari, wed_ari_wr_pause);
+        face(ari, west);
+    }
+    {
+        wait(0.5);
+        face(josephine, south);
+        wait(1);
+        face(josephine, west);
+    }
+    {
+        wait(1);
+        walk_slow(elsie, wed_elsie_wr_pause);
+        face(elsie, west);
+    }
+}
+wait(0.25);
+face(ari, east);
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(2);
+face(ari, west);
+wait(0.5);
+walk(ari, wed_wr_exit);
+sim {
+    {
+        pan_camera(2, wed_camera_wr_8);
+    }
+    {
+        wait(1);
+        face(josephine, south);
+    }
+    {
+        wait(1.5);
+        face(elsie, north);
+    }
+}
+checkpoint("ceremony");
+free bark_speech(elsie, cute_face);
+free bark_speech(josephine, cute_face);
+wait(0.5);
+sim {
+    {
+        fade_out(2);
+    }
+    {
+        wait(1);
+        free walk_slow(josephine, wed_wr_exit);
+    }
+    {
+        wait(1);
+        free walk_slow(elsie, wed_wr_exit);
+    }
+    {
+        wait(1);
+        pan_camera(2, wed_camera_wr_9);
+    }
+    {
+        wait(0.5);
+        request_music_stop(2);
+    }
+}
+
+//
+scene(town);
+__override_post_process_time(12, 0);
+set_on_blackboard("force_lights_on", true);
+enable_simple_pathfinding();
+camera_position(wed_camera_wed_1);
+wedding_setup();
+request_music_play("Music/Events/Joined Light"); //
+
+sim {
+    {
+        wait(0.5);
+        fade_in(4);
+    }
+    {
+        pan_camera(6, wed_camera_wed_2);
+    }
+    {
+        wait(0.4);
+        sim {
+            {
+                //
+                sim {
+                    walk(ari, ari_wed_altar);
+                    set_move_speed(ari, 0.4);
+                }
+                face(ari, north);
+            }
+            {
+                //
+                sim {
+                    walk(spouse, spouse_wed_altar);
+                    set_move_speed(spouse, 0.4);
+                }
+                face(spouse, north);
+            }
+        }
+    }
+}
+
+
+wait(1);
+face(ari, west);
+face(spouse, east);
+
+//
+
+
+if spouse == "adeline" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_adeline/wedding_adeline_0");
+
+    //
+    wait(0.75);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1.25);
+    next_line(); //
+    sim {
+        {
+            wait(1);
+            face(spouse, south);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    //
+    if get_response() == 0 {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, exclamation_mark);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+            }
+        }
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        animate(spouse, action);
+        wait(0.3);
+        anim_speed(spouse, 0);
+        wait(0.25);
+        animate(ari, action);
+        wait(0.3);
+        freeze_ari();
+        wait(1);
+    } else {
+        close_textbox();
+        wait(0.5);
+        animate(ari, action);
+        wait(0.3);
+        freeze_ari();
+        wait(0.25);
+        free bark_speech(spouse, exclamation_mark);
+        wait(1);
+        animate(spouse, action);
+        wait(0.3);
+        anim_speed(spouse, 0);
+        wait(0.5);
+        next_line(); //
+        next_line(); //
+    }
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+
+    sim {
+        {
+            wait(0.75);
+            unfreeze_ari();
+            anim_speed(spouse, 1);
+            animate(ari, idle);
+            animate(spouse, idle);
+            wait(0.5);
+            face(spouse, north);
+            face(ari, north);
+        }
+        {
+            pan_camera(1.5, wed_camera_wed_3);
+        }
+        {
+            wait(0.5);
+            next_line(); //
+        }
+    }
+
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_2);
+        }
+        {
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+        }
+    }
+    wait(1);
+
+    //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+
+    //
+    sim {
+        {
+            wait(0.5);
+            sim {
+                walk(ari, ari_wed_candle);
+                set_move_speed(ari, 0.4);
+            }
+            face(ari, north);
+        }
+        {
+            wait(0.5);
+            sim {
+                walk(spouse, spouse_wed_candle);
+                set_move_speed(spouse, 0.4);
+            }
+            face(spouse, north);
+        }
+        {
+            pan_camera(2, wed_camera_wed_4);
+        }
+    }
+    wait(0.5);
+    animate(ari, action);
+    animate(spouse, action);
+    wait(0.5);
+    destroy_prop(ari_candle_unlit);
+    destroy_prop(spouse_candle_unlit);
+    setup_prop(ari_candle_lit);
+    setup_prop(spouse_candle_lit);
+    animate(ari, idle);
+    animate(spouse, idle);
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    sim {
+        {
+            wait(0.5);
+            face(ari, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            face(ari, north);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            destroy_prop(ari_candle_lit);
+            animate(ari, idle);
+            wait(0.5);
+            face(ari, west);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            sim {
+                destroy_prop(central_candle_unlit);
+                setup_prop(central_candle_lit);
+                create_animation(spr_npc_effect_heal, wed_candle_poof, 0, 0, 0, -5000);
+                play_sound("SoundEffects/SpecialEvents/WeddingCandleLight");
+            }
+            animate(ari, idle);
+        }
+        {
+            face(spouse, north);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            destroy_prop(spouse_candle_lit);
+            animate(spouse, idle);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            //
+            animate(spouse, idle);
+        }
+    }
+    wait(1.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    pan_camera(2, wed_camera_wed_5);
+    wait(0.25);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    //
+    checkpoint("kiss");
+    if get_response() == 0 {
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, heart);
+        wait(1);
+        next_line(); //
+    } else {
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, heart);
+        wait(1);
+        next_line(); //
+        next_line(); //
+    }
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_6);
+        }
+        {
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    wedding_party_cheer();
+    wait(2);
+    sim {
+        {
+            face(ari, south);
+            face(spouse, south);
+        }
+        {
+            pan_camera(3, wed_camera_wed_7);
+        }
+        {
+            wait(1.5);
+            wedding_guests_cheer();
+        }
+    }
+    wait(1);
+    pan_camera(3, wed_camera_wed_5);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(1);
+    fade_out(2);
+
+} else if spouse == "balor" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_balor/wedding_balor_0");
+
+    //
+    wait(1);
+    face(spouse, south);
+    wait(0.5);
+    free bark_speech(balor, exclamation_mark);
+    wait(1.25);
+    next_line(); //
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+            next_line(); //
+            next_line(); //
+        }
+    }
+
+    //
+    if get_response() == 0 {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, cute_face);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+                next_line(); //
+            }
+        }
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, cute_face);
+        wait(0.5);
+        free bark_speech(ari, cute_face);
+        wait(2);
+    } else {
+        close_textbox();
+        sim {
+
+            {
+                wait(0.75);
+                free bark_speech(spouse, exclamation_mark);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+                next_line(); //
+                next_line(); //
+            }
+        }
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, cute_face);
+        wait(0.5);
+        free bark_speech(ari, cute_face);
+        wait(2);
+    }
+
+    sim {
+        {
+            wait(0.5);
+            face(ari, north);
+        }
+        {
+            wait(1);
+            face(spouse, north);
+        }
+        {
+            pan_camera(1.5, wed_camera_wed_3);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_2);
+        }
+        {
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+        }
+    }
+    wait(1);
+
+    //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+
+    //
+    sim {
+        {
+            wait(0.5);
+            sim {
+                walk(ari, ari_wed_candle);
+                set_move_speed(ari, 0.4);
+            }
+            face(ari, north);
+        }
+        {
+            wait(0.5);
+            sim {
+                walk(spouse, spouse_wed_candle);
+                set_move_speed(spouse, 0.4);
+            }
+            face(spouse, north);
+        }
+        {
+            pan_camera(2, wed_camera_wed_4);
+        }
+    }
+    wait(0.5);
+    animate(ari, action);
+    animate(spouse, action);
+    wait(0.5);
+    destroy_prop(ari_candle_unlit);
+    destroy_prop(spouse_candle_unlit);
+    setup_prop(ari_candle_lit);
+    setup_prop(spouse_candle_lit);
+    animate(ari, idle);
+    animate(spouse, idle);
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    sim {
+        {
+            wait(0.5);
+            face(ari, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(balor, heart);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            face(ari, north);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            destroy_prop(ari_candle_lit);
+            animate(ari, idle);
+            wait(0.5);
+            face(ari, west);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            sim {
+                destroy_prop(central_candle_unlit);
+                setup_prop(central_candle_lit);
+                create_animation(spr_npc_effect_heal, wed_candle_poof, 0, 0, 0, -5000);
+                play_sound("SoundEffects/SpecialEvents/WeddingCandleLight");
+            }
+            animate(ari, idle);
+        }
+        {
+            face(spouse, north);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            destroy_prop(spouse_candle_lit);
+            animate(spouse, idle);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            //
+            animate(spouse, idle);
+        }
+    }
+    wait(1.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    pan_camera(2, wed_camera_wed_5);
+    wait(0.25);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    //
+    checkpoint("kiss");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(balor, heart);
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_6);
+        }
+        {
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    wedding_party_cheer();
+    wait(2);
+    sim {
+        {
+            face(ari, south);
+            face(spouse, south);
+        }
+        {
+            pan_camera(3, wed_camera_wed_7);
+        }
+        {
+            wait(1.5);
+            wedding_guests_cheer();
+        }
+    }
+    wait(1);
+    pan_camera(3, wed_camera_wed_5);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(1);
+    fade_out(2);
+
+} else if spouse == "caldarus" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_caldarus/wedding_caldarus_0");
+
+    //
+    wait(0.75);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1.25);
+    next_line(); //
+    next_line(); //
+
+    //
+    if get_response() == 0 {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, cute_face);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+                next_line(); //
+                next_line(); //
+            }
+        }
+        sim {
+            {
+                wait(1);
+                face(spouse, south);
+            }
+            {
+                next_line(); //
+            }
+        }
+        sim {
+            {
+                wait(0.5);
+                face(spouse, east);
+            }
+            {
+                next_line(); //
+                next_line(); //
+            }
+        }
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, heart);
+        wait(0.5);
+        free bark_speech(spouse, heart);
+        wait(2);
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, cute_face);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+                next_line(); //
+                next_line(); //
+                next_line(); //
+            }
+        }
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, heart);
+        wait(0.5);
+        free bark_speech(ari, blush);
+        wait(2);
+    }
+
+    sim {
+        {
+            wait(0.5);
+            face(ari, north);
+        }
+        {
+            wait(1);
+            face(spouse, north);
+        }
+        {
+            pan_camera(1.5, wed_camera_wed_3);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_2);
+        }
+        {
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+        }
+    }
+    wait(1);
+
+    //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+
+    //
+    sim {
+        {
+            wait(0.5);
+            sim {
+                walk(ari, ari_wed_candle);
+                set_move_speed(ari, 0.4);
+            }
+            face(ari, north);
+        }
+        {
+            wait(0.5);
+            sim {
+                walk(spouse, spouse_wed_candle);
+                set_move_speed(spouse, 0.4);
+            }
+            face(spouse, north);
+        }
+        {
+            pan_camera(2, wed_camera_wed_4);
+        }
+    }
+    wait(0.5);
+    animate(ari, action);
+    animate(spouse, action);
+    wait(0.5);
+    destroy_prop(ari_candle_unlit);
+    destroy_prop(spouse_candle_unlit);
+    setup_prop(ari_candle_lit);
+    setup_prop(spouse_candle_lit);
+    animate(ari, idle);
+    animate(spouse, idle);
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    sim {
+        {
+            wait(0.5);
+            face(ari, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            face(ari, north);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            destroy_prop(ari_candle_lit);
+            animate(ari, idle);
+            wait(0.5);
+            face(ari, west);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            sim {
+                destroy_prop(central_candle_unlit);
+                setup_prop(central_candle_lit);
+                create_animation(spr_npc_effect_heal, wed_candle_poof, 0, 0, 0, -5000);
+                play_sound("SoundEffects/SpecialEvents/WeddingCandleLight");
+            }
+            animate(ari, idle);
+        }
+        {
+            face(spouse, north);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            destroy_prop(spouse_candle_lit);
+            animate(spouse, idle);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            //
+            animate(spouse, idle);
+        }
+    }
+    wait(1.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    pan_camera(2, wed_camera_wed_5);
+    wait(0.25);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    //
+    checkpoint("kiss");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_6);
+        }
+        {
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    wedding_party_cheer();
+    wait(2);
+    sim {
+        {
+            face(ari, south);
+            face(spouse, south);
+        }
+        {
+            pan_camera(3, wed_camera_wed_7);
+        }
+        {
+            wait(1.5);
+            wedding_guests_cheer();
+        }
+    }
+    wait(1);
+    pan_camera(3, wed_camera_wed_5);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(1);
+    fade_out(2);
+
+} else if spouse == "celine" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_celine/wedding_celine_0");
+
+    //
+    wait(0.75);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1.25);
+    next_line(); //
+    next_line(); //
+
+    //
+    close_textbox();
+    sim {
+        {
+            wait(0.75);
+            free bark_speech(spouse, exclamation_mark);
+        }
+        {
+            wait(1.5);
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(1.5);
+            face(spouse, south);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(0.5);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(ari, north);
+        }
+        {
+            wait(1);
+            face(spouse, north);
+        }
+        {
+            pan_camera(1.5, wed_camera_wed_3);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_2);
+        }
+        {
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+        }
+    }
+    wait(1);
+
+    //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+
+    //
+    sim {
+        {
+            wait(0.5);
+            sim {
+                walk(ari, ari_wed_candle);
+                set_move_speed(ari, 0.4);
+            }
+            face(ari, north);
+        }
+        {
+            wait(0.5);
+            sim {
+                walk(spouse, spouse_wed_candle);
+                set_move_speed(spouse, 0.4);
+            }
+            face(spouse, north);
+        }
+        {
+            pan_camera(2, wed_camera_wed_4);
+        }
+    }
+    wait(0.5);
+    animate(ari, action);
+    animate(spouse, action);
+    wait(0.5);
+    destroy_prop(ari_candle_unlit);
+    destroy_prop(spouse_candle_unlit);
+    setup_prop(ari_candle_lit);
+    setup_prop(spouse_candle_lit);
+    animate(ari, idle);
+    animate(spouse, idle);
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    sim {
+        {
+            wait(0.5);
+            face(ari, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            face(ari, north);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            destroy_prop(ari_candle_lit);
+            animate(ari, idle);
+            wait(0.5);
+            face(ari, west);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            sim {
+                destroy_prop(central_candle_unlit);
+                setup_prop(central_candle_lit);
+                create_animation(spr_npc_effect_heal, wed_candle_poof, 0, 0, 0, -5000);
+                play_sound("SoundEffects/SpecialEvents/WeddingCandleLight");
+            }
+            animate(ari, idle);
+        }
+        {
+            face(spouse, north);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            destroy_prop(spouse_candle_lit);
+            animate(spouse, idle);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            //
+            animate(spouse, idle);
+        }
+    }
+    wait(1.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    pan_camera(2, wed_camera_wed_5);
+    wait(0.25);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    //
+    checkpoint("kiss");
+    if get_response() == 0 {
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, heart);
+        wait(1);
+        next_line(); //
+    } else {
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, heart);
+        wait(1);
+        next_line(); //
+        next_line(); //
+    }
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_6);
+        }
+        {
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    wedding_party_cheer();
+    wait(2);
+    sim {
+        {
+            face(ari, south);
+            face(spouse, south);
+        }
+        {
+            pan_camera(3, wed_camera_wed_7);
+        }
+        {
+            wait(1.5);
+            wedding_guests_cheer();
+        }
+    }
+    wait(1);
+    pan_camera(3, wed_camera_wed_5);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(1);
+    fade_out(2);
+
+} else if spouse == "eiland" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_eiland/wedding_eiland_0");
+
+    //
+    wait(0.75);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1.25);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    //
+    if get_response() == 0 {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, cute_face);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+                next_line(); //
+            }
+        }
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, exclamation_mark);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+            }
+        }
+        sim {
+            {
+                wait(0.75);
+                face(spouse, south);
+            }
+            {
+                next_line(); //
+            }
+        }
+        sim {
+            {
+                wait(0.75);
+                face(spouse, east);
+            }
+            {
+                next_line(); //
+            }
+        }
+    }
+
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(0.5);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(ari, north);
+        }
+        {
+            wait(1);
+            face(spouse, north);
+        }
+        {
+            pan_camera(1.5, wed_camera_wed_3);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_2);
+        }
+        {
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+        }
+    }
+    wait(1);
+
+    //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+
+    //
+    sim {
+        {
+            wait(0.5);
+            sim {
+                walk(ari, ari_wed_candle);
+                set_move_speed(ari, 0.4);
+            }
+            face(ari, north);
+        }
+        {
+            wait(0.5);
+            sim {
+                walk(spouse, spouse_wed_candle);
+                set_move_speed(spouse, 0.4);
+            }
+            face(spouse, north);
+        }
+        {
+            pan_camera(2, wed_camera_wed_4);
+        }
+    }
+    wait(0.5);
+    animate(ari, action);
+    animate(spouse, action);
+    wait(0.5);
+    destroy_prop(ari_candle_unlit);
+    destroy_prop(spouse_candle_unlit);
+    setup_prop(ari_candle_lit);
+    setup_prop(spouse_candle_lit);
+    animate(ari, idle);
+    animate(spouse, idle);
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    sim {
+        {
+            wait(0.5);
+            face(ari, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            face(ari, north);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            destroy_prop(ari_candle_lit);
+            animate(ari, idle);
+            wait(0.5);
+            face(ari, west);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            sim {
+                destroy_prop(central_candle_unlit);
+                setup_prop(central_candle_lit);
+                create_animation(spr_npc_effect_heal, wed_candle_poof, 0, 0, 0, -5000);
+                play_sound("SoundEffects/SpecialEvents/WeddingCandleLight");
+            }
+            animate(ari, idle);
+        }
+        {
+            face(spouse, north);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            destroy_prop(spouse_candle_lit);
+            animate(spouse, idle);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            //
+            animate(spouse, idle);
+        }
+    }
+    wait(1.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    pan_camera(2, wed_camera_wed_5);
+    wait(0.25);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    //
+    checkpoint("kiss");
+    if get_response() == 0 {
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, blush);
+        wait(1);
+        next_line(); //
+    } else {
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, blush);
+        wait(1);
+        next_line(); //
+        next_line(); //
+    }
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_6);
+        }
+        {
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    wedding_party_cheer();
+    wait(2);
+    sim {
+        {
+            face(ari, south);
+            face(spouse, south);
+        }
+        {
+            pan_camera(3, wed_camera_wed_7);
+        }
+        {
+            wait(1.5);
+            wedding_guests_cheer();
+        }
+    }
+    wait(1);
+    pan_camera(3, wed_camera_wed_5);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(1);
+    fade_out(2);
+
+} else if spouse == "hayden" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_hayden/wedding_hayden_0");
+
+    //
+    wait(0.75);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1.25);
+    next_line(); //
+    next_line(); //
+
+    //
+    close_textbox();
+    sim {
+        {
+            wait(0.75);
+            free bark_speech(spouse, blush);
+        }
+        {
+            wait(1.5);
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.75);
+            face(spouse, south);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.75);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, cute_face);
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(ari, north);
+        }
+        {
+            wait(1);
+            face(spouse, north);
+        }
+        {
+            pan_camera(1.5, wed_camera_wed_3);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_2);
+        }
+        {
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+        }
+    }
+    wait(1);
+
+    //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+
+    //
+    sim {
+        {
+            wait(0.5);
+            sim {
+                walk(ari, ari_wed_candle);
+                set_move_speed(ari, 0.4);
+            }
+            face(ari, north);
+        }
+        {
+            wait(0.5);
+            sim {
+                walk(spouse, spouse_wed_candle);
+                set_move_speed(spouse, 0.4);
+            }
+            face(spouse, north);
+        }
+        {
+            pan_camera(2, wed_camera_wed_4);
+        }
+    }
+    wait(0.5);
+    animate(ari, action);
+    animate(spouse, action);
+    wait(0.5);
+    destroy_prop(ari_candle_unlit);
+    destroy_prop(spouse_candle_unlit);
+    setup_prop(ari_candle_lit);
+    setup_prop(spouse_candle_lit);
+    animate(ari, idle);
+    animate(spouse, idle);
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    sim {
+        {
+            wait(0.5);
+            face(ari, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            face(ari, north);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            destroy_prop(ari_candle_lit);
+            animate(ari, idle);
+            wait(0.5);
+            face(ari, west);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            sim {
+                destroy_prop(central_candle_unlit);
+                setup_prop(central_candle_lit);
+                create_animation(spr_npc_effect_heal, wed_candle_poof, 0, 0, 0, -5000);
+                play_sound("SoundEffects/SpecialEvents/WeddingCandleLight");
+            }
+            animate(ari, idle);
+        }
+        {
+            face(spouse, north);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            destroy_prop(spouse_candle_lit);
+            animate(spouse, idle);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            //
+            animate(spouse, idle);
+        }
+    }
+    wait(1.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    pan_camera(2, wed_camera_wed_5);
+    wait(0.25);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    //
+    checkpoint("kiss");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+    next_line(); //
+
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_6);
+        }
+        {
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    wedding_party_cheer();
+    wait(2);
+    sim {
+        {
+            face(ari, south);
+            face(spouse, south);
+        }
+        {
+            pan_camera(3, wed_camera_wed_7);
+        }
+        {
+            wait(1.5);
+            wedding_guests_cheer();
+        }
+    }
+    wait(1);
+    pan_camera(3, wed_camera_wed_5);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(1);
+    fade_out(2);
+
+} else if spouse == "juniper" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_juniper/wedding_juniper_0");
+
+    //
+    wait(0.75);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1.25);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    next_line(); //
+
+    //
+    if get_response() == 0 {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, cute_face);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+                next_line(); //
+            }
+        }
+        sim {
+            {
+                wait(0.75);
+                face(spouse, south);
+            }
+            {
+                next_line(); //
+            }
+        }
+        sim {
+            {
+                wait(0.75);
+                face(spouse, east);
+            }
+            {
+                next_line(); //
+                next_line(); //
+            }
+        }
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, heart);
+        wait(0.5);
+        free bark_speech(spouse, blush);
+        wait(2);
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, blush);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+                next_line(); //
+                next_line(); //
+                next_line(); //
+            }
+        }
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, heart);
+        wait(0.5);
+        free bark_speech(ari, blush);
+        wait(2);
+    }
+
+
+    sim {
+        {
+            wait(0.5);
+            face(ari, north);
+        }
+        {
+            wait(1);
+            face(spouse, north);
+        }
+        {
+            pan_camera(1.5, wed_camera_wed_3);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_2);
+        }
+        {
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+        }
+    }
+    wait(1);
+
+    //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+
+    //
+    sim {
+        {
+            wait(0.5);
+            sim {
+                walk(ari, ari_wed_candle);
+                set_move_speed(ari, 0.4);
+            }
+            face(ari, north);
+        }
+        {
+            wait(0.5);
+            sim {
+                walk(spouse, spouse_wed_candle);
+                set_move_speed(spouse, 0.4);
+            }
+            face(spouse, north);
+        }
+        {
+            pan_camera(2, wed_camera_wed_4);
+        }
+    }
+    wait(0.5);
+    animate(ari, action);
+    animate(spouse, action);
+    wait(0.5);
+    destroy_prop(ari_candle_unlit);
+    destroy_prop(spouse_candle_unlit);
+    setup_prop(ari_candle_lit);
+    setup_prop(spouse_candle_lit);
+    animate(ari, idle);
+    animate(spouse, idle);
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    sim {
+        {
+            wait(0.5);
+            face(ari, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            face(ari, north);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            destroy_prop(ari_candle_lit);
+            animate(ari, idle);
+            wait(0.5);
+            face(ari, west);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            sim {
+                destroy_prop(central_candle_unlit);
+                setup_prop(central_candle_lit);
+                create_animation(spr_npc_effect_heal, wed_candle_poof, 0, 0, 0, -5000);
+                play_sound("SoundEffects/SpecialEvents/WeddingCandleLight");
+            }
+            animate(ari, idle);
+        }
+        {
+            face(spouse, north);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            destroy_prop(spouse_candle_lit);
+            animate(spouse, idle);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            //
+            animate(spouse, idle);
+        }
+    }
+    wait(1.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    pan_camera(2, wed_camera_wed_5);
+    wait(0.25);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    //
+    checkpoint("kiss");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_6);
+        }
+        {
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    wedding_party_cheer();
+    wait(2);
+    sim {
+        {
+            face(ari, south);
+            face(spouse, south);
+        }
+        {
+            pan_camera(3, wed_camera_wed_7);
+        }
+        {
+            wait(1.5);
+            wedding_guests_cheer();
+        }
+    }
+    wait(1);
+    pan_camera(3, wed_camera_wed_5);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(1);
+    fade_out(2);
+
+} else if spouse == "march" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_march/wedding_march_0");
+
+    //
+    wait(0.75);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1.25);
+    next_line(); //
+    next_line(); //
+
+    //
+
+    if get_response() == 0 {
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, exclamation_mark);
+        wait(1);
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, blush);
+        sim {
+            {
+                wait(0.5);
+                face(spouse, south);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+                close_textbox();
+            }
+        }
+        sim {
+            {
+                wait(0.5);
+                face(spouse, east);
+            }
+            {
+                wait(1);
+                next_line(); //
+                next_line(); //
+                next_line(); //
+            }
+        }
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, blush);
+        wait(2);
+    } else {
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, blush);
+        wait(0.5);
+        face(spouse, west);
+        wait(1);
+        sim {
+            {
+                wait(0.5);
+                face(spouse, east);
+            }
+            {
+                next_line(); //
+                next_line(); //
+                next_line(); //
+                next_line(); //
+            }
+        }
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, blush);
+        wait(2);
+    }
+    sim {
+        {
+            wait(0.75);
+            face(spouse, north);
+            face(ari, north);
+        }
+        {
+            pan_camera(1.5, wed_camera_wed_3);
+        }
+        {
+            next_line(); //
+        }
+    }
+
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_2);
+        }
+        {
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+        }
+    }
+    wait(1);
+
+    //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+
+    //
+    sim {
+        {
+            wait(0.5);
+            sim {
+                walk(ari, ari_wed_candle);
+                set_move_speed(ari, 0.4);
+            }
+            face(ari, north);
+        }
+        {
+            wait(0.5);
+            sim {
+                walk(spouse, spouse_wed_candle);
+                set_move_speed(spouse, 0.4);
+            }
+            face(spouse, north);
+        }
+        {
+            pan_camera(2, wed_camera_wed_4);
+        }
+    }
+    wait(0.5);
+    animate(ari, action);
+    animate(spouse, action);
+    wait(0.5);
+    destroy_prop(ari_candle_unlit);
+    destroy_prop(spouse_candle_unlit);
+    setup_prop(ari_candle_lit);
+    setup_prop(spouse_candle_lit);
+    animate(ari, idle);
+    animate(spouse, idle);
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    sim {
+        {
+            wait(0.5);
+            face(ari, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+
+    //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            face(ari, north);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            destroy_prop(ari_candle_lit);
+            animate(ari, idle);
+            wait(0.5);
+            face(ari, west);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            sim {
+                destroy_prop(central_candle_unlit);
+                setup_prop(central_candle_lit);
+                create_animation(spr_npc_effect_heal, wed_candle_poof, 0, 0, 0, -5000);
+                play_sound("SoundEffects/SpecialEvents/WeddingCandleLight");
+            }
+            animate(ari, idle);
+        }
+        {
+            face(spouse, north);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            destroy_prop(spouse_candle_lit);
+            animate(spouse, idle);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            //
+            animate(spouse, idle);
+        }
+    }
+    wait(1.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    pan_camera(2, wed_camera_wed_5);
+    wait(0.25);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    //
+    checkpoint("kiss");
+    if get_response() == 0 {
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, blush);
+        wait(1);
+        next_line(); //
+    } else {
+        close_textbox();
+        wait(0.5);
+        free bark_speech(spouse, blush);
+        wait(1);
+        next_line(); //
+        next_line(); //
+    }
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_6);
+        }
+        {
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    wedding_party_cheer();
+    wait(2);
+    sim {
+        {
+            face(ari, south);
+            face(spouse, south);
+        }
+        {
+            pan_camera(3, wed_camera_wed_7);
+        }
+        {
+            wait(1.5);
+            wedding_guests_cheer();
+        }
+    }
+    wait(1);
+    pan_camera(3, wed_camera_wed_5);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(1);
+    fade_out(2);
+
+} else if spouse == "reina" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_reina/wedding_reina_0");
+
+    //
+    wait(0.75);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    free bark_speech(spouse, cute_face);
+    wait(1.25);
+    next_line(); //
+    next_line(); //
+
+    sim {
+        {
+            wait(0.75);
+            face(spouse, south);
+            wait(0.75);
+            face(spouse, west);
+            wait(0.75);
+            face(spouse, north);
+            wait(0.75);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+
+    //
+    close_textbox();
+    sim {
+        {
+            wait(0.75);
+            free bark_speech(spouse, blush);
+        }
+        {
+            wait(1.5);
+            next_line(); //
+            next_line(); //
+        }
+    }
+
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(0.5);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(ari, north);
+        }
+        {
+            wait(1);
+            face(spouse, north);
+        }
+        {
+            pan_camera(1.5, wed_camera_wed_3);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_2);
+        }
+        {
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+        }
+    }
+    wait(1);
+
+    //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+
+    //
+    sim {
+        {
+            wait(0.5);
+            sim {
+                walk(ari, ari_wed_candle);
+                set_move_speed(ari, 0.4);
+            }
+            face(ari, north);
+        }
+        {
+            wait(0.5);
+            sim {
+                walk(spouse, spouse_wed_candle);
+                set_move_speed(spouse, 0.4);
+            }
+            face(spouse, north);
+        }
+        {
+            pan_camera(2, wed_camera_wed_4);
+        }
+    }
+    wait(0.5);
+    animate(ari, action);
+    animate(spouse, action);
+    wait(0.5);
+    destroy_prop(ari_candle_unlit);
+    destroy_prop(spouse_candle_unlit);
+    setup_prop(ari_candle_lit);
+    setup_prop(spouse_candle_lit);
+    animate(ari, idle);
+    animate(spouse, idle);
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    sim {
+        {
+            wait(0.5);
+            face(ari, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            face(ari, north);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            destroy_prop(ari_candle_lit);
+            animate(ari, idle);
+            wait(0.5);
+            face(ari, west);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            sim {
+                destroy_prop(central_candle_unlit);
+                setup_prop(central_candle_lit);
+                create_animation(spr_npc_effect_heal, wed_candle_poof, 0, 0, 0, -5000);
+                play_sound("SoundEffects/SpecialEvents/WeddingCandleLight");
+            }
+            animate(ari, idle);
+        }
+        {
+            face(spouse, north);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            destroy_prop(spouse_candle_lit);
+            animate(spouse, idle);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            //
+            animate(spouse, idle);
+        }
+    }
+    wait(1.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    pan_camera(2, wed_camera_wed_5);
+    wait(0.25);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    //
+    checkpoint("kiss");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_6);
+        }
+        {
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    wedding_party_cheer();
+    wait(2);
+    sim {
+        {
+            face(ari, south);
+            face(spouse, south);
+        }
+        {
+            pan_camera(3, wed_camera_wed_7);
+        }
+        {
+            wait(1.5);
+            wedding_guests_cheer();
+        }
+    }
+    wait(1);
+    pan_camera(3, wed_camera_wed_5);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(1);
+    fade_out(2);
+
+} else if spouse == "ryis" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_ryis/wedding_ryis_0");
+
+    //
+    wait(0.75);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1.25);
+    next_line(); //
+    next_line(); //
+
+    //
+    if get_response() == 0 {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, blush);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+            }
+        }
+        sim {
+            {
+                wait(0.75);
+                face(spouse, south);
+            }
+            {
+                next_line(); //
+            }
+        }
+        sim {
+            {
+                wait(0.75);
+                face(spouse, east);
+            }
+            {
+                next_line(); //
+                next_line(); //
+                next_line(); //
+            }
+        }
+    } else {
+        next_line(); //
+        close_textbox();
+        wait(2);
+        next_line(); //
+        next_line(); //
+        next_line(); //
+    }
+
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(0.5);
+    free bark_speech(ari, blush);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(ari, north);
+        }
+        {
+            wait(1);
+            face(spouse, north);
+        }
+        {
+            pan_camera(1.5, wed_camera_wed_3);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_2);
+        }
+        {
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+        }
+    }
+    wait(1);
+
+    //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+
+    //
+    sim {
+        {
+            wait(0.5);
+            sim {
+                walk(ari, ari_wed_candle);
+                set_move_speed(ari, 0.4);
+            }
+            face(ari, north);
+        }
+        {
+            wait(0.5);
+            sim {
+                walk(spouse, spouse_wed_candle);
+                set_move_speed(spouse, 0.4);
+            }
+            face(spouse, north);
+        }
+        {
+            pan_camera(2, wed_camera_wed_4);
+        }
+    }
+    wait(0.5);
+    animate(ari, action);
+    animate(spouse, action);
+    wait(0.5);
+    destroy_prop(ari_candle_unlit);
+    destroy_prop(spouse_candle_unlit);
+    setup_prop(ari_candle_lit);
+    setup_prop(spouse_candle_lit);
+    animate(ari, idle);
+    animate(spouse, idle);
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    sim {
+        {
+            wait(0.5);
+            face(ari, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            face(ari, north);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            destroy_prop(ari_candle_lit);
+            animate(ari, idle);
+            wait(0.5);
+            face(ari, west);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            sim {
+                destroy_prop(central_candle_unlit);
+                setup_prop(central_candle_lit);
+                create_animation(spr_npc_effect_heal, wed_candle_poof, 0, 0, 0, -5000);
+                play_sound("SoundEffects/SpecialEvents/WeddingCandleLight");
+            }
+            animate(ari, idle);
+        }
+        {
+            face(spouse, north);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            destroy_prop(spouse_candle_lit);
+            animate(spouse, idle);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            //
+            animate(spouse, idle);
+        }
+    }
+    wait(1.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    pan_camera(2, wed_camera_wed_5);
+    wait(0.25);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    //
+    checkpoint("kiss");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_6);
+        }
+        {
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    wedding_party_cheer();
+    wait(2);
+    sim {
+        {
+            face(ari, south);
+            face(spouse, south);
+        }
+        {
+            pan_camera(3, wed_camera_wed_7);
+        }
+        {
+            wait(1.5);
+            wedding_guests_cheer();
+        }
+    }
+    wait(1);
+    pan_camera(3, wed_camera_wed_5);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(1);
+    fade_out(2);
+
+
+} else if spouse == "seridia" {
+
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_seridia/wedding_seridia_0");
+
+    //
+    wait(0.75);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1.25);
+    next_line(); //
+    next_line(); //
+
+    //
+    if get_response() == 0 {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, cute_face);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+                next_line(); //
+                next_line(); //
+                next_line(); //
+                next_line(); //
+            }
+        }
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, exclamation_mark);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+            }
+        }
+        sim {
+            {
+                wait(0.5);
+                face(spouse, west);
+            }
+            {
+                next_line(); //
+            }
+        }
+        sim {
+            {
+                wait(1);
+                face(spouse, east);
+            }
+            {
+                next_line(); //
+                next_line(); //
+            }
+        }
+    }
+
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(ari, north);
+        }
+        {
+            wait(1);
+            face(spouse, north);
+        }
+        {
+            pan_camera(1.5, wed_camera_wed_3);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_2);
+        }
+        {
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+        }
+    }
+    wait(1);
+
+    //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+
+    //
+    sim {
+        {
+            wait(0.5);
+            sim {
+                walk(ari, ari_wed_candle);
+                set_move_speed(ari, 0.4);
+            }
+            face(ari, north);
+        }
+        {
+            wait(0.5);
+            sim {
+                walk(spouse, spouse_wed_candle);
+                set_move_speed(spouse, 0.4);
+            }
+            face(spouse, north);
+        }
+        {
+            pan_camera(2, wed_camera_wed_4);
+        }
+    }
+    wait(0.5);
+    animate(ari, action);
+    animate(spouse, action);
+    wait(0.5);
+    destroy_prop(ari_candle_unlit);
+    destroy_prop(spouse_candle_unlit);
+    setup_prop(ari_candle_lit);
+    setup_prop(spouse_candle_lit);
+    animate(ari, idle);
+    animate(spouse, idle);
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    sim {
+        {
+            wait(0.5);
+            face(ari, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            face(ari, north);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            destroy_prop(ari_candle_lit);
+            animate(ari, idle);
+            wait(0.5);
+            face(ari, west);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            sim {
+                destroy_prop(central_candle_unlit);
+                setup_prop(central_candle_lit);
+                create_animation(spr_npc_effect_heal, wed_candle_poof, 0, 0, 0, -5000);
+                play_sound("SoundEffects/SpecialEvents/WeddingCandleLight");
+            }
+            animate(ari, idle);
+        }
+        {
+            face(spouse, north);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            destroy_prop(spouse_candle_lit);
+            animate(spouse, idle);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            //
+            animate(spouse, idle);
+        }
+    }
+    wait(1.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    pan_camera(2, wed_camera_wed_5);
+    wait(0.25);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    //
+    checkpoint("kiss");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_6);
+        }
+        {
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    wedding_party_cheer();
+    wait(2);
+    sim {
+        {
+            face(ari, south);
+            face(spouse, south);
+        }
+        {
+            pan_camera(3, wed_camera_wed_7);
+        }
+        {
+            wait(1.5);
+            wedding_guests_cheer();
+        }
+    }
+    wait(1);
+    pan_camera(3, wed_camera_wed_5);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(1);
+    fade_out(2);
+} else {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_valen/wedding_valen_0");
+
+    //
+    wait(0.75);
+    free bark_speech(spouse, cute_face);
+    wait(1.25);
+    next_line(); //
+    next_line(); //
+
+    //
+    if get_response() == 0 {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, cute_face);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+                next_line(); //
+                next_line(); //
+            }
+        }
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, exclamation_mark);
+            }
+            {
+                wait(1.5);
+                face(spouse, south);
+            }
+            {
+                wait(2);
+                next_line(); //
+            }
+        }
+        sim {
+            {
+                wait(0.75);
+                face(spouse, east);
+            }
+            {
+                next_line(); //
+                next_line(); //
+            }
+        }
+    }
+
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, cute_face);
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(ari, north);
+        }
+        {
+            wait(1);
+            face(spouse, north);
+        }
+        {
+            pan_camera(1.5, wed_camera_wed_3);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_2);
+        }
+        {
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+        }
+    }
+    wait(1);
+
+    //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+
+    //
+    sim {
+        {
+            wait(0.5);
+            sim {
+                walk(ari, ari_wed_candle);
+                set_move_speed(ari, 0.4);
+            }
+            face(ari, north);
+        }
+        {
+            wait(0.5);
+            sim {
+                walk(spouse, spouse_wed_candle);
+                set_move_speed(spouse, 0.4);
+            }
+            face(spouse, north);
+        }
+        {
+            pan_camera(2, wed_camera_wed_4);
+        }
+    }
+    wait(0.5);
+    animate(ari, action);
+    animate(spouse, action);
+    wait(0.5);
+    destroy_prop(ari_candle_unlit);
+    destroy_prop(spouse_candle_unlit);
+    setup_prop(ari_candle_lit);
+    setup_prop(spouse_candle_lit);
+    animate(ari, idle);
+    animate(spouse, idle);
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    sim {
+        {
+            wait(0.5);
+            face(ari, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            face(ari, north);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            destroy_prop(ari_candle_lit);
+            animate(ari, idle);
+            wait(0.5);
+            face(ari, west);
+            wait(0.5);
+            animate(ari, action);
+            wait(0.5);
+            sim {
+                destroy_prop(central_candle_unlit);
+                setup_prop(central_candle_lit);
+                create_animation(spr_npc_effect_heal, wed_candle_poof, 0, 0, 0, -5000);
+                play_sound("SoundEffects/SpecialEvents/WeddingCandleLight");
+            }
+            animate(ari, idle);
+        }
+        {
+            face(spouse, north);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            destroy_prop(spouse_candle_lit);
+            animate(spouse, idle);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            animate(spouse, action);
+            wait(0.5);
+            //
+            animate(spouse, idle);
+        }
+    }
+    wait(1.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    pan_camera(2, wed_camera_wed_5);
+    wait(0.25);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    //
+    checkpoint("kiss");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    sim {
+        {
+            pan_camera(1.5, wed_camera_wed_6);
+        }
+        {
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    wedding_party_cheer();
+    wait(2);
+    sim {
+        {
+            face(ari, south);
+            face(spouse, south);
+        }
+        {
+            pan_camera(3, wed_camera_wed_7);
+        }
+        {
+            wait(1.5);
+            wedding_guests_cheer();
+        }
+    }
+    wait(1);
+    pan_camera(3, wed_camera_wed_5);
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(1);
+    fade_out(2);
+
+}
+checkpoint("reception");
+//
+
+scene(inn);
+__harvest_festival_pathfind_finish();
+__override_post_process_time(22, 0);
+camera_position(wed_camera_rec_1);
+reception_setup();
+wait(0.5);
+
+sim {
+    {
+        wait(0.5);
+        fade_in(2);
+    }
+    {
+        wait(0.25);
+        reception_chat();
+    }
+    {
+        pan_camera(4, wed_camera_rec_2);
+    }
+}
+wait(1);
+
+//
+if spouse == "adeline" or spouse == "celine" or spouse == "eiland" or spouse == "juniper" or spouse == "reina" or spouse == "ryis" {
+    sim {
+        {
+            wait(0.5);
+            face(north_table_6, west);
+            wait(0.25);
+            place_actor(north_table_6, west, north_table_6_stand);
+            animate(north_table_6, idle);
+        }
+        {
+            face(north_table_7, north);
+            wait(0.25);
+            place_actor(north_table_7, north, north_table_7_stand);
+            animate(north_table_7, idle);
+        }
+    }
+} else {
+    face(north_table_7, north);
+    wait(0.25);
+    place_actor(north_table_7, north, north_table_7_stand);
+    animate(north_table_7, idle);
+}
+wait(0.3);
+
+//
+sim {
+
+    {
+        //
+        wait(0.25);
+        face(spouse, west);
+        wait(0.25);
+        face(ari, west);
+        wait(0.5);
+        face(north_table_2, west);
+    }
+    {
+        //
+        wait(0.75);
+        face(south_table_0, north);
+        wait(0.25);
+        face(south_table_7, north);
+        wait(0.25);
+        face(south_table_2, north);
+        wait(0.25);
+        face(south_table_3, north);
+        wait(0.25);
+        face(south_table_1, north);
+        wait(0.25);
+    }
+    {
+        //
+        wait(0.5);
+        face(bar_3, north);
+        wait(0.25);
+        face(bar_1, north);
+        wait(0.25);
+        face(bartender, east);
+        wait(0.25);
+        face(bar_5, north);
+        face(bar_6, north);
+        wait(0.25);
+        if is_defined(bar_7) {
+            face(bar_7, north);
+        }
+        if is_defined(bar_0) {
+            face(bar_0, east);
+        }
+        wait(0.5);
+        face(bar_2, north);
+        wait(0.25);
+        face(bar_4, north);
+    }
+    {
+        //
+        wait(1);
+        face(dozy, north);
+        wait(0.5);
+        face(henrietta, north);
+    }
+    {
+        if is_defined(reception_extra_0) {
+            wait(1.5);
+            face(reception_extra_0, north);
+        }
+
+        if is_defined(reception_extra_1) {
+            wait(0.5);
+            face(reception_extra_1, north);
+        }
+    }
+    {
+        if spouse == "adeline" or spouse == "celine" or spouse == "eiland" or spouse == "juniper" or spouse == "reina" or spouse == "ryis" {
+            //
+            sim {
+                {
+                    walk_slow(north_table_7, north_table_7_co_speech);
+                    face(north_table_7, south);
+                }
+                {
+                    walk_slow(north_table_6, north_table_6_co_speech);
+                    face(north_table_6, south);
+                }
+            }
+        } else {
+            {
+                //
+                walk_slow(north_table_7, north_table_7_speech);
+                face(north_table_7, south);
+            }
+        }
+    }
+
+    {
+        pan_camera(2.5, wed_camera_rec_3);
+    }
+}
+wait(1);
+
+//
+if spouse == "adeline" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_adeline/wedding_adeline_1");
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    reception_staggered_cheer();
+    wait(1.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            wait(0.75);
+            face(north_table_6, east);
+        }
+        {
+            pan_camera(2, wed_camera_rec_4);
+        }
+        {
+            wait(2);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(north_table_7, cute_face);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    sim {
+        {
+            wait(0.75);
+            face(north_table_6, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(north_table_6, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+
+} else if spouse == "balor" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_balor/wedding_balor_1");
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    reception_staggered_cheer();
+    wait(1.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            pan_camera(2, wed_camera_rec_4);
+        }
+        {
+            wait(2);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, south);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(2);
+    sim {
+        {
+            wait(1);
+            face(spouse, south);
+        }
+        {
+            wait(2);
+            face(ari, south);
+        }
+        {
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(1);
+            face(spouse, west);
+        }
+        {
+            wait(1.5);
+            face(ari, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+} else if spouse == "caldarus" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_caldarus/wedding_caldarus_1");
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    reception_staggered_cheer();
+    wait(1.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            pan_camera(2, wed_camera_rec_4);
+        }
+        {
+            wait(2);
+            next_line(); //
+
+        }
+    }
+    close_textbox();
+    wait(1);
+    face(north_table_7, south);
+    animate(north_table_7, book_stand);
+    wait(1);
+    anim_speed(north_table_7, 0);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    anim_speed(north_table_7, 1);
+    animate(north_table_7, idle);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(1);
+    face(north_table_7, east);
+    wait(0.5);
+    next_line(); //
+    close_textbox();
+
+} else if spouse == "celine" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_celine/wedding_celine_1");
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    reception_staggered_cheer();
+    wait(1.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            wait(0.75);
+            face(north_table_6, east);
+        }
+        {
+            pan_camera(2, wed_camera_rec_4);
+        }
+        {
+            wait(2);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    face(north_table_7, south);
+    wait(0.5);
+    free bark_speech(north_table_7, blush);
+    wait(1.5);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    face(north_table_7, east);
+    wait(0.5);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    free bark_speech(spouse, blush);
+    wait(2);
+
+    next_line(); //
+    next_line(); //
+
+    sim {
+        {
+            wait(1);
+            face(north_table_6, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(north_table_6, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(north_table_6, cute_face);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, south);
+        }
+        {
+            wait(0.75);
+            face(north_table_6, south);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    face(north_table_7, east);
+    wait(0.25);
+    face(north_table_6, east);
+
+} else if spouse == "eiland" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_eiland/wedding_eiland_1");
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    reception_staggered_cheer();
+    wait(1.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            wait(0.75);
+            face(north_table_6, east);
+        }
+        {
+            pan_camera(2, wed_camera_rec_4);
+        }
+        {
+            wait(2);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(north_table_7, cute_face);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    sim {
+        {
+            wait(0.75);
+            face(north_table_6, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(north_table_6, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+
+} else if spouse == "hayden" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_hayden/wedding_hayden_1");
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    reception_staggered_cheer();
+    wait(1.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            pan_camera(2, wed_camera_rec_4);
+        }
+        {
+            wait(2);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(north_table_7, cute_face);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    face(north_table_7, south);
+    wait(0.5);
+    next_line(); //
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+
+} else if spouse == "juniper" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_juniper/wedding_juniper_1");
+    next_line(); //
+    sim {
+        {
+            wait(0.5);
+            face(north_table_6, west);
+        }
+        {
+            wait(1);
+            face(north_table_7, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(north_table_6, south);
+        }
+        {
+            wait(1);
+            face(north_table_7, south);
+        }
+        {
+            wait(1.25);
+            face(spouse, south);
+        }
+        {
+            wait(1.5);
+            face(ari, south);
+        }
+        {
+            pan_camera(1.5, wed_camera_rec_5);
+        }
+        {
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    sim {
+        {
+            wait(0.5);
+            face(south_table_6, west);
+            wait(0.25);
+            place_actor(south_table_6, west, south_table_6_stand);
+            animate(south_table_6, idle);
+            walk(south_table_6, south_table_6_speech);
+            face(south_table_6, east);
+        }
+        {
+            place_actor(south_table_0, north, south_table_0_stand);
+            animate(south_table_0, idle);
+            walk(south_table_0, south_table_0_speech);
+            face(south_table_0, east);
+        }
+        {
+            face(south_table_7, north);
+            wait(0.25);
+            place_actor(south_table_7, north, south_table_7_stand);
+            animate(south_table_7, idle);
+            walk(south_table_7, south_table_7_speech);
+            face(south_table_7, east);
+        }
+        {
+            wait(2);
+            face(spouse, west);
+        }
+        {
+            wait(2.5);
+            face(ari, west);
+        }
+        {
+            pan_camera(3, wed_camera_rec_4);
+        }
+    }
+    wait(0.5);
+    free bark_speech(south_table_7, cute_face);
+    free bark_speech(south_table_0, cute_face);
+    free bark_speech(south_table_6, cute_face);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, sweat_drop);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    free bark_speech(spouse, heart);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, sweat_drop);
+    free bark_speech(juniper, cute_face);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    face(north_table_7, east);
+    wait(0.25);
+    face(north_table_6, east);
+
+} else if spouse == "march" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_march/wedding_march_1");
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    reception_staggered_cheer();
+    wait(1.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            pan_camera(2, wed_camera_rec_4);
+        }
+        {
+            wait(2);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(1);
+    free bark_speech(north_table_7, ellipses);
+    wait(0.5);
+    face(north_table_7, south);
+    wait(1.5);
+    next_line(); //
+    close_textbox();
+    wait(1);
+    face(north_table_7, east);
+    wait(0.5);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+
+} else if spouse == "reina" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_reina/wedding_reina_1");
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    reception_staggered_cheer();
+    wait(1.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            wait(0.75);
+            face(north_table_6, east);
+        }
+        {
+            pan_camera(2, wed_camera_rec_4);
+        }
+        {
+            wait(2);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1.5);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    sim {
+        {
+            wait(0.5);
+            face(north_table_6, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+
+    close_textbox();
+    wait(0.5);
+    face(north_table_6, east);
+    wait(0.5);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(1);
+    free bark_speech(spouse, blush);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    face(north_table_6, south);
+    wait(0.25);
+    face(north_table_7, south);
+    wait(0.25);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            wait(1);
+            face(north_table_6, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+
+} else if spouse == "ryis" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_ryis/wedding_ryis_1");
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    reception_staggered_cheer();
+    wait(1.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+    next_line(); //
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(north_table_6, west);
+            wait(1.5);
+            face(north_table_6, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(north_table_6, south);
+        }
+        {
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, south);
+        }
+        {
+            wait(1);
+            face(north_table_6, west);
+        }
+        {
+            next_line(); //
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            wait(1);
+            face(north_table_6, east);
+        }
+        {
+            pan_camera(2, wed_camera_rec_4);
+        }
+        {
+            wait(2);
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, south);
+        }
+        {
+            wait(1);
+            face(north_table_6, west);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            wait(1);
+            face(north_table_6, east);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, blush);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+
+} else if spouse == "seridia" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_seridia/wedding_seridia_1");
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    reception_staggered_cheer();
+    wait(1.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            pan_camera(2, wed_camera_rec_4);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    free pan_camera(2, wed_camera_rec_3);
+    wait(1);
+    free bark_speech(north_table_7, ellipses);
+    wait(1);
+    face(north_table_7, south);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(north_table_7, exclamation_mark);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, south);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    face(north_table_7, west);
+    wait(0.5);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(bartender, sweat_drop);
+    wait(2);
+    sim {
+        {
+            wait(1);
+            face(north_table_7, south);
+        }
+        {
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    free pan_camera(2, wed_camera_rec_4);
+    wait(0.5);
+    face(north_table_7, east);
+    wait(1);
+} else {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_valen/wedding_valen_1");
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    reception_staggered_cheer();
+    wait(1.5);
+    free bark_speech(ari, blush);
+    free bark_speech(spouse, blush);
+    wait(2);
+
+    sim {
+        {
+            wait(0.5);
+            face(north_table_7, east);
+        }
+        {
+            pan_camera(2, wed_camera_rec_4);
+        }
+        {
+            wait(2);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    free bark_speech(ari, cute_face);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(1);
+    free bark_speech(ari, cute_face);
+    free bark_speech(spouse, cute_face);
+    wait(1.5);
+    face(north_table_7, south);
+    wait(0.5);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    face(north_table_7, east);
+}
+
+//
+wait(0.5);
+free bark_speech(ari, heart);
+free bark_speech(spouse, heart);
+wait(1);
+reception_staggered_cheer();
+wait(1);
+fade_out(2);
+__raise_textbox();
+wait(1);
+next_line(); //
+close_textbox();
+wait(1);
+
+//
+scene(farm);
+__override_post_process_time(26, 0);
+place_actor(ari, west, wed_ari_night_entrance);
+apply_wedding_outfit();
+place_actor(spouse, west, wed_spouse_night_entrance);
+camera_position(wed_camera_night_0);
+sim {
+    {
+        wait(0.5);
+        fade_in(2);
+    }
+    {
+        pan_camera(2.5, wed_camera_night_1);
+    }
+    {
+        walk_slow(ari, wed_ari_night_start);
+        face(ari, west);
+    }
+    {
+        walk_slow(spouse, wed_spouse_night_start);
+        wait(0.75);
+        face(spouse, east);
+    }
+}
+wait(0.5);
+
+//
+if spouse == "adeline" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_adeline/wedding_adeline_2");
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(1);
+    free bark_speech(ari, heart);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, south);
+        }
+        {
+            wait(1);
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, ellipses);
+    wait(2);
+    face(spouse, east);
+    free pan_camera(1.5, wed_camera_night_2);
+    wait(0.5);
+    sim {
+        walk(spouse, wed_spouse_night_forward);
+        set_move_speed(spouse, 0.4);
+    }
+    face(spouse, east);
+    next_line(); //
+
+    //
+    checkpoint("kiss_night");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(adeline, blush);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(1);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    walk_slow(ari, wed_ari_night_back);
+    face(ari, west);
+    wait(0.25);
+    walk_slow(spouse, wed_ari_house_exit);
+    face(spouse, north);
+    use_door(spouse);
+    sim {
+        {
+            wait(1.5);
+            walk_slow(ari, wed_ari_house_exit);
+            face(ari, north);
+        }
+        {
+            pan_camera(3, wed_camera_night_3);
+        }
+        {
+            fade_out(2);
+        }
+    }
+
+} else if spouse == "balor" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_balor/wedding_balor_2");
+    next_line(); //
+    sim {
+        {
+            wait(0.5);
+            face(spouse, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, heart);
+    wait(1);
+    free bark_speech(ari, heart);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, south);
+        }
+        {
+            wait(1);
+            next_line(); //
+        }
+    }
+    close_textbox();
+    free pan_camera(1.5, wed_camera_night_2);
+    wait(0.5);
+    sim {
+        walk(spouse, wed_spouse_night_forward);
+        set_move_speed(spouse, 0.4);
+    }
+    face(spouse, east);
+    next_line(); //
+
+    //
+    checkpoint("kiss_night");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(1);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    walk_slow(ari, wed_ari_night_back);
+    face(ari, west);
+    wait(0.25);
+    walk_slow(spouse, wed_ari_house_exit);
+    face(spouse, north);
+    use_door(spouse);
+    sim {
+        {
+            wait(1.5);
+            walk_slow(ari, wed_ari_house_exit);
+            face(ari, north);
+        }
+        {
+            pan_camera(3, wed_camera_night_3);
+        }
+        {
+            fade_out(2);
+        }
+    }
+
+} else if spouse == "caldarus" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_caldarus/wedding_caldarus_2");
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    sim {
+        {
+            wait(1);
+            face(spouse, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, ellipses);
+    wait(2);
+    free pan_camera(1.5, wed_camera_night_2);
+    face(spouse, east);
+    wait(0.5);
+    sim {
+        walk(spouse, wed_spouse_night_forward);
+        set_move_speed(spouse, 0.4);
+    }
+    face(spouse, east);
+    next_line(); //
+
+
+    //
+    checkpoint("kiss_night");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(1);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    walk_slow(ari, wed_ari_night_back);
+    face(ari, west);
+    wait(0.25);
+    walk_slow(spouse, wed_ari_house_exit);
+    face(spouse, north);
+    use_door(spouse);
+    sim {
+        {
+            wait(1.5);
+            walk_slow(ari, wed_ari_house_exit);
+            face(ari, north);
+        }
+        {
+            pan_camera(3, wed_camera_night_3);
+        }
+        {
+            fade_out(2);
+        }
+    }
+
+} else if spouse == "celine" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_celine/wedding_celine_2");
+    next_line(); //
+    sim {
+        {
+            wait(1);
+            face(spouse, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free pan_camera(1.5, wed_camera_night_2);
+    wait(0.5);
+    sim {
+        walk(spouse, wed_spouse_night_forward);
+        set_move_speed(spouse, 0.4);
+    }
+    face(spouse, east);
+    next_line(); //
+
+    //
+    checkpoint("kiss_night");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(1);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    walk_slow(ari, wed_ari_night_back);
+    face(ari, west);
+    wait(0.25);
+    walk_slow(spouse, wed_ari_house_exit);
+    face(spouse, north);
+    use_door(spouse);
+    sim {
+        {
+            wait(1.5);
+            walk_slow(ari, wed_ari_house_exit);
+            face(ari, north);
+        }
+        {
+            pan_camera(3, wed_camera_night_3);
+        }
+        {
+            fade_out(2);
+        }
+    }
+
+} else if spouse == "eiland" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_eiland/wedding_eiland_2");
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    sim {
+        {
+            wait(1);
+            face(spouse, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+   //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    face(spouse, east);
+    free pan_camera(1.5, wed_camera_night_2);
+    wait(0.5);
+    sim {
+        walk(spouse, wed_spouse_night_forward);
+        set_move_speed(spouse, 0.4);
+    }
+    face(spouse, east);
+    checkpoint("kiss_night");
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+     sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+     sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(1);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    walk_slow(ari, wed_ari_night_back);
+    face(ari, west);
+    wait(0.25);
+    walk_slow(spouse, wed_ari_house_exit);
+    face(spouse, north);
+    use_door(spouse);
+    sim {
+        {
+            wait(1.5);
+            walk_slow(ari, wed_ari_house_exit);
+            face(ari, north);
+        }
+        {
+            pan_camera(3, wed_camera_night_3);
+        }
+        {
+            fade_out(2);
+        }
+    }
+} else if spouse == "hayden" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_hayden/wedding_hayden_2");
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(1);
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, west);
+        }
+        {
+            wait(1);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, cute_face);
+    wait(1);
+    checkpoint("kiss_night");
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free pan_camera(1.5, wed_camera_night_2);
+    wait(0.5);
+    sim {
+        walk(spouse, wed_spouse_night_forward);
+        set_move_speed(spouse, 0.4);
+    }
+    face(spouse, east);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(1);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    walk_slow(ari, wed_ari_night_back);
+    face(ari, west);
+    wait(0.25);
+    walk_slow(spouse, wed_ari_house_exit);
+    face(spouse, north);
+    use_door(spouse);
+    sim {
+        {
+            wait(1.5);
+            walk_slow(ari, wed_ari_house_exit);
+            face(ari, north);
+        }
+        {
+            pan_camera(3, wed_camera_night_3);
+        }
+        {
+            fade_out(2);
+        }
+    }
+
+} else if spouse == "juniper" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_juniper/wedding_juniper_2");
+    next_line(); //
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free pan_camera(1.5, wed_camera_night_2);
+    wait(0.5);
+    sim {
+        walk(spouse, wed_spouse_night_forward);
+        set_move_speed(spouse, 0.4);
+    }
+    face(spouse, east);
+    next_line(); //
+    next_line(); //
+    //
+    checkpoint("kiss_night");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(1);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    walk_slow(ari, wed_ari_night_back);
+    face(ari, west);
+    wait(0.25);
+    walk_slow(spouse, wed_ari_house_exit);
+    face(spouse, north);
+    use_door(spouse);
+    sim {
+        {
+            wait(1.5);
+            walk_slow(ari, wed_ari_house_exit);
+            face(ari, north);
+        }
+        {
+            pan_camera(3, wed_camera_night_3);
+        }
+        {
+            fade_out(2);
+        }
+    }
+
+} else if spouse == "march" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_march/wedding_march_2");
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, heart);
+    wait(1);
+    free bark_speech(spouse, heart);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(1);
+    face(spouse, east);
+    wait(0.5);
+    free pan_camera(1.5, wed_camera_night_2);
+    wait(0.5);
+    sim {
+        walk(spouse, wed_spouse_night_forward);
+        set_move_speed(spouse, 0.4);
+    }
+    face(spouse, east);
+    next_line(); //
+    //
+    checkpoint("kiss_night");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(1);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    walk_slow(ari, wed_ari_night_back);
+    face(ari, west);
+    wait(0.25);
+    walk_slow(spouse, wed_ari_house_exit);
+    face(spouse, north);
+    use_door(spouse);
+    sim {
+        {
+            wait(1.5);
+            walk_slow(ari, wed_ari_house_exit);
+            face(ari, north);
+        }
+        {
+            pan_camera(3, wed_camera_night_3);
+        }
+        {
+            fade_out(2);
+        }
+    }
+
+} else if spouse == "reina" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_reina/wedding_reina_2");
+    next_line(); //
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free pan_camera(1.5, wed_camera_night_2);
+    wait(0.5);
+    sim {
+        walk(spouse, wed_spouse_night_forward);
+        set_move_speed(spouse, 0.4);
+    }
+    face(spouse, east);
+    next_line(); //
+    //
+    checkpoint("kiss_night");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(1);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    walk_slow(ari, wed_ari_night_back);
+    face(ari, west);
+    wait(0.25);
+    walk_slow(spouse, wed_ari_house_exit);
+    face(spouse, north);
+    use_door(spouse);
+    sim {
+        {
+            wait(1.5);
+            walk_slow(ari, wed_ari_house_exit);
+            face(ari, north);
+        }
+        {
+            pan_camera(3, wed_camera_night_3);
+        }
+        {
+            fade_out(2);
+        }
+    }
+
+} else if spouse == "ryis" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_ryis/wedding_ryis_2");
+    next_line(); //
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free pan_camera(1.5, wed_camera_night_2);
+    wait(0.5);
+    sim {
+        walk(spouse, wed_spouse_night_forward);
+        set_move_speed(spouse, 0.4);
+    }
+    face(spouse, east);
+    next_line(); //
+    next_line(); //
+
+    //
+    checkpoint("kiss_night");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(1);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    walk_slow(ari, wed_ari_night_back);
+    face(ari, west);
+    wait(0.25);
+    walk_slow(spouse, wed_ari_house_exit);
+    face(spouse, north);
+    use_door(spouse);
+    sim {
+        {
+            wait(1.5);
+            walk_slow(ari, wed_ari_house_exit);
+            face(ari, north);
+        }
+        {
+            pan_camera(3, wed_camera_night_3);
+        }
+        {
+            fade_out(2);
+        }
+    }
+
+} else if spouse == "seridia" {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_seridia/wedding_seridia_2");
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free pan_camera(1.5, wed_camera_night_2);
+    wait(0.5);
+    sim {
+        walk(spouse, wed_spouse_night_forward);
+        set_move_speed(spouse, 0.4);
+    }
+    face(spouse, east);
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    next_line(); //
+    //
+    checkpoint("kiss_night");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, blush);
+    wait(1);
+    next_line(); //
+
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(1);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    walk_slow(ari, wed_ari_night_back);
+    face(ari, west);
+    wait(0.25);
+    walk_slow(spouse, wed_ari_house_exit);
+    face(spouse, north);
+    use_door(spouse);
+    sim {
+        {
+            wait(1.5);
+            walk_slow(ari, wed_ari_house_exit);
+            face(ari, north);
+        }
+        {
+            pan_camera(3, wed_camera_night_3);
+        }
+        {
+            fade_out(2);
+        }
+    }
+
+} else {
+    set_conversation("Cutscenes/Heart Events/Wedding/Custom Wedding Parts/wedding_valen/wedding_valen_2");
+    next_line(); //
+
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free pan_camera(1.5, wed_camera_night_2);
+    wait(0.5);
+    sim {
+        walk(spouse, wed_spouse_night_forward);
+        set_move_speed(spouse, 0.4);
+    }
+    face(spouse, east);
+    next_line(); //
+    //
+    checkpoint("kiss_night");
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, cute_face);
+    wait(1);
+    next_line(); //
+
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse, true, 1);
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(1);
+    free bark_speech(spouse, cute_face);
+    wait(2);
+    walk_slow(ari, wed_ari_night_back);
+    face(ari, west);
+    wait(0.25);
+    walk_slow(spouse, wed_ari_house_exit);
+    face(spouse, north);
+    use_door(spouse);
+    sim {
+        {
+            wait(1.5);
+            walk_slow(ari, wed_ari_house_exit);
+            face(ari, north);
+        }
+        {
+            pan_camera(3, wed_camera_night_3);
+        }
+        {
+            fade_out(2);
+        }
+    }
+}

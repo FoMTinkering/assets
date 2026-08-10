@@ -1,0 +1,580 @@
+//
+fun print(val) {
+	__print(val);
+}
+
+//
+//
+fun place_actor(actor, dir, x, y=0) {
+    __mark_actor_as_met(actor);
+	if __actor_is_present(actor) {
+		__move_instant(actor, x, y);
+	} else {
+		__actor_spawn(actor, x, y);
+	}
+    animate(actor, idle);
+    face(actor, dir);
+}
+
+//
+fun remove_actor(actor) {
+	__remove_actor(actor);
+}
+
+//
+fun face(actor, dir) {
+	__face(actor, dir);
+}
+
+//
+fun fade_in(seconds) {
+	if _SIMULATE_ {
+		camera_in();
+		return;
+	}
+	__camera_set_out();
+	__fade_in(seconds);
+} resolve {
+	return !__camera_is_fading();
+}
+
+//
+fun camera_in() {
+	__camera_set_in();
+}
+
+//
+//
+fun fade_out(seconds) {
+	if _SIMULATE_ {
+		camera_out();
+		return;
+	}
+	__fade_out(seconds);
+} resolve {
+	return !__camera_is_fading();
+}
+
+//
+fun camera_out() {
+	__camera_set_out();
+}
+//
+//
+fun camera_position(x, y=0) {
+    __camera_position(x, y);
+}
+
+//
+fun camera_follow(actor, instant=false) {
+	__camera_follow(actor, instant);
+}
+
+//
+fun open_textbox() {
+	__create_textbox();
+} resolve {
+	return __textbox_is_open();
+}
+
+//
+fun close_textbox() {
+	__close_textbox();
+} resolve {
+	return !__textbox_is_open();
+}
+
+//
+fun next_line() {
+	__next_line();
+} resolve {
+	return _SIMULATE_ or __textbox_interacted();
+}
+
+//
+fun repeat_line() {
+	__repeat_line();
+} resolve {
+	return __textbox_interacted();
+}
+
+//
+fun get_response() {
+	return __get_selected_option_index();
+}
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+fun set_move_speed(actor, speed) {
+	__set_actor_speed(actor, speed);
+}
+
+//
+//
+fun walk(actor, x, y=0) {
+    __set_actor_speed(actor, "fast_walk");
+
+	if _SIMULATE_ {
+		__move_instant(actor, x, y);
+		return;
+	}
+    __move(actor, x, y);
+} resolve {
+	return !__actor_is_moving(actor);
+}
+
+//
+//
+fun walk_slow(actor, x, y=0) {
+    __set_actor_speed(actor, "walk");
+
+	if _SIMULATE_ {
+		__move_instant(actor, x, y);
+		return;
+	}
+
+    __move(actor, x, y);
+} resolve {
+	return !__actor_is_moving(actor);
+}
+
+//
+fun set_outfit(actor, outfit) {
+	__set_outfit(actor, outfit);
+}
+
+//
+fun bark(actor, bark_type) {
+	__bark(actor, bark_type, false);
+} resolve {
+	return !__actor_is_barking(actor);
+}
+
+//
+fun bark_speech(actor, bark_type) {
+	__bark(actor, bark_type, true);
+} resolve {
+	return !__actor_is_barking(actor);
+}
+
+//
+fun wait(seconds) {
+	if _SIMULATE_ {
+		seconds = 0;
+	}
+	var timer = seconds * 60;
+} resolve {
+	timer = timer - 1;
+    return timer <= 0;
+}
+
+//
+fun wait_one_tick() {
+	var timer = 1;
+	if _SIMULATE_ {
+		timer = 0;
+	}
+} resolve {
+	timer = timer -1;
+	return timer <= 0;
+}
+
+//
+fun timelapse(target_time, length) {
+	var start = __get_time();
+	var timer = 0;
+	var frame_length = length * 60;
+	var increment = (target_time - start) / frame_length;
+} resolve {
+	timer = timer + increment;
+	__set_lighting_time(start + timer);
+	return start + timer == target_time;
+}
+
+//
+fun watch_actor(actor, target) {
+	__watch_actor(actor, target);
+}
+
+//
+//
+fun pan_camera(time, x, y=0, ease="sine_in_out") {
+	if _SIMULATE_ {
+		camera_position(x, y);
+		return;
+	}
+	__pan_camera(time, x, y, ease);
+} resolve {
+	return !__camera_is_panning();
+}
+
+//
+//
+fun scene(location_name) {
+    if __get_location_name() != location_name {
+        goto(location_name);
+    } else {
+    	__prepare_room();
+		//
+	}
+}
+
+//
+fun goto(location_name) {
+    __goto(location_name);
+} resolve {
+	return __get_location_name() == location_name;
+}
+
+//
+fun open_menu(name) {
+	__open_menu(name);
+}
+
+//
+fun menu_is_open(name) {
+	return __menu_exists(name);
+}
+
+//
+fun close_menu(name) {
+	__close_menu(name);
+} resolve {
+	return !__menu_exists(name);
+}
+
+//
+fun hide_menu(name, instant=false) {
+	__hide_menu(name, instant);
+}
+
+//
+fun show_menu(name, instant=false) {
+	__show_menu(name, instant);
+}
+
+//
+fun await_menu_close(name) {
+	//
+} resolve {
+	return !__menu_exists(name);
+}
+
+//
+fun get_from_blackboard(name) {
+	return __get_from_blackboard(name);
+}
+
+//
+fun set_on_blackboard(name, value) {
+	return __set_on_blackboard(name, value);
+}
+
+//
+fun await_flag_from_blackboard(name) {
+} resolve {
+	var value = try_take_from_blackboard(name);
+	return value == true;
+}
+
+//
+fun clock_jump(time) {
+	__clock_jump(time);
+}
+
+//
+fun animate(actor, animation) {
+	__animate(actor, animation);
+}
+
+//
+fun ari_hold_item(item, count=1, play_toast=true) {
+    var card = __get_actor_dir(ari);
+    if play_toast {
+      play_item_toast(item, count);
+    }
+    animate(ari, pickup);
+    play_sound("SoundEffects/Ari/RaiseAboveHeadAward");
+    __ari_hold_item(item);
+    wait(0.25);
+    face(ari, south);
+    wait(1.5);
+    face(ari, card);
+    animate(ari, idle);
+}
+
+//
+fun void_ari_hold_item(item, count=1) {
+	var card = __get_actor_dir(void_ari);
+	animate(void_ari, pickup);
+	play_sound("SoundEffects/Ari/RaiseAboveHeadAward");
+	__void_ari_hold_item(item);
+	wait(0.25);
+	face(void_ari, south);
+	wait(1.5);
+	face(void_ari, card);
+	animate(void_ari, idle);
+}
+
+//
+fun assert(val, err) {
+	__assert(val, err);
+}
+
+//
+fun hide_layer(name) {
+    __toggle_layer_visibility(layer, false);
+}
+
+//
+fun show_layer(name) {
+    __toggle_layer_visibility(layer, true);
+}
+
+//
+fun show_caldarus_statue() {
+	__show_caldarus_statue();
+	wait(3);
+}
+
+//
+fun hide_caldarus_statue() {
+	__hide_caldarus_statue();
+	wait(3);
+}
+
+//
+//
+fun play_sound(track, x=0, y=0) {
+	if _SIMULATE_ {
+		return; //
+	}
+	__play_sound(track, x, y);
+}
+
+//
+//
+fun request_music_play(track) {
+	if __music_is_playing() {
+		__request_music_stop();
+	}
+	__request_music_play(track);
+}
+
+//
+//
+//
+fun request_music_stop(seconds=-1) {
+	__request_music_stop(seconds);
+} resolve {
+	return !__music_is_playing();
+}
+
+//
+fun force_music_stop() {
+	__force_music_stop();
+}
+
+//
+fun get_element_x(element) {
+	return __get_element_x(element);
+}
+
+//
+fun get_element_y(element) {
+	return __get_element_y(element);
+}
+
+//
+fun play_item_toast(item, count=1) {
+	__play_item_toast(item, count);
+}
+
+//
+//
+fun play_bathhouse_scene() {
+	scene(bathhouse_bath);
+	play_sound("SoundEffects/SpecialEvents/EnterBathhouse");
+	place_actor(ari, south, "In Bath");
+	camera_position("In Bath");
+	show_menu(vitals);
+	animate(ari, swim_idle);
+	wait(1);
+	fade_in(3);
+	if __get_ari_health() == __get_ari_max_health() {
+		play_sound("SoundEffects/Ari/Heal");
+	}
+	set_ari_health(__get_ari_max_health());
+	set_ari_stamina(__get_ari_max_stamina());
+	wait(1);
+	fade_out(3);
+	hide_menu(vitals);
+}
+
+//
+fun freeze_ari() {
+	__freeze_ari();
+}
+
+//
+//
+//
+fun unfreeze_ari() {
+	__unfreeze_ari();
+}
+
+//
+fun set_ari_to_idle() {
+	__set_ari_to_idle();
+}
+
+//
+fun freeze_ari_on_last_frame() {
+	__freeze_ari_on_last_frame();
+}
+
+//
+fun use_item(item, xx=-1, yy=-1) {
+	__use_item(item);
+	wait_one_tick();
+} resolve {
+	return __await_ari_cutscene_state();
+}
+
+//
+fun set_ari_health(value) {
+	__set_ari_health(value);
+}
+
+//
+fun set_ari_stamina(value) {
+	__set_ari_stamina(value);
+}
+
+//
+fun give_ari_status_effect(name, amount, hours) {
+	__give_ari_status_effect(name, amount, hours);
+}
+
+//
+fun await_ari_animation() {
+	//
+} resolve {
+	return __await_ari_animation();
+}
+
+//
+fun ari_set_attachment(item) {
+	__ari_set_attachment(item);
+}
+
+//
+//
+fun use_door(actor) {
+	__use_door(actor);
+} resolve {
+	return __actor_is_present(actor);
+}
+
+//
+fun chat(npc_a, npc_b) {
+	__chat(npc_a, npc_b);
+}
+
+//
+fun stop_chat(npc) {
+	__stop_chat(npc);
+}
+
+//
+fun set_on_npc_blackboard(npc, name, value) {
+	__set_on_npc_blackboard(npc, name, value);
+}
+
+//
+fun get_from_npc_blackboard(npc, name) {
+	__get_from_npc_blackboard(npc, name);
+}
+
+//
+fun use_watering_can(x, y, watering_can_item) {
+	animate(ari, water);
+	free {
+		wait(0.2);
+		__water_node(x, y);
+	}
+	ari_set_attachment(watering_can_item);
+	await_ari_animation();
+	animate(ari, idle);
+}
+
+//
+//
+//
+//
+fun ari_jump(x_sign, y_sign) {
+	__ari_jump(x_sign, y_sign);
+}
+
+fun await_npc_animation(npc) {
+
+} resolve {
+	return __await_npc_animation(npc);
+}
+
+fun await_ari_cutscene_state() {
+
+} resolve {
+	return __await_ari_cutscene_state();
+}
+
+fun run_tutorial(tutorial) {
+	__run_tutorial(tutorial);
+} resolve {
+	return __tutorial_complete();
+}
+
+fun start_character_customization() {
+    __open_menu("customization");
+} resolve {
+    return !__menu_exists("customization");
+}
+
+fun trigger_birth() {
+    __trigger_birth();
+} resolve {
+	var value = try_take_from_blackboard("naming_done");
+	return value == true;
+}
+
+fun kiss_npc(npc, with_hearts=true, length=0.5, npc_reset_animation="idle") {
+    animate(ari, kiss);
+    animate(npc, kiss);
+    wait(1.083);
+    freeze_ari();
+    freeze_actor(npc);
+
+    if length != -1 {
+        wait(length);
+        unfreeze_ari();
+        unfreeze_actor(npc);
+        await_npc_animation(npc);
+        animate(ari, idle);
+        animate(npc, npc_reset_animation);
+        if with_hearts {
+            free bark_speech(ari, heart);
+            free bark_speech(npc, heart);
+        }
+        wait(0.5);
+    }
+}

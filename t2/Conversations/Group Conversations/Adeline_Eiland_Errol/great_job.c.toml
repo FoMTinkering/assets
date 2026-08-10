@@ -1,0 +1,55 @@
+[great_job]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "eiland" }, { npc = "errol" }] },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "<errol_zone>" },
+	{ building = "museum" },
+	{ museum_total_count = 30, comparator = ">=" }
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "I've been chatting with the townsfolk, and they're all in love with the Museum. Wonderful work, you two."
+next = "1"
+
+[great_job.1]
+speaker = "errol"
+portrait = "happy"
+local = "I'm delighted to hear it. The Museum has developed nicely under Lord Eiland's watchful eye."
+next = "2"
+
+[great_job.2]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "You're giving me too much credit, Errol. The Museum would be nothing without you."
+next = "3"
+
+[great_job.3]
+speaker = "eiland"
+portrait = "wink"
+local = "Nor you, [Ari]. Thanks for all your help."
+
+[great_job_2]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "eiland" }, { npc = "errol" }] },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "<errol_zone>" },
+	{ building = "museum" },
+	{ museum_total_count = 30, comparator = ">=" }
+]
+speaker = "eiland"
+portrait = "ugh"
+local = "Oh, you're here Adeline! Did I forget to file some paperwork?"
+next = "1"
+
+[great_job_2.1]
+speaker = "adeline"
+portrait = "wink"
+local = "Relax, Eiland. I'm here to enjoy the Museum!"
+next = "2"
+
+[great_job_2.2]
+speaker = "errol"
+portrait = "happy"
+local = "How nice! Please enjoy yourself!"

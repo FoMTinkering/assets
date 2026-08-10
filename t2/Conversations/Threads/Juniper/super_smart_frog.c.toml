@@ -1,0 +1,188 @@
+[juniper_super_smart_frog_1]
+refresh = "1y"
+requires = [
+	{ npc = "juniper" },
+	{ thread_mutex = "undefined" },
+	{ thread_delay = false },
+	{ juniper_super_smart_frog_finished = false },
+	{ juniper_heart_level = 1, comparator = ">=" },
+	{ juniper_heart_level = 4, comparator = "<" },
+]
+writes = [
+	{ thread_mutex = "juniper_super_smart_frog_1", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+local = "You there! Have you noticed any strange phenomena lately?"
+prompts = [
+	{ local = "Juniper, did you forget my name?", next = "1" },
+	{ local = "Do you mean, like, other than you?", next = "2" },
+]
+
+[juniper_super_smart_frog_1.1]
+portrait = "embarrassed"
+local = "What! No! It's... [Ari]...right...? Of course it is! Don't do that!"
+next = "3"
+
+[juniper_super_smart_frog_1.2]
+portrait = "unimpressed"
+local = "Oh dear, is that what passes for humor among the yokels?"
+next = "3"
+
+[juniper_super_smart_frog_1.3]
+portrait = "annoyed"
+local = "Please try and focus."
+next = "4"
+
+[juniper_super_smart_frog_1.4]
+local = "While tracking ley line shifts early this morning east of town, I noticed... a frog."
+prompts = [
+	{ local = "Okay, and...?", next = "5" },
+	{ local = "Wow, amazing. Listen, I have to go.", next = "5" },
+]
+
+[juniper_super_smart_frog_1.5]
+portrait = "think"
+local = "Judging by your tone you haven't noticed any unusual amphibian behavior."
+next = "6"
+
+[juniper_super_smart_frog_1.6]
+local = "This frog seemed much more intelligent then his fellows, I sense a deeper mystery at work here."
+next = "7"
+
+[juniper_super_smart_frog_1.7]
+portrait = "sly"
+local = "It's a shame you weren't more help, but I suppose that's not a particular surprise. Let me know if you DO see anything, [Ari]."
+
+[juniper_super_smart_frog_2]
+refresh = "instantly"
+requires = [
+	{ npc = "juniper" },
+	{ thread_mutex = "juniper_super_smart_frog_1" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "juniper_super_smart_frog_2", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+local = "There you are! Have you gleaned anything from your amphibian research?"
+prompts = [
+	{ local = "Ah, no...", next = "1" },
+	{ local = "What are you talking about?", next = "2" },
+]
+
+[juniper_super_smart_frog_2.1]
+portrait = "think"
+local = "My own efforts have been less than fruitful as well. We are rather in the hinterlands, aren't we?"
+next = "3"
+
+[juniper_super_smart_frog_2.2]
+portrait = "unimpressed"
+local = "I suppose I shouldn't be surprised at the poor quality of assistants out here in the sticks."
+next = "3"
+
+[juniper_super_smart_frog_2.3]
+local = "I managed to talk my way into Errol's good graces and obtain access to the Museum's archives."
+next = "4"
+
+[juniper_super_smart_frog_2.4]
+portrait = "annoyed"
+local = "Unfortunately it's a mess! You'd think a curator could quickly identify all books and artifacts that are related to frogs, but frankly he looked bewildered."
+next = "5"
+
+[juniper_super_smart_frog_2.5]
+portrait = "sly"
+local = "The man is clearly out of his depth."
+next = "6"
+
+[juniper_super_smart_frog_2.6]
+local = "I'm afraid I'll have to resort to careful experimentation to tease out the secrets of this frog. Local folk tales suggest some ideas..."
+prompts = [
+	{ local = "Do you need any help?", next = "7" },
+	{ local = "You're uh, not thinking of kissing that frog are you?", next = "8" },
+]
+
+[juniper_super_smart_frog_2.7]
+portrait = "think"
+local = "Oh I see how it is! NOW you want to be involved when the research is getting somewhere. No no, you had your chance."
+next = "9"
+
+[juniper_super_smart_frog_2.8]
+portrait = "think"
+local = "Well I am surprised! And here I thought I was the only one who had read that particular legend!"
+next = "9"
+
+[juniper_super_smart_frog_2.9]
+portrait = "wink"
+local = "Just you wait, [Ari]. I think I'm onto something positively... ribbiting!"
+next = "10"
+
+[juniper_super_smart_frog_2.10]
+portrait = "wild_laugh"
+local = "OH HO HO!"
+
+[juniper_super_smart_frog_3]
+refresh = "instantly"
+requires = [
+	{ npc = "juniper" },
+	{ thread_mutex = "juniper_super_smart_frog_2" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "undefined" },
+	{ thread_delay = true, expires = "1d" },
+	{ juniper_super_smart_frog_finished = true },
+	{ juniper_super_smart_frog_gift_line = true, expires = "1w" }
+]
+portrait = "embarrassed"
+local = "I can't find him."
+prompts = [
+	{ local = "So how did your research with the frog go?", next = "1" },
+	{ local = "Sorry, what?", next = "1" },
+]
+
+[juniper_super_smart_frog_3.1]
+portrait = "annoyed"
+local = "I SAID I have misplaced the specimen."
+next = "2"
+
+[juniper_super_smart_frog_3.2]
+portrait = "unimpressed"
+local = "It was important to leave the frog in his natural habitat, and with his unusual behavior, I assumed he would be simple to track down again."
+next = "3"
+
+[juniper_super_smart_frog_3.3]
+portrait = "mad"
+local = "And now he's gone! Vanished! A potentially monumental magical research subject has slipped through my fingers!"
+prompts = [
+	{ local = "Aww, I'm sorry Juniper. Do you want me to bring you any frogs I find?", next = "4" },
+	{ local = "Looks like you need my help after all, huh?", next = "5" },
+]
+
+[juniper_super_smart_frog_3.4]
+portrait = "angry_blush"
+local = "I don't need your pity! I-"
+next = "6"
+
+[juniper_super_smart_frog_3.5]
+portrait = "angry_blush"
+local = "The gall! Why I oughta turn YOU into a frog-"
+next = "6"
+
+[juniper_super_smart_frog_3.6]
+portrait = "sad"
+local = "No, that's not fair. You've been more helpful than most."
+next = "7"
+
+[juniper_super_smart_frog_3.7]
+local = "Yes [Ari], I'd appreciate any frogs you come across."
+
+[errol_super_smart_frog]
+refresh = "1y"
+requires = [{ npc = "errol" }, { thread_mutex = "juniper_super_smart_frog_2" }]
+portrait = "think"
+local = "[Ari]... what do you think about the Museum adding an amphibian wing?"
+next = "1"
+
+[errol_super_smart_frog.1]
+portrait = "ugh"
+local = "No no, I shouldn't let myself be swayed by every whim of the public."

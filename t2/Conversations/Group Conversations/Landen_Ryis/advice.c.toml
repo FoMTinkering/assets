@@ -1,0 +1,56 @@
+[advice]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "landen" }, { npc = "ryis" }] },
+	{ landen_zone = "<ryis_zone>" },
+	{ any = [
+		{ location = "landens_house_f1" },
+		{ landen_zone = "eastern_road/porch_conversation" },
+		{ landen_zone = "eastern_road/work_station" },
+		{ landen_zone = "eastern_road/work_station_teaching" },
+	] }
+]
+speaker = "ryis"
+portrait = "neutral"
+local = "Uncle Landen, has a lot about the job changed since you were my age?"
+next = "1"
+
+[advice.1]
+speaker = "landen"
+portrait = "think"
+local = "Well now! Yes and no, I'd say."
+next = "2"
+
+[advice.2]
+speaker = "landen"
+portrait = "wink"
+local = "The details change, but folks always need things built!"
+
+[advice_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "landen" }, { npc = "ryis" }] },
+	{ landen_zone = "<ryis_zone>" },
+	{ any = [
+		{ location = "landens_house_f1" },
+		{ landen_zone = "eastern_road/porch_conversation" },
+		{ landen_zone = "eastern_road/work_station" },
+		{ landen_zone = "eastern_road/work_station_teaching" },
+	] },
+	{ ryis_heart_level = 6, comparator = ">=" }
+]
+speaker = "ryis"
+portrait = "neutral"
+local = "Got any advice about the job for me, Uncle Landen?"
+next = "1"
+
+[advice_2.1]
+speaker = "landen"
+portrait = "wink"
+local = "Sure do! Don't work so hard that you don't leave time for stuff like romance!"
+next = "2"
+
+[advice_2.2]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "Uncle, I was asking about the job!"

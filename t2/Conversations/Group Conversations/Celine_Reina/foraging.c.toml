@@ -1,0 +1,68 @@
+[foraging]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "reina" }] },
+	{ celine_routine = "eastern_road_foraging_north" },
+	{ reina_routine = "eastern_road_foraging_north" }
+]
+speaker = "reina"
+portrait = "neutral"
+local = "Celine, I found another one! Look!"
+next = "1"
+
+[foraging.1]
+speaker = "celine"
+portrait = "neutral"
+local = "Good job, Reina! That's a beautiful =Frost Lily=!"
+
+[foraging_2]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "reina" }] },
+	{ celine_routine = "eastern_road_foraging_north" },
+	{ reina_routine = "eastern_road_foraging_north" }
+]
+speaker = "celine"
+portrait = "neutral"
+local = "I think we've found just about everything on my foraging list, Reina! Thank you so much for helping!"
+next = "1"
+
+[foraging_2.1]
+speaker = "reina"
+portrait = "happy"
+local = "Any time, Celine!"
+
+[foraging_3]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "reina" }] },
+	{ celine_routine = "eastern_road_foraging_north" },
+	{ reina_routine = "eastern_road_foraging_north" }
+]
+speaker = "reina"
+portrait = "neutral"
+local = "What about this one? Is it edible?"
+next = "1"
+
+[foraging_3.1]
+speaker = "celine"
+portrait = "happy"
+local = "It might have a more bitter taste than you're used to, but yes! You can forage that."
+
+[foraging_4]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "reina" }] },
+	{ celine_routine = "eastern_road_foraging_north" },
+	{ reina_routine = "eastern_road_foraging_north" }
+]
+speaker = "reina"
+portrait = "neutral"
+local = "Oh, this plant is so pretty! Can I forage it, Celine?"
+next = "1"
+
+[foraging_4.1]
+speaker = "celine"
+portrait = "happy"
+effect = "drop"
+local = "Only if you want to make stomach ache cupcakes. I wouldn't bake it into anything!"

@@ -1,0 +1,25 @@
+[harvest_festival_anticipation]
+refresh = "never"
+requires = [{ npc = "maple" }, { harvest_festival_setup = true }]
+portrait = "think"
+local = "$Queen Berries$, huh."
+next = "1"
+
+[harvest_festival_anticipation.1]
+portrait = "neutral"
+local = "I bet they're important if you want to be the next Queen... I mean, it's right there in the name!"
+
+[harvest_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "maple" },
+	{ harvest_festival_date = "1d", time = "after" },
+]
+portrait = "think"
+local = "I spent all my time gathering $Queen Berries$ so now I get a bigger slice of pie..."
+next = "1"
+
+[harvest_festival_0.1]
+portrait = "mad"
+local = "But I could have spent the last couple of days taste testing for Reina and gotten to eat all the pie I wanted!"

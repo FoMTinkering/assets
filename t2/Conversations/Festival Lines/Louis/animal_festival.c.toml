@@ -1,0 +1,92 @@
+[animal_festival_0]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "louis" },
+	{ animal_festival_today = true },
+	{ small_animal_place = "undefined" },
+	{ large_animal_place = "undefined" },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+]
+portrait = "neutral"
+local = "Hello, [Ari]! I've entered my dear rabbit, Mortimer into the small animal bracket."
+next = "1"
+
+[animal_festival_0.1]
+portrait = "happy"
+local = "Now everyone will appreciate what a wonderful bunny he is!"
+
+[animal_festival_1]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "louis" },
+	{ animal_festival_today = true },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+]
+portrait = "neutral"
+local = "It feels a bit odd to be in Mistria without my booth, but I'm certainly enjoying the festival!"
+
+[animal_festival_2]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "louis" },
+	{ animal_festival_today = true },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+]
+portrait = "neutral"
+local = "Those animal cutouts are quite inspired."
+next = "1"
+
+[animal_festival_2.1]
+portrait = "think"
+local = "I can just imagine them as cozy outfits!"
+
+[animal_festival_small_first_place]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "louis" },
+	{ animal_festival_today = true },
+	{ any = [{ small_animal_place = 3 }, { small_animal_place = 2 }] },
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "neutral"
+local = "Well done, [Ari]!"
+next = "1"
+
+[animal_festival_small_first_place.1]
+portrait = "think"
+local = "Do you know, Mortimer seems perfectly happy with his third place?"
+next = "2"
+
+[animal_festival_small_first_place.2]
+portrait = "happy"
+local = "As long as he's happy, so am I."
+
+[animal_festival_small_third_place]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "louis" },
+	{ animal_festival_today = true },
+	{ any = [{ small_animal_place = 1 }, { small_animal_place = 0 }] },
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "happy"
+local = "I can't believe we placed! I couldn't be happier for my Mortimer."
+next = "1"
+
+[animal_festival_small_third_place.1]
+portrait = "think"
+local = "I wonder if Hayden and Henrietta could give us some tips... It seems like Mortimer had a great time!"

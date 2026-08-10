@@ -1,0 +1,158 @@
+[harvest_festival_0_low_hearts]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+	{ march_heart_level = 4, comparator = "<" },
+]
+portrait = "neutral"
+local = "Having a good time?"
+prompts = [
+	{ local = "Y-yes? Are you okay?", next = "1" },
+	{ local = "I'm having a BERRY good time!", next = "2" },
+]
+
+[harvest_festival_0_low_hearts.1]
+portrait = "mad"
+local = "What? It's a perfectly normal question!"
+
+[harvest_festival_0_low_hearts.2]
+portrait = "mad"
+local = "Sheesh, forget I asked."
+
+[harvest_festival_0_high_hearts]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+	{ march_heart_level = 4, comparator = ">=" },
+]
+portrait = "neutral"
+local = "I've always really liked the Harvest Festival, ever since I was a kid."
+next = "1"
+
+[harvest_festival_0_high_hearts.1]
+portrait = "happy"
+local = "Big table full of great food, everyone having a good time..."
+next = "2"
+
+[harvest_festival_0_high_hearts.2]
+portrait = "think"
+local = "It's nice."
+
+[harvest_festival_first_place_follow_up]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_first_place = true },
+	{},
+	{},
+]
+portrait = "think"
+local = "Not bad..."
+next = "1"
+
+[harvest_festival_first_place_follow_up.1]
+portrait = "eight_heart_happy"
+local = "Congrats on taking first place."
+
+[harvest_festival_first_place_follow_up_romantic]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_first_place = true },
+	{ march_is_partner = true },
+	{},
+	{},
+]
+portrait = "eight_heart_happy"
+local = "Congrats on taking first place, [Ari]."
+next = "1"
+
+[harvest_festival_first_place_follow_up_romantic.1]
+portrait = "eight_heart_happy_blush"
+local = "Thanks for making this Harvest Festival a special one."
+
+[harvest_festival_second_place_follow_up]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_second_place = true },
+	{},
+	{},
+]
+portrait = "think"
+local = "Not bad..."
+next = "1"
+
+[harvest_festival_second_place_follow_up.1]
+portrait = "eight_heart_happy"
+local = "Congrats on taking second place."
+
+[harvest_festival_second_place_follow_up_romantic]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_second_place = true },
+	{ march_is_partner = true },
+	{},
+	{},
+]
+portrait = "eight_heart_happy"
+local = "Congrats on taking second place, [Ari]."
+next = "1"
+
+[harvest_festival_second_place_follow_up_romantic.1]
+portrait = "eight_heart_happy_blush"
+local = "Thanks for making this Harvest Festival a special one."
+
+[harvest_festival_third_place_follow_up]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_third_place = true },
+	{},
+	{},
+]
+portrait = "think"
+local = "Not bad..."
+next = "1"
+
+[harvest_festival_third_place_follow_up.1]
+portrait = "eight_heart_happy"
+local = "Congrats on taking third place."
+
+[harvest_festival_third_place_follow_up_romantic]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_third_place = true },
+	{ march_is_partner = true },
+	{},
+	{},
+]
+portrait = "eight_heart_happy"
+local = "Congrats on taking third place, [Ari]."
+next = "1"
+
+[harvest_festival_third_place_follow_up_romantic.1]
+portrait = "eight_heart_happy_blush"
+local = "Thanks for making this Harvest Festival a special one."

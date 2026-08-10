@@ -1,0 +1,118 @@
+[beach_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "adeline" },
+	{ date = "beach" },
+	{ da_adeline_beach = 0 },
+	{ adeline_is_spouse = false }
+]
+writes = [
+	{ da_adeline_beach = 1 },
+	{ da_adeline_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "adeline"
+portrait = "blush"
+local = "You want to go for a walk on the Beach?"
+next = "1"
+
+[beach_accept_1.1]
+speaker = "adeline"
+portrait = "happy"
+local = "Oooh that sounds so nice!"
+next = "2"
+
+[beach_accept_1.2]
+speaker = "adeline"
+portrait = "blush"
+local = "Let's go!"
+
+[beach_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "adeline" },
+	{ date = "beach" },
+	{ adeline_has_child = false },
+	{ any = [
+		{ adeline_is_spouse = true },
+		{ da_adeline_beach = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_adeline_beach = 2 },
+	{ da_adeline_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "adeline"
+portrait = "sly"
+local = "Would you like to join me for a walk on the Beach, [Ari]?"
+next = "1"
+
+[beach_accept_2.1]
+speaker = "adeline"
+portrait = "blush"
+local = "Yay, let's go!"
+
+[beach_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ da_adeline_beach = 1 },
+	{ da_adeline_beach_follow_up_gate = true },
+	{ adeline_is_spouse = false }
+]
+writes = [{ da_adeline_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy"
+local = "I had a really nice time at the Beach, [Ari]!"
+next = "1"
+
+[beach_follow_up_1.1]
+portrait = "hope_special"
+local = "The sand, the waves, sharing stories... It was all so relaxing."
+next = "2"
+
+[beach_follow_up_1.2]
+portrait = "blush"
+local = "What was your favorite part?"
+prompts = [
+	{ local = "The story you told me about your sand castle!", next = "3" },
+	{ local = "Hearing about that huge wave!", next = "3" },
+]
+
+[beach_follow_up_1.3]
+portrait = "cartoon_embarrassed"
+local = "Ah, yes, well..."
+next = "4"
+
+[beach_follow_up_1.4]
+portrait = "embarrassed"
+local = "I've always had a tendency to get hyper focused on things, even when I was a kid."
+next = "5"
+
+[beach_follow_up_1.5]
+portrait = "think"
+local = "I was so concerned with getting my sand castle just right, I never saw that huge wave coming..."
+next = "6"
+
+[beach_follow_up_1.6]
+portrait = "embarrassed"
+local = "At least Eiland had fun excavating its ruins afterwards."
+
+[beach_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_has_child = false },
+	{ any = [{ adeline_is_spouse = true }, { da_adeline_beach = 2 }] },
+	{ da_adeline_beach_follow_up_gate = true }
+]
+writes = [{ da_adeline_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "sly"
+local = "Ah... I always feel so good after a walk on the Beach with you."
+next = "1"
+
+[beach_follow_up_2.1]
+portrait = "blush"
+local = "Let's do it again soon!"

@@ -1,0 +1,46 @@
+[manor_gardening]
+refresh = "2m"
+requires = [{ npc = "celine" }, { celine_routine = "manor_gardening" }]
+portrait = "neutral"
+local = "[Ari]! Just helping out with the Manor House's gardens. Aren't they a sight?"
+next = "1"
+
+[manor_gardening.1]
+portrait = "happy"
+effect = "cheery"
+local = "Adeline lets me grow whatever I want, but I stick to the classics here. It makes the Manor House look charming, don't you think?"
+
+[manor_gardening_2]
+refresh = "2m"
+requires = [
+	{ npc = "celine" },
+	{ celine_routine = "manor_gardening" },
+	{ date_time = "1m", comparator = ">=" }
+]
+portrait = "neutral"
+local = "You know [Ari], these gardens have been lovingly tended for generations."
+next = "1"
+
+[manor_gardening_2.1]
+portrait = "happy"
+local = "It's an honor to be part of that tradition."
+
+[manor_gardening_3]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_routine = "manor_gardening" },
+		{ celine_routine = "celine_gardening" },
+	] },
+	{ date_time = "1y", comparator = ">=" },
+	{ season = "winter" },
+	{ louis_has_met = true }
+]
+portrait = "happy"
+local = "Louis made me special gardening gloves for the winter!"
+next = "1"
+
+[manor_gardening_3.1]
+portrait= "sweat"
+local = "It's a bit difficult to maneuver a spade with mittens."

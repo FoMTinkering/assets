@@ -1,0 +1,42 @@
+[foraging]
+refresh = "1y"
+requires = [
+	{ npc = "balor" },
+	{ any = [
+		{ location = "eastern_road" },
+		{ location = "narrows" },
+		{ location = "haydens_farm" }
+	] }
+]
+portrait = "think"
+local = "Rare flowers do well in the Capital, and Celine said the foraging out here is good, but..."
+next = "1"
+
+[foraging.1]
+portrait = "wink"
+local = "To be honest... I have no idea what I'm doing."
+next = "2"
+
+[foraging.2]
+portrait = "neutral"
+local = "I suppose we all need to start somewhere, eh?"
+
+[foraging_2]
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ any = [
+		{ location = "eastern_road" },
+		{ location = "narrows" },
+		{ location = "haydens_farm" }
+	] },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "concerned"
+local = "Celine and Juniper both said I might enjoy foraging, but I can never remember what's safe to pick."
+next = "1"
+
+[foraging_2.1]
+portrait = "happy"
+effect = "drop"
+local = "Maybe I'd best leave it to the experts before I poison myself."

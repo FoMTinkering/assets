@@ -1,0 +1,346 @@
+scene(ruins_seal);
+camera_in();
+place_actor(void_ari, south, rs3_void_ari_entrance);
+camera_position(ari);
+
+sim {
+	{
+		place_actor(seridia, south, rs3_priestess_entrance);
+		//
+		play_sound("SoundEffects/NPCs/SeridiaFadeOut");
+		fade_npc_alpha(seridia, 0.0, 1, 180);
+	}
+	{
+		wait(3.5);
+		next_line(); //
+	}
+	{
+		pan_camera(2.5, rs3_camera_1);
+	}
+}
+create_unique_renderer();
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+sim {
+	{
+		walk(seridia, rs3_priestess_start);
+		face(seridia, west);
+	}
+	{
+		wait(1.5);
+		walk_slow(ari, rs3_ari_start);
+		face(ari, east);
+	}
+	{
+		pan_camera(2.5, rs3_camera_2);
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(seridia, north);
+	}
+	{
+		wait(1);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(seridia, west);
+	}
+	{
+		wait(1);
+		face(ari, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+sim {
+	{
+		walk_slow(ari, rs3_ari_activate);
+		face(ari, north);
+	}
+	{
+		walk_slow(seridia, rs3_priestess_activate);
+		face(seridia, north);
+	}
+	{
+		pan_camera(1, rs3_camera_3);
+	}
+}
+wait(1);
+free bark_speech(ari, ellipses);
+wait(1);
+face(seridia, west);
+wait(0.5);
+sim {
+	{
+		wait(0.5);
+		face(ari, east);
+	}
+	{
+		next_line(); //
+	}
+}
+
+close_textbox();
+wait(0.5);
+face(seridia, north);
+wait(0.5);
+face(ari, north);
+wait(0.5);
+set_on_blackboard("next_bark_sfx", "SoundEffects/Barks/BubbleNeutral");
+free bark_speech(ari, breath_of_flame);
+wait(1);
+sim {
+	{
+		walk(void_ari, rs3_void_ari_bof);
+		face(void_ari, north);
+		animate(void_ari, action);
+		wait(0.5);
+		add_item_to_altar(1);
+		turn_on_sparky_asset(1);
+		animate(void_ari, idle);
+		wait(1);
+		face(void_ari, east);
+
+	}
+	{
+		wait(1);
+		face(ari, west);
+	}
+	{
+		wait(1.5);
+		face(seridia, west);
+	}
+	{
+		pan_camera(3, rs3_camera_4);
+	}
+}
+wait(1);
+set_on_blackboard("next_bark_sfx", "SoundEffects/Barks/BubbleNeutral");
+free bark_speech(ari, smoke_moth);
+wait(1);
+sim {
+	{
+		walk(void_ari, rs3_void_ari_sm);
+		face(void_ari, north);
+		animate(void_ari, action);
+		wait(0.5);
+		add_item_to_altar(2);
+		turn_on_sparky_asset(2);
+		animate(void_ari, idle);
+		wait(1);
+		face(void_ari, east);
+
+	}
+	{
+		pan_camera(2, rs3_camera_5);
+	}
+}
+wait(1);
+set_on_blackboard("next_bark_sfx", "SoundEffects/Barks/BubbleNeutral");
+free bark_speech(ari, firesail);
+wait(1);
+sim {
+	{
+		walk(void_ari, rs3_void_ari_ff);
+		face(void_ari, north);
+		animate(void_ari, action);
+		wait(0.5);
+		add_item_to_altar(3);
+		turn_on_sparky_asset(3);
+		animate(void_ari, idle);
+		wait(1);
+		face(void_ari, west);
+
+	}
+	{
+		wait(1.5);
+		face(ari, south);
+		wait(1.25);
+		face(ari, east);
+	}
+	{
+		wait(2);
+		face(seridia, south);
+		wait(1);
+		face(seridia, east);
+	}
+	{
+		pan_camera(4, rs3_camera_6);
+	}
+}
+wait(1);
+set_on_blackboard("next_bark_sfx", "SoundEffects/Barks/BubbleNeutral");
+free bark_speech(ari, obsidian);
+wait(1);
+sim {
+	{
+		walk(void_ari, rs3_void_ari_o);
+		face(void_ari, north);
+		animate(void_ari, action);
+		wait(0.5);
+		add_item_to_altar(4);
+		turn_on_sparky_asset(4);
+		animate(void_ari, idle);
+		wait(1);
+		face(void_ari, west);
+
+	}
+	{
+		pan_camera(2, rs3_camera_7);
+	}
+}
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1.5);
+sim {
+	{
+		walk(void_ari, rs3_void_ari_tablet);
+		face(void_ari, north);
+		animate(void_ari, action);
+		wait(0.1);
+		turn_on_sparky_asset(0);
+		wait(0.3);
+		freeze_void_ari();
+		//
+
+
+	}
+	{
+		wait(2);
+		face(ari, north);
+	}
+	{
+		wait(2.5);
+		face(seridia, north);
+	}
+	{
+		pan_camera(5, rs3_camera_8);
+	}
+}
+animate(void_ari, idle);
+wait(1);
+play_sound("SoundEffects/SpecialEvents/RuinsPedestalLaserFire");
+set_on_blackboard("command", "lasers");
+wait(1.5);
+set_on_blackboard("flash_length", 120);
+set_on_blackboard("command", "flash");
+wait(0.1);
+set_on_blackboard("command", "void_ari_explode");
+play_sound("SoundEffects/NPCs/VoidAriDie");
+shake_camera(0.6);
+remove_actor(void_ari);
+free bark_speech(ari, exclamation_mark);
+free bark_speech(seridia, exclamation_mark);
+wait(0.1);
+place_actor(ari, north, rs3_ari_hop);
+place_actor(seridia, north, rs3_priestess_hop);
+await_flag_from_blackboard("flash_in");
+turn_off_sparky_asset(0);
+turn_off_sparky_asset(1);
+turn_off_sparky_asset(2);
+turn_off_sparky_asset(3);
+turn_off_sparky_asset(4);
+wait(0.5);
+free {
+	wait(0.5);
+	play_sound("SoundEffects/SpecialEvents/CaveDoorDestruction");
+}
+trigger_scene_object_removals();
+wait(1.5);
+play_sound("SoundEffects/SpecialEvents/Premonition");
+wait(1);
+free pan_camera(2, rs3_camera_9);
+wait(0.5);
+next_line(); //
+close_textbox();
+wait(0.5);
+face(seridia, east);
+wait(1);
+free bark_speech(seridia, ellipses);
+wait(1);
+face(ari, east);
+wait(2);
+face(seridia, north);
+wait(0.25);
+next_line(); //
+close_textbox();
+wait(0.5);
+sim {
+	{
+		wait(0.5);
+		face(seridia, west);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+	{
+		pan_camera(2, rs3_camera_10);
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1.5);
+sim {
+	//
+	//
+	//
+	//
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(seridia, cute_face);
+wait(1);
+free bark_speech(ari, cute_face);
+wait(0.5);
+sim {
+	{
+		walk_slow(seridia, rs3_priestess_exit);
+		face(seridia, south);
+	}
+	{
+		wait(0.75);
+		walk_slow(ari, rs3_ari_entrance);
+		face(ari, north);
+	}
+	{
+		pan_camera(2, rs3_ari_entrance);
+	}
+	{
+		wait(2);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+sim {
+	{
+		play_sound("SoundEffects/NPCs/SeridiaFadeOut");
+		fade_npc_alpha(seridia, 1, 0.0, 180);
+	}
+	{
+		wait(3);
+	}
+}

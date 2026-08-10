@@ -1,0 +1,20 @@
+[red_spot]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "nora" }] },
+	{ adeline_zone = "<nora_zone>" },
+	{ any = [
+		{ adeline_animation = "write" },
+		{ adeline_animation = "write_sit" }
+	] },
+	{ any = [{ nora_animation = "write_sit" }, { nora_animation = "tap" }] }
+]
+speaker = "adeline"
+portrait = "concerned"
+local = "Nora, what's the meaning of this red blot here? Do we need to check it over again?"
+next = "1"
+
+[red_spot.1]
+speaker = "nora"
+portrait = "embarrassed"
+local = "Oh, no... That's sauce from Holt's lunch."

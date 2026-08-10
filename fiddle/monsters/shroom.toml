@@ -1,0 +1,257 @@
+[default]
+	hp = 1
+	damage = 0
+	essence = 0
+	drops = []
+	explodes = false
+	iframes = 7
+	gm_object = "obj_monster_shroom"
+	hurtbox = "spr_monster_mushroom_hurtbox"
+	starting_dir = [180, 360]
+	coin_count = [1, 3]
+	damage_number_offset = -15
+
+	# probably ignore everything after this
+	speed = 0.6
+	windup_friction = 0.97
+	patience_acknowledgement_reset = -120
+	attack_radius = 36
+	shell_radius = 32
+	hide_radius = 96
+	ari_bounce_distance = 4
+	# knockback
+	knockback_multiplier = 0.5
+	knockback_friction = 0.5
+	windup = -1
+	acknowledgment = [45, 55]
+	tired = [45, 55]
+	wiggle = [50, 60]
+	hurt = 12
+	# physics
+	push_radius = 4
+	push_force = 0.25
+	pushed_radius = 7
+	# fun knock stuff!
+	flip_jump_speed = -1
+	jump_speed = -2
+	jump_gravity = 0.12
+	jump_zx_factor = 8
+	sprites = { misc = {} }
+	spew_lava = -1
+	lava_damage = -1
+	lava_timer = -1
+	lava_count = -1
+	lava_angle = -1
+	lava_distance = -1
+
+	fade_in_rate = 0
+	fade_out_rate = 0
+	aggro_fade_in_timer = 120
+
+	shadow_threshold = 0
+	status_effect_offset = -14
+	fire_effect_offset = -7
+
+	[default.tango]
+		acknowledgment = "SoundEffects/Enemies/EnemyAlerted"
+		attack = "SoundEffects/Enemies/Mushroom/ExplodeAndSpore"
+		shell = "SoundEffects/Enemies/Mushroom/HideInHat"
+		windup_slide = "SoundEffects/Enemies/Mushroom/Windup"
+		wiggle = "SoundEffects/Enemies/Mushroom/FlipOver"
+		dying = "SoundEffects/Enemies/DieFlesh"
+
+		misc.weak_damage = "SoundEffects/Enemies/TakeDamageFleshWeak"
+		misc.strong_damage = "SoundEffects/Enemies/TakeDamageFleshStrong"
+		misc.un_shell = "SoundEffects/Enemies/Mushroom/UnHideInHat"
+		misc.bounce_off = "SoundEffects/Enemies/Mushroom/BounceOff"
+		misc.windup_sparke = "SoundEffects/Enemies/Mushroom/WindupStart"
+
+[mushroom]
+	hp = 24
+	damage = 15
+	essence = 5
+	coin_count = [1, 5]
+	drops = [
+		{ item = "red_toadstool", chance = 70 },
+		{ item = "monster_powder", chance = 30 },
+		{ cosmetic = "head_mushroom_hat", chance = 5 },
+		{ item = "pet_skin_mushroom", chance = 5 },
+	]
+
+	[mushroom.sprites]
+		idle.north = "spr_monster_mushroom_main_idle_north"
+		idle.south = "spr_monster_mushroom_main_idle_south"
+		acknowledgment.north = "spr_monster_mushroom_main_alert_north"
+		acknowledgment.south = "spr_monster_mushroom_main_alert_south"
+		walk.north = "spr_monster_mushroom_main_walk_north"
+		walk.south = "spr_monster_mushroom_main_walk_south"
+		windup_slide.north = "spr_monster_mushroom_main_windup_slide_south"
+		windup_slide.south = "spr_monster_mushroom_main_windup_slide_south"
+		windup.north = "spr_monster_mushroom_main_windup_south"
+		windup.south = "spr_monster_mushroom_main_windup_south"
+		attack.north = "spr_monster_mushroom_main_attack_south"
+		attack.south = "spr_monster_mushroom_main_attack_south"
+		tired.north = "spr_monster_mushroom_main_tired_south"
+		tired.south = "spr_monster_mushroom_main_tired_south"
+		shell.north = "spr_monster_mushroom_main_shield_enter_south"
+		shell.south = "spr_monster_mushroom_main_shield_enter_south"
+		dying.north = "spr_monster_mushroom_main_death_south"
+		dying.south = "spr_monster_mushroom_main_death_south"
+		wiggle.north = "spr_monster_mushroom_main_wiggle_south"
+		wiggle.south = "spr_monster_mushroom_main_wiggle_south"
+		wiggle_exit.north = "spr_monster_mushroom_main_wiggle_exit_south"
+		wiggle_exit.south = "spr_monster_mushroom_main_wiggle_exit_south"
+		explode.north = "spr_monster_mushroom_main_death_capoff_south"
+		explode.south = "spr_monster_mushroom_main_death_capoff_south"
+		misc.sleep = "spr_monster_mushroom_main_sleep_south"
+		misc.attack_vfx = "spr_fx_monster_mushroom_spore_attack"
+		misc.shell_hit = "spr_monster_mushroom_main_shield_hit_south"
+		misc.enter_wiggle = "spr_monster_mushroom_main_wiggle_enter_south"
+		misc.hurt_wiggle = "spr_monster_mushroom_main_wiggle_hurt_south"
+
+[mushroom_green]
+	hp = 48
+	damage = 25
+	essence = 10
+	coin_count = [2, 6]
+	drops = [
+		{ item = "wild_mushroom", chance = 70, count_range = [1, 1] },
+		{ item = "monster_powder", chance = 30, count_range = [1, 2] },
+		{ cosmetic = "head_mushroom_hat", chance = 5 },
+		{ item = "pet_skin_mushroom", chance = 5 },
+	]
+	speed = 0.7
+	explodes = true
+	explode = [100, 120]
+
+	[mushroom_green.sprites]
+		idle.north = "spr_monster_mushroom_green_main_idle_north"
+		idle.south = "spr_monster_mushroom_green_main_idle_south"
+		acknowledgment.north = "spr_monster_mushroom_green_main_alert_north"
+		acknowledgment.south = "spr_monster_mushroom_green_main_alert_south"
+		walk.north = "spr_monster_mushroom_green_main_walk_north"
+		walk.south = "spr_monster_mushroom_green_main_walk_south"
+		windup_slide.north = "spr_monster_mushroom_green_main_windup_slide_south"
+		windup_slide.south = "spr_monster_mushroom_green_main_windup_slide_south"
+		windup.north = "spr_monster_mushroom_green_main_windup_south"
+		windup.south = "spr_monster_mushroom_green_main_windup_south"
+		attack.north = "spr_monster_mushroom_green_main_attack_south"
+		attack.south = "spr_monster_mushroom_green_main_attack_south"
+		tired.north = "spr_monster_mushroom_green_main_tired_south"
+		tired.south = "spr_monster_mushroom_green_main_tired_south"
+		shell.north = "spr_monster_mushroom_green_main_shield_enter_south"
+		shell.south = "spr_monster_mushroom_green_main_shield_enter_south"
+		dying.north = "spr_monster_mushroom_green_main_death_south"
+		dying.south = "spr_monster_mushroom_green_main_death_south"
+		wiggle.north = "spr_monster_mushroom_green_main_wiggle_south"
+		wiggle.south = "spr_monster_mushroom_green_main_wiggle_south"
+		wiggle_exit.north = "spr_monster_mushroom_green_main_wiggle_exit_south"
+		wiggle_exit.south = "spr_monster_mushroom_green_main_wiggle_exit_south"
+		explode.north = "spr_monster_mushroom_green_main_death_capoff_south"
+		explode.south = "spr_monster_mushroom_green_main_death_capoff_south"
+		misc.sleep = "spr_monster_mushroom_green_main_sleep_south"
+		misc.attack_vfx = "spr_fx_monster_mushroom_green_spore_attack"
+		misc.shell_hit = "spr_monster_mushroom_green_main_shield_hit_south"
+		misc.enter_wiggle = "spr_monster_mushroom_green_main_wiggle_enter_south"
+		misc.hurt_wiggle = "spr_monster_mushroom_green_main_wiggle_hurt_south"
+		misc.mushroom_bits = "spr_monster_mushroom_green_bits_hat"
+
+[mushroom_blue]
+	hp = 72
+	damage = 35
+	essence = 15
+	coin_count = [4, 8]
+
+	windup_friction = 0.93
+	windup = [15, 25]
+
+	fade_in_rate = 0.05
+	fade_out_rate = 0.05
+	shadow_threshold = 0.5
+	drops = [
+		{ item = "glowing_mushroom", chance = 70, count_range = [1, 1] },
+		{ item = "monster_powder", chance = 30, count_range = [1, 2] },
+		{ cosmetic = "head_mushroom_hat", chance = 5 },
+		{ item = "pet_skin_mushroom", chance = 5 },
+	]
+	tired = [20, 30]
+	speed = 0.75
+
+	[mushroom_blue.sprites]
+		idle.north = "spr_monster_mushroom_blue_main_idle_north"
+		idle.south = "spr_monster_mushroom_blue_main_idle_south"
+		acknowledgment.north = "spr_monster_mushroom_blue_main_alert_north"
+		acknowledgment.south = "spr_monster_mushroom_blue_main_alert_south"
+		walk.north = "spr_monster_mushroom_blue_main_walk_north"
+		walk.south = "spr_monster_mushroom_blue_main_walk_south"
+		windup_slide.north = "spr_monster_mushroom_blue_main_windup_slide_south"
+		windup_slide.south = "spr_monster_mushroom_blue_main_windup_slide_south"
+		windup.north = "spr_monster_mushroom_blue_main_windup_south"
+		windup.south = "spr_monster_mushroom_blue_main_windup_south"
+		attack.north = "spr_monster_mushroom_blue_main_attack_south"
+		attack.south = "spr_monster_mushroom_blue_main_attack_south"
+		tired.north = "spr_monster_mushroom_blue_main_tired_south"
+		tired.south = "spr_monster_mushroom_blue_main_tired_south"
+		shell.north = "spr_monster_mushroom_blue_main_shield_enter_south"
+		shell.south = "spr_monster_mushroom_blue_main_shield_enter_south"
+		dying.north = "spr_monster_mushroom_blue_main_death_south"
+		dying.south = "spr_monster_mushroom_blue_main_death_south"
+		wiggle.north = "spr_monster_mushroom_blue_main_wiggle_south"
+		wiggle.south = "spr_monster_mushroom_blue_main_wiggle_south"
+		wiggle_exit.north = "spr_monster_mushroom_blue_main_wiggle_exit_south"
+		wiggle_exit.south = "spr_monster_mushroom_blue_main_wiggle_exit_south"
+		explode.north = "spr_monster_mushroom_blue_main_death_capoff_south"
+		explode.south = "spr_monster_mushroom_blue_main_death_capoff_south"
+		misc.sleep = "spr_monster_mushroom_blue_main_sleep_south"
+		misc.attack_vfx = "spr_fx_monster_mushroom_spore_attack"
+		misc.shell_hit = "spr_monster_mushroom_blue_main_shield_hit_south"
+		misc.enter_wiggle = "spr_monster_mushroom_blue_main_wiggle_enter_south"
+		misc.hurt_wiggle = "spr_monster_mushroom_blue_main_wiggle_hurt_south"
+
+[mushroom_purple]
+	hp = 96
+	damage = 50
+	essence = 20
+	drops = [
+		{ item = "purple_mushroom", chance = 70, count_range = [1, 1] },
+		{ item = "monster_powder", chance = 30, count_range = [1, 3] },
+		{ cosmetic = "head_mushroom_hat", chance = 5 },
+		{ item = "pet_skin_mushroom", chance = 5 },
+	]
+	speed = 0.8
+	spew_lava = true
+	lava_damage = 1
+	lava_angle = 90
+	lava_distance = 16
+	lava_timer = 300
+
+	[mushroom_purple.sprites]
+		idle.north = "spr_monster_mushroom_purple_main_idle_north"
+		idle.south = "spr_monster_mushroom_purple_main_idle_south"
+		acknowledgment.north = "spr_monster_mushroom_purple_main_alert_north"
+		acknowledgment.south = "spr_monster_mushroom_purple_main_alert_south"
+		walk.north = "spr_monster_mushroom_purple_main_walk_north"
+		walk.south = "spr_monster_mushroom_purple_main_walk_south"
+		windup_slide.north = "spr_monster_mushroom_purple_main_windup_slide_south"
+		windup_slide.south = "spr_monster_mushroom_purple_main_windup_slide_south"
+		windup.north = "spr_monster_mushroom_purple_main_windup_south"
+		windup.south = "spr_monster_mushroom_purple_main_windup_south"
+		attack.north = "spr_monster_mushroom_purple_main_attack_south"
+		attack.south = "spr_monster_mushroom_purple_main_attack_south"
+		tired.north = "spr_monster_mushroom_purple_main_tired_south"
+		tired.south = "spr_monster_mushroom_purple_main_tired_south"
+		shell.north = "spr_monster_mushroom_purple_main_shield_enter_south"
+		shell.south = "spr_monster_mushroom_purple_main_shield_enter_south"
+		dying.north = "spr_monster_mushroom_purple_main_death_south"
+		dying.south = "spr_monster_mushroom_purple_main_death_south"
+		wiggle.north = "spr_monster_mushroom_purple_main_wiggle_south"
+		wiggle.south = "spr_monster_mushroom_purple_main_wiggle_south"
+		wiggle_exit.north = "spr_monster_mushroom_purple_main_wiggle_exit_south"
+		wiggle_exit.south = "spr_monster_mushroom_purple_main_wiggle_exit_south"
+		explode.north = "spr_monster_mushroom_purple_main_death_capoff_south"
+		explode.south = "spr_monster_mushroom_purple_main_death_capoff_south"
+		misc.sleep = "spr_monster_mushroom_purple_main_sleep_south"
+		misc.attack_vfx = "spr_fx_monster_mushroom_spore_attack"
+		misc.shell_hit = "spr_monster_mushroom_purple_main_shield_hit_south"
+		misc.enter_wiggle = "spr_monster_mushroom_purple_main_wiggle_enter_south"
+		misc.hurt_wiggle = "spr_monster_mushroom_purple_main_wiggle_hurt_south"

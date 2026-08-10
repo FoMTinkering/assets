@@ -1,0 +1,129 @@
+[bathhouse_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "ryis" },
+	{ date = "bathhouse" },
+	{ da_ryis_bathhouse = 0 },
+	{ ryis_is_spouse = false }
+]
+writes = [
+	{ da_ryis_bathhouse = 1 },
+	{ da_ryis_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "thoughtful_blush"
+local = "Hey, [Ari]..."
+next = "1"
+
+[bathhouse_accept_1.1]
+portrait = "happy_blush"
+local = "I was thinking of heading to the Bathhouse... do you want to come with?"
+next = "2"
+
+[bathhouse_accept_1.2]
+portrait = "embarrassed"
+local = "Thought it could be fun-"
+next = "3"
+
+[bathhouse_accept_1.3]
+portrait = "happy_blush"
+local = "Yeah, you want to go?"
+next = "4"
+
+[bathhouse_accept_1.4]
+portrait = "blush_special"
+local = "Great! Let's go relax for a while!"
+
+[bathhouse_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "ryis" },
+	{ date = "bathhouse" },
+	{ ryis_has_child = false },
+	{ any = [
+		{ ryis_is_spouse = true },
+		{ da_ryis_bathhouse = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_ryis_bathhouse = 2 },
+	{ da_ryis_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "thoughtful_blush"
+local = "You want to go to the $Bathhouse$?"
+next = "1"
+
+[bathhouse_accept_2.1]
+portrait = "happy_blush"
+local = "Sounds great, [Ari]!"
+next = "2"
+
+[bathhouse_accept_2.2]
+portrait = "blush_special"
+local = "I was just thinking how nice it was the last time around."
+
+[bathhouse_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ da_ryis_bathhouse = 1 },
+	{ da_ryis_bathhouse_follow_up_gate = true },
+	{ ryis_is_spouse = false }
+]
+writes = [{ da_ryis_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy_blush"
+effect = "cheery"
+local = "Ah... I feel great after that bath."
+next = "1"
+
+[bathhouse_follow_up_1.1]
+portrait = "embarrassed"
+local = "How about you? Did you have a nice time?"
+prompts = [
+	{ local = "I feel great too!", next = "2" },
+	{ local = "I can't wait to go again!", next = "4" },
+]
+
+[bathhouse_follow_up_1.2]
+portrait = "happy_blush"
+local = "Right?"
+next = "3"
+
+[bathhouse_follow_up_1.3]
+portrait = "blush_special"
+local = "Let's go again soon, [Ari]."
+
+[bathhouse_follow_up_1.4]
+portrait = "happy_blush"
+local = "Haha!"
+next = "5"
+
+[bathhouse_follow_up_1.5]
+portrait = "blush_special"
+local = "Anytime, [Ari]."
+
+[bathhouse_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_has_child = false },
+	{ any = [{ ryis_is_spouse = true }, { da_ryis_bathhouse = 2 }] },
+	{ da_ryis_bathhouse_follow_up_gate = true }
+]
+writes = [{ da_ryis_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "blush_special"
+local = "Did you... have a good time, [Ari]?"
+next = "1"
+
+[bathhouse_follow_up_2.1]
+portrait = "happy_blush"
+effect = "cheery"
+local = "I'm glad. I did too!"
+next = "2"
+
+[bathhouse_follow_up_2.2]
+portrait = "blush_special"
+local = "We'll have to plan another $Bathhouse$ visit soon."

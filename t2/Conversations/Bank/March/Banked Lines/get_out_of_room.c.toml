@@ -1,0 +1,23 @@
+[get_out_of_room]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "night" },
+	{ march_is_at = "blacksmith_room_left/March Bed" },
+	{ march_heart_level = 8, comparator = "<" }
+]
+writes = [{ march_was_mean = 1, operator = "+=", expires = "24h" }]
+local = "Do you uh, normally come into people's rooms uninvited? Is that a thing where you're from?"
+prompts = [
+	{ local = "What are you reading?", next = "1" },
+	{ local = "Oh March, you're so funny!", next = "2" }
+]
+
+[get_out_of_room.1]
+portrait = "mad"
+local = "A book on how to deal with difficult people."
+
+[get_out_of_room.2]
+portrait = "mad"
+local = "I'm not trying to be funny! Get out!"

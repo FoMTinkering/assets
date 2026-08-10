@@ -1,0 +1,294 @@
+[unlocking_the_mines_pt_1_follow_up_adeline]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ utm = "part_1" },
+	{ unlocking_the_mines_pt_1_follow_up_ms_line = false }
+]
+writes = [{ unlocking_the_mines_pt_1_follow_up_ms_line = true }]
+portrait = "ugh"
+local = "I was walking by the old mine and heard some odd noises..."
+
+[unlocking_the_mines_pt_1_follow_up_balor]
+refresh = "never"
+requires = [{ npc = "balor" }, { utm = "part_1" }]
+portrait = "think"
+local = "Mistria's recovery could happen a lot faster if the Mine was reopened."
+next = "1"
+
+[unlocking_the_mines_pt_1_follow_up_balor.1]
+local = "Of course, it could also speed along my profits as well!"
+
+[unlocking_the_mines_pt_1_follow_up_celine]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ utm = "part_1" },
+	{ unlocking_the_mines_pt_1_follow_up_ms_line = false }
+]
+writes = [{ unlocking_the_mines_pt_1_follow_up_ms_line = true }]
+portrait = "ugh"
+local = "I was walking by the old mine and heard some odd noises..."
+
+[unlocking_the_mines_pt_1_follow_up_eiland]
+refresh = "never"
+requires = [{ npc = "eiland" }, { utm = "part_1" }]
+portrait = "mad"
+local = "I want those mines unsealed, [Ari]. There are dangers, certainly, but the potential for discovery is worth the risks."
+
+[unlocking_the_mines_pt_1_follow_up_elsie]
+refresh = "never"
+requires = [
+	{ npc = "elsie" },
+	{ utm = "part_1" },
+	{ unlocking_the_mines_pt_1_follow_up_ms_line = false }
+]
+writes = [{ unlocking_the_mines_pt_1_follow_up_ms_line = true }]
+portrait = "ugh"
+local = "I was walking by the old mine and heard some odd noises..."
+
+[unlocking_the_mines_pt_1_follow_up_errol]
+refresh = "never"
+requires = [{ npc = "errol" }, { utm = "part_1" }]
+portrait = "ugh"
+local = "Eiland is keen on reopening the Mines, but some things just can't be rushed."
+
+[unlocking_the_mines_pt_1_follow_up_hemlock]
+refresh = "never"
+requires = [
+	{ npc = "hemlock" },
+	{ utm = "part_1" },
+	{ unlocking_the_mines_pt_1_follow_up_ms_line = false }
+]
+writes = [{ unlocking_the_mines_pt_1_follow_up_ms_line = true }]
+portrait = "ugh"
+local = "I was walking by the old mine and heard some odd noises..."
+
+[unlocking_the_mines_pt_1_follow_up_josephine]
+refresh = "never"
+requires = [
+	{ npc = "josephine" },
+	{ utm = "part_1" },
+	{ unlocking_the_mines_pt_1_follow_up_ms_line = false }
+]
+writes = [{ unlocking_the_mines_pt_1_follow_up_ms_line = true }]
+portrait = "ugh"
+local = "I was walking by the old mine and heard some odd noises..."
+
+[unlocking_the_mines_pt_1_follow_up_nora]
+refresh = "never"
+requires = [
+	{ npc = "nora" },
+	{ utm = "part_1" },
+	{ unlocking_the_mines_pt_1_follow_up_ms_line = false }
+]
+writes = [{ unlocking_the_mines_pt_1_follow_up_ms_line = true }]
+portrait = "ugh"
+local = "I was walking by the old mine and heard some odd noises..."
+
+[unlocking_the_mines_pt_1_follow_up_olric]
+refresh = "never"
+requires = [{ npc = "olric" }, { utm = "part_1" }]
+portrait = "think"
+local = "I think Errol sealed the Mines off after the earthquake because I kept getting lost in there. All the tunnels got messed up!"
+next = "1"
+
+[unlocking_the_mines_pt_1_follow_up_reina]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ utm = "part_1" },
+	{ unlocking_the_mines_pt_1_follow_up_ms_line = false }
+]
+writes = [{ unlocking_the_mines_pt_1_follow_up_ms_line = true }]
+portrait = "ugh"
+local = "I was walking by the old mine and heard some odd noises..."
+
+[unlocking_the_mines_pt_1_follow_up_ryis]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ utm = "part_1" },
+	{ unlocking_the_mines_pt_1_follow_up_ms_line = false }
+]
+writes = [{ unlocking_the_mines_pt_1_follow_up_ms_line = true }]
+portrait = "ugh"
+local = "I was walking by the old mine and heard some odd noises..."
+
+[unlocking_the_mines_pt_1_follow_up_olric.1]
+portrait = "think"
+local = "Don't tell him, but I got lost in there before the earthquake, too..."
+
+[unlocking_the_mines_pt_1]
+kind = "gameplay_triggered"
+writes = [{ utm = "part_1", expires = "4d" }]
+speaker = "eiland"
+portrait = "happy"
+local = "[Ari]! Thank you for joining us!"
+next = "1"
+
+[unlocking_the_mines_pt_1.1]
+speaker = "errol"
+portrait = "ugh"
+local = "I hope you haven't roped [Ari] into your schemes, Eiland."
+prompts = [
+	{ local = "What's this all about?", next = "2" },
+	{ local = "Ooh, I do love a good scheme.", next = "3" },
+]
+
+[unlocking_the_mines_pt_1.2]
+speaker = "eiland"
+local = "I believe the time has come to discuss reopening the Mines."
+next = "4"
+
+[unlocking_the_mines_pt_1.3]
+speaker = "eiland"
+local = "Then you'll love this! I believe the time has come to discuss reopening the Mines."
+next = "4"
+
+[unlocking_the_mines_pt_1.4]
+speaker = "errol"
+effect = "drop"
+local = "Eiland, with all due respect, I believe we should be focusing on the Museum."
+next = "5"
+
+[unlocking_the_mines_pt_1.5]
+speaker = "errol"
+portrait = "think"
+local = "We don't have the workforce to reopen the Mines in a commercial capacity."
+next = "6"
+
+[unlocking_the_mines_pt_1.6]
+speaker = "errol"
+portrait = "happy"
+local = "Whereas the Museum is drawing interest from as far as the Capital already!"
+next = "7"
+
+[unlocking_the_mines_pt_1.7]
+speaker = "errol"
+local = "I believe it is the surest way to raise Mistria's Renown, which should be our top priority."
+next = "8"
+
+[unlocking_the_mines_pt_1.8]
+speaker = "eiland"
+local = "We are in agreement that the Museum should be our focus, Errol."
+next = "9"
+
+[unlocking_the_mines_pt_1.9]
+speaker = "eiland"
+local = "However, with the arrival of [Ari], I believe we now have the perfect person to begin exploring the Mines!"
+next = "10"
+
+[unlocking_the_mines_pt_1.10]
+speaker = "eiland"
+portrait = "wink"
+local = "Shipments of $Ore$ would be invaluable to the town, and there are surely incredible $Artifacts$ just waiting to be discovered in the depths."
+prompts = [
+	{ local = "Weren't the Mines condemned after the earthquake?", next = "11" },
+	{ local = "The more dangerous the adventure, the better!", next = "15" },
+]
+
+[unlocking_the_mines_pt_1.11]
+speaker = "eiland"
+portrait = "happy"
+local = "Haha, they sure were."
+next = "12"
+
+[unlocking_the_mines_pt_1.12]
+speaker = "errol"
+portrait = "ugh"
+local = "..."
+next = "13"
+
+[unlocking_the_mines_pt_1.13]
+speaker = "eiland"
+portrait = "ugh"
+effect = "drop"
+local = "..."
+next = "14"
+
+[unlocking_the_mines_pt_1.14]
+speaker = "eiland"
+local = "No rewards without risks, eh?"
+next = "16"
+
+[unlocking_the_mines_pt_1.15]
+speaker = "eiland"
+local = "That's the spirit!"
+next = "16"
+
+[unlocking_the_mines_pt_1.16]
+speaker = "errol"
+portrait = "mad"
+local = "While I appreciate the... enthusiasm, I simply can't approve of a reopening at this time."
+next = "17"
+
+[unlocking_the_mines_pt_1.17]
+speaker = "errol"
+portrait = "sad"
+local = "Structural damage, ore seam slippage, the elevator has stopped working..."
+next = "18"
+
+[unlocking_the_mines_pt_1.18]
+speaker = "errol"
+portrait = "ugh"
+effect = "drop"
+local = "And I've been hearing strange sounds from below..."
+next = "19"
+
+[unlocking_the_mines_pt_1.19]
+speaker = "eiland"
+portrait = "ugh"
+local = "Surely you're not keeping the Mines shut over some eerie noises, Errol."
+next = "20"
+
+[unlocking_the_mines_pt_1.20]
+speaker = "errol"
+portrait = "mad"
+effect = "sick"
+local = "..."
+next = "21"
+
+[unlocking_the_mines_pt_1.21]
+speaker = "errol"
+portrait = "think"
+local = "Er- I would be happy to reconvene on the matter when Mistria's $Town Rank$ has reached at least $Stone Star Rank$, if that would satisfy you two."
+next = "22"
+
+[unlocking_the_mines_pt_1.22]
+speaker = "eiland"
+portrait = "sad"
+effect = "sigh"
+local = "I can see there's no budging you, Errol."
+next = "23"
+
+[unlocking_the_mines_pt_1.23]
+speaker = "eiland"
+local = "Well at least we have a goal in sight, [Ari]!"
+prompts = [
+	{ local = "How can I help?", next = "25" },
+	{ local = "I guess those mines will stay closed...", next = "24" },
+]
+
+[unlocking_the_mines_pt_1.24]
+speaker = "eiland"
+portrait = "ugh"
+effect = "drop"
+local = "N-not necessarily!"
+next = "25"
+
+[unlocking_the_mines_pt_1.25]
+speaker = "eiland"
+local = "Turning in $items for Museum Sets$, completing $Requests$, and $Shipping$ items are all ways that you can help to raise Mistria's $Renown$!"
+next = "26"
+
+[unlocking_the_mines_pt_1.26]
+speaker = "eiland"
+portrait = "happy"
+local = "Let's get to it. The Mines will be reopened in no time!"
+next = "27"
+
+[unlocking_the_mines_pt_1.27]
+speaker = "errol"
+effect = "drop"
+local = "I'm glad to see you so enthused, Eiland."

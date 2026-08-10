@@ -1,0 +1,24 @@
+[lucs_the_leader]
+refresh = "1m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+]
+speaker = "dell"
+portrait = "think"
+local = "It's Luc's turn to decide what we do tomorrow."
+next = "1"
+
+[lucs_the_leader.1]
+speaker = "maple"
+portrait = "neutral"
+local = "What do you want to do, Luc?"
+next = "2"
+
+[lucs_the_leader.2]
+speaker = "luc"
+portrait = "embarrassed"
+effect = "drop"
+local = "Oh, this is a lot of pressure. Is this what it's like being leader of the Dragonguard, Dell?"

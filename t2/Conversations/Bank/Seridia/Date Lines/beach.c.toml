@@ -1,0 +1,170 @@
+[beach_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "seridia" },
+	{ date = "beach" },
+	{ da_seridia_beach = 0 },
+	{ seridia_is_spouse = false }
+]
+writes = [
+	{ da_seridia_beach = 1 },
+	{ da_seridia_beach_follow_up_gate = true, expires = "1d" }
+]
+portrait = "think"
+local = "I like walking along the shore and gazing at the primordial sea..."
+next = "1"
+
+[beach_accept_1.1]
+portrait = "smile"
+local = "And I like you, as well."
+next = "2"
+
+[beach_accept_1.2]
+portrait = "blush"
+local = "It is only natural to combine the things one likes."
+next = "3"
+
+[beach_accept_1.3]
+portrait = "embarrassed"
+local = "Shall we go?"
+
+[beach_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "seridia" },
+	{ date = "beach" },
+	{ seridia_has_child = false },
+	{ any = [
+		{ seridia_is_spouse = true },
+		{ da_seridia_beach = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_seridia_beach = 2 },
+	{ da_seridia_beach_follow_up_gate = true, expires = "1d" }
+]
+portrait = "neutral"
+local = "I wish to gaze upon the sea again, [Ari]."
+next = "1"
+
+[beach_accept_2.1]
+portrait = "blush"
+local = "You will accompany me, of course."
+
+[beach_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ da_seridia_beach = 1 },
+	{ da_seridia_beach_follow_up_gate = true },
+	{ seridia_is_spouse = false }
+]
+writes = [{ da_seridia_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "closed_eyes"
+local = "[Ari]."
+next = "1"
+
+[beach_follow_up_1.1]
+portrait = "neutral"
+local = "I am given to silences from time to time, so I thought I should make it clear:"
+next = "2"
+
+[beach_follow_up_1.2]
+portrait = "blush_think"
+local = "Our time at the $Beach$... I quite enjoyed it."
+next = "3"
+
+[beach_follow_up_1.3]
+portrait = "blush"
+local = "And I would be pleased to know..."
+next = "4"
+
+[beach_follow_up_1.4]
+portrait = "embarrassed"
+local = "What is it that draws you most to the shore, [Ari]?"
+prompts = [
+	{ local = "The sights, smells and sounds...", next = "5" },
+	{ local = "Sharing the experience with you.", next = "10" }
+]
+
+[beach_follow_up_1.5]
+portrait = "happy_blush"
+local = "The sensory experience. Yes."
+next = "6"
+
+[beach_follow_up_1.6]
+portrait = "blush_think"
+local = "I did not tell you this in the moment, but when we stood in the sea breeze together..."
+next = "7"
+
+[beach_follow_up_1.7]
+portrait = "embarrassed"
+local = "I closed my eyes and imagined we were flying, side-by-side."
+next = "8"
+
+[beach_follow_up_1.8]
+portrait = "blush_think"
+local = "I do not know what possessed me to fantasize about you in such a manner."
+next = "9"
+
+[beach_follow_up_1.9]
+portrait = "blush"
+local = "But the thought makes my face warm."
+
+[beach_follow_up_1.10]
+portrait = "surprise_blush"
+local = "[Ari], you..."
+next = "11"
+
+[beach_follow_up_1.11]
+portrait = "blush"
+local = "You are breathtakingly direct."
+next = "12"
+
+[beach_follow_up_1.12]
+portrait = "blush_think"
+local = "I did not tell you this in the moment, but when we stood in the sea breeze together..."
+next = "13"
+
+[beach_follow_up_1.13]
+portrait = "embarrassed"
+local = "I closed my eyes and imagined we were flying, side-by-side."
+next = "14"
+
+[beach_follow_up_1.14]
+portrait = "blush_think"
+local = "I do not know what possessed me to fantasize about you in such a manner."
+next = "15"
+
+[beach_follow_up_1.15]
+portrait = "blush"
+local = "But the thought makes my face warm."
+
+[beach_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ da_seridia_beach = 2 },
+	{ seridia_has_child = false },
+	{ any = [
+		{ seridia_is_spouse = true },
+		{ da_seridia_beach_follow_up_gate = true }
+	] }
+]
+writes = [{ da_seridia_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "blush_think"
+local = "I was thinking about our $Date$..."
+next = "1"
+
+[beach_follow_up_2.1]
+portrait = "embarrassed"
+local = "I would walk the shore with you again in a wingbeat."
+next = "2"
+
+[beach_follow_up_2.2]
+portrait = "blush"
+local = "You need but ask, and I shall join you."

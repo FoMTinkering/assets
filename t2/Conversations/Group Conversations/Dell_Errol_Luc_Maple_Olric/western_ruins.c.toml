@@ -1,0 +1,50 @@
+[western_ruins]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "errol" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "olric" },
+	] },
+	{ dell_zone = "<errol_zone>" },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "<olric_zone>" },
+	{ location = "western_ruins" }
+]
+speaker = "errol"
+portrait = "neutral"
+local = "And these are the remains of an ancient pot, depicting events from a past age!"
+next = "1"
+
+[western_ruins.1]
+speaker = "maple"
+portrait = "happy"
+local = "Is that a queen? She has a crown!"
+next = "2"
+
+[western_ruins.2]
+speaker = "luc"
+portrait = "neutral"
+local = "What's this language? It looks like branches!"
+next = "3"
+
+[western_ruins.3]
+speaker = "dell"
+portrait = "mad"
+local = "Is that a dragon? So cool!"
+next = "4"
+
+[western_ruins.4]
+speaker = "olric"
+portrait = "happy"
+local = "Wow! Is it blowing fire all over the place?"
+next = "5"
+
+[western_ruins.5]
+speaker = "errol"
+portrait = "happy"
+effect = "drop"
+local = "Olric, aren't you supposed to be giving this tour with me?"

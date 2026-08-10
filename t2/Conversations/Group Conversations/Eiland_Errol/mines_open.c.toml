@@ -1,0 +1,24 @@
+[mines_open]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "errol" }] },
+	{ eiland_zone = "<errol_zone>" },
+	{ floor_10 = "seen" },
+	{ date_time = "1y", comparator = "<" },
+	{ museum_archaeology_count = 10, comparator = ">=" }
+]
+speaker = "errol"
+portrait = "neutral_closed"
+local = "Lord Eiland, I must concede that opening the Mines to [Ari] was the right decision."
+next = "1"
+
+[mines_open.1]
+speaker = "errol"
+portrait = "neutral"
+local = "<he>He has</he><she>She has</she><they>They have</they><it>It has</it><none>[Ari] has</none> proven <he>he</he><she>she</she><they>they</they><it>it</it><none>[Ari]</none> can handle the situation with aplomb."
+next = "2"
+
+[mines_open.2]
+speaker = "eiland"
+portrait = "neutral"
+local = "I'm glad you've come around! The Museum has really flourished since <he>he</he><she>she</she><they>they</they><it>it</it><none>[Ari]</none> took up the pickaxe and sword!"

@@ -1,0 +1,41 @@
+[running_a_bathhouse]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "elsie" }, { npc = "juniper" }] },
+	{ elsie_zone = "<juniper_zone>" },
+	{ location = "bathhouse" }
+]
+speaker = "elsie"
+local = "Running a bathhouse seems like hard work. Everyone else relaxes while Juniper keeps it running."
+next = "1"
+
+[running_a_bathhouse.1]
+speaker = "juniper"
+portrait = "think"
+local = "Honestly Dozy's a big help."
+
+[running_a_bathhouse_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "elsie" }, { npc = "juniper" }] },
+	{ elsie_zone = "<juniper_zone>" },
+	{ location = "bathhouse" },
+	{ date_time = "2m", comparator = ">=" }
+]
+speaker = "juniper"
+portrait = "neutral"
+local = "In the circles I run in, you could become a powerful woman, Elsie."
+next = "1"
+
+[running_a_bathhouse_2.1]
+speaker = "elsie"
+portrait = "neutral"
+local = "Oh? While I appreciate a good bathhouse, I'm not sure I can see getting myself into the business."
+next = "2"
+
+[running_a_bathhouse_2.2]
+speaker = "juniper"
+portrait = "ugh"
+effect = "drop"
+local = "Ah, r-right. That's a shame."
+

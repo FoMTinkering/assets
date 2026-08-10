@@ -1,0 +1,16 @@
+[stock_up]
+refresh = "2m"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn", comparator = "!=" },
+	{ location = "general_store_store" },
+	{ any = [{ time_of_day = "morning" }, { time_of_day = "afternoon" }] },
+	{ day_of_the_week = "friday" },
+	{ reina_routine = "general_store_shopping" }
+]
+local = "I like to drop by the General Store on Friday before everyone starts gathering!"
+next = "1"
+
+[stock_up.1]
+portrait = "think"
+local = "Always a good idea to be well stocked up on an Inn Night."

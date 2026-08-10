@@ -1,0 +1,29 @@
+[cauldron]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_heart_level = 4, comparator = ">=" },
+	{ juniper_zone = "bathhouse/cauldron" },
+]
+portrait = "neutral"
+local = "This cauldron is one of the few things I brought with me to Mistria."
+next = "1"
+
+[cauldron.1]
+portrait = "unimpressed"
+local = "You wouldn't believe how long it takes to build up a proper patina."
+
+[cauldron_2]
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "morning", comparator = "!=" },
+	{ juniper_zone = "bathhouse/cauldron" },
+]
+portrait = "mad"
+local = "Those children threw a stick into my cauldron! And then one of them was on the brink of putting their hand into this melange before I intervened."
+next = "1"
+
+[cauldron_2.1]
+portrait = "annoyed"
+local = "It's bright and bubbling hot! What more warning could you need?"

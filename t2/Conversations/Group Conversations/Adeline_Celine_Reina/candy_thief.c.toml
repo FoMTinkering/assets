@@ -1,0 +1,41 @@
+[candy_thief]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "celine" }, { npc = "reina" }] },
+	{ adeline_zone = "<celine_zone>" },
+	{ adeline_zone = "<reina_zone>" },
+]
+actions = [{ bark = { bark = "music", npc = "celine" } }]
+speaker = "reina"
+portrait = "neutral"
+local = """Hey Celine, remember when we were little and decided to "taste test" all the candy in your family's store?"""
+next = "1"
+
+[candy_thief.1]
+speaker = "adeline"
+portrait = "neutral"
+local = "It was so much fun!"
+next = "2"
+
+[candy_thief.2]
+speaker = "celine"
+portrait = "ugh"
+local = "After my mom caught us, she made me do extra chores for a week to pay for it..."
+next = "3"
+
+[candy_thief.3]
+speaker = "celine"
+portrait = "mad"
+local = "And now that I think about it, you two never paid me back!"
+next = "4"
+
+[candy_thief.4]
+speaker = "adeline"
+portrait = "happy"
+local = "Order whatever you want from the Inn, it's on us!"
+next = "5"
+
+[candy_thief.5]
+speaker = "reina"
+portrait = "happy"
+local = "I'll even whip it up for you personally!"

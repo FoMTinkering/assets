@@ -1,0 +1,28 @@
+[rainy_day_paperwork]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "elsie" }] },
+	{ weather = "rainy" },
+	{ any = [
+		{ adeline_animation = "write" },
+		{ adeline_animation = "write_sit" },
+		{ adeline_routine = "adeline_office_work" }
+	] },
+	{ any = [
+		{ location = "adelines_office" },
+		{ location = "manor_house_entry" }
+	] },
+	{ adeline_zone = "<elsie_zone>" },
+	{ elsie_animation = "drink" },
+	{ quest_upgrade_the_carpenters_shop_complete = false },
+	{ adeline_can_drink = true }
+]
+speaker = "adeline"
+portrait = "ugh"
+local = "I do really need to get through this paperwork so we can keep the rebuilding process going. These approvals won't sign off on themselves."
+next = "1"
+
+[rainy_day_paperwork.1]
+speaker = "elsie"
+portrait = "happy"
+local = "Rainy days are for living, dear girl! Put that pen down and join me for some wine."

@@ -1,0 +1,29 @@
+[bath_citrus]
+refresh = "2m"
+requires = [
+	{ npc = "reina" },
+	{ any = [
+		{ location = "bathhouse_change_room" },
+		{ reina_is_traveling_from_location = "bathhouse_change_room" }
+	] }
+]
+portrait = "happy"
+local = "Ooh, I smell like citrus! Bathtime got so much better when Juniper got this place going again."
+
+[bath_citrus_2]
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ any = [
+		{ location = "bathhouse_change_room" },
+		{ reina_is_traveling_from_location = "bathhouse_change_room" }
+	] },
+	{ season = "fall" }
+]
+portrait = "think"
+local = "How did Juniper get the bath smelling so autumny? Is it orange peel? Pine?"
+next = "1"
+
+[bath_citrus_2.1]
+portrait = "happy"
+local = "Whatever it is, I love it!"

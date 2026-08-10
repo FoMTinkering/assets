@@ -1,0 +1,115 @@
+[adeline_family_history_1]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ thread_mutex = "undefined" },
+	{ thread_delay = false },
+	{ adeline_family_history_finished = false },
+	{ adeline_heart_level = 3, comparator = ">=" },
+	{ adeline_heart_level = 8, comparator = "<" },
+]
+writes = [
+	{ thread_mutex = "adeline_family_history_1", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+local = "[Ari], have I told you about my parents? Baron Wiscar and Baroness Linnet?"
+next = "1"
+
+[adeline_family_history_1.1]
+portrait = "happy"
+local = "They'd really like you if they met you. Both of them were born to a simple life, but rose to a higher calling... kind of like you!"
+
+[adeline_family_history_2]
+refresh = "instantly"
+requires = [
+	{ npc = "adeline" },
+	{ thread_mutex = "adeline_family_history_1" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "adeline_family_history_2", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+local = "My parents exchanged letters before they were married, after my father was sent to the front. But Mother rejected him after he was raised to peerage by King Kelinien!"
+next = "1"
+
+[adeline_family_history_2.1]
+portrait = "wink"
+local = "Father had to come all the way back to Mistria to win her over, haha!"
+prompts = [
+	{ local = "Why did she reject him?", next = "2" },
+	{ local = "Sounds like they were in love...", next = "3" },
+]
+
+[adeline_family_history_2.2]
+local = "She wanted nothing to do with titles or royalty, but Father showed her that a title couldn't change him. He asked her to elope!"
+
+[adeline_family_history_2.3]
+local = "Very much so. My mother and father married purely for love, a rarity in the world of nobles."
+
+[adeline_family_history_3]
+refresh = "instantly"
+requires = [
+	{ npc = "adeline" },
+	{ thread_mutex = "adeline_family_history_2" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "adeline_family_history_3", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+portrait = "happy"
+local = "I got a letter from my mother! It's mostly fond grumbling about my father and the King getting into trouble together..."
+next = "1"
+
+[adeline_family_history_3.1]
+portrait = "think"
+local = "They say my father saved King Kel's life back when he was still Prince Kelinien, and that's the basis of their friendship, but really it's the pranks..."
+prompts = [
+	{ local = "They're friends with the King?", next = "2" },
+	{ local = "Pranks?", next = "4" },
+]
+
+[adeline_family_history_3.2]
+portrait = "happy"
+local = "Oh, yes! My father is King Kelinien's trusted adviser, and my mother his bodyguard."
+next = "3"
+
+[adeline_family_history_3.3]
+portrait = "wink"
+local = "They're among few who can speak so um... candidly with him."
+
+[adeline_family_history_3.4]
+portrait = "wink"
+local = "Oh yes... they like to keep those stuffy ministers on their toes, I think."
+
+[adeline_family_history_4]
+refresh = "instantly"
+requires = [
+	{ npc = "adeline" },
+	{ thread_mutex = "adeline_family_history_3" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "undefined" },
+	{ thread_delay = true, expires = "1d" },
+	{ adeline_family_history_finished = true },
+]
+portrait = "think"
+local = "I hope I'm doing a good job, [Ari]... Mother and Father are in the Capital with the King, so it's up to me to keep Mistria running."
+prompts = [
+	{ local = "Everyone smiles when they see you, Adeline... You're doing great!", next = "1" },
+	{ local = "I'm sure your parents are really proud of you, Adeline.", next = "3" },
+]
+
+[adeline_family_history_4.1]
+portrait = "blush"
+local = "Even you?"
+next = "2"
+
+[adeline_family_history_4.2]
+portrait = "happy"
+local = "Thanks, [Ari]... that means a lot."
+
+[adeline_family_history_4.3]
+local = "Thank you, [Ari]... that means a lot."

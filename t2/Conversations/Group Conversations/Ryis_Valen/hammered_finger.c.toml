@@ -1,0 +1,20 @@
+[hammered_finger]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "ryis" }, { npc = "valen" }] },
+	{ ryis_zone = "<valen_zone>" },
+	{ location = "clinic_f1" },
+	{ ryis_injured_day = true },
+	{ ryis_is_at = "clinic_f1/Top Bed" },
+	{ time_of_day = "morning", comparator = "!=" },
+]
+speaker = "ryis"
+portrait = "happy"
+effect = "drop"
+local = "Hey, [Ari]. Friendly piece of advice? Don't get to hammering before you're totally awake."
+next = "1"
+
+[hammered_finger.1]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "You'll be fine, Ryis, it looks worse than it is. But that's good advice, [Ari]."

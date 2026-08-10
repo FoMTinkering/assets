@@ -1,0 +1,18 @@
+[room]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "reina" }] },
+	{ balor_zone = "<reina_zone>" },
+	{ location = "inn" },
+	{ date_time = "1y", comparator = ">=" },
+	{ balor_heart_level = 8, comparator = "<" }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "Your family's quite kind to let me post up in that room for so long."
+next = "1"
+
+[room.1]
+speaker = "reina"
+portrait = "happy"
+local = "Oh, it's nothing at all! We appreciate the business!"

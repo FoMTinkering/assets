@@ -1,0 +1,194 @@
+[shooting_star_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+	{ valen_heart_level = 4, comparator = ">=" },
+	{ valen_heart_level = 8, comparator = "<" },
+]
+portrait = "think"
+local = "At last year's Shooting Star Festival, the whole town stayed out half the night."
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "embarrassed"
+local = "Myself included. I suppose it's alright, once in a while..."
+
+[shooting_star_not_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_at = "town/star_festival_valen" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "valen_invited", comparator = "!=" },
+]
+portrait = "neutral"
+local = "It's hard not to be awed by a view like this."
+next = "1"
+
+[shooting_star_not_invited.1]
+portrait = "happy"
+local = "I find it very calming."
+
+[shooting_star_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_at = "town/star_festival_valen" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "valen_invited" },
+]
+portrait = "neutral"
+local = "Good evening, [Ari]."
+next = "1"
+
+[shooting_star_invited.1]
+portrait = "happy"
+local = "Shall we walk up to the Summit now?"
+
+[shooting_star_invited_anticipation]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ shooting_star_date_status = "valen_invited" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ valen_is_at = "town/star_festival_valen", comparator = "!=" },
+]
+portrait = "neutral"
+local = "I'll see you at 8 pm, [Ari]."
+
+[shooting_star_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ shooting_star_date_status = "valen_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ valen_is_partner = false },
+]
+portrait = "neutral"
+local = "Hello, [Ari]."
+next = "1"
+
+[shooting_star_follow_up.1]
+portrait = "happy"
+local = "Thanks again for last night. I had a great time."
+next = "2"
+
+[shooting_star_follow_up.2]
+portrait = "embarrassed"
+local = "Sorry for keeping you out so late!"
+
+[shooting_star_8h_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ shooting_star_date_status = "valen_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ valen_is_partner = true },
+]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "caring_special"
+local = "I really enjoyed watching the stars with you, [Ari]."
+next = "1"
+
+[shooting_star_8h_follow_up.1]
+portrait = "blush"
+local = "I hope that we can do it again next year."
+
+[shooting_star_missed_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ shooting_star_date_status = "valen_invited" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "think"
+local = "It's one thing to miss an appointment, [Ari]..."
+next = "1"
+
+[shooting_star_missed_follow_up.1]
+portrait = "ugh"
+local = "And entirely another to miss a date..."
+
+[shooting_star_follow_up_not_invited]
+refresh = "3m"
+requires = [
+	{ npc = "valen" },
+	{ shooting_star_date_status = "valen_invited", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "valen_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "raised_eyebrow"
+local = "Ah, did you stay up all night, [Ari]?"
+next = "1"
+
+[shooting_star_follow_up_not_invited.1]
+portrait = "neutral"
+local = "Well, I suppose I can't blame you..."
+next = "2"
+
+[shooting_star_follow_up_not_invited.2]
+portrait = "raised_eyebrow"
+local = "Just don't make a habit of it, okay?"
+
+# NEW ROMANCE LINE FOLLOW UPS
+
+[shooting_star_romantic_follow_up_A]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ shooting_star_date_status = "valen_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+	{ reina_is_spouse = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "valen" } },
+]
+portrait = "happy"
+local = "Oh, [Ari]! I have something for you..."
+next = "1"
+
+[shooting_star_romantic_follow_up_A.1]
+portrait = "embarrassed"
+local = "I made some of my favorite =Beet Soup= and thought I'd make a little extra for you..."
+next = "2"
+
+[shooting_star_romantic_follow_up_A.2]
+portrait = "happy"
+actions = [{ item = "beet_soup" }]
+local = "I hope you like it."
+
+[shooting_star_romantic_follow_up_B]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ shooting_star_date_status = "valen_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+	{ reina_is_spouse = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "blush", npc = "valen" } },
+]
+portrait = "happy"
+local = "You look well today, [Ari]."
+next = "1"
+
+[shooting_star_romantic_follow_up_B.1]
+portrait = "embarrassed"
+local = "You must be taking good care of yourself. I'm glad."

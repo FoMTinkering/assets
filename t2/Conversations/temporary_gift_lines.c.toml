@@ -1,0 +1,42 @@
+[loved_gift]
+kind = "gift"
+requires = [{ gift_desire = "loved" }]
+portrait = "happy"
+local = "(PLACEHOLDER) This is a basement line for NPCs receiving a loved gift!"
+
+[neutral_gift]
+kind = "gift"
+requires = [{ gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Thanks, [Ari]!"
+
+[disliked_gift]
+kind = "gift"
+requires = [{ gift_desire = "disliked" }]
+portrait = "think"
+local = "(PLACEHOLDER) This is a basement line for NPCs receiving a disliked gift!"
+
+[hated_gift]
+kind = "gift"
+requires = [{ gift_desire = "hated" }]
+portrait = "neutral"
+effect = "shock"
+local = "Wow!"
+next = "1"
+
+[hated_gift.1]
+portrait = "happy"
+local = "I hate this!"
+
+[birthday]
+kind = "gift"
+requires = [
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" }
+	] },
+	{ "<npc>_birthday" = "24h", time = "after" },
+]
+portrait = "blush"
+local = "(PLACEHOLDER) This is a gift, and it's my birthday!"

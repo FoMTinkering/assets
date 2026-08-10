@@ -1,0 +1,194 @@
+# Liked gift
+[glass]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "merri" },
+	{ gift_desire = "liked" },
+	{ gift_given = "glass" }
+]
+portrait = "happy"
+local = "This =Glass= has such wonderful clarity! I know just what I'm going to use it on."
+
+[hard_wood]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "merri" },
+	{ gift_desire = "liked" },
+	{ gift_given = "hard_wood" }
+]
+portrait = "happy"
+local = "=Hardwood=! You can never have enough when you're in my business. Thank you, [Ari]!"
+
+[latte]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "merri" },
+	{ gift_desire = "liked" },
+	{ gift_given = "latte" }
+]
+portrait = "happy"
+local = "A =Latte=! Thanks, [Ari]. I was just thinking I needed something zippy."
+
+# Hated gift
+[snail]
+kind = "gift"
+requires = [
+	{ npc = "merri" },
+	{ gift_desire = "hated" },
+	{ gift_given = "snail" },
+]
+portrait = "ugh"
+effect = "drop"
+local = "Yuck..."
+
+# Generic gift lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "merri" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "hearts"
+local = "Oh thank you [Ari], I love it!"
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "merri" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "cheery"
+local = "Oh wow, [Ari]! You don't come across something this fancy so often! I really appreciate it!"
+
+[loved_gift_gems]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "merri" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "perfect_diamond" },
+		{ gift_given = "perfect_pink_diamond" }
+	] }
+]
+portrait = "mad"
+effect = "sparkles"
+local = "A perfect diamond! Wowee, you don't see something like this every day!"
+next = "1"
+
+[loved_gift_gems.1]
+portrait = "happy"
+local = "Now, what to use it for... oh, I'm so excited!"
+
+[loved_gift_quality]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "merri" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "golden_alpaca_wool" },
+		{ gift_given = "golden_bristle" },
+		{ gift_given = "golden_bull_horn" },
+		{ gift_given = "golden_duck_feather" },
+		{ gift_given = "golden_horse_hair" },
+		{ gift_given = "golden_rabbit_wool" },
+		{ gift_given = "golden_feather" },
+		{ gift_given = "golden_sheep_wool" }
+	] }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "This is incredible, [Ari]! With such quality materials, I could make my refurbished projects look better than new!"
+
+[liked_gift]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "merri" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "alpaca_wool" },
+		{ gift_given = "basic_wood" },
+		{ gift_given = "bristle" },
+		{ gift_given = "bull_horn" },
+		{ gift_given = "clay" },
+		{ gift_given = "coral" },
+		{ gift_given = "crystal" },
+		{ gift_given = "duck_feather" },
+		{ gift_given = "feather" },
+		{ gift_given = "glass" },
+		{ gift_given = "hard_wood" },
+		{ gift_given = "horse_hair" },
+		{ gift_given = "obsidian" },
+		{ gift_given = "ore_stone" },
+		{ gift_given = "paper" },
+		{ gift_given = "rabbit_wool" },
+		{ gift_given = "sheep_wool" }
+	] }
+]
+portrait = "happy"
+local = "Haha, if you can use it to make furniture you know I'll probably like it! Thanks, [Ari]."
+
+[liked_gift_2]
+kind = "gift"
+requires = [{ npc = "merri" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "This is great! Thanks for thinking of me, [Ari]."
+
+[liked_gift_materials]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "merri" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "alpaca_wool" },
+		{ gift_given = "basic_wood" },
+		{ gift_given = "bristle" },
+		{ gift_given = "bull_horn" },
+		{ gift_given = "clay" },
+		{ gift_given = "coral" },
+		{ gift_given = "crystal" },
+		{ gift_given = "duck_feather" },
+		{ gift_given = "feather" },
+		{ gift_given = "glass" },
+		{ gift_given = "hard_wood" },
+		{ gift_given = "horse_hair" },
+		{ gift_given = "obsidian" },
+		{ gift_given = "ore_stone" },
+		{ gift_given = "paper" },
+		{ gift_given = "rabbit_wool" },
+		{ gift_given = "sheep_wool" }
+	] }
+]
+portrait = "wink"
+local = "Ooh, I always need more of this around! It'll get used up in a jiffy."
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "merri" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Thank you."
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "merri" }, { gift_desire = "disliked" }]
+portrait = "think"
+local = "It's a little... um... well, what do YOU think of it? No, don't answer that."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "merri" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ merri_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "embarrassed"
+effect = "sparkles"
+local = "Oh, a birthday gift! You're so nice to think of me, [Ari]."

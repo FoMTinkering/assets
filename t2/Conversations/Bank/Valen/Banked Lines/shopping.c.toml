@@ -1,0 +1,31 @@
+[shopping]
+refresh = "2m"
+requires = [
+	{ npc = "valen" },
+	{ valen_routine = "general_store_shopping" },
+	{ date_time = "1y", comparator = ">=" },
+	{ valen_heart_level = 10, comparator = "<" }
+]
+portrait = "neutral"
+local = "Some of these crops come from your farm, don't they [Ari]? You've had a lovely harvest this year."
+
+[shopping_2]
+refresh = "1y"
+requires = [{ npc = "valen" }, { date_time = "1y", comparator = ">=" }]
+portrait = "think"
+local = "Celine was asking after reading recommendations, so I loaned her one of my favorite mystery novels."
+next = "1"
+
+[shopping_2.1]
+portrait = "embarrassed"
+local = "I like to annotate my mysteries with theories about the culprit's identity. I hope the ending isn't spoiled for her..."
+
+[shopping_3]
+refresh = "2m"
+requires = [
+	{ npc = "valen" },
+	{ valen_routine = "general_store_shopping" },
+	{ date_time = "2m", comparator = ">=" },
+]
+portrait = "think"
+local = "I waited a little too long to get groceries this time... unfortunately, syrups don't make a meal."

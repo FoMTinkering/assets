@@ -1,0 +1,36 @@
+[winter_patrol]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "hemlock" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ is_inside = false },
+	{ season = "winter" },
+	{ dell_zone = "<hemlock_zone>" },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+]
+speaker = "dell"
+portrait = "mad"
+local = "Hi, [Ari]! The Dragonguard is on winter patrol!"
+next = "1"
+
+[winter_patrol.1]
+speaker = "luc"
+portrait = "neutral"
+local = "So let us know if you see anything suspicious."
+next = "2"
+
+[winter_patrol.2]
+speaker = "maple"
+portrait = "happy"
+local = "Or if you see anything fun, like a really big pile of snow."
+next = "3"
+
+[winter_patrol.3]
+speaker = "hemlock"
+portrait = "wink"
+local = "Definitely let them know if you see something fun."

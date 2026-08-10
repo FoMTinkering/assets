@@ -1,0 +1,32 @@
+[oils]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "juniper" }] },
+	{ balor_zone = "<juniper_zone>" },
+]
+speaker = "balor"
+portrait = "neutral"
+local = "You sure you don't want to export your bath oils? I'll give you a good price."
+next = "1"
+
+[oils.1]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Hmph. My concoctions are priceless."
+
+[oils_2]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "juniper" }] },
+	{ balor_zone = "<juniper_zone>" },
+	{ building = "bathhouse", comparator = "!=" }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "How do you come up with so many different aromas at the Bathhouse? Your cabinet of scented oils must be bottomless."
+next = "1"
+
+[oils_2.1]
+speaker = "juniper"
+portrait = "sly"
+local = "Trade secret."

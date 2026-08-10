@@ -1,0 +1,114 @@
+[foraging]
+refresh = "2m"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_routine = "eastern_road_foraging_north" },
+		{ celine_routine = "haydens_farm_foraging" }
+	] }
+]
+portrait = "happy"
+local = "Are you foraging, too? There's so much to find out here!"
+
+[foraging_2]
+refresh = "2m"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_routine = "eastern_road_foraging_north" },
+		{ celine_routine = "haydens_farm_foraging" }
+	] }
+]
+portrait = "neutral"
+local = "Juniper asked for some =Lilacs= for the Bathhouse. I've got a few already, but... one more couldn't hurt."
+
+[foraging_3]
+refresh = "2m"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_routine = "eastern_road_foraging_north" },
+		{ celine_routine = "haydens_farm_foraging" }
+	] },
+	{ celine_was_last_spoken_to = "6h", time = "after", comparator = ">" }
+]
+portrait = "happy"
+local = "Oh, hello [Ari]! Have you ever noticed how fertile the soil of Mistria is? The things you forage grow right back after just a few days!"
+
+[foraging_4]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_routine = "eastern_road_foraging_north" },
+		{ celine_routine = "haydens_farm_foraging" }
+	] },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "think"
+local = "Juniper asked after flowers for her bath oils, and Reina always needs berries for baking, and... well, the list goes on."
+next = "1"
+
+[foraging_4.1]
+portrait = "wink"
+effect = "cheery"
+local = "I'm just happy my foraging is helpful! Between the two of us, I'd be doing it for fun anyway."
+
+[foraging_5]
+refresh = "1y"
+requires = [
+	{ npc = "celine" },
+	{ location = "haydens_farm" },
+]
+portrait = "neutral"
+local = "The animals on Hayden's farm are so cute, aren't they? I wonder which would look cutest with a bow, or a little hat..."
+
+[foraging_6]
+refresh = "1y"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_routine = "eastern_road_foraging_north" },
+		{ celine_routine = "haydens_farm_foraging" }
+	] },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "neutral"
+local = "Dad wanted to make some pie to surprise Mom, so I'm doing some foraging!"
+next = "1"
+
+[foraging_6.1]
+portrait = "think"
+local = "About half the fruit I've found is sweet, and the rest is tart! Dad will have his pick."
+
+[foraging_7]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ location = "haydens_farm" },
+	{ celine_routine = "haydens_farm_foraging" },
+	{ season = "fall" }
+]
+portrait = "neutral"
+local = "I was just doing some fall foraging, [Ari]."
+next = "1"
+
+[foraging_7.1]
+portrait = "happy"
+local = "It's the only time of year I can get my hands on fresh $Rosemary$!"
+
+[foraging_8]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ location = "haydens_farm" },
+	{ celine_routine = "haydens_farm_foraging" },
+]
+portrait = "neutral"
+local = "Sweetwater Farm is such a lovely spot for foraging all year round."
+next = "1"
+
+[foraging_8.1]
+portrait = "happy"
+effect = "cheery"
+local = "And it's extra fun to see all of Hayden's animals playing in the yard! They're so cute!"

@@ -1,0 +1,39 @@
+[breakfast]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "landen" }, { npc = "ryis" }] },
+	{ errol_zone = "<landen_zone>" },
+	{ errol_zone = "<ryis_zone>" },
+	{ time_of_day = "morning" },
+	{ errol_activity = "eat" },
+	{ landen_activity = "eat" },
+	{ ryis_activity = "eat" },
+]
+speaker = "errol"
+portrait = "think"
+local = "You know, there was a time when we'd arm-wrestle over who would pay for breakfast!"
+next = "1"
+
+[breakfast.1]
+speaker = "ryis"
+portrait = "mad"
+local = "We're not bringing that back! I'm so not arm-wrestling you two."
+next = "2"
+
+[breakfast.2]
+speaker = "landen"
+portrait = "neutral"
+local = "Oh, don't worry... that all came to an end when Terithia moved to town."
+next = "3"
+
+[breakfast.3]
+speaker = "landen"
+portrait = "wink"
+local = "That lady's got an arm on her!"
+next = "4"
+
+[breakfast.4]
+speaker = "errol"
+portrait = "happy"
+effect = "cheery"
+local = "She's the arm-wrestling queen of Mistria!"

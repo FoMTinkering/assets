@@ -1,0 +1,40 @@
+[stop_in]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "valen" }] },
+	{ hayden_zone = "<valen_zone>" },
+	{ location = "clinic_f1" },
+	{ hayden_is_at = "clinic_f1/Top Bed", comparator = "!=" },
+	{ hayden_is_traveling_to = "clinic_f1/Top Bed", comparator = "!=" },
+	{ hayden_is_traveling_from = "clinic_f1/Top Bed", comparator = "!=" },
+]
+speaker = "valen"
+portrait = "sad"
+local = "Is everything alright, Hayden? Are you injured? Are the animals down on the farm unwell?"
+next = "1"
+
+[stop_in.1]
+speaker = "hayden"
+portrait = "happy_fist"
+local = "Aw, nothing like that! Figured I'd stop in to say hello!"
+
+[stop_in_2]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "valen" }] },
+	{ hayden_zone = "<valen_zone>" },
+	{ location = "clinic_f1" },
+	{ hayden_is_at = "clinic_f1/Top Bed", comparator = "!=" },
+	{ hayden_is_traveling_to = "clinic_f1/Top Bed", comparator = "!=" },
+	{ hayden_is_traveling_from = "clinic_f1/Top Bed", comparator = "!=" },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "To what do I owe the visit, Hayden?"
+next = "1"
+
+[stop_in_2.1]
+speaker = "hayden"
+portrait = "happy"
+local = "Nothing in particular! Just been a while since I dropped in to say hello."

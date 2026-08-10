@@ -1,0 +1,39 @@
+[beach]
+refresh = "3m"
+requires = [{ npc = "march" }, { location = "beach" }]
+writes = [{ sand_to_glass = true, expires = "8d" }]
+portrait = "think"
+local = "You know, sand can be turned to glass at extremely high temperatures..."
+next = "1"
+
+[beach.1]
+portrait = "tsundere"
+local = "W-what? I didn't say I was going to try it!"
+
+[beach_2]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ location = "beach" },
+	{ march_heart_level = 6, comparator = "<=" },
+	{ march_outfit = "beach" }
+]
+portrait = "sigh"
+effect = "sigh"
+local = "I know you can't help staring, but can you do it from further away?"
+
+[beach_3]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ location = "beach" },
+	{ ryis_is_at_location = "beach" },
+	{ shell_competition = true }
+]
+portrait = "think"
+local = "Ryis and I are having a shell-collecting competition. It's friendly."
+next = "1"
+
+[beach_3.1]
+portrait = "mad"
+local = "So friendly."

@@ -1,0 +1,47 @@
+[museum_help]
+refresh = "1y"
+requires = [{ npc = "olric" }, { olric_routine = "museum_work" }]
+portrait = "neutral"
+local = "I'm helping out today, so let me know if you need anything!"
+next = "1"
+
+[museum_help.1]
+portrait = "think"
+local = "Or are you donating something?"
+
+[museum_help_2]
+refresh = "1y"
+requires = [{ npc = "olric" }, { olric_routine = "museum_work" }]
+portrait = "neutral"
+local = "I'm helping out at the Museum today! Let me know if I can tell you about any of the exhibits."
+next = "1"
+
+[museum_help_2.1]
+portrait = "wink"
+local = "Oh whoa, you donated some of these! Maybe you can explain them to me!"
+
+[museum_help_3]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ olric_routine = "museum_work" },
+	{ errol_building = "museum" }
+]
+portrait = "wink"
+local = "I'm working a shift at the Museum! So if you need anything, I'm your guy!"
+next = "1"
+
+[museum_help_3.1]
+portrait = "think"
+local = "Unless you have a question. Then I have to get Errol."
+
+[museum_help_4]
+refresh = "1y"
+requires = [{ npc = "olric" }, { olric_routine = "museum_work" }]
+portrait = "think"
+local = "You want to make a donation to the Museum?"
+next = "1"
+
+[museum_help_4.1]
+portrait = "happy"
+local = "You're so nice, [Ari]!"

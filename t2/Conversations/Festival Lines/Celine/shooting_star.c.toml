@@ -1,0 +1,244 @@
+[shooting_star_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+	{ celine_heart_level = 4, comparator = ">=" },
+	{ celine_heart_level = 8, comparator = "<" }
+]
+portrait = "neutral"
+local = "I can't believe summer is almost over!"
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "happy"
+local = "That means it's almost time for the Shooting Star Festival..."
+next = "2"
+
+[shooting_star_anticipation.2]
+portrait = "blush_closed_eyes"
+local = "Do you have any plans yet, [Ari]?"
+
+[shooting_star_not_invited]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_at = "town/star_festival_celine" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "celine_invited", comparator = "!=" }
+]
+portrait = "happy"
+local = "The stars are so beautiful..."
+next = "1"
+
+[shooting_star_not_invited.1]
+portrait = "neutral"
+local = "It's like the sky is a garden in bloom."
+
+[shooting_star_invited]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_at = "town/star_festival_celine" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "celine_invited" }
+]
+portrait = "embarrassed"
+local = "[Ari]! Are you ready to go up to the Summit now...?"
+
+[shooting_star_invited_anticipation]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ shooting_star_date_status = "celine_invited" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ celine_is_at = "town/star_festival_celine", comparator = "!=" }
+]
+portrait = "happy"
+local = "Tonight will be fun. I'll see you at 8 pm?"
+
+[shooting_star_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ shooting_star_date_status = "celine_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ celine_is_partner = false }
+]
+portrait = "embarrassed"
+local = "H-hi [Ari], did you have a nice time last night?"
+prompts = [
+	{ local = "I did!", next = "1" },
+	{ local = "Of course!", next = "1" }
+]
+
+[shooting_star_follow_up.1]
+portrait = "blush"
+local = "I'm so glad! I did too. Thanks again for inviting me."
+
+[shooting_star_8h_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ shooting_star_date_status = "celine_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ celine_is_partner = true }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "very_happy"
+local = "Last night was fun, wasn't it?"
+next = "1"
+
+[shooting_star_8h_follow_up.1]
+portrait = "blush"
+local = "Let's watch the stars together next year, too."
+
+[shooting_star_missed_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ shooting_star_date_status = "celine_invited" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" }
+]
+portrait = "think"
+local = "..."
+next = "1"
+
+[shooting_star_missed_follow_up.1]
+portrait = "sad"
+local = "Is everything okay, [Ari]?"
+next = "2"
+
+[shooting_star_missed_follow_up.2]
+portrait = "gloomy"
+local = "You never showed up last night. Did something happen...?"
+
+[shooting_star_caldarus_follow_up_celine]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ shooting_star_date_status = "caldarus_went" },
+	{ shooting_star_festival_date = "2d", time = "after" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "celine" } }]
+portrait = "happy"
+effect = "cheery"
+local = "Hi, [Ari]!"
+next = "1"
+
+[shooting_star_caldarus_follow_up_celine.1]
+portrait = "neutral"
+local = "The plants seem happy today, despite the chill in the air."
+next = "2"
+
+[shooting_star_caldarus_follow_up_celine.2]
+portrait = "think"
+local = "The trees especially... and I'm not talking about the change in color."
+next = "3"
+
+[shooting_star_caldarus_follow_up_celine.3]
+portrait = "sweat"
+local = "It sounds strange, but nature's very spirit seems to be smiling today!"
+
+[shooting_star_juniper_follow_up_celine]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ shooting_star_date_status = "juniper_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ celine_is_partner = false },
+	{ juniper_is_partner = false }
+]
+portrait = "think"
+local = "Juniper was acting a little strange when I dropped off some herbs for her this morning..."
+next = "1"
+
+[shooting_star_juniper_follow_up_celine.1]
+portrait = "happy"
+effect = "drop"
+local = "She asked me if we're friends... Of course we're friends!"
+next = "2"
+
+[shooting_star_juniper_follow_up_celine.2]
+portrait = "sweat"
+local = "Where do you suppose that came from?"
+
+[shooting_star_follow_up_not_invited]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ shooting_star_date_status = "celine_invited", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "celine_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "juniper_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" }
+]
+portrait = "think"
+local = "Dell's definitely going to be running around looking for shooting stars with her friends."
+next = "1"
+
+[shooting_star_follow_up_not_invited.1]
+portrait = "embarrassed"
+local = "She does this every year, but I just don't have the heart to tell her she probably won't find anything."
+
+# NEW ROMANCE LINE FOLLOW UPS
+[shooting_star_romantic_follow_up_A]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ shooting_star_date_status = "celine_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ time_of_day = "morning" },
+	{ shooting_star_gate = false },
+	{ celine_is_fiance = false },
+	{ celine_is_spouse = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "cute_face", npc = "celine" } }]
+portrait = "neutral"
+local = "Good morning! Your timing is perfect."
+next = "1"
+
+[shooting_star_romantic_follow_up_A.1]
+portrait = "blush_closed_eyes"
+local = "It's been getting colder, so I made you a cup of $Hot Chocolate$ to start your day!"
+next = "2"
+
+[shooting_star_romantic_follow_up_A.2]
+portrait = "embarrassed"
+actions = [{ item = "hot_cocoa" }]
+local = "I... I hope you like extra marshmallows."
+
+[shooting_star_romantic_follow_up_B]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_ex = false },
+	{ shooting_star_date_status = "celine_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+	{ celine_is_fiance = false },
+	{ celine_is_spouse = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "celine" } }]
+portrait = "neutral"
+local = "You look nice today, [Ari]!"
+next = "1"
+
+[shooting_star_romantic_follow_up_B.1]
+portrait = "blush_special"
+local = "Um, I mean, not that you normally don't! Because you do!"

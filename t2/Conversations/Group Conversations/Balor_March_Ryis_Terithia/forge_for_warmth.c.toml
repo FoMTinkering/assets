@@ -1,0 +1,125 @@
+[forge_for_warmth]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "balor" },
+		{ npc = "march" },
+		{ npc = "ryis" },
+		{ npc = "terithia" }
+	] },
+	{ balor_zone = "town/forge_lesson" },
+	{ any = [
+		{ march_zone = "town/blacksmith_forge" },
+		{ march_zone = "town/forge_lesson" }
+	] },
+	{ ryis_zone = "town/forge_lesson" },
+	{ terithia_zone = "town/forge_lesson" },
+]
+actions = [
+	{ bark = { bark = "sweat_drop", npc = "balor" } },
+	{ bark = { bark = "annoyed", npc = "march" } },
+	{ bark = { bark = "sweat_drop", npc = "ryis" } },
+	{ bark = { bark = "sweat_drop", npc = "terithia" } }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "What do you think, March? Can you make me a new axle for my wagon?"
+next = "1"
+
+[forge_for_warmth.1]
+speaker = "terithia"
+portrait = "mad"
+local = "Hey, no cutting! He's working on my fish hooks right now!"
+next = "2"
+
+[forge_for_warmth.2]
+speaker = "ryis"
+portrait = "think"
+local = "Not to interrupt, but I really need those nails, March."
+next = "3"
+
+[forge_for_warmth.3]
+speaker = "march"
+portrait = "ugh"
+local = "No one's getting anything if you all don't shut it. I can barely concentrate!"
+
+[forge_for_warmth_2]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "balor" },
+		{ npc = "march" },
+		{ npc = "ryis" },
+		{ npc = "terithia" }
+	] },
+	{ balor_zone = "town/forge_lesson" },
+	{ any = [
+		{ march_zone = "town/blacksmith_forge" },
+		{ march_zone = "town/forge_lesson" }
+	] },
+	{ ryis_zone = "town/forge_lesson" },
+	{ terithia_zone = "town/forge_lesson" },
+	{ season = "winter" }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "What do you think? He's been swinging that hammer for a while now."
+next = "1"
+
+[forge_for_warmth_2.1]
+speaker = "terithia"
+portrait = "wink"
+local = "He's definitely getting tired. Take a break, March!"
+next = "2"
+
+[forge_for_warmth_2.2]
+speaker = "ryis"
+portrait = "happy"
+local = "Oh, I think he heard us. Look, he's hammering faster."
+next = "3"
+
+[forge_for_warmth_2.3]
+speaker = "march"
+portrait = "unimpressed"
+local = "[Ari], please tell those gossips that they can warm themselves by the forge only if they're quiet!"
+
+[forge_for_warmth_3]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "balor" },
+		{ npc = "march" },
+		{ npc = "ryis" },
+		{ npc = "terithia" }
+	] },
+	{ balor_zone = "town/forge_lesson" },
+	{ any = [
+		{ march_zone = "town/blacksmith_forge" },
+		{ march_zone = "town/forge_lesson" }
+	] },
+	{ ryis_zone = "town/forge_lesson" },
+	{ terithia_zone = "town/forge_lesson" },
+	{ season = "winter" }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "Looks like we've got a group. Should we get a game of cards going?"
+next = "1"
+
+[forge_for_warmth_3.1]
+speaker = "ryis"
+portrait = "wink"
+local = "I brought a deck! I can deal."
+next = "2"
+
+[forge_for_warmth_3.2]
+speaker = "terithia"
+portrait = "think"
+local = "All that's left is a card table! March, we're going to need your anvil."
+next = "3"
+
+[forge_for_warmth_3.3]
+speaker = "march"
+portrait = "mad"
+effect = "angry"
+local = "I'm working here!"

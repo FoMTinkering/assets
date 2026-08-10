@@ -1,0 +1,53 @@
+[play]
+refresh = "never"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "reina" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "<reina_zone>" },
+	{ dell_is_inside = false },
+	{ dell_routine = "hgs_it", comparator = "!=" },
+	{ luc_routine = "hgs_it", comparator = "!=" },
+	{ maple_routine = "hgs_it", comparator = "!=" },
+]
+speaker = "reina"
+portrait = "neutral"
+local = "Watching the kids play reminds me of when I used to play make-believe with Celine and Adeline."
+next = "1"
+
+[play.1]
+speaker = "dell"
+portrait = "mad"
+effect = "sick"
+local = "Cough cough... I can't believe I was betrayed... by my own second-in-command... poisoned... to DEATH..."
+next = "2"
+
+[play.2]
+speaker = "maple"
+portrait = "happy"
+effect = "sparkles_dark"
+local = "You shouldn't have crossed me, Dell... you're too pure of heart. You never stood a chance against Blood Queen Maple's royal poisoner, Luc the Venomous."
+next = "3"
+
+[play.3]
+speaker = "luc"
+portrait = "think"
+local = "And you are too sure of yourself, Blood Queen Maple. The poison I extracted from my beetles, the poison that now courses through Knight Dell's veins..."
+next = "4"
+
+[play.4]
+speaker = "luc"
+portrait = "mad"
+local = "It's the same poison in your tea! Long live the insect kingdom!"
+next = "5"
+
+[play.5]
+speaker = "reina"
+portrait = "happy"
+effect = "drop"
+local = "Actually, this is pretty different."

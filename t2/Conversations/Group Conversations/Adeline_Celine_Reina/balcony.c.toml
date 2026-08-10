@@ -1,0 +1,75 @@
+[balcony]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "celine" }, { npc = "reina" }] },
+	{ adeline_heart_level = 4, comparator = ">=" },
+	{ celine_heart_level = 4, comparator = ">=" },
+	{ reina_heart_level = 4, comparator = ">=" },
+	{ adeline_zone = "<celine_zone>" },
+	{ adeline_zone = "<reina_zone>" },
+	{ adeline_zone = "inn/balcony_hang" }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "adeline" } },
+	{ bark = { bark = "cute_face", npc = "celine" } },
+	{ bark = { bark = "heart", npc = "reina" } }
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "Do you remember when we were little and couldn't see over the railing?"
+next = "1"
+
+[balcony.1]
+speaker = "celine"
+portrait = "happy"
+local = "I sure do! We used to pretend like we were sneaking around castle ramparts."
+next = "2"
+
+[balcony.2]
+speaker = "reina"
+portrait = "neutral"
+local = "Wasn't that game your idea, Celine? I saw Dell reinvent it just the other day."
+next = "3"
+
+[balcony.3]
+speaker = "reina"
+portrait = "happy"
+effect = "sparkles"
+local = "Palace infiltration must run in the family!"
+
+[balcony_2]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "celine" }, { npc = "reina" }] },
+	{ adeline_zone = "<celine_zone>" },
+	{ adeline_zone = "<reina_zone>" },
+	{ adeline_zone = "inn/balcony_hang" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+]
+speaker = "celine"
+portrait = "concerned"
+local = "Thank you for joining us here today, Adeline. You know we're here because we care for you, right?"
+next = "1"
+
+[balcony_2.1]
+speaker = "reina"
+portrait = "neutral"
+local = "So know that I say this with love... You cannot be having coffee after the sun goes down."
+next = "2"
+
+[balcony_2.2]
+speaker = "reina"
+portrait = "sad"
+local = "It makes you crazy, girl."
+next = "3"
+
+[balcony_2.3]
+speaker = "adeline"
+portrait = "concerned"
+local = "Is this an intervention? It was just the one time, you guys!"
+next = "4"
+
+[balcony_2.4]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "Well. Maybe twice."

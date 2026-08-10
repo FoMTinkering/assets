@@ -1,0 +1,576 @@
+[celine_post_8h_romantic_0]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_dating = true },
+	{ celine_post_8h_romantic_gate = false },
+	{ celine_post_8h_romantic_grouping = 0 },
+	{ celine_post_8h_romantic_progression = false }
+]
+writes = [
+	{ celine_post_8h_romantic_gate = true, expires = "20h" },
+	{ celine_post_8h_romantic_grouping = 1 }
+]
+actions = [{ bark = { bark = "blush", npc = "celine" } }]
+portrait = "embarrassed"
+local = "I really like you, [Ari]..."
+next = "1"
+
+[celine_post_8h_romantic_0.1]
+portrait = "blush_special"
+local = "I... I hope it's okay if I tell you that a lot."
+
+[celine_post_8h_romantic_1]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_dating = true },
+	{ celine_post_8h_romantic_gate = false },
+	{ celine_post_8h_romantic_grouping = 1 },
+	{ celine_post_8h_romantic_progression = false }
+]
+writes = [
+	{ celine_post_8h_romantic_gate = true, expires = "20h" },
+	{ celine_post_8h_romantic_grouping = 2 }
+]
+actions = [{ bark = { bark = "blush", npc = "celine" } }]
+portrait = "neutral"
+local = "I have a little journal where I like to keep notes on my garden..."
+next = "1"
+
+[celine_post_8h_romantic_1.1]
+portrait = "embarrassed"
+local = "But lately, I keep spacing out and doodling in the margins."
+next = "2"
+
+[celine_post_8h_romantic_1.2]
+portrait = "shy_blush"
+local = "I don't know what's gotten into me! I'm just... distracted."
+prompts = [
+	{ local = "I can help you look over your notes.", next = "3" },
+	{ local = "I want to see your doodles!", next = "6" }
+]
+
+[celine_post_8h_romantic_1.3]
+portrait = "blush_closed_eyes"
+local = "I guess that might keep me on task..."
+next = "4"
+
+[celine_post_8h_romantic_1.4]
+portrait = "shy_blush"
+local = "..."
+next = "5"
+
+[celine_post_8h_romantic_1.5]
+portrait = "blush_special"
+local = "On second thought, maybe it won't."
+
+[celine_post_8h_romantic_1.6]
+portrait = "embarrassed"
+local = "O-oh! Well, I guess I could show you a few!"
+next = "7"
+
+[celine_post_8h_romantic_1.7]
+portrait = "shy_blush"
+local = "..."
+next = "8"
+
+[celine_post_8h_romantic_1.8]
+portrait = "blush_special"
+local = "On second thought, maybe not."
+
+[celine_post_8h_romantic_2]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_dating = true },
+	{ celine_post_8h_romantic_gate = false },
+	{ celine_post_8h_romantic_grouping = 2 },
+	{ celine_post_8h_romantic_progression = false }
+]
+writes = [
+	{ celine_post_8h_romantic_gate = true, expires = "20h" },
+	{ celine_post_8h_romantic_grouping = 3 }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "celine" } },
+	{ item = "vegetable_quiche" }
+]
+portrait = "shy_blush"
+local = "Um, [Ari]? I made you something."
+next = "1"
+
+[celine_post_8h_romantic_2.1]
+portrait = "embarrassed"
+local = "I've been making $Vegetable Quiche$ with my family ever since I was little, so I'm pretty good at it!"
+next = "2"
+
+[celine_post_8h_romantic_2.2]
+portrait = "blush_closed_eyes"
+local = "I hope you like it!"
+
+[celine_post_8h_romantic_3]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_dating = true },
+	{ celine_post_8h_romantic_gate = false },
+	{ celine_post_8h_romantic_grouping = 3 },
+	{ celine_post_8h_romantic_progression = false }
+]
+writes = [
+	{ celine_post_8h_romantic_gate = true, expires = "2d" },
+	{ celine_post_8h_romantic_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "think"
+local = "Mom and Dad sometimes talk about when they first got together..."
+next = "1"
+
+[celine_post_8h_romantic_3.1]
+portrait = "happy"
+local = """They refer to that time period as "the springtime of their youth"."""
+next = "2"
+
+[celine_post_8h_romantic_3.2]
+portrait = "embarrassed"
+local = "I wonder if in the future... I'll talk about these days in the same way."
+
+[celine_post_8h_romantic_4]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_dating = true },
+	{ celine_post_8h_romantic_gate = false },
+	{ celine_post_8h_romantic_progression = false },
+	{ celine_post_8h_romantic_grouping = 4 }
+]
+writes = [{ celine_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "celine" } }]
+portrait = "think"
+local = "I don't usually tell anyone this... but I tend to have really vivid dreams."
+next = "1"
+
+[celine_post_8h_romantic_4.1]
+portrait = "shy_blush"
+local = "Last night, I dreamt that we were walking through a meadow, holding hands and laughing..."
+next = "2"
+
+[celine_post_8h_romantic_4.2]
+portrait = "blush_closed_eyes"
+local = "It was so nice. Maybe we should do that some time!"
+
+[celine_post_8h_romantic_5]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_dating = true },
+	{ celine_post_8h_romantic_gate = false },
+	{ celine_post_8h_romantic_progression = false },
+	{ celine_post_8h_romantic_grouping = 4 }
+]
+writes = [{ celine_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "celine" } }]
+portrait = "shy_blush"
+local = "I think Dell figured out that we like each other..."
+next = "1"
+
+[celine_post_8h_romantic_5.1]
+portrait = "happy"
+effect = "drop"
+local = "She keeps warning me we'll give each other cooties if we get too close."
+next = "2"
+
+[celine_post_8h_romantic_5.2]
+portrait = "shy_blush"
+local = "I don't know... I think I'll take my chances."
+
+[celine_post_8h_romantic_6]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_partner = true },
+	{ celine_post_8h_romantic_gate = false },
+	{ celine_post_8h_romantic_progression = false },
+	{ celine_post_8h_romantic_grouping = 4 }
+]
+writes = [{ celine_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "embarrassed"
+local = "I used to think nothing could make me smile the way flowers do."
+next = "1"
+
+[celine_post_8h_romantic_6.1]
+portrait = "blush_closed_eyes"
+local = "But that was before I met you."
+
+[celine_post_8h_romantic_7]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_dating = true },
+	{ celine_post_8h_romantic_gate = false },
+	{ celine_post_8h_romantic_progression = false },
+	{ celine_post_8h_romantic_grouping = 4 }
+]
+writes = [{ celine_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "blush_closed_eyes"
+local = "[Ari]! I was just thinking about you!"
+next = "1"
+
+[celine_post_8h_romantic_7.1]
+portrait = "shy_blush"
+local = "A lot, actually."
+next = "2"
+
+[celine_post_8h_romantic_7.2]
+portrait = "blush"
+local = "I'm glad you stopped by to say hello."
+
+[celine_post_8h_romantic_8]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_partner = true },
+	{ celine_post_8h_romantic_gate = false },
+	{ celine_post_8h_romantic_progression = false },
+	{ celine_post_8h_romantic_grouping = 4 }
+]
+writes = [{ celine_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "embarrassed"
+local = "Oh, you look really nice today..."
+next = "1"
+
+[celine_post_8h_romantic_8.1]
+portrait = "shy_blush"
+local = "You always look nice, but today especially."
+
+[celine_post_8h_romantic_9]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_dating = true },
+	{ celine_post_8h_romantic_gate = false },
+	{ celine_post_8h_romantic_progression = false },
+	{ celine_post_8h_romantic_grouping = 4 }
+]
+writes = [{ celine_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "neutral"
+local = "Did I ever tell you that spring is my favorite season, [Ari]?"
+next = "1"
+
+[celine_post_8h_romantic_9.1]
+portrait = "happy"
+local = "Everything comes alive after winter... the meadows turn fragrant and blossom with color."
+next = "2"
+
+[celine_post_8h_romantic_9.2]
+portrait = "shy_blush"
+local = "And now, there's something new..."
+next = "3"
+
+[celine_post_8h_romantic_9.3]
+portrait = "embarrassed"
+local = "Spring was the season we first met."
+
+[celine_post_8h_romantic_10]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_dating = true },
+	{ celine_post_8h_romantic_gate = false },
+	{ any = [
+		{ celine_post_8h_romantic_progression = false },
+		{ celine_post_8h_best_friend_grouping = 0 },
+		{ celine_post_8h_best_friend_grouping = 4 }
+	] },
+	{ celine_post_8h_romantic_grouping = 4 },
+	{ celine_animation = "book_sit" }
+]
+writes = [
+	{ celine_post_8h_romantic_gate = true, expires = "2d" },
+	{ celine_post_8h_best_friend_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "blush", npc = "celine" } }]
+portrait = "neutral"
+local = "Hi [Ari]! I was just doing some reading."
+next = "1"
+
+[celine_post_8h_romantic_10.1]
+portrait = "sweat"
+local = "I love fantasy novels, but it's always hard waiting between releases."
+next = "2"
+
+[celine_post_8h_romantic_10.2]
+portrait = "neutral"
+local = "It's not a big deal, since I can just re-read my old favorites..."
+next = "3"
+
+[celine_post_8h_romantic_10.3]
+portrait = "shy_blush"
+local = "But lately I've been thinking it might be fun to branch out a little."
+next = "4"
+
+[celine_post_8h_romantic_10.4]
+portrait = "blush_closed_eyes"
+local = "Do you have a favorite genre that you'd recommend?"
+prompts = [
+	{ local = "I like historical fiction, myself.", next = "5" },
+	{ local = "I recommend a good mystery book!", next = "8" },
+	{ local = "How about a romance novel?", next = "11" }
+]
+
+[celine_post_8h_romantic_10.5]
+portrait = "happy"
+local = "Oooh, I'll have to give it a try!"
+next = "6"
+
+[celine_post_8h_romantic_10.6]
+portrait = "neutral"
+local = "I've always enjoyed learning about history..."
+next = "7"
+
+[celine_post_8h_romantic_10.7]
+portrait = "shy_blush"
+effect = "drop"
+local = "M-mostly the legends about heroes and dragons."
+
+[celine_post_8h_romantic_10.8]
+portrait = "happy"
+local = "Oooh, I've been meaning to borrow one from Valen!"
+next = "9"
+
+[celine_post_8h_romantic_10.9]
+portrait = "embarrassed"
+local = "It does sound exciting..."
+next = "10"
+
+[celine_post_8h_romantic_10.10]
+portrait = "shy_blush"
+local = "Wondering what's going to happen next in the story."
+
+[celine_post_8h_romantic_10.11]
+portrait = "blush_closed_eyes"
+local = "Oooh, that's not a bad idea."
+next = "12"
+
+[celine_post_8h_romantic_10.12]
+portrait = "embarrassed"
+local = "Do you have a particular recommendation?"
+next = "13"
+
+[celine_post_8h_romantic_10.13]
+portrait = "shy_blush"
+local = "I'm curious to learn more about what you like..."
+next = "14"
+
+[celine_post_8h_romantic_10.14]
+portrait = "blush_special"
+local = "A-about the genre."
+
+[celine_post_8h_romantic_11]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_dating = true },
+	{ celine_post_8h_romantic_gate = false },
+	{ celine_post_8h_romantic_progression = false },
+	{ celine_post_8h_romantic_grouping = 4 }
+]
+writes = [{ celine_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "celine" } }]
+portrait = "neutral"
+local = "Hi [Ari]! I passed by your farm on my walk earlier..."
+next = "1"
+
+[celine_post_8h_romantic_11.1]
+portrait = "shy_blush"
+local = "I remember when it was all rocks and bramble."
+next = "2"
+
+[celine_post_8h_romantic_11.2]
+portrait = "blush_closed_eyes"
+local = "It's come such a long way!"
+prompts = [
+	{ local = "Oh, I'm glad you like how the farm's turned out!", next = "3" },
+	{ local = "It was your tulip seeds that got me started.", next = "6" }
+]
+
+[celine_post_8h_romantic_11.3]
+portrait = "very_happy"
+local = "I really do!"
+next = "4"
+
+[celine_post_8h_romantic_11.4]
+portrait = "embarrassed"
+local = "It's obvious how much love and effort you've put into restoring the land."
+next = "5"
+
+[celine_post_8h_romantic_11.5]
+portrait = "blush_closed_eyes"
+local = "It takes a special kind of person to make that happen."
+
+[celine_post_8h_romantic_11.6]
+portrait = "embarrassed"
+local = "O-oh. You remember that?"
+next = "7"
+
+[celine_post_8h_romantic_11.7]
+portrait = "teary_special"
+local = "That's... so sweet, [Ari]."
+next = "8"
+
+[celine_post_8h_romantic_11.8]
+portrait = "blush_closed_eyes"
+local = "But you know, those seeds only bloomed because of your care!"
+
+[celine_post_8h_romantic_12]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_dating = true },
+	{ celine_post_8h_romantic_gate = false },
+	{ celine_post_8h_romantic_progression = false },
+	{ celine_post_8h_romantic_grouping = 4 },
+	{ has_spouse = false }
+]
+writes = [{ celine_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "celine" } }]
+portrait = "neutral"
+local = "Dell's been helping out more around the shop lately."
+next = "1"
+
+[celine_post_8h_romantic_12.1]
+portrait = "happy"
+local = "It's hard to believe she's growing up so fast!"
+next = "2"
+
+[celine_post_8h_romantic_12.2]
+portrait = "embarrassed"
+local = "I remember when she was just a baby..."
+next = "3"
+
+[celine_post_8h_romantic_12.3]
+portrait = "blush_closed_eyes"
+local = "I always loved helping my mom take care of her."
+prompts = [
+	{ local = "Do you think you want a family of your own someday?", next = "4" },
+	{ local = "Do you miss it?", next = "7" }
+]
+
+[celine_post_8h_romantic_12.4]
+portrait = "shy_blush"
+local = "Well, I like to think I'd make a good mom..."
+next = "5"
+
+[celine_post_8h_romantic_12.5]
+portrait = "blush_closed_eyes"
+local = "Taking care of a child is a lot more work than tending a garden, though."
+next = "6"
+
+[celine_post_8h_romantic_12.6]
+portrait = "shy_blush"
+effect = "drop"
+local = "Dell is certainly proof of that!"
+
+[celine_post_8h_romantic_12.7]
+portrait = "shy_blush"
+local = "I do, sometimes..."
+next = "8"
+
+[celine_post_8h_romantic_12.8]
+portrait = "blush_closed_eyes"
+local = "Taking care of a child is a lot more work than tending a garden, though."
+next = "9"
+
+[celine_post_8h_romantic_12.9]
+portrait = "shy_blush"
+effect = "drop"
+local = "Dell is certainly proof of that!"
+
+# Last Line
+[celine_post_8h_romantic_13]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_dating = true },
+	{ celine_post_8h_romantic_gate = false },
+	{ celine_post_8h_romantic_grouping = 4 }
+]
+writes = [
+	{ celine_post_8h_romantic_gate = true, expires = "2d" },
+	{ celine_post_8h_best_friend_gate = true, expires = "2d" },
+	{ celine_post_8h_romantic_progression = true }
+]
+actions = [{ bark = { bark = "blush", npc = "celine" } }]
+portrait = "think"
+local = "Oh, [Ari]!"
+next = "1"
+
+[celine_post_8h_romantic_13.1]
+portrait = "embarrassed"
+local = "Sorry, I was lost in thought."
+next = "2"
+
+[celine_post_8h_romantic_13.2]
+portrait = "shy_blush"
+local = "I was thinking about our flower, the day it bloomed."
+next = "3"
+
+[celine_post_8h_romantic_13.3]
+portrait = "blush_closed_eyes"
+local = "Sharing one's true feelings... I never guessed it held such tangible power."
+next = "4"
+
+[celine_post_8h_romantic_13.4]
+portrait = "shy_blush"
+local = "It makes me feel silly that I didn't tell you how I felt sooner."
+prompts = [
+	{ local = "Maybe we should try confessing in front of lots of plants... for science!", next = "5" },
+	{ local = "I like you! I like you! I really really like you!", next = "9" }
+]
+
+[celine_post_8h_romantic_13.5]
+portrait = "blush_closed_eyes"
+local = "Yes! F-for science!"
+next = "6"
+
+[celine_post_8h_romantic_13.6]
+portrait = "angry_blush"
+effect = "sparkles"
+local = "This power requires a thorough investigation!"
+next = "7"
+
+[celine_post_8h_romantic_13.7]
+portrait = "shy_blush"
+local = "..."
+next = "8"
+
+[celine_post_8h_romantic_13.8]
+portrait = "blush_special"
+effect = "hearts"
+local = "I really really like you, [Ari]!"
+
+[celine_post_8h_romantic_13.9]
+portrait = "blush_closed_eyes"
+local = "Oh wait wait! Let me find a notebook!"
+next = "10"
+
+[celine_post_8h_romantic_13.10]
+portrait = "angry_blush"
+effect = "sparkles"
+local = "After all, this power requires a thorough investigation!"
+next = "11"
+
+[celine_post_8h_romantic_13.11]
+portrait = "shy_blush"
+local = "..."
+next = "12"
+
+[celine_post_8h_romantic_13.12]
+portrait = "blush_special"
+effect = "hearts"
+local = "I really really like you too, [Ari]!"

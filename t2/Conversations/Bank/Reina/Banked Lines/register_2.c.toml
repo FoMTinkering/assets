@@ -1,0 +1,15 @@
+[register_2]
+refresh = "2m"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn" },
+	{ any = [
+		{ reina_routine = "inn_solo_reina" },
+		{ reina_routine = "inn_table_service" },
+		{ reina_routine = "inn_bar_service" },
+		{ reina_activity = "attend_register" }
+	] },
+	{ reina_heart_level = 4, comparator = ">=" }
+]
+portrait = "happy"
+local = "It's always nice when you come around, [Ari]. Now, what can I get for you?"

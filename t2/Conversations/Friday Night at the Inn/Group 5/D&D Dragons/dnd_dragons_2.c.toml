@@ -1,0 +1,153 @@
+[dnd_dragons_2]
+priority = "max"
+refresh = "never"
+requires = [
+    { day_of_the_week = "friday" },
+    { balor_zone = "inn/south_table" },
+    { caldarus_zone = "inn/south_table" },
+    { eiland_zone = "inn/south_table" },
+    { olric_zone = "inn/south_table" },
+    { seridia_zone = "inn/south_table" },
+    { terithia_zone = "inn/south_table" },
+    { any = [
+        { npc = "balor" },
+        { npc = "caldarus" },
+        { npc = "eiland" },
+        { npc = "olric" },
+        { npc = "seridia" },
+        { npc = "terithia" },
+    ] },
+    { dnd_dragons_fnati = 1 }
+]
+writes = [{ dnd_dragons_fnati = 2 }]
+actions = [
+    { bark = { bark = "sweat_drop", npc = "balor" } },
+    { bark = { bark = "sweat_drop", npc = "caldarus" } },
+    { bark = { bark = "sweat_drop", npc = "eiland" } },
+    { bark = { bark = "cute_face", npc = "olric" } },
+    { bark = { bark = "cute_face", npc = "seridia" } },
+    { bark = { bark = "sweat_drop", npc = "terithia" } },
+]
+speaker = "seridia"
+portrait = "neutral"
+local = "After last week's rousing session of bandit bullying, you have at last come to the castle of the Enchanter."
+next = "1"
+
+[dnd_dragons_2.1]
+speaker = "seridia"
+portrait = "think"
+local = "The drawbridge and gate are down, and all you can see inside is a thick mist..."
+next = "2"
+
+[dnd_dragons_2.2]
+speaker = "eiland"
+portrait = "mad"
+local = "Let us be on our guard. I'm sure the Enchanter has all sorts of diabolical magical traps in store for us."
+next = "3"
+
+[dnd_dragons_2.3]
+speaker = "terithia"
+portrait = "think"
+local = "I'll cast Trell's Intuition, it'll give us a buff to our Insight rolls."
+next = "4"
+
+[dnd_dragons_2.4]
+speaker = "olric"
+portrait = "happy"
+local = "Smart thinking, Princess! I'll need a few minutes to cast a spell to summon a rock golem."
+next = "5"
+
+[dnd_dragons_2.5]
+speaker = "olric"
+portrait = "neutral"
+local = "He can like, scout ahead for us? Also he's way cute."
+next = "6"
+
+[dnd_dragons_2.6]
+speaker = "eiland"
+portrait = "happy"
+local = "A sound plan, Wizard Shale!"
+next = "7"
+
+[dnd_dragons_2.7]
+speaker = "eiland"
+portrait = "think"
+local = "Now I'll need a few moments to cast buffs on our frontliners Solstice and Nix-"
+next = "8"
+
+[dnd_dragons_2.8]
+speaker = "caldarus"
+portrait = "think"
+local = "On the other hand..."
+next = "9"
+
+[dnd_dragons_2.9]
+speaker = "caldarus"
+portrait = "mad"
+local = "Maybe all this preparation is playing right into the Enchanter's hands!"
+next = "10"
+
+[dnd_dragons_2.10]
+speaker = "balor"
+portrait = "concerned"
+local = "Wait a moment, Solstice. Let me roll a perception check-"
+next = "11"
+
+[dnd_dragons_2.11]
+speaker = "caldarus"
+portrait = "happy"
+local = """I use my "Impenetrable Defense" ability and charge into the castle's courtyard!"""
+next = "12"
+
+[dnd_dragons_2.12]
+speaker = "balor"
+portrait = "sad"
+local = "Nevermind."
+next = "13"
+
+[dnd_dragons_2.13]
+speaker = "seridia"
+portrait = "happy"
+local = "My!"
+next = "14"
+
+[dnd_dragons_2.14]
+speaker = "seridia"
+portrait = "smile"
+local = "The Enchanter's elaborately laid spell wards all go off at once, obscuring Solstice in a cloud of multicolor magic."
+next = "15"
+
+[dnd_dragons_2.15]
+speaker = "seridia"
+portrait = "neutral"
+local = "He only has time for a brief, agonized scream before he turns to stone."
+next = "16"
+
+[dnd_dragons_2.16]
+speaker = "caldarus"
+portrait = "mad"
+local = "What!"
+next = "17"
+
+[dnd_dragons_2.17]
+speaker = "seridia"
+portrait = "think"
+local = "Drawn by the noise, monsters pour into the courtyard."
+next = "18"
+
+[dnd_dragons_2.18]
+speaker = "caldarus"
+portrait = "sad"
+local = "May I uh, get a do over?"
+next = "19"
+
+[dnd_dragons_2.19]
+speaker = "seridia"
+portrait = "happy"
+local = "You may not."
+next = "20"
+
+[dnd_dragons_2.20]
+actions = [{ blackout = 60 }]
+no_speaker = true
+local = "You had a thrilling time playing Dragons and Drama."

@@ -1,0 +1,33 @@
+[fountain]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "elsie" }, { npc = "terithia" }] },
+	{ adeline_zone = "<elsie_zone>" },
+	{ adeline_zone = "<terithia_zone>" },
+	{ any = [
+		{ adeline_zone = "town/fountain_north_east" },
+		{ adeline_zone = "town/fountain_north_west" },
+		{ adeline_zone = "town/fountain_south" }
+	] }
+]
+speaker = "terithia"
+portrait = "neutral"
+local = "Ever thought about putting fish in the fountain?"
+next = "1"
+
+[fountain.1]
+speaker = "adeline"
+portrait = "think"
+local = "I... have not..."
+next = "2"
+
+[fountain.2]
+speaker = "elsie"
+portrait = "think"
+local = "Nor I..."
+next = "3"
+
+[fountain.3]
+speaker = "terithia"
+portrait = "think"
+local = "Yeah... Probably not a good idea."

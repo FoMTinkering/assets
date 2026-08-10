@@ -1,0 +1,122 @@
+fade_out(4);
+wait(1);
+__raise_textbox();
+set_on_blackboard("no_held_child", true);
+set_on_blackboard("stork_child_portrait", true);
+
+//
+var spouse = spouse();
+set_conversation("Cutscenes/Heart Events/Children/Delivery/stork_delivery/stork_delivery");
+
+//
+scene(dragonsworn_glade);
+set_weather("calm");
+__override_post_process_time(12, 0);
+create_black_overlay();
+place_actor(ari, north, sd_ari_entrance);
+raise_actor(ari);
+fade_npc_alpha(ari, 0.0, 1.0, 150);
+place_actor(spouse, north, sd_spouse_entrance);
+raise_actor(spouse);
+fade_npc_alpha(spouse, 0.0, 1.0, 150);
+camera_position(sd_camera_1);
+request_music_play("Music/Events/Twinkling Light"); //
+fade_in(2.5);
+sim {
+    {
+        pan_camera(4, sd_camera_2);
+    }
+    {
+        wait(1);
+        setup_prop(gb_bird);
+        fade_prop_alpha(gb_bird, 0.0, 1.0, 180);
+        spawn_stork_baby_prop();
+        setup_prop(sd_star_bkg);
+        fade_prop_alpha(sd_star_bkg, 0.0, 1.0, 180);
+    }
+    {
+        wait(3);
+        free bark_speech(spouse, exclamation_mark);
+        free bark_speech(ari, exclamation_mark);
+    }
+}
+play_sound("SoundEffects/SpecialEvents/BabyCry");
+wait(4.5);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, exclamation_mark);
+free bark_speech(spouse, exclamation_mark);
+wait(0.5);
+free pan_camera(2, sd_camera_4);
+wait(1.5);
+face(spouse, east);
+face(ari, west);
+wait(0.5);
+free bark_speech(ari, heart);
+free bark_speech(spouse, heart);
+wait(2);
+free pan_camera(2, sd_camera_2);
+wait(1);
+sim {
+    {
+        wait(0.5);
+        face(ari, north);
+    }
+    {
+        wait(1);
+        face(spouse, north);
+    }
+    {
+        wait(1);
+        next_line(); //
+    }
+}
+close_textbox();
+free pan_camera(3, sd_camera_3);
+wait(1.5);
+face(spouse, east);
+wait(0.5);
+face(ari, west);
+wait(1);
+trigger_birth();
+wait(1);
+//
+wait(1);
+free bark_speech(ari, heart);
+free bark_speech(spouse, heart);
+wait(1.5);
+free pan_camera(3, sd_camera_2);
+wait(1.5);
+face(spouse, north);
+wait(0.5);
+face(ari, north);
+wait(1);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+free bark_speech(spouse, cute_face);
+wait(2);
+next_line(); //
+next_line(); //
+
+//
+if get_response() == 0 {
+    close_textbox();
+	wait(0.25);
+	run_tutorial("baby");
+    wait(0.25);
+    next_line(); //
+} else {
+    next_line(); //
+    next_line(); //
+}
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+fade_out(3);

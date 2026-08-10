@@ -1,0 +1,117 @@
+bio = "Legendary tailor banished from the Capital, now a fixture of Mistria's Saturday Market."
+birthday = { season = "fall", day = 20 }
+loved_gifts = [
+	"golden_alpaca_wool",
+	"golden_bristle",
+	"golden_duck_feather",
+	"golden_feather",
+	"golden_horse_hair",
+	"golden_rabbit_wool",
+	"golden_sheep_wool",
+	"middlemist",
+	"red_wine",
+	"white_wine",
+]
+liked_gifts = [
+	"alpaca_wool",
+	"breath_of_fire",
+	"bristle",
+	"cattail",
+	"celosia",
+	"crystal",
+	"crystal_rose",
+	"duck_feather",
+	"essence_blossom",
+	"feather",
+	"cup_of_tea",
+	"frost_lily",
+	"horse_hair",
+	"lilac",
+	"marigold",
+	"rabbit_wool",
+	"shadow_flower",
+	"snapdragon",
+	"viola",
+	"sheep_wool",
+
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "fuzzy_moth"
+name = "Louis"
+aldarian_name = "LW"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["vendor"]
+journal_portrait_offset = [-118, -36]
+journal_background_color = [255, 216, 254]
+date_photo_offset = [0, 0]
+job = "Clothing Vendor"
+icon_sprite = "spr_ui_generic_icon_npc_louis"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_louis"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_louis"
+dateable = false
+
+[gossip]
+	line = "louis_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["coffee"]
+	"17" = ["wine"]
+
+[offsets]
+	portrait = [-126, -65]
+	sweat = [0, 9]
+	hearts = [0, 4]
+	angry = [-5, 6]
+	sparkles = [1, 9]
+	sparkles_dark = [1, 9]
+	sick = [0, 8]
+	music_notes = [-2, 5]
+	intensity = [-2, -4]
+	surprise = [-1, 6]
+	shock = [5, -8]
+	sigh = [1, -1]
+	loud = [7, -4]
+	cheery = [0, -2]
+	drop = [-3, -2]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"

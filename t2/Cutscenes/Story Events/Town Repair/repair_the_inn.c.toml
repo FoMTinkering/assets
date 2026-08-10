@@ -1,0 +1,520 @@
+[repair_the_inn_pt_1_follow_up_adeline]
+refresh = "never"
+requires = [{ npc = "adeline" }, { rti = "pre" }]
+portrait = "neutral"
+local = "I never expected Jo and Hemlock to decline, they caught me completely off guard."
+next = "1"
+
+[repair_the_inn_pt_1_follow_up_adeline.1]
+portrait = "happy"
+local = "Thank goodness for Reina!"
+
+[repair_the_inn_pt_1_follow_up_hemlock]
+refresh = "never"
+requires = [{ npc = "hemlock" }, { rti = "pre" }]
+portrait = "neutral"
+local = "Lots to do around here before we can start construction, but don't you worry [Ari], we'll be ready as soon as you've collected all the materials!"
+
+[repair_the_inn_pt_1_follow_up_josephine]
+refresh = "never"
+requires = [{ npc = "josephine" }, { rti = "pre" }]
+portrait = "happy"
+local = "That daughter of mine! She's grown up into a fine business woman."
+
+[repair_the_inn_pt_1_follow_up_kids]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ rti = "pre" },
+]
+speaker = "maple"
+portrait = "neutral"
+local = "Did Reina show you the plans for the Inn? We helped, you know! I proposed the six room Princess Suite!"
+next = "1"
+
+[repair_the_inn_pt_1_follow_up_kids.1]
+speaker = "luc"
+portrait = "happy"
+local = "And I suggested the special menu for our bug customers!"
+next = "2"
+
+[repair_the_inn_pt_1_follow_up_kids.2]
+speaker = "dell"
+portrait = "sad"
+local = "She told me there wasn't any room for the arena royale though."
+next = "3"
+
+[repair_the_inn_pt_1_follow_up_kids.3]
+speaker = "maple"
+portrait = "think"
+local = "Wait... did my sister use ANY of our ideas?"
+
+[repair_the_inn_pt_1_follow_up_landen]
+refresh = "never"
+requires = [{ npc = "landen" }, { rti = "pre" }]
+portrait = "happy"
+local = "That Reina had quite the proposal for the Inn, didn't she? Branded furniture, now why didn't I think of that?"
+
+[repair_the_inn_pt_1_follow_up_ryis]
+refresh = "never"
+requires = [{ npc = "ryis" }, { rti = "pre" }]
+portrait = "neutral"
+local = "Pretty cool to think that when we're done with the Inn, we'll have worked on every building on that street, huh?"
+next = "1"
+
+[repair_the_inn_pt_1_follow_up_ryis.1]
+portrait = "wink"
+local = "We'll really be leaving our mark on Mistria for generations to come."
+
+[repair_the_inn_pt_1]
+kind = "gameplay_triggered"
+writes = [{ rti = "pre" }]
+speaker = "hemlock"
+portrait = "happy"
+local = "And here's [Ari]!"
+next = "1"
+
+[repair_the_inn_pt_1.1]
+speaker = "josephine"
+portrait = "neutral"
+local = "Can I get you two a bite to eat?"
+next = "2"
+
+[repair_the_inn_pt_1.2]
+speaker = "adeline"
+portrait = "neutral"
+local = "No no, this isn't about us! We're here to talk about the Inn."
+next = "3"
+
+[repair_the_inn_pt_1.3]
+speaker = "hemlock"
+portrait = "neutral"
+local = "At least let me make us some drinks!"
+prompts = [
+	{ local = "I'll have something fruity!", next = "4" },
+	{ local = "Bitter and full-bodied, please!", next = "5" },
+	{ local = "Can I get a glass of water?", next = "6" },
+]
+
+[repair_the_inn_pt_1.4]
+speaker = "hemlock"
+portrait = "happy"
+local = "You got it!"
+next = "7"
+
+[repair_the_inn_pt_1.5]
+speaker = "josephine"
+portrait = "happy"
+local = "Ooh, me too!"
+next = "7"
+
+[repair_the_inn_pt_1.6]
+speaker = "hemlock"
+portrait = "happy"
+local = "I've got a bottle here from the winter of the Two Week Blizzard, let's crack it open!"
+next = "7"
+
+[repair_the_inn_pt_1.7]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "I suppose I'll have what [Ari] is having then."
+next = "8"
+
+[repair_the_inn_pt_1.8]
+speaker = "josephine"
+portrait = "wink"
+local = "So what can we help you two with?"
+next = "9"
+
+[repair_the_inn_pt_1.9]
+speaker = "adeline"
+portrait = "neutral"
+local = "As you know, we recently rebuilt Hayden's barn and coop, giving him the room to raise new animals and securing a new source of exports for the town."
+next = "10"
+
+[repair_the_inn_pt_1.10]
+speaker = "adeline"
+portrait = "think"
+local = "It was a project that I don't think Hayden could have done alone, but it benefits everyone living here."
+next = "11"
+
+[repair_the_inn_pt_1.11]
+speaker = "josephine"
+portrait = "neutral"
+local = "I'll say! We haven't had to worry about our orders being too big ever since!"
+next = "12"
+
+[repair_the_inn_pt_1.12]
+speaker = "hemlock"
+portrait = "happy"
+local = "And the quality has never been better!"
+next = "13"
+
+[repair_the_inn_pt_1.13]
+speaker = "adeline"
+portrait = "happy"
+local = "I'm so glad to hear that!"
+next = "14"
+
+[repair_the_inn_pt_1.14]
+speaker = "josephine"
+portrait = "think"
+local = "I think I see where this is going, Adeline."
+next = "15"
+
+[repair_the_inn_pt_1.15]
+speaker = "adeline"
+portrait = "neutral"
+local = "The Sleeping Dragon Inn is the first place travelers come to when they arrive in Mistria and it's the hub of our social life."
+next = "16"
+
+[repair_the_inn_pt_1.16]
+speaker = "adeline"
+portrait = "happy"
+local = "With an upgrade, the sky's the limit!"
+next = "17"
+
+[repair_the_inn_pt_1.17]
+speaker = "hemlock"
+portrait = "think"
+local = "Well, I dunno... we can't really go much bigger than we are, don't have the staff."
+next = "18"
+
+[repair_the_inn_pt_1.18]
+speaker = "josephine"
+portrait = "neutral"
+local = "It's a lovely thought, but I wouldn't want to put so much of a burden on you two."
+next = "19"
+
+[repair_the_inn_pt_1.19]
+speaker = "adeline"
+portrait = "concerned"
+local = "It wouldn't be any trouble, really. You've both given so much! The town relies on everything the Inn provides."
+prompts = [
+	{ local = "I'd love to help!", next = "20" },
+	{ local = "Come oooon!", next = "21" },
+]
+
+[repair_the_inn_pt_1.20]
+speaker = "josephine"
+portrait = "happy"
+local = "That's sweet of you, but-"
+next = "22"
+
+[repair_the_inn_pt_1.21]
+speaker = "josephine"
+portrait = "think"
+local = "Oh, I'm not sure-"
+next = "22"
+
+[repair_the_inn_pt_1.22]
+speaker = "reina"
+portrait = "mad"
+local = "Hold it right there!"
+next = "23"
+
+[repair_the_inn_pt_1.23]
+speaker = "josephine"
+portrait = "mad"
+effect = "surprise"
+local = "Reina, goodness! You gave me such a start!"
+next = "24"
+
+[repair_the_inn_pt_1.24]
+speaker = "reina"
+portrait = "neutral"
+local = "A little bird told me that we were next up for improvements-"
+next = "25"
+
+[repair_the_inn_pt_1.25]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "Sorry, I got excited."
+next = "26"
+
+[repair_the_inn_pt_1.26]
+speaker = "reina"
+portrait = "happy"
+local = "And I've just put the finishing touches on my proposal!"
+next = "27"
+
+[repair_the_inn_pt_1.27]
+speaker = "reina"
+portrait = "neutral"
+local = "An upgraded, state of the art kitchen and bar! We'll be able to offer even more dishes!"
+next = "28"
+
+[repair_the_inn_pt_1.28]
+speaker = "hemlock"
+portrait = "happy"
+local = "Well, now! And what's this about furniture and decor?"
+next = "29"
+
+[repair_the_inn_pt_1.29]
+speaker = "reina"
+portrait = "happy"
+local = "Ryis and Landen have already agreed to help us do some redecorating."
+next = "30"
+
+[repair_the_inn_pt_1.30]
+speaker = "reina"
+portrait = "wink"
+local = "We'll even stock some of the new decor for sale! They'll be perfect souvenirs for our visitors, don't you think?"
+next = "31"
+
+[repair_the_inn_pt_1.31]
+speaker = "josephine"
+portrait = "neutral"
+local = "Runners for the tables, new cushions for the chairs, you've really thought of everything, Reina."
+next = "32"
+
+[repair_the_inn_pt_1.32]
+speaker = "josephine"
+portrait = "happy"
+local = "And this soup cauldron proposal-"
+next = "33"
+
+[repair_the_inn_pt_1.33]
+speaker = "reina"
+portrait = "neutral"
+local = "That's right, bigger servings for everyone, loaded with delicious ingredients!"
+next = "34"
+
+[repair_the_inn_pt_1.34]
+speaker = "adeline"
+portrait = "happy"
+local = "This looks fantastic, Reina!"
+prompts = [
+	{ local = "When do we start?", next = "35" },
+	{ local = "Jo, Hemlock, what do you two think?", next = "36" },
+]
+
+[repair_the_inn_pt_1.35]
+speaker = "reina"
+portrait = "wink"
+local = "As soon as my parents approve!"
+next = "37"
+
+[repair_the_inn_pt_1.36]
+speaker = "josephine"
+portrait = "happy"
+local = "I'm a bit overwhelmed, to tell you the truth!"
+next = "37"
+
+[repair_the_inn_pt_1.37]
+speaker = "hemlock"
+portrait = "neutral"
+local = "With a proposal this well thought out, how could we say no?"
+next = "38"
+
+[repair_the_inn_pt_1.38]
+speaker = "josephine"
+portrait = "neutral"
+local = "I'm so proud of you, Reina."
+next = "39"
+
+[repair_the_inn_pt_1.39]
+speaker = "reina"
+portrait = "embarrassed"
+local = "Aw, you two..."
+next = "40"
+
+[repair_the_inn_pt_1.40]
+speaker = "adeline"
+portrait = "neutral"
+local = "I'll get the $Donation Box$ set up outside. We're all counting on you, [Ari]."
+
+[repair_the_inn_pt_2_follow_up_balor]
+refresh = "never"
+requires = [{ npc = "balor" }, { rti = "post" }]
+portrait = "neutral"
+local = "I'm glad they left my room alone in the construction, some of the merchandise I keep in there is quite delicate."
+
+[repair_the_inn_pt_2_follow_up_hemlock]
+refresh = "never"
+requires = [{ npc = "hemlock" }, { rti = "post" }]
+portrait = "neutral"
+local = "Business is right up with the Inn's refurbishment!"
+next = "1"
+
+[repair_the_inn_pt_2_follow_up_hemlock.1]
+portrait = "wink"
+local = "We're not raising the prices though."
+
+[repair_the_inn_pt_2_follow_up_josephine]
+refresh = "never"
+requires = [{ npc = "josephine" }, { rti = "post" }]
+portrait = "neutral"
+local = "The Inn has been in the family for generations, it's so wonderful to see what it's grown into!"
+
+[repair_the_inn_pt_2_follow_up_maple]
+refresh = "never"
+requires = [{ npc = "maple" }, { rti = "post" }]
+portrait = "think"
+local = "You know, when I grow up I was planning to go to the Capital to seek my fortune..."
+next = "1"
+
+[repair_the_inn_pt_2_follow_up_maple.1]
+portrait = "happy"
+local = "But the Inn looks so nice now, it's hard to imagine there's a better place to go in all of Aldaria!"
+
+[repair_the_inn_pt_2_follow_up_reina]
+refresh = "never"
+requires = [{ npc = "reina" }, { rti = "post" }]
+portrait = "happy"
+local = "I really can't thank you enough, [Ari]. The new kitchen is a dream to work in!"
+
+[repair_the_inn_pt_2_turn_in]
+kind = "gameplay_triggered"
+actions = [{ cutscene = "repair_the_inn_pt_2" }]
+speaker = "adeline"
+portrait = "happy"
+local = "Are we ready to get started on the Inn? The whole town has been looking forward to this!"
+
+[repair_the_inn_pt_2]
+kind = "gameplay_triggered"
+writes = [{ rti = "post", expires = "4d" }]
+speaker = "josephine"
+portrait = "neutral"
+effect = "surprise"
+local = "My word! It looks like most of the town came out!"
+next = "2"
+
+[repair_the_inn_pt_2.2]
+speaker = "balor"
+portrait = "happy"
+local = "Only too happy to contribute, seeing as we'll all be benefiting."
+next = "3"
+
+[repair_the_inn_pt_2.3]
+speaker = "landen"
+portrait = "happy"
+local = "You two ready?"
+next = "4"
+
+[repair_the_inn_pt_2.4]
+speaker = "ryis"
+portrait = "happy"
+local = "Always!"
+next = "5"
+
+[repair_the_inn_pt_2.5]
+speaker = "celine"
+portrait = "happy"
+local = "Come on Hayden, let's get these planter boxes ready!"
+next = "6"
+
+[repair_the_inn_pt_2.6]
+speaker = "hayden"
+portrait = "neutral"
+local = "I've got the finest Sweetwater Farm soil ready for 'em!"
+next = "7"
+
+[repair_the_inn_pt_2.7]
+speaker = "reina"
+portrait = "mad"
+local = "Dragonguard, assemble!"
+next = "8"
+
+[repair_the_inn_pt_2.8]
+speaker = "luc"
+portrait = "happy"
+local = "Oh boy, oh boy!"
+next = "9"
+
+[repair_the_inn_pt_2.9]
+speaker = "maple"
+portrait = "neutral"
+local = "Time to show everyone what we've got!"
+next = "10"
+
+[repair_the_inn_pt_2.10]
+speaker = "dell"
+portrait = "mad"
+local = "I'm ready!"
+next = "11"
+
+[repair_the_inn_pt_2.11]
+speaker = "reina"
+portrait = "neutral"
+local = "Your mission is to help me decorate the dining room! The whole town is depending on you!"
+next = "12"
+
+[repair_the_inn_pt_2.12]
+speaker = "reina"
+portrait = "think"
+local = "Oh, and Balor, Olric, come with us."
+next = "13"
+
+[repair_the_inn_pt_2.13]
+speaker = "reina"
+portrait = "happy"
+local = "You can do the heavy lifting!"
+next = "14"
+
+[repair_the_inn_pt_2.14]
+speaker = "olric"
+portrait = "happy"
+local = "Helping out the Dragonguard? Wow!"
+next = "15"
+
+[repair_the_inn_pt_2.15]
+speaker = "adeline"
+portrait = "happy"
+local = "It's all coming together so fast, I think they're almost done."
+next = "16"
+
+[repair_the_inn_pt_2.16]
+speaker = "hemlock"
+portrait = "happy"
+local = "Would you look at that!"
+next = "17"
+
+[repair_the_inn_pt_2.17]
+speaker = "adeline"
+portrait = "neutral"
+local = "Shall we go inside?"
+next = "18"
+
+[repair_the_inn_pt_2.18]
+speaker = "reina"
+portrait = "happy"
+local = "Welcome to the new and improved Sleeping Dragon Inn, everyone!"
+next = "19"
+
+[repair_the_inn_pt_2.19]
+speaker = "josephine"
+portrait = "happy"
+local = "It's a dream come true!"
+next = "20"
+
+[repair_the_inn_pt_2.20]
+speaker = "hemlock"
+portrait = "neutral"
+local = "Say, the bar is already stocked!"
+next = "21"
+
+[repair_the_inn_pt_2.21]
+speaker = "balor"
+portrait = "wink"
+local = "No thanks are necessary, but I wouldn't say no to a drink!"
+next = "22"
+
+[repair_the_inn_pt_2.22]
+speaker = "hemlock"
+portrait = "happy"
+local = "I'd say drinks are on the house for all of you!"
+next = "23"
+
+[repair_the_inn_pt_2.23]
+speaker = "reina"
+portrait = "happy"
+local = "And I'll get cooking! I can't wait to break in my new kitchen!"
+next = "24"
+
+[repair_the_inn_pt_2.24]
+speaker = "josephine"
+portrait = "happy"
+local = "Thank you everyone, I can't tell you how much I'm looking forward to welcoming you all here for many more seasons to come!"

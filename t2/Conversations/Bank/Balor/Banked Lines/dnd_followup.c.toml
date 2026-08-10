@@ -1,0 +1,16 @@
+[dnd_followup]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ day_of_the_week = "friday", comparator = "!=" },
+	{ dnd_fnati = 1 },
+	{ dnd_fnati_discussion = 2, comparator = "<" },
+]
+writes = [{ dnd_fnati_discussion = 1, operator = "+=", expires = "1w" }]
+portrait = "mad"
+local = "I kept trying to get out of Lord Eiland's little game, but he made me a character and everything."
+next = "1"
+
+[dnd_followup.1]
+portrait = "think"
+local = "Still, what kind of name is Snicklefritz?"

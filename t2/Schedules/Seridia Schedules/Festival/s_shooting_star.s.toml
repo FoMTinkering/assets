@@ -1,0 +1,25 @@
+priority = "max"
+requires = [
+	{ caldarus_seridia_town = true },
+	{ seridia_is_human = true },
+	{ shooting_star_festival_date = "1d", time = "after" },
+]
+
+# Seridia
+[seridia."6:00am"]
+destination = "seridias_house/Seridia Wake Point"
+
+[seridia."6:12am"]
+destination = "seridias_house/Seridia Desk Chair"
+on_arrival_actions = [{ animation = "write_sit" }]
+
+[seridia."11:48am"]
+destination = "seridias_house/Seridia Desk Chair"
+on_arrival_actions = [{ routine = "seridia_coffee_making" }]
+
+[seridia."2:34pm"]
+destination = "western_ruins/seridias_house_routine_exit"
+on_arrival_actions = [{ routine = "seridia_western_ruins_writing_and_wander" }]
+
+[seridia."7:02pm"]
+destination = "western_ruins/star_festival_seridia"

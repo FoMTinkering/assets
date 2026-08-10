@@ -1,0 +1,21 @@
+[request_for_flowers]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "elsie" }] },
+	{ celine_zone = "<elsie_zone>" }
+]
+speaker = "elsie"
+portrait = "happy"
+local = "You're so sweet, Celine! You always take my request for flowers so seriously."
+next = "1"
+
+[request_for_flowers.1]
+speaker = "celine"
+portrait = "neutral"
+local = "I'm glad to know someone who likes flowers as much as I do. They really do transform a room!"
+next = "2"
+
+[request_for_flowers.2]
+speaker = "elsie"
+portrait = "wink"
+local = "They do! And I admit, I got used to having them in the Capital. My adoring fans spared no expense."

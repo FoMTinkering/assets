@@ -1,0 +1,135 @@
+[default]
+	hp = 1
+	damage = 0
+	essence = 0
+	drops = []
+	coin_count = [1, 3]
+
+	attack_duration = [45, 90]
+	windup_duration = [60, 90]
+	flee_timer = [120, 180]
+
+	starting_dir = [0, 360]
+	acknowledgment = [45, 55]
+
+	damage_number_offset = -15
+
+	iframes = 1
+	gm_object = "obj_monster_bat"
+	hurtbox = "spr_monster_essence_bat_hurt_box"
+
+	knockback = 2
+	knockback_decline = 0.8
+
+	flee_speed = 0.75
+	speed = 0.75
+	patience_acknowledgement_reset = -120
+
+	aggro_radius = 384
+	attack_radius = 96
+
+	status_effect_offset = -19
+	fire_effect_offset = -8
+
+	sprites = { misc = {} }
+	[default.tango]
+		idle = "SoundEffects/Enemies/EssenceBat/WingFlap"
+		walk = "SoundEffects/Enemies/EssenceBat/WingFlap"
+		flee = "SoundEffects/Enemies/EssenceBat/WingFlap"
+		acknowledgment = "SoundEffects/Enemies/EnemyAlerted"
+		windup = "SoundEffects/Enemies/EssenceBat/AttackWindup"
+		dying = "SoundEffects/Enemies/DieFlesh"
+		attack = "SoundEffects/Enemies/EssenceBat/AttackSpit"
+
+		misc.magic_particles = "SoundEffects/Enemies/EssenceBat/MagicParticles"
+		misc.projectile_spawn = "SoundEffects/Enemies/EssenceBat/EchoProjectile"
+
+		misc.weak_damage = "SoundEffects/Enemies/TakeDamageFleshWeak"
+		misc.strong_damage = "SoundEffects/Enemies/TakeDamageFleshStrong"
+
+[bat]
+	hp = 32
+	damage = 18
+	essence = 15
+	variant_attack = false
+
+	drops = [
+		{ item = "essence_drop", chance = 70, count_range = [1, 1] },
+		{ item = "monster_wing", chance = 30, count_range = [1, 1] },
+		{ cosmetic = "head_essence_bat_hat", chance = 5 },
+		{ item = "pet_skin_essence_bat", chance = 5 },
+	]
+
+	[bat.sprites]
+		idle.north = "spr_monster_essence_bat_main_idle_north"
+		idle.south = "spr_monster_essence_bat_main_idle_south"
+
+		acknowledgment.north = "spr_monster_essence_bat_main_alert_north"
+		acknowledgment.south = "spr_monster_essence_bat_main_alert_south"
+
+		walk.north = "spr_monster_essence_bat_main_fly_north"
+		walk.south = "spr_monster_essence_bat_main_fly_south"
+
+		windup.north = "spr_monster_essence_bat_main_windup_north"
+		windup.south = "spr_monster_essence_bat_main_windup_south"
+
+		attack.north = "spr_monster_essence_bat_main_attack_north"
+		attack.south = "spr_monster_essence_bat_main_attack_south"
+
+		hurt.north = "spr_monster_essence_bat_main_hurt_north"
+		hurt.south = "spr_monster_essence_bat_main_hurt_south"
+
+		dying.north = "spr_monster_essence_bat_main_hurt_north"
+		dying.south = "spr_monster_essence_bat_main_hurt_south"
+
+		flee.north = "spr_monster_essence_bat_main_fly_north"
+		flee.south = "spr_monster_essence_bat_main_fly_south"
+
+		misc.breath_east = "spr_fx_monster_essence_bat_breath_windup_east"
+		misc.breath_west = "spr_fx_monster_essence_bat_breath_windup_west"
+		misc.breath_north = "spr_fx_monster_essence_bat_breath_windup_north"
+		misc.breath_south = "spr_fx_monster_essence_bat_breath_windup_south"
+
+[bat_blue]
+	hp = 48
+	damage = 32
+	essence = 15
+	variant_attack = true
+	knockback = 4
+
+	drops = [
+		{ item = "essence_drop", chance = 70, count_range = [1, 1] },
+		{ item = "monster_wing", chance = 30, count_range = [1, 1] },
+		{ cosmetic = "head_essence_bat_hat", chance = 5 },
+		{ item = "pet_skin_essence_bat", chance = 5 },
+	]
+
+	[bat_blue.sprites]
+		idle.north = "spr_monster_essence_bat_blue_main_idle_north"
+		idle.south = "spr_monster_essence_bat_blue_main_idle_south"
+
+		acknowledgment.north = "spr_monster_essence_bat_blue_main_alert_north"
+		acknowledgment.south = "spr_monster_essence_bat_blue_main_alert_south"
+
+		walk.north = "spr_monster_essence_bat_blue_main_fly_north"
+		walk.south = "spr_monster_essence_bat_blue_main_fly_south"
+
+		windup.north = "spr_monster_essence_bat_blue_main_windup_north"
+		windup.south = "spr_monster_essence_bat_blue_main_windup_south"
+
+		attack.north = "spr_monster_essence_bat_blue_main_attack_north"
+		attack.south = "spr_monster_essence_bat_blue_main_attack_south"
+
+		hurt.north = "spr_monster_essence_bat_blue_main_hurt_north"
+		hurt.south = "spr_monster_essence_bat_blue_main_hurt_south"
+
+		dying.north = "spr_monster_essence_bat_blue_main_hurt_north"
+		dying.south = "spr_monster_essence_bat_blue_main_hurt_south"
+
+		flee.north = "spr_monster_essence_bat_blue_main_fly_north"
+		flee.south = "spr_monster_essence_bat_blue_main_fly_south"
+
+		misc.breath_east = "spr_fx_monster_essence_bat_breath_windup_east"
+		misc.breath_west = "spr_fx_monster_essence_bat_breath_windup_west"
+		misc.breath_north = "spr_fx_monster_essence_bat_breath_windup_north"
+		misc.breath_south = "spr_fx_monster_essence_bat_breath_windup_south"

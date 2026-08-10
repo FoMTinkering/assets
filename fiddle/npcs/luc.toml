@@ -1,0 +1,166 @@
+bio = "Budding entomologist with big dreams and bigger bugs. Brother to Reina and Maple, son of Hemlock and Josephine."
+birthday = { season = "spring", day = 21 }
+loved_gifts = [
+	"amber_trapped_insect",
+	"bumblebee",
+	"copper_beetle",
+	"fairy_bee",
+	"grilled_cheese",
+	"jewel_beetle",
+	"rhinoceros_beetle",
+	"roly_poly",
+	"sea_scarab",
+	"strobe_firefly",
+]
+
+liked_gifts = [
+	"ant",
+	"butterfly",
+	"cave_shrimp",
+	"cheese",
+	"chocolate",
+	"cricket",
+	"fuzzy_moth",
+	"hot_cocoa",
+	"hummingbird_hawk_moth",
+	"inchworm",
+	"jam_sandwich",
+	"mistmoth",
+	"monarch_butterfly",
+	"orchid_mantis",
+	"pond_skater",
+	"praying_mantis",
+	"puddle_spider",
+	"river_snail",
+	"snowball_beetle",
+	"worm",
+
+]
+
+disliked_gift_tags = ["junk", "weird_gift", "caffeine", "alcohol"]
+hated_gift = "frog"
+banned_gift_tags = ["alcohol", "caffeine", "bomb"]
+name = "Luc"
+aldarian_name = "LK"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["townsfolk", "inn_family", "child"]
+journal_portrait_offset = [-116, -70]
+journal_background_color = [255, 210, 227]
+date_photo_offset = [0, 0]
+job = "Future Entomologist"
+icon_sprite = "spr_ui_generic_icon_npc_luc"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_luc"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_luc"
+dateable = false
+
+[gossip]
+	line = "luc_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["hot_chocolate"]
+	"12" = ["water", "juice"]
+	"17" = ["juice"]
+	"19" = ["milk", "hot_chocolate"]
+
+[offsets]
+	portrait = [-128, -65]
+	sweat = [-5, 37]
+	hearts = [-5, 37]
+	angry = [-5, 41]
+	sparkles = [0, 40]
+	sparkles_dark = [0, 40]
+	sick = [-1, 41]
+	music_notes = [0, 40]
+	intensity = [2, 28]
+	surprise = [0, 38]
+	shock = [-5, 30]
+	sigh = [5, 29]
+	loud = [-2, 32]
+	cheery = [0, 34]
+	drop = [-2, 37]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.shocked]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.net]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "idle"
+
+[cycles.scratch_head]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"

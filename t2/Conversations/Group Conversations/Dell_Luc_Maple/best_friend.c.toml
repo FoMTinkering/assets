@@ -1,0 +1,39 @@
+[best_friend]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ date_time = "3m", comparator = "<" },
+	{ dell_heart_level = 4, comparator = "<" },
+	{ luc_heart_level = 4, comparator = "<" },
+	{ maple_heart_level = 4, comparator = "<" },
+]
+speaker = "dell"
+portrait = "mad"
+local = "I'm gonna make [Ari] my best friend!"
+next = "1"
+
+[best_friend.1]
+speaker = "luc"
+portrait = "neutral"
+local = "But I was gonna make <he>him</he><she>her</she><they>them</they><it>it</it><none>[Ari]</none> my best friend!"
+next = "2"
+
+[best_friend.2]
+speaker = "maple"
+portrait = "sad"
+local = "Oh Dell... oh Luc... so young, so naive..."
+next = "3"
+
+[best_friend.3]
+speaker = "maple"
+portrait = "neutral"
+local = "When I make <he>him</he><she>her</she><they>them</they><it>it</it><none>[Ari]</none> my best friend, I'll order <he>him</he><she>her</she><they>them</they><it>it</it><none>[Ari]</none> to defeat all <he>his</he><she>her</she><they>their</they><it>its</it><none>[Ari]'s</none> other best friends..."
+next = "4"
+
+[best_friend.4]
+speaker = "maple"
+portrait = "happy"
+effect = "sparkles"
+local = "And then I'll be the last best friend standing!"

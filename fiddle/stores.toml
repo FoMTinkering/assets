@@ -1,0 +1,1434 @@
+[general]
+	name = "General Store"
+	[[general.categories]]
+		icon = "spr_ui_store_category_icon_seeds"
+
+		[general.categories.seasonal]
+			spring = [
+				"seed_turnip",
+				"seed_potato",
+				"seed_cabbage",
+				"seed_strawberry",
+				{ item = "seed_carrot", requirements = { repaired_general_store = true } },
+				{ item = "seed_peas", requirements = { repaired_general_store = true } },
+				"seed_daffodil",
+				"seed_tulip",
+				"sapling_cherry",
+				"sapling_lemon",
+			]
+			summer = [
+				"seed_cucumber",
+				"seed_chili_pepper",
+				"seed_watermelon",
+				"seed_tomato",
+				"seed_corn",
+				"seed_sunflower",
+				{ item = "seed_sugar_cane", requirements = { repaired_general_store = true } },
+				{ item = "seed_tea", requirements = { repaired_general_store = true } },
+				"seed_daisy",
+				"seed_catmint",
+				"seed_cosmos",
+				"sapling_pear",
+				"sapling_peach",
+			]
+			fall = [
+				"seed_sweet_potato",
+				"seed_broccoli",
+				"seed_cranberry",
+				"seed_pumpkin",
+				"seed_wheat",
+				{ item = "seed_rice", requirements = { repaired_general_store = true } },
+				{ item = "seed_onion", requirements = { repaired_general_store = true } },
+				"seed_celosia",
+				"seed_chrysanthemum",
+				"sapling_apple",
+				"sapling_orange",
+			]
+			winter = [
+				"seed_beet",
+				"seed_cauliflower",
+				"seed_snow_peas",
+				"seed_daikon_radish",
+				"seed_frost_lily",
+				"seed_poinsettia",
+				"sapling_pomegranate",
+			]
+
+	[[general.categories]]
+		icon = "spr_ui_store_category_icon_ingredients"
+		constant_stock = [
+			"sugar",
+			"flour",
+			"rice",
+			"rock_salt",
+			"oil",
+			"soy_sauce",
+			"chocolate",
+			"curry_powder",
+			"paper",
+			{ item = "honey", requirements = { repaired_general_store = true } },
+		]
+
+	[[general.categories]]
+		icon = "spr_ui_store_category_icon_tools"
+		constant_stock = [
+			"shovel_worn",
+			"basic_pouch",
+			"watering_can_worn",
+			"hoe_worn",
+			"sword_worn",
+			{ item = "large_pouch", requirements = { repaired_general_store = true } },
+		]
+
+	[[general.categories]]
+		icon = "spr_ui_store_category_icon_furniture"
+		constant_stock = [
+			"starter_potted_plant",
+			"starter_scarecrow",
+			"starter_wheelbarrow",
+			"basic_wood_chest_medium",
+			"starter_shipping_box",
+			{ item = "spring_crop_sign_scroll_bundle", requirements = { repaired_general_store = true } },
+			{ item = "summer_crop_sign_scroll_bundle", requirements = { repaired_general_store = true } },
+			{ item = "fall_crop_sign_scroll_bundle", requirements = { repaired_general_store = true } },
+			{ item = "winter_crop_sign_scroll_bundle", requirements = { repaired_general_store = true } },
+			{ item = "seed_maker", requirements = { repaired_general_store = true } },
+		]
+
+[carpenter]
+	name = "Carpenter's Shop"
+	[[carpenter.categories]]
+		icon = "spr_ui_store_category_icon_materials"
+		constant_stock = [
+			"basic_wood",
+			"ore_stone",
+			"glass",
+			"clay",
+			"fiber",
+			"small_wood_bundle",
+			"large_wood_bundle",
+			"small_stone_bundle",
+			"large_stone_bundle",
+			{ item = "sod", requirements = { has_perk = "steady_supplies" } },
+			{ item = "peat", requirements = { has_perk = "steady_supplies" } },
+			{ item = "cattail", requirements = { has_perk = "steady_supplies" } },
+		]
+
+	[[carpenter.categories]]
+		icon = "spr_ui_store_category_icon_furniture"
+		constant_stock = [
+			"basic_bookshelf_oak",
+			"basic_bookshelf_walnut",
+			"basic_chair_oak",
+			"basic_chair_walnut",
+			"basic_bed_oak",
+			"basic_bed_walnut",
+			"basic_bed_double_oak",
+			"basic_bed_double_walnut",
+			"basic_dresser_oak",
+			"basic_dresser_walnut",
+			"basic_flooring_oak",
+			"basic_flooring_walnut",
+			"basic_nightstand_oak",
+			"basic_nightstand_walnut",
+			"basic_table_oak",
+			"basic_table_walnut",
+			"basic_wallpaper_oak",
+			"basic_wallpaper_walnut",
+			"basic_wall_window_oak",
+			"basic_wall_window_walnut",
+		]
+
+	[[carpenter.categories]]
+		icon = "spr_ui_store_category_icon_furniture_recipes"
+		constant_stock = [
+			"lovely_cottage_scroll_bundle",
+			"rustic_cabin_scroll_bundle",
+		]
+
+	[[carpenter.categories]]
+		icon = "spr_ui_store_category_icon_objects"
+		tag = "objects"
+		constant_stock = [
+			"beginner_kitchen",
+			"woodcrafting_station",
+			"forge",
+			{ item = "mini_mill", requirements = { repaired_carpenters_shop = true } },
+		]
+
+	[[carpenter.categories]]
+		icon = "spr_ui_store_category_icon_buildings"
+		constant_stock = [
+			"small_coop_red_blueprint",
+			"small_barn_red_blueprint",
+			"small_coop_black_blueprint",
+			"small_barn_black_blueprint",
+			{ item = "medium_coop_red_blueprint", requirements = { reached_skill_level = { ranching = 20 } } },
+			{ item = "medium_barn_red_blueprint", requirements = { reached_skill_level = { ranching = 20 } } },
+			{ item = "medium_coop_black_blueprint", requirements = { reached_skill_level = { ranching = 20 } } },
+			{ item = "medium_barn_black_blueprint", requirements = { reached_skill_level = { ranching = 20 } } },
+			{ item = "large_coop_red_blueprint", requirements = { reached_skill_level = { ranching = 40 } } },
+			{ item = "large_barn_red_blueprint", requirements = { reached_skill_level = { ranching = 40 } } },
+			{ item = "large_coop_black_blueprint", requirements = { reached_skill_level = { ranching = 40 } } },
+			{ item = "large_barn_black_blueprint", requirements = { reached_skill_level = { ranching = 40 } } },
+			{ item = "small_greenhouse_white_blueprint", requirements = { repaired_carpenters_shop = true } },
+			{ item = "small_greenhouse_wood_blueprint", requirements = { repaired_carpenters_shop = true } },
+			{ item = "large_greenhouse_white_blueprint", requirements = { repaired_carpenters_shop = true } },
+			{ item = "large_greenhouse_wood_blueprint", requirements = { repaired_carpenters_shop = true } },
+			{ item = "stairs", requirements = { has_upper_floor = true } },
+			{ item = "ladder", requirements = { has_upper_floor = true } },
+		]
+
+[terithia]
+	name = "Tackle Shop"
+
+	[[terithia.categories]]
+		icon = "spr_ui_store_category_icon_fishing_rod"
+		constant_stock = [
+			"fishing_rod_worn",
+			{ item = "fishing_rod_copper", requirements = { reached_skill_level = { fishing = 8 } } },
+			{ item = "fishing_rod_iron", requirements = { reached_skill_level = { fishing = 15 } } },
+			{ item = "fishing_rod_silver", requirements = { reached_skill_level = { fishing = 20 } } },
+			{ item = "fishing_rod_gold", requirements = { reached_skill_level = { fishing = 30 } } },
+			{ item = "fishing_rod_mistril", requirements = { reached_skill_level = { fishing = 45 } } },
+		]
+
+	[[terithia.categories]]
+		icon = "spr_ui_store_category_icon_fish"
+		[terithia.categories.seasonal]
+			spring = ["chub", "anchovy", "tetra"]
+			summer = ["loach", "lake_chub", "dart"]
+			fall = ["grayling", "roach", "butterfish"]
+			winter = ["smallmouth_bass", "tilapia", "sea_bass"]
+
+	[[terithia.categories]]
+		icon = "spr_ui_store_category_icon_cooking_recipes"
+		constant_stock = [
+			{ recipe_scroll = "salmon_sashimi" },
+			{ recipe_scroll = "mackerel_sashimi" },
+			{ recipe_scroll = "canned_sardines" },
+			{ recipe_scroll = "pan_fried_snapper" },
+			{ recipe_scroll = "pan_fried_salmon" },
+			{ recipe_scroll = "fish_skewer" },
+		]
+
+	[[terithia.categories]]
+		icon = "spr_ui_store_category_icon_ingredients"
+		constant_stock = [
+			"seaweed",
+		]
+
+[blacksmith]
+	name = "Blacksmith's Shop"
+	[[blacksmith.categories]]
+		icon = "spr_ui_store_category_icon_axe"
+		constant_stock = [
+			"axe_copper",
+			{ item = "axe_iron", requirements = { reached_mines_level = 21 } },
+			{ item = "axe_silver", requirements = { reached_mines_level = 41 } },
+			{ item = "axe_gold", requirements = { reached_mines_level = 61 } },
+			{ item = "axe_mistril", requirements = { reached_mines_level = 81 } },
+		]
+
+	[[blacksmith.categories]]
+		icon = "spr_ui_store_category_icon_hoe"
+		constant_stock = [
+			"hoe_copper",
+			{ item = "hoe_iron", requirements = { reached_mines_level = 21 } },
+			{ item = "hoe_silver", requirements = { reached_mines_level = 41 } },
+			{ item = "hoe_gold", requirements = { reached_mines_level = 61 } },
+			{ item = "hoe_mistril", requirements = { reached_mines_level = 81 } },
+		]
+
+	[[blacksmith.categories]]
+		icon = "spr_ui_store_category_icon_net"
+		constant_stock = [
+			"net_copper",
+			{ item = "net_iron", requirements = { reached_mines_level = 21 } },
+			{ item = "net_silver", requirements = { reached_mines_level = 41 } },
+			{ item = "net_gold", requirements = { reached_mines_level = 61 } },
+			{ item = "net_mistril", requirements = { reached_mines_level = 81 } },
+		]
+
+	[[blacksmith.categories]]
+		icon = "spr_ui_store_category_icon_pickaxe"
+		constant_stock = [
+			"pick_axe_copper",
+			{ item = "pick_axe_iron", requirements = { reached_mines_level = 21 } },
+			{ item = "pick_axe_silver", requirements = { reached_mines_level = 41 } },
+			{ item = "pick_axe_gold", requirements = { reached_mines_level = 61 } },
+			{ item = "pick_axe_mistril", requirements = { reached_mines_level = 81 } },
+		]
+
+	[[blacksmith.categories]]
+		icon = "spr_ui_store_category_icon_shovel"
+		constant_stock = [
+			"shovel_copper",
+			{ item = "shovel_iron", requirements = { reached_mines_level = 21 } },
+			{ item = "shovel_silver", requirements = { reached_mines_level = 41 } },
+			{ item = "shovel_gold", requirements = { reached_mines_level = 61 } },
+			{ item = "shovel_mistril", requirements = { reached_mines_level = 81 } },
+		]
+
+	[[blacksmith.categories]]
+		icon = "spr_ui_store_category_icon_watering_can"
+		constant_stock = [
+			"watering_can_copper",
+			{ item = "watering_can_iron", requirements = { reached_mines_level = 21 } },
+			{ item = "watering_can_silver", requirements = { reached_mines_level = 41 } },
+			{ item = "watering_can_gold", requirements = { reached_mines_level = 61 } },
+			{ item = "watering_can_mistril", requirements = { reached_mines_level = 81 } },
+		]
+
+	[[blacksmith.categories]]
+		icon = "spr_ui_store_category_icon_armor"
+		constant_stock = [
+			"copper_armor",
+			"copper_ring",
+			"copper_greaves",
+			"copper_helmet",
+			"copper_legplates",
+			{ item = "iron_armor", requirements = { reached_mines_level = 21 } },
+			{ item = "iron_ring", requirements = { reached_mines_level = 21 } },
+			{ item = "iron_greaves", requirements = { reached_mines_level = 21 } },
+			{ item = "iron_helmet", requirements = { reached_mines_level = 21 } },
+			{ item = "iron_legplates", requirements = { reached_mines_level = 21 } },
+			{ item = "silver_armor", requirements = { reached_mines_level = 41 } },
+			{ item = "silver_ring", requirements = { reached_mines_level = 41 } },
+			{ item = "silver_greaves", requirements = { reached_mines_level = 41 } },
+			{ item = "silver_helmet", requirements = { reached_mines_level = 41 } },
+			{ item = "silver_legplates", requirements = { reached_mines_level = 41 } },
+			{ item = "gold_armor", requirements = { reached_mines_level = 61 } },
+			{ item = "gold_ring", requirements = { reached_mines_level = 61 } },
+			{ item = "gold_greaves", requirements = { reached_mines_level = 61 } },
+			{ item = "gold_helmet", requirements = { reached_mines_level = 61 } },
+			{ item = "gold_legplates", requirements = { reached_mines_level = 61 } },
+			{ item = "mistril_armor", requirements = { reached_mines_level = 81 } },
+			{ item = "mistril_ring", requirements = { reached_mines_level = 81 } },
+			{ item = "mistril_boots", requirements = { reached_mines_level = 81 } },
+			{ item = "mistril_helmet", requirements = { reached_mines_level = 81 } },
+			{ item = "mistril_legplates", requirements = { reached_mines_level = 81 } },
+		]
+
+	[[blacksmith.categories]]
+		icon = "spr_ui_store_category_icon_materials"
+		constant_stock = [
+			"ore_copper",
+			{ item = "ore_iron", requirements = { reached_mines_level = 21 } },
+			{ item = "ore_silver", requirements = { reached_mines_level = 41 } },
+			{ item = "ore_gold", requirements = { reached_mines_level = 61 } },
+			{ item = "ore_mistril", requirements = { reached_mines_level = 81 } },
+		]
+
+[louis]
+	name = "Louis' Stall"
+	[[louis.categories]]
+		icon = "spr_ui_customization_icon_short_sleeved_tops"
+		target_selections = 10
+		random_stock = [
+			{ cosmetic = "dress_maid" },
+			{ cosmetic = "shoes_sneakers_basic" },
+			{ cosmetic = "face_gear_hoop_earrings" },
+			{ cosmetic = "head_lily_pad" },
+			{ cosmetic = "head_cat_ears" },
+			{ cosmetic = "skirt_pleated_short" },
+			{ cosmetic = "top_long_sleeve_striped" },
+			{ cosmetic = "head_tangerine" },
+			{ cosmetic = "skirt_long_scalloped" },
+			{ cosmetic = "head_cap_basic" },
+			{ cosmetic = "shoes_dressy_stockings" },
+			{ cosmetic = "head_devil_horns" },
+			{ cosmetic = "top_tee_oversized" },
+			{ cosmetic = "top_tanktop_buttons" },
+			{ cosmetic = "head_striped_bow" },
+			{ cosmetic = "head_striped_bucket_hat" },
+			{ cosmetic = "head_paisley_bandana" },
+			{ cosmetic = "head_sprout_hat" },
+		]
+
+	[[louis.categories]]
+		icon = "spr_ui_store_category_icon_seasonal"
+		target_selections = 10
+		random_stock = [
+			{ cosmetic = "head_bunny_ears", requirements = { is_season = "spring" } },
+			{ cosmetic = "head_strawberry_beret", requirements = { is_season = "spring" } },
+			{ cosmetic = "head_lemon_beret", requirements = { is_season = "spring" } },
+			{ cosmetic = "head_cherry_beret", requirements = { is_season = "spring" } },
+			{ cosmetic = "suit_halter_bikini_set", requirements = { is_season = "summer" } },
+			{ cosmetic = "top_halter_bikini", requirements = { is_season = "summer" } },
+			{ cosmetic = "shorts_swimtrunks", requirements = { is_season = "summer" } },
+			{ cosmetic = "head_pumpkin_beanie", requirements = { is_season = "fall" } },
+			{ cosmetic = "face_gear_pumpkin_earrings", requirements = { is_season = "fall" } },
+			{ cosmetic = "shoes_boots_pumpkin", requirements = { is_season = "fall" } },
+			{ cosmetic = "top_wool_lined_jacket", requirements = { is_season = "fall" } },
+			{ cosmetic = "head_winter_beanie", requirements = { is_season = "winter" } },
+			{ cosmetic = "head_ear_muffs", requirements = { is_season = "winter" } },
+			{ cosmetic = "top_cropped_puff_jacket", requirements = { is_season = "winter" } },
+			{ cosmetic = "top_puff_jacket", requirements = { is_season = "winter" } },
+		]
+
+[vera]
+	name = "Vera's Stall"
+	[[vera.categories]]
+		icon = "spr_ui_customization_icon_medium_hair"
+		target_selections = 10
+		random_stock = [
+			{ cosmetic = "hair_afro_puffs" },
+			{ cosmetic = "hair_curly_pompadour" },
+			{ cosmetic = "hair_dreadlock_twin_buns" },
+			{ cosmetic = "hair_medium_half_bun" },
+			{ cosmetic = "hair_medium_half_bun_fringe" },
+			{ cosmetic = "hair_medium_pigtails" },
+			{ cosmetic = "hair_rounded_afro" },
+			{ cosmetic = "hair_shaggy_bob" },
+			{ cosmetic = "hair_short_parted_curls" },
+			{ cosmetic = "hair_short_parted_straight" },
+			{ cosmetic = "hair_straight_buns_fringed" },
+			{ cosmetic = "hair_straight_long_twin_buns" },
+			{ cosmetic = "hair_straight_long_bun" },
+			{ cosmetic = "hair_straight_pompadour" },
+			{ cosmetic = "hair_wavy_rugged" },
+			{ cosmetic = "hair_wavy_medium_twin_buns" },
+			{ cosmetic = "hair_wavy_long_twin_buns" },
+			{ cosmetic = "hair_wavy_long_ponytail" },
+			{ cosmetic = "head_clips_angel_wing" },
+			{ cosmetic = "head_clips_bat_wing" },
+			{ cosmetic = "head_clips_heart" },
+			{ cosmetic = "head_clips_moon" },
+			{ cosmetic = "head_clips_star" },
+			{ cosmetic = "head_clips_strawberry" },
+
+		]
+
+[darcy]
+	name = "Darcy's Stall"
+
+	[[darcy.categories]]
+		icon = "spr_ui_store_category_icon_cooked_dishes"
+		target_selections = 10
+		random_stock = [
+			"berries_and_cream",
+			"candied_lemon_peel",
+			"candied_strawberries",
+			"cherry_tart",
+			"lemon_pie",
+			"pudding",
+			"salted_watermelon",
+			"poached_pear",
+			"peaches_and_cream",
+			"sour_lemon_cake",
+			"strawberries_and_cream",
+			"wildberry_scone",
+			"strawberry_shortcake",
+			{ item = "caldosian_chocolate_cake", include_recipe = true },
+			"wildberry_pie",
+			"caramelized_moon_fruit",
+			"cranberry_orange_scone",
+			{ item = "ice_cream_sundae", include_recipe = true },
+			{ item = "spicy_cheddar_biscuit", include_recipe = true },
+			{ item = "pumpkin_pie", include_recipe = true },
+			{ item = "cherry_cobbler", include_recipe = true },
+		]
+
+	[[darcy.categories]]
+		icon = "spr_ui_store_category_icon_drinks"
+		constant_stock = [
+			"coffee",
+		]
+		target_selections = 9
+		random_stock = [
+			{ item = "cup_of_tea", include_recipe = true },
+			{ item = "hot_cocoa", include_recipe = true },
+			{ item = "lemonade", include_recipe = true },
+			{ item = "iced_coffee", include_recipe = true },
+			"espresso",
+			{ item = "latte", include_recipe = true },
+			{ item = "mocha", include_recipe = true },
+			{ item = "green_tea", include_recipe = true },
+			{ item = "roasted_rice_tea", include_recipe = true },
+			{ item = "jasmine_tea", include_recipe = true },
+			"rose_tea",
+			"mushroom_brew",
+			"coconut_milk",
+			{ item = "grape_juice", include_recipe = true },
+			"cranberry_juice",
+			"orange_juice",
+			"apple_juice",
+			{ item = "pomegranate_juice", include_recipe = true },
+
+		]
+
+	[[darcy.categories]]
+		icon = "spr_ui_store_category_icon_cooking_recipes"
+		accept_recipes = true
+		target_selections = 15
+
+
+	[[darcy.categories]]
+		icon = "spr_ui_crafting_category_icon_misc"
+		target_selections = 1
+		constant_stock = [
+			{ item = "espresso_machine", include_recipe = true, requirements = { has_perk = "espresso_yourself" } },
+		]
+
+[merri]
+	name = "Merri's Stall"
+	[[merri.categories]]
+		icon = "spr_ui_store_category_icon_furniture"
+		target_selections = 25
+		random_stock = [
+			{ item = "bakery_cake_case_pastel", include_recipe = true },
+			{ item = "bakery_cake_case_coffee", include_recipe = true },
+
+			{ item = "haunted_attic_armoire_dusty", include_recipe = true },
+			{ item = "haunted_attic_armoire_dark", include_recipe = true },
+			{ item = "haunted_attic_bed_dusty", include_recipe = true },
+			{ item = "haunted_attic_bed_dark", include_recipe = true },
+			{ item = "haunted_attic_double_bed_dusty", include_recipe = true },
+			{ item = "haunted_attic_double_bed_dark", include_recipe = true },
+			{ item = "haunted_attic_chair_dusty", include_recipe = true },
+			{ item = "haunted_attic_chair_dark", include_recipe = true },
+			{ item = "haunted_attic_dress_form_dusty", include_recipe = true },
+			{ item = "haunted_attic_dress_form_dark", include_recipe = true },
+			{ item = "haunted_attic_nightstand_dusty", include_recipe = true },
+			{ item = "haunted_attic_nightstand_dark", include_recipe = true },
+			{ item = "haunted_attic_rocking_chair_dusty", include_recipe = true },
+			{ item = "haunted_attic_rocking_chair_dark", include_recipe = true },
+			{ item = "haunted_attic_table_dusty", include_recipe = true },
+			{ item = "haunted_attic_table_dark", include_recipe = true },
+			{ item = "haunted_attic_wall_shelf_dusty", include_recipe = true },
+			{ item = "haunted_attic_wall_shelf_dark", include_recipe = true },
+			{ item = "haunted_attic_wall_window_dusty", include_recipe = true },
+			{ item = "haunted_attic_wall_window_dark", include_recipe = true },
+			{ item = "haunted_attic_wallpaper_dusty", include_recipe = true },
+			{ item = "haunted_attic_wallpaper_dark", include_recipe = true },
+			{ item = "haunted_attic_flooring_dusty", include_recipe = true },
+			{ item = "haunted_attic_flooring_dark", include_recipe = true },
+
+			{ item = "ornate_rug_large_square_cream", include_recipe = true },
+			{ item = "ornate_rug_large_square_red", include_recipe = true },
+			{ item = "ornate_rug_large_square_blue", include_recipe = true },
+
+			{ item = "starry_flooring_v1", include_recipe = true },
+			{ item = "starry_flooring_v2", include_recipe = true },
+			{ item = "summit_wallpaper_v1", include_recipe = true },
+			{ item = "summit_wallpaper_v2", include_recipe = true },
+
+			{ item = "bathroom_sink_black", include_recipe = true },
+			{ item = "bathroom_sink_white", include_recipe = true },
+			{ item = "bathroom_bench_black", include_recipe = true },
+			{ item = "bathroom_bench_white", include_recipe = true },
+			{ item = "bathroom_wall_mirror_black", include_recipe = true },
+			{ item = "bathroom_wall_mirror_white", include_recipe = true },
+			{ item = "gold_wall_mirror", include_recipe = true },
+			{ item = "bathroom_floor_mirror_black", include_recipe = true },
+			{ item = "bathroom_floor_mirror_white", include_recipe = true },
+			{ item = "gold_floor_mirror", include_recipe = true },
+			{ item = "toilet_black", include_recipe = true },
+			{ item = "toilet_white", include_recipe = true },
+			{ item = "bathtub_black", include_recipe = true },
+			{ item = "bathtub_white", include_recipe = true },
+			{ item = "bathroom_wall_sconce", include_recipe = true },
+			{ item = "bathroom_curtain_stand_blue", include_recipe = true },
+			{ item = "bathroom_curtain_stand_green", include_recipe = true },
+			{ item = "bathroom_curtain_stand_light_green", include_recipe = true },
+			{ item = "bathroom_curtain_stand_pink", include_recipe = true },
+			{ item = "bathroom_curtain_stand_black", include_recipe = true },
+			{ item = "bathroom_curtain_stand_brown", include_recipe = true },
+			{ item = "bathroom_curtain_stand_white", include_recipe = true },
+			{ item = "small_bathmat_blue", include_recipe = true },
+			{ item = "small_bathmat_green", include_recipe = true },
+			{ item = "small_bathmat_light_green", include_recipe = true },
+			{ item = "small_bathmat_pink", include_recipe = true },
+			{ item = "small_bathmat_black", include_recipe = true },
+			{ item = "small_bathmat_brown", include_recipe = true },
+			{ item = "small_bathmat_white", include_recipe = true },
+			{ item = "small_bathmat_beige", include_recipe = true },
+			{ item = "large_fluffy_rug_blue", include_recipe = true },
+			{ item = "large_fluffy_rug_green", include_recipe = true },
+			{ item = "large_fluffy_rug_light_green", include_recipe = true },
+			{ item = "large_fluffy_rug_pink", include_recipe = true },
+			{ item = "large_fluffy_rug_black", include_recipe = true },
+			{ item = "large_fluffy_rug_brown", include_recipe = true },
+			{ item = "large_fluffy_rug_white", include_recipe = true },
+			{ item = "large_fluffy_rug_beige", include_recipe = true },
+			{ item = "round_cushioned_stool_blue", include_recipe = true },
+			{ item = "round_cushioned_stool_green", include_recipe = true },
+			{ item = "round_cushioned_stool_light_green", include_recipe = true },
+			{ item = "round_cushioned_stool_pink", include_recipe = true },
+			{ item = "round_cushioned_stool_black", include_recipe = true },
+			{ item = "round_cushioned_stool_brown", include_recipe = true },
+			{ item = "round_cushioned_stool_white", include_recipe = true },
+			{ item = "round_cushioned_stool_beige", include_recipe = true },
+			{ item = "bathroom_wall_towel_blue", include_recipe = true },
+			{ item = "bathroom_wall_towel_green", include_recipe = true },
+			{ item = "bathroom_wall_towel_light_green", include_recipe = true },
+			{ item = "bathroom_wall_towel_pink", include_recipe = true },
+			{ item = "bathroom_wall_towel_black", include_recipe = true },
+			{ item = "bathroom_wall_towel_brown", include_recipe = true },
+			{ item = "bathroom_wall_towel_white", include_recipe = true },
+			{ item = "bathroom_tile_wall_blue", include_recipe = true },
+			{ item = "bathroom_tile_wall_green", include_recipe = true },
+			{ item = "bathroom_tile_wall_light_green", include_recipe = true },
+			{ item = "bathroom_tile_wall_pink", include_recipe = true },
+			{ item = "herringbone_tile_floor_blue", include_recipe = true },
+			{ item = "herringbone_tile_floor_green", include_recipe = true },
+			{ item = "herringbone_tile_floor_white", include_recipe = true },
+			{ item = "square_tile_floor", include_recipe = true },
+
+			{ item = "counter_basic_v1", include_recipe = true },
+			{ item = "counter_basic_v2", include_recipe = true },
+			{ item = "counter_cabin_walnut", include_recipe = true },
+			{ item = "counter_cabin_oak", include_recipe = true },
+			{ item = "counter_cabin_cherry", include_recipe = true },
+			{ item = "counter_cake_strawberry", include_recipe = true },
+			{ item = "counter_cake_chocolate", include_recipe = true },
+			{ item = "counter_cake_double_chocolate", include_recipe = true },
+			{ item = "counter_cottage_v1", include_recipe = true },
+			{ item = "counter_cottage_v2", include_recipe = true },
+
+			{ item = "cherry_wallpaper", include_recipe = true },
+			{ item = "cherry_flooring", include_recipe = true },
+			{ item = "cherry_rug", include_recipe = true },
+			{ item = "cherry_chair", include_recipe = true },
+			{ item = "cherry_table", include_recipe = true },
+
+			{ item = "lemon_wallpaper", include_recipe = true },
+			{ item = "lemon_flooring", include_recipe = true },
+			{ item = "lemon_rug", include_recipe = true },
+			{ item = "lemon_stool", include_recipe = true },
+			{ item = "lemon_table", include_recipe = true },
+
+			{ item = "ornate_privacy_screen_v1", include_recipe = false },
+			{ item = "ornate_privacy_screen_v2", include_recipe = false },
+			{ item = "ornate_privacy_screen_v3", include_recipe = false },
+			{ item = "ornate_privacy_screen_v4", include_recipe = false },
+			{ item = "ornate_privacy_screen_v5", include_recipe = false },
+			{ item = "ornate_cabinet_v1", include_recipe = false },
+			{ item = "ornate_cabinet_v2", include_recipe = false },
+			{ item = "ornate_cabinet_v3", include_recipe = false },
+			{ item = "ornate_cabinet_v4", include_recipe = false },
+			{ item = "ornate_coffee_table_v1", include_recipe = false },
+			{ item = "ornate_coffee_table_v2", include_recipe = false },
+			{ item = "ornate_coffee_table_v3", include_recipe = false },
+			{ item = "ornate_coffee_table_v4", include_recipe = false },
+			{ item = "ornate_wallpaper_v1", include_recipe = false },
+			{ item = "ornate_wallpaper_v2", include_recipe = false },
+			{ item = "ornate_wallpaper_v3", include_recipe = false },
+			{ item = "ornate_wallpaper_v4", include_recipe = false },
+			{ item = "ornate_flooring_v1", include_recipe = false },
+			{ item = "ornate_flooring_v2", include_recipe = false },
+			{ item = "ornate_flooring_v3", include_recipe = false },
+			{ item = "ornate_flooring_v4", include_recipe = false },
+		]
+
+	[[merri.categories]]
+		icon = "spr_ui_woodcrafting_category_icon_decorative_items"
+		target_selections = 25
+		random_stock = [
+			{ item = "haunted_attic_candle_single", include_recipe = true },
+			{ item = "haunted_attic_candle_single_dark", include_recipe = true },
+			{ item = "haunted_attic_candle_cluster", include_recipe = true },
+			{ item = "haunted_attic_candle_cluster_dark", include_recipe = true },
+			{ item = "haunted_attic_wall_cobweb_left", include_recipe = true },
+			{ item = "haunted_attic_wall_cobweb_left_dark", include_recipe = true },
+			{ item = "haunted_attic_wall_cobweb_right", include_recipe = true },
+			{ item = "haunted_attic_wall_cobweb_right_dark", include_recipe = true },
+
+			{ item = "bakery_bread_basket_pastel", include_recipe = true },
+			{ item = "bakery_bread_basket_coffee", include_recipe = true },
+			{ item = "bakery_cake_slice_pastel", include_recipe = true },
+			{ item = "bakery_cake_slice_coffee", include_recipe = true },
+			{ item = "bakery_cake_pastel", include_recipe = true },
+			{ item = "bakery_cake_coffee", include_recipe = true },
+			{ item = "bakery_cookie_jar_pastel", include_recipe = true },
+			{ item = "bakery_cookie_jar_coffee", include_recipe = true },
+			{ item = "bakery_cutting_board_pastel", include_recipe = true },
+			{ item = "bakery_cutting_board_coffee", include_recipe = true },
+			{ item = "picnic_basket_pink", include_recipe = true },
+			{ item = "picnic_basket_red", include_recipe = true },
+			{ item = "picnic_basket_yellow", include_recipe = true },
+			{ item = "picnic_pie_plate_pink", include_recipe = true },
+			{ item = "picnic_pie_plate_red", include_recipe = true },
+			{ item = "picnic_pie_plate_yellow", include_recipe = true },
+			{ item = "picnic_place_setting_pink", include_recipe = true },
+			{ item = "picnic_place_setting_red", include_recipe = true },
+			{ item = "picnic_place_setting_yellow", include_recipe = true },
+			{ item = "picnic_rug_pink", include_recipe = true },
+			{ item = "picnic_rug_red", include_recipe = true },
+			{ item = "picnic_rug_yellow", include_recipe = true },
+			{ item = "picnic_donut_plate", include_recipe = true },
+			{ item = "picnic_hamburger_plate", include_recipe = true },
+			{ item = "picnic_sandwich_plate", include_recipe = true },
+			{ item = "picnic_sunflower_vase_pink", include_recipe = true },
+			{ item = "picnic_sunflower_vase_red", include_recipe = true },
+			{ item = "picnic_sunflower_vase_yellow", include_recipe = true },
+
+			{ item = "weather_crystal_ball", include_recipe = true },
+
+			{ item = "coffee_mug_v1", include_recipe = true },
+			{ item = "coffee_mug_v2", include_recipe = true },
+			{ item = "coffee_mug_v3", include_recipe = true },
+			{ item = "espresso_cup_v1", include_recipe = true },
+			{ item = "espresso_cup_v2", include_recipe = true },
+			{ item = "espresso_cup_v3", include_recipe = true },
+			{ item = "basket", include_recipe = true },
+			{ item = "beer_mug", include_recipe = true },
+			{ item = "box_medium_v1", include_recipe = true },
+			{ item = "box_small_v1", include_recipe = true },
+			{ item = "box_small_v2", include_recipe = true },
+			{ item = "candle", include_recipe = true },
+			{ item = "candle_chamberstick", include_recipe = true },
+			{ item = "glass_absinthe", include_recipe = true },
+			{ item = "glass_cocktail", include_recipe = true },
+			{ item = "glass_lemonade", include_recipe = true },
+			{ item = "glass_milk", include_recipe = true },
+			{ item = "glass_water", include_recipe = true },
+			{ item = "glass_whisky", include_recipe = true },
+			{ item = "green_bottle", include_recipe = true },
+			{ item = "jar_large", include_recipe = true },
+			{ item = "jar_medium", include_recipe = true },
+			{ item = "jar_pair", include_recipe = true },
+			{ item = "jar_small", include_recipe = true },
+			{ item = "notepad_white", include_recipe = true },
+			{ item = "notepad_yellow", include_recipe = true },
+			{ item = "paper_stack", include_recipe = true },
+			{ item = "small_vase_v1", include_recipe = true },
+			{ item = "small_vase_v2", include_recipe = true },
+			{ item = "small_vase_v3", include_recipe = true },
+			{ item = "small_vase_v4", include_recipe = true },
+			{ item = "tea_black", include_recipe = true },
+			{ item = "tea_green", include_recipe = true },
+			{ item = "wine_glass_red", include_recipe = true },
+			{ item = "wine_glass_rose", include_recipe = true },
+			{ item = "wine_glass_white", include_recipe = true },
+
+			{ item = "cherry_table_lamp", include_recipe = true },
+			{ item = "cherry_fruit_bowl", include_recipe = true },
+			{ item = "cherry_bonsai", include_recipe = true },
+
+			{ item = "lemon_table_lamp", include_recipe = true },
+			{ item = "lemon_fruit_bowl", include_recipe = true },
+			{ item = "lemon_bonsai", include_recipe = true },
+
+			{ item = "incense_burner_white", include_recipe = false },
+			{ item = "incense_burner_purple", include_recipe = false },
+			{ item = "incense_burner_green", include_recipe = false },
+			{ item = "incense_burner_blue", include_recipe = false },
+			{ item = "incense_stick_v1", include_recipe = false },
+			{ item = "incense_stick_v2", include_recipe = false },
+			{ item = "incense_stick_v3", include_recipe = false },
+			{ item = "ornate_vase_white", include_recipe = false },
+			{ item = "ornate_vase_green", include_recipe = false },
+			{ item = "ornate_vase_blue", include_recipe = false },
+			{ item = "ornate_vase_purple", include_recipe = false },
+		]
+
+
+	[[merri.categories]]
+		icon = "spr_ui_store_category_icon_furniture_recipes"
+		accept_recipes = true
+		target_selections = 25
+
+[hayden]
+	name = "Hayden's Shop"
+
+	[[hayden.categories]]
+		icon = "spr_ui_store_category_icon_animal_supplies"
+		constant_stock = [
+			"grass_seed",
+			"hay",
+			"heart_shaped_chicken_treat",
+			"heart_shaped_cow_treat",
+			{ requirements = { unlocked_animal = "duck" }, item = "heart_shaped_duck_treat" },
+			{ requirements = { unlocked_animal = "horse" }, item = "heart_shaped_horse_treat" },
+			{ requirements = { unlocked_animal = "rabbit" }, item = "heart_shaped_rabbit_treat" },
+			{ requirements = { unlocked_animal = "sheep" }, item = "heart_shaped_sheep_treat" },
+			{ requirements = { unlocked_animal = "capybara" }, item = "heart_shaped_capybara_treat" },
+			{ requirements = { unlocked_animal = "alpaca" }, item = "heart_shaped_alpaca_treat" },
+			"cat_treat",
+			"dog_treat",
+			{ requirements = { reached_skill_level = { ranching = 45 } }, item = "auto_feeder" },
+
+		]
+
+	[[hayden.categories]]
+		icon = "spr_ui_store_category_icon_animal_accessories"
+		constant_stock = [
+			{ animal = "chicken", animal_cosmetic = "ear_muffs" },
+			{ animal = "chicken", animal_cosmetic = "top_hat" },
+			{ animal = "chicken", animal_cosmetic = "yellow_bow" },
+			{ animal = "cow", animal_cosmetic = "cowboy_hat" },
+			{ animal = "cow", animal_cosmetic = "crown" },
+			{ animal = "cow", animal_cosmetic = "pink_bow" },
+			{ animal = "cow", animal_cosmetic = "pink_sunglasses" },
+			{ requirements = { unlocked_animal = "horse" }, animal = "horse", animal_cosmetic = "cowboy_hat" },
+			{ requirements = { unlocked_animal = "horse" }, animal = "horse", animal_cosmetic = "pink_bow" },
+			{ requirements = { unlocked_animal = "horse" }, animal = "horse", animal_cosmetic = "unicorn_horn" },
+			{ requirements = { unlocked_animal = "duck" }, animal = "duck", animal_cosmetic = "black_bowtie" },
+			{ requirements = { unlocked_animal = "duck" }, animal = "duck", animal_cosmetic = "pink_bow" },
+			{ requirements = { unlocked_animal = "duck" }, animal = "duck", animal_cosmetic = "bonnet" },
+			{ requirements = { unlocked_animal = "sheep" }, animal = "sheep", animal_cosmetic = "party_hat" },
+			{ requirements = { unlocked_animal = "sheep" }, animal = "sheep", animal_cosmetic = "pink_bow" },
+			{ requirements = { unlocked_animal = "sheep" }, animal = "sheep", animal_cosmetic = "mushroom_hat" },
+			{ requirements = { unlocked_animal = "rabbit" }, animal = "rabbit", animal_cosmetic = "daisy_clips" },
+			{ requirements = { unlocked_animal = "rabbit" }, animal = "rabbit", animal_cosmetic = "pink_bow" },
+			{ requirements = { unlocked_animal = "rabbit" }, animal = "rabbit", animal_cosmetic = "top_hat" },
+			{ requirements = { unlocked_animal = "alpaca" }, animal = "alpaca", animal_cosmetic = "beaded_necklace" },
+			{ requirements = { unlocked_animal = "alpaca" }, animal = "alpaca", animal_cosmetic = "bowtie" },
+			{ requirements = { unlocked_animal = "alpaca" }, animal = "alpaca", animal_cosmetic = "scarf" },
+			{ requirements = { unlocked_animal = "capybara" }, animal = "capybara", animal_cosmetic = "baseball_cap" },
+			{ requirements = { unlocked_animal = "capybara" }, animal = "capybara", animal_cosmetic = "bow" },
+			{ requirements = { unlocked_animal = "capybara" }, animal = "capybara", animal_cosmetic = "yuzu" },
+
+		]
+
+	[[hayden.categories]]
+		icon = "spr_ui_store_category_icon_animal_toys"
+		constant_stock = [
+			{ item = "large_animal_gramophone", requirements = { has_perk = "playtime" } },
+			{ item = "small_animal_hot_spring", requirements = { has_perk = "playtime" } },
+			"small_animal_seesaw",
+			"large_animal_ball_court",
+			"pink_pet_bed",
+			"blue_pet_bed",
+			"cream_pet_bed",
+			"pink_pet_dish",
+			"blue_pet_dish",
+			"cream_pet_dish",
+		]
+
+[inn]
+	name = "Sleeping Dragon Inn"
+
+	[[inn.categories]]
+		icon = "spr_ui_store_category_icon_cooked_dishes"
+		tag = "food"
+		target_selections = 10
+		random_stock = [
+			{ item = "potato_soup" },
+			{ item = "vegetable_soup" },
+			{ item = "fish_stew" },
+			{ item = "pan_fried_salmon" },
+			{ item = "pan_fried_snapper" },
+			{ item = "smoked_trout_soup" },
+			{ item = "breaded_catfish" },
+			{ item = "mushroom_rice" },
+			{ item = "loaded_baked_potato" },
+			{ item = "lemon_pie" },
+			{ item = "crayfish_etouffee" },
+			{ item = "riceball" },
+			{ item = "deluxe_curry" },
+			{ item = "red_snapper_sushi" },
+			{ item = "crab_cakes" },
+			{ item = "sweet_sesame_balls" },
+			{ item = "wildberry_scone" },
+			{ item = "strawberry_shortcake" },
+			{ item = "spicy_water_chestnuts" },
+			{ item = "spicy_cheddar_biscuit" },
+			{ item = "grilled_cheese" },
+			{ item = "sweet_potato_pie" },
+			{ item = "apple_pie" },
+			{ item = "cauliflower_curry" },
+			{ item = "tomato_soup" },
+			{ item = "pan_fried_bream" },
+			{ item = "wildberry_pie", requirements = { seen_cutscene = "reina_two_hearts" } },
+			{ item = "twice_baked_rations", requirements = { seen_cutscene = "replenishing_mistrias_food_reserves_2_pt_2" } },
+			{ item = "chili_coconut_curry", requirements = { repaired_inn = true } },
+			{ item = "seafood_boil", requirements = { repaired_inn = true } },
+			{ item = "mushroom_steak_dinner", requirements = { repaired_inn = true } },
+			{ item = "seafood_snow_pea_noodles", requirements = { repaired_inn = true } },
+			{ item = "mont_blanc", requirements = { repaired_inn = true } },
+			{ item = "beet_soup", requirements = { repaired_inn = true } },
+			{ item = "rosemary_garlic_noodles", requirements = { repaired_inn = true } },
+			{ item = "herb_butter_pasta", requirements = { repaired_inn = true } },
+			{ item = "fish_tacos", requirements = { repaired_inn = true } },
+			{ item = "veggie_sub_sandwich", requirements = { repaired_inn = true } },
+			{ item = "coconut_cream_pie", requirements = { repaired_inn = true } },
+			{ item = "spring_galette", requirements = { repaired_inn = true } },
+			{ item = "gazpacho", requirements = { repaired_inn = true } },
+
+		]
+
+	[[inn.categories]]
+		icon = "spr_ui_store_category_icon_drinks"
+		tag = "drinks"
+		constant_stock = [
+			"lemonade",
+			"cow_milk",
+			"apple_juice",
+			"orange_juice",
+			"cup_of_tea",
+			"coconut_milk",
+			"beer",
+			"red_wine",
+			"white_wine",
+			"hot_toddy",
+
+		]
+
+	[[inn.categories]]
+		icon = "spr_ui_store_category_icon_cooking_recipes"
+		target_selections = 5
+		random_stock = [
+			{ recipe_scroll = "lemon_pie" },
+			{ recipe_scroll = "mushroom_rice" },
+			{ recipe_scroll = "riceball" },
+			{ recipe_scroll = "potato_soup" },
+			{ recipe_scroll = "cherry_tart" },
+			{ recipe_scroll = "crayfish_etouffee" },
+			{ recipe_scroll = "deluxe_curry" },
+			{ recipe_scroll = "red_snapper_sushi" },
+			{ recipe_scroll = "grilled_cheese" },
+			{ recipe_scroll = "sweet_potato_pie" },
+			{ recipe_scroll = "apple_pie" },
+			{ recipe_scroll = "noodles" },
+			{ recipe_scroll = "crab_cakes" },
+			{ recipe_scroll = "cauliflower_curry" },
+			{ recipe_scroll = "sweet_sesame_balls" },
+			{ recipe_scroll = "pan_fried_bream" },
+			{ recipe_scroll = "chili_coconut_curry", requirements = { repaired_inn = true } },
+			{ recipe_scroll = "seafood_boil" },
+			{ recipe_scroll = "mushroom_steak_dinner", requirements = { repaired_inn = true } },
+			{ recipe_scroll = "seafood_snow_pea_noodles", requirements = { repaired_inn = true } },
+			{ recipe_scroll = "mont_blanc", requirements = { repaired_inn = true } },
+			{ recipe_scroll = "beet_soup", requirements = { repaired_inn = true } },
+			{ recipe_scroll = "rosemary_garlic_noodles", requirements = { repaired_inn = true } },
+			{ recipe_scroll = "veggie_sub_sandwich", requirements = { repaired_inn = true } },
+			{ recipe_scroll = "spring_galette", requirements = { repaired_inn = true } },
+			{ recipe_scroll = "herb_butter_pasta", requirements = { repaired_inn = true } },
+			{ recipe_scroll = "fish_tacos", requirements = { repaired_inn = true } },
+			{ recipe_scroll = "coconut_cream_pie", requirements = { repaired_inn = true } },
+			{ recipe_scroll = "gazpacho", requirements = { repaired_inn = true } },
+		]
+
+	[[inn.categories]]
+		icon = "spr_ui_store_category_icon_furniture"
+		constant_stock = [
+			{ item = "coffee_mug_v1" },
+			{ item = "coffee_mug_v2" },
+			{ item = "coffee_mug_v3" },
+			{ item = "espresso_cup_v1" },
+			{ item = "espresso_cup_v2" },
+			{ item = "espresso_cup_v3" },
+			{ item = "kitchen_salt_and_pepper_shakers" },
+			{ item = "inn_counter", requirements = { repaired_inn = true } },
+			{ item = "inn_stool", requirements = { repaired_inn = true } },
+			{ item = "inn_cross_stitch", requirements = { repaired_inn = true } },
+			{ item = "inn_kitchen_shelves", requirements = { repaired_inn = true } },
+			{ item = "inn_candle", requirements = { repaired_inn = true } },
+			{ item = "inn_tile_flooring", requirements = { repaired_inn = true } },
+			{ item = "inn_wooden_flooring", requirements = { repaired_inn = true } },
+			{ item = "perpetual_soup_pot", requirements = { repaired_inn = true } },
+
+		]
+
+[balor]
+	name = "Balor's Wagon"
+
+	[[balor.categories]]
+		icon = "spr_ui_store_category_icon_materials"
+		target_selections = 5
+		random_stock = [
+			"copper_ingot",
+			"iron_ingot",
+			"silver_ingot",
+			"gold_ingot",
+			"shards",
+			"shard_mass",
+			"feather",
+			"duck_feather",
+			"alpaca_wool",
+			"hard_wood",
+			"basic_wood",
+			"ore_stone",
+			"clay",
+			"glass",
+			"horse_hair",
+			"bristle",
+			"cattail",
+			"ore_sapphire",
+			"ore_emerald",
+			"ore_ruby",
+			"ore_diamond",
+			"ore_pink_diamond",
+			"hay",
+			"grass_seed",
+			"sheep_wool",
+			"rabbit_wool",
+			"question_mark_butterfly",
+			"ladybug",
+			"caterpillar",
+			"fiber",
+			"pink_scallop_shell",
+			"spirula_shell",
+			"sand_dollar",
+			"blue_conch_shell",
+		]
+
+	[[balor.categories]]
+		icon = "spr_ui_store_category_icon_furniture"
+		target_selections = 10
+		random_stock = [
+			{ item = "ornate_rug_small_red" },
+			{ item = "ornate_rug_medium_round_red" },
+			{ item = "ornate_rug_medium_square_red" },
+			{ item = "ornate_rug_large_round_red" },
+			{ item = "ornate_rug_large_square_red" },
+			{ item = "ornate_rug_large_rectangle_red" },
+			{ item = "bonsai_accessory_plant_v1" },
+			{ item = "bonsai_accessory_plant_v2" },
+			{ item = "bonsai_accessory_plant_v3" },
+			{ item = "bonsai_large_v1" },
+			{ item = "bonsai_large_v2" },
+			{ item = "bonsai_large_v3" },
+			{ item = "bonsai_medium_v1" },
+			{ item = "bonsai_medium_v2" },
+			{ item = "bonsai_medium_v3" },
+			{ item = "bonsai_small_v1" },
+			{ item = "bonsai_small_v2" },
+			{ item = "bonsai_small_v3" },
+			{ item = "bonsai_small_v4" },
+			{ item = "potted_landscape_v1" },
+			{ item = "potted_landscape_v2" },
+			{ item = "potted_landscape_v3" },
+			{ item = "potted_landscape_v4" },
+			{ item = "jadeite_cabbage" },
+			{ item = "jadeite_daikon" },
+			{ item = "strange_garden_stone_v1" },
+			{ item = "strange_garden_stone_v2" },
+			{ item = "bonsai_high_stand_light_brown" },
+			{ item = "bonsai_low_stand_light_brown" },
+			{ item = "bonsai_low_cabinet_light_brown" },
+			{ item = "bonsai_low_table_light_brown" },
+			{ item = "bonsai_high_stand_brown" },
+			{ item = "bonsai_low_stand_brown" },
+			{ item = "bonsai_low_cabinet_brown" },
+			{ item = "bonsai_low_table_brown" },
+			{ item = "bonsai_high_stand_white" },
+			{ item = "bonsai_low_stand_white" },
+			{ item = "bonsai_low_cabinet_white" },
+			{ item = "bonsai_low_table_white" },
+			{ item = "bonsai_high_stand_black" },
+			{ item = "bonsai_low_stand_black" },
+			{ item = "bonsai_low_cabinet_black" },
+			{ item = "bonsai_low_table_black" },
+		]
+
+	[[balor.categories]]
+		icon = "spr_ui_store_category_icon_furniture_recipes"
+		target_selections = 5
+		random_stock = [
+			{ crafting_scroll = "ornate_rug_small_red" },
+			{ crafting_scroll = "ornate_rug_medium_round_red" },
+			{ crafting_scroll = "ornate_rug_medium_square_red" },
+			{ crafting_scroll = "ornate_rug_large_round_red" },
+			{ crafting_scroll = "ornate_rug_large_square_red" },
+			{ crafting_scroll = "ornate_rug_large_rectangle_red" },
+			{ crafting_scroll = "moon_gate_v1" },
+			{ crafting_scroll = "tile_roof_fence_v1" },
+			{ crafting_scroll = "craft_closed_sewing_tin_v1" },
+			{ crafting_scroll = "craft_fabric_rack_v1" },
+			{ crafting_scroll = "craft_rug_v1" },
+			{ crafting_scroll = "craft_yarn_basket_v1" },
+			{ item = "chess_scroll_bundle" },
+		]
+
+
+	[[balor.categories]]
+		icon = "spr_ui_store_category_icon_player_cosmetics"
+		target_selections = 5
+		random_stock = [
+			{ cosmetic = "top_plaid_flannel" },
+			{ cosmetic = "face_gear_face_mask" },
+			{ cosmetic = "face_gear_reading_glasses" },
+			{ cosmetic = "face_gear_reading_glasses_small" },
+			{ cosmetic = "face_gear_stud_earrings" },
+			{ cosmetic = "head_headband_basic" },
+			{ cosmetic = "head_mini_horns" },
+			{ cosmetic = "overalls_shorts" },
+			{ cosmetic = "shoes_boots_pirate" },
+			{ cosmetic = "shoes_boots_work" },
+			{ cosmetic = "shoes_sandals_worn" },
+			{ cosmetic = "skirt_maid" },
+			{ cosmetic = "skirt_pleated_medium" },
+			{ cosmetic = "top_tee_ringer_basic" },
+			{ cosmetic = "head_barrel_roller_hat" },
+		]
+
+	[[balor.categories]]
+		icon = "spr_ui_store_category_icon_cooked_dishes"
+		target_selections = 5
+		random_stock = [
+			"wild_berry_jam",
+			"blueberry_jam",
+			"hard_boiled_egg",
+			"crunchy_chickpeas",
+			"canned_sardines",
+			"cabbage_slaw",
+			"spring_salad",
+			"fish_stew",
+			"jam_sandwich",
+			"baked_potato",
+			"red_snapper_sushi",
+			"chickpea_curry",
+			"crayfish_etouffee",
+			"turnip_and_potato_gratin",
+			"vegetable_quiche",
+			"vegetable_pot_pie",
+			"lobster_roll",
+			"fried_rice",
+			"spring_galette",
+			"sushi_platter",
+			"berries_and_cream",
+			"candied_lemon_peel",
+			"candied_strawberries",
+			"strawberries_and_cream",
+			"cherry_cobbler",
+			"cherry_tart",
+			"wildberry_pie",
+			"wildberry_scone",
+			"spicy_water_chestnuts",
+			"toasted_sunflower_seeds",
+			"spicy_cheddar_biscuit",
+			"grilled_corn",
+			"summer_salad",
+			"herb_salad",
+			"tomato_soup",
+			"gazpacho",
+			"pizza",
+			"spicy_corn",
+			"salted_watermelon",
+			"poached_pear",
+			"hot_toddy",
+			"lavender_tea",
+			"mushroom_brew",
+			"coffee",
+			"lemon_pie",
+			"strawberry_shortcake",
+			"sour_lemon_cake",
+			"lemonade",
+			"cup_of_tea",
+			"rosehip_jam",
+		]
+
+	[[balor.categories]]
+		icon = "spr_ui_store_category_icon_ingredients"
+		target_selections = 5
+		random_stock = [
+			# Misc
+			"egg",
+			"duck_egg",
+			"cow_milk",
+			"chocolate",
+			"oil",
+			"curry_powder",
+			"soy_sauce",
+			"wheat",
+			"rice",
+			"spirula_shell",
+			"pink_scallop_shell",
+			"sand_dollar",
+			"blue_conch_shell",
+
+			# Spring crops
+			"turnip",
+			"potato",
+			"strawberry",
+			"cabbage",
+			"daffodil",
+			"tulip",
+			"cherry",
+			{ item = "carrot", requirements = { repaired_general_store = true } },
+			{ item = "peas", requirements = { repaired_general_store = true } },
+			"lemon",
+			"chickpea",
+			"snowdrop_anemone",
+			"lilac",
+			"dandelion",
+			"middlemist",
+			"fennel",
+			"fiddlehead",
+			"morel_mushroom",
+			"nettle",
+			"wild_berries",
+			"blueberry",
+			"wild_leek",
+			"water_chestnut",
+			"cattail",
+			"acorn",
+			"pinecone",
+
+			# Summer crops
+			{ item = "cucumber", requirements = { reached_date = "summer" } },
+			{ item = "chili_pepper", requirements = { reached_date = "summer" } },
+			{ item = "tomato", requirements = { reached_date = "summer" } },
+			{ item = "corn", requirements = { reached_date = "summer" } },
+			{ item = "watermelon", requirements = { reached_date = "summer" } },
+			{ item = "sunflower", requirements = { reached_date = "summer" } },
+			{ item = "daisy", requirements = { reached_date = "summer" } },
+			{ item = "catmint", requirements = { reached_date = "summer" } },
+			{ item = "cosmos", requirements = { reached_date = "summer" } },
+			{ item = "pear", requirements = { reached_date = "summer" } },
+			{ item = "peach", requirements = { reached_date = "summer" } },
+			{ item = "sugar_cane", requirements = { repaired_general_store = true } },
+			{ item = "tea", requirements = { repaired_general_store = true } },
+			{ item = "sage", requirements = { reached_date = "summer" } },
+			{ item = "basil", requirements = { reached_date = "summer" } },
+			{ item = "thyme", requirements = { reached_date = "summer" } },
+			{ item = "oregano", requirements = { reached_date = "summer" } },
+			{ item = "dill", requirements = { reached_date = "summer" } },
+			{ item = "iris", requirements = { reached_date = "summer" } },
+			{ item = "marigold", requirements = { reached_date = "summer" } },
+			{ item = "night_queen", requirements = { reached_date = "summer" } },
+			{ item = "hydrangea", requirements = { reached_date = "summer" } },
+			{ item = "rose", requirements = { reached_date = "summer" } },
+			{ item = "wild_grapes", requirements = { reached_date = "summer" } },
+			{ item = "sesame", requirements = { reached_date = "summer" } },
+			{ item = "coconut", requirements = { reached_date = "summer" } },
+
+			# Fall crops
+			{ item = "sweet_potato", requirements = { reached_date = "fall" } },
+			{ item = "broccoli", requirements = { reached_date = "fall" } },
+			{ item = "cranberry", requirements = { reached_date = "fall" } },
+			{ item = "pumpkin", requirements = { reached_date = "fall" } },
+			{ item = "wheat", requirements = { reached_date = "fall" } },
+			{ item = "celosia", requirements = { reached_date = "fall" } },
+			{ item = "chrysanthemum", requirements = { reached_date = "fall" } },
+			{ item = "apple", requirements = { reached_date = "fall" } },
+			{ item = "orange", requirements = { reached_date = "fall" } },
+			{ item = "rice_stalk", requirements = { repaired_general_store = true } },
+			{ item = "onion", requirements = { repaired_general_store = true } },
+			{ item = "moon_fruit", requirements = { reached_date = "fall" } },
+			{ item = "rosemary", requirements = { reached_date = "fall" } },
+			{ item = "garlic", requirements = { reached_date = "fall" } },
+			{ item = "viola", requirements = { reached_date = "fall" } },
+			{ item = "heather", requirements = { reached_date = "fall" } },
+			{ item = "fog_orchid", requirements = { reached_date = "fall" } },
+			{ item = "horseradish", requirements = { reached_date = "fall" } },
+			{ item = "acorn", requirements = { reached_date = "fall" } },
+			{ item = "pinecone", requirements = { reached_date = "fall" } },
+			{ item = "blackberry", requirements = { reached_date = "fall" } },
+			{ item = "chestnut", requirements = { reached_date = "fall" } },
+
+			# Winter crops
+			{ item = "beet", requirements = { reached_date = "winter" } },
+			{ item = "cauliflower", requirements = { reached_date = "winter" } },
+			{ item = "snow_peas", requirements = { reached_date = "winter" } },
+			{ item = "daikon_radish", requirements = { reached_date = "winter" } },
+			{ item = "frost_lily", requirements = { reached_date = "winter" } },
+			{ item = "poinsettia", requirements = { reached_date = "winter" } },
+			{ item = "pomegranate", requirements = { reached_date = "winter" } },
+			{ item = "plum_blossom", requirements = { reached_date = "winter" } },
+			{ item = "burdock_root", requirements = { reached_date = "winter" } },
+			{ item = "snapdragon", requirements = { reached_date = "winter" } },
+			{ item = "jasmine", requirements = { reached_date = "winter" } },
+			{ item = "crocus", requirements = { reached_date = "winter" } },
+			{ item = "holly", requirements = { reached_date = "winter" } },
+			{ item = "pineshroom", requirements = { reached_date = "winter" } },
+			{ item = "oyster_mushroom", requirements = { reached_date = "winter" } },
+			{ item = "rose_hip", requirements = { reached_date = "winter" } },
+			{ item = "wintergreen_berry", requirements = { reached_date = "winter" } },
+			{ item = "glowberry", requirements = { reached_date = "winter" } },
+			{ item = "ice_block", requirements = { reached_date = "winter" } },
+
+			#Deep Woods Forageables
+			{ item = "bell_berry", requirements = { unlocked_deep_woods = true } },
+			{ item = "spirit_mushroom", requirements = { unlocked_deep_woods = true } },
+			{ item = "temple_flower", requirements = { unlocked_deep_woods = true } },
+			{ item = "thorn_vine", requirements = { unlocked_deep_woods = true } },
+			{ item = "walnut", requirements = { unlocked_deep_woods = true } },
+		]
+
+	[[balor.categories]]
+		icon = "spr_ui_store_category_icon_seeds"
+		target_selections = 5
+
+		random_stock = [
+			{ item = "seed_turnip", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_potato", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_cabbage", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_strawberry", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_carrot", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_peas", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_daffodil", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_tulip", requirements = { repaired_carpenters_shop = true } },
+			{ item = "sapling_cherry", requirements = { repaired_carpenters_shop = true } },
+			{ item = "sapling_lemon", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_cucumber", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_chili_pepper", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_watermelon", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_tomato", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_corn", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_sunflower", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_sugar_cane", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_tea", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_daisy", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_catmint", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_cosmos", requirements = { repaired_carpenters_shop = true } },
+			{ item = "sapling_pear", requirements = { repaired_carpenters_shop = true } },
+			{ item = "sapling_peach", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_sweet_potato", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_broccoli", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_cranberry", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_pumpkin", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_wheat", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_rice", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_onion", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_celosia", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_chrysanthemum", requirements = { repaired_carpenters_shop = true } },
+			{ item = "sapling_apple", requirements = { repaired_carpenters_shop = true } },
+			{ item = "sapling_orange", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_beet", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_cauliflower", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_snow_peas", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_daikon_radish", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_frost_lily", requirements = { repaired_carpenters_shop = true } },
+			{ item = "seed_poinsettia", requirements = { repaired_carpenters_shop = true } },
+			{ item = "sapling_pomegranate", requirements = { repaired_carpenters_shop = true } },
+		]
+
+[valens_clinic]
+	name = "Valen's Clinic"
+
+	[[valens_clinic.categories]]
+		icon = "spr_illegal_16"
+		constant_stock = [
+			"heal_syrup",
+			"stamina_syrup",
+			"fairy_syrup",
+			"speedy_syrup",
+			"restorative_syrup",
+		]
+
+[maple_spring_festival]
+	name = "Food Stall"
+
+	[[maple_spring_festival.categories]]
+		icon = "spr_illegal_16"
+
+[nora_souvenir_stall]
+	name = "Souvenir Stall"
+
+	[[nora_souvenir_stall.categories]]
+		icon = "spr_illegal_16"
+
+[elsie_spring_festival]
+	name = "Clothing Stall"
+
+	[[elsie_spring_festival.categories]]
+		icon = "spr_illegal_16"
+
+[wheedle]
+	name = "Wheedle's Stall"
+
+	[[wheedle.categories]]
+		icon = "spr_ui_store_category_icon_consumables"
+		constant_stock = [
+			"poison_snake_oil",
+			"fire_snake_oil",
+			"ice_snake_oil",
+		]
+
+	[[wheedle.categories]]
+		icon = "spr_ui_store_category_icon_player_cosmetics"
+		target_selections = 25
+		random_stock = [
+			{ cosmetic = "head_crown" },
+			{ cosmetic = "back_gear_sheathed_sword" },
+			{ cosmetic = "back_gear_mini_wings" },
+			{ cosmetic = "back_gear_ornate_round_shield" },
+			{ cosmetic = "back_gear_ornate_shield" },
+			{ cosmetic = "suit_court" },
+			{ cosmetic = "dress_court" },
+			{ cosmetic = "head_dancer_flower" },
+			{ cosmetic = "top_dancer" },
+			{ cosmetic = "skirt_dancer" },
+			{ cosmetic = "back_gear_rogue_cape" },
+			{ cosmetic = "head_rogue_hood" },
+			{ cosmetic = "pants_rogue" },
+			{ cosmetic = "shoes_boots_rogue" },
+			{ cosmetic = "top_rogue" },
+			{ cosmetic = "back_gear_hunter_bow" },
+			{ cosmetic = "back_gear_hunter_cape" },
+			{ cosmetic = "head_hunter_hat" },
+			{ cosmetic = "pants_hunter" },
+			{ cosmetic = "shoes_boots_hunter" },
+			{ cosmetic = "top_hunter" },
+			{ cosmetic = "head_halo" },
+		]
+
+	[[wheedle.categories]]
+		icon = "spr_ui_store_category_icon_furniture"
+		constant_stock = [
+			{ item = "animated_snow_globe" },
+			{ item = "animated_bird_fountain" },
+			{ item = "deluxe_storage_chest_pink" },
+			{ item = "deluxe_storage_chest_red" },
+			{ item = "deluxe_storage_chest_orange" },
+			{ item = "deluxe_storage_chest_gold" },
+			{ item = "deluxe_storage_chest_green" },
+			{ item = "deluxe_storage_chest_aqua" },
+			{ item = "deluxe_storage_chest_blue" },
+			{ item = "deluxe_storage_chest_purple" },
+			{ item = "deluxe_storage_chest_black" },
+			{ item = "deluxe_storage_chest_gray" },
+			{ item = "deluxe_storage_chest_white" },
+			{ item = "deluxe_storage_chest_light_brown" },
+			{ item = "deluxe_storage_chest_dark_brown" },
+			{ item = "deluxe_icebox_white" },
+			{ item = "deluxe_icebox_pink" },
+			{ item = "deluxe_icebox_blue" },
+			{ item = "deluxe_icebox_yellow" },
+			{ item = "deluxe_icebox_green" },
+			{ item = "teleportation_pad", requirements = { has_upper_floor = true } },
+		]
+
+	[[wheedle.categories]]
+		icon = "spr_ui_crafting_category_icon_misc"
+		constant_stock = [
+			{ item = "bath_soap", requirements = { is_dating_someone = true, seen_cutscene = "elsie_dating_tutorial" } },
+			"fast_food",
+		]
+
+[zorel]
+	name = "Zorel's Stall"
+
+	[[zorel.categories]]
+		icon = "spr_ui_store_category_icon_consumables"
+		constant_stock = [
+			"crystal_resonator_red",
+			"crystal_resonator_orange",
+			"crystal_resonator_gold",
+			"crystal_resonator_green",
+			"crystal_resonator_blue",
+			"crystal_resonator_purple",
+			"crystal_resonator_silver",
+			"crystal_resonator_black",
+			"crystal_resonator_void",
+			"crystal_resonator_pink",
+		]
+		target_selections = 5
+		random_stock = [
+			"song_crystal_farm_boy",
+			"song_crystal_pink_twintails",
+			"song_crystal_crystal_caves",
+			"song_crystal_misty_pasture",
+			"song_crystal_purple_potions",
+			"song_crystal_heros_journey",
+			"song_crystal_five_more_minutes",
+			"song_crystal_dream_lobby",
+			"song_crystal_rainy_window",
+			"song_crystal_adelines_theme",
+			"song_crystal_balors_theme",
+			"song_crystal_caldarus_theme",
+			"song_crystal_celines_theme",
+			"song_crystal_eilands_theme",
+			"song_crystal_haydens_theme",
+			"song_crystal_junipers_theme",
+			"song_crystal_marchs_theme",
+			"song_crystal_reinas_theme",
+			"song_crystal_ryis_theme",
+			"song_crystal_seridias_theme",
+			"song_crystal_valens_theme",
+		]

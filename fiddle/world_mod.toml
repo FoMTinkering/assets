@@ -1,0 +1,341 @@
+[bridge]
+	location_id = "eastern_road"
+	requirements.repaired_eastern_road_bridge = true
+	collision_edit = { name = "Bridge_Fixed", replacement_area = [148, 88, 169, 98] }
+	layer_additions = [
+		"Level_0_Assets_Bridge_Fixed",
+		"Level_0_FloorSprites_Bridge_Fixed",
+	]
+	layer_removals = [
+		"Level_0_Assets_Bridge_Broken",
+		"Level_0_FloorSprites_Bridge_Broken",
+	]
+
+[stone_refinery]
+	location_id = "mines_entry"
+	requirements.unlocked_refining = true
+	collision_edit = { name = "Fixed", replacement_area = [0, 0, 87, 45] }
+	layer_additions = [
+		"Level_1_Assets_Fixed",
+		"Level_1_Walls_Roof_Fixed",
+		"Level_0_Assets_Fixed",
+		"Level_0_Walls_Top_Fixed",
+		"Level_0_Walls_Middle_Fixed",
+		"Level_0_Walls_Bottom_Fixed",
+		"Level_0_FloorSprites_Fixed",
+		"Level_0_Ground_Ruins_Fixed",
+		"Level_0_Ground_Brighter_Fixed",
+		"Level_0_Ground_Darker_Fixed",
+		"Level_0_Ground_Normal_Fixed",
+	]
+	layer_removals = [
+		"Level_1_Assets",
+		"Level_1_Walls_Roof",
+		"Level_0_Assets",
+		"Level_0_Walls_Top",
+		"Level_0_Walls_Middle",
+		"Level_0_Walls_Bottom",
+		"Level_0_FloorSprites",
+		"Level_0_Ground_Ruins",
+		"Level_0_Ground_Brighter",
+		"Level_0_Ground_Darker",
+		"Level_0_Ground_Normal",
+	]
+
+[thorny_stairs]
+	location_id = "eastern_road"
+	requirements.unlocked_deep_woods = true
+	layer_additions = [
+		"Level_0_FloorSprites_Thorny_Stairs_Fixed",
+	]
+	layer_removals = [
+		"Level_0_FloorSprites_Thorny_Stairs_Broken",
+	]
+
+[player_house]
+	location_id = "farm"
+	requirements.has_home_upgrade = "large"
+	collision_edit = { name = "Player_House_Upgrade" }
+
+[general_store_interior]
+	location_id = "general_store_store"
+	requirements.repaired_general_store = true
+	collision_edit = { name = "Fixed", replacement_area = [0, 0, 59, 43] }
+	layer_additions = [
+		"Level_1_Ceiling_Fixed",
+		"Level_1_BlackArea_Fixed",
+		"Level_0_Assets_Fixed",
+		"Level_0_Walls_Fixed",
+		"Level_0_Shadows_Fixed",
+	]
+	layer_removals = [
+		"Level_1_Ceiling",
+		"Level_1_BlackArea",
+		"Level_0_Assets",
+		"Level_0_Walls",
+		"Level_0_Shadows",
+	]
+
+[general_store_exterior]
+	location_id = "town"
+	requirements.repaired_general_store = true
+	collision_edit = { name = "General_Store_Fixed" }
+	layer_additions = [
+		"Level_0_Assets_General_Store_Fixed",
+		"Level_0_Windows_General_Store_Fixed",
+		"Level_0_FloorSprites_General_Store_Fixed",
+	]
+	layer_removals = [
+		"Level_0_Assets_General_Store_Broken",
+		"Level_0_FloorSprites_General_Store_Broken",
+	]
+
+[inn_interior]
+	location_id = "inn"
+	requirements.repaired_inn = true
+	layer_additions = [
+		"Level_0_Assets_Fixed",
+		"Level_0_NoDepthSprites_Fixed",
+	]
+	layer_removals = [
+		"Level_0_Assets",
+		"Level_0_NoDepthSprites",
+	]
+
+[inn_exterior]
+	location_id = "town"
+	requirements.repaired_inn = true
+	collision_edit = { name = "Inn_Fixed" }
+	layer_additions = ["Level_0_Assets_Inn_Fixed"]
+	layer_removals = ["Level_0_Assets_Inn_Broken"]
+
+[mill]
+	location_id = "town"
+	requirements.repaired_mill = true
+	layer_additions = ["Level_0_Assets_Mill_Fixed"]
+	layer_removals = ["Level_0_Assets_Mill_Broken"]
+
+[carpenters_shop_exterior]
+	location_id = "eastern_road"
+	requirements.repaired_carpenters_shop = true
+	collision_edit = { name = "Carpenters_Shop_Fixed", replacement_area = [24, 48, 34, 63] }
+	layer_additions = [
+		"Level_0_Assets_Carpenters_Shop_Fixed",
+		"Level_0_Windows_Carpenters_Shop_Fixed",
+		"Level_0_FloorSprites_Carpenters_Shop_Fixed",
+	]
+	layer_removals = [
+		"Level_0_Assets_Carpenters_Shop_Broken",
+		"Level_0_FloorSprites_Carpenters_Shop_Broken",
+	]
+
+[carpenters_shop_interior]
+	location_id = "landens_house_f1"
+	requirements.repaired_carpenters_shop = true
+	collision_edit = { name = "Fixed", replacement_area = [0, 0, 57, 43] }
+	layer_additions = [
+		"Level_1_Ceiling_Fixed",
+		"Level_0_Assets_Fixed",
+		"Level_0_Shadows_Fixed",
+		"Level_0_FloorSprites_Fixed",
+	]
+	layer_removals = [
+		"Level_1_Ceiling",
+		"Level_0_Assets",
+		"Level_0_Shadows",
+		"Level_0_FloorSprites",
+	]
+
+[narrows_rubble]
+	location_id = "narrows"
+	requirements.unlocked_summit = true
+	collision_edit = { name = "Rubble_Fixed", replacement_area = [152, 88, 185, 95] }
+	layer_removals = ["Level_0_Assets_Rubble"]
+
+[town_cracks]
+	location_id = "town"
+	requirements.unlocked_summit = true
+	layer_removals = ["Level_0_Floor_Cracks"]
+
+[town_plaza]
+	location_id = "town"
+	requirements.repaired_town_plaza = true 
+	collision_edit = { name = "Plaza_Fixed" }
+	layer_additions = [
+		"Level_0_Assets_Plaza_Fixed",
+	]
+	layer_removals = [
+		"Level_0_Floor_Plaza_Broken",
+	]
+
+[bell_tower_bell_broken]
+	location_id = "town"
+	requirements.broke_bell = true
+	layer_additions = [
+		"Level_0_Assets_Bell_Tower_Broken_Bell",
+	]
+	layer_removals = [
+		"Level_0_Assets_Bell_Tower_Fixed_Bell",
+	]
+
+[bell_tower_door]
+	location_id = "town"
+	requirements.repaired_bell_tower_door = true
+	layer_additions = [
+		"Level_0_Assets_Bell_Tower_Fixed_Door",
+	]
+	layer_removals = [
+		"Level_0_Assets_Bell_Tower_Broken_Door",
+	]
+
+[bell_tower]
+	location_id = "town"
+	requirements.repaired_bell_tower = true
+	layer_additions = [
+		"Level_0_Assets_Bell_Tower_Fixed",
+	]
+	layer_removals = [
+		"Level_0_Assets_Bell_Tower_Broken",
+	]
+
+[narrows_stairs]
+	location_id = "narrows"
+	requirements.unlocked_summit = true
+	layer_additions = [
+		"Level_0_Assets_Stairs_Fixed",
+		"Level_0_FloorSprites_Stairs_Fixed",
+	]
+	layer_removals = [
+		"Level_0_Assets_Stairs_Broken",
+		"Level_0_FloorSprites_Stairs_Broken",
+	]
+
+[haydens_farm]
+	location_id = "haydens_farm"
+	requirements.repaired_haydens_farm = true
+	collision_edit = { name = "Fixed" }
+	layer_additions = ["Level_0_Assets_Fixed"]
+	layer_removals = ["Level_0_Assets_Broken"]
+
+[beach_bridge]
+	location_id = "beach"
+	requirements.repaired_beach_bridge = true
+	collision_edit = { name = "Bridge_Fixed", replacement_area = [133, 38, 150, 48] }
+	layer_additions = [
+		"Level_0_Shd_Bridge_Fixed_Assets",
+		"Level_0_Assets_Bridge_Fixed",
+		"Level_0_FloorSprites_Bridge_Fixed",
+	]
+	layer_removals = [
+		"Level_0_Assets_Bridge_Broken",
+		"Level_0_FloorSprites_Bridge_Broken",
+	]
+
+[narrows_secret]
+	location_id = "narrows"
+	requirements.unlocked_narrows_secret = true
+	collision_edit = { name = "Cave_Fixed", replacement_area = [117, 132, 118, 133] }
+	layer_removals = ["Level_0_Assets_Cave_Blocked"]
+
+[beach_secret]
+	location_id = "beach"
+	requirements.unlocked_beach_secret = true
+	collision_edit = { name = "Cave_Fixed", replacement_area = [353, 10, 354, 11] }
+	layer_removals = ["Level_0_Assets_Cave_Blocked"]
+
+[horse_statue]
+	location_id = "narrows"
+	requirements.repaired_horse_statue = true
+	collision_edit = { name = "Horse_Statue" }
+
+[dragonsworn_glade]
+	location_id = "deep_woods"
+	requirements.unlocked_dragonsworn_glade = true
+	collision_edit = { name = "Glade_Open", replacement_area = [110, 35, 111, 37] }
+	layer_additions = ["Level_0_Assets_Glade_Open"]
+	layer_removals = ["Level_0_Assets_Glade_Closed"]
+
+[balors_room_scene]
+	location_id = "balors_room"
+	requirements.or = [
+		{ scene_is_playing = "balor_eight_hearts" },
+		{ quest_is_active = "for_good" },
+	]
+	layer_additions = ["Level_0_Assets_Scene"]
+	layer_removals = ["Level_0_Assets"]
+	collision_edit = { name = "Scene", replacement_area = [9, 22, 23, 25] }
+
+[balors_room_post_scene]
+	location_id = "balors_room"
+	requirements.seen_cutscene = "balor_eight_hearts"
+	layer_additions = ["Level_0_Assets_Post_Scene"]
+	layer_removals = ["Level_0_Assets"]
+	collision_edit = { name = "Post_Scene", replacement_area = [9, 22, 23, 25] }
+
+[priestess_quarters_northeast]
+	location_id = "priestess_quarters"
+	requirements.unlocked_pq_ne = true
+	layer_additions = [
+		"Level_1_Walls_Roof_Northeast_Fixed",
+		"Level_0_Walls_Top_Northeast_Fixed",
+		"Level_0_Walls_Middle_Northeast_Fixed",
+		"Level_0_Walls_Bottom_Northeast_Fixed",
+		"Level_0_Shadows_Northeast_Fixed",
+		"Level_0_Assets_Forge_On",
+	]
+	layer_removals = [
+		"Level_1_Walls_Roof",
+		"Level_0_Walls_Top",
+		"Level_0_Walls_Middle",
+		"Level_0_Walls_Bottom",
+		"Level_0_Shadows",
+		"Level_0_Assets_Forge_Off",
+	]
+	collision_edit = { name = "Main_Door_Fixed", replacement_area = [94, 30, 99, 37] }
+
+[priestess_quarters_main_door]
+	location_id = "priestess_quarters"
+	requirements.unlocked_pq_door = true
+	collision_edit = { name = "Main_Door_Fixed", replacement_area = [60, 30, 99, 37] }
+
+[void_seal_portal]
+	location_id = "ruins_seal"
+	requirements.opened_void_portal = true
+	layer_additions = ["Level_0_Assets_Void_Portal"]
+
+[dragonsworn_glade_flashback]
+	location_id = "dragonsworn_glade"
+	requirements.in_glade_flashback = true
+	layer_additions = [
+		"Level_0_Assets_Flashback",
+	]
+	layer_removals = [
+		"Level_0_Assets_Default",
+	]
+	collision_edit = { name = "Flashback", replacement_area = [149, 140, 152, 149] }
+
+[priestess_crystal_removal]
+	location_id = "seridias_chamber"
+	requirements.priestess_crystal_removed = true
+	layer_additions = []
+	layer_removals = [
+		"Level_0_Assets_Default",
+	]
+	collision_edit = { name = "CrystalRemoved", replacement_area = [23, 21, 26, 23] }
+
+[priestess_magic_barrier]
+	location_id = "seridias_chamber"
+	requirements.closed_final_seal = true
+	layer_additions = ["Level_0_Assets_Barrier"]
+
+[western_ruins]
+	location_id = "western_ruins"
+	requirements.seridia_house_open = true
+		layer_additions = [
+		"Level_0_Assets_Unlocked",
+		"Level_0_FloorSprites_Unlocked",
+	]
+	layer_removals = [
+		"Level_0_Assets_Locked",
+		"Level_0_FloorSprites_Locked",
+	]

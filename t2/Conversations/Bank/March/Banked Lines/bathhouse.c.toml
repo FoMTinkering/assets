@@ -1,0 +1,102 @@
+[bathhouse]
+refresh = "1m"
+requires = [{ npc = "march" }, { location = "bathhouse_change_room" }]
+portrait = "think"
+local = "I feel refreshed."
+
+[bathhouse_2]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ location = "bathhouse_change_room" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_forge_work_day = true }
+]
+portrait = "happy"
+local = "The bath feels amazing after a day spent hammering away at the forge. Whew."
+
+[bathhouse_3]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ location = "bathhouse_change_room" },
+	{ time_of_day = "morning" },
+	{ march_forge_work_day = true },
+	{ march_heart_level = 4, comparator = ">=" }
+]
+portrait = "sigh"
+local = "Sometimes I wake up with a tense neck, and that's when I come over here."
+next = "1"
+
+[bathhouse_3.1]
+portrait = "think"
+local = "A hot bath always relaxes my muscles..."
+next = "2"
+
+[bathhouse_3.2]
+portrait = "happy"
+local = "Then I can get back to work."
+
+[bathhouse_4]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ location = "bathhouse_change_room" },
+	{ time_of_day = "night", comparator = "!=" },
+	{ march_forge_work_day = true },
+	{ march_heart_level = 6, comparator = ">=" }
+]
+portrait = "think"
+local = "I thought my hands were going to smell like copper all day, but a bath really did the trick."
+
+[bathhouse_5]
+refresh = "1m"
+requires = [{ npc = "march" }, { location = "bathhouse_change_room" }]
+portrait = "sigh"
+local = "Good bath."
+
+[bathhouse_6]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ building = "bathhouse" }
+]
+portrait = "think"
+local = "It always smells nice in the Bathhouse, but it also smells different every time?"
+next = "1"
+
+[bathhouse_6.1]
+portrait = "unimpressed"
+local = "Seems like a lot of work."
+
+[bathhouse_7]
+refresh = "1y"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ building = "bathhouse" }
+]
+portrait = "think"
+local = "I wonder what keeps the water at the Bathhouse hot all the time."
+next = "1"
+
+[bathhouse_7.1]
+portrait = "ugh"
+local = "When I asked Juniper, she smirked and said it was magic. Ugh."
+
+[bathhouse_8]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ location = "bathhouse_change_room" },
+	{ time_of_day = "night" },
+	{ march_heart_level = 4, comparator = ">=" }
+]
+portrait = "think"
+local = "A quick bath, and then bed for me."
+next = "1"
+
+[bathhouse_8.1]
+portrait = "neutral"
+local = "Got another early day tomorrow."

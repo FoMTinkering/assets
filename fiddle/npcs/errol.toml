@@ -1,0 +1,177 @@
+birthday = { season = "winter", day = 11 }
+loved_gifts = [
+	"baked_sweetroot",
+	"braised_burdock",
+	"clam_chowder",
+	"fish_skewer",
+	"miners_helmet",
+	"miners_mushroom_stew",
+	"pan_fried_bream",
+	"perch_risotto",
+	"shard_mass",
+	"white_wine",
+
+
+]
+liked_gifts = [
+	"apple",
+	"beer",
+	"breaded_catfish",
+	"canned_sardines",
+	"ore_copper",
+	"fish_stew",
+	"ore_gold",
+	"hot_toddy",
+	"ore_iron",
+	"ore_mistril",
+	"latte",
+	"mocha",
+	"pear",
+	"peat",
+	"pomegranate",
+	"red_wine",
+	"ore_silver",
+	"sweetroot",
+	"upper_mines_mushroom",
+	"wintergreen_ice_cream",
+
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "hard_boiled_egg"
+name = "Errol"
+aldarian_name = "ERL"
+outfits = ["spring", "summer", "autumn", "winter"]
+drink_offset = -2
+tags = ["townsfolk"]
+journal_portrait_offset = [-114, -32]
+journal_background_color = [255, 242, 205]
+date_photo_offset = [0, 0]
+job = "Museum Curator"
+icon_sprite = "spr_ui_generic_icon_npc_errol"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_errol"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_errol"
+dateable = false
+
+[gossip]
+	line = "errol_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["coffee", "latte", "water"]
+	"12" = ["latte", "water"]
+	"16" = ["beer"]
+	"20" = ["whiskey", "green_bottle"]
+
+[offsets]
+	portrait = [-127, -65]
+	sweat = [0, -2]
+	hearts = [0, -2]
+	angry = [-5, -5]
+	sparkles = [0, -5]
+	sparkles_dark = [0, -5]
+	sick = [2, -4]
+	music_notes = [0, -5]
+	intensity = [0, -13]
+	surprise = [-1, -1]
+	shock = [0, -7]
+	sigh = [4, -8]
+	loud = [2, -6]
+	cheery = [0, 0]
+	drop = [0, -9]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	neutral_closed = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.shocked]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.magnify]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	on_pause_speaking = "idle"
+
+[cycles.brush]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.pickaxe]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "idle"
+
+[cycles.trowel]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"

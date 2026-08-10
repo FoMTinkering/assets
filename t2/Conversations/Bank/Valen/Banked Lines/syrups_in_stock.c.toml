@@ -1,0 +1,20 @@
+[syrups_in_stock]
+refresh = "1m"
+requires = [{ npc = "valen" }, { location = "clinic_f1" }]
+portrait = "neutral"
+local = "I've got quite a few syrups in stock, if you're looking for something in particular."
+
+[syrups_in_stock_2]
+refresh = "1y"
+requires = [
+	{ npc = "valen" },
+	{ location = "clinic_f1" },
+	{ valen_heart_level = 8, comparator = "<" }
+]
+portrait = "happy"
+local = "How is your medicine cabinet looking?"
+next = "1"
+
+[syrups_in_stock_2.1]
+portrait = "neutral"
+local = "I have plenty of syrups in stock."

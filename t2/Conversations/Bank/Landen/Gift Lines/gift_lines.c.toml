@@ -1,0 +1,142 @@
+# Hated gift
+[roly_poly]
+kind = "gift"
+requires = [
+	{ npc = "landen" },
+	{ gift_desire = "hated" },
+	{ gift_given = "roly_poly" }
+]
+portrait = "mad"
+effect = "shock"
+local = "A $Roly Poly$? Errol used to give me those when we were kids! I didn't like it then, and I don't like it now!"
+
+# General lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "landen" }, { gift_desire = "loved" }]
+portrait = "happy"
+local = "Now this is what I'm talking about! I love it, [Ari]!"
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "landen" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "sparkles"
+local = "Ain't that something! This is just what I like to see! Thank you, [Ari]!"
+
+[loved_gift_crafting]
+kind = "gift"
+requires = [
+	{ npc = "landen" },
+	{ gift_desire = "loved" },
+	{ any = [{ gift_given = "hard_wood" }, { gift_given = "shard_mass" }] },
+]
+portrait = "wink"
+effect = "sparkles"
+local = "Ooh [Ari], thank you! I'm going to turn this into something that turns heads!"
+
+[loved_gift_quality]
+kind = "gift"
+requires = [
+	{ npc = "landen" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "golden_bristle" },
+		{ gift_given = "golden_bull_horn" },
+		{ gift_given = "golden_cheesecake" },
+		{ gift_given = "golden_cookies" },
+		{ gift_given = "golden_duck_feather" },
+		{ gift_given = "golden_horse_hair" },
+	] },
+]
+portrait = "happy"
+effect = "sparkles"
+local = "You can't be around as long as I have and not appreciate quality like this! Look at that luster! That shine! Thank you, [Ari]!"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "landen" }, { gift_desire = "liked" }]
+portrait = "happy"
+local = "Well now, I do like a nice gift! Thanks, buddy!"
+
+[liked_gift_2]
+kind = "gift"
+requires = [{ npc = "landen" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "[Ari], you didn't have to go all out of your way!"
+next = "1"
+
+[liked_gift_2.1]
+portrait = "wink"
+local = "But since you already did... thanks!"
+
+[liked_gift_edible]
+kind = "gift"
+requires = [
+	{ npc = "landen" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "canned_sardines" },
+		{ gift_given = "coconut" },
+		{ gift_given = "coconut_milk" },
+		{ gift_given = "deep_sea_soup" },
+		{ gift_given = "tomato_soup" },
+		{ gift_given = "vegetable_pot_pie" },
+		{ gift_given = "vegetable_soup" },
+	] },
+]
+portrait = "neutral"
+local = "Thank you, [Ari]! I'm gonna make a little snack out of this later."
+
+[liked_gift_materials]
+kind = "gift"
+requires = [
+	{ npc = "landen" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "basic_wood" },
+		{ gift_given = "clay" },
+		{ gift_given = "crystal" },
+		{ gift_given = "glass" },
+		{ gift_given = "obsidian" },
+		{ gift_given = "ore_stone" },
+		{ gift_given = "paper" },
+		{ gift_given = "shards" },
+	] },
+]
+portrait = "neutral"
+local = "This is real helpful. Basic materials like this are always needed for repairs!"
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "landen" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Thanks!"
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "landen" }, { gift_desire = "disliked" }]
+portrait = "think"
+local = "Are you sure you didn't intend this for someone else? Oh... I see..."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "landen" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ landen_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "neutral"
+local = "A birthday gift? For me?"
+next = "1"
+
+[birthday_gift.1]
+portrait = "wink"
+effect = "sparkles"
+local = "Don't mind if I do! Thanks, pal!"

@@ -1,0 +1,30 @@
+[nails]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "march" }] },
+	{ adeline_zone = "<march_zone>" },
+	{ any = [
+		{ adeline_is_at_location = "blacksmith_store" },
+		{ adeline_zone = "town/blacksmith_business" },
+		{ adeline_zone = "town/forge_lesson" },
+		{ adeline_zone = "town/blacksmith_forge" }
+	] },
+	{ date_time = "1y", comparator = ">=" },
+	{ season = "spring" }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "adeline" } }]
+speaker = "adeline"
+portrait = "happy"
+local = "Here's a list of projects we're starting the new year with!"
+next = "1"
+
+[nails.1]
+speaker = "march"
+portrait = "think"
+local = """Ah... my old friends, "nails"."""
+next = "2"
+
+[nails.2]
+speaker = "march"
+portrait = "neutral"
+local = "I'll get started right away."

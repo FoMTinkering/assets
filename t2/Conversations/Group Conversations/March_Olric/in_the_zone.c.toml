@@ -1,0 +1,57 @@
+[in_the_zone]
+refresh = "1m"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }] },
+	{ march_zone = "<olric_zone>" },
+	{ march_animation = "hammer" },
+	{ march_is_at = "town/Anvil" },
+	{ olric_is_at = "town/Forge" }
+]
+speaker = "march"
+effect = "loud"
+local = "Keep the fire going! I need extra time with this piece!"
+next = "1"
+
+[in_the_zone.1]
+speaker = "olric"
+local = "On it!"
+next = "2"
+
+[in_the_zone.2]
+speaker = "olric"
+portrait = "wink"
+local = """Oh, hey [Ari]! Watch out, March is in "the zone"!"""
+
+[in_the_zone_2]
+refresh = "1m"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }] },
+	{ march_zone = "<olric_zone>" },
+	{ march_animation = "hammer" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+]
+speaker = "march"
+portrait = "mad"
+local = "One!"
+next = "1"
+
+[in_the_zone_2.1]
+speaker = "olric"
+portrait = "happy"
+local = "Two!"
+next = "2"
+
+[in_the_zone_2.2]
+speaker = "march"
+portrait = "mad"
+local = "One!"
+next = "3"
+
+[in_the_zone_2.3]
+speaker = "olric"
+portrait = "happy"
+local = "Two!"

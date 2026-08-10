@@ -1,0 +1,48 @@
+[manor_wander_1]
+refresh = "2m"
+requires = [{ npc = "adeline" }, { adeline_routine = "manor_garden_wander" }]
+portrait = "neutral"
+local = "Mom and dad would be so happy to see the garden now! It's so pretty."
+
+[manor_wander_2]
+refresh = "2m"
+requires = [{ npc = "adeline" }, { adeline_routine = "manor_garden_wander" }]
+portrait = "think"
+local = "I wonder what kinds of flowers these are. I should ask Celine."
+
+[manor_wander_3]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_routine = "manor_garden_wander" },
+	{ date_time = "2m", comparator = ">=" }
+]
+portrait = "think"
+local = "My mother and I used to go on walks in the garden every day, before she moved to the Capital."
+next = "1"
+
+[manor_wander_3.1]
+portrait = "happy"
+local = "I wonder how she's doing! I should write her soon."
+
+[manor_wander_4]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_routine = "manor_garden_wander" },
+	{ date_time = "1y", comparator = ">=" },
+	{ adeline_heart_level = 6, comparator = ">=" }
+]
+portrait = "neutral"
+local = "I'm not sure if I've ever mentioned it, but Mother and Father were married out by the gazebo!"
+next = "1"
+
+[manor_wander_4.1]
+portrait = "happy"
+local = "Elsie says it was a simple but beautiful wedding."
+next = "2"
+
+[manor_wander_4.2]
+portrait = "embarrassed"
+local = "I wish I could've seen it!"
+

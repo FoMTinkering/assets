@@ -1,0 +1,24 @@
+[caldarus_recovery_follow_up]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ caldarus_home = true },
+	{ caldarus_recovery_delay = "two_weeks" },
+	{ cutscene_seen_caldarus_recovery = true },
+	{ caldarus_post_recovery_conversation = "available" }
+]
+writes = [{ caldarus_post_recovery_conversation = "finished" }]
+portrait = "neutral"
+local = "It seems that there is a connection between the statue in my temple and the one on your farm."
+next = "1"
+
+[caldarus_recovery_follow_up.1]
+portrait = "think"
+local = "I believe it is possible to teleport between them, though I unfortunately do not have the power to do so myself..."
+next = "2"
+
+[caldarus_recovery_follow_up.2]
+portrait = "smile"
+local = "But perhaps you will find it useful, when you have time to visit."

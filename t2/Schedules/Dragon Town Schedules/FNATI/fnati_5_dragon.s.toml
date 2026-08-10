@@ -1,0 +1,96 @@
+priority = "max"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ weather = "pleasant" },
+	{ fnati = 5 },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+]
+
+[caldarus."6:00am"]
+destination = "museum_entry/museum_conversation_shadow"
+
+[caldarus."10:09am"]
+destination = "bathhouse_change_room/Right Bench Left Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[caldarus."2:44pm"]
+destination = "general_store_store/shopping_entrance"
+on_arrival_actions = [{ routine = "general_store_shopping" }]
+
+[caldarus."5:38pm"]
+destination = "inn/Balcony Hang 3"
+
+# dell
+[dell."6:00am"]
+destination = "inn/South Table Left End"
+on_arrival_actions = [{ activity = "eat" }]
+on_departure_writes = [{ dell_zone = "kids_zone" }]
+
+[dell."10:11am"]
+destination = "town/Windmill Watch 1"
+on_departure_writes = [{ dell_zone = "kids_zone" }]
+
+[dell."2:32pm"]
+destination = "inn/Balcony Hang 1"
+
+[dell."6:22pm"]
+destination = "inn/Story Listener 1"
+
+# juniper
+[juniper."6:00am"]
+destination = "town/bathhouse_chat_2"
+
+[juniper."10:23am"]
+destination = "bathhouse/Front Desk"
+
+[juniper."3:35pm"]
+destination = "inn/Bottom Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+
+# luc
+[luc."6:00am"]
+destination = "inn/South Table Bottom 1"
+on_arrival_actions = [{ activity = "eat" }]
+on_departure_writes = [{ luc_zone = "kids_zone" }]
+
+[luc."10:13am"]
+destination = "town/Windmill Watch 3"
+on_departure_writes = [{ luc_zone = "kids_zone" }]
+
+[luc."2:35pm"]
+destination = "inn/Balcony Hang 2"
+
+[luc."6:23pm"]
+destination = "inn/Story Listener 2"
+
+# maple
+[maple."6:00am"]
+destination = "inn/South Table Top 1"
+on_arrival_actions = [{ activity = "eat" }]
+on_departure_writes = [{ maple_zone = "kids_zone" }]
+
+[maple."10:12am"]
+destination = "town/Windmill Watch 2"
+on_departure_writes = [{ maple_zone = "kids_zone" }]
+
+[maple."2:34pm"]
+destination = "inn/Balcony Hang 3"
+
+[maple."6:24pm"]
+destination = "inn/Story Listener 3"
+
+# seridia
+[seridia."6:00am"]
+destination = "town/bathhouse_chat_1"
+
+[seridia."10:22am"]
+destination = "town/garden_wander_entrance"
+on_arrival_actions = [{ routine = "manor_garden_wander" }]
+
+[seridia."2:12pm"]
+destination = "town/Manor Pond Edge"
+
+[seridia."4:34pm"]
+destination = "inn/Balcony Hang 1"

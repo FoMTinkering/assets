@@ -1,0 +1,1121 @@
+var ari_is_sawing = false;
+var landen_is_hammering = false;
+var construction_in_progress = false;
+var ryis_is_sawing = false;
+var west_construction_poof = false;
+var east_construction_poof = false;
+var west_construction_plus = false;
+var east_construction_plus = false;
+var east_bed_poof = false;
+var east_bed_plus = false;
+var west_bed_poof = false;
+var west_bed_plus = false;
+var kill = false;
+
+fun ari_saw_sound() {
+	if ari_is_sawing == false {
+		return;
+	}
+	play_sound("SoundEffects/Tools/SawBackAndForth2D");
+	wait(0.9);
+	if ari_is_sawing == false {
+		return;
+	}
+	ari_saw_sound();
+}
+
+fun ari_saw() {
+	sim {
+		animate(ari, saw);
+		ari_set_attachment(craftingsaw);
+		face(ari, east);
+	}
+	{
+		ari_saw_sound();
+	}
+}
+
+fun landen_hammer_sound() {
+	if landen_is_hammering == false {
+		return;
+	}
+	play_sound("SoundEffects/Tools/RyisHammerSwingAndHitWood2D");
+	wait(0.7);
+	if landen_is_hammering == false {
+		return;
+	}
+	landen_hammer_sound();
+}
+
+fun construction_sounds() {
+	if construction_in_progress == false {
+		return;
+	}
+	play_sound("SoundEffects/SpecialEvents/Construction");
+	wait(2);
+	if construction_in_progress == false {
+		return;
+	}
+	construction_sounds();
+}
+
+fun ryis_saw_sound() {
+	if ryis_is_sawing == false {
+		return;
+	}
+	play_sound("SoundEffects/Tools/SawBackAndForth2D");
+	wait(0.45);
+	if ryis_is_sawing == false {
+		return;
+	}
+	ryis_saw_sound();
+}
+
+fun try_create_animation(animation, trellis_point, killed) {
+    if killed == true {
+        return;
+    }
+    create_animation(animation, trellis_point, 0, 0, 0, -5000);
+}
+
+fun west_construction(animation) {
+    if west_construction_poof == false {
+        return;
+    }
+    wait(0.25);
+    try_create_animation(animation, rti2_dust_west_1, kill);
+    wait(0.25);
+    try_create_animation(animation, rti2_dust_west_2, kill);
+    wait(0.1);
+    try_create_animation(animation, rti2_dust_west_3, kill);
+	if west_construction_poof == false {
+        return;
+    }
+    wait(0.25);
+    try_create_animation(animation, rti2_dust_west_4, kill);
+    wait(0.1);
+    try_create_animation(animation, rti2_dust_west_5, kill);
+    wait(0.25);
+    try_create_animation(animation, rti2_dust_west_6, kill);
+    wait(0.1);
+    try_create_animation(animation, rti2_dust_west_7, kill);
+	if west_construction_poof == false {
+        return;
+    }
+    if west_construction_plus == true {
+        wait(0.1);
+        try_create_animation(animation, rti2_dust_west_8, kill);
+        wait(0.25);
+        try_create_animation(animation, rti2_dust_west_9, kill);
+        wait(0.1);
+        try_create_animation(animation, rti2_dust_west_10, kill);
+        wait(0.1);
+    }
+    wait(0.1);
+    west_construction(animation);
+}
+
+fun east_construction(animation) {
+    if east_construction_poof == false {
+        return;
+    }
+    wait(0.5);
+    try_create_animation(animation, rti2_dust_east_1, kill);
+    wait(0.25);
+    try_create_animation(animation, rti2_dust_east_2, kill);
+    wait(0.1);
+    try_create_animation(animation, rti2_dust_east_3, kill);
+	if east_construction_poof == false {
+        return;
+    }
+    wait(0.25);
+    try_create_animation(animation, rti2_dust_east_4, kill);
+    wait(0.1);
+    try_create_animation(animation, rti2_dust_east_5, kill);
+    wait(0.25);
+    try_create_animation(animation, rti2_dust_east_6, kill);
+    wait(0.1);
+    try_create_animation(animation, rti2_dust_east_7, kill);
+	if east_construction_poof == false {
+        return;
+    }
+    if east_construction_plus == true {
+        wait(0.1);
+        try_create_animation(animation, rti2_dust_east_8, kill);
+        wait(0.25);
+        try_create_animation(animation, rti2_dust_east_9, kill);
+        wait(0.1);
+        try_create_animation(animation, rti2_dust_east_10, kill);
+        wait(0.1);
+    }
+    wait(0.1);
+    east_construction(animation);
+}
+
+fun east_bed(animation) {
+    if east_bed_poof == false {
+        return;
+    }
+    wait(0.5);
+    try_create_animation(animation, rti2_dust_east_bed_1, kill);
+    wait(0.25);
+    try_create_animation(animation, rti2_dust_east_bed_2, kill);
+    wait(0.1);
+    try_create_animation(animation, rti2_dust_east_bed_3, kill);
+	if east_bed_poof == false {
+        return;
+    }
+    if east_bed_plus == true {
+        wait(0.1);
+        try_create_animation(animation, rti2_dust_east_bed_4, kill);
+        wait(0.25);
+        try_create_animation(animation, rti2_dust_east_bed_5, kill);
+        wait(0.1);
+    }
+    wait(0.1);
+    east_bed(animation);
+}
+
+fun west_bed(animation) {
+    if west_bed_poof == false {
+        return;
+    }
+    wait(0.5);
+    try_create_animation(animation, rti2_dust_west_bed_1, kill);
+    wait(0.25);
+    try_create_animation(animation, rti2_dust_west_bed_2, kill);
+    wait(0.1);
+    try_create_animation(animation, rti2_dust_west_bed_3, kill);
+	if west_bed_poof == false {
+        return;
+    }
+    if west_bed_plus == true {
+        wait(0.1);
+        try_create_animation(animation, rti2_dust_west_bed_4, kill);
+        wait(0.25);
+        try_create_animation(animation, rti2_dust_west_bed_5, kill);
+        wait(0.1);
+    }
+    wait(0.1);
+    west_bed(animation);
+}
+
+scene(town);
+place_actor(adeline, south, rti2_adeline_entrance);
+animate(adeline, write);
+place_actor(balor, south, rti2_balor_entrance);
+place_actor(celine, north, rti2_celine_entrance);
+place_actor(dell, north, rti2_dell_entrance);
+place_actor(eiland, east, rti2_eiland_entrance);
+place_actor(elsie, west, rti2_elsie_entrance);
+place_actor(errol, west, rti2_errol_entrance);
+place_actor(hayden, north, rti2_hayden_entrance);
+place_actor(holt, south, rti2_holt_entrance);
+animate(holt, sweep);
+place_actor(juniper, east, rti2_juniper_entrance);
+place_actor(landen, north, rti2_landen_entrance);
+place_actor(luc, south, rti2_luc_entrance);
+place_actor(maple, east, rti2_maple_entrance);
+place_actor(march, south, rti2_march_entrance);
+place_actor(nora, east, rti2_nora_entrance);
+place_actor(olric, north, rti2_olric_entrance);
+place_actor(reina, south, rti2_reina_entrance);
+animate(reina, write);
+place_actor(ryis, south, rti2_ryis_entrance);
+animate(ryis, write);
+place_actor(terithia, south, rti2_terithia_entrance);
+place_actor(valen, west, rti2_valen_entrance);
+place_actor(ari, east, rti2_ari_entrance);
+camera_position(rti2_camera_1);
+request_music_play("Music/Events/Cutscene");
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		pan_camera(4, rti2_camera_2);
+	}
+	{
+		free bark_speech(ari, woodcrafting);
+		wait(0.75);
+		free bark_speech(ryis, crafting);
+		wait(0.75);
+		free bark_speech(landen, four);
+		wait(0.75);
+		free bark_speech(ari, question_mark);
+		wait(0.75);
+		free bark_speech(adeline, march);
+	}
+	{
+		wait(1);
+		place_actor(josephine, south, "Inn Front Door");
+		look_for_entry_transition(josephine);
+		wait(1);
+		free bark_speech(josephine, exclamation_mark);
+		face(josephine, south);
+		wait(0.25);
+		walk_slow(josephine, rti2_josephine_entrance);
+		face(josephine, south);
+	}
+	{
+		wait(2.25);
+		place_actor(hemlock, south, "Inn Front Door");
+		look_for_entry_transition(hemlock);
+		wait(1);
+		free bark_speech(hemlock, exclamation_mark);
+		face(hemlock, south);
+		wait(0.25);
+		walk_slow(hemlock, rti2_hemlock_entrance);
+		face(hemlock, south);
+	}
+	{
+		wait(3.5);
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(balor, east);
+	}
+	{
+		wait(1);
+		face(josephine, west);
+	}
+	{
+		pan_camera(1.5, rti2_camera_extra);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(balor, cute_face);
+wait(0.5);
+free bark_speech(josephine, cute_face);
+wait(1);
+sim {
+	{
+		wait(1.25);
+		face(josephine, south);
+	}
+	{
+		wait(1.5);
+		face(balor, south);
+	}
+	{
+		wait(1.5);
+		face(ari, south);
+	}
+	{
+		wait(2);
+		animate(ryis, idle);
+	}
+	{
+		wait(3);
+		animate(adeline, idle);
+	}
+	{
+		pan_camera(2, rti2_camera_3);
+	}
+	{
+		wait(1);
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+free bark_speech(landen, cute_face);
+free bark_speech(ryis, cute_face);
+wait(0.5);
+free bark_speech(adeline, cute_face);
+wait(0.5);
+free sim {
+	{
+		walk(ari, rti2_ari_construction);
+		face(ari, east);
+		free ari_saw();
+	}
+	{
+		wait(0.25);
+		walk(landen, rti2_landen_construction);
+		face(landen, east);
+		animate(landen, hammer);
+	}
+	{
+		wait(0.5);
+		walk(ryis, rti2_ryis_construction);
+		face(ryis, west);
+		animate(ryis, saw);
+	}
+	{
+		wait(1.25);
+		walk_slow(adeline, rti2_adeline_start);
+		face(adeline, south);
+		animate(adeline, write);
+	}
+	{
+		wait(2);
+		walk_slow(josephine, rti2_josephine_back);
+		face(josephine, north);
+	}
+	{
+		wait(2.25);
+		walk_slow(hemlock, rti2_hemlock_back);
+		face(hemlock, north);
+	}
+}
+sim {
+	{
+		pan_camera(3, rti2_camera_4);
+	}
+	{
+		wait(2);
+		face(celine, east);
+	}
+	{
+		wait(3);
+		face(hayden, west);
+	}
+	{
+		wait(1.5);
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(hayden, cute_face);
+free bark_speech(celine, cute_face);
+wait(1);
+free sim {
+	{
+		walk(celine, rti2_celine_construction);
+		face(celine, east);
+		animate(celine, action);
+	}
+	{
+		wait(0.5);
+		walk(hayden, rti2_hayden_construction);
+		face(hayden, west);
+		animate(hayden, action);
+	}
+	{
+		wait(1.5);
+		face(balor, north);
+	}
+}
+sim {
+	{
+		pan_camera(3, rti2_camera_5);
+	}
+	{
+		wait(3);
+		next_line(); //
+	}
+}
+close_textbox();
+free bark_speech(dell, exclamation_mark);
+free bark_speech(luc, exclamation_mark);
+free bark_speech(maple, exclamation_mark);
+wait(1);
+sim {
+	{
+		pan_camera(2, rti2_camera_6);
+	}
+	{
+		sim {
+			walk(dell, rti2_dell_start);
+			set_move_speed(dell, 1.2);
+		}
+		face(dell, north);
+	}
+	{
+		sim {
+			walk(luc, rti2_luc_start);
+			set_move_speed(luc, 1.2);
+		}
+		face(luc, north);
+	}
+	{
+		sim {
+			walk(maple, rti2_maple_start);
+			set_move_speed(maple, 1.2);
+		}
+		face(maple, north);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+	{
+		wait(2);
+		animate(adeline, idle);
+		face(adeline, south);
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(adeline, east);
+	}
+	{
+		wait(1);
+		animate(reina, idle);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(dell, cute_face);
+free bark_speech(maple, cute_face);
+free bark_speech(luc, cute_face);
+wait(0.5);
+face(adeline, south);
+free sim {
+	{
+		wait(0.75);
+		sim {
+			walk(maple, "Inn Front Door");
+			set_move_speed(maple, 1.2);
+		}
+		face(maple, north);
+		use_door(maple);
+	}
+	{
+		wait(1);
+		sim {
+			walk(dell, "Inn Front Door");
+			set_move_speed(dell, 1.2);
+		}
+		face(dell, north);
+		use_door(dell);
+	}
+	{
+		wait(0.5);
+		sim {
+			walk(luc, "Inn Front Door");
+			set_move_speed(luc, 1.2);
+		}
+		face(luc, north);
+		use_door(luc);
+	}
+}
+sim {
+	{
+		wait(1.75);
+		walk_slow(adeline, rti2_landen_entrance);
+		face(adeline, north);
+	}
+	{
+		wait(2.25);
+		walk(reina, rti2_reina_start);
+		face(reina, north);
+	}
+	{
+		wait(2.25);
+		pan_camera(2, rti2_camera_7);
+	}
+}
+sim {
+	{
+		wait(0.25);
+		face(reina, west);
+		wait(1.25);
+		face(reina, east);
+	}
+	{
+		wait(0.75);
+		face(balor, east);
+	}
+	{
+		wait(1.5);
+		face(olric, west);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(olric, cute_face);
+free bark_speech(balor, cute_face);
+wait(1);
+free sim {
+	{
+		walk(reina, "Inn Front Door");
+		face(reina, north);
+		use_door(reina);
+	}
+	{
+		wait(0.5);
+		walk(balor, "Inn Front Door");
+		face(balor, north);
+		use_door(balor);
+	}
+	{
+		wait(0.25);
+		walk(olric, "Inn Front Door");
+		face(olric, north);
+		use_door(olric);
+	}
+	{
+		wait(1.5);
+		walk(march, rti2_march_construction);
+		face(march, west);
+		animate(march, hammer);
+	}
+	{
+		wait(3.75);
+		walk(eiland, rti2_eiland_construction);
+		face(eiland, west);
+		animate(eiland, brush);
+	}
+	{
+		wait(3.25);
+		walk(errol, rti2_errol_construction);
+		face(errol, east);
+		animate(errol, brush);
+	}
+}
+sim {
+	{
+		wait(2);
+		pan_camera(3, rti2_camera_3);
+	}
+	{
+		wait(2.5);
+		animate(adeline, idle);
+		wait(0.5);
+		face(adeline, north);
+	}
+	{
+		wait(6);
+		next_line(); //
+		close_textbox();
+	}
+}
+sim {
+	{
+		construction_in_progress = true;
+		free construction_sounds();
+	}
+	{
+		west_construction_poof = true;
+		east_construction_poof = true;
+		free west_construction(spr_fx_poof1_dirt_once);
+		free east_construction(spr_fx_poof1_dirt_once);
+		wait(2);
+		west_bed_poof = true;
+		free west_bed(spr_fx_poof1_dirt_once);
+		wait(0.5);
+		east_bed_poof = true;
+		free east_bed(spr_fx_poof1_dirt_once);
+	}
+	{
+		wait(2);
+		west_construction_plus = true;
+		east_construction_plus = true;
+		wait(1);
+		west_bed_plus = true;
+		east_bed_plus = true;
+	}
+	{
+		ari_is_sawing = true;
+		ryis_is_sawing = true;
+		landen_is_hammering = true;
+		free landen_hammer_sound();
+		free ryis_saw_sound();
+		free ari_saw_sound();
+	}
+	{
+		wait(0.5);
+		face(terithia, north);
+	}
+	{
+		wait(1);
+		face(juniper, north);
+	}
+	{
+		wait(1.25);
+		face(elsie, north);
+	}
+	{
+		wait(2.5);
+		face(nora, north);
+	}
+	{
+		wait(2.75);
+		face(valen, north);
+	}
+	{
+		wait(2);
+		animate(holt, idle);
+		face(holt, north);
+	}
+	{
+		wait(4);
+		construction_in_progress = false;
+	}
+	{
+		wait(5.5);
+		west_construction_poof = false;
+		east_construction_poof = false;
+		west_construction_plus = false;
+		east_construction_plus = false;
+		east_bed_poof = false;
+		east_bed_plus = false;
+		west_bed_poof = false;
+		west_bed_plus = false;
+	}
+	{
+		pan_camera(7, rti2_camera_1);
+	}
+}
+ari_is_sawing = false;
+landen_is_hammering = false;
+ryis_is_sawing = false;
+//
+sim {
+	override_requirement("repaired_inn");
+	refresh_room_layers();
+	play_sound("SoundEffects/SpecialEvents/RevealTransition");
+	kill = true;
+
+	west_construction_poof = false;
+	east_construction_poof = false;
+	west_construction_plus = false;
+	east_construction_plus = false;
+	east_bed_poof = false;
+	east_bed_plus = false;
+	west_bed_poof = false;
+	west_bed_plus = false;
+	animate(ari, idle);
+	animate(celine, idle);
+	animate(eiland, idle);
+	animate(errol, idle);
+	animate(hayden, idle);
+	animate(landen, idle);
+	animate(march, idle);
+	animate(ryis, idle);
+	free bark_speech(adeline, exclamation_mark);
+	free bark_speech(elsie, exclamation_mark);
+	free bark_speech(hemlock, exclamation_mark);
+	free bark_speech(holt, exclamation_mark);
+	free bark_speech(josephine, exclamation_mark);
+	free bark_speech(juniper, exclamation_mark);
+	free bark_speech(nora, exclamation_mark);
+	free bark_speech(terithia, exclamation_mark);
+	free bark_speech(valen, exclamation_mark);
+}
+
+sim {
+	{
+		wait(0.3);
+		free west_construction(spr_fx_twinkle_1);
+		wait(0.5);
+		free east_construction(spr_fx_twinkle_1);
+		wait(1);
+		free west_bed(spr_fx_twinkle_1);
+		wait(1);
+		free east_bed(spr_fx_twinkle_1);
+	}
+	{
+		wait(0.25);
+		kill = false;
+		west_construction_poof = true;
+		east_construction_poof = true;
+		west_construction_plus = true;
+		east_construction_plus = true;
+		east_bed_poof = true;
+		east_bed_plus = true;
+		west_bed_poof = true;
+		west_bed_plus = true;
+	}
+	free {
+		wait(6);
+		west_construction_poof = false;
+		east_construction_poof = false;
+		west_construction_plus = false;
+		east_construction_plus = false;
+		east_bed_poof = false;
+		east_bed_plus = false;
+		west_bed_poof = false;
+		west_bed_plus = false;
+	}
+	{
+		wait(2);
+		face(ari, south);
+		wait(0.25);
+		face(landen, north);
+		free bark_speech(ari, cute_face);
+		free bark_speech(landen, cute_face);
+	}
+	{
+		wait(3);
+		face(ryis, south);
+		wait(0.25);
+		face(march, north);
+		free bark_speech(ryis, cute_face);
+		free bark_speech(march, cute_face);
+	}
+	{
+		wait(1);
+		free bark_speech(celine, cute_face);
+		free bark_speech(hayden, cute_face);
+		free bark_speech(eiland, cute_face);
+		free bark_speech(hayden, cute_face);
+	}
+	{
+		wait(4);
+		pan_camera(3, rti2_camera_3);
+	}
+	{
+		wait(6);
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(adeline, south);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(hemlock, cute_face);
+free bark_speech(josephine, cute_face);
+wait(1.5);
+sim {
+	{
+		walk(josephine, "Inn Front Door");
+		face(josephine, north);
+		use_door(josephine);
+	}
+	{
+		wait(1);
+		walk(hemlock, "Inn Front Door");
+		face(hemlock, north);
+		use_door(hemlock);
+	}
+	{
+		wait(2);
+		walk(adeline, "Inn Front Door");
+		face(adeline, north);
+		use_door(adeline);
+	}
+	{
+		free pan_camera(4, rti2_camera_1);
+	}
+	{
+		wait(2);
+		fade_out(1);
+	}
+}
+
+scene(inn);
+place_actor(reina, north, rti2_reina_inn_entrance);
+place_actor(balor, east, rti2_balor_inn_entrance);
+place_actor(dell, south, rti2_dell_inn_entrance);
+place_actor(luc, west, rti2_luc_inn_entrance);
+place_actor(maple, east, rti2_maple_inn_entrance);
+place_actor(olric, west, rti2_olric_inn_entrance);
+place_actor(josephine, north, rti2_josephine_inn_entrance);
+place_actor(hemlock, north, rti2_hemlock_inn_entrance);
+place_actor(adeline, north, rti2_general_inn_entrance);
+place_actor(ari, east, rti2_ari_inn_entrance);
+camera_position(rti2_camera_8);
+
+free sim {
+	{
+		wait(1);
+		place_actor(eiland, east, rti2_general_inn_entrance);
+		walk_slow(eiland, rti2_eiland_inn_entrance);
+		face(eiland, north);
+		wait(1);
+		face(eiland, east);
+		wait(1);
+		face(eiland, north);
+
+	}
+	{
+		wait(1.5);
+		place_actor(celine, north, rti2_general_inn_entrance);
+		walk_slow(celine, rti2_celine_inn_entrance);
+		face(celine, north);
+		wait(1.5);
+		face(celine, west);
+		wait(1);
+		face(celine, north);
+	}
+	{
+		wait(2);
+		place_actor(errol, north, rti2_general_inn_entrance);
+		walk_slow(errol, rti2_errol_inn_entrance);
+		face(errol, north);
+	}
+	{
+		wait(2.25);
+		walk_slow(ari, rti2_ari_inn_start);
+		face(ari, north);
+	}
+	{
+		wait(3);
+		place_actor(hayden, north, rti2_general_inn_entrance);
+		walk_slow(hayden, rti2_hayden_inn_entrance);
+		face(hayden, north);
+		wait(1);
+		face(hayden, east);
+		wait(2);
+		face(hayden, north);
+	}
+	{
+		wait(3.75);
+		place_actor(elsie, north, rti2_general_inn_entrance);
+		walk_slow(elsie, rti2_elsie_inn_entrance);
+		face(elsie, north);
+	}
+	{
+		wait(4.5);
+		place_actor(juniper, north, rti2_general_inn_entrance);
+		walk_slow(juniper, rti2_juniper_inn_entrance);
+		face(juniper, north);
+	}
+	{
+		wait(5.25);
+		place_actor(landen, north, rti2_general_inn_entrance);
+		walk_slow(landen, rti2_landen_inn_entrance);
+		face(landen, north);
+		wait(1);
+		face(landen, east);
+		wait(2);
+		face(landen, north);
+	}
+	{
+		wait(6);
+		place_actor(holt, north, rti2_general_inn_entrance);
+		walk_slow(holt, rti2_holt_inn_entrance);
+		face(holt, north);
+		wait(1);
+		face(holt, east);
+		wait(1);
+		face(holt, north);
+	}
+	{
+		wait(6.75);
+		place_actor(terithia, north, rti2_general_inn_entrance);
+		walk_slow(terithia, rti2_terithia_inn_entrance);
+		face(terithia, north);
+	}
+	{
+		wait(7.5);
+		place_actor(march, north, rti2_general_inn_entrance);
+		walk_slow(march, rti2_march_inn_entrance);
+		face(march, north);
+	}
+	{
+		wait(8.25);
+		place_actor(ryis, north, rti2_general_inn_entrance);
+		walk_slow(ryis, rti2_ryis_inn_entrance);
+		face(ryis, north);
+	}
+	{
+		wait(9);
+		place_actor(nora, north, rti2_general_inn_entrance);
+		walk_slow(nora, rti2_nora_inn_entrance);
+		face(nora, north);
+	}
+	{
+		wait(9.75);
+		place_actor(valen, north, rti2_general_inn_entrance);
+		walk_slow(valen, rti2_valen_inn_entrance);
+		face(valen, north);
+	}
+}
+sim {
+	{
+		wait(0.25);
+		fade_in(1);
+	}
+	{
+		wait(2.25);
+		face(balor, south);
+	}
+	{
+		wait(2.75);
+		face(olric, south);
+	}
+	{
+		wait(1.5);
+		face(reina, south);
+	}
+	{
+		walk_slow(josephine, rti2_josephine_inn_start);
+		face(josephine, north);
+		free bark_speech(josephine, exclamation_mark);
+		wait(1);
+		face(josephine, east);
+		wait(1);
+		face(josephine, north);
+	}
+	{
+		walk_slow(hemlock, rti2_hemlock_inn_start);
+		face(hemlock, east);
+		wait(1.5);
+		face(hemlock, west);
+		wait(1);
+		walk(hemlock, rti2_hemlock_inn_bar);
+		face(hemlock, east);
+	}
+	{
+		walk_slow(adeline, rti2_adeline_inn_entrance);
+		face(adeline, north);
+		wait(3);
+		walk_slow(adeline, rti2_hemlock_inn_start);
+		face(adeline, north);
+	}
+	{
+		wait(3);
+		next_line(); //
+		next_line(); //
+		close_textbox();
+	}
+	{
+		pan_camera(3, rti2_camera_9);
+	}
+}
+
+sim {
+	{
+		wait(1);
+		face(hemlock, west);
+		wait(1);
+		face(hemlock, east);
+	}
+	{
+		wait(0.5);
+		face(josephine, west);
+	}
+	{
+		wait(0.75);
+		face(adeline, west);
+	}
+	{
+		wait(1.25);
+		face(reina, west);
+	}
+	{
+		pan_camera(2, rti2_camera_10);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		face(hemlock, north);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		face(hemlock, east);
+		wait(1);
+		face(hemlock, south);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(hemlock, east);
+	}
+	{
+		wait(0.75);
+		face(reina, south);
+	}
+	{
+		wait(1);
+		face(josephine, north);
+	}
+	{
+		wait(1.25);
+		face(adeline, north);
+	}
+	{
+		pan_camera(2, rti2_camera_11);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+free pan_camera(3, rti2_camera_12);
+wait(1);
+sim {
+	{
+		wait(0.5);
+		face(josephine, south);
+	}
+	{
+		wait(0.75);
+		face(adeline, east);
+	}
+	{
+		wait(2);
+		face(hemlock, south);
+	}
+	{
+		wait(1);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(1);
+free bark_speech(ari, cute_face);
+free bark_speech(adeline, cute_face);
+free bark_speech(balor, cute_face);
+free bark_speech(celine, cute_face);
+free bark_speech(dell, cute_face);
+free bark_speech(eiland, cute_face);
+free bark_speech(elsie, cute_face);
+free bark_speech(errol, cute_face);
+free bark_speech(hayden, cute_face);
+free bark_speech(holt, cute_face);
+free bark_speech(juniper, cute_face);
+free bark_speech(landen, cute_face);
+free bark_speech(luc, cute_face);
+free bark_speech(maple, cute_face);
+free bark_speech(march, cute_face);
+free bark_speech(nora, cute_face);
+free bark_speech(olric, cute_face);
+free bark_speech(reina, cute_face);
+free bark_speech(ryis, cute_face);
+free bark_speech(terithia, cute_face);
+free bark_speech(valen, cute_face);
+wait(1);
+free pan_camera(2, rti2_camera_9);
+wait(2);
+free bark_speech(hemlock, cute_face);
+free bark_speech(josephine, cute_face);
+wait(1);
+fade_out(2);

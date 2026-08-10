@@ -1,0 +1,22 @@
+[bathhouse]
+refresh = "1y"
+requires = [
+	{ npc = "landen" },
+	{ any = [
+		{ landen_is_traveling_to_building = "bathhouse" },
+		{ landen_building = "bathhouse" }
+	] }
+]
+portrait= "think"
+local = "These days, my aches and pains keep me up."
+next = "1"
+
+[bathhouse.1]
+portrait = "happy"
+local = "The bathhouse is the cure for what ails me."
+
+[bathhouse_2]
+refresh = "1y"
+requires = [{ npc = "landen" }, { location = "bathhouse_change_room" }]
+portrait = "neutral"
+local = "Oh boy. I nearly fell asleep in the bath. It's just so cozy in there!"

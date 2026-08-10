@@ -1,0 +1,24 @@
+[storage_room]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "eiland" }, { npc = "errol" }] },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "<errol_zone>" },
+	{ building = "museum" },
+	{ museum_total_count = 30, comparator = ">=" }
+]
+speaker = "adeline"
+portrait = "ugh"
+local = "Your storage room is... so disorganized... I feel faint."
+next = "1"
+
+[storage_room.1]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "It's not that bad!"
+next = "2"
+
+[storage_room.2]
+speaker = "errol"
+portrait = "neutral_closed"
+local = "It's a dig site of its own, Lord Eiland."

@@ -1,0 +1,16 @@
+[checking_on_narrows]
+refresh = "1y"
+requires = [
+	{ npc = "hemlock" },
+	{ dell_is_at_location = "narrows" },
+	{ luc_is_at_location = "narrows" },
+	{ maple_is_at_location = "narrows" },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ any = [
+		{ hemlock_is_traveling_to_zone = "<dell_zone>" },
+		{ hemlock_zone = "<dell_zone>" }
+	] }
+]
+portrait = "neutral"
+local = "The kids are usually fine on their own, but I like to check on them when they're in the Narrows."

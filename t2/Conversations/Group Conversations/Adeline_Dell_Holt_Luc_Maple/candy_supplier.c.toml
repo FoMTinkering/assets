@@ -1,0 +1,43 @@
+[candy_supplier]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "dell" },
+		{ npc = "holt" },
+		{ npc = "luc" },
+		{ npc = "maple" }
+	] },
+	{ adeline_zone = "<dell_zone>" },
+	{ adeline_zone = "<holt_zone>" },
+	{ adeline_zone = "<luc_zone>" },
+	{ adeline_zone = "<maple_zone>" },
+	{ adeline_business_review = true }
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "Anything new to tell, Holt?"
+next = "1"
+
+[candy_supplier.1]
+speaker = "holt"
+portrait = "neutral"
+local = "I should be asking you! Looks like you've picked up some assistants."
+next = "2"
+
+[candy_supplier.2]
+speaker = "maple"
+portrait = "mad"
+local = "That's right! We're helping Lady Adeline!"
+next = "3"
+
+[candy_supplier.3]
+speaker = "dell"
+portrait = "mad"
+local = "And don't expect any special treatment because we're related, papa!"
+next = "4"
+
+[candy_supplier.4]
+speaker = "luc"
+portrait = "mad"
+local = "Let's talk about your candy supplier..."

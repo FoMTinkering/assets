@@ -1,0 +1,98 @@
+[reading]
+refresh = "2m"
+requires = [
+	{ npc = "celine" },
+	{ celine_animation = "book_sit" },
+	{ celine_heart_level = 4, comparator = ">=" }
+]
+portrait = "think"
+local = "This part of the book is... is..."
+next = "1"
+
+[reading.1]
+portrait = "mad"
+effect = "sparkles"
+local = "It's really good, [Ari]!"
+
+[reading_2]
+refresh = "2m"
+requires = [
+	{ npc = "celine" },
+	{ celine_zone = "town/celine_bench" },
+	{ celine_animation = "book_sit" },
+	{ celine_heart_level = 4, comparator = ">=" }
+]
+portrait = "neutral"
+local = "I love to read by my garden."
+next = "1"
+
+[reading_2.1]
+portrait = "happy"
+local = "You can pull up a seat, if you like!"
+
+[reading_3]
+refresh = "1y"
+requires = [
+	{ npc = "celine" },
+	{ celine_animation = "book_sit" },
+	{ celine_heart_level = 4, comparator = ">=" },
+	{ reina_heart_level = 4, comparator = ">=" }
+]
+portrait = "neutral"
+local = "Reina and I have a lot of classic books about knights and dragons and adventure."
+next = "1"
+
+[reading_3.1]
+portrait = "happy"
+local = "I think Dell is really going to enjoy reading them when she gets older!"
+
+[reading_4]
+refresh = "1y"
+requires = [
+	{ npc = "celine" },
+	{ celine_animation = "book_sit" },
+	{ celine_heart_level = 4, comparator = ">=" },
+]
+portrait = "neutral"
+local = "I don't usually read mystery novels, but Valen loaned me one of her old favorites!"
+next = "1"
+
+[reading_4.1]
+portrait = "happy"
+local = "You can tell this book has really been loved."
+next = "2"
+
+[reading_4.2]
+portrait = "blush_closed_eyes"
+local = "I keep finding underlined passages and little notes in the margins!"
+
+[reading_5]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ celine_animation = "book_sit" },
+	{ location = "celines_room" }
+]
+portrait = "happy"
+local = "Winter's my favorite time to read at home!"
+next = "1"
+
+[reading_5.1]
+portrait = "neutral"
+local = "There's just something so cozy about it."
+
+[reading_6]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ celine_animation = "book_sit" },
+	{ season = "fall" }
+]
+portrait = "neutral"
+local = "It says here that the leaves change color in the fall when their green pigment breaks down."
+next = "1"
+
+[reading_6.1]
+portrait = "happy"
+effect = "cheery"
+local = "That's when the other natural colors of the leaves show through! Isn't that interesting?"

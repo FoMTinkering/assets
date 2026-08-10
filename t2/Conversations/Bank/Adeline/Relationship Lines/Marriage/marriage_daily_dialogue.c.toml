@@ -1,0 +1,1114 @@
+# Morning
+[morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "blush"
+local = "Good morning, [Ari]!"
+next = "1"
+
+[morning_0.1]
+portrait = "happy_blush"
+local = "Did you sleep well?"
+next = "2"
+
+[morning_0.2]
+portrait = "blush"
+local = "You're looking very nice today."
+
+[morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "blush"
+local = "Morning, [Ari]!"
+next = "1"
+
+[morning_1.1]
+portrait = "wink"
+local = "Let's do our best today, okay?"
+
+[dreams_0]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy_blush"
+local = "Good morning!"
+next = "1"
+
+[dreams_0.1]
+portrait = "blush"
+local = "Did you have any good dreams last night...?"
+
+[ari_plans_0]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false },
+	{ adeline_planning_line = "undefined" }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy"
+effect = "cheery"
+local = "Good morning!"
+next = "1"
+
+[ari_plans_0.1]
+portrait = "blush"
+local = "What are your plans for the day, [Ari]?"
+prompts = [
+	{ local = "I'm going to get some work done on the farm!", next = "2" },
+	{ local = "I was thinking of heading to the Mines...", next = "4" },
+	{ local = "Today feels like a good day for fishing.", next = "7" }
+]
+
+[ari_plans_0.2]
+writes = [{ adeline_planning_line = "farming", expires = "20h" }]
+portrait = "happy_blush"
+local = "Don't work too hard today, okay?"
+next = "3"
+
+[ari_plans_0.3]
+portrait = "wink"
+local = "The farm might need your attention, but so does your wife!"
+
+[ari_plans_0.4]
+writes = [{ adeline_planning_line = "mining", expires = "20h" }]
+portrait = "embarrassed"
+local = "Off to the Mines? Well..."
+next = "5"
+
+[ari_plans_0.5]
+portrait = "embarrassed_tired"
+local = "Just promise me you'll be careful, alright?"
+next = "6"
+
+[ari_plans_0.6]
+portrait = "embarrassed"
+local = "Come home safe!"
+
+[ari_plans_0.7]
+writes = [{ adeline_planning_line = "fishing", expires = "20h" }]
+portrait = "blush"
+local = "Oooh that sounds fun!"
+next = "8"
+
+[ari_plans_0.8]
+portrait = "happy"
+local = "Good luck, [Ari]."
+next = "9"
+
+[ari_plans_0.9]
+portrait = "wink"
+local = "I can't wait to see what you'll bring home later!"
+
+[sleepy_0]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] }
+]
+portrait = "sick_eyes_closed"
+local = "Yawn..."
+next = "1"
+
+[sleepy_0.1]
+portrait = "embarrassed"
+local = "Oh, don't mind me, [Ari]!"
+next = "2"
+
+[sleepy_0.2]
+portrait = "sick_smile"
+local = "I'm just a little bit sleepy this morning..."
+
+[spouse_plans_0]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "think"
+local = "Hmm I wonder if I should stop by the office later..."
+next = "1"
+
+[spouse_plans_0.1]
+portrait = "happy"
+local = "Maybe I can pick up some things from the store on my way home!"
+
+[spring_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "sweat_drop", npc = "adeline" } }]
+portrait = "sick_eyes_closed"
+local = "Sniff... sniff..."
+next = "1"
+
+[spring_morning_0.1]
+portrait = "embarrassed_tired"
+local = "Oh, [Ari]! It seems like my allergies are up this morning."
+next = "2"
+
+[spring_morning_0.2]
+portrait = "happy_blush"
+effect = "drop"
+local = "There must be something in the air today!"
+
+[spring_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "blush"
+local = "Ah... such a beautiful spring morning."
+next = "1"
+
+[spring_morning_1.1]
+portrait = "hope_special"
+local = "The birds are singing, the flowers are blooming..."
+next = "2"
+
+[spring_morning_1.2]
+portrait = "happy_blush"
+effect = "cheery"
+local = "I just love days like this, don't you?"
+
+[summer_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "sweat_drop", npc = "adeline" } }]
+portrait = "neutral_tired"
+local = "Whew..."
+next = "1"
+
+[summer_morning_0.1]
+portrait = "happy"
+effect = "drop"
+local = "The day has hardly gotten started and it's already so hot out!"
+
+[summer_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "happy"
+local = "It looks like it's going to be a little milder today..."
+next = "1"
+
+[summer_morning_1.1]
+portrait = "wink"
+local = "What do you think, should we sneak off to the Beach later?"
+
+[fall_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "sweat_drop", npc = "adeline" } }]
+portrait = "think"
+local = "Maybe I should do some more raking today..."
+next = "1"
+
+[fall_morning_0.1]
+portrait = "happy"
+effect = "drop"
+local = "Just when I thought I was on top of it, everything is covered in leaves again!"
+
+[fall_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "happy_blush"
+local = "Ahhh... the autumn air is so clean and crisp today."
+next = "1"
+
+[fall_morning_1.1]
+portrait = "blush"
+effect = "cheery"
+local = "Doesn't it make you want to eat something pumpkin-flavored?"
+
+[winter_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "sad"
+local = "It's so cold out today, [Ari]!"
+next = "1"
+
+[winter_morning_0.1]
+portrait = "embarrassed"
+local = "Bundle up before you head out for the day, okay?"
+
+[winter_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy_blush"
+local = "There's nothing like snuggling up in a warm bed on a cold morning..."
+next = "1"
+
+[winter_morning_1.1]
+portrait = "blush"
+local = "I'm tempted to have you climb back in with me, hehe!"
+
+[rainy_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ weather = "rainy" },
+	{ adeline_is_spouse = true },
+	{ building = "player_home" },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "I love listening to the sound of the rain on the roof..."
+next = "1"
+
+[rainy_morning_0.1]
+portrait = "happy_blush"
+local = "Maybe I'll put on some tea and do a little reading."
+
+[snowy_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ weather = "snowy" },
+	{ adeline_is_spouse = true },
+	{ building = "player_home" },
+	{ adeline_morning_greeting = false }
+]
+writes = [{ adeline_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "blush"
+local = "Look, [Ari]! It's snowing out!"
+next = "1"
+
+[snowy_morning_0.1]
+portrait = "happy_blush"
+local = "Isn't it pretty?"
+
+# Basement throughout the day
+[basement_0]
+refresh = "1w"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "neutral"
+local = "[Ari]! I hope your day is going as well as mine."
+next = "1"
+
+[basement_0.1]
+portrait = "wink"
+local = "I'll see you at home tonight!"
+
+[basement_1]
+
+refresh = "1w"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" },
+	{ building = "general_store", comparator = "!=" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "Can you think of anything we need from the General Store?"
+next = "1"
+
+[basement_1.1]
+portrait = "happy"
+local = "I can stop by on my way home later."
+
+[basement_2]
+
+refresh = "1w"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+portrait = "think"
+local = "In the mood for anything in particular tonight for dinner?"
+next = "1"
+
+[basement_2.1]
+portrait = "neutral"
+local = "I'd be happy to make something, unless you want to cook!"
+
+[basement_3]
+
+refresh = "1w"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" },
+	{ quest_unlocking_the_mines_pt_2_complete = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "think"
+local = "You always do such a good job with the laundry, [Ari]."
+next = "1"
+
+[basement_3.1]
+portrait = "happy"
+effect = "drop"
+local = "How do you manage to get all the dirt stains out when you come back from the Mines?"
+
+[basement_4]
+
+refresh = "1w"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "embarrassed"
+local = "I know that look!"
+next = "1"
+
+[basement_4.1]
+portrait = "wink"
+local = "Come here and kiss me."
+
+[basement_5]
+
+refresh = "1w"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy"
+local = "I'm so lucky to have you in my life, [Ari]!"
+next = "1"
+
+[basement_5.1]
+portrait = "blush"
+local = "You mean the world to me."
+
+[basement_6]
+
+refresh = "1w"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "embarrassed"
+local = "It's... really nice that you always make so much time for me, [Ari]."
+next = "1"
+
+[basement_6.1]
+portrait = "happy"
+local = "I just wanted you to know that."
+
+# Evening
+[evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_evening_greeting = false },
+	{ adeline_in_bed = false }
+]
+writes = [{ adeline_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy"
+local = "Good evening, [Ari]!"
+next = "1"
+
+[evening_0.1]
+portrait = "neutral"
+local = "I hope you didn't overdo it today."
+next = "2"
+
+[evening_0.2]
+portrait = "wink"
+local = "I still want plenty of [Ari]-time tonight!"
+
+[evening_1]
+refresh = "8d"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_evening_greeting = false },
+	{ adeline_in_bed = false }
+]
+writes = [{ adeline_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "neutral"
+local = "As soon as the sun goes down, I start thinking of settling in for the night with you."
+next = "1"
+
+[evening_1.1]
+portrait = "blush"
+local = "It's a nice feeling."
+
+[evening_2]
+refresh = "8d"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_evening_greeting = false },
+	{ adeline_in_bed = false }
+]
+writes = [{ adeline_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "neutral"
+local = "Did you have a good day?"
+next = "1"
+
+[evening_2.1]
+portrait = "embarrassed"
+local = "Honestly, just knowing I have you to come home to makes every day a good one."
+
+[evening_3]
+refresh = "8d"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_evening_greeting = false },
+	{ adeline_in_bed = false }
+]
+writes = [{ adeline_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "sly"
+local = "There's the love of my life!"
+next = "1"
+
+[evening_3.1]
+portrait = "blush"
+local = "Don't I get a kiss? Hehe."
+
+[spring_evening_0]
+refresh = "14d"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_evening_greeting = false },
+	{ adeline_in_bed = false },
+	{ season = "spring" }
+]
+writes = [{ adeline_evening_greeting = true, expires = "7h" }]
+portrait = "think"
+local = "Ah... I didn't get a chance to finish everything on my to-do list today."
+next = "1"
+
+[spring_evening_0.1]
+portrait = "embarrassed"
+local = "Maybe I spent a little too much time smelling the flowers... Hehe."
+
+[spring_evening_1]
+refresh = "8d"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_is_spouse = true },
+	{ building = "player_home" },
+	{ adeline_evening_greeting = false },
+	{ adeline_in_bed = false },
+	{ season = "spring" }
+]
+writes = [{ adeline_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "I love opening the windows to let the evening breeze in..."
+next = "1"
+
+[spring_evening_1.1]
+portrait = "happy"
+local = "The smell of spring makes the whole house feel fresh!"
+
+[summer_evening_0]
+refresh = "14d"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_evening_greeting = false },
+	{ adeline_in_bed = false },
+	{ season = "summer" }
+]
+writes = [{ adeline_evening_greeting = true, expires = "7h" }]
+portrait = "concerned"
+local = "Phew, I worked up a sweat today."
+next = "1"
+
+[summer_evening_0.1]
+portrait = "happy"
+effect = "drop"
+local = "I'm glad it starts to cool down when the sun sets!"
+prompts = [
+	{ local = "Me too!", next = "2" },
+	{ local = "It doesn't have to...", next = "3" }
+]
+
+[summer_evening_0.2]
+portrait = "blush"
+local = "Maybe I'll open the windows for a bit to let the breeze in."
+
+[summer_evening_0.3]
+portrait = "blush"
+local = "[Ari]!"
+next = "4"
+
+[summer_evening_0.4]
+portrait = "happy_blush"
+local = "Hehe..."
+
+[summer_evening_1]
+refresh = "8d"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_evening_greeting = false },
+	{ adeline_in_bed = false },
+	{ season = "summer" }
+]
+writes = [{ adeline_evening_greeting = true, expires = "7h" }]
+portrait = "neutral"
+local = "Ahh, the day is finally starting to cool off."
+next = "1"
+
+[summer_evening_1.1]
+portrait = "happy"
+local = "I'm sure it'll help me sleep better!"
+
+[fall_evening_0]
+refresh = "14d"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_evening_greeting = false },
+	{ adeline_in_bed = false },
+	{ season = "fall" }
+]
+writes = [{ adeline_evening_greeting = true, expires = "7h" }]
+portrait = "sigh"
+local = "I can never seem to layer my outfits correctly in the fall."
+next = "1"
+
+[fall_evening_0.1]
+portrait = "neutral"
+local = "I always end up a little too warm or a little too cold."
+
+[fall_evening_1]
+refresh = "8d"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_evening_greeting = false },
+	{ adeline_in_bed = false },
+	{ season = "fall" }
+]
+writes = [{ adeline_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "That crisp evening air..."
+next = "1"
+
+[fall_evening_1.1]
+portrait = "happy"
+local = "Doesn't it just put a bounce in your step?"
+
+[winter_evening_0]
+refresh = "14d"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_evening_greeting = false },
+	{ adeline_in_bed = false },
+	{ season = "winter" }
+]
+writes = [{ adeline_evening_greeting = true, expires = "7h" }]
+portrait = "concerned"
+local = "I think I spent too much time out in the cold today."
+next = "1"
+
+[winter_evening_0.1]
+portrait = "think"
+local = "I should really talk to Louis about a pair of earmuffs."
+
+[winter_evening_1]
+refresh = "8d"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_evening_greeting = false },
+	{ adeline_in_bed = false },
+	{ season = "winter" }
+]
+writes = [{ adeline_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "neutral"
+local = "There's something so cozy about snuggling up on a winter's evening..."
+next = "1"
+
+[winter_evening_1.1]
+portrait = "happy_blush"
+local = "Especially when it's with you!"
+
+[rainy_evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_evening_greeting = false },
+	{ adeline_in_bed = false },
+	{ weather = "rainy" }
+]
+writes = [{ adeline_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "neutral"
+local = "I know you were busy today, but try not to spend so much time out in the rain, [Ari]."
+next = "1"
+
+[rainy_evening_0.1]
+portrait = "happy"
+local = "Better that you stay inside with me instead!"
+
+[snowy_evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "adeline" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ adeline_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ adeline_evening_greeting = false },
+	{ adeline_in_bed = false },
+	{ weather = "snowy" }
+]
+writes = [{ adeline_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "neutral"
+local = "Goodness, this snow has been going all day!"
+next = "1"
+
+[snowy_evening_0.1]
+portrait = "wink"
+local = "I'm looking forward to snuggling up this evening."
+
+[domestic_flavor_0]
+refresh = "30d"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ cutscene_seen_pet_arrival = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "Don't be fooled by [pet_name], I already gave them some food."
+next = "1"
+
+[domestic_flavor_0.1]
+portrait = "wink"
+local = "Well... I suppose a little extra wouldn't hurt."
+
+[domestic_flavor_1]
+refresh = "30d"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ cutscene_seen_pet_arrival = true }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "neutral"
+local = "Have you seen how cute [pet_name] is when they go off to their job for the day?"
+next = "1"
+
+[domestic_flavor_1.1]
+portrait = "angry_blush"
+local = "Such determination... such work ethic."
+next = "2"
+
+[domestic_flavor_1.2]
+portrait = "blush"
+local = "I just adore them, [Ari]!"
+
+# @ gabe double bed problem, ultimately line works without knowing that the spouse couldn't sleep in it the night before
+# so as long as we point that out to the writers, should be fine to just have it be a current double bed gating the line
+[domestic_flavor_2]
+refresh = "30d"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ ari_has_double_bed_placed = false },
+	{ spouse_slept_in_double_bed_night_before = false },
+	{ wedding_was_yesterday = false, ignore_priority = true }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "adeline" } }]
+portrait = "sad"
+local = "[Ari]. We need to get a $double bed$."
+next = "1"
+
+[domestic_flavor_2.1]
+portrait = "think"
+local = "I'm happy to cuddle with you, but the bed we have is hardly big enough for one person!"
+
+[domestic_flavor_3]
+refresh = "30d"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ adeline_desk_placed = true },
+	{ building = "manor_house", comparator = "!=" },
+	{ wedding_was_yesterday = false, ignore_priority = true }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "neutral"
+local = "My office at the manor is nice, but honestly getting comfortable at my desk at home is even nicer."
+next = "1"
+
+[domestic_flavor_3.1]
+portrait = "happy"
+local = "Thank you for setting everything up so nicely for me, [Ari]!"
+
+[domestic_flavor_4]
+refresh = "30d"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ any = [
+		{ adeline_desk_placed = false },
+		{ adeline_hobby_table_placed = false }
+	] },
+	{ wedding_was_yesterday = false, ignore_priority = true }
+]
+actions = [{ bark = { bark = "ellipses", npc = "adeline" } }]
+portrait = "think"
+local = "I've been thinking, [Ari]..."
+next = "1"
+
+[domestic_flavor_4.1]
+portrait = "concerned"
+local = "I know that you're used to having the house look a certain way..."
+next = "2"
+
+[domestic_flavor_4.2]
+portrait = "sad"
+local = "But do you think you could make a spot for my things somewhere?"
+next = "3"
+
+[domestic_flavor_4.3]
+portrait = "embarrassed"
+local = "It would really make the place feel like home for me."
+
+[workstation_0]
+refresh = "9d"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ adeline_activity = "roommate_write_sitting" },
+	{ adeline_activity_object = "adeline_desk" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "happy"
+local = "[Ari]!"
+next = "1"
+
+[workstation_0.1]
+portrait = "neutral"
+local = "Don't mind me, inspiration struck for a grant proposal!"
+next = "2"
+
+[workstation_0.2]
+portrait = "happy"
+local = "I'm sure I'll be able to get it approved."
+
+[workstation_1]
+refresh = "9d"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ adeline_activity = "roommate_write_sitting" },
+	{ adeline_activity_object = "adeline_desk" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "blush"
+local = "Feel free to hang around if you have the time."
+next = "1"
+
+[workstation_1.1]
+portrait = "sly"
+local = "I could use the distraction from work."
+
+[workstation_2]
+refresh = "9d"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ adeline_activity = "roommate_write_sitting" },
+	{ adeline_activity_object = "adeline_desk" }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "embarrassed"
+local = "Ah, don't read what I'm working on."
+next = "1"
+
+[workstation_2.1]
+portrait = "happy"
+local = "I had a proposal for our next date night that I wanted to get down on paper."
+
+[workstation_3]
+refresh = "9d"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ any = [
+		{ adeline_activity = "roommate_read_sitting" },
+		{ adeline_activity = "roommate_sitting" }
+	] },
+	{ adeline_animation = "read_sit" }
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "neutral"
+local = "I borrowed another book from Elsie this week."
+next = "1"
+
+[workstation_3.1]
+portrait = "blush"
+local = "Here... read this part!"
+next = "2"
+
+[workstation_3.2]
+portrait = "happy_blush"
+local = "Hehe!"
+
+[workstation_4]
+refresh = "9d"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ any = [
+		{ adeline_activity = "roommate_read_sitting" },
+		{ adeline_activity = "roommate_sitting" }
+	] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "The newest issue of Aldarian Statistics just arrived."
+next = "1"
+
+[workstation_4.1]
+portrait = "happy"
+local = "Let me know if you want to read it after I'm done."
+
+[workstation_5]
+refresh = "9d"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ any = [
+		{ adeline_activity = "roommate_read_sitting" },
+		{ adeline_activity = "roommate_sitting" }
+	] },
+	{ adeline_animation = "read_sit" }
+]
+portrait = "neutral"
+local = "I thought it might be nice to read a book about farming."
+next = "1"
+
+[workstation_5.1]
+portrait = "happy"
+local = "I want to learn more so I can help you more!"
+
+[workstation_6]
+refresh = "9d"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ adeline_activity = "roommate_work_sitting" },
+	{ adeline_activity_object = "adeline_hobby_table" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "happy"
+local = "[Ari]! Have you ever tried origami?"
+next = "1"
+
+[workstation_6.1]
+portrait = "neutral"
+local = "There's something very satisfying about folding the paper just so."
+next = "2"
+
+[workstation_6.2]
+portrait = "happy"
+local = "I find it really relaxing!"
+
+[workstation_7]
+refresh = "9d"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ adeline_activity = "roommate_work_sitting" },
+	{ adeline_activity_object = "adeline_hobby_table" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "I thought I'd do a little crocheting today."
+next = "1"
+
+[workstation_7.1]
+portrait = "happy"
+local = "It helps me clear my head."
+
+[workstation_8]
+refresh = "9d"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_spouse = true },
+	{ adeline_activity = "roommate_work_sitting" },
+	{ adeline_activity_object = "adeline_hobby_table" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "think"
+local = "Eiland keeps talking about starting another tabletop campaign."
+next = "1"
+
+[workstation_8.1]
+portrait = "happy"
+local = "I thought I'd do a little number crunching and see if I can get an overpowered build ready!"

@@ -1,0 +1,2852 @@
+
+# <---------SPRING FETCH QUESTS------------->
+
+# SPRING FORAGE REQUESTS-------------------------------------->
+
+[request_for_berries]
+	name = "Request for Berries"
+	npc_for_icon = "eiland"
+	description = """I'm craving something sweet!
+
+If you bring me some wild berries, I'll teach you how to make berries and cream!"""
+	rewards = [{ recipe_scroll = "berries_and_cream" }, { renown = 20 }]
+
+	[[request_for_berries.stages]]
+		objective_description = "Bring some wild berries to Eiland."
+		requirements = { has_item = { wild_berries = 5 } }
+		queries = [{ npc = "eiland", npc_conversation = "request_for_berries_turn_in" }]
+
+[request_for_more_wildberries]
+	name = "Request for Berries"
+	npc_for_icon = "reina"
+	description = """I'm working on a pie recipe, but I need some fresh wild berries.
+
+If you bring me some I'll teach it to you!"""
+	rewards = [{ recipe_scroll = "wildberry_pie" }, { renown = 20 }]
+
+	[[request_for_more_wildberries.stages]]
+		objective_description = "Bring some wild berries to Reina."
+		requirements = { has_item = { wild_berries = 5 } }
+		queries = [{ npc = "reina", npc_conversation = "request_for_more_wildberries_turn_in" }]
+
+[request_for_berries_gold]
+	name = "Request for Berries"
+	npc_for_icon = "errol"
+	description = "If someone would be so kind as to bring me some wild berries for my snack, I would be in your debt."
+	rewards = [{ gold = 40 }, { renown = 20 }]
+	appears_on = { season = "spring", day = 2, year = 1 }
+
+	[[request_for_berries_gold.stages]]
+		objective_description = "Bring some wild berries to Errol."
+		requirements = { has_item = { wild_berries = 5 } }
+		queries = [{ npc = "errol", npc_conversation = "request_for_berries_gold_turn_in" }]
+
+[request_for_fennel]
+	name = "Request for Fennel"
+	npc_for_icon = "celine"
+	description = """Can you bring me some fennel if you find any growing east of town?
+
+I'll teach you how to make a spring salad in return!"""
+	rewards = [{ recipe_scroll = "spring_salad" }, { renown = 20 }]
+
+	[[request_for_fennel.stages]]
+		objective_description = "Bring some fennel to Celine."
+		requirements = { has_item = "fennel" }
+		queries = [{ npc = "celine", npc_conversation = "request_for_fennel_turn_in" }]
+
+[request_for_snowdrop_anemone]
+	name = "Request for a Snowdrop Anemone"
+	npc_for_icon = "elsie"
+	description = "If you wouldn't mind bringing me one of those lovely flowers that grows by the Western Ruins, I can provide you with seeds to grow more."
+	rewards = [{ item = "seed_snowdrop_anemone", count = 3 }, { renown = 20 }]
+
+	[[request_for_snowdrop_anemone.stages]]
+		objective_description = "Bring a snowdrop anemone to Elsie."
+		requirements = { has_item = "snowdrop_anemone" }
+		queries = [{ npc = "elsie", npc_conversation = "request_for_snowdrop_anemone_turn_in" }]
+
+[request_for_lemon]
+	name = "Request for a Lemon"
+	npc_for_icon = "adeline"
+	description = """I was planning to make some tea with lemon, but I'm short on lemons!
+
+If you have an extra one, can you bring it to me? I'll teach you my recipe!"""
+	rewards = [{ recipe_scroll = "cup_of_tea" }, { renown = 20 }]
+
+	[[request_for_lemon.stages]]
+		objective_description = "Bring a lemon to Adeline."
+		requirements = { has_item = "lemon" }
+		queries = [
+			{ npc = "adeline", npc_conversation = "request_for_lemon_turn_in" },
+		]
+
+[request_for_blueberries]
+	name = "Request for Blueberries"
+	npc_for_icon = "reina"
+	description = """It's blueberry season, so I want to make some blueberry jam!
+
+If you can bring me some, I'll share my recipe!"""
+	rewards = [{ recipe_scroll = "blueberry_jam" }, { renown = 20 }]
+
+	[[request_for_blueberries.stages]]
+		objective_description = "Bring some blueberries to Reina."
+		requirements = { has_item = { blueberry = 3 } }
+		queries = [
+			{ npc = "reina", npc_conversation = "request_for_blueberries_turn_in" },
+		]
+
+[request_for_gardening_supplies]
+	name = "Request for Gardening Materials"
+	npc_for_icon = "celine"
+	description = """Would someone bring me some sod and peat for a potting soil mix I'm testing?
+
+I'll share some fresh flowers from my garden in return!"""
+	rewards = [
+		{ item = "tulip", count = 1 },
+		{ item = "daffodil", count = 1 },
+		{ renown = 20 },
+	]
+
+	[[request_for_gardening_supplies.stages]]
+		objective_description = "Bring some sod and peat to Celine."
+		requirements = { has_item = [{ sod = 1 }, { peat = 1 }] }
+		queries = [{ npc = "celine", npc_conversation = "request_for_gardening_supplies_turn_in" }]
+
+[request_for_wild_leek]
+	name = "Request for Wild Leek"
+	npc_for_icon = "reina"
+	description = """Could someone bring me a wild leek? I'm a little short for my soup recipe.
+
+I'll give you a bowl to take home in return!"""
+	rewards = [{ item = "potato_soup", count = 1 }, { renown = 20 }]
+
+	[[request_for_wild_leek.stages]]
+		objective_description = "Bring a wild leek to Reina."
+		requirements = { has_item = "wild_leek" }
+		queries = [{ npc = "reina", npc_conversation = "request_for_wild_leek_turn_in" }]
+
+		# SPRING MATERIAL REQUESTS-------------------------------------->
+
+[request_for_materials]
+	name = "Request for Materials"
+	npc_for_icon = "ryis"
+	description = "I'm slightly short on materials for a project. Can anyone spare some wood and stone? I can pay, of course!"
+	rewards = [{ gold = 80 }, { renown = 20 }]
+
+	[[request_for_materials.stages]]
+		objective_description = "Bring some wood and stone to Ryis."
+		requirements = { has_item = [{ basic_wood = 10 }, { ore_stone = 10 }] }
+		queries = [{ npc = "ryis", npc_conversation = "request_for_materials_turn_in" }]
+
+[request_for_wood]
+	name = "Request for Wood"
+	npc_for_icon = "landen"
+	description = "Can someone bring me some wood to help us restock? I'll pay a fair price!"
+	rewards = [{ gold = 40 }, { renown = 20 }]
+
+	[[request_for_wood.stages]]
+		objective_description = "Bring some wood to Landen."
+		requirements = { has_item = { basic_wood = 10 } }
+		queries = [{ npc = "landen", npc_conversation = "request_for_wood_turn_in" }]
+
+[request_for_clay]
+	name = "Request for Art Supplies"
+	npc_for_icon = "nora"
+	description = """I need to get my hands on some clay so that Dell can finish her "art project".
+
+Apparently she needs it to make a legendary sword?"""
+	rewards = [{ gold = 50 }, { renown = 20 }]
+
+	[[request_for_clay.stages]]
+		objective_description = "Bring some clay to Nora."
+		requirements = { has_item = "clay" }
+		queries = [{ npc = "nora", npc_conversation = "request_for_clay_turn_in" }]
+
+[request_for_hay]
+	name = "Request for Hay"
+	npc_for_icon = "hayden"
+	description = "I'd like to give my cows a little extra hay for being so good. I can swap it for some of their milk!"
+	rewards = [{ item = "cow_milk", count = 1 }, { renown = 20 }]
+
+	[[request_for_hay.stages]]
+		objective_description = "Bring some hay to Hayden."
+		requirements = { has_item = { hay = 5 } }
+		queries = [{ npc = "hayden", npc_conversation = "request_for_hay_turn_in" }]
+
+		# SPRING CROP REQUESTS-------------------------------------->
+
+[request_for_strawberries]
+	name = "Request for a Strawberry"
+	npc_for_icon = "eiland"
+	description = "Can someone bring me a strawberry? I'll share my recipe for strawberry shortcake as a reward!"
+	rewards = [{ recipe_scroll = "strawberry_shortcake" }, { renown = 20 }]
+
+	[[request_for_strawberries.stages]]
+		objective_description = "Bring a strawberry to Eiland."
+		requirements = { has_item = "strawberry" }
+		queries = [{ npc = "eiland", npc_conversation = "request_for_strawberries_turn_in" }]
+
+[request_for_turnip]
+	name = "Request for a Turnip"
+	npc_for_icon = "adeline"
+	description = """It's that time of year! I need to write a report on Mistria's spring crop yield.
+
+Could you bring me a turnip to inspect?"""
+	rewards = [{ gold = 50 }, { renown = 20 }]
+
+	[[request_for_turnip.stages]]
+		objective_description = "Bring a turnip to Adeline."
+		requirements = { has_item = "turnip" }
+		queries = [
+			{ npc = "adeline", npc_conversation = "request_for_turnip_turn_in" },
+		]
+
+[request_for_strawberries_cream]
+	name = "Request for a Strawberry"
+	npc_for_icon = "eiland"
+	description = """Would someone please bring me a strawberry?
+
+I'm happy to share my recipe for strawberries and cream in return!"""
+	rewards = [{ recipe_scroll = "strawberries_and_cream" }, { renown = 20 }]
+
+	[[request_for_strawberries_cream.stages]]
+		objective_description = "Bring a strawberry to Eiland."
+		requirements = { has_item = "strawberry" }
+		queries = [
+			{ npc = "eiland", npc_conversation = "request_for_strawberries_cream_turn_in" },
+		]
+
+		# SPRING MINES REQUESTS-------------------------------------->
+
+[request_for_copper]
+	name = "Request for Copper"
+	npc_for_icon = "march"
+	description = "I need some copper ore and I need it soon. If you can manage it, I'll pay you for it."
+	rewards = [{ gold = 75 }, { renown = 20 }]
+
+	[[request_for_copper.stages]]
+		objective_description = "Bring some copper ore to March."
+		requirements = { has_item = { ore_copper = 5 } }
+		queries = [{ npc = "march", npc_conversation = "request_for_copper_turn_in" }]
+
+[request_for_copper_beetle]
+	name = "Request for Copper Beetle"
+	npc_for_icon = "luc"
+	description = "I've heard there's an amazing beetle found in the Mines... Please, I must have it for my collection! I'll trade for it!"
+	rewards = [{ item = "trail_mix", count = 1 }, { renown = 20 }]
+
+	[[request_for_copper_beetle.stages]]
+		objective_description = "Bring a copper nugget beetle to Luc."
+		requirements = { has_item = "copper_beetle" }
+		queries = [{ npc = "luc", npc_conversation = "request_for_copper_beetle_turn_in" }]
+
+[request_for_a_rock]
+	name = "Request for a Rock"
+	npc_for_icon = "olric"
+	description = "Hi, can someone bring me a cool rock? I'm collecting them! I'll give you a nice chair in exchange."
+	rewards = [{ item = "miners_crate_chair_v1", count = 1 }, { renown = 20 }]
+
+	[[request_for_a_rock.stages]]
+		objective_description = "Bring a piece of stone to Olric."
+		requirements = { has_item = "ore_stone" }
+		queries = [{ npc = "olric", npc_conversation = "request_for_a_rock_turn_in" }]
+
+[request_for_a_red_toadstool]
+	name = "Request for a Red Toadstool"
+	npc_for_icon = "juniper"
+	description = "I require a red toadstool for something I'm working on. I will not be elaborating."
+	rewards = [{ gold = 50 }, { renown = 20 }]
+
+	[[request_for_a_red_toadstool.stages]]
+		objective_description = "Bring a red toadstool to Juniper."
+		requirements = { has_item = "red_toadstool" }
+		queries = [
+			{ npc = "juniper", npc_conversation = "request_for_a_red_toadstool_turn_in" },
+		]
+
+[request_for_bait]
+	name = "Request for Bait"
+	npc_for_icon = "terithia"
+	description = "I could use a little extra help getting the fish to bite. Can someone bring me a worm?"
+	rewards = [{ gold = 40 }, { renown = 20 }]
+
+	[[request_for_bait.stages]]
+		objective_description = "Bring a worm to Terithia."
+		requirements = { has_item = "worm" }
+		queries = [
+			{ npc = "terithia", npc_conversation = "request_for_bait_turn_in" },
+		]
+
+[request_for_pink_scallop_shell]
+	name = "Request for a Seashell"
+	npc_for_icon = "maple"
+	description = """If I'm going to become queen someday, I need to get more comfortable giving orders...
+
+Bring me a pretty seashell... please!"""
+	rewards = [{ item = "tulip", count = 1 }, { renown = 20 }]
+
+	[[request_for_pink_scallop_shell.stages]]
+		objective_description = "Bring a pink scallop shell to Maple."
+		requirements = { has_item = "pink_scallop_shell" }
+		queries = [{ npc = "maple", npc_conversation = "request_for_pink_scallop_shell_turn_in" }]
+
+[request_for_morel_mushroom]
+	name = "Request for a Morel Mushroom"
+	npc_for_icon = "valen"
+	description = """I would like to source a morel mushroom, as it's known to have anti-inflammatory properties.
+
+Please deliver one if possible."""
+	rewards = [{ gold = 75 }, { renown = 20 }]
+
+	[[request_for_morel_mushroom.stages]]
+		objective_description = "Bring a morel mushroom to Valen."
+		requirements = { has_item = "morel_mushroom" }
+		queries = [{ npc = "valen", npc_conversation = "request_for_morel_mushroom_turn_in" }]
+
+[request_for_shards]
+	name = "Request for Shards"
+	npc_for_icon = "eiland"
+	description = """I'm seeking some shards as part of my archaeological research. They can often be unearthed at dig sites!
+
+If you come across any, could you bring me some?"""
+	rewards = [{ gold = 50 }, { renown = 20 }]
+
+	[[request_for_shards.stages]]
+		objective_description = "Bring some shards to Eiland."
+		requirements = { has_item = { shards = 2 } }
+		queries = [{ npc = "eiland", npc_conversation = "request_for_shards_turn_in" }]
+
+[request_for_ruby]
+	name = "Request for a Ruby"
+	npc_for_icon = "balor"
+	description = """I realize this is a big ask, but I have a customer who's willing to pay well for a ruby.
+
+If you can get your hands on one, we can split the profits."""
+	rewards = [{ gold = 200 }, { renown = 20 }]
+
+	[[request_for_ruby.stages]]
+		objective_description = "Bring a ruby to Balor."
+		requirements = { has_item = "ore_ruby" }
+		queries = [{ npc = "balor", npc_conversation = "request_for_ruby_turn_in" }]
+
+		# SPRING FISH REQUESTS-------------------------------------->
+
+[request_for_catfish]
+	name = "Request for a Catfish"
+	npc_for_icon = "hemlock"
+	description = "I need a catfish for a dish we're making at the Inn! If you bring me one, I'll teach you my recipe!"
+	rewards = [{ recipe_scroll = "breaded_catfish" }, { renown = 20 }]
+
+	[[request_for_catfish.stages]]
+		objective_description = "Bring a catfish to Hemlock."
+		requirements = { has_item = "catfish" }
+		queries = [
+			{ npc = "hemlock", npc_conversation = "request_for_catfish_turn_in" },
+		]
+
+[request_for_salmon]
+	name = "Request for Salmon"
+	npc_for_icon = "josephine"
+	description = "If it's not too much trouble, could someone bring me some fresh salmon? Our last shipment was a little short."
+	rewards = [{ gold = 50 }, { renown = 20 }]
+
+	[[request_for_salmon.stages]]
+		objective_description = "Bring a salmon to Josephine."
+		requirements = { has_item = "salmon" }
+		queries = [
+			{ npc = "josephine", npc_conversation = "request_for_salmon_turn_in" },
+		]
+
+[request_for_trout]
+	name = "Request for Trout"
+	npc_for_icon = "terithia"
+	description = """I'm craving some smoked trout soup, but the fish aren't biting for me!
+
+If you can bring me a trout I'll teach you my recipe!"""
+	rewards = [{ recipe_scroll = "smoked_trout_soup" }, { renown = 20 }]
+
+	[[request_for_trout.stages]]
+		objective_description = "Bring a trout to Terithia"
+		requirements = { has_item = "trout" }
+		queries = [
+			{ npc = "terithia", npc_conversation = "request_for_trout_turn_in" },
+		]
+
+		# SPRING COOKING REQUESTS-------------------------------------->
+
+[request_for_baked_potato]
+	name = "Request for Baked Potato"
+	npc_for_icon = "hayden"
+	description = """I have a theory I'd like to test, but I need some help!
+
+Can someone bring me a baked potato? I think I can improve the recipe!"""
+	rewards = [{ recipe_scroll = "loaded_baked_potato" }, { renown = 20 }]
+
+	[[request_for_baked_potato.stages]]
+		objective_description = "Bring a baked potato to Hayden."
+		requirements = { has_item = "baked_potato" }
+		queries = [{ npc = "hayden", npc_conversation = "request_for_baked_potato_turn_in" }]
+
+		# SPRING CRAFTING REQUESTS-------------------------------------->
+
+[request_for_wood_fence]
+	name = "Request for Wood Fencing"
+	npc_for_icon = "hayden"
+	description = """Could someone craft some wood fencing for me?
+
+Henrietta's been testing the integrity of my current enclosure and it's simply not meeting her standards."""
+	rewards = [{ item = "egg", count = 3 }, { renown = 20 }]
+
+	[[request_for_wood_fence.stages]]
+		objective_description = "Bring some wood fencing to Hayden."
+		requirements = { has_item = { starter_wood_fence = 5 } }
+		queries = [{ npc = "hayden", npc_conversation = "request_for_wood_fence_turn_in" }]
+
+		# SPRING BUG REQUESTS-------------------------------------->
+
+[request_for_caterpillar]
+	name = "Request for a Caterpillar"
+	npc_for_icon = "hemlock"
+	description = """Luc's been asking me to get a friend for his caterpillar but I'm not sure where to get one.
+
+Can someone bring me one? I'll repay you with a bite to eat!"""
+	rewards = [{ item = "riceball", count = 1 }, { renown = 20 }]
+
+	[[request_for_caterpillar.stages]]
+		objective_description = "Bring a caterpillar to Hemlock."
+		requirements = { has_item = "caterpillar" }
+		queries = [
+			{ npc = "hemlock", npc_conversation = "request_for_caterpillar_turn_in" },
+		]
+
+		# <---------SUMMER FETCH QUESTS------------->
+
+		# SUMMER FARMING REQUESTS-------------------------------------->
+
+[request_for_tomato]
+	name = "Request for Tomatoes"
+	npc_for_icon = "holt"
+	description = """Would someone bring me some tomatoes?
+
+I could really go for some nice cool gazpacho! I'll make enough for both of us!"""
+	rewards = [{ item = "gazpacho" }, { renown = 20 }]
+
+	[[request_for_tomato.stages]]
+		objective_description = "Bring some tomatoes to Holt."
+		requirements = { has_item = { tomato = 2 } }
+		queries = [{ npc = "holt", npc_conversation = "request_for_tomato_turn_in" }]
+
+		# SUMMER FORAGE REQUESTS-------------------------------------->
+
+[request_for_basil_thyme]
+	name = "Request for Herbs"
+	npc_for_icon = "valen"
+	description = """Would someone please bring me some herbs?
+
+I'm planning to make some herb salad but I'm a little short on ingredients."""
+	rewards = [{ item = "herb_salad" }, { renown = 20 }]
+
+	[[request_for_basil_thyme.stages]]
+		objective_description = "Bring some basil and thyme to Valen."
+		requirements = { has_item = [{ basil = 1 }, { thyme = 1 }] }
+		queries = [{ npc = "valen", npc_conversation = "request_for_basil_thyme_turn_in" }]
+
+[request_for_coconuts]
+	name = "Request for Coconuts"
+	npc_for_icon = "landen"
+	description = """Would someone bring me some coconuts from the Beach?
+
+This weather calls for a nice cold drink. Bring me some and I'll fix us up some coconut milk!"""
+	rewards = [{ item = "coconut_milk", count = 1 }, { renown = 20 }]
+
+	[[request_for_coconuts.stages]]
+		objective_description = "Bring some coconuts to Landen."
+		requirements = { has_item = { coconut = 3 } }
+		queries = [{ npc = "landen", npc_conversation = "request_for_coconuts_turn_in" }]
+
+		# <---------FALL FETCH QUESTS------------->
+
+		# FALL FORAGE REQUESTS-------------------------------------->
+
+[request_for_cranberry_orange]
+	name = "Request for Cranberries"
+	npc_for_icon = "ryis"
+	description = """Would someone mind bringing me some cranberries?
+
+This chilly weather has me craving a taste of home.
+
+If you can bring me some, I'll share my recipe for cranberry orange scones!"""
+	rewards = [{ recipe_scroll = "cranberry_orange_scone" }, { renown = 20 }]
+
+	[[request_for_cranberry_orange.stages]]
+		objective_description = "Bring some cranberries to Ryis."
+		requirements = { has_item = { cranberry = 3 } }
+		queries = [{ npc = "ryis", npc_conversation = "request_for_cranberry_orange_turn_in" }]
+
+[request_for_garlic]
+	name = "Request for Garlic"
+	npc_for_icon = "reina"
+	description = """Could someone please bring me some garlic?
+
+Since garlic is in season, I'd love to make a batch of garlic bread. If you can bring me some, I'll share my recipe!"""
+	rewards = [{ recipe_scroll = "garlic_bread" }, { renown = 20 }]
+
+	[[request_for_garlic.stages]]
+		objective_description = "Bring some garlic to Reina."
+		requirements = { has_item = "garlic" }
+		queries = [{ npc = "reina", npc_conversation = "request_for_garlic_turn_in" }]
+
+[request_for_horseradish_salmon]
+	name = "Request for Ingredients"
+	npc_for_icon = "terithia"
+	description = """It's salmon season again, and I'm craving some horseradish salmon!
+
+If someone can bring me some key ingredients, I'll share my recipe!"""
+	rewards = [{ recipe_scroll = "horseradish_salmon" }, { renown = 20 }]
+
+	[[request_for_horseradish_salmon.stages]]
+		objective_description = "Bring some salmon and horseradish to Terithia"
+		requirements = { has_item = [{ salmon = 1 }, { horseradish = 1 }] }
+		queries = [{ npc = "terithia", npc_conversation = "request_for_horseradish_salmon_turn_in" }]
+
+[request_for_blackberries]
+	name = "Request for Blackberries"
+	npc_for_icon = "elsie"
+	description = """Could someone drop off some blackberries, please?
+
+I just love blackberry jam but I'm nearly out. If you can bring me some, I'll teach you how to make your own!"""
+	rewards = [{ recipe_scroll = "blackberry_jam" }, { renown = 20 }]
+
+	[[request_for_blackberries.stages]]
+		objective_description = "Bring some blackberries to Elsie."
+		requirements = { has_item = { blackberry = 6 } }
+		queries = [{ npc = "elsie", npc_conversation = "request_for_blackberries_turn_in" }]
+
+[request_for_chestnuts]
+	name = "Request for Chestnuts"
+	npc_for_icon = "dell"
+	description = """URGENT: I need some chestnuts!
+
+Please bring me some as soon as possible! I'll trade you an apple!"""
+	rewards = [{ item = "apple", count = 1 }, { renown = 20 }]
+
+	[[request_for_chestnuts.stages]]
+		objective_description = "Bring some chestnuts to Dell."
+		requirements = { has_item = { chestnut = 3 } }
+		queries = [{ npc = "dell", npc_conversation = "request_for_chestnuts_turn_in" }]
+
+		# <---------WINTER FETCH QUESTS------------->
+
+		# WINTER FORAGE REQUESTS-------------------------------------->
+
+[request_for_rose_hip]
+	name = "Request for Rose Hips"
+	npc_for_icon = "valen"
+	description = """I would like to request some fresh rose hips so I can make some seasonal jam.
+
+They can be found fruiting on rose bushes when the weather gets cold.
+
+If you can bring me some, I'll share my recipe for rose hip jam!"""
+	rewards = [{ recipe_scroll = "rosehip_jam" }, { renown = 20 }]
+
+	[[request_for_rose_hip.stages]]
+		objective_description = "Bring some rose hips to Valen."
+		requirements = { has_item = { rose_hip = 3 } }
+		queries = [{ npc = "valen", npc_conversation = "request_for_rose_hip_turn_in" }]
+
+[request_for_eel]
+	name = "Request for Freshwater Eel"
+	npc_for_icon = "march"
+	description = """I need a freshwater eel. Bring one to me if you want to know how to make a grilled eel rice bowl."""
+	rewards = [{ recipe_scroll = "grilled_eel_rice_bowl" }, { renown = 20 }]
+
+	[[request_for_eel.stages]]
+		objective_description = "Bring a freshwater eel to March."
+		requirements = { has_item = "freshwater_eel" }
+		queries = [{ npc = "march", npc_conversation = "request_for_eel_turn_in" }]
+
+[request_for_pineshrooms]
+	name = "Request for Pineshrooms"
+	npc_for_icon = "adeline"
+	description = """Would someone bring me some pineshrooms?
+
+I'm really craving a nostalgic winter treat. If you don't mind bringing me some, I'll teach you how to make it!"""
+	rewards = [{ recipe_scroll = "pineshroom_toast" }, { renown = 20 }]
+
+	[[request_for_pineshrooms.stages]]
+		objective_description = "Bring some pineshrooms to Adeline."
+		requirements = { has_item = { pineshroom = 2 } }
+		queries = [{ npc = "adeline", npc_conversation = "request_for_pineshrooms_turn_in" }]
+
+		# MONSTER DROP REQUESTS-------------------------------------->
+
+[request_for_monster_powder]
+	name = "Request for Monster Powder"
+	npc_for_icon = "juniper"
+	description = """I've recently seen a curious new item called "monster powder" on the market.
+
+I would like to investigate its uses. Bring some to me."""
+	rewards = [{ item = "monster_mash", count = 1 }, { renown = 20 }]
+
+	[[request_for_monster_powder.stages]]
+		objective_description = "Bring some monster powder to Juniper."
+		requirements = { has_item = { monster_powder = 3 } }
+		queries = [{ npc = "juniper", npc_conversation = "request_for_monster_powder_turn_in" }]
+
+[request_for_monster_shell]
+	name = "Request for a Monster Shell"
+	npc_for_icon = "march"
+	description = """I want to try forging something with these "monster shells" I've been seeing around.
+
+I don't care to know where they come from, just bring me some."""
+	rewards = [{ item = "iron_ingot", count = 2 }, { renown = 20 }]
+
+	[[request_for_monster_shell.stages]]
+		objective_description = "Bring some monster shells to March."
+		requirements = { has_item = { monster_shell = 5 } }
+		queries = [{ npc = "march", npc_conversation = "request_for_monster_shell_turn_in" }]
+
+[request_for_shadow_flower]
+	name = "Request for a Shadow Flower"
+	npc_for_icon = "celine"
+	description = """The Codex Mistria has some very interesting flowers it says are native to the region including a "Shadow Flower".
+
+I'd like to have one to see how it grows!"""
+	rewards = [{ gold = 300 }, { renown = 20 }]
+
+	[[request_for_shadow_flower.stages]]
+		objective_description = "Bring a Shadow Flower to Celine."
+		requirements = { has_item = "shadow_flower" }
+		queries = [{ npc = "celine", npc_conversation = "request_for_shadow_flower_turn_in" }]
+
+[request_for_a_miners_pickaxe]
+	name = "Request for a Miner's Pickaxe"
+	npc_for_icon = "olric"
+	description = """When the earthquake hit, we lost a lot of our gear in the Mines.
+
+I found my pickaxe, but Errol never found his. I'd love to return it to him!"""
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_a_miners_pickaxe.stages]]
+		objective_description = "Bring a Miner's Pickaxe to Olric."
+		requirements = { has_item = "miners_pickaxe" }
+		queries = [{ npc = "olric", npc_conversation = "request_for_a_miners_pickaxe_turn_in" }]
+
+[request_for_glass]
+	name = "Request for Glass"
+	npc_for_icon = "landen"
+	description = """It was hard enough to get glass before the earthquake, now it's near impossible!
+
+I'll pay good money to whoever can find us some."""
+	rewards = [{ gold = 240 }, { renown = 20 }]
+
+	[[request_for_glass.stages]]
+		objective_description = "Bring 3 Glass to Landen."
+		requirements = { has_item = { glass = 3 } }
+		queries = [{ npc = "landen", npc_conversation = "request_for_glass_turn_in" }]
+
+[request_for_iron]
+	name = "Request for Iron"
+	npc_for_icon = "dell"
+	description = """Mister March said if I could bring him iron, he'd make me a sword!
+
+I've been saving my allowance for forever to post this!"""
+	rewards = [{ gold = 30 }, { renown = 20 }]
+
+	[[request_for_iron.stages]]
+		objective_description = "Bring 2 Iron Ore to Dell."
+		requirements = { has_item = { ore_iron = 2 } }
+		queries = [{ npc = "dell", npc_conversation = "request_for_iron_turn_in" }]
+
+[request_for_coral]
+	name = "Request for Coral"
+	npc_for_icon = "celine"
+	description = """I've read that ground up Coral can be good for growing certain types of plants.
+
+Can someone bring me some?"""
+	rewards = [{ gold = 200 }, { renown = 20 }]
+
+	[[request_for_coral.stages]]
+		objective_description = "Bring 5 Coral to Celine."
+		requirements = { has_item = { coral = 5 } }
+		queries = [{ npc = "celine", npc_conversation = "request_for_coral_turn_in" }]
+
+[request_for_sapphire]
+	name = "Request for Sapphire"
+	npc_for_icon = "hemlock"
+	description = """A friend went out of the way to do me a favor and I'd like to show him how much I appreciated it.
+
+Could you find me a Sapphire?"""
+	rewards = [{ gold = 150 }, { renown = 20 }]
+
+	[[request_for_sapphire.stages]]
+		objective_description = "Bring 1 Sapphire to Hemlock."
+		requirements = { has_item = "ore_sapphire" }
+		queries = [{ npc = "hemlock", npc_conversation = "request_for_sapphire_turn_in" }]
+
+[request_for_underseaweed]
+	name = "Request for Underseaweed"
+	npc_for_icon = "terithia"
+	description = """I like seaweed fine in a cooked dish, but not too much by itself.
+
+Maybe I just haven't tried the right kind. Bring me some I haven't tried before!"""
+	rewards = [{ gold = 150 }, { renown = 20 }]
+
+	[[request_for_underseaweed.stages]]
+		objective_description = "Bring an Underseaweed to Terithia."
+		requirements = { has_item = "underseaweed" }
+		queries = [{ npc = "terithia", npc_conversation = "request_for_underseaweed_turn_in" }]
+
+[request_for_tidestone]
+	name = "Request for a Tidestone"
+	npc_for_icon = "juniper"
+	description = """Dozy asked me to request someone bring him a "Tidestone", he thinks it'll be a real draw at the Bathhouse."""
+	rewards = [{ gold = 450 }, { renown = 20 }]
+
+	[[request_for_tidestone.stages]]
+		objective_description = "Bring a Tidestone to Dozy."
+		requirements = { has_item = "tidestone" }
+		queries = [{ npc = "dozy", npc_conversation = "request_for_tidestone_turn_in" }]
+
+[request_for_crystal]
+	name = "Request for Crystals"
+	npc_for_icon = "juniper"
+	description = """Rumor has it that crystals of marvelous quality can be found below the Mines.
+
+I would be willing to pay top tesserae for some."""
+	rewards = [{ gold = 300 }, { renown = 20 }]
+
+	[[request_for_crystal.stages]]
+		objective_description = "Bring 5 Crystals to Juniper."
+		requirements = { has_item = { crystal = 5 } }
+		queries = [{ npc = "juniper", npc_conversation = "request_for_crystal_turn_in" }]
+
+[request_for_emerald]
+	name = "Request for an Emerald"
+	npc_for_icon = "balor"
+	description = """The Mines were once famous for the quality of their emeralds.
+
+If you happen to find any, I'd pay handsomely."""
+	rewards = [{ gold = 180 }, { renown = 20 }]
+
+	[[request_for_emerald.stages]]
+		objective_description = "Bring an emerald to Balor."
+		requirements = { has_item = "ore_emerald" }
+		queries = [{ npc = "balor", npc_conversation = "request_for_emerald_turn_in" }]
+
+[request_for_silver_ore]
+	name = "Request for Silver Ore"
+	npc_for_icon = "march"
+	description = """The prices for importing silver into Mistria are outrageous.
+
+Dig some up for me, I don't need much."""
+	rewards = [{ gold = 200 }, { renown = 20 }]
+
+	[[request_for_silver_ore.stages]]
+		objective_description = "Bring 3 silver ore to March."
+		requirements = { has_item = { ore_silver = 3 } }
+		queries = [{ npc = "march", npc_conversation = "request_for_silver_ore_turn_in" }]
+
+[request_for_round_rock]
+	name = "Request for a Really Round Rock"
+	npc_for_icon = "olric"
+	description = """I once saw an incredibly round rock in the Mines, but it rolled out of sight before I could grab it!
+
+If you see it, could you bring it to me?"""
+	rewards = [{ item = "cavern_rock_flooring", count = 1 }, { renown = 20 }]
+
+	[[request_for_round_rock.stages]]
+		objective_description = "Bring a Really Round Rock to Olric."
+		requirements = { has_item = "really_round_rock" }
+		queries = [{ npc = "olric", npc_conversation = "request_for_really_round_rock_turn_in" }]
+
+[request_for_deep_earthworm]
+	name = "Request for a Deep Earthworm"
+	npc_for_icon = "reina"
+	description = """Luc wants to see a bug he's never seen before!
+
+Can you help me be a cool big sister and find an insect from deep in the Mines?"""
+	rewards = [{ item = "coconut_cream_pie", count = 1 }, { renown = 20 }]
+
+	[[request_for_deep_earthworm.stages]]
+		objective_description = "Bring a Deep Earthworm to Reina."
+		requirements = { has_item = "deep_earthworm" }
+		queries = [{ npc = "reina", npc_conversation = "request_for_deep_earthworm_turn_in" }]
+
+[request_for_striped_bass]
+	name = "Request for a Striped Bass"
+	npc_for_icon = "eiland"
+	description = """A fellow researcher has written to me with an unusual request for a Striped Bass from Mistria.
+
+Could I prevail on someone to help me by catching one?"""
+	rewards = [{ gold = 450 }, { renown = 20 }]
+
+	[[request_for_striped_bass.stages]]
+		objective_description = "Bring a Striped Bass to Eiland."
+		requirements = { has_item = "striped_bass" }
+		queries = [{ npc = "eiland", npc_conversation = "request_for_striped_bass_turn_in" }]
+
+[request_for_mullet]
+	name = "Request for a Mullet"
+	npc_for_icon = "maple"
+	description = """Miss Terithia told me there's a fish called a Mullet, and I don't believe it!
+
+I'd cough up my favorite snack if someone proves me wrong!"""
+	rewards = [{ item = "chocolate", count = 1 }, { renown = 20 }]
+
+	[[request_for_mullet.stages]]
+		objective_description = "Bring a Mullet to Maple."
+		requirements = { has_item = "mullet" }
+		queries = [{ npc = "maple", npc_conversation = "request_for_mullet_turn_in" }]
+
+[request_for_rosemary]
+	name = "Request for Rosemary"
+	npc_for_icon = "reina"
+	description = """I think my Rosemary might be getting a bit old, could someone bring me a fresh sprig now that it's back in season?"""
+	rewards = [{ gold = 450 }, { renown = 20 }]
+
+	[[request_for_rosemary.stages]]
+		objective_description = "Bring Rosemary to Reina."
+		requirements = { has_item = "rosemary" }
+		queries = [{ npc = "reina", npc_conversation = "request_for_rosemary_turn_in" }]
+
+[request_for_heather]
+	name = "Request for Heather"
+	npc_for_icon = "adeline"
+	description = """This time of year always makes me think of my mother's favorite flower, heather.
+
+Could someone gather a few bunches for me?"""
+	rewards = [{ gold = 400 }, { renown = 20 }]
+
+	[[request_for_heather.stages]]
+		objective_description = "Bring 3 Heather to Adeline."
+		requirements = { has_item = { heather = 3 } }
+		queries = [{ npc = "adeline", npc_conversation = "request_for_heather_turn_in" }]
+
+[request_for_fog_orchid]
+	name = "Request for a Fog Orchid"
+	npc_for_icon = "juniper"
+	description = """Eiland claims he saw a "mystical, ethereal flower that seemed out of a bygone era" at the Western Ruins.
+
+I've got better things to do then hunt for it, but if you find it, bring it to me."""
+	rewards = [{ gold = 500 }, { renown = 20 }]
+
+	[[request_for_fog_orchid.stages]]
+		objective_description = "Bring a Fog Orchid to Juniper."
+		requirements = { has_item = "fog_orchid" }
+		queries = [{ npc = "juniper", npc_conversation = "request_for_fog_orchid_turn_in" }]
+
+[request_for_tilapia]
+	name = "Request for a Tilapia"
+	npc_for_icon = "errol"
+	description = """The Capital Museum has requested a Tilapia, but my skills do not lie in fishing.
+
+There is a generous reimbursement if you can help."""
+	rewards = [{ gold = 750 }, { renown = 20 }]
+
+	[[request_for_tilapia.stages]]
+		objective_description = "Bring a Tilapia to Errol."
+		requirements = { has_item = "tilapia" }
+		queries = [{ npc = "errol", npc_conversation = "request_for_tilapia_turn_in" }]
+
+[request_for_frog]
+	name = "Request for a Frog"
+	npc_for_icon = "dell"
+	description = """Every fantasy story I read has a talking frog in it! There's too many in the Eastern Road's pond for me to check them all.
+
+Help me start my big adventure!"""
+	rewards = [{ gold = 100 }, { renown = 20 }]
+
+	[[request_for_frog.stages]]
+		objective_description = "Bring a Frog to Dell."
+		requirements = { has_item = "frog" }
+		queries = [{ npc = "dell", npc_conversation = "request_for_frog_turn_in" }]
+
+[request_for_ice]
+	name = "Request for Ice"
+	npc_for_icon = "josephine"
+	description = """You'd be amazed at how much ice we need to stock up on to keep our drinks cold and our food fresh!
+
+Would you mind helping out?"""
+	rewards = [{ recipe_scroll = "wintergreen_ice_cream" }, { renown = 20 }]
+
+	[[request_for_ice.stages]]
+		objective_description = "Bring 3 Ice Blocks to Josephine."
+		requirements = { has_item = { ice_block = 3 } }
+		queries = [{ npc = "josephine", npc_conversation = "request_for_ice_turn_in" }]
+
+[request_for_burdock_root]
+	name = "Request for Burdock Root"
+	npc_for_icon = "nora"
+	description = """It's burdock root season!
+
+Could someone bring me one?"""
+	rewards = [{ gold = 240 }, { renown = 20 }]
+
+	[[request_for_burdock_root.stages]]
+		objective_description = "Bring a Burdock Root to Nora."
+		requirements = { has_item = "burdock_root" }
+		queries = [{ npc = "nora", npc_conversation = "request_for_burdock_root_turn_in" }]
+
+[request_for_glowberry]
+	name = "Request for Glowberries"
+	npc_for_icon = "ryis"
+	description = """Looking for someone to gather Glowberries for me, I'd like to make some cookies."""
+	rewards = [{ item = "glowberry_cookies", count = 1 }, { renown = 20 }]
+
+	[[request_for_glowberry.stages]]
+		objective_description = "Bring 12 Glowberries to Ryis."
+		requirements = { has_item = { glowberry = 12 } }
+		queries = [{ npc = "ryis", npc_conversation = "request_for_glowberry_turn_in" }]
+
+[request_for_egg]
+	name = "Request for Eggs"
+	npc_for_icon = "eiland"
+	description = """Errol suggested that more protein in my diet could help with my excavation work.
+
+May I request three eggs?"""
+	rewards = [{ recipe_scroll = "hard_boiled_egg" }, { renown = 20 }]
+
+	[[request_for_egg.stages]]
+		objective_description = "Bring 3 Eggs to Eiland."
+		requirements = { has_item = { egg = 3 } }
+		queries = [{ npc = "eiland", npc_conversation = "request_for_egg_turn_in" }]
+
+[request_for_milk]
+	name = "Request for Milk"
+	npc_for_icon = "reina"
+	description = """I've been experimenting with ice cream recently, and that takes a lot of milk!
+
+Bring me some and I'll let you try out one of my recipes!"""
+	rewards = [{ item = "ice_cream_sundae", count = 1 }, { renown = 20 }]
+
+	[[request_for_milk.stages]]
+		objective_description = "Bring 4 Milks to Reina."
+		requirements = { has_item = { cow_milk = 4 } }
+		queries = [{ npc = "reina", npc_conversation = "request_for_milk_turn_in" }]
+
+[request_for_rooster_feather]
+	name = "Request for Rooster Feathers"
+	npc_for_icon = "josephine"
+	description = """We could use some fresh Rooster Feathers to refill our guest pillows.
+
+Could someone help us out?"""
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_rooster_feather.stages]]
+		objective_description = "Bring 4 Rooster Feathers to Josephine."
+		requirements = { has_item = { feather = 4 } }
+		queries = [{ npc = "josephine", npc_conversation = "request_for_rooster_feather_turn_in" }]
+
+[request_for_bull_horn]
+	name = "Request for Bull Horns"
+	npc_for_icon = "ryis"
+	description = """I've got some crafting orders that need Bull Horns to finish, but they're in short supply.
+
+Can you help?"""
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_bull_horn.stages]]
+		objective_description = "Bring 2 Bull Horns to Ryis."
+		requirements = { has_item = { bull_horn = 2 } }
+		queries = [{ npc = "ryis", npc_conversation = "request_for_bull_horn_turn_in" }]
+
+[request_for_horse_hair]
+	name = "Request for Horse Hair"
+	npc_for_icon = "merri"
+	description = """I could use some horse hair for my reupholstery work, please and thank you."""
+	rewards = [{ gold = 400 }, { renown = 20 }]
+
+	[[request_for_horse_hair.stages]]
+		objective_description = "Bring 3 Horse Hair bundles to Merri."
+		requirements = { has_item = { horse_hair = 3 } }
+		queries = [{ npc = "merri", npc_conversation = "request_for_horse_hair_turn_in" }]
+
+[request_for_duck_egg]
+	name = "Request for a Duck Egg"
+	npc_for_icon = "juniper"
+	description = """Dozy likes a duck egg in his food every now and then, bring one to me."""
+	rewards = [{ gold = 200 }, { renown = 20 }]
+
+	[[request_for_duck_egg.stages]]
+		objective_description = "Bring 1 Duck Egg to Juniper."
+		requirements = { has_item = "duck_egg" }
+		queries = [{ npc = "juniper", npc_conversation = "request_for_duck_egg_turn_in" }]
+
+[request_for_sheep_wool]
+	name = "Request for Sheep Wool"
+	npc_for_icon = "hemlock"
+	description = """We're placing an order for new blankets for the Inn soon, and I think it'd make them extra special to be made of wool from Mistrian sheep.
+
+I'll need half a dozen!"""
+	rewards = [{ gold = 800 }, { renown = 20 }]
+
+	[[request_for_sheep_wool.stages]]
+		objective_description = "Bring 6 Sheep Wool to Hemlock."
+		requirements = { has_item = { sheep_wool = 6 } }
+		queries = [{ npc = "hemlock", npc_conversation = "request_for_sheep_wool_turn_in" }]
+
+[request_for_rabbit_wool]
+	name = "Request for Rabbit Wool"
+	npc_for_icon = "louis"
+	description = """Rabbit Wool is essential for high quality garments, and one of my preferred materials to work in.
+
+Please bring some to me!"""
+	rewards = [{ gold = 400 }, { renown = 20 }]
+
+	[[request_for_rabbit_wool.stages]]
+		objective_description = "Bring 4 Rabbit Wool to Louis."
+		requirements = { has_item = { rabbit_wool = 4 } }
+		queries = [{ npc = "louis", npc_conversation = "request_for_rabbit_wool_turn_in" }]
+
+[request_for_bristles]
+	name = "Request for Capybara Bristles"
+	npc_for_icon = "juniper"
+	description = """You won't find a more comfortable stuffing for a chair than Capybara Bristles, which is why I require some."""
+	rewards = [{ gold = 400 }, { renown = 20 }]
+
+	[[request_for_bristles.stages]]
+		objective_description = "Bring 3 Capybara Bristles to Juniper."
+		requirements = { has_item = { bristle = 3 } }
+		queries = [{ npc = "juniper", npc_conversation = "request_for_bristles_turn_in" }]
+
+[request_for_copper_ingot]
+	name = "Request for a Copper Ingot"
+	npc_for_icon = "balor"
+	description = """A trading partner wants to see the quality of the new copper coming out of the Mines.
+
+Could I get a Copper Ingot?"""
+	rewards = [{ gold = 220 }, { renown = 20 }]
+
+	[[request_for_copper_ingot.stages]]
+		objective_description = "Bring a Copper Ingot to Balor."
+		requirements = { has_item = "copper_ingot" }
+		queries = [{ npc = "balor", npc_conversation = "request_for_copper_ingot_turn_in" }]
+
+[request_for_copper_shovel]
+	name = "Request for a Copper Shovel"
+	npc_for_icon = "celine"
+	description = """I've saved up for a new Copper Shovel, but the Blacksmith's is so busy, I don't want to trouble them.
+
+Could someone help me out?"""
+	rewards = [{ gold = 960 }, { renown = 20 }]
+
+	[[request_for_copper_shovel.stages]]
+		objective_description = "Bring a Copper Shovel to Celine."
+		requirements = { has_item = "shovel_copper" }
+		queries = [{ npc = "celine", npc_conversation = "request_for_copper_shovel_turn_in" }]
+
+[request_for_iron_ingot]
+	name = "Request for an Iron Ingot"
+	npc_for_icon = "march"
+	description = """Let's see how your blacksmithing is coming along, bring me an Iron Ingot.
+
+Yes, [Ari]. I'm talking to you."""
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_iron_ingot.stages]]
+		objective_description = "Bring an Iron Ingot to March."
+		requirements = { has_item = "iron_ingot" }
+		queries = [{ npc = "march", npc_conversation = "request_for_iron_ingot_turn_in" }]
+
+[request_for_iron_armor]
+	name = "Request for Iron Armor"
+	npc_for_icon = "errol"
+	description = """Armor styles have changed greatly throughout Aldaria's history.
+
+I would like to request Iron Armor crafted in the modern style for my research."""
+	rewards = [{ gold = 1450 }, { renown = 20 }]
+
+	[[request_for_iron_armor.stages]]
+		objective_description = "Bring Iron Armor to Errol."
+		requirements = { has_item = "iron_armor" }
+		queries = [{ npc = "errol", npc_conversation = "request_for_iron_armor_turn_in" }]
+
+[request_for_silver_ingot]
+	name = "Request for a Silver Ingot"
+	npc_for_icon = "elsie"
+	description = """A personal friend in the Capital, who happens to be a rather famous jeweler, has been complaining about the silver shortage.
+
+Please bring me a bar so I can make a gift of it."""
+	rewards = [{ gold = 500 }, { renown = 20 }]
+
+	[[request_for_silver_ingot.stages]]
+		objective_description = "Bring a Silver Ingot to Elsie."
+		requirements = { has_item = "silver_ingot" }
+		queries = [{ npc = "elsie", npc_conversation = "request_for_silver_ingot_turn_in" }]
+
+[request_for_silver_sword]
+	name = "Request for a Silver Sword"
+	npc_for_icon = "adeline"
+	description = """My father, Baron Wiscar, has requested I send him something that he can give to the King.
+
+I can't think of anything more suitable than a Silver Sword!"""
+	rewards = [{ gold = 2000 }, { renown = 20 }]
+
+	[[request_for_silver_sword.stages]]
+		objective_description = "Bring a Silver Sword to Adeline."
+		requirements = { has_item = "sword_silver" }
+		queries = [{ npc = "adeline", npc_conversation = "request_for_silver_sword_turn_in" }]
+
+[request_for_pond_skater]
+	name = "Request for a Pond Skater"
+	npc_for_icon = "luc"
+	description = """Mom says I can't keep trying to catch a Pond Skater, cause I keep falling into the water when I miss!
+
+Can someone help me catch one?"""
+	rewards = [{ item = "grilled_cheese", count = 1 }, { renown = 20 }]
+
+	[[request_for_pond_skater.stages]]
+		objective_description = "Bring a Pond Skater to Luc."
+		requirements = { has_item = "pond_skater" }
+		queries = [{ npc = "luc", npc_conversation = "request_for_pond_skater_turn_in" }]
+
+[request_for_trail_mix]
+	name = "Request for Trail Mix"
+	npc_for_icon = "josephine"
+	description = """I like to keep plenty of Trail Mix on hand for the kids, but they sure eat a lot of it! Can someone mix some more up for me? You'll need Wild Berries and Water Chestnuts from the Narrows to make it!
+
+Feel free to use the kitchen at the Inn."""
+	rewards = [{ gold = 100 }, { renown = 20 }]
+
+	[[request_for_trail_mix.stages]]
+		objective_description = "Bring 3 portions of Trail Mix to Josephine."
+		requirements = { has_item = { trail_mix = 3 } }
+		queries = [{ npc = "josephine", npc_conversation = "request_for_trail_mix_turn_in" }]
+
+[request_for_tea]
+	name = "Request for Tea"
+	npc_for_icon = "valen"
+	description = """My favorite tea has been in short supply for ages now.
+
+Could I request some local tea instead?"""
+	rewards = [{ gold = 270 }, { renown = 20 }]
+
+	[[request_for_tea.stages]]
+		objective_description = "Bring tea to Valen."
+		requirements = { has_item = "tea" }
+		queries = [{ npc = "valen", npc_conversation = "request_for_tea_turn_in" }]
+
+[request_for_onion]
+	name = "Request for an Onion"
+	npc_for_icon = "nora"
+	description = """I'm making my favorite Onion Soup, but I seem to be short on the most important ingredient.
+
+Could someone bring me an Onion?"""
+	rewards = [{ gold = 270 }, { renown = 20 }]
+
+	[[request_for_onion.stages]]
+		objective_description = "Bring an Onion to Nora."
+		requirements = { has_item = "onion" }
+		queries = [{ npc = "nora", npc_conversation = "request_for_onion_turn_in" }]
+
+[request_for_beet]
+	name = "Request for a Beet"
+	npc_for_icon = "holt"
+	description = """Winter's here and that means Beets!
+
+I'd like to request the freshest, most mouthwatering Beet you can find!"""
+	rewards = [{ gold = 150 }, { renown = 20 }]
+
+	[[request_for_beet.stages]]
+		objective_description = "Bring a Beet to Holt."
+		requirements = { has_item = "beet" }
+		queries = [{ npc = "holt", npc_conversation = "request_for_beet_turn_in" }]
+
+[request_for_wild_berry]
+	name = "Request for Wild Berries"
+	npc_for_icon = "elsie"
+	description = """There are many ways to use the Mistrian Wild Berry, but in my opinion there's no finer way than in a fresh scone!
+
+Bring me some wild berries and let me share the recipe with you."""
+	rewards = [{ recipe_scroll = "wildberry_scone" }, { renown = 20 }]
+
+	[[request_for_wild_berry.stages]]
+		objective_description = "Bring 6 Wild Berries to Elsie."
+		requirements = { has_item = { wild_berries = 6 } }
+		queries = [{ npc = "elsie", npc_conversation = "request_for_wild_berry_turn_in" }]
+
+[request_for_orange]
+	name = "Request for an Orange"
+	npc_for_icon = "elsie"
+	description = """Would someone be a dear and fetch me an Orange? I need to make a fresh batch of my famous Marmalade.
+
+I'd be happy to reveal the recipe to you in exchange."""
+	rewards = [{ recipe_scroll = "marmalade" }, { renown = 20 }]
+
+	[[request_for_orange.stages]]
+		objective_description = "Bring an Orange to Elsie."
+		requirements = { has_item = "orange" }
+		queries = [{ npc = "elsie", npc_conversation = "request_for_orange_turn_in" }]
+
+[request_for_roasted_chestnuts]
+	name = "Request for Chestnuts"
+	npc_for_icon = "hemlock"
+	description = """This crisp weather has me in the mood for Roasted Chestnuts!
+
+Bring me some and I'll share my recipe with you."""
+	rewards = [{ recipe_scroll = "roasted_chestnuts" }, { renown = 20 }]
+
+	[[request_for_roasted_chestnuts.stages]]
+		objective_description = "Bring 2 Chestnuts to Hemlock."
+		requirements = { has_item = { chestnut = 2 } }
+		queries = [{ npc = "hemlock", npc_conversation = "request_for_roasted_chestnuts_turn_in" }]
+
+[request_for_broccoli]
+	name = "Request for Broccoli"
+	npc_for_icon = "reina"
+	description = """Can I request some fresh broccoli?
+
+There's a tough recipe I want to try out..."""
+	rewards = [{ recipe_scroll = "broccoli_salad" }, { renown = 20 }]
+
+	[[request_for_broccoli.stages]]
+		objective_description = "Bring a Broccoli to Reina."
+		requirements = { has_item = "broccoli" }
+		queries = [{ npc = "reina", npc_conversation = "request_for_broccoli_turn_in" }]
+
+[request_for_earthshroom]
+	name = "Request for an Earthshroom"
+	npc_for_icon = "terithia"
+	description = """Don't know if it's found around these parts, but I'm looking for an Earthshroom.
+
+I got a recipe to exchange for it that'll make it worth the hunt!"""
+	rewards = [{ recipe_scroll = "sea_bream_rice" }, { renown = 20 }]
+
+	[[request_for_earthshroom.stages]]
+		objective_description = "Bring an Earthshroom to Terithia."
+		requirements = { has_item = "earthshroom" }
+		queries = [{ npc = "terithia", npc_conversation = "request_for_earthshroom_turn_in" }]
+
+[request_for_perch]
+	name = "Request for a Perch"
+	npc_for_icon = "errol"
+	description = """I'm quite fond of Perch Risotto, but lack the fish.
+
+If anyone is fishing in the river on a rainy day, please keep an eye out for it and bring one to me for the recipe."""
+	rewards = [{ recipe_scroll = "perch_risotto" }, { renown = 20 }]
+
+	[[request_for_perch.stages]]
+		objective_description = "Bring a Perch to Errol."
+		requirements = { has_item = "perch" }
+		queries = [{ npc = "errol", npc_conversation = "request_for_perch_turn_in" }]
+
+[request_for_moon_fruit]
+	name = "Request for a Moon Fruit"
+	npc_for_icon = "eiland"
+	description = """Has anyone seen any Moon Fruit? They're quite hard to come by, but can be foraged around Mistria this time of year.
+
+Please bring me one and I'll share a wonderful recipe for them!"""
+	rewards = [{ recipe_scroll = "caramelized_moon_fruit" }, { renown = 20 }]
+
+	[[request_for_moon_fruit.stages]]
+		objective_description = "Bring a Moon Fruit to Eiland."
+		requirements = { has_item = "moon_fruit" }
+		queries = [{ npc = "eiland", npc_conversation = "request_for_moon_fruit_turn_in" }]
+
+[request_for_daikon]
+	name = "Request for a Daikon Radish"
+	npc_for_icon = "vera"
+	description = """As the name suggests, Winter Stew is just the thing for a frosty day in Mistria!
+
+Bring me a Daikon Radish and I'll share my recipe with you."""
+	rewards = [{ recipe_scroll = "winter_stew" }, { renown = 20 }]
+
+	[[request_for_daikon.stages]]
+		objective_description = "Bring a Daikon Radish to Vera."
+		requirements = { has_item = "daikon_radish" }
+		queries = [{ npc = "vera", npc_conversation = "request_for_daikon_turn_in" }]
+
+[request_for_water_chestnuts]
+	name = "Request for Water Chestnuts"
+	npc_for_icon = "juniper"
+	description = """I keep seeing folks enjoying Water Chestnuts in all the ways but the best way- deep fried.
+
+Bring me some and I'll enlighten you to the recipe."""
+	rewards = [{ recipe_scroll = "water_chestnut_fritters" }, { renown = 20 }]
+
+	[[request_for_water_chestnuts.stages]]
+		objective_description = "Bring 2 Water Chestnuts to Juniper."
+		requirements = { has_item = { water_chestnut = 2 } }
+		queries = [{ npc = "juniper", npc_conversation = "request_for_water_chestnuts_turn_in" }]
+
+[request_for_clam]
+	name = "Request for a Clam"
+	npc_for_icon = "errol"
+	description = """Years ago Terithia showed me how to make the most delectable Clam Chowder, but I'm too old to be diving for the Clam I need off the coast.
+
+Help a fellow out?"""
+	rewards = [{ recipe_scroll = "clam_chowder" }, { renown = 20 }]
+
+	[[request_for_clam.stages]]
+		objective_description = "Bring a Clam to Errol."
+		requirements = { has_item = "clam" }
+		queries = [{ npc = "errol", npc_conversation = "request_for_clam_turn_in" }]
+
+[request_for_sesame]
+	name = "Request for Sesame"
+	npc_for_icon = "vera"
+	description = """One of my favorite herbs in Mistria is the Sesame!
+
+Bring me some and I'll show you a great dish to make with it."""
+	rewards = [{ recipe_scroll = "sesame_broccoli" }, { renown = 20 }]
+
+	[[request_for_sesame.stages]]
+		objective_description = "Bring a Sesame to Vera."
+		requirements = { has_item = "sesame" }
+		queries = [{ npc = "vera", npc_conversation = "request_for_sesame_turn_in" }]
+
+[request_for_cod]
+	name = "Request for Cod"
+	npc_for_icon = "reina"
+	description = """Anyone in the mood for a little ocean fishing?
+
+I'm looking for a Cod, and I've got a recipe to share if you do!"""
+	rewards = [{ recipe_scroll = "cod_with_thyme" }, { renown = 20 }]
+
+	[[request_for_cod.stages]]
+		objective_description = "Bring a Cod to Reina."
+		requirements = { has_item = "cod" }
+		queries = [{ npc = "reina", npc_conversation = "request_for_cod_turn_in" }]
+
+[request_for_moon]
+	name = "Important Request for a Moon Fruit"
+	npc_for_icon = "juniper"
+	description = """I had no idea Mistria was so far out in the country that I'd need to bake my own Moon Fruit Cake.
+
+Luckily Dozy has chef training. Would someone bring me a Moon Fruit?"""
+	rewards = [{ recipe_scroll = "moon_fruit_cake" }, { renown = 20 }]
+
+	[[request_for_moon.stages]]
+		objective_description = "Bring a Moon Fruit to Juniper."
+		requirements = { has_item = "moon_fruit" }
+		queries = [{ npc = "juniper", npc_conversation = "request_for_moon_turn_in" }]
+
+		# NOT ORGANIZED YET-----------------------------
+
+[request_for_seaweed]
+	name = "Request for Seaweed"
+	npc_for_icon = "valen"
+	description = """Would someone please deliver some seaweed?
+
+This hot weather calls for a nice chilled seaweed salad. If you can bring me some, I'll share my recipe!"""
+	rewards = [{ recipe_scroll = "seaweed_salad" }, { renown = 20 }]
+
+	[[request_for_seaweed.stages]]
+		objective_description = "Bring some seaweed to Valen."
+		requirements = { has_item = { seaweed = 2 } }
+		queries = [{ npc = "valen", npc_conversation = "request_for_seaweed_turn_in" }]
+
+
+		# ANY SEASON REQUEST BATCH
+
+[request_for_sap]
+	name = "Request for Sap"
+	npc_for_icon = "landen"
+	icon = "fetch"
+	description = "I don't like dipping into the shop's supplies for personal projects. Can I request 5 Sap for my woodworking?"
+	rewards = [{ gold = 125 }, { renown = 20 }]
+
+	[[request_for_sap.stages]]
+		objective_description = "Bring 5 Sap to Landen."
+		requirements = { has_item = { sap = 5 } }
+		queries = [{ npc = "landen", npc_conversation = "request_for_sap_turn_in" }]
+
+[request_for_monster_fang]
+	name = "Request for a Monster Fang"
+	npc_for_icon = "louis"
+	icon = "fetch"
+	description = "A customer of mine wants something unusual and daring to offset his new outfit. I'd like to request a Monster Fang to help in my design."
+	rewards = [{ gold = 220 }, { renown = 20 }]
+
+	[[request_for_monster_fang.stages]]
+		objective_description = "Bring a Monster Fang to Louis."
+		requirements = { has_item = "monster_fang" }
+		queries = [{ npc = "louis", npc_conversation = "request_for_monster_fang_turn_in" }]
+
+[request_for_monster_core]
+	name = "Request for a Monster Core"
+	npc_for_icon = "juniper"
+	icon = "fetch"
+	description = "Seeking a Monster Core to help settle an academic debate."
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_monster_core.stages]]
+		objective_description = "Bring a Monster Core to Juniper."
+		requirements = { has_item = "monster_core" }
+		queries = [{ npc = "juniper", npc_conversation = "request_for_monster_core_turn_in" }]
+
+[request_for_monster_horn]
+	name = "Request for a Monster Horn"
+	npc_for_icon = "holt"
+	icon = "fetch"
+	description = "Now, I love to whittle, but I've been thinking of expanding out into other materials. Could I request a Monster Horn to practice on?"
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_monster_horn.stages]]
+		objective_description = "Bring a Monster Horn to Holt."
+		requirements = { has_item = "monster_horn" }
+		queries = [{ npc = "holt", npc_conversation = "request_for_monster_horn_turn_in" }]
+
+[request_for_crystal_berries]
+	name = "Request for Crystal Berries"
+	npc_for_icon = "josephine"
+	icon = "fetch"
+	description = "I've heard of something called \"Crystal Berries\" that grow in Mistria, but I haven't been able to find any! Can I request some? I'd love to see what I can bake with them!"
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_crystal_berries.stages]]
+		objective_description = "Bring Crystal Berries to Josephine."
+		requirements = { has_item = "crystal_berries" }
+		queries = [{ npc = "josephine", npc_conversation = "request_for_crystal_berries_turn_in" }]
+
+[request_for_ultimate_hay]
+	name = "Request for Ultimate Feed"
+	npc_for_icon = "balor"
+	icon = "fetch"
+	description = "A friend of a friend has a horse that needs to be in tiptop shape for a race. I've been asked to procure Ultimate Large Animal Feed. You'll be well compensated for assisting me."
+	rewards = [{ gold = 750 }, { renown = 20 }]
+
+	[[request_for_ultimate_hay.stages]]
+		objective_description = "Bring 1 Ultimate Large Animal Feed to Balor."
+		requirements = { has_item = "ultimate_hay" }
+		queries = [{ npc = "balor", npc_conversation = "request_for_ultimate_hay_turn_in" }]
+
+[request_for_ultimate_small_animal_feed]
+	name = "Request for Ultimate Feed"
+	npc_for_icon = "hayden"
+	icon = "fetch"
+	description = "Henrietta was a big help with farm chores the other day and deserves a special treat. Could someone bring me a bag of Ultimate Small Animal Feed?"
+	rewards = [{ gold = 400 }, { renown = 20 }]
+
+	[[request_for_ultimate_small_animal_feed.stages]]
+		objective_description = "Bring 1 Ultimate Small Animal Feed to Hayden."
+		requirements = { has_item = "ultimate_small_animal_feed" }
+		queries = [{ npc = "hayden", npc_conversation = "request_for_ultimate_small_animal_feed_turn_in" }]
+
+[request_for_butter]
+	name = "Request for Butter"
+	npc_for_icon = "reina"
+	icon = "fetch"
+	description = "Any Chef will tell you that the one thing they can never have enough of is Butter! I'd like to request some."
+	rewards = [{ gold = 270 }, { renown = 20 }]
+
+	[[request_for_butter.stages]]
+		objective_description = "Bring 2 Butter to Reina."
+		requirements = { has_item = { butter = 2 } }
+		queries = [{ npc = "reina", npc_conversation = "request_for_butter_turn_in" }]
+
+[request_for_golden_butter]
+	name = "Request for Golden Butter"
+	npc_for_icon = "nora"
+	icon = "fetch"
+	description = "A Capital merchant with a high opinion of himself recently told me I couldn't expect something like Golden Butter out of Mistria. I'll pay handsomely to prove him wrong."
+	rewards = [{ gold = 750 }, { renown = 20 }]
+
+	[[request_for_golden_butter.stages]]
+		objective_description = "Bring 1 Golden Butter to Nora."
+		requirements = { has_item = "golden_butter" }
+		queries = [{ npc = "nora", npc_conversation = "request_for_golden_butter_turn_in" }]
+
+[request_for_cheese]
+	name = "Request for Cheese"
+	npc_for_icon = "luc"
+	icon = "fetch"
+	description = "Mom says I can't eat a big chunk of Cheese as a meal, but I can't think of any scientific reason why not. Could I request some Cheese, for science?"
+	rewards = [{ gold = 100 }, { renown = 20 }]
+
+	[[request_for_cheese.stages]]
+		objective_description = "Bring 1 Cheese to Luc."
+		requirements = { has_item = "cheese" }
+		queries = [{ npc = "luc", npc_conversation = "request_for_cheese_turn_in" }]
+
+[request_for_pomegranate_juice]
+	name = "Request for Pomegranate Juice"
+	npc_for_icon = "vera"
+	icon = "fetch"
+	description = "Can I request a glass of Pomegranate Juice? There's nothing more refreshing!"
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_pomegranate_juice.stages]]
+		objective_description = "Bring 1 Pomegranate Juice to Vera."
+		requirements = { has_item = "pomegranate_juice" }
+		queries = [{ npc = "vera", npc_conversation = "request_for_pomegranate_juice_turn_in" }]
+
+[request_for_noodles]
+	name = "Request for Noodles"
+	npc_for_icon = "josephine"
+	icon = "fetch"
+	description = "Maple keeps asking for Noodles, but then tells me \"not these Noodles, the other ones!\" I'm at my wit's end, can someone bring me a plateful to try to appease my little princess?"
+	rewards = [{ gold = 300 }, { renown = 20 }]
+
+	[[request_for_noodles.stages]]
+		objective_description = "Bring Noodles to Josephine."
+		requirements = { has_item = "noodles" }
+		queries = [{ npc = "josephine", npc_conversation = "request_for_noodles_turn_in" }]
+
+[request_for_tuna_sashimi]
+	name = "Request for Tuna Sashimi"
+	npc_for_icon = "terithia"
+	icon = "fetch"
+	description = "I've got a craving for Tuna Sashimi, but I just haven't had any luck with my catches! Can someone help out?"
+	rewards = [{ gold = 400 }, { renown = 20 }]
+
+	[[request_for_tuna_sashimi.stages]]
+		objective_description = "Bring Tuna Sashimi to Terithia."
+		requirements = { has_item = "tuna_sashimi" }
+		queries = [{ npc = "terithia", npc_conversation = "request_for_tuna_sashimi_turn_in" }]
+
+[request_for_riceball]
+	name = "Request for a Riceball"
+	npc_for_icon = "vera"
+	icon = "fetch"
+	description = "I'd like to request a Riceball, I need something I can eat while working."
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_riceball.stages]]
+		objective_description = "Bring a Riceball to Vera."
+		requirements = { has_item = "riceball" }
+		queries = [{ npc = "vera", npc_conversation = "request_for_riceball_turn_in" }]
+
+[request_for_pudding]
+	name = "Request for Pudding"
+	npc_for_icon = "eiland"
+	icon = "fetch"
+	description = "I recently read a treatise on Puddings, and now I can't stop thinking about them. May I request one?"
+	rewards = [{ gold = 400 }, { renown = 20 }]
+
+	[[request_for_pudding.stages]]
+		objective_description = "Bring Pudding to Eiland."
+		requirements = { has_item = "pudding" }
+		queries = [{ npc = "eiland", npc_conversation = "request_for_pudding_turn_in" }]
+
+[request_for_haybale]
+	name = "Request for a Hay Bale"
+	npc_for_icon = "merri"
+	icon = "fetch"
+	description = "Can I request a Hay Bale? They've got a lot of design potential!"
+	rewards = [{ gold = 300 }, { renown = 20 }]
+
+	[[request_for_haybale.stages]]
+		objective_description = "Bring a Hay Bale to Merri."
+		requirements = { has_item = "spooky_haybale" }
+		queries = [{ npc = "merri", npc_conversation = "request_for_haybale_turn_in" }]
+
+[request_for_bird_house]
+	name = "Request for a Bird House"
+	npc_for_icon = "valen"
+	icon = "fetch"
+	description = "I woke up to birdsong yesterday morning and quite enjoyed it. I'd like to request a Birdhouse to hopefully attract some new bird friends to my Clinic."
+	rewards = [{ gold = 430 }, { renown = 20 }]
+
+	[[request_for_bird_house.stages]]
+		objective_description = "Bring a Bird House to Valen."
+		requirements = { has_item = "starter_bird_house_red" }
+		queries = [{ npc = "valen", npc_conversation = "request_for_bird_house_turn_in" }]
+
+[request_for_scarecrow]
+	name = "Request for a Scarecrow"
+	npc_for_icon = "errol"
+	icon = "fetch"
+	description = "I'm afraid my patch of garden has become a breakfast spot to some very unruly birds. May I request a Scarecrow so my vegetables remain unharmed?"
+	rewards = [{ gold = 425 }, { renown = 20 }]
+
+	[[request_for_scarecrow.stages]]
+		objective_description = "Bring a Scarecrow to Errol."
+		requirements = { has_item = "starter_scarecrow" }
+		queries = [{ npc = "errol", npc_conversation = "request_for_scarecrow_turn_in" }]
+
+[request_for_potted_plant]
+	name = "Request for a Potted Plant"
+	npc_for_icon = "hemlock"
+	icon = "fetch"
+	description = "Hard to keep plants around the Inn, since Luc keeps making them into his bug's habitats. Can I request a Potted Plant so he can have a designated place for them?"
+	rewards = [{ gold = 400 }, { renown = 20 }]
+
+	[[request_for_potted_plant.stages]]
+		objective_description = "Bring a Potted Plant to Hemlock."
+		requirements = { has_item = "starter_potted_plant" }
+		queries = [{ npc = "hemlock", npc_conversation = "request_for_potted_plant_turn_in" }]
+
+[request_for_shipping_bin]
+	name = "Request for a Shipping Bin"
+	npc_for_icon = "march"
+	icon = "fetch"
+	description = "Can I request a Shipping Bin? We're running out of room at the Blacksmith's."
+	rewards = [{ gold = 300 }, { renown = 20 }]
+
+	[[request_for_shipping_bin.stages]]
+		objective_description = "Bring a Shipping Bin to March."
+		requirements = { has_item = "starter_shipping_box" }
+		queries = [{ npc = "march", npc_conversation = "request_for_shipping_bin_turn_in" }]
+
+[request_for_smallmouth_bass]
+	name = "Request for Smallmouth Bass"
+	npc_for_icon = "ryis"
+	icon = "fetch"
+	description = "My parents really like Mistrian Smallmouth bass. Can I request a couple to send them?"
+	rewards = [{ gold = 275 }, { renown = 20 }]
+
+	[[request_for_smallmouth_bass.stages]]
+		objective_description = "Bring 2 Smallmouth Bass to Ryis."
+		requirements = { has_item = { smallmouth_bass = 2 } }
+		queries = [{ npc = "ryis", npc_conversation = "request_for_smallmouth_bass_turn_in" }]
+
+[request_for_pike]
+	name = "Request for a Pike"
+	npc_for_icon = "olric"
+	icon = "fetch"
+	description = "Can I request a Pike? I hear fish is brain food, and I've never caught a pike so I figure they're pretty smart!"
+	rewards = [{ gold = 200 }, { renown = 20 }]
+
+	[[request_for_pike.stages]]
+		objective_description = "Bring a Pike to Olric."
+		requirements = { has_item = "pike" }
+		queries = [{ npc = "olric", npc_conversation = "request_for_pike_turn_in" }]
+
+[request_for_goby]
+	name = "Request for a Goby"
+	npc_for_icon = "holt"
+	icon = "fetch"
+	description = "Can I get someone to fish me up a Goby? They're good luck!"
+	rewards = [{ gold = 200 }, { renown = 20 }]
+
+	[[request_for_goby.stages]]
+		objective_description = "Bring a Goby to Holt."
+		requirements = { has_item = "goby" }
+		queries = [{ npc = "holt", npc_conversation = "request_for_goby_turn_in" }]
+
+[request_for_freshwater_oyster]
+	name = "Request for a Freshwater Oyster"
+	npc_for_icon = "maple"
+	icon = "fetch"
+	description = "Did you know that pearls come from oysters? I didn't! I can't afford a pearl, but I can request a Freshwater Oyster!"
+	rewards = [{ gold = 100 }, { renown = 20 }]
+
+	[[request_for_freshwater_oyster.stages]]
+		objective_description = "Bring a Freshwater Oyster to Maple."
+		requirements = { has_item = "freshwater_oyster" }
+		queries = [{ npc = "maple", npc_conversation = "request_for_freshwater_oyster_turn_in" }]
+
+[request_for_snail]
+	name = "Request for a Snail"
+	npc_for_icon = "dell"
+	icon = "fetch"
+	description = """Mom said I shouldn't keep catching snails to bring home, but she didn't say I couldn't put up a request for one!
+
+Please help, I just need one more to complete the whole set!"""
+	rewards = [{ gold = 100 }, { renown = 20 }]
+
+	[[request_for_snail.stages]]
+		objective_description = "Bring a Snail to Dell."
+		requirements = { has_item = "snail" }
+		queries = [{ npc = "dell", npc_conversation = "request_for_snail_turn_in" }]
+
+		# UPDATE 2 LAVA CAVES QUESTS
+
+[request_for_walnut]
+	name = "Request for Walnuts"
+	npc_for_icon = "darcy"
+	icon = "fetch"
+	description = "I love working with regional ingredients, could I request 3 Walnuts?"
+	rewards = [{ gold = 175 }, { renown = 20 }]
+
+	[[request_for_walnut.stages]]
+		objective_description = "Bring 3 Walnuts to Darcy."
+		requirements = { has_item = { walnut = 3 } }
+		queries = [{ npc = "darcy", npc_conversation = "request_for_walnut_turn_in" }]
+
+[request_for_spirit_mushroom_tea]
+	name = "Request for Spirit Mushroom Tea"
+	npc_for_icon = "darcy"
+	icon = "fetch"
+	description = "Valen told me that Mistria has a tea I've never even heard of! Could I request a cup of Spirit Mushroom Tea, please?"
+	rewards = [{ gold = 300 }, { renown = 20 }]
+
+	[[request_for_spirit_mushroom_tea.stages]]
+		objective_description = "Bring a Spirit Mushroom Tea to Darcy."
+		requirements = { has_item = "spirit_mushroom_tea" }
+		queries = [{ npc = "darcy", npc_conversation = "request_for_spirit_mushroom_tea_turn_in" }]
+
+[request_for_dragon_horn_beetle]
+	name = "Request for Dragon Horn Beetle"
+	npc_for_icon = "luc"
+	icon = "fetch"
+	description = "Have you ever heard of the Dragon Horn Beetle? I have! But I haven't been able to find one in the Deep Woods yet. Please help!"
+	rewards = [{ gold = 200 }, { renown = 20 }]
+
+	[[request_for_dragon_horn_beetle.stages]]
+		objective_description = "Bring a Dragon Horn Beetle to Luc."
+		requirements = { has_item = "dragon_horn_beetle" }
+		queries = [{ npc = "luc", npc_conversation = "request_for_dragon_horn_beetle_turn_in" }]
+
+[request_for_singing_katydid]
+	name = "Request for Singing Katydid"
+	npc_for_icon = "luc"
+	icon = "fetch"
+	description = "Can someone help me catch a Singing Katydid? I want to put on a concert for all of my other bugs!"
+	rewards = [{ gold = 225 }, { renown = 20 }]
+
+	[[request_for_singing_katydid.stages]]
+		objective_description = "Bring a Singing Katydid to Luc."
+		requirements = { has_item = "singing_katydid" }
+		queries = [{ npc = "luc", npc_conversation = "request_for_singing_katydid_turn_in" }]
+
+[request_for_temple_flower]
+	name = "Request for Temple Flower"
+	npc_for_icon = "maple"
+	icon = "fetch"
+	description = "Did you know the Princess of Aldaria is really into flowers? It'd be cool to have a flower to talk to her about. Help me find a Temple Flower!"
+	rewards = [{ gold = 150 }, { renown = 20 }]
+
+	[[request_for_temple_flower.stages]]
+		objective_description = "Bring a Temple Flower to Maple."
+		requirements = { has_item = "temple_flower" }
+		queries = [{ npc = "maple", npc_conversation = "request_for_temple_flower_turn_in" }]
+
+[request_for_breath_of_flame]
+	name = "Request for Breath of Flame"
+	npc_for_icon = "nora"
+	icon = "fetch"
+	description = "I'm looking for a unique gift for Celine. I know it's a longshot, but can someone help me find a Breath Of Flame flower?"
+	rewards = [{ gold = 300 }, { renown = 20 }]
+
+	[[request_for_breath_of_flame.stages]]
+		objective_description = "Bring a Breath of Flame to Nora."
+		requirements = { has_item = "breath_of_fire" }
+		queries = [{ npc = "nora", npc_conversation = "request_for_breath_of_flame_turn_in" }]
+
+[request_for_diamond]
+	name = "Request for Diamond"
+	npc_for_icon = "olric"
+	icon = "fetch"
+	description = "Diamonds have a lot of industrial uses, but I just like'em cause they're shiny! Hard to find though, could someone bring me one?"
+	rewards = [{ gold = 500 }, { renown = 20 }]
+
+	[[request_for_diamond.stages]]
+		objective_description = "Bring a Diamond to Olric."
+		requirements = { has_item = "ore_diamond" }
+		queries = [{ npc = "olric", npc_conversation = "request_for_diamond_turn_in" }]
+
+[request_for_lake_trout]
+	name = "Request for Lake Trout"
+	npc_for_icon = "holt"
+	icon = "fetch"
+	description = "Can someone fish me up a Lake Trout from the Deep Woods?"
+	rewards = [{ gold = 300 }, { renown = 20 }]
+
+	[[request_for_lake_trout.stages]]
+		objective_description = "Bring a Lake Trout to Holt."
+		requirements = { has_item = "lake_trout" }
+		queries = [{ npc = "holt", npc_conversation = "request_for_lake_trout_turn_in" }]
+
+[request_for_bell_berry_bakewell]
+	name = "Request for Bell Berry Bakewell Tart"
+	npc_for_icon = "holt"
+	icon = "fetch"
+	description = "Could someone whip me up a Bell Berry Bakewell Tart, now that the Deep Woods are opened back up?"
+	rewards = [{ gold = 350 }, { renown = 20 }]
+
+	[[request_for_bell_berry_bakewell.stages]]
+		objective_description = "Bring a Bell Berry Bakewell Tart to Holt."
+		requirements = { has_item = "bell_berry_bakewell_tart" }
+		queries = [{ npc = "holt", npc_conversation = "request_for_bell_berry_bakewell_turn_in" }]
+
+[request_for_thorn_vine]
+	name = "Request for Thorn Vine"
+	npc_for_icon = "hayden"
+	icon = "fetch"
+	description = "Could I request some Thorn Vine? Could be a good deterrent to keep pests out of my field!"
+	rewards = [{ gold = 240 }, { renown = 20 }]
+
+	[[request_for_thorn_vine.stages]]
+		objective_description = "Bring 2 Thorn Vine to Hayden."
+		requirements = { has_item = { thorn_vine = 2 } }
+		queries = [{ npc = "hayden", npc_conversation = "request_for_thorn_vine_turn_in" }]
+
+[request_for_obsidian]
+	name = "Request for Obsidian"
+	npc_for_icon = "dell"
+	icon = "fetch"
+	description = "Olric told me that Obsidian is cooled down lava! I want one! Someone get me one!"
+	rewards = [{ gold = 100 }, { renown = 20 }]
+
+	[[request_for_obsidian.stages]]
+		objective_description = "Bring an Obsidian to Dell."
+		requirements = { has_item = "obsidian" }
+		queries = [{ npc = "dell", npc_conversation = "request_for_obsidian_turn_in" }]
+
+[request_for_gold_ore]
+	name = "Request for Gold Ore"
+	npc_for_icon = "balor"
+	icon = "fetch"
+	description = "I have it on good authority that the Mine is producing Gold Ore again. I'm paying handsomely to have some of that ore come directly to me."
+	rewards = [{ gold = 500 }, { renown = 20 }]
+
+	[[request_for_gold_ore.stages]]
+		objective_description = "Bring 3 Gold Ore to Balor."
+		requirements = { has_item = { ore_gold = 3 } }
+		queries = [{ npc = "balor", npc_conversation = "request_for_gold_ore_turn_in" }]
+
+[request_for_armored_bass]
+	name = "Request for Armored Bass"
+	npc_for_icon = "march"
+	icon = "fetch"
+	description = "Terithia told me a legend of an Armored Bass, a fish that grows its own armor. Willing to pay well to see if it really exists."
+	rewards = [{ gold = 400 }, { renown = 20 }]
+
+	[[request_for_armored_bass.stages]]
+		objective_description = "Bring an Armored Bass to March."
+		requirements = { has_item = "armored_bass" }
+		queries = [{ npc = "march", npc_conversation = "request_for_armored_bass_turn_in" }]
+
+# additional summer requests update 2
+[request_for_chili_pepper]
+	name = "Request for Chili Peppers"
+	npc_for_icon = "josephine"
+	icon = "fetch"
+	description = "Seems to me I'm always running out of Chili Peppers! I'd like to request a few."
+	rewards = [{ gold = 310 }, { renown = 20 }]
+
+	[[request_for_chili_pepper.stages]]
+		objective_description = "Bring 3 Chili Peppers to Josephine."
+		requirements = { has_item = { chili_pepper = 3 } }
+		queries = [{ npc = "josephine", npc_conversation = "request_for_chili_pepper_turn_in" }]
+
+[request_for_pear]
+	name = "Request for Pears"
+	npc_for_icon = "errol"
+	icon = "fetch"
+	description = "May I request a brace of Pears? They make an excellent snack."
+	rewards = [{ gold = 400 }, { renown = 20 }]
+
+	[[request_for_pear.stages]]
+		objective_description = "Bring 2 Pears to Errol."
+		requirements = { has_item = { pear = 2 } }
+		queries = [{ npc = "errol", npc_conversation = "request_for_pear_turn_in" }]
+
+[request_for_sunflower]
+	name = "Request for a Sunflower"
+	npc_for_icon = "maple"
+	icon = "fetch"
+	description = "Sunflowers are so pretty, and they have so many seeds! I bet with just one I could make a whole FIELD of Sunflowers! Can I have one whole Sunflower, please?"
+	rewards = [{ gold = 60 }, { renown = 20 }]
+
+	[[request_for_sunflower.stages]]
+		objective_description = "Bring a Sunflower to Maple."
+		requirements = { has_item = "sunflower" }
+		queries = [{ npc = "maple", npc_conversation = "request_for_sunflower_turn_in" }]
+
+[request_for_coconuts_2]
+	name = "Request for Coconuts"
+	npc_for_icon = "darcy"
+	icon = "fetch"
+	description = "Terithia told me that Mistria has Coconuts at the Beach, but I haven't had the time to get out there myself. Could I request 3 Coconuts?"
+	rewards = [{ gold = 155 }, { renown = 20 }]
+
+	[[request_for_coconuts_2.stages]]
+		objective_description = "Bring 3 Coconuts to Darcy."
+		requirements = { has_item = { coconut = 3 } }
+		queries = [{ npc = "darcy", npc_conversation = "request_for_coconuts_2_turn_in" }]
+
+[request_for_wild_grapes]
+	name = "Request for Wild Grapes"
+	npc_for_icon = "hemlock"
+	icon = "fetch"
+	description = "Things around here are too busy to go foraging myself, so can someone please hunt down some Wild Grapes for me? Try the Narrows!"
+	rewards = [{ gold = 125 }, { renown = 20 }]
+
+	[[request_for_wild_grapes.stages]]
+		objective_description = "Bring 3 Wild Grapes to Hemlock."
+		requirements = { has_item = { wild_grapes = 3 } }
+		queries = [{ npc = "hemlock", npc_conversation = "request_for_wild_grapes_turn_in" }]
+
+[request_for_watermelon]
+	name = "Request for a Watermelon"
+	npc_for_icon = "merri"
+	icon = "fetch"
+	description = "My horse Swiftwind is a big fan of Watermelon, I'd like to request one as a treat for him."
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_watermelon.stages]]
+		objective_description = "Bring a Watermelon to Merri."
+		requirements = { has_item = "watermelon" }
+		queries = [{ npc = "merri", npc_conversation = "request_for_watermelon_turn_in" }]
+
+[request_for_corn]
+	name = "Request for Corn"
+	npc_for_icon = "nora"
+	icon = "fetch"
+	description = "Grilled Corn is a regular side at our dinner table, but I don't want to dip into our shop's stock. I'd like to request 4 ears of corn."
+	rewards = [{ gold = 500 }, { renown = 20 }]
+
+	[[request_for_corn.stages]]
+		objective_description = "Bring 4 Corn to Nora."
+		requirements = { has_item = { corn = 4 } }
+		queries = [{ npc = "nora", npc_conversation = "request_for_corn_turn_in" }]
+
+# fall requests update 2
+[request_for_apple]
+	name = "Request for an Apple"
+	npc_for_icon = "balor"
+	icon = "fetch"
+	description = "Mistria's apples are second to none, I'd like to request one freshly picked from the tree."
+	rewards = [{ gold = 180 }, { renown = 20 }]
+
+	[[request_for_apple.stages]]
+		objective_description = "Bring an Apple to Balor."
+		requirements = { has_item = "apple" }
+		queries = [{ npc = "balor", npc_conversation = "request_for_apple_turn_in" }]
+
+[request_for_rice]
+	name = "Request for Rice"
+	npc_for_icon = "hemlock"
+	icon = "fetch"
+	description = "When we have a really spicy dish I like to keep plenty of Rice on the table to help cut the heat for the kids. Can I request a couple of bags?"
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_rice.stages]]
+		objective_description = "Bring 2 Rice to Hemlock."
+		requirements = { has_item = { rice = 2 } }
+		queries = [{ npc = "hemlock", npc_conversation = "request_for_rice_turn_in" }]
+
+[request_for_acorn]
+	name = "Request for Acorns"
+	npc_for_icon = "dell"
+	icon = "fetch"
+	description = "Celine read me a story about a princess befriending woodland creatures with a song. I can't sing, but I bet I could bribe them! Can I get some Acorns to help build my woodland army?"
+	rewards = [{ gold = 70 }, { renown = 20 }]
+
+	[[request_for_acorn.stages]]
+		objective_description = "Bring 3 Acorns to Dell."
+		requirements = { has_item = { acorn = 3 } }
+		queries = [{ npc = "dell", npc_conversation = "request_for_acorn_turn_in" }]
+
+[request_for_sweet_potato]
+	name = "Request for a Sweet Potato"
+	npc_for_icon = "nora"
+	icon = "fetch"
+	description = "A Roasted Sweet Potato is especially good when the weather starts to turn cold. Can I request a Sweet Potato?"
+	rewards = [{ gold = 150 }, { renown = 20 }]
+
+	[[request_for_sweet_potato.stages]]
+		objective_description = "Bring a Sweet Potato to Nora."
+		requirements = { has_item = "sweet_potato" }
+		queries = [{ npc = "nora", npc_conversation = "request_for_sweet_potato_turn_in" }]
+
+# Update 3 Requests
+[request_for_cabbage]
+	name = "Request for a Cabbage"
+	npc_for_icon = "holt"
+	icon = "fetch"
+	description = "I'm requesting a fresh snacking Cabbage!"
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_cabbage.stages]]
+		objective_description = "Bring a Cabbage to Holt."
+		requirements = { has_item = "cabbage" }
+		queries = [{ npc = "holt", npc_conversation = "request_for_cabbage_turn_in" }]
+
+[request_for_fiddlehead]
+	name = "Request for a Fiddlehead"
+	npc_for_icon = "merri"
+	icon = "fetch"
+	description = "A friend of mine says that Mistrian Fiddleheads are the best around, and asked if I could gather one for her. But I don't even know what they look like. Little help?"
+	rewards = [{ gold = 310 }, { renown = 20 }]
+
+	[[request_for_fiddlehead.stages]]
+		objective_description = "Bring a Fiddlehead to Merri."
+		requirements = { has_item = "fiddlehead" }
+		queries = [{ npc = "merri", npc_conversation = "request_for_fiddlehead_turn_in" }]
+
+[request_for_carrot]
+	name = "Request for a Carrot"
+	npc_for_icon = "juniper"
+	icon = "fetch"
+	description = "Dozy quite enjoys a raw Carrot as a treat, and I'd like for him to have the very best. Gather me a few, or, uh grow them? I'm not sure."
+	rewards = [{ gold = 400 }, { renown = 20 }]
+
+	[[request_for_carrot.stages]]
+		objective_description = "Bring 3 Carrots to Juniper."
+		requirements = { has_item = { carrot = 3 } }
+		queries = [{ npc = "juniper", npc_conversation = "request_for_carrot_turn_in" }]
+
+[request_for_middlemist]
+	name = "Request for a Middlemist"
+	npc_for_icon = "louis"
+	icon = "fetch"
+	description = "I've heard rumors of Mistria's rarest flower, the Middlemist. Can anyone find one for me?"
+	rewards = [{ gold = 1000 }, { renown = 20 }]
+
+	[[request_for_middlemist.stages]]
+		objective_description = "Bring a Middlemist to Louis."
+		requirements = { has_item = "middlemist" }
+		queries = [{ npc = "louis", npc_conversation = "request_for_middlemist_turn_in" }]
+
+[request_for_peas]
+	name = "Request for Peas"
+	npc_for_icon = "hayden"
+	icon = "fetch"
+	description = "Could I request some fresh Peas? Henrietta's a big fan!"
+	rewards = [{ gold = 500 }, { renown = 20 }]
+
+	[[request_for_peas.stages]]
+		objective_description = "Bring 3 Peas to Hayden."
+		requirements = { has_item = { peas = 3 } }
+		queries = [{ npc = "hayden", npc_conversation = "request_for_peas_turn_in" }]
+
+[request_for_cucumbers]
+	name = "Request for Cucumbers"
+	npc_for_icon = "valen"
+	icon = "fetch"
+	description = "One of the joys of summer is fresh Cucumbers. Could I request a few?"
+	rewards = [{ gold = 200 }, { renown = 20 }]
+
+	[[request_for_cucumbers.stages]]
+		objective_description = "Bring 3 Cucumbers to Valen."
+		requirements = { has_item = { cucumber = 3 } }
+		queries = [{ npc = "valen", npc_conversation = "request_for_cucumbers_turn_in" }]
+
+[request_for_peaches]
+	name = "Request for Peaches"
+	npc_for_icon = "darcy"
+	icon = "fetch"
+	description = "I've always enjoyed Peaches, and I thought it'd be fun to request some to experiment with in my drinks!"
+	rewards = [{ gold = 200 }, { renown = 20 }]
+
+	[[request_for_peaches.stages]]
+		objective_description = "Bring 3 Peaches to Darcy."
+		requirements = { has_item = { peach = 3 } }
+		queries = [{ npc = "darcy", npc_conversation = "request_for_peaches_turn_in" }]
+
+[request_for_dill]
+	name = "Request for Dill"
+	npc_for_icon = "josephine"
+	icon = "fetch"
+	description = "Could I request some Dill? Can't make good Crab Cakes without it!"
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_dill.stages]]
+		objective_description = "Bring 2 Dill to Josephine."
+		requirements = { has_item = { dill = 2 } }
+		queries = [{ npc = "josephine", npc_conversation = "request_for_dill_turn_in" }]
+
+[request_for_night_queen]
+	name = "Request for a Night Queen"
+	npc_for_icon = "juniper"
+	icon = "fetch"
+	description = "Requesting a Night Queen flower. I need one for my work, but apparently they're quite rare, so I'm prepared to pay well."
+	rewards = [{ gold = 600 }, { renown = 20 }]
+
+	[[request_for_night_queen.stages]]
+		objective_description = "Bring a Night Queen to Juniper."
+		requirements = { has_item = "night_queen" }
+		queries = [{ npc = "juniper", npc_conversation = "request_for_night_queen_turn_in" }]
+
+[request_for_roses]
+	name = "Request for Roses"
+	npc_for_icon = "elsie"
+	icon = "fetch"
+	description = "Could someone bring me a dozen Roses? I quite like the flower, but I'm not much of a fan of the actual picking, too many thorns."
+	rewards = [{ gold = 300 }, { renown = 20 }]
+
+	[[request_for_roses.stages]]
+		objective_description = "Bring 12 Roses to Elsie."
+		requirements = { has_item = { rose = 12 } }
+		queries = [{ npc = "elsie", npc_conversation = "request_for_roses_turn_in" }]
+
+[request_for_salted_watermelon]
+	name = "Request for Salted Watermelon"
+	npc_for_icon = "vera"
+	icon = "fetch"
+	description = "Can anyone in Mistria make me a Salted Watermelon? It's a perfect summer treat!"
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_salted_watermelon.stages]]
+		objective_description = "Bring Salted Watermelon to Vera."
+		requirements = { has_item = "salted_watermelon" }
+		queries = [{ npc = "vera", npc_conversation = "request_for_salted_watermelon_turn_in" }]
+
+[request_for_grilled_corn]
+	name = "Request for Grilled Corn"
+	npc_for_icon = "nora"
+	icon = "fetch"
+	description = "A few ears of Grilled Corn would be a perfect summer side dish. Could someone grill them up for me?"
+	rewards = [{ gold = 450 }, { renown = 20 }]
+
+	[[request_for_grilled_corn.stages]]
+		objective_description = "Bring 3 Grilled Corn to Nora."
+		requirements = { has_item = { grilled_corn = 3 } }
+		queries = [{ npc = "nora", npc_conversation = "request_for_grilled_corn_turn_in" }]
+
+[request_for_tomato_soup]
+	name = "Request for Tomato Soup"
+	npc_for_icon = "landen"
+	icon = "fetch"
+	description = "Could I get a bowl of Tomato Soup? I've had it at the Inn, I've had it at the Capital, I want to try everyone's take on it!"
+	rewards = [{ gold = 200 }, { renown = 20 }]
+
+	[[request_for_tomato_soup.stages]]
+		objective_description = "Bring Tomato Soup to Landen."
+		requirements = { has_item = "tomato_soup" }
+		queries = [{ npc = "landen", npc_conversation = "request_for_tomato_soup_turn_in" }]
+
+[request_for_sugar_cane]
+	name = "Request for Sugar Cane"
+	npc_for_icon = "holt"
+	icon = "fetch"
+	description = "You wouldn't believe how hard it is to get Sugar Cane in Mistria! Could I request one?"
+	rewards = [{ gold = 225 }, { renown = 20 }]
+
+	[[request_for_sugar_cane.stages]]
+		objective_description = "Bring 1 Sugar Cane to Holt."
+		requirements = { has_item = "sugar_cane" }
+		queries = [{ npc = "holt", npc_conversation = "request_for_sugar_cane_turn_in" }]
+
+[request_for_pumpkin]
+	name = "Request for a Pumpkin"
+	npc_for_icon = "eiland"
+	icon = "fetch"
+	description = "I'm quite fond of Pumpkin Pie, and would like to request a Pumpkin for one!"
+	rewards = [{ gold = 200 }, { renown = 20 }]
+
+	[[request_for_pumpkin.stages]]
+		objective_description = "Bring a Pumpkin to Eiland."
+		requirements = { has_item = "pumpkin" }
+		queries = [{ npc = "eiland", npc_conversation = "request_for_pumpkin_turn_in" }]
+
+[request_for_cauliflower]
+	name = "Request for a Cauliflower"
+	npc_for_icon = "holt"
+	icon = "fetch"
+	description = "Looking for the freshest, most delicious Cauliflower in Mistria!"
+	rewards = [{ gold = 225 }, { renown = 20 }]
+
+	[[request_for_cauliflower.stages]]
+		objective_description = "Bring a Cauliflower to Holt."
+		requirements = { has_item = "cauliflower" }
+		queries = [{ npc = "holt", npc_conversation = "request_for_cauliflower_turn_in" }]
+
+[request_for_crocus]
+	name = "Request for a Crocus"
+	npc_for_icon = "dell"
+	icon = "fetch"
+	description = "Could someone get me a Crocus? Please?"
+	rewards = [{ gold = 100 }, { renown = 20 }]
+
+	[[request_for_crocus.stages]]
+		objective_description = "Bring a Crocus to Dell."
+		requirements = { has_item = "crocus" }
+		queries = [{ npc = "dell", npc_conversation = "request_for_crocus_turn_in" }]
+
+[request_for_holly]
+	name = "Request for Holly"
+	npc_for_icon = "louis"
+	icon = "fetch"
+	description = "Could I request a few sprigs of Holly to decorate my booth with?"
+	rewards = [{ gold = 310 }, { renown = 20 }]
+
+	[[request_for_holly.stages]]
+		objective_description = "Bring 3 Holly to Louis."
+		requirements = { has_item = { holly = 3 } }
+		queries = [{ npc = "louis", npc_conversation = "request_for_holly_turn_in" }]
+
+[request_for_pomegranate]
+	name = "Request for a Pomegranate"
+	npc_for_icon = "darcy"
+	icon = "fetch"
+	description = "I've really been craving a Pomegranate for some reason. Could anyone help me out?"
+	rewards = [{ gold = 175 }, { renown = 20 }]
+
+	[[request_for_pomegranate.stages]]
+		objective_description = "Bring a Pomegranate to Darcy."
+		requirements = { has_item = "pomegranate" }
+		queries = [{ npc = "darcy", npc_conversation = "request_for_pomegranate_turn_in" }]
+
+[request_for_oyster_mushrooms]
+	name = "Request for Oyster Mushrooms"
+	npc_for_icon = "olric"
+	icon = "fetch"
+	description = "March never really liked Oyster Mushrooms when he was little, but maybe now that he's older he'll like them! Could someone find some for me?"
+	rewards = [{ gold = 310 }, { renown = 20 }]
+
+	[[request_for_oyster_mushrooms.stages]]
+		objective_description = "Bring 2 Oyster Mushrooms to Olric."
+		requirements = { has_item = { oyster_mushroom = 2 } }
+		queries = [{ npc = "olric", npc_conversation = "request_for_oyster_mushrooms_turn_in" }]
+
+[request_for_red_wine]
+	name = "Request for Red Wine"
+	npc_for_icon = "taliferro"
+	icon = "fetch"
+	description = "You would think as a professional food judge I would have a dedicated sommelier, but no. I'd like to request a GOOD bottle of Red Wine."
+	rewards = [{ gold = 310 }, { renown = 20 }]
+
+	[[request_for_red_wine.stages]]
+		objective_description = "Bring Red Wine to Taliferro."
+		requirements = { has_item = "red_wine" }
+		queries = [{ npc = "taliferro", npc_conversation = "request_for_red_wine_turn_in" }]
+
+[request_for_spring_galette]
+	name = "Request for Spring Galette"
+	npc_for_icon = "taliferro"
+	icon = "fetch"
+	description = "Sometimes the best chef in the world would like the best food in the world without having to prepare it himself. Bring me a Spring Galette, posthaste."
+	rewards = [{ gold = 1000 }, { renown = 20 }]
+
+	[[request_for_spring_galette.stages]]
+		objective_description = "Bring Spring Galette to Taliferro."
+		requirements = { has_item = "spring_galette" }
+		queries = [{ npc = "taliferro", npc_conversation = "request_for_spring_galette_turn_in" }]
+
+[request_for_beet_soup]
+	name = "Request for Beet Soup"
+	npc_for_icon = "taliferro"
+	icon = "fetch"
+	description = "If there was someone... who had made an exceptional Beet Soup, and was so inclined to make more... I'd be willing to pay handsomely."
+	rewards = [{ gold = 650 }, { renown = 20 }]
+
+	[[request_for_beet_soup.stages]]
+		objective_description = "Bring Beet Soup to Taliferro."
+		requirements = { has_item = "beet_soup" }
+		queries = [{ npc = "taliferro", npc_conversation = "request_for_beet_soup_turn_in" }]
+
+[request_for_gold_ingots]
+	name = "Request for Gold Ingots"
+	npc_for_icon = "wheedle"
+	icon = "fetch"
+	description = "The Needy Children of Aldaria are doing their annual fundraising mission for Gold Ingots. Please, help the Needy Children."
+	rewards = [{ gold = 810 }, { renown = 40 }]
+
+	[[request_for_gold_ingots.stages]]
+		objective_description = "Bring 3 Gold Ingots to Wheedle."
+		requirements = { has_item = { gold_ingot = 3 } }
+		queries = [{ npc = "wheedle", npc_conversation = "request_for_gold_ingots_turn_in" }]
+
+[request_for_emeralds]
+	name = "Request for Emeralds"
+	npc_for_icon = "wheedle"
+	icon = "fetch"
+	description = "Legend says that Mistria was once famous for its Emeralds. I'd like to request seven of them, for completely legitimate reasons."
+	rewards = [{ gold = 415 }, { renown = 40 }]
+
+	[[request_for_emeralds.stages]]
+		objective_description = "Bring 7 Emeralds to Wheedle."
+		requirements = { has_item = { ore_emerald = 7 } }
+		queries = [{ npc = "wheedle", npc_conversation = "request_for_emeralds_turn_in" }]
+
+[request_for_golden_cookies]
+	name = "Request for Golden Cookies"
+	npc_for_icon = "wheedle"
+	icon = "fetch"
+	description = "I've heard tell of a cookie, a GOLDEN cookie. Just thinking about them is making me hungry! Someone bake me Golden Cookies posthaste!"
+	rewards = [{ gold = 2100 }, { renown = 20 }]
+
+	[[request_for_golden_cookies.stages]]
+		objective_description = "Bring Golden Cookies to Wheedle."
+		requirements = { has_item = "golden_cookies" }
+		queries = [{ npc = "wheedle", npc_conversation = "request_for_golden_cookies_turn_in" }]
+
+[request_for_premium_honey]
+	name = "Request for Premium Honey"
+	npc_for_icon = "valen"
+	icon = "fetch"
+	description = "I'm a bit of a Honey connoisseur, recently I read about a special Premium Honey but I can't seem to find any. Little help?"
+	rewards = [{ gold = 500 }, { renown = 20 }]
+
+	[[request_for_premium_honey.stages]]
+		objective_description = "Bring Premium Honey to Valen."
+		requirements = { has_item = "honey_premium" }
+		queries = [{ npc = "valen", npc_conversation = "request_for_premium_honey_turn_in" }]
+
+[request_for_deluxe_honey]
+	name = "Request for Deluxe Honey"
+	npc_for_icon = "reina"
+	icon = "fetch"
+	description = "Luc told me about Deluxe Honey and how only a hive of rare bees can make it! I'd love to try cooking with some!"
+	rewards = [{ gold = 750 }, { renown = 20 }]
+
+	[[request_for_deluxe_honey.stages]]
+		objective_description = "Bring Deluxe Honey to Reina."
+		requirements = { has_item = "honey_deluxe" }
+		queries = [{ npc = "reina", npc_conversation = "request_for_deluxe_honey_turn_in" }]
+
+[request_for_legendary_honey]
+	name = "Request for Legendary Honey"
+	npc_for_icon = "darcy"
+	icon = "fetch"
+	description = "Has anyone heard of Legendary Honey? Supposedly even a single drop of it makes any dessert taste amazing! I gotta have a jar!"
+	rewards = [{ gold = 1000 }, { renown = 20 }]
+
+	[[request_for_legendary_honey.stages]]
+		objective_description = "Bring Legendary Honey to Darcy."
+		requirements = { has_item = "honey_legendary" }
+		queries = [{ npc = "darcy", npc_conversation = "request_for_legendary_honey_turn_in" }]
+
+[request_for_common_pheromone]
+	name = "Request for Common Pheromone"
+	npc_for_icon = "maple"
+	icon = "fetch"
+	description = """Luc really likes finding new bugs, and he told me that the Pheromone stuff the Terrarium makes helps a lot!
+
+So I want to request a Common Pheromone to give to him!"""
+	rewards = [{ gold = 100 }, { renown = 20 }]
+
+	[[request_for_common_pheromone.stages]]
+		objective_description = "Bring Common Pheromone to Maple."
+		requirements = { has_item = "bug_pheromone_common" }
+		queries = [{ npc = "maple", npc_conversation = "request_for_common_pheromone_turn_in" }]
+
+[request_for_uncommon_pheromone]
+	name = "Uncommon Pheromone Request"
+	npc_for_icon = "balor"
+	icon = "fetch"
+	description = "I'd like to request a bottle of Uncommon Pheromone. If it works on bugs, maybe it could have applications in the perfume industry."
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_uncommon_pheromone.stages]]
+		objective_description = "Bring Uncommon Pheromone to Balor."
+		requirements = { has_item = "bug_pheromone_uncommon" }
+		queries = [{ npc = "balor", npc_conversation = "request_for_uncommon_pheromone_turn_in" }]
+
+[request_for_rare_pheromone]
+	name = "Request for Rare Pheromone"
+	npc_for_icon = "juniper"
+	icon = "fetch"
+	description = "I've had no luck hunting down a particularly rare bug, so I'd like to request a bottle of Rare Pheromone to assist."
+	rewards = [{ gold = 500 }, { renown = 20 }]
+
+	[[request_for_rare_pheromone.stages]]
+		objective_description = "Bring Rare Pheromone to Juniper."
+		requirements = { has_item = "bug_pheromone_rare" }
+		queries = [{ npc = "juniper", npc_conversation = "request_for_rare_pheromone_turn_in" }]
+
+[request_for_common_bait]
+	name = "Request for Common Bait"
+	npc_for_icon = "terithia"
+	icon = "fetch"
+	description = "Little Luc was telling me that those new Terrariums thingies can produce Common Bait that helps attract fish. I'm not much for taking care of bugs, so I'd like to request one!"
+	rewards = [{ gold = 100 }, { renown = 20 }]
+
+	[[request_for_common_bait.stages]]
+		objective_description = "Bring Common Bait to Terithia."
+		requirements = { has_item = "fish_bait_common" }
+		queries = [{ npc = "terithia", npc_conversation = "request_for_common_bait_turn_in" }]
+
+[request_for_uncommon_bait]
+	name = "Request for Uncommon Bait"
+	npc_for_icon = "errol"
+	icon = "fetch"
+	description = "I have a dear friend who loves to fish, and am hoping to procure her some Uncommon Bait as a gift."
+	rewards = [{ gold = 250 }, { renown = 20 }]
+
+	[[request_for_uncommon_bait.stages]]
+		objective_description = "Bring Uncommon Bait to Errol."
+		requirements = { has_item = "fish_bait_uncommon" }
+		queries = [{ npc = "errol", npc_conversation = "request_for_uncommon_bait_turn_in" }]
+
+[request_for_rare_bait]
+	name = "Request for Rare Bait"
+	npc_for_icon = "landen"
+	icon = "fetch"
+	description = "Need someone who has got the know-how to get me some Rare Bait!"
+	rewards = [{ gold = 500 }, { renown = 20 }]
+
+	[[request_for_rare_bait.stages]]
+		objective_description = "Bring Rare Bait to Landen."
+		requirements = { has_item = "fish_bait_rare" }
+		queries = [{ npc = "landen", npc_conversation = "request_for_rare_bait_turn_in" }]
+
+[request_for_mistril_ore]
+	name = "Request for Mistril Ore"
+	npc_for_icon = "march"
+	icon = "fetch"
+	description = "I've heard there's a new type of metal ore coming out of the Mines. Could I request some Mistril Ore?"
+	rewards = [{ gold = 780 }, { renown = 20 }]
+
+	[[request_for_mistril_ore.stages]]
+		objective_description = "Bring 4 Mistril Ore to March."
+		requirements = { has_item = { ore_mistril = 4 } }
+		queries = [{ npc = "march", npc_conversation = "request_for_mistril_ore_turn_in" }]
+
+[request_for_mistril_ingot]
+	name = "Request for a Mistril Ingot"
+	npc_for_icon = "adeline"
+	icon = "fetch"
+	description = "Despite filling out the proper forms, we've had a request by the Capital for a Mistril Ingot to confirm that it's a new metal."
+	rewards = [{ gold = 1250 }, { renown = 20 }]
+
+	[[request_for_mistril_ingot.stages]]
+		objective_description = "Bring a Mistril Ingot to Adeline."
+		requirements = { has_item = "mistril_ingot" }
+		queries = [{ npc = "adeline", npc_conversation = "request_for_mistril_ingot_turn_in" }]
+
+[request_for_pink_diamond]
+	name = "Request for a Pink Diamond"
+	npc_for_icon = "balor"
+	icon = "fetch"
+	description = "I'd quite like to get my hands on a Pink Diamond, if any are to be found in Mistria."
+	rewards = [{ gold = 650 }, { renown = 20 }]
+
+	[[request_for_pink_diamond.stages]]
+		objective_description = "Bring a Pink Diamond to Balor."
+		requirements = { has_item = "ore_pink_diamond" }
+		queries = [{ npc = "balor", npc_conversation = "request_for_pink_diamond_turn_in" }]
+
+[request_for_corrupted_mistril_sword]
+	name = "Corrupted Mistril Sword Request"
+	npc_for_icon = "errol"
+	icon = "fetch"
+	description = "There is a very old sword made of an unidentified type of metal in the Museum's backroom. I would like to request a Corrupted Mistril Sword to compare the two."
+	rewards = [{ gold = 1500 }, { renown = 20 }]
+
+	[[request_for_corrupted_mistril_sword.stages]]
+		objective_description = "Bring a Corrupted Mistril Sword to Errol."
+		requirements = { has_item = "sword_corrupted_mistril" }
+		queries = [{ npc = "errol", npc_conversation = "request_for_corrupted_mistril_sword_turn_in" }]
+
+[request_for_coelacanth]
+	name = "Request for a Coelacanth"
+	npc_for_icon = "terithia"
+	icon = "fetch"
+	description = "You ever heard of the Coelacanth? They say it's a fish that's been around for pretty much forever. I've never caught one, but I'd love to see one!"
+	rewards = [{ gold = 750 }, { renown = 20 }]
+
+	[[request_for_coelacanth.stages]]
+		objective_description = "Bring a Coelacanth to Terithia."
+		requirements = { has_item = "coelacanth" }
+		queries = [{ npc = "terithia", npc_conversation = "request_for_coelacanth_turn_in" }]
+
+[request_for_dragon_forged_bracelet]
+	name = "Dragon-Forged Bracelet Request"
+	npc_for_icon = "march"
+	icon = "fetch"
+	description = "Eiland mentioned an ancient technique called \"Dragon Forging\", but couldn't remember where he read it. I'm requesting a Dragon Forged Bracelet, but I'm not sure it exists."
+	rewards = [{ gold = 999 }, { renown = 20 }]
+
+	[[request_for_dragon_forged_bracelet.stages]]
+		objective_description = "Bring a Dragon-Forged Bracelet to March."
+		requirements = { has_item = "dragon_forged_bracelet" }
+		queries = [{ npc = "march", npc_conversation = "request_for_dragon_forged_bracelet_turn_in" }]
+
+[request_for_spell_fruit]
+	name = "Request for a Spell Fruit"
+	npc_for_icon = "darcy"
+	icon = "fetch"
+	description = "Have anyone ever seen a Spell Fruit? Celine told me about them from that old book of hers. I'd love to try one!"
+	rewards = [{ gold = 750 }, { renown = 20 }]
+
+	[[request_for_spell_fruit.stages]]
+		objective_description = "Bring a Spell Fruit to Darcy."
+		requirements = { has_item = "spell_fruit" }
+		queries = [{ npc = "darcy", npc_conversation = "request_for_spell_fruit_turn_in" }]
+
+[request_for_voidite]
+	name = "Request for Voidite"
+	npc_for_icon = "juniper"
+	icon = "fetch"
+	description = "Looking for Voidite. It's a theoretical \"mineral\" formed in unusual circumstances."
+	rewards = [{ gold = 650 }, { renown = 20 }]
+
+	[[request_for_voidite.stages]]
+		objective_description = "Bring Voidite to Juniper."
+		requirements = { has_item = "voidite" }
+		queries = [{ npc = "juniper", npc_conversation = "request_for_voidite_turn_in" }]
+
+[request_for_written_root]
+	name = "Request for a Written Root"
+	npc_for_icon = "wheedle"
+	icon = "fetch"
+	description = "Looking for Written Root to do a little business forecasting. Payment on delivery, NO cut of future sales."
+	rewards = [{ gold = 800 }, { renown = 20 }]
+
+	[[request_for_written_root.stages]]
+		objective_description = "Bring a Written Root to Wheedle."
+		requirements = { has_item = "written_root" }
+		queries = [{ npc = "wheedle", npc_conversation = "request_for_written_root_turn_in" }]
+
+[request_for_wood_2]
+	name = "Request for Wood"
+	npc_for_icon = "merri"
+	icon = "fetch"
+	description = "I'm always in need of Wood for my business!"
+	rewards = [{ gold = 175 }, { renown = 20 }]
+
+	[[request_for_wood_2.stages]]
+		objective_description = "Bring 10 Wood to Merri."
+		requirements = { has_item = { basic_wood = 10 } }
+		queries = [{ npc = "merri", npc_conversation = "request_for_wood_2_turn_in" }]
+
+[request_for_hard_wood]
+	name = "Request for Hardwood"
+	npc_for_icon = "merri"
+	icon = "fetch"
+	description = "I know it isn't easy to get a hold of, but if anyone has Hardwood they can sell me it'd be big help!"
+	rewards = [{ gold = 450 }, { renown = 20 }]
+
+	[[request_for_hard_wood.stages]]
+		objective_description = "Bring 5 Hardwood to Merri."
+		requirements = { has_item = { hard_wood = 5 } }
+		queries = [{ npc = "merri", npc_conversation = "request_for_hard_wood_turn_in" }]
+
+[request_for_copper_net]
+	name = "Request for a Copper Net"
+	npc_for_icon = "hemlock"
+	icon = "fetch"
+	description = "I'd like to surprise someone with a Copper Net! Can anyone make one for me?"
+	rewards = [{ gold = 520 }, { renown = 20 }]
+
+	[[request_for_copper_net.stages]]
+		objective_description = "Bring a Copper Net to Hemlock."
+		requirements = { has_item = "net_copper" }
+		queries = [{ npc = "hemlock", npc_conversation = "request_for_copper_net_turn_in" }]
+
+[request_for_iron_watering_can]
+	name = "Request for an Iron Watering Can"
+	npc_for_icon = "adeline"
+	icon = "fetch"
+	description = "Our Iron Watering Can seems to have been misplaced, can I request someone craft me a new one?"
+	rewards = [{ gold = 2200 }, { renown = 20 }]
+
+	[[request_for_iron_watering_can.stages]]
+		objective_description = "Bring an Iron Watering Can to Adeline."
+		requirements = { has_item = "watering_can_iron" }
+		queries = [{ npc = "adeline", npc_conversation = "request_for_iron_watering_can_turn_in" }]
+
+[request_for_silver_axe]
+	name = "Request for a Silver Axe"
+	npc_for_icon = "landen"
+	icon = "fetch"
+	description = "I don't know if I'm just getting older, or the trees are getting tougher, but I'd like to request a Silver Axe to even the odds!"
+	rewards = [{ gold = 3300 }, { renown = 20 }]
+
+	[[request_for_silver_axe.stages]]
+		objective_description = "Bring a Silver Axe to Landen."
+		requirements = { has_item = "axe_silver" }
+		queries = [{ npc = "landen", npc_conversation = "request_for_silver_axe_turn_in" }]
+
+[request_for_void_stone]
+	name = "Request for Void Stone"
+	npc_for_icon = "seridia"
+	icon = "fetch"
+	description = "I may have punched a teeny tiny hole in space-time. I'd like to request 3 Void Stone. Quickly, please."
+	rewards = [{ gold = 1000 }, { renown = 20 }]
+
+	[[request_for_void_stone.stages]]
+		objective_description = "Bring 3 Void Stones to Seridia."
+		requirements = { has_item = { void_stone = 3 } }
+		queries = [{ npc = "seridia", npc_conversation = "request_for_void_stone_turn_in" }]
+
+[request_for_mont_blanc]
+	name = "Request for Mont Blanc"
+	npc_for_icon = "seridia"
+	icon = "fetch"
+	description = "I would like to request the dessert known as \"Mont Blanc\"."
+	rewards = [{ gold = 1000 }, { renown = 20 }]
+
+	[[request_for_mont_blanc.stages]]
+		objective_description = "Bring Mont Blanc to Seridia."
+		requirements = { has_item = "mont_blanc" }
+		queries = [{ npc = "seridia", npc_conversation = "request_for_mont_blanc_turn_in" }]
+
+[request_for_dragon_forged_core]
+	name = "Request for a Dragon Forged Core"
+	npc_for_icon = "seridia"
+	icon = "fetch"
+	description = "I require a Dragon Forged Core, to test out fluctuations in this era's ley lines."
+	rewards = [{ gold = 1000 }, { renown = 20 }]
+
+	[[request_for_dragon_forged_core.stages]]
+		objective_description = "Bring a Dragon Forged Core to Seridia."
+		requirements = { has_item = "dragon_forged_core" }
+		queries = [{ npc = "seridia", npc_conversation = "request_for_dragon_forged_core_turn_in" }]
+
+[request_for_fire_wasp]
+	name = "Request for a Fire Wasp"
+	npc_for_icon = "seridia"
+	icon = "fetch"
+	description = "Have you heard of a Fire Wasp? It sounds delightful! I would like to request one."
+	rewards = [{ gold = 666 }, { renown = 20 }]
+
+	[[request_for_fire_wasp.stages]]
+		objective_description = "Bring a Fire Wasp to Seridia."
+		requirements = { has_item = "fire_wasp" }
+		queries = [{ npc = "seridia", npc_conversation = "request_for_fire_wasp_turn_in" }]
+
+[request_for_latte]
+	name = "Request for a Latte"
+	npc_for_icon = "seridia"
+	icon = "fetch"
+	description = "I wish to try the popular new drink called the \"Latte\"."
+	rewards = [{ gold = 500 }, { renown = 20 }]
+
+	[[request_for_latte.stages]]
+		objective_description = "Bring a Latte to Seridia."
+		requirements = { has_item = "latte" }
+		queries = [{ npc = "seridia", npc_conversation = "request_for_latte_turn_in" }]
+
+[request_for_iron_shovel]
+	name = "Request for an Iron Shovel"
+	npc_for_icon = "seridia"
+	icon = "fetch"
+	description = "I require an Iron Shovel."
+	rewards = [{ gold = 777 }, { renown = 20 }]
+
+	[[request_for_iron_shovel.stages]]
+		objective_description = "Bring an Iron Shovel to Seridia."
+		requirements = { has_item = "shovel_iron" }
+		queries = [{ npc = "seridia", npc_conversation = "request_for_iron_shovel_turn_in" }]
+
+[request_for_bomb]
+	name = "Request for a Bomb"
+	npc_for_icon = "seridia"
+	icon = "fetch"
+	description = "There seems to be a type of Rockclod that possesses the remarkable ability to spit Bombs. I would like one. A Bomb, that is."
+	rewards = [{ gold = 700 }, { renown = 20 }]
+
+	[[request_for_bomb.stages]]
+		objective_description = "Bring a Bomb to Seridia."
+		requirements = { has_item = "bomb" }
+		queries = [{ npc = "seridia", npc_conversation = "request_for_bomb_turn_in" }]
+
+[request_for_monster_mash]
+	name = "Request for Monster Mash"
+	npc_for_icon = "caldarus"
+	icon = "fetch"
+	description = "I would like to request a dish called \"Monster Mash\". My own attempts at creating it have been less than successful."
+	rewards = [{ gold = 1000 }, { renown = 20 }]
+
+	[[request_for_monster_mash.stages]]
+		objective_description = "Bring Monster Mash to Caldarus."
+		requirements = { has_item = "monster_mash" }
+		queries = [{ npc = "caldarus", npc_conversation = "request_for_monster_mash_turn_in" }]
+
+[request_for_fried_rice]
+	name = "Request for Fried Rice"
+	npc_for_icon = "caldarus"
+	icon = "fetch"
+	description = "I had some Fried Rice at the Inn which I found to be quite enjoyable! I would like to request more from another chef to see how it differs."
+	rewards = [{ gold = 750 }, { renown = 20 }]
+
+	[[request_for_fried_rice.stages]]
+		objective_description = "Bring Fried Rice to Caldarus."
+		requirements = { has_item = "fried_rice" }
+		queries = [{ npc = "caldarus", npc_conversation = "request_for_fried_rice_turn_in" }]
+
+[request_for_sushi_platter]
+	name = "Request for a Sushi Platter"
+	npc_for_icon = "caldarus"
+	icon = "fetch"
+	description = "May I request a Sushi Platter?"
+	rewards = [{ gold = 800 }, { renown = 20 }]
+
+	[[request_for_sushi_platter.stages]]
+		objective_description = "Bring a Sushi Platter to Caldarus."
+		requirements = { has_item = "sushi_platter" }
+		queries = [{ npc = "caldarus", npc_conversation = "request_for_sushi_platter_turn_in" }]
+
+[request_for_pumpkin_pie]
+	name = "Request for a Pumpkin Pie"
+	npc_for_icon = "caldarus"
+	icon = "fetch"
+	description = "Could I request a fresh Pumpkin Pie?"
+	rewards = [{ gold = 675 }, { renown = 20 }]
+
+	[[request_for_pumpkin_pie.stages]]
+		objective_description = "Bring a Pumpkin Pie to Caldarus."
+		requirements = { has_item = "pumpkin_pie" }
+		queries = [{ npc = "caldarus", npc_conversation = "request_for_pumpkin_pie_turn_in" }]
+
+[request_for_dog_treat]
+	name = "Request for a Dog Treat"
+	npc_for_icon = "caldarus"
+	icon = "fetch"
+	description = "I'd like to request a Dog Treat for the Bathhouse owner."
+	rewards = [{ gold = 510 }, { renown = 20 }]
+
+	[[request_for_dog_treat.stages]]
+		objective_description = "Bring a Dog Treat to Caldarus."
+		requirements = { has_item = "dog_treat" }
+		queries = [{ npc = "caldarus", npc_conversation = "request_for_dog_treat_turn_in" }]
+
+[request_for_lobster]
+	name = "Request for a Lobster"
+	npc_for_icon = "caldarus"
+	icon = "fetch"
+	description = "It's quite the walk to the ocean from my home. I'd like to request a Lobster from an angler."
+	rewards = [{ gold = 445 }, { renown = 20 }]
+
+	[[request_for_lobster.stages]]
+		objective_description = "Bring a Lobster to Caldarus."
+		requirements = { has_item = "lobster" }
+		queries = [{ npc = "caldarus", npc_conversation = "request_for_lobster_turn_in" }]
+
+[request_for_blackberries_2]
+	name = "Request for Blackberries"
+	npc_for_icon = "hayden"
+	icon = "fetch"
+	description = "Anyone got any spare Blackberries? They make great feed for my animals!"
+	rewards = [{ gold = 150 }, { renown = 20 }]
+
+	[[request_for_blackberries_2.stages]]
+		objective_description = "Bring 5 Blackberries to Hayden."
+		requirements = { has_item = { blackberry = 5 } }
+		queries = [{ npc = "hayden", npc_conversation = "request_for_blackberries_2_turn_in" }]
+
+# 1.0 additions
+
+[request_for_coffee]
+	name = "Request for Coffee"
+	npc_for_icon = "stillwell"
+	icon = "fetch"
+	description = "Could I get a Coffee?"
+	rewards = [{ gold = 200 }, { renown = 20 }]
+
+	[[request_for_coffee.stages]]
+		objective_description = "Bring Coffee to Stillwell."
+		requirements = { has_item = "coffee" }
+		queries = [{ npc = "stillwell", npc_conversation = "request_for_coffee_turn_in" }]
+
+[request_for_fire_crystal]
+	name = "Request for Fire Crystal"
+	npc_for_icon = "stillwell"
+	icon = "fetch"
+	description = "My work requires a Fire Crystal, if you please."
+	rewards = [{ gold = 600 }, { renown = 20 }]
+
+	[[request_for_fire_crystal.stages]]
+		objective_description = "Bring a Fire Crystal to Stillwell."
+		requirements = { has_item = "fire_crystal" }
+		queries = [{ npc = "stillwell", npc_conversation = "request_for_fire_crystal_turn_in" }]
+
+[request_for_poached_pear]
+	name = "Request for a Poached Pear"
+	npc_for_icon = "stillwell"
+	icon = "fetch"
+	description = "I'd love a Poached Pear. The fresher the better."
+	rewards = [{ gold = 600 }, { renown = 20 }]
+
+	[[request_for_poached_pear.stages]]
+		objective_description = "Bring a Poached Pear to Stillwell."
+		requirements = { has_item = "poached_pear" }
+		queries = [{ npc = "stillwell", npc_conversation = "request_for_poached_pear_turn_in" }]
+
+[request_for_mushroom_rice]
+	name = "Request for Mushroom Rice"
+	npc_for_icon = "zorel"
+	icon = "fetch"
+	description = "Could I request Mushroom Rice? Made with local Mistrian mushrooms, please!"
+	rewards = [{ gold = 450 }, { renown = 20 }]
+
+	[[request_for_mushroom_rice.stages]]
+		objective_description = "Bring Mushroom Rice to Zorel."
+		requirements = { has_item = "mushroom_rice" }
+		queries = [{ npc = "zorel", npc_conversation = "request_for_mushroom_rice_turn_in" }]
+
+[request_for_glowing_mushroom]
+	name = "Request for a Glowing Mushroom"
+	npc_for_icon = "zorel"
+	icon = "fetch"
+	description = "Someone mentioned you've got Glowing Mushrooms here in Mistria that are actually good to eat. I'd love to try one!"
+	rewards = [{ gold = 500 }, { renown = 20 }]
+
+	[[request_for_glowing_mushroom.stages]]
+		objective_description = "Bring a Glowing Mushroom to Zorel."
+		requirements = { has_item = "glowing_mushroom" }
+		queries = [{ npc = "zorel", npc_conversation = "request_for_glowing_mushroom_turn_in" }]
+
+[request_for_bell_berries]
+	name = "Request for Bell Berries"
+	npc_for_icon = "zorel"
+	icon = "fetch"
+	description = "Could I get some Bell Berries?"
+	rewards = [{ gold = 400 }, { renown = 20 }]
+
+	[[request_for_bell_berries.stages]]
+		objective_description = "Bring 3 Bell Berries to Zorel."
+		requirements = { has_item = { bell_berry = 3 } }
+		queries = [{ npc = "zorel", npc_conversation = "request_for_bell_berries_turn_in" }]
+
+[request_for_duck_mayonnaise]
+	name = "Request for Duck Mayo"
+	npc_for_icon = "taliferro"
+	icon = "fetch"
+	description = "Has anyone even heard of Duck Mayonnaise in this backwater? Paying good money for a jar."
+	rewards = [{ gold = 500 }, { renown = 20 }]
+
+	[[request_for_duck_mayonnaise.stages]]
+		objective_description = "Bring Duck Mayonnaise to Taliferro."
+		requirements = { has_item = "duck_mayonnaise" }
+		queries = [{ npc = "taliferro", npc_conversation = "request_for_duck_mayonnaise_turn_in" }]
+
+[request_for_golden_duck_mayonnaise]
+	name = "Request for Golden Duck Mayonnaise"
+	npc_for_icon = "taliferro"
+	icon = "fetch"
+	description = "Requesting a jar of Golden Duck Mayonnaise. Preferably not from [Ari]."
+	rewards = [{ gold = 1000 }, { renown = 20 }]
+
+	[[request_for_golden_duck_mayonnaise.stages]]
+		objective_description = "Bring Golden Duck Mayonnaise to Taliferro."
+		requirements = { has_item = "golden_duck_mayonnaise" }
+		queries = [{ npc = "taliferro", npc_conversation = "request_for_golden_duck_mayonnaise_turn_in" }]
+
+[request_for_apple_pie]
+	name = "Request for Apple Pie"
+	npc_for_icon = "louis"
+	icon = "fetch"
+	description = "I would like to request an Apple Pie, if someone would be so kind!"
+	rewards = [{ gold = 750 }, { renown = 20 }]
+
+	[[request_for_apple_pie.stages]]
+		objective_description = "Bring Apple Pie to Louis."
+		requirements = { has_item = "apple_pie" }
+		queries = [{ npc = "louis", npc_conversation = "request_for_apple_pie_turn_in" }]
+
+[request_for_crab]
+	name = "Request for a Crab"
+	npc_for_icon = "luc"
+	icon = "fetch"
+	description = "Could someone bring me a Crab? From the beach?"
+	rewards = [{ gold = 20 }, { renown = 20 }]
+
+	[[request_for_crab.stages]]
+		objective_description = "Bring a Crab to Luc."
+		requirements = { has_item = "crab" }
+		queries = [{ npc = "luc", npc_conversation = "request_for_crab_turn_in" }]
+
+[request_for_butterfly]
+	name = "Request for a Butterfly"
+	npc_for_icon = "seridia"
+	icon = "fetch"
+	description = "I would like to request a Butterfly. Please take extra care, I am told they are quite delicate."
+	rewards = [{ gold = 550 }, { renown = 20 }]
+
+	[[request_for_butterfly.stages]]
+		objective_description = "Bring a Butterfly to Seridia."
+		requirements = { has_item = "butterfly" }
+		queries = [{ npc = "seridia", npc_conversation = "request_for_butterfly_turn_in" }]
+
+[request_for_cherry_tart]
+	name = "Request for a Cherry Tart"
+	npc_for_icon = "dell"
+	icon = "fetch"
+	description = "Could someone make me a Cherry Tart, fast? It's life or death!"
+	rewards = [{ gold = 75 }, { renown = 20 }]
+
+	[[request_for_cherry_tart.stages]]
+		objective_description = "Bring a Cherry Tart to Dell."
+		requirements = { has_item = "cherry_tart" }
+		queries = [{ npc = "dell", npc_conversation = "request_for_cherry_tart_turn_in" }]
+
+[request_for_blueberry_jam]
+	name = "Request for Blueberry Jam"
+	npc_for_icon = "elsie"
+	icon = "fetch"
+	description = "I'm quite partial to Blueberry Jam, could I request a few jars?"
+	rewards = [{ gold = 1000 }, { renown = 20 }]
+
+	[[request_for_blueberry_jam.stages]]
+		objective_description = "Bring 3 Blueberry Jam to Elsie."
+		requirements = { has_item = { blueberry_jam = 3 } }
+		queries = [{ npc = "elsie", npc_conversation = "request_for_blueberry_jam_turn_in" }]

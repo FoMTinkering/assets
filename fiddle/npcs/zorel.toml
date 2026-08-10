@@ -1,0 +1,103 @@
+birthday = { season = "spring", day = 6 }
+loved_gifts = ["middlemist", "sunflower", "heather", "morel_mushroom"]
+liked_gifts = [
+	"mushroom_rice",
+	"red_toadstool",
+	"upper_mines_mushroom",
+	"glowing_mushroom",
+	"miners_mushroom_stew",
+	"wild_mushroom",
+	"dandelion",
+	"fiddlehead",
+	"nettle",
+	"wild_leek",
+	"fennel",
+	"sage",
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "cicada"
+name = "Zorel"
+aldarian_name = "ZRL"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["vendor"]
+journal_portrait_offset = [-111, -32]
+journal_background_color = [221, 255, 238]
+date_photo_offset = [0, 0]
+job = "Music Vendor"
+icon_sprite = "spr_ui_generic_icon_npc_zorel"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_zorel"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_zorel"
+dateable = false
+
+[gossip]
+	line = "zorel_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["coffee"]
+	"17" = ["wine"]
+
+[offsets]
+	portrait = [-121, -65]
+	sweat = [-10, 8]
+	hearts = [-10, 8]
+	angry = [-8, 11]
+	sparkles = [-4, 3]
+	sparkles_dark = [-4, 3]
+	sick = [-6, 9]
+	music_notes = [-4, 3]
+	intensity = [-3, 0]
+	surprise = [-2, 0]
+	shock = [0, 0]
+	sigh = [-5, 5]
+	loud = [2, -2]
+	cheery = [-3, 15]
+	drop = [-6, 5]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"

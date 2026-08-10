@@ -1,0 +1,77 @@
+scene(fire_seal);
+place_actor(ari, north, fs_ari_entrance);
+camera_position(fs_camera_1);
+request_music_play("Music/Events/TheSeal");
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		sim {
+			walk(ari, fs_ari_start);
+			set_move_speed(ari, 0.4);
+		}
+		face(ari, north);
+	}
+	{
+		wait(2);
+	}
+	pan_camera(4, fs_camera_2);
+}
+sim {
+	{
+		wait(1);
+		free bark_speech(ari, exclamation_mark);
+	}
+	{
+		place_actor(seridia, south, fs_priestess);
+		set_shadow_enabled(seridia, false);
+		play_sound("SoundEffects/NPCs/SeridiaFadeOut");
+		fade_npc_alpha(seridia, 0.0, 0.5, 180);
+	}
+	{
+		wait(3.5);
+		next_line(); //
+		next_line(); //
+	}
+	{
+		pan_camera(2.5, fs_camera_seal);
+	}
+}
+close_textbox();
+wait(1);
+sim {
+	{
+		play_sound("SoundEffects/NPCs/SeridiaFadeOut");
+		fade_npc_alpha(seridia, 0.5, 0.0, 180);
+	}
+	{
+		wait(3);
+		walk_slow(ari, fs_ari_tablet);
+		face(ari, north);
+		animate(ari, idle);
+		wait(0.5);
+		animate(ari, action);
+		wait(1.5);
+		animate(ari, idle);
+		wait(0.5);
+		ari_hold_item(fire_tablet_rubbing);
+		wait(1);
+	}
+	{
+		wait(1);
+		pan_camera(4, fs_camera_3);
+	}
+}
+next_line(); //
+close_textbox();
+sim {
+	walk(ari, fs_ari_back);
+	set_move_speed(ari, 0.4);
+}
+face(ari, north);
+wait(1);
+fade_out(2);
+

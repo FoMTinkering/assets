@@ -1,0 +1,425 @@
+[balor_post_8h_best_friend_0]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = false },
+	{ any = [
+		{ balor_post_8h_romantic_progression = true },
+		{ balor_is_best_friend = true }
+	] },
+	{ balor_post_8h_best_friend_gate = false },
+	{ balor_post_8h_best_friend_grouping = 0 }
+]
+writes = [
+	{ balor_post_8h_best_friend_gate = true, expires = "20h" },
+	{ balor_post_8h_best_friend_grouping = 1 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "balor" } }]
+portrait = "think"
+local = "I've been doing some reorganizing to my room at the Inn lately."
+next = "1"
+
+[balor_post_8h_best_friend_0.1]
+portrait = "neutral"
+local = "It's starting to look more like a bedroom and less like a warehouse."
+next = "2"
+
+[balor_post_8h_best_friend_0.2]
+portrait = "happy"
+effect = "drop"
+local = "Though it's still a work in progress."
+
+[balor_post_8h_best_friend_question_0]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = false },
+	{ any = [
+		{ balor_post_8h_romantic_progression = true },
+		{ balor_is_best_friend = true }
+	] },
+	{ balor_post_8h_best_friend_gate = false },
+	{ balor_post_8h_best_friend_grouping = 1 }
+]
+writes = [
+	{ balor_post_8h_best_friend_gate = true, expires = "20h" },
+	{ balor_post_8h_best_friend_grouping = 2 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "balor" } }]
+portrait = "concerned"
+local = "In my old life, I did a few things I'm not proud of. A bit of theft here, a bit of espionage there..."
+next = "1"
+
+[balor_post_8h_best_friend_question_0.1]
+portrait = "think"
+local = "All for the benefit of someone else's purse. It's how I survived."
+next = "2"
+
+[balor_post_8h_best_friend_question_0.2]
+portrait = "neutral"
+local = "Maybe you can relate, coming from the Adventurer's Guild?"
+prompts = [
+	{ local = "Yeah, I did an unsavory job or two.", next = "3" },
+	{ local = "No, I was lucky. I managed to avoid any shady business.", next = "5" }
+]
+
+[balor_post_8h_best_friend_question_0.3]
+portrait = "embarrassed"
+local = "You don't always get a say in who you're working for when it comes to that line of work, eh?"
+next = "4"
+
+[balor_post_8h_best_friend_question_0.4]
+portrait = "blush"
+local = "Glad there's a place where folks like us can get a second chance."
+
+[balor_post_8h_best_friend_question_0.5]
+portrait = "happy"
+local = "That's admirable! I'm glad you never had to get your hands dirty."
+next = "6"
+
+[balor_post_8h_best_friend_question_0.6]
+portrait = "embarrassed"
+local = "I won't say it's been easy moving all my business aboveboard, but it's been worth it."
+next = "7"
+
+[balor_post_8h_best_friend_question_0.7]
+portrait = "blush"
+local = "I feel... lighter."
+
+[balor_post_8h_best_friend_1]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = false },
+	{ any = [
+		{ balor_post_8h_romantic_progression = true },
+		{ balor_is_best_friend = true }
+	] },
+	{ balor_post_8h_best_friend_gate = false },
+	{ balor_post_8h_best_friend_grouping = 2 }
+]
+writes = [
+	{ balor_post_8h_best_friend_gate = true, expires = "20h" },
+	{ balor_post_8h_best_friend_grouping = 3 }
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "balor" } },
+	{ item = "blueberry_jam" }
+]
+portrait = "neutral"
+local = "Jo let me have a go at the kitchen again! Figured I could do better than a campfire-burnt potato."
+next = "1"
+
+[balor_post_8h_best_friend_1.1]
+portrait = "happy"
+local = "It's not much, but here... the fruits of my labor."
+
+[balor_post_8h_best_friend_question_1]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = false },
+	{ any = [
+		{ balor_post_8h_romantic_progression = true },
+		{ balor_is_best_friend = true }
+	] },
+	{ balor_post_8h_best_friend_gate = false },
+	{ balor_post_8h_best_friend_grouping = 3 }
+]
+writes = [
+	{ balor_post_8h_best_friend_gate = true, expires = "2d" },
+	{ balor_post_8h_best_friend_grouping = 4 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "balor" } }]
+portrait = "neutral"
+local = "I cleared out your shipping bin the other night, and I had to stop and admire your farm."
+next = "1"
+
+[balor_post_8h_best_friend_question_1.1]
+portrait = "think"
+local = "You've brought that patch of land a long way. Is it easier these days?"
+prompts = [
+	{ local = "Much easier.", next = "2" },
+	{ local = "Farming's hard work.", next = "4" }
+]
+
+[balor_post_8h_best_friend_question_1.2]
+portrait = "neutral"
+local = "Maybe it's just my mercantile eye, but I've gotten the feeling that your farm's become more efficient over time."
+next = "3"
+
+[balor_post_8h_best_friend_question_1.3]
+portrait = "wink"
+local = "I'd wager you'd do well at just about anything you set your mind to."
+
+[balor_post_8h_best_friend_question_1.4]
+portrait = "neutral"
+local = "Ah, but you're no stranger to that, are you?"
+next = "5"
+
+[balor_post_8h_best_friend_question_1.5]
+portrait = "embarrassed"
+local = "It's one of the many things I admire about you."
+
+# Last Line
+[balor_post_8h_best_friend_2]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ any = [
+		{ balor_post_8h_romantic_progression = true },
+		{ balor_is_best_friend = true }
+	] },
+	{ balor_post_8h_best_friend_gate = false },
+	{ balor_post_8h_best_friend_grouping = 4, ignore_priority = true }
+]
+writes = [{ balor_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "cute_face", npc = "balor" } }]
+portrait = "think"
+local = "I used to think I'd be on the road till the day I died..."
+next = "1"
+
+[balor_post_8h_best_friend_2.1]
+portrait = "neutral"
+local = "Never thought I'd have a true place to rest my head."
+next = "2"
+
+[balor_post_8h_best_friend_2.2]
+portrait = "embarrassed"
+local = "It's nice to have a place to call home, isn't it?"
+
+[balor_post_8h_best_friend_3]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ any = [
+		{ balor_post_8h_romantic_progression = true },
+		{ balor_is_best_friend = true }
+	] },
+	{ balor_post_8h_best_friend_gate = false },
+	{ balor_post_8h_best_friend_grouping = 4 },
+	{ time_of_day = "evening", comparator = "!=" },
+	{ time_of_day = "night", comparator = "!=" },
+	{ balor_is_inside = false },
+	{ ari_utero = false }
+]
+writes = [{ balor_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "relationship_status", npc = "balor" } }]
+portrait = "neutral"
+local = "Out conquering the world today? Don't let me get in your way!"
+next = "1"
+
+[balor_post_8h_best_friend_3.1]
+portrait = "happy"
+local = "But be sure to tell me all about it later. Preferably over a drink!"
+
+[balor_post_8h_best_friend_4]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ any = [
+		{ balor_post_8h_romantic_progression = true },
+		{ balor_is_best_friend = true }
+	] },
+	{ balor_post_8h_best_friend_gate = false },
+	{ balor_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ balor_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "balor" } }]
+portrait = "think"
+local = "I learned from an early age how to thrive in chaos... but thriving in stability?"
+next = "1"
+
+[balor_post_8h_best_friend_4.1]
+portrait = "embarrassed"
+local = "That's new."
+
+[balor_post_8h_best_friend_5]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = false },
+	{ any = [
+		{ balor_post_8h_romantic_progression = true },
+		{ balor_is_best_friend = true }
+	] },
+	{ balor_post_8h_best_friend_gate = false },
+	{ balor_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ balor_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "relationship_status", npc = "balor" } }]
+portrait = "think"
+local = "If I could bottle your tenacity, I could make us both very rich."
+next = "1"
+
+[balor_post_8h_best_friend_5.1]
+portrait = "wink"
+local = "Too bad you're one of a kind."
+
+[balor_post_8h_best_friend_6]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = false },
+	{ any = [
+		{ balor_post_8h_romantic_progression = true },
+		{ balor_is_best_friend = true }
+	] },
+	{ balor_post_8h_best_friend_gate = false },
+	{ balor_post_8h_best_friend_grouping = 4 },
+	{ location = "inn" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ balor_activity = "drink" }
+]
+writes = [{ balor_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "cute_face", npc = "balor" } }, { item = "beer" }]
+portrait = "happy"
+local = "There you are, [Ari]! Pull up a seat!"
+next = "1"
+
+[balor_post_8h_best_friend_6.1]
+portrait = "neutral"
+local = "Let me buy you a round and you can catch me up on your day."
+
+[balor_post_8h_best_friend_7]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ any = [
+		{ balor_post_8h_romantic_progression = true },
+		{ balor_is_best_friend = true }
+	] },
+	{ balor_post_8h_best_friend_gate = false },
+	{ balor_post_8h_best_friend_grouping = 4 },
+	{ balor_zone = "town/wagon" }
+]
+writes = [{ balor_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "cute_face", npc = "balor" } }]
+portrait = "neutral"
+local = "[Ari]! My day always gets better when I see you coming up the road."
+next = "1"
+
+[balor_post_8h_best_friend_7.1]
+portrait = "think"
+local = "I hope you're staying out of trouble..."
+next = "2"
+
+[balor_post_8h_best_friend_7.2]
+portrait = "happy"
+local = "Unless it's the fun kind of trouble. Then I hope I'm invited!"
+
+[balor_post_8h_best_friend_8]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = false },
+	{ any = [
+		{ balor_post_8h_romantic_progression = true },
+		{ balor_is_best_friend = true }
+	] },
+	{ balor_post_8h_best_friend_gate = false },
+	{ balor_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ balor_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "cute_face", npc = "balor" } }]
+portrait = "neutral"
+local = "Between you and me, I'm touched that Jo and Hemlock's family have always treated me more like a relative than a guest."
+next = "1"
+
+[balor_post_8h_best_friend_8.1]
+portrait = "wink"
+effect = "sparkles"
+local = "Didn't know how much fun an eccentric uncle could be until I accidentally became one!"
+
+[balor_post_8h_best_friend_question_2]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = false },
+	{ any = [
+		{ balor_post_8h_romantic_progression = true },
+		{ balor_is_best_friend = true }
+	] },
+	{ balor_post_8h_best_friend_gate = false },
+	{ balor_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ balor_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "relationship_status", npc = "balor" } }]
+portrait = "think"
+local = "I've always wondered, [Ari]..."
+next = "1"
+
+[balor_post_8h_best_friend_question_2.1]
+portrait = "neutral"
+local = "Did you spend a lot of time in the Capital before you came to Mistria?"
+prompts = [
+	{ local = "I was in the Capital a long time.", next = "2" },
+	{ local = "Not really, I was just passing through.", next = "4" }
+]
+
+[balor_post_8h_best_friend_question_2.2]
+portrait = "think"
+local = "I suppose we were like boats passing in the night, then."
+next = "3"
+
+[balor_post_8h_best_friend_question_2.3]
+portrait = "wink"
+local = "I'm grateful that we managed to meet in Mistria's safe harbor."
+
+[balor_post_8h_best_friend_question_2.4]
+portrait = "think"
+local = "Funny to think how a series of chances can add up."
+next = "5"
+
+[balor_post_8h_best_friend_question_2.5]
+portrait = "happy"
+local = "I'm glad fate brought you here, [Ari]."
+
+[balor_post_8h_best_friend_question_3]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = false },
+	{ any = [
+		{ balor_post_8h_romantic_progression = true },
+		{ balor_is_best_friend = true }
+	] },
+	{ balor_post_8h_best_friend_gate = false },
+	{ balor_post_8h_best_friend_grouping = 4 }
+]
+writes = [{ balor_post_8h_best_friend_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "cute_face", npc = "balor" } }]
+portrait = "happy"
+local = "It's nice to see the kids here living carefree lives."
+next = "1"
+
+[balor_post_8h_best_friend_question_3.1]
+portrait = "think"
+local = "My childhood was a little more... complicated."
+next = "2"
+
+[balor_post_8h_best_friend_question_3.2]
+portrait = "neutral"
+local = "What about yours, [Ari]?"
+prompts = [
+	{ local = "My childhood was pretty happy!", next = "3" },
+	{ local = """I'd say "complicated" about covers it.""", next = "5" }
+]
+
+[balor_post_8h_best_friend_question_3.3]
+portrait = "happy"
+local = "I'm glad to hear that, [Ari] really."
+next = "4"
+
+[balor_post_8h_best_friend_question_3.4]
+portrait = "neutral"
+local = "Maybe that's how you came to be such a kind person."
+
+[balor_post_8h_best_friend_question_3.5]
+portrait = "sad_special"
+local = "Yeah..."
+next = "6"
+
+[balor_post_8h_best_friend_question_3.6]
+portrait = "embarrassed"
+local = "I get you."

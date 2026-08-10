@@ -1,0 +1,434 @@
+[default]
+	hp = 1
+	damage = 0
+	essence = 0
+	drops = []
+	sticky = false
+	coin_count = [1, 1]
+
+	starting_dir = [0, 360]
+
+	damage_number_offset = -15
+
+	iframes = 1
+	gm_object = "obj_monster_sap"
+	hitbox = "spr_monster_sapling_main_hit_box"
+	hurtbox = "spr_monster_sapling_main_idle_south"
+
+	speed = 0.6
+	patience_acknowledgement_reset = -120
+	attack_radius = 48
+	max_jump_radius = 64
+
+	# timings, if in array, it's a random value between the lower and upper bound
+	windup = [35, 55]
+	acknowledgment = [45, 55]
+	tired = [90, 110]
+	landing = 8
+	hurt = 12
+
+	jump_speed = -2.0
+	jump_gravity = 0.1
+	jump_zx_factor = 36
+
+	# physics
+	push_radius = 4
+	push_force = 0.25
+	pushed_radius = 7
+
+	sap_children_birth_distance = 0
+	sap_children_birth_timer = 0
+	sap_children = 0
+	sap_children_species = -1
+
+	free_fly = false
+	air_speed_modifier = 1
+
+	collision_box_jump = "spr_monster_sapling_main_idle_south"
+	collision_box_default = "spr_monster_sapling_main_idle_south"
+
+	status_effect_offset = -14
+	fire_effect_offset = -6
+	hyper_armor = 0
+
+	sprites = { misc = {} }
+	[default.tango]
+		acknowledgment = "SoundEffects/Enemies/EnemyAlerted"
+		windup = "SoundEffects/Enemies/Sapling/ChargeUp"
+		dying = "SoundEffects/Enemies/Sapling/SaplingDie"
+		attack = "SoundEffects/Enemies/Sapling/SaplingJump"
+		misc.land = "SoundEffects/Enemies/Sapling/Land"
+		misc.weak_damage = "SoundEffects/Enemies/TakeDamageFleshWeak"
+		misc.strong_damage = "SoundEffects/Enemies/TakeDamageFleshStrong"
+		misc.hyper_armor_hit = "SoundEffects/Enemies/Sapling/LoseSkull"
+
+[sapling]
+	hp = 24
+	damage = 10
+	essence = 5
+	coin_count = [1, 5]
+	drops = [
+		{ item = "sap", chance = 70 },
+		{ item = "monster_fang", chance = 30 },
+		{ cosmetic = "head_sapling_hat", chance = 5 },
+		{ item = "pet_skin_sapling", chance = 5 },
+	]
+
+	[sapling.sprites]
+		idle.north = "spr_monster_sapling_main_idle_north"
+		idle.south = "spr_monster_sapling_main_idle_south"
+
+		acknowledgment.north = "spr_monster_sapling_main_alert_north"
+		acknowledgment.south = "spr_monster_sapling_main_alert_south"
+
+		walk.north = "spr_monster_sapling_main_walk_north"
+		walk.south = "spr_monster_sapling_main_walk_south"
+
+		windup.north = "spr_monster_sapling_main_windup_north"
+		windup.south = "spr_monster_sapling_main_windup_south"
+
+		attack.north = "spr_monster_sapling_main_attack_jump_south"
+		attack.south = "spr_monster_sapling_main_attack_jump_south"
+
+		tired.north = "spr_monster_sapling_main_tired_north"
+		tired.south = "spr_monster_sapling_main_tired_south"
+
+		hurt.north = "spr_monster_sapling_main_hurt_north"
+		hurt.south = "spr_monster_sapling_main_hurt_south"
+
+		splitting.north = "spr_monster_sapling_main_hurt_north"
+		splitting.south = "spr_monster_sapling_main_hurt_south"
+
+		dying.north = "spr_monster_sapling_main_death_south"
+		dying.south = "spr_monster_sapling_main_death_south"
+
+		# misc sprites, not tied to a state
+		misc.idle_variant = "spr_monster_sapling_main_idle_2_south"
+		misc.landing_north = "spr_monster_sapling_main_land_north"
+		misc.landing_south = "spr_monster_sapling_main_land_south"
+		misc.sap_particle = "spr_part_sapling_bits"
+		misc.hit_back_north = "spr_monster_sapling_main_hit_back_south"
+		misc.hit_back_south = "spr_monster_sapling_main_hit_back_south"
+
+[sapling_cool]
+	hp = 36
+	damage = 17
+	essence = 10
+	coin_count = [1, 5]
+	drops = [
+		{ item = "sap", chance = 70 },
+		{ item = "monster_fang", chance = 30 },
+		{ cosmetic = "head_sapling_hat", chance = 5 },
+		{ cosmetic = "face_gear_sunglasses", chance = 5 },
+		{ item = "pet_skin_sapling", chance = 5 },
+	]
+	speed = 0.7
+	attack_radius = 52
+	max_jump_radius = 68
+	death_bits = "spr_monster_sapling_cool_bits"
+
+	[sapling_cool.sprites]
+		idle.north = "spr_monster_sapling_cool_main_idle_north"
+		idle.south = "spr_monster_sapling_cool_main_idle_south"
+
+		acknowledgment.north = "spr_monster_sapling_cool_main_alert_north"
+		acknowledgment.south = "spr_monster_sapling_cool_main_alert_south"
+
+		walk.north = "spr_monster_sapling_cool_main_walk_north"
+		walk.south = "spr_monster_sapling_cool_main_walk_south"
+
+		windup.north = "spr_monster_sapling_cool_main_windup_north"
+		windup.south = "spr_monster_sapling_cool_main_windup_south"
+
+		attack.north = "spr_monster_sapling_cool_main_attack_jump_south"
+		attack.south = "spr_monster_sapling_cool_main_attack_jump_south"
+
+		tired.north = "spr_monster_sapling_cool_main_tired_north"
+		tired.south = "spr_monster_sapling_cool_main_tired_south"
+
+		hurt.north = "spr_monster_sapling_cool_main_hurt_north"
+		hurt.south = "spr_monster_sapling_cool_main_hurt_south"
+
+		splitting.north = "spr_monster_sapling_cool_main_hurt_north"
+		splitting.south = "spr_monster_sapling_cool_main_hurt_south"
+
+		dying.north = "spr_monster_sapling_cool_main_death_south"
+		dying.south = "spr_monster_sapling_cool_main_death_south"
+
+		# misc sprites, not tied to a state
+		misc.idle_variant = "spr_monster_sapling_cool_main_idle_2_south"
+		misc.sap_particle = "spr_part_sapling_bits"
+		misc.landing_north = "spr_monster_sapling_cool_main_land_north"
+		misc.landing_south = "spr_monster_sapling_cool_main_land_south"
+		misc.hit_back_north = "spr_monster_sapling_cool_main_hit_back_south"
+		misc.hit_back_south = "spr_monster_sapling_cool_main_hit_back_south"
+
+[sapling_blue]
+	hp = 36
+	damage = 24
+	essence = 10
+	coin_count = [2, 6]
+	drops = [
+		{ item = "sap", chance = 70, count_range = [1, 2] },
+		{ item = "monster_fang", chance = 30, count_range = [1, 2] },
+		{ cosmetic = "head_sapling_hat", chance = 5 },
+		{ item = "pet_skin_sapling", chance = 5 },
+	]
+	speed = 0.7
+	attack_radius = 52
+	max_jump_radius = 68
+	sticky = true
+
+	[sapling_blue.sprites]
+		idle.north = "spr_monster_sapling_blue_main_idle_north"
+		idle.south = "spr_monster_sapling_blue_main_idle_south"
+
+		acknowledgment.north = "spr_monster_sapling_blue_main_alert_north"
+		acknowledgment.south = "spr_monster_sapling_blue_main_alert_south"
+
+		walk.north = "spr_monster_sapling_blue_main_walk_north"
+		walk.south = "spr_monster_sapling_blue_main_walk_south"
+
+		windup.north = "spr_monster_sapling_blue_main_windup_north"
+		windup.south = "spr_monster_sapling_blue_main_windup_south"
+
+		attack.north = "spr_monster_sapling_blue_main_attack_jump_south"
+		attack.south = "spr_monster_sapling_blue_main_attack_jump_south"
+
+		tired.north = "spr_monster_sapling_blue_main_tired_north"
+		tired.south = "spr_monster_sapling_blue_main_tired_south"
+
+		hurt.north = "spr_monster_sapling_blue_main_hurt_north"
+		hurt.south = "spr_monster_sapling_blue_main_hurt_south"
+
+		splitting.north = "spr_monster_sapling_blue_main_hurt_north"
+		splitting.south = "spr_monster_sapling_blue_main_hurt_south"
+
+		dying.north = "spr_monster_sapling_blue_main_death_south"
+		dying.south = "spr_monster_sapling_blue_main_death_south"
+
+		# misc sprites, not tied to a state
+		misc.idle_variant = "spr_monster_sapling_blue_main_idle_2_south"
+		misc.landing_north = "spr_monster_sapling_blue_main_land_north"
+		misc.landing_south = "spr_monster_sapling_blue_main_land_south"
+		misc.sap_particle = "spr_part_sapling_blue_bits"
+		misc.hit_back_north = "spr_monster_sapling_blue_main_hit_back_south"
+		misc.hit_back_south = "spr_monster_sapling_blue_main_hit_back_south"
+
+[sapling_purple]
+	hp = 48
+	damage = 24
+	essence = 15
+	coin_count = [4, 8]
+	drops = [
+		{ item = "sap", chance = 70, count_range = [1, 2] },
+		{ item = "monster_fang", chance = 30, count_range = [1, 2] },
+		{ cosmetic = "head_sapling_hat", chance = 5 },
+		{ item = "pet_skin_sapling", chance = 5 },
+	]
+	speed = 0.75
+	attack_radius = 624
+	max_jump_radius = 624
+	acknowledgment = [120, 120]
+	use_circle = true
+	aggro_radius = 624
+	windup = [105, 165]
+	tired = [180, 220]
+	collision_box_jump = "spr_monster_sapling_flying_collision_box"
+
+	free_fly = true
+	air_speed_modifier = 0.6
+
+	[sapling_purple.sprites]
+		idle.north = "spr_monster_sapling_purple_main_idle_north"
+		idle.south = "spr_monster_sapling_purple_main_idle_south"
+
+		acknowledgment.north = "spr_monster_sapling_purple_main_alert_north"
+		acknowledgment.south = "spr_monster_sapling_purple_main_alert_south"
+
+		walk.north = "spr_monster_sapling_purple_main_walk_north"
+		walk.south = "spr_monster_sapling_purple_main_walk_south"
+
+		windup.north = "spr_monster_sapling_purple_main_windup_north"
+		windup.south = "spr_monster_sapling_purple_main_windup_south"
+
+		attack.north = "spr_monster_sapling_purple_main_attack_jump_south"
+		attack.south = "spr_monster_sapling_purple_main_attack_jump_south"
+
+		tired.north = "spr_monster_sapling_purple_main_tired_north"
+		tired.south = "spr_monster_sapling_purple_main_tired_south"
+
+		hurt.north = "spr_monster_sapling_purple_main_hurt_north"
+		hurt.south = "spr_monster_sapling_purple_main_hurt_south"
+
+		splitting.north = "spr_monster_sapling_purple_main_hurt_north"
+		splitting.south = "spr_monster_sapling_purple_main_hurt_south"
+
+		dying.north = "spr_monster_sapling_purple_main_death_south"
+		dying.south = "spr_monster_sapling_purple_main_death_south"
+
+		# misc sprites, not tied to a state
+		misc.idle_variant = "spr_monster_sapling_purple_main_idle_2_south"
+		misc.landing_north = "spr_monster_sapling_purple_main_land_north"
+		misc.landing_south = "spr_monster_sapling_purple_main_land_south"
+		misc.sap_particle = "spr_part_sapling_purple_bits"
+		misc.hit_back_north = "spr_monster_sapling_purple_main_hit_back_south"
+		misc.hit_back_south = "spr_monster_sapling_purple_main_hit_back_south"
+
+[sapling_orange]
+	hp = 72
+	damage = 44
+	essence = 20
+	drops = [
+		{ item = "sap", chance = 70, count_range = [1, 3] },
+		{ item = "monster_fang", chance = 30, count_range = [1, 3] },
+		{ cosmetic = "head_sapling_hat", chance = 5 },
+		{ item = "pet_skin_sapling", chance = 5 },
+	]
+	speed = 0.8
+	attack_radius = 60
+	max_jump_radius = 78
+	sap_children_birth_timer = 60
+	sap_children_birth_distance = 15
+	sap_children = 2
+	sap_children_species = "sapling_orange_mini"
+
+	[sapling_orange.sprites]
+		idle.north = "spr_monster_sapling_orange_main_idle_north"
+		idle.south = "spr_monster_sapling_orange_main_idle_south"
+
+		acknowledgment.north = "spr_monster_sapling_orange_main_alert_north"
+		acknowledgment.south = "spr_monster_sapling_orange_main_alert_south"
+
+		walk.north = "spr_monster_sapling_orange_main_walk_north"
+		walk.south = "spr_monster_sapling_orange_main_walk_south"
+
+		windup.north = "spr_monster_sapling_orange_main_windup_north"
+		windup.south = "spr_monster_sapling_orange_main_windup_south"
+
+		attack.north = "spr_monster_sapling_orange_main_attack_jump_south"
+		attack.south = "spr_monster_sapling_orange_main_attack_jump_south"
+
+		tired.north = "spr_monster_sapling_orange_main_tired_north"
+		tired.south = "spr_monster_sapling_orange_main_tired_south"
+
+		hurt.north = "spr_monster_sapling_orange_main_hurt_north"
+		hurt.south = "spr_monster_sapling_orange_main_hurt_south"
+
+		dying.north = "spr_monster_sapling_orange_main_death_south"
+		dying.south = "spr_monster_sapling_orange_main_death_south"
+
+		splitting.north = "spr_monster_sapling_orange_main_split_south"
+		splitting.south = "spr_monster_sapling_orange_main_split_south"
+
+		# misc sprites, not tied to a state
+		misc.idle_variant = "spr_monster_sapling_orange_main_idle_2_south"
+		misc.landing_north = "spr_monster_sapling_orange_main_land_north"
+		misc.landing_south = "spr_monster_sapling_orange_main_land_south"
+		misc.sap_particle = "spr_part_sapling_orange_bits"
+		misc.hit_back_north = "spr_monster_sapling_orange_main_hit_back_south"
+		misc.hit_back_south = "spr_monster_sapling_orange_main_hit_back_south"
+
+
+[sapling_orange_mini]
+	# a bunch of these values were tweaked down, but might need better tuning
+	hp = 24
+	damage = 10
+	essence = 5
+	drops = [
+		{ item = "sap", chance = 35 },
+		{ item = "monster_fang", chance = 15 },
+	]
+	speed = 0.5
+	attack_radius = 50
+	max_jump_radius = 60
+
+	[sapling_orange_mini.sprites]
+		idle.north = "spr_monster_sapling_orange_mini_main_idle_north"
+		idle.south = "spr_monster_sapling_orange_mini_main_idle_south"
+
+		acknowledgment.north = "spr_monster_sapling_orange_mini_main_alert_north"
+		acknowledgment.south = "spr_monster_sapling_orange_mini_main_alert_south"
+
+		walk.north = "spr_monster_sapling_orange_mini_main_walk_north"
+		walk.south = "spr_monster_sapling_orange_mini_main_walk_south"
+
+		windup.north = "spr_monster_sapling_orange_mini_main_windup_north"
+		windup.south = "spr_monster_sapling_orange_mini_main_windup_south"
+
+		attack.north = "spr_monster_sapling_orange_mini_main_attack_jump_south"
+		attack.south = "spr_monster_sapling_orange_mini_main_attack_jump_south"
+
+		tired.north = "spr_monster_sapling_orange_mini_main_tired_north"
+		tired.south = "spr_monster_sapling_orange_mini_main_tired_south"
+
+		hurt.north = "spr_monster_sapling_orange_mini_main_hurt_north"
+		hurt.south = "spr_monster_sapling_orange_mini_main_hurt_south"
+
+		splitting.north = "spr_monster_sapling_orange_mini_main_hurt_north"
+		splitting.south = "spr_monster_sapling_orange_mini_main_hurt_south"
+
+		dying.north = "spr_monster_sapling_orange_mini_main_death_south"
+		dying.south = "spr_monster_sapling_orange_mini_main_death_south"
+
+		# misc sprites, not tied to a state
+		misc.idle_variant = "spr_monster_sapling_orange_mini_main_idle_2_south"
+		misc.landing_north = "spr_monster_sapling_orange_mini_main_land_north"
+		misc.landing_south = "spr_monster_sapling_orange_mini_main_land_south"
+		misc.sap_particle = "spr_part_sapling_orange_bits"
+		misc.hit_back_north = "spr_monster_sapling_orange_mini_main_hit_back_south"
+		misc.hit_back_south = "spr_monster_sapling_orange_mini_main_hit_back_south"
+
+[sapling_pink]
+	hp = 150
+	damage = 50
+	essence = 25
+	drops = [
+		{ item = "sap", chance = 70, count_range = [1, 3] },
+		{ item = "monster_fang", chance = 30, count_range = [1, 3] },
+		{ cosmetic = "head_sapling_hat", chance = 5 },
+		{ cosmetic = "head_skull_mask", chance = 5 },
+		{ item = "pet_skin_sapling", chance = 5 },
+		{ pet_cosmetic = "skull_mask", chance = 10 },
+	]
+	speed = 0.85
+	attack_radius = 64
+	max_jump_radius = 82
+	hyper_armor = 2
+
+	[sapling_pink.sprites]
+		idle.north = "spr_monster_sapling_pink_main_idle_north"
+		idle.south = "spr_monster_sapling_pink_main_idle_south"
+
+		acknowledgment.north = "spr_monster_sapling_pink_main_alert_north"
+		acknowledgment.south = "spr_monster_sapling_pink_main_alert_south"
+
+		walk.north = "spr_monster_sapling_pink_main_walk_north"
+		walk.south = "spr_monster_sapling_pink_main_walk_south"
+
+		windup.north = "spr_monster_sapling_pink_main_windup_north"
+		windup.south = "spr_monster_sapling_pink_main_windup_south"
+
+		attack.north = "spr_monster_sapling_pink_main_attack_jump_south"
+		attack.south = "spr_monster_sapling_pink_main_attack_jump_south"
+
+		tired.north = "spr_monster_sapling_pink_main_tired_north"
+		tired.south = "spr_monster_sapling_pink_main_tired_south"
+
+		hurt.north = "spr_monster_sapling_pink_main_hurt_north"
+		hurt.south = "spr_monster_sapling_pink_main_hurt_south"
+
+		splitting.north = "spr_monster_sapling_pink_main_hurt_north"
+		splitting.south = "spr_monster_sapling_pink_main_hurt_south"
+
+		dying.north = "spr_monster_sapling_pink_main_death_south"
+		dying.south = "spr_monster_sapling_pink_main_death_south"
+
+		# misc sprites, not tied to a state
+		misc.idle_variant = "spr_monster_sapling_pink_main_idle_2_south"
+		misc.landing_north = "spr_monster_sapling_pink_main_land_north"
+		misc.landing_south = "spr_monster_sapling_pink_main_land_south"
+		misc.sap_particle = "spr_part_sapling_pink_bits"
+		misc.hit_back_north = "spr_monster_sapling_pink_main_hit_back_south"
+		misc.hit_back_south = "spr_monster_sapling_pink_main_hit_back_south"
+		misc.skull_bits = "spr_monster_sapling_skull_bits_main"

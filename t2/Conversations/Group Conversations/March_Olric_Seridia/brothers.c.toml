@@ -1,0 +1,158 @@
+[brothers_0]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }, { npc = "seridia" }] },
+	{ march_zone = "<olric_zone>" },
+	{ march_zone = "<seridia_zone>" },
+	{ caldarus_seridia_town = true }
+]
+speaker = "seridia"
+portrait = "neutral"
+local = "March. Your personality is wanting, but your work is impressive."
+next = "1"
+
+[brothers_0.1]
+speaker = "march"
+portrait = "neutral"
+local = "Is that so? Well, YOUR work seems nonexistent."
+next = "2"
+
+[brothers_0.2]
+speaker = "march"
+portrait = "unimpressed"
+local = "Do you even have a job?"
+next = "3"
+
+[brothers_0.3]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "Olric... your brother is an impudent whelp."
+next = "4"
+
+[brothers_0.4]
+speaker = "seridia"
+portrait = "mad"
+local = "He is lucky you are his blood relation."
+next = "5"
+
+[brothers_0.5]
+speaker = "olric"
+portrait = "happy"
+effect = "cheery"
+local = "Hahaha! People are always saying that!"
+
+[brothers_1]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }, { npc = "seridia" }] },
+	{ march_zone = "<olric_zone>" },
+	{ march_zone = "<seridia_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false }
+]
+speaker = "march"
+portrait = "eight_heart_closed_eyes"
+local = "Olric tells me you two work out together."
+next = "1"
+
+[brothers_1.1]
+speaker = "seridia"
+portrait = "smile"
+local = "Oh yes. Maintaining the body is important when one takes on a mortal form."
+next = "2"
+
+[brothers_1.2]
+speaker = "march"
+portrait = "think"
+local = "You sound... surprisingly like Olric."
+next = "3"
+
+[brothers_1.3]
+speaker = "olric"
+portrait = "happy"
+local = "Right? We're like twins!"
+next = "4"
+
+[brothers_1.4]
+speaker = "seridia"
+portrait = "ugh"
+local = "..."
+
+[brothers_2]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }, { npc = "seridia" }] },
+	{ march_zone = "<olric_zone>" },
+	{ march_zone = "<seridia_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+		{ olric_routine = "forge_work_solo" },
+		{ olric_routine = "forge_work_principal" },
+		{ olric_routine = "forge_work_secondary" },
+	] },
+]
+actions = [{ bark = { npc = "march", bark = "sweat_drop" } }]
+speaker = "olric"
+portrait = "happy"
+local = "Let me know if I can help with anything, Seri!"
+next = "1"
+
+[brothers_2.1]
+speaker = "seridia"
+portrait = "smile"
+local = "Thank you, Olric. I am merely enjoying the sight of sparks flying."
+next = "2"
+
+[brothers_2.2]
+speaker = "march"
+portrait = "neutral"
+local = "Do you want to try your hand at it, Seri? I have an extra hammer."
+next = "3"
+
+[brothers_2.3]
+speaker = "seridia"
+portrait = "mad"
+local = "If you call me Seri again... it will be you on the anvil, young March."
+
+[brothers_3]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }, { npc = "seridia" }] },
+	{ march_zone = "<olric_zone>" },
+	{ march_zone = "<seridia_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+		{ olric_routine = "forge_work_solo" },
+		{ olric_routine = "forge_work_principal" },
+		{ olric_routine = "forge_work_secondary" },
+	] },
+]
+speaker = "seridia"
+portrait = "neutral"
+local = "When metalworking, why do you wear those gloves?"
+next = "1"
+
+[brothers_3.1]
+speaker = "seridia"
+portrait = "sly"
+local = "Why not hold the molten metal in your bare hands and feel its primal energies mingling with your own?"
+next = "2"
+
+[brothers_3.2]
+speaker = "olric"
+portrait = "neutral"
+local = "Oh! That sounds cool!"
+next = "3"
+
+[brothers_3.3]
+speaker = "march"
+portrait = "ugh"
+local = "Olric, no!"

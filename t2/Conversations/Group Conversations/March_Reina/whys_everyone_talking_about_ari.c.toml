@@ -1,0 +1,22 @@
+[whys_everyone_talking_about_ari]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "reina" }] },
+	{ march_zone = "<reina_zone>" },
+	{ march_heart_level = 4.0, comparator = "<=" },
+]
+speaker = "march"
+local = "Why's everyone always talking about [Ari] anyway?"
+next = "1"
+
+[whys_everyone_talking_about_ari.1]
+speaker = "reina"
+portrait = "happy"
+effect = "drop"
+local = "Uh, March..."
+next = "2"
+
+[whys_everyone_talking_about_ari.2]
+speaker = "march"
+portrait = "tsundere"
+local = "I was talking about a different [Ari]!"

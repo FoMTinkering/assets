@@ -1,0 +1,35 @@
+[economics]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "balor" },
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ balor_zone = "<dell_zone>" },
+	{ balor_zone = "<luc_zone>" },
+	{ balor_zone = "<maple_zone>" },
+]
+speaker = "balor"
+portrait = "ugh"
+local = "Maple, I have to say... you have a surprising grasp of a kingdom's economics."
+next = "1"
+
+[economics.1]
+speaker = "maple"
+portrait = "happy"
+effect = "sparkles_dark"
+local = "Well of course! I must know how to tax my citizens in a manner that brings money into the royal treasury, without enraging the people."
+next = "2"
+
+[economics.2]
+speaker = "luc"
+portrait = "sad"
+local = "I don't want to do taxes anymore..."
+next = "3"
+
+[economics.3]
+speaker = "dell"
+portrait = "happy"
+local = "That's what Mom said the other day!"

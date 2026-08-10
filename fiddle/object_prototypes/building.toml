@@ -1,0 +1,597 @@
+[small_barn]
+	size = [14, 10]
+	collision_grid = [
+		"22222222222222",
+		"22222222222222",
+		"22222222222222",
+		"22222222222222",
+		"22222222222222",
+		"22222222222222",
+		"22222222222222",
+		"22222222222222",
+		"22222222222222",
+		"00000000000000",
+	]
+	blueprints = [
+		"small_barn_red_blueprint",
+		"small_barn_black_blueprint",
+	]
+	farm_plate = { sprite = "spr_stable_name_plate_spring", offset = [39, 2] }
+	name = "Small Barn"
+	location_id = "small_barn"
+	offset = [56, 70]
+	door_hides_on_open = false
+	door_offset = [0, 1]
+	transition_offset = [-16, -14]
+	light_bottom_offset = [0, -46]
+	light_top_offset = [0, -2]
+	door_closed = [
+		"spr_placeable_small_barn_red_door_spring_closed",
+		"spr_placeable_small_barn_black_door_spring_closed",
+	]
+	open_door = true
+	doorway_floor = [
+		"spr_placeable_small_barn_red_door_doorway_floor_closed",
+		"spr_placeable_small_barn_black_door_doorway_floor_closed",
+	]
+	entrance_offset = [0, -18]
+
+	[[small_barn.transparency_boxes]]
+		offset = [8, -32]
+		size = [96, 32]
+
+	[[small_barn.transparency_boxes]]
+		offset = [16, -48]
+		size = [80, 16]
+
+	# [[small_barn.transparency_boxes]]
+	# 	offset = [24, -56]
+	# 	size = [64, 8]
+
+	[small_barn.stable]
+		max_occupants = 4
+		permitted_animal_size = "large"
+		double_manger = false
+		manger_size = 4
+		incubators = 0
+		farm_bell = { idle = "spr_stable_bell_spring_idle", ring = "spr_stable_bell_spring_ring", offset = [-41, 2] }
+		send_animal_in_offset = [0, 32]
+		send_animal_out_offset = [0, 0]
+		exit_direction = "south"
+		animal_door_point = "small_barn/animal_door"
+
+	[small_barn.sprites]
+		spring = [
+			"spr_placeable_small_barn_red_spring",
+			"spr_placeable_small_barn_black_spring",
+		]
+		winter = [
+			"spr_placeable_small_barn_red_winter",
+			"spr_placeable_small_barn_black_winter",
+		]
+
+[medium_barn]
+	size = [16, 12]
+	collision_grid = [
+		"2222222222222222",
+		"2222222222222222",
+		"2222222222222222",
+		"2222222222222222",
+		"2222222222222222",
+		"2222222222222222",
+		"2222222222222222",
+		"2222222222222222",
+		"2222222222222222",
+		"2222222222222222",
+		"2222222222222222",
+		"0000000000000000",
+	]
+	blueprints = [
+		"medium_barn_red_blueprint",
+		"medium_barn_black_blueprint",
+	]
+	farm_plate = { sprite = "spr_stable_name_plate_spring", offset = [39, 2] }
+	name = "Medium Barn"
+	location_id = "medium_barn"
+	offset = [64, 86]
+	door_hides_on_open = false
+	door_offset = [0, 1]
+	transition_offset = [-16, -14]
+	light_bottom_offset = [0, -46]
+	light_top_offset = [0, -2]
+	door_closed = [
+		"spr_placeable_small_barn_red_door_spring_closed",
+		"spr_placeable_small_barn_black_door_spring_closed",
+	]
+	open_door = true
+	doorway_floor = [
+		"spr_placeable_small_barn_red_door_doorway_floor_closed",
+		"spr_placeable_small_barn_black_door_doorway_floor_closed",
+	]
+	entrance_offset = [0, -18]
+	[[medium_barn.transparency_boxes]]
+		offset = [8, -22]
+		size = [112, 22]
+
+	[[medium_barn.transparency_boxes]]
+		offset = [24, -46]
+		size = [84, 24]
+
+	[medium_barn.stable]
+		max_occupants = 8
+		permitted_animal_size = "large"
+		double_manger = true
+		manger_size = 4
+		incubators = 0
+		farm_bell = { idle = "spr_stable_bell_spring_idle", ring = "spr_stable_bell_spring_ring", offset = [-44, 2] }
+		send_animal_in_offset = [0, 32]
+		send_animal_out_offset = [0, 0]
+		exit_direction = "south"
+		animal_door_point = "medium_barn/animal_door"
+
+	[medium_barn.sprites]
+		spring = [
+			"spr_placeable_medium_barn_red_spring",
+			"spr_placeable_medium_barn_black_spring",
+		]
+		winter = [
+			"spr_placeable_medium_barn_red_winter",
+			"spr_placeable_medium_barn_black_winter",
+		]
+
+[large_barn]
+	size = [18, 12]
+	collision_grid = [
+		"222222222222222222",
+		"222222222222222222",
+		"222222222222222222",
+		"222222222222222222",
+		"222222222222222222",
+		"222222222222222222",
+		"222222222222222222",
+		"222222222222222222",
+		"222222222222222222",
+		"222222222222222222",
+		"222222222222222222",
+		"000000000000000000",
+	]
+	blueprints = [
+		"large_barn_red_blueprint",
+		"large_barn_black_blueprint",
+	]
+	farm_plate = { sprite = "spr_stable_name_plate_spring", offset = [52, 2] }
+	name = "Large Barn"
+	location_id = "large_barn"
+	offset = [72, 86]
+	door_hides_on_open = false
+	door_offset = [0, 1]
+	transition_offset = [-16, -14]
+	light_bottom_offset = [0, -46]
+	light_top_offset = [0, -2]
+	door_closed = [
+		"spr_placeable_small_barn_red_door_spring_closed",
+		"spr_placeable_small_barn_black_door_spring_closed",
+	]
+	open_door = true
+	doorway_floor = [
+		"spr_placeable_small_barn_red_door_doorway_floor_closed",
+		"spr_placeable_small_barn_black_door_doorway_floor_closed",
+	]
+	entrance_offset = [0, -18]
+	[[large_barn.transparency_boxes]]
+		offset = [8, -42]
+		size = [128, 42]
+
+	[[large_barn.transparency_boxes]]
+		offset = [24, -64]
+		size = [96, 24]
+
+	[large_barn.stable]
+		max_occupants = 12
+		permitted_animal_size = "large"
+		double_manger = true
+		manger_size = 6
+		incubators = 0
+		farm_bell = { idle = "spr_stable_bell_spring_idle", ring = "spr_stable_bell_spring_ring", offset = [-52, 2] }
+		send_animal_in_offset = [0, 32]
+		send_animal_out_offset = [0, 0]
+		exit_direction = "south"
+		animal_door_point = "large_barn/animal_door"
+
+	[large_barn.sprites]
+		spring = [
+			"spr_placeable_large_barn_red_spring",
+			"spr_placeable_large_barn_black_spring",
+		]
+		winter = [
+			"spr_placeable_large_barn_red_winter",
+			"spr_placeable_large_barn_black_winter",
+		]
+
+[small_coop]
+	size = [12, 10]
+	collision_grid = [
+		"222222222200",
+		"222222222200",
+		"222222222200",
+		"222222222200",
+		"222222222200",
+		"222222222200",
+		"222222222210",
+		"222222224400",
+		"222222222210",
+		"000000000000",
+	]
+	blueprints = [
+		"small_coop_red_blueprint",
+		"small_coop_black_blueprint",
+	]
+	farm_plate = { sprite = "spr_stable_name_plate_spring", offset = [27, 1] }
+	name = "Small Coop"
+	location_id = "small_coop"
+	offset = [40, 71]
+	entrance_offset = [39, -14]
+	open_door = false
+	door_hides_on_open = true
+	door_offset = [0, -1]
+	transition_offset = [-8, -19]
+	light_bottom_offset = [0, -46]
+	light_top_offset = [0, 0]
+	door_closed = [
+		"spr_placeable_small_coop_red_door_spring_closed",
+		"spr_placeable_small_coop_black_door_spring_closed",
+	]
+	doorway_floor = [
+		"spr_placeable_small_coop_red_door_doorwayfloor_closed",
+		"spr_placeable_small_coop_black_door_doorwayfloor_closed",
+	]
+	ramps = [
+		"spr_placeable_small_coop_red_ramp_spring",
+		"spr_placeable_small_coop_black_ramp_spring",
+	]
+	ramp_offset = [40, -23]
+	[[small_coop.transparency_boxes]]
+		offset = [8, -18]
+		size = [68, 18]
+
+	[[small_coop.transparency_boxes]]
+		offset = [16, -24]
+		size = [52, 6]
+
+	[small_coop.stable]
+		double_manger = false
+		manger_size = 4
+		incubators = 1
+		max_occupants = 4
+		permitted_animal_size = "small"
+		farm_bell = { idle = "spr_stable_bell_spring_idle", ring = "spr_stable_bell_spring_ring", offset = [-25, 1] }
+		send_animal_in_offset = [24, 4]
+		send_animal_out_offset = [0, 0]
+		exit_direction = "east"
+		animal_door_point = "small_coop/animal_door"
+
+	[small_coop.sprites]
+		spring = [
+			"spr_placeable_small_coop_red_spring",
+			"spr_placeable_small_coop_black_spring",
+		]
+		winter = [
+			"spr_placeable_small_coop_red_winter",
+			"spr_placeable_small_coop_black_winter",
+		]
+
+[medium_coop]
+	size = [14, 12]
+	collision_grid = [
+		"22222222222200",
+		"22222222222200",
+		"22222222222200",
+		"22222222222200",
+		"22222222222200",
+		"22222222222200",
+		"22222222222200",
+		"22222222222200",
+		"22222222222210",
+		"22222222224400",
+		"22222222222210",
+		"00000000000000",
+	]
+	blueprints = [
+		"medium_coop_red_blueprint",
+		"medium_coop_black_blueprint",
+	]
+	farm_plate = { sprite = "spr_stable_name_plate_spring", offset = [32, 1] }
+	name = "Medium Coop"
+	location_id = "medium_coop"
+	offset = [48, 87]
+	entrance_offset = [39, -14]
+	open_door = false
+	door_hides_on_open = true
+	door_offset = [0, -1]
+	transition_offset = [-8, -19]
+	light_bottom_offset = [0, -46]
+	light_top_offset = [0, 0]
+	door_closed = [
+		"spr_placeable_small_coop_red_door_spring_closed",
+		"spr_placeable_small_coop_black_door_spring_closed",
+	]
+	doorway_floor = [
+		"spr_placeable_small_coop_red_door_doorwayfloor_closed",
+		"spr_placeable_small_coop_black_door_doorwayfloor_closed",
+	]
+	ramps = [
+		"spr_placeable_small_coop_red_ramp_spring",
+		"spr_placeable_small_coop_black_ramp_spring",
+	]
+	ramp_offset = [48, -23]
+	[[medium_coop.transparency_boxes]]
+		offset = [8, -16]
+		size = [84, 16]
+
+	[[medium_coop.transparency_boxes]]
+		offset = [16, -28]
+		size = [64, 12]
+
+	[medium_coop.stable]
+		double_manger = true
+		manger_size = 4
+		incubators = 2
+		max_occupants = 8
+		permitted_animal_size = "small"
+		farm_bell = { idle = "spr_stable_bell_spring_idle", ring = "spr_stable_bell_spring_ring", offset = [-28, 1] }
+		send_animal_in_offset = [24, 4]
+		send_animal_out_offset = [0, 0]
+		exit_direction = "east"
+		animal_door_point = "medium_coop/animal_door"
+
+	[medium_coop.sprites]
+		spring = [
+			"spr_placeable_medium_coop_red_spring",
+			"spr_placeable_medium_coop_black_spring",
+		]
+		winter = [
+			"spr_placeable_medium_coop_red_winter",
+			"spr_placeable_medium_coop_black_winter",
+		]
+
+[large_coop]
+	size = [16, 12]
+	collision_grid = [
+		"2222222222222200",
+		"2222222222222200",
+		"2222222222222200",
+		"2222222222222200",
+		"2222222222222200",
+		"2222222222222200",
+		"2222222222222200",
+		"2222222222222200",
+		"2222222222222210",
+		"2222222222224400",
+		"2222222222222210",
+		"0000000000000000",
+	]
+	blueprints = [
+		"large_coop_red_blueprint",
+		"large_coop_black_blueprint",
+	]
+	farm_plate = { sprite = "spr_stable_name_plate_spring", offset = [40, 1] }
+	name = "Large Coop"
+	location_id = "large_coop"
+	offset = [56, 87]
+	entrance_offset = [39, -14]
+	open_door = false
+	door_hides_on_open = true
+	door_offset = [0, -1]
+	transition_offset = [-8, -19]
+	light_bottom_offset = [0, -46]
+	light_top_offset = [0, 0]
+	door_closed = [
+		"spr_placeable_small_coop_red_door_spring_closed",
+		"spr_placeable_small_coop_black_door_spring_closed",
+	]
+	doorway_floor = [
+		"spr_placeable_small_coop_red_door_doorwayfloor_closed",
+		"spr_placeable_small_coop_black_door_doorwayfloor_closed",
+	]
+	ramps = [
+		"spr_placeable_small_coop_red_ramp_spring",
+		"spr_placeable_small_coop_black_ramp_spring",
+	]
+	ramp_offset = [55, -23]
+	[[large_coop.transparency_boxes]]
+		offset = [8, -32]
+		size = [102, 32]
+
+	[[large_coop.transparency_boxes]]
+		offset = [16, -44]
+		size = [84, 12]
+
+	[[large_coop.transparency_boxes]]
+		offset = [24, -52]
+		size = [68, 8]
+
+	[large_coop.stable]
+		double_manger = true
+		manger_size = 6
+		incubators = 4
+		max_occupants = 12
+		permitted_animal_size = "small"
+		farm_bell = { idle = "spr_stable_bell_spring_idle", ring = "spr_stable_bell_spring_ring", offset = [-36, 1] }
+		send_animal_in_offset = [24, 4]
+		send_animal_out_offset = [0, 0]
+		exit_direction = "east"
+		animal_door_point = "large_coop/animal_door"
+
+	[large_coop.sprites]
+		spring = [
+			"spr_placeable_large_coop_red_spring",
+			"spr_placeable_large_coop_black_spring",
+		]
+		winter = [
+			"spr_placeable_large_coop_red_winter",
+			"spr_placeable_large_coop_black_winter",
+		]
+
+[small_greenhouse]
+	size = [12, 6]
+	collision_grid = "2"
+	collision = "2"
+	blueprints = [
+		"small_greenhouse_white_blueprint",
+		"small_greenhouse_wood_blueprint",
+	]
+	tilesets = [
+		"tile_greenhouse_white",
+		"tile_greenhouse_wood",
+	]
+	farm_plate = { sprite = "spr_placeable_greenhouse_placard_spring", offset = [25, 1] }
+	name = "Small Greenhouse"
+	location_id = "small_greenhouse"
+	offset = [48, 46]
+	transition_offset = [-16, -14]
+	door_hides_on_open = false
+	door_offset = [0, -1]
+	light_bottom_offset = [0, -46]
+	light_top_offset = [0, -2]
+	door_closed = [
+		"spr_placeable_small_greenhouse_white_door_spring_closed",
+		"spr_placeable_small_greenhouse_wood_door_spring_closed",
+	]
+	open_door = true
+	doorway_floor = [
+		"spr_placeable_small_greenhouse_white_door_doorwayfloor_closed",
+		"spr_placeable_small_greenhouse_wood_door_doorwayfloor_closed",
+	]
+	entrance_offset = [0, -18]
+
+	[[small_greenhouse.transparency_boxes]]
+		offset = [8, -24]
+		size = [80, 24]
+
+	[[small_greenhouse.transparency_boxes]]
+		offset = [20, -36]
+		size = [56, 12]
+
+	[[small_greenhouse.transparency_boxes]]
+		offset = [32, -48]
+		size = [32, 12]
+
+	[[small_greenhouse.transparency_boxes]]
+		offset = [40, -54]
+		size = [16, 6]
+
+	[small_greenhouse.greenhouse]
+		crop_area_start = [10, 16]
+		crop_area_end = [20, 26]
+
+	[small_greenhouse.sprites]
+		spring = [
+			"spr_placeable_small_greenhouse_white_spring",
+			"spr_placeable_small_greenhouse_wood_spring",
+		]
+		winter = [
+			"spr_placeable_small_greenhouse_white_winter",
+			"spr_placeable_small_greenhouse_wood_winter",
+		]
+
+[large_greenhouse]
+	size = [14, 8]
+	collision_grid = "2"
+	door_hides_on_open = false
+	collision = "2"
+	blueprints = [
+		"large_greenhouse_white_blueprint",
+		"large_greenhouse_wood_blueprint",
+	]
+	tilesets = [
+		"tile_greenhouse_white",
+		"tile_greenhouse_wood",
+	]
+	transition_offset = [-16, -14]
+	farm_plate = { sprite = "spr_placeable_greenhouse_placard_spring", offset = [34, 1] }
+	name = "Large Greenhouse"
+	location_id = "large_greenhouse"
+	offset = [56, 62]
+	door_offset = [0, -1]
+	light_bottom_offset = [0, -46]
+	light_top_offset = [0, -2]
+	door_closed = [
+		"spr_placeable_small_greenhouse_white_door_spring_closed",
+		"spr_placeable_small_greenhouse_wood_door_spring_closed",
+	]
+	open_door = true
+	doorway_floor = [
+		"spr_placeable_small_greenhouse_white_door_doorwayfloor_closed",
+		"spr_placeable_small_greenhouse_wood_door_doorwayfloor_closed",
+	]
+	entrance_offset = [0, -18]
+	[[large_greenhouse.transparency_boxes]]
+		offset = [8, -20]
+		size = [96, 20]
+
+	[[large_greenhouse.transparency_boxes]]
+		offset = [20, -32]
+		size = [72, 12]
+
+	[[large_greenhouse.transparency_boxes]]
+		offset = [32, -44]
+		size = [48, 12]
+
+	[[large_greenhouse.transparency_boxes]]
+		offset = [40, -54]
+		size = [32, 10]
+
+	[[large_greenhouse.transparency_boxes]]
+		offset = [48, -58]
+		size = [16, 4]
+
+	[large_greenhouse.greenhouse]
+		crop_area_start = [10, 16]
+		crop_area_end = [30, 36]
+
+	[large_greenhouse.sprites]
+		spring = [
+			"spr_placeable_large_greenhouse_white_spring",
+			"spr_placeable_large_greenhouse_wood_spring",
+		]
+		winter = [
+			"spr_placeable_large_greenhouse_white_winter",
+			"spr_placeable_large_greenhouse_wood_winter",
+		]
+
+[mini_museum]
+	size = [14, 8]
+	collision_grid = "2"
+	door_hides_on_open = true
+	blueprints = [
+		"mini_museum_blueprint",
+	]
+	transition_offset = [-16, -14]
+	farm_plate = { sprite = "spr_placeable_mini_museum_placard_spring", offset = [33, 1] }
+	name = "Mini Museum"
+	location_id = "mini_museum"
+	offset = [56, 61]
+	door_offset = [0, -1]
+	light_bottom_offset = [0, -46]
+	light_top_offset = [0, -2]
+	door_closed = [
+		"spr_placeable_mini_museum_door_spring_closed",
+	]
+	open_door = true
+	doorway_floor = [
+		"spr_placeable_mini_museum_door_doorwayfloor_closed",
+	]
+	entrance_offset = [0, -18]
+	[[mini_museum.transparency_boxes]]
+		offset = [8, -34]
+		size = [96, 34]
+	[[mini_museum.transparency_boxes]]
+		offset = [20, -45]
+		size = [72, 11]
+	[[mini_museum.transparency_boxes]]
+		offset = [40, -56]
+		size = [32, 11]
+	[mini_museum.mini_museum]
+	[mini_museum.sprites]
+		spring = ["spr_placeable_mini_museum_spring"]
+		winter = ["spr_placeable_mini_museum_winter"]

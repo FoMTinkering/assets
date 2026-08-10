@@ -1,0 +1,81 @@
+# "Meta" menus are our strange ones that fulfill miscellaneous UI needs, such as the screen fader
+# and Bugger.
+[default]
+	canvas_kind = "screen"
+	run_tests = false
+
+# Used to fade the screen in and out.
+[screen_fader]
+	layer = "screen_fader"
+	# The speed of fade ins and fade outs (i.e.: when Ari exits a room).
+	fade_speed = 30
+	# The speed of the fade that happens when entering and exiting a cutscene (if it is set to fade).
+	cutscene_fade_speed = 120
+
+# The game's debug console.
+[bugger]
+	layer = "debug"
+
+# This is the menu that allows players to select one of their buildings on the farm. Since it's
+# such a unique sequence it's sequestered from the standard menus.
+[farm_building_selection]
+	layer = "standard"
+	pause = "cutscene"
+	hides_hud = true
+
+# The tile-preview when Ari is casting her fishing rod.
+[fishing_indicator]
+	layer = "world_space"
+
+# Sequence for Ari crafting items then displaying the results in a popup.
+[crafting_sequence]
+	layer = "above_fader"
+	duration = 120        # how many frames we do the timelapse over
+
+# An incredibly stupid menu needed for the sake of rendering Caldarus's statue over the
+# faded out screen in cutscenes.
+[caldarus_statue_overlay]
+	layer = "above_fader"
+
+# The main menu. Quite unique since it's implementing more than just UI, it's the entire
+# experience in that room.
+[title]
+	layer = "standard"
+
+# Similarly, this only appears at the main menu, so it's unique.
+[load]
+	layer = "standard"
+	canvas_kind = "<n/a>"
+
+# The small notifications that appear over Ari's head when she increases a level.
+[dingaling]
+	layer = "world_space"
+	run_tests = true
+    run_test_once = true
+
+# The popup menu is highly configurable and used in a variety of places, and as
+# such does not restrict its behavior here.
+[popup]
+	backplate_name = "backplate"
+	layer = "popup"
+	plays_sound = false          # handled manually
+	pause = "main"
+	run_tests = true
+    run_test_once = true
+	close_transition = true
+	listen_for_exit = false      # also handled manually
+	fade_out_frames = 10
+	hides_hud = true
+
+# The sequence/visual elements that appear after Ari sleeps.
+[eod]
+	layer = "standard"
+	canvas_kind = "screen"
+
+# The level up sequence for renown
+[renown_sequence]
+	layer = "above_fader"
+
+# Credits!
+[credits]
+	canvas_kind = "<n/a>"

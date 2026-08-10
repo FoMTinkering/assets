@@ -1,0 +1,37 @@
+[travel_0]
+refresh = "1y"
+requires = [{ npc = "hayden" }, { hayden_is_traveling = true }]
+portrait = "neutral"
+local = "Dell, Luc and Maple... they remind me of me and Valen growing up."
+next = "1"
+
+[travel_0.1]
+portrait = "happy"
+local = "We got up to some trouble, too!"
+
+[travel_1]
+refresh = "2m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_traveling = true },
+	{ hayden_is_inside = false },
+	{ hayden_heart_level = 8, comparator = "<" }
+]
+portrait = "neutral"
+local = "Howdy, neighbor! Thought I'd stretch my legs a bit."
+
+[travel_2]
+refresh = "2m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_traveling = true },
+	{ hayden_is_inside = false },
+	{ hayden_heart_level = 8, comparator = "<" }
+]
+portrait = "neutral"
+local = "What are you up to, [Ari]?"
+next = "1"
+
+[travel_2.1]
+portrait = "happy"
+local = "I'm having myself a walk!"

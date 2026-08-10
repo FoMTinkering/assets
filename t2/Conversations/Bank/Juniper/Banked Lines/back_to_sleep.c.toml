@@ -1,0 +1,29 @@
+[back_to_sleep]
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_heart_level = 8, comparator = "<" },
+	{ juniper_animation = "snooze" },
+	{ juniper_is_at = "bathhouse/Front Desk" },
+	{ dozy_is_at_location = "bathhouse" },
+]
+portrait = "neutral"
+local = "Hi, welcome to the Bathhouse..."
+next = "1"
+
+[back_to_sleep.1]
+portrait = "unimpressed"
+local = "Oh, it's you. Talk to Dozy, I'm going back to sleep."
+
+[back_to_sleep_b]
+refresh = "2m"
+actions = [{ bark = { bark = "relationship_status", npc = "juniper" } }]
+requires = [
+	{ npc = "juniper" },
+	{ juniper_heart_level = 8, comparator = ">=" },
+	{ juniper_animation = "snooze" },
+	{ juniper_is_at = "bathhouse/Front Desk" },
+	{ dozy_is_at_location = "bathhouse" },
+]
+portrait = "neutral"
+local = "Hey, [Ari]. Here for a bath?"

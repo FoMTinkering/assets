@@ -1,0 +1,75 @@
+[animal_festival_0]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "merri" },
+	{ animal_festival_today = true },
+	{ small_animal_place = "undefined" },
+	{ large_animal_place = "undefined" },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+]
+portrait = "neutral"
+local = "I entered my carthorse Swiftwind into the Large Animal competition."
+next = "1"
+
+[animal_festival_0.1]
+portrait = "happy"
+local = "He's the strongest and most well behaved horse I've ever met!"
+
+[animal_festival_1]
+priority = "max"
+refresh = "3m"
+requires = [{ npc = "merri" }, { animal_festival_today = true }]
+portrait = "neutral"
+local = "Such a cute celebration for animals! I wish more towns held events like this."
+
+[animal_festival_2]
+priority = "max"
+refresh = "3m"
+requires = [{ npc = "merri" }, { animal_festival_today = true }]
+portrait = "think"
+local = "A secret panel of judges to decide who has the best animals, huh... I wonder who could be on it!"
+
+[animal_festival_large_first_place]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "merri" },
+	{ animal_festival_today = true },
+	{ any = [
+		{ large_animal_place = 3 },
+		{ large_animal_place = 2 },
+	] },
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "neutral"
+local = "Third place! Who would have guessed?"
+next = "1"
+
+[animal_festival_large_first_place.1]
+portrait = "happy"
+local = "Swiftwind is delighted too!"
+
+[animal_festival_large_third_place]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "merri" },
+	{ animal_festival_today = true },
+	{ any = [{ large_animal_place = 1 }, { large_animal_place = 0 }] },
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "happy"
+local = "I can't believe it! Who knew Swiftwind was secretly a show horse?"
+next = "1"
+
+[animal_festival_large_third_place.1]
+portrait = "neutral"
+local = "He's getting extra oats tonight, that's for sure!"

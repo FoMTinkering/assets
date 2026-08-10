@@ -1,0 +1,145 @@
+# Loved gift
+[ancient_gold_coin]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "nora" },
+	{ gift_desire = "loved" },
+	{ gift_given = "ancient_gold_coin" }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "Goodness, look at this! How many hands do you think this =Ancient Gold Coin= passed through? It's beautiful, thank you."
+
+# Liked gift
+[coffee]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "nora" },
+	{ gift_desire = "liked" },
+	{ gift_given = "coffee" }
+]
+effect = "sparkles"
+local = "=Coffee=! This is going to power me through my paperwork. Thank you, [Ari]."
+
+# Hated gift
+[narrows_moss]
+kind = "gift"
+requires = [
+	{ npc = "nora" },
+	{ gift_desire = "hated" },
+	{ gift_given = "narrows_moss" }
+]
+portrait = "ugh"
+effect = "angry"
+local = "[Ari], what am I supposed to do with moss?"
+
+# General lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "nora" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "sparkles"
+local = "Thank you, [Ari]! I love it."
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "nora" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "sparkles"
+local = "You're so thoughtful, [Ari]! It's not often I receive something and want to keep it all to myself."
+
+[loved_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "nora" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "cherry_cobbler" },
+		{ gift_given = "fried_rice" },
+		{ gift_given = "onion_soup" },
+		{ gift_given = "peaches_and_cream" },
+		{ gift_given = "pumpkin_stew" },
+		{ gift_given = "roasted_cauliflower" },
+		{ gift_given = "roasted_sweet_potato" },
+		{ gift_given = "sauteed_snow_peas" },
+		{ gift_given = "toasted_sunflower_seeds" }
+	] }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "Did Holt tell you this is one of my favorites? Thank you [Ari], I'm going to savor this!"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "nora" }, { gift_desire = "liked" }]
+portrait = "happy"
+local = "Thanks [Ari], I like this a lot."
+
+[liked_gift_2]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "nora" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "baked_potato" },
+		{ gift_given = "beet_salad" },
+		{ gift_given = "braised_burdock" },
+		{ gift_given = "braised_carrots" },
+		{ gift_given = "butter" },
+		{ gift_given = "cabbage_slaw" },
+		{ gift_given = "candied_lemon_peel" },
+		{ gift_given = "coconut_milk" },
+		{ gift_given = "coffee" },
+		{ gift_given = "cucumber_salad" },
+		{ gift_given = "grilled_corn" },
+		{ gift_given = "latte" },
+		{ gift_given = "poached_pear" },
+		{ gift_given = "salted_watermelon" },
+		{ gift_given = "sesame_broccoli" },
+		{ gift_given = "simmered_daikon" },
+		{ gift_given = "sliced_turnip" },
+		{ gift_given = "spicy_water_chestnuts" },
+		{ gift_given = "strawberries_and_cream" },
+		{ gift_given = "tomato_soup" }
+	] }
+]
+portrait = "neutral"
+local = "Looks delicious! Thanks for thinking of me, [Ari]."
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "nora" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Ah, thank you."
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "nora" }, { gift_desire = "disliked" }]
+portrait = "think"
+local = "Hm, I'm not even sure I could sell this."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "nora" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ nora_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "neutral"
+local = "For me? Oh goodness, it's my birthday, isn't it?"
+next = "1"
+
+[birthday_gift.1]
+portrait = "happy"
+effect = "hearts"
+local = "Holt is always leaving me presents, so I didn't put it together. Thank you, [Ari]!"

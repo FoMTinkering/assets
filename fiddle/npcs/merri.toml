@@ -1,0 +1,116 @@
+birthday = { season = "fall", day = 6 }
+loved_gifts = [
+	"golden_alpaca_wool",
+	"golden_bristle",
+	"golden_bull_horn",
+	"golden_duck_feather",
+	"golden_horse_hair",
+	"golden_rabbit_wool",
+	"golden_feather",
+	"golden_sheep_wool",
+	"perfect_diamond",
+	"perfect_pink_diamond",
+
+]
+liked_gifts = [
+	"alpaca_wool",
+	"basic_wood",
+	"bristle",
+	"bull_horn",
+	"clay",
+	"coral",
+	"crystal",
+	"ore_diamond",
+	"duck_feather",
+	"glass",
+	"hard_wood",
+	"horse_hair",
+	"latte",
+	"obsidian",
+	"paper",
+	"ore_pink_diamond",
+	"rabbit_wool",
+	"feather",
+	"sheep_wool",
+	"ore_stone",
+
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "snail"
+name = "Merri"
+aldarian_name = "MR"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["vendor"]
+journal_portrait_offset = [-112, -39]
+journal_background_color = [255, 225, 201]
+date_photo_offset = [0, 0]
+job = "Furniture Vendor"
+icon_sprite = "spr_ui_generic_icon_npc_merri"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_merri"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_merri"
+dateable = false
+
+[gossip]
+	line = "merri_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["coffee"]
+	"17" = ["wine"]
+
+[offsets]
+	portrait = [-124, -65]
+	sweat = [-9, 10]
+	hearts = [-9, 10]
+	angry = [-5, 7]
+	sparkles = [-3, 6]
+	sparkles_dark = [-3, 6]
+	sick = [-4, 10]
+	music_notes = [-3, 6]
+	intensity = [-2, -3]
+	surprise = [0, 5]
+	shock = [2, 4]
+	sigh = [-5, 4]
+	loud = [4, 6]
+	cheery = [0, 11]
+	drop = [-5, 5]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"

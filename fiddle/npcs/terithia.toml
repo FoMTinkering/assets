@@ -1,0 +1,160 @@
+bio = "Rough and tough fisherwoman and former soldier with a million stories to tell, living by the ocean."
+birthday = { season = "fall", day = 22 }
+loved_gifts = [
+	"cod_with_thyme",
+	"fish_stew",
+	"giant_fish_scale",
+	"lobster_roll",
+	"perch_risotto",
+	"rubber_fish",
+	"sea_bream_rice",
+	"seafood_boil",
+	"seafood_snow_pea_noodles",
+	"sushi_platter",
+]
+
+liked_gifts = [
+	"breaded_catfish",
+	"canned_sardines",
+	"clam_chowder",
+	"crayfish_etouffee",
+	"deep_sea_soup",
+	"dried_squid",
+	"fish_skewer",
+	"fish_tacos",
+	"grilled_eel_rice_bowl",
+	"horseradish_salmon",
+	"mackerel_sashimi",
+	"pan_fried_bream",
+	"pan_fried_salmon",
+	"pan_fried_snapper",
+	"red_snapper_sushi",
+	"salmon_sashimi",
+	"sesame_tuna_bowl",
+	"smoked_trout_soup",
+	"spicy_crab_sushi",
+	"tuna_sashimi",
+
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "fiber"
+name = "Terithia"
+aldarian_name = "TRTY"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["townsfolk"]
+journal_portrait_offset = [-119, -37]
+journal_background_color = [185, 247, 255]
+date_photo_offset = [0, 0]
+job = "Fisherwoman"
+icon_sprite = "spr_ui_generic_icon_npc_terithia"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_terithia"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_terithia"
+dateable = false
+
+[gossip]
+	line = "terithia_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["water", "coffee"]
+	"12" = ["espresso"]
+	"15" = ["beer"]
+
+[offsets]
+	portrait = [-125, -65]
+	sweat = [5, 10]
+	hearts = [5, 10]
+	angry = [1, 12]
+	sparkles = [7, 7]
+	sparkles_dark = [7, 7]
+	sick = [-2, 13]
+	music_notes = [5, 7]
+	intensity = [4, 0]
+	surprise = [7, 3]
+	shock = [11, 0]
+	sigh = [7, 4]
+	loud = [7, 5]
+	cheery = [4, 11]
+	drop = [5, 4]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.shocked]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.fish]
+	default_direction = "east"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+
+[cycles.bait]
+	default_direction = "east"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"

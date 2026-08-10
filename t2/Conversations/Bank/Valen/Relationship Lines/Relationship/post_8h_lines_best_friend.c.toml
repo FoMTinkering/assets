@@ -1,0 +1,697 @@
+[valen_post_8h_best_friend_0]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = false },
+	{ any = [
+		{ valen_post_8h_romantic_progression = true },
+		{ valen_is_best_friend = true }
+	] },
+	{ valen_post_8h_best_friend_gate = false },
+	{ valen_post_8h_best_friend_grouping = 0 }
+]
+writes = [
+	{ valen_post_8h_best_friend_gate = true, expires = "20h" },
+	{ valen_post_8h_best_friend_grouping = 1 }
+]
+actions = [
+	{ bark = { bark = "relationship_status", npc = "valen" } },
+	{ item = "restorative_syrup" }
+]
+portrait = "think"
+local = "I'm certain that you're accustomed to a certain threshold for peril, given your history at the Adventurer's Guild..."
+next = "1"
+
+[valen_post_8h_best_friend_0.1]
+portrait = "sad"
+local = "But I worry about the risks you take, at times..."
+next = "2"
+
+[valen_post_8h_best_friend_0.2]
+portrait = "think"
+local = "Particularly all the delving into the depths of the Mines that you do."
+prompts = [
+	{ local = "Well, I don't get injured THAT often...", next = "3" },
+	{ local = "Well, I don't pass out on my way home THAT often...", next = "7" }
+]
+
+[valen_post_8h_best_friend_0.3]
+portrait = "sad"
+local = "Oh, [Ari]..."
+next = "4"
+
+[valen_post_8h_best_friend_0.4]
+portrait = "think"
+local = "I certainly won't stand in your way, but-"
+next = [
+	{ target = "5r", requires = [{ valen_is_partner = true }] },
+	{ target = "5f" }
+]
+
+[valen_post_8h_best_friend_0.5r]
+portrait = "think_blush"
+local = "I'd really prefer you stay in one piece."
+next = "6"
+
+[valen_post_8h_best_friend_0.5f]
+portrait = "think_smile"
+local = "I'd really prefer you stay in one piece."
+next = "6"
+
+[valen_post_8h_best_friend_0.6]
+portrait = "neutral"
+local = "Here, take this. It will help you if you run into danger."
+next = "11"
+
+[valen_post_8h_best_friend_0.7]
+portrait = "sad"
+local = "Oh, [Ari]..."
+next = "8"
+
+[valen_post_8h_best_friend_0.8]
+portrait = "think"
+local = "I certainly won't stand in your way, but-"
+next = [
+	{ target = "9r", requires = [{ valen_is_partner = true }] },
+	{ target = "9f" }
+]
+
+[valen_post_8h_best_friend_0.9r]
+portrait = "think_blush"
+local = "I'd really prefer you take better care of your body."
+next = "10"
+
+[valen_post_8h_best_friend_0.9f]
+portrait = "think_smile"
+local = "I'd really prefer you take better care of your body."
+next = "10"
+
+[valen_post_8h_best_friend_0.10]
+portrait = "neutral"
+local = "Here, take this. It will help you if you need to get home quickly."
+next = "11"
+
+[valen_post_8h_best_friend_0.11]
+portrait = "happy"
+local = "You know where to find me if you need more!"
+
+[valen_post_8h_best_friend_1]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ any = [
+		{ valen_post_8h_romantic_progression = true },
+		{ valen_is_best_friend = true }
+	] },
+	{ valen_post_8h_best_friend_gate = false },
+	{ valen_post_8h_best_friend_grouping = 1 }
+]
+writes = [
+	{ valen_post_8h_best_friend_gate = true, expires = "20h" },
+	{ valen_post_8h_best_friend_grouping = 2 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "valen" } }]
+portrait = "think_smile"
+local = "I read something interesting this morning..."
+next = "1"
+
+[valen_post_8h_best_friend_1.1]
+portrait = "neutral"
+local = "A new study suggests that having strong relationships increases both health and longevity."
+next = "2"
+
+[valen_post_8h_best_friend_1.2]
+portrait = "happy"
+local = "It makes sense, doesn't it?"
+next = "3"
+
+[valen_post_8h_best_friend_1.3]
+portrait = "think"
+local = "Having someone to stand by you through life's trials..."
+next = "4"
+
+[valen_post_8h_best_friend_1.4]
+portrait = "think_smile"
+local = "Someone to share in both your joys and your pains."
+next = [
+	{ target = "5r", requires = [{ valen_is_partner = true }] },
+	{ target = "5f" }
+]
+
+[valen_post_8h_best_friend_1.5r]
+portrait = "neutral_blush"
+local = "It reminds me how grateful I am-"
+next = "6r"
+
+[valen_post_8h_best_friend_1.5f]
+portrait = "neutral"
+local = "It reminds me how grateful I am-"
+next = "6f"
+
+[valen_post_8h_best_friend_1.6r]
+portrait = "happy_blush"
+local = "To have someone like you in my life."
+
+[valen_post_8h_best_friend_1.6f]
+portrait = "happy"
+local = "To have someone like you in my life."
+
+[valen_post_8h_best_friend_2]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = false },
+	{ any = [
+		{ valen_post_8h_romantic_progression = true },
+		{ valen_is_best_friend = true }
+	] },
+	{ valen_post_8h_best_friend_gate = false },
+	{ valen_post_8h_best_friend_grouping = 2 }
+]
+writes = [
+	{ valen_post_8h_best_friend_gate = true, expires = "20h" },
+	{ valen_post_8h_best_friend_grouping = 3 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "valen" } }]
+portrait = "neutral"
+local = "[Ari]!"
+next = "1"
+
+[valen_post_8h_best_friend_2.1]
+portrait = "think_smile"
+local = "I've been meaning to ask..."
+next = "2"
+
+[valen_post_8h_best_friend_2.2]
+portrait = "happy"
+local = "How is everything going with your farm?"
+next = "3"
+
+[valen_post_8h_best_friend_2.3]
+portrait = "neutral"
+local = "Are your crops doing well? And your animals?"
+prompts = [
+	{ local = "It's nice of you to ask! Things are good!", next = "4" },
+	{ local = "There are some challenges to overcome, but I'm working on it!", next = "8" }
+]
+
+[valen_post_8h_best_friend_2.4]
+portrait = "think_smile"
+local = "Oh! I didn't ask just to be nice. I'm genuinely interested!"
+next = "5"
+
+[valen_post_8h_best_friend_2.5]
+portrait = "happy"
+local = "I'm glad to hear the farm is thriving."
+next = [
+	{ target = "6r", requires = [{ valen_is_partner = true }] },
+	{ target = "6f" }
+]
+
+[valen_post_8h_best_friend_2.6r]
+portrait = "neutral_blush"
+local = "I can't say that I'm surprised..."
+next = "7r"
+
+[valen_post_8h_best_friend_2.6f]
+portrait = "neutral"
+local = "I can't say that I'm surprised..."
+next = "7f"
+
+[valen_post_8h_best_friend_2.7r]
+portrait = "happy_blush"
+local = "You show such great care for those around you."
+
+[valen_post_8h_best_friend_2.7f]
+portrait = "happy"
+local = "You show such great care for those around you."
+
+[valen_post_8h_best_friend_2.8]
+portrait = "think_smile"
+local = "Oh! Of course, I understand."
+next = "9"
+
+[valen_post_8h_best_friend_2.9]
+portrait = "happy"
+local = "Maintaining a thriving farm is a big undertaking."
+next = [
+	{ target = "10r", requires = [{ valen_is_partner = true }] },
+	{ target = "10f" }
+]
+
+[valen_post_8h_best_friend_2.10r]
+portrait = "neutral_blush"
+local = "I'm sure that you'll overcome any challenge. After all-"
+next = "11r"
+
+[valen_post_8h_best_friend_2.10f]
+portrait = "neutral"
+local = "I'm sure that you'll overcome any challenge. After all-"
+next = "11f"
+
+[valen_post_8h_best_friend_2.11r]
+portrait = "happy_blush"
+local = "You show such great care for those around you."
+
+[valen_post_8h_best_friend_2.11f]
+portrait = "happy"
+local = "You show such great care for those around you."
+
+[valen_post_8h_best_friend_3]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = false },
+	{ any = [
+		{ valen_post_8h_romantic_progression = true },
+		{ valen_is_best_friend = true }
+	] },
+	{ valen_post_8h_best_friend_gate = false },
+	{ valen_post_8h_best_friend_grouping = 3 }
+]
+writes = [
+	{ valen_post_8h_best_friend_gate = true, expires = "2d" },
+	{ valen_post_8h_romantic_gate = true, expires = "2d" },
+	{ valen_post_8h_best_friend_grouping = 4 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "think"
+local = "Looking back, I'm lucky my path has been so straightforward."
+next = "1"
+
+[valen_post_8h_best_friend_3.1]
+portrait = "happy"
+local = "I don't think there was ever a time I didn't want to be a doctor."
+next = "2"
+
+[valen_post_8h_best_friend_3.2]
+portrait = "neutral"
+local = "Though I suppose there was that brief time in my childhood when I considered becoming a dancer..."
+next = "3"
+
+[valen_post_8h_best_friend_3.3]
+portrait = "raised_eyebrow"
+local = "But I was so unhappy wearing a dancer's dress, the idea was put to rest immediately."
+next = "4"
+
+[valen_post_8h_best_friend_3.4]
+portrait = "happy"
+local = "I suppose I haven't changed much since then!"
+
+[valen_post_8h_best_friend_4]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ any = [
+		{ valen_post_8h_romantic_progression = true },
+		{ valen_is_best_friend = true }
+	] },
+	{ valen_post_8h_best_friend_gate = false },
+	{ valen_post_8h_best_friend_grouping = 4 },
+	{ location = "clinic_f1" }
+]
+writes = [
+	{ valen_post_8h_best_friend_gate = true, expires = "2d" },
+	{ valen_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "relationship_status", npc = "valen" } },
+	{ item = "cup_of_tea" }
+]
+portrait = "neutral"
+local = "[Ari]! What good timing, I just put on some tea."
+next = "1"
+
+[valen_post_8h_best_friend_4.1]
+portrait = "wink"
+local = "We all need a pick-me-up now and then."
+next = "2"
+
+[valen_post_8h_best_friend_4.2]
+portrait = "happy"
+local = "I hope this gives your day a boost!"
+
+[valen_post_8h_best_friend_5]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ any = [
+		{ valen_post_8h_romantic_progression = true },
+		{ valen_is_best_friend = true }
+	] },
+	{ valen_post_8h_best_friend_gate = false },
+	{ valen_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ valen_post_8h_best_friend_gate = true, expires = "2d" },
+	{ valen_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "valen" } }]
+portrait = "think"
+local = "Due to doctor-patient confidentiality, I can't give you any specifics..."
+next = "1"
+
+[valen_post_8h_best_friend_5.1]
+portrait = "mad"
+local = "But there are some individuals in this town with very unusual views on the nutritional properties of butter in coffee."
+next = "2"
+
+[valen_post_8h_best_friend_5.2]
+portrait = "happy"
+local = "I can't say more, but I... needed to share that with someone."
+
+[valen_post_8h_best_friend_6]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = false },
+	{ any = [
+		{ valen_post_8h_romantic_progression = true },
+		{ valen_is_best_friend = true }
+	] },
+	{ valen_post_8h_best_friend_gate = false },
+	{ valen_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ valen_post_8h_best_friend_gate = true, expires = "2d" },
+	{ valen_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "neutral"
+local = "Elsie has been suggesting that I find more creative outlets in my life."
+next = "1"
+
+[valen_post_8h_best_friend_6.1]
+portrait = "think"
+local = "She says it's good for the spirit to express oneself through art."
+next = "2"
+
+[valen_post_8h_best_friend_6.2]
+portrait = "raised_eyebrow"
+local = "I'm not sure that I'm one for painting or playing music."
+next = "3"
+
+[valen_post_8h_best_friend_6.3]
+portrait = "think_smile"
+local = "I do enjoy reading, though... Perhaps I could try my hand at writing?"
+next = "4"
+
+[valen_post_8h_best_friend_6.4]
+portrait = "happy"
+local = "What do you think of a mystery novel about a small-town doctor?"
+prompts = [
+	{ local = "A doctor who solves medical mysteries!", next = "5" },
+	{ local = "A doctor who solves crime!", next = "9" }
+]
+
+[valen_post_8h_best_friend_6.5]
+portrait = "neutral"
+local = "Solving medical mysteries... That's an interesting idea!"
+next = "6"
+
+[valen_post_8h_best_friend_6.6]
+portrait = "think"
+local = "It reminds me of the time a patient came to the Clinic for persistent headaches-"
+next = "7"
+
+[valen_post_8h_best_friend_6.7]
+portrait = "ugh"
+local = "Only for me to discover they'd sworn off coffee two days earlier..."
+next = "8"
+
+[valen_post_8h_best_friend_6.8]
+portrait = "raised_eyebrow"
+local = "Is this the sort of gripping medical curiosity mystery fans want to read about?"
+next = "14"
+
+[valen_post_8h_best_friend_6.9]
+portrait = "neutral"
+local = "A doctor? Solving crimes? That's an interesting idea!"
+next = "10"
+
+[valen_post_8h_best_friend_6.10]
+portrait = "think"
+local = "It reminds me of the time I asked Celine to grow some $Dandelions$ for my medicinal supply."
+next = "11"
+
+[valen_post_8h_best_friend_6.11]
+portrait = "ugh"
+local = "Then her garden was ransacked! The whole crop was destroyed!"
+next = "12"
+
+[valen_post_8h_best_friend_6.12]
+portrait = "think_smile"
+effect = "drop"
+local = "It was later revealed to be Holt doing some diligent but ill-considered weeding..."
+next = "13"
+
+[valen_post_8h_best_friend_6.13]
+portrait = "raised_eyebrow"
+local = "Is this the sort of gripping true crime that mystery fans want to read about?"
+next = "14"
+
+[valen_post_8h_best_friend_6.14]
+portrait = "happy"
+local = "Haha!"
+
+[valen_post_8h_best_friend_7]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ any = [
+		{ valen_post_8h_romantic_progression = true },
+		{ valen_is_best_friend = true }
+	] },
+	{ valen_post_8h_best_friend_gate = false },
+	{ valen_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ valen_post_8h_best_friend_gate = true, expires = "2d" },
+	{ valen_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "valen" } }]
+portrait = "sad"
+local = "Ah, [Ari], hello."
+next = "1"
+
+[valen_post_8h_best_friend_7.1]
+portrait = "neutral"
+local = "I received a newsletter from my old alma mater and it has me feeling rather nostalgic."
+next = "2"
+
+[valen_post_8h_best_friend_7.2]
+portrait = "think"
+local = "I don't talk about it often... but I nearly stayed in the Capital after I finished my medical schooling."
+next = "3"
+
+[valen_post_8h_best_friend_7.3]
+portrait = "neutral"
+local = "In part, to stay closer to my mother."
+prompts = [
+	{ local = "Your mother?", next = "4" },
+	{ local = "I've never heard you talk about your mom before.", next = "4" }
+]
+
+[valen_post_8h_best_friend_7.4]
+portrait = "raised_eyebrow"
+local = "Oh, have I never mentioned her before? Yes, I had one of those."
+next = "5"
+
+[valen_post_8h_best_friend_7.5]
+portrait = "think"
+local = "My parents separated when I was young. My mother and I had a pleasant relationship, if not a warm one."
+next = "6"
+
+[valen_post_8h_best_friend_7.6]
+portrait = "neutral"
+local = "Ultimately, my father had obligations to his hometown while she had her own ambitions in the Capital."
+next = "7"
+
+[valen_post_8h_best_friend_7.7]
+portrait = "raised_eyebrow"
+local = "Everyone who knew her says I inherited her sense of humor."
+next = "8"
+
+[valen_post_8h_best_friend_7.8]
+portrait = "happy"
+local = "Whatever that might mean."
+
+[valen_post_8h_best_friend_8]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = false },
+	{ any = [
+		{ valen_post_8h_romantic_progression = true },
+		{ valen_is_best_friend = true }
+	] },
+	{ valen_post_8h_best_friend_gate = false },
+	{ valen_post_8h_best_friend_grouping = 4 },
+	{ location = "inn" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ valen_can_drink = true }
+]
+writes = [
+	{ valen_post_8h_best_friend_gate = true, expires = "2d" },
+	{ valen_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "valen" } }]
+portrait = "neutral"
+local = "[Ari]! I'm glad to see you taking time to unwind."
+next = "1"
+
+[valen_post_8h_best_friend_8.1]
+portrait = "happy"
+local = "As much as I admire how hard you work..."
+next = "2"
+
+[valen_post_8h_best_friend_8.2]
+portrait = "wink"
+local = "I breathe a sigh of relief seeing you hang up your farming implements for a moment."
+next = [
+	{ target = "3r", requires = [{ valen_is_partner = true }] },
+	{ target = "3f" }
+]
+
+[valen_post_8h_best_friend_8.3r]
+portrait = "neutral_blush"
+local = "Why don't you join me for a drink?"
+next = "4r"
+
+[valen_post_8h_best_friend_8.3f]
+portrait = "raised_eyebrow"
+local = "Why don't you join me for a drink?"
+next = "4f"
+
+[valen_post_8h_best_friend_8.4r]
+portrait = "happy_blush"
+local = "Whatever you'd like, it's on me."
+
+[[valen_post_8h_best_friend_8.4r.prompts]]
+local = "I'll have the wine."
+next = [
+	{ target = "5r", requires = [{ valen_is_partner = true }] },
+	{ target = "5f", requires = [] }
+]
+
+[[valen_post_8h_best_friend_8.4r.prompts]]
+local = "I'd love some tea!"
+next = [
+	{ target = "8r", requires = [{ valen_is_partner = true }] },
+	{ target = "8f", requires = [] }
+]
+
+[valen_post_8h_best_friend_8.4f]
+portrait = "happy"
+local = "Whatever you'd like, it's on me."
+
+[[valen_post_8h_best_friend_8.4f.prompts]]
+local = "I'll have the wine."
+next = [
+	{ target = "5r", requires = [{ valen_is_partner = true }] },
+	{ target = "5f", requires = [] }
+]
+
+[[valen_post_8h_best_friend_8.4f.prompts]]
+local = "I'd love some tea!"
+next = [
+	{ target = "8r", requires = [{ valen_is_partner = true }] },
+	{ target = "8f", requires = [] }
+]
+
+[valen_post_8h_best_friend_8.5r]
+portrait = "neutral_blush"
+local = "Wine sounds lovely. I'll have the same."
+next = "6"
+
+[valen_post_8h_best_friend_8.5f]
+portrait = "neutral"
+local = "Wine sounds lovely. I'll have the same."
+next = "6"
+
+[valen_post_8h_best_friend_8.6]
+portrait = "wink"
+local = "Let's have a toast, shall we?"
+next = [
+	{ target = "7r", requires = [{ valen_is_partner = true }] },
+	{ target = "7f", requires = [] }
+]
+
+[valen_post_8h_best_friend_8.7r]
+actions = [{ item = "white_wine" }]
+portrait = "neutral_blush"
+local = "Cheers. To your health."
+
+[valen_post_8h_best_friend_8.7f]
+actions = [{ item = "white_wine" }]
+portrait = "neutral"
+local = "Cheers. To your health."
+
+[valen_post_8h_best_friend_8.8r]
+portrait = "neutral_blush"
+local = "Tea sounds lovely. I'll have the same."
+next = "9"
+
+[valen_post_8h_best_friend_8.8f]
+portrait = "neutral"
+local = "Tea sounds lovely. I'll have the same."
+next = "9"
+
+[valen_post_8h_best_friend_8.9]
+portrait = "wink"
+local = "Let's have a toast, shall we?"
+next = [
+	{ target = "10r", requires = [{ valen_is_partner = true }] },
+	{ target = "10f", requires = [] }
+]
+
+[valen_post_8h_best_friend_8.10r]
+actions = [{ item = "roasted_rice_tea" }]
+portrait = "neutral_blush"
+local = "Cheers. To your health."
+
+[valen_post_8h_best_friend_8.10f]
+actions = [{ item = "roasted_rice_tea" }]
+portrait = "neutral"
+local = "Cheers. To your health."
+
+[valen_post_8h_best_friend_9]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_spouse = false },
+	{ any = [
+		{ valen_post_8h_romantic_progression = true },
+		{ valen_is_best_friend = true }
+	] },
+	{ valen_post_8h_best_friend_gate = false, ignore_priority = true },
+	{ valen_post_8h_best_friend_grouping = 4, ignore_priority = true },
+	{ cutscene_seen_destroy_vines_eastern_road = true }
+]
+writes = [
+	{ valen_post_8h_best_friend_gate = true, expires = "2d" },
+	{ valen_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "valen" } }]
+portrait = "sad"
+local = "You know... I appreciate that the $Grove of Rest$ is accessible again."
+next = "1"
+
+[valen_post_8h_best_friend_9.1]
+portrait = "think"
+local = "My father spent some time as a court physician, but was ultimately laid to rest here in Mistria."
+next = "2"
+
+[valen_post_8h_best_friend_9.2]
+portrait = "neutral"
+local = "It's been nice to be able to visit now that the path is clear..."
+next = "3"
+
+[valen_post_8h_best_friend_9.3]
+portrait = "happy"
+local = "I'm glad I could finally tell him we were able to recreate the Panacea, [Ari]."
+next = "4"
+
+[valen_post_8h_best_friend_9.4]
+portrait = "think_blush"
+local = "I know he'd be proud."

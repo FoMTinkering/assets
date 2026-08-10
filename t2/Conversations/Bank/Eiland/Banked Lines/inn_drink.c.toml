@@ -1,0 +1,24 @@
+[inn_drink]
+refresh = "2m"
+requires = [
+	{ npc = "eiland" },
+	{ location = "inn" },
+	{ eiland_activity = "drink" },
+	{ eiland_heart_level = 4, comparator = ">=" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ hemlock_zone = "inn/bar" }
+]
+portrait = "wink"
+local = "Hemlock's got something sweet on tap today, [Ari]!"
+
+[inn_drink_2]
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ location = "inn" },
+	{ eiland_activity = "drink" },
+	{ season = "winter" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+]
+portrait = "wink"
+local = "A winter's night calls for a hot drink. Sweetened, of course."

@@ -1,0 +1,87 @@
+[outside_0]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "ryis" }] },
+	{ caldarus_zone = "<ryis_zone>" },
+	{ caldarus_seridia_town = true },
+	{ is_inside = false },
+	{ any = [
+		{ location = "narrows" },
+		{ location = "eastern_road" },
+		{ location = "beach" },
+		{ location = "western_ruins" },
+		{ location = "deep_woods" },
+	] }
+]
+speaker = "ryis"
+portrait = "neutral"
+local = "Hey, [Ari]. Want to join us?"
+next = "1"
+
+[outside_0.1]
+speaker = "caldarus"
+portrait = "smile"
+local = "We are enjoying the musical ensemble that nature has provided."
+next = "2"
+
+[outside_0.2]
+speaker = "ryis"
+portrait = "happy"
+local = "It's pretty nice."
+next = "3"
+
+[outside_0.3]
+speaker = "caldarus"
+portrait = "sigh"
+effect = "cheery"
+local = "..."
+next = "4"
+
+[outside_0.4]
+speaker = "ryis"
+portrait = "happy"
+effect = "cheery"
+local = "..."
+
+[outside_1]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "caldarus" }, { npc = "ryis" }] },
+	{ caldarus_zone = "<ryis_zone>" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_zone = "eastern_road/tree_chat" },
+	{ ryis_heart_level = 2, comparator = ">=" }
+]
+speaker = "caldarus"
+portrait = "neutral"
+local = "This wall looks more ancient than Mistria's modern architecture."
+next = "1"
+
+[outside_1.1]
+speaker = "caldarus"
+portrait = "sigh"
+local = "I am certain that several generations of trees have lived within this ruin."
+next = "2"
+
+[outside_1.2]
+speaker = "ryis"
+portrait = "think"
+local = "The old hawthorne tree we lost in the earthquake was hundreds of years old. So this building must be from before it was even a sprout."
+next = "3"
+
+[outside_1.3]
+speaker = "ryis"
+portrait = "neutral"
+local = "Makes you think, right? How the Mistria we know is built on top of its past lives."
+next = "4"
+
+[outside_1.4]
+speaker = "caldarus"
+portrait = "sigh"
+local = "From decay, much can blossom."
+next = "5"
+
+[outside_1.5]
+speaker = "ryis"
+portrait = "happy"
+local = "Oh... I like that."

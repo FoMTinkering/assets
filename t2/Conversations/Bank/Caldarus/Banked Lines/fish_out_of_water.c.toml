@@ -1,0 +1,561 @@
+[fish_out_of_water_0]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_routine = "deep_woods_forage" },
+		{ caldarus_routine = "deep_woods_wander" }
+	] }
+]
+portrait = "neutral"
+local = "A word of advice, [Ari]."
+next = "1"
+
+[fish_out_of_water_0.1]
+portrait = "think"
+local = """It seems that some wild plants are not "edible" in my current form."""
+next = "2"
+
+[fish_out_of_water_0.2]
+portrait = "ugh"
+local = "I will need to proceed with more caution going forward."
+
+[fish_out_of_water_1]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ caldarus_animation = "sit", comparator = "!=" },
+	{ caldarus_animation = "lute_play", comparator = "!=" }
+]
+portrait = "ugh"
+local = """I had heard tales of humans "stubbing a toe"..."""
+next = "1"
+
+[fish_out_of_water_1.1]
+portrait = "sad"
+local = "Having now experienced it firsthand, I can confirm that it is rather unpleasant."
+
+[fish_out_of_water_2]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" }
+]
+portrait = "neutral"
+local = "Brushing one's hair takes a surprisingly long time."
+next = "1"
+
+[fish_out_of_water_2.1]
+portrait = "smile"
+local = "I have recently begun using a pine branch instead of my claws. It is much faster!"
+next = "2"
+
+[fish_out_of_water_2.2]
+portrait = "happy"
+local = "It smells nice, too."
+
+[fish_out_of_water_3]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = false },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_routine = "deep_woods_forage" },
+		{ caldarus_routine = "deep_woods_wander" }
+	] }
+]
+portrait = "neutral"
+local = "In the past, I was never concerned with trimming my claws."
+next = "1"
+
+[fish_out_of_water_3.1]
+portrait = "think"
+local = "But now, those types of little details seem important."
+
+[fish_out_of_water_4]
+refresh = "1y"
+requires = [{ npc = "caldarus" }, { caldarus_is_human = true }]
+portrait = "neutral"
+local = "I have always considered a tail essential for balance."
+next = "1"
+
+[fish_out_of_water_4.1]
+portrait = "sad"
+local = "And so, humans perplex me. Is it not difficult to move around without one?"
+
+[fish_out_of_water_5]
+refresh = "1y"
+requires = [{ npc = "caldarus" }, { caldarus_is_human = true }]
+portrait = "neutral"
+local = "Somehow, feelings are sharper and more pronounced lately."
+next = "1"
+
+[fish_out_of_water_5.1]
+portrait = "sigh"
+local = "The anticipation of a meal nearly ready to eat. The anticipation of unfurling a scroll. The anticipation of your next visit."
+next = "2"
+
+[fish_out_of_water_5.2]
+portrait = "think"
+local = "It is new to me."
+
+[fish_out_of_water_6]
+refresh = "1y"
+requires = [{ npc = "caldarus" }, { caldarus_is_human = true }]
+portrait = "neutral"
+local = "When I chose this form, I did not realize just how much one must care for hair. Dragons need not worry about such things."
+next = "1"
+
+[fish_out_of_water_6.1]
+portrait = "sigh"
+local = "I thought that the priestesses looked so elegant with their tresses. And they made it look so easy..."
+next = "2"
+
+[fish_out_of_water_6.2]
+portrait = "think"
+local = "They never came to the temple with leaves caught in a tangle."
+
+[fish_out_of_water_7]
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_heart_level = 8, comparator = "<=" },
+	{ caldarus_is_human = true },
+	{ location = "deep_woods" },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ eog_fish_out_of_water_7 = true, expires = "1y" }]
+refresh = "1y"
+portrait = "think"
+local = "Bathing in a stream is natural for a dragon, but the water is colder than I remember."
+next = "1"
+
+[fish_out_of_water_7.1]
+portrait = "neutral"
+local = "It would be nice to experience the bathhouse, one day. A hot bath now holds a great deal of appeal."
+
+[fish_out_of_water_7_alt]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_heart_level = 8, comparator = "<=" },
+	{ caldarus_is_human = true },
+	{ any = [{ location = "deep_woods" }, { building = "bathhouse" }] },
+	{ caldarus_seridia_town = true },
+	{ eog_fish_out_of_water_7 = false }
+]
+portrait = "think"
+local = "Bathing in a stream is natural for a dragon, but the water is rather cold..."
+next = "1"
+
+[fish_out_of_water_7_alt.1]
+portrait = "happy"
+local = "A hot bath holds a great deal more appeal. I am thankful that I may now visit the bathhouse as I please."
+
+[fish_out_of_water_8]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ caldarus_routine = "tea_making" },
+	{ time_of_day = "morning", comparator = "!=" }
+]
+portrait = "think"
+local = "Since awakening, I have observed many in Mistria drinking a beverage extracted from fire-darkened beans. They called it... $Coffee$."
+next = [
+	{ target = "1_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "1_n", requires = [] }
+]
+
+[fish_out_of_water_8.1_eog]
+portrait = "neutral"
+local = "I was able to purchase a packet of grounds, which I brewed this morning."
+next = "2"
+
+[fish_out_of_water_8.1_n]
+portrait = "neutral"
+local = "An anonymous request of Balor secured me a packet of grounds, which I brewed this morning."
+next = "2"
+
+[fish_out_of_water_8.2]
+portrait = "sigh"
+local = "However, I believe my measurements may have been off. Unless, the room seems to be vibrating to you as well...?"
+
+[fish_out_of_water_9]
+refresh = "1y"
+requires = [{ npc = "caldarus" }, { caldarus_is_human = true }]
+portrait = "neutral"
+local = "As a dragon, I did not wear any adornments save the ceremonial necessities."
+next = "1"
+
+[fish_out_of_water_9.1]
+portrait = "smile"
+effect = "cheery"
+local = "But now, I must admit... it is pleasing to express oneself through clothing."
+
+[fish_out_of_water_10]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "caldarus_house" }
+]
+portrait = "neutral"
+local = "This temple was carved directly from stone, and creature comforts were added according to my taste."
+next = "1"
+
+[fish_out_of_water_10.1]
+portrait = "smile"
+local = "More than anything, I enjoy the ingenuity of human textiles. They are most pleasing to the senses."
+
+[fish_out_of_water_11]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ caldarus_routine = "tea_making" },
+	{ any = [{ season = "fall" }, { season = "winter" }] }
+]
+portrait = "think"
+local = "I once wondered what purpose humans had in boiling leaves."
+next = "1"
+
+[fish_out_of_water_11.1]
+portrait = "smile"
+local = "But as it turns out, a hot drink on a cold day is quite revivifying."
+
+[fish_out_of_water_12]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ eog_fish_out_of_water_12 = true, expires = "1y" }]
+portrait = "neutral"
+local = "It has been a long time since I have visited the ocean. Is it still salty? Bitterly so?"
+next = "1"
+
+[fish_out_of_water_12.1]
+portrait = "sigh"
+local = "Ah, good. That is a relief."
+
+[fish_out_of_water_12_alt]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ caldarus_seridia_town = true },
+	{ eog_fish_out_of_water_12 = false }
+]
+portrait = "smile"
+local = "It is a joy to be able to visit the ocean once more."
+next = "1"
+
+[fish_out_of_water_12_alt.1]
+portrait = "happy"
+local = "The salty air, the gentle crashing of the waves... It has been a relief to find them unchanged."
+
+[fish_out_of_water_13]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_routine = "tea_making" },
+		{ caldarus_is_at = "caldarus_house/Caldarus Pouf Left" },
+		{ caldarus_is_at = "caldarus_house/Caldarus Pouf Right" }
+	] }
+]
+portrait = "happy"
+local = "Is it not marvelous how heat improves a meal?"
+
+[fish_out_of_water_14]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ caldarus_birthday = "7d", time = "before" },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ eog_fish_out_of_water_14 = true }]
+portrait = "neutral"
+local = "When I was watching over the townsfolk, I saw someone receive a box covered in paper as congratulations for their day of birth. Is this common practice in this era?"
+next = "1"
+
+[fish_out_of_water_14.1]
+portrait = "think"
+local = "Is there a meaning to the paper? Or perhaps the box?"
+
+[fish_out_of_water_14_alt]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ caldarus_birthday = "7d", time = "before" },
+	{ caldarus_seridia_town = true },
+	{ eog_fish_out_of_water_14 = false }
+]
+portrait = "neutral"
+local = "I notice that the villagers will sometimes receive a box covered in paper as congratulations for their day of birth. Is this common practice in this era?"
+next = "1"
+
+[fish_out_of_water_14_alt.1]
+portrait = "think"
+local = "Is there a meaning to the paper? Or perhaps the box?"
+
+
+[fish_out_of_water_15]
+refresh = "1y"
+requires = [{ npc = "caldarus" }, { caldarus_is_human = true }]
+portrait = "think"
+local = "While a dragon must have horns, it is a shame that they make it impossible to wear any of your delightful human hats."
+
+[fish_out_of_water_16]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_routine = "deep_woods_forage" },
+		{ caldarus_routine = "deep_woods_wander" }
+	] }
+]
+portrait = "neutral"
+local = "I rather enjoy foraging for wild ingredients in the Deep Woods, but I never have enough pockets to store them all."
+
+[fish_out_of_water_17]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ time_of_day = "night" },
+	{ location = "caldarus_house" }
+]
+portrait = "think"
+local = "I must admit, I am unused to the way my eyes perceive darkness as of late."
+next = "1"
+
+[fish_out_of_water_17.1]
+portrait = "smile"
+local = "Thankfully, I rather enjoy decorating my home with lights."
+
+[fish_out_of_water_20]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ market_is_back = true },
+	{ day_of_the_week = "saturday" },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ eog_fish_out_of_water_20 = true, expires = "1y" }]
+portrait = "think"
+local = "Someday I should like to walk around this Saturday Market you have spoken of."
+next = "1"
+
+[fish_out_of_water_20.1]
+portrait = "embarrassed"
+local = "Having admired your various ensembles, I have become curious about contemporary attire."
+
+[fish_out_of_water_20_alt]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ market_is_back = true },
+	{ day_of_the_week = "saturday", comparator = "!=" },
+	{ day_of_the_week = "friday", comparator = "!=", ignore_priority = true },
+	{ day_of_the_week = "sunday", comparator = "!=", ignore_priority = true },
+	{ caldarus_seridia_town = true },
+	{ eog_fish_out_of_water_20 = false },
+	{ dragon_market = "seridia" }
+]
+portrait = "think"
+local = "I should like to walk around the Saturday Market next week."
+next = "1"
+
+[fish_out_of_water_20_alt.1]
+portrait = "happy"
+local = "It is quite enjoyable, leisurely browsing each booth."
+
+[fish_out_of_water_21]
+refresh = "1y"
+requires = [{ npc = "caldarus" }, { caldarus_is_human = true }, { caldarus_seridia_town = false }]
+portrait = "neutral"
+local = "Despite my foggy memory, I am thankful my fingers remember how to play the lute."
+
+[fish_out_of_water_22]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ season = "winter" }
+]
+portrait = "neutral"
+local = "Are you not chilled, [Ari]?"
+next = "1"
+
+[fish_out_of_water_22.1]
+portrait = "think"
+local = "I cannot help but miss the living fire of my draconic form. In this earthly form, I am always at the mercy of the elements."
+
+[fish_out_of_water_23]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ season = "winter" },
+	{ caldarus_is_inside = false }
+]
+portrait = "think"
+local = "I was unprepared for the reality of the elements in a physical form. Now, I must work harder to keep warm."
+next = "1"
+
+[fish_out_of_water_23.1]
+portrait = "smile"
+local = "Worry not. Beneath these many layers, I am quite comfortable."
+
+[fish_out_of_water_24]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ season = "winter" },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ eog_fish_out_of_water_24 = true, expires = "1y" }]
+portrait = "neutral"
+local = "Dragons are solitary creatures. Perhaps they would seek company as often as humans do if they were as sensitive to the elements."
+next = "1"
+
+[fish_out_of_water_24.1]
+portrait = "think"
+local = "In this new shape, I find myself desiring the warmth of company as well."
+
+[fish_out_of_water_24_alt]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ season = "winter" },
+	{ caldarus_seridia_town = true },
+	{ eog_fish_out_of_water_24 = false }
+]
+portrait = "neutral"
+local = "Dragons are typically solitary creatures. However..."
+next = "1"
+
+[fish_out_of_water_24_alt.1]
+portrait = "happy"
+local = "Since taking mortal form, I find myself enjoying the warmth of company."
+
+[fish_out_of_water_25]
+refresh = "1y"
+requires = [{ npc = "caldarus" }, { caldarus_is_human = true }, { caldarus_is_spouse = false }]
+portrait = "neutral"
+local = "I sometimes wonder if I should have kept my wings in this form..."
+next = "1"
+
+[fish_out_of_water_25.1]
+portrait = "think"
+local = "But perhaps they would make it difficult to sleep in my bed."
+
+[fish_out_of_water_25b]
+refresh = "1y"
+requires = [{ npc = "caldarus" }, { caldarus_is_human = true }, { caldarus_is_spouse = true }]
+portrait = "think"
+local = "I sometimes wonder if I should have kept my wings in this form..."
+next = "1"
+
+[fish_out_of_water_25b.1]
+portrait = "embarrassed"
+local = "But perhaps they would make it difficult to sleep in our bed."
+
+[fish_out_of_water_26]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "caldarus_house" }
+]
+portrait = "sigh"
+local = "Of the many and varied human inventions, weaving is one of my favorites. Such meticulous work, and such beautiful results."
+next = "1"
+
+[fish_out_of_water_26.1]
+portrait = "smile"
+local = "In my opinion, one can never have enough rugs or blankets."
+
+[fish_out_of_water_27]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ location = "caldarus_house" }
+]
+portrait = "neutral"
+local = "Looking around my home, one cannot help but wonder..."
+next = "1"
+
+[fish_out_of_water_27.1]
+portrait = "think"
+local = "How many rugs is too many?"
+
+[fish_out_of_water_28]
+refresh = "1y"
+requires = [{ npc = "caldarus" }, { caldarus_is_human = true }]
+portrait = "think"
+local = "I have always found myself curious about the uniquely human practice of wearing socks."
+next = "1"
+
+[fish_out_of_water_28.1]
+portrait = "sigh"
+local = "Unfortunately, if I were to try them on myself, my talons would certainly rend them to ribbons."
+
+[fish_out_of_water_29]
+refresh = "1y"
+requires = [{ npc = "caldarus" }, { caldarus_is_human = true }]
+portrait = "think"
+local = "The practice of domestication is fascinating. Tying one's future to the beasts of the earth, and vice versa."
+next = "1"
+
+[fish_out_of_water_29.1]
+portrait = "sigh"
+effect = "cheery"
+local = "Perhaps someday, I will try my hand at this... ranching."
+
+[fish_out_of_water_30]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_heart_level = 8, comparator = "<=" },
+	{ caldarus_is_human = true }
+]
+portrait = "neutral"
+local = "[Ari]. A matter of curiosity, I would like to see your hand if you would not mind."
+next = "1"
+
+[fish_out_of_water_30.1]
+portrait = "happy"
+local = "Yes, it is indeed quite different than mine. It is soft. And warm."
+
+[fish_out_of_water_31]
+refresh = "1y"
+requires = [{ npc = "caldarus" }, { caldarus_is_human = true }]
+portrait = "think"
+local = "I did not intend to become notably taller than the average human when I transformed."
+next = "1"
+
+[fish_out_of_water_31.1]
+portrait = "embarrassed"
+local = "I hope my stature does not trouble you."
+
+[fish_out_of_water_32]
+refresh = "1y"
+requires = [{ npc = "caldarus" }, { caldarus_is_human = true }]
+portrait = "think"
+local = "What is the experience of wearing shoes like? Do you wear them for protection, or for self-expression?"

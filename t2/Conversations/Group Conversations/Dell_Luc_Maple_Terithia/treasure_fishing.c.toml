@@ -1,0 +1,40 @@
+[treasure_fishing]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "terithia" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "<terithia_zone>" },
+]
+speaker = "maple"
+portrait = "neutral"
+local = "Have you ever fished up treasure, Miss Terithia?"
+next = "1"
+
+[treasure_fishing.1]
+speaker = "luc"
+portrait = "think"
+local = "Or ancient books?"
+next = "2"
+
+[treasure_fishing.2]
+speaker = "dell"
+portrait = "mad"
+local = "Or a skull?"
+next = "3"
+
+[treasure_fishing.3]
+speaker = "terithia"
+portrait = "sad"
+local = "Maple, Luc... why is Dell always asking me about dredging up skulls?"
+next = "4"
+
+[treasure_fishing.4]
+speaker = "dell"
+portrait = "mad"
+local = "Because they're so cool!"

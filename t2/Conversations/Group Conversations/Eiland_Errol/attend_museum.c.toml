@@ -1,0 +1,17 @@
+[attend_museum]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "errol" }] },
+	{ eiland_zone = "<errol_zone>" },
+	{ time_of_day = "morning" },
+	{ errol_museum_day = true },
+	{ eiland_dig_day_wr = true },
+]
+speaker = "errol"
+local = "I'll attend to the Museum, so you go ahead and focus on the excavation at the Western Ruins."
+next = "1"
+
+[attend_museum.1]
+speaker = "eiland"
+portrait = "wink"
+local = "I appreciate it, Errol. I'll fill you in on any exciting discoveries!"

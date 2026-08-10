@@ -1,0 +1,34 @@
+[harvest_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [{ npc = "seridia" }, { harvest_festival_date = "1d", time = "after" }, { caldarus_seridia_town = true }]
+portrait = "unsure_blush"
+local = "$Queen Berries$... how nostalgic."
+next = "1"
+
+[harvest_festival_0.1]
+portrait = "think"
+local = "..."
+next = "2"
+
+[harvest_festival_0.2]
+portrait = "sly"
+local = "And this =Queen Berry Pie= is quite good, a remarkable use of them."
+
+[harvest_festival_first_place_follow_up]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "seridia" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_first_place = true },
+	{ caldarus_seridia_town = true }
+]
+portrait = "smile"
+local = "First place, very well done."
+next = "1"
+
+[harvest_festival_first_place_follow_up.1]
+portrait = "embarrassed"
+local = "I confess I had a difficult time not consuming the berries as I found them."
+

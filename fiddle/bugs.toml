@@ -1,0 +1,906 @@
+# This guy sets the defaults for everyone else. If you omit any of these fields from your bug,
+# it will use these values!
+[default]
+	# Options are "jump", "fly", "fly_wave" and "crawl"
+	type = "crawl"
+	# The name of the sprite for the bug when idle. "<..>" means that we attempt to find
+	# the sprite based on its name at runtime.
+	idle_sprite = "<..>"
+	# The name of the sprite for the bug when moving. "<..>" means that we attempt to find
+	# the sprite based on its name at runtime.
+	move_sprite = "<..>"
+	# The range of time (in seconds) the bug moves for before pausing
+	move_range = [0.3, 2.0]
+	# The range of speed (in pixels) the bug moves per frame
+	speed_range = [0.0, 0.3]
+	# The amount of time (in seconds) the bug spends idle inbetween movements
+	idle_range = [2, 5]
+	# Whether or not this but emits a light.
+	has_light = false
+	# The way this bug spawns (options are default, canopy, rock)
+	spawn = "default"
+	# The seasons this bug can appear in
+	seasons = ["spring", "summer", "fall", "winter"]
+	# The range of hours this bug can appear in
+	hours = [6, 17]
+	# The types of weather events the bug can appear in
+	weather = ["calm", "special"]
+	# How rare this bug is (options are common, uncommon, rare, very_rare)
+	rarity = "common"
+	# The bug tags for this bug.
+	tag = ["standard"]
+	# Whether or not this bug can spawn on water. This is currently only for the pond skater.
+	can_spawn_on_water = false
+	# If specified the bug can only spawn in the listed dungeon biome
+	dungeon_biome = -1
+	# If true this bug will try to move towards light sources.
+	attraction = "none"
+	# If this is true, this bug will only be spawned by pheromones and won't be in the regular bug distributions
+	pheromones_only = false
+
+	# <---------SPRING BUGS------------->
+
+[butterfly]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	seasons = ["spring"]
+	hours = [6, 20]
+	weather = ["calm", "special"]
+	rarity = "common"
+	tag = ["standard", "deep_woods"]
+
+[caterpillar]
+	spawn = ["canopy", "default"]
+	seasons = ["spring"]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement"]
+	rarity = "common"
+	tag = ["standard"]
+
+[flower_crown_beetle]
+	seasons = ["spring"]
+	weather = ["calm", "special"]
+	rarity = "very_rare"
+
+[petalhopper]
+	type = "jump"
+	move_range = [0.2, 1.0]
+	speed_range = [0, 0]
+	spawn = ["default", "grass"]
+	seasons = ["spring"]
+	hours = [6, 20]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "common"
+	tag = ["standard"]
+
+[ladybug]
+	seasons = ["spring"]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement"]
+	rarity = "common"
+	tag = ["standard", "deep_woods"]
+
+[luna_moth]
+	seasons = ["spring"]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	rarity = "rare"
+	hours = [20, 26]
+	weather = ["calm", "special"]
+	attraction = "light"
+
+[orchid_mantis]
+	seasons = ["spring"]
+	type = "jump"
+	move_range = [0.2, 1.0]
+	speed_range = [0, 0]
+	idle_range = [6, 15]
+	hours = [6, 20]
+	weather = ["calm", "special", "inclement"]
+	rarity = "rare"
+	tag = ["standard", "deep_woods"]
+
+[roly_poly]
+	seasons = ["spring"]
+	idle_sprite = "spr_insect_pillbug_entity_idle"
+	spawn = "rock"
+	move_sprite = "spr_insect_pillbug_entity_move"
+	rarity = "uncommon"
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	hours = [6, 26]
+
+[snail]
+	seasons = ["spring"]
+	speed_range = [0.0, 0.15]
+	hours = [6, 26]
+	rarity = "uncommon"
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	tag = ["standard"]
+
+[waterbug]
+	seasons = ["spring", "summer", "fall", "winter"]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	tag = ["beach"]
+	rarity = "common"
+
+	# <---------SUMMER BUGS------------->
+
+[cicada]
+	seasons = ["summer"]
+	spawn = ["canopy", "grass"]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "common"
+
+[cricket]
+	seasons = ["summer"]
+	type = "jump"
+	move_range = [0.2, 1.0]
+	speed_range = [0, 0]
+	hours = [20, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+
+[dragonfly]
+	seasons = ["summer"]
+	type = "fly"
+	move_range = [0.5, 3.0]
+	speed_range = [0.2, 1.0]
+	rarity = "uncommon"
+	hours = [6, 20]
+	weather = ["calm", "special", "inclement"]
+
+[firefly]
+	seasons = ["summer"]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	has_light = true
+	hours = [20, 26]
+	weather = ["calm", "special"]
+	rarity = "common"
+
+[jewel_beetle]
+	seasons = ["summer"]
+	spawn = "rock"
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "uncommon"
+
+[magma_beetle]
+	seasons = ["summer"]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "rare"
+
+[strawhopper]
+	seasons = ["summer"]
+	type = "jump"
+	move_range = [0.2, 1.0]
+	speed_range = [0, 0]
+	spawn = ["default", "grass"]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "common"
+
+[strobe_firefly]
+	seasons = ["summer"]
+	type = "fly"
+	idle_sprite = "spr_insect_strobedragonfly_entity_idle"
+	move_sprite = "spr_insect_strobedragonfly_entity_move"
+	move_range = [0.5, 3.0]
+	speed_range = [0.2, 1.0]
+	has_light = true
+	rarity = "very_rare"
+	weather = ["calm", "special"]
+
+[sand_bug]
+	idle_sprite = "spr_insect_sand_bug_entity_idle"
+	move_sprite = "spr_insect_sand_bug_entity_move"
+	seasons = ["spring", "summer", "fall", "winter"]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	tag = ["beach"]
+	rarity = "common"
+
+[surf_beetle]
+	idle_sprite = "spr_insect_surf_beetle_entity_idle"
+	move_sprite = "spr_insect_surf_beetle_entity_move"
+	seasons = ["spring", "summer", "fall", "winter"]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	tag = ["beach"]
+	rarity = "common"
+
+	# <---------FALL BUGS------------->
+
+[beach_hopper]
+	idle_sprite = "spr_insect_beach_hopper_entity_idle"
+	move_sprite = "spr_insect_beach_hopper_entity_move"
+	type = "jump"
+	move_range = [0.2, 1.0]
+	speed_range = [0, 0]
+	seasons = ["spring", "summer", "fall", "winter"]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	tag = ["beach"]
+	rarity = "common"
+
+[chillipede]
+	seasons = ["fall"]
+	spawn = "rock"
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "uncommon"
+
+[cicada_nymph]
+	seasons = ["fall"]
+	hours = [20, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "common"
+
+[fairy_bee]
+	seasons = ["fall"]
+	type = "fly"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	has_light = true
+	rarity = "very_rare"
+	weather = ["calm", "special"]
+
+[inchworm]
+	seasons = ["fall"]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "common"
+
+[leafhopper]
+	seasons = ["fall"]
+	spawn = ["default", "grass"]
+	type = "jump"
+	move_range = [0.2, 1.0]
+	speed_range = [0, 0]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "common"
+
+[mistmoth]
+	seasons = ["fall"]
+	type = "fly"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	hours = [20, 26]
+	weather = ["calm", "special"]
+	attraction = "light"
+	rarity = "rare"
+
+[monarch_butterfly]
+	seasons = ["fall"]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	rarity = "common"
+	hours = [6, 20]
+	weather = ["calm", "special"]
+
+[tiger_swallowtail_butterfly]
+	seasons = ["fall"]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	hours = [6, 20]
+	rarity = "uncommon"
+	weather = ["calm", "special"]
+
+[walking_leaf]
+	seasons = ["fall"]
+	spawn = ["canopy", "default"]
+	hours = [6, 20]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "uncommon"
+
+	# <---------WINTER BUGS------------->
+
+[crystal_caterpillar]
+	seasons = ["winter"]
+	weather = ["inclement", "heavy_inclement"]
+	hours = [6, 26]
+	rarity = "rare"
+	spawn = ["canopy", "default"]
+
+[brightbulb_moth]
+	idle_sprite = "spr_insect_brightbulb_moth_entity_idle"
+	move_sprite = "spr_insect_brightbulb_moth_entity_move"
+	seasons = ["winter"]
+	type = "fly"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	has_light = true
+	hours = [20, 26]
+	weather = ["calm", "special"]
+	rarity = "common"
+
+[fur_bee]
+	seasons = ["winter"]
+	type = "fly_wave"
+	idle_sprite = "spr_insect_fur_bee_entity_idle"
+	move_sprite = "spr_insect_fur_bee_entity_move"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	hours = [6, 20]
+	weather = ["calm", "special"]
+	rarity = "common"
+	tag = ["standard"]
+
+[frost_flutter_butterfly]
+	idle_sprite = "spr_insect_frost_flutter_butterfly_entity_idle"
+	move_sprite = "spr_insect_frost_flutter_butterfly_entity_move"
+	seasons = ["winter"]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	hours = [6, 20]
+	weather = ["calm", "special"]
+	rarity = "common"
+
+[icehopper]
+	seasons = ["winter"]
+	spawn = ["default", "grass"]
+	type = "jump"
+	move_range = [0.2, 1.0]
+	speed_range = [0, 0]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "common"
+
+[polar_fly]
+	idle_sprite = "spr_insect_polar_fly_entity_idle"
+	move_sprite = "spr_insect_polar_fly_entity_move"
+	seasons = ["winter"]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	hours = [6, 26]
+	weather = ["calm", "special"]
+	rarity = "common"
+
+[snug_bug]
+	idle_sprite = "spr_insect_snug_bug_entity_idle"
+	move_sprite = "spr_insect_snug_bug_entity_move"
+	seasons = ["winter"]
+	spawn = "rock"
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "uncommon"
+
+[relic_crab]
+	seasons = ["spring", "summer", "fall", "winter"]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	tag = ["beach"]
+	rarity = "uncommon"
+
+[snowball_beetle]
+	seasons = ["winter"]
+	weather = ["heavy_inclement"]
+	rarity = "very_rare"
+
+[walking_stick]
+	seasons = ["winter"]
+	hours = [6, 26]
+	rarity = "uncommon"
+
+[winterpillar]
+	seasons = ["winter"]
+	spawn = ["default", "canopy"]
+	hours = [6, 26]
+	rarity = "common"
+
+	# <---------MULTI-SEASON BUGS------------->
+
+[ant]
+	seasons = ["spring", "summer", "fall"]
+	speed_range = [0.0, 0.15]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement"]
+	rarity = "common"
+	tag = ["standard"]
+
+[big_bee]
+	seasons = ["spring", "summer", "fall"]
+	type = "fly_wave"
+	idle_sprite = "spr_insect_big_bee_entity_idle"
+	move_sprite = "spr_insect_big_bee_entity_move"
+	move_range = [0.5, 2.5]
+	speed_range = [0.2, 0.7]
+	hours = [6, 20]
+	weather = ["calm", "special"]
+	rarity = "uncommon"
+	tag = ["standard"]
+
+[bumblebee]
+	seasons = ["spring", "summer", "fall"]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	hours = [6, 20]
+	weather = ["calm", "special"]
+	rarity = "common"
+	tag = ["standard", "beach"]
+
+[flower_bee]
+	seasons = ["spring", "summer", "fall", "winter"]
+	type = "fly_wave"
+	idle_sprite = "spr_insect_flower_bee_entity_idle"
+	move_sprite = "spr_insect_flower_bee_entity_move"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	hours = [6, 20]
+	weather = ["calm", "special"]
+	rarity = "rare"
+	tag = ["standard"]
+
+[fuzzy_moth]
+	seasons = ["spring", "summer", "fall", "winter"]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	hours = [20, 26]
+	attraction = "light"
+	rarity = "uncommon"
+
+[grasshopper]
+	seasons = ["spring", "summer", "fall"]
+	type = "jump"
+	spawn = ["default", "grass"]
+	move_range = [0.2, 1.0]
+	speed_range = [0, 0]
+	hours = [6, 20]
+	rarity = "common"
+	tag = ["standard", "beach"]
+
+[hermit_crab]
+	seasons = ["spring", "summer", "fall", "winter"]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "common"
+	hours = [6, 26]
+	tag = ["beach"]
+
+[hummingbird_hawk_moth]
+	seasons = ["spring", "summer", "fall"]
+	type = "fly"
+	move_range = [0.5, 3.0]
+	speed_range = [0.2, 1.0]
+	rarity = "rare"
+	hours = [6, 26]
+	tag = ["standard", "beach"]
+
+[lightning_dragonfly]
+	seasons = ["spring", "summer", "fall"]
+	type = "fly"
+	move_range = [0.5, 3.0]
+	speed_range = [0.2, 1.0]
+	has_light = true
+	weather = ["heavy_inclement"]
+	hours = [6, 20]
+	rarity = "rare"
+
+[moonlight_bee]
+	seasons = ["spring", "summer", "fall", "winter"]
+	type = "fly_wave"
+	idle_sprite = "spr_insect_moonlight_bee_entity_idle"
+	move_sprite = "spr_insect_moonlight_bee_entity_move"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	hours = [20, 26]
+	has_light = true
+	weather = ["calm", "special"]
+	rarity = "rare"
+	tag = ["standard"]
+
+[pond_skater]
+	speed_range = [2.0, 2.5]
+	seasons = ["spring", "summer", "fall", "winter"]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement"]
+	tag = ["water_bug"]
+	rarity = "uncommon"
+	can_spawn_on_water = true
+
+[praying_mantis]
+	seasons = ["spring", "summer", "fall"]
+	type = "jump"
+	move_range = [0.2, 1.0]
+	speed_range = [0, 0]
+	idle_range = [6, 15]
+	hours = [6, 20]
+	rarity = "common"
+	tag = ["standard", "beach"]
+
+[question_mark_butterfly]
+	seasons = ["spring", "summer", "fall"]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	hours = [6, 20]
+	rarity = "uncommon"
+	tag = ["standard", "deep_woods"]
+
+[redhead_worm]
+	idle_sprite = "spr_insect_redhead_worm_entity_idle"
+	move_sprite = "spr_insect_redhead_worm_entity_move"
+	seasons = ["spring", "summer", "fall"]
+	spawn = "rock"
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "uncommon"
+
+[speedy_snail]
+	seasons = ["spring", "summer", "fall"]
+	speed_range = [0.6, 1.2]
+	weather = ["inclement", "calm", "special"]
+	rarity = "very_rare"
+
+[sweet_bee]
+	seasons = ["spring", "summer", "fall", "winter"]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	hours = [6, 20]
+	idle_sprite = "spr_insect_sweet_bee_entity_idle"
+	move_sprite = "spr_insect_sweet_bee_entity_move"
+	weather = ["calm", "special"]
+	rarity = "uncommon"
+	tag = ["standard"]
+
+[rhinoceros_beetle]
+	seasons = ["spring", "summer", "fall"]
+	hours = [20, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "uncommon"
+
+	# UPPER MINES BUGS
+
+[lantern_moth]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	idle_sprite = "spr_insect_lantern_moth_entity_idle"
+	move_sprite = "spr_insect_lantern_moth_entity_move"
+	dungeon_biome = "upper"
+	tag = ["mines"]
+	attraction = "light"
+
+[copper_beetle]
+	rarity = "uncommon"
+	idle_sprite = "spr_insect_copper_beetle_entity_idle"
+	move_sprite = "spr_insect_copper_beetle_entity_move"
+	dungeon_biome = "upper"
+	tag = ["mines"]
+	attraction = "copper"
+
+[worm]
+	spawn = "rock"
+	dungeon_biome = "upper"
+	rarity = "uncommon"
+	tag = ["mines"]
+
+[mine_cricket]
+	type = "jump"
+	move_range = [0.2, 1.0]
+	speed_range = [0, 0]
+	rarity = "rare"
+	idle_sprite = "spr_insect_mine_cricket_entity_idle"
+	move_sprite = "spr_insect_mine_cricket_entity_move"
+	dungeon_biome = "upper"
+	tag = ["mines"]
+
+[tunnel_millipede]
+	idle_sprite = "spr_insect_tunnel_millipede_entity_idle"
+	move_sprite = "spr_insect_tunnel_millipede_entity_move"
+	spawn = "rock"
+	dungeon_biome = "upper"
+	tag = ["mines"]
+	rarity = "uncommon"
+
+	# TIDE CAVERNS BUGS
+
+[sea_scarab]
+	idle_sprite = "spr_insect_sea_scarab_entity_idle"
+	move_sprite = "spr_insect_sea_scarab_entity_move"
+	spawn = "rock"
+	rarity = "uncommon"
+	dungeon_biome = "tide_caverns"
+	tag = ["mines"]
+
+[waterfly]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	has_light = true
+	dungeon_biome = "tide_caverns"
+	tag = ["mines"]
+
+[hermit_snail]
+	idle_sprite = "spr_insect_hermit_snail_entity_idle"
+	move_sprite = "spr_insect_hermit_snail_entity_move"
+	speed_range = [0.0, 0.15]
+	rarity = "uncommon"
+	dungeon_biome = "tide_caverns"
+	tag = ["mines"]
+
+[puddle_spider]
+	idle_sprite = "spr_insect_puddle_spider_entity_idle"
+	move_sprite = "spr_insect_puddle_spider_entity_move"
+	rarity = "rare"
+	dungeon_biome = "tide_caverns"
+	tag = ["mines"]
+
+[coral_mantis]
+	idle_sprite = "spr_insect_coral_mantis_entity_idle"
+	move_sprite = "spr_insect_coral_mantis_entity_move"
+	rarity = "uncommon"
+	dungeon_biome = "tide_caverns"
+	tag = ["mines"]
+
+	# DEEP EARTH BUGS
+
+[rock_roach]
+	move_range = [0.3, 2.0]
+	speed_range = [1, 1.5]
+	idle_range = [1.5, 3]
+	idle_sprite = "spr_insect_rock_roach_entity_idle"
+	move_sprite = "spr_insect_rock_roach_entity_move"
+	spawn = "rock"
+	dungeon_biome = "deep_earth"
+	rarity = "uncommon"
+	tag = ["mines"]
+
+[deep_earthworm]
+	idle_range = [3, 5]
+	idle_sprite = "spr_insect_deep_earthworm_entity_idle"
+	move_sprite = "spr_insect_deep_earthworm_entity_move"
+	spawn = "rock"
+	dungeon_biome = "deep_earth"
+	rarity = "uncommon"
+	tag = ["mines"]
+
+[crystalline_cricket]
+	type = "jump"
+	move_range = [0.2, 1.0]
+	rarity = "common"
+	idle_sprite = "spr_insect_crystalline_cricket_entity_idle"
+	move_sprite = "spr_insect_crystalline_cricket_entity_move"
+	dungeon_biome = "deep_earth"
+	tag = ["mines"]
+
+[gem_shard_caterpillar]
+	rarity = "uncommon"
+	idle_sprite = "spr_insect_gem_shard_caterpillar_entity_idle"
+	move_sprite = "spr_insect_gem_shard_caterpillar_entity_move"
+	dungeon_biome = "deep_earth"
+	attraction = "crystal_berries"
+	tag = ["mines"]
+
+[crystal_wing_moth]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	rarity = "rare"
+	idle_sprite = "spr_insect_crystal_wing_moth_entity_idle"
+	move_sprite = "spr_insect_crystal_wing_moth_entity_move"
+	dungeon_biome = "deep_earth"
+	tag = ["mines"]
+
+	# LAVA CAVES BUGS
+
+[fire_wasp]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.2, 0.6]
+	rarity = "common"
+	idle_sprite = "spr_insect_fire_wasp_entity_idle"
+	move_sprite = "spr_insect_fire_wasp_entity_move"
+	dungeon_biome = "lava_caves"
+	tag = ["mines"]
+
+[cooktop_beetle]
+	speed_range = [0.1, 0.5]
+	idle_range = [3, 5]
+	idle_sprite = "spr_insect_cooktop_beetle_entity_idle"
+	move_sprite = "spr_insect_cooktop_beetle_entity_move"
+	dungeon_biome = "lava_caves"
+	tag = ["mines"]
+
+[lava_snail]
+	idle_sprite = "spr_insect_lava_snail_entity_idle"
+	move_sprite = "spr_insect_lava_snail_entity_move"
+	speed_range = [0.0, 0.15]
+	rarity = "uncommon"
+	dungeon_biome = "lava_caves"
+	tag = ["mines"]
+
+[smoke_moth]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	rarity = "uncommon"
+	idle_sprite = "spr_insect_smoke_moth_entity_idle"
+	move_sprite = "spr_insect_smoke_moth_entity_move"
+	dungeon_biome = "lava_caves"
+	tag = ["mines"]
+
+[diamond_beetle]
+	idle_sprite = "spr_insect_diamond_beetle_entity_idle"
+	move_sprite = "spr_insect_diamond_beetle_entity_move"
+	rarity = "rare"
+	dungeon_biome = "lava_caves"
+	tag = ["mines"]
+
+	# RUINS BUGS
+
+[ancient_firefly]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	has_light = true
+	rarity = "common"
+	idle_sprite = "spr_insect_ancient_firefly_entity_idle"
+	move_sprite = "spr_insect_ancient_firefly_entity_move"
+	dungeon_biome = "ruins"
+	tag = ["mines"]
+
+[void_snail]
+	speed_range = [0.0, 0.15]
+	idle_sprite = "spr_insect_void_snail_entity_idle"
+	move_sprite = "spr_insect_void_snail_entity_move"
+	rarity = "common"
+	dungeon_biome = "ruins"
+	tag = ["mines"]
+
+[giant_worm]
+	idle_range = [1, 3]
+	idle_sprite = "spr_insect_giant_worm_entity_idle"
+	move_sprite = "spr_insect_giant_worm_entity_move"
+	rarity = "uncommon"
+	spawn = "rock"
+	dungeon_biome = "ruins"
+	tag = ["mines"]
+
+[parchment_moth]
+	type = "fly_wave"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	rarity = "uncommon"
+	idle_sprite = "spr_insect_parchment_moth_entity_idle"
+	move_sprite = "spr_insect_parchment_moth_entity_move"
+	dungeon_biome = "ruins"
+	tag = ["mines"]
+
+[hidden_beetle]
+	speed_range = [0.05, 0.15]
+	idle_range = [3, 8]
+	idle_sprite = "spr_insect_hidden_beetle_entity_idle"
+	move_sprite = "spr_insect_hidden_beetle_entity_move"
+	rarity = "rare"
+	dungeon_biome = "ruins"
+	tag = ["mines"]
+
+	# DEEP WOODS BUGS
+
+[dragon_horn_beetle]
+	seasons = ["spring", "summer", "fall", "winter"]
+	idle_sprite = "spr_insect_dragon_horn_beetle_entity_idle"
+	move_sprite = "spr_insect_dragon_horn_beetle_entity_move"
+	tag = ["deep_woods"]
+	hours = [6, 26]
+	rarity = "common"
+
+[loam_caterpillar]
+	seasons = ["spring", "summer", "fall", "winter"]
+	idle_sprite = "spr_insect_loam_caterpillar_entity_idle"
+	move_sprite = "spr_insect_loam_caterpillar_entity_move"
+	tag = ["deep_woods"]
+	hours = [6, 26]
+	rarity = "uncommon"
+	spawn = ["canopy", "default"]
+
+[mote_firefly]
+	seasons = ["spring", "summer", "fall", "winter"]
+	idle_sprite = "spr_insect_mote_firefly_entity_idle"
+	move_sprite = "spr_insect_mote_firefly_entity_move"
+	type = "fly_wave"
+	tag = ["deep_woods"]
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	has_light = true
+	hours = [20, 26]
+	weather = ["calm", "special"]
+	rarity = "common"
+
+[singing_katydid]
+	seasons = ["spring", "summer", "fall", "winter"]
+	idle_sprite = "spr_insect_singing_katydid_entity_idle"
+	move_sprite = "spr_insect_singing_katydid_entity_move"
+	type = "jump"
+	tag = ["deep_woods"]
+	move_range = [0.2, 1.0]
+	speed_range = [0, 0]
+	hours = [6, 26]
+	rarity = "rare"
+
+[windleaf_butterfly]
+	type = "fly_wave"
+	idle_sprite = "spr_insect_windleaf_butterfly_entity_idle"
+	move_sprite = "spr_insect_windleaf_butterfly_entity_move"
+	tag = ["deep_woods"]
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	seasons = ["spring", "summer", "fall", "winter"]
+	hours = [6, 26]
+	weather = ["calm", "special"]
+	rarity = "common"
+
+	# <---------BUG PHEROMONE INSECTS------------->
+[ant_queen]
+	idle_sprite = "spr_insect_ant_queen_entity_idle"
+	move_sprite = "spr_insect_ant_queen_entity_move"
+	seasons = ["spring", "summer", "fall", "winter"]
+	move_range = [0.5, 3.0]
+	speed_range = [0.0, 0.20]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "common"
+	pheromones_only = true
+	tag = ["standard", "beach", "mines"]
+
+[sunset_moth]
+	type = "fly_wave"
+	idle_sprite = "spr_insect_sunset_moth_entity_idle"
+	move_sprite = "spr_insect_sunset_moth_entity_move"
+	seasons = ["spring", "summer", "fall", "winter"]
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "common"
+	pheromones_only = true
+	tag = ["standard", "beach", "mines"]
+
+[saint_mantis]
+	type = "jump"
+	seasons = ["spring", "summer", "fall", "winter"]
+	idle_sprite = "spr_insect_saint_mantis_entity_idle"
+	move_sprite = "spr_insect_saint_mantis_entity_move"
+	move_range = [0.2, 1.0]
+	speed_range = [0, 0]
+	idle_range = [6, 15]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	hours = [6, 26]
+	rarity = "uncommon"
+	pheromones_only = true
+	tag = ["standard", "beach", "mines"]
+
+[queens_birdwing]
+	type = "fly_wave"
+	seasons = ["spring", "summer", "fall", "winter"]
+	idle_sprite = "spr_insect_queens_birdwing_entity_idle"
+	move_sprite = "spr_insect_queens_birdwing_entity_move"
+	move_range = [0.5, 3.0]
+	speed_range = [0.1, 0.5]
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "rare"
+	pheromones_only = true
+	tag = ["standard", "beach", "mines"]
+
+[biggest_beetle]
+	seasons = ["spring", "summer", "fall", "winter"]
+	idle_sprite = "spr_insect_biggest_beetle_entity_idle"
+	move_sprite = "spr_insect_biggest_beetle_entity_move"
+	hours = [6, 26]
+	weather = ["calm", "special", "inclement", "heavy_inclement"]
+	rarity = "very_rare"
+	pheromones_only = true
+	tag = ["standard", "beach", "mines"]

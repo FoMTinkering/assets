@@ -1,0 +1,148 @@
+[default]
+	hp = 144
+	damage = 0
+	essence = 0
+	drops = []
+	super_drops = []
+	coin_count = [1, 3]
+
+	starting_dir = [180, 360]
+
+	damage_number_offset = -12
+
+	iframes = 0
+	gm_object = "obj_monster_rock_stack"
+	hurtbox = "spr_monster_rockclod_hurtbox"
+
+	speed = 1.5
+
+	patience_acknowledgement_reset = -120
+	# Determines the ! state, the monster will start attacking once the player is in this radius, and stop if the player is outside of this radius too long
+	aggro_radius = 256
+	# Determines if the player is in range to be attacked again after the rockstack's attack resolves
+	attack_radius = 256
+	use_circle = true
+
+	knockback_multiplier = 4
+	knockback_friction = 0.88
+
+	# physics
+	push_radius = 4
+	push_force = 0.25
+	pushed_radius = 7
+
+	sprites = { misc = {} }
+	wander_frequency = 180
+	rising_duration = 30
+
+	# Controls launching speed
+	rise_speed = -6.5
+	# Controls initial falling speed after being launched
+	fall_speed = 1
+	# Gets added to an initial fall speed every frame
+	fall_acceleration = 0.3
+
+	# Controls how long to wait after a rock lands
+	fell_stall = [60, 75]
+
+	# Controls how long to wait while in the air
+	air_stall = [150, 250]
+	air_wait = [30, 60]
+
+	# Dimensions of the tarball
+	execution_width = 32
+	execution_height = 32
+	# How close the receiving rock has to be to the creator of the tarball to be executed
+	execution_distance = 14
+	# How quickly the stack tracks ari
+	air_speed_starting = 0.0
+	air_speed_max = 1.5
+	air_speed_acceleration = 0.02
+	# the distance from another rock to attempt a hop on top
+	hop_threshold = 48
+	# the offset of the homie on top
+	homie_offset = -8
+	# the lut to use for the homie
+	lut = "spr_monster_rock_stack_lut"
+	# the landing vfx!
+	landing_vfx = "spr_fx_small_monster_land"
+
+	# how many frames after launching do we warn the player of impending doom?
+	whistle_frame = 100
+
+	# jumping things
+	jump_speed = -2
+	jump_gravity = 0.125
+	jump_zx_factor = 36
+	air_speed = 1.25
+
+	status_effect_offset = -18
+	fire_effect_offset = -6
+
+	[default.tango]
+		acknowledgment = "SoundEffects/Enemies/EnemyAlerted"
+		walk = "SoundEffects/Enemies/Rockclod/Hop"
+		windup = "SoundEffects/Enemies/Rockclod/ProjectileChargeUp"
+		attack = "SoundEffects/Enemies/Rockclod/ProjectileSpit"
+		dying = "SoundEffects/Enemies/Rockclod/Die"
+		misc.hit_by_projectile = "SoundEffects/Enemies/Rockclod/HitByProjectile"
+		misc.projectile_break = "SoundEffects/Enemies/Rockclod/ProjectileBreak"
+		misc.projectile_reflect = "SoundEffects/Tools/SwordReflectProjectile"
+		misc.weak_damage = "SoundEffects/Enemies/TakeDamageRockWeak"
+		misc.strong_damage = "SoundEffects/Enemies/TakeDamageRockStrong"
+		misc.death = "SoundEffects/Enemies/Rockclod/Die"
+
+[rock_stack]
+	hp = 150
+	damage = 50
+	essence = 15
+	coin_count = [6, 10]
+	drops = [
+		{ item = "ore_stone", chance = 70, count_range = [1, 2] },
+		{ item = "monster_block", chance = 30, count_range = [1, 1] },
+		{ cosmetic = "head_rock_stack_hat", chance = 5 },
+		{ item = "pet_skin_rock_stack", chance = 10 },
+	]
+	super_drops = [
+		{ item = "ore_diamond", chance = 100, count_range = [3, 5] },
+	]
+	[rock_stack.sprites]
+		idle.north = "spr_monster_rock_stack_main_idle_north"
+		idle.east = "spr_monster_rock_stack_main_idle_east"
+		idle.south = "spr_monster_rock_stack_main_idle_south"
+
+		acknowledgment.north = "spr_monster_rock_stack_main_alert_north"
+		acknowledgment.east = "spr_monster_rock_stack_main_alert_east"
+		acknowledgment.south = "spr_monster_rock_stack_main_alert_south"
+
+		walk.north = "spr_monster_rock_stack_main_walk_north"
+		walk.east = "spr_monster_rock_stack_main_walk_east"
+		walk.south = "spr_monster_rock_stack_main_walk_south"
+
+		windup.north = "spr_monster_rock_stack_main_windup_bottom_north"
+		windup.east = "spr_monster_rock_stack_main_windup_bottom_east"
+		windup.south = "spr_monster_rock_stack_main_windup_bottom_south"
+
+		hurt.north = "spr_monster_rock_stack_main_hurt_north"
+		hurt.east = "spr_monster_rock_stack_main_hurt_east"
+		hurt.south = "spr_monster_rock_stack_main_hurt_south"
+
+		dying.north = "spr_monster_rock_stack_main_hurt_south"
+		dying.east = "spr_monster_rock_stack_main_hurt_south"
+		dying.south = "spr_monster_rock_stack_main_hurt_south"
+
+		launching.north = "spr_monster_rock_stack_main_fly_south"
+		launching.east = "spr_monster_rock_stack_main_fly_south"
+		launching.south = "spr_monster_rock_stack_main_fly_south"
+
+		catching.north = "spr_monster_rock_stack_main_launch_bottom_north"
+		catching.east = "spr_monster_rock_stack_main_launch_bottom_east"
+		catching.south = "spr_monster_rock_stack_main_launch_bottom_south"
+
+		hopping.north = "spr_monster_rock_stack_main_launch_bottom_north"
+		hopping.east = "spr_monster_rock_stack_main_launch_bottom_east"
+		hopping.south = "spr_monster_rock_stack_main_launch_bottom_south"
+
+		misc.windup_top = "spr_monster_rock_stack_main_windup_top_south"
+		misc.windup_top_fx = "spr_fx_monster_rock_stack_top_windup_shine"
+		misc.landing_top = "spr_monster_rock_stack_main_catch_south"

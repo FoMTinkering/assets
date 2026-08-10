@@ -1,0 +1,128 @@
+[inn_work]
+refresh = "2m"
+requires = [{ npc = "reina" }, { reina_routine = "inn_table_service" }]
+portrait = "wink"
+local = "Want something to eat, [Ari]? Pull up a chair!"
+
+[inn_work_2]
+refresh = "1y"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn" },
+	{ any = [
+		{ reina_routine = "inn_solo_reina" },
+		{ reina_routine = "inn_table_service" },
+		{ reina_activity = "attend_register" },
+		{ reina_animation = "write" }
+	] },
+	{ date_time = "2m", comparator = ">=" }
+]
+portrait = "think"
+local = "I'm brainstorming a new cake recipe!"
+next = "1"
+
+[inn_work_2.1]
+portrait = "wink"
+local = "Thanks to Eiland, I always know I'll sell at least one."
+
+[inn_work_3]
+refresh = "1y"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn" },
+	{ any = [
+		{ reina_routine = "inn_solo_reina" },
+		{ reina_routine = "inn_table_service" },
+		{ reina_activity = "attend_register" },
+		{ reina_animation = "write" }
+	] },
+	{ date_time = "1y", comparator = ">=" },
+	{ inn_counter = 6, comparator = ">=" },
+	{ reina_heart_level = 4, comparator = ">=" }
+]
+portrait = "wink"
+local = "Don't feel like you're interrupting me if you need something!"
+next = "1"
+
+[inn_work_3.1]
+portrait = "neutral"
+local = "The Inn's bustling these days, but I always have time for you, [Ari]!"
+
+[inn_work_4]
+refresh = "1m"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn" },
+	{ any = [
+		{ reina_routine = "inn_solo_reina" },
+		{ reina_routine = "inn_table_service" },
+		{ reina_activity = "attend_register" },
+	] },
+	{ date_time = "1y", comparator = ">=" },
+	{ reina_heart_level = 4, comparator = ">=" }
+]
+portrait = "wink"
+local = "Pull up a chair, [Ari]! I can get something started for you, just say the word!"
+
+[inn_work_5]
+refresh = "1y"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn" },
+	{ reina_routine = "inn_table_service" },
+	{ date_time = "1y", comparator = ">=" },
+]
+portrait = "neutral"
+local = "We always end up with a lot of scraps after a day of cooking."
+next = "1"
+
+[inn_work_5.1]
+portrait = "happy"
+local = "Celine uses them for composting, which is kind of poetic if you think about it."
+
+[inn_work_6]
+refresh = "1y"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn" },
+	{ any = [
+		{ reina_routine = "inn_solo_reina" },
+		{ reina_routine = "inn_table_service" },
+		{ reina_activity = "attend_register" },
+	] },
+	{ date_time = "1y", comparator = ">=" },
+	{ reina_heart_level = 4, comparator = ">=" },
+	{ day_of_the_week = "sunday" }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "It's a sleepy Sunday! Come in and relax with me before the new week starts!"
+
+[inn_work_7]
+refresh = "2m"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn" },
+	{ any = [
+		{ reina_routine = "inn_solo_reina" },
+		{ reina_routine = "inn_table_service" },
+		{ reina_activity = "attend_register" },
+	] },
+	{ date_time = "1y", comparator = ">=" },
+]
+portrait = "happy"
+local = "Hi [Ari]! Go on and make yourself at home."
+
+[inn_work_8]
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn" },
+	{ any = [
+		{ reina_routine = "inn_solo_reina" },
+		{ reina_routine = "inn_table_service" },
+	] },
+	{ season = "fall" }
+]
+portrait = "happy"
+local = "The kitchen is so cozy in the fall! I love it!"

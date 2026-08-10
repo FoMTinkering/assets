@@ -1,0 +1,14 @@
+[hungry_caterpillar]
+refresh = "1y"
+requires = [
+	{ npc = "luc" },
+	{ day_time = "4:00pm", comparator = ">=" },
+	{ any = [
+		{ luc_is_traveling_to_location = "inn" },
+		{ luc_is_traveling_to_location = "general_store_home" },
+		{ luc_is_traveling_to_location = "lucs_room" }
+	] },
+	{ day_of_the_week = "friday", comparator = "!=" },
+]
+portrait = "happy"
+local = "I'm hungry, and sleepy... like a sleepy, hungry caterpillar..."

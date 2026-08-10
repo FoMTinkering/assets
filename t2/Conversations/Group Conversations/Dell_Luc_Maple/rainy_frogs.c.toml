@@ -1,0 +1,20 @@
+[rainy_frogs]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ weather = "rainy" },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+]
+speaker = "luc"
+local = "A lot of fascinating insects come out during the rain, [Ari]."
+next = "1"
+
+[rainy_frogs.1]
+speaker = "dell"
+local = "LIKE FROGS!"
+next = "2"
+
+[rainy_frogs.2]
+speaker = "maple"
+local = "Frogs aren't bugs, Dell..."

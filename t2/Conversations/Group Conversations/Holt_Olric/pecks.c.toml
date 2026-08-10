@@ -1,0 +1,46 @@
+[pecks]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "olric" }] },
+	{ holt_zone = "<olric_zone>" },
+	{ date_time = "1y", comparator = ">=" }
+]
+actions = [
+	{ bark = { bark = "sweat_drop", npc = "holt" } },
+	{ bark = { bark = "sweat_drop", npc = "olric" } },
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+speaker = "holt"
+portrait = "neutral"
+local = "Hey, Olric! Why'd Henrietta go to the gym?"
+next = "1"
+
+[pecks.1]
+speaker = "holt"
+portrait = "wink"
+local = "To work out her pecks...!"
+next = "2"
+
+[pecks.2]
+speaker = "olric"
+portrait = "mad"
+effect = "sparkles"
+local = "Whoa, good for her! The pecs are an important muscle!"
+next = "3"
+
+[pecks.3]
+speaker = "holt"
+portrait = "sad"
+local = "No, no... to work out her PECKS."
+next = "4"
+
+[pecks.4]
+speaker = "olric"
+portrait = "sad"
+local = "Y-yeah? You already said that."
+next = "5"
+
+[pecks.5]
+speaker = "holt"
+portrait = "sad"
+local = "Her... pecks?"

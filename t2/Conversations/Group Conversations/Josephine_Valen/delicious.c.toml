@@ -1,0 +1,22 @@
+[delicious]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "josephine" }, { npc = "valen" }] },
+	{ josephine_zone = "<valen_zone>" },
+	{ location = "inn" },
+	{ valen_activity = "eat" },
+	{ any = [
+		{ reina_routine = "inn_solo_reina" },
+		{ reina_routine = "inn_table_service" },
+	] },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "valen"
+portrait = "neutral"
+local = "This is delicious, Josephine. Reina's handiwork, I presume?"
+next = "1"
+
+[delicious.1]
+speaker = "josephine"
+portrait = "neutral"
+local = "Oh, thank you Valen! She's really blossomed into an exceptional chef, hasn't she?"

@@ -1,0 +1,119 @@
+[dragonguard_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ adeline_zone = "inn/balcony_dragonguard" },
+	{ balor_zone = "inn/balcony_dragonguard" },
+	{ dell_zone = "inn/balcony_dragonguard" },
+	{ juniper_zone = "inn/balcony_dragonguard" },
+	{ olric_zone = "inn/balcony_dragonguard" },
+	{ dragonguard_fnati = 3 },
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "balor" },
+		{ npc = "dell" },
+		{ npc = "juniper" },
+		{ npc = "olric" },
+	] },
+]
+actions = [
+	{ bark = { bark = "sweat_drop", npc = "adeline" } },
+	{ bark = { bark = "sweat_drop", npc = "balor" } },
+	{ bark = { bark = "cute_face", npc = "dell" } },
+	{ bark = { bark = "sweat_drop", npc = "juniper" } },
+	{ bark = { bark = "cute_face", npc = "olric" } },
+]
+writes = [{ fnati = 3 }, { dragonguard_fnati = 4 }]
+speaker = "balor"
+portrait = "sad"
+local = "None of you had any luck finding Dell's lost treasure?"
+next = "1"
+
+[dragonguard_4.1]
+speaker = "adeline"
+portrait = "concerned"
+local = "None at all."
+next = "2"
+
+[dragonguard_4.2]
+speaker = "olric"
+portrait = "sad"
+local = "No luck..."
+next = "3"
+
+[dragonguard_4.3]
+speaker = "juniper"
+portrait = "ugh"
+local = "You do all realize she never told us what it is? What were you all even looking for?"
+next = "4"
+
+[dragonguard_4.4]
+speaker = "dell"
+portrait = "neutral"
+local = "Oh, didn't I tell you? I found it under my bed! Want to see?"
+next = "5"
+
+[dragonguard_4.5]
+speaker = "adeline"
+portrait = "mad"
+effect = "shock"
+local = "...!"
+next = "6"
+
+[dragonguard_4.6]
+speaker = "olric"
+portrait = "mad"
+effect = "shock"
+local = "Whoa! This...!"
+next = "7"
+
+[dragonguard_4.7]
+speaker = "balor"
+portrait = "mad"
+effect = "shock"
+local = "This is...!"
+next = "8"
+
+[dragonguard_4.8]
+speaker = "juniper"
+portrait = "mad"
+local = "Dell... this is a rock."
+next = "9"
+
+[dragonguard_4.9]
+speaker = "dell"
+portrait = "happy"
+local = "Yeah!"
+next = "10"
+
+[dragonguard_4.10]
+speaker = "adeline"
+portrait = "sigh"
+effect = "sigh"
+local = "It's a nice rock, Dell."
+next = "11"
+
+[dragonguard_4.11]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "I've seen better."
+next = "12"
+
+[dragonguard_4.12]
+speaker = "balor"
+portrait = "ugh"
+local = "Even I can't figure out how to turn that into money..."
+next = "13"
+
+[dragonguard_4.13]
+speaker = "olric"
+portrait = "neutral"
+local = "Sweet rock, Dell!"
+next = "14"
+
+[dragonguard_4.14]
+speaker = "olric"
+portrait = "happy"
+effect = "sparkles"
+local = "The Dragonguard really has it all!"

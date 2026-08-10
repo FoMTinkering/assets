@@ -1,0 +1,471 @@
+scene(eilands_office);
+place_actor(eiland, south, twt_eiland_entrance);
+animate(eiland, write);
+place_actor(ari, east, twt_ari_entrance);
+setup_prop(twt_water_tablet);
+camera_position(twt_camera_1);
+request_music_play("Music/Events/DragonCutscene");
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		wait(2.5);
+		animate(eiland, idle);
+		face(eiland, west);
+		wait(0.25);
+		animate(eiland, magnify);
+	}
+	{
+		wait(4);
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	animate(eiland, idle);
+	face(eiland, west);
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1.25);
+		pan_camera(3.5, twt_camera_1_extra);
+	}
+	{
+		wait(0.5);
+		animate(eiland, action);
+		wait(0.5);
+		destroy_prop(twt_water_tablet);
+		animate(eiland, idle);
+		wait(0.25);
+		sim {
+			walk(eiland, twt_eiland_start);
+			set_move_speed(eiland, 0.7);
+		}
+		face(eiland, east);
+	}
+	{
+		wait(3.5);
+		face(ari, south);
+		wait(1);
+		face(ari, west);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		walk_slow(eiland, twt_eiland_thought);
+		face(eiland, west);
+	}
+	{
+		next_line(); //
+	}
+}
+
+//
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.5);
+			free bark_speech(eiland, exclamation_mark);
+			wait(0.25);
+			face(eiland, east);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	sim {
+		{
+			wait(0.5);
+			free bark_speech(eiland, sweat_drop);
+			wait(0.25);
+			face(eiland, east);
+		}
+		{
+			next_line(); //
+		}
+	}
+}
+sim {
+	{
+		wait(0.5);
+		walk_slow(eiland, twt_eiland_start);
+		face(eiland, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+face(eiland, west);
+wait(0.5);
+free bark_speech(eiland, ellipses);
+wait(1.5);
+next_line(); //
+sim {
+	{
+		face(eiland, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(1);
+		fade_out(2);
+	}
+	{
+		wait(0.5);
+		free bark_speech(ari, cute_face);
+		wait(0.5);
+		free bark_speech(eiland, cute_face);
+	}
+	{
+		wait(2);
+		walk(eiland, "Manor House Main Room Door");
+		remove_actor(eiland);
+	}
+	{
+		wait(2.5);
+		walk(ari, "Manor House Main Room Door");
+		set_ari_to_idle();
+	}
+}
+//
+scene(bathhouse);
+place_actor(eiland, north, twt_eiland_bathhouse_entrance);
+place_actor(juniper, south, "Front Desk");
+animate(juniper, snooze);
+place_actor(dozy, east, "Dozy");
+animate(dozy, doze_2);
+place_actor(ari, north, twt_ari_bathhouse_entrance);
+camera_position(twt_camera_2);
+wait(1);
+sim {
+	pan_camera(4, twt_camera_3);
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		walk_slow(eiland, twt_eiland_bathhouse_start);
+		face(eiland, north);
+	}
+	{
+		wait(0.5);
+		walk_slow(ari, twt_ari_bathhouse_start);
+		face(ari, north);
+	}
+	{
+		wait(2.75);
+		free bark(dozy, exclamation_mark);
+		wait(0.25);
+		animate(dozy, idle);
+		face(dozy, south);
+		wait(0.5);
+		animate(dozy, tailwag);
+		wait(1);
+		walk(dozy, twt_dozy_bathhouse_start);
+		face(dozy, east);
+		wait(0.5);
+		face(ari, west);
+		wait(0.5);
+		animate(ari, action);
+		wait(0.5);
+		free bark(dozy, heart);
+		animate(dozy, tailwag);
+		wait(1);
+		animate(ari, idle);
+		wait(0.5);
+		face(ari, north);
+		wait(0.5);
+		animate(dozy, idle);
+		walk_slow(dozy, "Dozy");
+		wait(0.5);
+		animate(dozy, sleep_1);
+	}
+	{
+		wait(3);
+		free bark_speech(juniper, exclamation_mark);
+		wait(0.5);
+		animate(juniper, idle);
+	}
+	{
+		wait(4);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(2);
+		face(eiland, west);
+		wait(1);
+		face(eiland, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	free bark_speech(juniper, exclamation_mark);
+	{
+		animate(juniper, idle);
+		wait(0.5);
+		sim {
+			walk(juniper, twt_juniper_bathhouse_start);
+			set_move_speed(juniper, 1.5);
+		}
+		face(juniper, south);
+	}
+	{
+		wait(1);
+		next_line(); //
+	}
+	{
+		wait(0.5);
+		free bark_speech(eiland, exclamation_mark);
+		free bark_speech(ari, exclamation_mark);
+		free bark(dozy, exclamation_mark);
+		animate(dozy, idle);
+		face(dozy, south);
+	}
+}
+sim {
+	{
+		wait(3.5);
+		animate(juniper, hair_flip);
+		wait(0.7);
+		animate(juniper, idle);
+	}
+	{
+		wait(0.5);
+		face(eiland, west);
+		face(ari, east);
+		wait(1);
+		face(eiland, north);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+	}
+}
+free {
+	wait(2);
+	animate(dozy, sleep_2);
+}
+next_line(); //
+close_textbox();
+free pan_camera(3, twt_camera_3_extra);
+fade_out(2);
+
+//
+scene(bathhouse_bedroom);
+place_actor(eiland, north, twt_eiland_bathhouse_bedroom_entrance);
+place_actor(juniper, north, "Desk Stool");
+place_actor(ari, north, twt_ari_bathhouse_bedroom_entrance);
+setup_prop(twt_bathhouse_bedroom_water_tablet);
+camera_position(twt_camera_4_extra);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	pan_camera(3, twt_camera_4);
+	{
+		wait(2);
+		bark_speech(eiland, ellipses);
+		wait(1);
+	}
+	{
+		wait(4.5);
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(0.5);
+		free bark_speech(eiland, annoyed);
+	}
+	{
+		wait(4);
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		face(juniper, south);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+
+//
+if get_response() == 0 {
+	next_line(); //
+	next_line(); //
+} else {
+	sim {
+		{
+			wait(0.5);
+			face(eiland, west);
+			wait(0.5);
+			face(ari, east);
+			wait(2.5);
+			face(eiland, north);
+			wait(0.5);
+			face(ari, north);
+		}
+		{
+			next_line(); //
+		}
+	}
+	sim {
+		//
+		//
+		//
+		//
+		//
+		//
+		{
+			next_line(); //
+		}
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(1);
+		request_music_stop(2);
+		wait(0.5);
+		request_music_play(caldarus);
+	}
+	{
+		wait(1);
+		face(juniper, north);
+	}
+	{
+		wait(1.5);
+		pan_camera(6, twt_camera_5);
+	}
+	{
+		wait(2);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		//
+		//
+	}
+	{
+		wait(0.5);
+		pan_camera(2, twt_camera_4);
+	}
+	{
+		wait(0.5);
+		face(juniper, south);
+	}
+	{
+		wait(0.5);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(eiland, west);
+		wait(0.5);
+		face(ari, east);
+	}
+	{
+		next_line(); //
+	}
+}
+
+//
+
+if get_response() == 0 {
+	next_line(); //
+} else {
+	sim {
+		{
+			wait(2);
+			face(ari, north);
+			wait(0.5);
+			face(eiland, north);
+		}
+		{
+			next_line(); //
+		}
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(eiland, north);
+		wait(1);
+		face(eiland, west);
+	}
+	{
+		wait(2);
+		face(ari, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(eiland, cute_face);
+wait(1);
+free bark_speech(ari, cute_face);
+wait(1.5);
+face(juniper, north);
+wait(1);
+free bark_speech(juniper, ellipses);
+sim {
+	{
+		wait(0.5);
+		face(eiland, north);
+		face(ari, north);
+		wait(1.5);
+		face(eiland, west);
+		face(ari, east);
+	}
+	{
+		wait(1);
+		fade_out(2);
+		destroy_prop(twt_bathhouse_bedroom_water_tablet);
+	}
+}
+wait_one_tick();

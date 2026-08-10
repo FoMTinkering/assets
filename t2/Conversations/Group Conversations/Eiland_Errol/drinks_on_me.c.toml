@@ -1,0 +1,61 @@
+[drinks_on_me]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "errol" }] },
+	{ eiland_zone = "<errol_zone>" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ location = "inn" },
+	{ eiland_activity = "drink" },
+	{ errol_activity = "drink" }
+]
+speaker = "eiland"
+portrait = "neutral"
+local = "Cheers, Errol. Drinks are on me tonight!"
+next = "1"
+
+[drinks_on_me.1]
+speaker = "errol"
+portrait = "happy"
+local = "Very gracious of you, Lord Eiland!"
+
+[drinks_on_me_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "errol" }] },
+	{ eiland_zone = "<errol_zone>" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ location = "inn" },
+	{ eiland_activity = "drink" },
+	{ errol_activity = "drink" },
+	{ eiland_heart_level = 4, comparator = ">=" },
+	{ errol_heart_level = 4, comparator = ">=" },
+	{ museum_total_count = 40, comparator = ">=" },
+	{ museum_archaeology_count = 15, comparator = ">=" }
+]
+speaker = "eiland"
+portrait = "neutral"
+local = "Drinks are on me tonight, Errol! Cheers!"
+next = "1"
+
+[drinks_on_me_2.1]
+speaker = "eiland"
+portrait = "happy"
+local = "I couldn't ask for a better collaborator or curator. Your love of history and preservation is a gift to Mistria."
+next = "2"
+
+[drinks_on_me_2.2]
+speaker = "errol"
+portrait = "neutral"
+local = "Oh, you're too kind Lord Eiland!"
+next = "3"
+
+[drinks_on_me_2.3]
+speaker = "errol"
+portrait = "think"
+local = "During my time as the mine's foreman, I did my best to save artifacts I dug up while searching for ore, but I wasn't always successful."
+next = "4"
+
+[drinks_on_me_2.4]
+speaker = "errol"
+portrait = "happy"
+local = "Now that I've been behind the curator's desk a few seasons, I can truly say that the work of preservation is quite fulfilling. A dream come true!"

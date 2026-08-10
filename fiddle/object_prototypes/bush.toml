@@ -1,0 +1,291 @@
+[default]
+	size = [2, 2]
+	offset = [8, 8]
+	regrow_days = 3
+	interact_size = 8
+	sound_on_collide = "SoundEffects/Objects/TallGrassRustle"
+	count = 3
+	collides = false
+	target_terrain = "ground"
+	off_season = "regress"
+	sway = false
+
+	# these must be well defined to be a valid bush
+	harvest = -1
+	sprites = -1
+	seasons = -1
+
+[bush]
+	sprites.spring = "spr_bush_spring"
+	sprites.summer = "spr_bush_summer"
+	sprites.fall = "spr_bush_autumn"
+	sprites.winter = "spr_bush_winter"
+	# this is chaotic, but this just needs to be a name that ISN'T a valid ID
+	harvest = "__none__"
+	size = [4, 4]
+	offset = [16, 24]
+	collides = [
+		"0000",
+		"0000",
+		"1111",
+		"1111",
+	]
+
+	seasons = []
+
+[rose_bush]
+	sprites.spring = "spr_bush_rose_spring_stage1"
+	sprites.summer = ["spr_bush_rose_summer_stage1", "spr_bush_rose_summer_stage2"]
+	sprites.fall = "spr_bush_rose_autumn_stage1"
+	sprites.winter = "spr_bush_rose_winter_stage1"
+
+	size = [4, 4]
+	harvest = "rose"
+	regrow_days = 4
+	offset = [16, 24]
+	seasons = "summer"
+	collides = [
+		"0000",
+		"0000",
+		"1111",
+		"1111",
+	]
+
+[rose_hip_bush]
+	sprites.spring = "spr_bush_rose_spring_stage1"
+	sprites.summer = "spr_bush_rose_summer_stage1"
+	sprites.fall = "spr_bush_rose_autumn_stage1"
+	sprites.winter = ["spr_bush_rose_winter_stage1", "spr_bush_rose_winter_stage2"]
+
+	size = [4, 4]
+	harvest = "rose_hip"
+	regrow_days = 4
+	offset = [16, 24]
+	seasons = "winter"
+	collides = [
+		"0000",
+		"0000",
+		"1111",
+		"1111",
+	]
+
+[hydrangea_bush]
+	sprites.spring = "spr_bush_hydrangea_spring_stage1"
+	sprites.summer = ["spr_bush_hydrangea_summer_stage1", "spr_bush_hydrangea_summer_stage2"]
+	sprites.fall = "spr_bush_hydrangea_autumn_stage1"
+	sprites.winter = "spr_bush_hydrangea_winter_stage1"
+
+	size = [4, 4]
+	harvest = "hydrangea"
+
+	offset = [16, 24]
+	seasons = "summer"
+	collides = [
+		"0000",
+		"0000",
+		"1111",
+		"1111",
+	]
+
+[blueberry_bush]
+	sprites.spring = ["spr_bush_blueberry_spring_stage1", "spr_bush_blueberry_spring_stage2"]
+	sprites.summer = "spr_bush_blueberry_summer_stage1"
+	sprites.fall = "spr_bush_blueberry_autumn_stage1"
+	sprites.winter = "spr_bush_blueberry_winter_stage1"
+
+	size = [4, 4]
+	harvest = "blueberry"
+
+	offset = [16, 24]
+	seasons = "spring"
+	collides = [
+		"0000",
+		"0000",
+		"1111",
+		"1111",
+	]
+
+[wild_berry_bush]
+	sprites.spring = ["spr_bush_wildberry_spring_stage1", "spr_bush_wildberry_spring_stage2"]
+	sprites.summer = "spr_bush_wildberry_summer_stage1"
+	sprites.fall = "spr_bush_wildberry_autumn_stage1"
+	sprites.winter = "spr_bush_wildberry_winter_stage1"
+
+	size = [4, 4]
+	harvest = "wild_berries"
+	regrow_days = 4
+
+	offset = [16, 24]
+	seasons = "spring"
+	collides = [
+		"0000",
+		"0000",
+		"1111",
+		"1111",
+	]
+
+[blackberry_bush]
+	sprites.spring = "spr_bush_blackberry_spring_stage1"
+	sprites.summer = "spr_bush_blackberry_summer_stage1"
+	sprites.fall = ["spr_bush_blackberry_autumn_stage1", "spr_bush_blackberry_autumn_stage2"]
+	sprites.winter = "spr_bush_blackberry_winter_stage1"
+
+	size = [4, 4]
+	harvest = "blackberry"
+	regrow_days = 4
+
+	offset = [16, 24]
+	seasons = "fall"
+	collides = [
+		"0000",
+		"0000",
+		"1111",
+		"1111",
+	]
+
+[wild_grape_bush]
+	sprites.spring = "spr_bush_grape_spring_stage1"
+	sprites.summer = ["spr_bush_grape_summer_stage1", "spr_bush_grape_summer_stage2"]
+	sprites.fall = "spr_bush_grape_autumn_stage1"
+	sprites.winter = "spr_bush_grape_winter_stage1"
+
+	size = [2, 2]
+	harvest = "wild_grapes"
+	regrow_days = 4
+	seasons = "summer"
+	collides = "1"
+
+[wintergreen_bush]
+	sprites.spring = "spr_bush_wintergreen_spring_stage1"
+	sprites.summer = "spr_bush_wintergreen_summer_stage1"
+	sprites.fall = "spr_bush_wintergreen_autumn_stage1"
+	sprites.winter = ["spr_bush_wintergreen_winter_stage1", "spr_bush_wintergreen_winter_stage2"]
+
+	size = [4, 4]
+	harvest = "wintergreen_berry"
+	regrow_days = 4
+
+	offset = [16, 24]
+	seasons = "winter"
+	collides = [
+		"0000",
+		"0000",
+		"1111",
+		"1111",
+	]
+
+[glowberry_bush]
+	sprites.spring = "spr_bush_glowberry_spring_stage1"
+	sprites.summer = "spr_bush_glowberry_summer_stage1"
+	sprites.fall = "spr_bush_glowberry_autumn_stage1"
+	sprites.winter = ["spr_bush_glowberry_winter_stage1", "spr_bush_glowberry_winter_stage2"]
+
+	size = [4, 4]
+	harvest = "glowberry"
+	regrow_days = 4
+
+	offset = [16, 24]
+	seasons = "winter"
+	collides = [
+		"0000",
+		"0000",
+		"1111",
+		"1111",
+	]
+
+[bell_berry_bush]
+	sprites.spring = ["spr_bush_bell_berry_spring_stage1", "spr_bush_bell_berry_spring_stage2"]
+	sprites.summer = ["spr_bush_bell_berry_summer_stage1", "spr_bush_bell_berry_summer_stage2"]
+	sprites.fall = ["spr_bush_bell_berry_autumn_stage1", "spr_bush_bell_berry_autumn_stage2"]
+	sprites.winter = ["spr_bush_bell_berry_winter_stage1","spr_bush_bell_berry_winter_stage2"]
+
+	size = [4, 4]
+	harvest = "bell_berry"
+	regrow_days = 4
+
+	offset = [16, 24]
+	seasons = ["spring", "summer", "fall", "winter"]
+	collides = [
+		"0000",
+		"0000",
+		"1111",
+		"1111",
+	]
+
+[underseaweed]
+	sprites = ["spr_forage_underseaweed_spring_stage_1", "spr_forage_underseaweed_spring_stage_2"]
+	water_bases = ["spr_forage_underseaweed_water", "spr_forage_underseaweed_water"]
+	count = 1
+	target_terrain = "water"
+	harvest = "underseaweed"
+	seasons = ["spring", "summer", "fall", "winter"]
+	sway = true
+
+[cattail_one]
+	sprites = ["spr_forage_cattail_v1_spring_stage_1", "spr_forage_cattail_v1_spring_stage_2"]
+	water_bases = ["spr_forage_cattail_v1_water", "spr_forage_cattail_v1_water"]
+	target_terrain = "water"
+	harvest = "cattail"
+	count = 1
+	seasons = ["spring", "summer", "fall"]
+	off_season = "destroy"
+	sway = true
+	regrow_days = 3
+
+[cattail_two]
+	sprites = ["spr_forage_cattail_v2_spring_stage_1", "spr_forage_cattail_v2_spring_stage_2"]
+	water_bases = ["spr_forage_cattail_v2_water", "spr_forage_cattail_v2_water"]
+	target_terrain = "water"
+	harvest = "cattail"
+	count = 2
+	seasons = ["spring", "summer", "fall"]
+	off_season = "destroy"
+	sway = true
+
+[cattail_three]
+	sprites = ["spr_forage_cattail_v3_spring_stage_1", "spr_forage_cattail_v3_spring_stage_2"]
+	water_bases = ["spr_forage_cattail_v3_water", "spr_forage_cattail_v3_water"]
+	target_terrain = "water"
+	harvest = "cattail"
+	seasons = ["spring", "summer", "fall"]
+	off_season = "destroy"
+	sway = true
+
+[water_chestnut_one]
+	sprites = ["spr_forage_waterchestnut_sprout_spring", "spr_forage_waterchestnut_v1_spring"]
+	water_bases = ["spr_forage_waterchestnut_sprout_ground", "spr_forage_waterchestnut_v1_ground"]
+	target_terrain = "water"
+	harvest = "water_chestnut"
+	count = 1
+	seasons = ["spring", "summer", "fall"]
+	off_season = "destroy"
+	sway = true
+
+[water_chestnut_two]
+	sprites = ["spr_forage_waterchestnut_sprout_spring", "spr_forage_waterchestnut_v2_spring"]
+	water_bases = ["spr_forage_waterchestnut_sprout_ground", "spr_forage_waterchestnut_v2_ground"]
+	target_terrain = "water"
+	harvest = "water_chestnut"
+	count = 2
+	seasons = ["spring", "summer", "fall"]
+	off_season = "destroy"
+	sway = true
+
+[water_chestnut_three]
+	sprites = ["spr_forage_waterchestnut_sprout_spring", "spr_forage_waterchestnut_v3_spring"]
+	water_bases = ["spr_forage_waterchestnut_sprout_ground", "spr_forage_waterchestnut_v3_ground"]
+	target_terrain = "water"
+	harvest = "water_chestnut"
+	seasons = ["spring", "summer", "fall"]
+	off_season = "destroy"
+	sway = true
+
+[water_chestnut_four]
+	sprites = ["spr_forage_waterchestnut_sprout_spring", "spr_forage_waterchestnut_v4_spring"]
+	water_bases = ["spr_forage_waterchestnut_sprout_ground", "spr_forage_waterchestnut_v4_ground"]
+	target_terrain = "water"
+	harvest = "water_chestnut"
+	count = 4
+	seasons = ["spring", "summer", "fall"]
+	off_season = "destroy"
+	sway = true

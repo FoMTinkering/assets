@@ -1,0 +1,127 @@
+[gardening]
+refresh = "1y"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_routine = "manor_gardening" },
+		{ celine_routine = "celine_gardening" },
+	] },
+	{ date_time = "1y", comparator = ">=" },
+	{ celine_new_tools = true }
+]
+portrait = "happy"
+local = "I'm breaking in a new set of tools I commissioned from March and Ryis! Oh, this is so exciting!"
+next = "1"
+
+[gardening.1]
+portrait = "think"
+local = "Dell read a story about a beanstalk that grows into the clouds..."
+next = "2"
+
+[gardening.2]
+portrait = "happy"
+effect = "drop"
+local = "Now she's asking if I can grow one for her!"
+
+[gardening_2]
+refresh = "1y"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_routine = "manor_gardening" },
+		{ celine_routine = "celine_gardening" },
+	] },
+	{ date_time = "1y", comparator = ">=" },
+	{ celine_new_tools = true }
+]
+portrait = "very_happy"
+local = "Did I show you my new gardening tools? Ryis made the handles out of this pretty wood, and March pressed a flower pattern into the metal!"
+
+[gardening_3]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_routine = "manor_gardening" },
+		{ celine_routine = "celine_gardening" },
+	] },
+	{ date_time = "1y", comparator = ">=" },
+	{ season = "spring" }
+]
+portrait = "happy"
+local = "I'm doing my spring planting! It's a nice time to do it, while the soil's saturated with water from winter's last melt."
+
+[gardening_4]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_routine = "manor_gardening" },
+		{ celine_routine = "celine_gardening" },
+	] },
+	{ date_time = "1y", comparator = ">=" },
+	{ celine_heart_level = 2, comparator = ">=" }
+]
+portrait = "neutral"
+local = "I was pulling up some old roots earlier..."
+next = "1"
+
+[gardening_4.1]
+portrait = "think"
+local = "Some of them were longer than my braid, if you can believe it!"
+
+[gardening_5]
+refresh = "1y"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_routine = "manor_gardening" },
+		{ celine_routine = "celine_gardening" },
+	] },
+	{ date_time = "1y", comparator = ">=" },
+	{ celine_heart_level = 6, comparator = ">=" }
+]
+portrait = "think"
+local = "Sometimes when I'm digging in the soil, I feel this... connection to the land. Like I'm touching the past, present and future of Mistria."
+next = "1"
+
+[gardening_5.1]
+portrait = "happy"
+local = "It feels so special, you know?"
+
+[gardening_6]
+refresh = "2m"
+requires = [
+	{ npc = "celine" },
+	{ celine_routine = "celine_gardening" },
+	{ date_time = "2m", comparator = ">=" },
+	{ time_of_day = "night", comparator = "!=" }
+]
+portrait = "neutral"
+local = "I'm testing the soil today, and deciding if I'll do my next planting from seeds or transplanted seedlings."
+
+[gardening_7]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_routine = "manor_gardening" },
+		{ celine_routine = "celine_gardening" },
+	] },
+	{ season = "fall" }
+]
+portrait = "neutral"
+local = "Fall in Mistria is so pretty, but there's a practical side too! All those leaves on the ground make wonderful mulch for planting."
+
+[gardening_8]
+refresh = "2m"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_routine = "manor_gardening" },
+		{ celine_routine = "celine_gardening" },
+	] },
+	{ weather = "pleasant" }
+]
+portrait = "happy"
+local = "The soil is happy today! I didn't have to water my garden much at all."

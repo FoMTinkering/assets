@@ -1,0 +1,94 @@
+[generic_0]
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_human = true },
+	{ caldarus_seridia_town = true },
+	{ any = [{ location = "town" }, { location = "inn" }] }
+]
+portrait = "smile"
+local = "It delights me, the bustle of mortals going about their daily lives."
+next = "1"
+
+[generic_0.1]
+portrait = "sly"
+local = "It is like watching an anthill inside of a jar."
+
+[generic_1]
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_human = true },
+	{ caldarus_seridia_town = true },
+	{ location = "town", comparator = "!=" }
+]
+portrait = "neutral"
+local = "Sometimes I look around and think these townsfolk have become too complacent."
+next = "1"
+
+[generic_1.1]
+portrait = "sly"
+local = "Perhaps I should practice my new spells in the village square."
+next = "2"
+
+[generic_1.2]
+portrait = "think"
+local = "It would certainly liven things up."
+
+[generic_2]
+refresh = "1m"
+requires = [{ npc = "seridia" }, { seridia_is_human = true }]
+portrait = "closed_eyes"
+local = "The age of dragons may have passed, but do not fret."
+next = "1"
+
+[generic_2.1]
+portrait = "sinister"
+local = "Time is cyclical, and our reign of fire will surely burn again."
+
+[generic_3]
+refresh = "2m"
+requires = [{ npc = "seridia" }, { seridia_is_human = true }]
+actions = [{ bark = { npc = "seridia", bark = "cute_face" } }]
+portrait = "serious"
+local = "Today, I find myself feeling listless."
+next = "1"
+
+[generic_3.1]
+portrait = "closed_eyes"
+local = "We should do as we did in my youth..."
+next = "2"
+
+[generic_3.2]
+portrait = "smile"
+local = "Single out the brawniest mortals and make them fight for our entertainment."
+next = "3"
+
+[generic_3.3]
+portrait = "angry_brows"
+local = "Then the winner will have the honor of fighting me."
+next = "4"
+
+[generic_3.4]
+portrait = "happy"
+local = "What do you say, [Ari]?"
+
+[generic_4]
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_human = true },
+	{ caldarus_seridia_town = true }
+]
+portrait = "think"
+local = "I am surprised the people of this era do not wear the bones of their enemies."
+next = "1"
+
+[generic_4.1]
+portrait = "neutral"
+local = "It is a mode of expression that I favor."
+next = "2"
+
+[generic_4.2]
+portrait = "happy"
+local = "Perhaps you and I can bring it back into fashion."

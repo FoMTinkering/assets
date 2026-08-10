@@ -1,0 +1,42 @@
+[zero_to_one_0]
+refresh = "never"
+requires = [{ npc = "celine" }, { celine_heart_level = 2, comparator = "<" }]
+portrait = "think"
+local = "Hmmm..."
+next = "1"
+
+[zero_to_one_0.1]
+portrait = "neutral"
+local = "I was just thinking now that we're neighbors, we should get to know each other better, right?"
+next = "2"
+
+[zero_to_one_0.2]
+portrait = "happy"
+local = "You have an air of mystery about you, [Ari]!"
+
+[two_to_three_0]
+refresh = "2m"
+requires = [
+	{ npc = "celine" },
+	{ celine_heart_level = 4, comparator = "<" },
+	{ celine_heart_level = 2, comparator = ">=" },
+]
+portrait = "neutral"
+local = "It's always nice running into you, [Ari]."
+next = "1"
+
+[two_to_three_0.1]
+portrait = "happy"
+local = "I enjoy our chats."
+
+[four_to_five_0]
+refresh = "2m"
+requires = [
+	{ npc = "celine" },
+	{ time_of_day = "morning" },
+	{ celine_animation = "book_sit" },
+	{ celine_heart_level = 6, comparator = "<" },
+	{ celine_heart_level = 4, comparator = ">=" }
+]
+portrait = "embarrassed"
+local = "[Ari]! I was just doing some morning reading. Elsie lent this to me from her personal library..."

@@ -1,0 +1,790 @@
+[eiland_eight_hearts_follow_up_adeline]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_partner = false },
+	{ eiland_heart_event = "eight_heart" },
+	{ any = [
+		{ eiland_is_best_friend = true },
+		{ eiland_is_partner = true }
+	] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "Eiland told me that you found the last pieces of the $Dragonsworn Armor$ set!"
+next = "1"
+
+[eiland_eight_hearts_follow_up_adeline.1]
+portrait = "think"
+local = "And that you uncovered them in a secret glade within the Deep Woods..."
+next = "2"
+
+[eiland_eight_hearts_follow_up_adeline.2]
+portrait = "wink"
+local = "Just think what this could mean for the future of Mistrian tourism!"
+
+[eiland_eight_hearts_follow_up_eiland_romantic]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_heart_event = "eight_heart" },
+	{ eiland_is_partner = true },
+	{ eiland_eight_heart_priority_bump = true }
+]
+actions = [{ bark = { bark = "blush", npc = "eiland" } }]
+portrait = "neutral"
+local = "I still can't believe we completed the $Dragonsworn Armor$ set, [Ari]."
+next = "1"
+
+[eiland_eight_hearts_follow_up_eiland_romantic.1]
+portrait = "embarrassed"
+local = "I admit... I haven't been able to stop thinking about it."
+next = "2"
+
+[eiland_eight_hearts_follow_up_eiland_romantic.2]
+portrait = "hope_special"
+local = "Or about you."
+
+[eiland_eight_hearts_follow_up_eiland_best_friend]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_heart_event = "eight_heart" },
+	{ eiland_is_best_friend = true },
+	{ eiland_eight_heart_priority_bump = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "eiland" } }]
+portrait = "neutral"
+local = "I still can't believe we completed the $Dragonsworn Armor$ set, [Ari]."
+next = "1"
+
+[eiland_eight_hearts_follow_up_eiland_best_friend.1]
+portrait = "happy"
+effect = "drop"
+local = "I admit... It's hard to resist the urge to visit the Museum whenever I think about it!"
+
+[eiland_eight_hearts_follow_up_elsie_romantic]
+refresh = "never"
+requires = [
+	{ npc = "elsie" },
+	{ eiland_heart_event = "eight_heart" },
+	{ eiland_is_partner = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "elsie" } }]
+portrait = "neutral"
+local = "I am glad that Eiland has you in his life, [Ari]."
+next = "1"
+
+[eiland_eight_hearts_follow_up_elsie_romantic.1]
+portrait = "happy"
+effect = "cheery"
+local = "It's always so exciting to see a new romance bloom."
+
+[eiland_eight_hearts_follow_up_elsie_best_friend]
+refresh = "never"
+requires = [
+	{ npc = "elsie" },
+	{ eiland_heart_event = "eight_heart" },
+	{ eiland_is_best_friend = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "elsie" } }]
+portrait = "neutral"
+local = "I am glad that Eiland has a friend like you, [Ari]."
+next = "1"
+
+[eiland_eight_hearts_follow_up_elsie_best_friend.1]
+portrait = "happy"
+local = "Thank you for being there for him."
+
+[eiland_eight_hearts_follow_up_errol_romantic]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ eiland_heart_event = "eight_heart" },
+	{ eiland_is_partner = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "errol" } }]
+portrait = "neutral"
+local = "Congratulations on your discovery, [Ari]."
+next = "1"
+
+[eiland_eight_hearts_follow_up_errol_romantic.1]
+portrait = "happy"
+local = "Eiland told me all about it!"
+next = "2"
+
+[eiland_eight_hearts_follow_up_errol_romantic.2]
+portrait = "neutral"
+local = "The completed $Dragonsworn Armor$ display is undoubtedly the gem of our collection."
+next = "3"
+
+[eiland_eight_hearts_follow_up_errol_romantic.3]
+portrait = "wink"
+local = "You two... You make quite the team!"
+
+[eiland_eight_hearts_follow_up_errol_best_friend]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ eiland_heart_event = "eight_heart" },
+	{ eiland_is_best_friend = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "errol" } }]
+portrait = "neutral"
+local = "Congratulations on your discovery, [Ari]."
+next = "1"
+
+[eiland_eight_hearts_follow_up_errol_best_friend.1]
+portrait = "happy"
+local = "Eiland told me all about it!"
+next = "2"
+
+[eiland_eight_hearts_follow_up_errol_best_friend.2]
+portrait = "neutral"
+local = "The completed $Dragonsworn Armor$ display is undoubtedly the gem of our collection."
+next = "3"
+
+[eiland_eight_hearts_follow_up_errol_best_friend.3]
+portrait = "happy"
+local = "You two make quite the team!"
+
+[eiland_eight_hearts]
+kind = "gameplay_triggered"
+writes = [
+	{ eiland_heart_event = "eight_heart", expires = "4d" },
+	{ eiland_eight_heart_priority_bump = true, expires = "4d" }
+]
+speaker = "eiland"
+portrait = "happy"
+local = "[Ari]!"
+next = "0"
+
+[eiland_eight_hearts.0]
+speaker = "eiland"
+portrait = "neutral"
+local = "I'm so glad you could make it."
+next = "1"
+
+[eiland_eight_hearts.1]
+speaker = "eiland"
+portrait = "neutral_closed"
+local = "I was just taking a moment to soak in the atmosphere."
+next = "2"
+
+[eiland_eight_hearts.2]
+speaker = "eiland"
+portrait = "neutral"
+local = "Have you seen the extra tall conifer trees that grow in this area?"
+next = "3"
+
+[eiland_eight_hearts.3]
+speaker = "eiland"
+portrait = "think"
+local = "They are known as the $Guardians of the Woods$."
+next = "4"
+
+[eiland_eight_hearts.4]
+speaker = "eiland"
+portrait = "happy"
+local = "Legends say that they offer protection, even after they fall. Like this one, arched above us."
+next = "5"
+
+[eiland_eight_hearts.5]
+speaker = "eiland"
+portrait = "neutral"
+local = "I used to come here to sit beneath it and read, before the earthquake."
+next = "6"
+
+[eiland_eight_hearts.6]
+speaker = "eiland"
+portrait = "neutral_closed"
+local = "There's just something so peaceful about this place."
+next = [
+	{ target = "7r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "7f", requires = [] }
+]
+
+[eiland_eight_hearts.7r]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "I'm glad that I can finally visit again. I have you to thank for that."
+next = "8"
+
+[eiland_eight_hearts.7f]
+speaker = "eiland"
+portrait = "neutral"
+local = "I'm glad that I can finally visit again. It's all thanks to you."
+next = "8"
+
+[eiland_eight_hearts.8]
+speaker = "eiland"
+portrait = "happy"
+local = "Let's make the most of it, shall we?"
+next = "9"
+
+[eiland_eight_hearts.9]
+speaker = "eiland"
+portrait = "neutral_closed"
+local = "The gentle rippling of the water, the sway in the branches..."
+next = "10"
+
+[eiland_eight_hearts.10]
+speaker = "eiland"
+portrait = "think"
+local = "It's meditative in a way."
+next = "11"
+
+[eiland_eight_hearts.11]
+speaker = "eiland"
+portrait = "neutral"
+local = "This scenery seems to clear my mind..."
+next = "12"
+
+[eiland_eight_hearts.12]
+speaker = "eiland"
+portrait = "think"
+local = "And leaves me with a sense of connection to the world around me."
+next = "13"
+
+[eiland_eight_hearts.13]
+speaker = "eiland"
+portrait = "neutral"
+local = "How about you, [Ari]?"
+
+[[eiland_eight_hearts.13.prompts]]
+local = "I feel a sense of connection as well."
+next = [
+	{ target = "14r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "14f", requires = [] }
+]
+
+[[eiland_eight_hearts.13.prompts]]
+local = "I feel a sense of calm."
+next = [
+	{ target = "15r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "15f", requires = [] }
+]
+
+[eiland_eight_hearts.14r]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "I'm glad you feel it too."
+next = "16"
+
+[eiland_eight_hearts.14f]
+speaker = "eiland"
+portrait = "happy"
+local = "I'm glad you feel it too."
+next = "16"
+
+[eiland_eight_hearts.15r]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "I do as well."
+next = "16"
+
+[eiland_eight_hearts.15f]
+speaker = "eiland"
+portrait = "happy"
+local = "I do as well."
+next = "16"
+
+[eiland_eight_hearts.16]
+speaker = "eiland"
+portrait = "think"
+local = "Looking at our reflections..."
+next = "17"
+
+[eiland_eight_hearts.17]
+speaker = "eiland"
+portrait = "neutral"
+local = "I can't help but think of all the faces that have looked back from these waters over the years."
+next = "18"
+
+[eiland_eight_hearts.18]
+speaker = "eiland"
+portrait = "think"
+local = "My childhood self, my parents..."
+next = "19"
+
+[eiland_eight_hearts.19]
+speaker = "eiland"
+portrait = "neutral"
+local = "And surely, the many generations of Mistrians that came before us."
+next = "20"
+
+[eiland_eight_hearts.20]
+speaker = "eiland"
+portrait = "think"
+local = "In a way... it's like looking across time."
+next = [
+	{ target = "21r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "21f", requires = [] }
+]
+
+[eiland_eight_hearts.21r]
+speaker = "eiland"
+portrait = "hope_special"
+local = "I'm reminded of the night we spent watching the stars on the summit."
+next = "22"
+
+[eiland_eight_hearts.21f]
+speaker = "eiland"
+portrait = "happy"
+local = "There's just something mysterious about this place, I suppose."
+next = "22"
+
+[eiland_eight_hearts.22]
+speaker = "eiland"
+portrait = "happy_blush"
+effect = "drop"
+local = "Ah... but here I am going on about the past again..."
+next = "23"
+
+[eiland_eight_hearts.23]
+speaker = "eiland"
+portrait = "hope_special"
+local = "I promised myself I wouldn't do that today."
+next = [
+	{ target = "24r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "24f", requires = [] }
+]
+
+[eiland_eight_hearts.24r]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "I just want to enjoy being in the moment with you."
+next = "25"
+
+[eiland_eight_hearts.24f]
+speaker = "eiland"
+portrait = "happy"
+local = "I just want to enjoy being in the moment."
+next = "25"
+
+[eiland_eight_hearts.25]
+speaker = "eiland"
+portrait = "neutral"
+local = "Come on, [Ari]. Let's continue our walk."
+next = "26"
+
+[eiland_eight_hearts.26]
+speaker = "eiland"
+portrait = "think"
+local = "This area is known as the $Grove of Rest$..."
+next = "27"
+
+[eiland_eight_hearts.27]
+speaker = "eiland"
+portrait = "neutral"
+local = "These are the $Guardians of the Woods$ I was telling you about!"
+next = "28"
+
+[eiland_eight_hearts.28]
+speaker = "eiland"
+portrait = "think"
+local = "But these ones here have a special purpose-"
+next = "29"
+
+[eiland_eight_hearts.29]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "S-sorry... I nearly dove into another history lesson..."
+
+[[eiland_eight_hearts.29.prompts]]
+local = "Please, go on!"
+next = [
+	{ target = "30r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "30f", requires = [] }
+]
+
+[[eiland_eight_hearts.29.prompts]]
+local = "I love it when you talk about things you feel passionate about!"
+next = [
+	{ target = "30r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "30f", requires = [] }
+]
+
+[eiland_eight_hearts.30r]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "Really? You don't mind?"
+next = "31"
+
+[eiland_eight_hearts.30f]
+speaker = "eiland"
+portrait = "happy"
+local = "Oh! Is it... really okay?"
+next = "31"
+
+[eiland_eight_hearts.31]
+speaker = "eiland"
+portrait = "neutral"
+local = "Well, these trees in particular are marked with memorial tablets."
+next = "32"
+
+[eiland_eight_hearts.32]
+speaker = "eiland"
+portrait = "think"
+local = "See the stone marker all the way up there?"
+next = "33"
+
+[eiland_eight_hearts.33]
+speaker = "eiland"
+portrait = "neutral"
+local = "Throughout history, the people living here have always planted a tree when a member of the community passes on."
+next = "34"
+
+[eiland_eight_hearts.34]
+speaker = "eiland"
+portrait = "think"
+local = "A marker is inscribed, and then attached to a new sapling."
+next = "35"
+
+[eiland_eight_hearts.35]
+speaker = "eiland"
+portrait = "neutral"
+local = "Over time, the marker is embraced by the tree as it grows, lifting the marker skyward."
+next = "36"
+
+[eiland_eight_hearts.36]
+speaker = "eiland"
+portrait = "happy"
+local = "Legends say that it aids the ascension of the spirit into its next life."
+next = "37"
+
+[eiland_eight_hearts.37]
+speaker = "eiland"
+portrait = "neutral"
+local = "That must be why these trees are considered guardians."
+next = "38"
+
+[eiland_eight_hearts.38]
+speaker = "eiland"
+portrait = "think"
+local = "It's a sacred duty, guiding a spirit between lifetimes."
+next = "39"
+
+[eiland_eight_hearts.39]
+speaker = "eiland"
+portrait = "neutral"
+local = "And besides..."
+next = "40"
+
+[eiland_eight_hearts.40]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "There's an $unusually strong protective energy$ here, don't you think?"
+next = "41"
+
+[eiland_eight_hearts.41]
+speaker = "eiland"
+portrait = "sad"
+local = "What is it, [Ari]?"
+prompts = [
+	{ local = "I... I sense something here.", next = "42" },
+	{ local = "I'm not sure... just follow me.", next = "42" }
+]
+
+[eiland_eight_hearts.42]
+speaker = "eiland"
+portrait = "think"
+local = "...?"
+next = "43"
+
+[eiland_eight_hearts.43]
+speaker = "eiland"
+effect = "surprise"
+portrait = "surprised"
+local = "...!"
+next = "44"
+
+[eiland_eight_hearts.44]
+speaker = "eiland"
+portrait = "neutral"
+local = "L-look! There's an opening in the trees!"
+next = "45"
+
+[eiland_eight_hearts.45]
+speaker = "eiland"
+portrait = "surprised"
+local = "Another stele? Could it be...?"
+next = "46"
+
+[eiland_eight_hearts.46]
+speaker = "eiland"
+portrait = "surprised"
+local = "I can't believe it...!"
+next = "47"
+
+[eiland_eight_hearts.47]
+speaker = "eiland"
+portrait = "happy"
+local = "It's the $Dragonsworn Armor$! Both the $Cuisses$ and $Cuirass$... the last two pieces of the set!"
+next = "48"
+
+[eiland_eight_hearts.48]
+speaker = "eiland"
+portrait = "think"
+local = "But... how did you know this was hidden here?"
+prompts = [
+	{ local = "You mentioned before that the armor has unusual protective power.", next = "49" },
+	{ local = "I felt pulled toward this site in a way I can't quite explain.", next = "51" }
+]
+
+[eiland_eight_hearts.49]
+speaker = "eiland"
+portrait = "surprised"
+effect = "surprise"
+local = "Y-you're right! I can't believe I didn't think of that!"
+next = [
+	{ target = "50r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "50f", requires = [] }
+]
+
+[eiland_eight_hearts.50r]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "I'm impressed, [Ari]. Well done!"
+next = "53"
+
+[eiland_eight_hearts.50f]
+speaker = "eiland"
+portrait = "happy"
+local = "I'm impressed, [Ari].  Well done!"
+next = "53"
+
+[eiland_eight_hearts.51]
+speaker = "eiland"
+portrait = "neutral"
+local = "You have some incredible intuition, [Ari]."
+next = [
+	{ target = "52r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "52f", requires = [] }
+]
+
+[eiland_eight_hearts.52r]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "I'm so impressed. Well done!"
+next = "53"
+
+[eiland_eight_hearts.52f]
+speaker = "eiland"
+portrait = "happy"
+local = "I'm so impressed. Well done!"
+next = "53"
+
+[eiland_eight_hearts.53]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "Now, we'd better get this find over to the Museum!"
+next = "54"
+
+[eiland_eight_hearts.54]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "First, let's wrap them up, then-"
+next = "55"
+
+[eiland_eight_hearts.55]
+speaker = "eiland"
+portrait = "hope_special"
+local = "No, wait."
+next = "56"
+
+[eiland_eight_hearts.56]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "There's no need for us to rush off."
+next = "57"
+
+[eiland_eight_hearts.57]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "Why don't we take a break first and just... appreciate the moment?"
+next = [
+	{ target = "58r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "58f", requires = [] }
+]
+
+[eiland_eight_hearts.58r]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "Thank you for today [Ari]."
+next = "59r"
+
+[eiland_eight_hearts.58f]
+speaker = "eiland"
+portrait = "happy"
+local = "Thank you for today [Ari]."
+next = "59f"
+
+[eiland_eight_hearts.59r]
+speaker = "eiland"
+portrait = "hope_special"
+local = "It's been... well, magical."
+next = "60"
+
+[eiland_eight_hearts.59f]
+speaker = "eiland"
+portrait = "neutral"
+local = "It's been... well, incredible."
+next = "60"
+
+[eiland_eight_hearts.60]
+speaker = "eiland"
+portrait = "think"
+local = "The search for the $Dragonsworn Armor$ has been the adventure of a lifetime."
+next = "61"
+
+[eiland_eight_hearts.61]
+speaker = "eiland"
+portrait = "happy"
+local = "To have someone to share this with..."
+next = [
+	{ target = "62r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "62f", requires = [] }
+]
+
+[eiland_eight_hearts.62r]
+speaker = "eiland"
+portrait = "hope_special"
+local = "It means the world to me."
+next = "63"
+
+[eiland_eight_hearts.62f]
+speaker = "eiland"
+portrait = "neutral"
+local = "It means so much to me."
+next = "63"
+
+[eiland_eight_hearts.63]
+speaker = "eiland"
+portrait = "sad"
+local = "At the same time, it's bittersweet, isn't it?"
+next = "64"
+
+[eiland_eight_hearts.64]
+speaker = "eiland"
+portrait = "gloomy_special"
+local = "The truth is... I don't want our adventure together to be over."
+
+[[eiland_eight_hearts.64.prompts]]
+local = "Nonsense, Eiland, you're my best friend. We'll keep on adventuring!"
+next = [
+	{ target = "65r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "65f", requires = [] }
+]
+
+[[eiland_eight_hearts.64.prompts]]
+local = "I want to be with you, Eiland. Let's continue this adventure together."
+next = [
+	{ target = "69r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "69f", requires = [] }
+]
+
+[eiland_eight_hearts.65r]
+actions = [{ update_status = { npc = "eiland", status = "best_friend" } }]
+speaker = "eiland"
+portrait = "gloomy_special"
+local = "[Ari]..."
+next = "66r"
+
+[eiland_eight_hearts.65f]
+actions = [{ update_status = { npc = "eiland", status = "best_friend" } }]
+speaker = "eiland"
+portrait = "happy"
+local = "[Ari]..."
+next = "66f"
+
+[eiland_eight_hearts.66r]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "I'm grateful to have you as a friend."
+next = "67r"
+
+[eiland_eight_hearts.66f]
+speaker = "eiland"
+portrait = "neutral"
+local = "I'm so lucky to have a friend like you."
+next = "67f"
+
+[eiland_eight_hearts.67r]
+speaker = "eiland"
+portrait = "think"
+local = "And you're right..."
+next = "68"
+
+[eiland_eight_hearts.67f]
+speaker = "eiland"
+portrait = "think"
+local = "And you're right..."
+next = "68"
+
+[eiland_eight_hearts.68]
+speaker = "eiland"
+portrait = "happy"
+effect = "cheery"
+local = "I'm sure the future will be full of new adventures!"
+next = [
+	{ target = "73r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "73f", requires = [] }
+]
+
+[eiland_eight_hearts.69r]
+actions = [{ update_status = { npc = "eiland", status = "dating" } }]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "[Ari]..."
+next = "70r"
+
+[eiland_eight_hearts.69f]
+actions = [{ update_status = { npc = "eiland", status = "dating" } }]
+speaker = "eiland"
+portrait = "hope_special"
+local = "[Ari]..."
+next = "70f"
+
+[eiland_eight_hearts.70r]
+speaker = "eiland"
+portrait = "hope_special"
+local = "I've been wanting to tell you how much you mean to me for some time now."
+next = "71r"
+
+[eiland_eight_hearts.70f]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "I didn't realize you felt the same way."
+next = "71f"
+
+[eiland_eight_hearts.71r]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "I-I'm so happy that you feel the same way."
+next = "72"
+
+[eiland_eight_hearts.71f]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "I-I'm so happy."
+next = "72"
+
+[eiland_eight_hearts.72]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "To a future full of new adventures!"
+next = [
+	{ target = "73r", requires = [{ shooting_star_eiland_attended = true }] },
+	{ target = "73f", requires = [] }
+]
+
+[eiland_eight_hearts.73r]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "Come on, let's head back. We'll drop the armor over at the Museum and then I'll walk you home."
+
+[eiland_eight_hearts.73f]
+speaker = "eiland"
+portrait = "neutral"
+local = "Come on, let's head back. We'll drop the armor over at the Museum and then I'll walk you home."

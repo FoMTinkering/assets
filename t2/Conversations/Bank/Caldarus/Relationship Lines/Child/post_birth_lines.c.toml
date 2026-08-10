@@ -1,0 +1,304 @@
+[post_birth_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ time_of_day = "morning" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ caldarus_is_spouse = true },
+	{ child_born_today = true },
+	{ child_0_status = "infant" },
+	{ spouse_holding_child = true },
+	{ child_born_bump = true }
+]
+
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "neutral"
+local = "[child_0]..."
+next = "1"
+
+[post_birth_0.1]
+portrait = "embarrassed"
+local = "Hello, new soul. Hello, my little wonder."
+next = "2"
+
+[post_birth_0.2]
+portrait = "caring_special"
+local = "Look at how perfect you are."
+prompts = [
+	{ local = "I can't believe she's finally here!", next = "3" },
+	{ local = "Valen says she's perfectly healthy.", next = "5" }
+]
+
+[post_birth_0.3]
+portrait = "smile"
+local = "Yes... it feels as though I have been waiting my whole life to meet her."
+next = "4"
+
+[post_birth_0.4]
+portrait = "laugh_special"
+local = "I cannot wait to continue this journey together, with both of you."
+
+[post_birth_0.5]
+portrait = "smile"
+local = "Nothing could bring me greater joy. [child_0] is a miracle."
+next = "6"
+
+[post_birth_0.6]
+portrait = "laugh_special"
+local = "I cannot wait to continue this journey together, with both of you."
+
+[post_birth_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ post_birth_gate = false },
+	{ post_birth_grouping = 0 },
+	{ child_0_status = "infant" }
+]
+writes = [
+	{ post_birth_gate = true, expires = "3d" },
+	{ post_birth_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "Little Dell has asked me what [child_0] will become when she grows up..."
+next = "1"
+
+[post_birth_1.1]
+portrait = "smile"
+local = "Dragons do not normally ask such questions. Our lives are such that we may find many purposes to dedicate ourselves to."
+next = "2"
+
+[post_birth_1.2]
+portrait = "laugh"
+local = "[child_0], I hope you find many things that bring you joy. More than you can grasp with both your hands."
+
+[post_birth_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ post_birth_gate = false },
+	{ post_birth_grouping = 1 },
+	{ child_0_status = "infant" }
+]
+writes = [
+	{ post_birth_gate = true, expires = "3d" },
+	{ post_birth_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "I do not have strong memories of my parents. Perhaps it is the nature of my long life and the passage of time..."
+next = "1"
+
+[post_birth_2.1]
+portrait = "neutral"
+local = """Though it is true... dragons do not normally stay with their kin once they come of age. We are proverbially "shoved out of the nest." """
+next = "2"
+
+[post_birth_2.2]
+portrait = "smile"
+local = "I cannot be such a parent. Looking at [child_0]'s face, I know in my bones there will be no greater joy to pursue than witnessing her journey."
+
+[post_birth_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ post_birth_gate = false },
+	{ post_birth_grouping = 2 },
+	{ child_0_status = "infant" }
+]
+writes = [
+	{ post_birth_gate = true, expires = "3d" },
+	{ post_birth_grouping = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "neutral"
+local = "In my long life, I thought I had experienced everything there was to know of the world."
+next = "1"
+
+[post_birth_3.1]
+portrait = "smile"
+local = "It is a delight to be proven wrong."
+next = "2"
+
+[post_birth_3.2]
+portrait = "laugh"
+local = "The family that we share... it is the greatest adventure I have ever embarked upon."
+next = "3"
+
+[post_birth_3.3]
+portrait = "caring_special"
+local = "And it is a gift to share it with you."
+
+[post_birth_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ post_birth_gate = false },
+	{ post_birth_grouping = 3 },
+	{ child_0_status = "infant" },
+	{ time_of_day = "morning", comparator = "!=" }
+]
+writes = [
+	{ post_birth_gate = true, expires = "3d" },
+	{ post_birth_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "Earlier, [child_0] and I came across Eiland in the town square. He wished to discuss some recent translations I have done for him."
+next = "1"
+
+[post_birth_4.1]
+portrait = "neutral"
+local = "While we lingered, I noticed [child_0] was transfixed by the little dragon at the center of the fountain."
+next = "2"
+
+[post_birth_4.2]
+portrait = "smile"
+local = "Do you suppose she thinks it to be a miniature version of my shrine?"
+
+[post_birth_5]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ post_birth_gate = false },
+	{ post_birth_grouping = 4 },
+	{ child_0_status = "infant" }
+]
+writes = [
+	{ post_birth_gate = true, expires = "3d" },
+	{ post_birth_grouping = 5 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "The children of the town seem eager to recruit [child_0] into the Dragonguard."
+next = "1"
+
+[post_birth_5.1]
+portrait = "happy"
+local = "I support such a thing. It is important to create connections with one's peers, is it not?"
+next = "2"
+
+[post_birth_5.2]
+portrait = "think"
+local = "Though perhaps... it would do to wait until she can walk on her own."
+
+# friends and family
+[baby_born_caldarus_celine_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ caldarus_is_spouse = true },
+	{ child_0_status = "infant" },
+	{ baby_born_timer = true },
+	{ baby_born_best_friend_celine = false },
+	{ baby_friends_and_family_bump = true }
+]
+writes = [{ baby_born_best_friend_celine = true }]
+actions = [{ bark = { bark = "cute_face", npc = "celine" } }]
+portrait = "very_happy"
+local = "I'm so excited that you and Caldarus are parents... congratulations!"
+next = "1"
+
+[baby_born_caldarus_celine_0.1]
+portrait = "shocked"
+local = "Wow, a new dragon has been born... it feels like something really momentous has happened, doesn't it?"
+
+[baby_born_caldarus_eiland_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ caldarus_is_spouse = true },
+	{ child_0_status = "infant" },
+	{ baby_born_timer = true },
+	{ baby_born_best_friend_eiland = false },
+	{ baby_friends_and_family_bump = true }
+]
+writes = [{ baby_born_best_friend_eiland = true }]
+actions = [{ bark = { bark = "cute_face", npc = "eiland" } }]
+portrait = "happy"
+effect = "cheery"
+local = "Many felicitations on your growing family!"
+next = "1"
+
+[baby_born_caldarus_eiland_0.1]
+portrait = "neutral"
+local = "It's a wonder, [child_0] looks so much like Caldarus! Who'd think that our very own Mistria would be home to all of Aldaria's known dragons."
+next = "2"
+
+[baby_born_caldarus_eiland_0.2]
+portrait = "think"
+local = "Dragons are so long-lived, I wonder if she'll grow faster or slower than a mortal child? Will she need a specialized diet?"
+next = "3"
+
+[baby_born_caldarus_eiland_0.3]
+portrait = "mad"
+effect = "shock"
+local = "[Ari]! Can dragons even eat sweets?"
+
+[baby_born_caldarus_nora_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "nora" },
+	{ caldarus_is_spouse = true },
+	{ child_0_status = "infant" },
+	{ baby_born_timer = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "nora" } }]
+portrait = "happy"
+local = "Congratulations, [Ari]! [child_0] is such a darling."
+next = "1"
+
+[baby_born_caldarus_nora_0.1]
+portrait = "neutral"
+local = "Please tell me if you need any advice, I have plenty of experience raising kids... even if they're not dragons."
+next = "2"
+
+[baby_born_caldarus_nora_0.2]
+portrait = "think"
+local = "Well, Dell's questionable."
+
+[baby_born_caldarus_seridia_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ caldarus_is_spouse = true },
+	{ child_0_status = "infant" },
+	{ baby_born_timer = true },
+	{ baby_born_best_friend_seridia = false },
+	{ baby_friends_and_family_bump = true }
+]
+writes = [{ baby_born_best_friend_seridia = true }]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "smile"
+local = "I am delighted to see a new dragon has been born into the world."
+next = "1"
+
+[baby_born_caldarus_seridia_0.1]
+portrait = "closed_eyes_smile"
+local = "[child_0] is lucky she takes after you. To see a dragon child with Caldarus' features would be a terrible disappointment."
+next = "2"
+
+[baby_born_caldarus_seridia_0.2]
+portrait = "smile"
+local = "However, seeing her take after my Dragonsworn... how joyous."
+next = "3"
+
+[baby_born_caldarus_seridia_0.3]
+portrait = "happy"
+local = "Be proud, [Ari]. [child_0] is a miraculous thing."

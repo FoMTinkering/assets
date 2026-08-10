@@ -1,0 +1,215 @@
+birthday = { season = "fall", day = 12 }
+loved_gifts = [
+	"apple_honey_curry",
+	"breaded_catfish",
+	"cabbage_slaw",
+	"ice_cream_sundae",
+	"incredibly_hot_pot",
+	"rosemary_garlic_noodles",
+	"seafood_boil",
+	"seafood_snow_pea_noodles",
+	"spell_fruit_parfait",
+	"sushi_platter",
+]
+liked_gifts = [
+	"cauliflower_curry",
+	"cheese",
+	"cod_with_thyme",
+	"coffee",
+	"crystal_berry_pie",
+	"daffodil",
+	"deep_sea_soup",
+	"flour",
+	"garlic",
+	"garlic_bread",
+	"grilled_cheese",
+	"iced_coffee",
+	"miners_mushroom_stew",
+	"pizza",
+	"rice",
+	"spicy_cheddar_biscuit",
+	"sugar",
+	"turnip_and_potato_gratin",
+	"upper_mines_mushroom",
+	"wildberry_pie",
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "tunnel_millipede"
+name = "Reina"
+aldarian_name = "RN"
+music = "Music/Npc Tracks/Reina"
+outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+tags = ["townsfolk", "inn_family", "dateable"]
+journal_portrait_offset = [-108, -39]
+journal_background_color = [255, 240, 208]
+date_photo_offset = [1, 0]
+job = "Head Cook at the Inn"
+icon_sprite = "spr_ui_generic_icon_npc_reina"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_reina"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_reina"
+dateable = true
+roommate_routine = "reina_roommate"
+proposal_cutscene = "reina_ten_hearts"
+children = ["cedar"]
+can_carry_child = true
+
+[gossip]
+	line = "reina_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["latte"]
+	"12" = ["water"]
+	"16" = ["wine", "white_wine", "rose_wine"]
+	"20" = ["wine", "cocktail"]
+
+[offsets]
+	portrait = [-125, -65]
+	sweat = [-13, 11]
+	hearts = [-13, 11]
+	angry = [-13, 15]
+	sparkles = [-6, 8]
+	sparkles_dark = [-6, 8]
+	sick = [-10, 0]
+	music_notes = [-6, 8]
+	intensity = [-5, 3]
+	surprise = [-7, 7]
+	shock = [0, 4]
+	sigh = [-10, 8]
+	loud = [2, 9]
+	cheery = [-5, 9]
+	drop = [-8, 2]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	think = ["spring", "summer", "autumn", "winter", "beach"]
+	happy = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	wink = ["spring", "summer", "autumn", "winter", "beach"]
+	blush = ["spring", "summer", "autumn", "winter", "beach"]
+	mad = ["spring", "summer", "autumn", "winter", "beach"]
+	embarrassed = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	sad = ["spring", "summer", "autumn", "winter", "beach"]
+	ugh = ["spring", "summer", "autumn", "winter", "beach"]
+	blush_special = ["spring", "summer", "autumn", "winter", "beach"]
+	gloomy_special = ["spring", "summer", "autumn", "winter", "beach"]
+	blush_open_eyes = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	blush_think = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	bath_neutral = ["beach"]
+	shocked = ["spring", "summer", "autumn", "winter", "beach"]
+	serious = ["spring", "summer", "autumn", "winter", "beach"]
+	closed_eyes = ["spring", "summer", "autumn", "winter", "beach"]
+	closed_eyes_blush = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	closed_eyes_smile = ["spring", "summer", "autumn", "winter", "beach"]
+	closed_eyes_smile_blush = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+
+[cycles.shocked]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.kiss]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.sleep]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.bath_swim]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["beach"]
+	type = "linear"
+
+[cycles.write]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+
+[cycles.chop]
+	default_direction = "north"
+	directions = ["north"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	sound = "SoundEffects/SpecialEvents/ReinaChop"
+	on_pause_speaking = "idle"
+
+[cycles.polish]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+
+[cycles.write_sit]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	is_seated = true
+
+[cycles.read_sit]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	is_seated = true

@@ -1,0 +1,113 @@
+requires = [
+	{ weather = "pleasant" },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+	{ season = "fall" },
+	{ day_of_the_week = "thursday" },
+]
+# caldarus
+[caldarus."6:00am"]
+destination = "town/north_east_routine_entrance"
+
+[caldarus."6:01am"]
+destination = "bathhouse_change_room/Right Bench Right Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[caldarus."9:23am"]
+destination = "bathhouse/Cauldron 2"
+
+[caldarus."1:45pm"]
+destination = "town/repair_observation_1"
+
+[caldarus."7:17pm"]
+destination = "town/business_blacksmith_shadow_3"
+
+[caldarus."8:22pm"]
+destination = "deep_woods/west_pond_convo_1"
+
+[caldarus."12:52am"]
+destination = "caldarus_house/Caldarus Wake Point"
+on_arrival_actions = [{ animation = "eyes_closed" }]
+
+# eiland
+[eiland."6:00am"]
+destination = "manor_house_entry/Piano Bench Seat"
+
+[eiland."7:41am"]
+destination = "museum_entry/Museum Desk"
+
+[eiland."3:15pm"]
+destination = "museum_entry/Museum Admiring Painting Left"
+on_departure_writes = [{ archaeology_discussion_museum = false }]
+
+[eiland."6:07pm"]
+destination = "town/business_blacksmith_shadow_1"
+
+[eiland."8:22pm"]
+destination = "deep_woods/west_pond_convo_2"
+
+[eiland."12:51am"]
+destination = "eilands_bedroom/Loveseat Left Seat"
+
+# errol
+[errol."6:00am"]
+destination = "western_ruins/Dig Site Tour 1"
+
+[errol."8:34am"]
+destination = "western_ruins/Dig Site Tour 1"
+occupy_point = false
+on_arrival_actions = [{ routine = "western_ruins_archaeology_pit" }]
+on_departure_writes = [{ archaeology_discussion_museum = true }]
+
+[errol."1:23pm"]
+destination = "museum_entry/Museum Admiring Painting Right"
+
+[errol."6:06pm"]
+destination = "bathhouse_change_room/Left Bench Right Seat"
+
+[errol."11:29pm"]
+destination = "errols_bedroom/Desk Chair"
+
+# hayden
+[hayden."6:00am"]
+destination = "haydens_farm/Farm Visitor 1"
+
+[hayden."8:23am"]
+destination = "haydens_house/Hayden Counter"
+
+[hayden."11:12am"]
+destination = "town/north_west_routine_entrance"
+on_arrival_actions = [{ routine = "town_repair_work" }]
+
+[hayden."4:45pm"]
+destination = "town/repair_observation_2"
+
+[hayden."7:16pm"]
+destination = "town/Fountain Meetcute 1"
+
+[hayden."9:46pm"]
+destination = "inn/Top-Middle Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[hayden."12:45am"]
+destination = "haydens_house/Couch Seat Right"
+on_arrival_actions = [{ activity = "drink" }]
+
+# juniper
+[juniper."6:00am"]
+destination = "bathhouse/Front Desk"
+
+[juniper."8:55am"]
+destination = "bathhouse/Cauldron 3"
+
+[juniper."1:46pm"]
+destination = "deep_woods/eastern_road_routine_entrance"
+on_arrival_actions = [{ routine = "deep_woods_west_forage" }]
+
+[juniper."5:22pm"]
+destination = "bathhouse/Cauldron 3"
+
+[juniper."11:51pm"]
+destination = "bathhouse_bedroom/Crystal Ball Seat"

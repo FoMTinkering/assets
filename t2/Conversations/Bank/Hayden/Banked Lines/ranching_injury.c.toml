@@ -1,0 +1,18 @@
+[ranching_injury]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ any = [
+		{ hayden_is_traveling_to_location = "clinic_f1" },
+		{ location = "bathhouse_change_room" },
+	] },
+	{ hayden_zone = "<valen_zone>", comparator = "!=" },
+]
+portrait = "happy"
+effect = "drop"
+local = "I've got an old ranching injury that aches when it rains, so I like to check in with Valen when I can."
+next = "1"
+
+[ranching_injury.1]
+portrait = "think"
+local = "Though a soak at the Bathhouse works just as well! Er, don't tell Valen. Or Juniper, for that matter."

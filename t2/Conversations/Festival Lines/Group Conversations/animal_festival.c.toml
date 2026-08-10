@@ -1,0 +1,206 @@
+[animal_festival_eiland_errol_valen]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "errol" }, { npc = "valen" }] },
+	{ eiland_zone = "<errol_zone>" },
+	{ eiland_zone = "<valen_zone>" },
+	{ animal_festival_today = true },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+speaker = "eiland"
+portrait = "mad"
+local = "Surely Valen, you can agree that a healthy, well-balanced diet includes a =Cow-Shaped Donut=. Or two!"
+next = "1"
+
+[animal_festival_eiland_errol_valen.1]
+speaker = "valen"
+portrait = "think"
+local = "Well... they're certainly VERY cute, but-"
+next = "2"
+
+[animal_festival_eiland_errol_valen.2]
+speaker = "errol"
+portrait = "happy"
+local = "Good enough for me! Cheers, Eiland!"
+
+[animal_festival_march_olric]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }] },
+	{ march_zone = "<olric_zone>" },
+	{ animal_festival_today = true },
+	{ small_animal_place = "undefined" },
+	{ large_animal_place = "undefined" },
+]
+speaker = "olric"
+portrait = "neutral"
+local = "You ready for the competition, [Ari]? I've been taking Rocky through his paces!"
+next = "1"
+
+[animal_festival_march_olric.1]
+speaker = "olric"
+portrait = "wink"
+local = "He can sit, stay, you name it!"
+next = "2"
+
+[animal_festival_march_olric.2]
+speaker = "march"
+portrait = "sigh"
+local = "We're all rooting for your pet rock, Olric."
+next = "3"
+
+[animal_festival_march_olric.3]
+speaker = "march"
+portrait = "mad"
+local = "Right, [Ari]?"
+prompts = [
+	{ local = "Of course! Go Rocky!", next = "4" },
+	{ local = "Rocky's got a tough fight ahead of him!", next = "5" },
+]
+
+[animal_festival_march_olric.4]
+speaker = "olric"
+portrait = "happy"
+effect = "cheery"
+local = "Y-you guys..."
+
+[animal_festival_march_olric.5]
+speaker = "olric"
+portrait = "mad"
+local = "Bring it on, he's got the heart of a tiger!"
+
+[animal_festival_small_first_place_march_olric]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }] },
+	{ march_zone = "<olric_zone>" },
+	{ animal_festival_today = true },
+	{ any = [
+		{ small_animal_place = 3 },
+		{ small_animal_place = 2 },
+		{ small_animal_place = 1 },
+	] },
+	{},
+	{},
+	{},
+	{},
+]
+speaker = "olric"
+portrait = "sad"
+local = "Rocky, don't worry little buddy. You did your best!"
+next = "1"
+
+[animal_festival_small_first_place_march_olric.1]
+speaker = "olric"
+portrait = "neutral"
+local = "Tell'em he did great, March!"
+next = "2"
+
+[animal_festival_small_first_place_march_olric.2]
+speaker = "march"
+portrait = "ugh"
+local = "You... you did great, Rocky."
+
+[animal_festival_small_dnp_march_olric]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }] },
+	{ march_zone = "<olric_zone>" },
+	{ animal_festival_today = true },
+	{ small_animal_place = 0 },
+]
+speaker = "olric"
+portrait = "happy"
+local = "Rocky, you did it! Three cheers for Rocky!"
+next = "1"
+
+[animal_festival_small_dnp_march_olric.1]
+speaker = "march"
+portrait = "happy"
+local = "Congrats, you two."
+next = "2"
+
+[animal_festival_small_dnp_march_olric.2]
+speaker = "march"
+portrait = "sigh"
+local = "Just... don't toss him in the air, okay?"
+
+[animal_festival_large_first_place_dozy_juniper]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ any = [{ npc = "dozy" }, { npc = "juniper" }] },
+	{ dozy_zone = "<juniper_zone>" },
+	{ animal_festival_today = true },
+	{ any = [
+		{ large_animal_place = 3 },
+		{ large_animal_place = 2 },
+		{ large_animal_place = 1 },
+	] },
+	{},
+	{},
+	{},
+	{},
+]
+speaker = "juniper"
+portrait = "neutral"
+local = "Frankly, Dozy, I think you were meant for bigger things than this small town dog and pony show."
+next = "1"
+
+[animal_festival_large_first_place_dozy_juniper.1]
+speaker = "juniper"
+portrait = "wink"
+local = "Let's enter you into a Bathhouse competition, let your real skills shine!"
+next = "2"
+
+[animal_festival_large_first_place_dozy_juniper.2]
+speaker = "dozy"
+portrait = "neutral"
+local = "(Dozy seems to be giving this proposal some serious thought.)"
+
+[animal_festival_large_dnp_dozy_juniper]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ any = [{ npc = "dozy" }, { npc = "juniper" }] },
+	{ dozy_zone = "<juniper_zone>" },
+	{ animal_festival_today = true },
+	{ large_animal_place = 0 },
+]
+speaker = "juniper"
+portrait = "happy"
+local = "Third place... well done, Dozy."
+next = "1"
+
+[animal_festival_large_dnp_dozy_juniper.1]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "That cow of Hayden's had just better watch out next year!"
+next = "2"
+
+[animal_festival_large_dnp_dozy_juniper.2]
+speaker = "dozy"
+portrait = "neutral"
+local = "(Dozy seems to indicate that the actual large animal won.)"
+next = "3"
+
+[animal_festival_large_dnp_dozy_juniper.3]
+speaker = "juniper"
+portrait = "neutral"
+local = """Well... if you say so. Just let me know if you want me to "even out" the competition."""
+next = "4"
+
+[animal_festival_large_dnp_dozy_juniper.4]
+speaker = "juniper"
+portrait = "laugh"
+local = "Oh ho ho!"

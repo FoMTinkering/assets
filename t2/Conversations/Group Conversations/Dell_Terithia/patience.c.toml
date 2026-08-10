@@ -1,0 +1,35 @@
+[patience]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "terithia" }] },
+	{ dell_zone = "<terithia_zone>" },
+	{ terithia_animation = "fish" }
+]
+speaker = "terithia"
+portrait = "neutral"
+local = "Fishing is all about patience, Dell! Patience, and then a quick strike!"
+next = "1"
+
+[patience.1]
+speaker = "dell"
+portrait = "sad"
+local = "Patience? No wonder I'm so bad at fishing..."
+next = "2"
+
+[patience.2]
+speaker = "terithia"
+portrait = "wink"
+local = "A warrior needs patience most of all, Dell."
+next = "3"
+
+[patience.3]
+speaker = "dell"
+portrait = "neutral"
+local = "Really? Wow..."
+next = "4"
+
+[patience.4]
+speaker = "dell"
+portrait = "mad"
+effect = "sparkles"
+local = "I'll be the most patient warrior ever! You'll see!"

@@ -1,0 +1,548 @@
+# Ari pregnant
+[ari_pregnant_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ day_time = "11:00am", comparator = "<=" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ balor_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 0 },
+	{ ari_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "1d" },
+	{ pregnant_line_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "embarrassed"
+local = "It's such an indescribable feeling, knowing that we're going to have a child."
+next = "1"
+
+[ari_pregnant_0.1]
+portrait = "neutral"
+local = "I never really pictured myself as the father type..."
+next = "2"
+
+[ari_pregnant_0.2]
+portrait = "happy_blush"
+local = "But now... for you and our baby... I want to be the best father in Aldaria."
+
+[ari_pregnant_1]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 1 },
+	{ ari_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "[Ari], have you noticed you're craving any food in particular?"
+next = "1"
+
+[ari_pregnant_1.1]
+portrait = "embarrassed"
+local = "Apparently it's very common when you're pregnant."
+prompts = [
+	{ local = "I really want... fresh Golden Cookies!", next = "2" },
+	{ local = "I'm craving Apple Honey Curry!", next = "4" },
+	{ local = "A glass of Lemonade would be wonderful.", next = "6" }
+]
+
+[ari_pregnant_1.2]
+portrait = "happy_blush"
+local = "Hard to find a better dessert then =Golden Cookies=!"
+next = "3"
+
+[ari_pregnant_1.3]
+actions = [{ item = "golden_cookies" }]
+portrait = "embarrassed"
+local = "I actually already picked some up, I thought it'd be nice to have them in the house."
+
+[ari_pregnant_1.4]
+portrait = "blush"
+local = "What a coincidence!"
+next = "5"
+
+[ari_pregnant_1.5]
+actions = [{ item = "apple_honey_curry" }]
+portrait = "happy_blush"
+local = "I've got a fresh hot plate of =Apple Honey Curry= right here. Here you are!"
+
+[ari_pregnant_1.6]
+portrait = "neutral"
+local = "That does sound refreshing."
+next = "7"
+
+[ari_pregnant_1.7]
+actions = [{ item = "lemonade" }]
+portrait = "happy_blush"
+local = "I happen to have picked some up earlier, here you are!"
+
+[ari_pregnant_2]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 2 },
+	{ ari_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 3 }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "balor" } },
+	{ item = "restorative_syrup" }
+]
+portrait = "think"
+local = "I've noticed that you've been having a hard time in the mornings since you got pregnant."
+next = "1"
+
+[ari_pregnant_2.1]
+portrait = "concerned"
+local = "I know you prefer to tough things out, but I talked to Valen and she says this syrup would help."
+next = "2"
+
+[ari_pregnant_2.2]
+portrait = "neutral"
+local = "You do what you think is best, but your husband would appreciate it if you had it on you, okay?"
+
+[ari_pregnant_3]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 3 },
+	{ ari_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "How are you feeling today, [Ari]?"
+prompts = [
+	{ local = "It feels like the baby is getting bigger!", next = "1" },
+	{ local = "It feels like my clothes are getting tighter!", next = "4" },
+	{ local = "I feel fine!", next = "6" }
+]
+
+[ari_pregnant_3.1]
+portrait = "happy"
+local = "That's so exciting!"
+next = "2"
+
+[ari_pregnant_3.2]
+portrait = "neutral"
+local = "It feels like it's happening so fast."
+next = "3"
+
+[ari_pregnant_3.3]
+portrait = "happy_blush"
+local = "I can't wait to finally hold our baby!"
+
+[ari_pregnant_3.4]
+portrait = "sad"
+local = "You're not uncomfortable, are you?"
+next = "5"
+
+[ari_pregnant_3.5]
+portrait = "neutral"
+local = "Next time Louis is in town I'll have a talk with him about letting out a few of your outfits."
+
+[ari_pregnant_3.6]
+portrait = "happy"
+local = "I'm relieved to hear that."
+next = "7"
+
+[ari_pregnant_3.7]
+portrait = "neutral"
+local = "Still, let me know if you need anything!"
+
+[ari_pregnant_4]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 4 },
+	{ ari_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 5 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "happy"
+local = "What is it, [Ari]? You want me to put my hand on your belly?"
+next = "1"
+
+[ari_pregnant_4.1]
+portrait = "shocked"
+effect = "surprise"
+local = "Ah!"
+next = "2"
+
+[ari_pregnant_4.2]
+portrait = "happy_blush"
+local = "I... I felt the baby kick!"
+next = "3"
+
+[ari_pregnant_4.3]
+portrait = "embarrassed"
+local = "How wonderful!"
+
+[ari_pregnant_5]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 5 },
+	{ ari_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 6 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "think"
+local = """I've been thinking about baby names... how do you feel about "$Sterling$" if it's a boy?"""
+next = "1"
+
+[ari_pregnant_5.1]
+portrait = "happy"
+local = "A good, trustworthy name."
+next = "2"
+
+[ari_pregnant_5.2]
+portrait = "neutral"
+local = "How about you, [Ari]? Any names you've been thinking of?"
+
+[ari_pregnant_6]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 6 },
+	{ ari_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 7 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "I can't believe it's almost time for the baby to arrive."
+next = "1"
+
+[ari_pregnant_6.1]
+portrait = "happy"
+local = "Don't you worry [Ari]. I'll be right there by your side."
+
+# Stork pregnant
+[stork_pregnant_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 0 },
+	{ stork_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "1d" },
+	{ pregnant_line_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "embarrassed"
+local = "It's such an indescribable feeling, knowing that we're going to have a child."
+next = "1"
+
+[stork_pregnant_0.1]
+portrait = "neutral"
+local = "I never really pictured myself as the father type..."
+next = "2"
+
+[stork_pregnant_0.2]
+portrait = "happy_blush"
+local = "But now... for you and our baby... I want to be the best father in Aldaria."
+
+[stork_pregnant_1]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 1 },
+	{ stork_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "I've been assured by Nora that we'll be so frazzled after the baby arrives that it helps to make a list of everything we'll need... and then buy it."
+next = "1"
+
+[stork_pregnant_1.1]
+portrait = "think"
+local = "..."
+next = "2"
+
+[stork_pregnant_1.2]
+portrait = "angry_blush"
+local = "This may simply be a clever trick to help pad out the General Store's sales, but for the sake of our baby, I can't take that chance."
+
+[stork_pregnant_2]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 2 },
+	{ stork_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "think"
+local = "..."
+next = "1"
+
+[stork_pregnant_2.1]
+portrait = "sad_special"
+local = "......"
+prompts = [{ local = "What's on your mind?", next = "2" }, { local = "Something wrong?", next = "2" }]
+
+[stork_pregnant_2.2]
+portrait = "think"
+local = "All this preparation for the baby..."
+next = "3"
+
+[stork_pregnant_2.3]
+portrait = "sad"
+local = "It brings up... unpleasant memories from my own childhood."
+next = "4"
+
+[stork_pregnant_2.4]
+portrait = "ugh"
+local = "I want to be a better parent to our child than my parents were to me. A much better one."
+next = "5"
+
+[stork_pregnant_2.5]
+portrait = "hurt"
+local = "But what if I can't? What if I'm going to end up being just as lousy at it as my parents were?"
+prompts = [
+	{ local = "That you're worried about it at all means you'll be a great dad.", next = "6" },
+	{ local = "We'll figure it out together.", next = "8" }
+]
+
+[stork_pregnant_2.6]
+portrait = "shocked"
+local = "Oh!"
+next = "7"
+
+[stork_pregnant_2.7]
+portrait = "neutral"
+local = "I... I hadn't thought about it like that. It's a fair point."
+next = "9"
+
+[stork_pregnant_2.8]
+portrait = "embarrassed"
+local = "Yeah... knowing that helps a lot."
+next = "9"
+
+[stork_pregnant_2.9]
+portrait = "happy_blush"
+local = "Thanks, [Ari]. I love you."
+
+
+[stork_pregnant_3]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 3 },
+	{ stork_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "Hemlock has been kind enough to give me an enormous amount of advice on being a father."
+next = "1"
+
+[stork_pregnant_3.1]
+portrait = "happy"
+effect = "cheery"
+local = "Also I'm pretty sure he's been undercharging me for drinks at the bar."
+
+[stork_pregnant_4]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 4 },
+	{ stork_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 5 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "Jo and I were speculating over who the baby will end up taking after."
+next = "1"
+
+[stork_pregnant_4.1]
+portrait = "think"
+local = "While it would be fun to teach them all I know about business..."
+next = "2"
+
+[stork_pregnant_4.2]
+portrait = "happy_blush"
+local = "Personally, I hope they take after you."
+
+[stork_pregnant_5]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 5 },
+	{ stork_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 6 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "think"
+local = """I've been thinking about baby names... how do you feel about "$Sterling$" if it's a boy?"""
+next = "1"
+
+[stork_pregnant_5.1]
+portrait = "happy"
+local = "A good, trustworthy name."
+next = "2"
+
+[stork_pregnant_5.2]
+portrait = "neutral"
+local = "How about you, [Ari]? Any names you've been thinking of?"
+
+[stork_pregnant_6]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 6 },
+	{ stork_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 7 }
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "It seems like it's almost time for the baby to arrive."
+next = "1"
+
+[stork_pregnant_6.1]
+portrait = "happy"
+local = "Don't you worry [Ari]. Whatever comes next, we're in it together."
+
+# Friends and Family
+[pregnancy_balor_hemlock_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "hemlock" },
+	{ balor_is_spouse = true },
+	{ child_in_utero = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "hemlock" } }]
+portrait = "happy"
+local = "Heeey [Ari]! Congrats on the big news!"
+next = "1"
+
+[pregnancy_balor_hemlock_0.1]
+portrait = "neutral"
+local = "If you want any parenting advice when the time comes, just ask."
+
+[pregnancy_balor_josephine_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "josephine" },
+	{ balor_is_spouse = true },
+	{ child_in_utero = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "josephine" } }]
+portrait = "happy"
+local = "Congratulations to you and Balor on the upcoming bundle of joy!"
+next = "1"
+
+[pregnancy_balor_josephine_0.1]
+portrait = "neutral"
+local = "If you two need anything, anything at all, come and talk to Hemlock or myself."
+next = "2"
+
+[pregnancy_balor_josephine_0.2]
+portrait = "wink"
+local = "You're like family to us!"
+
+[pregnancy_balor_luc_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "luc" },
+	{ balor_is_spouse = true },
+	{ child_in_utero = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "luc" } }]
+portrait = "happy"
+local = "I heard you and Mister Balor are gonna have a baby! That's so cool!"
+next = "1"
+
+[pregnancy_balor_luc_0.1]
+portrait = "think"
+local = "..."
+next = "2"
+
+[pregnancy_balor_luc_0.2]
+portrait = "neutral"
+local = "Is the position of Uncle available? I can put together my references."

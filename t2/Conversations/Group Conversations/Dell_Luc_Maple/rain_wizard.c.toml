@@ -1,0 +1,23 @@
+[rain_wizard]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ weather = "rainy" },
+]
+speaker = "dell"
+portrait = "think"
+local = "This rain must be the work of an evil wizard!"
+next = "1"
+
+[rain_wizard.1]
+speaker = "maple"
+portrait = "happy"
+local = "You've got to help us, [Ari]!"
+next = "2"
+
+[rain_wizard.2]
+speaker = "luc"
+portrait = "happy"
+local = "Give us your best Dragon Smash!"

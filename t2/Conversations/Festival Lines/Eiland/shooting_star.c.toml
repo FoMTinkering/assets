@@ -1,0 +1,244 @@
+[shooting_star_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+	{ eiland_heart_level = 4, comparator = ">=" },
+	{ eiland_heart_level = 8, comparator = "<" },
+]
+portrait = "neutral"
+local = "Oh, [Ari]! I was just brushing up on the history of the Shooting Star Festival."
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "happy"
+local = "There's something uniquely romantic about a festival that predates written records."
+next = "2"
+
+[shooting_star_anticipation.2]
+portrait = "embarrassed"
+local = "Though I admit there are elements of the tradition I've yet to experience myself."
+
+[shooting_star_not_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_at = "town/star_festival_eiland" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "eiland_invited", comparator = "!=" },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "neutral"
+local = "The Shooting Star Festival is a rather romantic tradition, isn't it?"
+next = "1"
+
+[shooting_star_not_invited.1]
+portrait = "happy"
+local = "Just think! This view has been shared by all the Mistrians that have come before us..."
+
+[shooting_star_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_at = "town/star_festival_eiland" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "eiland_invited" },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "embarrassed"
+local = "[Ari]! May I escort you to the Summit now? If you're ready, of course."
+
+[shooting_star_invited_anticipation]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ shooting_star_date_status = "eiland_invited" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ eiland_is_at = "town/star_festival_eiland", comparator = "!=" },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "happy"
+local = "Tonight will be fun. I'll see you at 8 pm?"
+
+[shooting_star_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ shooting_star_date_status = "eiland_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ eiland_is_partner = false },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "neutral"
+local = "Oh, [Ari]!"
+next = "1"
+
+[shooting_star_follow_up.1]
+portrait = "embarrassed"
+local = "I was actually just thinking about you."
+next = "2"
+
+[shooting_star_follow_up.2]
+portrait = "happy"
+local = "Thank you for last night. I had a great time!"
+
+[shooting_star_8h_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ shooting_star_date_status = "eiland_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ eiland_is_partner = true },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "hope_special"
+local = "I had a wonderful time last night, [Ari]."
+next = "1"
+
+[shooting_star_8h_follow_up.1]
+portrait = "happy_blush"
+local = "I hope we can do it again next year."
+
+[shooting_star_missed_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ shooting_star_date_status = "eiland_invited" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "think"
+local = "Ah, [Ari]... Is everything alright?"
+next = "1"
+
+[shooting_star_missed_follow_up.1]
+portrait = "sad"
+local = "I wondered if maybe something came up last night..."
+
+[shooting_star_adeline_follow_up_eiland]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ shooting_star_date_status = "adeline_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ eiland_is_partner = false },
+	{ adeline_is_partner = false }
+]
+portrait = "think"
+local = "Adeline seems a little bit distracted today... I wonder why?"
+
+[shooting_star_follow_up_not_invited]
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ shooting_star_date_status = "eiland_invited", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "eiland_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "adeline_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "neutral"
+local = "Hi, [Ari]!"
+next = "1"
+
+[shooting_star_follow_up_not_invited.1]
+portrait = "happy"
+local = "Weren't the stars last night just magical?"
+
+# NEW ROMANCE LINE FOLLOW UPS
+
+[shooting_star_romantic_follow_up_A]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ shooting_star_date_status = "eiland_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "eiland" } },
+]
+portrait = "happy"
+local = "[Ari]! Hello!"
+next = "1"
+
+[shooting_star_romantic_follow_up_A.1]
+portrait = "embarrassed"
+local = "You're always going out of your way to bring me nice treats and I've been wanting to return the favor..."
+next = "2"
+
+[shooting_star_romantic_follow_up_A.2]
+portrait = "happy"
+actions = [{ item = "pudding" }]
+local = "It's not much, but I did make it myself! I hope you enjoy it!"
+
+
+[shooting_star_romantic_follow_up_B]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ shooting_star_date_status = "eiland_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "blush", npc = "eiland" } },
+]
+portrait = "happy"
+local = "You look nice today, [Ari]!"
+next = "1"
+
+[shooting_star_romantic_follow_up_B.1]
+portrait = "embarrassed"
+local = "Maybe it's all the fresh air? You always seem to have a certain glow."

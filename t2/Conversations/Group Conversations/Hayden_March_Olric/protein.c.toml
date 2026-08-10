@@ -1,0 +1,24 @@
+[protein]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "march" }, { npc = "olric" }] },
+	{ hayden_zone = "<march_zone>" },
+	{ hayden_zone = "<olric_zone>" },
+	{ hayden_activity = "eat" },
+	{ olric_activity = "eat" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+]
+speaker = "march"
+portrait = "unimpressed"
+effect = "drop"
+local = "I just want to say, I think you might both be obsessed with getting enough protein."
+next = "1"
+
+[protein.1]
+speaker = "hayden"
+local = "Nothing wrong with eggs for dinner, March."
+next = "2"
+
+[protein.2]
+speaker = "olric"
+local = "Nothing wrong with a dozen eggs for dinner, bro."

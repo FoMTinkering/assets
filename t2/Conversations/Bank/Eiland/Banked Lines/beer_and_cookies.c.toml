@@ -1,0 +1,15 @@
+[beer_and_cookies]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ any = [{ rainy_inn_night = true }, { day_of_the_week = "friday" }] },
+	{ location = "inn", comparator = "!=" },
+	{ any = [{ time_of_day = "morning" }, { time_of_day = "afternoon" }] },
+	{ eiland_was_last_spoken_to = "6h", time = "after", comparator = ">" }
+]
+local = "[Ari]! Will you be at the Inn tonight?"
+next = "1"
+
+[beer_and_cookies.1]
+portrait = "happy"
+local = "Hemlock has a new beer that wonderfully pairs with chocolate chip cookies, if you can believe it."

@@ -1,0 +1,237 @@
+[bathhouse_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "bathhouse" },
+	{ da_caldarus_bathhouse = 0 },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ da_caldarus_bathhouse = 1 },
+	{ da_caldarus_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "unsure_special"
+local = "You wish to share... a bath?"
+next = "1"
+
+[bathhouse_accept_1.1]
+portrait = "embarrassed"
+local = "Although I cannot join you at the $Bathhouse$..."
+next = "2"
+
+[bathhouse_accept_1.2]
+portrait = "laugh_special"
+local = "Perhaps I can improvise by heating one of the springs here."
+next = "3"
+
+[bathhouse_accept_1.3]
+portrait = "embarrassed"
+local = "Would that be sufficient?"
+
+[bathhouse_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "bathhouse" },
+	{ da_caldarus_bathhouse = 1, comparator = ">=" },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ da_caldarus_bathhouse = 2 },
+	{ da_caldarus_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "unsure_special"
+local = "Would you like to join me for a soak in the hot spring?"
+next = "1"
+
+[bathhouse_accept_2.1]
+portrait = "laugh_special"
+local = "Well... I will need to heat it first, of course."
+
+[bathhouse_accept_eog_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "bathhouse" },
+	{ da_caldarus_eog_bathhouse = 0 },
+	{ caldarus_seridia_town = true }
+]
+writes = [
+	{ da_caldarus_eog_bathhouse = 1 },
+	{ da_caldarus_eog_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "unsure_special"
+local = "You wish to share a bath?"
+next = "1"
+
+[bathhouse_accept_eog_1.1]
+portrait = "caring_special"
+local = "Certainly. I would enjoy a bath that I do not have to heat myself."
+next = "2"
+
+[bathhouse_accept_eog_1.2]
+portrait = "think_special"
+local = "And I have heard the Bathhouse waters are quite recuperative."
+next = "3"
+
+[bathhouse_accept_eog_1.3]
+portrait = "laugh_special"
+local = "After you, [Ari]."
+
+[bathhouse_accept_eog_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "bathhouse" },
+	{ da_caldarus_eog_bathhouse = 1, comparator = ">=" },
+	{ caldarus_seridia_town = true }
+]
+writes = [
+	{ da_caldarus_eog_bathhouse = 2 },
+	{ da_caldarus_eog_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "unsure_special"
+local = "Would you join me at the Bathhouse, [Ari]?"
+next = "1"
+
+[bathhouse_accept_eog_2.1]
+portrait = "caring_special"
+local = "You live an active life. It is necessary to release the tensions of the week."
+
+[bathhouse_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_bathhouse = 1 },
+	{ da_caldarus_bathhouse_follow_up_gate = true },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ da_caldarus_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "laugh_special"
+local = "That was most relaxing, [Ari]."
+next = "1"
+
+[bathhouse_follow_up_1.1]
+portrait = "unsure_special"
+local = "I still feel somewhat... overheated."
+next = "2"
+
+[bathhouse_follow_up_1.2]
+portrait = "embarrassed"
+local = "I hope that one day we may visit Juniper's $Bathhouse$ together, as well."
+prompts = [
+	{ local = "I would like that very much...", next = "3" },
+	{ local = "The spring here was great too!", next = "5" },
+]
+
+[bathhouse_follow_up_1.3]
+portrait = "caring_special"
+local = "As would I, [Ari]..."
+next = "4"
+
+[bathhouse_follow_up_1.4]
+portrait = "unsure_special"
+effect = "cheery"
+local = "It is something we can look forward to, then."
+
+[bathhouse_follow_up_1.5]
+portrait = "caring_special"
+local = "[Ari]... I am glad."
+next = "6"
+
+[bathhouse_follow_up_1.6]
+portrait = "unsure_special"
+effect = "cheery"
+local = "I would be happy to heat it up for us any time."
+
+[bathhouse_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_bathhouse = 2 },
+	{ da_caldarus_bathhouse_follow_up_gate = true },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ da_caldarus_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "caring_special"
+local = "I hope that you enjoyed our time in the spring together, [Ari]."
+next = "1"
+
+[bathhouse_follow_up_2.1]
+portrait = "laugh_special"
+effect = "cheery"
+local = "Both my heart and my body feel light."
+
+[bathhouse_follow_up_eog_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_eog_bathhouse = 1 },
+	{ da_caldarus_eog_bathhouse_follow_up_gate = true },
+	{ caldarus_seridia_town = true }
+]
+writes = [{ da_caldarus_eog_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "unsure_special"
+local = "I cannot recall the last time I felt so relaxed."
+next = "1"
+
+[bathhouse_follow_up_eog_1.1]
+portrait = "embarrassed"
+local = "I... enjoyed sharing that experience with you, [Ari]."
+prompts = [
+	{ local = "I enjoyed it, too.", next = "2" },
+	{ local = "I feel a little overheated...", next = "5" }
+]
+
+[bathhouse_follow_up_eog_1.2]
+portrait = "laugh_special"
+local = "I am happy to hear it."
+next = "3"
+
+[bathhouse_follow_up_eog_1.3]
+portrait = "unsure_special"
+local = "Purifying your body with your chosen one... it is an intimate thing."
+next = "4"
+
+[bathhouse_follow_up_eog_1.4]
+portrait = "caring_special"
+local = "I am already looking forward to our next visit."
+
+[bathhouse_follow_up_eog_1.5]
+portrait = "laugh_special"
+local = "I feel the same."
+next = "6"
+
+[bathhouse_follow_up_eog_1.6]
+portrait = "unsure_special"
+local = "Purifying your body with your chosen one... it is an intimate thing."
+next = "7"
+
+[bathhouse_follow_up_eog_1.7]
+portrait = "caring_special"
+local = "I am already looking forward to our next visit."
+
+[bathhouse_follow_up_eog_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_eog_bathhouse = 2 },
+	{ da_caldarus_eog_bathhouse_follow_up_gate = true },
+	{ caldarus_seridia_town = true }
+]
+writes = [{ da_caldarus_eog_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "unsure_special"
+local = "I... enjoyed sharing a bath with you, [Ari]."
+next = "1"
+
+[bathhouse_follow_up_eog_2.1]
+portrait = "laugh_special"
+local = "Both my heart and my body feel light."

@@ -1,0 +1,182 @@
+[farm_chores]
+refresh = "2m"
+requires = [
+	{ npc = "hayden" },
+	{ any = [
+		{ hayden_routine = "hayden_farm_work" },
+		{ hayden_routine = "hayden_farm_work_rain" }
+	] }
+]
+portrait = "neutral"
+local = "Working the farm can get tiring, but then I think of the animals and get a fresh burst of energy!"
+next = "1"
+
+[farm_chores.1]
+portrait = "wink"
+local = "Works every time!"
+
+[farm_chores_1]
+refresh = "2m"
+requires = [
+	{ npc = "hayden" },
+	{ any = [
+		{ hayden_routine = "hayden_farm_work" },
+		{ hayden_routine = "hayden_farm_work_rain" }
+	] }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "I never get tired of farm chores, [Ari]. Spending my day with animals is just the best!"
+
+[farm_chores_2]
+refresh = "2m"
+requires = [
+	{ npc = "hayden" },
+	{ any = [
+		{ hayden_routine = "hayden_farm_work" },
+		{ hayden_routine = "hayden_farm_work_rain" }
+	] }
+]
+portrait = "happy"
+local = "Working the field is a bit like meditation, for me. It's soothing to go with the flow for a little while."
+
+[farm_chores_3]
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_routine = "hayden_farm_work" },
+	{ season = "summer" },
+	{ weather = "pleasant" }
+]
+portrait = "happy_fist"
+local = "It's so cute how energetic the animals are in the summer. The green grass, the bright sunshine..."
+next = "1"
+
+[farm_chores_3.1]
+portrait = "wink"
+local = "Why, they're all about it!"
+
+[farm_chores_4]
+refresh = "2m"
+requires = [
+	{ npc = "hayden" },
+	{ any = [
+		{ hayden_routine = "hayden_farm_work" },
+		{ hayden_routine = "hayden_farm_work_rain" }
+	] },
+	{ date_time = "2m", comparator = ">=" }
+]
+portrait = "wink"
+local = "The work never ends when you run a farm, eh?"
+
+[farm_chores_5]
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_routine = "hayden_farm_work" },
+	{ season = "winter", comparator = "!=" },
+	{ weather = "pleasant" }
+]
+portrait = "neutral"
+local = "Days like today make me happy to be a farmer."
+next = "1"
+
+[farm_chores_5.1]
+portrait = "happy_fist"
+local = "That blue sky's so bright and beautiful, isn't it?"
+
+[farm_chores_6]
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_routine = "hayden_farm_work" },
+	{ season = "winter", comparator = "!=" },
+	{ weather = "pleasant" }
+]
+portrait = "neutral"
+local = "There's so much to do, and I've already worked up a sweat!"
+next = "1"
+
+[farm_chores_6.1]
+portrait = "wink_fist"
+local = "That's okay, though. Sweat means you're working hard, don't it?"
+
+[farm_chores_7]
+refresh = "1y"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_routine = "hayden_farm_work" },
+	{ weather = "pleasant" },
+	{ quest_repair_haydens_barn_complete = true }
+]
+portrait = "think"
+local = "It's all habit now, but there were a few times in my youth when I forgot to ring the bell and call the animals in."
+next = "1"
+
+[farm_chores_7.1]
+portrait = "wink"
+local = "Boy, did I learn quick!"
+
+[farm_chores_8]
+refresh = "1y"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_routine = "hayden_farm_work" },
+	{ weather = "pleasant" },
+	{ quest_repair_haydens_barn_complete = true },
+	{ time_of_day = "afternoon" },
+	{ hayden_was_last_spoken_to = "6h", time = "after", comparator = ">" }
+]
+portrait = "neutral"
+local = "Whew. A lot of tending to the animals today!"
+next = "1"
+
+[farm_chores_8.1]
+portrait = "wink"
+local = "It's hard work with so many mouths to feed, but it's always rewarding!"
+
+[farm_chores_9]
+refresh = "2m"
+requires = [
+	{ npc = "hayden" },
+	{ location = "haydens_farm" },
+	{ cutscene_seen_tea_with_hayden = true }
+]
+portrait = "happy_fist"
+local = "Animals come in so many varieties and colors..."
+next = "1"
+
+[farm_chores_9.1]
+portrait = "think"
+local = "I bet there are some that even I haven't seen!"
+
+[farm_chores_10]
+refresh = "2m"
+requires = [
+	{ npc = "hayden" },
+	{ location = "haydens_farm" },
+	{ hayden_routine = "hayden_farm_work" },
+	{ season = "winter" }
+]
+portrait = "wink"
+local = "Moving around and doing chores helps to keep you warm in weather like this!"
+next = "1"
+
+[farm_chores_10.1]
+portrait = "sweat"
+local = "To be honest, I'm breaking a sweat!"
+
+[farm_chores_11]
+refresh = "2m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_routine = "hayden_farm_work" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "neutral"
+local = "Grandma taught me that every season has something to offer a farmer in Mistria."
+next = "1"
+
+[farm_chores_11.1]
+portrait = "happy"
+local = "I hope that's proven true for you too, [Ari]!"

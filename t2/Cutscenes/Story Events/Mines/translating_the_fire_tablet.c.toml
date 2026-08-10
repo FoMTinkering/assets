@@ -1,0 +1,202 @@
+[translating_the_fire_tablet_follow_up_balor]
+refresh = "never"
+requires = [{ npc = "balor" }, { tft = true }]
+portrait = "neutral"
+local = "No update on your special order yet, [Ari]. Don't worry, my contacts haven't failed me yet."
+
+[translating_the_fire_tablet_follow_up_juniper]
+refresh = "never"
+requires = [{ npc = "juniper" }, { tft = true }]
+portrait = "neutral"
+local = "I honestly expected more pushback from Balor."
+next = "1"
+
+[translating_the_fire_tablet_follow_up_juniper.1]
+portrait = "sly"
+local = "Once he's tracked down the $Sealing Scroll$, maybe I'll have a few other orders for him."
+next = "2"
+
+[translating_the_fire_tablet_follow_up_juniper.2]
+portrait = "laugh"
+local = "Oh ho ho!"
+
+[translating_the_fire_tablet_turn_in]
+kind = "gameplay_triggered"
+actions = [{ cutscene = "translating_the_fire_tablet" }]
+speaker = "juniper"
+portrait = "happy"
+local = "Well, well! Another mysterious bit of text."
+next = "1"
+
+[translating_the_fire_tablet_turn_in.1]
+speaker = "juniper"
+portrait = "think"
+local = "I was starting to think the trail had gone cold."
+next = "2"
+
+[translating_the_fire_tablet_turn_in.2]
+speaker = "juniper"
+portrait = "neutral"
+local = "Let me gather my notes and then we'll get started."
+
+[translating_the_fire_tablet]
+kind = "gameplay_triggered"
+writes = [{ tft = true, expires = "4d" }]
+actions = [
+	{ heart_points = { amount = 20, npc = "balor" } },
+	{ heart_points = { amount = 40, npc = "juniper" } }
+]
+speaker = "juniper"
+portrait = "neutral"
+local = "Ahem, let's begin."
+next = "1"
+
+[translating_the_fire_tablet.1]
+speaker = "juniper"
+portrait = "think"
+local = "You're going to need a $Faceted Rock Gem$, a $Rockroot$, and an $Emerald$."
+next = "2"
+
+[translating_the_fire_tablet.2]
+speaker = "juniper"
+portrait = "laugh"
+local = "Oh ho ho!"
+next = "3"
+
+[translating_the_fire_tablet.3]
+speaker = "juniper"
+portrait = "sly"
+local = "There's the usual flowery language as well, but who needs to hear that again, am I right?"
+prompts = [
+	{ local = "Wow, Juniper!", next = "4" },
+	{ local = "Aren't there usually four items?", next = "5" }
+]
+
+[translating_the_fire_tablet.4]
+speaker = "juniper"
+portrait = "happy"
+local = "Oh, a translation like this is no big deal for someone of my talents. However..."
+next = "6"
+
+[translating_the_fire_tablet.5]
+speaker = "juniper"
+portrait = "annoyed"
+effect = "drop"
+local = "O-Of course! I was just getting to it."
+next = "6"
+
+[translating_the_fire_tablet.6]
+speaker = "juniper"
+portrait = "think"
+local = "The fourth item is... unusual. Even in a list as odd as this one."
+next = "7"
+
+[translating_the_fire_tablet.7]
+speaker = "juniper"
+portrait = "mad"
+local = "Have you ever heard of a $Sealing Scroll$?"
+next = "8"
+
+[translating_the_fire_tablet.8]
+speaker = "juniper"
+portrait = "sly"
+local = "I'm not surprised you haven't, they're very rare, and extremely dangerous."
+next = "9"
+
+[translating_the_fire_tablet.9]
+speaker = "juniper"
+portrait = "blush"
+local = "And powerful."
+next = "10"
+
+[translating_the_fire_tablet.10]
+speaker = "juniper"
+portrait = "think"
+local = "I've heard rumors that they still circulate among Aldaria's nobility, but we'll need to be... discreet."
+next = "11"
+
+[translating_the_fire_tablet.11]
+speaker = "juniper"
+portrait = "angry_brows"
+local = "They're not exactly illegal, but the fewer people who know we're looking for one, the better."
+prompts = [
+	{ local = "Balor can help, let's ask him.", next = "12" },
+	{ local = "Eiland might have some noble connections we can use!", next = "13" },
+]
+
+[translating_the_fire_tablet.12]
+speaker = "juniper"
+portrait = "happy"
+local = "I can see we're on the same wavelength."
+next = "14"
+
+[translating_the_fire_tablet.13]
+speaker = "juniper"
+portrait = "ugh"
+local = "I'm afraid our young nobleman possesses an unusually honest demeanor. I think it's best that we don't get him entangled in this."
+next = "14"
+
+[translating_the_fire_tablet.14]
+speaker = "juniper"
+portrait = "neutral"
+local = "Balor always seems to have just what his customers need, and he's too smart to ask more questions than necessary. Come."
+next = "15"
+
+[translating_the_fire_tablet.15]
+speaker = "balor"
+portrait = "think"
+local = "Hmm, I was sure I locked that door."
+next = "16"
+
+[translating_the_fire_tablet.16]
+speaker = "juniper"
+portrait = "wink"
+local = "You did."
+next = "17"
+
+[translating_the_fire_tablet.17]
+speaker = "juniper"
+portrait = "neutral"
+local = "I'd apologize, but we needed to catch you away from prying eyes."
+next = "18"
+
+[translating_the_fire_tablet.18]
+speaker = "balor"
+portrait = "neutral"
+local = "Ah. Here to place a... special order?"
+next = "19"
+
+[translating_the_fire_tablet.19]
+speaker = "juniper"
+portrait = "happy"
+local = "Precisely. We're in the market for a $Sealing Scroll$."
+next = "20"
+
+[translating_the_fire_tablet.20]
+speaker = "balor"
+portrait = "mad"
+local = "I see."
+next = "21"
+
+[translating_the_fire_tablet.21]
+speaker = "balor"
+portrait = "think"
+local = "I'll need a few days to track down a seller. I should warn you, it isn't going to come cheap."
+next = "22"
+
+[translating_the_fire_tablet.22]
+speaker = "juniper"
+portrait = "sly"
+local = "That won't be a problem, right [Ari]?"
+next = "23"
+
+[translating_the_fire_tablet.23]
+speaker = "balor"
+portrait = "neutral"
+local = "Then I think we have an agreement. I'll notify you when I have a lead, [Ari]."
+next = "24"
+
+[translating_the_fire_tablet.24]
+speaker = "juniper"
+portrait = "happy"
+local = "Wonderful!"

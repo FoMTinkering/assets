@@ -1,0 +1,39 @@
+[harvest_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "celine" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=", ignore_priority = true },
+]
+portrait = "neutral"
+local = "Have you seen the $Pumpkin Patch$ yet?"
+next = "1"
+
+[harvest_festival_0.1]
+portrait = "happy"
+local = "Hayden's grown some pumpkins that are as colorful as any flower!"
+
+[harvest_festival_first_place_follow_up]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "celine" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_first_place = true },
+	{},
+	{},
+]
+portrait = "happy"
+local = "Congrats on the win, [Ari]!"
+next = "1"
+
+[harvest_festival_first_place_follow_up.1]
+portrait = "think"
+local = "Every year, I keep an eye out for $Queen Berry$ flowers, and every year I miss them."
+next = "2"
+
+[harvest_festival_first_place_follow_up.2]
+portrait = "neutral"
+local = "One day I'll unravel their mystery!"

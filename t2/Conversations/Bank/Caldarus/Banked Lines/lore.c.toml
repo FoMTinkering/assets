@@ -1,0 +1,370 @@
+[grove_of_rest]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [{ location = "deep_woods" }, { location = "caldarus_house" }] }
+]
+portrait = "neutral"
+local = "The $Grove of Rest$ lies to the west of here."
+next = "1"
+
+[grove_of_rest.1]
+portrait = "think"
+local = "It is an ancient custom, to plant a tree when a human passes on."
+next = "2"
+
+[grove_of_rest.2]
+portrait = "neutral"
+local = "A stone marker is attached to the sapling at the burial site, allowing the stone to integrate and grow upward with the tree over time..."
+next = "3"
+
+[grove_of_rest.3]
+portrait = "smile"
+local = "It represents the ascension of the spirit into its next life."
+
+[lore_0]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_routine = "caldarus_house_reading" },
+		{ caldarus_routine = "scroll_rearranging" },
+		{ caldarus_is_at = "caldarus_house/Caldarus Desk Chair" },
+		{ caldarus_animation = "read" }
+	] },
+	{ caldarus_lore_delay = false },
+	{ caldarus_lore_mutex = "undefined" },
+]
+writes = [
+	{ caldarus_lore_delay = true, expires = "2d" },
+	{ caldarus_lore_mutex = "lore_1" }
+]
+portrait = "neutral"
+local = "All of these old scrolls..."
+next = [
+	{ target = "1_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "1_n", requires = [] },
+]
+
+[lore_0.1_eog]
+portrait = "think"
+local = "The Dragon Priestesses truly were diligent record keepers."
+next = "2_eog"
+
+[lore_0.2_eog]
+portrait = "smile"
+local = "I am grateful. Reading these has helped me to piece together events that occurred while I slept."
+
+[lore_0.1_n]
+portrait = "think"
+local = "It seems that the Dragon Priestesses were diligent record keepers."
+next = "2_n"
+
+[lore_0.2_n]
+portrait = "smile"
+local = "I am grateful. I hope that by reading these, I can piece together the gaps in my memory."
+
+[lore_1]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_is_at = "caldarus_house/Caldarus Desk Chair" },
+		{ caldarus_animation = "read" }
+	] },
+	{ caldarus_lore_delay = false },
+	{ caldarus_lore_mutex = "lore_1" },
+]
+writes = [
+	{ caldarus_lore_delay = true, expires = "2d" },
+	{ caldarus_lore_mutex = "lore_2" }
+]
+actions = [{ bark = { bark = "ellipses", npc = "caldarus" } }]
+portrait = "neutral"
+local = "I am currently reading a scroll about the history of this temple."
+next = "1"
+
+[lore_1.1]
+portrait = "think"
+local = "\"A civilization predating the Alda constructed the exterior areas prior to the Dark Ages, but the cave itself existed long before that.\""
+next = [
+	{ target = "2_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "2_n", requires = [] },
+]
+
+[lore_1.2_eog]
+portrait = "avoidant"
+local = """I understand now that the "Dark Ages" described were triggered by my decision to seal Seridia."""
+next = "3_eog"
+
+[lore_1.3_eog]
+portrait = "sad"
+local = "It is not pleasant reading, but there is future benefit to understanding the unintended ramifications of one's actions..."
+
+[lore_1.2_n]
+portrait = "neutral"
+local = """I am not familiar with the "Dark Ages" mentioned."""
+next = "3_n"
+
+[lore_1.3_n]
+portrait = "think"
+local = "Perhaps I missed it...?"
+
+[lore_2]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_is_at = "caldarus_house/Caldarus Desk Chair" },
+		{ caldarus_animation = "read" }
+	] },
+	{ caldarus_lore_delay = false },
+	{ caldarus_lore_mutex = "lore_2" },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ caldarus_lore_delay = true, expires = "2d" },
+	{ caldarus_lore_mutex = "lore_3" }
+]
+portrait = "neutral"
+local = "I have been recovering much information from these old scrolls."
+next = "1"
+
+[lore_2.1]
+portrait = "think"
+local = """It seems that the "Alda civilization" mentioned was formed from fragmented tribes at the end of the Dark Ages."""
+next = "2"
+
+[lore_2.2]
+portrait = "neutral"
+local = "Strangely, I can find no records that they had queens, kings, or any nobility at all."
+next = "3"
+
+[lore_2.3]
+portrait = "think"
+local = "I vaguely recall that queens ruled the human tribes at one time. How mysterious..."
+
+[lore_2_alt]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_is_at = "caldarus_house/Caldarus Desk Chair" },
+		{ caldarus_animation = "read" }
+	] },
+	{ caldarus_lore_delay = false },
+	{ caldarus_lore_mutex = "lore_2" },
+	{ caldarus_seridia_town = true }
+]
+writes = [
+	{ caldarus_lore_delay = true, expires = "2d" },
+	{ caldarus_lore_mutex = "lore_4_alt" }
+]
+portrait = "neutral"
+local = "I have been learning much from these old scrolls."
+next = "1"
+
+[lore_2_alt.1]
+portrait = "think"
+local = """I understand that the "Alda civilization" was formed from fragmented tribes at the end of the Dark Ages."""
+next = "2"
+
+[lore_2_alt.2]
+portrait = "neutral"
+local = "Those fragmented tribes consisted of commoners once ruled by Seridia, before she was sealed."
+next = "3"
+
+[lore_2_alt.3]
+portrait = "sigh"
+local = "When $Magic$ disappeared, noble society collapsed. Seridia's court fled east in search of me, hoping to form a new dragon pact to restore their power."
+next = "4"
+
+[lore_2_alt.4]
+portrait = "think"
+local = "Perhaps that is why the lands to the east became known as the $Caldosian Empire$."
+next = "5"
+
+[lore_2_alt.5]
+portrait = "sigh"
+local = "Somehow, that raises more questions than it answers."
+
+[lore_3]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_is_at = "caldarus_house/Caldarus Desk Chair" },
+		{ caldarus_animation = "read" }
+	] },
+	{ caldarus_lore_delay = false },
+	{ caldarus_lore_mutex = "lore_3" },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ caldarus_lore_delay = true, expires = "2d" },
+	{ caldarus_lore_mutex = "lore_4" }
+]
+portrait = "neutral"
+local = "[Ari]! I have uncovered something most interesting."
+next = "1"
+
+[lore_3.1]
+portrait = "think"
+local = "Finally, a scroll referencing the queens that ruled the human tribes prior to the Dark Ages."
+next = "2"
+
+[lore_3.2]
+portrait = "sigh"
+local = "The timeline surrounding my long slumber is starting to slot into place but..."
+next = "3"
+
+[lore_3.3]
+portrait = "ugh"
+local = "What happened, I wonder?"
+next = "4"
+
+[lore_3.4]
+portrait = "think"
+local = "I wish that I could remember more. I must continue my research."
+
+[lore_4]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_is_at = "caldarus_house/Caldarus Desk Chair" },
+		{ caldarus_animation = "read" }
+	] },
+	{ caldarus_lore_delay = false },
+	{ caldarus_lore_mutex = "lore_4" },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ caldarus_lore_delay = true, expires = "2d" },
+	{ caldarus_lore_mutex = "lore_5" }
+]
+portrait = "neutral"
+local = "Fascinating..."
+next = "1"
+
+[lore_4.1]
+portrait = "think"
+local = "\"The Caldosians and the Aldarians are known to share a common ancestral origin.\""
+next = "2"
+
+[lore_4.2]
+portrait = "smile"
+local = "Caldosians... and the Aldarians."
+next = "3"
+
+[lore_4.3]
+portrait = "happy"
+local = "Descendants of those who lived and worshiped here during my time, I am sure of it."
+next = "4"
+
+[lore_4.4]
+portrait = "think"
+local = "And yet, those who would become the Caldosians sailed east to form their empire while the Alda remained to found Aldaria. Why...?"
+next = "5"
+
+[lore_4.5]
+portrait = "sigh"
+local = "Ah, my head is beginning to hurt. Perhaps that is enough reading for today."
+
+[lore_4_alt]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_is_at = "caldarus_house/Caldarus Desk Chair" },
+		{ caldarus_animation = "read" }
+	] },
+	{ caldarus_lore_delay = false },
+	{ any = [
+		{ caldarus_lore_mutex = "lore_3" },
+		{ caldarus_lore_mutex = "lore_4" },
+		{ caldarus_lore_mutex = "lore_4_alt" }
+	] },
+	{ caldarus_seridia_town = true }
+]
+writes = [
+	{ caldarus_lore_delay = true, expires = "2d" },
+	{ caldarus_lore_mutex = "lore_6" }
+]
+portrait = "neutral"
+local = "All the pieces are coming together..."
+next = "1"
+
+[lore_4_alt.1]
+portrait = "think"
+local = "\"The Caldosians and the Aldarians are known to share a common ancestral origin.\""
+next = "2"
+
+[lore_4_alt.2]
+portrait = "think"
+local = "Caldosians... and the Aldarians."
+next = "3"
+
+[lore_4_alt.3]
+portrait = "sad"
+local = "Descendants of those who lived and worshiped here during Seridia's reign."
+next = "4"
+
+[lore_4_alt.4]
+portrait = "think"
+local = "The common people remained in this land, eventually forming Aldaria. Seridia's nobility sailed east and became the Caldosian Empire."
+next = "5"
+
+[lore_4_alt.5]
+portrait = "sigh"
+local = "One can only wonder how those nobles managed to survive such a journey, having been completely dependent on $Magic$ up until that point."
+next = "6"
+
+[lore_4_alt.6]
+portrait = "ugh"
+local = "Ah, my head is beginning to hurt. Perhaps that is enough reading for today."
+
+[lore_5]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ any = [
+		{ caldarus_routine = "caldarus_house_reading" },
+		{ caldarus_is_at = "caldarus_house/Caldarus Desk Chair" },
+		{ caldarus_animation = "read" }
+	] },
+	{ caldarus_lore_delay = false },
+	{ caldarus_lore_mutex = "lore_5" },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ caldarus_lore_delay = true, expires = "2d" },
+	{ caldarus_lore_mutex = "lore_6" }
+]
+actions = [{ bark = { bark = "ellipses", npc = "caldarus" } }]
+portrait = "sigh"
+local = "Ah, [Ari]. It is hard to concentrate today."
+next = "1"
+
+[lore_5.1]
+portrait = "think"
+local = "I thought that I remembered something last night."
+next = "2"
+
+[lore_5.2]
+portrait = "pained"
+local = "A vision of sorts. Red flames, red eyes..."
+next = "3"
+
+[lore_5.3]
+portrait = "sigh"
+local = "Perhaps it was just a dream."

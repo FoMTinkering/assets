@@ -1,0 +1,69 @@
+[witchspeak]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ location = "western_ruins" },
+		{ location = "eilands_office" },
+		{ location = "museum_entry" }
+	] },
+	{ eiland_animation = "magnify" },
+	{ quest_the_water_tablet_complete = true }
+]
+portrait = "neutral"
+local = "I found a fragment of Witchspeak on this tablet! Much of it is worn down, but some of the characters are quite clear... remarkable!"
+
+[witchspeak_2]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ location = "western_ruins" },
+		{ location = "eilands_office" },
+		{ location = "museum_entry" }
+	] },
+	{ eiland_animation = "magnify" },
+	{ quest_the_water_tablet_complete = true },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ eog_witchspeak_2 = true, expires = "1y" }]
+portrait = "think"
+local = "The phonetic structure of Witchspeak is a mystery to me. I wonder if the day will come when we can translate it in its entirety."
+
+[witchspeak_2_alt]
+refresh = "1y"
+requires = [
+    { npc = "eiland" },
+    { any = [
+        { location = "western_ruins" },
+        { location = "eilands_office" },
+        { location = "museum_entry" }
+    ] },
+    { eiland_animation = "magnify" },
+    { quest_the_water_tablet_complete = true },
+	{ caldarus_seridia_town = true },
+	{ eog_witchspeak_2 = false }
+]
+portrait = "think"
+local = "The phonetic structure of Witchspeak is still a mystery to me..."
+next = "1"
+
+
+[witchspeak_2_alt.1]
+portrait = "happy"
+local = "Would you mind helping me translate this?"
+prompts = [
+    { local = "It appears to be a complaint about the low quality of a copper order.", next = "2" },
+    { local = "It seems to be an ancient customer service ticket.", next = "2" }
+]
+
+
+[witchspeak_2_alt.2]
+portrait = "ugh"
+local = "Ugh. Another one?"
+next = "3"
+
+
+[witchspeak_2_alt.3]
+portrait = "embarrassed"
+local = "Oh well. Thanks for your help, [Ari]."

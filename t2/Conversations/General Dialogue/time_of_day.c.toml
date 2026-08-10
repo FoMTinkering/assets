@@ -1,0 +1,524 @@
+[early_morning_1]
+refresh = "1m"
+requires = [
+	{ time_of_day = "morning" },
+	{ early_morning_delay = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+writes = [{ early_morning_delay = true, expires = "16h" }]
+portrait = "neutral"
+local = "Good morning!"
+
+[early_morning_2]
+refresh = "1m"
+requires = [
+	{ day_time = "6:00am", comparator = ">=" },
+	{ day_time = "9:00am", comparator = "<=" },
+	{ is_inside = false },
+	{ early_morning_delay = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+portrait = "neutral"
+local = "Nice to see another early riser up and about!"
+
+[early_morning_3]
+refresh = "1m"
+requires = [
+	{ time_of_day = "morning" },
+	{ is_inside = false },
+	{ early_morning_delay = false },
+	{ weather = "pleasant" },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+portrait = "neutral"
+local = "Just smell that fresh morning air!"
+
+[early_morning_4]
+refresh = "1m"
+requires = [
+	{ time_of_day = "morning" },
+	{ early_morning_delay = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+portrait = "neutral"
+local = "Another new day, let's make the most of it!"
+
+[early_morning_5]
+refresh = "1m"
+requires = [
+	{ time_of_day = "morning" },
+	{ early_morning_delay = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+portrait = "happy"
+local = "Ah, another day in Mistria."
+
+[early_morning_summer]
+refresh = "1m"
+requires = [
+	{ season = "summer" },
+	{ day_time = "6:00am", comparator = ">=" },
+	{ day_time = "9:00am", comparator = "<=" },
+	{ weather = "pleasant" },
+	{ early_morning_delay = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+portrait = "neutral"
+local = "Looks like another scorcher! Best to get anything urgent done in the morning when it's cooler."
+
+[early_morning_fall]
+refresh = "1m"
+requires = [
+	{ season = "fall" },
+	{ is_inside = false },
+	{ day_time = "6:00am", comparator = ">=" },
+	{ weather = "pleasant" },
+	{ day_time = "9:00am", comparator = "<=" },
+	{ early_morning_delay = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+portrait = "neutral"
+local = "You can really feel that winter's on its way in the early morning, huh? Brr!"
+
+[early_morning_winter]
+refresh = "1m"
+requires = [
+	{ season = "winter" },
+	{ is_inside = false },
+	{ time_of_day = "morning" },
+	{ weather = "pleasant" },
+	{ early_morning_delay = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+portrait = "neutral"
+local = "Is there anything better than a winter morning? Mistria feels so fresh and clean!"
+
+[early_morning_eiland]
+refresh = "1m"
+requires = [
+	{ npc = "eiland" },
+	{ time_of_day = "morning" },
+	{ early_morning_delay = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+]
+writes = [{ early_morning_delay = true, expires = "16h" }]
+portrait = "neutral"
+local = "Good morning! Hope you slept as well as I did last night."
+
+[early_morning_errol]
+refresh = "1m"
+requires = [
+	{ npc = "errol" },
+	{ time_of_day = "morning" },
+	{ early_morning_delay = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+]
+writes = [{ early_morning_delay = true, expires = "16h" }]
+portrait = "neutral"
+local = "It's a fine morning, isn't it? The older I get the more I appreciate them."
+
+[early_morning_juniper]
+refresh = "1m"
+requires = [
+	{ npc = "juniper" },
+	{ day_time = "6:00am", comparator = ">=" },
+	{ day_time = "9:00am", comparator = "<=" },
+	{ early_morning_delay = false },
+]
+writes = [{ early_morning_delay = true, expires = "16h" }]
+portrait = "unimpressed"
+local = "Early mornings are my least favorite time in Mistria."
+next = "1"
+
+[early_morning_juniper.1]
+portrait = "ugh"
+local = "Everyone's so... cheery. Like they're about to break into song."
+
+[early_morning_march_low_hearts]
+refresh = "1m"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 2, comparator = "<" },
+	{ time_of_day = "morning" },
+	{ march_zone = "town/blacksmith_forge", comparator = "!=" },
+	{ early_morning_delay = false },
+]
+writes = [{ early_morning_delay = true, expires = "16h" }]
+portrait = "unimpressed"
+local = "..."
+prompts = [
+	{ local = "Goooood morning!", next = "1" },
+	{ local = "Looks like someone's still sleepy!", next = "2" },
+]
+
+[early_morning_march_low_hearts.1]
+portrait = "mad"
+local = "Morning..."
+
+[early_morning_march_low_hearts.2]
+portrait = "ugh"
+local = "I'm not sleepy!"
+
+[early_morning_march_mid_hearts]
+refresh = "1m"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 2, comparator = ">=" },
+	{ march_heart_level = 6, comparator = "<" },
+	{ time_of_day = "morning" },
+	{ early_morning_delay = false },
+]
+writes = [{ early_morning_delay = true, expires = "16h" }]
+portrait = "neutral"
+local = "Morning."
+
+[early_morning_march_high_hearts]
+refresh = "1m"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 6, comparator = ">=" },
+	{ march_heart_level = 7, comparator = "<=" },
+	{ time_of_day = "morning" },
+	{ early_morning_delay = false },
+]
+writes = [{ early_morning_delay = true, expires = "16h" }]
+portrait = "neutral"
+local = "Good morning."
+
+[early_morning_olric]
+refresh = "1m"
+requires = [
+	{ npc = "olric" },
+	{ time_of_day = "morning" },
+	{ early_morning_delay = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+]
+writes = [{ early_morning_delay = true, expires = "16h" }]
+portrait = "neutral"
+local = "Bet it's easy to start your day with some early morning exercise on your farm, right, [Ari]?"
+next = "1"
+
+[early_morning_olric.1]
+portrait = "happy"
+local = "It's a great way to get yourself fired up!"
+
+[early_morning_reina]
+refresh = "1m"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn", comparator = "!=" },
+	{ time_of_day = "morning" },
+	{ early_morning_delay = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+]
+writes = [{ early_morning_delay = true, expires = "16h" }]
+portrait = "neutral"
+local = "Good morning! Hope you've had breakfast, [Ari]!"
+next = "1"
+
+[early_morning_reina.1]
+portrait = "wink"
+local = "And if not, I hope you order one at the Inn!"
+
+[early_morning_seridia]
+refresh = "1m"
+requires = [
+	{ npc = "seridia" },
+	{ day_time = "6:00am", comparator = ">=" },
+	{ day_time = "9:00am", comparator = "<=" },
+	{ early_morning_delay = false },
+]
+writes = [{ early_morning_delay = true, expires = "16h" }]
+portrait = "neutral"
+local = "Oh, did you just wake up? For one such as I, sleep is more... optional."
+
+[early_morning_terithia]
+refresh = "1m"
+requires = [
+	{ npc = "terithia" },
+	{ time_of_day = "morning" },
+	{ early_morning_delay = false },
+	{ terithia_animation = "fish", comparator = "!=", ignore_priority = true },
+	{ terithia_animation = "bait", comparator = "!=", ignore_priority = true },
+]
+writes = [{ early_morning_delay = true, expires = "16h" }]
+portrait = "neutral"
+local = "Morning, [Ari]! Let's both find some time to do a little fishing today, eh?"
+
+# <---Late Night --->
+[late_night_1]
+refresh = "1m"
+requires = [
+	{ time_of_day = "night" },
+	{ late_night_delay = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+writes = [{ late_night_delay = true, expires = "8h" }]
+portrait = "neutral"
+local = "Good evening!"
+
+[late_night_2]
+refresh = "1m"
+requires = [
+	{ time_of_day = "night" },
+	{ late_night_delay = false },
+	{ is_inside = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+writes = [{ late_night_delay = true, expires = "8h" }]
+portrait = "neutral"
+local = "Isn't Mistria peaceful after the sun sets?"
+
+[late_night_3]
+refresh = "1m"
+requires = [
+	{ time_of_day = "night" },
+	{ late_night_delay = false },
+	{ is_inside = false },
+	{ weather = "pleasant" },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+writes = [{ late_night_delay = true, expires = "8h" }]
+portrait = "neutral"
+local = "Out for a late night stroll? It's a great way to relax before bed."
+
+[late_night_4]
+refresh = "1m"
+requires = [
+	{ time_of_day = "night" },
+	{ late_night_delay = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+writes = [{ late_night_delay = true, expires = "8h" }]
+portrait = "neutral"
+local = "Another full day! Here's hoping you had a good one, [Ari]."
+
+[late_night_5]
+refresh = "1m"
+requires = [
+	{ day_time = "11:00pm", comparator = ">=" },
+	{ late_night_delay = false },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+writes = [{ late_night_delay = true, expires = "8h" }]
+portrait = "neutral"
+local = "Doubt I'll see you again before bed, so good night [Ari]!"
+
+[late_night_summer]
+refresh = "1m"
+requires = [
+	{ time_of_day = "night" },
+	{ late_night_delay = false },
+	{ season = "summer" },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+writes = [{ late_night_delay = true, expires = "8h" }]
+portrait = "neutral"
+local = "Hope it cools off a bit, now that the sun is down..."
+
+[late_night_winter]
+refresh = "1m"
+requires = [
+	{ time_of_day = "night" },
+	{ late_night_delay = false },
+	{ season = "winter" },
+	{ is_inside = false },
+	{ weather = "rainy", comparator = "!=" },
+	{ "<npc>_is_traveling" = true, ignore_priority = true },
+	{ npc = "caldarus", comparator = "!=", ignore_priority = true },
+	{ npc = "dozy", comparator = "!=", ignore_priority = true },
+	{ npc = "henrietta", comparator = "!=", ignore_priority = true },
+	{ npc = "juniper", comparator = "!=", ignore_priority = true },
+	{ npc = "march", comparator = "!=", ignore_priority = true },
+	{ npc = "seridia", comparator = "!=", ignore_priority = true },
+]
+writes = [{ late_night_delay = true, expires = "8h" }]
+portrait = "neutral"
+local = "Brr! You can really feel that temperature drop now that the sun has set."
+
+[late_night_balor]
+refresh = "1m"
+requires = [
+	{ npc = "balor" },
+	{ time_of_day = "night" },
+	{ late_night_delay = false },
+	{ balor_is_traveling_to_location = "balors_room", comparator = "!=" },
+]
+writes = [{ late_night_delay = true, expires = "8h" }]
+portrait = "neutral"
+local = "I suppose I should think about heading to bed, lots to do tomorrow."
+
+[late_night_holt]
+refresh = "1m"
+requires = [
+	{ npc = "holt" },
+	{ time_of_day = "night" },
+	{ late_night_delay = false },
+]
+writes = [
+	{ late_night_delay = true, expires = "8h" },
+	{ holt_just_punned = 1, operator = "+=", expires = "24h" },
+]
+portrait = "think"
+local = "I've been trying to think of a good sleep pun, but it's getting late."
+next = "1"
+
+[late_night_holt.1]
+portrait = "neutral"
+local = "I guess I should give it a rest."
+
+[late_night_josephine]
+refresh = "1m"
+requires = [
+	{ npc = "josephine" },
+	{ time_of_day = "night" },
+	{ late_night_delay = false },
+]
+writes = [{ late_night_delay = true, expires = "8h" }]
+portrait = "neutral"
+local = "Look how late it is! Time sure does fly these days."
+
+[late_night_juniper]
+refresh = "1m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "night" },
+	{ late_night_delay = false },
+]
+writes = [{ late_night_delay = true, expires = "8h" }]
+portrait = "happy"
+local = "Ahh."
+next = "1"
+
+[late_night_juniper.1]
+portrait = "neutral"
+local = "I don't think the day really starts until the sun sets."
+
+[late_night_landen]
+refresh = "1m"
+requires = [
+	{ npc = "landen" },
+	{ time_of_day = "night" },
+	{ late_night_delay = false },
+]
+writes = [{ late_night_delay = true, expires = "8h" }]
+portrait = "neutral"
+local = "Nice thing about retiring is you can stay up as late you want!"
+
+[late_night_march]
+refresh = "1m"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "night" },
+	{ late_night_delay = false },
+	{ march_heart_level = 4, comparator = "<=" },
+]
+writes = [{ late_night_delay = true, expires = "8h" }]
+portrait = "neutral"
+local = "Evening..."
+
+[late_night_seridia]
+refresh = "1m"
+requires = [
+	{ npc = "seridia" },
+	{ time_of_day = "night" },
+	{ late_night_delay = false },
+]
+writes = [{ late_night_delay = true, expires = "8h" }]
+portrait = "neutral"
+local = "It's interesting to see how quiet Mistria becomes at night. Those poor human eyes of yours aren't much for night vision, are they?"
+
+[late_night_valen]
+refresh = "1m"
+requires = [
+	{ npc = "valen" },
+	{ time_of_day = "night" },
+	{ late_night_delay = false },
+]
+writes = [{ late_night_delay = true, expires = "8h" }]
+portrait = "neutral"
+local = "Up a bit late, aren't we? Be sure to let me know if you're having trouble sleeping."

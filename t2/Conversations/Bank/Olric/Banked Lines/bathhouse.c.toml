@@ -1,0 +1,61 @@
+[bathhouse]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ any = [
+		{ building = "bathhouse" },
+		{ olric_is_traveling_from_building = "bathhouse" }
+	] }
+]
+portrait = "sad"
+local = "Juniper said I can't swim laps in the bath anymore..."
+
+[bathhouse_2]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ building = "bathhouse" },
+	{ olric_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "neutral"
+local = "Oh, hey [Ari]! Welcome to the Bathhouse!"
+next = "1"
+
+[bathhouse_2.1]
+portrait = "wink"
+local = "Or as I like to call it, the splash capital of Mistria!"
+
+[bathhouse_3]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ building = "bathhouse" },
+	{ olric_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "happy"
+local = "Hey, [Ari]! Are you also here to sweat it out? Let's do it on the count of three!"
+next = "1"
+
+[bathhouse_3.1]
+portrait = "mad"
+effect = "sweat"
+local = "One... two... three... SWEAT!"
+
+[bathhouse_4]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ any = [
+		{ building = "bathhouse" },
+		{ olric_is_traveling_from_building = "bathhouse" }
+	] }
+]
+portrait = "think"
+local = "Soaking in the bath reminds me of when I found an underground spring in the Mines."
+next = "1"
+
+[bathhouse_4.1]
+portrait = "happy"
+local = "I'm just lucky there aren't any whirlpools in the Bathhouse. That's how I got super lost that one time!"

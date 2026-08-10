@@ -1,0 +1,3159 @@
+camera_out();
+wait(3);
+__raise_textbox();
+
+//
+var spouse = spouse();
+var convo_path = "Cutscenes/Heart Events/Children/Dream/great_bird_1_" + spouse + "/great_bird_1_" + spouse;
+set_conversation(convo_path);
+
+//
+scene(dragonsworn_glade);
+set_weather("calm");
+__override_post_process_time(12, 0);
+create_black_overlay();
+place_actor(ari, north, gb1_ari_entrance);
+raise_actor(ari);
+fade_npc_alpha(ari, 0.0, 1.0, 150);
+place_actor(spouse, north, gb1_spouse_entrance);
+raise_actor(spouse);
+fade_npc_alpha(spouse, 0.0, 1.0, 150);
+camera_position(gb1_camera_1);
+request_music_play("Music/Events/Twinkling Light"); //
+fade_in(2.5);
+sim {
+    {
+        pan_camera(4, gb1_camera_2);
+    }
+    {
+        wait(0.5);
+        setup_prop(gb_bird);
+        fade_prop_alpha(gb_bird, 0.0, 1.0, 180);
+        setup_prop(gb1_star_bkg);
+        fade_prop_alpha(gb1_star_bkg, 0.0, 1.0, 180);
+    }
+    {
+        wait(2.5);
+        free bark_speech(spouse, exclamation_mark);
+    }
+}
+if spouse == "adeline" {
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, question_mark);
+    wait(1);
+    face(spouse, east);
+    wait(0.5);
+    face(ari, west);
+    wait(0.5);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, ellipses);
+    wait(1);
+    free bark_speech(spouse, sweat_drop);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            pan_camera(3, gb1_camera_3);
+            wait(1);
+            pan_camera(3, gb1_camera_2);
+        }
+        {
+            wait(1);
+            setup_prop(gb1_star_appear);
+            free fade_prop_alpha(gb1_star_appear, 0.0, 1.0, 60);
+            play_sound("SoundEffects/SpecialEvents/GreatBirdStarTwinkle");
+            wait(1.52);
+            destroy_prop(gb1_star_appear);
+            setup_prop(gb1_star_idle);
+        }
+
+        {
+            wait(4);
+            free bark_speech(ari, exclamation_mark);
+            free bark_speech(spouse, exclamation_mark);
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+            wait(1);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(2);
+            face(ari, north);
+            face(spouse, north);
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            wait(1);
+            face(ari, west);
+        }
+        {
+            pan_camera(3, gb1_camera_4);
+        }
+        {
+            wait(3);
+            next_line(); //
+        }
+    }
+    //
+    //
+    if get_response() == 0 {
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, heart);
+        free bark_speech(spouse, heart);
+        wait(1.5);
+        sim {
+            {
+                pan_camera(3, gb1_camera_2);
+            }
+            {
+                wait(0.5);
+                face(spouse, north);
+            }
+            {
+                wait(1);
+                face(ari, north);
+            }
+        }
+        next_line(); //
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        free bark_speech(ari, cute_face);
+        wait(2);
+        free pan_camera(2, gb1_camera_5);
+        wait(0.5);
+        face(ari, west);
+        wait(0.5);
+        face(spouse, east);
+        wait(0.5);
+        next_line(); //
+        next_line(); //
+        //
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, exclamation_mark);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+            }
+        }
+
+        //
+        //
+        if get_response() == 0 {
+            next_line(); //
+            close_textbox();
+            sim {
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+                {
+                    pan_camera(3, gb1_camera_3);
+                }
+                {
+                    wait(3);
+                    next_line(); //
+                }
+            }
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free pan_camera(3, gb1_camera_5);
+            wait(1.5);
+            face(ari, west);
+            wait(0.75);
+            face(spouse, east);
+            wait(0.75);
+            next_line(); //
+            next_line(); //
+            //
+        } else if get_response() == 1 {
+            close_textbox();
+            sim {
+                {
+                    wait(0.75);
+                    free bark_speech(spouse, cute_face);
+                }
+                {
+                    wait(1.5);
+                    next_line(); //
+                    next_line(); //
+                    next_line(); //
+                }
+            }
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, heart);
+            wait(1);
+            free bark_speech(ari, heart);
+            wait(1.5);
+            free pan_camera(3, gb1_camera_2);
+            wait(1.5);
+            face(spouse, north);
+            wait(0.5);
+            face(ari, north);
+            wait(1);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            //
+        } else {
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(1.5);
+            sim {
+                {
+                    pan_camera(3, gb1_camera_2);
+                }
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+            }
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+            //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse);
+    wait(1);
+    fade_out(3);
+
+} else if spouse == "balor" {
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, question_mark);
+    wait(1);
+    face(spouse, east);
+    wait(0.5);
+    face(ari, west);
+    wait(0.5);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, ellipses);
+    wait(1);
+    free bark_speech(spouse, sweat_drop);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            pan_camera(3, gb1_camera_3);
+            wait(1);
+            pan_camera(3, gb1_camera_2);
+        }
+        {
+            wait(1);
+            setup_prop(gb1_star_appear);
+            free fade_prop_alpha(gb1_star_appear, 0.0, 1.0, 60);
+            play_sound("SoundEffects/SpecialEvents/GreatBirdStarTwinkle");
+            wait(1.52);
+            destroy_prop(gb1_star_appear);
+            setup_prop(gb1_star_idle);
+        }
+
+        {
+            wait(4);
+            free bark_speech(ari, exclamation_mark);
+            free bark_speech(spouse, exclamation_mark);
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+            wait(1);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(2);
+            face(ari, north);
+            face(spouse, north);
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1.5);
+    close_textbox();
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            wait(1);
+            face(ari, west);
+        }
+        {
+            pan_camera(3, gb1_camera_4);
+        }
+        {
+            wait(3);
+            next_line(); //
+        }
+    }
+    //
+    //
+    if get_response() == 0 {
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, heart);
+        free bark_speech(spouse, heart);
+        wait(1.5);
+        sim {
+            {
+                pan_camera(3, gb1_camera_3);
+            }
+            {
+                wait(0.5);
+                face(spouse, north);
+            }
+            {
+                wait(1);
+                face(ari, north);
+            }
+        }
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, cute_face);
+        free bark_speech(spouse, cute_face);
+        wait(2);
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        free pan_camera(3, gb1_camera_5);
+        wait(1.5);
+        face(ari, west);
+        wait(0.75);
+        face(spouse, east);
+        wait(0.75);
+        next_line(); //
+        next_line(); //
+        //
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, exclamation_mark);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+            }
+        }
+
+        //
+        //
+        if get_response() == 0 {
+            close_textbox();
+            sim {
+                {
+                    wait(0.75);
+                    free bark_speech(spouse, exclamation_mark);
+                }
+                {
+                    wait(1.5);
+                    next_line(); //
+                }
+            }
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            wait(2);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, heart);
+            wait(1);
+            free bark_speech(ari, heart);
+            wait(1.5);
+            free pan_camera(3, gb1_camera_2);
+            wait(1.5);
+            face(spouse, north);
+            wait(0.5);
+            face(ari, north);
+            wait(1);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            //
+        } else {
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(1.5);
+            sim {
+                {
+                    pan_camera(3, gb1_camera_3);
+                }
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+            }
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free pan_camera(3, gb1_camera_5);
+            wait(1.5);
+            face(ari, west);
+            wait(0.75);
+            face(spouse, east);
+            wait(0.75);
+            next_line(); //
+            next_line(); //
+            //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse);
+    wait(1);
+    fade_out(3);
+
+} else if spouse == "caldarus" {
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    face(spouse, east);
+    wait(0.5);
+    face(ari, west);
+    wait(0.5);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            wait(1);
+            next_line(); //
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            pan_camera(3, gb1_camera_3);
+            wait(1);
+            pan_camera(3, gb1_camera_2);
+        }
+        {
+            wait(1);
+            setup_prop(gb1_star_appear);
+            free fade_prop_alpha(gb1_star_appear, 0.0, 1.0, 60);
+            play_sound("SoundEffects/SpecialEvents/GreatBirdStarTwinkle");
+            wait(1.52);
+            destroy_prop(gb1_star_appear);
+            setup_prop(gb1_star_idle);
+        }
+
+        {
+            wait(4);
+            free bark_speech(ari, exclamation_mark);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+            wait(1);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(2);
+            face(ari, north);
+            face(spouse, north);
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            wait(1);
+            face(ari, west);
+        }
+        {
+            pan_camera(3, gb1_camera_4);
+        }
+        {
+            wait(3);
+            next_line(); //
+        }
+    }
+    //
+    //
+    if get_response() == 0 {
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, heart);
+        free bark_speech(spouse, heart);
+        wait(1.5);
+        sim {
+            {
+                pan_camera(3, gb1_camera_3);
+            }
+            {
+                wait(0.5);
+                face(spouse, north);
+            }
+            {
+                wait(1);
+                face(ari, north);
+            }
+            {
+                wait(3);
+                next_line(); //
+            }
+        }
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, cute_face);
+        free bark_speech(spouse, cute_face);
+        wait(2);
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        free pan_camera(3, gb1_camera_5);
+        wait(1.5);
+        face(ari, west);
+        wait(0.75);
+        face(spouse, east);
+        wait(0.75);
+        next_line(); //
+        next_line(); //
+        //
+    } else {
+        next_line();
+
+        //
+        //
+        if get_response() == 0 {
+            close_textbox();
+            sim {
+                {
+                    wait(0.75);
+                    free bark_speech(spouse, exclamation_mark);
+                }
+                {
+                    wait(1.5);
+                    next_line(); //
+                    next_line(); //
+                }
+            }
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            wait(2);
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, heart);
+            wait(1);
+            free bark_speech(ari, heart);
+            wait(1.5);
+            free pan_camera(3, gb1_camera_2);
+            wait(1.5);
+            face(spouse, north);
+            wait(0.5);
+            face(ari, north);
+            wait(1);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            //
+        } else {
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(1.5);
+            sim {
+                {
+                    pan_camera(3, gb1_camera_3);
+                }
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+                {
+                    next_line(); //
+                }
+            }
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free pan_camera(3, gb1_camera_5);
+            wait(1.5);
+            face(ari, west);
+            wait(0.75);
+            face(spouse, east);
+            wait(0.75);
+            next_line(); //
+            next_line(); //
+            //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse);
+    wait(1);
+    fade_out(3);
+
+} else if spouse == "celine" {
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, question_mark);
+    wait(1);
+    face(spouse, east);
+    wait(0.5);
+    face(ari, west);
+    wait(0.5);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, exclamation_mark);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            pan_camera(3, gb1_camera_3);
+            wait(1);
+            pan_camera(3, gb1_camera_2);
+        }
+        {
+            wait(1);
+            setup_prop(gb1_star_appear);
+            free fade_prop_alpha(gb1_star_appear, 0.0, 1.0, 60);
+            play_sound("SoundEffects/SpecialEvents/GreatBirdStarTwinkle");
+            wait(1.52);
+            destroy_prop(gb1_star_appear);
+            setup_prop(gb1_star_idle);
+        }
+
+        {
+            wait(4);
+            free bark_speech(ari, exclamation_mark);
+            free bark_speech(spouse, exclamation_mark);
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+            wait(1);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(2);
+            face(ari, north);
+            face(spouse, north);
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            wait(1);
+            face(ari, west);
+        }
+        {
+            pan_camera(3, gb1_camera_4);
+        }
+        {
+            wait(3);
+            next_line(); //
+        }
+    }
+    //
+    //
+    if get_response() == 0 {
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, heart);
+        free bark_speech(spouse, heart);
+        wait(1.5);
+        sim {
+            {
+                pan_camera(3, gb1_camera_2);
+            }
+            {
+                wait(0.5);
+                face(spouse, north);
+            }
+            {
+                wait(1);
+                face(ari, north);
+            }
+        }
+        next_line(); //
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        free bark_speech(ari, cute_face);
+        wait(2);
+        free pan_camera(2, gb1_camera_5);
+        wait(0.5);
+        face(ari, west);
+        wait(0.5);
+        face(spouse, east);
+        wait(0.5);
+        next_line(); //
+        next_line(); //
+        //
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, exclamation_mark);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+            }
+        }
+
+        //
+        //
+        if get_response() == 0 {
+            next_line(); //
+            close_textbox();
+            sim {
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+                {
+                    pan_camera(3, gb1_camera_3);
+                }
+                {
+                    wait(3);
+                    next_line(); //
+                }
+            }
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free pan_camera(3, gb1_camera_5);
+            wait(1.5);
+            face(ari, west);
+            wait(0.75);
+            face(spouse, east);
+            wait(0.75);
+            next_line(); //
+            next_line(); //
+            //
+        } else if get_response() == 1 {
+            close_textbox();
+            sim {
+                {
+                    wait(0.75);
+                    free bark_speech(spouse, cute_face);
+                }
+                {
+                    wait(1.5);
+                    next_line(); //
+                    next_line(); //
+                    next_line(); //
+                }
+            }
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, heart);
+            wait(1);
+            free bark_speech(ari, heart);
+            wait(1.5);
+            free pan_camera(3, gb1_camera_2);
+            wait(1.5);
+            face(spouse, north);
+            wait(0.5);
+            face(ari, north);
+            wait(1);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            //
+        } else {
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(1.5);
+            sim {
+                {
+                    pan_camera(3, gb1_camera_2);
+                }
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+            }
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+            //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse);
+    wait(1);
+    fade_out(3);
+
+} else if spouse == "eiland" {
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, question_mark);
+    wait(1);
+    face(spouse, east);
+    wait(0.5);
+    face(ari, west);
+    wait(0.5);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, sweat_drop);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            pan_camera(3, gb1_camera_3);
+            wait(1);
+            pan_camera(3, gb1_camera_2);
+        }
+        {
+            wait(1);
+            setup_prop(gb1_star_appear);
+            free fade_prop_alpha(gb1_star_appear, 0.0, 1.0, 60);
+            play_sound("SoundEffects/SpecialEvents/GreatBirdStarTwinkle");
+            wait(1.52);
+            destroy_prop(gb1_star_appear);
+            setup_prop(gb1_star_idle);
+        }
+
+        {
+            wait(4);
+            free bark_speech(ari, exclamation_mark);
+            free bark_speech(spouse, exclamation_mark);
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+            wait(1);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(2);
+            face(ari, north);
+            face(spouse, north);
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1.5);
+    close_textbox();
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            wait(1);
+            face(ari, west);
+        }
+        {
+            pan_camera(3, gb1_camera_4);
+        }
+        {
+            wait(3);
+            next_line(); //
+        }
+    }
+    //
+    //
+    if get_response() == 0 {
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, heart);
+        free bark_speech(spouse, heart);
+        wait(1.5);
+        sim {
+            {
+                pan_camera(3, gb1_camera_3);
+            }
+            {
+                wait(0.5);
+                face(spouse, north);
+            }
+            {
+                wait(1);
+                face(ari, north);
+            }
+        }
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, cute_face);
+        free bark_speech(spouse, cute_face);
+        wait(2);
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        free pan_camera(3, gb1_camera_5);
+        wait(1.5);
+        face(ari, west);
+        wait(0.75);
+        face(spouse, east);
+        wait(0.75);
+        next_line(); //
+        next_line(); //
+        //
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, exclamation_mark);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+            }
+        }
+
+        //
+        //
+        if get_response() == 0 {
+            close_textbox();
+            sim {
+                {
+                    wait(0.75);
+                    free bark_speech(spouse, exclamation_mark);
+                }
+                {
+                    wait(1.5);
+                    next_line(); //
+                    next_line(); //
+                }
+            }
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            wait(2);
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, heart);
+            wait(1);
+            free bark_speech(ari, heart);
+            wait(1.5);
+            free pan_camera(3, gb1_camera_2);
+            wait(1.5);
+            face(spouse, north);
+            wait(0.5);
+            face(ari, north);
+            wait(1);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            //
+        } else {
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(1.5);
+            sim {
+                {
+                    pan_camera(3, gb1_camera_3);
+                }
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+            }
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free pan_camera(3, gb1_camera_5);
+            wait(1.5);
+            face(ari, west);
+            wait(0.75);
+            face(spouse, east);
+            wait(0.75);
+            next_line(); //
+            next_line(); //
+            //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse);
+    wait(1);
+    fade_out(3);
+
+} else if spouse == "hayden" {
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, question_mark);
+    wait(1);
+    face(spouse, east);
+    wait(0.5);
+    face(ari, west);
+    wait(0.5);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, sweat_drop);
+    wait(1);
+    free bark_speech(hayden, question_mark);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            pan_camera(3, gb1_camera_3);
+            wait(1);
+            pan_camera(3, gb1_camera_2);
+        }
+        {
+            wait(1);
+            setup_prop(gb1_star_appear);
+            free fade_prop_alpha(gb1_star_appear, 0.0, 1.0, 60);
+            play_sound("SoundEffects/SpecialEvents/GreatBirdStarTwinkle");
+            wait(1.52);
+            destroy_prop(gb1_star_appear);
+            setup_prop(gb1_star_idle);
+        }
+
+        {
+            wait(4);
+            free bark_speech(ari, exclamation_mark);
+            free bark_speech(spouse, exclamation_mark);
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+            wait(1);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(2);
+            face(ari, north);
+            face(spouse, north);
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            wait(1);
+            face(ari, west);
+        }
+        {
+            pan_camera(3, gb1_camera_4);
+        }
+        {
+            wait(3);
+            next_line(); //
+        }
+    }
+    //
+    //
+    if get_response() == 0 {
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(hayden, cute_face);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+            }
+            {
+                wait(2.5);
+                face(hayden, north);
+            }
+            {
+                wait(3);
+                face(ari, north);
+            }
+        }
+
+        close_textbox();
+        pan_camera(2, gb1_camera_3);
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, cute_face);
+        free bark_speech(spouse, cute_face);
+        wait(2);
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        free pan_camera(3, gb1_camera_5);
+        wait(1.5);
+        face(ari, west);
+        wait(0.75);
+        face(spouse, east);
+        wait(0.75);
+        next_line(); //
+        next_line(); //
+        //
+    } else {
+        next_line(); //
+
+        //
+        //
+        if get_response() == 0 {
+            close_textbox();
+            sim {
+                {
+                    wait(0.75);
+                    free bark_speech(spouse, exclamation_mark);
+                }
+                {
+                    wait(1.5);
+                    next_line(); //
+                    next_line(); //
+                    next_line(); //
+                    next_line(); //
+                }
+            }
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, heart);
+            wait(1);
+            free bark_speech(ari, heart);
+            wait(1.5);
+            free pan_camera(3, gb1_camera_2);
+            wait(1.5);
+            face(spouse, north);
+            wait(0.5);
+            face(ari, north);
+            wait(1);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            //
+        } else {
+            sim {
+                {
+                    wait(0.75);
+                    free bark_speech(hayden, cute_face);
+                }
+                {
+                    wait(1.5);
+                    next_line(); //
+                }
+                {
+                    wait(2.5);
+                    face(hayden, north);
+                }
+                {
+                    wait(3);
+                    face(ari, north);
+                }
+            }
+
+            close_textbox();
+            pan_camera(2, gb1_camera_3);
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free pan_camera(3, gb1_camera_5);
+            wait(1.5);
+            face(ari, west);
+            wait(0.75);
+            face(spouse, east);
+            wait(0.75);
+            next_line(); //
+            next_line(); //
+            //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse);
+    wait(1);
+    fade_out(3);
+
+} else if spouse == "juniper" {
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, question_mark);
+    wait(1);
+    face(spouse, east);
+    wait(0.5);
+    face(ari, west);
+    wait(0.5);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, ellipses);
+    wait(1);
+    free bark_speech(spouse, sweat_drop);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            pan_camera(3, gb1_camera_3);
+            wait(1);
+            pan_camera(3, gb1_camera_2);
+        }
+        {
+            wait(1);
+            setup_prop(gb1_star_appear);
+            free fade_prop_alpha(gb1_star_appear, 0.0, 1.0, 60);
+            play_sound("SoundEffects/SpecialEvents/GreatBirdStarTwinkle");
+            wait(1.52);
+            destroy_prop(gb1_star_appear);
+            setup_prop(gb1_star_idle);
+        }
+
+        {
+            wait(4);
+            free bark_speech(ari, exclamation_mark);
+            free bark_speech(spouse, exclamation_mark);
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+            wait(1);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(2);
+            face(ari, north);
+            face(spouse, north);
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            wait(1);
+            face(ari, west);
+        }
+        {
+            pan_camera(3, gb1_camera_4);
+        }
+        {
+            wait(3);
+            next_line(); //
+        }
+    }
+    //
+    //
+    if get_response() == 0 {
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, heart);
+        free bark_speech(spouse, heart);
+        wait(1.5);
+        sim {
+            {
+                pan_camera(3, gb1_camera_2);
+            }
+            {
+                wait(0.5);
+                face(spouse, north);
+            }
+            {
+                wait(1);
+                face(ari, north);
+            }
+        }
+        next_line(); //
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        free bark_speech(ari, cute_face);
+        wait(2);
+        free pan_camera(2, gb1_camera_5);
+        wait(0.5);
+        face(ari, west);
+        wait(0.5);
+        face(spouse, east);
+        wait(0.5);
+        //
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, exclamation_mark);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+                next_line(); //
+            }
+        }
+
+        //
+        //
+        if get_response() == 0 {
+            next_line(); //
+            close_textbox();
+            sim {
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+                {
+                    pan_camera(3, gb1_camera_3);
+                }
+                {
+                    wait(3);
+                    next_line(); //
+                }
+            }
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free pan_camera(3, gb1_camera_5);
+            wait(1.5);
+            face(ari, west);
+            wait(0.75);
+            face(spouse, east);
+            wait(0.75);
+            //
+        } else if get_response() == 1 {
+            close_textbox();
+            sim {
+                {
+                    wait(0.75);
+                    free bark_speech(spouse, cute_face);
+                }
+                {
+                    wait(1.5);
+                    next_line(); //
+                    next_line(); //
+                    next_line(); //
+                }
+            }
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, heart);
+            wait(1);
+            free bark_speech(ari, heart);
+            wait(1.5);
+            free pan_camera(3, gb1_camera_2);
+            wait(1.5);
+            face(spouse, north);
+            wait(0.5);
+            face(ari, north);
+            wait(1);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            //
+        } else {
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(1.5);
+            sim {
+                {
+                    pan_camera(3, gb1_camera_2);
+                }
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+            }
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            //
+        }
+    }
+    //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    face(juniper, south);
+    sim {
+        {
+            animate(spouse, laugh);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.25);
+    animate(spouse, idle);
+    face(spouse, east);
+    wait(0.25);
+    sim {
+        {
+            animate(ari, kiss);
+            __freeze_ari_on_last_frame();
+            wait(1.1);
+            __unfreeze_ari();
+            animate(ari, idle);
+        }
+        {
+            animate(spouse, kiss);
+            wait(0.4);
+            anim_speed(spouse, 0);
+            wait(0.7);
+            anim_speed(spouse, 1);
+            animate(spouse, idle);
+        }
+    }
+    wait(1);
+    free bark_speech(spouse, heart);
+    free bark_speech(ari, heart);
+    wait(1);
+    fade_out(3);
+
+} else if spouse == "march" {
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, question_mark);
+    wait(1);
+    face(spouse, east);
+    wait(0.5);
+    face(ari, west);
+    wait(0.5);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, ellipses);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            pan_camera(3, gb1_camera_3);
+            wait(1);
+            pan_camera(3, gb1_camera_2);
+        }
+        {
+            wait(1);
+            setup_prop(gb1_star_appear);
+            free fade_prop_alpha(gb1_star_appear, 0.0, 1.0, 60);
+            play_sound("SoundEffects/SpecialEvents/GreatBirdStarTwinkle");
+            wait(1.52);
+            destroy_prop(gb1_star_appear);
+            setup_prop(gb1_star_idle);
+        }
+
+        {
+            wait(4);
+            free bark_speech(ari, exclamation_mark);
+            free bark_speech(spouse, exclamation_mark);
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+            wait(1);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(2);
+            face(ari, north);
+            face(spouse, north);
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1.5);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            wait(1);
+            face(ari, west);
+        }
+        {
+            pan_camera(3, gb1_camera_4);
+        }
+        {
+            wait(3);
+            next_line(); //
+        }
+    }
+    //
+    //
+    if get_response() == 0 {
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, heart);
+        free bark_speech(spouse, heart);
+        wait(1.5);
+        sim {
+            {
+                pan_camera(3, gb1_camera_3);
+            }
+            {
+                wait(0.5);
+                face(spouse, north);
+            }
+            {
+                wait(1);
+                face(ari, north);
+            }
+        }
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, cute_face);
+        free bark_speech(spouse, cute_face);
+        wait(2);
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        free pan_camera(3, gb1_camera_5);
+        wait(1.5);
+        face(ari, west);
+        wait(0.75);
+        face(spouse, east);
+        wait(0.75);
+        next_line(); //
+        next_line(); //
+        //
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, exclamation_mark);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+            }
+        }
+
+        //
+        //
+        if get_response() == 0 {
+            close_textbox();
+            sim {
+                {
+                    wait(0.75);
+                    free bark_speech(spouse, exclamation_mark);
+                }
+                {
+                    wait(1.5);
+                    next_line(); //
+                    next_line(); //
+                }
+            }
+            sim {
+                {
+                    wait(0.5);
+                    face(spouse, west);
+                }
+                {
+                    next_line(); //
+                }
+            }
+            sim {
+                {
+                    wait(0.75);
+                    face(spouse, east);
+                }
+                {
+                    next_line(); //
+                }
+            }
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            wait(2);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, heart);
+            wait(1);
+            free bark_speech(ari, heart);
+            wait(1.5);
+            free pan_camera(3, gb1_camera_2);
+            wait(1.5);
+            face(spouse, north);
+            wait(0.5);
+            face(ari, north);
+            wait(1);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(spouse, east);
+            wait(0.5);
+            face(ari, west);
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            //
+        } else {
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(1.5);
+            sim {
+                {
+                    pan_camera(3, gb1_camera_3);
+                }
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+            }
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free pan_camera(3, gb1_camera_5);
+            wait(1.5);
+            face(ari, west);
+            wait(0.75);
+            face(spouse, east);
+            wait(0.75);
+            next_line(); //
+            next_line(); //
+
+            //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse);
+    wait(1);
+    fade_out(3);
+
+} else if spouse == "reina" {
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(2);
+    next_line(); //
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            wait(1);
+            face(ari, west);
+        }
+        {
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, ellipses);
+    wait(1);
+    free bark_speech(spouse, question_mark);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            pan_camera(3, gb1_camera_3);
+            wait(1);
+            pan_camera(3, gb1_camera_2);
+        }
+        {
+            wait(1);
+            setup_prop(gb1_star_appear);
+            free fade_prop_alpha(gb1_star_appear, 0.0, 1.0, 60);
+            play_sound("SoundEffects/SpecialEvents/GreatBirdStarTwinkle");
+            wait(1.52);
+            destroy_prop(gb1_star_appear);
+            setup_prop(gb1_star_idle);
+        }
+
+        {
+            wait(4);
+            free bark_speech(ari, exclamation_mark);
+            free bark_speech(spouse, exclamation_mark);
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+            wait(1);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(2);
+            face(ari, north);
+            face(spouse, north);
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            wait(1);
+            face(ari, west);
+        }
+        {
+            pan_camera(3, gb1_camera_4);
+        }
+        {
+            wait(3);
+            next_line(); //
+        }
+    }
+    //
+    //
+    if get_response() == 0 {
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, heart);
+        free bark_speech(spouse, heart);
+        wait(1.5);
+        sim {
+            {
+                pan_camera(3, gb1_camera_2);
+            }
+            {
+                wait(0.5);
+                face(spouse, north);
+            }
+            {
+                wait(1);
+                face(ari, north);
+            }
+        }
+        next_line(); //
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        free bark_speech(ari, cute_face);
+        wait(2);
+        free pan_camera(2, gb1_camera_5);
+        wait(0.5);
+        face(ari, west);
+        wait(0.5);
+        face(spouse, east);
+        wait(0.5);
+        next_line(); //
+        next_line(); //
+        //
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, exclamation_mark);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+            }
+        }
+
+        //
+        //
+        if get_response() == 0 {
+            next_line(); //
+            close_textbox();
+            sim {
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+                {
+                    pan_camera(3, gb1_camera_3);
+                }
+                {
+                    wait(3);
+                    next_line(); //
+                }
+            }
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free pan_camera(3, gb1_camera_5);
+            wait(1.5);
+            face(ari, west);
+            wait(0.75);
+            face(spouse, east);
+            wait(0.75);
+            next_line(); //
+            next_line(); //
+            //
+        } else if get_response() == 1 {
+            close_textbox();
+            sim {
+                {
+                    wait(0.75);
+                    free bark_speech(spouse, cute_face);
+                }
+                {
+                    wait(1.5);
+                    next_line(); //
+                    next_line(); //
+                    next_line(); //
+                }
+            }
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, heart);
+            wait(1);
+            free bark_speech(ari, heart);
+            wait(1.5);
+            free pan_camera(3, gb1_camera_2);
+            wait(1.5);
+            face(spouse, north);
+            wait(0.5);
+            face(ari, north);
+            wait(1);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            //
+        } else {
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(1.5);
+            sim {
+                {
+                    pan_camera(3, gb1_camera_2);
+                }
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+            }
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+            //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse);
+    wait(1);
+    fade_out(3);
+
+} else if spouse == "ryis" {
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, question_mark);
+    wait(1);
+    face(spouse, east);
+    wait(0.5);
+    face(ari, west);
+    wait(0.5);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    face(spouse, north);
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, cute_face);
+    wait(1);
+    face(ari, north);
+    wait(1);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            pan_camera(3, gb1_camera_3);
+            wait(1);
+            pan_camera(3, gb1_camera_2);
+        }
+        {
+            wait(1);
+            setup_prop(gb1_star_appear);
+            free fade_prop_alpha(gb1_star_appear, 0.0, 1.0, 60);
+            play_sound("SoundEffects/SpecialEvents/GreatBirdStarTwinkle");
+            wait(1.52);
+            destroy_prop(gb1_star_appear);
+            setup_prop(gb1_star_idle);
+        }
+
+        {
+            wait(4);
+            free bark_speech(ari, exclamation_mark);
+            free bark_speech(spouse, exclamation_mark);
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+            wait(1);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(2);
+            face(ari, north);
+            face(spouse, north);
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(1.5);
+    close_textbox();
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            wait(1);
+            face(ari, west);
+        }
+        {
+            pan_camera(3, gb1_camera_4);
+        }
+        {
+            wait(3);
+            next_line(); //
+            next_line(); //
+        }
+    }
+    //
+    //
+    if get_response() == 0 {
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, heart);
+        free bark_speech(spouse, heart);
+        wait(1.5);
+        sim {
+            {
+                pan_camera(3, gb1_camera_3);
+            }
+            {
+                wait(0.5);
+                face(spouse, north);
+            }
+            {
+                wait(1);
+                face(ari, north);
+            }
+        }
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, cute_face);
+        free bark_speech(spouse, cute_face);
+        wait(2);
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        free pan_camera(3, gb1_camera_5);
+        wait(1.5);
+        face(ari, west);
+        wait(0.75);
+        face(spouse, east);
+        wait(0.75);
+        next_line(); //
+        next_line(); //
+        next_line(); //
+        //
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, question_mark);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+            }
+        }
+
+        //
+        //
+        if get_response() == 0 {
+            close_textbox();
+            sim {
+                {
+                    wait(0.75);
+                    free bark_speech(spouse, cute_face);
+                }
+                {
+                    wait(1.5);
+                    next_line(); //
+                    next_line(); //
+                    next_line(); //
+                }
+            }
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            wait(2);
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, heart);
+            wait(1);
+            free bark_speech(ari, heart);
+            wait(1.5);
+            free pan_camera(3, gb1_camera_2);
+            wait(1.5);
+            face(spouse, north);
+            wait(0.5);
+            face(ari, north);
+            wait(1);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            //
+        } else {
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(1.5);
+            sim {
+                {
+                    pan_camera(3, gb1_camera_3);
+                }
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+            }
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free pan_camera(3, gb1_camera_5);
+            wait(1.5);
+            face(ari, west);
+            wait(0.75);
+            face(spouse, east);
+            wait(0.75);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse);
+    wait(1);
+    fade_out(3);
+
+} else if spouse == "seridia" {
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(seridia, cute_face);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(seridia, ellipses);
+    wait(1);
+    face(ari, west);
+    wait(1);
+    next_line(); //
+    sim {
+        {
+            wait(0.5);
+            face(seridia, east);
+            wait(1.5);
+            face(seridia, north);
+        }
+        {
+            wait(2.5);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+            next_line(); //
+            next_line(); //
+        }
+    }
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            pan_camera(3, gb1_camera_3);
+            wait(1);
+            pan_camera(3, gb1_camera_2);
+        }
+        {
+            wait(1);
+            setup_prop(gb1_star_appear);
+            free fade_prop_alpha(gb1_star_appear, 0.0, 1.0, 60);
+            play_sound("SoundEffects/SpecialEvents/GreatBirdStarTwinkle");
+            wait(1.52);
+            destroy_prop(gb1_star_appear);
+            setup_prop(gb1_star_idle);
+        }
+
+        {
+            wait(4);
+            free bark_speech(ari, exclamation_mark);
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+            wait(1);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(2);
+            face(ari, north);
+            face(spouse, north);
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(2);
+    next_line(); //
+    close_textbox();
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            wait(1);
+            face(ari, west);
+        }
+        {
+            pan_camera(3, gb1_camera_4);
+        }
+        {
+            wait(3);
+            next_line(); //
+        }
+    }
+    //
+    //
+    if get_response() == 0 {
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, heart);
+        free bark_speech(spouse, heart);
+        wait(1.5);
+        sim {
+            {
+                pan_camera(3, gb1_camera_2);
+            }
+            {
+                wait(0.5);
+                face(spouse, north);
+            }
+            {
+                wait(1);
+                face(ari, north);
+            }
+        }
+        next_line(); //
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        free bark_speech(ari, cute_face);
+        wait(2);
+        free pan_camera(2, gb1_camera_5);
+        wait(0.5);
+        face(ari, west);
+        wait(0.5);
+        face(spouse, east);
+        wait(0.5);
+        next_line(); //
+        next_line(); //
+        //
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, question_mark);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+            }
+        }
+
+        //
+        //
+        if get_response() == 0 {
+            next_line(); //
+            close_textbox();
+            sim {
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+                {
+                    pan_camera(3, gb1_camera_3);
+                }
+                {
+                    wait(3);
+                    next_line(); //
+                }
+            }
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free pan_camera(3, gb1_camera_5);
+            wait(1.5);
+            face(ari, west);
+            wait(0.75);
+            face(spouse, east);
+            wait(0.75);
+            next_line(); //
+            next_line(); //
+            //
+        } else if get_response() == 1 {
+            close_textbox();
+            sim {
+                {
+                    wait(0.75);
+                    free bark_speech(spouse, exclamation_mark);
+                }
+                {
+                    wait(1.5);
+                    next_line(); //
+                    next_line(); //
+                    next_line(); //
+                }
+            }
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, heart);
+            wait(1);
+            free bark_speech(ari, heart);
+            wait(1.5);
+            free pan_camera(3, gb1_camera_2);
+            wait(1.5);
+            face(spouse, north);
+            wait(0.5);
+            face(ari, north);
+            wait(1);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            //
+        } else {
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(1.5);
+            sim {
+                {
+                    pan_camera(3, gb1_camera_2);
+                }
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+            }
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+            //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse);
+    wait(1);
+    fade_out(3);
+
+} else { //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, question_mark);
+    wait(1);
+    face(spouse, east);
+    wait(0.5);
+    face(ari, west);
+    wait(0.5);
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(ari, ellipses);
+    wait(2);
+    sim {
+        {
+            wait(0.5);
+            face(spouse, north);
+        }
+        {
+            wait(1);
+            face(ari, north);
+        }
+        {
+            next_line(); //
+        }
+    }
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    sim {
+        {
+            pan_camera(3, gb1_camera_3);
+            wait(1);
+            pan_camera(3, gb1_camera_2);
+        }
+        {
+            wait(1);
+            setup_prop(gb1_star_appear);
+            free fade_prop_alpha(gb1_star_appear, 0.0, 1.0, 60);
+            play_sound("SoundEffects/SpecialEvents/GreatBirdStarTwinkle");
+            wait(1.52);
+            destroy_prop(gb1_star_appear);
+            setup_prop(gb1_star_idle);
+        }
+
+        {
+            wait(4);
+            free bark_speech(ari, exclamation_mark);
+            free bark_speech(spouse, exclamation_mark);
+            wait(2);
+            face(ari, west);
+            face(spouse, east);
+            wait(1);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(2);
+            face(ari, north);
+            face(spouse, north);
+        }
+    }
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    wait(0.5);
+    free bark_speech(spouse, exclamation_mark);
+    wait(2);
+    next_line(); //
+    next_line(); //
+    close_textbox();
+    sim {
+        {
+            wait(0.5);
+            face(spouse, east);
+        }
+        {
+            wait(1);
+            face(ari, west);
+        }
+        {
+            pan_camera(3, gb1_camera_4);
+        }
+        {
+            wait(3);
+            next_line(); //
+        }
+    }
+    //
+    //
+    if get_response() == 0 {
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        wait(0.5);
+        free bark_speech(ari, heart);
+        free bark_speech(spouse, heart);
+        wait(1.5);
+        sim {
+            {
+                pan_camera(3, gb1_camera_2);
+            }
+            {
+                wait(0.5);
+                face(spouse, north);
+            }
+            {
+                wait(1);
+                face(ari, north);
+            }
+        }
+        next_line(); //
+        next_line(); //
+        next_line(); //
+        close_textbox();
+        free bark_speech(ari, cute_face);
+        wait(2);
+        free pan_camera(2, gb1_camera_5);
+        wait(0.5);
+        face(ari, west);
+        wait(0.5);
+        face(spouse, east);
+        wait(0.5);
+        next_line(); //
+        next_line(); //
+        //
+    } else {
+        close_textbox();
+        sim {
+            {
+                wait(0.75);
+                free bark_speech(spouse, exclamation_mark);
+            }
+            {
+                wait(1.5);
+                next_line(); //
+            }
+        }
+
+        //
+        //
+        if get_response() == 0 {
+            next_line(); //
+            close_textbox();
+            sim {
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+                {
+                    pan_camera(3, gb1_camera_3);
+                }
+                {
+                    wait(3);
+                    next_line(); //
+                }
+            }
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free pan_camera(3, gb1_camera_5);
+            wait(1.5);
+            face(ari, west);
+            wait(0.75);
+            face(spouse, east);
+            wait(0.75);
+            next_line(); //
+            next_line(); //
+            //
+        } else if get_response() == 1 {
+            close_textbox();
+            sim {
+                {
+                    wait(0.75);
+                    free bark_speech(spouse, exclamation_mark);
+                }
+                {
+                    wait(1.5);
+                    next_line(); //
+                    next_line(); //
+                    next_line(); //
+                }
+            }
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, heart);
+            wait(1);
+            free bark_speech(ari, heart);
+            wait(1.5);
+            free pan_camera(3, gb1_camera_2);
+            wait(1.5);
+            face(spouse, north);
+            wait(0.5);
+            face(ari, north);
+            wait(1);
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            //
+        } else {
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, cute_face);
+            wait(1);
+            free bark_speech(spouse, cute_face);
+            wait(2);
+            next_line(); //
+            close_textbox();
+            wait(0.5);
+            free bark_speech(ari, heart);
+            free bark_speech(spouse, heart);
+            wait(1.5);
+            sim {
+                {
+                    pan_camera(3, gb1_camera_2);
+                }
+                {
+                    wait(0.5);
+                    face(spouse, north);
+                }
+                {
+                    wait(1);
+                    face(ari, north);
+                }
+            }
+            next_line(); //
+            next_line(); //
+            next_line(); //
+            close_textbox();
+            free bark_speech(ari, cute_face);
+            wait(2);
+            free pan_camera(2, gb1_camera_5);
+            wait(1);
+            face(ari, west);
+            wait(0.5);
+            face(spouse, east);
+            wait(0.5);
+            next_line(); //
+            next_line(); //
+            //
+        }
+    }
+    //
+    close_textbox();
+    wait(0.5);
+	kiss_npc(spouse);
+    wait(1);
+    fade_out(3);
+
+}

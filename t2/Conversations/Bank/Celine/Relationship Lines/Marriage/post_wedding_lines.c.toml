@@ -1,0 +1,340 @@
+[marriage_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ celine_is_spouse = true },
+	{ wedding_was_yesterday = true },
+	{ time_of_day = "morning" },
+	{ post_wedding_bump = true },
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "very_happy"
+local = "Good morning, [Ari]."
+next = "1"
+
+[marriage_0.1]
+portrait = "blush"
+local = "Wasn't yesterday just perfect? The wedding... the party..."
+next = "2"
+
+[marriage_0.2]
+portrait = "embarrassed"
+local = "And then coming home with you..."
+next = "3"
+
+[marriage_0.3]
+portrait = "blush"
+local = "It's the start of our lives together, and I couldn't be happier."
+prompts = [{ local = "I love you, Celine.", next = "4" }, { local = "I feel the same way.", next = "4" }]
+
+[marriage_0.4]
+portrait = "blush_closed_eyes"
+local = "Oh [Ari]..."
+next = "5"
+
+[marriage_0.5]
+portrait = "embarrassed"
+effect = "hearts"
+local = "I love you."
+
+[marriage_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 0 },
+	{ wedding_was_yesterday = false }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "neutral"
+local = "It's wonderful living with you on [farm_name]. You've done such an amazing job with the land!"
+next = "1"
+
+[marriage_1.1]
+portrait = "blush_closed_eyes"
+local = "My perfect partner and the perfect place!"
+
+[marriage_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 1 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "neutral"
+local = "I had the most wonderful dream last night..."
+next = "1"
+
+[marriage_2.1]
+portrait = "happy"
+local = "We were standing together in a beautiful field of flowers."
+next = [
+	{ target = "2", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "3", requires = [] }
+]
+
+[marriage_2.2]
+portrait = "neutral"
+local = "Caldarus was there too, watching over us in the form of an ancient dragon..."
+next = "3"
+
+[marriage_2.3]
+portrait = "very_happy"
+local = "And we were smiling and laughing together, and I felt so warm."
+next = "4"
+
+[marriage_2.4]
+portrait = "teary_special"
+local = "Sorry... I don't why I'm crying... it was such a happy dream."
+
+[marriage_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 2 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 3 }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "celine" } }]
+portrait = "sad"
+local = "My poor nails... they're in such bad shape from all the gardening."
+next = "1"
+
+[marriage_3.1]
+portrait = "gloomy"
+local = "I need to get better about wearing my gloves."
+
+[marriage_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 3 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "think"
+local = "Looking back, I was so lucky growing up."
+next = "1"
+
+[marriage_4.1]
+portrait = "think_special"
+local = "Dell and I were such a handful, and my parents had the General Store to run on top of that..."
+next = "2"
+
+[marriage_4.2]
+portrait = "neutral"
+local = "But no matter how busy things were, they always made time for us, and for each other."
+next = "3"
+
+[marriage_4.3]
+portrait = "happy"
+local = "You could really tell how much they loved each other."
+next = "4"
+
+[marriage_4.4]
+portrait = "embarrassed"
+local = "I hope I can be as good a partner to you!"
+
+[marriage_5]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 4 },
+	{ time_of_day = "night", comparator = "!=" }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 5 }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "embarrassed"
+local = "Hey [Ari], I know you've been busy in the evenings, but... um..."
+next = "1"
+
+[marriage_5.1]
+portrait = "blush"
+local = "Could we maybe... go to bed early tonight?"
+prompts = [{ local = "Oh! Of course, darling.", next = "2" }, { local = "But I'm not very sleepy...", next = "3" }]
+
+[marriage_5.2]
+portrait = "blush_special"
+local = "Hehe!"
+
+[marriage_5.3]
+portrait = "blush_special"
+local = "[Ari]!"
+next = "4"
+
+[marriage_5.4]
+portrait = "embarrassed"
+local = "Are you teasing me again?"
+
+[marriage_6]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 5 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 6 }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "think"
+local = """Mom keeps sharing advice about married life, but it basically comes down to "don't pun too much"."""
+next = "1"
+
+[marriage_6.1]
+portrait = "sad"
+local = "But when I talk to Dad, he says lots of puns keep a marriage fresh!"
+prompts = [
+	{ local = "Whatever amount of puns is fine!", next = "2" },
+	{ local = "When I married you, I knew puns were inevitable.", next = "4" }
+]
+
+[marriage_6.2]
+portrait = "neutral"
+local = "Yeah, you're right. We've gotta find our own balance!"
+next = "3"
+
+[marriage_6.3]
+portrait = "wink"
+local = "Just let me know when you reach your pun Celine."
+
+[marriage_6.4]
+portrait = "blush_special"
+local = "Oh!"
+next = "5"
+
+[marriage_6.5]
+portrait = "embarrassed"
+effect = "hearts"
+local = "That's... actually pretty romantic?"
+
+[marriage_7]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 6 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 7 }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "laugh"
+local = "It's just so wonderful being with you."
+next = "1"
+
+[marriage_7.1]
+portrait = "neutral"
+local = "When I'm with you, I feel so... complete."
+next = "2"
+
+[marriage_7.2]
+portrait = "blush"
+local = "Like I've known you my whole life, or somehow longer."
+next = "3"
+
+[marriage_7.3]
+portrait = "very_happy"
+local = "I'm so happy we ended up together."
+
+[marriage_8]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 7 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 8 }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "blush"
+local = "..."
+prompts = [{ local = "What?", next = "1" }, { local = "What'cha thinking about?", next = "1" }]
+
+[marriage_8.1]
+portrait = "blush_special"
+local = "Oh!"
+next = "2"
+
+[marriage_8.2]
+portrait = "embarrassed"
+local = "I was thinking how you're just my type. Hehe!"
+
+[marriage_9]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 8 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 9 }
+]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "think"
+local = "It feels like just yesterday I was welcoming my new neighbor to town..."
+next = "1"
+
+[marriage_9.1]
+portrait = "blush_closed_eyes"
+local = "And thinking how cute you were..."
+next = "2"
+
+[marriage_9.2]
+portrait = "neutral"
+local = "And now look at us, married!"
+next = "3"
+
+[marriage_9.3]
+portrait = "embarrassed"
+local = "I... I hope no matter how many years pass, we'll always be as happy as we are now."
+prompts = [{ local = "Me too!", next = "4" }, { local = "Even happier, I bet.", next = "4" }]
+
+[marriage_9.4]
+portrait = "blush"
+local = "I love you, [Ari]."

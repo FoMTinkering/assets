@@ -1,0 +1,495 @@
+[default]
+	# The date the festival takes place on
+	date = "<n/a>"
+	# The icon sprite used to render this festival on the Calendar UI
+	icon = "spr_illegal_16"
+	# The name of the festival as it should appear in the UI
+	name = "MISSING NAME"
+	# The challenges (if any) that this festival involves.
+	challenges = []
+	# The data pertaining to decorating locations. These can rely on tiers within challenges.
+	decor = {}
+	# The possible cutscenes that can play
+	# The stocks for the various vendors at this festival
+	stocks = {}
+	# The quest associated with this festival
+	associated_quest = "<n/a>"
+	# Data for date style festivals
+	npc_date = "<n/a>"
+	# Forced weather conditions for this festival
+	forced_weather = "calm"
+	# A collection of music tracks that should play in specific locations
+	location_music = {}
+	# An override for the general daytime playlist
+	daytime_music = "<n/a>"
+	# The location this festival takes place in
+	location = "<n/a>"
+	# Whether or not we're done implementing this festival. This is so users can see them on the
+	# calendar as upcoming content, and we can keep them here, but they won't have consequences
+	implemented = false
+	# this is the stringified *gameplay_triggered_conversation* name.
+	# confusing, yah?
+	festival_post_line = "<n/a>"
+	# this is a sprite name for the festival post, such as `spr_town_flag_post_new_years_eve_festival_winter`
+	# note: you should set the correct seasonality on the sprite here, we don't handle that for you
+	festival_post_sprite = "<n/a>"
+	# the local for the npc interaction
+	interact_local = "misc_local/interact_invite"
+	# if there are any writes for t2 facts, they should go here.
+	# these will be written on the day of the festival at 6am
+	writes = []
+
+[animal]
+	date = { season = "winter", day = 10 }
+	icon = "spr_ui_calendar_icon_event_animal_festival"
+	name = "Animal Festival"
+	location = "town"
+	forced_weather = "calm"
+	implemented = true
+	festival_post_line = "animal_festival_post"
+	festival_post_sprite = "spr_town_flag_post_animal_festival_winter"
+	associated_quest = "the_animal_festival"
+	writes = [
+	    ["small_animal_place", "<n/a>"],
+	    ["large_animal_place",  "<n/a>"],
+	]
+
+	[animal.location_music]
+		town = { day = "Music/Location Tracks/AnimalFestival", night = "<n/a>" }
+
+	[animal.decor.town]
+		asset_layers = ["Level_0_Assets_Animal_Festival", "Level_0_FloorSprites_Animal_Festival"]
+		collision_layers = ["Animal_Festival"]
+		grid_flag_edits = []
+
+[animal.stocks]
+	nora_souvenir_stall = [
+		{ recipe_scroll = "golden_cookies", tier_required = 0 },
+		{ recipe_scroll = "golden_cheesecake", tier_required = 0 },
+		{ item = "chicky_hot_chocolate", tier_required = 0 },
+		{ item = "cow_donut", tier_required = 0 },
+		{ animal = "chicken", animal_cosmetic = "apple", tier_required = 0 },
+		{ animal = "chicken", animal_cosmetic = "baseball_cap", tier_required = 0 },
+		{ animal = "cow", animal_cosmetic = "bell_collar", tier_required = 0 },
+		{ animal = "cow", animal_cosmetic = "laurels", tier_required = 0 },
+		{ has_unlocked_animal = "horse", animal = "horse", animal_cosmetic = "monocle", tier_required = 0 },
+		{ has_unlocked_animal = "horse", animal = "horse", animal_cosmetic = "bandana", tier_required = 0 },
+		{ has_unlocked_animal = "duck", animal = "duck", animal_cosmetic = "backwards_cap", tier_required = 0 },
+		{ has_unlocked_animal = "duck", animal = "duck", animal_cosmetic = "strawberry_hat", tier_required = 0 },
+		{ has_unlocked_animal = "sheep", animal = "sheep", animal_cosmetic = "hot_water_bottle", tier_required = 0 },
+		{ has_unlocked_animal = "sheep", animal = "sheep", animal_cosmetic = "green_visor", tier_required = 0 },
+		{ has_unlocked_animal = "rabbit", animal = "rabbit", animal_cosmetic = "cowboy_hat", tier_required = 0 },
+		{ has_unlocked_animal = "rabbit", animal = "rabbit", animal_cosmetic = "chef_hat", tier_required = 0 },
+		{ has_unlocked_animal = "alpaca", animal = "alpaca", animal_cosmetic = "beret", tier_required = 0 },
+		{ has_unlocked_animal = "alpaca", animal = "alpaca", animal_cosmetic = "lacy_collar", tier_required = 0 },
+		{ has_unlocked_animal = "capybara", animal = "capybara", animal_cosmetic = "angel_wings", tier_required = 0 },
+		{ has_unlocked_animal = "capybara", animal = "capybara", animal_cosmetic = "bat_wings", tier_required = 0 },
+
+	]
+
+[harvest]
+	date = { season = "fall", day = 10 }
+	icon = "spr_ui_calendar_icon_event_harvest_festival"
+	name = "Harvest Festival"
+	location = "town"
+	festival_post_sprite = "spr_town_flag_post_harvest_festival_spring"
+	festival_post_line = "harvest_festival_post"
+	forced_weather = "special"
+	implemented = true
+	associated_quest = "the_harvest_festival"
+	interact_local = "misc_local/interact_dance"
+
+	[harvest.location_music]
+		town = { day = "Music/Location Tracks/HarvestFestivalTheme", night = "<n/a>" }
+
+	[harvest.decor.town]
+		asset_layers = ["Level_0_Assets_Harvest_Festival", "Level_0_FloorSprites_Harvest_Festival"]
+		collision_layers = ["Harvest_Festival"]
+		grid_flag_edits = []
+
+[[harvest.challenges]]
+	artifact_key = "harvest_festival"
+
+	[[harvest.challenges.tier_results]]
+		cutscene = "harvest_festival_no_place"
+
+	[[harvest.challenges.tier_results]]
+		cutscene = "harvest_festival_third_place"
+
+	[[harvest.challenges.tier_results]]
+		cutscene = "harvest_festival_second_place"
+
+	[[harvest.challenges.tier_results]]
+		cutscene = "harvest_festival_first_place"
+
+[harvest.npc_date]
+	manual = true
+
+	[harvest.npc_date.participants.adeline]
+		basic_accept.line = "harvest_adeline_basic_accept"
+		basic_accept.requirements.reached_heart_level.adeline = 4
+		decline_line = "harvest_festival_rejection"
+		friend_decline_line = "harvest_festival_friend_rejection"
+		cutscene = "harvest_festival_dance"
+
+	[harvest.npc_date.participants.balor]
+		basic_accept.line = "harvest_balor_basic_accept"
+		basic_accept.requirements.reached_heart_level.balor = 4
+		decline_line = "harvest_festival_rejection"
+		friend_decline_line = "harvest_festival_friend_rejection"
+		cutscene = "harvest_festival_dance"
+	# switch to new line post dt4 is handled manually, line is harvest_caldarus_basic_accept_eog
+	[harvest.npc_date.participants.caldarus]
+		basic_accept.line = "harvest_caldarus_basic_accept"
+		basic_accept.requirements.reached_heart_level.caldarus = 4
+		decline_line = "harvest_festival_rejection"
+		friend_decline_line = "harvest_festival_friend_rejection"
+		cutscene = "harvest_festival_dance"
+
+	[harvest.npc_date.participants.celine]
+		basic_accept.line = "harvest_celine_basic_accept"
+		basic_accept.requirements.reached_heart_level.celine = 4
+		decline_line = "harvest_festival_rejection"
+		friend_decline_line = "harvest_festival_friend_rejection"
+		cutscene = "harvest_festival_dance"
+
+	[harvest.npc_date.participants.eiland]
+		basic_accept.line = "harvest_eiland_basic_accept"
+		basic_accept.requirements.reached_heart_level.eiland = 4
+		decline_line = "harvest_festival_rejection"
+		friend_decline_line = "harvest_festival_friend_rejection"
+		cutscene = "harvest_festival_dance"
+
+	[harvest.npc_date.participants.hayden]
+		basic_accept.line = "harvest_hayden_basic_accept"
+		basic_accept.requirements.reached_heart_level.hayden = 4
+		decline_line = "harvest_festival_rejection"
+		friend_decline_line = "harvest_festival_friend_rejection"
+		cutscene = "harvest_festival_dance"
+
+	[harvest.npc_date.participants.juniper]
+		basic_accept.line = "harvest_juniper_basic_accept"
+		basic_accept.requirements.reached_heart_level.juniper = 4
+		decline_line = "harvest_festival_rejection"
+		friend_decline_line = "harvest_festival_friend_rejection"
+		cutscene = "harvest_festival_dance"
+
+	[harvest.npc_date.participants.march]
+		basic_accept.line = "harvest_march_basic_accept"
+		basic_accept.requirements.reached_heart_level.march = 4
+		super_accept.line = "harvest_march_super_accept"
+		super_accept.requirements = { reached_heart_level.march = 8, is_partner = "march" }
+		decline_line = "harvest_festival_rejection"
+		friend_decline_line = "harvest_festival_friend_rejection"
+		cutscene = "harvest_festival_dance"
+
+	[harvest.npc_date.participants.reina]
+		basic_accept.line = "harvest_reina_basic_accept"
+		basic_accept.requirements.reached_heart_level.reina = 4
+		decline_line = "harvest_festival_rejection"
+		friend_decline_line = "harvest_festival_friend_rejection"
+		cutscene = "harvest_festival_dance"
+
+	[harvest.npc_date.participants.ryis]
+		basic_accept.line = "harvest_ryis_basic_accept"
+		basic_accept.requirements.reached_heart_level.ryis = 4
+		decline_line = "harvest_festival_rejection"
+		friend_decline_line = "harvest_festival_friend_rejection"
+		cutscene = "harvest_festival_dance"
+
+	[harvest.npc_date.participants.seridia]
+		basic_accept.line = "harvest_seridia_basic_accept"
+		basic_accept.requirements.reached_heart_level.seridia = 6
+		decline_line = "harvest_festival_rejection"
+		friend_decline_line = "harvest_festival_friend_rejection"
+		cutscene = "harvest_festival_dance"
+
+	[harvest.npc_date.participants.valen]
+		basic_accept.line = "harvest_valen_basic_accept"
+		basic_accept.requirements.reached_heart_level.valen = 4
+		decline_line = "harvest_festival_rejection"
+		friend_decline_line = "harvest_festival_friend_rejection"
+		cutscene = "harvest_festival_dance"
+
+[harvest.stocks]
+	nora_souvenir_stall = [
+		{ item = "candied_queen_berries", tier_required = 0 },
+		{ item = "queen_berry_pie", tier_required = 0 },
+		{ recipe_scroll = "pumpkin_pie", tier_required = 0 },
+		{ recipe_scroll = "apple_honey_curry", tier_required = 0 },
+		{ recipe_scroll = "harvest_plate", tier_required = 0 },
+		{ item = "autumn_scarecrow", tier_required = 0 },
+		{ item = "cornucopia", tier_required = 0 },
+		{ cosmetic = "head_berry_crown", tier_required = 0 },
+		{ cosmetic = "head_berry_hat", tier_required = 0 },
+		{ cosmetic = "dress_berry", tier_required = 0 },
+		{ cosmetic = "suit_berry", tier_required = 0 },
+	]
+
+[shooting_star]
+	date = { season = "summer", day = 28 }
+	icon = "spr_ui_calendar_icon_event_shooting_star_festival"
+	name = "Shooting Star Festival"
+	location = "summit"
+	associated_quest = "the_shooting_star_festival"
+	forced_weather = "calm"
+	festival_post_line = "shooting_star_post"
+	festival_post_sprite = "spr_town_flag_post_shooting_star_festival_spring"
+	implemented = true
+
+	[shooting_star.location_music]
+		town = { day = "<n/a>", night = "Music/Events/ShootingStarNight" }
+		deep_woods = { day = "<n/a>", night = "Music/Events/ShootingStarNight" }
+		farm = { day = "<n/a>", night = "Music/Events/ShootingStarNight" }
+		eastern_road = { day = "<n/a>", night = "Music/Events/ShootingStarNight" }
+		dragonsworn_glade = { day = "<n/a>", night = "Music/Events/ShootingStarNight" }
+		narrows = { day = "<n/a>", night = "Music/Events/ShootingStarNight" }
+		summit = { day = "<n/a>", night = "Music/Events/ShootingStarNight" }
+		western_ruins = { day = "<n/a>", night = "Music/Events/ShootingStarNight" }
+		beach = { day = "<n/a>", night = "Music/Events/ShootingStarNight" }
+		haydens_farm = { day = "<n/a>", night = "Music/Events/ShootingStarNight" }
+
+	[shooting_star.npc_date]
+		item = "star_brooch"
+		solo_cutscene = "shooting_star_solo"
+		manual = false
+
+		[shooting_star.npc_date.participants.adeline]
+			basic_accept.line = "shooting_star_adeline_basic_accept"
+			basic_accept.requirements.reached_heart_level.adeline = 4
+			super_accept.line = "shooting_star_adeline_super_accept"
+			super_accept.requirements.is_partner = "adeline"
+			decline_line = "shooting_star_adeline_decline"
+			friend_decline_line = "shooting_star_adeline_friend_decline"
+			cutscene = "shooting_star_adeline"
+
+		[shooting_star.npc_date.participants.balor]
+			basic_accept.line = "shooting_star_balor_basic_accept"
+			basic_accept.requirements.reached_heart_level.balor = 4
+			super_accept.line = "shooting_star_balor_super_accept"
+			super_accept.requirements.is_partner = "balor"
+			decline_line = "shooting_star_balor_decline"
+			friend_decline_line = "shooting_star_balor_friend_decline"
+			cutscene = "shooting_star_balor"
+
+		[shooting_star.npc_date.participants.caldarus]
+			basic_accept.line = "shooting_star_caldarus_basic_accept"
+			basic_accept.requirements.reached_heart_level.caldarus = 4
+			super_accept.line = "shooting_star_caldarus_super_accept"
+			super_accept.requirements.is_partner = "caldarus"
+			decline_line = "shooting_star_caldarus_basic_accept"       # this isn't possible
+			friend_decline_line = "shooting_star_caldarus_friend_decline"
+			cutscene = "shooting_star_caldarus"
+
+		[shooting_star.npc_date.participants.celine]
+			basic_accept.line = "shooting_star_celine_basic_accept"
+			basic_accept.requirements.reached_heart_level.celine = 4
+			super_accept.line = "shooting_star_celine_super_accept"
+			super_accept.requirements.is_partner = "celine"
+			decline_line = "shooting_star_celine_decline"
+			friend_decline_line = "shooting_star_celine_friend_decline"
+			cutscene = "shooting_star_celine"
+
+		[shooting_star.npc_date.participants.eiland]
+			basic_accept.line = "shooting_star_eiland_basic_accept"
+			basic_accept.requirements.reached_heart_level.eiland = 4
+			super_accept.line = "shooting_star_eiland_super_accept"
+			super_accept.requirements.is_partner = "eiland"
+			decline_line = "shooting_star_eiland_decline"
+			friend_decline_line = "shooting_star_eiland_friend_decline"
+			cutscene = "shooting_star_eiland"
+
+		[shooting_star.npc_date.participants.hayden]
+			basic_accept.line = "shooting_star_hayden_basic_accept"
+			basic_accept.requirements.reached_heart_level.hayden = 4
+			super_accept.line = "shooting_star_hayden_super_accept"
+			super_accept.requirements.is_partner = "hayden"
+			decline_line = "shooting_star_hayden_decline"
+			friend_decline_line = "shooting_star_hayden_friend_decline"
+			cutscene = "shooting_star_hayden"
+
+		[shooting_star.npc_date.participants.juniper]
+			basic_accept.line = "shooting_star_juniper_basic_accept"
+			basic_accept.requirements.reached_heart_level.juniper = 4
+			super_accept.line = "shooting_star_juniper_super_accept"
+			super_accept.requirements.is_partner = "juniper"
+			decline_line = "shooting_star_juniper_decline"
+			friend_decline_line = "shooting_star_juniper_friend_decline"
+			cutscene = "shooting_star_juniper"
+
+		[shooting_star.npc_date.participants.march]
+			basic_accept.line = "shooting_star_march_basic_accept"
+			basic_accept.requirements.reached_heart_level.march = 4
+			super_accept.line = "shooting_star_march_super_accept"
+			super_accept.requirements.is_partner = "march"
+			decline_line = "shooting_star_march_decline"
+			friend_decline_line = "shooting_star_march_friend_decline"
+			cutscene = "shooting_star_march"
+
+		[shooting_star.npc_date.participants.reina]
+			basic_accept.line = "shooting_star_reina_basic_accept"
+			basic_accept.requirements.reached_heart_level.reina = 4
+			super_accept.line = "shooting_star_reina_super_accept"
+			super_accept.requirements.is_partner = "reina"
+			decline_line = "shooting_star_reina_decline"
+			friend_decline_line = "shooting_star_reina_friend_decline"
+			cutscene = "shooting_star_reina"
+
+		[shooting_star.npc_date.participants.ryis]
+			basic_accept.line = "shooting_star_ryis_basic_accept"
+			basic_accept.requirements.reached_heart_level.ryis = 4
+			super_accept.line = "shooting_star_ryis_super_accept"
+			super_accept.requirements.is_partner = "ryis"
+			decline_line = "shooting_star_ryis_decline"
+			friend_decline_line = "shooting_star_ryis_friend_decline"
+			cutscene = "shooting_star_ryis"
+
+		[shooting_star.npc_date.participants.seridia]
+			basic_accept.line = "shooting_star_seridia_basic_accept"
+			basic_accept.requirements.reached_heart_level.seridia = 6
+			super_accept.line = "shooting_star_seridia_super_accept"
+			super_accept.requirements.is_partner = "seridia"
+			decline_line = "shooting_star_seridia_basic_accept"       # this isn't possible
+			friend_decline_line = "shooting_star_seridia_friend_decline"
+			cutscene = "shooting_star_seridia"
+
+		[shooting_star.npc_date.participants.valen]
+			basic_accept.line = "shooting_star_valen_basic_accept"
+			basic_accept.requirements.reached_heart_level.valen = 4
+			super_accept.line = "shooting_star_valen_super_accept"
+			super_accept.requirements.is_partner = "valen"
+			decline_line = "shooting_star_valen_decline"
+			friend_decline_line = "shooting_star_valen_friend_decline"
+			cutscene = "shooting_star_valen"
+
+[shooting_star.decor.town]
+	asset_layers = ["Level_0_Assets_Shooting_Star_Festival", "Level_0_FloorSprites_Shooting_Star_Festival"]
+	collision_layers = ["Shooting_Star_Festival"]
+	grid_flag_edits = [
+		{ position = [43, 207], value = 3 },
+		{ position = [44, 207], value = 3 },
+		{ position = [45, 207], value = 3 },
+		{ position = [46, 207], value = 3 },
+		{ position = [43, 211], value = 3 },
+		{ position = [44, 211], value = 3 },
+		{ position = [45, 211], value = 3 },
+		{ position = [46, 211], value = 3 },
+		{ position = [47, 211], value = 3 },
+		{ position = [48, 211], value = 3 },
+
+		{ position = [122, 150], value = 3 },
+		{ position = [125, 150], value = 3 },
+
+		{ position = [147, 149], value = 3 },
+		{ position = [148, 149], value = 3 },
+		{ position = [151, 149], value = 3 },
+		{ position = [152, 149], value = 3 },
+
+		{ position = [147, 152], value = 3 },
+		{ position = [148, 152], value = 3 },
+		{ position = [151, 152], value = 3 },
+		{ position = [152, 152], value = 3 },
+
+		{ position = [182, 70], value = 3 },
+		{ position = [183, 70], value = 3 },
+		{ position = [186, 70], value = 3 },
+		{ position = [187, 70], value = 3 },
+		{ position = [184, 73], value = 3 },
+		{ position = [185, 73], value = 3 },
+
+		{ position = [193, 259], value = 3 },
+		{ position = [194, 259], value = 3 },
+		{ position = [195, 259], value = 3 },
+		{ position = [196, 259], value = 3 },
+
+		{ position = [192, 263], value = 3 },
+		{ position = [193, 263], value = 3 },
+		{ position = [196, 263], value = 3 },
+		{ position = [197, 263], value = 3 },
+
+		{ position = [122, 292], value = 3 },
+		{ position = [123, 292], value = 3 },
+		{ position = [124, 292], value = 3 },
+		{ position = [125, 292], value = 3 },
+		{ position = [126, 292], value = 3 },
+		{ position = [127, 292], value = 3 },
+
+		{ position = [123, 295], value = 3 },
+		{ position = [124, 295], value = 3 },
+	]
+
+[shooting_star.decor.summit]
+	asset_layers = ["Level_0_Assets_Shooting_Star_Festival", "Level_0_FloorSprites_Shooting_Star_Festival"]
+	collision_layers = []
+	grid_flag_edits = []
+
+[spring]
+	date = { season = "spring", day = 17 }
+	icon = "spr_ui_calendar_icon_event_spring_festival"
+	name = "Spring Festival"
+	location = "town"
+	associated_quest = "the_spring_festival"
+	forced_weather = "special"
+	implemented = true
+	festival_post_line = "spring_festival_post"
+	festival_post_sprite = "spr_town_flag_post_spring_festival_spring"
+
+	[spring.location_music]
+		town = { day = "Music/Location Tracks/SpringFestival", night = "<n/a>" }
+
+	[spring.stocks]
+		maple_spring_festival = [
+			{ item = "floral_tea", tier_required = 0 },
+			{ item = "coffee", tier_required = 0 },
+			{ item = "tulip_cake", tier_required = 2 },
+			{ item = "mocha", tier_required = 3 },
+			{ item = "rose_tea", tier_required = 3 },
+			{ item = "lavender_tea", tier_required = 4 },
+		]
+		nora_souvenir_stall = [
+			{ item = "scent_of_spring", tier_required = 0 },
+			{ item = "spring_festival_planter", tier_required = 0 },
+			{ item = "spring_festival_basket", tier_required = 0 },
+			{ item = "spring_festival_wreath", tier_required = 2 },
+			{ item = "spring_festival_large_planter", tier_required = 3 },
+			{ item = "spring_festival_flower_chest", tier_required = 4 },
+		]
+		elsie_spring_festival = [
+			{ cosmetic = "head_flower_crown", tier_required = 0 },
+			{ cosmetic = "face_gear_flower_earrings", tier_required = 2 },
+			{ cosmetic = "dress_spring_festival", tier_required = 3 },
+			{ cosmetic = "suit_spring_festival", tier_required = 3 },
+			{ cosmetic = "head_flower_top_hat", tier_required = 4 },
+		]
+
+	[[spring.challenges]]
+		artifact_key = "spring_festival"
+
+		[[spring.challenges.tier_results]]
+			asset_layer = "Level_0_Assets_Spring_Festival_Tier_1"
+			collision_layer = "Spring_Festival_Tier_1"
+			cutscene = "spring_festival_no_place"
+
+		[[spring.challenges.tier_results]]
+			cutscene = "spring_festival_third_place"
+
+		[[spring.challenges.tier_results]]
+			asset_layer = "Level_0_Assets_Spring_Festival_Tier_2"
+			collision_layer = "Spring_Festival_Tier_2"
+			sprite_swaps = { spr_town_planter_barrel_spring = "spr_decor_spring_festival_basket_spring" }
+			cutscene = "spring_festival_second_place"
+
+		[[spring.challenges.tier_results]]
+			asset_layer = "Level_0_Assets_Spring_Festival_Tier_3"
+			collision_layer = "Spring_Festival_Tier_3"
+			sprite_swaps = { spr_town_planter_rustic_medium_spring = "spr_decor_spring_festival_large_planter_spring" }
+			cutscene = "spring_festival_first_place"
+
+		[[spring.challenges.tier_results]]
+			sprite_swaps = { spr_town_fountain_spring = "spr_town_spring_festival_fountain_spring" }
+			cutscene = "spring_festival_first_place_plus"
+
+		[spring.decor.town]
+			asset_layers = ["Level_0_FloorSprites_Spring_Festival"]
+			collision_layers = []
+			grid_flag_edits = []

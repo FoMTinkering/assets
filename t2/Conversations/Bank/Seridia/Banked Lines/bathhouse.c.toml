@@ -1,0 +1,97 @@
+[bathhouse_0]
+refresh = "1m"
+requires = [
+	{ npc = "seridia" },
+	{ building = "bathhouse" },
+	{ caldarus_seridia_town = true }
+]
+portrait = "neutral"
+local = "The aromas that fill this bathhouse... they are invigorating."
+next = "1"
+
+[bathhouse_0.1]
+portrait = "smile"
+local = "Juniper sets the ambiance well."
+
+[bathhouse_1]
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ building = "bathhouse" },
+	{ caldarus_seridia_town = true }
+]
+portrait = "angry_brows"
+local = "Oh, this bathhouse is a luxury worth killing for."
+next = "1"
+
+[bathhouse_1.1]
+portrait = "closed_eyes_smile"
+local = "What? It is a figure of speech."
+
+[bathhouse_2]
+refresh = "1y"
+requires = [
+	{ npc = "seridia" },
+	{ building = "bathhouse" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false }
+]
+portrait = "neutral"
+local = "Try as I might, the bins in the changing room are not big enough to hold my armor..."
+next = "1"
+
+[bathhouse_2.1]
+portrait = "closed_eyes"
+local = "I will have a word with Dozy about it."
+
+[bathhouse_3]
+refresh = "1m"
+requires = [
+	{ npc = "seridia" },
+	{ location = "bathhouse_change_room" },
+	{ caldarus_seridia_town = true }
+]
+portrait = "smile"
+local = "It is a pleasure to enjoy a hot bath in a mortal body."
+next = "1"
+
+[bathhouse_3.1]
+portrait = "serious"
+local = "I never did find a hot spring large enough to accommodate my draconic form."
+
+[bathhouse_4]
+refresh = "1y"
+requires = [
+	{ npc = "seridia" },
+	{ building = "bathhouse" },
+	{ seridia_zone = "<juniper_zone>", comparator = "!=" },
+	{ caldarus_seridia_town = true }
+]
+writes = [{ seridia_juniper_bath_follow_up = true, expires = "3d" }]
+portrait = "neutral"
+local = "I came here to wash my armor in the magic-infused water of this bathhouse... but it seems Juniper is against such things."
+next = "1"
+
+[bathhouse_4.1]
+portrait = "closed_eyes"
+local = "I will make accommodations for her feelings. For now."
+next = "2"
+
+[bathhouse_4.2]
+portrait = "sly_think"
+local = "But perhaps, once she is distracted..."
+
+[bathhouse_5]
+refresh = "1m"
+requires = [
+	{ npc = "seridia" },
+	{ location = "bathhouse_change_room" },
+	{ caldarus_seridia_town = true }
+]
+portrait = "closed_eyes"
+local = "The temperature of the baths is pleasant enough..."
+next = "1"
+
+[bathhouse_5.1]
+portrait = "smile"
+local = "But as a dragon, I wouldn't mind if the water was a few hundred degrees hotter."

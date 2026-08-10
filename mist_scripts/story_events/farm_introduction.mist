@@ -1,0 +1,252 @@
+fun item_give_sequence(actor, item, count, start_location, offset) {
+	var x = get_element_x(start_location);
+	var y = get_element_y(start_location);
+	x = x + offset;
+	walk_slow(actor, x, y);
+	face(actor, west);
+	wait(0.25);
+	ari_hold_item(item, count);
+	wait(1);
+	walk_slow(actor, start_location);
+	face(actor, west);
+}
+
+fun item_give_sequence_hayden_watering_can() {
+	sim {
+		walk(hayden, fi_hayden_item_give);
+		set_move_speed(hayden, fast_walk);
+	}
+	animate(hayden, ride_idle_1);
+	face(hayden, east);
+	wait(0.25);
+	ari_hold_item(watering_can_worn, 1);
+	wait(1);
+}
+fun item_give_sequence_hayden_turnips(start_location) {
+	wait(1.5);
+	ari_hold_item(seed_turnip, 3);
+	wait(1);
+	sim {
+		walk(hayden, start_location);
+		set_move_speed(hayden, fast_walk);
+	}
+	animate(hayden, ride_idle_1);
+	face(hayden, east);
+}
+
+fun walk_slow_offset(actor, element, x, y) {
+	var ex = get_element_x(element);
+	var ey = get_element_y(element);
+	walk_slow(actor, x + ex, y + ey);
+}
+
+scene(farm);
+request_music_play(celine);
+camera_position(fi_ari);
+place_actor(ari, north, fi_ari);
+place_actor(celine, south, fi_celine_spawn);
+place_actor(hayden, east, fi_hayden_spawn);
+free fade_npc_alpha(hayden, 0, 0, 1);
+
+set_outfit(celine, spring);
+free fade_in(2);
+
+sim {
+	{
+		walk_slow(ari, fi_ari_south);
+		wait(0.5);
+		face(ari, east);
+		wait(0.25);
+		free bark_speech(ari, exclamation_mark);
+	}
+	{
+		walk(celine, fi_celine);
+		face(celine, west);
+	}
+	{
+		pan_camera(3, fi_camera_1);
+	}
+}
+next_line(); //
+next_line(); //
+free item_give_sequence(celine, hoe_worn, 1, fi_celine, -24);
+next_line(); //
+next_line(); //
+sim {
+	item_give_sequence(celine, seed_tulip, 3, fi_celine, -24);
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		close_textbox();
+	}
+}
+force_music_stop();
+//
+//
+play_sound("SoundEffects/Animals/HorseNeigh", 752, 336);
+set_on_blackboard("hayden_walk_animation_override", ride_run);
+
+wait(0.5);
+face(ari, west);
+free bark_speech(celine, exclamation_mark);
+free bark_speech(ari, exclamation_mark);
+wait(1);
+request_music_play(hayden);
+free {
+	pan_camera(2, fi_camera_hayden_pan);
+	wait(1.5);
+	pan_camera(2, fi_camera_2);
+}
+sim {
+	fade_npc_alpha(hayden, 0.0, 1, 60);
+	walk(hayden, fi_hayden_closer);
+	set_move_speed(hayden, 1.5);
+}
+animate(hayden, ride_idle_1);
+set_on_blackboard("hayden_walk_animation_override", ride_walk);
+
+next_line(); //
+
+free {
+	walk_slow_offset(celine, ari, 0, 20);
+	face(celine, west);
+}
+next_line(); //
+next_line(); //
+next_line(); //
+
+//
+next_line(); //
+free item_give_sequence_hayden_watering_can();
+next_line(); //
+sim {
+	item_give_sequence_hayden_turnips(fi_hayden_closer);
+	{
+		next_line(); //
+		free {
+			face(celine, north);
+			wait(0.5);
+			face(ari, south);
+		}
+		next_line(); //
+		close_textbox();
+	}
+}
+
+//
+wait(0.75);
+free sim {
+		{
+			wait(0.5);
+			face(ari, west);
+			wait(2);
+			walk_slow(ari, fi_ari_wander);
+			face(ari, west);
+		}
+		{
+			face(celine, west);
+			wait(3);
+			walk_slow(celine, fi_celine_wander);
+			face(celine, west);
+		}
+		{
+		sim {
+			walk(hayden, fi_hayden_survey);
+			set_move_speed(hayden, fast_walk);
+		}
+		animate(hayden, ride_idle_1);
+		face(hayden, south);
+		wait(1.5);
+		sim {
+			walk(hayden, fi_hayden_wander);
+			set_move_speed(hayden, fast_walk);
+		}
+		animate(hayden, ride_idle_1);
+		face(hayden, west);
+	}
+	pan_camera(3, fi_camera_3);
+}
+wait(2);
+next_line(); //
+
+//
+free {
+	wait(2);
+	sim {
+		walk(hayden, fi_hayden_final);
+		set_move_speed(hayden, fast_walk);
+	}
+	animate(hayden, ride_idle_1);
+	face(hayden, east);
+}
+if get_response() == 0 {
+	close_textbox();
+	wait(0.25);
+	run_tutorial("farming");
+}
+sim {
+	{
+		wait(0.5);
+		pan_camera(2, fi_camera_4);
+	}
+	{
+		wait(0.5);
+		face(celine, west);
+	}
+	{
+		wait(1);
+		face(ari, east);
+	}
+	{
+		if get_response() == 1 {
+			next_line(); //
+		}
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(ari, west);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(ari, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.75);
+free {
+	sim {
+		walk(hayden, fi_hayden_exit);
+		set_move_speed(hayden, fast_walk);
+	}
+	animate(hayden, ride_idle_1);
+	face(hayden, west);
+}
+sim {
+	{
+		wait(2.75);
+		free bark_speech(celine, cute_face);
+		wait(1);
+		free walk_slow(celine, fi_celine_spawn);
+	}
+	{
+		wait(0.25);
+		face(ari, west);
+		wait(2);
+		face(ari, east);
+	}
+	{
+		wait(3.75);
+		fade_out(2);
+	}
+}

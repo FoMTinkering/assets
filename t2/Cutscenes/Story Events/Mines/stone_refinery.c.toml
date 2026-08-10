@@ -1,0 +1,368 @@
+[stone_refinery_pt_1_follow_up_eiland]
+refresh = "never"
+requires = [{ npc = "eiland" }, { sr = "part_1" }]
+portrait = "neutral"
+local = "My sister told me about the $Stone Refinery$! Quite exciting!"
+next = "1"
+
+[stone_refinery_pt_1_follow_up_eiland.1]
+portrait = "think"
+local = """I inquired if they're working on a "Dessert Refinery" in the Capital as well, but no such luck..."""
+
+[stone_refinery_pt_1_follow_up_march_low_hearts]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ sr = "part_1" },
+	{ shooting_star_march_attended = false },
+	{ march_heart_level = 8, comparator = "<" },
+]
+portrait = "neutral"
+local = "Olric won't stop talking my ear off about this $Stone Refinery$."
+next = "1"
+
+[stone_refinery_pt_1_follow_up_march_low_hearts.1]
+portrait = "think"
+local = "You're gathering materials for it, right? Here."
+next = "2"
+
+[stone_refinery_pt_1_follow_up_march_low_hearts.2]
+portrait = "tsundere"
+actions = [{ item = { item = "basic_wood", count = 10 } }]
+local = "Don't get the wrong idea! I just want to make my brother happy."
+
+[stone_refinery_pt_1_follow_up_march_high_hearts]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ sr = "part_1" },
+	{ any = [
+		{ shooting_star_march_attended = true },
+		{ march_heart_level = 8, comparator = ">=" },
+	] },
+]
+portrait = "neutral"
+local = "Olric won't stop talking my ear off about this $Stone Refinery$."
+next = "1"
+
+[stone_refinery_pt_1_follow_up_march_high_hearts.1]
+portrait = "think"
+local = "You're gathering materials for it, right? Here."
+next = "2"
+
+[stone_refinery_pt_1_follow_up_march_high_hearts.2]
+portrait = "tsundere"
+actions = [{ item = { item = "basic_wood", count = 10 } }]
+local = "I- I just want to make my brother happy."
+
+
+[stone_refinery_pt_1]
+kind = "gameplay_triggered"
+writes = [{ sr = "part_1", expires = "4d" }]
+speaker = "errol"
+portrait = "neutral"
+local = "[Ari]! I see Adeline has summoned you as well."
+next = "1"
+
+[stone_refinery_pt_1.1]
+speaker = "olric"
+portrait = "happy"
+local = "Hey, [Ari]!"
+next = "2"
+
+[stone_refinery_pt_1.2]
+speaker = "adeline"
+portrait = "neutral"
+local = "Thank you all for coming!"
+next = "3"
+
+[stone_refinery_pt_1.3]
+speaker = "adeline"
+portrait = "happy"
+local = "I'm delighted to share that the King's Council has officially congratulated Mistria on our rising $Town Rank$."
+next = "4"
+
+[stone_refinery_pt_1.4]
+speaker = "adeline"
+portrait = "neutral"
+local = "Mistria is quickly becoming one of the highest ranked regions in all of Aldaria!"
+next = "5"
+
+[stone_refinery_pt_1.5]
+speaker = "errol"
+portrait = "happy"
+local = "What an honor, I couldn't be happier with the progress our little village has made!"
+next = "6"
+
+[stone_refinery_pt_1.6]
+speaker = "adeline"
+portrait = "think"
+local = "In addition..."
+next = "7"
+
+[stone_refinery_pt_1.7]
+speaker = "adeline"
+portrait = "neutral"
+local = """The King himself has offered us an opportunity to receive something called a $Stone Refinery$, delivered straight to Mistria from the Capital!"""
+next = "8"
+
+[stone_refinery_pt_1.8]
+speaker = "olric"
+portrait = "mad"
+local = "Whoa! Double whoa! Triple-"
+next = "9"
+
+[stone_refinery_pt_1.9]
+speaker = "errol"
+portrait = "neutral"
+local = "Let me illuminate [Ari], Olric. There has been much talk in mining circles of the kingdom's new $Stone Refinery$ technology."
+next = "10"
+
+[stone_refinery_pt_1.10]
+speaker = "errol"
+portrait = "mad"
+local = "Credible sources say that the device crushes and converts $Stone$ into other useful materials, such as gems and $Refined Stone$!"
+next = "11"
+
+[stone_refinery_pt_1.11]
+speaker = "errol"
+portrait = "happy"
+local = "It would be an enormous boon to have such a remarkable device here!"
+next = "12"
+
+[stone_refinery_pt_1.12]
+speaker = "adeline"
+portrait = "happy"
+local = "Now we just have to find a place for it!"
+next = "13"
+
+[stone_refinery_pt_1.13]
+speaker = "olric"
+portrait = "neutral"
+local = "Ooooh, now I get why you wanted to talk to us!"
+next = "14"
+
+[stone_refinery_pt_1.14]
+speaker = "errol"
+portrait = "neutral"
+local = "Indeed, such a device will need its own bespoke workshop. Shall we all take a look inside the entryway to the Mines?"
+next = "15"
+
+[stone_refinery_pt_1.15]
+speaker = "errol"
+portrait = "think"
+local = "As Curator of the Museum, I would say that construction near this dragon statue would be inadvisable."
+next = "16"
+
+[stone_refinery_pt_1.16]
+speaker = "olric"
+portrait = "think"
+local = "I think over here would work!"
+next = "17"
+
+[stone_refinery_pt_1.17]
+speaker = "olric"
+portrait = "happy"
+local = "It's been a while since I've done any mining, this is going to feel so good!"
+next = "18"
+
+[stone_refinery_pt_1.18]
+speaker = "adeline"
+portrait = "neutral"
+local = "I'm glad to have you on board, Olric."
+next = "19"
+
+[stone_refinery_pt_1.19]
+speaker = "adeline"
+portrait = "think"
+local = "Now, I'm no expert on this kind of work, but I have some plans I was hoping to run by you all..."
+next = "20"
+
+[stone_refinery_pt_1.20]
+speaker = "adeline"
+portrait = "neutral"
+local = "$200 pieces of Wood$, $400 Stone$, $20 Sap$ and $5000 tesserae$ should be enough to handle building out the room and shipping the $Stone Refinery$ to Mistria!"
+next = "21"
+
+[stone_refinery_pt_1.21]
+speaker = "errol"
+portrait = "neutral"
+local = "These blueprints look quite good to me. The addition of a $Storage Chest$ is a nice touch!"
+prompts = [
+	{ local = "You can count on me to gather all the materials!", next = "22" },
+	{ local = "I can't wait to get refining!", next = "23" },
+]
+
+[stone_refinery_pt_1.22]
+speaker = "olric"
+portrait = "happy"
+local = "That's so cool of you, [Ari]!"
+next = "24"
+
+[stone_refinery_pt_1.23]
+speaker = "olric"
+portrait = "happy"
+local = "I was just thinking the same thing!"
+next = "24"
+
+[stone_refinery_pt_1.24]
+speaker = "adeline"
+portrait = "happy"
+local = "Wonderful! I'll set out a $Donation Box$ outside the Mines."
+
+[stone_refinery_pt_2_follow_up_adeline]
+refresh = "never"
+requires = [{ npc = "adeline" }, { sr = "part_2" }]
+portrait = "neutral"
+local = "Only in my wildest dreams did I ever imagine we'd be lucky enough to get something like a $Stone Refinery$ shipped to Mistria."
+next = "1"
+
+[stone_refinery_pt_2_follow_up_adeline.1]
+portrait = "happy"
+local = "I guess some dreams do come true!"
+
+[stone_refinery_pt_2_follow_up_eiland]
+refresh = "never"
+requires = [{ npc = "eiland" }, { sr = "part_2" }]
+portrait = "think"
+local = "That Chalice you discovered in the Mine's entrance... I've never seen anything quite like it."
+next = "1"
+
+[stone_refinery_pt_2_follow_up_eiland.1]
+portrait = "neutral"
+local = "I'm hoping to do more research and discover what it was used for!"
+
+[stone_refinery_pt_2_follow_up_ryis]
+refresh = "never"
+requires = [{ npc = "ryis" }, { sr = "part_2" }]
+portrait = "think"
+local = "That $Refined Stone$ that the $Stone Refinery$ can make is pretty interesting, don't you think?"
+next = "1"
+
+[stone_refinery_pt_2_follow_up_ryis.1]
+portrait = "neutral"
+effect = "drop"
+local = "Or is that just me...?"
+
+[stone_refinery_pt_2_turn_in]
+kind = "gameplay_triggered"
+speaker = "adeline"
+actions = [{ cutscene = "stone_refinery_pt_2" }]
+portrait = "neutral"
+local = "I know that look on your face! Let me guess, it's time to get the $Stone Refinery$ workshop built?"
+prompts = [
+	{ local = "It is!", next = "1" },
+	{ local = "Aww, I wanted to surprise you!", next = "2" },
+]
+
+[stone_refinery_pt_2_turn_in.1]
+speaker = "adeline"
+portrait = "happy"
+local = "How exciting!"
+next = "3"
+
+[stone_refinery_pt_2_turn_in.2]
+speaker = "adeline"
+portrait = "happy"
+local = "Haha, you've done nothing but surprise me since you first arrived here, [Ari]!"
+next = "3"
+
+[stone_refinery_pt_2_turn_in.3]
+speaker = "adeline"
+portrait = "neutral"
+local = "Let's gather the others!"
+
+[stone_refinery_pt_2]
+kind = "gameplay_triggered"
+writes = [{ sr = "part_2", expires = "4d" }]
+speaker = "olric"
+portrait = "think"
+local = "Current structural integrity seems stable, as long as we brace the ceiling as we go, I think we're good."
+next = "1"
+
+[stone_refinery_pt_2.1]
+speaker = "errol"
+portrait = "neutral"
+local = "A succinct assessment, Olric."
+next = "2"
+
+[stone_refinery_pt_2.2]
+speaker = "olric"
+portrait = "wink"
+local = "Rad!"
+next = "3"
+
+[stone_refinery_pt_2.3]
+speaker = "adeline"
+portrait = "concerned"
+local = "I'll stand back, shall I?"
+prompts = [
+	{ local = "Let's get started!", next = "4" },
+	{ local = "Dibs on any gold or gems!", next = "5" },
+]
+
+[stone_refinery_pt_2.4]
+speaker = "olric"
+portrait = "happy"
+local = "Yeah! Lead the way, Errol!"
+next = "6"
+
+[stone_refinery_pt_2.5]
+speaker = "olric"
+portrait = "mad"
+local = "We can do that? Dibs on any cool rocks!"
+next = "6"
+
+[stone_refinery_pt_2.6]
+speaker = "errol"
+portrait = "neutral"
+local = "Here we go!"
+next = "7"
+
+[stone_refinery_pt_2.7]
+speaker = "errol"
+portrait = "happy"
+local = "Ahh, what a joy it is to see the Mine's facilities expanded."
+next = "8"
+
+[stone_refinery_pt_2.8]
+speaker = "adeline"
+portrait = "happy"
+local = "How impressive is this $Stone Refinery$? Just think what we can accomplish with this!"
+next = "9"
+
+[stone_refinery_pt_2.9]
+speaker = "olric"
+portrait = "neutral"
+local = "Hey, I think I found some kind of artifact!"
+next = "10"
+
+[stone_refinery_pt_2.10]
+speaker = "olric"
+portrait = "think"
+local = "Or a really weird rock..."
+next = "11"
+
+[stone_refinery_pt_2.11]
+speaker = "errol"
+portrait = "neutral"
+effect = "surprise"
+local = "My word!"
+next = "12"
+
+[stone_refinery_pt_2.12]
+speaker = "errol"
+portrait = "think"
+local = "Although, considering the recently uncovered Dragon Statue, I suppose it isn't that unexpected."
+next = "13"
+
+[stone_refinery_pt_2.13]
+speaker = "errol"
+portrait = "neutral"
+local = "Lady Adeline, shall we let your brother know? I suspect he would be most interested."
+next = "14"
+
+[stone_refinery_pt_2.14]
+speaker = "adeline"
+portrait = "neutral"
+local = "Of course! Let's go!"

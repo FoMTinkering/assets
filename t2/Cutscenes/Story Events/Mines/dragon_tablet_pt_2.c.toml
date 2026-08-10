@@ -1,0 +1,389 @@
+[dragon_tablet_pt_2_follow_up_seridia_0]
+refresh = "instantly"
+priority = "max"
+requires = [
+	{ npc = "seridia" },
+	{ dt = "part_two" },
+	{ any = [
+		{ eiland_status = "undefined" },
+		{ juniper_status = "undefined" },
+	] },
+]
+portrait = "neutral"
+local = "How are things progressing, Hero?"
+next = "1"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.1]
+portrait = "think"
+local = "Remember, you must $strengthen your relationships with Juniper and Eiland$ before we can safely proceed."
+next = "2"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.2]
+portrait = "neutral"
+local = "It is inconsequential, whether you choose to become $Best Friends$ or =Something More=."
+next = "3"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.3]
+portrait = "neutral"
+local = "We simply need to be assured that our trust is well-placed."
+next = "4"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.4]
+portrait = "neutral_closed"
+local = "Only then may we allow them into the fold."
+prompts = [
+	{ local = "I'll do my best!", next = "end" },
+	{ local = "But I don't want to...", next = "5" },
+]
+
+[dragon_tablet_pt_2_follow_up_seridia_0.end]
+portrait = "happy"
+local = "Wonderful. Good luck, Hero."
+
+[dragon_tablet_pt_2_follow_up_seridia_0.5]
+portrait = "think"
+local = "You... do not wish to strengthen your relationships with $Juniper$ and $Eiland$?"
+next = "6"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.6]
+portrait = "sad"
+local = "But Hero... you must gain their trust if we are to involve them in $Breaking the Final Seal$!"
+prompts = [
+	{ local = "Okay, I'll do my best!", next = "end" },
+	{ local = "But I don't like them...", next = "7" },
+]
+
+[dragon_tablet_pt_2_follow_up_seridia_0.7]
+portrait = "think"
+local = "You do not like them?"
+next = "8"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.8]
+portrait = "ugh"
+local = "H-hero..."
+next = "9"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.9]
+portrait = "serious_think"
+local = "..."
+next = "10"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.10]
+portrait = "neutral"
+local = "Well, will you try to befriend them for the sake of Mistria, then?"
+prompts = [
+	{ local = "Okay, I'll do my best!", next = "end" },
+	{ local = "I really don't want to...", next = "11" },
+]
+
+[dragon_tablet_pt_2_follow_up_seridia_0.11]
+portrait = "closed_eyes"
+local = "I see."
+next = "12"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.12]
+portrait = "sad"
+local = "I understand now that this will not be an easy task for you."
+next = "13"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.13]
+portrait = "hurt"
+local = "But even if you were just to pretend-"
+prompts = [
+	{ local = "Okay fiiine. I'll do it.", next = "end" },
+	{ local = "I don't want to put in the effort, even if I'm pretending!", next = "14" },
+]
+
+[dragon_tablet_pt_2_follow_up_seridia_0.14]
+portrait = "serious_think"
+local = "..."
+next = "15"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.15]
+portrait = "mad"
+local = "......"
+next = "16"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.16]
+portrait = "closed_eyes"
+local = "............"
+next = "17"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.17]
+portrait = "hurt"
+local = "Then perhaps I shall need to make things easier for you."
+next = "18"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.18]
+portrait = "think"
+local = "I would rather not do this, but it seems the situation is extreme."
+next = "19"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.19]
+portrait = "closed_eyes"
+local = "Here. I will conjure some tokens of friendship from the void that you may gift to them."
+next = "20"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.20]
+actions = [{ item = "void_cake" }, { item = "void_newt" }]
+portrait = "serious_think"
+local = "These items are not of this world... so I cannot say how long they will last once gifted."
+next = "21"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.21]
+portrait = "hurt"
+local = "But perhaps $Eiland$ and $Juniper$ will like them despite that."
+next = "22"
+
+[dragon_tablet_pt_2_follow_up_seridia_0.22]
+portrait = "ugh"
+local = "Good luck, Hero."
+
+[dragon_tablet_pt_2_follow_up_seridia_1]
+refresh = "instantly"
+priority = "max"
+requires = [
+	{ npc = "seridia" },
+	{ dt = "part_two" },
+	{ eiland_status = "undefined", comparator = "!=" },
+	{ juniper_status = "undefined", comparator = "!=" },
+]
+portrait = "happy"
+local = "The bonds that you share with $Juniper$ and $Eiland$ are quite strong."
+next = "1"
+
+[dragon_tablet_pt_2_follow_up_seridia_1.1]
+portrait = "neutral"
+local = "I would recommend that you start by speaking with $Juniper$."
+next = "2"
+
+[dragon_tablet_pt_2_follow_up_seridia_1.2]
+portrait = "think"
+local = "She is the one most familiar with your situation..."
+
+[dragon_tablet_pt_2]
+kind = "gameplay_triggered"
+writes = [{ dt = "part_two" }]
+actions = [{ can_talk = "seridia" }]
+no_speaker = true
+local = "The $Dragonsworn Tablet$ stands solemnly."
+next = "stitch_0"
+
+[dragon_tablet_pt_2.stitch_0]
+no_speaker = true
+local = "It looks blank, but you sense the words are merely hidden from sight."
+next = "stitch_1"
+
+[dragon_tablet_pt_2.stitch_1]
+no_speaker = true
+local = "Maybe the $Dragon Priestess$ knows how to reveal them...?"
+next = "0"
+
+[dragon_tablet_pt_2.0]
+speaker = "seridia"
+portrait = "neutral"
+local = "Ah, what did you say?"
+next = "1"
+
+[dragon_tablet_pt_2.1]
+speaker = "seridia"
+portrait = "think"
+local = "The $Dragonsworn Tablet$ appears blank?"
+next = "2"
+
+[dragon_tablet_pt_2.2]
+speaker = "seridia"
+portrait = "serious_think"
+local = "Are you certain? I had thought that with $Void Sight$..."
+next = "3"
+
+[dragon_tablet_pt_2.3]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "..."
+next = "4"
+
+[dragon_tablet_pt_2.4]
+speaker = "seridia"
+portrait = "sad"
+local = "It seems that we have yet another puzzle to solve, Hero."
+next = "5"
+
+[dragon_tablet_pt_2.5]
+speaker = "seridia"
+portrait = "think"
+local = "Tell me... how were you able to progress through the other seal rooms before you could read $Witchspeak$?"
+prompts = [
+	{ local = "Juniper and Eiland helped me!", next = "6" },
+	{ local = "I admit I had a little help...", next = "6" },
+]
+
+[dragon_tablet_pt_2.6]
+speaker = "seridia"
+portrait = "neutral"
+local = "Your friends assisted you? Do go on..."
+next = "7"
+
+[dragon_tablet_pt_2.7]
+speaker = "seridia"
+portrait = "neutral"
+local = "I see. So $Eiland$ is an expert when it comes to $History and Artifacts$."
+next = "8"
+
+[dragon_tablet_pt_2.8]
+speaker = "seridia"
+portrait = "happy"
+local = "And $Juniper$ knows something of both $Magic and Witchspeak$..."
+next = "9"
+
+[dragon_tablet_pt_2.9]
+speaker = "seridia"
+portrait = "think"
+local = "It is possible that they may be able to help us solve the mystery of the $Dragonsworn Tablet$."
+next = "10"
+
+[dragon_tablet_pt_2.10]
+speaker = "seridia"
+portrait = "sad"
+local = "However, that would require telling them about... everything."
+next = "11"
+
+[dragon_tablet_pt_2.11]
+speaker = "seridia"
+portrait = "hurt"
+local = "How well do you know these people, Hero? Can they be trusted?"
+prompts = [
+	{ local = "I know them very well!", next = "12" },
+	{ local = "I know them fairly well.", next = "12" },
+	{ local = "I don't really know them...", next = "12" },
+]
+
+[dragon_tablet_pt_2.12]
+speaker = "seridia"
+portrait = "think"
+local = "Is that so? Surely you understand that it is a risk to involve others in this situation..."
+next = "13"
+
+[dragon_tablet_pt_2.13]
+speaker = "seridia"
+portrait = "sad"
+local = "Would you put your hand on the crystal for a moment?"
+
+[[dragon_tablet_pt_2.13.next]]
+target = "14a"
+requires = [
+	{ eiland_status = "undefined", comparator = "!=" },
+	{ juniper_status = "undefined", comparator = "!=" },
+]
+
+[[dragon_tablet_pt_2.13.next]]
+target = "14b"
+requires = [
+	{ eiland_status = "undefined", comparator = "!=" },
+	{ juniper_status = "undefined" },
+]
+
+[[dragon_tablet_pt_2.13.next]]
+target = "14c"
+requires = [
+	{ eiland_status = "undefined" },
+	{ juniper_status = "undefined", comparator = "!=" },
+]
+
+[[dragon_tablet_pt_2.13.next]]
+target = "14d"
+requires = []
+
+[dragon_tablet_pt_2.14a]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "I sense that the bonds that you share with $Juniper$ and $Eiland$ are quite strong."
+next = "15t"
+
+[dragon_tablet_pt_2.14b]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "I sense that the bonds you share with $Juniper$ are not yet strong enough to entrust her with this matter."
+next = "14bc_extra"
+
+[dragon_tablet_pt_2.14c]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "I sense that the bonds you share with $Eiland$ are not yet strong enough to entrust him with this matter."
+next = "14bc_extra"
+
+[dragon_tablet_pt_2.14d]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "I sense that the bonds you share with $Juniper$ and $Eiland$ are not yet strong enough to entrust them with this matter."
+next = "14d_extra"
+
+[dragon_tablet_pt_2.14bc_extra]
+speaker = "seridia"
+portrait = "serious_think"
+local = "You will need to $strengthen your relationship$ before we can proceed."
+next = "15f"
+
+[dragon_tablet_pt_2.14d_extra]
+speaker = "seridia"
+portrait = "serious_think"
+local = "You will need to $strengthen your relationships$ before we can proceed."
+next = "15f"
+
+[dragon_tablet_pt_2.15t]
+speaker = "seridia"
+portrait = "think"
+local = "While I remain somewhat wary of the risk..."
+next = "16t"
+
+[dragon_tablet_pt_2.15f]
+speaker = "seridia"
+portrait = "sad"
+local = "While I share your sense of urgency..."
+next = "16f"
+
+[dragon_tablet_pt_2.16t]
+speaker = "seridia"
+portrait = "neutral"
+local = "Perhaps asking for their assistance would be for the best."
+next = "17t"
+
+[dragon_tablet_pt_2.16f]
+speaker = "seridia"
+portrait = "neutral"
+local = "Let us not forget the gravity of the task at hand."
+next = "17f"
+
+[dragon_tablet_pt_2.17t]
+speaker = "seridia"
+portrait = "neutral_closed"
+local = "We must uncover the details of how to break $The Final Seal$ as soon as possible."
+next = "18t"
+
+[dragon_tablet_pt_2.17f]
+speaker = "seridia"
+portrait = "neutral_closed"
+local = "The future of Mistria is at stake."
+next = "18f"
+
+[dragon_tablet_pt_2.18t]
+speaker = "seridia"
+portrait = "happy"
+local = "The time has come to allow these friends of yours into the fold."
+next = "19t"
+
+[dragon_tablet_pt_2.18f]
+speaker = "seridia"
+portrait = "neutral"
+local = "We must wait to proceed until you have sufficiently $strengthened your relationships with Juniper and Eiland$."
+next = "19f"
+
+[dragon_tablet_pt_2.19t]
+speaker = "seridia"
+portrait = "neutral"
+local = "I recommend that you speak with $Juniper$ first, as she is more familiar with your situation."
+
+[dragon_tablet_pt_2.19f]
+speaker = "seridia"
+portrait = "neutral_closed"
+local = "Only then may we allow them into the fold without worry."

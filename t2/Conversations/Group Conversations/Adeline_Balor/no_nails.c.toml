@@ -1,0 +1,17 @@
+[no_nails]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "balor" }] },
+	{ adeline_zone = "<balor_zone>" },
+	{ adeline_zone = "<march_zone>", comparator = "!=" }
+]
+speaker = "balor"
+portrait = "sad"
+local = "I've got another shipment coming in, but I'm afraid nails aren't on the manifest."
+next = "1"
+
+[no_nails.1]
+speaker = "adeline"
+portrait = "happy"
+effect = "drop"
+local = "Got it. I'll let March know..."

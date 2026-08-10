@@ -1,0 +1,88 @@
+[grove_of_rest_0]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_routine = "grove_of_rest_wander" },
+	{ caldarus_seridia_town = true }
+]
+portrait = "neutral"
+local = "Mistrians have long held the tradition of attaching burial markers to young saplings."
+next = "1"
+
+[grove_of_rest_0.1]
+portrait = "sigh"
+local = "As the years pass, the tree lifts the marker skyward."
+next = "2"
+
+[grove_of_rest_0.2]
+portrait = "neutral"
+local = "Over time, the headstone becomes too high for the average person to read, as is the case with the grave of Doctor Valen's father."
+next = "3"
+
+[grove_of_rest_0.3]
+portrait = "sigh"
+local = "Soon, even I will not be able to read its epitaph."
+
+[grove_of_rest_1]
+refresh = "1y"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_routine = "grove_of_rest_wander" },
+	{ caldarus_seridia_town = true },
+	{ greta = "read", ignore_priority = true },
+	{ caldarus_seridia_town_timer = true }
+]
+portrait = "sigh"
+local = "Hayden's storied grandmother is laid to rest in this grove."
+next = "1"
+
+[grove_of_rest_1.1]
+portrait = "neutral"
+local = "It is curious to know so much of her, despite never having the opportunity to meet her."
+next = "2"
+
+[grove_of_rest_1.2]
+portrait = "smile"
+local = "Yet, she is ever-present. In Hayden's home, and his mannerisms, and his person."
+
+[grove_of_rest_2]
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_routine = "grove_of_rest_wander" },
+	{ caldarus_seridia_town = true },
+	{ season = "winter" }
+]
+portrait = "neutral"
+local = "The Grove of Rest is always a place of quiet contemplation."
+next = "1"
+
+[grove_of_rest_2.1]
+portrait = "sigh"
+local = "But in the winter, the snow hushes all sound..."
+next = "2"
+
+[grove_of_rest_2.2]
+portrait = "think"
+local = "And that quiet becomes deeper, and enveloping."
+next = "3"
+
+[grove_of_rest_2.3]
+portrait = "smile"
+local = "Almost like a touch."
+
+[grove_of_rest_3]
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_routine = "grove_of_rest_wander" },
+	{ caldarus_seridia_town = true },
+	{ season = "winter" }
+]
+portrait = "neutral"
+local = "Ah, [Ari]... Have you also come to appreciate the grove's winter raiment?"
+next = "1"
+
+[grove_of_rest_3.1]
+portrait = "smile"
+local = "The towering pines are singularly beautiful when capped in snow."

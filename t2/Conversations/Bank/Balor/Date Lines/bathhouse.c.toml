@@ -1,0 +1,93 @@
+[bathhouse_accept_1]
+kind = "date_acceptance"
+requires = [
+    { npc = "balor" },
+    { date = "bathhouse" },
+    { da_balor_bathhouse = 0 },
+    { balor_is_spouse = false }
+]
+writes = [
+    { da_balor_bathhouse = 1 },
+    { da_balor_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "blush"
+local = "What's that? A bath... at the $Bathhouse$?"
+next = "1"
+
+[bathhouse_accept_1.1]
+portrait = "happy"
+local = "Really?"
+next = "2"
+
+[bathhouse_accept_1.2]
+portrait = "embarrassed"
+local = "Of course I'll go with you!"
+
+[bathhouse_accept_2]
+kind = "date_acceptance"
+requires = [
+    { npc = "balor" },
+    { date = "bathhouse" },
+    { balor_has_child = false },
+    { any = [
+        { balor_is_spouse = true },
+        { da_balor_bathhouse = 1, comparator = ">=" }
+    ] }
+]
+writes = [
+    { da_balor_bathhouse = 2 },
+    { da_balor_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "blush"
+local = "Care to join me at the $Bathhouse$, [Ari]?"
+next = "1"
+
+[bathhouse_accept_2.1]
+portrait = "happy_blush"
+effect = "cheery"
+local = "I thought we could use some alone time, just the two of us..."
+
+[bathhouse_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "balor" },
+    { da_balor_bathhouse = 1 },
+    { da_balor_bathhouse_follow_up_gate = true },
+    { balor_is_spouse = false }
+]
+writes = [{ da_balor_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "blush"
+local = "Ahhh... what a nice bath."
+next = "1"
+
+[bathhouse_follow_up_1.1]
+portrait = "embarrassed"
+local = "Thank you for suggesting it, [Ari]!"
+next = "2"
+
+[bathhouse_follow_up_1.2]
+portrait = "happy_blush"
+effect = "cheery"
+local = "I feel like a million tesserae!"
+
+[bathhouse_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "balor" },
+    { balor_has_child = false },
+    { any = [{ balor_is_spouse = true }, { da_balor_bathhouse = 2 }] },
+    { da_balor_bathhouse_follow_up_gate = true }
+]
+writes = [{ da_balor_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "blush"
+local = "That was great, [Ari]."
+next = "1"
+
+[bathhouse_follow_up_2.1]
+portrait = "happy_blush"
+effect = "cheery"
+local = "Going to the $Bathhouse$ with you is definitely the best way to unwind!"

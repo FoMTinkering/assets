@@ -1,0 +1,118 @@
+[animal_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ animal_festival_today = true },
+	{ caldarus_is_human = true },
+	{ any = [{ location = "deep_woods" }, { location = "caldarus_house" }] },
+	{ caldarus_seridia_town = false }
+]
+portrait = "neutral"
+local = "There's a festival today? To celebrate the best animals in Mistria? How interesting."
+next = "1"
+
+[animal_festival_0.1]
+portrait = "smile"
+local = """I would like to see these "best animals" myself, one day."""
+
+[animal_festival_eog_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ animal_festival_today = true },
+	{ caldarus_is_human = true },
+	{ location = "town" },
+	{ caldarus_seridia_town = true }
+]
+portrait = "think"
+local = "Perhaps I should have worn a less elaborate outfit to the Festival."
+next = "1"
+
+[animal_festival_eog_0.1]
+portrait = "laugh_special"
+local = "Most of the animals I have met today seem determined to give it a taste."
+
+[animal_festival_cow_cutout]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ animal_festival_today = true },
+	{ caldarus_is_at = "town/af_cow_cutout" },
+	{ caldarus_seridia_town = true },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  },
+]
+portrait = "happy"
+local = "[Ari]! Do you get it?"
+prompts = [
+	{ local = "Get what?", next = "1" },
+	{ local = "... Cow-darus.", next = "3" }
+]
+
+[animal_festival_cow_cutout.1]
+portrait = "sigh"
+local = "..."
+next = "2"
+
+[animal_festival_cow_cutout.2]
+portrait = "sad"
+local = "It seems Holt was right, I do need to work on my pun skills."
+
+[animal_festival_cow_cutout.3]
+portrait = "smile"
+local = "Excellent, Holt will be glad that my puns are improving."
+
+[animal_festival_first]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ animal_festival_today = true },
+	{ any = [{ small_animal_place = 3 }, { large_animal_place = 3 }] },
+	{ caldarus_seridia_town = true },
+	{  },
+	{  },
+	{  },
+]
+portrait = "happy"
+local = "Congratulations to you, [Ari]!"
+next = "1"
+
+[animal_festival_first.1]
+portrait = "smile"
+local = "It is to be expected that an exceptional person raises exceptional animals."
+
+[animal_festival_other_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ animal_festival_today = true },
+	{ any = [
+		{ small_animal_place = 0 },
+		{ small_animal_place = 1 },
+		{ small_animal_place = 2 }
+	] },
+	{ any = [
+		{ large_animal_place = 0 },
+		{ large_animal_place = 1 },
+		{ large_animal_place = 2 }
+	] },
+	{ caldarus_seridia_town = true },
+	{  },
+	{  },
+]
+portrait = "happy"
+local = "Well done, [Ari]."
+next = "1"
+
+[animal_festival_other_place.1]
+portrait = "smile"
+local = "Even to my untrained eyes, it is clear your animals are raised with care."

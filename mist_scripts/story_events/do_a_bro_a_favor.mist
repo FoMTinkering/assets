@@ -1,0 +1,166 @@
+fun item_give_sequence(actor, start_location) {
+	walk_slow(actor, dabaf_olric_closer);
+	face(actor, south);
+	wait(0.25);
+	ari_hold_item(pick_axe_worn);
+	wait(1);
+	walk_slow(actor, start_location);
+	face(actor, south);
+}
+
+scene(blacksmith_store);
+camera_position(dabaf_camera_1);
+place_actor(ari, north, dabaf_ari);
+place_actor(olric, north, dabaf_olric_rummage);
+animate(olric, action);
+request_music_play("Music/Events/Cutscene");
+
+//
+sim {
+	fade_in(2);
+	{
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		wait(0.75);
+		face(ari, west);
+		wait(2.25);
+		face(ari, east);
+		wait(2.25);
+		free bark_speech(ari, exclamation_mark);
+		wait(0.5);
+		face(ari, north);
+	}
+	{
+		wait(1);
+		free bark_speech(olric, question_mark);
+		wait(0.5);
+		animate(olric, idle);
+		wait(0.5);
+		walk(olric, "Blacksmith Till");
+		face(olric, south);
+		wait(0.5);
+		animate(olric, action);
+		wait(1);
+		free bark_speech(olric, exclamation_mark);
+		wait(0.5);
+		animate(olric, idle);
+		wait(0.25);
+		walk(olric, dabaf_olric_back);
+		face(olric, south);
+	}
+	{
+		pan_camera(6, dabaf_camera_2);
+	}
+	{
+		wait(5);
+		next_line(); //
+	}
+}
+
+
+//
+face(olric, south);
+next_line(); //
+next_line(); //
+
+//
+free bark_speech(olric, exclamation_mark);
+sim {
+	{
+		wait(0.5);
+		item_give_sequence(olric, dabaf_olric_back);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		close_textbox();
+	}
+}
+
+//
+free bark_speech(olric, exclamation_mark);
+wait(0.25);
+place_actor(march, east, "March's Room Door");
+face(olric, west);
+request_music_stop();
+request_music_play(march);
+
+free {
+	free sim {
+		walk(march, dabaf_march_approach);
+		pan_camera(2, dabaf_camera_3);
+		}
+	wait(0.5);
+	walk(olric, dabaf_olric_back);
+	face(march, east);
+	face(olric, west);
+	wait(0.5);
+	bark_speech(march, question_mark);
+	face(march, south);
+	wait(0.5);
+	face(olric, south);
+}
+wait(0.5);
+next_line(); //
+next_line(); //
+
+//
+if get_response() == 1 {
+	next_line(); //
+	free {
+		face(march, east);
+		wait(0.5);
+		face(olric, west);
+	}
+	next_line(); //
+} else {
+	free {
+			wait(3.75);
+			face(march, east);
+			face(olric, west);
+		}
+	next_line(); //
+}
+
+//
+free bark_speech(olric, ellipses);
+free {
+	walk(march, "March's Room Door");
+	remove_actor(march);
+}
+wait(0.75);
+next_line(); //
+
+free sim {
+	{
+		walk(olric, dabaf_olric_closer);
+		face(olric, west);
+	}
+	pan_camera(2, dabaf_camera_2);
+}
+next_line(); //
+close_textbox();
+free bark_speech(olric, cute_face);
+face(olric, south);
+wait(1);
+next_line(); //
+close_textbox();
+sim {
+	walk(olric, "Blacksmith Till");
+	pan_camera(3, "Blacksmith Till");
+	fade_out(2);
+}
+wait_one_tick();

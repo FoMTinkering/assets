@@ -1,0 +1,107 @@
+[inn_work_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ hemlock_zone = "<josephine_zone>" },
+	{ any = [{ npc = "hemlock" }, { npc = "josephine" }] },
+	{ adeline_zone = "inn/balcony_dragonguard" },
+	{ balor_zone = "inn/balcony_dragonguard" },
+	{ dell_zone = "inn/balcony_dragonguard" },
+	{ juniper_zone = "inn/balcony_dragonguard" },
+	{ olric_zone = "inn/balcony_dragonguard" },
+	{ fnati = 2 },
+]
+speaker = "hemlock"
+portrait = "neutral"
+local = "What do you suppose the folks up on the balcony are talking about, Josie?"
+next = "1"
+
+[inn_work_1.1]
+speaker = "josephine"
+portrait = "think"
+local = "I'm not sure."
+next = "2"
+
+[inn_work_1.2]
+speaker = "josephine"
+portrait = "happy"
+effect = "drop"
+local = "Doesn't it look like Dell's in charge, though?"
+
+[inn_work_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ hemlock_zone = "<josephine_zone>" },
+	{ any = [{ npc = "hemlock" }, { npc = "josephine" }] },
+	{ hayden_zone = "inn/south_table" },
+	{ luc_zone = "inn/south_table" },
+	{ maple_zone = "inn/south_table" },
+	{ march_zone = "inn/south_table" },
+	{ reina_zone = "inn/south_table" },
+	{ fnati = 2 },
+]
+speaker = "hemlock"
+portrait = "neutral"
+local = "Maple looks like she's having fun! She spent a while planning her big adventure."
+next = "1"
+
+[inn_work_2.1]
+speaker = "josephine"
+portrait = "happy"
+effect = "drop"
+local = "She was cackling an awful lot while she was doing it. I hope she's playing nice with everyone over there..."
+
+[inn_work_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ hemlock_zone = "<josephine_zone>" },
+	{ any = [{ npc = "hemlock" }, { npc = "josephine" }] },
+	{ celine_zone = "inn/north_table" },
+	{ eiland_zone = "inn/north_table" },
+	{ holt_zone = "inn/north_table" },
+	{ nora_zone = "inn/north_table" },
+	{ valen_zone = "inn/north_table" },
+	{ board_games_fnati = 1, comparator = ">=" },
+	{ board_games_fnati = 3, comparator = "<=" },
+	{ fnati = 2 },
+]
+speaker = "hemlock"
+portrait = "sad"
+local = "There's something odd about that board game they're playing over there."
+next = "1"
+
+[inn_work_3.1]
+speaker = "josephine"
+portrait = "sad"
+local = "Don't their faces look all scrunched up? Are they angry? Oh dear."
+
+[inn_work_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ hemlock_zone = "<josephine_zone>" },
+	{ any = [{ npc = "hemlock" }, { npc = "josephine" }] },
+	{ elsie_zone = "inn/bar" },
+	{ errol_zone = "inn/bar" },
+	{ landen_zone = "inn/bar" },
+	{ ryis_zone = "inn/bar" },
+	{ terithia_zone = "inn/bar" },
+	{ book_club_fnati = 3, comparator = ">=" },
+	{ fnati = 2 },
+]
+speaker = "hemlock"
+portrait = "neutral"
+local = "Elsie said she organized the book club as inspiration for her craft while she writes her memoirs."
+next = "1"
+
+[inn_work_4.1]
+speaker = "josephine"
+portrait = "happy"
+effect = "hearts"
+local = "Maybe we can talk her into doing a signing at the Inn! That would be such fun!"

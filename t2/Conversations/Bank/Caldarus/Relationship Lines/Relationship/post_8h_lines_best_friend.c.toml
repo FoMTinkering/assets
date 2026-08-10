@@ -1,0 +1,672 @@
+[caldarus_post_8h_best_friend_0]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = false },
+	{ any = [
+		{ caldarus_post_8h_romantic_progression = true },
+		{ caldarus_is_best_friend = true }
+	] },
+	{ caldarus_post_8h_best_friend_gate = false },
+	{ caldarus_post_8h_best_friend_grouping = 0 }
+]
+writes = [
+	{ caldarus_post_8h_best_friend_gate = true, expires = "20h" },
+	{ caldarus_post_8h_best_friend_grouping = 1 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "caldarus" } }]
+portrait = "neutral"
+local = "As I grow accustomed to my circumstances, I aspire to spend my days with intention, and gratitude."
+next = "1"
+
+[caldarus_post_8h_best_friend_0.1]
+portrait = "smile"
+local = "You have set a good example, [Ari]."
+next = "2"
+
+[caldarus_post_8h_best_friend_0.2]
+portrait = "happy"
+local = "Whether it is tending your farm, working the Mines, or minding your friends... I recognize all that you do, and I admire it."
+
+[caldarus_post_8h_best_friend_1]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = false },
+	{ any = [
+		{ caldarus_post_8h_romantic_progression = true },
+		{ caldarus_is_best_friend = true }
+	] },
+	{ caldarus_post_8h_best_friend_gate = false },
+	{ caldarus_post_8h_best_friend_grouping = 1 }
+]
+writes = [
+	{ caldarus_post_8h_best_friend_gate = true, expires = "20h" },
+	{ caldarus_post_8h_best_friend_grouping = 2 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "caldarus" } }]
+portrait = "smile"
+local = "I was thinking fondly of the days that I spoke to you through my statue on your farm."
+next = "1"
+
+[caldarus_post_8h_best_friend_1.1]
+portrait = "think"
+local = "It is as though I was truly there, and yet..."
+next = [
+	{ target = "2_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "2_n", requires = [] }
+]
+
+[caldarus_post_8h_best_friend_1.2_eog]
+portrait = "happy"
+local = "I cannot help anticipating my next in-person visit."
+prompts = [
+	{ local = "You're welcome any time!", next = "3" },
+	{ local = "I'll have to tidy up first...", next = "7" }
+]
+
+[caldarus_post_8h_best_friend_1.2_n]
+portrait = "happy"
+local = "One day, I should like to visit your farm in person."
+prompts = [
+	{ local = "You're welcome any time!", next = "3" },
+	{ local = "I'll have to tidy up first...", next = "7" }
+]
+
+[caldarus_post_8h_best_friend_1.3]
+portrait = "smile"
+local = "Thank you, [Ari]."
+next = [
+	{ target = "4_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "4_n", requires = [] }
+]
+
+[caldarus_post_8h_best_friend_1.4_eog]
+portrait = "happy"
+local = "I enjoy being able to see how your farm changes over time."
+next = "5_eog"
+
+[caldarus_post_8h_best_friend_1.5_eog]
+portrait = "neutral"
+local = "Perhaps I could even lend you a hand sometime. I have never sheared a sheep before."
+next = "6"
+
+[caldarus_post_8h_best_friend_1.4_n]
+portrait = "think"
+local = "I am certain much has changed, and I would be happy to see it."
+next = "5_n"
+
+[caldarus_post_8h_best_friend_1.5_n]
+portrait = "neutral"
+local = "And perhaps I could even lend you a hand. I have never sheared a sheep before."
+next = "6"
+
+[caldarus_post_8h_best_friend_1.6]
+portrait = "happy"
+local = "I wonder if my claws are sharp enough?"
+
+[caldarus_post_8h_best_friend_1.7]
+portrait = "smile"
+local = "I will respect your wishes... But your hesitation sparks my curiosity."
+next = "8"
+
+[caldarus_post_8h_best_friend_1.8]
+portrait = "neutral"
+local = "I would know every part of you, [Ari]."
+next = "9"
+
+[caldarus_post_8h_best_friend_1.9]
+portrait = "smile"
+local = "And I would be more than happy to help you on the farm. I have never sheared a sheep before."
+next = "10"
+
+[caldarus_post_8h_best_friend_1.10]
+portrait = "happy"
+local = "I wonder if my claws are sharp enough?"
+
+[caldarus_post_8h_best_friend_2]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = false },
+	{ any = [
+		{ caldarus_post_8h_romantic_progression = true },
+		{ caldarus_is_best_friend = true }
+	] },
+	{ caldarus_post_8h_best_friend_gate = false },
+	{ caldarus_post_8h_best_friend_grouping = 2 }
+]
+writes = [
+	{ caldarus_post_8h_best_friend_gate = true, expires = "20h" },
+	{ caldarus_post_8h_best_friend_grouping = 3 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "caldarus" } }]
+portrait = "neutral"
+local = "It is a Dragonsworn's duty to answer the call in a time of need..."
+next = "1"
+
+[caldarus_post_8h_best_friend_2.1]
+portrait = "think"
+local = "But you have no duty to visit me, nor to bring me gifts."
+next = "2"
+
+[caldarus_post_8h_best_friend_2.2]
+portrait = "smile"
+local = "It pleases me to know that our bond goes beyond obligation."
+
+[caldarus_post_8h_best_friend_3]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = false },
+	{ any = [
+		{ caldarus_post_8h_romantic_progression = true },
+		{ caldarus_is_best_friend = true }
+	] },
+	{ caldarus_post_8h_best_friend_gate = false },
+	{ caldarus_post_8h_best_friend_grouping = 3 }
+]
+writes = [
+	{ caldarus_post_8h_best_friend_gate = true, expires = "2d" },
+	{ caldarus_post_8h_romantic_gate = true, expires = "2d" },
+	{ caldarus_post_8h_best_friend_grouping = 4 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "caldarus" } }]
+portrait = "think"
+local = "Ah, [Ari]. My apologies, I was just ruminating on a strange thought."
+next = "1"
+
+[caldarus_post_8h_best_friend_3.1]
+portrait = "neutral"
+local = "Humans are so delicate and susceptible to the elements..."
+next = "2"
+
+[caldarus_post_8h_best_friend_3.2]
+portrait = "think"
+local = "Why do you suppose they did not come to grow great scales, as dragons do? Surely this would be a marvelous adaptation."
+prompts = [
+	{ local = "Well, we make clothing and armor instead.", next = "3" },
+	{ local = "Scales would be really helpful, to be honest...", next = "6" }
+]
+
+[caldarus_post_8h_best_friend_3.3]
+portrait = "think"
+local = "Yes, of course... the ingenuity of the human mind."
+next = "4"
+
+[caldarus_post_8h_best_friend_3.4]
+portrait = "sigh"
+local = "To overcome any obstacle with innovation and craft."
+next = "5"
+
+[caldarus_post_8h_best_friend_3.5]
+portrait = "happy"
+local = "I do hope that you next learn to build wings. I cannot currently assist as I am, but I very much recommend the experience of flight."
+
+[caldarus_post_8h_best_friend_3.6]
+portrait = "smile"
+local = "Speaking from personal experience, I highly recommend it."
+next = "7"
+
+[caldarus_post_8h_best_friend_3.7]
+portrait = "happy"
+local = "Though I believe that humans can overcome any obstacle with their innovation and craft."
+next = "8"
+
+[caldarus_post_8h_best_friend_3.8]
+portrait = "laugh_special"
+local = "I do hope that you next learn to build wings. I cannot currently assist as I am, but I very much recommend the experience of flight."
+
+[caldarus_post_8h_best_friend_4]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = false },
+	{ any = [
+		{ caldarus_post_8h_romantic_progression = true },
+		{ caldarus_is_best_friend = true }
+	] },
+	{ caldarus_post_8h_best_friend_gate = false },
+	{ caldarus_post_8h_best_friend_grouping = 4 },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ caldarus_post_8h_best_friend_gate = true, expires = "2d" },
+	{ caldarus_post_8h_romantic_gate = true, expires = "2d" },
+	{ eog_caldarus_post_8h_best_friend_4 = true }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "caldarus" } }]
+portrait = "neutral"
+local = "You go to such lengths to visit me, knowing that I cannot return the favor."
+next = "1"
+
+[caldarus_post_8h_best_friend_4.1]
+portrait = "smile"
+local = "It touches my heart."
+next = "2"
+
+[caldarus_post_8h_best_friend_4.2]
+portrait = "happy"
+local = "I hope that you will continue to indulge me."
+
+[caldarus_post_8h_best_friend_4_alt]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = false },
+	{ any = [
+		{ caldarus_post_8h_romantic_progression = true },
+		{ caldarus_is_best_friend = true }
+	] },
+	{ caldarus_post_8h_best_friend_gate = false },
+	{ caldarus_post_8h_best_friend_grouping = 4 },
+	{ caldarus_seridia_town = true },
+	{ eog_caldarus_post_8h_best_friend_4 = false }
+]
+writes = [
+	{ caldarus_post_8h_best_friend_gate = true, expires = "2d" },
+	{ caldarus_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "caldarus" } }]
+portrait = "neutral"
+local = "In the past, you went through such lengths to visit me at home in the $Deep Woods$..."
+next = "1"
+
+[caldarus_post_8h_best_friend_4_alt.1]
+portrait = "smile"
+local = "It touches my heart to think of it."
+next = "2"
+
+[caldarus_post_8h_best_friend_4_alt.2]
+portrait = "happy"
+local = "Now that I may roam freely, I intend to return the favor."
+
+[caldarus_post_8h_best_friend_5]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = false },
+	{ any = [
+		{ caldarus_post_8h_romantic_progression = true },
+		{ caldarus_is_best_friend = true }
+	] },
+	{ caldarus_post_8h_best_friend_gate = false },
+	{ caldarus_post_8h_best_friend_grouping = 4 },
+	{ location = "deep_woods" }
+]
+writes = [
+	{ caldarus_post_8h_best_friend_gate = true, expires = "2d" },
+	{ caldarus_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "caldarus" } }]
+portrait = "neutral"
+local = "Here in the heart of the Deep Woods, the passage of time can come to feel slow and deliberate."
+next = "1"
+
+[caldarus_post_8h_best_friend_5.1]
+portrait = "sigh"
+local = "Bearing such a tempo alone can make the soul feel heavy..."
+next = "2"
+
+[caldarus_post_8h_best_friend_5.2]
+portrait = "smile"
+local = "But in your company, that slowness becomes welcoming, and that time begins to feel quite leisurely. Even pleasurable."
+
+[caldarus_post_8h_best_friend_6]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = false },
+	{ any = [
+		{ caldarus_post_8h_romantic_progression = true },
+		{ caldarus_is_best_friend = true }
+	] },
+	{ caldarus_post_8h_best_friend_gate = false },
+	{ caldarus_post_8h_best_friend_grouping = 4 },
+	{ season = "winter" }
+]
+writes = [
+	{ caldarus_post_8h_best_friend_gate = true, expires = "2d" },
+	{ caldarus_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "relationship_status", npc = "caldarus" } },
+	{ item = "spirit_mushroom_tea" }
+]
+portrait = "sad"
+local = "The winter can be a hardship, even for a dragon. Are you not cold, [Ari]?"
+next = "1"
+
+[caldarus_post_8h_best_friend_6.1]
+portrait = "smile"
+local = "Please, accept this =Spirit Mushroom Tea=, from my hearth."
+next = "2"
+
+[caldarus_post_8h_best_friend_6.2]
+portrait = "happy"
+local = "It is possible the tea leaves have oversteeped... but I hope it will warm you, body and mind."
+
+[caldarus_post_8h_best_friend_7]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = false },
+	{ any = [
+		{ caldarus_post_8h_romantic_progression = true },
+		{ caldarus_is_best_friend = true }
+	] },
+	{ caldarus_post_8h_best_friend_gate = false },
+	{ caldarus_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ caldarus_post_8h_best_friend_gate = true, expires = "2d" },
+	{ caldarus_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "caldarus" } }]
+portrait = "neutral"
+local = "The children of Mistria... they fascinate me."
+next = "1"
+
+[caldarus_post_8h_best_friend_7.1]
+portrait = "think"
+local = "Luc has a knowledge of the natural world, and can read the signs of insects to infer much."
+next = "2"
+
+[caldarus_post_8h_best_friend_7.2]
+portrait = "smile"
+local = "Maple grasps the undercurrents of power in the mortal world."
+next = "3"
+
+[caldarus_post_8h_best_friend_7.3]
+portrait = "neutral"
+local = "And Dell's courage binds them in fellowship."
+next = "4"
+
+[caldarus_post_8h_best_friend_7.4]
+portrait = "neutral"
+local = "Together, they have established a Dragonguard at such a young age... and each of them brings their unique skills to the fore."
+next = [
+	{ target = "5_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "5_n", requires = [] }
+]
+
+[caldarus_post_8h_best_friend_7.5_eog]
+portrait = "smile"
+local = "The first Dragonguard would be proud to see their traditions upheld."
+prompts = [
+	{ local = "Wait... the Dragonguard was real?", next = "6" },
+	{ local = "They were so excited to meet you!", next = "10_eog" }
+]
+
+[caldarus_post_8h_best_friend_7.5_n]
+portrait = "smile"
+local = "The first Dragonguard would be proud to see their traditions upheld."
+prompts = [
+	{ local = "Wait... the Dragonguard was real?", next = "6" },
+	{ local = "They would be so excited to meet you.", next = "10_n" }
+]
+
+[caldarus_post_8h_best_friend_7.6]
+portrait = "neutral"
+local = "Oh yes."
+next = [
+	{ target = "7_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "7_n", requires = [] }
+]
+
+[caldarus_post_8h_best_friend_7.7_eog]
+portrait = "sigh"
+local = "Curiously, they also began as a group of childhood friends."
+next = "8"
+
+[caldarus_post_8h_best_friend_7.7_n]
+portrait = "sigh"
+local = "I do not remember much, but they also began as a group of childhood friends."
+next = "8"
+
+[caldarus_post_8h_best_friend_7.8]
+portrait = "smile"
+local = "Though I think Dell, Maple and Luc... may have more of a penchant for mischief."
+next = "9"
+
+[caldarus_post_8h_best_friend_7.9]
+portrait = "happy"
+local = "Oh, a land with happy children is a good land indeed. That is what Mistria is, and it pleases me to see it."
+
+[caldarus_post_8h_best_friend_7.10_eog]
+portrait = "smile"
+local = "And I was excited to meet them! Such delightful children."
+next = "11"
+
+[caldarus_post_8h_best_friend_7.10_n]
+portrait = "smile"
+local = "And I would be excited to meet them. I am delighted by children."
+next = "11"
+
+[caldarus_post_8h_best_friend_7.11]
+portrait = "sigh"
+local = "They keep the rest of us young..."
+next = "12"
+
+[caldarus_post_8h_best_friend_7.12]
+portrait = "neutral"
+local = "They surprise even scholars with their wisdom..."
+next = "13"
+
+[caldarus_post_8h_best_friend_7.13]
+portrait = "smile"
+local = "And they remind us of what is important."
+next = "14"
+
+[caldarus_post_8h_best_friend_7.14]
+portrait = "happy"
+local = "A land with happy children is a good land indeed. That is what Mistria is, and it pleases me to see it."
+
+[caldarus_post_8h_best_friend_8]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = false },
+	{ any = [
+		{ caldarus_post_8h_romantic_progression = true },
+		{ caldarus_is_best_friend = true }
+	] },
+	{ caldarus_post_8h_best_friend_gate = false },
+	{ caldarus_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ caldarus_post_8h_best_friend_gate = true, expires = "2d" },
+	{ caldarus_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "caldarus" } }]
+portrait = "think"
+local = "In nature, most creatures only have the means to eat a small variety of things. The bird eats an insect, while the insect eats a leaf."
+next = "1"
+
+[caldarus_post_8h_best_friend_8.1]
+portrait = "neutral"
+local = "However, humans are quite different. They have learned to cultivate and savor the world around them."
+next = "2"
+
+[caldarus_post_8h_best_friend_8.2]
+portrait = "smile"
+local = "Now I, too, have come to appreciate the omnivorous delights of the human world. It is my wish to experience all it has to offer."
+prompts = [
+	{ local = "I'll have to cook for you more often!", next = "3" },
+	{ local = "What did you eat before?", next = "6" }
+]
+
+[caldarus_post_8h_best_friend_8.3]
+portrait = "laugh"
+effect = "cheery"
+local = "Truly?"
+next = "4"
+
+[caldarus_post_8h_best_friend_8.4]
+portrait = "think"
+local = "I am not picky. Due to my culinary misfortunes, I have learned to eat any dish in front of me, no matter how charred."
+next = "5"
+
+[caldarus_post_8h_best_friend_8.5]
+portrait = "happy"
+local = "I look forward to whatever you may bring. Anything made by your hand is something to savor."
+
+[caldarus_post_8h_best_friend_8.6]
+portrait = "think"
+local = "I recall eating a great number of fish, fresh from the water and uncooked."
+next = "7"
+
+[caldarus_post_8h_best_friend_8.7]
+portrait = "neutral"
+local = "However, humans have a similar dish, do they not?"
+next = "8"
+
+[caldarus_post_8h_best_friend_8.8]
+portrait = "smile"
+local = "Though now that I have experienced the artistry of sashimi, it would be difficult to return to eating them unprepared."
+
+[caldarus_post_8h_best_friend_9]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = false },
+	{ any = [
+		{ caldarus_post_8h_romantic_progression = true },
+		{ caldarus_is_best_friend = true }
+	] },
+	{ caldarus_post_8h_best_friend_gate = false },
+	{ caldarus_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ caldarus_post_8h_best_friend_gate = true, expires = "2d" },
+	{ caldarus_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "caldarus" } },
+	{ item = "singing_katydid" }
+]
+portrait = "think"
+local = "As of late, I have had... what one might call a social issue."
+next = "1"
+
+[caldarus_post_8h_best_friend_9.1]
+portrait = "ugh"
+local = "You see, a neighbor has taken to singing quite enthusiastically in the small hours."
+next = "2"
+
+[caldarus_post_8h_best_friend_9.2]
+portrait = "sigh"
+effect = "drop"
+local = "Unfortunately, this has made my sleep light and my mornings haunted by fatigue."
+prompts = [
+	{ local = "I'll help however I can!", next = "3" },
+	{ local = "Wait, you have neighbors?", next = "7" }
+]
+
+[caldarus_post_8h_best_friend_9.3]
+portrait = "neutral"
+local = "You have my gratitude, [Ari]."
+next = "4"
+
+[caldarus_post_8h_best_friend_9.4]
+portrait = "smile"
+local = "You see, all creatures of the Deep Woods coexist alongside me quite peacefully."
+next = "5"
+
+[caldarus_post_8h_best_friend_9.5]
+portrait = "sigh"
+local = "However, if one decides to take up residence underneath my bed, I feel I have the authority to evict them."
+next = "6"
+
+[caldarus_post_8h_best_friend_9.6]
+portrait = "mad"
+local = "Perhaps you will know what to do with this one?"
+
+[caldarus_post_8h_best_friend_9.7]
+portrait = "smile"
+local = "Oh, yes. All creatures of the Deep Woods are my neighbors. We coexist quite peacefully."
+next = "8"
+
+[caldarus_post_8h_best_friend_9.8]
+portrait = "sigh"
+local = "However, if one decides to take up residence underneath my bed, I feel I have the authority to evict them."
+next = "9"
+
+[caldarus_post_8h_best_friend_9.9]
+portrait = "mad"
+local = "Perhaps you will know what to do with this one?"
+
+# last line
+[caldarus_post_8h_best_friend_10]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = false },
+	{ any = [
+		{ caldarus_post_8h_romantic_progression = true },
+		{ caldarus_is_best_friend = true }
+	] },
+	{ caldarus_post_8h_best_friend_gate = false },
+	{ caldarus_post_8h_best_friend_grouping = 4, ignore_priority = true },
+	{ caldarus_seridia_town = false, ignore_priority = true }
+]
+writes = [
+	{ caldarus_post_8h_best_friend_gate = true, expires = "2d" },
+	{ caldarus_post_8h_romantic_gate = true, expires = "2d" },
+	{ eog_caldarus_post_8h_best_friend_10 = true }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "caldarus" } }]
+portrait = "think"
+local = "I do not have strong memories from before you repaired my shrine."
+next = "1"
+
+[caldarus_post_8h_best_friend_10.1]
+portrait = "sigh"
+local = "Time felt like a long, heavy dream. It was not unpleasant, but it lacked shape and structure."
+next = "2"
+
+[caldarus_post_8h_best_friend_10.2]
+portrait = "neutral"
+local = "Your presence was like the first plucking of a string into a vast silence."
+next = "3"
+
+[caldarus_post_8h_best_friend_10.3]
+portrait = "smile"
+local = "There is no doubt in my mind that only my Dragonsworn could awaken me as you did. Our meeting was kismet."
+
+[caldarus_post_8h_best_friend_10_alt]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = false },
+	{ any = [
+		{ caldarus_post_8h_romantic_progression = true },
+		{ caldarus_is_best_friend = true }
+	] },
+	{ caldarus_post_8h_best_friend_gate = false },
+	{ caldarus_post_8h_best_friend_grouping = 4, ignore_priority = true },
+	{ caldarus_seridia_town = true, ignore_priority = true },
+	{ eog_caldarus_post_8h_best_friend_10 = false, ignore_priority = true }
+]
+writes = [
+	{ caldarus_post_8h_best_friend_gate = true, expires = "2d" },
+	{ caldarus_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "caldarus" } }]
+portrait = "think"
+local = "It feels strange to recall memories from before you repaired my shrine."
+next = "1"
+
+[caldarus_post_8h_best_friend_10_alt.1]
+portrait = "sigh"
+local = "Time felt like a long, heavy dream. It was not unpleasant, but it lacked shape and structure."
+next = "2"
+
+[caldarus_post_8h_best_friend_10_alt.2]
+portrait = "neutral"
+local = "Your presence was like the first plucking of a string into a vast silence."
+next = "3"
+
+[caldarus_post_8h_best_friend_10_alt.3]
+portrait = "smile"
+local = "There is no doubt in my mind that only my Dragonsworn could awaken me as you did. Our meeting was kismet."

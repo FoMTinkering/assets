@@ -1,0 +1,344 @@
+fun watering_can() {
+	animate(ari, water);
+	ari_set_attachment(watering_can_worn);
+	play_sound("SoundEffects/Tools/WateredSuccess");
+	await_ari_animation();
+	animate(ari, idle);
+}
+
+fun applying_fertilizer() {
+	animate(ari, action);
+	play_sound("SoundEffects/Tools/SeedUseSuccess");
+	await_ari_animation();
+	animate(ari, idle);
+}
+
+scene(celines_room);
+camera_position(c4h_camera_1);
+place_actor(ari, north, c4h_ari_entrance);
+place_actor(celine, south, "ArmChair Seat");
+animate(celine, book_sit);
+request_music_play(celine);
+
+sim {
+	fade_in(2);
+	{
+		pan_camera(3, c4h_camera_2);
+	}
+	{
+		wait(1);
+		walk_slow(ari, c4h_ari_start);
+		face(ari, north);
+	}
+	{
+		wait(1.5);
+		free bark_speech(celine, exclamation_mark);
+		wait(0.5);
+		animate(celine, sit);
+	}
+	{
+		wait(2);
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		pan_camera(3, c4h_camera_3);
+	}
+	{
+		wait(0.5);
+		walk_slow(celine, c4h_celine_talk);
+		face(celine, south);
+		animate(celine, idle);
+	}
+	{
+		wait(1);
+		walk_slow(ari, c4h_ari_talk);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		animate(celine, book_stand);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+
+
+//
+sim {
+	{
+		wait(0.5);
+		animate(celine, idle);
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(celine, west);
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(celine, south);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+
+//
+
+next_line(); //
+close_textbox();
+if get_response() == 0 {
+	sim {
+		{
+			wait(1);
+			animate(celine, action);
+			wait(0.5);
+			animate(celine, idle);
+			wait(0.5);
+			face(celine, west);
+		}
+		{
+			walk_slow(ari, c4h_ari_collect_dirt);
+			face(ari, north);
+			wait(1.5);
+			walk_slow(ari, c4h_ari_pot);
+			face(ari, north);
+			wait(0.5);
+			applying_fertilizer();
+			wait(0.5);
+			walk_slow(ari, c4h_ari_talk);
+			face(ari, north);
+		}
+	}
+} else {
+	sim {
+		{
+			wait(1);
+			animate(celine, action);
+			wait(0.5);
+			animate(celine, idle);
+			wait(0.5);
+			face(celine, west);
+		}
+		{
+			walk_slow(ari, c4h_ari_collect_dirt);
+			face(ari, north);
+			wait(1.5);
+			walk_slow(ari, c4h_ari_pot);
+			face(ari, north);
+			wait(0.5);
+			applying_fertilizer();
+			applying_fertilizer();
+			applying_fertilizer();
+			wait(0.5);
+			walk_slow(ari, c4h_ari_talk);
+			face(ari, north);
+		}
+	}
+}
+next_line(); //
+
+sim {
+	{
+		wait(0.5);
+		face(celine, south);
+		animate(celine, book_stand);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		next_line(); //
+	}
+	{
+		wait(2.5);
+		walk_slow(ari, c4h_celine_side_step);
+		face(ari, west);
+	}
+}
+
+//
+sim {
+	{
+		wait(0.5);
+		animate(celine, idle);
+		wait(0.5);
+		face(celine, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+sim {
+	{
+		wait(0.5);
+		animate(celine, action);
+		wait(0.5);
+		animate(celine, idle);
+		wait(1);
+		face(celine, south);
+		wait(0.5);
+		face(celine, west);
+	}
+	{
+		wait(1.5);
+		walk_slow(ari, c4h_ari_pot);
+		face(ari, north);
+	}
+}
+if get_response() == 0 {
+	watering_can();
+} else {
+	watering_can();
+	watering_can();
+	watering_can();
+	watering_can();
+	watering_can();
+	watering_can();
+	watering_can();
+}
+wait(0.5);
+sim {
+	{
+		walk_slow(ari, c4h_ari_pot_back);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(1.5);
+free bark_speech(ari, ellipses);
+free bark_speech(celine, ellipses);
+wait(1);
+
+sim {
+	{
+		wait(0.5);
+		face(celine, east);
+	}
+	{
+		next_line(); //
+	}
+}
+//
+close_textbox();
+sim {
+	{
+		wait(0.25);
+		face(celine, west);
+	}
+	{
+		play_sound("SoundEffects/SpecialEvents/PottedPlantSprout");
+	}
+	override_requirement("celine_plant_stage_one");
+	set_on_blackboard("grow_plant", true);
+	{
+		wait(1);
+		free bark_speech(ari, exclamation_mark);
+		free bark_speech(celine, exclamation_mark);
+	}
+	{
+		wait(1.5);
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(celine, south);
+		wait(0.5);
+		animate(celine, book_stand);
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(1);
+		animate(celine, idle);
+		wait(0.25);
+		walk(celine, c4h_ari_talk);
+		face(celine, west);
+	}
+	{
+		wait(1.5);
+		face(ari, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+free bark_speech(ari, cute_face);
+wait(0.5);
+free bark_speech(celine, cute_face);
+wait(1);
+next_line(); //
+close_textbox();
+sim {
+	{
+		wait(0.5);
+		free {
+			walk(celine, c4h_celine_tea);
+			face(celine, north);
+			wait(0.5);
+			animate(celine, action);
+		}
+
+	}
+	{
+		wait(1.5);
+		free pan_camera(3, c4h_camera_2);
+	}
+	{
+		wait(2);
+		free bark_speech(celine, music);
+	}
+	{
+		wait(1.5);
+		free {
+			walk_slow(ari, "ArmChair Seat");
+			animate(ari, sit);
+			face(ari, south);
+		}
+	}
+	{
+		wait(2.5);
+		fade_out(2);
+	}
+}
+wait_one_tick();

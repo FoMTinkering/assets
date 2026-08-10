@@ -1,0 +1,34 @@
+[dog_treats]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "juniper" }] },
+	{ balor_zone = "<juniper_zone>" },
+	{ balor_zone = "town/wagon" }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "You want a gift for Dozy? Might I suggest this uncut emerald? It makes quite the statement."
+next = "1"
+
+[dog_treats.1]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Focus, Balor. I'm looking for dog treats."
+
+[dog_treats_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "juniper" }] },
+	{ balor_zone = "<juniper_zone>" },
+	{ balor_zone = "town/wagon" }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "These are the premium gold star treats you asked for, Juniper. I didn't know Dozy had such fancy tastes."
+next = "1"
+
+[dog_treats_2.1]
+speaker = "juniper"
+portrait = "happy"
+effect = "sparkles"
+local = "He doesn't, but he deserves the best."

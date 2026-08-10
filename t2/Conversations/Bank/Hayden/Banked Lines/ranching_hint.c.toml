@@ -1,0 +1,28 @@
+[ranching_hint_0]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ any = [
+		{ cow_count = 1, comparator = ">=" },
+		{ chicken_count = 1, comparator = ">=" }
+	] },
+	{ hayden_ranching_tips = false }
+]
+writes = [{ hayden_ranching_tips = true, expires = "3d" }]
+portrait = "happy"
+local = "Couldn't be more excited that you're getting into $Ranching$, [Ari]!"
+next = "1"
+
+[ranching_hint_0.1]
+portrait = "neutral_arm_down"
+local = "You know, most barnyard animals will be happy to $eat just about whatever you give 'em$..."
+next = "2"
+
+[ranching_hint_0.2]
+portrait = "happy_fist"
+local = "Crops, Forage, and even Cooked Dishes all make great options in addition to milled Animal Feed!"
+next = "3"
+
+[ranching_hint_0.3]
+portrait = "wink"
+local = "Who knows, they might even $thank you$ if you $feed them something particularly tasty$!"

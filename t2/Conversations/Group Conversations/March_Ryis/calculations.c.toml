@@ -1,0 +1,22 @@
+[calculations]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "ryis" }] },
+	{ march_zone = "<ryis_zone>" },
+	{ any = [
+		{ location = "blacksmith_store" },
+		{ location = "landens_house_f1" },
+		{ march_zone = "town/forge_lesson" },
+		{ march_zone = "town/blacksmith_forge" },
+		{ march_zone = "town/blacksmith_business" }
+	] }
+]
+speaker = "march"
+portrait = "neutral"
+local = "I think we're on the right track, Ryis. Nice work on the calculations."
+next = "1"
+
+[calculations.1]
+speaker = "ryis"
+portrait = "neutral"
+local = "For sure."

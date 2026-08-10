@@ -1,0 +1,233 @@
+[ryis_unavailable_nails_1]
+refresh = "1y"
+requires = [
+	{ npc = "ryis" },
+	{ thread_mutex = "undefined" },
+	{ thread_delay = false },
+	{ ryis_unavailable_nails_finished = false },
+	{ ryis_heart_level = 3, comparator = ">=" },
+	{ ryis_heart_level = 8, comparator = "<" },
+]
+writes = [
+	{ thread_mutex = "ryis_unavailable_nails_1", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+local = "[Ari], got a moment? I'm stuck on a problem."
+next = "1"
+
+[ryis_unavailable_nails_1.1]
+portrait = "think"
+local = "Adeline's got me on general repairs around town, but there was a run on nails after the earthquake."
+next = "2"
+
+[ryis_unavailable_nails_1.2]
+portrait = "ugh"
+local = "They're getting pretty scarce. Seems like we've never got enough!"
+prompts = [
+	{ local = "Have you asked March to make more?", next = "3" },
+	{ local = "Can Adeline requisition some for you?", next = "4" }
+]
+
+[ryis_unavailable_nails_1.3]
+writes = [{ ryis_unavailable_nails_march = true, expires = "1d" }]
+portrait = "think"
+local = "I've been putting it off, but you're right. Should pay him a visit."
+next = "5"
+
+[ryis_unavailable_nails_1.4]
+writes = [{ ryis_unavailable_nails_adeline = true, expires = "1d" }]
+portrait = "think"
+local = "She always seems so busy, but you're right. I bet she'll make the time."
+next = "5"
+
+[ryis_unavailable_nails_1.5]
+portrait = "happy"
+local = "Thanks, [Ari]. I'll let you know how it goes!"
+
+[ryis_unavailable_nails_2]
+refresh = "instantly"
+requires = [
+	{ npc = "ryis" },
+	{ thread_mutex = "ryis_unavailable_nails_1" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "ryis_unavailable_nails_2", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+portrait = "ugh"
+local = "Talking to March and Adeline about the nail shortage didn't pan out."
+next = "1"
+
+[ryis_unavailable_nails_2.1]
+portrait = "think"
+local = "Beginning to wonder if finding more nails is even the answer."
+next = "2"
+
+[ryis_unavailable_nails_2.2]
+local = "There are all kinds of ways to build things..."
+prompts = [
+	{ local = "What did people do before they had nails?", next = "3" },
+	{ local = "Maybe you'll find the answer outside Mistria?", next = "4" }
+]
+
+[ryis_unavailable_nails_2.3]
+writes = [
+	{ ryis_unavailable_nails_eiland = true, expires = "1d" },
+	{ ryis_unavailable_nails_errol = true, expires = "1d" }
+]
+portrait = "think"
+local = "Interesting... maybe it's time to drop in on Eiland and Errol at the Museum."
+next = "5"
+
+[ryis_unavailable_nails_2.4]
+writes = [
+	{ ryis_unavailable_nails_balor = true, expires = "1d" },
+	{ ryis_unavailable_nails_juniper = true, expires = "1d" }
+]
+portrait = "think"
+local = "Hm. Wonder if Balor and Juniper are around..."
+next = "5"
+
+[ryis_unavailable_nails_2.5]
+portrait = "happy"
+local = "I'll keep you posted, [Ari]!"
+
+[ryis_unavailable_nails_3]
+refresh = "instantly"
+requires = [
+	{ npc = "ryis" },
+	{ thread_mutex = "ryis_unavailable_nails_2" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "undefined" },
+	{ thread_delay = true, expires = "1d" },
+	{ ryis_unavailable_nails_finished = true }
+]
+local = "[Ari], hey! After we talked, I read up about ancient architecture from across the world."
+next = "1"
+
+[ryis_unavailable_nails_3.1]
+portrait = "happy"
+local = "Now I'm experimenting with new kinds of joinery! The kind that jigsaws together, no nails required."
+next = "2"
+
+[ryis_unavailable_nails_3.2]
+portrait = "wink"
+effect = "sparkles"
+local = "It's gonna take a lot of pressure off of Adeline and March. It'll take some time to get it right, but I'm on the right track."
+next = "3"
+
+[ryis_unavailable_nails_3.3]
+portrait = "think"
+local = "You got me pointed in the right direction. Just wanted to say thanks."
+prompts = [
+	{ local = "Happy to help!", next = "4" },
+	{ local = "It's nothing! You're doing all the hard work.", next = "5" }
+]
+
+[ryis_unavailable_nails_3.4]
+local = "And I'll be happy to help you when you need it. Just say the word, [Ari]."
+
+[ryis_unavailable_nails_3.5]
+local = "Still, I owe you one for hearing me out. Let me know, [Ari]."
+
+[march_unavailable_nails]
+refresh = "1y"
+requires = [
+	{ npc = "march" },
+	{ thread_mutex = "ryis_unavailable_nails_1" },
+	{ ryis_unavailable_nails_march = true }
+]
+writes = [{ ryis_unavailable_nails_march = false }]
+local = "Ryis came by looking for nails. He's my friend and I don't like telling him no, but he's gotta get in line."
+next = "1"
+
+[march_unavailable_nails.1]
+portrait = "ugh"
+local = "Making nails is beneath me, but I'm making them as fast as I can."
+
+[adeline_unavailable_nails]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ thread_mutex = "ryis_unavailable_nails_1" },
+	{ ryis_unavailable_nails_adeline = true }
+]
+writes = [{ ryis_unavailable_nails_adeline = false }]
+portrait = "concerned"
+local = "Ryis stopped by my office and asked after a new supply of nails... sigh."
+next = "1"
+
+[adeline_unavailable_nails.1]
+portrait = "happy"
+effect = "drop"
+local = "He's right, they're becoming a hot commodity."
+
+[balor_unavailable_nails]
+refresh = "1y"
+requires = [
+	{ npc = "balor" },
+	{ thread_mutex = "ryis_unavailable_nails_2" },
+	{ ryis_unavailable_nails_balor = true }
+]
+writes = [{ ryis_unavailable_nails_balor = false }]
+local = "Ryis asked if I'd noticed any unique building methods from my travels. I mean, I have..."
+next = "1"
+
+[balor_unavailable_nails.1]
+portrait = "ugh"
+local = "Unfortunately, I'm a merchant, not a carpenter, so I wasn't much help."
+
+[juniper_unavailable_nails]
+refresh = "1y"
+requires = [
+	{ npc = "juniper" },
+	{ thread_mutex = "ryis_unavailable_nails_2" },
+	{ ryis_unavailable_nails_juniper = true }
+]
+writes = [{ ryis_unavailable_nails_juniper = false }]
+portrait = "think"
+local = "Ryis was asking after building methods from the era of the Witch Queens."
+next = "1"
+
+[juniper_unavailable_nails.1]
+portrait = "unimpressed"
+local = "He seemed disappointed when I told him their techniques were mostly magical in nature. It's too bad..."
+next = "2"
+
+[juniper_unavailable_nails.2]
+portrait = "wink"
+local = "He'd make a good witch, don't you think?"
+
+[eiland_unavailable_nails]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ thread_mutex = "ryis_unavailable_nails_2" },
+	{ ryis_unavailable_nails_eiland = true }
+]
+writes = [{ ryis_unavailable_nails_eiland = false }]
+portrait = "happy"
+local = "Ryis paid me a visit to ask about ancient building techniques! I'm digging up an old treatise on the ancient Alda tribe for him, which is..."
+next = "1"
+
+[eiland_unavailable_nails.1]
+portrait = "ugh"
+local = "Well, it's somewhere in my office. I think."
+
+[errol_unavailable_nails]
+refresh = "1y"
+requires = [
+	{ npc = "errol" },
+	{ thread_mutex = "ryis_unavailable_nails_2" },
+	{ ryis_unavailable_nails_errol = true }
+]
+writes = [{ ryis_unavailable_nails_errol = false }]
+local = "The young carpenter Ryis dropped by the Museum, looking for books about ancient architecture."
+next = "1"
+
+[errol_unavailable_nails.1]
+portrait = "think"
+local = "It was such an earnest plea, I dropped everything to help him. He seemed particularly interested in a volume about the Caldosians..."

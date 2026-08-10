@@ -1,0 +1,921 @@
+scene(caldarus_house);
+var ari_start = __get_element_x(ari);
+if ari_start >= 265 {
+	place_actor(ari, west, c8h_ari_entrance_teleport);
+	camera_position(c8h_camera_1_teleport);
+} else {
+	place_actor(ari, north, c8h_ari_entrance_door);
+	camera_position(c8h_camera_1_door);
+}
+place_actor(caldarus, east, c8h_caldarus_entrance);
+animate(caldarus, action);
+request_music_play("Music/Location Tracks/Deep Woods");
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		if ari_start >= 265 {
+			pan_camera(3, c8h_camera_2_teleport);
+		} else {
+			pan_camera(3, c8h_camera_2_door);
+		}
+	}
+	{
+		wait(0.5);
+		anim_speed(caldarus, 0);
+		wait(1);
+		free bark_speech(caldarus, exclamation_mark);
+		wait(0.5);
+		anim_speed(caldarus, 1);
+		animate(caldarus, idle);
+		if ari_start >= 265 {
+			face(caldarus, east);
+		} else {
+			face(caldarus, south);
+		}
+	}
+	{
+		if ari_start <= 265 {
+			walk_slow(ari, c8h_ari_start);
+			face(ari, north);
+		}
+	}
+	{
+		wait(2.5);
+		next_line(); //
+		next_line(); //
+	}
+}
+
+if ari_start >= 265 {
+	next_line(); //
+} else {
+	sim {
+		{
+			wait(1);
+			face(caldarus, east);
+			wait(1.25);
+			face(caldarus, south);
+		}
+		{
+			next_line(); //
+		}
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(caldarus, cute_face);
+wait(1);
+sim {
+	{
+		walk_slow(ari, c8h_ari_stand);
+		face(ari, west);
+		wait(0.25);
+		place_actor(ari, west, "Caldarus Pouf Right");
+		animate(ari, sit);
+	}
+	{
+		pan_camera(3, c8h_camera_cooking);
+	}
+	{
+		wait(0.5);
+		face(caldarus, east);
+		animate(caldarus, action);
+		wait(3);
+		animate(caldarus, idle);
+		wait(0.25);
+		animate(caldarus, action);
+		wait(1);
+		animate(caldarus, idle);
+		free bark_speech(caldarus, sweat_drop);
+		wait(1);
+		animate(caldarus, action);
+		wait(0.5);
+		animate(caldarus, idle);
+		walk(caldarus, c8h_caldarus_start);
+		face(caldarus, north);
+		animate(caldarus, action);
+		wait(0.5);
+		animate(caldarus, idle);
+		animate(caldarus, action);
+		wait(2);
+		animate(caldarus, idle);
+		free pan_camera(4, c8h_camera_3);
+		walk(caldarus, c8h_caldarus_entrance);
+		face(caldarus, east);
+		animate(caldarus, action);
+		wait(0.5);
+		free bark_speech(caldarus, ellipses);
+		wait(0.5);
+		animate(caldarus, idle);
+		wait(1);
+		animate(caldarus, action);
+		wait(0.5);
+		free bark_speech(caldarus, exclamation_mark);
+		animate(caldarus, idle);
+		wait(1);
+		free bark_speech(caldarus, cute_face);
+	}
+}
+wait(0.5);
+next_line(); //
+close_textbox();
+
+wait(0.5);
+animate(caldarus, action);
+wait(0.5);
+animate(caldarus, idle);
+wait(0.5);
+animate(caldarus, action);
+wait(0.5);
+animate(caldarus, idle);
+sim {
+	{
+		walk_slow(caldarus, c8h_caldarus_serve_ari);
+		face(caldarus, north);
+		animate(caldarus, action);
+		wait(0.5);
+		setup_prop(c8h_onion_soup_ari);
+		animate(caldarus, idle);
+	}
+	{
+		pan_camera(3, c8h_camera_4);
+	}
+	{
+		wait(2);
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(0.25);
+		walk_slow(caldarus, c8h_caldarus_stand);
+		face(caldarus, east);
+		animate(caldarus, action);
+		wait(0.5);
+		setup_prop(c8h_onion_soup_caldarus);
+		animate(caldarus, idle);
+		place_actor(caldarus, east, "Caldarus Pouf Left");
+		animate(caldarus, sit);
+	}
+	{
+		free bark_speech(ari, cute_face);
+	}
+	{
+		pan_camera(3, c8h_camera_3);
+	}
+}
+wait(0.25);
+next_line(); //
+
+sim {
+	{
+		pan_camera(3, c8h_camera_4);
+	}
+	{
+		next_line(); //
+	}
+}
+
+//
+close_textbox();
+sim {
+	{
+		wait(1.5);
+		free bark_speech(caldarus, exclamation_mark);
+	}
+	{
+		pan_camera(1.5, c8h_camera_3);
+	}
+}
+next_line(); //
+if get_response() == 0 {
+	next_line(); //
+	close_textbox();
+	wait(0.5);
+	free bark_speech(ari, sweat_drop);
+	wait(1.5);
+} else {
+	close_textbox();
+	wait(2);
+	free bark_speech(caldarus, ellipses);
+	wait(2);
+	next_line(); //
+}
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(caldarus, cute_face);
+wait(1);
+free bark_speech(ari, cute_face);
+wait(2);
+sim {
+	{
+		fade_out(2);
+	}
+	{
+		pan_camera(2.5, c8h_camera_cooking);
+	}
+}
+wait(0.5);
+destroy_prop(c8h_onion_soup_ari);
+destroy_prop(c8h_onion_soup_caldarus);
+setup_prop(c8h_onion_soup_ari_empty);
+setup_prop(c8h_onion_soup_caldarus_empty);
+fade_in(2);
+wait(1);
+free bark_speech(caldarus, cute_face);
+free bark_speech(ari, cute_face);
+wait(2);
+free pan_camera(4, c8h_camera_5);
+wait(0.5);
+free bark_speech(caldarus, ellipses);
+wait(2.5);
+sim {
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(1);
+free bark_speech(caldarus, ellipses);
+wait(2);
+sim {
+	{
+		pan_camera(2, c8h_camera_3);
+	}
+	{
+		next_line(); //
+	}
+}
+
+//
+close_textbox();
+free pan_camera(3, c8h_camera_5);
+wait(1);
+free bark_speech(caldarus, ellipses);
+wait(2);
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.25);
+face(caldarus, south);
+wait(0.25);
+place_actor(caldarus, east, c8h_caldarus_stand_south);
+animate(caldarus, idle);
+wait(0.25);
+walk_slow(caldarus, c8h_caldarus_serve_caldarus);
+face(caldarus, north);
+animate(caldarus, action);
+wait(0.75);
+destroy_prop(c8h_onion_soup_caldarus_empty);
+animate(caldarus, idle);
+wait(0.25);
+walk_slow(caldarus, c8h_caldarus_entrance);
+face(caldarus, east);
+
+wait(0.25);
+animate(caldarus, action);
+wait(0.5);
+animate(caldarus, idle);
+wait(0.25);
+animate(caldarus, action);
+wait(0.5);
+animate(caldarus, idle);
+sim {
+	{
+		walk_slow(caldarus, c8h_caldarus_serve_ari);
+		face(caldarus, north);
+		animate(caldarus, action);
+		wait(0.5);
+		destroy_prop(c8h_onion_soup_ari_empty);
+		animate(caldarus, idle);
+		animate(caldarus, action);
+		wait(0.5);
+		setup_prop(c8h_mushroom_rice_ari);
+		animate(caldarus, idle);
+	}
+	{
+		pan_camera(2, c8h_camera_4);
+	}
+	{
+		wait(2.5);
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(0.25);
+		walk_slow(caldarus, c8h_caldarus_stand);
+		face(caldarus, east);
+		animate(caldarus, action);
+		wait(0.5);
+		setup_prop(c8h_mushroom_rice_caldarus);
+		animate(caldarus, idle);
+		place_actor(caldarus, east, "Caldarus Pouf Left");
+		animate(caldarus, sit);
+	}
+	{
+		free bark_speech(ari, cute_face);
+	}
+	{
+		pan_camera(3, c8h_camera_3);
+	}
+}
+wait(1);
+sim {
+	{
+		pan_camera(1, c8h_camera_4);
+	}
+	{
+		wait(0.5);
+		free bark_speech(ari, exclamation_mark);
+		wait(1);
+	}
+}
+wait(0.5);
+free bark_speech(caldarus, question_mark);
+wait(1);
+next_line(); //
+
+//
+
+if get_response() == 0 {
+	close_textbox();
+	sim {
+		{
+			wait(1.5);
+			free bark_speech(caldarus, cute_face);
+			wait(1);
+		}
+		{
+			pan_camera(1.5, c8h_camera_3);
+		}
+	}
+	next_line(); //
+	next_line(); //
+	next_line(); //
+	next_line(); //
+	close_textbox();
+	wait(0.5);
+	free bark(ari, exclamation_mark);
+	wait(1);
+	next_line(); //
+} else {
+	close_textbox();
+	free pan_camera(1.5, c8h_camera_3);
+	wait(1);
+	free bark_speech(caldarus, ellipses);
+	wait(1);
+	next_line(); //
+	next_line(); //
+	close_textbox();
+	wait(0.5);
+	free bark_speech(ari, exclamation_mark);
+	wait(1.5);
+	next_line(); //
+	close_textbox();
+	wait(1.5);
+	next_line(); //
+	next_line(); //
+}
+close_textbox();
+wait(0.5);
+free bark_speech(caldarus, sweat_drop);
+wait(1.5);
+free bark(ari, sweat_drop);
+wait(1.5);
+free bark_speech(ari, cute_face);
+wait(1);
+sim {
+	{
+		fade_out(2);
+	}
+	{
+		pan_camera(2.5, c8h_camera_cooking);
+	}
+}
+wait(0.5);
+
+destroy_prop(c8h_mushroom_rice_ari);
+destroy_prop(c8h_mushroom_rice_caldarus);
+setup_prop(c8h_mushroom_rice_ari_empty);
+setup_prop(c8h_mushroom_rice_caldarus_empty);
+fade_in(2);
+wait(0.5);
+free bark_speech(ari, cute_face);
+free bark_speech(caldarus, cute_face);
+wait(1.5);
+free pan_camera(3, c8h_camera_3);
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(caldarus, cute_face);
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+free bark_speech(caldarus, music);
+wait(1.5);
+sim {
+	{
+		face(caldarus, south);
+		wait(0.5);
+		place_actor(caldarus, south, c8h_caldarus_stand_south);
+		animate(caldarus, idle);
+		wait(0.25);
+		walk_slow(caldarus, c8h_exit);
+		face(caldarus, south);
+	}
+	{
+		wait(0.5);
+		face(ari, south);
+		wait(0.5);
+		place_actor(ari, south, c8h_ari_stand_south);
+		animate(ari, idle);
+		wait(0.5);
+		walk_slow(ari, c8h_exit);
+		face(ari, south);
+	}
+	{
+		wait(1);
+		pan_camera(3, c8h_camera_1_door);
+	}
+	{
+		wait(1.5);
+		fade_out(2);
+	}
+	{
+		wait(1.5);
+		request_music_stop(2);
+	}
+}
+
+scene(deep_woods);
+place_actor(ari, west, c8h_ari_dw_pond);
+place_actor(caldarus, west, c8h_caldarus_dw_pond);
+camera_position(c8h_camera_6);
+
+sim {
+	{
+		fade_in(2);
+		wait(9);
+		fade_out(2);
+	}
+	{
+		wait(0.5);
+		request_music_play("Music/Events/SharedLight");
+	}
+	{
+		wait(1.5);
+		free bark_speech(ari, fishing);
+		wait(1.5);
+		free bark_speech(caldarus, question_mark);
+		face(caldarus, north);
+		wait(1.5);
+		free bark_speech(ari, lake);
+		face(ari, south);
+		wait(1.5);
+		free bark_speech(caldarus, exclamation_mark);
+		wait(1);
+		face(caldarus, west);
+		wait(1);
+		face(ari, west);
+		wait(1);
+		free bark_speech(caldarus, fishing);
+		wait(1.5);
+		free bark_speech(ari, cute_face);
+		wait(1.5);
+	}
+}
+setup_prop(c8h_outside_pouf);
+place_actor(ari, north, c8h_ari_dw_perform);
+animate(ari, sit);
+place_actor(caldarus, south, c8h_caldarus_dw_perform);
+animate(caldarus, lute_play);
+camera_position(c8h_camera_7);
+sim {
+	{
+		fade_in(2);
+		wait(6.5);
+		fade_out(2);
+	}
+	{
+		wait(6.5);
+		animate(caldarus, idle);
+		wait(2);
+		if read_world_fact("shooting_star_caldarus_attended") == true {
+			free bark_speech(caldarus, blush);
+		} else {
+			free bark_speech(caldarus, cute_face);
+		}
+
+	}
+	{
+		wait(7.5);
+		place_actor(ari, north, c8h_ari_dw_perform_stand);
+		animate(ari, idle);
+		wait(0.25);
+		free bark_speech(ari, cute_face);
+	}
+}
+
+destroy_prop(c8h_outside_pouf);
+place_actor(ari, west, c8h_ari_dw_chat);
+place_actor(caldarus, east, c8h_caldarus_dw_chat);
+camera_position(c8h_camera_8_extra);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		wait(2.5);
+		next_line(); //
+		next_line(); //
+	}
+	{
+		pan_camera(3, c8h_camera_8);
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+free bark_speech(caldarus, cute_face);
+wait(1.5);
+next_line(); //
+close_textbox();
+wait(1);
+face(caldarus, west);
+wait(0.5);
+free bark_speech(caldarus, ellipses);
+wait(2);
+sim {
+	{
+		wait(0.75);
+		face(caldarus, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, question_mark);
+wait(2);
+free bark_speech(caldarus, ellipses);
+wait(0.5);
+face(caldarus, west);
+wait(1.5);
+
+sim {
+	{
+		wait(1);
+		sim {
+			walk(caldarus, c8h_caldarus_dw_chat_step_0);
+			set_move_speed(caldarus, 0.4);
+		}
+		face(caldarus, west);
+	}
+	{
+		next_line(); //
+	}
+	{
+		pan_camera(3, c8h_camera_9);
+	}
+}
+close_textbox();
+wait(1);
+free bark_speech(caldarus, ellipses);
+wait(1.5);
+free bark_speech(caldarus, exclamation_mark);
+wait(0.5);
+sim {
+	{
+		face(caldarus, east);
+	}
+	{
+		wait(0.5);
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(1);
+
+
+sim {
+	{
+		wait(0.25);
+		sim {
+			walk(caldarus, c8h_caldarus_dw_chat_step_1);
+			set_move_speed(caldarus, 0.4);
+		}
+		face(caldarus, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+	{
+		pan_camera(1.5, c8h_camera_10);
+	}
+}
+next_line(); //
+next_line(); //
+sim {
+	{
+		wait(1);
+		face(caldarus, south);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+	{
+		pan_camera(4, c8h_camera_11);
+	}
+}
+close_textbox();
+wait(1);
+sim {
+	free bark_speech(caldarus, ellipses);
+	{
+		pan_camera(2, c8h_camera_10);
+	}
+}
+next_line(); //
+next_line(); //
+close_textbox();
+wait(1.5);
+
+sim {
+	{
+		wait(0.75);
+		face(caldarus, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+
+	}
+}
+sim {
+	{
+		wait(1.25);
+		sim {
+			walk(caldarus, c8h_caldarus_dw_chat_step_2);
+			set_move_speed(caldarus, 0.4);
+		}
+		face(caldarus, east);
+	}
+	{
+		next_line(); //
+	}
+	{
+		wait(1);
+		pan_camera(2, c8h_camera_12);
+	}
+}
+//
+close_textbox();
+wait(0.5);
+free bark_speech(caldarus, cute_face);
+wait(2);
+next_line(); //
+sim {
+	{
+		wait(1);
+		face(caldarus, west);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(1);
+free bark_speech(caldarus, ellipses);
+wait(2);
+
+sim {
+	{
+		wait(1);
+		face(caldarus, east);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	{
+		next_line(); //
+	}
+	{
+		pan_camera(1.5, c8h_camera_8);
+	}
+}
+
+
+next_line(); //
+make_next_prompt_pink(1);
+next_line(); //
+
+//
+
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(caldarus, exclamation_mark);
+		}
+		{
+			next_line(); //
+			next_line(); //
+			next_line(); //
+			next_line(); //
+		}
+	}
+	close_textbox();
+	wait(0.5);
+	free bark_speech(caldarus, cute_face);
+	wait(1);
+	next_line(); //
+	next_line(); //
+	sim {
+		{
+			wait(0.5);
+			sim {
+				walk(caldarus, c8h_caldarus_dw_chat);
+				set_move_speed(caldarus, 0.2);
+			}
+			face(caldarus, east);
+		}
+		{
+			next_line(); //
+		}
+		//
+		//
+		//
+	}
+	close_textbox();
+	wait(0.5);
+	free bark_speech(ari, cute_face);
+	free bark_speech(caldarus, cute_face);
+	wait(1);
+	sim {
+		{
+			wait(1);
+			face(caldarus, north);
+			wait(1);
+			face(caldarus, east);
+		}
+		{
+			next_line(); //
+			next_line(); //
+			next_line(); //
+		}
+	}
+	close_textbox();
+	wait(0.5);
+	free bark(ari, sweat_drop);
+	wait(1);
+	free bark_speech(ari, cute_face);
+	wait(0.5);
+	free bark_speech(caldarus, cute_face);
+	wait(2);
+	sim {
+		{
+			walk_slow(caldarus, c8h_dw_exit);
+			face(caldarus, north);
+			use_door(caldarus);
+		}
+		{
+			wait(1);
+			walk_slow(ari, c8h_dw_exit);
+			face(ari, north);
+		}
+		{
+			wait(0.5);
+			fade_out(2);
+		}
+		{
+			pan_camera(3, c8h_camera_13);
+		}
+	}
+} else {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(caldarus, exclamation_mark);
+		}
+		{
+			next_line(); //
+			next_line(); //
+
+		}
+	}
+	sim {
+		{
+			wait(0.5);
+			sim {
+				walk(caldarus, c8h_caldarus_dw_chat);
+				set_move_speed(caldarus, 0.2);
+			}
+			face(caldarus, east);
+		}
+		{
+			next_line(); //
+			next_line(); //
+			next_line(); //
+			next_line(); //
+		}
+	}
+	checkpoint("kiss");
+	sim {
+		{
+			wait(0.5);
+			sim {
+				walk(caldarus, c8h_caldarus_dw_chat_kiss);
+				set_move_speed(caldarus, 0.2);
+			}
+			face(caldarus, east);
+		}
+		{
+			next_line(); //
+		}
+		{
+			pan_camera(2, c8h_camera_kiss);
+		}
+	}
+	close_textbox();
+	wait(0.25);
+	walk_slow(ari, c8h_ari_dw_chat_kiss);
+	wait(0.75);
+	kiss_npc(caldarus, true, 1);
+	wait(0.5);
+	next_line(); //
+	next_line(); //
+	close_textbox();
+	wait(0.5);
+	free bark_speech(ari, heart);
+	free bark_speech(caldarus, heart);
+	wait(2);
+	next_line(); //
+	close_textbox();
+	wait(0.5);
+	free bark(ari, sweat_drop);
+	wait(1);
+	free bark_speech(ari, cute_face);
+	wait(0.5);
+	free bark_speech(caldarus, cute_face);
+	wait(2);
+	sim {
+		{
+			walk_slow(caldarus, c8h_dw_exit);
+			face(caldarus, north);
+			use_door(caldarus);
+		}
+		{
+			wait(1);
+			walk_slow(ari, c8h_dw_exit);
+			face(ari, north);
+		}
+		{
+			wait(0.5);
+			fade_out(2);
+		}
+		{
+			pan_camera(3, c8h_camera_13);
+		}
+	}
+}
+wait(1);
+face(ari, south);

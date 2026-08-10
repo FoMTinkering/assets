@@ -1,0 +1,25 @@
+[inspection]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "juniper" }, { npc = "ryis" }] },
+	{ juniper_zone = "<ryis_zone>" },
+	{ any = [
+		{ juniper_zone = "bathhouse/cauldron" },
+		{ juniper_zone = "town/bathhouse_exterior" }
+	] }
+]
+speaker = "ryis"
+portrait = "neutral"
+local = "Got the inspection all done, Juniper. Might do some weatherproofing on the exterior, but that's just about being prepared."
+next = "1"
+
+[inspection.1]
+speaker = "ryis"
+portrait = "happy"
+local = "The bathhouse is looking pretty good overall."
+next = "2"
+
+[inspection.2]
+speaker = "juniper"
+portrait = "wink"
+local = "Music to my ears. And please, enjoy your next five baths free of charge."

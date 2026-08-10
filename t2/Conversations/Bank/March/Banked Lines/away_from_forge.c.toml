@@ -1,0 +1,18 @@
+[away_from_forge]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_is_at_location = "inn" },
+		{ march_building = "bathhouse" },
+		{ march_is_at_location = "beach" },
+		{ march_building = "manor_house" },
+		{ march_is_at_location = "eastern_road" },
+		{ march_is_at_location = "western_ruins" },
+		{ march_is_at_location = "deep_woods" },
+	] },
+	{ march_heart_level = 6, comparator = ">=" },
+	{ march_heart_level = 10, comparator = "<" }
+]
+portrait = "think"
+local = "It's not often I'm away from the forge... there's always more to do."

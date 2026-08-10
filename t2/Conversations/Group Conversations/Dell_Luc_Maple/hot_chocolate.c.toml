@@ -1,0 +1,28 @@
+[hot_chocolate]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ location = "inn" },
+	{ dell_activity = "drink" },
+	{ luc_activity = "drink" },
+	{ maple_activity = "drink" },
+	{ season = "winter" }
+]
+speaker = "maple"
+portrait = "happy"
+effect = "sparkles"
+local = "So? How do you like Reina's special hot chocolate recipe?"
+next = "1"
+
+[hot_chocolate.1]
+speaker = "dell"
+portrait = "mad"
+local = "It's so good! So good!"
+next = "2"
+
+[hot_chocolate.2]
+speaker = "luc"
+portrait = "happy"
+local = "And nice and warm! I'm ready for more snow!"

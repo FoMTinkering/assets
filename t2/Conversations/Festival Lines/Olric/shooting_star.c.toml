@@ -1,0 +1,64 @@
+[shooting_star_evening]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "olric" },
+	{ olric_is_at = "town/star_festival_olric" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "march_invited" },
+]
+portrait = "think"
+local = "I have a theory, [Ari]..."
+next = "1"
+
+[shooting_star_evening.1]
+portrait = "happy"
+local = "I bet these stars are actually very powerful rocks!"
+
+[shooting_star_march_follow_up_olric]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "olric" },
+	{ shooting_star_date_status = "march_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ march_is_partner = false }
+]
+portrait = "happy"
+local = "I'm so glad you and March had a nice time last night!"
+next = "1"
+
+[shooting_star_march_follow_up_olric.1]
+portrait = "embarrassed"
+local = "It was so nice to see him smiling when he got back in. I guess I worried over nothing, huh?"
+
+[shooting_star_seridia_follow_up_olric]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "olric" },
+	{ shooting_star_date_status = "seridia_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false },
+	{ seridia_is_partner = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "olric" }}]
+portrait = "happy"
+local = "Hey, [Ari]!"
+next = "1"
+
+[shooting_star_seridia_follow_up_olric.1]
+portrait = "neutral"
+local = "Have you seen Seri today?"
+next = "2"
+
+[shooting_star_seridia_follow_up_olric.2]
+portrait = "think"
+local = "She seems like... extra pumped, for some reason."
+next = "3"
+
+[shooting_star_seridia_follow_up_olric.3]
+portrait = "happy"
+effect = "cheery"
+local = "Good for her!"

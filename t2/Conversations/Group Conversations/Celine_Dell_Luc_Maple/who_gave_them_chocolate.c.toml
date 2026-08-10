@@ -1,0 +1,39 @@
+[who_gave_them_chocolate]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "celine" },
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ celine_zone = "<dell_zone>" },
+	{ celine_zone = "<luc_zone>" },
+	{ celine_zone = "<maple_zone>" },
+	{ kids_got_chocolate = 1, comparator = ">=" },
+	{ any = [{ time_of_day = "morning" }, { time_of_day = "night" }] }
+]
+speaker = "celine"
+portrait = "think"
+local = "Who gave the kids chocolate at his hour?"
+next = "1"
+
+[who_gave_them_chocolate.1]
+speaker = "dell"
+portrait = "mad"
+effect = "sparkles"
+local = "It's a secret, Celine."
+next = "2"
+
+[who_gave_them_chocolate.2]
+speaker = "luc"
+portrait = "mad"
+effect = "sparkles"
+local = "Classified."
+next = "3"
+
+[who_gave_them_chocolate.3]
+speaker = "maple"
+portrait = "mad"
+effect = "sparkles"
+local = "We'll tell you if you join the Dragonguard!"

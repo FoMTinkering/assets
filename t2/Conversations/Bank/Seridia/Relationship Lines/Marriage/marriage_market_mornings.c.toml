@@ -1,0 +1,226 @@
+# DARCY
+[market_darcy]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ seridia_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ seridia_morning_greeting = false }
+]
+writes = [{ seridia_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "closed_eyes"
+local = "Saturday comes again... and with it, the Market."
+next = "1"
+
+
+[market_darcy.1]
+portrait = "think"
+local = "From where does Darcy conjure her coffees and cakes?"
+next = "2"
+
+[market_darcy.2]
+portrait = "sinister"
+local = "Perhaps today she will tell me her secrets."
+
+# LOUIS
+[market_louis]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ seridia_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ seridia_morning_greeting = false }
+]
+writes = [{ seridia_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "think"
+local = "It is Market day. Today, I will visit Louis..."
+next = "1"
+
+
+[market_louis.1]
+portrait = "smile"
+local = "His taste is impeccable."
+
+
+# MERRI
+[market_merri]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ seridia_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ seridia_morning_greeting = false }
+]
+writes = [{ seridia_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "think"
+local = "Saturday morning... so it is Market day again."
+next = "1"
+
+
+[market_merri.1]
+portrait = "smile"
+local = "I think I will visit Merri's booth... she has many offerings suitable for adding to my hoard."
+
+
+# VERA
+[market_vera]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ seridia_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ seridia_morning_greeting = false }
+]
+writes = [{ seridia_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "smile"
+local = "Good morning, [Ari]. I think I will visit Vera at the Market today."
+next = "1"
+
+
+[market_vera.1]
+portrait = "happy"
+local = "She is quite skilled... and quite fearless despite working in close proximity to my horns. I admire that."
+
+
+# TALIFERRO
+
+
+[market_taliferro]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ seridia_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ seridia_morning_greeting = false }
+]
+writes = [{ seridia_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "neutral"
+local = "It is Saturday morning. I require amusement."
+next = "1"
+
+
+[market_taliferro.1]
+portrait = "sly"
+local = "Perhaps I will go visit Taliferro and gaze at him disapprovingly."
+next = "2"
+
+[market_taliferro.2]
+portrait = "sinister"
+local = "I enjoy watching him panic."
+
+# WHEEDLE
+
+
+[market_wheedle]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ seridia_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ seridia_morning_greeting = false }
+]
+writes = [{ seridia_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "neutral"
+local = "Good morning, [Ari]. I received a letter from Wheedle recently."
+next = "1"
+
+
+[market_wheedle.1]
+portrait = "closed_eyes"
+local = "I threw it out immediately, of course."
+next = "2"
+
+[market_wheedle.2]
+portrait = "sly"
+local = "But I will visit him if I require amusement."
+
+# STILLWELL
+
+
+[market_stillwell]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ seridia_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ stillwell_has_met = true },
+	{ seridia_morning_greeting = false }
+]
+writes = [{ seridia_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "neutral"
+local = "Good morning... it is Market day, is it not?"
+next = "1"
+
+
+[market_stillwell.1]
+portrait = "think"
+local = "That Stillwell fellow claims to see the future..."
+next = "2"
+
+[market_stillwell.2]
+portrait = "sinister"
+local = "Well, he is not alone. Perhaps I will stop by his booth later and attempt to verify his skill for myself."
+
+# ZOREL
+
+
+[market_zorel]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ seridia_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ seridia_morning_greeting = false },
+	{ zorel_has_met = true }
+]
+writes = [{ seridia_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "smile"
+local = "Another Saturday Market has arrived."
+next = "1"
+
+
+[market_zorel.1]
+portrait = "think"
+local = "That Zorel... her enterprise always intrigues me."
+next = "2"
+
+[market_zorel.2]
+portrait = "smile"
+local = "Few things have the power to move one so quickly as music."
+next = "3"
+
+[market_zorel.3]
+portrait = "happy"
+local = "She would have thrived at my court, in another life."

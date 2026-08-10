@@ -1,0 +1,25 @@
+[business_proposal]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "errol" }] },
+	{ any = [{ location = "museum_entry" }, { location = "narrows" }] },
+	{ balor_zone = "<errol_zone>" },
+	{ date_time = "2m", comparator = ">=" },
+	{ museum_total_count = 30, comparator = ">=" }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "I've got a business proposal for you and Eiland, but first..."
+next = "1"
+
+[business_proposal.1]
+speaker = "balor"
+portrait = "sly"
+local = "Answer me this, Errol. What's a museum without a gift shop?"
+next = "2"
+
+[business_proposal.2]
+speaker = "errol"
+portrait = "happy"
+effect = "drop"
+local = "A museum?"

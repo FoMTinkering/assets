@@ -1,0 +1,21 @@
+[reinas_cooking]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_is_traveling = true },
+	{ celine_zone = "<reina_zone>", comparator = "!=" },
+	{ location = "inn", comparator = "!=" },
+	{ reina_heart_level = 1 }
+]
+portrait = "think"
+local = "Maybe I should stop by the Inn."
+next = "1"
+
+[reinas_cooking.1]
+portrait = "neutral"
+local = "Reina's cooking is amazing..."
+next = "2"
+
+[reinas_cooking.2]
+portrait = "sweat"
+local = "She really should have more confidence in herself!"

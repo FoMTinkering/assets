@@ -1,0 +1,71 @@
+[dnd_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ adeline_zone = "inn/south_table" },
+	{ balor_zone = "inn/south_table" },
+	{ celine_zone = "inn/south_table" },
+	{ eiland_zone = "inn/south_table" },
+	{ holt_zone = "inn/south_table" },
+	{ dnd_fnati = 1 },
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "balor" },
+		{ npc = "celine" },
+		{ npc = "eiland" },
+		{ npc = "holt" },
+	] },
+	{ any = [{ fnati = 0 }, { fnati = 1 }]},
+]
+writes = [{ dnd_fnati = 2 }]
+speaker = "eiland"
+local = "You've come across an ancient Aldarian castle. The architecture rises up before you, great swooping buttresses that-"
+next = "1"
+
+[dnd_2.1]
+speaker = "adeline"
+portrait = "think"
+local = "Is there anything to zap?"
+next = "2"
+
+[dnd_2.2]
+speaker = "eiland"
+portrait = "think"
+local = "Well, I suppose the King comes out to greet you, but-"
+next = "3"
+
+[dnd_2.3]
+speaker = "adeline"
+portrait = "happy"
+local = "I zap the King! Ooh, look at that... I got a high roll."
+next = "4"
+
+[dnd_2.4]
+speaker = "celine"
+portrait = "concerned"
+local = "Daffodillia watches in abject horror... but doesn't stop her friend."
+next = "5"
+
+[dnd_2.5]
+speaker = "eiland"
+portrait = "ugh"
+local = "The wizard Moonsilver... zaps the King."
+next = "6"
+
+[dnd_2.6]
+speaker = "balor"
+portrait = "ugh"
+local = "Ugh, is it my turn? I was about to get a drink. Um... Snicklefritz steals his crown. And his shoes. I'm sure that will fetch a nice sum of fake coin in this game of pretend."
+next = "7"
+
+[dnd_2.7]
+speaker = "holt"
+portrait = "happy"
+local = "Bad Brad the Bearded Bard begins composing a ballad for the fallen King... I'll begin with verse one of seventeen: OHHHH-"
+next = "8"
+
+[dnd_2.8]
+speaker = "eiland"
+portrait = "ugh"
+local = "With his dying breath, the king has cast a spell of silence on you, Brad."

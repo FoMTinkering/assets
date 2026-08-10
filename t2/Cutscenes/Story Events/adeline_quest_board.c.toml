@@ -1,0 +1,127 @@
+[adeline_quest_board_follow_up]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ quest_greet_the_townsfolk_in_progress = true },
+	{ adeline_zone = "town/quest_board" },
+	{ date_time = "7d", comparator = "<=" }
+]
+local = "Don't forget to check your Journal's $Map$, it's a great way to help you find your way around!"
+
+[adeline_quest_board]
+kind = "gameplay_triggered"
+speaker = "adeline"
+portrait = "neutral"
+local = "Hi there, [Ari]! I was hoping I'd run into you!"
+next = "1"
+
+[adeline_quest_board.1]
+portrait = "happy"
+local = "Your timing is perfect! I'm sure you're eager to start helping Mistria and its citizens, so I'm here to tell you all about our town's $Request Board$. Come with me!"
+next = "2"
+
+[adeline_quest_board.2]
+portrait = "neutral"
+local = "As the name implies, villagers post their $Requests$ here every day. You'll receive rewards whenever you complete them!"
+next = "3"
+
+[adeline_quest_board.3]
+portrait = "happy"
+local = "It's a great way to earn $Money$, $Equipment$, and most importantly, $Renown$!"
+prompts = [
+	{ local = "Renown?", next = "4" },
+	{ local = "Can't wait to get started!", next = "5" }
+]
+
+[adeline_quest_board.4]
+portrait = "embarrassed"
+local = "Ah yes, let me explain the basics..."
+next = "6"
+
+[adeline_quest_board.5]
+portrait = "wink"
+local = "I'm so glad! Allow me to explain the basics of $Renown$..."
+next = "6"
+
+[adeline_quest_board.6]
+portrait = "neutral"
+local = "As you know, Mistria is just one of the many towns that make up the Kingdom of Aldaria. All of them receive a $Town Rank$ according to their $Renown Level$."
+next = "7"
+
+[adeline_quest_board.7]
+portrait = "think"
+local = "Towns with a higher $Town Rank$ enjoy more popularity and more support from the Capital."
+next = "8"
+
+[adeline_quest_board.8]
+portrait = "sigh"
+effect = "drop"
+local = "Mistria's $Renown Level$ was improving prior to the earthquake... Since then, though, we're down two entire $Town Ranks$."
+next = "9"
+
+[adeline_quest_board.9]
+portrait = "mad"
+local = "As daughter and heiress of Mistria's Baron, improving this situation is my highest priority."
+next = "10"
+
+[adeline_quest_board.10]
+portrait = "happy"
+local = "With your help we'll repair the earthquake's damage, raise Mistria's $Town Rank$, and put this village back on the map!"
+next = "11"
+
+[adeline_quest_board.11]
+portrait = "neutral"
+local = "Why don't you go ahead now and accept your first $Request$? It's one I just put up for you!"
+next = "12"
+
+[adeline_quest_board.12]
+portrait = "happy"
+local = "Perfect! That was easy, right?"
+next = "13"
+
+[adeline_quest_board.13]
+portrait = "neutral"
+local = "I'm sure you want to meet your new neighbors as much as they want to meet you!"
+next = "14"
+
+[adeline_quest_board.14]
+portrait = "sly"
+local = "And as you get to know them better, your $Journal$ can keep track of your relationships with them and even document their favorite gifts."
+prompts = [
+	{ local = "And what do you like, Adeline?", next = "15" },
+	{ local = "And what can I do to make you like me, Adeline?", next = "16" }
+]
+
+[adeline_quest_board.15]
+portrait = "happy"
+local = "Well, =Tulips= are nice, and they are in season right now! I hope you'll be growing some on your farm!"
+next = "19"
+
+[adeline_quest_board.16]
+portrait = "blush"
+local = "Ah-"
+next = "17"
+
+[adeline_quest_board.17]
+portrait = "blush"
+local = "Well, I wouldn't say no to a =Tulip=, [Ari]."
+next = "18"
+
+[adeline_quest_board.18]
+portrait = "embarrassed"
+local = "A-Anyway we've still got a lot of things to talk about!"
+next = "19"
+
+[adeline_quest_board.19]
+portrait = "neutral"
+local = "You can view the $Map$ in your $Journal$. It should give you a good idea where people are, isn't that helpful? And each time you meet someone, it will update!"
+next = "20"
+
+[adeline_quest_board.20]
+portrait = "happy"
+local = "You can think of this as the first step on our path to restoring the town."
+next = "21"
+
+[adeline_quest_board.21]
+portrait = "neutral"
+local = "Isn't this exciting? Come talk to me once you're done meeting everyone!"

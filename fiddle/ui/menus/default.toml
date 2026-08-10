@@ -1,0 +1,53 @@
+# The default properties ALL menus have unless overwritten.
+[default]
+	# The type of canvas that should be created for this menu. The possible options are:
+	#
+	# "minspec": A canvas who's size is locked to the MINSPEC defined in Display.gml (aka "Perfect Claire").
+	# "screen": A canvas who's size will always match the window's.
+	# "<n/a>": No canvas will be created.
+	#
+	# The base canvas for a menu is always stored in `self.canvas`. This canvas is automatically
+	# cleaned up when the menu is freed.
+	canvas_kind = "<n/a>"
+	# The name of the variable which contains the primary "backplate" of the menu, or in other words
+	# the base, non-canvas node in the menu. By supplying this you enable users to click outside of
+	# this node (i.e.: on the empty space on the screen's edges) to close the menu.
+	backplate_name = "<n/a>"
+	# An array of glyph-guide inputs that should appear when the menu is open.
+	# These should be in the format of { input = "interact", key = "local_key" }
+	glyph_guides = []
+	# If true, this menu will automatically handle closing itself when InputId.MenuBack is pressed.
+	# This will automatically add the needed glyph guide!
+	listen_for_exit = false
+	# If true, the menu will automatically handle fading in when it is opened
+	open_transition = false
+	# How many frames the open transition takes
+	fade_in_frames = 20
+	# If true, the menu will automatically handle fading in when it is closed
+	close_transition = false
+	# How many frames the close transition takes
+	fade_out_frames = 20
+	# The sounds this menu should play when opened and closed. Should be the following format:
+	# { open = "sound_path", close = "sound_path" }
+	sounds = "<n/a>"
+	# If true, this menu will automatically create a faded background on the screen when opened and
+	# additionally free it when it is closed.
+	has_background = false
+	# The depth layer this menu should spawn on. See `ui/misc.toml`.
+	layer = "standard"
+	# Whether or not the game should be paused while this menu is open.
+	#
+	# This can be either false for no pausing, "main" for main pausing, or "cutscene".
+	#
+	# I'm not explaining this. Only one person reads this. Me. Gabe. Gabe knows how this works. If
+	# future Gabe doesn't, that's his problem. I'm not responsible for the degradation of his brain.
+	pause = false
+	# Whether or not the hud should be hidden while this menu is open.
+	hides_hud = false
+	# Whether or not this menu should be ran in the test suite. If true, this will by default instruct
+	# the suite to just open and close the menu, but a more particular test can be written within it.
+	# This is most often used for menus that would be difficult to manually test but will naturally
+	# be tested by the game executing (for example, the HUD).
+	run_tests = true
+    # If true the test for this menu will only run one time per suite.
+    run_test_once = false

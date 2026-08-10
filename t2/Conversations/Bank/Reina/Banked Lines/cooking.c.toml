@@ -1,0 +1,30 @@
+[cooking]
+refresh = "1m"
+requires = [
+	{ npc = "reina" },
+	{ reina_zone = "inn/kitchen" },
+	{ reina_heart_level = 4, comparator = ">=" }
+]
+portrait = "wink"
+local = "You're going to love what I'm cooking up, [Ari]!"
+
+[cooking_2]
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ reina_zone = "inn/kitchen" },
+	{ reina_heart_level = 2, comparator = ">=" }
+]
+portrait = "think"
+local = "Leafy greens always cook the fastest, so they go into the pot last."
+next = "1"
+
+[cooking_2.1]
+portrait = "wink"
+local = "It's all about the timing!"
+
+[cooking_3]
+refresh = "2m"
+requires = [{ npc = "reina" }, { reina_zone = "inn/kitchen" }]
+portrait = "think"
+local = "We've got a lot of $Potatoes$, a lot of $Onions$... should I make a soup?"

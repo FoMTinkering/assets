@@ -1,0 +1,171 @@
+[deep_woods_picnic_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "reina" },
+	{ date = "deep_woods_picnic" },
+	{ da_reina_deep_woods_picnic = 0 },
+	{ reina_is_spouse = false }
+]
+writes = [
+	{ da_reina_deep_woods_picnic = 1 },
+	{ da_reina_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "reina"
+portrait = "blush"
+local = "You're inviting me out on a picnic, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_accept_1.1]
+speaker = "reina"
+portrait = "blush_special"
+local = "Really? That sounds amazing!"
+next = "2"
+
+[deep_woods_picnic_accept_1.2]
+speaker = "reina"
+portrait = "blush_think"
+local = "I can't wait to see what you've packed for us!"
+
+[deep_woods_picnic_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "reina" },
+	{ date = "deep_woods_picnic" },
+	{ da_reina_deep_woods_picnic = 1 },
+	{ reina_is_spouse = false }
+]
+writes = [
+	{ da_reina_deep_woods_picnic = 2 },
+	{ da_reina_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "Are you up for a picnic, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_accept_2.1]
+speaker = "reina"
+portrait = "blush"
+local = "I prepared a basket for us this time!"
+
+[deep_woods_picnic_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "reina" },
+	{ date = "deep_woods_picnic" },
+	{ reina_has_child = false },
+	{ any = [
+		{ reina_is_spouse = true },
+		{ da_reina_deep_woods_picnic = 2, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_reina_deep_woods_picnic = 3 },
+	{ da_reina_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "reina"
+portrait = "blush"
+local = "You want to take me out on another picnic?"
+next = "1"
+
+[deep_woods_picnic_accept_3.1]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "That sounds wonderful."
+next = "2"
+
+[deep_woods_picnic_accept_3.2]
+speaker = "reina"
+portrait = "blush"
+effect = "cheery"
+local = "Let's go!"
+
+[deep_woods_picnic_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ da_reina_deep_woods_picnic = 1 },
+	{ da_reina_deep_woods_picnic_follow_up_gate = true },
+	{ reina_is_spouse = false }
+]
+writes = [{ da_reina_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush"
+local = "I had such a nice time on our picnic, [Ari]!"
+next = "1"
+
+[deep_woods_picnic_follow_up_1.1]
+portrait = "blush_open_eyes"
+local = "You did a great job preparing everything."
+next = "2"
+
+[deep_woods_picnic_follow_up_1.2]
+portrait = "blush"
+local = "Next time I'll prepare a basket for you, okay?"
+
+[deep_woods_picnic_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ da_reina_deep_woods_picnic = 2 },
+	{ da_reina_deep_woods_picnic_follow_up_gate = true },
+	{ reina_is_spouse = false }
+]
+writes = [{ da_reina_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush"
+local = "That was fun, [Ari]!"
+next = "1"
+
+[deep_woods_picnic_follow_up_2.1]
+portrait = "blush_open_eyes"
+local = "Did you enjoy our picnic, too?"
+prompts = [
+	{ local = "I did! It was very relaxing...", next = "2" },
+	{ local = "I did! It was really romantic...", next = "4" },
+]
+
+[deep_woods_picnic_follow_up_2.2]
+portrait = "blush"
+local = "I thought so too."
+next = "3"
+
+[deep_woods_picnic_follow_up_2.3]
+portrait = "blush_open_eyes"
+local = "I hope we can do it again soon!"
+
+[deep_woods_picnic_follow_up_2.4]
+portrait = "blush_special"
+effect = "hearts"
+local = "I thought so too."
+next = "5"
+
+[deep_woods_picnic_follow_up_2.5]
+portrait = "blush"
+local = "I hope we can do it again soon!"
+
+[deep_woods_picnic_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "reina" },
+	{ reina_has_child = false },
+	{ any = [{ reina_is_spouse = true }, { da_reina_deep_woods_picnic = 3 }] },
+	{ da_reina_deep_woods_picnic_follow_up_gate = true }
+]
+writes = [{ da_reina_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush"
+local = "That was a lovely picnic, [Ari]!"
+next = "1"
+
+[deep_woods_picnic_follow_up_3.1]
+portrait = "blush_special"
+local = "Thank you for taking me."
+next = "2"
+
+[deep_woods_picnic_follow_up_3.2]
+portrait = "blush"
+local = "Let's do it again soon!"

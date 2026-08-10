@@ -1,0 +1,17 @@
+[healthy]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "valen" }] },
+	{ errol_zone = "<valen_zone>" },
+	{ date_time = "2m", comparator = ">=" },
+	{ museum_total_count = 10, comparator = ">=" }
+]
+speaker = "errol"
+portrait = "happy"
+local = "It's funny, Valen, but I feel even healthier nowadays."
+next = "1"
+
+[healthy.1]
+speaker = "valen"
+portrait = "neutral"
+local = "Well, health is one part mental. You do seem happier since you became the Museum's Curator!"

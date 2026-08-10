@@ -1,0 +1,98 @@
+[park_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "valen" },
+	{ date = "park" },
+	{ da_valen_park = 0 },
+	{ valen_is_spouse = false }
+]
+writes = [
+	{ da_valen_park = 1 },
+	{ da_valen_park_follow_up_gate = true, expires = "1d" }
+]
+speaker = "valen"
+portrait = "happy"
+local = "Would you like to take a walk to the $Park$, [Ari]?"
+prompts = [
+	{ local = "It would be some nice healthy exercise...", next = "1" },
+	{ local = "Something you need out there? An herb?", next = "2" }
+]
+
+[park_accept_1.1]
+speaker = "valen"
+portrait = "neutral_blush"
+local = "True, but I was just looking for an excuse to spend time with you."
+
+[park_accept_1.2]
+speaker = "valen"
+portrait = "neutral_blush"
+local = "I... I just thought it'd make a nice date!"
+next = "3"
+
+[park_accept_1.3]
+speaker = "valen"
+portrait = "caring_special"
+local = "You want to go? Great!"
+
+[park_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "valen" },
+	{ date = "park" },
+	{ valen_has_child = false },
+	{ any = [
+		{ valen_is_spouse = true },
+		{ da_valen_park = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_valen_park = 2 },
+	{ da_valen_park_follow_up_gate = true, expires = "1d" }
+]
+speaker = "valen"
+portrait = "happy"
+local = "A date to the $Park$?"
+next = "1"
+
+[park_accept_2.1]
+speaker = "valen"
+portrait = "caring_special"
+local = "I'd love to."
+
+[park_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ da_valen_park = 1 },
+	{ da_valen_park_follow_up_gate = true },
+	{ valen_is_spouse = false }
+]
+writes = [{ da_valen_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "think_smile"
+local = "You know, our $Park Date$ made for a pretty good workout."
+next = "1"
+
+[park_follow_up_1.1]
+portrait = "caring_special"
+local = "We'll have to do that more often."
+
+[park_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "valen" },
+	{ valen_has_child = false },
+	{ any = [{ valen_is_spouse = true }, { da_valen_park = 2 }] },
+	{ da_valen_park_follow_up_gate = true }
+]
+writes = [{ da_valen_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "happy"
+local = "The $Park$ was fun, wasn't it?"
+next = "1"
+
+[park_follow_up_2.1]
+portrait = "embarrassed"
+local = "I always enjoy spending time with you, [Ari]."

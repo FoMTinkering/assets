@@ -1,0 +1,200 @@
+[march_four_hearts_follow_up_adeline]
+refresh = "never"
+requires = [{ npc = "adeline" }, { march_heart_event = "four_heart" }]
+local = "[Ari]! Olric says you helped March and him get through that absolute mountain of smithing work! Thank you!"
+
+[march_four_hearts_follow_up_balor]
+refresh = "never"
+requires = [{ npc = "balor" }, { march_heart_event = "four_heart" }]
+local = "March said you helped out a bit at the forge, [Ari]!"
+next = "1"
+
+[march_four_hearts_follow_up_balor.1]
+portrait = "think"
+local = "When I pointed out that I couldn't have gotten them their shipment without all the work you did repairing the bridge, March got a bit flustered."
+next = "2"
+
+[march_four_hearts_follow_up_balor.2]
+portrait = "laugh"
+local = "Haha!"
+
+[march_four_hearts_follow_up_landen]
+refresh = "never"
+requires = [{ npc = "landen" }, { march_heart_event = "four_heart" }]
+local = "There's the hero of the hour! I heard about you helping out at the Blacksmith's."
+next = "1"
+
+[march_four_hearts_follow_up_landen.1]
+portrait = "happy"
+local = "We've got the nails we need and didn't have to pay inflated Capital prices on them, I can't thank you enough!"
+
+[march_four_hearts]
+kind = "gameplay_triggered"
+writes = [{ march_heart_event = "four_heart", expires = "4d" }]
+speaker = "olric"
+portrait = "happy"
+local = "[Ari], am I glad to see you!"
+next = "1"
+
+[march_four_hearts.1]
+portrait = "neutral"
+local = "March is negotiating with Balor for more iron ingots, so I'm getting everything tidy."
+prompts = [
+	{ local = "You said you needed a helping hand?", next = "2" },
+	{ local = "What are we working on?", next = "3" },
+]
+
+[march_four_hearts.2]
+portrait = "sad"
+effect = "sweat"
+local = "For sure, it's been nonstop!"
+next = "4"
+
+[march_four_hearts.3]
+portrait = "think"
+local = "Nails, hinges, barrel hoops... if Mistria needs it, we've got an order for it!"
+next = "4"
+
+[march_four_hearts.4]
+portrait = "neutral"
+local = "With the bridge repaired, we don't have the same supply problems, but stuff is still like, way expensive after the earthquake."
+next = "5"
+
+[march_four_hearts.5]
+portrait = "happy"
+local = "So we gotta make the things the town needs right here! Can I count on you to pitch in?"
+next = "6"
+
+[march_four_hearts.6]
+speaker = "march"
+portrait = "neutral"
+local = "Olric! Balor cut me a great deal on the ingots. But we'll have to bring them to the forge ourselves, so we'll need to-"
+next = "7"
+
+[march_four_hearts.7]
+portrait = "unimpressed"
+local = "[Ari], what do you think you're doing here, exactly?"
+next = "8"
+
+[march_four_hearts.8]
+speaker = "olric"
+portrait = "sad"
+effect = "drop"
+local = "March! [Ari] heard how backed up we were and uh... volunteered to help out! Right, buddy?"
+prompts = [
+	{ local = "Many hands make light work!", next = "9" },
+	{ local = "It's okay to admit you're in over your head, March.", next = "10" },
+]
+
+[march_four_hearts.9]
+speaker = "march"
+portrait = "mad"
+local = "I don't need platitudes, especially from you."
+next = "11"
+
+[march_four_hearts.10]
+speaker = "march"
+portrait = "mad"
+effect = "angry"
+local = "..."
+next = "11"
+
+[march_four_hearts.11]
+portrait = "unimpressed"
+local = "Well you can just-"
+next = "12"
+
+[march_four_hearts.12]
+portrait = "ugh"
+local = "Fine! Fine. But you'd better be able to keep up."
+next = "13"
+
+[march_four_hearts.13]
+portrait = "neutral"
+local = "Olric, Balor's at the Inn with our shipment. Start carrying it over."
+next = "14"
+
+[march_four_hearts.14]
+speaker = "olric"
+portrait = "neutral"
+local = "You got it, bro!"
+next = "15"
+
+[march_four_hearts.15]
+speaker = "march"
+portrait = "think"
+local = "[Ari], let's get started! Get that forge fired up!"
+next = "16"
+
+[march_four_hearts.16]
+portrait = "neutral"
+local = "Keep the temperature steady! Steady... good."
+next = "17"
+
+[march_four_hearts.17]
+portrait = "think"
+local = "Just add it to the pile there, [Ari]."
+next = "18"
+
+[march_four_hearts.18]
+portrait = "neutral"
+local = "Are you good to jump back in, Olric?"
+next = "19"
+
+[march_four_hearts.19]
+speaker = "olric"
+portrait = "neutral"
+local = "Yeah! Put me in, coach!"
+next = "20"
+
+[march_four_hearts.20]
+speaker = "march"
+portrait = "mad"
+local = "And... that's... it!"
+next = "21"
+
+[march_four_hearts.21]
+portrait = "neutral"
+local = "Whew, I think we're done. Are we done, Olric?"
+next = "22"
+
+[march_four_hearts.22]
+speaker = "olric"
+portrait = "happy"
+local = "We sure are! Everyone is going to be super happy about this!"
+prompts = [
+	{ local = "That was fun!", next = "23" },
+	{ local = "Great work, everyone!", next = "23" },
+]
+
+[march_four_hearts.23]
+speaker = "march"
+portrait = "happy"
+local = "Y-yeah!"
+next = "24"
+
+[march_four_hearts.24]
+portrait = "embarrassed"
+effect = "surprise"
+local = "..."
+next = "25"
+
+[march_four_hearts.25]
+portrait = "tsundere"
+local = "I mean... thanks, [Ari]."
+next = "26"
+
+[march_four_hearts.26]
+portrait = "unimpressed"
+local = "I'm going inside, I need to cool down."
+next = "27"
+
+[march_four_hearts.27]
+speaker = "olric"
+portrait = "neutral"
+local = "Thanks [Ari]! You're the best."
+next = "28"
+
+[march_four_hearts.28]
+portrait = "think"
+local = "Seems like you and March make a pretty good team! I hope we can count on you in the future."

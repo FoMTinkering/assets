@@ -1,0 +1,229 @@
+fun item_give_sequence(actor, start_location) {
+	walk_slow(actor, tut_eiland_give);
+	face(actor, west);
+	wait(0.25);
+	ari_hold_item(axe_worn);
+	wait(0.5);
+	walk_slow(actor, start_location);
+	face(actor, west);
+}
+
+fun ari_swing() {
+	play_sound("SoundEffects/Tools/AxeAndPickSwing");
+	animate(ari, axe);
+	free {
+		wait(0.2);
+		__chop_node(axe_worn, 146, 24);
+	}
+	ari_set_attachment(axe_worn);
+	await_ari_animation();
+	animate(ari, idle);
+}
+
+var eiland_is_chopping = false;
+
+fun eiland_chop_sound() {
+	if eiland_is_chopping == false {
+		wait(1);
+		return;
+	}
+	wait(0.35);
+	play_sound("SoundEffects/Tools/AxeDamageTree");
+	wait(0.75);
+}
+
+scene(farm);
+place_actor(eiland, west, tut_eiland_chop);
+place_actor(ari, south, tut_ari_entrance);
+camera_position(fi_ari);
+explode_furniture(1018, 194, 1214, 300);
+nuke_tut(1040, 208, 1216, 240);
+camera_out();
+request_music_play("Music/Events/DragonCutscene");
+face(eiland, west);
+
+//
+animate(eiland, axe);
+eiland_is_chopping = true;
+free {
+	eiland_chop_sound();
+	eiland_chop_sound();
+	eiland_chop_sound();
+	eiland_chop_sound();
+	eiland_chop_sound();
+	eiland_chop_sound();
+	eiland_chop_sound();
+	eiland_chop_sound();
+	eiland_chop_sound();
+	eiland_chop_sound();
+	eiland_chop_sound();
+	eiland_chop_sound();
+	eiland_chop_sound();
+	eiland_chop_sound();
+	eiland_chop_sound();
+	eiland_chop_sound();
+}
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	camera_follow(ari);
+
+	free {
+		wait(1.5);
+		free bark_speech(ari, question_mark);
+		face(ari, west);
+		wait(0.75);
+		face(ari, east);
+		wait(0.5);
+		walk(ari, tut_ari_start);
+		face(ari, east);
+	}
+
+	{
+		wait(8.25);
+		free bark_speech(eiland, exclamation_mark);
+		wait(0.25);
+		animate(eiland, idle);
+		eiland_is_chopping = false;
+		next_line(); //
+	}
+}
+free sim {
+	{
+		walk_slow(ari, tut_ari_talk);
+		face(ari, east);
+	}
+	pan_camera(4, tut_camera_1);
+	{
+		walk_slow(eiland, tut_eiland_talk);
+		face(eiland, west);
+	}
+}
+next_line(); //
+
+//
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(1);
+item_give_sequence(eiland, tut_eiland_talk);
+face(eiland, north);
+
+wait(1);
+walk_slow(ari, tut_tree_cut);
+face(ari, east);
+wait(0.3);
+ari_swing();
+wait(0.3);
+ari_swing();
+wait(0.3);
+ari_swing();
+wait(1);
+free bark_speech(eiland, exclamation_mark);
+ari_swing();
+wait(0.3);
+ari_swing();
+
+wait(0.5);
+
+free {
+	face(eiland, west);
+	wait(0.5);
+	walk_slow(ari, tut_ari_talk);
+	face(ari, east);
+	wait(0.5);
+	face(eiland, north);
+	wait(0.75);
+	face(ari, north);
+}
+next_line(); //
+next_line(); //
+sim {
+	{
+		wait(1);
+		face(eiland, west);
+	}
+	{
+		wait(1.5);
+		face(ari, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(0.5);
+		walk_slow(ari, tut_tree_cut);
+		face(ari, north);
+		animate(ari, action);
+	}
+	{
+		wait(0.75);
+		face(eiland, north);
+	}
+	{
+		fade_out(1.5);
+	}
+}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+play_sound("SoundEffects/SpecialEvents/CaldarusStatueFix");
+//
+//
+//
+override_requirement("repaired_dragon_shrine");
+wait(4);
+animate(ari, idle);
+sim {
+	{
+		wait(1.25);
+		free bark_speech(eiland, cute_face);
+	}
+	{
+		wait(0.75);
+		walk_slow(ari, tut_ari_talk);
+		face(ari, east);
+	}
+	{
+		//
+		wait(1);
+		face(eiland, west);
+	}
+	{
+		fade_in(1.5);
+	}
+	{
+		wait(2);
+	next_line(); //
+	}
+}
+refresh_achievements();
+next_line(); //
+next_line(); //
+close_textbox();
+free bark_speech(eiland, cute_face);
+wait(1);
+fade_out(2);

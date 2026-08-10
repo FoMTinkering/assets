@@ -1,0 +1,39 @@
+[garden]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "celine" },
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ celine_zone = "<dell_zone>" },
+	{ celine_zone = "<luc_zone>" },
+	{ celine_zone = "<maple_zone>" },
+	{ any = [
+		{ celine_zone = "town/celine_garden" },
+		{ celine_zone = "town/celine_garden_chat" }
+	] }
+]
+speaker = "celine"
+portrait = "neutral"
+local = "What does the Dragonguard think of my garden?"
+next = "1"
+
+[garden.1]
+speaker = "maple"
+portrait = "happy"
+local = "It's so pretty!"
+next = "2"
+
+[garden.2]
+speaker = "luc"
+portrait = "happy"
+local = "Yes, and it makes a wonderful habitat for our insect friends."
+next = "3"
+
+[garden.3]
+speaker = "dell"
+portrait = "mad"
+effect = "shock"
+local = "This garden is Dragonguard approved!"

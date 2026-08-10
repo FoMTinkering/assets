@@ -1,0 +1,17 @@
+[town_repair]
+refresh = "1m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "ryis" }] },
+	{ hayden_zone = "<ryis_zone>" },
+	{ hayden_routine = "town_repair_work" },
+	{ ryis_routine = "town_repair_work" }
+]
+speaker = "hayden"
+portrait = "neutral_fist"
+local = "And... there we go! How's that looking?"
+next = "1"
+
+[town_repair.1]
+speaker = "ryis"
+portrait = "happy"
+local = "Worlds better than before. Thanks for the assist, Hayden."

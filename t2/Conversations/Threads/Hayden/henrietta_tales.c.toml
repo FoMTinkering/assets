@@ -1,0 +1,138 @@
+[hayden_henrietta_tales_1]
+refresh = "1y"
+requires = [
+	{ npc = "hayden" },
+	{ thread_mutex = "undefined" },
+	{ thread_delay = false },
+	{ hayden_henrietta_tales_finished = false },
+	{ hayden_heart_level = 3, comparator = ">=" },
+	{ hayden_heart_level = 8, comparator = "<" },
+]
+writes = [
+	{ thread_mutex = "hayden_henrietta_tales_1", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+portrait = "annoyed"
+local = "Henrietta's been at the seed corn again. I keep telling her she can just ASK but that's a Featherbottom for you!"
+prompts = [
+	{ local = "Uh... Featherbottom?", next = "1" },
+	{ local = "Wow, she's a Featherbottom?!", next = "2" },
+]
+
+[hayden_henrietta_tales_1.1]
+portrait = "happy"
+local = "Oh, you didn't know? She's from the most award winning lineage to ever grace chickendom. Henrietta Jubilation Featherbottom!"
+next = "3"
+
+[hayden_henrietta_tales_1.2]
+portrait = "happy"
+local = "That's right, she's from the most award winning lineage to ever grace chickendom. Henrietta Jubilation Featherbottom!"
+next = "3"
+
+[hayden_henrietta_tales_1.3]
+portrait = "neutral_arm_down"
+local = "It's been an honor and privilege to raise her, but sometimes I wonder if all those blue ribbons and first place trophies have gone to her head..."
+next = "4"
+
+[hayden_henrietta_tales_1.4]
+portrait = "gloomy"
+local = "If she's not careful that could cost her a win one of these days."
+
+[hayden_henrietta_tales_2]
+refresh = "instantly"
+requires = [
+	{ npc = "hayden" },
+	{ thread_mutex = "hayden_henrietta_tales_1" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "hayden_henrietta_tales_2", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+local = "Been trying to teach Henrietta some better manners."
+next = "1"
+
+[hayden_henrietta_tales_2.1]
+portrait = "neutral_arm_down"
+local = "Wiping her claws off before she comes inside the house, using her napkin at meal times, not interrupting when someone else is talking..."
+next = "2"
+
+[hayden_henrietta_tales_2.2]
+portrait = "embarrassed"
+local = "You know. Manners!"
+prompts = [
+	{ local = "How's it going?", next = "3" },
+	{ local = "Isn't that asking a lot for a... chicken?", next = "3" },
+]
+
+[hayden_henrietta_tales_2.3]
+local = "Well I won't lie to you, she's a prideful lady. And not without cause!"
+next = "4"
+
+[hayden_henrietta_tales_2.4]
+portrait = "neutral_fist"
+local = "But I'm trying to get her to understand that you can't be an award winner without award winning manners!"
+next = "5"
+
+[hayden_henrietta_tales_2.5]
+portrait = "neutral_arm_down"
+local = "I gotta talk to Jo, I bet one of Henrietta's favorite meals will make her a bit more agreeable to the whole subject of decorum."
+
+[hayden_henrietta_tales_3]
+refresh = "instantly"
+requires = [
+	{ npc = "hayden" },
+	{ thread_mutex = "hayden_henrietta_tales_2" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "undefined" },
+	{ thread_delay = true, expires = "1d" },
+	{ hayden_henrietta_tales_finished = true },
+]
+portrait = "happy"
+local = "Think I'm finally getting through to Henrietta, [Ari]! She's been real helpful lately, helping me find stuff that I've misplaced."
+next = "1"
+
+[hayden_henrietta_tales_3.1]
+portrait = "laugh"
+local = "Now that's manners!"
+next = "2"
+
+[hayden_henrietta_tales_3.2]
+portrait = "neutral_arm_down"
+local = "In fact, I think I'll treat her to her favorite meal tonight, =Corn= on the cob!"
+prompts = [
+	{ local = "Do you normally lose stuff?", next = "3" },
+	{ local = "... do you always reward her when she finds things for you?", next = "4" },
+]
+
+[hayden_henrietta_tales_3.3]
+portrait = "think"
+local = "Well now that you mention it, it's been a pretty recent thing actually..."
+next = "5"
+
+[hayden_henrietta_tales_3.4]
+portrait = "happy"
+local = "Of course! Gotta have positive reinforcement, don't you?"
+next = "5"
+
+[hayden_henrietta_tales_3.5]
+portrait = "annoyed"
+local = "Now wait just a minute..."
+next = "6"
+
+[hayden_henrietta_tales_3.6]
+portrait = "annoyed"
+effect = "drop"
+local = "You don't think... Henrietta's been hiding my stuff so she can bring it back for a reward do you?"
+next = "7"
+
+[hayden_henrietta_tales_3.7]
+portrait = "laugh"
+local = "Gya ha ha!"
+next = "8"
+
+[hayden_henrietta_tales_3.8]
+portrait = "wink_fist"
+local = "I told you she was a smart chicken, [Ari]! Looks like she even managed to outsmart me!"

@@ -1,0 +1,175 @@
+bio = "Laid-back innkeeper, former touring musician. Married to Josephine, father to Reina, Luc and Maple."
+birthday = { season = "winter", day = 23 }
+loved_gifts = [
+	"beer",
+	"chili_coconut_curry",
+	"crayfish_etouffee",
+	"crispy_fried_earthshroom",
+	"caldosian_drinking_horn",
+	"hot_toddy",
+	"incredibly_hot_pot",
+	"white_wine",
+	"wild_grapes",
+	"spicy_corn",
+
+]
+liked_gifts = [
+	"basil",
+	"chili_pepper",
+	"coffee",
+	"crunchy_chickpeas",
+	"dried_squid",
+	"honey",
+	"lemon",
+	"roasted_chestnuts",
+	"rock_salt",
+	"sesame_broccoli",
+	"spicy_cheddar_biscuit",
+	"grape_juice",
+	"spicy_crab_sushi",
+	"spicy_water_chestnuts",
+	"summer_salad",
+	"tea",
+	"thyme",
+	"toasted_sunflower_seeds",
+	"trail_mix",
+	"water_chestnut_fritters",
+
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "newt"
+name = "Hemlock"
+aldarian_name = "HMLK"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["townsfolk", "inn_family"]
+journal_portrait_offset = [-129, -28]
+journal_background_color = [255, 199, 220]
+date_photo_offset = [0, 0]
+job = "Inn Co-Owner, Bartender"
+icon_sprite = "spr_ui_generic_icon_npc_hemlock"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_hemlock"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_hemlock"
+dateable = false
+
+[gossip]
+	line = "hemlock_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["water", "juice"]
+	"16" = ["beer"]
+	"22" = ["beer", "coffee"]
+
+[offsets]
+	portrait = [-132, -65]
+	sweat = [23, -9]
+	hearts = [23, -9]
+	angry = [18, -5]
+	sparkles = [20, -1]
+	sparkles_dark = [20, -1]
+	sick = [24, -3]
+	music_notes = [16, -1]
+	intensity = [17, -12]
+	surprise = [22, -4]
+	shock = [23, -10]
+	sigh = [13, -1]
+	loud = [26, -7]
+	cheery = [20, -2]
+	drop = [22, -8]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.shocked]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.action]
+	default_direction = "north"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.write]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+
+[cycles.polish]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+
+[cycles.chop]
+	default_direction = "north"
+	directions = ["north"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	sound = "SoundEffects/SpecialEvents/ReinaChop"
+	on_pause_speaking = "idle"
+
+[cycles.lute_play]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn"]
+	type = "complex"
+	on_pause_speaking = "idle"

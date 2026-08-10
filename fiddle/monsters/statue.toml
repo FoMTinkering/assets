@@ -1,0 +1,79 @@
+[default]
+	hp = 1
+	damage = 0
+	essence = 0
+	drops = []
+	sticky = false
+	coin_count = [1, 1]
+
+	starting_dir = [0, 360]
+
+	damage_number_offset = -38
+
+	iframes = 0
+	gm_object = "obj_monster_statue"
+	hitbox = "spr_monster_living_griffin_statue_main_idle_south_rock_collision"
+	hurtbox = "spr_monster_living_griffin_statue_hurtbox"
+
+	speed = 0.6
+	patience_acknowledgement_reset = -120
+	push_radius = 4
+	push_force = 0.25
+	pushed_radius = 7
+	aggro_radius = 360
+	use_circle = true
+
+	status_effect_offset = -32
+	fire_effect_offset = -10
+	hurt_duration = 30
+	stomp_frames = 6
+	dying_frames = 0
+
+	trauma_range_full = 64
+	trauma_range_buffer = 32
+
+	sprites = { misc = {} }
+
+	tumble_hit_cap = 0
+	tumble_hit_speed = 0
+	tumble_hit_reduction = 0
+	tumble_hit_speed_reduction = 0
+	# how much speed is added when jumping upwards
+	jump_speed_gain = 0.25
+	# how much to add to gravity per frame in the air
+	gravity_gain = 0.25
+	# move speed while in the air hopping around
+	move_speed = 6
+
+	[default.tango]
+		acknowledgment = "SoundEffects/Enemies/GriffinStatue/StartAttackPhase"
+		dying = "SoundEffects/Enemies/GriffinStatue/Die"
+		chase = "SoundEffects/Enemies/GriffinStatue/StartAttackPhase"
+		tumbling = "SoundEffects/Enemies/GriffinStatue/Tumble"
+
+		misc.presentation = "SoundEffects/Enemies/GriffinStatue/Presentation"
+		misc.damage = "SoundEffects/Enemies/TakeDamageRockStrong"
+
+[griffin_statue]
+	hp = 200
+	damage = 60
+	bonus_damage = 5
+	drops = [
+		{ item = "monster_block", chance = 70, count_range = [1, 3] },
+		{ item = "monster_fang", chance = 30, count_range = [1, 3] },
+		{ cosmetic = "head_griffin_statue_hat", chance = 10 },
+		{ item = "pet_skin_rock_stack", chance = 10 },
+	]
+	tumble_hit_reduction = 0.75
+	tumble_hit_speed = 6
+	tumble_hit_speed_reduction = 1
+	tumble_spd_reduction = 0.2
+	chase_rate = 20
+	dying_frames = 30
+	[griffin_statue.sprites]
+		acknowledgment = "spr_monster_living_griffin_statue_main_alert_south"
+		idle = "spr_monster_living_griffin_statue_main_idle_south"
+		chase = "spr_monster_living_griffin_statue_main_walk_south"
+		tumbling = "spr_monster_living_griffin_statue_main_tumble_south"
+		dying = "spr_monster_living_griffin_statue_main_hurt_south"
+		misc.particle = "spr_part_living_griffin_statue_bits"

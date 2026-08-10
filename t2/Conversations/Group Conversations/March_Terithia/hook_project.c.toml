@@ -1,0 +1,22 @@
+[hook_project]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "terithia" }] },
+	{ march_zone = "<terithia_zone>" },
+]
+writes = [{ terithia_hook_project = true }]
+speaker = "march"
+portrait = "neutral"
+local = "You'll want your hooks to be made with a sturdy metal, but I think blending ores might get you a more flexible fishing rod."
+next = "1"
+
+[hook_project.1]
+speaker = "march"
+portrait = "think"
+local = "Can you give me some time with this? It's an interesting problem."
+next = "2"
+
+[hook_project.2]
+speaker = "terithia"
+portrait = "neutral"
+local = "Take all the time you want!"

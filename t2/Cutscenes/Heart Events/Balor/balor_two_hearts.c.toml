@@ -1,0 +1,104 @@
+[balor_two_hearts_turn_in]
+kind = "gameplay_triggered"
+speaker = "balor"
+portrait = "neutral"
+local = "Oh, here about the unloading job? Wonderful! Let's get to it."
+actions = [
+	{ cutscene = "balor_two_hearts" },
+]
+
+[balor_two_hearts]
+kind = "gameplay_triggered"
+speaker = "nora"
+portrait = "mad"
+local = "I know the market, Balor. We won't take charity!"
+next = "1"
+
+[balor_two_hearts.1]
+speaker = "balor"
+portrait = "happy"
+local = "I couldn't pull the wool over your eyes if I tried, Nora. I'm making my share off your order, I assure you."
+next = "2"
+
+[balor_two_hearts.2]
+speaker = "nora"
+portrait = "mad"
+effect = "angry"
+local = "Balor..."
+next = "3"
+
+[balor_two_hearts.3]
+speaker = "balor"
+portrait = "wink"
+local = "I do love our talks, but you'll have to excuse me. I've got business to attend to with [Ari]."
+next = "4"
+
+[balor_two_hearts.4]
+speaker = "nora"
+portrait = "ugh"
+local = "Ugh, you are incorrigible."
+next = "5"
+
+[balor_two_hearts.5]
+speaker = "balor"
+portrait = "neutral"
+local = "Thanks for waiting. Sorry to put you in the position of being my out."
+prompts = [
+	{ local = "Why would Nora complain about low prices?", next = "6" },
+	{ local = "Your prices don't seem that low to me...", next = "7" },
+]
+
+[balor_two_hearts.6]
+speaker = "balor"
+portrait = "think"
+local = "Why indeed?"
+next = "8"
+
+[balor_two_hearts.7]
+speaker = "balor"
+portrait = "wink"
+local = "Let me know the next time you're in the market for a hundred sacks of flour and I'll see what I can do."
+next = "8"
+
+[balor_two_hearts.8]
+speaker = "balor"
+portrait = "neutral"
+local = "I'll make sure there's something extra in your payment for today's work."
+next = "9"
+
+[balor_two_hearts.9]
+speaker = "balor"
+portrait = "think"
+local = "I'm going to finish organizing these. Could you start taking the boxes into the General Store?"
+next = "10"
+
+[balor_two_hearts.10]
+speaker = "nora"
+portrait = "think"
+local = "It's the most peculiar thing..."
+next = "11"
+
+[balor_two_hearts.11]
+speaker = "nora"
+portrait = "think"
+local = "I have no idea how he does it, but Balor's the only one with a supply line into Mistria. Normally that would drive his prices up."
+next = "12"
+
+[balor_two_hearts.12]
+speaker = "nora"
+portrait = "mad"
+local = "But that man... he's selling his goods for well below the new market value."
+next = "13"
+
+[balor_two_hearts.13]
+speaker = "nora"
+portrait = "sad"
+effect = "drop"
+local = "Do you think he's selling stolen merchandise?"
+next = "14"
+
+[balor_two_hearts.14]
+speaker = "nora"
+portrait = "think"
+effect = "sigh"
+local = "Maybe I'm just overthinking it."

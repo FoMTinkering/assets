@@ -1,0 +1,19 @@
+[seagull_call]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "landen" }] },
+	{ errol_zone = "<landen_zone>" },
+	{ season = "summer" },
+	{ time_of_day = "morning" },
+	{ location = "beach", comparator = "!=" },
+	{ landen_activity = "eat", comparator = "!=" }
+]
+speaker = "landen"
+portrait = "think"
+local = "You hear that, old-timer? That's the seagull's cry. It's calling me to the ocean."
+next = "1"
+
+[seagull_call.1]
+speaker = "errol"
+portrait = "think"
+local = "That would be your stomach, Landen. Get yourself some breakfast!"

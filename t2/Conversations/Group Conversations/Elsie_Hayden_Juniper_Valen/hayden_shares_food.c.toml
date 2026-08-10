@@ -1,0 +1,46 @@
+[hayden_shares_food]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "elsie" },
+		{ npc = "hayden" },
+		{ npc = "juniper" },
+		{ npc = "valen" },
+	] },
+	{ location = "inn" },
+	{ elsie_zone = "<hayden_zone>" },
+	{ elsie_zone = "<juniper_zone>" },
+	{ elsie_zone = "<valen_zone>" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ elsie_activity = "eat" },
+	{ hayden_activity = "eat" },
+	{ juniper_activity = "eat" },
+	{ valen_activity = "eat" }
+]
+speaker = "elsie"
+portrait = "happy"
+local = "Hayden always shares his food with everyone! What a generous man."
+next = "1"
+
+[hayden_shares_food.1]
+speaker = "valen"
+portrait = "neutral"
+local = "He's always been like that, in my recollection. I suppose it's the farmer in him... like he wants to share the bounty."
+next = "2"
+
+[hayden_shares_food.2]
+speaker = "juniper"
+portrait = "sly"
+local = "Hayden, your order is delicious! Here, trade plates with me."
+next = "3"
+
+[hayden_shares_food.3]
+speaker = "hayden"
+portrait = "wink"
+local = "I'm not that generous!"
+next = "4"
+
+[hayden_shares_food.4]
+speaker = "hayden"
+portrait = "laugh"
+local = "GYA HA HA!"

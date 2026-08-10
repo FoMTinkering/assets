@@ -1,0 +1,16 @@
+[chicken_feed]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "holt" }] },
+	{ hayden_zone = "<holt_zone>" },
+	{ location = "general_store_store", comparator = "!=" },
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+speaker = "hayden"
+local = "Have you gotten the new shipment of rice in, Holt? My chickens will never forgive me if I don't make them their special treat."
+next = "1"
+
+[chicken_feed.1]
+speaker = "holt"
+portrait = "wink"
+local = "That's because they have im-peck-able taste."

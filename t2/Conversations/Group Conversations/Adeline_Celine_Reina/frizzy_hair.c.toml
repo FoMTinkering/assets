@@ -1,0 +1,26 @@
+[frizzy_hair]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "celine" }, { npc = "reina" }] },
+	{ adeline_zone = "<celine_zone>" },
+	{ adeline_zone = "<reina_zone>" },
+	{ weather = "rainy" },
+	{ location = "bathhouse_change_room", comparator = "!=" },
+	{ location = "bathhouse", comparator = "!=" },
+]
+speaker = "adeline"
+portrait = "sigh"
+local = "Ugh, my hair gets so frizzy in the rain. What's your secret, Celine?"
+next = "1"
+
+[frizzy_hair.1]
+speaker = "celine"
+portrait = "neutral"
+effect = "cheery"
+local = "I made hair oil from sunflower seeds! I apply it after taking a bath."
+next = "2"
+
+[frizzy_hair.2]
+speaker = "reina"
+portrait = "happy"
+local = "Ooh, I wanna try! Bring it to the Bathhouse next time!"

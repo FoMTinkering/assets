@@ -1,0 +1,21 @@
+[texts]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ any = [
+		{ eiland_routine = "eiland_office_work" },
+		{ eiland_routine = "manor_garden_wander" }
+	] },
+	{ "<npc>_zone" = "<eiland_zone>", comparator = "!=" },
+	{ eiland_was_last_spoken_to = "3h", time = "after", comparator = ">" },
+	{ eiland_heart_level = 8, comparator = "<" }
+]
+portrait = "think"
+local = "The two texts in question are both from the same era, but stylistically quite different. Perhaps it's a regional difference... Oh!"
+next = "1"
+
+[texts.1]
+portrait = "happy"
+effect = "drop"
+local = "Good evening, [Ari]! Apologies, I was off in my own little world."

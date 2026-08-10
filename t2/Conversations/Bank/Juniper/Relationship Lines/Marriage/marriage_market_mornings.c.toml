@@ -1,0 +1,196 @@
+# DARCY
+[market_darcy]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ juniper_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ juniper_morning_greeting = false }
+]
+writes = [{ juniper_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "neutral"
+local = "Saturday morning... Saturday Market day!"
+next = "1"
+
+[market_darcy.1]
+portrait = "sly"
+local = "Do you think Darcy will draw something cute on my =Latte= again? I hope so..."
+
+# LOUIS
+[market_louis]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ juniper_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ juniper_morning_greeting = false }
+]
+writes = [{ juniper_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "neutral"
+local = "I heard Louis' booth will have some new shoes in today..."
+next = "1"
+
+[market_louis.1]
+portrait = "sly"
+local = "So that's where I'll be later, if you need me."
+
+# MERRI
+[market_merri]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ juniper_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ juniper_morning_greeting = false }
+]
+writes = [{ juniper_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "neutral"
+local = "I wonder if Merri's got any new inventory today..."
+next = "1"
+
+[market_merri.1]
+portrait = "happy"
+local = "Let's go to the Market later and take a look!"
+
+# VERA
+[market_vera]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ juniper_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ juniper_morning_greeting = false }
+]
+writes = [{ juniper_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "sad"
+local = "Am I getting split ends? I am, aren't I?"
+next = "1"
+
+[market_vera.1]
+portrait = "annoyed"
+local = "Ugh."
+next = "2"
+
+[market_vera.2]
+portrait = "think"
+local = "I think I'll stop by Vera's at the Market today for a trim."
+
+# TALIFERRO
+
+[market_taliferro]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ juniper_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ juniper_morning_greeting = false }
+]
+writes = [{ juniper_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "think"
+local = "Taliferro will be at the Market today, won't he?"
+next = "1"
+
+[market_taliferro.1]
+portrait = "happy"
+local = "Sometimes I like to stand near his booth and imagine all the different toads I could turn him into... it's very therapeutic."
+
+# WHEEDLE
+
+[market_wheedle]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ juniper_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ juniper_morning_greeting = false }
+]
+writes = [{ juniper_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "think"
+local = "Wheedle said he'd have a rare magical artifact to show me today..."
+next = "1"
+
+[market_wheedle.1]
+portrait = "angry_brows"
+local = "If he's lying again, I'm going to dunk him in my cauldron. "
+
+# STILLWELL
+
+[market_stillwell]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ juniper_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ stillwell_has_met = true },
+	{ juniper_morning_greeting = false }
+]
+writes = [{ juniper_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "sweat_drop", npc = "juniper" } }]
+portrait = "neutral"
+local = "It's the Saturday Market today, isn't it?"
+next = "1"
+
+[market_stillwell.1]
+portrait = "sad"
+local = "Stillwell sent a letter demanding to see me... he said it was a matter of life and death."
+next = "2"
+
+[market_stillwell.2]
+portrait = "ugh"
+local = "But he's always saying things like that..."
+
+# ZOREL
+
+[market_zorel]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ juniper_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ juniper_morning_greeting = false },
+	{ zorel_has_met = true }
+]
+writes = [{ juniper_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "happy"
+local = "Good morning, [Ari]."
+next = "1"
+
+[market_zorel.1]
+portrait = "think"
+local = "I've been thinking... some new music would make cleaning the Bathhouse fly by."
+next = "2"
+
+[market_zorel.2]
+portrait = "neutral"
+local = "I think I'll pay Zorel a visit at the Market today."

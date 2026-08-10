@@ -1,0 +1,72 @@
+requires = [
+	{ weather = "pleasant" },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+	{ season = "summer" },
+	{ day_of_the_week = "tuesday" },
+	{ summer_tuesday_progress = true }
+]
+
+# caldarus
+[caldarus."6:00am"]
+destination = "beach/fishing_3"
+on_arrival_actions = [{ outfit = "beach" }]
+
+[caldarus."9:22am"]
+destination = "beach/Chat Below Towels 2"
+on_arrival_actions = [{ outfit = "beach" }]
+
+[caldarus."12:42pm"]
+destination = "beach/sand_castle_2"
+on_arrival_actions = [{ animation = "action" }, { outfit = "beach" }]
+on_departure_actions = [{ outfit = "summer" }]
+
+[caldarus."3:31pm"]
+destination = "caldarus_house/routine_entrance"
+on_arrival_actions = [{ routine = "tea_making" }]
+
+[caldarus."12:08am"]
+destination = "caldarus_house/Caldarus Wake Point"
+on_arrival_actions = [{ animation = "eyes_closed" }]
+
+
+# juniper
+[juniper."6:00am"]
+destination = "inn/South Table Left End"
+on_arrival_actions = [{ activity = "eat" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[juniper."9:54am"]
+destination = "bathhouse/Front Desk"
+on_arrival_actions = [{ animation = "snooze" }]
+
+[juniper."12:36pm"]
+destination = "bathhouse/Cauldron 3"
+
+[juniper."6:19pm"]
+destination = "western_ruins/ruins_chat_2"
+
+# seridia
+[seridia."6:00am"]
+destination = "seridias_house/Seridia Wake Point"
+
+[seridia."6:12am"]
+destination = "seridias_house/Seridia Fire Bench"
+on_arrival_actions = [{ activity = "seridia_coffee" }]
+
+[seridia."9:34am"]
+destination = "seridias_house/Seridia Wake Point"
+on_arrival_actions = [{ routine = "seridia_statue_cleaning" }]
+
+[seridia."12:21pm"]
+destination = "seridias_house_back/Seridia Throne"
+
+[seridia."4:18pm"]
+destination = "seridias_house_back/spell_cast_1"
+on_arrival_actions = [{ activity = "seridia_spell_cast" }]
+on_arrival_writes = [{ seridia_casting_spells = true }]
+on_departure_writes = [{ seridia_casting_spells = false }]
+
+[seridia."7:33pm"]
+destination = "western_ruins/ruins_chat_1"

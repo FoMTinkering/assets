@@ -1,0 +1,199 @@
+[shooting_star_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+	{ adeline_heart_level = 4, comparator = ">=" },
+	{ adeline_heart_level = 8, comparator = "<" },
+]
+portrait = "neutral"
+local = "The Shooting Star Festival is coming up, [Ari]! It's a real Mistrian tradition."
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "think"
+local = "Though I suppose the stars are visible across the kingdom..."
+next = "2"
+
+[shooting_star_anticipation.2]
+portrait = "happy"
+effect = "cheery"
+local = "The best view is definitely here in Mistria."
+
+[shooting_star_not_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_at = "town/star_festival_adeline" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "adeline_invited", comparator = "!=" },
+]
+portrait = "happy"
+local = "How pretty..."
+next = "1"
+
+[shooting_star_not_invited.1]
+portrait = "think"
+local = "I wonder if Mother and Father are watching from the Capital right now, too."
+
+[shooting_star_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_is_at = "town/star_festival_adeline" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "adeline_invited" },
+]
+portrait = "embarrassed"
+local = "Hi [Ari]! Are you ready to walk up to the Summit together?"
+
+[shooting_star_invited_anticipation]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ shooting_star_date_status = "adeline_invited" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ adeline_is_at = "town/star_festival_adeline", comparator = "!=" },
+]
+portrait = "happy"
+local = "I'll see you at 8 pm sharp! I'm looking forward to it."
+
+[shooting_star_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ shooting_star_date_status = "adeline_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ adeline_is_partner = false },
+]
+portrait = "happy"
+local = "Hi, [Ari]!"
+next = "1"
+
+[shooting_star_follow_up.1]
+portrait = "blush"
+local = "Thank you again for last night. It was really nice to spend time together."
+
+[shooting_star_8h_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ shooting_star_date_status = "adeline_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ adeline_is_partner = true },
+]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "blush"
+local = "The stars were so beautiful, weren't they? I'm already looking forward to next year."
+
+[shooting_star_missed_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ shooting_star_date_status = "adeline_invited" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "think"
+local = "Oh, [Ari]! Did something come up last night?"
+next = "1"
+
+[shooting_star_missed_follow_up.1]
+portrait = "sad"
+local = "I waited for you to stop by, but ended up watching with Elsie and Eiland..."
+
+[shooting_star_eiland_follow_up_adeline]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ shooting_star_date_status = "eiland_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "think"
+local = "Eiland seems like he's lost in his own little world today..."
+next = "1"
+
+[shooting_star_eiland_follow_up_adeline.1]
+portrait = "happy"
+effect = "drop"
+local = "More than usual, I mean."
+
+[shooting_star_follow_up_not_invited]
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ shooting_star_date_status = "adeline_invited", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "adeline_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "eiland_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "sigh"
+local = "*Yawn*"
+next = "1"
+
+[shooting_star_follow_up_not_invited.1]
+portrait = "neutral"
+effect = "surprise"
+local = "Oh! Sorry [Ari]."
+next = "2"
+
+[shooting_star_follow_up_not_invited.2]
+portrait = "happy"
+local = "I'm just a little sleepy after staying out so late yesterday."
+
+# NEW ROMANCE LINE FOLLOW UPS
+
+[shooting_star_romantic_follow_up_A]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ shooting_star_date_status = "adeline_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "adeline" } },
+]
+portrait = "happy"
+local = "Hey [Ari]! I know how hard you've been working lately..."
+next = "1"
+
+[shooting_star_romantic_follow_up_A.1]
+portrait = "blush"
+actions = [{ item = "coffee" }]
+local = "And I thought maybe you could use a pick-me-up. Here, this =Coffee= is for you!"
+
+
+[shooting_star_romantic_follow_up_B]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ shooting_star_date_status = "adeline_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ time_of_day = "morning" },
+	{ shooting_star_gate = false },
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "blush", npc = "adeline" } },
+]
+portrait = "happy"
+local = "You look nice today, [Ari]!"
+next = "1"
+
+[shooting_star_romantic_follow_up_B.1]
+portrait = "blush"
+local = "All your hard work seems to give you a certain glow..."

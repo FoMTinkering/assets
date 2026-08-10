@@ -1,0 +1,28 @@
+requires = [
+	{ day_of_the_week = "saturday" },
+	{ weather = "pleasant" },
+	{ quest_repair_the_bridge_complete = true },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+	{ dragon_market = "caldarus" }
+]
+end_writes = [
+	{ dragon_market = "seridia" },
+	{ caldarus_market_count = 1, operator = "+=" }
+]
+
+[caldarus."6:00am"]
+destination = "eastern_road/deep_woods_cutscene_exit"
+
+[caldarus."6:01am"]
+destination = "town/north_east_routine_entrance"
+on_arrival_actions = [{ routine = "saturday_market" }]
+occupy_point = false
+delayed_arrival_actions = [
+	{ after = "4h", can_talk = {  } },
+	{ after = "8h", can_talk = {  } },
+]
+
+[caldarus."8:15pm"]
+destination = "caldarus_house/Caldarus Wake Point"
+on_arrival_actions = [{ animation = "eyes_closed" }]

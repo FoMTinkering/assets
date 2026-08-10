@@ -1,0 +1,49 @@
+[shift]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ celine_routine = "general_store" },
+	{ season = "fall" }
+]
+portrait = "neutral"
+local = "Hi, [Ari]! I'm on my shift, so let me know if you need anything."
+next = "1"
+
+[shift.1]
+portrait = "happy"
+effect = "cheery"
+local = "Otherwise I'll go back to daydreaming about the autumn leaves!"
+
+[shift_2]
+refresh = "1m"
+requires = [
+	{ npc = "celine" },
+	{ celine_routine = "general_store" },
+	{ celine_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ celine_heart_level = 2, comparator = ">=" }
+]
+portrait = "happy"
+local = "[Ari]! Hi! Let me know if you're looking for anything in particular, okay?"
+
+[shift_3]
+refresh = "3m"
+requires = [
+	{ npc = "celine" },
+	{ celine_routine = "general_store" },
+	{ celine_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ celine_heart_level = 4, comparator = ">=" },
+	{ season = "fall" },
+	{ time_of_day = "night", comparator = "!=" }
+]
+portrait = "happy"
+local = "[Ari]!"
+next = "1"
+
+[shift_3.1]
+portrait = "very_happy"
+local = "Isn't it such a pretty fall day?"
+next = "2"
+
+[shift_3.2]
+portrait = "neutral"
+local = "I'm hoping I can manage a walk after my shift."

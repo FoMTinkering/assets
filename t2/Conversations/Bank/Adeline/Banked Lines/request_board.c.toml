@@ -1,0 +1,67 @@
+[request_board]
+refresh = "2m"
+requires = [{ npc = "adeline" }, { adeline_zone = "town/quest_board" }]
+portrait = "neutral"
+local = "I'm always happy to see you checking the request board!"
+
+[request_board_2]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_zone = "town/quest_board" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "neutral"
+local = """Don't mind me, [Ari]... I'm just taking down Dell's request for "a really really big frog that also talks"."""
+next = "1"
+
+[request_board_2.1]
+portrait = "ugh"
+local = "Again..."
+
+[request_board_3]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_zone = "town/quest_board" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "neutral"
+local = "Dell said she wants to help fulfill requests from the request board when she grows up!"
+next = "1"
+
+[request_board_3.1]
+portrait = "embarrassed"
+local = "Isn't that sweet? She reminds me of myself at that age."
+next = "2"
+
+[request_board_3.2]
+portrait = "ugh"
+local = "Well, in some ways..."
+
+[request_board_4]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_zone = "town/quest_board" },
+	{ date_time = "1y", comparator = ">=" },
+	{ quest_repair_the_inn_complete = true }
+]
+portrait = "wink"
+local = "This request board has really done wonders for our town rank, don't you think?"
+
+[request_board_5]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_zone = "town/quest_board" },
+	{ date_time = "1y", comparator = ">=" },
+	{ date_time = "1y 2m", comparator = "<" },
+]
+portrait = "neutral"
+local = "We put the request board up just before you came to Mistria, [Ari]! That means it's been over a year since you began helping out around town."
+next = "1"
+
+[request_board_5.1]
+portrait = "happy"
+local = "Thanks so much for taking on all these requests! I know everyone really appreciates it!"

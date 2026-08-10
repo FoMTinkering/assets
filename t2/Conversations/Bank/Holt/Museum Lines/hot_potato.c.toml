@@ -1,0 +1,21 @@
+[hot_potato]
+refresh = "1y"
+requires = [
+	{ npc = "holt" },
+	{ museum_donated_hot_potato = true },
+	{ building = "museum", comparator = "!=" },
+]
+writes = [{ holt_just_punned = 1, operator = "+=" }]
+portrait = "neutral"
+local = "I told Celine a joke about the $Hot Potato$ at the Museum..."
+next = "1"
+
+[hot_potato.1]
+portrait = "think"
+local = "And she said I was frying her patience!"
+next = "2"
+
+[hot_potato.2]
+portrait = "happy"
+effect = "cheery"
+local = "I'm so proud."

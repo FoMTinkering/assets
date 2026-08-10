@@ -1,0 +1,116 @@
+[bathhouse_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "march" },
+	{ date = "bathhouse" },
+	{ da_march_bathhouse = 0 },
+	{ march_is_spouse = false }
+]
+writes = [
+	{ da_march_bathhouse = 1 },
+	{ da_march_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "super_flustered"
+local = "Y-you want to go to the Bathhouse together?"
+next = "1"
+
+[bathhouse_accept_1.1]
+portrait = "drunk"
+local = "[Ari]... Of course I want to!"
+
+[bathhouse_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "march" },
+	{ date = "bathhouse" },
+	{ march_has_child = false },
+	{ any = [
+		{ march_is_spouse = true },
+		{ da_march_bathhouse = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_march_bathhouse = 2 },
+	{ da_march_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "eight_heart_happy_blush"
+local = "You want to go relax at the Bathhouse, [Ari]?"
+next = "1"
+
+[bathhouse_accept_2.1]
+portrait = "eight_heart_flustered"
+local = "We've both been working hard..."
+next = "2"
+
+[bathhouse_accept_2.2]
+portrait = "drunk"
+local = "We should take some time for ourselves."
+
+[bathhouse_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ da_march_bathhouse = 1 },
+	{ da_march_bathhouse_follow_up_gate = true },
+	{ march_is_spouse = false }
+]
+writes = [{ da_march_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "drunk"
+effect = "cheery"
+local = "I can't remember the last time I felt so relaxed..."
+next = "1"
+
+[bathhouse_follow_up_1.1]
+portrait = "eight_heart_happy_blush"
+local = "[Ari]... Let's do that again soon."
+next = "2"
+
+[bathhouse_follow_up_1.2]
+portrait = "embarrassed"
+local = "If you want to, I mean!"
+prompts = [
+	{ local = "Of course I want to!", next = "3" },
+	{ local = "You're so cute, March!", next = "5" },
+]
+
+[bathhouse_follow_up_1.3]
+portrait = "drunk"
+local = "Hahaha."
+next = "4"
+
+[bathhouse_follow_up_1.4]
+portrait = "eight_heart_happy_blush"
+effect = "cheery"
+local = "You're cute, [Ari]..."
+
+[bathhouse_follow_up_1.5]
+portrait = "eight_heart_happy_blush"
+local = "Me? Nah..."
+next = "6"
+
+[bathhouse_follow_up_1.6]
+portrait = "drunk"
+effect = "cheery"
+local = "You are, though!"
+
+[bathhouse_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "march" },
+	{ march_has_child = false },
+	{ any = [{ march_is_spouse = true }, { da_march_bathhouse = 2 }] },
+	{ da_march_bathhouse_follow_up_gate = true }
+]
+writes = [{ da_march_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "drunk"
+effect = "cheery"
+local = "Wow, that bath was really what I needed..."
+next = "1"
+
+[bathhouse_follow_up_2.1]
+portrait = "eight_heart_happy_blush"
+local = "Let's go again soon!"

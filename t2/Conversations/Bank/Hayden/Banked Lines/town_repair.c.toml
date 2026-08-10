@@ -1,0 +1,67 @@
+[town_repair_0]
+refresh = "1y"
+requires = [{ npc = "hayden" }, { hayden_routine = "town_repair_work" }]
+portrait = "think"
+local = "Now let's see. I took care of the creaky hinge at the General Store, and replaced a bit of cracked molding at the Inn..."
+next = "1"
+
+[town_repair_0.1]
+portrait = "happy"
+effect = "drop"
+local = "What was next, again?"
+
+[town_repair_1]
+refresh = "2m"
+requires = [{ npc = "hayden" }, { hayden_routine = "town_repair_work" }]
+local = "You learn a lot, maintaining your own farm. I've gotten downright decent at simple fixes."
+next = "1"
+
+[town_repair_1.1]
+portrait = "wink"
+local = "So I'm always happy when Ryis asks me to pick up small repairs around town. Tells me I'm doing something right!"
+
+[town_repair_2]
+refresh = "2m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_routine = "town_repair_work" },
+	{ ryis_routine = "town_repair_work", comparator = "!=" }
+]
+portrait = "happy_fist"
+local = "I told Ryis I'd pick up some of the repairs around town today. I'm making good time!"
+
+[town_repair_3]
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_routine = "town_repair_work" },
+	{ season = "winter" }
+]
+portrait = "neutral_fist"
+local = "It's especially important to keep up with repair work in the winter."
+
+[town_repair_4]
+refresh = "3m"
+requires = [{ npc = "hayden" }, { hayden_routine = "town_repair_work" }]
+portrait = "neutral"
+local = "Just making the rounds and making sure everything's in good shape."
+next = "1"
+
+[town_repair_4.1]
+portrait = "wink_fist"
+local = "Flag down me or Ryis if you see something that needs repairing!"
+
+[town_repair_5]
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_routine = "town_repair_work" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "neutral"
+local = "It's quite the trick, how Ryis can line up a nail and get it hammered down with one clean swing."
+next = "1"
+
+[town_repair_5.1]
+portrait = "wink"
+local = "Spinning the hammer back into the holster is just showing off, though."

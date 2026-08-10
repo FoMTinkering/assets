@@ -1,0 +1,284 @@
+[shooting_star_anticipation_statue]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+	{ cutscene_seen_the_unusual_tree_pt_2 = true },
+	{ caldarus_is_human = false },
+	{ cutscene_seen_break_fire_seal = false }
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[shooting_star_anticipation_statue.1]
+speaker = "caldarus"
+local = "A meteor shower returns to the skies every year around this time."
+next = "2"
+
+[shooting_star_anticipation_statue.2]
+speaker = "caldarus"
+local = "It's a rare constant, looking back over the years."
+next = "3"
+
+[shooting_star_anticipation_statue.3]
+speaker = "caldarus"
+local = "I look forward to viewing it once more."
+
+[shooting_star_caldarus_statue]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ day_time = "8:00pm", comparator = ">=" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "undefined" },
+	{ caldarus_is_human = false },
+	{ cutscene_seen_break_fire_seal = false },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  }
+]
+no_speaker = true
+local = "You feel compelled to talk to Caldarus' Statue."
+next = "1"
+
+[shooting_star_caldarus_statue.1]
+speaker = "caldarus"
+local = "[Ari]... Were you not going to watch the stars with someone tonight?"
+next = "2"
+
+[shooting_star_caldarus_statue.2]
+speaker = "caldarus"
+local = "Would you like to watch them with... me?"
+prompts = [
+	{ local = "Yes! That's why I'm here!", next = "3" },
+	{ local = "I think I'm actually going to head to bed.", next = "11" }
+]
+
+[shooting_star_caldarus_statue.3]
+speaker = "caldarus"
+local = "I do not recall the last time I watched the stars with someone else..."
+next = "4"
+
+[shooting_star_caldarus_statue.4]
+speaker = "caldarus"
+local = "You are very kind to think of me. Let us enjoy them for a moment, shall we?"
+next = "5"
+
+[shooting_star_caldarus_statue.5]
+speaker = "caldarus"
+local = "..."
+next = "6"
+
+[shooting_star_caldarus_statue.6]
+speaker = "caldarus"
+local = "They are beautiful, are they not? How nostalgic."
+next = "7"
+
+[shooting_star_caldarus_statue.7]
+speaker = "caldarus"
+local = "This night has always been auspicious for linking destinies."
+next = "8"
+
+[shooting_star_caldarus_statue.8]
+speaker = "caldarus"
+local = "I am reminded how grateful I am to share one with you."
+
+[shooting_star_caldarus_statue.11]
+speaker = "caldarus"
+local = "Of course, [Ari]. You must be tired after a long day."
+next = "12"
+
+[shooting_star_caldarus_statue.12]
+speaker = "caldarus"
+local = "Sleep well."
+
+[shooting_star_not_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_at = "deep_woods/Caldarus Bench Left" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = ">" },
+	{ shooting_star_date_status = "caldarus_invited", comparator = "!=" },
+	{ caldarus_is_human = true },
+	{ cutscene_seen_break_fire_seal = true }
+]
+portrait = "think"
+local = "The stars look different from this perspective."
+next = "1"
+
+[shooting_star_not_invited.1]
+portrait = "smile"
+local = "They are grand, are they not?"
+
+[shooting_star_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_at = "deep_woods/Caldarus Bench Left" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = ">" },
+	{ shooting_star_date_status = "caldarus_invited" },
+	{ caldarus_is_human = true },
+	{ cutscene_seen_break_fire_seal = true }
+]
+portrait = "smile"
+local = "Good evening, [Ari]. Shall we head to the summit?"
+
+[shooting_star_invited_anticipation]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ shooting_star_date_status = "caldarus_invited" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ caldarus_is_human = true },
+	{ cutscene_seen_break_fire_seal = true }
+]
+portrait = "neutral"
+local = "Let us meet tonight at 8 pm, [Ari]."
+next = "1"
+
+[shooting_star_invited_anticipation.1]
+portrait = "happy"
+local = "I am looking forward to spending the evening together."
+
+[shooting_star_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ shooting_star_date_status = "caldarus_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ caldarus_is_partner = false }
+]
+actions = [{ bark = { bark = "blush", npc = "caldarus" } }]
+portrait = "neutral"
+local = "Greetings, [Ari]."
+next = "1"
+
+[shooting_star_follow_up.1]
+portrait = "smile"
+local = "Viewing the stars last night has lightened my spirit."
+next = "2"
+
+[shooting_star_follow_up.2]
+portrait = "embarrassed"
+local = "Moreso for having shared the experience with you."
+
+[shooting_star_8h_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ shooting_star_date_status = "caldarus_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ caldarus_is_partner = true }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "unsure_special"
+local = "I truly enjoyed our $Starbinding$ last night, [Ari]."
+next = "1"
+
+[shooting_star_8h_follow_up.1]
+portrait = "caring_special"
+local = "I look forward to repeating the ceremony in the years to come."
+
+[shooting_star_missed_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ shooting_star_date_status = "caldarus_invited" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" }
+]
+portrait = "think"
+local = "Is everything well, [Ari]?"
+next = "1"
+
+[shooting_star_missed_follow_up.1]
+portrait = "avoidant_special"
+local = "Last night... I-"
+next = "2"
+
+[shooting_star_missed_follow_up.2]
+portrait = "sigh"
+local = "No. Nevermind."
+next = "3"
+
+[shooting_star_missed_follow_up.3]
+portrait = "smile"
+local = "I am glad to see that no harm has come to you."
+
+[shooting_star_romantic_follow_up_A]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ shooting_star_date_status = "caldarus_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false }
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "caldarus" } },
+	{ item = "roasted_chestnuts" }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+portrait = "smile"
+local = "[Ari]!"
+next = "1"
+
+[shooting_star_romantic_follow_up_A.1]
+portrait = "embarrassed"
+local = "I have made something for you. A gift, of sorts."
+next = "2"
+
+[shooting_star_romantic_follow_up_A.2]
+portrait = "avoidant_special"
+local = "Although I still have much to learn about cooking..."
+next = "3"
+
+[shooting_star_romantic_follow_up_A.3]
+portrait = "embarrassed"
+local = "I thought that this dish turned out well. Please, enjoy it."
+
+[shooting_star_romantic_follow_up_B]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ shooting_star_date_status = "caldarus_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ time_of_day = "morning" },
+	{ shooting_star_gate = false },
+	{ caldarus_is_human = true },
+	{ caldarus_is_spouse = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "caldarus" } }]
+portrait = "smile"
+local = "Thank you for the visit, [Ari]."
+next = "1"
+
+[shooting_star_romantic_follow_up_B.1]
+portrait = "avoidant_special"
+local = "Ah, it is happening again-"
+next = "2"
+
+[shooting_star_romantic_follow_up_B.2]
+portrait = "embarrassed"
+local = "It is a strange thing... Since taking this form, I find that sometimes my heart will suddenly begin to beat faster."
+next = "3"
+
+[shooting_star_romantic_follow_up_B.3]
+portrait = "avoidant_special"
+local = "Is it normal, I wonder?"

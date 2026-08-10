@@ -1,0 +1,33 @@
+[adeline_worked_late]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ date_time = "9d", comparator = ">" },
+	{ adeline_heart_level = 1 }
+]
+portrait = "gloomy"
+local = "My sister... she never stops."
+next = "1"
+
+[adeline_worked_late.1]
+portrait = "think"
+local = "I came back home from the Museum later than usual last night, and she was still holed up in her office!"
+next = "2"
+
+[adeline_worked_late.2]
+portrait = "ugh"
+local = "She's obsessed with her work. "
+prompts = [
+	{ local = "That makes two of you, then!", next = "3" },
+	{ local = "It must run in the family...", next = "3" }
+]
+
+[adeline_worked_late.3]
+portrait = "embarrassed"
+local = "Well, when you put it that way..."
+next = "4"
+
+[adeline_worked_late.4]
+portrait = "cartoon_embarrassed"
+effect = "drop"
+local = "Perhaps you're right. I rescind my comment!"

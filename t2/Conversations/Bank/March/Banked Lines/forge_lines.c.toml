@@ -1,0 +1,425 @@
+[forge_0]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_heart_level = 4, comparator = "<" },
+]
+portrait = "neutral"
+local = "Hey, watch yourself around the forge."
+next = "1"
+
+[forge_0.1]
+portrait = "mad"
+local = "You'll get burned if you're careless."
+
+[forge_1]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ season = "summer" },
+]
+portrait = "sigh"
+local = "Whew..."
+next = "1"
+
+[forge_1.1]
+portrait = "embarrassed"
+local = "There's no escaping this heat when there's work to be done."
+
+[forge_2]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_heart_level = 4, comparator = "<" },
+	{ march_heart_level = 1, comparator = ">=" },
+]
+portrait = "neutral"
+local = "Hmm, is it just me or are you getting more skilled-"
+next = "1"
+
+[forge_2.1]
+portrait = "unimpressed"
+local = "At breathing down my neck when I'm working?"
+
+[forge_3]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_heart_level = 4, comparator = "<=" },
+	{ march_heart_level = 1, comparator = ">=" }
+]
+portrait = "neutral"
+local = "I'll let you use the forge if you need it..."
+next = "1"
+
+[forge_3.1]
+portrait = "unimpressed"
+local = "But you better clean up after yourself."
+
+[forge_4]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ march_heart_level = 8, comparator = "<" },
+]
+portrait = "neutral"
+local = "..."
+next = "1"
+
+[forge_4.1]
+portrait = "tsundere"
+local = "Don't stand too close... I'm trying to work here."
+
+[forge_5]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ any = [{ season = "fall" }, { season = "winter" }] },
+]
+portrait = "neutral"
+local = "It's warm by the forge on a cold day."
+next = "1"
+
+[forge_5.1]
+portrait = "happy"
+local = "The contrast is nice."
+
+[forge_6]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ march_heart_level = 7, comparator = "<=" },
+	{ season = "winter" },
+]
+portrait = "think"
+local = "Aren't you cold, standing around like that?"
+next = "1"
+
+[forge_6.1]
+portrait = "neutral"
+local = "You can warm up by the forge, if you want."
+
+[forge_7]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ season = "summer" },
+	{ time_of_day = "morning" },
+]
+portrait = "neutral"
+local = "It's best to get forge work in early, before the day's heat sets in."
+
+[forge_8]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_heart_level = 2, comparator = ">=" },
+	{ time_of_day = "morning", comparator = "!=" },
+	{ march_forge_work_day = true },
+]
+portrait = "neutral"
+local = "The temperature inside the forge has been steady today."
+
+[forge_9]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_heart_level = 6, comparator = "<=" },
+	{ march_forge_work_day = true },
+]
+portrait = "neutral"
+local = "Keeping the heat even requires a lot of concentration."
+next = "1"
+
+[forge_9.1]
+portrait = "unimpressed"
+local = "So don't distract me."
+
+[forge_10]
+refresh = "1y"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ time_of_day = "morning" },
+	{ march_forge_work_day = true },
+	{ any = [
+		{ olric_zone = "town/forge_lesson" },
+		{ olric_zone = "town/blacksmith_forge" },
+		{ olric_zone = "town/blacksmith_business" },
+	] },
+	{ date_time = "1y", comparator = ">=" },
+]
+portrait = "unimpressed"
+local = "Olric used to do jumping jacks next to the forge as part of his morning workout."
+next = "1"
+
+[forge_10.1]
+portrait = "mad"
+local = "He's not allowed to do that any more."
+
+[forge_11]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ march_animation = "hammer" },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ march_heart_level = 8, comparator = "<" },
+]
+portrait = "unimpressed"
+local = "Sorry, can't stop now... I've got to finish shaping the metal before it cools off."
+
+[forge_12]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ march_animation = "hammer" },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ march_heart_level = 8, comparator = "<" },
+]
+portrait = "unimpressed"
+local = "You can watch, but leave me some elbow room."
+
+[forge_13]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_heart_level = 5, comparator = ">=" },
+	{ march_forge_work_day = true },
+]
+portrait = "think"
+local = "Olric always works hard..."
+next = "1"
+
+[forge_13.1]
+portrait = "neutral"
+local = "So I've got to work hard too."
+
+[forge_14]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_heart_level = 8, comparator = ">=" },
+	{ march_forge_work_day = true },
+]
+portrait = "eight_heart_think"
+local = "Oh, sorry [Ari]..."
+next = "1"
+
+[forge_14.1]
+portrait = "eight_heart_happy"
+local = "Just give me a few to finish this up."
+
+[forge_15]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_heart_level = 8, comparator = ">=" },
+	{ season = "winter" },
+]
+actions = [{ bark = { bark = "relationship_status", npc = "march" } }]
+portrait = "eight_heart_think"
+local = "Are you cold, [Ari]?"
+next = "1"
+
+[forge_15.1]
+portrait = "eight_heart_happy"
+local = "Come here, you can warm up by the forge."
+
+[forge_16]
+refresh = "1y"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+]
+portrait = "neutral"
+local = "Ah... This order is taking longer than I meant to."
+next = "1"
+
+[forge_16.1]
+portrait = "think"
+local = "I guess I better hurry things up."
+
+[forge_17]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ season = "winter" },
+	{ march_heart_level = 8, comparator = ">=" }
+]
+portrait = "think"
+local = "It's nice, watching a fresh snow fall..."
+next = "1"
+
+[forge_17.1]
+portrait = "ugh"
+local = "But I'm not a fan of having to clear it off my anvil."
+
+[forge_18]
+refresh = "1y"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_heart_level = 8, comparator = ">=" }
+]
+portrait = "think"
+local = "Eiland is always bringing me interesting little projects to work on."
+next = "1"
+
+[forge_18.1]
+portrait = "sigh"
+local = "Maybe that's his way of apologizing for Adeline's bulk nail requests."
+
+[forge_19]
+refresh = "1y"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_heart_level = 8, comparator = ">=" }
+]
+portrait = "neutral"
+local = "Elsie said she likes to bring me projects because she's a patron of the arts."
+next = "1"
+
+[forge_19.1]
+portrait = "eight_heart_happy"
+local = "She thinks I'm an artist? Nice to be recognized."
+
+[forge_20]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_status = "undefined", comparator = "!=" },
+	{ season = "winter" }
+]
+portrait = "think"
+local = "Are you cold, [Ari]?"
+next = "1"
+
+[forge_20.1]
+portrait = "eight_heart_happy"
+local = "Want to give me a hand here? You'll warm up in no time."
+
+[forge_21]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_status = "undefined" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "unimpressed"
+local = "You can watch, but mind the sparks."
+
+[forge_22]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ march_status = "undefined", comparator = "!=" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "eight_heart_happy"
+local = "You can watch, but mind the sparks."

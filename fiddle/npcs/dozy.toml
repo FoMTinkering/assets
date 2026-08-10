@@ -1,0 +1,151 @@
+bio = "Juniper's trusty and reliable familiar, without whom the Bathhouse would surely fall apart. A very good boy."
+birthday = { season = "fall", day = 16 }
+
+loved_gifts = [
+	"basic_wood",
+	"hard_boiled_egg",
+	"catfish",
+	"crystalline_cricket",
+	"golden_duck_egg",
+	"golden_egg",
+	"hard_wood",
+	"dog_treat",
+	"petrified_wood",
+	"tiny_dinosaur_skeleton",
+]
+
+liked_gifts = [
+	"butterfly",
+	"carrot",
+	"cicada",
+	"cod",
+	"cricket",
+	"duck_egg",
+	"egg",
+	"firefly",
+	"fuzzy_moth",
+	"grasshopper",
+	"mackerel",
+	"monster_shell",
+	"monster_whisker",
+	"pumpkin",
+	"red_snapper",
+	"rockroot",
+	"salmon",
+	"sardine",
+	"sod",
+	"tuna",
+
+]
+
+disliked_gift_tags = ["junk", "citrus", "choco", "caffeine", "alcohol", "weird_gift"]
+banned_gift_tags = ["alcohol", "caffeine", "choco", "bomb"]
+hated_gift = "chili_pepper"
+name = "Dozy"
+aldarian_name = "DZ"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["townsfolk", "animal"]
+job = "Bathhouse Co-Owner"
+journal_portrait_offset = [-121, -75]
+journal_background_color = [184, 228, 255]
+date_photo_offset = [0, 0]
+journal_person_offset = [0, -2]
+
+icon_sprite = "spr_ui_generic_icon_npc_dozy"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_dozy"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_dozy"
+dateable = false
+roommate_routine = "dozy_roommate"
+
+[gossip]
+	line = "dozy_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[offsets]
+	portrait = [-123, -65]
+	sweat = [3, 43]
+	hearts = [3, 43]
+	angry = [3, 43]
+	sparkles = [6, 39]
+	sparkles_dark = [6, 39]
+	sick = [9, 46]
+	music_notes = [6, 39]
+	intensity = [7, 33]
+	surprise = [4, 48]
+	shock = [0, 38]
+	sigh = [15, 30]
+	loud = [15, 51]
+	cheery = [7, 38]
+	drop = [8, 43]
+
+[drink_preferences]
+	"6" = ["coffee"]
+	"17" = ["wine"]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	neutral_closed = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.tailwag]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.sleep_1]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "doze_1"
+
+[cycles.sleep_2]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "doze_2"
+
+[cycles.doze_1]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.doze_2]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.happy]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"

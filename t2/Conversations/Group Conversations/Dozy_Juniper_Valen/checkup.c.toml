@@ -1,0 +1,121 @@
+[checkup]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "dozy" }, { npc = "juniper" }, { npc = "valen" }] },
+	{ dozy_zone = "<juniper_zone>" },
+	{ dozy_zone = "<valen_zone>" },
+	{ dozy_checkup = true }
+]
+speaker = "juniper"
+portrait = "sad"
+local = "Dozy just kept sneezing! So I thought you could take a look at him."
+next = "1"
+
+[checkup.1]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "You know, since you're not busy or anything."
+next = "2"
+
+[checkup.2]
+speaker = "valen"
+portrait = "neutral"
+local = "So this is how you ask for help, hm? Well, the good news is that Dozy simply has a dust allergy."
+next = "3"
+
+[checkup.3]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "The bad news is that I prescribe sweeping around here every once in a while."
+next = "4"
+
+[checkup.4]
+speaker = "dozy"
+portrait = "happy"
+effect = "shock"
+local = "(Dozy sneezes.)"
+
+[checkup_2]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "dozy" }, { npc = "juniper" }, { npc = "valen" }] },
+	{ juniper_zone = "<valen_zone>" },
+	{ dozy_is_at_location = "bathhouse" },
+	{ dozy_checkup = true }
+]
+speaker = "juniper"
+portrait = "annoyed"
+local = "You already finished Dozy's checkup, so why are you still here? Don't you have patients or whatever?"
+next = "1"
+
+[checkup_2.1]
+speaker = "valen"
+portrait = "happy"
+local = "Oh, but Dozy and I are getting on so well. Aren't we, friend?"
+next = "2"
+
+[checkup_2.2]
+speaker = "dozy"
+portrait = "neutral"
+effect = "sparkles"
+local = "(Dozy gleefully wags his tail.)"
+next = "3"
+
+[checkup_2.3]
+speaker = "juniper"
+portrait = "mad"
+local = "Traitor..."
+
+[checkup_3]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "dozy" }, { npc = "juniper" }, { npc = "valen" }] },
+	{ dozy_zone = "<juniper_zone>" },
+	{ dozy_zone = "<valen_zone>" },
+	{ dozy_checkup = true }
+]
+speaker = "juniper"
+portrait = "mad"
+local = "Maybe you should check him a third time, Valen."
+next = "1"
+
+[checkup_3.1]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "I know you think I'm a quack, Juniper, but I assure you... I wouldn't misdiagnose a patient. Dozy is perfectly healthy."
+next = "2"
+
+[checkup_3.2]
+speaker = "valen"
+portrait = "happy"
+local = "Just a little sleepy."
+next = "3"
+
+[checkup_3.3]
+speaker = "dozy"
+portrait = "neutral_closed"
+local = "(Dozy gives Juniper and Valen a drowsy look, as though asking if he can go back to bed.)"
+
+[checkup_4]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "dozy" }, { npc = "juniper" }, { npc = "valen" }] },
+	{ juniper_zone = "<valen_zone>" },
+	{ dozy_is_at_location = "bathhouse" },
+	{ dozy_checkup = true }
+]
+speaker = "dozy"
+portrait = "happy"
+local = "(Dozy excitedly wags his tail at Valen. He seems happy to see her.)"
+next = "1"
+
+[checkup_4.1]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Oh, he... likes you. Well, don't let it go to your head."
+next = "2"
+
+[checkup_4.2]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "I wouldn't dream of it."

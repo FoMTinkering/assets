@@ -1,0 +1,30 @@
+[clinic_assistant]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "olric" }, { npc = "valen" }] },
+	{ olric_zone = "<valen_zone>" },
+	{ location = "clinic_f1" },
+	{ olric_is_at = "clinic_f1/Top Bed", comparator = "!=" }
+]
+speaker = "olric"
+portrait = "neutral"
+local = "Valen, I recorded the last patient's symptoms for you! Just like you asked!"
+next = "1"
+
+[clinic_assistant.1]
+speaker = "valen"
+portrait = "neutral"
+local = "Wonderful!"
+next = "2"
+
+[clinic_assistant.2]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = """Hm. Olric, I'm afraid that "bummer vibes" is not the kind of medical terminology I'm looking for. Good effort, though."""
+next = "3"
+
+[clinic_assistant.3]
+speaker = "olric"
+portrait = "happy"
+effect = "sparkles"
+local = "Thanks, boss!"

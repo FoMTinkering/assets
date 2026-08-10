@@ -1,0 +1,121 @@
+[detectives_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ adeline_zone = "inn/north_table" },
+	{ balor_zone = "inn/north_table" },
+	{ celine_zone = "inn/north_table" },
+	{ errol_zone = "inn/north_table" },
+	{ nora_zone = "inn/north_table" },
+	{ ryis_zone = "inn/north_table" },
+	{ detectives_fnati = 3 },
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "balor" },
+		{ npc = "celine" },
+		{ npc = "errol" },
+		{ npc = "nora" },
+		{ npc = "ryis" },
+	] },
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "adeline" } },
+	{ bark = { bark = "cute_face", npc = "balor" } },
+	{ bark = { bark = "cute_face", npc = "celine" } },
+	{ bark = { bark = "cute_face", npc = "errol" } },
+	{ bark = { bark = "cute_face", npc = "nora" } },
+	{ bark = { bark = "cute_face", npc = "ryis" } },
+]
+writes = [{ fnati = 4 }, { detectives_fnati = 4 }]
+speaker = "balor"
+portrait = "wink"
+local = "Good evening, my detectives! I come bearing good news and bad news."
+next = "1"
+
+[detectives_4.1]
+speaker = "balor"
+portrait = "neutral"
+local = "The good news is that we solved the mystery! This painting was indeed commissioned by the late Lord Hawthorne."
+next = "2"
+
+[detectives_4.2]
+speaker = "balor"
+portrait = "think"
+local = "He was a politician who moonlighted as a clown... his true passion."
+next = "3"
+
+[detectives_4.3]
+speaker = "adeline"
+portrait = "happy"
+local = "We did it!"
+next = "4"
+
+[detectives_4.4]
+speaker = "nora"
+portrait = "think"
+local = "And the bad news?"
+next = "5"
+
+[detectives_4.5]
+speaker = "balor"
+portrait = "sigh"
+effect = "sigh"
+local = "The family is aware of the painting... and despises it."
+next = "6"
+
+[detectives_4.6]
+speaker = "celine"
+portrait = "concerned"
+local = "Oh. I suppose his descendants want nothing to do with their clownish history..."
+next = "7"
+
+[detectives_4.7]
+speaker = "ryis"
+portrait = "ugh"
+local = "So... what do we do with it?"
+next = "8"
+
+[detectives_4.8]
+speaker = "balor"
+portrait = "think"
+local = "Well, the Hawthornes said it was a political liability. They want it destroyed."
+next = "9"
+
+[detectives_4.9]
+speaker = "ryis"
+portrait = "sad"
+local = "I don't have the heart to do that, but maybe we can bury it. I'll get a shovel."
+prompts = [{ local = "Wait! I'll take it!", next = "10" }, { local = "That's probably for the best.", next = "11" }]
+
+[detectives_4.10]
+speaker = "nora"
+portrait = "happy"
+effect = "drop"
+actions = [{ item = "mournful_clown_painting" }]
+local = "All yours, [Ari]. This clown was giving me nightmares."
+next = "12"
+
+[detectives_4.11]
+speaker = "ryis"
+portrait = "wink"
+local = "Great. Let's bury it somewhere... funny. I think Hawthorne would have liked that."
+next = "12"
+
+[detectives_4.12]
+speaker = "errol"
+portrait = "happy"
+effect = "sparkles"
+local = "A mystery well-solved, everyone! Congratulations."
+next = "13"
+
+[detectives_4.13]
+speaker = "balor"
+portrait = "happy"
+local = "No kidding! I'm impressed with all of you."
+next = "14"
+
+[detectives_4.14]
+speaker = "balor"
+portrait = "wink"
+local = "And now I know exactly who to call next time I have a hideous, unsellable painting on my hands."

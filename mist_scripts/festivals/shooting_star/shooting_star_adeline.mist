@@ -1,0 +1,143 @@
+scene(summit);
+camera_position(shst_camera_1);
+request_music_play("Music/Location Tracks/ShootingStarFestival");
+stop_ambiance();
+play_sound("Ambience/ShootingStarFestival");
+place_actor(ari, north, shst_ari_couple_near);
+animate(ari, sit);
+place_actor(adeline, north, shst_date_near);
+animate(adeline, sit);
+setup_prop(shst_blanket);
+setup_prop(shst_pouf_ari_near);
+setup_prop(shst_pouf_date_near);
+__override_post_process_time(22, 30);
+
+start_shooting_stars();
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		pan_camera(4, shst_camera_2);
+	}
+}
+wait(3);
+set_on_blackboard("quiet_stars", true);
+next_line(); //
+next_line(); //
+
+//
+
+next_line(); //
+
+close_textbox();
+
+wait(2);
+free bark(adeline, cute_face);
+wait(4);
+
+next_line(); //
+next_line(); //
+next_line(); //
+
+//
+if get_response() == 0 {
+	sim {
+		//
+		//
+		//
+		//
+		{
+			next_line(); //
+			next_line(); //
+		}
+	}
+} else {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(adeline, cute_face);
+		}
+		{
+			next_line(); //
+		}
+	}
+}
+close_textbox();
+wait(2);
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(adeline, cute_face);
+wait(1);
+free bark_speech(ari, cute_face);
+wait(2);
+pan_camera(3, shst_camera_3);
+wait(2);
+free bark_speech(adeline, ellipses);
+wait(2);
+
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+
+wait(2);
+free bark(adeline, ellipses);
+wait(4);
+
+next_line(); //
+next_line(); //
+next_line(); //
+
+//
+
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(adeline, cute_face);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	sim {
+		//
+		//
+		//
+		//
+		{
+			next_line(); //
+			close_textbox();
+			wait(1);
+			free bark_speech(adeline, blush);
+			wait(2);
+			next_line(); //
+			next_line(); //
+		}
+	}
+}
+close_textbox();
+wait(2);
+free bark(ari, heart);
+free bark(adeline, heart);
+wait(3);
+
+next_line(); //
+next_line(); //
+close_textbox();
+sim {
+	{
+		wait(1);
+		pan_camera(4, shst_camera_4);
+	}
+	{
+		wait(4);
+		fade_out(3);
+	}
+}

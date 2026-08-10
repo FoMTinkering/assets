@@ -1,0 +1,51 @@
+[museum]
+refresh = "1y"
+requires = [
+	{ npc = "ryis" },
+	{ building = "museum" },
+	{ eiland_building = "museum" },
+	{ museum_total_count = 20, comparator = ">" },
+]
+portrait = "think"
+local = "Eiland asked me out here to brainstorm shelving for the Museum's cataloging system."
+next = "1"
+
+[museum.1]
+portrait = "wink"
+local = "I've got ideas."
+
+[museum_2]
+refresh = "1y"
+requires = [
+	{ npc = "ryis" },
+	{ building = "museum" },
+	{ museum_total_count = 50, comparator = ">=" }
+]
+portrait = "neutral"
+local = "I was looking at an exhibit and I thought there was a cool bas-relief of a bird!"
+next = "1"
+
+[museum_2.1]
+portrait = "think"
+local = "But it turned out to be a dragon or whatever."
+next = "2"
+
+[museum_2.2]
+portrait = "ugh"
+local = "That's cool... I guess."
+
+[museum_3]
+refresh = "1y"
+requires = [
+	{ npc = "ryis" },
+	{ building = "museum" },
+	{ museum_total_count = 50, comparator = ">=" },
+	{ date_time = "1y", comparator = ">=" }
+]
+portrait = "neutral"
+local = "The Museum's collection has really grown over the past year, hasn't it?"
+next = "1"
+
+[museum_3.1]
+portrait = "happy"
+local = "Pretty impressive."

@@ -1,0 +1,15 @@
+[animal_workout]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "olric" }] },
+	{ location = "haydens_farm", comparator = "!=" },
+	{ location = "haydens_house", comparator = "!=" },
+	{ hayden_zone = "<olric_zone>" },
+]
+speaker = "hayden"
+local = "Come by and work out sometime. We've got the whole yard, and the animals don't mind."
+next = "1"
+
+[animal_workout.1]
+speaker = "olric"
+local = "Aw, they can join us! We can all sweat together!"

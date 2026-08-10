@@ -1,0 +1,195 @@
+[hayden_two_hearts_follow_up_march]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ quest_a_get_together_complete = true },
+	{ hayden_heart_event = "two_heart" }
+]
+portrait = "neutral"
+local = "If you want to talk about Hayden and his chicken, tough. I'm no gossip."
+
+[hayden_two_hearts_follow_up_valen]
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ quest_a_get_together_complete = true },
+	{ hayden_heart_event = "two_heart" }
+]
+portrait = "think"
+local = "Don't mind Henrietta too much. She's quite attached to Hayden."
+next = "1"
+
+[hayden_two_hearts_follow_up_valen.1]
+speaker = "valen"
+portrait = "neutral"
+local = "I suppose it's mutual, though."
+next = "2"
+
+[hayden_two_hearts_follow_up_valen.2]
+speaker = "valen"
+portrait = "think"
+local = "She was the last chick that his Grandmother helped hatch, some years back."
+next = "3"
+
+[hayden_two_hearts_follow_up_valen.3]
+speaker = "valen"
+portrait = "sad"
+local = "Henrietta has been his closest companion since Greta passed."
+next = "4"
+
+[hayden_two_hearts_follow_up_valen.4]
+speaker = "valen"
+portrait = "neutral"
+local = "If you ask me, Henrietta just needs to broaden her horizons."
+next = "5"
+
+[hayden_two_hearts_follow_up_valen.5]
+speaker = "valen"
+portrait = "happy"
+effect = "drop"
+local = "Perhaps the same could be said for Hayden, too."
+
+[hayden_two_hearts_follow_up_ryis]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ quest_a_get_together_complete = true },
+	{ hayden_heart_event = "two_heart" }
+]
+portrait = "neutral"
+local = "Henrietta isn't a bad bird, she's just territorial."
+next = "1"
+
+[hayden_two_hearts_follow_up_ryis.1]
+speaker = "ryis"
+effect = "drop"
+portrait = "neutral"
+local = "You'd think March would understand that."
+
+[hayden_two_hearts]
+kind = "gameplay_triggered"
+writes = [{ hayden_heart_event = "two_heart", expires = "4d" }]
+speaker = "hayden"
+portrait = "neutral"
+local = "[Ari], you came!"
+next = "1"
+
+[hayden_two_hearts.1]
+speaker = "valen"
+portrait = "very_happy"
+local = "Glad to have you join us, [Ari]."
+next = "2"
+
+[hayden_two_hearts.2]
+speaker = "valen"
+portrait = "neutral"
+local = "I've brought along a veggie plate with homemade dip, I think you'll quite like it."
+next = "3"
+
+[hayden_two_hearts.3]
+speaker = "ryis"
+portrait = "neutral"
+local = "And I brought my favorite board game, Well-Constructed Slides and Structurally-Sound Ladders."
+next = "4"
+
+[hayden_two_hearts.4]
+speaker = "ryis"
+portrait = "think"
+effect = "drop"
+local = "It's more fun than it sounds, I swear."
+prompts = [
+	{ local = "What's more fun than good construction?", next = "5" },
+	{ local = "I'll take your word on it...", next = "6" }
+]
+
+[hayden_two_hearts.5]
+speaker = "ryis"
+portrait = "happy"
+local = "Ooh, you get it!"
+next = "7"
+
+[hayden_two_hearts.6]
+speaker = "hayden"
+portrait = "happy_arm_down"
+local = "Don't worry [Ari], after a round or two you'll be carpentering like a pro!"
+next = "7"
+
+[hayden_two_hearts.7]
+speaker = "hayden"
+portrait = "neutral_fist"
+local = "I was just about to pop some corn, and then we can dive in!"
+next = "8"
+
+[hayden_two_hearts.8]
+speaker = "march"
+portrait = "neutral"
+local = "Hey everyone, sorry I'm late. Got held up on an order."
+next = "9"
+
+[hayden_two_hearts.9]
+speaker = "hayden"
+portrait = "neutral"
+local = "No worries, just glad you could make it!"
+next = "10"
+
+[hayden_two_hearts.10]
+speaker = "march"
+portrait = "unimpressed"
+local = "Move it, chicken."
+next = "11"
+
+[hayden_two_hearts.11]
+speaker = "hayden"
+portrait = "mad"
+local = "Whoa there, Henrietta! Save the pecking for the popcorn!"
+next = "12"
+
+[hayden_two_hearts.12]
+speaker = "march"
+portrait = "mad"
+local = "Hayden, you really need to get that fowl of yours under control. She can't just go snapping at people."
+next = "13"
+
+[hayden_two_hearts.13]
+speaker = "hayden"
+portrait = "gloomy"
+local = "Henrietta's got nearly as many blue ribbons as you do March! She's a splendid chicken."
+prompts = [
+	{ local = "Plenty of other places to sit, March.", next = "14" },
+	{ local = "March has a point.", next = "15" }
+]
+
+[hayden_two_hearts.14]
+speaker = "march"
+portrait = "sigh"
+local = "That's not the- fine."
+next = "16"
+
+[hayden_two_hearts.15]
+speaker = "hayden"
+portrait = "sweat"
+local = "W-well, I'm sure she didn't mean it! Right, Henrietta?"
+next = "16"
+
+[hayden_two_hearts.16]
+speaker = "valen"
+portrait = "sad"
+local = "Oh dear... she's stormed off."
+next = "17"
+
+[hayden_two_hearts.17]
+speaker = "ryis"
+portrait = "neutral"
+local = "Maybe she's just used to having you to herself? Birds can be territorial sometimes."
+next = "18"
+
+[hayden_two_hearts.18]
+speaker = "hayden"
+portrait = "ugh"
+local = "Y-you might be right."
+next = "19"
+
+[hayden_two_hearts.19]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "Well, let's give her some time to cool down and get this party started. I'll bring her out a bowl of popcorn when it's ready."

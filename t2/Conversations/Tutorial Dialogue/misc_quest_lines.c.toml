@@ -1,0 +1,311 @@
+[greet_the_vendors_turn_in]
+kind = "gameplay_triggered"
+speaker = "nora"
+portrait = "neutral"
+local = "Thanks [Ari]! Isn't the market great? Here's your reward, you can buy something from your favorite stall!"
+
+[greet_the_townsfolk_turn_in]
+kind = "gameplay_triggered"
+speaker = "adeline"
+portrait = "neutral"
+local = "You finished meeting everyone in town? That's wonderful! Congratulations on completing your first $Request$. Here's your reward!"
+
+[meet_the_new_vendors_turn_in]
+kind = "gameplay_triggered"
+speaker = "nora"
+portrait = "neutral"
+local = "Hey [Ari]! I take it you met our newest vendors."
+next = "1"
+
+[meet_the_new_vendors_turn_in.1]
+speaker = "nora"
+portrait = "happy"
+local = "Here's a little thank you again for all your hard work. Why not spend it at one of the new vendor's booths?"
+
+[friday_at_the_sleeping_dragon_inn_turn_in]
+kind = "gameplay_triggered"
+writes = [{ fnati_follow_up = true, expires = "24h" }]
+speaker = "reina"
+portrait = "happy"
+local = "You made it! What did I tell you, it's a full house! Why don't you go around and see what everyone's up to? Oh, and here's your free drink!"
+
+[friday_at_the_sleeping_dragon_inn_too_early]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ quest_friday_at_the_sleeping_dragon_inn_in_progress = true },
+	{ quest_friday_at_the_sleeping_dragon_inn_complete = false },
+	{ day_of_the_week = "friday" },
+	{ day_time = "4:00pm", comparator = "<=" },
+	{ day_time = "6:00am", comparator = ">=" },
+	{ fnati = 0 },
+]
+portrait = "neutral"
+local = "Hey [Ari]! I hope I see you tonight at the Inn! People tend to start gathering around 6 pm."
+
+[friday_at_the_sleeping_dragon_inn_wrong_day]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ quest_friday_at_the_sleeping_dragon_inn_in_progress = true },
+	{ quest_friday_at_the_sleeping_dragon_inn_complete = false },
+	{ day_of_the_week = "friday", comparator = "!=" },
+	{ fnati = 0 },
+]
+portrait = "neutral"
+local = "You don't want to miss coming out to the Inn this Friday evening, [Ari]! Everyone will be there!"
+
+[gossip_for_elsie_balor]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ quest_gossip_for_elsie_in_progress = true },
+	{ quest_gossip_for_elsie_complete = false },
+]
+local = "[Ari]! Dashing about as always, I see."
+writes = [{ heard_balor_gossip = true }]
+actions = [{ bark = { bark = "sweat_drop", npc = "balor" } }]
+prompts = [
+	{ local = "Get any interesting gossip- er, orders recently?", next = "1" },
+	{ local = "What's the oddest thing you've ever had an order for?", next = "3" },
+]
+
+[gossip_for_elsie_balor.1]
+portrait = "think"
+local = "Hmmm..."
+next = "2"
+
+[gossip_for_elsie_balor.2]
+portrait = "neutral"
+local = "Well, =Juniper= did place a special order for a dozen =Newts= the other day."
+next = "5"
+
+[gossip_for_elsie_balor.3]
+portrait = "wink"
+local = "Funny you should ask!"
+next = "4"
+
+[gossip_for_elsie_balor.4]
+portrait = "neutral"
+local = "=Juniper= did place a special order for a dozen =Newts= the other day."
+next = "5"
+
+[gossip_for_elsie_balor.5]
+portrait = "ugh"
+local = """She marked the request as "bath supplies", for some reason?"""
+next = "6"
+
+[gossip_for_elsie_balor.6]
+portrait = "think"
+local = "I wasn't sure I'd be able to swing it, but I managed to source them all from $Dell$ at the last minute."
+next = "7"
+
+[gossip_for_elsie_balor.7]
+portrait = "happy"
+effect = "drop"
+local = "Look, I don't go asking too many questions. I'm just the middle man."
+
+[gossip_for_elsie_juniper]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ quest_gossip_for_elsie_in_progress = true },
+	{ quest_gossip_for_elsie_complete = false },
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "juniper" } }]
+speaker = "juniper"
+portrait = "sly"
+local = "Oh, [Ari]. Do you need something?"
+writes = [{ heard_juniper_gossip = true }]
+prompts = [
+	{ local = "I'm in dire need of gossip, got any for me?", next = "1" },
+	{ local = "Anything interesting happen around the Bathhouse lately?", next = "2" },
+]
+
+[gossip_for_elsie_juniper.1]
+portrait = "annoyed"
+local = "Well now that you mention it..."
+next = "3"
+
+[gossip_for_elsie_juniper.2]
+portrait = "annoyed"
+local = "Why? Do you know something?"
+next = "3"
+
+[gossip_for_elsie_juniper.3]
+portrait = "mad"
+local = "Some of my most critical potion ingredients have been going missing lately."
+next = "4"
+
+[gossip_for_elsie_juniper.4]
+portrait = "ugh"
+local = "At first I thought I must have misplaced them..."
+next = "5"
+
+[gossip_for_elsie_juniper.5]
+portrait = "mad"
+local = "But it's starting to seem like they're slipping out of the cauldron all by themselves!"
+next = "6"
+
+[gossip_for_elsie_juniper.6]
+portrait = "think"
+local = "That's not supposed to happen, normally."
+next = "7"
+
+[gossip_for_elsie_juniper.7]
+portrait = "ugh"
+local = "I had no choice but to trade =Balor= some of those =Rubies= he likes so much in order to restock my supply."
+next = "8"
+
+[gossip_for_elsie_juniper.8]
+portrait = "unimpressed"
+local = "Slimy business, all around."
+
+[gossip_for_elsie_dell]
+priority = "max"
+refresh = "never"
+actions = [{ bark = { bark = "cute_face", npc = "dell" } }]
+requires = [
+	{ npc = "dell" },
+	{ quest_gossip_for_elsie_in_progress = true },
+	{ quest_gossip_for_elsie_complete = false },
+]
+speaker = "dell"
+portrait = "happy"
+local = "Heeeey, [Ari]!"
+writes = [{ heard_dell_gossip = true }]
+next = "1"
+
+[gossip_for_elsie_dell.1]
+portrait = "think"
+local = "Uh, I mean..."
+next = "2"
+
+[gossip_for_elsie_dell.2]
+portrait = "mad"
+local = "How can the Dragonguard assist you, citizen?"
+prompts = [
+	{ local = "Does the Dragonguard have any intel to share?", next = "3" },
+	{ local = "Got any gossip?", next = "4" },
+]
+
+[gossip_for_elsie_dell.3]
+portrait = "think"
+local = "Intel? Is that a kind of $Newt$?"
+next = "5"
+
+[gossip_for_elsie_dell.4]
+portrait = "think"
+local = "Gossip? Is that a kind of $Newt$?"
+next = "5"
+
+[gossip_for_elsie_dell.5]
+portrait = "wink"
+local = "Because in that case, you're in luck! I've got a whole pocket full!"
+prompts = [
+	{ local = "Where did you get the Newts, Dell.", next = "6" },
+	{ local = "Newts...?", next = "6" },
+]
+
+[gossip_for_elsie_dell.6]
+portrait = "happy"
+local = "I've been tasked with saving them!"
+prompts = [
+	{ local = "Go on.", next = "7" },
+	{ local = "Tasked by who?", next = "7" },
+]
+
+[gossip_for_elsie_dell.7]
+portrait = "think"
+local = """Well, maybe not "tasked with" exactly..."""
+next = "8"
+
+[gossip_for_elsie_dell.8]
+portrait = "mad"
+local = "But it's the Dragonguard's job to help those in need!"
+next = "9"
+
+[gossip_for_elsie_dell.9]
+portrait = "neutral"
+local = "I found them in the Bathhouse, swimming around in $Juniper's$ weird soup!"
+next = "10"
+
+[gossip_for_elsie_dell.10]
+portrait = "mad"
+local = "$Newts$ don't belong in soup, [Ari]. Even I know that!"
+next = "11"
+
+[gossip_for_elsie_dell.11]
+portrait = "happy"
+local = "So I've been helping them AND Miss Juniper at the same time!"
+next = "12"
+
+[gossip_for_elsie_dell.12]
+portrait = "think"
+local = "Plus, $Mr. Balor$ let me trade a bunch of them for my favorite =Chocolate=."
+next = "13"
+
+[gossip_for_elsie_dell.13]
+portrait = "ugh"
+local = "What's he doing with them...?"
+next = "14"
+
+[gossip_for_elsie_dell.14]
+portrait = "wink"
+local = "Who knows, it's not the Dragonguard's job to ask questions."
+
+[gossip_for_elsie_turn_in]
+kind = "gameplay_triggered"
+speaker = "elsie"
+portrait = "neutral"
+local = "[Ari]! You answered my request? I'm so glad someone else in Mistria loves to hear a good bit of gossip!"
+prompts = [
+	{ local = "You're not going to believe what Dell's been doing...", next = "1" },
+	{ local = "Apparently Juniper has a newt problem...", next = "5" },
+]
+
+[gossip_for_elsie_turn_in.1]
+portrait = "happy"
+local = "Ohhh trading some ill-gotten goods for candy, you say? How scandalous."
+next = "2"
+
+[gossip_for_elsie_turn_in.2]
+portrait = "wink"
+local = "$Dell$ does love her =Chocolate=!"
+next = "3"
+
+[gossip_for_elsie_turn_in.3]
+portrait = "think"
+local = "But what would her mother think of all this...?"
+next = "8"
+
+[gossip_for_elsie_turn_in.5]
+portrait = "happy"
+local = "My my! So you're telling me those little creatures are SUPPOSED to be swimming around in that cauldron of hers?"
+next = "6"
+
+[gossip_for_elsie_turn_in.6]
+portrait = "think"
+local = "I always assumed the damp attracted them in..."
+next = "7"
+
+[gossip_for_elsie_turn_in.7]
+portrait = "wink"
+local = "But it turns out that $Juniper$ is just fond of =Newts=! Who would have guessed?"
+next = "8"
+
+[gossip_for_elsie_turn_in.8]
+portrait = "happy"
+local = "This chat has been most delightful."
+next = "9"
+
+[gossip_for_elsie_turn_in.9]
+portrait = "neutral"
+local = "If you're ever in the mood for a bit of daily gossip, do stop by."
+next = "10"
+
+[gossip_for_elsie_turn_in.10]
+portrait = "wink"
+local = "I'm happy to share any tidbits I've picked up!"

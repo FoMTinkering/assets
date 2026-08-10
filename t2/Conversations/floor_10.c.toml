@@ -1,0 +1,63 @@
+[floor_10_follow_up_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ floor_10 = "seen" },
+	{ water_seal = "undefined" },
+]
+local = "Hi [Ari], what's on your mind? I don't have any updates on that second dragon statue yet."
+next = "1"
+
+[floor_10_follow_up_eiland.1]
+portrait = "happy"
+local = "You want to know about the history of the Mines?"
+next = "2"
+
+[floor_10_follow_up_eiland.2]
+portrait = "think"
+local = "We don't know too much, but there is evidence a pre-Aldarian society once utilized underground chambers for cultural and religious activities."
+next = "3"
+
+[floor_10_follow_up_eiland.3]
+local = "Pre-Aldarian, Pre-Alda, its origins likely predate even the rule of the Witch Queens."
+next = "4"
+
+[floor_10_follow_up_eiland.4]
+portrait = "happy"
+effect = "music_notes"
+local = "There are surely artifacts yet to be discovered that will reveal more about them."
+
+[floor_10_follow_up_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ floor_10 = "seen" },
+	{ water_seal = "undefined" },
+]
+portrait = "think"
+local = "A voice... in the Mines?"
+next = "1"
+
+[floor_10_follow_up_errol.1]
+portrait = "sad"
+effect = "sick"
+local = "..."
+next = "2"
+
+[floor_10_follow_up_errol.2]
+portrait = "ugh"
+local = "I'm telling you, eerie things have been happening there since the earthquake."
+next = "3"
+
+[floor_10_follow_up_errol.3]
+local = "I'm glad we've got someone brave to look into it."
+
+[mines_floor_ten]
+kind = "gameplay_triggered"
+writes = [{ floor_10 = "seen" }]
+no_speaker = true
+local = "A faint whisper breaks the silence..."
+next = "1"
+
+[mines_floor_ten.1]
+local = "^Hero... Help...^"

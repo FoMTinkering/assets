@@ -1,0 +1,160 @@
+[chat_0]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "olric" }, { npc = "seridia" }] },
+	{ olric_zone = "<seridia_zone>" },
+	{ olric_zone = "narrows/mines_chat" },
+	{ caldarus_seridia_town = true },
+	{  },
+	{  },
+	{  },
+]
+speaker = "olric"
+portrait = "ugh"
+local = "Seridia, only [Ari] is allowed in the Mines!"
+next = "1"
+
+[chat_0.1]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "It was not my choice, Olric... I was imprisoned down there."
+next = "2"
+
+[chat_0.2]
+speaker = "olric"
+portrait = "sad"
+local = "I get that, but Errol is super strict about this stuff... he'll be so mad if he finds out."
+next = "3"
+
+[chat_0.3]
+speaker = "seridia"
+portrait = "think"
+local = "Really?"
+next = "4"
+
+[chat_0.4]
+speaker = "seridia"
+portrait = "sinister"
+local = "Then perhaps I will tell him myself."
+
+[chat_1]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "olric" }, { npc = "seridia" }] },
+	{ olric_zone = "<seridia_zone>" },
+	{ olric_zone = "narrows/mines_chat" },
+	{ caldarus_seridia_town = true },
+]
+speaker = "olric"
+portrait = "neutral"
+local = "Errol says these mines are haunted..."
+next = "1"
+
+[chat_1.1]
+speaker = "olric"
+portrait = "think"
+local = "You used to hang out down there, right? Ever see anything scary?"
+next = "2"
+
+[chat_1.2]
+speaker = "seridia"
+portrait = "smile"
+local = "Hah! Ahaha!"
+next = "3"
+
+[chat_1.3]
+speaker = "olric"
+portrait = "happy"
+local = "Hahaha!"
+next = "4"
+
+[chat_1.4]
+speaker = "seridia"
+portrait = "sinister"
+local = "Hahaha!"
+next = "5"
+
+[chat_1.5]
+speaker = "olric"
+portrait = "happy"
+local = "Haha! Wait, why are we laughing again?"
+
+[chat_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "olric" }, { npc = "seridia" }] },
+	{ olric_zone = "<seridia_zone>" },
+	{ olric_zone = "narrows/mines_chat" },
+	{ caldarus_seridia_town = true },
+]
+speaker = "seridia"
+portrait = "neutral"
+local = "So I am to understand that the Mines are condemned, and therefore you cannot go inside."
+next = "1"
+
+[chat_2.1]
+speaker = "seridia"
+portrait = "serious"
+local = """But sometimes you like to visit the entrance so you can... "remember the good times"."""
+next = "2"
+
+[chat_2.2]
+speaker = "olric"
+portrait = "happy"
+local = "Yeah! Don't you ever do that?"
+next = "3"
+
+[chat_2.3]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "The places I remember are long gone... so no, I do not."
+next = "4"
+
+[chat_2.4]
+speaker = "olric"
+portrait = "wink"
+local = "Sounds like you need to go to some new places and make some new memories!"
+next = "5"
+
+[chat_2.5]
+speaker = "seridia"
+portrait = "think"
+local = "Hm. I suppose I am working on it."
+next = "6"
+
+[chat_2.6]
+speaker = "seridia"
+portrait = "sly"
+local = "You are very wise for one so muscular, Olric."
+
+[chat_3]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "olric" }, { npc = "seridia" }] },
+	{ olric_zone = "<seridia_zone>" },
+	{ olric_routine = "narrows_workout", comparator = "!=", ignore_priority = true },
+	{ seridia_routine = "narrows_workout", comparator = "!=", ignore_priority = true },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+speaker = "seridia"
+portrait = "neutral"
+local = "I must warn you Olric, I can only pay for your services with gold or gems."
+next = "1"
+
+[chat_3.1]
+portrait = "think"
+local = "I've learned my lesson about bestowing unimaginable power."
+next = "2"
+
+[chat_3.2]
+speaker = "olric"
+portrait = "happy"
+local = "Aw, I don't need to get paid to help out a bud, Seri!"
+next = "3"
+
+[chat_3.3]
+speaker = "olric"
+portrait = "think"
+local = "... I mean, a cool gem would be pretty sweet... if you've got one lying around."

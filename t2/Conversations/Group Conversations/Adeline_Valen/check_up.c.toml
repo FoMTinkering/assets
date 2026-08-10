@@ -1,0 +1,18 @@
+[check_up]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "valen" }] },
+	{ adeline_zone = "<valen_zone>" },
+	{ location = "clinic_f1", comparator = "!=" },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "I'd say it's nearing time for your annual checkup, Adeline."
+next = "1"
+
+[check_up.1]
+speaker = "adeline"
+portrait = "mad"
+effect = "shock"
+local = "Oh my gosh! I'll schedule it right away!"

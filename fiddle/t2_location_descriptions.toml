@@ -1,0 +1,876 @@
+allowed_overlaps = [
+	"general_store_store/south_entrance_to_shift",
+	"eilands_office/routine_entrance",
+	"town/blacksmith_routine_entrance",
+	"general_store_store/shopping_entrance",
+	"inn/food_service_entrance",
+	"inn/bartender_entrance",
+	"eastern_road/north_west_routine_entrance",
+	"town/garden_wander_entrance",
+	"general_store_home/south_routine_entrance",
+	"town/general_store_entrance_routine",
+	"inn/chores_to_food_service",
+	"town/inn_exit_routine",
+	"town/north_west_routine_entrance",
+	"museum_entry/south_routine_entrance",
+	"town/hf_kitchen_entrance"
+]
+
+# How to make zones:
+#
+# Each zone needs to be `x.y`, where `x` is the name of a location
+# and `y` is the name of the zone. It needs to be an array of points,
+# and each point is just the name of the trellis point within the room `x`.
+#
+# Additionally, there are auto-inserted `personal.<npc>` zones, which are composed
+# of no points themselves.
+[zones]
+	adelines_bedroom.seats = [
+		"Loveseat Left Seat",
+		"Loveseat Right Seat",
+		"Armchair Seat",
+	]
+	adelines_office.room = [
+		"Left Bookshelf",
+		"Right Bookshelf",
+		"Desk Chair Seat",
+		"Pacing Left",
+		"Pacing Right",
+		"Ad Couch Top Seat",
+		"Ad Couch Middle Seat",
+		"Ad Couch Bottom Seat",
+		"chat_1",
+		"chat_2",
+		"chat_3"
+	]
+	bathhouse.cauldron = ["Cauldron 1", "Cauldron 2", "Cauldron 3", "Cauldron 4", "supervisor_1", "supervisor_2"]
+	bathhouse.cauldron_convo = ["cauldron_convo_1", "cauldron_convo_2"]
+	bathhouse.desk = ["Dozy", "Front Desk", "customer", "dozy_bed_chat_1", "dozy_bed_chat_2"]
+	bathhouse_change_room.seats = [
+		"Left Stool Seat",
+		"Right Stool Seat",
+		"Left Bench Left Seat",
+		"Left Bench Right Seat",
+		"Middle Bench Left Seat",
+		"Middle Bench Right Seat",
+		"Right Bench Left Seat",
+		"Right Bench Right Seat",
+	]
+	beach.campfire_benches = [
+		"Left Bench Seat",
+		"Top Bench Seat",
+		"Right Bench Seat",
+	]
+	beach.dock = ["Dock Chatting 1", "Dock Chatting 2"]
+	beach.picnic_bench = [
+		"Picnic Bench Top Left",
+		"Picnic Bench Top Right",
+		"Picnic Bench Bottom Left",
+		"Picnic Bench Bottom Right",
+	]
+	beach.sand_castle = ["sand_castle_1", "sand_castle_2", "sand_castle_3"]
+	beach.towels = [
+		"Chat Below Towels 1",
+		"Chat Below Towels 2",
+		"Chat Below Towels 3",
+	]
+	blacksmith_store.fireplace = [
+		"Fireplace Seat Left",
+		"Fireplace Seat Right",
+		"Fireplace Stool Left",
+	]
+	blacksmith_store.till = ["Blacksmith Till", "North Hangout"]
+	blacksmith_store.workbench = [
+		"Workbench Stool",
+		"Store Chatting Left",
+		"Store Chatting Right",
+		"Store Chatting Bottom",
+	]
+	caldarus_house.firepit = [
+		"Caldarus Pouf Left",
+		"Caldarus Pouf Right",
+		"tea_1",
+		"tea_2",
+		"tea_3",
+		"tea_4",
+	]
+	caldarus_house.shelf_left = [
+		"scroll_1",
+		"scroll_2",
+		"reading_1"
+	]
+	caldarus_house.shelf_right = [
+		"scroll_3",
+		"scroll_4",
+		"reading_2"
+	]
+	caldarus_house.statue = [
+		"dragon_cleaning_1",
+		"dragon_cleaning_2"
+	]
+	caldarus_house.tree_left = [
+		"tree_1",
+		"tree_2"
+	]
+	caldarus_house.tree_right = [
+		"tree_3",
+		"tree_4"
+	]
+	celines_room.living_room = [
+		"ArmChair Seat",
+		"Couch Seat Upper",
+		"Couch Seat Middle",
+		"Couch Seat Bottom",
+	]
+	clinic_f1.babysitting = ["Valen Babysitting", "Kids 1", "Kids 2", "Kids 3"]
+	clinic_f1.desk = [
+		"Doctor's Desk",
+		"Valen Chatting",
+		"Bothering Valen",
+		"Check In",
+		"Prescription",
+	]
+	clinic_f1.top_bed = ["Top Bed", "North Bed Side"]
+	deep_woods.bench = [
+		"Caldarus Bench Left",
+		"Caldarus Bench Right",
+		"lute_1"
+	]
+	deep_woods.garden = [
+		"gardening_1",
+		"gardening_2",
+		"gardening_3",
+		"gardening_4",
+		"gardening_5",
+		"gardening_6",
+		"gardening_7",
+		"gardening_8",
+	]
+	deep_woods.lake = [
+		"foraging_chat_1",
+		"foraging_chat_2"
+	]
+	deep_woods.pond_left = [
+		"pond_1",
+		"pond_2",
+		"pond_3",
+		"pond_4",
+		"pond_5",
+		"pond_6",
+		"west_pond_convo_1",
+		"west_pond_convo_2",
+	]
+	deep_woods.pond_right = [
+		"pond_7",
+		"pond_8",
+		"pond_9",
+		"pond_10",
+		"pond_11",
+		"pond_12",
+	]
+	dells_bedroom.bed = ["Dell Wake Point", "Dell Bed"]
+	dells_bedroom.hanging_out = ["Hanging Out 1", "Hanging Out 2", "Hanging Out 3"]
+	eastern_road.business_check_in = [
+		"adeline_business_carpenter",
+		"business_carpenter",
+		"business_carpenter_shadow_1",
+		"business_carpenter_shadow_2",
+		"business_carpenter_shadow_3",
+	]
+	eastern_road.foraging_chat = [
+		"foraging_chat_1",
+		"foraging_chat_2"
+	]
+	eastern_road.pond_bench = ["Bench Left", "Bench Right"]
+	eastern_road.pond_north = ["North Side of Pond", "fishing_3"]
+	eastern_road.porch_conversation = [
+		"Porch Conversation Left",
+		"Porch Conversation Right",
+	]
+	eastern_road.supervising = [
+		"supervising_1",
+		"supervising_extra",
+		"kids_1",
+		"kids_2",
+		"kids_3"
+	]
+	eastern_road.tree_chat = [
+		"tree_chat_1",
+		"tree_chat_2"
+	]
+	eastern_road.work_station = [
+		"Carpenter's Workshop Stool",
+		"Lumber 1",
+		"Porch Near Lumber",
+		"Workbench 1",
+		"Workbench 2",
+	]
+	eastern_road.work_station_teaching = [
+		"observation_1",
+		"observation_2",
+		"observation_3",
+		"explanation",
+	]
+	eilands_bedroom.loveseat = ["Loveseat Left Seat", "Loveseat Right Seat"]
+	eilands_office.office_chat = [
+		"office_chat_1",
+		"office_chat_2",
+		"office_chat_3",
+		"office_chat_4",
+	]
+	eilands_office.room = [
+		"Left Cabinet",
+		"Right Cabinet",
+		"Desk Chair Seat",
+		"Pacing Left",
+		"Pacing Right",
+		"South Table",
+		"Front of Desk",
+	]
+	eilands_office.viewing_0 = [
+		"viewing_0_a",
+		"viewing_0_b"
+	]
+	eilands_office.viewing_1 = [
+		"viewing_1_a",
+		"viewing_1_b"
+	]
+	eilands_office.viewing_2 = [
+		"viewing_2_a",
+		"viewing_2_b"
+	]
+	eilands_office.viewing_3 = [
+		"viewing_3_a",
+		"viewing_3_b"
+	]
+	elsies_bedroom.seats = [
+		"Chaise Left Seat",
+		"Chaise Right Seat",
+		"Desk Chair Seat",
+	]
+	general_store_home.kids_play = [
+		"kids_play_1",
+		"kids_play_2",
+		"kids_play_3",
+	]
+	general_store_home.living_room = [
+		"Upper Couch Left Seat",
+		"Upper Couch Middle Seat",
+		"Upper Couch Right Seat",
+		"Lower Couch Left Seat",
+		"Lower Couch Middle Seat",
+		"Lower Couch Right Seat",
+		"Armchair",
+	]
+	general_store_home.kitchen = [
+		"Kitchen Stool Left",
+		"Kitchen Stool Right",
+		"Kitchen Counter",
+		"General Store Kitchen Mat",
+		"chores_cleaning_1",
+		"Stove",
+	]
+	general_store_home.kitchen_table = [
+		"Kitchen Table Top Left",
+		"Kitchen Table Top Right",
+		"Kitchen Table Bottom Left",
+		"Kitchen Table Bottom Right",
+	]
+	general_store_store.north_east_shelves = ["Stocking 1", "Stocking 2"]
+	general_store_store.north_west_shelves = [
+		"Shopping 4",
+		"Group Chatting 1",
+		"Group Chatting 2",
+		"Group Chatting 3",
+	]
+	general_store_store.register = [
+		"Checking Out",
+		"Dell Helping At Register",
+		"General Store Register",
+		"General Store Work Lunch",
+		"north_entrance_to_shift",
+	]
+	general_store_store.south_east_shelves = ["Shopping 1", "Shopping 2"]
+	haydens_farm.barn = [
+		"Hayden Chores Cows Horses",
+		"Farm Visitor 1",
+		"Farm Visitor 2",
+	]
+	haydens_farm.farm_chat = [
+		"farm_chat_1",
+		"farm_chat_2",
+		"farm_chat_3",
+		"farm_chat_4",
+	]
+	haydens_farm.foraging_chat = [
+		"foraging_chat_1",
+		"foraging_chat_2",
+	]
+	haydens_farm.statue = [
+		"statue_1",
+		"statue_2",
+	]
+	haydens_house.bench = ["Bench Seat 1", "Bench Seat 2", "Bench Seat 3"]
+	haydens_house.living_room = [
+		"Haybale Seat 1",
+		"Haybale Seat 2",
+		"Couch Seat Left",
+		"Couch Seat Middle",
+		"Couch Seat Right",
+	]
+	haydens_house.table = ["Table Seat 1", "Table Seat 2", "Table Seat 3"]
+	inn.balcony_dragonguard = [
+		"dragonguard_1",
+		"dragonguard_2",
+		"dragonguard_3",
+		"dragonguard_4",
+		"dragonguard_5",
+	]
+	inn.balcony_hang = ["Balcony Hang 1", "Balcony Hang 2", "Balcony Hang 3"]
+	inn.bar = [
+		"Bottom-Middle Bar Seat",
+		"Bottom Bar Seat",
+		"Top Bar Seat",
+		"Top-Middle Bar Seat",
+		"Top Bar Hang",
+		"Bar Stand North",
+		"Bar Stand Middle",
+		"Bar Stand South",
+		"Bartender 1",
+		"Bartender 2",
+		"Bartender 3",
+		"Bartender 4",
+	]
+	inn.capital_club = ["capital_club_1", "capital_club_2", "capital_club_3"]
+	inn.kitchen = ["Cutting Board", "Stove-Top Kitchen", "Hot Pass"]
+	inn.kitchen_tutorial = ["cooking_tutorial_1", "cooking_tutorial_2", "cooking_tutorial_3", "cooking_tutorial_4"]
+	inn.performance = ["Jo Singing", "Hemlock Playing", "Second Singer"]
+	inn.north_table = [
+		"North Table Bottom 1",
+		"North Table Bottom 2",
+		"North Table Bottom 3",
+		"North Table Left End",
+		"North Table Right End",
+		"North Table Top 1",
+		"North Table Top 2",
+		"North Table Top 3",
+		"fnati_art_model",
+	]
+	inn.song_listening = ["Song Listening 1", "Song Listening 2"]
+	inn.south_table = [
+		"South Table Bottom 1",
+		"South Table Bottom 2",
+		"South Table Bottom 3",
+		"South Table Left End",
+		"South Table Top 1",
+		"South Table Top 2",
+		"South Table Top 3",
+	]
+	inn.story = [
+		"Story Listener 1",
+		"Story Listener 2",
+		"Story Listener 3",
+		"Storyteller",
+		"Storyteller Duo 1",
+		"Storyteller Duo 2"
+	]
+	inn.work = ["work_chat_1", "work_chat_2"]
+	landens_house_f1.kitchen_table = ["Kitchen Chair Left", "Kitchen Chair Right"]
+	landens_house_f1.register = ["Register", "Register Chatting"]
+	landens_house_f1.shop_south = ["shop_south_1", "shop_south_2", "shop_south_3", "shop_south_4"]
+	landens_house_f1.tools_group = ["Chatting 1", "Chatting 2", "Chatting 3"]
+	landens_house_f1.worktable = [
+		"Carpentry Point Left",
+		"Carpentry Point Right",
+		"Extra Hang",
+	]
+	lucs_room.hanging_out = ["Luc Wake Point", "Maple Hanging Out", "Luc Bed"]
+	manor_house_dining_room.table = [
+		"Table Left Seat 1",
+		"Table Left Seat 2",
+		"Table Left Seat 3",
+		"Table Left Seat 4",
+		"Table Right Seat 1",
+		"Table Right Seat 2",
+		"Table Right Seat 3",
+		"Table Right Seat 4",
+		"Standing",
+	]
+	manor_house_entry.east_chat = ["east_chat_1", "east_chat_2", "east_chat_3", "east_chat_4"]
+	manor_house_entry.west_chat = ["west_chat_1", "west_chat_2"]
+	manor_house_entry.couch = [
+		"Couch Left Seat",
+		"Couch Middle Seat",
+		"Couch Right Seat",
+	]
+	maples_room.hanging_out = [
+		"Luc Hanging Out",
+		"Reina_Reading",
+		"Maple Wake Point",
+	]
+	museum_entry.chat = [
+		"Museum Admiring Painting Left",
+		"Museum Admiring Painting Right",
+		"museum_conversation_shadow",
+	]
+	museum_entry.chat_2 = [
+		"chat_1",
+		"chat_2",
+		"chat_3"
+	]
+	museum_entry.desk = [
+		"Museum Desk",
+		"museum_desk_shadow",
+	]
+	narrows.fishing = ["Gathering Bait Near River", "fishing_1"]
+	narrows.hang = ["kid_group_hang_1", "kid_group_hang_2", "kid_group_hang_3"]
+	narrows.mines_chat = ["mines_chat_1", "mines_chat_2"]
+	narrows.museum_chat = ["museum_chat_1", "museum_chat_2"]
+	narrows.ruins = [
+		"archaeology_1",
+		"archaeology_2",
+		"archaeology_3",
+		"archaeology_7",
+		"North West Ruins Corner",
+		"South East Ruins Corner",
+	]
+	narrows.ruins_routine = [
+		"narrows_ruins_routine_entrance",
+		"workout_0",
+		"workout_1",
+		"workout_2",
+		"workout_3",
+	]
+	narrows.supervisors = ["supervisor_1", "supervisor_2"]
+	terithias_house.couch = [
+		"Couch Seat Top",
+		"Couch Seat Middle",
+		"Couch Seat Bottom",
+	]
+	town.animal_festival_east_chat = [
+		"af_east_chat_1",
+		"af_east_chat_2"
+	]
+	town.animal_festival_large_animal_booth = [
+		"af_large_booth_1",
+		"af_large_booth_2",
+		"af_large_booth_3",
+		"af_large_booth_4",
+	]
+	town.animal_festival_north_chat = [
+		"af_north_chat_1",
+		"af_north_chat_2",
+		"af_north_chat_3"
+	]
+	town.animal_festival_podium = [
+		"af_podium",
+		"af_podium_chat"
+	]
+	town.animal_festival_small_animal_booth = [
+		"af_small_booth_1",
+		"af_small_booth_2",
+		"af_small_booth_3",
+		"af_small_booth_4",
+	]
+	town.animal_festival_south_chat = [
+		"af_south_chat_1",
+		"af_south_chat_2",
+		"af_south_chat_3"
+	]
+	town.animal_festival_souvenir_booth = [
+		"af_souvenir_booth_1",
+		"af_souvenir_booth_2",
+		"af_souvenir_booth_3",
+		"af_souvenir_booth_4"
+	]
+	town.animal_festival_zoo_south = [
+		"af_zoo_3",
+		"af_zoo_4",
+		"af_zoo_5"
+	]
+	town.animal_festival_zoo_west = [
+		"af_zoo_1",
+		"af_zoo_2",
+		"af_zoo_6"
+	]
+	town.bathhouse_exterior = ["bathhouse_chat_1", "bathhouse_chat_2"]
+	town.blacksmith_business = [
+		"adeline_business_blacksmith",
+		"business_blacksmith",
+		"business_blacksmith_2",
+		"business_blacksmith_shadow_1",
+		"business_blacksmith_shadow_2",
+		"business_blacksmith_shadow_3",
+	]
+	town.blacksmith_forge = [
+		"Anvil",
+		"Forge",
+		"Anvil Olric Helping",
+		"Blacksmith Customer",
+		"Anvil Chatting 1",
+		"Anvil Chatting 2",
+	]
+	town.bridge = ["Bridge Hang Left Up", "Bridge Standing Left"]
+	town.celine_bench = ["Celine Cottage Bench Left", "Celine Cottage Bench Right"]
+	town.celine_garden = [
+		"Celine Garden 1",
+		"Celine Garden 2",
+		"Celine Garden 3",
+		"Celine Garden 4",
+		"Celine Garden Talking To",
+		"celine_garden_start"
+	]
+	town.celine_garden_chat = [
+		"gardening_talk_1",
+		"gardening_talk_2",
+		"gardening_talk_3",
+		"gardening_talk_4",
+		"gardening_talk_5"
+	]
+	town.center_square = [
+		"Maple DG Town Meet",
+		"Dell DG Town Meet",
+		"Luc DG Town Meet",
+	]
+	town.clinic = [
+		"Conversation Outside Clinic Left",
+		"Conversation Outside Clinic Right",
+	]
+	town.darcy_stall_chat = [
+		"market_darcy_0",
+		"market_darcy_1",
+		"market_darcy_2",
+	]
+	town.darcy_stall_booth = [
+		"market_darcy_4",
+		"market_darcy_5",
+	]
+	town.fishing = ["River Fishing Near Celine's House", "Town Fishing Friend"]
+	town.fountain_north_east = [
+		"Fountain Square Right 1",
+		"Fountain Square Right 2",
+		"Fountain Square Right 3",
+	]
+	town.fountain_north_west = [
+		"Fountain Square Left 1",
+		"Fountain Square Left 2",
+		"Fountain Square Left 3",
+	]
+	town.fountain_south = [
+		"Fountain Hang 1",
+		"Fountain Hang 2",
+		"Fountain Hang 3",
+		"Fountain Meetcute 1",
+		"Fountain Meetcute 2",
+		"south_fountain_1",
+		"south_fountain_2",
+		"south_fountain_3",
+		"south_fountain_4"
+	]
+	town.forge_lesson = [
+		"forge_observation_1",
+		"forge_observation_2",
+		"forge_observation_3",
+		"forge_explanation",
+	]
+	town.front_of_manor = ["Adeline Wake Point", "Eiland Wake Point"]
+	town.gazebo = ["Gazebo Hang Left", "Gazebo Hang Right", "Manor Gazebo"]
+	town.general_store_business = [
+		"adeline_business_general_store",
+		"business_general_store",
+		"general_store_sweep_2",
+		"business_general_store_shadow_1",
+		"business_general_store_shadow_2",
+		"business_general_store_shadow_3",
+	]
+	town.harvest_festival_chat = [
+		"hf_chat_0",
+		"hf_chat_1",
+		"hf_chat_2"
+	]
+	town.harvest_festival_kitchen = [
+		"hf_kitchen_0",
+		"hf_kitchen_1",
+		"hf_kitchen_2",
+		"hf_kitchen_4",
+		"hf_kitchen_5",
+		"hf_kitchen_entrance"
+	]
+	town.harvest_festival_kitchen_bar = [
+		"hf_bar_0",
+		"hf_bar_1"
+	]
+	town.harvest_festival_kitchen_customer = [
+		"hf_kitchen_3",
+	]
+	town.harvest_festival_kitchen_hang = [
+		"hf_kitchen_hang_0",
+		"hf_kitchen_hang_1",
+		"hf_kitchen_hang_2"
+	]
+	town.harvest_festival_patch = [
+		"hf_patch_0",
+		"hf_patch_1",
+		"hf_patch_2",
+		"hf_patch_3"
+	]
+	town.harvest_festival_side_chat = [
+		"hf_side_chat_0",
+		"hf_side_chat_1",
+		"hf_side_chat_2"
+	]
+	town.harvest_festival_shopping = [
+		"hf_shopping_0",
+		"hf_shopping_1",
+		"hf_shopping_2",
+		"hf_shopping_3"
+	]
+	town.harvest_festival_table_north_east = [
+		"hf_table_north_4",
+		"hf_table_north_5"
+	]
+	town.harvest_festival_table_north_west = [
+		"hf_table_north_1",
+		"hf_table_north_2"
+	]
+	town.harvest_festival_table_south_east = [
+		"hf_table_south_4",
+		"hf_table_south_5"
+	]
+	town.harvest_festival_table_south_west = [
+		"hf_table_south_1",
+		"hf_table_south_2"
+	]
+	town.inn_business = ["adeline_business_inn", "business_inn", "business_inn_shadow_1",
+		"business_inn_shadow_2",
+		"business_inn_shadow_3",]
+	town.inn_yard_chat = ["Inn Yard", "Inn Yard Talking To"]
+	town.inn_yard_chores = [
+		"inn_yard_chores_1",
+		"inn_yard_chores_2",
+		"inn_yard_chores_3",
+		"inn_yard_chores_4",
+		"inn_yard_chores_5",
+	]
+	town.louis_stall_chat = [
+		"market_louis_3",
+		"market_louis_4"
+	]
+	town.louis_stall_trio = [
+		"market_louis_0",
+		"market_louis_1",
+		"market_louis_2"
+	]
+	town.manor_flowers_north_east = [
+		"manor_gardening_3",
+		"manor_gardening_4",
+		"manor_garden_north_east",
+		"manor_garden_north_east_2",
+	]
+	town.manor_flowers_north_west = [
+		"manor_gardening_1",
+		"manor_gardening_2",
+		"manor_garden_north_west",
+		"manor_garden_north_west_2",
+	]
+	town.manor_flowers_south_east = [
+		"manor_gardening_7",
+		"manor_gardening_8",
+		"manor_garden_south_east",
+		"manor_garden_south_east_2",
+	]
+	town.manor_flowers_south_west = [
+		"manor_gardening_5",
+		"manor_gardening_6",
+		"manor_garden_south_west",
+		"manor_garden_south_west_2",
+	]
+	town.merri_stall_chat = [
+		"market_merri_3",
+		"market_merri_4",
+		"merri_packing_2",
+	]
+	town.merri_stall_hang = [
+		"market_merri_0",
+		"market_merri_1",
+		"market_merri_2",
+	]
+	town.mill = ["Mill Inspection 1", "Mill Inspection 2"]
+	town.playground = [ "Big Tree Left", "Big Tree Right"]
+	town.playground_parent = [
+		"Playground Parent 1",
+		"Playground Parent 2",
+		"Playground Parent 3",
+		"Playground Parent 4",
+	]
+	town.playground_playdate = [
+		"Big Tree Playdate 1",
+		"Big Tree Playdate 2",
+		"Big Tree Playdate 3",
+		"Big Tree Playdate 4",
+	]
+	town.quest_board = [
+		"Quest Board",
+		"Quest Board Friend",
+	]
+	town.quest_board_looking = [
+		"Quest Board Looking 1",
+		"Quest Board Looking 2",
+		"Quest Board Looking 3",
+	]
+	town.repair_observation = [
+		"repair_observation_1",
+		"repair_observation_2"
+	]
+	town.repair_yard = [
+		"repair_work_1",
+		"repair_work_2",
+		"repair_work_3",
+		"repair_work_4",
+		"repair_work_5",
+	]
+	town.shooting_star_blacksmith = [
+		"star_festival_march",
+		"star_festival_olric"
+	]
+	town.shooting_star_carpenters_plus = [
+		"star_festival_errol",
+		"star_festival_landen",
+		"star_festival_ryis",
+		"star_festival_terithia"
+	]
+	town.shooting_star_general_store = [
+		"star_festival_celine",
+		"star_festival_dell",
+		"star_festival_holt",
+		"star_festival_nora"
+	]
+	town.shooting_star_inn = [
+		"star_festival_hemlock",
+		"star_festival_josephine",
+		"star_festival_luc",
+		"star_festival_maple",
+		"star_festival_reina"
+	]
+	town.shooting_star_manor = [
+		"star_festival_adeline",
+		"star_festival_eiland",
+		"star_festival_elsie",
+	]
+	town.shooting_star_misc_dateables = [
+		"star_festival_balor",
+		"star_festival_dozy",
+		"star_festival_hayden",
+		"star_festival_henrietta",
+		"star_festival_juniper",
+		"star_festival_valen"
+	]
+	town.south_street_central = [
+		"Town South Meetup 1",
+		"Town South Meetup 2",
+		"Town South Meetup 3",
+		"Town South Meetup 4",
+	]
+	town.south_street_east = [
+		"Windmill Watch 1",
+		"Windmill Watch 2",
+		"Windmill Watch 3",
+	]
+	town.spring_festival_elsie_booth_shoppers = [
+		"sf_errol_booth",
+		"sf_landen_booth",
+		"sf_terithia_booth",
+	]
+	town.spring_festival_fountain = ["sf_terithia_chat", "sf_valen_chat"]
+	town.spring_festival_maple_booth_shoppers = [
+		"sf_dell_booth",
+		"sf_hayden_booth",
+		"sf_henrietta_booth",
+		"sf_luc_booth",
+	]
+	town.spring_festival_nora_booth_shoppers = [
+		"sf_balor_booth",
+		"sf_dell_booth_2",
+		"sf_march_booth",
+	]
+	town.spring_festival_nora_booth_side = ["sf_celine_booth", "sf_holt_booth"]
+	town.spring_festival_podium = ["sf_adeline_booth", "sf_josephine_booth"]
+	town.spring_festival_stage_performers = [
+		"sf_elsie_duet",
+		"sf_hemlock_duet",
+		"sf_hemlock_play",
+	]
+	town.spring_festival_trio = ["sf_errol_chat", "sf_march_chat", "sf_olric_chat"]
+	town.stillwell_board_chat = [
+		"market_stillwell_1",
+		"market_stillwell_2",
+	]
+	town.stillwell_stall_booth = [
+		"market_stillwell_0",
+		"market_stillwell_4",
+	]
+	town.stillwell_stall_chat = [
+		"market_stillwell_3",
+		"market_stillwell_5",
+	]
+	town.vera_stall_chat = [
+		"market_vera_0",
+		"market_vera_1"
+	]
+	town.vera_stall_trio = [
+		"market_vera_2",
+		"market_vera_3",
+		"market_vera_4"
+	]
+	town.taliferro_stall_chat = [
+		"market_taliferro_0",
+		"market_taliferro_1"
+	]
+	town.taliferro_stall_trio = [
+		"market_taliferro_2",
+		"market_taliferro_3",
+		"market_taliferro_4"
+	]
+	town.zorel_stall_trio = [
+		"market_zorel_1",
+		"market_zorel_2",
+		"market_zorel_3"
+	]
+	town.wagon = [
+		"Bothering Balor",
+		"Wagon Meet Up 1",
+		"Wagon Meet Up 2",
+		"Wagon Meet Up 3",
+	]
+	town.wheedle_stall_booth = [
+		"market_wheedle_0",
+		"market_wheedle_1",
+		"wheedle_packing_5",
+	]
+	town.wheedle_stall_chat = [
+		"market_wheedle_2",
+		"market_wheedle_3",
+	]
+	town.wheedle_stall_shop = [
+		"market_wheedle_4",
+	]
+	western_ruins.pit = [
+		"pit_1",
+		"pit_2",
+		"pit_3",
+		"pit_4",
+		"pit_edges_1",
+		"pit_edges_2",
+		"Grid Supervisor",
+	]
+	western_ruins.ruins_chat = [
+		"ruins_chat_1",
+		"ruins_chat_2"
+	]
+	western_ruins.tarp = ["artifacts_1", "artifacts_2"]
+	western_ruins.tour = [
+		"Dig Site Tour 1",
+		"Dig Site Tour 2",
+		"Dig Site Tour 3",
+		"Dig Site Tour Guide",
+	]

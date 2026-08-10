@@ -1,0 +1,29 @@
+[saturday_no_market]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "reina" }] },
+	{ celine_zone = "<reina_zone>" },
+	{ quest_repair_the_bridge_complete = false },
+	{ quest_repair_the_bridge_in_progress = true },
+	{ season = "spring" },
+]
+speaker = "reina"
+portrait = "sad"
+local = "It's been hard getting my hands on my usual ingredients since the earthquake. Merchants can't get to Mistria since the bridge collapsed."
+next = "1"
+
+[saturday_no_market.1]
+speaker = "reina"
+portrait = "ugh"
+local = "Coming up with new recipes is tough when I'm stuck using last year's potatoes!"
+next = "2"
+
+[saturday_no_market.2]
+speaker = "celine"
+local = "Have you tried foraging for fiddleheads? Spring is the perfect season for them!"
+next = "3"
+
+[saturday_no_market.3]
+speaker = "reina"
+effect = "cheery"
+local = "Ooh!"

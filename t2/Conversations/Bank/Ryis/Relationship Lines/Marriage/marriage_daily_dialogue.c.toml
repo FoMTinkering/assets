@@ -1,0 +1,1087 @@
+[morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_morning_greeting = false }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy_blush"
+local = "Hey... there's my sleepyhead."
+next = "1"
+
+[morning_0.1]
+portrait = "wink"
+local = "Feeling good and rested? It's a beautiful day."
+
+[morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_morning_greeting = false }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "embarrassed"
+local = "Getting out of bed in the morning is tough when there's someone so cute next to me."
+next = "1"
+
+[morning_1.1]
+portrait = "thoughtful_blush"
+local = "It's criminal, really. Someone should do something."
+
+[dreams_0]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_morning_greeting = false }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "Dreamt I was still living above the bakery with my folks..."
+next = "1"
+
+[dreams_0.1]
+portrait = "closed_eyes"
+local = "Woke up convinced I'd have to get out of bed and start warming up the big shop ovens."
+next = "2"
+
+[dreams_0.2]
+portrait = "blush_special"
+local = "Gotta say, it's way better waking up next to you."
+
+[ari_plans_0]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_morning_greeting = false },
+	{ ryis_planning_line = "undefined" }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "neutral"
+local = "Hey you."
+next = "1"
+
+[ari_plans_0.1]
+portrait = "happy"
+local = "What's the plan for the day? Wanna make sure I'm here when you get home."
+prompts = [
+	{ local = "I'm going to check on the farm.", next = "2" },
+	{ local = "Maybe I'll go fishing.", next = "4" },
+	{ local = "I was thinking of going into the Mines...", next = "7" }
+]
+
+[ari_plans_0.2]
+writes = [{ ryis_planning_line = "farming", expires = "20h" }]
+portrait = "neutral"
+local = "Yeah, of course!"
+next = "3"
+
+[ari_plans_0.3]
+portrait = "happy"
+local = "It's looking good these days. You're really good with your hands, [Ari]."
+
+[ari_plans_0.4]
+writes = [{ ryis_planning_line = "fishing", expires = "20h" }]
+portrait = "neutral"
+local = "Yeah! That sounds fun."
+next = "5"
+
+[ari_plans_0.5]
+portrait = "happy"
+local = "I gotta join you some time. Fishing is a nice way to spend a day, even if you don't catch anything."
+next = "6"
+
+[ari_plans_0.6]
+portrait = "blush_special"
+local = "Just as long as I get to go home with the best catch of all, right?"
+
+[ari_plans_0.7]
+writes = [{ ryis_planning_line = "mining", expires = "20h" }]
+portrait = "neutral"
+local = "Oh yeah? That sounds cool. I love how you're always out adventuring, even now."
+next = "8"
+
+[ari_plans_0.8]
+portrait = "sad"
+local = "Just... don't overdo it, okay?"
+next = "9"
+
+[ari_plans_0.9]
+portrait = "embarrassed"
+local = "I'd rather you overdo it where I can keep an eye on you."
+
+[sleepy_0]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "closed_eyes_smile"
+local = "What a sleepy morning..."
+next = "1"
+
+[sleepy_0.1]
+portrait = "wink"
+local = "Hey, what do you say we crawl back into bed?"
+
+[spouse_plans_0]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_morning_greeting = false }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "Think I might head out to the Carpenter's Shop later."
+next = "1"
+
+[spouse_plans_0.1]
+portrait = "wink"
+local = "Still gotta keep the town up and running!"
+next = "2"
+
+[spouse_plans_0.2]
+portrait = "happy"
+effect = "drop"
+local = "Not to mention make sure that Uncle's eating right."
+
+[spring_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_morning_greeting = false }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "sweat_drop", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "Every spring, I'm reminded that the abundance of trees in Mistria has one downside..."
+next = "1"
+
+[spring_morning_0.1]
+portrait = "embarrassed"
+local = "I'm still not used to all this pollen!"
+
+[spring_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_morning_greeting = false }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "Spring mornings are so nice..."
+next = "1"
+
+[spring_morning_1.1]
+portrait = "happy"
+local = "It's great waking up to a cool breeze, right?"
+
+[summer_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_morning_greeting = false }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "sweat_drop", npc = "ryis" } }]
+portrait = "closed_eyes"
+local = "Whew, this summer humidity is something else."
+next = "1"
+
+[summer_morning_0.1]
+portrait = "sad"
+local = "I can already feel my shirt sticking to my... everything."
+
+[summer_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_morning_greeting = false }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "The days are so long in summer... makes me want to play hooky and go to the Beach."
+next = "1"
+
+[summer_morning_1.1]
+portrait = "wink"
+local = "Hey, let's go to the Beach again soon."
+
+[fall_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_morning_greeting = false }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+portrait = "think"
+local = "The floor is so cold in the mornings, now..."
+next = "1"
+
+[fall_morning_0.1]
+portrait = "happy"
+effect = "drop"
+local = "Fall is really here, huh?"
+
+[fall_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_morning_greeting = false }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+portrait = "happy"
+local = "Love the colors this time of year."
+next = "1"
+
+[fall_morning_1.1]
+portrait = "neutral"
+local = "It's like the trees put on their best clothes before closing up shop for winter."
+next = "2"
+
+[fall_morning_1.2]
+portrait = "wink"
+local = "We better not let them show us up!"
+
+[winter_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_morning_greeting = false }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "sad"
+local = "Winter mornings are too cold..."
+next = "1"
+
+[winter_morning_0.1]
+portrait = "thoughtful_blush"
+local = "Hey, let's call off work and go back to bed. I'm sure the animals can take care of themselves for one day."
+
+[winter_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_morning_greeting = false }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "sincere_special"
+local = "It's chilly out there... you bundled up and prepared for the day?"
+next = "1"
+
+[winter_morning_1.1]
+portrait = "blush_special"
+local = "Well, you're looking real cute. That counts, too."
+
+[rainy_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ weather = "rainy" },
+	{ ryis_is_spouse = true },
+	{ building = "player_home" },
+	{ ryis_morning_greeting = false }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+portrait = "blush_special"
+local = "Morning! Doesn't look like the rain's going to let up today."
+next = "1"
+
+[rainy_morning_0.1]
+portrait = "happy_blush"
+local = "Wear good boots, okay?"
+
+[snowy_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "ryis" },
+	{ time_of_day = "morning" },
+	{ weather = "snowy" },
+	{ ryis_is_spouse = true },
+	{ building = "player_home" },
+	{ ryis_morning_greeting = false }
+]
+writes = [{ ryis_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "shocked"
+local = "Hey [Ari]! Did you see it's snowing?"
+next = "1"
+
+[snowy_morning_0.1]
+portrait = "happy"
+local = "Wow, it's extra pretty on the farm..."
+
+# Basement
+[basement_0]
+
+refresh = "1w"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "surprised"
+local = "Look who it is! How's your day going?"
+next = "1"
+
+[basement_0.1]
+portrait = "starry_eyed"
+local = "Looking forward to seeing you back at the house tonight."
+
+[basement_1]
+
+refresh = "1w"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" },
+	{ building = "general_store", comparator = "!=" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "We need anything from the store? I can do a grocery run on the way home, easy."
+
+[basement_2]
+
+refresh = "1w"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "Hey you. What did you want for dinner tonight?"
+next = "1"
+
+[basement_2.1]
+portrait = "thoughtful"
+local = "I'm always a fan of a good sandwich, but whatever you want is fine with me."
+
+[basement_3]
+
+refresh = "1w"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+portrait = "wink"
+local = "If you want me to do some laundry while you're out, just say the word."
+next = "1"
+
+[basement_3.1]
+portrait = "neutral"
+local = "I'm used to doing laundry for a big family, so washing just our clothes? That's small potatoes."
+
+[basement_4]
+
+refresh = "1w"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy_blush"
+local = "Wow, [Ari]... did you come all the way over here to give me a kiss?"
+next = "1"
+
+[basement_4.1]
+portrait = "thoughtful_blush"
+local = "I guess that means you like me..."
+next = "2"
+
+[basement_4.2]
+portrait = "closed_eyes_smile_blush"
+local = "I... like you too."
+next = "3"
+
+[basement_4.3]
+portrait = "blush_special"
+local = "I guess we should get married about it."
+
+[basement_5]
+
+refresh = "1w"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "shocked"
+local = "I keep thinking to myself... I'm so lucky to be with you [Ari]."
+next = "1"
+
+[basement_5.1]
+portrait = "embarrassed"
+local = "You're so amazing..."
+next = "2"
+
+[basement_5.2]
+portrait = "happy_blush"
+local = "I feel like I can talk to you about anything."
+
+[basement_6]
+
+refresh = "1w"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "surprised"
+local = "Hey, [Ari]!"
+next = "1"
+
+[basement_6.1]
+portrait = "neutral"
+local = "You didn't come all the way out here just to see me, did you?"
+next = "2"
+
+[basement_6.2]
+portrait = "embarrassed"
+local = "I missed you, too."
+
+# Evening
+[evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_evening_greeting = false },
+	{ ryis_in_bed = false }
+]
+writes = [{ ryis_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "neutral"
+local = "Hey, I was just thinking about you."
+next = "1"
+
+[evening_0.1]
+portrait = "happy"
+effect = "cheery"
+local = "Have a good day? See any cool birds?"
+
+[evening_1]
+refresh = "8d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_evening_greeting = false },
+	{ ryis_in_bed = false }
+]
+writes = [{ ryis_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "think"
+local = "The day went by fast, didn't it?"
+next = "1"
+
+[evening_1.1]
+portrait = "embarrassed"
+local = "Well, maybe we can make the evening go by more slowly."
+
+[evening_2]
+refresh = "8d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_evening_greeting = false },
+	{ ryis_in_bed = false }
+]
+writes = [{ ryis_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "happy"
+local = "Another day's work done!"
+next = "1"
+
+[evening_2.1]
+portrait = "embarrassed"
+local = "You're not tired yet, are you? I wanna hear about your day."
+
+[evening_3]
+refresh = "8d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_evening_greeting = false },
+	{ ryis_in_bed = false }
+]
+writes = [{ ryis_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "neutral"
+local = "Hey you."
+next = "1"
+
+[evening_3.1]
+portrait = "embarrassed"
+local = "Missed you today. Love you."
+
+[spring_evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_evening_greeting = false },
+	{ ryis_in_bed = false },
+	{ season = "spring" }
+]
+writes = [{ ryis_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "annoyed", npc = "ryis" } }]
+portrait = "closed_eyes"
+local = "Spring weather is tough, isn't it?"
+next = "1"
+
+[spring_evening_0.1]
+portrait = "sad"
+local = "You want to bring out your cute warm weather clothes... but the second the sun's down, it's basically winter again. Brr."
+
+[spring_evening_1]
+refresh = "8d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_evening_greeting = false },
+	{ ryis_in_bed = false },
+	{ season = "spring" }
+]
+writes = [{ ryis_evening_greeting = true, expires = "7h" }]
+portrait = "happy"
+local = "So glad it's spring..."
+next = "1"
+
+[spring_evening_1.1]
+portrait = "neutral"
+local = "It's nice we don't have to sleep under that big pile of winter blankets anymore. Cozy... but so heavy!"
+
+[summer_evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_evening_greeting = false },
+	{ ryis_in_bed = false },
+	{ season = "summer" }
+]
+writes = [{ ryis_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "annoyed", npc = "ryis" } }]
+portrait = "closed_eyes"
+local = "Summer nights are tough..."
+next = "1"
+
+[summer_evening_0.1]
+portrait = "sad"
+local = "What's the point of going to bed when it's too hot to cuddle?"
+
+[summer_evening_1]
+refresh = "8d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_evening_greeting = false },
+	{ ryis_in_bed = false },
+	{ season = "summer" }
+]
+writes = [{ ryis_evening_greeting = true, expires = "7h" }]
+portrait = "happy"
+local = "Love it when the sun goes down in summer..."
+next = "1"
+
+[summer_evening_1.1]
+portrait = "blush_special"
+local = "Feel that night breeze? It's something else."
+
+[fall_evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_evening_greeting = false },
+	{ ryis_in_bed = false },
+	{ season = "fall" }
+]
+writes = [{ ryis_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "think"
+local = "The days are getting short again, huh?"
+next = "1"
+
+[fall_evening_0.1]
+portrait = "happy"
+local = "Well, let's make the most of the day while we have it."
+
+[fall_evening_1]
+refresh = "8d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_evening_greeting = false },
+	{ ryis_in_bed = false },
+	{ season = "fall" }
+]
+writes = [{ ryis_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "Gotta say, fall is my favorite season for people watching. Everyone always dresses extra nice."
+next = "1"
+
+[fall_evening_1.1]
+portrait = "embarrassed"
+local = "Especially you... you looked extra cute today."
+
+[winter_evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_evening_greeting = false },
+	{ ryis_in_bed = false },
+	{ season = "winter" }
+]
+writes = [{ ryis_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "shocked"
+local = "Hey, your hands are so cold..."
+next = "1"
+
+[winter_evening_0.1]
+portrait = "happy_blush"
+local = "Let's warm you up. What do you say we go to bed early?"
+
+[winter_evening_1]
+refresh = "8d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ building = "player_home" },
+	{ ryis_evening_greeting = false },
+	{ ryis_in_bed = false },
+	{ season = "winter" }
+]
+writes = [{ ryis_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "neutral"
+local = "So nice to come inside our warm house on a cold day."
+next = "1"
+
+[winter_evening_1.1]
+portrait = "happy_blush"
+local = "Getting to see you makes it extra nice."
+
+[rainy_evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_evening_greeting = false },
+	{ ryis_in_bed = false },
+	{ weather = "rainy" }
+]
+writes = [{ ryis_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "think"
+local = "It's been coming down all day, huh?"
+next = "1"
+
+[rainy_evening_0.1]
+portrait = "neutral"
+local = "Hopefully tomorrow won't be so rainy... but if it is, maybe we can have a lazy day at home."
+
+[snowy_evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ ryis_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_evening_greeting = false },
+	{ ryis_in_bed = false },
+	{ weather = "snowy" }
+]
+writes = [{ ryis_evening_greeting = true, expires = "7h" }]
+portrait = "think"
+local = "It's really been snowing all day, huh?"
+next = "1"
+
+[snowy_evening_0.1]
+portrait = "neutral"
+local = "If it lets up tonight, maybe all the kids will make snowmen tomorrow."
+
+# domestic flavor
+[domestic_flavor_0]
+refresh = "30d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ cutscene_seen_pet_arrival = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "Don't worry about [pet_name], I already fed them."
+next = "1"
+
+[domestic_flavor_0.1]
+portrait = "wink"
+local = "But if you wanna sneak them extra treats... I'm not looking!"
+
+[domestic_flavor_1]
+refresh = "30d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ cutscene_seen_pet_arrival = true }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "neutral"
+local = "Aw man, [pet_name] is too cute. It's so cool having a little guy living in your house."
+next = "1"
+
+[domestic_flavor_1.1]
+portrait = "happy"
+effect = "sparkles"
+local = "I always wanted a pet as a kid... this is seriously a dream come true."
+
+[domestic_flavor_2]
+refresh = "30d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ ari_has_double_bed_placed = false },
+	{ spouse_slept_in_double_bed_night_before = false },
+	{ wedding_was_yesterday = false, ignore_priority = true }
+]
+actions = [{ bark = { bark = "annoyed", npc = "ryis" } }]
+portrait = "think"
+local = "Hey uh, [Ari]?"
+next = "1"
+
+[domestic_flavor_2.1]
+portrait = "happy"
+effect = "drop"
+local = "Listen, a small bed works when you're single, but the one you have can't really accommodate two people... those people being you and me..."
+next = "2"
+
+[domestic_flavor_2.2]
+portrait = "sad"
+local = "Can we just get a double-sized bed? We even sell them at the Carpenter's Shop..."
+
+[domestic_flavor_3]
+refresh = "30d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ ryis_chair_placed = true },
+	{ ryis_desk_placed = true },
+	{ ryis_crafting_station_placed = true },
+	{ wedding_was_yesterday = false, ignore_priority = true }
+]
+portrait = "happy"
+local = "The farm has been looking real nice lately!"
+next = "1"
+
+[domestic_flavor_3.1]
+portrait = "wink"
+local = "Glad I could put my mark on the house, too. Nice to have space to do my projects."
+next = "2"
+
+[domestic_flavor_3.2]
+portrait = "embarrassed"
+local = "Just tell me if I'm tracking sawdust everywhere!"
+
+[domestic_flavor_4]
+refresh = "30d"
+requires = [
+	{ npc = "ryis" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_is_spouse = true },
+	{ ryis_desk_placed = false },
+	{ ryis_crafting_station_placed = false },
+	{ wedding_was_yesterday = false, ignore_priority = true }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "ryis" } }]
+portrait = "think"
+local = "Hey, [Ari]..."
+next = "1"
+
+[domestic_flavor_4.1]
+portrait = "sad"
+local = "I live here now, it would be nice to have a spot of my own... a place to get up to my own projects and stuff."
+next = "2"
+
+[domestic_flavor_4.2]
+portrait = "embarrassed"
+local = "I spent years doing woodworking in my bedroom. I'm married, now... so I'd like to graduate from all that, you know?"
+
+# workstation
+[workstation_0]
+refresh = "9d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ ryis_activity_object = "ryis_desk" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "I'm writing a letter to my baby sister, Vivi... she's been pestering me about how you're doing."
+next = "1"
+
+[workstation_0.1]
+portrait = "wink"
+local = "I guess she's been hearing me gush about you for a while, and now she's a big fan."
+
+[workstation_1]
+refresh = "9d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ ryis_activity_object = "ryis_desk" }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "ryis" } }]
+portrait = "think"
+local = "Dad sent a letter with a laundry list of questions to ask Uncle Landen, and now I'm transcribing all Uncle Landen's questions to send back to my dad..."
+next = "1"
+
+[workstation_1.1]
+portrait = "happy"
+effect = "drop"
+local = "They're brothers, can't they send their own letters to each other?"
+
+[workstation_2]
+refresh = "9d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ ryis_activity_object = "ryis_desk" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "My big sister Wynne is looking for new menu ideas for the bakery! She's asking everyone in the family to contribute a recipe."
+next = "1"
+
+[workstation_2.1]
+portrait = "thoughtful"
+local = "What should I do? Cookies? Maybe some kind of cake..."
+
+[workstation_3]
+refresh = "9d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ any = [
+		{ ryis_activity = "roommate_sitting" },
+		{ ryis_activity = "roommate_read_sitting" }
+	] },
+	{ ryis_animation = "read_sit" }
+]
+actions = [{ bark = { bark = "ellipses", npc = "ryis" } }]
+portrait = "neutral"
+local = "My mom sent a long letter about how the shop's been going."
+next = "1"
+
+[workstation_3.1]
+portrait = "thoughtful"
+local = "Sounds like chocolate croissants have been really big lately..."
+next = "2"
+
+[workstation_3.2]
+portrait = "think"
+effect = "drop"
+local = "Wait, did they ever go out of style?"
+
+[workstation_4]
+refresh = "9d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ any = [
+		{ ryis_activity = "roommate_sitting" },
+		{ ryis_activity = "roommate_read_sitting" }
+	] },
+	{ ryis_animation = "read_sit" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "My sister Kiki sent me her newest book pickup... the story's getting pretty tense!"
+next = "1"
+
+[workstation_4.1]
+portrait = "wink"
+local = "Kiki loves books. She has so many novels in her collection, she might as well open up a lending library."
+
+[workstation_5]
+refresh = "9d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ ryis_activity_object = "ryis_chair" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "Not to toot my own horn, but this chair is real comfortable."
+next = "1"
+
+[workstation_5.1]
+portrait = "wink"
+local = "Whoever made it deserves an award. Or a really nice nap."
+
+[workstation_6]
+refresh = "9d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ any = [
+		{ ryis_activity = "roommate_saw" },
+		{ ryis_activity_object = "ryis_crafting_station" },
+		{ ryis_activity_object = "ryis_desk" }
+	] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "When I don't know what to do, I always wind up making birdhouses..."
+next = "1"
+
+[workstation_6.1]
+portrait = "happy"
+local = "I think making tiny houses just relaxes me."
+
+[workstation_7]
+refresh = "9d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ any = [
+		{ ryis_activity = "roommate_saw" },
+		{ ryis_activity_object = "ryis_crafting_station" }
+	] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "Hey, [Ari]! Sorry about the fumes... I'm doing some segmented woodwork for ornamentation."
+next = "1"
+
+[workstation_7.1]
+portrait = "happy"
+local = "I know it looks like a mess now, but it'll look cool later. Promise."
+
+[workstation_8]
+refresh = "9d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ any = [
+		{ ryis_activity = "roommate_saw" },
+		{ ryis_activity_object = "ryis_crafting_station" },
+		{ ryis_activity_object = "ryis_desk" }
+	] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "I know you're not supposed to bring work home... but working here is real relaxing, you know?"

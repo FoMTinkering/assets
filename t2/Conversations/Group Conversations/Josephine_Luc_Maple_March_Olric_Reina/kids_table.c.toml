@@ -1,0 +1,54 @@
+[kids_table]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "josephine" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "march" },
+		{ npc = "olric" },
+		{ npc = "reina" }
+	] },
+	{ josephine_zone = "<luc_zone>" },
+	{ josephine_zone = "<maple_zone>" },
+	{ josephine_zone = "<march_zone>" },
+	{ josephine_zone = "<olric_zone>" },
+	{ josephine_zone = "<reina_zone>" },
+	{ any = [
+		{ josephine_zone = "inn/north_table" },
+		{ josephine_zone = "inn/south_table" }
+	] }
+]
+speaker = "march"
+portrait = "neutral"
+local = "Hey, how did we end up at the kid's table?"
+next = "1"
+
+[kids_table.1]
+speaker = "maple"
+portrait = "mad"
+local = "Mister March, how do you know Luc and I aren't sitting at the grown-ups table?"
+next = "2"
+
+[kids_table.2]
+speaker = "luc"
+portrait = "neutral"
+local = "That's true. There's no empirical evidence to prove it one way or the other."
+next = "3"
+
+[kids_table.3]
+speaker = "olric"
+portrait = "neutral"
+local = "You sure know a lot of big words, Luc!"
+next = "4"
+
+[kids_table.4]
+speaker = "reina"
+portrait = "think"
+local = "I think he learned that one at the Museum."
+next = "5"
+
+[kids_table.5]
+speaker = "josephine"
+portrait = "happy"
+local = "Errol does like to turn their visits into impromptu lessons."

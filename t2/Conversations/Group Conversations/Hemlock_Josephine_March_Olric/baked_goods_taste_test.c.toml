@@ -1,0 +1,42 @@
+[baked_goods_taste_test]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "hemlock" },
+		{ npc = "josephine" },
+		{ npc = "march" },
+		{ npc = "olric" }
+	] },
+	{ location = "inn" },
+	{ hemlock_zone = "<josephine_zone>" },
+	{ hemlock_zone = "<march_zone>" },
+	{ hemlock_zone = "<olric_zone>" },
+	{ baked_goods_taste_test = true }
+]
+speaker = "hemlock"
+portrait = "happy"
+local = "Oh, this is delicious!"
+next = "1"
+
+[baked_goods_taste_test.1]
+speaker = "josephine"
+portrait = "neutral"
+local = "Sweetheart, you wouldn't tell me even if it tasted bad. That's why March is here, to give his honest opinion. What do you think, March?"
+next = "2"
+
+[baked_goods_taste_test.2]
+speaker = "march"
+portrait = "think"
+local = "It's okay, I guess."
+next = "3"
+
+[baked_goods_taste_test.3]
+speaker = "josephine"
+portrait = "wink"
+local = "And Olric is here to translate!"
+next = "4"
+
+[baked_goods_taste_test.4]
+speaker = "olric"
+portrait = "happy"
+local = "That means he loves it, and he wants seconds!"

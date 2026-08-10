@@ -1,0 +1,2585 @@
+[shooting_star_morning]
+kind = "gameplay_triggered"
+speaker = "elsie"
+effect = "surprise"
+local = "Ah, good morning [Ari]!"
+next = "1"
+
+[shooting_star_morning.1]
+speaker = "elsie"
+portrait = "happy"
+local = "I was just on my way over to tell you about tonight's $Shooting Star Festival$."
+next = "2"
+
+[shooting_star_morning.2]
+speaker = "elsie"
+portrait = "neutral"
+local = "It's a Mistrian tradition going back centuries, you know."
+next = "3"
+
+[shooting_star_morning.3]
+speaker = "elsie"
+portrait = "happy"
+local = "The villagers gather around town with family and friends every year to watch the meteor shower that marks the end of summer."
+next = "4"
+
+[shooting_star_morning.4]
+speaker = "elsie"
+portrait = "wink"
+local = "Better yet... $viewing them with a romantic partner$ on the $summit$ makes an ideal date."
+next = "5"
+
+[shooting_star_morning.5]
+speaker = "elsie"
+portrait = "happy"
+local = "It's said that doing so will link your destinies together, just like the stars themselves."
+next = "6"
+
+[shooting_star_morning.6]
+speaker = "elsie"
+portrait = "wink"
+local = "What do you think, [Ari]? Is there someone special you want to watch the stars with...?"
+prompts = [
+	{ local = "Yes! Please tell me more!", next = "7" },
+	{ local = "I would prefer to watch them alone.", next = "12" },
+]
+
+[shooting_star_morning.7]
+speaker = "elsie"
+portrait = "wink"
+local = "Wonderful, I thought that might be the case!"
+next = "8"
+
+[shooting_star_morning.8]
+speaker = "elsie"
+portrait = "neutral"
+local = "To $invite someone you're interested in$, give them this $Star Brooch$, per tradition."
+next = "9"
+
+[shooting_star_morning.9]
+speaker = "elsie"
+portrait = "think"
+local = "Of course, be sure this person already $knows you well$, if you want to invite them on a date."
+next = "10"
+
+[shooting_star_morning.10]
+speaker = "elsie"
+portrait = "happy"
+local = "Once they accept it, be sure to $meet up with them from 8:00 PM onward$ so you can go up to the summit together."
+next = "11"
+
+[shooting_star_morning.11]
+speaker = "elsie"
+portrait = "wink"
+local = "Good luck [Ari]."
+next = "14"
+
+[shooting_star_morning.12]
+speaker = "elsie"
+portrait = "neutral"
+local = "Of course dear, there's no pressure to choose a date if you're not interested. Forget I mentioned it!"
+next = "13"
+
+[shooting_star_morning.13]
+speaker = "elsie"
+portrait = "happy"
+local = "You can enjoy the evening however you see fit. If you'd like a great view of the stars, you can head to $the summit from 8:00 PM onward$."
+next = "14"
+
+[shooting_star_morning.14]
+speaker = "elsie"
+portrait = "neutral"
+local = "Well, I'd better let you get back to your morning."
+next = "15"
+
+[shooting_star_morning.15]
+speaker = "elsie"
+portrait = "happy"
+local = "See you later!"
+
+[shooting_star_morning_married]
+kind = "gameplay_triggered"
+speaker = "elsie"
+effect = "surprise"
+local = "Good morning [Ari]!"
+next = "1"
+
+[shooting_star_morning_married.1]
+speaker = "elsie"
+portrait = "happy"
+local = "I just wanted to stop by to remind you that tonight is the $Shooting Star Festival$."
+next = "2"
+
+[shooting_star_morning_married.2]
+speaker = "elsie"
+portrait = "neutral"
+local = "After all, it's a Mistrian tradition going back centuries!"
+next = "3"
+
+[shooting_star_morning_married.3]
+speaker = "elsie"
+portrait = "happy"
+local = "As you know, the villagers gather around town with family and friends every year to watch the meteor shower that marks the end of summer."
+next = "4"
+
+[shooting_star_morning_married.4]
+speaker = "elsie"
+portrait = "wink"
+local = "I'm sure that [spouse] is eagerly awaiting your invitation."
+next = "5"
+
+[shooting_star_morning_married.5]
+speaker = "elsie"
+portrait = "happy"
+local = "What better way to celebrate and reaffirm your vows?"
+next = "6"
+
+[shooting_star_morning_married.6]
+speaker = "elsie"
+portrait = "wink"
+local = "What do you think, [Ari]? Will you watch the stars with [spouse] tonight?"
+prompts = [
+    { local = "Yes! Of course!", next = "7" },
+    { local = "Not this year...", next = "12" },
+]
+
+[shooting_star_morning_married.7]
+speaker = "elsie"
+portrait = "wink"
+local = "Wonderful, I'm glad to hear it!"
+next = [
+    { target = "8_male", requires = [
+        { any = [
+            { balor_is_spouse = true },
+            { caldarus_is_spouse = true },
+            { eiland_is_spouse = true },
+            { hayden_is_spouse = true },
+            { march_is_spouse = true },
+            { ryis_is_spouse = true }
+        ] }
+    ] },
+    { target = "8_female", requires = []}
+]
+
+[shooting_star_morning_married.8_male]
+speaker = "elsie"
+portrait = "neutral"
+local = "To $invite [spouse]$, give him this $Star Brooch$, per tradition."
+next = "9_male"
+
+[shooting_star_morning_married.9_male]
+speaker = "elsie"
+portrait = "wink"
+local = "He is sure to appreciate such a romantic gesture..."
+next = "10_male"
+
+[shooting_star_morning_married.10_male]
+speaker = "elsie"
+portrait = "happy"
+local = "Afterwards, be sure to $meet up with him from 8:00 PM onward$ so you can go up to the summit together."
+next = "11"
+
+[shooting_star_morning_married.8_female]
+speaker = "elsie"
+portrait = "neutral"
+local = "To $invite [spouse]$, give her this $Star Brooch$, per tradition."
+next = "9_female"
+
+[shooting_star_morning_married.9_female]
+speaker = "elsie"
+portrait = "wink"
+local = "She is sure to appreciate such a romantic gesture..."
+next = "10_female"
+
+[shooting_star_morning_married.10_female]
+speaker = "elsie"
+portrait = "happy"
+local = "Afterwards, be sure to $meet up with her from 8:00 PM onward$ so you can go up to the summit together."
+next = "11"
+
+[shooting_star_morning_married.11]
+speaker = "elsie"
+portrait = "wink"
+local = "Have fun, [Ari]!"
+next = "14"
+
+[shooting_star_morning_married.12]
+speaker = "elsie"
+portrait = "sad"
+local = "Oh! Really? My apologies, [Ari]. Perhaps the timing isn't good."
+next = "13"
+
+[shooting_star_morning_married.13]
+speaker = "elsie"
+portrait = "think"
+local = "I hope that everything is okay..."
+next = "14"
+
+[shooting_star_morning_married.14]
+speaker = "elsie"
+portrait = "neutral"
+local = "Well, I'd better let you get back to your morning."
+next = "15"
+
+[shooting_star_morning_married.15]
+speaker = "elsie"
+portrait = "happy"
+local = "See you later!"
+
+[shooting_star_blocked]
+kind = "gameplay_triggered"
+speaker = "elsie"
+local = "Ah, good morning [Ari]!"
+effect = "surprise"
+next = "1"
+
+[shooting_star_blocked.1]
+portrait = "happy"
+local = "I was just on my way over to tell you about tonight's $Shooting Star Festival$."
+next = "2"
+
+[shooting_star_blocked.2]
+portrait = "neutral"
+local = "It's a Mistrian tradition going back centuries, you know."
+next = "3"
+
+[shooting_star_blocked.3]
+portrait = "happy"
+local = "The villagers gather around town with family and friends every year to watch the meteor shower that marks the end of summer."
+next = "4"
+
+[shooting_star_blocked.4]
+portrait = "think"
+local = "In years past... $viewing them with a romantic partner$ on the $summit$ would make an ideal date."
+next = "5"
+
+[shooting_star_blocked.5]
+portrait = "sad"
+local = "Unfortunately, it seems the $summit is still inaccessible$, so that won't be possible this year."
+next = "6"
+
+[shooting_star_blocked.6]
+portrait = "happy"
+local = "It will still be nice to enjoy the festivities around town this evening, though."
+next = "7"
+
+[shooting_star_blocked.7]
+portrait = "neutral"
+local = "Well, I'd better let you get back to your morning."
+next = "8"
+
+[shooting_star_blocked.8]
+portrait = "happy"
+local = "See you later, [Ari]!"
+
+[shooting_star_adeline]
+kind = "gameplay_triggered"
+writes = [
+	{ shooting_star_date_status = "adeline_went", expires = "2w" },
+	{ shooting_star_adeline_attended = true },
+]
+speaker = "adeline"
+portrait = "blush"
+local = "Wow..."
+next = "1"
+
+[shooting_star_adeline.1]
+speaker = "adeline"
+portrait = "happy"
+local = "The stars are beautiful, aren't they?"
+prompts = [
+	{ local = "What an incredible view...", next = "2" },
+	{ local = "It's so peaceful...", next = "3" },
+]
+
+[shooting_star_adeline.2]
+speaker = "adeline"
+portrait = "neutral"
+local = "Right? This has to be the best view in the whole kingdom."
+next = "4"
+
+[shooting_star_adeline.3]
+speaker = "adeline"
+portrait = "blush"
+local = "Right? I think so too."
+next = "4"
+
+[shooting_star_adeline.4]
+speaker = "adeline"
+portrait = "happy"
+local = "It's so relaxing, sitting up here under the sky."
+next = "5"
+
+[shooting_star_adeline.5]
+speaker = "adeline"
+portrait = "think"
+local = "It's like... I suddenly feel a weight lifted from my shoulders."
+next = "6"
+
+[shooting_star_adeline.6]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "D-does that make sense?"
+prompts = [
+	{ local = "What do you mean?", next = "7" },
+	{ local = "Actually, I feel the same way.", next = "9" },
+]
+
+[shooting_star_adeline.7]
+speaker = "adeline"
+portrait = "happy"
+local = "Haha, I guess it's a feeling like..."
+next = "8"
+
+[shooting_star_adeline.8]
+speaker = "adeline"
+portrait = "hope_special"
+local = "Like everything's going to be okay."
+next = "10"
+
+[shooting_star_adeline.9]
+speaker = "adeline"
+portrait = "happy"
+local = "I'm glad that you feel it as well..."
+next = "10"
+
+[shooting_star_adeline.10]
+speaker = "adeline"
+portrait = "blush"
+local = "I've actually felt this way a lot more often since you moved to town."
+next = "11"
+
+[shooting_star_adeline.11]
+speaker = "adeline"
+portrait = "happy"
+local = "I'm not sure how I would have managed if you hadn't!"
+next = "12"
+
+[shooting_star_adeline.12]
+speaker = "adeline"
+portrait = "concerned"
+local = "To be honest, I've often worried whether I'd be able to live up to the responsibilities of being Mistria's leader."
+next = "13"
+
+[shooting_star_adeline.13]
+speaker = "adeline"
+portrait = "think"
+local = "My parents... really, the whole village has put so much faith in me."
+next = "14"
+
+[shooting_star_adeline.14]
+speaker = "adeline"
+portrait = "gloomy_special"
+local = "I wonder... will I be able to protect everyone, no matter what happens in the future...?"
+next = "15"
+
+[shooting_star_adeline.15]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "I'm so glad you answered my call, [Ari]."
+next = "16"
+
+[shooting_star_adeline.16]
+speaker = "adeline"
+portrait = "blush"
+local = "Thank you for helping to see my plans through."
+next = "17"
+
+[shooting_star_adeline.17]
+speaker = "adeline"
+portrait = "hope_special"
+local = "I... I promise I won't let you down."
+prompts = [
+	{ local = "I believe in you.", next = "18" },
+	{ local = "Let's protect Mistria together.", next = "19" },
+]
+
+[shooting_star_adeline.18]
+speaker = "adeline"
+portrait = "blush"
+local = "Thank you... it means a lot."
+next = "22"
+
+[shooting_star_adeline.19]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "[Ari]..."
+next = "20"
+
+[shooting_star_adeline.20]
+speaker = "adeline"
+portrait = "happy"
+local = "You're right. We're doing this together, aren't we?"
+next = "21"
+
+[shooting_star_adeline.21]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "I'm relieved to have you by my side."
+next = "22"
+
+[shooting_star_adeline.22]
+speaker = "adeline"
+portrait = "happy"
+local = "What a wonderful night."
+next = "23"
+
+[shooting_star_adeline.23]
+speaker = "adeline"
+portrait = "blush"
+local = "Let's watch the stars just a little bit longer before we head back, okay?"
+
+[shooting_star_balor]
+kind = "gameplay_triggered"
+writes = [
+	{ shooting_star_date_status = "balor_went", expires = "2w" },
+	{ shooting_star_balor_attended = true },
+]
+speaker = "balor"
+portrait = "neutral"
+local = "Amazing, what a view!"
+next = "1"
+
+[shooting_star_balor.1]
+speaker = "balor"
+portrait = "happy"
+local = "Mistria sure does have some nice traditions, huh?"
+next = "2"
+
+[shooting_star_balor.2]
+speaker = "balor"
+portrait = "think"
+local = "Though I don't quite understand this $Star Brooch$ thing. Is this the kind of local handicraft I should look into exporting...?"
+next = "3"
+
+[shooting_star_balor.3]
+speaker = "balor"
+portrait = "happy"
+local = "Hahaha! I'm only kidding!"
+prompts = [
+	{ local = "Haha!", next = "4" },
+	{ local = "How dare you!", next = "6" },
+]
+
+[shooting_star_balor.4]
+speaker = "balor"
+portrait = "happy"
+local = "Don't worry, I promise I won't sell it."
+next = "5"
+
+[shooting_star_balor.5]
+speaker = "balor"
+portrait = "wink"
+local = "In fact, I won't let anyone else so much as look at it!"
+next = "9"
+
+[shooting_star_balor.6]
+speaker = "balor"
+portrait = "wink"
+local = "Haha! Don't worry, I promise I won't sell it."
+next = "7"
+
+[shooting_star_balor.7]
+speaker = "balor"
+portrait = "happy"
+local = "In fact, I won't let anyone else so much as look at it!"
+next = "8"
+
+[shooting_star_balor.8]
+speaker = "balor"
+portrait = "wink"
+local = "It's all mine."
+next = "9"
+
+[shooting_star_balor.9]
+speaker = "balor"
+portrait = "sincere_special"
+local = "The stars... They really are beautiful."
+next = "10"
+
+[shooting_star_balor.10]
+speaker = "balor"
+portrait = "think"
+local = "In all my years traveling Aldaria, I've never seen them so clear and bright."
+next = "11"
+
+[shooting_star_balor.11]
+speaker = "balor"
+portrait = "neutral"
+local = "I feel lucky to have the chance to see them like this."
+prompts = [
+	{ local = "Let's watch them next year, too.", next = "12" },
+	{ local = "It's nice that these stars can be seen across Aldaria.", next = "14" },
+]
+
+[shooting_star_balor.12]
+speaker = "balor"
+portrait = "concerned"
+local = "Next year, huh..."
+next = "13"
+
+[shooting_star_balor.13]
+speaker = "balor"
+portrait = "hope_special"
+local = "I guess we'll see where the road ahead takes us, eh?"
+next = "17"
+
+[shooting_star_balor.14]
+speaker = "balor"
+portrait = "blush_special"
+local = "Now that you mention it..."
+next = "15"
+
+[shooting_star_balor.15]
+speaker = "balor"
+portrait = "happy"
+local = "It is, isn't it? Wherever our paths take us in the next year..."
+next = "16"
+
+[shooting_star_balor.16]
+speaker = "balor"
+portrait = "hope_special"
+local = "We can watch them together, as long as we both look up."
+next = "17"
+
+[shooting_star_balor.17]
+speaker = "balor"
+portrait = "neutral"
+local = "This has been nice, [Ari]."
+next = "18"
+
+[shooting_star_balor.18]
+speaker = "balor"
+portrait = "think"
+local = "The wind is starting to get cold though... we should probably head back."
+next = "19"
+
+[shooting_star_balor.19]
+speaker = "balor"
+portrait = "hope_special"
+local = "Thank you again for inviting me."
+
+[shooting_star_caldarus]
+kind = "gameplay_triggered"
+writes = [
+	{ shooting_star_date_status = "caldarus_went", expires = "2w" },
+	{ shooting_star_caldarus_attended = true },
+]
+speaker = "caldarus"
+portrait = "neutral"
+local = "......"
+next = [
+	{ target = "1_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "1_n", requires = [] },
+]
+
+[shooting_star_caldarus.1_eog]
+speaker = "caldarus"
+portrait = "think"
+local = "It has been a long time..."
+next = "2_eog"
+
+[shooting_star_caldarus.1_n]
+speaker = "caldarus"
+portrait = "think"
+local = "I wonder..."
+next = "2_n"
+
+[shooting_star_caldarus.2_eog]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Since I last saw this particular view..."
+next = "3"
+
+[shooting_star_caldarus.2_n]
+speaker = "caldarus"
+portrait = "neutral"
+local = "How long has it been since I last saw this particular view...?"
+next = "3"
+
+[shooting_star_caldarus.3]
+speaker = "caldarus"
+portrait = "smile"
+local = "Thank you for inviting me out here this evening, [Ari]."
+next = "4"
+
+[shooting_star_caldarus.4]
+speaker = "caldarus"
+portrait = "neutral"
+local = "I am glad to see that this custom continues to withstand the passage of time."
+next = "5"
+
+[shooting_star_caldarus.5]
+speaker = "caldarus"
+portrait = "think"
+local = "Mistrians once referred to the practice as $Starbinding$, you know. An apt name, indeed."
+next = "6"
+
+[shooting_star_caldarus.6]
+speaker = "caldarus"
+portrait = "smile"
+local = "Humans, despite being mortal-"
+next = "7"
+
+[shooting_star_caldarus.7]
+speaker = "caldarus"
+portrait = "think"
+local = "Or perhaps because they are mortal-"
+next = "8"
+
+[shooting_star_caldarus.8]
+speaker = "caldarus"
+portrait = "smile"
+local = "Tend to be particularly sensitive to the bonds that their souls form throughout their lifetimes."
+prompts = [
+	{ local = "The bonds that their souls form...?", next = "9" },
+	{ local = "So it really binds people together...?", next = "9" },
+]
+
+[shooting_star_caldarus.9]
+speaker = "caldarus"
+portrait = "happy"
+local = "Well, think of it this way..."
+next = "10"
+
+[shooting_star_caldarus.10]
+speaker = "caldarus"
+portrait = "neutral"
+local = "You will encounter many souls on the journey through this life."
+next = "11"
+
+[shooting_star_caldarus.11]
+speaker = "caldarus"
+portrait = "think"
+local = "Some will slip by the edges without much notice."
+next = "12"
+
+[shooting_star_caldarus.12]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "And others... others will stand out to you, like a beacon of light."
+next = "13"
+
+[shooting_star_caldarus.13]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "When that light is shared, a connection is formed."
+next = "14"
+
+[shooting_star_caldarus.14]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Mind you, that is not to say that every connection is a joyful one."
+next = "15"
+
+[shooting_star_caldarus.15]
+speaker = "caldarus"
+portrait = "think"
+local = "Every hero's story needs a villain, after all."
+next = "16"
+
+[shooting_star_caldarus.16]
+speaker = "caldarus"
+portrait = "sigh"
+local = "And of course, some souls you encounter are unable or unwilling to see your light."
+next = "17"
+
+[shooting_star_caldarus.17]
+speaker = "caldarus"
+portrait = "smile"
+local = "But the ones that are meant to always do."
+next = "18"
+
+[shooting_star_caldarus.18]
+speaker = "caldarus"
+portrait = "smile"
+local = "I suppose that is where this tradition comes into play."
+next = "19"
+
+[shooting_star_caldarus.19]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "Two souls, each casting their light with intention. Combined with the starlight above..."
+next = "20"
+
+[shooting_star_caldarus.20]
+speaker = "caldarus"
+portrait = "think"
+local = "It creates quite the beacon, you see..."
+next = "21"
+
+[shooting_star_caldarus.21]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "Guiding us to each other across many lifetimes."
+next = "22"
+
+[shooting_star_caldarus.22]
+speaker = "caldarus"
+portrait = "sigh"
+local = "..."
+next = [
+	{ target = "23_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "23_n", requires = [] },
+]
+
+[shooting_star_caldarus.23_eog]
+speaker = "caldarus"
+portrait = "neutral"
+local = "It is no coincidence that it was your light that awakened me, [Ari]."
+next = "24_eog"
+
+[shooting_star_caldarus.23_n]
+speaker = "caldarus"
+portrait = "think"
+local = "Forgive me..."
+next = "24_n"
+
+[shooting_star_caldarus.24_eog]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "Regardless of what we have been to each other in lifetimes past..."
+next = "25_eog"
+
+[shooting_star_caldarus.24_n]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "I wish that my memory was clearer."
+next = "25_n"
+
+[shooting_star_caldarus.25_eog]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "Our bond in this one is special, and ours to create."
+prompts = [
+	{ local = "I'm glad we've chosen to share this fate!", next = "26" },
+	{ local = "Being here with you... It feels like destiny.", next = "28" },
+]
+
+[shooting_star_caldarus.25_n]
+speaker = "caldarus"
+portrait = "sad"
+local = "I cannot recall if we stood here together once, in another life..."
+prompts = [
+	{ local = "It's okay. I don't recall either!", next = "26" },
+	{ local = "I'd like to think that we have.", next = "28" },
+]
+
+[shooting_star_caldarus.26]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "[Ari]...!"
+next = [
+	{ target = "27_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "27_n", requires = [] },
+]
+
+[shooting_star_caldarus.27_eog]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "I am glad as well."
+next = "29_eog"
+
+[shooting_star_caldarus.27_n]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "Aha... ahaha!"
+next = "29_n"
+
+[shooting_star_caldarus.28]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "[Ari]..."
+next = [
+	{ target = "29_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "29_n", requires = [] },
+]
+
+[shooting_star_caldarus.29_eog]
+speaker = "caldarus"
+portrait = "smile"
+local = "It is strange. Even destiny feels different to me in this $Mortal Form$."
+next = "30_eog"
+
+[shooting_star_caldarus.29_n]
+speaker = "caldarus"
+portrait = "think"
+local = "I suppose this kind of uncertainty is to be expected from a mortal-"
+next = "30_n"
+
+[shooting_star_caldarus.30_eog]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "Our dreams, our choices... It feels as though we chart a course and the tides of fate rise to meet us."
+next = "31_eog"
+
+[shooting_star_caldarus.30_n]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "F-from a mortal perspective."
+next = "31_n"
+
+[shooting_star_caldarus.31_eog]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "And so I choose to believe..."
+next = "32"
+
+[shooting_star_caldarus.31_n]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "In that case, I will choose to believe-"
+next = "32"
+
+[shooting_star_caldarus.32]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "That we, like the stars, have simply returned at the appointed time."
+next = [
+	{ target = "33_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "33_n", requires = [] },
+]
+
+[shooting_star_caldarus.33_eog]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "Ah..."
+next = "34_eog"
+
+[shooting_star_caldarus.33_n]
+speaker = "caldarus"
+portrait = "sigh"
+local = "Ah..."
+next = "34_n"
+
+[shooting_star_caldarus.34_eog]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "I hope that I am not rambling on too long, [Ari]."
+next = "35_eog"
+
+[shooting_star_caldarus.34_n]
+speaker = "caldarus"
+portrait = "think"
+local = "My body-"
+next = "35_n"
+
+[shooting_star_caldarus.35_eog]
+speaker = "caldarus"
+portrait = "unsure_special"
+local = "..."
+next = "36_eog"
+
+[shooting_star_caldarus.35_n]
+speaker = "caldarus"
+portrait = "sigh"
+local = "I am beginning to feel somewhat fatigued."
+next = "36_n"
+
+[shooting_star_caldarus.36_eog]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "Truth be told, I find myself losing track of time when we are together."
+next = "37_eog"
+
+[shooting_star_caldarus.36_n]
+speaker = "caldarus"
+portrait = "think"
+local = "Do not worry. I am not yet accustomed to leaving the protection of the woods."
+next = "37_n"
+
+[shooting_star_caldarus.37_eog]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "It is getting rather late, is it not?"
+prompts = [
+	{ local = "Should we call it a night?", next = "38" },
+	{ local = "Why don't we head back to your place?", next = "39_eog" }
+]
+
+[shooting_star_caldarus.37_n]
+speaker = "caldarus"
+portrait = "sigh"
+local = "I- I just need a moment."
+prompts = [
+	{ local = "Are you sure that you're okay?", next = "38" },
+	{ local = "Why don't we get you home?", next = "39_n" },
+]
+
+[shooting_star_caldarus.38]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "Well... perhaps we should retire to my place for the rest of the evening...?"
+next = "40"
+
+[shooting_star_caldarus.39_eog]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "I- I would like that."
+next = "40"
+
+[shooting_star_caldarus.39_n]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "I would like that."
+next = "40"
+
+[shooting_star_caldarus.40]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "I can prepare us some tea and we can watch the last of the stars through the canopy."
+next = [
+	{ target = "41_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "41_n", requires = [] },
+]
+
+[shooting_star_caldarus.41_eog]
+speaker = "caldarus"
+portrait = "smile"
+local = "Come, take my hand. I shall walk you back."
+
+[shooting_star_caldarus.41_n]
+speaker = "caldarus"
+portrait = "smile"
+local = "Come, take my hand. I will guide you back."
+
+[shooting_star_celine]
+kind = "gameplay_triggered"
+writes = [
+	{ shooting_star_date_status = "celine_went", expires = "2w" },
+	{ shooting_star_celine_attended = true },
+]
+speaker = "celine"
+portrait = "happy"
+local = "Ah... the stars are so beautiful!"
+next = "1"
+
+[shooting_star_celine.1]
+speaker = "celine"
+portrait = "blush"
+local = "They really are clear from up here, aren't they?"
+next = "2"
+
+[shooting_star_celine.2]
+speaker = "celine"
+portrait = "embarrassed"
+local = "To be honest, I was a little nervous about watching them from the summit."
+next = "3"
+
+[shooting_star_celine.3]
+speaker = "celine"
+portrait = "blush_special"
+local = "Last time I was up here I was reminded that I'm not so good with heights!"
+next = "4"
+
+[shooting_star_celine.4]
+speaker = "celine"
+portrait = "embarrassed"
+local = "But somehow, I don't feel scared this time..."
+next = "5"
+
+[shooting_star_celine.5]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "I'm glad you invited me, [Ari]. I was hoping you would."
+next = "6"
+
+[shooting_star_celine.6]
+speaker = "celine"
+portrait = "think_special"
+local = "......"
+prompts = [
+	{ local = "Is everything okay?", next = "7" },
+	{ local = "Are you sure you're not scared?", next = "7" },
+]
+
+[shooting_star_celine.7]
+speaker = "celine"
+portrait = "embarrassed"
+local = "O-oh. I'm okay!"
+next = "8"
+
+[shooting_star_celine.8]
+speaker = "celine"
+portrait = "think_special"
+local = "It's not that I'm scared, I was just... lost in thought."
+next = "9"
+
+[shooting_star_celine.9]
+speaker = "celine"
+portrait = "gloomy"
+local = "I was talking with my mom earlier, and it got me thinking about the future of the store..."
+next = "10"
+
+[shooting_star_celine.10]
+speaker = "celine"
+portrait = "think"
+local = "My parents already know that I don't want to take it over, but at the same time... it's not like I have anything else lined up yet."
+next = "11"
+
+[shooting_star_celine.11]
+speaker = "celine"
+portrait = "neutral"
+local = "I want to pursue my love of gardening. I'm sure that I'm onto something with the Codex and the seed that we found..."
+next = "12"
+
+[shooting_star_celine.12]
+speaker = "celine"
+portrait = "think_special"
+local = "But... am I just being selfish?"
+next = "13"
+
+[shooting_star_celine.13]
+speaker = "celine"
+portrait = "gloomy"
+local = "Ahh... I'm sorry, [Ari]! I didn't mean to derail our evening together."
+prompts = [
+	{ local = "You'll find your own path, don't worry.", next = "14" },
+	{ local = "I'll support you, no matter what.", next = "17" },
+]
+
+[shooting_star_celine.14]
+speaker = "celine"
+portrait = "embarrassed"
+local = "D-do you really think so?"
+next = "15"
+
+[shooting_star_celine.15]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "Thank you, [Ari]."
+next = "16"
+
+[shooting_star_celine.16]
+speaker = "celine"
+portrait = "embarrassed"
+local = "I promise I'll do my best!"
+next = "20"
+
+[shooting_star_celine.17]
+speaker = "celine"
+portrait = "teary_special"
+local = "[Ari]... thank you."
+next = "18"
+
+[shooting_star_celine.18]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "It means a lot to hear you say that."
+next = "19"
+
+[shooting_star_celine.19]
+speaker = "celine"
+portrait = "embarrassed"
+local = "I'll do my best to find my own path!"
+next = "20"
+
+[shooting_star_celine.20]
+speaker = "celine"
+portrait = "happy"
+local = "Thank you again for asking me out tonight."
+next = "21"
+
+[shooting_star_celine.21]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "I had a really nice time!"
+next = "22"
+
+[shooting_star_celine.22]
+speaker = "celine"
+portrait = "embarrassed"
+local = "It's getting a little bit cold though, isn't it?"
+next = "23"
+
+[shooting_star_celine.23]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "Um, if you want to... we could stop by my cottage on the way back."
+next = "24"
+
+[shooting_star_celine.24]
+speaker = "celine"
+portrait = "blush"
+local = "I'll put some wood on the fire and we can warm ourselves up!"
+
+[shooting_star_eiland]
+kind = "gameplay_triggered"
+writes = [
+	{ shooting_star_date_status = "eiland_went", expires = "2w" },
+	{ shooting_star_eiland_attended = true },
+]
+speaker = "eiland"
+portrait = "happy"
+local = "Ah... wow, what an incredible view!"
+next = "1"
+
+[shooting_star_eiland.1]
+speaker = "eiland"
+portrait = "neutral"
+local = "I'm so glad to have the opportunity to experience this firsthand."
+next = "2"
+
+[shooting_star_eiland.2]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "It's the first time I've celebrated the festival in the traditional way..."
+next = "3"
+
+[shooting_star_eiland.3]
+speaker = "eiland"
+portrait = "hope_special"
+local = "Up here on the summit, I mean."
+next = "4"
+
+[shooting_star_eiland.4]
+speaker = "eiland"
+portrait = "neutral"
+local = "This custom actually has a pretty incredible history, you know."
+next = "5"
+
+[shooting_star_eiland.5]
+speaker = "eiland"
+portrait = "think"
+local = "In ancient times, our ancestors celebrated the yearly return of the shooting stars with a practice known as $Starbinding$."
+next = "6"
+
+[shooting_star_eiland.6]
+speaker = "eiland"
+portrait = "happy"
+local = "It was believed that those who chose to view them here would bind their destinies together..."
+next = "7"
+
+[shooting_star_eiland.7]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "Linking them like the stars that return year after year, lifetime after lifetime."
+prompts = [
+	{ local = "Wow, you know so much about these things!", next = "8" },
+	{ local = "I'm always impressed by your historical knowledge!", next = "8" },
+]
+
+[shooting_star_eiland.8]
+speaker = "eiland"
+portrait = "happy"
+local = "Oh! Well, it's nothing really..."
+next = "9"
+
+[shooting_star_eiland.9]
+speaker = "eiland"
+portrait = "think"
+local = "You could say I've always been this way, preoccupied with the past..."
+next = "10"
+
+[shooting_star_eiland.10]
+speaker = "eiland"
+portrait = "gloomy_special"
+local = "To be honest, it often feels like it's easier for me to look back at the paths carved behind us than to forge a new one ahead."
+next = "11"
+
+[shooting_star_eiland.11]
+speaker = "eiland"
+portrait = "sad"
+local = "Adeline has always been so hardworking and focused on the future."
+next = "12"
+
+[shooting_star_eiland.12]
+speaker = "eiland"
+portrait = "think"
+local = "There was never any question about her becoming the heir. It's a role I never wanted for myself."
+next = "13"
+
+[shooting_star_eiland.13]
+speaker = "eiland"
+portrait = "sad"
+local = "And my father... His forward thinking and accomplishments saw him raised to peerage when he was my age."
+next = "14"
+
+[shooting_star_eiland.14]
+speaker = "eiland"
+portrait = "think"
+local = "I know that I'm always focusing on the past, but I can't shake the feeling that IS what I'm supposed to be doing."
+next = "15"
+
+[shooting_star_eiland.15]
+speaker = "eiland"
+portrait = "gloomy_special"
+local = "But sometimes I wonder if I'm just shying away from the future."
+prompts = [
+	{ local = "Understanding Mistria's past is important to its future!", next = "16" },
+	{ local = "Don't worry, Eiland. Let's continue discovering both!", next = "18" },
+]
+
+[shooting_star_eiland.16]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "[Ari]...!"
+next = "17"
+
+[shooting_star_eiland.17]
+speaker = "eiland"
+portrait = "hope_special"
+local = "Thank you, it makes me happy to hear that you feel the same way."
+next = "20"
+
+[shooting_star_eiland.18]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "[Ari]...!"
+next = "19"
+
+[shooting_star_eiland.19]
+speaker = "eiland"
+portrait = "hope_special"
+local = "Thank you... Wherever this road leads, I'm glad we're on it together."
+next = "20"
+
+[shooting_star_eiland.20]
+speaker = "eiland"
+portrait = "happy"
+local = "It's funny, isn't it? Talking about this here, under these stars that bridge time."
+next = "21"
+
+[shooting_star_eiland.21]
+speaker = "eiland"
+portrait = "hope_special"
+local = "It feels meant to be."
+next = "22"
+
+[shooting_star_eiland.22]
+speaker = "eiland"
+portrait = "happy"
+local = "Thank you again for inviting me out tonight, [Ari]."
+next = "23"
+
+[shooting_star_eiland.23]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "And for listening to me ramble on..."
+next = "24"
+
+[shooting_star_eiland.24]
+speaker = "eiland"
+portrait = "neutral"
+local = "It's getting late, huh."
+next = "25"
+
+[shooting_star_eiland.25]
+speaker = "eiland"
+portrait = "happy"
+local = "How about I walk you home?"
+
+[shooting_star_hayden]
+kind = "gameplay_triggered"
+writes = [
+	{ shooting_star_date_status = "hayden_went", expires = "2w" },
+	{ shooting_star_hayden_attended = true },
+]
+speaker = "hayden"
+portrait = "neutral_fist"
+local = "Wow, would you look at those stars!"
+next = "1"
+
+[shooting_star_hayden.1]
+speaker = "hayden"
+portrait = "happy_arm_down"
+local = "They sure are pretty, aren't they?"
+next = "2"
+
+[shooting_star_hayden.2]
+speaker = "hayden"
+portrait = "blush"
+local = "This is nice, [Ari]."
+next = "3"
+
+[shooting_star_hayden.3]
+speaker = "hayden"
+portrait = "think"
+local = "I remember watching these stars with my grandmother from the roof of the barn when I was a kid."
+next = "4"
+
+[shooting_star_hayden.4]
+speaker = "hayden"
+portrait = "happy"
+local = "She told me she used to do the same with her dad."
+next = "5"
+
+[shooting_star_hayden.5]
+speaker = "hayden"
+portrait = "think"
+local = "Eating some fresh popcorn, pointing out which stars we thought looked brightest..."
+next = "6"
+
+[shooting_star_hayden.6]
+speaker = "hayden"
+portrait = "sweat"
+local = "It's a tradition that goes back about as far as my family line in Mistria does!"
+next = "7"
+
+[shooting_star_hayden.7]
+speaker = "hayden"
+portrait = "think"
+local = "Hopefully it will continue to the next generation, too."
+prompts = [
+	{ local = "Do you mean... Henrietta?", next = "8" },
+	{ local = "Hey, you never know!", next = "8" },
+]
+
+[shooting_star_hayden.8]
+speaker = "hayden"
+portrait = "laugh"
+local = "Gya ha ha!"
+next = "9"
+
+[shooting_star_hayden.9]
+speaker = "hayden"
+portrait = "sweat"
+local = "Well, I suppose you're right."
+next = "10"
+
+[shooting_star_hayden.10]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "I always imagined myself with a big family someday..."
+next = "11"
+
+[shooting_star_hayden.11]
+speaker = "hayden"
+portrait = "think"
+local = "And now, it's not just Henrietta... I've got my whole farm!"
+next = "12"
+
+[shooting_star_hayden.12]
+speaker = "hayden"
+portrait = "happy_arm_down"
+effect = "drop"
+local = "Who knows how much bigger my family might grow at this rate!"
+next = "13"
+
+[shooting_star_hayden.13]
+speaker = "hayden"
+portrait = "think_special"
+local = "..."
+next = "14"
+
+[shooting_star_hayden.14]
+speaker = "hayden"
+portrait = "shy_special"
+local = "Well now, sorry for getting sidetracked there."
+next = "15"
+
+[shooting_star_hayden.15]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "I suppose you never know where life might take you, huh?"
+next = "16"
+
+[shooting_star_hayden.16]
+speaker = "hayden"
+portrait = "neutral"
+local = "After all, here we are watching the stars together!"
+next = "17"
+
+[shooting_star_hayden.17]
+speaker = "hayden"
+portrait = "think_special"
+local = "It's hard to imagine what things would be like if you hadn't come to Mistria."
+next = "18"
+
+[shooting_star_hayden.18]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "And for what it's worth..."
+next = "19"
+
+[shooting_star_hayden.19]
+speaker = "hayden"
+portrait = "shy_special"
+local = "I'm really glad that you did."
+next = "20"
+
+[shooting_star_hayden.20]
+speaker = "hayden"
+portrait = "happy"
+local = "Thanks for spending the evening with me, [Ari]."
+next = "21"
+
+[shooting_star_hayden.21]
+speaker = "hayden"
+portrait = "think"
+local = "It's nice to have some time together, just the two of us."
+next = "22"
+
+[shooting_star_hayden.22]
+speaker = "hayden"
+portrait = "shy_special"
+local = "Maybe we can do this again sometime."
+
+[shooting_star_juniper]
+kind = "gameplay_triggered"
+writes = [
+	{ shooting_star_date_status = "juniper_went", expires = "2w" },
+	{ shooting_star_juniper_attended = true },
+]
+speaker = "juniper"
+portrait = "neutral"
+local = "Mmm... the view is clear up here, I'll give you that much."
+next = "1"
+
+[shooting_star_juniper.1]
+speaker = "juniper"
+portrait = "sly"
+local = """I'm generally not one for Mistria's "rustic" traditions..."""
+next = "2"
+
+[shooting_star_juniper.2]
+speaker = "juniper"
+portrait = "think"
+local = "All this staring up into the sky, slack-jawed, and whatnot..."
+next = "3"
+
+[shooting_star_juniper.3]
+speaker = "juniper"
+portrait = "sly"
+local = "But I guess I may as well see what the fuss is all about."
+next = "4"
+
+[shooting_star_juniper.4]
+speaker = "juniper"
+portrait = "sincere_special"
+local = "Interesting..."
+next = "5"
+
+[shooting_star_juniper.5]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "The stars appear to be influencing the flow of power around us. Do you feel it?"
+next = "6"
+
+[shooting_star_juniper.6]
+speaker = "juniper"
+portrait = "sincere_special"
+local = "It's unusual, like Mistria's combined energy has shifted to a higher frequency..."
+next = "7"
+
+[shooting_star_juniper.7]
+speaker = "juniper"
+portrait = "wink"
+local = "Which is saying something, considering you villagers have a pretty pathetic baseline."
+prompts = [
+	{ local = "And what about yours?", next = "8" },
+	{ local = "Yeah, I guess I can't compare with your high vibrations.", next = "13" },
+]
+
+[shooting_star_juniper.8]
+speaker = "juniper"
+portrait = "annoyed"
+local = "Excuse me...?"
+next = "10"
+
+[shooting_star_juniper.10]
+speaker = "juniper"
+portrait = "wild_laugh"
+local = "Oh ho ho ho ho!"
+next = "11"
+
+[shooting_star_juniper.11]
+speaker = "juniper"
+portrait = "embarrassed"
+local = "Shut up, [Ari]."
+next = "15"
+
+[shooting_star_juniper.13]
+speaker = "juniper"
+portrait = "wild_laugh"
+local = "Oh ho ho ho!"
+next = "14"
+
+[shooting_star_juniper.14]
+speaker = "juniper"
+portrait = "embarrassed"
+local = "Is that sarcasm I detect, [Ari]?"
+next = "15"
+
+[shooting_star_juniper.15]
+speaker = "juniper"
+portrait = "blush"
+local = "My vibrations are so high, you can't even sense them!"
+next = "16"
+
+[shooting_star_juniper.16]
+speaker = "juniper"
+portrait = "wink"
+local = "You know, you're lucky that I even agreed to come out here with you."
+next = "17"
+
+[shooting_star_juniper.17]
+speaker = "juniper"
+portrait = "think"
+local = "I'm a busy woman..."
+next = "18"
+
+[shooting_star_juniper.18]
+speaker = "juniper"
+portrait = "sly"
+local = """I mean really, why didn't you just join those little "friends" of yours in town instead?"""
+prompts = [
+	{ local = "Who was going to join you if I hadn't asked?", next = "19" },
+	{ local = "We can't all be as popular as you, Juniper.", next = "19" },
+]
+
+[shooting_star_juniper.19]
+speaker = "juniper"
+portrait = "sad_special"
+local = "..."
+next = "20"
+
+[shooting_star_juniper.20]
+speaker = "juniper"
+portrait = "think"
+local = "Ha..."
+next = "21"
+
+[shooting_star_juniper.21]
+speaker = "juniper"
+portrait = "happy"
+local = "Ha ha!"
+next = "23"
+
+[shooting_star_juniper.23]
+speaker = "juniper"
+portrait = "think"
+local = "Joking aside, maybe there is something to be said for this festival after all."
+next = "24"
+
+[shooting_star_juniper.24]
+speaker = "juniper"
+portrait = "sly"
+local = "I'm not sure what surprised me most tonight..."
+next = "25"
+
+[shooting_star_juniper.25]
+speaker = "juniper"
+portrait = "think_special"
+local = "The striking view, the energetic shift..."
+next = "26"
+
+[shooting_star_juniper.26]
+speaker = "juniper"
+portrait = "embarrassed"
+local = "Or that mouth of yours, [Ari]."
+next = "27"
+
+[shooting_star_juniper.27]
+speaker = "juniper"
+portrait = "neutral"
+local = "Well, it's getting late."
+next = "28"
+
+[shooting_star_juniper.28]
+speaker = "juniper"
+portrait = "think"
+local = "And it's starting to get cold..."
+next = "29"
+
+[shooting_star_juniper.29]
+speaker = "juniper"
+portrait = "wink"
+local = "Come on, I'll let you walk me back to town."
+
+[shooting_star_march]
+kind = "gameplay_triggered"
+writes = [
+	{ shooting_star_date_status = "march_went", expires = "2w" },
+	{ shooting_star_march_attended = true },
+]
+speaker = "march"
+portrait = "neutral"
+local = "Well, here we are."
+next = "1"
+
+[shooting_star_march.1]
+speaker = "march"
+portrait = "think"
+local = "Up on the summit."
+next = "2"
+
+[shooting_star_march.2]
+speaker = "march"
+portrait = "tsundere"
+effect = "drop"
+local = "Watching the stars."
+next = "4"
+
+[shooting_star_march.4]
+speaker = "march"
+portrait = "unimpressed"
+local = "..."
+next = "5"
+
+[shooting_star_march.5]
+speaker = "march"
+portrait = "neutral"
+local = "....."
+next = "6"
+
+[shooting_star_march.6]
+speaker = "march"
+portrait = "tsundere"
+local = "........"
+prompts = [
+	{ local = "So uh, did you watch the stars with your family when you were younger?", next = "7" },
+	{ local = "So uh, did you and Olric watch the stars growing up, too?", next = "8" },
+]
+
+[shooting_star_march.7]
+speaker = "march"
+portrait = "shock_special"
+local = "My... family?"
+next = "9"
+
+[shooting_star_march.8]
+speaker = "march"
+portrait = "sad_special"
+local = "Me and Olric...?"
+next = "9"
+
+[shooting_star_march.9]
+speaker = "march"
+portrait = "think"
+local = "Olric and I didn't have time for that kind of thing growing up."
+next = "10"
+
+[shooting_star_march.10]
+speaker = "march"
+portrait = "sad_special"
+local = "..."
+next = "11"
+
+[shooting_star_march.11]
+speaker = "march"
+portrait = "mad_special"
+local = "Can we talk about something else?"
+prompts = [
+	{ local = "Umm, so how about those stars?", next = "12" },
+	{ local = "Umm, aren't the stars beautiful?", next = "12" },
+]
+
+[shooting_star_march.12]
+speaker = "march"
+portrait = "sad_special"
+local = "....."
+next = "13"
+
+[shooting_star_march.13]
+speaker = "march"
+portrait = "unimpressed"
+local = "Why did you really invite me here, [Ari]?"
+next = "14"
+
+[shooting_star_march.14]
+speaker = "march"
+portrait = "ugh"
+local = "To press my buttons?"
+next = "15"
+
+[shooting_star_march.15]
+speaker = "march"
+portrait = "mad_special"
+local = "Or as some kind of... joke?"
+prompts = [
+	{ local = "B-because I like you?", next = "16" },
+	{ local = "B-because I wanted to see the stars with you?", next = "17" },
+]
+
+[shooting_star_march.16]
+speaker = "march"
+portrait = "shock_special"
+local = "You... what?"
+next = "17"
+
+[shooting_star_march.17]
+speaker = "march"
+portrait = "tsundere"
+local = "Quit messing around, will you?"
+next = "18"
+
+[shooting_star_march.18]
+speaker = "march"
+portrait = "sigh"
+local = "If you want to watch the stars, let's just watch the stars."
+next = "19"
+
+[shooting_star_march.19]
+speaker = "march"
+portrait = "sincere_special"
+local = "The stars... do look pretty from up here."
+next = "20"
+
+[shooting_star_march.20]
+speaker = "march"
+portrait = "think"
+local = "I didn't realize they would be so clear."
+next = "21"
+
+[shooting_star_march.21]
+speaker = "march"
+portrait = "sincere_special"
+local = "It almost feels like they're drawing you in, doesn't it?"
+next = "22"
+
+[shooting_star_march.22]
+speaker = "march"
+portrait = "neutral"
+local = "It's getting pretty late..."
+next = "23"
+
+[shooting_star_march.23]
+speaker = "march"
+portrait = "think"
+local = "Come on, I'll walk you back to the farm."
+next = "24"
+
+[shooting_star_march.24]
+speaker = "march"
+portrait = "tsundere"
+local = "If you fall and hurt yourself in the dark, I know I won't hear the end of it."
+
+[shooting_star_reina]
+kind = "gameplay_triggered"
+writes = [
+	{ shooting_star_date_status = "reina_went", expires = "2w" },
+	{ shooting_star_reina_attended = true },
+]
+speaker = "reina"
+portrait = "neutral"
+local = "Ahhh, I'm so excited to finally see the stars from up here!"
+next = "1"
+
+[shooting_star_reina.1]
+speaker = "reina"
+portrait = "think"
+local = "I always wondered what it would be like. Ma's always going on about how magical it was when she used to come here with Pa..."
+next = "2"
+
+[shooting_star_reina.2]
+speaker = "reina"
+portrait = "blush"
+local = "Honestly, it's even better than I imagined."
+next = "3"
+
+[shooting_star_reina.3]
+speaker = "reina"
+portrait = "neutral"
+local = "Oh, here! I made some star-shaped cookies for the occasion. Take one!"
+next = "4"
+
+[shooting_star_reina.4]
+speaker = "reina"
+portrait = "happy"
+local = "They're cinnamon turmeric flavored, and the filling is vanilla!"
+next = "5"
+
+[shooting_star_reina.5]
+speaker = "reina"
+portrait = "embarrassed"
+local = "Aren't they cute? Like little sandwiches."
+next = "6"
+
+[shooting_star_reina.6]
+speaker = "reina"
+portrait = "wink"
+local = "You know, looking out over the Capital like this... I can tell that the view there isn't as good as it is here in Mistria!"
+prompts = [
+	{ local = "You know, I bet the food isn't as good either.", next = "7" },
+	{ local = "Mistria has a lot of things the Capital doesn't!", next = "8" },
+]
+
+[shooting_star_reina.7]
+speaker = "reina"
+portrait = "blush"
+local = "Haha! [Ari]...!"
+next = "9"
+
+[shooting_star_reina.8]
+speaker = "reina"
+portrait = "happy"
+local = "I suppose that's true..."
+next = "9"
+
+[shooting_star_reina.9]
+speaker = "reina"
+portrait = "think"
+local = "But you know..."
+next = "10"
+
+[shooting_star_reina.10]
+speaker = "reina"
+portrait = "sad"
+local = "Sometimes I wonder if I could make it out there..."
+next = "11"
+
+[shooting_star_reina.11]
+speaker = "reina"
+portrait = "embarrassed"
+local = "Not that I'd ever THINK of leaving Mistria!"
+next = "12"
+
+[shooting_star_reina.12]
+speaker = "reina"
+portrait = "gloomy_special"
+local = "More like... would people still like my cooking, if our inn wasn't the only place in town?"
+prompts = [
+	{ local = "Don't say that! Your cooking is fantastic!", next = "13" },
+	{ local = "I prefer your cooking over anyone else's.", next = "14" },
+]
+
+[shooting_star_reina.13]
+speaker = "reina"
+portrait = "blush"
+local = "Thank you, [Ari]. I'm glad you think so."
+next = "18"
+
+[shooting_star_reina.14]
+speaker = "reina"
+portrait = "blush_special"
+local = "R-really? Do you mean that?"
+next = "15"
+
+[shooting_star_reina.15]
+speaker = "reina"
+portrait = "blush"
+local = "Thank you, [Ari]. I um..."
+next = "16"
+
+[shooting_star_reina.16]
+speaker = "reina"
+portrait = "blush_special"
+local = "I like cooking for you, too."
+next = "17"
+
+[shooting_star_reina.17]
+speaker = "reina"
+portrait = "blush"
+local = "Especially the way your eyes light up when you take that first bite!"
+next = "18"
+
+[shooting_star_reina.18]
+speaker = "reina"
+portrait = "blush_special"
+local = "..."
+next = "19"
+
+[shooting_star_reina.19]
+speaker = "reina"
+portrait = "embarrassed"
+local = "The wind is getting a little cold, isn't it?"
+next = "20"
+
+[shooting_star_reina.20]
+speaker = "reina"
+portrait = "neutral"
+local = "You can really tell summer's ending..."
+prompts = [
+	{ local = "Why don't we head back and grab a warm drink?", next = "21" },
+	{ local = "It is getting late, how about I walk you home?", next = "21" },
+]
+
+[shooting_star_reina.21]
+speaker = "reina"
+portrait = "happy"
+local = "Yeah, let's head back. I'll put on the kettle and we can have a hot cup of tea before we call it a night."
+next = "22"
+
+[shooting_star_reina.22]
+speaker = "reina"
+portrait = "wink"
+local = "And maybe another cookie or two, hehe."
+
+[shooting_star_ryis]
+kind = "gameplay_triggered"
+writes = [
+	{ shooting_star_date_status = "ryis_went", expires = "2w" },
+	{ shooting_star_ryis_attended = true },
+]
+speaker = "ryis"
+portrait = "neutral"
+local = "What an incredible view... thanks for inviting me, [Ari]."
+next = "1"
+
+[shooting_star_ryis.1]
+speaker = "ryis"
+portrait = "happy"
+local = "Wow, I can practically see home from here!"
+next = "2"
+
+[shooting_star_ryis.2]
+speaker = "ryis"
+portrait = "neutral"
+effect = "drop"
+local = "Er, the Capital I mean..."
+next = "3"
+
+[shooting_star_ryis.3]
+speaker = "ryis"
+portrait = "think"
+local = "..."
+next = "4"
+
+[shooting_star_ryis.4]
+speaker = "ryis"
+portrait = "sincere_special"
+local = "I wonder if my family is watching the stars right now, too."
+prompts = [
+	{ local = "Do you miss home?", next = "5" },
+	{ local = "Do you miss your family?", next = "10" },
+]
+
+[shooting_star_ryis.5]
+speaker = "ryis"
+portrait = "neutral"
+local = "I do, sometimes, yeah."
+next = "6"
+
+[shooting_star_ryis.6]
+speaker = "ryis"
+portrait = "happy"
+local = "The smell of fresh bread and pastries straight from the oven..."
+next = "7"
+
+[shooting_star_ryis.7]
+speaker = "ryis"
+portrait = "neutral"
+local = "My sisters rushing around preparing the orders..."
+next = "8"
+
+[shooting_star_ryis.8]
+speaker = "ryis"
+portrait = "happy"
+local = "Mom and Dad running the bakery counter..."
+next = "9"
+
+[shooting_star_ryis.9]
+speaker = "ryis"
+portrait = "think"
+local = "It was lively, you know?"
+next = "15"
+
+[shooting_star_ryis.10]
+speaker = "ryis"
+portrait = "think"
+local = "Yeah, I think about them a lot."
+next = "11"
+
+[shooting_star_ryis.11]
+speaker = "ryis"
+portrait = "neutral"
+local = "My sisters rushing around preparing the orders..."
+next = "12"
+
+[shooting_star_ryis.12]
+speaker = "ryis"
+portrait = "happy"
+local = "Mom and Dad running the bakery counter..."
+next = "13"
+
+[shooting_star_ryis.13]
+speaker = "ryis"
+portrait = "neutral"
+local = "The smell of fresh baked goods filling the house..."
+next = "14"
+
+[shooting_star_ryis.14]
+speaker = "ryis"
+portrait = "happy"
+effect = "drop"
+local = "It's a lot quieter out here, just me and uncle Landen."
+next = "15"
+
+[shooting_star_ryis.15]
+speaker = "ryis"
+portrait = "neutral"
+local = "Sometimes I wonder if I'll end up back in the Capital one day."
+next = "16"
+
+[shooting_star_ryis.16]
+speaker = "ryis"
+portrait = "think"
+local = "Don't get me wrong, I'm enjoying life in Mistria so far..."
+next = "17"
+
+[shooting_star_ryis.17]
+speaker = "ryis"
+portrait = "sincere_special"
+local = """But how can you tell when a place really becomes "home"?"""
+prompts = [
+	{ local = "I suppose it's just a feeling.", next = "18" },
+	{ local = "I suppose home is where you build your nest.", next = "19" },
+]
+
+[shooting_star_ryis.18]
+speaker = "ryis"
+portrait = "happy"
+local = "Haha, yeah..."
+next = "20"
+
+[shooting_star_ryis.19]
+speaker = "ryis"
+portrait = "happy"
+local = "Haha, now that you mention it..."
+next = "20"
+
+[shooting_star_ryis.20]
+speaker = "ryis"
+portrait = "neutral"
+local = "Maybe that's part of why I like watching birds so much."
+next = "21"
+
+[shooting_star_ryis.21]
+speaker = "ryis"
+portrait = "think"
+local = "They have an innate sense for these things, don't they?"
+next = "22"
+
+[shooting_star_ryis.22]
+speaker = "ryis"
+portrait = "sincere_special"
+local = "How does a bird manage to find its nest in a whole forest of trees?"
+next = "23"
+
+[shooting_star_ryis.23]
+speaker = "ryis"
+portrait = "think"
+local = "Or return to a distant breeding ground year after year?"
+next = "24"
+
+[shooting_star_ryis.24]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "Sorry, [Ari]. Here I am going on about homesickness and birds when we should be enjoying the stars!"
+prompts = [
+	{ local = "Not at all! I'm enjoying learning more about you.", next = "25" },
+	{ local = "Actually, I really relate to what you're saying!", next = "27" },
+]
+
+[shooting_star_ryis.25]
+speaker = "ryis"
+portrait = "happy"
+local = "Haha... really? I'm glad."
+next = "26"
+
+[shooting_star_ryis.26]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "Thanks for listening."
+next = "30"
+
+[shooting_star_ryis.27]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "Haha... really?"
+next = "28"
+
+[shooting_star_ryis.28]
+speaker = "ryis"
+portrait = "happy"
+local = "I guess that makes sense... You haven't lived here that long, either!"
+next = "29"
+
+[shooting_star_ryis.29]
+speaker = "ryis"
+portrait = "blush_special"
+local = "It's nice, being able to talk with someone who understands."
+next = "30"
+
+[shooting_star_ryis.30]
+speaker = "ryis"
+portrait = "neutral"
+local = "Maybe sometime, if you're comfortable sharing..."
+next = "31"
+
+[shooting_star_ryis.31]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "You can tell me more about your past too."
+next = "32"
+
+[shooting_star_ryis.32]
+speaker = "ryis"
+portrait = "blush_special"
+local = """And who knows? Maybe one day soon... we'll both find that Mistria has become home."""
+next = "33"
+
+[shooting_star_ryis.33]
+speaker = "ryis"
+portrait = "neutral"
+local = "Thank you again for inviting me out, [Ari]."
+next = "34"
+
+[shooting_star_ryis.34]
+speaker = "ryis"
+portrait = "happy"
+local = "Come on, I'll walk you home before it gets any colder out here!"
+
+[shooting_star_seridia]
+kind = "gameplay_triggered"
+writes = [
+	{ shooting_star_date_status = "seridia_went", expires = "2w" },
+	{ shooting_star_seridia_attended = true },
+]
+speaker = "seridia"
+portrait = "blush_think"
+local = "Thank you for inviting me to join you this evening, [Ari]."
+next = "1"
+
+[shooting_star_seridia.1]
+speaker = "seridia"
+portrait = "smile"
+local = "It pleases me to be here with you. To see these stars once more."
+next = "2"
+
+[shooting_star_seridia.2]
+speaker = "seridia"
+portrait = "sly"
+local = "I find this to be a most excellent vantage point."
+next = "3"
+
+[shooting_star_seridia.3]
+speaker = "seridia"
+portrait = "sly_think"
+local = "The view from the summit? Oh yes, that too."
+next = "4"
+
+[shooting_star_seridia.4]
+speaker = "seridia"
+portrait = "smile"
+local = "However, I was referring to the view from this mortal body."
+next = "5"
+
+[shooting_star_seridia.5]
+speaker = "seridia"
+portrait = "neutral"
+local = "Of course, my draconic form has its advantages..."
+next = "6"
+
+[shooting_star_seridia.6]
+speaker = "seridia"
+portrait = "sly_think"
+local = "But a mortal existence is so perfectly suited to such experiences."
+next = "7"
+
+[shooting_star_seridia.7]
+speaker = "seridia"
+portrait = "neutral"
+local = "Gazing into the great black veil above, as it is pierced by a shower of stars..."
+next = "8"
+
+[shooting_star_seridia.8]
+speaker = "seridia"
+portrait = "closed_eyes_smile"
+local = "It reminds one that there are new heights still to reach, unknown powers yet to discover... even for one as long-lived as I."
+prompts = [
+	{ local = "New heights to reach?", next = "9" },
+	{ local = "Powers yet to discover?", next = "9" }
+]
+
+[shooting_star_seridia.9]
+speaker = "seridia"
+portrait = "think"
+local = "Certainly. It may sound strange to you..."
+next = "10"
+
+[shooting_star_seridia.10]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "But an immortal's power is so vast, one risks losing sight of that which lies beyond one's sphere of control."
+next = "11"
+
+[shooting_star_seridia.11]
+speaker = "seridia"
+portrait = "serious"
+local = "Immortals who fall to this complacency limit themselves. Believing they know all there is to know, and control all there is to control..."
+next = "12"
+
+[shooting_star_seridia.12]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "How short-sighted."
+next = "13"
+
+[shooting_star_seridia.13]
+speaker = "seridia"
+portrait = "sinister"
+local = "Those who dare to seek will always find. After all, the pleasure is in the hunt, [Ari]."
+next = "14"
+
+[shooting_star_seridia.14]
+speaker = "seridia"
+portrait = "smile"
+local = "That is why I so enjoy this mortal life."
+next = "15"
+
+[shooting_star_seridia.15]
+speaker = "seridia"
+portrait = "think"
+local = "In exchange for certain benefits..."
+next = "16"
+
+[shooting_star_seridia.16]
+speaker = "seridia"
+portrait = "sinister"
+local = "I am able to remove various... limitations."
+next = "17"
+
+[shooting_star_seridia.17]
+speaker = "seridia"
+portrait = "sly_think"
+local = "To see the world through a different lens."
+next = "18"
+
+[shooting_star_seridia.18]
+speaker = "seridia"
+portrait = "closed_eyes_blush"
+local = "To relish new challenges and reap new rewards."
+next = "19"
+
+[shooting_star_seridia.19]
+speaker = "seridia"
+portrait = "sinister"
+local = "You understand, do you not? The joy of the game... the drive for progression?"
+prompts = [
+	{ local = "I completely understand!", next = "20" },
+	{ local = "(laughs nervously)", next = "21" }
+]
+
+[shooting_star_seridia.20]
+speaker = "seridia"
+portrait = "happy"
+local = "Yes, of course you do."
+next = "22"
+
+[shooting_star_seridia.21]
+speaker = "seridia"
+portrait = "happy"
+local = "There is no need to be shy about it. Of course you do."
+next = "22"
+
+[shooting_star_seridia.22]
+speaker = "seridia"
+portrait = "blush"
+local = "That is what I like about you, [Ari]."
+next = "23"
+
+[shooting_star_seridia.23]
+speaker = "seridia"
+portrait = "blush_think"
+local = "You understand what it is to pursue that which you desire."
+next = "24"
+
+[shooting_star_seridia.24]
+speaker = "seridia"
+portrait = "closed_eyes_blush"
+local = "To carve out paths that others do not believe possible."
+next = "25"
+
+[shooting_star_seridia.25]
+speaker = "seridia"
+portrait = "sly_think"
+local = "Take this night, for example. The tradition of $Starbinding$."
+next = "26"
+
+[shooting_star_seridia.26]
+speaker = "seridia"
+portrait = "neutral"
+local = "It is true that we are like these stars, returning to this world again and again."
+next = "27"
+
+[shooting_star_seridia.27]
+speaker = "seridia"
+portrait = "smile"
+local = "But you and I... we are not simply fireflies caught in a web."
+next = "28"
+
+[shooting_star_seridia.28]
+speaker = "seridia"
+portrait = "sly"
+local = "We chose to be here, [Ari]."
+next = "29"
+
+[shooting_star_seridia.29]
+speaker = "seridia"
+portrait = "think"
+local = "We are not just the points of light, but also weavers of the darkness that binds us together."
+next = "30"
+
+[shooting_star_seridia.30]
+speaker = "seridia"
+portrait = "sinister"
+local = "Twisting and bending the threads of fate to our will."
+next = "31"
+
+[shooting_star_seridia.31]
+speaker = "seridia"
+portrait = "sly_think"
+local = "At least, that is how I see it."
+next = "32"
+
+[shooting_star_seridia.32]
+speaker = "seridia"
+portrait = "sly"
+local = "Tell me, [Ari]... what is your perspective?"
+prompts = [
+	{ local = "I never let a little thing like destiny stand between me and my goals.", next = "33" },
+	{ local = "All I know is that nothing could have kept me from freeing you, Seridia.", next = "35" }
+]
+
+[shooting_star_seridia.33]
+speaker = "seridia"
+portrait = "happy"
+local = "Ah hahahaha!"
+next = "34"
+
+[shooting_star_seridia.34]
+speaker = "seridia"
+portrait = "sinister"
+local = "Yes... how like you to say so."
+next = "37"
+
+[shooting_star_seridia.35]
+speaker = "seridia"
+portrait = "blush"
+local = "Oh!"
+next = "36"
+
+[shooting_star_seridia.36]
+speaker = "seridia"
+portrait = "blush_think"
+local = "Yes... I have no doubt about that."
+next = "37"
+
+[shooting_star_seridia.37]
+speaker = "seridia"
+portrait = "sly_think"
+local = "I see it, [Ari]. Your point of view. The world through your lens..."
+next = "38"
+
+[shooting_star_seridia.38]
+speaker = "seridia"
+portrait = "sly"
+local = "Your light."
+next = "39"
+
+[shooting_star_seridia.39]
+speaker = "seridia"
+portrait = "think"
+local = "Now, I am curious..."
+next = "40"
+
+[shooting_star_seridia.40]
+speaker = "seridia"
+portrait = "smile"
+local = "How else does one celebrate the Shooting Star Festival in this age?"
+next = "41"
+
+[shooting_star_seridia.41]
+speaker = "seridia"
+portrait = "think"
+local = "Should we perhaps ignite a bonfire? Make an offering of some sort?"
+prompts = [
+	{ local = "Sounds fun!", next = "42" },
+	{ local = "How about we take a walk back to my place?", next = "44" }
+]
+
+[shooting_star_seridia.42]
+speaker = "seridia"
+portrait = "smile"
+local = "Excellent!"
+next = "43"
+
+[shooting_star_seridia.43]
+speaker = "seridia"
+portrait = "embarrassed"
+local = "Come, let us return to my temple."
+next = "46"
+
+[shooting_star_seridia.44]
+speaker = "seridia"
+portrait = "smile"
+local = "Oh? That does sound fun."
+next = "45"
+
+[shooting_star_seridia.45]
+speaker = "seridia"
+portrait = "embarrassed"
+local = "Come. Perhaps we can create some new festival traditions of our own."
+next = "46"
+
+[shooting_star_seridia.46]
+speaker = "seridia"
+portrait = "closed_eyes_blush"
+local = "For the night is still young..."
+
+[shooting_star_valen]
+kind = "gameplay_triggered"
+writes = [
+	{ shooting_star_date_status = "valen_went", expires = "2w" },
+	{ shooting_star_valen_attended = true },
+]
+speaker = "valen"
+portrait = "caring_special"
+local = "Ah... how lovely..."
+next = "1"
+
+[shooting_star_valen.1]
+speaker = "valen"
+portrait = "neutral"
+local = "It's important to take the time to relax like this when you can."
+next = "2"
+
+[shooting_star_valen.2]
+speaker = "valen"
+portrait = "happy"
+local = "It's good for the body, mind, and spirit!"
+next = "3"
+
+[shooting_star_valen.3]
+speaker = "valen"
+portrait = "think"
+local = "It's definitely starting to get colder with the season turning, though. Are you feeling warm enough?"
+prompts = [
+	{ local = "I'm feeling pretty cozy, actually.", next = "4" },
+	{ local = "I'm sweating a little, to be honest.", next = "5" },
+]
+
+[shooting_star_valen.4]
+speaker = "valen"
+portrait = "sincere_special"
+local = "Hmmm, you're looking a little flushed..."
+next = "6"
+
+[shooting_star_valen.5]
+speaker = "valen"
+portrait = "sincere_special"
+local = "Now that you mention it, you are looking a little flushed..."
+next = "6"
+
+[shooting_star_valen.6]
+speaker = "valen"
+portrait = "think"
+local = "Are you feeling okay?"
+next = "7"
+
+[shooting_star_valen.7]
+speaker = "valen"
+portrait = "sad"
+local = "You're not getting sick...?"
+prompts = [
+	{ local = "I feel fine, Valen.", next = "8" },
+	{ local = "I feel great, actually.", next = "8" },
+]
+
+[shooting_star_valen.8]
+speaker = "valen"
+portrait = "embarrassed"
+local = "R-right, sorry about that."
+next = "9"
+
+[shooting_star_valen.9]
+speaker = "valen"
+portrait = "sad"
+local = "I guess I've been a little bit on edge since the panacea ran out."
+next = "10"
+
+[shooting_star_valen.10]
+speaker = "valen"
+portrait = "think"
+local = "It's an arduous task, trying to reverse engineer it..."
+next = "11"
+
+[shooting_star_valen.11]
+speaker = "valen"
+portrait = "sad"
+local = "But I refuse to allow the panacea to end with me. It's my responsibility to make sure it isn't lost to time."
+prompts = [
+	{ local = "It's not your fault though...", next = "12" },
+	{ local = "You're not the one who lost the recipe...", next = "12" },
+]
+
+[shooting_star_valen.12]
+speaker = "valen"
+portrait = "think"
+local = "While it's true that the recipe was lost over the generations preceding me..."
+next = "13"
+
+[shooting_star_valen.13]
+speaker = "valen"
+portrait = "sincere_special"
+local = "I'm now the last person to have held the panacea in my hands, to remember firsthand its physical qualities."
+next = "14"
+
+[shooting_star_valen.14]
+speaker = "valen"
+portrait = "think"
+local = "It's up to me to recreate it, before even that knowledge is lost..."
+prompts = [
+	{ local = "I believe in you, Valen.", next = "15" },
+	{ local = "We'll do it together, Valen.", next = "16" },
+]
+
+[shooting_star_valen.15]
+speaker = "valen"
+portrait = "embarrassed"
+local = "Thank you for putting your faith in me, [Ari]."
+next = "17"
+
+[shooting_star_valen.16]
+speaker = "valen"
+portrait = "embarrassed"
+local = "[Ari]... Thank you..."
+next = "17"
+
+[shooting_star_valen.17]
+speaker = "valen"
+portrait = "caring_special"
+local = "Hearing you say it like that, I really believe it's possible."
+next = "18"
+
+[shooting_star_valen.18]
+speaker = "valen"
+portrait = "happy"
+local = "You know... you certainly have a knack for making people feel better."
+next = "19"
+
+[shooting_star_valen.19]
+speaker = "valen"
+portrait = "caring_special"
+local = "And for helping them when they need it, too."
+next = "20"
+
+[shooting_star_valen.20]
+speaker = "valen"
+portrait = "happy"
+local = "It's one of my favorite things about you."
+next = "21"
+
+[shooting_star_valen.21]
+speaker = "valen"
+portrait = "think"
+local = "Well, it's getting kind of late..."
+next = "22"
+
+[shooting_star_valen.22]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "But you know..."
+next = "23"
+
+[shooting_star_valen.23]
+speaker = "valen"
+portrait = "caring_special"
+local = "I don't mind staying out a little bit longer, how about you?"
+
+[shooting_star_solo]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "It's getting cold... you'd better head home."

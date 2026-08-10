@@ -1,0 +1,156 @@
+[inn_meal_accept_1]
+kind = "date_acceptance"
+requires = [
+    { npc = "reina" },
+    { date = "inn_meal" },
+    { da_reina_inn_meal = 0 },
+    { reina_is_spouse = false }
+]
+writes = [
+    { da_reina_inn_meal = 1 },
+    { da_reina_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "Are you hungry, [Ari]?"
+next = "1"
+
+[inn_meal_accept_1.1]
+speaker = "reina"
+portrait = "blush_special"
+local = "I thought maybe I could whip us up something to eat..."
+next = "2"
+
+[inn_meal_accept_1.2]
+speaker = "reina"
+portrait = "blush"
+local = "What do you say?"
+
+[inn_meal_accept_2]
+kind = "date_acceptance"
+requires = [
+    { npc = "reina" },
+    { date = "inn_meal" },
+    { da_reina_inn_meal = 1 },
+    { reina_is_spouse = false }
+]
+writes = [
+    { da_reina_inn_meal = 2 },
+    { da_reina_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "reina"
+portrait = "blush_think"
+local = "Last time we ate at the Inn, I cooked for you..."
+next = "1"
+
+[inn_meal_accept_2.1]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "What do you think about cooking for me this time?"
+next = "2"
+
+[inn_meal_accept_2.2]
+speaker = "reina"
+portrait = "blush"
+local = "Ooooh, you will? I can't wait to see what you make!"
+
+[inn_meal_accept_3]
+kind = "date_acceptance"
+requires = [
+    { npc = "reina" },
+    { date = "inn_meal" },
+    { reina_has_child = false },
+    { any = [
+        { reina_is_spouse = true },
+        { da_reina_inn_meal = 2, comparator = ">=" }
+    ] }
+]
+writes = [
+    { da_reina_inn_meal = 3 },
+    { da_reina_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "reina"
+portrait = "blush"
+local = "Are you thinking what I'm thinking?"
+next = "1"
+
+[inn_meal_accept_3.1]
+speaker = "reina"
+portrait = "blush_open_eyes"
+effect = "hearts"
+local = "Come on, [Ari]! Let's make something to eat!"
+
+[inn_meal_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "reina" },
+    { da_reina_inn_meal = 1 },
+    { da_reina_inn_meal_follow_up_gate = true },
+    { reina_is_spouse = false }
+]
+writes = [{ da_reina_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush"
+local = "That was great, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_1.1]
+portrait = "blush_think"
+local = "I enjoy cooking for you, but-"
+next = "2"
+
+[inn_meal_follow_up_1.2]
+portrait = "blush_open_eyes"
+effect = "hearts"
+local = "I think I enjoy eating with you just as much, hehe!"
+
+[inn_meal_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "reina" },
+    { da_reina_inn_meal = 2 },
+    { da_reina_inn_meal_follow_up_gate = true },
+    { reina_is_spouse = false }
+]
+writes = [{ da_reina_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush"
+local = "That was soooo fun, [Ari]!"
+next = "1"
+
+[inn_meal_follow_up_2.1]
+portrait = "blush_open_eyes"
+local = "You're a really good cook, you know..."
+next = "2"
+
+[inn_meal_follow_up_2.2]
+portrait = "blush_think"
+effect = "hearts"
+local = "And a good conversationalist too, hehe."
+
+[inn_meal_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "reina" },
+    { reina_has_child = false },
+    { any = [{ reina_is_spouse = true }, { da_reina_inn_meal = 3 }] },
+    { da_reina_inn_meal_follow_up_gate = true }
+]
+writes = [{ da_reina_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush"
+local = "Wasn't that nice, [Ari]?"
+next = "1"
+
+[inn_meal_follow_up_3.1]
+portrait = "blush_open_eyes"
+local = "It's always fun when we get to cook together."
+next = "2"
+
+[inn_meal_follow_up_3.2]
+portrait = "blush"
+effect = "hearts"
+local = "I'm already thinking up plans for next time!"

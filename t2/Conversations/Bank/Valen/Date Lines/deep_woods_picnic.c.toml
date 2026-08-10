@@ -1,0 +1,141 @@
+[deep_woods_picnic_accept_1]
+kind = "date_acceptance"
+requires = [
+    { npc = "valen" },
+    { date = "deep_woods_picnic" },
+    { da_valen_deep_woods_picnic = 0 },
+    { valen_is_spouse = false }
+]
+writes = [
+    { da_valen_deep_woods_picnic = 1 },
+    { da_valen_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "valen"
+portrait = "neutral"
+local = "How would you feel about joining me for a picnic, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_accept_1.1]
+speaker = "valen"
+portrait = "caring_special"
+local = "The $Deep Woods$ is beautiful this time of year."
+next = "2"
+
+[deep_woods_picnic_accept_1.2]
+speaker = "valen"
+portrait = "happy"
+local = "I think you'll find that it's a very relaxing place to unwind!"
+
+[deep_woods_picnic_accept_2]
+kind = "date_acceptance"
+requires = [
+    { npc = "valen" },
+    { date = "deep_woods_picnic" },
+    { da_valen_deep_woods_picnic = 1 },
+    { valen_is_spouse = false }
+]
+writes = [
+    { da_valen_deep_woods_picnic = 2 },
+    { da_valen_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "valen"
+portrait = "think_blush"
+local = "You know, [Ari], spending time in nature is good for you..."
+next = "1"
+
+[deep_woods_picnic_accept_2.1]
+speaker = "valen"
+portrait = "happy_blush"
+local = "How about we go on another picnic?"
+
+[deep_woods_picnic_accept_3]
+kind = "date_acceptance"
+requires = [
+    { npc = "valen" },
+    { date = "deep_woods_picnic" },
+    { valen_has_child = false },
+    { any = [
+        { valen_is_spouse = true },
+        { da_valen_deep_woods_picnic = 2, comparator = ">=" }
+    ] }
+]
+writes = [
+    { da_valen_deep_woods_picnic = 3 },
+    { da_valen_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "valen"
+portrait = "think_blush"
+local = "Are you inviting me out for a picnic, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_accept_3.1]
+speaker = "valen"
+portrait = "happy_blush"
+local = "Of course, I'd love to!"
+
+[deep_woods_picnic_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "valen" },
+    { da_valen_deep_woods_picnic = 1 },
+    { da_valen_deep_woods_picnic_follow_up_gate = true },
+    { valen_is_spouse = false }
+]
+writes = [{ da_valen_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "happy"
+local = "Thanks for coming with me on that picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_1.1]
+portrait = "embarrassed"
+local = "I'm glad you liked the food I prepared."
+next = "2"
+
+[deep_woods_picnic_follow_up_1.2]
+portrait = "neutral_blush"
+local = "I made sure everything was fresh and healthy!"
+
+[deep_woods_picnic_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "valen" },
+    { da_valen_deep_woods_picnic = 2 },
+    { da_valen_deep_woods_picnic_follow_up_gate = true },
+    { valen_is_spouse = false }
+]
+writes = [{ da_valen_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "happy_blush"
+local = "Ah... what a relaxing time."
+next = "1"
+
+[deep_woods_picnic_follow_up_2.1]
+portrait = "think_blush"
+local = "What do you like best about our $Deep Woods$ picnics?"
+next = "2"
+
+[deep_woods_picnic_follow_up_2.2]
+portrait = "caring_special"
+local = "I think they're beautiful any time of the year."
+
+[deep_woods_picnic_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "valen" },
+    { valen_has_child = false },
+    { any = [{ valen_is_spouse = true }, { da_valen_deep_woods_picnic = 3 }] },
+    { da_valen_deep_woods_picnic_follow_up_gate = true }
+]
+writes = [{ da_valen_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "happy_blush"
+local = "Thank you for a lovely time, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_3.1]
+portrait = "caring_special"
+local = "Let's plan to go on another $Deep Woods$ picnic soon!"

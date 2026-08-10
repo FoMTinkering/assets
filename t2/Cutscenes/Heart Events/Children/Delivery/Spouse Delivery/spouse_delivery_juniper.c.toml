@@ -1,0 +1,104 @@
+[spouse_delivery_juniper]
+writes = [
+    { child_born_bump = true, expires = "2d" },
+    { baby_born_timer = true, expires = "5d" }
+]
+kind = "gameplay_triggered"
+speaker = "juniper"
+portrait = "shocked"
+effect = "surprise"
+local = "[Ari]? Are you awake?"
+next = "1"
+
+[spouse_delivery_juniper.1]
+speaker = "juniper"
+portrait = "closed_eyes"
+local = "I think the baby is coming...!"
+next = "2"
+
+[spouse_delivery_juniper.2]
+speaker = "juniper"
+portrait = "embarrassed"
+local = "Hurry, we'd better get to the Clinic!"
+next = "3"
+
+[spouse_delivery_juniper.3]
+speaker = "valen"
+portrait = "neutral"
+local = "Congratulations, Juniper, [Ari]!"
+next = "4"
+
+[spouse_delivery_juniper.4]
+speaker = "valen"
+portrait = "happy"
+local = "You are now the proud parents of a healthy $baby girl$!"
+next = "5"
+
+[spouse_delivery_juniper.5]
+speaker = "valen"
+portrait = "neutral"
+local = "Have you two decided $what you will name her$?"
+next = "6"
+
+[spouse_delivery_juniper.6]
+speaker = "juniper"
+portrait = "neutral_blush"
+local = "Yes, [child_0]... it suits her perfectly!"
+next = "7"
+
+[spouse_delivery_juniper.7]
+speaker = "juniper"
+portrait = "happy_blush"
+local = "It's as if it were already chosen for her long ago."
+next = "8"
+
+[spouse_delivery_juniper.8]
+speaker = "valen"
+portrait = "neutral"
+local = "Now, before I let you head home..."
+next = "9"
+
+[spouse_delivery_juniper.9]
+speaker = "valen"
+portrait = "happy"
+local = "Would you like me to $tell you more about caring for a child$?"
+prompts = [
+    { local = "Yes, please!", next = "11" },
+    { local = "No, I think we've got it covered.", next = "10" }
+]
+
+[spouse_delivery_juniper.10]
+speaker = "valen"
+portrait = "neutral"
+local = "Understood."
+next = "11"
+
+[spouse_delivery_juniper.11]
+speaker = "valen"
+portrait = "neutral"
+local = "Well, I believe that's everything for the time being."
+next = "12"
+
+[spouse_delivery_juniper.12]
+speaker = "valen"
+portrait = "think_special"
+local = "Now Juniper, make sure you take it easy and get plenty of rest."
+next = "13"
+
+[spouse_delivery_juniper.13]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "Do I make myself clear, [Ari]? Don't let her overdo it!"
+next = "14"
+
+[spouse_delivery_juniper.14]
+speaker = "valen"
+portrait = "neutral"
+local = "And remember, if you need anything at all, I'm just up the road."
+next = "15"
+
+[spouse_delivery_juniper.15]
+speaker = "valen"
+portrait = "happy"
+effect = "cheery"
+local = "Congratulations again!"

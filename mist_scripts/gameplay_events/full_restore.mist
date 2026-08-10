@@ -1,0 +1,25 @@
+camera_out();
+wait(3);
+request_music_play(caldarus);
+
+wait(2);
+play_sound("SoundEffects/SpecialEvents/CaldarusAppear");
+show_caldarus_statue();
+__raise_textbox();
+next_line();
+if get_response() == 0 {
+	next_line();
+} else {
+	next_line();
+	next_line();
+	next_line();
+}
+next_line();
+next_line();
+next_line();
+next_line();
+camera_out();
+close_textbox();
+hide_caldarus_statue();
+wait(0.25);
+run_tutorial("magic");

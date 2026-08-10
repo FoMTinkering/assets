@@ -1,0 +1,22 @@
+[foraging]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "celine" }, { npc = "reina" }] },
+	{ adeline_zone = "<celine_zone>" },
+	{ adeline_zone = "<reina_zone>" },
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "Can we go foraging with you some time, Celine? It seems so relaxing, and it would really get me out of the house."
+next = "1"
+
+[foraging.1]
+speaker = "reina"
+portrait = "mad"
+local = "Celine, Adeline wants to spend time outside her office. You have to say yes!"
+next = "2"
+
+[foraging.2]
+speaker = "celine"
+portrait = "happy"
+local = "Haha, of course! I'd love the company."

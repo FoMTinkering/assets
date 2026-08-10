@@ -1,0 +1,194 @@
+[deep_woods_picnic_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "march" },
+	{ date = "deep_woods_picnic" },
+	{ da_march_deep_woods_picnic = 0 },
+	{ march_is_spouse = false }
+]
+writes = [
+	{ da_march_deep_woods_picnic = 1 },
+	{ da_march_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "march"
+portrait = "tsundere"
+local = "Hey. Do you wanna-"
+next = "1"
+
+[deep_woods_picnic_accept_1.1]
+speaker = "march"
+portrait = "eight_heart_blush"
+local = "Uh."
+next = "2"
+
+[deep_woods_picnic_accept_1.2]
+speaker = "march"
+portrait = "eight_heart_flustered"
+local = "Come with me to the $Deep Woods$..."
+next = "3"
+
+[deep_woods_picnic_accept_1.3]
+speaker = "march"
+portrait = "tsundere"
+local = "For a picnic?"
+next = "4"
+
+[deep_woods_picnic_accept_1.4]
+speaker = "march"
+portrait = "embarrassed"
+local = "Really, it's pretty cool out there, and-"
+next = "5"
+
+[deep_woods_picnic_accept_1.5]
+speaker = "march"
+portrait = "eight_heart_happy_blush"
+local = "Oh, you would?"
+next = "6"
+
+[deep_woods_picnic_accept_1.6]
+speaker = "march"
+portrait = "tsundere"
+local = "Cool. Cool."
+next = "7"
+
+[deep_woods_picnic_accept_1.7]
+speaker = "march"
+portrait = "happy"
+local = "Well then. Let's go."
+
+[deep_woods_picnic_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "march" },
+	{ date = "deep_woods_picnic" },
+	{ da_march_deep_woods_picnic = 1 },
+	{ march_is_spouse = false }
+]
+writes = [
+	{ da_march_deep_woods_picnic = 2 },
+	{ da_march_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "march"
+portrait = "tsundere"
+local = "Oh?"
+next = "1"
+
+[deep_woods_picnic_accept_2.1]
+speaker = "march"
+portrait = "eight_heart_flustered"
+local = "You want to go on another picnic?"
+next = "2"
+
+[deep_woods_picnic_accept_2.2]
+speaker = "march"
+portrait = "eight_heart_happy_blush"
+local = "Sure. Let's go."
+
+[deep_woods_picnic_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "march" },
+	{ date = "deep_woods_picnic" },
+	{ march_has_child = false },
+	{ any = [
+		{ march_is_spouse = true },
+		{ da_march_deep_woods_picnic = 2, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_march_deep_woods_picnic = 3 },
+	{ da_march_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "march"
+portrait = "eight_heart_flustered"
+local = "Want to go on a picnic, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_accept_3.1]
+speaker = "march"
+portrait = "eight_heart_happy_blush"
+local = "Yeah? Nice. Let's go!"
+
+[deep_woods_picnic_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ da_march_deep_woods_picnic = 1 },
+	{ da_march_deep_woods_picnic_follow_up_gate = true },
+	{ march_is_spouse = false }
+]
+writes = [{ da_march_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "eight_heart_happy_blush"
+local = "Thanks for coming out with me, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_1.1]
+portrait = "tsundere"
+local = "Did you uh. Have a good time?"
+prompts = [
+	{ local = "The food and the scenery were great!", next = "2" },
+	{ local = "Yes! I really enjoyed talking with you!", next = "4" },
+]
+
+[deep_woods_picnic_follow_up_1.2]
+portrait = "eight_heart_happy_blush"
+local = "Yeah? You liked it?"
+next = "3"
+
+[deep_woods_picnic_follow_up_1.3]
+portrait = "drunk"
+local = "Nice. I'm glad."
+
+[deep_woods_picnic_follow_up_1.4]
+portrait = "eight_heart_flustered"
+local = "You did?"
+next = "5"
+
+[deep_woods_picnic_follow_up_1.5]
+portrait = "eight_heart_happy_blush"
+local = "Me too..."
+
+[deep_woods_picnic_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ da_march_deep_woods_picnic = 2 },
+	{ da_march_deep_woods_picnic_follow_up_gate = true },
+	{ march_is_spouse = false }
+]
+writes = [{ da_march_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "blush", npc = "march" } }]
+portrait = "tsundere"
+local = "I um."
+next = "1"
+
+[deep_woods_picnic_follow_up_2.1]
+portrait = "eight_heart_happy_blush"
+local = "I had a nice time, [Ari]."
+next = "2"
+
+[deep_woods_picnic_follow_up_2.2]
+portrait = "tsundere"
+local = "Maybe we can do it again soon..."
+
+[deep_woods_picnic_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "march" },
+	{ march_has_child = false },
+	{ any = [{ march_is_spouse = true }, { da_march_deep_woods_picnic = 3 }] },
+	{ da_march_deep_woods_picnic_follow_up_gate = true }
+]
+writes = [{ da_march_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "eight_heart_flustered"
+local = "Thanks for joining me on that $Deep Woods$ picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_3.1]
+portrait = "eight_heart_happy_blush"
+local = "I'll take you out there again sometime soon."

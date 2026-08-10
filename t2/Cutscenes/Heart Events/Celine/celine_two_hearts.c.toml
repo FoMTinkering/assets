@@ -1,0 +1,121 @@
+[celine_two_hearts_follow_up_celine]
+refresh = "never"
+requires = [{ npc = "celine" }, { celine_heart_event = "two_heart" }]
+local = "No luck with the seed yet, [Ari]. Don't worry, I'll let you know if anything changes!"
+
+[celine_two_hearts_follow_up_dell]
+refresh = "never"
+requires = [{ npc = "dell" }, { celine_heart_event = "two_heart" }]
+portrait = "mad"
+local = "Did you and Celine really go on an adventure without me? Next time make sure to bring me along, I can be your guard!"
+
+[celine_two_hearts_follow_up_nora]
+refresh = "never"
+requires = [{ npc = "nora" }, { celine_heart_event = "two_heart" }]
+local = "Celine told me about your little seed hunting adventure! Thanks for helping her out, she's over the moon about that seed!"
+
+[celine_two_hearts]
+kind = "gameplay_triggered"
+writes = [{ celine_heart_event = "two_heart", expires = "4d" }]
+speaker = "celine"
+portrait = "neutral"
+local = "[Ari], you came! Is this about my letter?"
+next = "1"
+
+[celine_two_hearts.1]
+portrait = "happy"
+local = "I'm so glad! Here, look at this..."
+next = "2"
+
+[celine_two_hearts.2]
+portrait = "think"
+local = "Errol lent this book to me. It's called the Codex Mistria, and it's very old. No one has been able to translate it..."
+next = "3"
+
+[celine_two_hearts.3]
+portrait = "neutral"
+local = "But it's full of illustrations of Mistria's ancient flora! I'm especially interested in the flowers."
+next = "4"
+
+[celine_two_hearts.4]
+portrait = "blush_closed_eyes"
+local = "It's amazing to think that Mistria had such a unique variety of flowers! [Ari], have you ever seen this one?"
+prompts = [
+	{ local = "No, but it sure is pretty!", next = "5" },
+	{ local = "I haven't, but we could try asking Balor.", next = "6" },
+]
+
+[celine_two_hearts.5]
+portrait = "neutral"
+local = "Isn't it? I'd love to try growing it myself..."
+next = "7"
+
+[celine_two_hearts.6]
+portrait = "sweat"
+local = "I've actually asked him, but he hasn't had any luck finding it..."
+next = "7"
+
+[celine_two_hearts.7]
+portrait = "think"
+local = "The odd thing is, I remember seeing this very flower when I was a kid, out near the cottage ruins east of town."
+next = "8"
+
+[celine_two_hearts.8]
+portrait = "gloomy"
+local = "But I've never seen it since then. Maybe I should try hunting for seeds in the area..."
+prompts = [
+	{ local = "Good idea, why don't we go now?", next = "9" },
+	{ local = "Sounds like an adventure, let's go!", next = "9" },
+]
+
+[celine_two_hearts.9]
+portrait = "blush"
+local = "Ah, r-right now?"
+next = "10"
+
+[celine_two_hearts.10]
+portrait = "neutral"
+local = "Yeah, there's no time like the present! Let's go, [Ari]!"
+next = "11"
+
+[celine_two_hearts.11]
+portrait = "neutral"
+local = "This is around where I saw it..."
+next = "12"
+
+[celine_two_hearts.12]
+portrait = "think"
+local = "[Ari], could you take my shovel and dig around a little? I'm going to check around the base of the wall."
+next = "13"
+
+[celine_two_hearts.13]
+portrait = "neutral"
+local = "What's that you've found, [Ari]?"
+next = "14"
+
+[celine_two_hearts.14]
+portrait = "think"
+local = "I've never seen a seed like this! Could this be the seed of the flower I've been hunting for?"
+prompts = [
+	{ local = "Only one way to find out!", next = "15" },
+	{ local = "I've got a good feeling!", next = "16" },
+]
+
+[celine_two_hearts.15]
+portrait = "neutral"
+local = "Oh, this is so exciting!"
+next = "17"
+
+[celine_two_hearts.16]
+portrait = "neutral"
+local = "You know what, me too!"
+next = "17"
+
+[celine_two_hearts.17]
+portrait = "very_happy"
+local = "Thank you so much for your help, [Ari]! I'll get this seed home and plant it!"
+next = "18"
+
+[celine_two_hearts.18]
+portrait = "neutral"
+local = "I'll let you know as soon as it sprouts!"

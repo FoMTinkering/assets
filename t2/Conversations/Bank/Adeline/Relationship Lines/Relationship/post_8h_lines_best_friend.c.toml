@@ -1,0 +1,533 @@
+[adeline_post_8h_best_friend_0]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true }
+	] },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 0 }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "20h" },
+	{ adeline_post_8h_best_friend_grouping = 1 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "neutral"
+local = "Work has been so much more manageable lately!"
+next = "1"
+
+[adeline_post_8h_best_friend_0.1]
+portrait = "happy"
+local = "And it's so much fun working with you! We really make a great team."
+
+[adeline_post_8h_best_friend_question_0]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true }
+	] },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 1 }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "20h" },
+	{ adeline_post_8h_best_friend_grouping = 2 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "think"
+local = "Can I ask you something kind of random, [Ari]?"
+next = "1"
+
+[adeline_post_8h_best_friend_question_0.1]
+portrait = "neutral"
+local = "I've been thinking about first impressions lately. It got me wondering..."
+next = "2"
+
+[adeline_post_8h_best_friend_question_0.2]
+portrait = "happy"
+local = "What did you think of me, the first time we met?"
+prompts = [
+	{ local = "I was a little intimidated! You were so put-together.", next = "3" },
+	{ local = "You dazzled me! You were really prepared.", next = "6" }
+]
+
+[adeline_post_8h_best_friend_question_0.3]
+portrait = "embarrassed"
+local = "Intimidated?"
+next = "4"
+
+[adeline_post_8h_best_friend_question_0.4]
+portrait = "happy"
+effect = "drop"
+local = "I was covered in dust and cobwebs!"
+next = "5"
+
+[adeline_post_8h_best_friend_question_0.5]
+portrait = "wink"
+local = "Well, I'm glad you didn't stay intimidated, [Ari]."
+
+[adeline_post_8h_best_friend_question_0.6]
+portrait = "embarrassed"
+local = "You were impressed? But I barely got your house together in time..."
+next = "7"
+
+[adeline_post_8h_best_friend_question_0.7]
+portrait = "neutral"
+local = "You didn't think we were going to make you sleep in the dirt, did you?"
+next = "8"
+
+[adeline_post_8h_best_friend_question_0.8]
+portrait = "happy"
+effect = "drop"
+local = "Haha... Don't answer that!"
+
+[adeline_post_8h_best_friend_1]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true }
+	] },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 2 }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "20h" },
+	{ adeline_post_8h_best_friend_grouping = 3 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }, { item = "trail_mix" }]
+portrait = "neutral"
+local = "Oh, nice timing [Ari]. I was about to take a break and have a snack to keep my energy up."
+next = "1"
+
+[adeline_post_8h_best_friend_1.1]
+portrait = "happy"
+local = "Here, split this with me!"
+
+[adeline_post_8h_best_friend_question_1]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true },
+	] },
+	{ adeline_is_spouse = false },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 3 }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "2d" },
+	{ adeline_post_8h_best_friend_grouping = 4 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "neutral"
+local = "I'm so glad that you always take an interest in town projects..."
+next = "1"
+
+[adeline_post_8h_best_friend_question_1.1]
+portrait = "happy"
+local = "But we so often talk about what I'm working on!"
+next = "2"
+
+[adeline_post_8h_best_friend_question_1.2]
+portrait = "neutral"
+local = "I want to hear about you! What have you been up to lately?"
+prompts = [
+	{ local = "I've been working on my farm!", next = "3" },
+	{ local = "I've been spending a lot of time in the Mines lately.", next = "5" }
+]
+
+[adeline_post_8h_best_friend_question_1.3]
+portrait = "happy"
+local = "You've done incredible things with that plot of land since you've moved in."
+next = "4"
+
+[adeline_post_8h_best_friend_question_1.4]
+portrait = "wink"
+local = "It looks more amazing every day!"
+
+[adeline_post_8h_best_friend_question_1.5]
+portrait = "neutral"
+local = "I'm so glad that reopening the Mines has worked out so well."
+next = "6"
+
+[adeline_post_8h_best_friend_question_1.6]
+portrait = "embarrassed"
+local = "But do me a favor and be safe, okay? I worry about you!"
+
+[adeline_post_8h_best_friend_2]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true },
+	] },
+	{ adeline_is_spouse = false },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "2d" },
+	{ adeline_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "neutral"
+local = "Are you reading anything good lately, [Ari]?"
+next = "1"
+
+[adeline_post_8h_best_friend_2.1]
+portrait = "think"
+local = "I'm reading a mystery novel Valen lent me. I can't put it down!"
+next = "2"
+
+[adeline_post_8h_best_friend_2.2]
+portrait = "happy"
+local = "Maybe you can borrow it after I'm done. I'm so curious what you'd think of it!"
+
+
+[adeline_post_8h_best_friend_3]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true },
+	] },
+	{ adeline_is_spouse = false },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "2d" },
+	{ adeline_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "happy"
+local = "You always make time to listen to me, [Ari], even when I get on a tangent..."
+next = "1"
+
+[adeline_post_8h_best_friend_3.1]
+portrait = "embarrassed"
+local = "It's really sweet, actually."
+
+# Last line
+[adeline_post_8h_best_friend_4]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true }
+	] },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 4, ignore_priority = true },
+	{ adeline_is_traveling = true, ignore_priority = true }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "2d" },
+	{ adeline_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "think"
+local = "I was always rushing everywhere to keep up with my schedule before..."
+next = "1"
+
+[adeline_post_8h_best_friend_4.1]
+portrait = "neutral"
+local = "But lately, I've been making an effort to slow down and enjoy the moment."
+next = "2"
+
+[adeline_post_8h_best_friend_4.2]
+portrait = "happy"
+local = "I have you to thank for that, [Ari]!"
+
+[adeline_post_8h_best_friend_5]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true },
+	] },
+	{ adeline_is_spouse = false },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 4 },
+	{ adeline_animation = "write" }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "2d" },
+	{ adeline_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "think"
+local = "I can tell you this because we're close, [Ari]..."
+next = "1"
+
+[adeline_post_8h_best_friend_5.1]
+portrait = "concerned"
+local = "I actually have a special drawer full of clipboards."
+next = "2"
+
+[adeline_post_8h_best_friend_5.2]
+portrait = "embarrassed"
+local = "Like, fifty clipboards."
+next = "3"
+
+[adeline_post_8h_best_friend_5.3]
+portrait = "happy"
+local = "I'm trusting you! Don't tell anyone, okay?"
+
+[adeline_post_8h_best_friend_6]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true },
+	] },
+	{ adeline_is_spouse = false },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "2d" },
+	{ adeline_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "happy"
+local = "It really takes a weight off my shoulders, knowing you're here. Thanks for always checking in on me."
+
+[adeline_post_8h_best_friend_7]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true }
+	] },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "2d" },
+	{ adeline_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "think"
+local = "When I was little, I always thought I'd have less time for fun when I became a proper noble lady."
+next = "1"
+
+[adeline_post_8h_best_friend_7.1]
+portrait = "blush"
+local = "Thank you for proving me wrong."
+
+[adeline_post_8h_best_friend_8]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true }
+	] },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "2d" },
+	{ adeline_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "think"
+local = "I had a dream last night that you and I were little bees in a beehive!"
+next = "1"
+
+[adeline_post_8h_best_friend_8.1]
+portrait = "neutral"
+local = "We flew around together and visited flowers and built perfectly geometric little houses..."
+next = "2"
+
+[adeline_post_8h_best_friend_8.2]
+portrait = "happy"
+effect = "cheery"
+local = "It was a really cute dream!"
+
+[adeline_post_8h_best_friend_9]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true }
+	] },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "2d" },
+	{ adeline_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "happy"
+local = "Seeing your smile always gives me a burst of energy!"
+next = "1"
+
+[adeline_post_8h_best_friend_9.1]
+portrait = "wink"
+effect = "sparkles"
+local = "Now I'm ready to tackle the rest of the day!"
+
+[adeline_post_8h_best_friend_10]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true }
+	] },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 4 },
+	{ darcy_has_met = true }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "2d" },
+	{ adeline_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "hot_drink", npc = "adeline" } }, { item = "coffee" }]
+portrait = "neutral"
+local = "I picked up a new =Coffee= blend from Darcy..."
+next = "1"
+
+[adeline_post_8h_best_friend_10.1]
+portrait = "think"
+local = "She said I should be getting notes of chocolate and cherry?"
+next = "2"
+
+[adeline_post_8h_best_friend_10.2]
+portrait = "sigh"
+local = "All I taste is coffee... am I missing something?"
+next = "3"
+
+[adeline_post_8h_best_friend_10.3]
+portrait = "neutral"
+local = "Here, take a sip and tell me what you think!"
+
+[adeline_post_8h_best_friend_11]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true },
+	] },
+	{ adeline_is_spouse = false },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "2d" },
+	{ adeline_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "neutral"
+local = "Have you seen the big family portrait in the dining room? Eiland was probably too little to remember the day it was painted, but I do."
+next = "1"
+
+[adeline_post_8h_best_friend_11.1]
+portrait = "wink"
+local = "He was sooo squirmy and mad that we had to sit all day! I don't blame him, it took forever."
+next = "2"
+
+[adeline_post_8h_best_friend_11.2]
+portrait = "happy"
+local = "Looking back, it was really funny!"
+
+
+[adeline_post_8h_best_friend_question_2]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true },
+	] },
+	{ adeline_is_spouse = false },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "2d" },
+	{ adeline_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "neutral"
+local = "[Ari], I've been wondering... when planning your farm layout, what's more important to you?"
+next = "1"
+
+[adeline_post_8h_best_friend_question_2.1]
+portrait = "happy"
+local = "The practical aspect? Or are you thinking more about the aesthetics?"
+prompts = [
+	{ local = "I'm very serious about farm efficiency.", next = "2" },
+	{ local = "I want my farm to look pretty!", next = "3" }
+]
+
+[adeline_post_8h_best_friend_question_2.2]
+portrait = "happy"
+effect = "sparkles"
+local = "I had a feeling! We have a lot in common in that way, don't we?"
+
+[adeline_post_8h_best_friend_question_2.3]
+portrait = "happy"
+effect = "sparkles"
+local = "It's SO pretty! I should ask you to redecorate my office, honestly! You really have an eye for it!"
+
+[adeline_post_8h_best_friend_question_3]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ any = [
+		{ adeline_post_8h_romantic_progression = true },
+		{ adeline_is_best_friend = true },
+	] },
+	{ adeline_is_spouse = false },
+	{ adeline_post_8h_best_friend_gate = false },
+	{ adeline_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ adeline_post_8h_best_friend_gate = true, expires = "2d" },
+	{ adeline_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "neutral"
+local = "[Ari]! I feel like I see you around town at all hours."
+next = "1"
+
+[adeline_post_8h_best_friend_question_3.1]
+portrait = "wink"
+local = "Tell me, are you more of a morning person or an evening person?"
+prompts = [{ local = "I'm an early bird!", next = "2" }, { local = "I'm a night owl!", next = "4" }]
+
+[adeline_post_8h_best_friend_question_3.2]
+portrait = "happy"
+local = "Me too! I love walking around while the town is waking up. It feels like the world is all mine, just for a little while."
+next = "3"
+
+[adeline_post_8h_best_friend_question_3.3]
+portrait = "wink"
+local = "But I'm happy to share it with you!"
+
+[adeline_post_8h_best_friend_question_3.4]
+portrait = "think"
+local = "Ooh, yeah? I can relate! I used to stay up late working all the time."
+next = "5"
+
+[adeline_post_8h_best_friend_question_3.5]
+portrait = "wink"
+local = "These days I try to be more responsible about it, though... thanks to a certain someone!"

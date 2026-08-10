@@ -1,0 +1,228 @@
+[core]
+	name = "Rabbit"
+	plural_name = "Rabbit"
+	female_other = "a female rabbit"
+	male_other = "a male rabbit"
+	new_baby_born = "A new Rabbit was born! Enter new name"
+	size = "small"
+	default_icon_variant = "black_and_white"
+	cosmetic_sub_icon = "spr_ui_item_sub_animal_rabbit"
+	requirements = { repaired_haydens_farm = true }
+
+[behavior]
+	move_speed = 0.7
+
+[celebration_data]
+	baby_animation = "happy"
+	adult_animation = "happy"
+
+[production.male]
+	days_to_produce = 3
+	normal_product = "rabbit_wool"
+	golden_product = "golden_rabbit_wool"
+
+[production.female]
+	days_to_produce = 3
+	normal_product = "rabbit_wool"
+	golden_product = "golden_rabbit_wool"
+
+[breeding]
+	uses_egg = false
+	days_until_adult = 3
+	treat = "heart_shaped_rabbit_treat"
+
+[eating]
+	kind = "seed"
+	offset = [18, -2]
+	baby_offset = [18, -2]
+	shake_frames = [1, 9]
+
+[petting]
+	kind = "pick_up"
+	held_offset = [9, 15]
+
+[pricing]
+	buy_price = 1500
+	baby_sell_price = 375
+	adult_sell_prices = [500, 560, 675, 750, 825, 900, 1050, 1200, 1500, 1700, 1800]
+
+[mounting]
+	is_mount = false
+
+[bark_offsets]
+	adult = { north = [2, -23], south = [2, -25], east = [8, -22], west = [-4, -22] }
+	baby = { north = [1, -21], south = [1, -22], east = [4, -21], west = [3, -21] }
+
+[[sounds.baby]]
+	ambient = "<n/a>"
+	positive_react = "SoundEffects/Animals/BabyRabbitPositiveReact"
+	negative_react = "SoundEffects/Animals/BabyRabbitNegativeReact"
+
+[[sounds.adult]]
+	ambient = "<n/a>"
+	positive_react = "SoundEffects/Animals/RabbitPositiveReact"
+	negative_react = "SoundEffects/Animals/RabbitNegativeReact"
+
+[animations.idle_2]
+	end_with_animation = true
+
+[animations.happy]
+	randomly_selected = false
+
+[animations.blink]
+	end_with_animation = true
+
+[animations.swim]
+	randomly_selected = false
+	end_with_animation = false
+	valid_for = ["male", "female"]
+
+# Variants
+[variants.default]
+	lut = "spr_animal_rabbit_basic_lut"
+
+	[variants.default.male]
+		key = "basic_rabbit"
+		top_key = "<n/a>"
+
+	[variants.default.female]
+		key = "basic_rabbit"
+		top_key = "<n/a>"
+
+	[variants.default.baby]
+		key = "basic_baby_rabbit"
+		top_key = "<n/a>"
+
+[variants.white]
+	name = "White"
+	lut_index = 1
+	default_unlocked = true
+
+[variants.brown]
+	name = "Brown"
+	lut_index = 2
+	default_unlocked = true
+
+[variants.black_and_white]
+	name = "Black and White"
+	lut_index = 3
+	default_unlocked = true
+
+[variants.brown_sable]
+	name = "Brown Sable"
+	tier = 2
+	lut_index = 4
+
+[variants.orange_sable]
+	name = "Orange Sable"
+	tier = 2
+	lut_index = 5
+
+[variants.black]
+	name = "Black"
+	tier = 2
+	lut_index = 6
+
+[variants.blue]
+	name = "Blue"
+	tier = 3
+	lut_index = 7
+
+[variants.purple]
+	name = "Purple"
+	tier = 3
+	lut_index = 8
+
+[variants.pink]
+	name = "Pink"
+	tier = 3
+	lut_index = 9
+
+[variants.silver]
+	name = "Silver"
+	tier = 4
+	lut_index = 10
+
+[variants.gold]
+	name = "Gold"
+	tier = 5
+	lut_index = 11
+
+[variants.spring]
+	name = "Spring"
+	tier = 6
+	lut_index = 12
+	born_in = "spring"
+	default_cosmetic = "flower_crown"
+
+[variants.summer]
+	name = "Summer"
+	tier = 6
+	lut_index = 13
+	born_in = "summer"
+	default_cosmetic = "sunglasses"
+
+[variants.fall]
+	name = "Fall"
+	tier = 6
+	born_in = "fall"
+	default_cosmetic = "horn"
+	lut = "<n/a>"
+
+	[variants.fall.male]
+		key = "fall_rabbit"
+
+	[variants.fall.female]
+		key = "fall_rabbit"
+
+	[variants.fall.baby]
+		key = "fall_baby_rabbit"
+
+[variants.winter]
+	name = "Winter"
+	tier = 6
+	lut_index = 14
+	born_in = "winter"
+	default_cosmetic = "winter_hat"
+
+[cosmetics.daisy_clips]
+	name = "Rabbit Daisy Clips"
+
+[cosmetics.flower_crown]
+	name = "Rabbit Flower Crown"
+
+[cosmetics.halo]
+	name = "Rabbit Halo"
+
+[cosmetics.heart_clips]
+	name = "Rabbit Heart Clips"
+
+[cosmetics.horn]
+	name = "Rabbit Horn"
+
+[cosmetics.pink_bow]
+	name = "Pink Rabbit Bow"
+
+[cosmetics.ribbon_blue]
+	name = "Rabbit Blue Ribbon"
+
+[cosmetics.ribbon_red]
+	name = "Rabbit Red Ribbon"
+
+[cosmetics.ribbon_white]
+	name = "Rabbit White Ribbon"
+
+[cosmetics.sunglasses]
+	name = "Rabbit Sunglasses"
+
+[cosmetics.top_hat]
+	name = "Rabbit Top Hat"
+
+[cosmetics.winter_hat]
+	name = "Rabbit Winter Hat"
+
+[cosmetics.cowboy_hat]
+	name = "Rabbit Cowboy Hat"
+
+[cosmetics.chef_hat]
+	name = "Rabbit Chef Hat"

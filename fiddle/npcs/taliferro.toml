@@ -1,0 +1,134 @@
+bio = "Celebrated chef of noble birth, hailing from the Capital and seeking to bring his exquisite cooking to the simple peasants at the Saturday Market. "
+birthday = { season = "spring", day = 13 }
+loved_gifts = [
+	"apple_honey_curry",
+	"beet_soup",
+	"fried_rice",
+	"harvest_plate",
+	"mont_blanc",
+	"seafood_boil",
+	"seafood_snow_pea_noodles",
+	"spell_fruit_parfait",
+	"spring_galette",
+	"sushi_platter",
+
+]
+liked_gifts = [
+	"chili_coconut_curry",
+	"coconut_cream_pie",
+	"crab_cakes",
+	"fish_tacos",
+	"glowberry_cookies",
+	"golden_cheesecake",
+	"golden_cookies",
+	"herb_salad",
+	"ice_cream_sundae",
+	"incredibly_hot_pot",
+	"lobster_roll",
+	"mushroom_steak_dinner",
+	"perch_risotto",
+	"pumpkin_pie",
+	"red_wine",
+	"sea_bream_rice",
+	"vegetable_pot_pie",
+	"vegetable_quiche",
+	"veggie_sub_sandwich",
+	"white_wine",
+
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "monster_mash"
+name = "Taliferro"
+aldarian_name = "TLFR"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["vendor"]
+journal_portrait_offset = [-116, -28]
+journal_background_color = [255, 227, 175]
+date_photo_offset = [0, 0]
+job = "Chef"
+icon_sprite = "spr_ui_generic_icon_npc_taliferro"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_taliferro"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_taliferro"
+dateable = false
+
+[gossip]
+	line = "taliferro_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["coffee"]
+	"17" = ["wine"]
+
+[offsets]
+	portrait = [-125, -65]
+	sweat = [-1, -3]
+	hearts = [-1, -3]
+	angry = [0, -3]
+	sparkles = [2, -5]
+	sparkles_dark = [2, -5]
+	sick = [8, -6]
+	music_notes = [0, -5]
+	intensity = [0, -13]
+	surprise = [2, -4]
+	shock = [0, -15]
+	sigh = [-2, -7]
+	loud = [4, -11]
+	cheery = [1, -4]
+	drop = [4, -13]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+	sly = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]

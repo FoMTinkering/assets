@@ -1,0 +1,148 @@
+[cauldron]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "juniper" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ location = "bathhouse" },
+	{ any = [
+		{ juniper_is_at_location = "bathhouse" },
+		{ dell_zone = "<juniper_zone>" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "bathhouse/cauldron" },
+	{ date_time = "1y", comparator = ">=" }
+]
+writes = [{ cauldron_emergency = true }]
+speaker = "juniper"
+portrait = "annoyed"
+local = "Repeat after me, children. \"I will not drink out of the Bathhouse cauldron.\""
+next = "1"
+
+[cauldron.1]
+speaker = "maple"
+portrait = "happy"
+local = "I will not..."
+next = "2"
+
+[cauldron.2]
+speaker = "luc"
+portrait = "think"
+local = "Drink out of the Bathhouse cauldron..."
+next = "3"
+
+[cauldron.3]
+speaker = "dell"
+portrait = "happy"
+local = "Unless it's an emergency!"
+next = "4"
+
+[cauldron.4]
+speaker = "juniper"
+portrait = "happy"
+local = "Very good."
+next = "5"
+
+[cauldron.5]
+speaker = "juniper"
+portrait = "mad"
+local = "Wait a minute..."
+
+[cauldron_2]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "juniper" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ location = "bathhouse" },
+	{ any = [
+		{ juniper_is_at_location = "bathhouse" },
+		{ dell_zone = "<juniper_zone>" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "bathhouse/cauldron" },
+	{ date_time = "1y", comparator = ">=" },
+	{ cauldron_emergency = true }
+]
+writes = [{ cauldron_emergency = false }]
+speaker = "juniper"
+portrait = "annoyed"
+local = "What emergency could possibly warrant drinking out of the cauldron, Dell?"
+next = "1"
+
+[cauldron_2.1]
+speaker = "dell"
+portrait = "mad"
+local = "Lots of stuff!"
+next = "2"
+
+[cauldron_2.2]
+speaker = "luc"
+portrait = "neutral"
+local = "Such as?"
+next = "3"
+
+[cauldron_2.3]
+speaker = "dell"
+portrait = "think"
+local = "Well... what if I need powers?"
+next = "4"
+
+[cauldron_2.4]
+speaker = "maple"
+portrait = "ugh"
+local = "Like what? The power of bad breath?"
+
+[cauldron_3]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "juniper" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ location = "bathhouse" },
+	{ any = [
+		{ juniper_is_at_location = "bathhouse" },
+		{ dell_zone = "<juniper_zone>" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "bathhouse/cauldron" }
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "dell" } },
+	{ bark = { bark = "annoyed", npc = "juniper" } },
+	{ bark = { bark = "cute_face", npc = "luc" } },
+	{ bark = { bark = "cute_face", npc = "maple" } }
+]
+speaker = "juniper"
+portrait = "mad"
+local = "Dell, stop putting sticks in the cauldron."
+next = "1"
+
+[cauldron_3.1]
+speaker = "dell"
+portrait = "happy"
+local = "But I'm helping!"
+next = "2"
+
+[cauldron_3.2]
+speaker = "maple"
+portrait = "happy"
+local = "She's helping, Miss Juniper."
+next = "3"
+
+[cauldron_3.3]
+speaker = "luc"
+portrait = "happy"
+local = "She's sooo helpful!"

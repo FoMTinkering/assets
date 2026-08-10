@@ -1,0 +1,32 @@
+[celine_0_follow_up]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_caldarus_encounter = true },
+	{ location = "deep_woods", comparator = "!=" },
+	{ caldarus_seridia_town = false }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "celine" } }]
+portrait = "think"
+local = "The strangest thing happened..."
+next = "1"
+
+[celine_0_follow_up.1]
+portrait = "ugh"
+local = "I was foraging at the Deep Woods pond and it felt like... like someone was watching me."
+next = "2"
+
+[celine_0_follow_up.2]
+portrait = "concerned"
+local = "I was so distracted that I slipped and almost fell in-"
+next = "3"
+
+[celine_0_follow_up.3]
+portrait = "mad"
+effect = "drop"
+local = "When suddenly, the air itself seemed to wrap around me and pulled me back! Like a pair of invisible arms!"
+next = "4"
+
+[celine_0_follow_up.4]
+portrait = "sad"
+local = "You don't think... it was a ghost?"

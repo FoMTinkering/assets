@@ -1,0 +1,389 @@
+[baby_0]
+refresh = "10d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ ari_has_infant = true },
+	{ spouse_holding_child = true }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "[infant] seems to be in high spirits today!"
+next = "1"
+
+
+[baby_0.1]
+portrait = "laugh"
+local = "Come, my little love. I will lift you high up again, so you might soar like a dragon."
+
+
+[baby_1]
+refresh = "10d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ ari_has_infant = true },
+	{ spouse_holding_child = true }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "[infant] always smiles more when you are near."
+next = "1"
+
+
+[baby_1.1]
+portrait = "laugh"
+local = "Is that not right, my little blossom?"
+
+
+[baby_2]
+refresh = "10d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ ari_has_infant = true },
+	{ caldarus_zone = "<celine_zone>", comparator = "!=", ignore_priority = true },
+	{ building = "general_store", comparator = "!=", ignore_priority = true },
+	{ time_of_day = "morning" }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "Celine has been asking after [child_0], so I thought to bring her to the General Store."
+next = "1"
+
+
+[baby_2.1]
+portrait = "smile"
+local = "[child_0] especially enjoys seeing all the colorful fruits."
+
+
+[baby_3]
+refresh = "10d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ ari_has_infant = true }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "As [child_0] ages, I can see your features in her."
+next = "1"
+
+
+[baby_3.1]
+portrait = "laugh"
+effect = "sparkles"
+local = "It brings me joy to see."
+
+
+[baby_4]
+refresh = "10d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ ari_has_infant = true }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "As [child_0] gets older, I must teach her about horn and tail care..."
+next = "1"
+
+
+[baby_4.1]
+portrait = "smile"
+local = "It is remarkable to think there is a small version of myself out in the world."
+
+
+[baby_5]
+refresh = "10d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ ari_has_infant = true }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "I was unsure of how I would feel, becoming a parent."
+next = "1"
+
+
+[baby_5.1]
+portrait = "neutral"
+local = "But now that I am, I cannot recall why I had apprehensions."
+next = "2"
+
+
+[baby_5.2]
+portrait = "smile"
+local = "It feels that I am doing something important. Perhaps the most important thing I have ever done."
+
+
+[baby_6]
+refresh = "10d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "It is a blessing to share [infant] with you, [Ari]."
+next = "1"
+
+
+[baby_6.1]
+portrait = "caring_special"
+local = "I cannot imagine embarking on such an adventure with anyone but you."
+
+
+[baby_7]
+refresh = "10d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "It may be [child_0]'s draconic blood, or perhaps simply my imagination..."
+next = "1"
+
+
+[baby_7.1]
+portrait = "smile"
+local = "But she is growing more quickly than average, is she not?"
+prompts = [
+	{ local = "I think she takes after you!", next = "2" },
+	{ local = "Soon she'll be taller than you are!", next = "5" }
+]
+
+
+[baby_7.2]
+portrait = "think"
+local = "Perhaps so..."
+next = "3"
+
+
+[baby_7.3]
+portrait = "smile"
+local = "Though, I do hope she will decide to stay small a little longer."
+next = "4"
+
+
+[baby_7.4]
+portrait = "wink"
+local = "She is very convenient to carry around at this size."
+
+
+[baby_7.5]
+portrait = "think"
+local = "Perhaps so..."
+next = "6"
+
+
+[baby_7.6]
+portrait = "smile"
+local = "Though, I do hope she will decide to stay small a little longer."
+next = "7"
+
+
+[baby_7.7]
+portrait = "wink"
+local = "She is very convenient to carry around at this size."
+
+
+[baby_8]
+refresh = "10d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ ari_has_infant = true },
+	{ any = [{ ari_holding_child = true }, { spouse_holding_child = true }] }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "It seems [child_0] has some important business that must be swiftly taken care of."
+next = "1"
+
+
+[baby_8.1]
+portrait = "mad"
+local = "Who is currently the arbiter of nappies?"
+prompts = [
+	{ local = "Can you take care of her this time?", next = "2" },
+	{ local = "Let me handle it!", next = "4" }
+]
+
+
+[baby_8.2]
+portrait = "laugh"
+local = "Of course, I am happy to take care of such things."
+next = "3"
+
+
+[baby_8.3]
+portrait = "smile"
+local = "Come, my little frog. Let us clean you up."
+next = "6"
+
+
+[baby_8.4]
+portrait = "laugh"
+local = "I am grateful, [Ari]."
+next = "5"
+
+
+[baby_8.5]
+portrait = "wink"
+local = "Next time, I will take charge."
+next = "6"
+
+
+[baby_8.6]
+actions = [{ blackout = 60 }]
+portrait = "laugh"
+local = "There you are, [child_0]. Is it not lovely to be dry and warm?"
+
+
+[baby_9]
+refresh = "10d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ ari_has_infant = true },
+	{ any = [{ ari_holding_child = true }, { spouse_holding_child = true }] }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "neutral"
+local = "Hm... [child_0] seems to be getting fussy."
+next = "1"
+
+
+[baby_9.1]
+portrait = "smile"
+local = "I believe it is close to her meal time. Shall I feed her? And you as well, perhaps?"
+prompts = [
+	{ local = "Yes, that sounds great!", next = "2" },
+	{ local = "Don't worry about it, I've got her!", next = "4" }
+]
+
+
+[baby_9.2]
+portrait = "happy"
+local = "Certainly."
+next = "3"
+
+
+[baby_9.3]
+portrait = "laugh"
+local = "Come, let us see what is on the menu."
+next = "6"
+
+
+[baby_9.4]
+portrait = "laugh"
+local = "Thank you, [Ari]."
+next = "5"
+
+
+[baby_9.5]
+portrait = "happy"
+local = "While your hands are occupied, I will feed you some fruit. Surely I can do that much."
+next = "6"
+
+
+[baby_9.6]
+actions = [{ blackout = 60 }]
+portrait = "laugh"
+local = "Was that not delicious, [child_0]?"
+next = "7"
+
+
+[baby_9.7]
+portrait = "smile"
+local = "I hope I can cook more adeptly before she is on solid food."
+
+
+# ari holding baby
+[ari_holding_baby_0]
+refresh = "5d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ ari_holding_child = true }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "[infant] seems to be enjoying your daily adventure together."
+next = "1"
+
+
+[ari_holding_baby_0.1]
+portrait = "laugh"
+local = "Hello, my little sprout. How are you finding the world today?"
+
+
+[ari_holding_baby_1]
+refresh = "5d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ child_0_location = "with_ari" }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "Ah, here are my two hearts."
+
+
+[ari_holding_baby_2]
+refresh = "5d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ child_0_location = "with_ari" }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "Thank you for taking charge of [infant] today."
+next = "1"
+
+
+[ari_holding_baby_2.1]
+portrait = "happy"
+local = "I will endeavor to make good use of the time you have allowed me."
+
+
+[ari_holding_baby_3]
+refresh = "5d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ ari_holding_child = true }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "It is a delight to see you two trotting around together. [child_0] seems to enjoy watching the world go by."
+next = "1"
+
+
+[ari_holding_baby_3.1]
+portrait = "caring_special"
+local = "I believe she has inherited your spirit, [Ari]."
+
+
+[ari_holding_baby_4]
+refresh = "5d"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ child_0_location = "with_ari" }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "Do not hesitate to ask if you would like me to take [infant] for the day."
+next = "1"
+
+
+[ari_holding_baby_4.1]
+portrait = "laugh"
+local = "I am ever at your service. And [infant]'s, as well."

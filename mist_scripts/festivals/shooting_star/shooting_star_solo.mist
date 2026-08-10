@@ -1,0 +1,31 @@
+scene(summit);
+camera_position(shst_camera_1);
+//
+stop_ambiance();
+play_sound("Ambience/ShootingStarFestival");
+place_actor(ari, north, shst_ari_solo);
+__override_post_process_time(22, 30);
+start_shooting_stars();
+request_music_stop(1);
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		sim {
+			walk(ari, shst_ari_solo_forward);
+			set_move_speed(ari, 0.4);
+		}
+		face(ari, north);
+	}
+	{
+		pan_camera(5, shst_camera_3);
+	}
+}
+
+wait(18);
+next_line();
+close_textbox();
+wait(2);
+fade_out(3);

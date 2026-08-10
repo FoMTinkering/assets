@@ -1,0 +1,17 @@
+[medical_instruments]
+refresh = "1y"
+requires = [
+	{ npc = "march" },
+	{ any = [
+		{ march_taking_orders = true },
+		{ march_is_traveling_from_zone = "<valen_is_traveling_from_zone>" },
+		{ march_zone = "<valen_zone>" }
+	] }
+]
+portrait = "neutral"
+local = "Valen asked me to make medical instruments."
+next = "1"
+
+[medical_instruments.1]
+portrait = "think"
+local = "An order for anything but nails makes my day."

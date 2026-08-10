@@ -1,0 +1,61 @@
+[dnd_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ adeline_zone = "inn/south_table" },
+	{ balor_zone = "inn/south_table" },
+	{ celine_zone = "inn/south_table" },
+	{ eiland_zone = "inn/south_table" },
+	{ holt_zone = "inn/south_table" },
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "balor" },
+		{ npc = "celine" },
+		{ npc = "eiland" },
+		{ npc = "holt" },
+	] },
+	{ any = [{ fnati = 0 }, { fnati = 1 }]},
+]
+writes = [{ dnd_fnati = 1 }]
+speaker = "eiland"
+local = "Welcome to our inaugural session of Dragons & Drama! I'll be striving to provide a historically accurate experience, but if I slip on any details, please speak up!"
+next = "1"
+
+[dnd_1.1]
+speaker = "celine"
+portrait = "think"
+local = "I wrote a backstory for my character, [Ari]... she's a druid, and she can talk to flowers, and she loves nature! But I don't get what to do with all these numbers..."
+next = "2"
+
+[dnd_1.2]
+speaker = "adeline"
+local = "Follow my lead, Celine! I set all of these USELESS stats to 1 so my mind stat can be 67..."
+next = "3"
+
+[dnd_1.3]
+speaker = "adeline"
+portrait = "happy"
+local = "Which you would think ISN'T possible for a starter character, but if you look at the rules section 107 paragraph 2, you'll see that..."
+next = "4"
+
+[dnd_1.4]
+speaker = "holt"
+local = "Whew, Adeline sure does know her stuff. Look here, [Ari]... I'm whittling out some miniatures for the game."
+next = "5"
+
+[dnd_1.5]
+speaker = "holt"
+local = "This is Celine's druid Daffodillia, and this is Adeline's wizard Moonsilver, and this is Balor's thief, Snicklefritz. Me?..."
+next = "6"
+
+[dnd_1.6]
+speaker = "holt"
+portrait = "mad"
+local = "I'm Bad Brad, the Bearded Bard. Please call him by his full name."
+next = "7"
+
+[dnd_1.7]
+speaker = "balor"
+portrait = "ugh"
+local = "Sigh... is this what I get for arriving late to the cards table? I have no idea what's going on... or why everyone keeps calling me Snicklefritz."

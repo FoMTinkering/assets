@@ -1,0 +1,56 @@
+[shop_0]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ location = "blacksmith_store" },
+	{ time_of_day = "night", comparator = "!=" },
+	{ march_heart_level = 2, comparator = "<=" }
+]
+writes = [{ march_was_mean = 1, operator = "+=", expires = "24h" }]
+portrait = "neutral"
+local = "Let me guess, here to ogle the merchandise?"
+next = "1"
+
+[shop_0.1]
+portrait = "sigh"
+effect = "sigh"
+local = "Let me know if you actually want to buy something."
+
+[shop_1]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ location = "blacksmith_store" },
+	{ time_of_day = "night", comparator = "!=" },
+	{ march_heart_level = 4, comparator = "<=" },
+]
+portrait = "neutral"
+local = "Are you working on your blacksmithing skill?"
+next = "1"
+
+[shop_1.1]
+portrait = "think"
+local = "I don't really mind if you're here to study my work."
+
+[shop_2]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ location = "blacksmith_store" },
+	{ time_of_day = "night", comparator = "!=" },
+	{ march_heart_level = 4, comparator = "<=" },
+]
+portrait = "neutral"
+local = "Everything in here was handmade by me, you won't find better quality anywhere in Aldaria."
+
+[shop_3]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ location = "blacksmith_store" },
+	{ time_of_day = "night", comparator = "!=" },
+	{ march_heart_level = 4, comparator = "<=" },
+]
+writes = [{ march_was_mean = 1, operator = "+=", expires = "24h" }]
+portrait = "unimpressed"
+local = "I didn't become a blacksmith to be a shopkeep. Don't try to haggle."

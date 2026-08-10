@@ -1,0 +1,232 @@
+scene(town);
+place_actor(march, east, cso_march_forward);
+place_actor(ari, west, cso_ari_start);
+camera_position(cso_camera_1);
+request_music_play("Music/Events/Cutscene");
+
+//
+sim {
+	fade_in(2);
+	pan_camera(3, cso_adeline_convo);
+	{
+		wait(2);
+		next_line(); //
+	}
+}
+close_textbox();
+
+//
+sim {
+	{
+		wait(1.5);
+		//
+	}
+	{
+		wait(1);
+		free bark_speech(ari, ellipses);
+		wait(2);
+		walk_slow(ari, cso_ari_walk_away);
+		face(ari, south);
+		wait(0.5);
+		free bark_speech(ari, exclamation_mark);
+	}
+	{
+		walk_slow(march, cso_march_anvil);
+		face(march, east);
+		animate(march, hammer);
+	}
+	{
+		wait(0.5);
+		place_actor(adeline, west, cso_adeline_start);
+		sim {
+			fade_npc_alpha(adeline, 0.0, 1, 60);
+			walk(adeline, cso_adeline_notice);
+		}
+		face(adeline, north);
+	}
+}
+wait(1);
+free bark_speech(march, exclamation_mark);
+wait(0.5);
+animate(march, idle);
+face(march, south);
+
+//
+
+free sim {
+	pan_camera(3, cso_adeline_convo);
+	{
+		walk_slow(march, cso_march_forward);
+		face(march, south);
+	}
+	{
+		wait(0.5);
+		walk_slow(adeline, cso_adeline_convo);
+		face(adeline, north);
+	}
+	{
+		wait(1);
+		walk_slow(ari, cso_ari_start);
+		face(ari, south);
+	}
+}
+wait(1);
+next_line(); //
+next_line(); //
+
+//
+if get_response() == 0 {
+	wait(0.75);
+	face(march, east);
+	free bark_speech(march, annoyed);
+} else {
+	wait(1);
+	face(ari, west);
+	free bark_speech(ari, annoyed);
+	wait(1);
+	face(ari, south);
+}
+next_line(); //
+wait(0.5);
+face(march, east);
+wait(0.5);
+face(ari, west);
+next_line(); //
+free {
+	wait(0.5);
+	face(ari, south);
+	wait(0.5);
+	face(march, south);
+}
+free bark_speech(adeline, exclamation_mark);
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+
+//
+free sim {
+	{
+		walk_slow(march, cso_march_anvil);
+		face(march, east);
+		wait(0.5);
+		animate(march, hammer);
+	}
+	{
+		wait(0.5);
+		walk_slow(adeline, cso_adeline);
+		face(adeline, north);
+	}
+	{
+		wait(1);
+		walk_slow(ari, cso_ari);
+		face(ari, west);
+	}
+	pan_camera(4, cso_camera_4);
+}
+wait(2.5);
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+
+close_textbox();
+if get_response() == 0 {
+	wait(0.25);
+	animate(march, idle);
+	run_tutorial("blacksmithing");
+	animate(march, hammer);
+}
+
+sim {
+	{
+		wait(0.5);
+		animate(march, idle);
+		setup_prop(cso_ingot);
+		wait(0.5);
+		walk_slow(march, cso_march_gift);
+		face(march, north);
+	}
+	watch_actor(ari, march);
+	pan_camera(3, cso_camera_5);
+}
+face(march, north);
+wait(0.5);
+face(ari, west);
+next_line(); //
+face(ari, south);
+next_line(); //
+face(march, west);
+wait(0.5);
+next_line(); //
+wait(0.5);
+face(march, north);
+next_line(); //
+face(march, west);
+next_line(); //
+face(march, north);
+wait(0.5);
+face(ari, west);
+walk_slow(ari, cso_ari_pickup);
+face(ari, west);
+destroy_prop(cso_ingot);
+animate(ari, pickup);
+play_sound("SoundEffects/Ari/RaiseAboveHeadAward");
+__ari_hold_item(copper_ingot);
+play_item_toast(copper_ingot);
+wait(1.5);
+animate(ari, idle);
+wait(0.5);
+walk_slow(ari, cso_ari);
+face(ari, south);
+next_line(); //
+free {
+	wait(0.25);
+	free bark_speech(march, sweat_drop);
+	face(march, west);
+	wait(0.75);
+	face(march, east);
+	wait(0.5);
+	face(march, west);
+	wait(0.5);
+	face(march, north);
+}
+next_line(); //
+next_line(); //
+close_textbox();
+sim {
+	{
+		sim {
+			walk(march, "Blacksmith Front Door");
+			set_move_speed(march, 1.25);
+		}
+		use_door(march);
+	}
+	{
+		watch_actor(ari, march);
+		wait(2);
+		walk_slow(ari, cso_ari_start);
+		face(ari, east);
+	}
+	{
+		watch_actor(adeline, march);
+		wait(2.5);
+		walk_slow(adeline, cso_march_forward);
+		face(adeline, east);
+	}
+	{
+		wait(1);
+		pan_camera(3, cso_adeline_convo);
+	}
+}
+face(ari, west);
+wait(1.5);
+sim {
+	bark_speech(adeline, cute_face);
+	bark_speech(ari, cute_face);
+	{
+		wait(1);
+		fade_out(2);
+	}
+}
+wait_one_tick();

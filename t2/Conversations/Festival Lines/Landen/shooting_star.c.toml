@@ -1,0 +1,34 @@
+[shooting_star_day_of]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "landen" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ landen_is_at = "town/star_festival_landen", comparator = "!=" }
+]
+portrait = "neutral"
+local = "Terithia, Errol and I have a tradition of watching the shooting stars together."
+next = "1"
+
+[shooting_star_day_of.1]
+portrait = "happy"
+local = "This year's no different!"
+
+
+[shooting_star_ryis_follow_up_landen]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "landen" },
+	{ shooting_star_date_status = "ryis_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ ryis_is_partner = false }
+]
+portrait = "neutral"
+local = "Did you have a good time watching the stars, [Ari]?"
+next = "1"
+
+[shooting_star_ryis_follow_up_landen.1]
+portrait = "wink"
+local = "Between you and me, I'm pretty sure Ryis did."

@@ -1,0 +1,39 @@
+[winter_work]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "eiland" }] },
+	{ balor_zone = "<eiland_zone>" },
+	{ season = "winter" }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "I suppose your work winds down in the winter, Eiland. It can't be easy to excavate anything in this snowy weather."
+next = "1"
+
+[winter_work.1]
+speaker = "eiland"
+portrait = "think"
+local = "Well, the workload is about the same, but its nature changes."
+next = "2"
+
+[winter_work.2]
+speaker = "eiland"
+portrait = "neutral"
+local = "Less time at the dig site, more time researching."
+
+[winter_work_2]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "eiland" }] },
+	{ balor_zone = "<eiland_zone>" },
+	{ season = "winter" }
+]
+speaker = "balor"
+portrait = "wink"
+local = "Not even the winter season stops you from pursuing your passions, eh Eiland?"
+next = "1"
+
+[winter_work_2.1]
+speaker = "eiland"
+portrait = "happy"
+local = "I may be spending more time indoors, but that means more time for planning the spring excavations!"

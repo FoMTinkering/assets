@@ -1,0 +1,25 @@
+[turn_out]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ spring_festival_date = "1d", time = "after" },
+]
+portrait = "neutral"
+local = "What a turn out! I wish I had had time to set up a booth this year."
+next = "1"
+
+[turn_out.1]
+portrait = "happy"
+local = "At least this means I can properly enjoy myself!"
+
+[first_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ any = [{ sf_first_place = true }, { sf_first_place_plus = true }] },
+]
+portrait = "happy"
+local = "Well well, first place, eh? You're certainly worth keeping an eye on."

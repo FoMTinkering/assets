@@ -1,0 +1,28 @@
+[museum]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "olric" }] },
+	{ location = "museum_entry" },
+	{ hayden_zone = "<olric_zone>" },
+]
+speaker = "hayden"
+portrait = "neutral"
+local = "Why'd you want to come to the Museum, Olric?"
+next = "1"
+
+[museum.1]
+speaker = "olric"
+portrait = "neutral"
+local = "I thought you wanted to come to the Museum!"
+next = "2"
+
+[museum.2]
+speaker = "hayden"
+portrait = "laugh"
+local = "GYA HA HA!"
+next = "3"
+
+[museum.3]
+speaker = "hayden"
+portrait = "wink"
+local = "Well, we're here! We might as well have ourselves a look around!"

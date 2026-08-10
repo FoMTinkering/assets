@@ -1,0 +1,30 @@
+[zero_to_one_0]
+refresh = "2m"
+requires = [{ npc = "valen" }, { ryis_heart_level = 2, comparator = "<" }]
+portrait = "neutral"
+local = "As a lifelong resident of Mistria, let me know if you need any pointers."
+
+[two_to_three_0]
+refresh = "2m"
+requires = [
+	{ npc = "valen" },
+	{ valen_heart_level = 4, comparator = "<" },
+	{ valen_heart_level = 2, comparator = ">=" }
+]
+portrait = "neutral"
+local = "It's nice that you take the time to chat, even when you're not in medical need."
+
+[four_to_five_0]
+refresh = "1y"
+requires = [
+	{ npc = "valen" },
+	{ valen_heart_level = 6, comparator = "<" },
+	{ valen_heart_level = 4 , comparator = ">=" }
+]
+portrait = "neutral"
+local = "Running around as usual I see."
+next = "1"
+
+[four_to_five_0.1]
+portrait = "raised_eyebrow"
+local = "Try not to overdo it."

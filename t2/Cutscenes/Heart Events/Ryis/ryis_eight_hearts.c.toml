@@ -1,0 +1,723 @@
+[ryis_eight_hearts_follow_up_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ any = [{ ryis_is_best_friend = true }, { ryis_is_partner = true }] },
+	{ ryis_eight_heart_priority_bump = true },
+	{ ryis_heart_event = "eight_heart" }
+]
+portrait = "neutral"
+local = "Landen has been regaling me with what you and his nephew have been up to."
+next = [
+	{ target = "1r", requires = [{ ryis_is_partner = true }] },
+	{ target = "1f", requires = [] }
+]
+
+[ryis_eight_hearts_follow_up_errol.1r]
+portrait = "wink"
+local = "Bringing back a local ecological niche all for a species of bird is quite admirable. Ho ho!"
+
+[ryis_eight_hearts_follow_up_errol.1f]
+portrait = "happy"
+local = "Bringing back a local ecological niche all for a species of bird is quite admirable."
+
+[ryis_eight_hearts_follow_up_landen_romantic]
+refresh = "never"
+requires = [
+	{ npc = "landen" },
+	{ ryis_is_partner = true },
+	{ ryis_eight_heart_priority_bump = true },
+	{ ryis_heart_event = "eight_heart" }
+]
+portrait = "happy"
+local = "You know, I don't ever think I've seen Ryis in such a good mood before."
+next = "1"
+
+[ryis_eight_hearts_follow_up_landen_romantic.1]
+portrait = "wink"
+local = "Now I wonder why that could be, [Ari]?"
+
+[ryis_eight_hearts_follow_up_landen_best_friend]
+refresh = "never"
+requires = [
+	{ npc = "landen" },
+	{ ryis_is_best_friend = true },
+	{ ryis_eight_heart_priority_bump = true },
+	{ ryis_heart_event = "eight_heart" }
+]
+portrait = "neutral"
+local = "Ryis told me all about how you finally coaxed those bluebirds back to Mistria!"
+next = "1"
+
+[ryis_eight_hearts_follow_up_landen_best_friend.1]
+portrait = "happy"
+local = "Good on you two!"
+
+[ryis_eight_hearts_follow_up_ryis_romantic]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_partner = true },
+	{ ryis_eight_heart_priority_bump = true },
+	{ ryis_heart_event = "eight_heart" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "blush_special"
+local = "Still can't believe we brought back the Mistrian Bluebirds..."
+next = "1"
+
+[ryis_eight_hearts_follow_up_ryis_romantic.1]
+portrait = "happy_blush"
+local = "It makes me wonder what other rare birds are waiting to be found in Mistria!"
+next = "2"
+
+[ryis_eight_hearts_follow_up_ryis_romantic.2]
+portrait = "embarrassed"
+local = "Let's plan a birdwatching date sometime soon, okay [Ari]?"
+
+[ryis_eight_hearts_follow_up_ryis_best_friend]
+refresh = "never"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_best_friend = true },
+	{ ryis_eight_heart_priority_bump = true },
+	{ ryis_heart_event = "eight_heart" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "neutral"
+local = "Still can't believe we brought back the Mistrian Bluebirds."
+next = "1"
+
+[ryis_eight_hearts_follow_up_ryis_best_friend.1]
+portrait = "happy"
+local = "It makes me wonder what other rare birds are waiting to be found in Mistria!"
+
+[ryis_eight_hearts_follow_up_terithia]
+refresh = "never"
+requires = [
+	{ npc = "terithia" },
+	{ any = [{ ryis_is_best_friend = true }, { ryis_is_partner = true }] },
+	{ ryis_eight_heart_priority_bump = true },
+	{ ryis_heart_event = "eight_heart" }
+]
+portrait = "think"
+local = "Landen never had any children of his own..."
+next = "1"
+
+[ryis_eight_hearts_follow_up_terithia.1]
+portrait = "neutral"
+local = "I'm sure you've noticed how he dotes on his nephew."
+next = [
+	{ target = "2r", requires = [{ ryis_is_partner = true }] },
+	{ target = "2f", requires = [] }
+]
+
+[ryis_eight_hearts_follow_up_terithia.2r]
+portrait = "happy"
+local = "He's so happy that Ryis has found someone special in you, [Ari]."
+next = "3"
+
+[ryis_eight_hearts_follow_up_terithia.2f]
+portrait = "happy"
+local = "He's so happy that Ryis has made a friend as good as you, [Ari]."
+next = "3"
+
+[ryis_eight_hearts_follow_up_terithia.3]
+portrait = "wink"
+local = "And we all appreciate a happier Landen!"
+
+[ryis_eight_hearts]
+kind = "gameplay_triggered"
+writes = [
+	{ ryis_heart_event = "eight_heart", expires = "4d" },
+	{ ryis_eight_heart_priority_bump = true, expires = "4d" }
+]
+speaker = "ryis"
+portrait = "neutral"
+local = "Thanks for coming, [Ari]."
+next = "1"
+
+[ryis_eight_hearts.1]
+speaker = "ryis"
+portrait = "happy"
+local = "I was so excited when I spotted that blue feather by our tree!"
+next = [
+	{ target = "2r", requires = [{ shooting_star_ryis_attended = true }] },
+	{ target = "2f" }
+]
+
+[ryis_eight_hearts.2r]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "I'm glad you could join me. I know my letter was kind of last minute."
+next = "3"
+
+[ryis_eight_hearts.2f]
+speaker = "ryis"
+portrait = "neutral"
+local = "I'm glad you could join me. I know my letter was kind of last minute."
+next = "3"
+
+[ryis_eight_hearts.3]
+speaker = "ryis"
+portrait = "think"
+local = "You know..."
+next = [
+	{ target = "4r", requires = [{ shooting_star_ryis_attended = true }] },
+	{ target = "4f" }
+]
+
+[ryis_eight_hearts.4r]
+speaker = "ryis"
+portrait = "blush_special"
+local = "I don't really birdwatch with anyone else."
+next = "5r"
+
+[ryis_eight_hearts.4f]
+speaker = "ryis"
+portrait = "neutral"
+local = "I don't really birdwatch with anyone else."
+next = "5f"
+
+[ryis_eight_hearts.5r]
+speaker = "ryis"
+portrait = "closed_eyes_smile_blush"
+local = "I always thought it was my thing, but... it's really nice that it's our thing."
+prompts = [
+	{ local = "It's been a lot of fun!", next = "6" },
+	{ local = "It's been great spending time with you!", next = "7r" }
+]
+
+[ryis_eight_hearts.5f]
+speaker = "ryis"
+portrait = "closed_eyes_smile"
+local = "I always thought it was my thing, but... it's really nice that it's our thing."
+prompts = [
+	{ local = "It's been a lot of fun!", next = "6" },
+	{ local = "It's been great spending time with you!", next = "7f" }
+]
+
+[ryis_eight_hearts.6]
+speaker = "ryis"
+portrait = "wink"
+local = "For sure."
+next = "8"
+
+[ryis_eight_hearts.7r]
+speaker = "ryis"
+portrait = "blush_special"
+local = "It's been cool."
+next = "8"
+
+[ryis_eight_hearts.7f]
+speaker = "ryis"
+portrait = "neutral"
+local = "It's been cool."
+next = "8"
+
+[ryis_eight_hearts.8]
+speaker = "ryis"
+portrait = "think"
+local = "That feather turned up around here, but there's a chance our bird was just doing a flyby..."
+next = "9"
+
+[ryis_eight_hearts.9]
+speaker = "ryis"
+portrait = "happy"
+local = "It's a good sign, though!"
+next = "10"
+
+[ryis_eight_hearts.10]
+speaker = "ryis"
+portrait = "neutral"
+local = "Normally I just let the birds do their thing, and if I see them, great."
+next = "11"
+
+[ryis_eight_hearts.11]
+speaker = "ryis"
+portrait = "wink"
+local = "But if the Mistrian Bluebirds find the house we made for them, they'll have a real head start."
+next = "12"
+
+[ryis_eight_hearts.12]
+speaker = "ryis"
+portrait = "neutral"
+local = "Now we just watch and wait."
+next = "13"
+
+[ryis_eight_hearts.13]
+speaker = "ryis"
+portrait = "happy"
+local = "It's a good excuse to relax, right?"
+next = "14"
+
+[ryis_eight_hearts.14]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "I grew up in a lively house..."
+next = "15"
+
+[ryis_eight_hearts.15]
+speaker = "ryis"
+portrait = "closed_eyes"
+local = "So whenever I wanted some solitude, I'd go walking all over the Capital."
+next = "16"
+
+[ryis_eight_hearts.16]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "People-watching was fun, but observing the pigeons, starlings, and sparrows..."
+next = "17"
+
+[ryis_eight_hearts.17]
+speaker = "ryis"
+portrait = "neutral"
+local = "It always made me feel calm and more connected to nature."
+next = [
+	{ target = "18r", requires = [{ shooting_star_ryis_attended = true }] },
+	{ target = "18f" }
+]
+
+[ryis_eight_hearts.18r]
+speaker = "ryis"
+portrait = "closed_eyes_blush"
+local = "I've always felt that way about carpentry, too."
+next = "19"
+
+[ryis_eight_hearts.18f]
+speaker = "ryis"
+portrait = "closed_eyes"
+local = "I've always felt that way about carpentry, too."
+next = "19"
+
+[ryis_eight_hearts.19]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "Working with wood and stone from the forest, the quiet focus required of the craft..."
+next = [
+	{ target = "20r", requires = [{ shooting_star_ryis_attended = true }] },
+	{ target = "20f" }
+]
+
+[ryis_eight_hearts.20r]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "I guess I'm just drawn toward this kind of thing."
+next = "21"
+
+[ryis_eight_hearts.20f]
+speaker = "ryis"
+portrait = "happy"
+local = "I guess I'm just drawn toward this kind of thing."
+next = "21"
+
+[ryis_eight_hearts.21]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "So while we wait..."
+next = [
+	{ target = "22r", requires = [{ shooting_star_ryis_attended = true }] },
+	{ target = "22f" }
+]
+
+[ryis_eight_hearts.22r]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "Why don't we just sit back and enjoy some time in nature?"
+next = "23r"
+
+[ryis_eight_hearts.22f]
+speaker = "ryis"
+portrait = "happy"
+local = "Why don't we just sit back and enjoy some time in nature?"
+next = "23f"
+
+[ryis_eight_hearts.23r]
+speaker = "ryis"
+portrait = "blush_special"
+local = "Ah... this has been nice, [Ari]."
+next = "24"
+
+[ryis_eight_hearts.23f]
+speaker = "ryis"
+portrait = "happy"
+local = "Ah... this has been nice, [Ari]."
+next = "24"
+
+[ryis_eight_hearts.24]
+speaker = "ryis"
+portrait = "think"
+local = "It's a shame we haven't had any luck spotting our birds yet, though."
+
+[[ryis_eight_hearts.24.prompts]]
+local = "I guess that's why they call it birdwatching and not birdfinding."
+next = "25"
+
+[[ryis_eight_hearts.24.prompts]]
+local = "I'm still having a good time with you, Ryis."
+next = [
+	{ target = "26r", requires = [{ shooting_star_ryis_attended = true }] },
+	{ target = "26f" }
+]
+
+[ryis_eight_hearts.25]
+speaker = "ryis"
+portrait = "wink"
+local = "Haha, I'll have to tell that one to Uncle Landen."
+next = [
+	{ target = "27r", requires = [{ shooting_star_ryis_attended = true }] },
+	{ target = "27f" }
+]
+
+[ryis_eight_hearts.26r]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "Yeah, me too."
+next = [
+	{ target = "27r", requires = [{ shooting_star_ryis_attended = true }] },
+	{ target = "27f" }
+]
+
+[ryis_eight_hearts.26f]
+speaker = "ryis"
+portrait = "neutral"
+local = "Yeah, me too."
+next = [
+	{ target = "27r", requires = [{ shooting_star_ryis_attended = true }] },
+	{ target = "27f" }
+]
+
+[ryis_eight_hearts.27r]
+speaker = "ryis"
+portrait = "blush_special"
+local = "Luck or not, it's been really great spending time together, [Ari]-"
+next = "28"
+
+[ryis_eight_hearts.27f]
+speaker = "ryis"
+portrait = "happy"
+local = "Luck or not, it's been really great hanging out, [Ari]-"
+next = "28"
+
+[ryis_eight_hearts.28]
+speaker = "ryis"
+portrait = "surprised"
+effect = "surprise"
+local = "No way! A Mistrian bluebird!"
+next = "29"
+
+[ryis_eight_hearts.29]
+speaker = "ryis"
+portrait = "neutral"
+local = "I didn't realize the house was already occupied..."
+next = "30"
+
+[ryis_eight_hearts.30]
+speaker = "ryis"
+portrait = "happy"
+local = "It looks like she's already started building a nest!"
+next = "31"
+
+[ryis_eight_hearts.31]
+speaker = "ryis"
+portrait = "think"
+local = "Wait... that clover-shaped marking on the back of her head-"
+next = "32"
+
+[ryis_eight_hearts.32]
+speaker = "ryis"
+portrait = "surprised"
+local = "I think it's the same bird that nested here before the earthquake!"
+next = "33"
+
+[ryis_eight_hearts.33]
+speaker = "ryis"
+portrait = "sad"
+local = "But... I guess it's unrealistic to think her mate's still around, too..."
+next = "34"
+
+[ryis_eight_hearts.34]
+speaker = "ryis"
+portrait = "starry_eyed"
+local = "[Ari]! Oh, wow... I'd recognize that plumage anywhere!"
+next = [
+	{ target = "35r", requires = [{ shooting_star_ryis_attended = true }] },
+	{ target = "35f" }
+]
+
+[ryis_eight_hearts.35r]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "It's him! Her partner!"
+next = "36"
+
+[ryis_eight_hearts.35f]
+speaker = "ryis"
+portrait = "happy"
+local = "It's him! Her partner!"
+next = "36"
+
+[ryis_eight_hearts.36]
+speaker = "ryis"
+portrait = "starry_eyed"
+local = "They did it, [Ari]. They found their way back to each other..."
+next = [
+	{ target = "37r", requires = [{ shooting_star_ryis_attended = true }] },
+	{ target = "37f" }
+]
+
+[ryis_eight_hearts.37r]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "And they found their way home. I'm so happy we could help them."
+next = "38r"
+
+[ryis_eight_hearts.37f]
+speaker = "ryis"
+portrait = "happy"
+local = "And they found their way home. I'm so happy we could help them."
+next = "38f"
+
+[ryis_eight_hearts.38r]
+speaker = "ryis"
+portrait = "thoughtful_blush"
+local = "This whole experience... It's helped me, too."
+next = "39"
+
+[ryis_eight_hearts.38f]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "This whole experience... It's helped me, too."
+next = "39"
+
+[ryis_eight_hearts.39]
+speaker = "ryis"
+portrait = "think"
+local = "I've often wondered if I'd end up back in the Capital one day."
+next = "40"
+
+[ryis_eight_hearts.40]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "..."
+next = "41"
+
+[ryis_eight_hearts.41]
+speaker = "ryis"
+portrait = "sincere_special"
+local = "I wasn't sure if and when Mistria would really become \"home\" to me."
+next = [
+	{ target = "42r", requires = [{ shooting_star_ryis_attended = true }] },
+	{ target = "42f" }
+]
+
+[ryis_eight_hearts.42r]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "Remember what we talked about that night? At the $Shooting Star Festival$?"
+next = "43r"
+
+[ryis_eight_hearts.42f]
+speaker = "ryis"
+portrait = "happy"
+local = "I guess that's part of why I've found observing the birds here so... comforting."
+next = "43f"
+
+[ryis_eight_hearts.43r]
+speaker = "ryis"
+portrait = "thoughtful_blush"
+local = "The birds really do have a special intuition for these things."
+next = "44r"
+
+[ryis_eight_hearts.43f]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "They have a special intuition for these things."
+next = "44f"
+
+[ryis_eight_hearts.44r]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "Whether it's returning to the place they were born to raise their own young-"
+next = "45r"
+
+[ryis_eight_hearts.44f]
+speaker = "ryis"
+portrait = "neutral"
+local = "Whether it's returning to the place they were born to raise their own young-"
+next = "45f"
+
+[ryis_eight_hearts.45r]
+speaker = "ryis"
+portrait = "blush_special"
+local = "Or finding the perfect tree to call home, among a forest of possibilities..."
+next = "46r"
+
+[ryis_eight_hearts.45f]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "Or finding the perfect tree to call home, among a forest of possibilities..."
+next = "46f"
+
+[ryis_eight_hearts.46r]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "I'd hoped that my own path would appear, if I paid close enough attention."
+next = "47r"
+
+[ryis_eight_hearts.46f]
+speaker = "ryis"
+portrait = "sad"
+local = "I suppose I'd hoped my own path would appear, if I paid close enough attention."
+next = "47f"
+
+[ryis_eight_hearts.47r]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "And then one day, I realized... I've been on it the whole time."
+next = "48r"
+
+[ryis_eight_hearts.47f]
+speaker = "ryis"
+portrait = "happy"
+local = "And then one day, I realized... I've been on it the whole time."
+next = "48f"
+
+[ryis_eight_hearts.48r]
+speaker = "ryis"
+portrait = "thoughtful_blush"
+local = "Mistria has become my home."
+next = "49r"
+
+[ryis_eight_hearts.48f]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "Mistria has become my home."
+next = "49f"
+
+[ryis_eight_hearts.49r]
+speaker = "ryis"
+portrait = "starry_eyed"
+local = "But it's not the birds I have to thank for that. It's you."
+prompts = [
+	{ local = "What are best friends for? ", next = "50r" },
+	{ local = "I've realized it too. We both belong here... together.", next = "55" }
+]
+
+[ryis_eight_hearts.49f]
+speaker = "ryis"
+portrait = "neutral"
+local = "But it's not just the birds I have to thank for that. It's you, too."
+prompts = [
+	{ local = "What are best friends for? ", next = "50f" },
+	{ local = "I've realized it too. We both belong here... together.", next = "55" }
+]
+
+[ryis_eight_hearts.50r]
+actions = [{ update_status = { npc = "ryis", status = "best_friend" } }]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "[Ari]... You're my best friend too."
+next = "51"
+
+[ryis_eight_hearts.50f]
+actions = [{ update_status = { npc = "ryis", status = "best_friend" } }]
+speaker = "ryis"
+portrait = "happy"
+local = "You're my best friend too, [Ari]."
+next = "51"
+
+[ryis_eight_hearts.51]
+speaker = "ryis"
+portrait = "neutral"
+local = "It's been something, hasn't it?"
+next = "52"
+
+[ryis_eight_hearts.52]
+speaker = "ryis"
+portrait = "happy"
+local = "Working to restore the town together, and then making a place for these birds to return to..."
+next = "53"
+
+[ryis_eight_hearts.53]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "With a friend like you by my side-"
+next = "54"
+
+[ryis_eight_hearts.54]
+speaker = "ryis"
+portrait = "happy"
+local = "It's really no wonder that Mistria feels like home."
+next = [
+	{ target = "60r", requires = [{ shooting_star_ryis_attended = true }] },
+	{ target = "60f" }
+]
+
+[ryis_eight_hearts.55]
+actions = [{ update_status = { npc = "ryis", status = "dating" } }]
+speaker = "ryis"
+portrait = "starry_eyed"
+local = "[Ari]... do you mean it?"
+next = "56"
+
+[ryis_eight_hearts.56]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "I'm so happy that you feel the same way."
+next = "57"
+
+[ryis_eight_hearts.57]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "Working to restore the town together, and then making a place for these birds to return to..."
+next = "58"
+
+[ryis_eight_hearts.58]
+speaker = "ryis"
+portrait = "thoughtful_blush"
+local = "Here with you, side by side..."
+next = "59"
+
+[ryis_eight_hearts.59]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "Where else could my home be?"
+next = [
+	{ target = "60r", requires = [{ shooting_star_ryis_attended = true }] },
+	{ target = "60f" }
+]
+
+[ryis_eight_hearts.60r]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "This has turned out to be a really special day, [Ari]."
+next = "61r"
+
+[ryis_eight_hearts.60f]
+speaker = "ryis"
+portrait = "happy"
+local = "This has turned out to be a really special day, [Ari]."
+next = "61f"
+
+[ryis_eight_hearts.61r]
+speaker = "ryis"
+portrait = "thoughtful_blush"
+local = "But I guess we'd better start heading back, huh?"
+next = "62r"
+
+[ryis_eight_hearts.61f]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "But I guess we'd better start heading back, huh?"
+next = "62f"
+
+[ryis_eight_hearts.62r]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "Let's give these little lovebirds some privacy so they can settle in."
+
+[ryis_eight_hearts.62f]
+speaker = "ryis"
+portrait = "happy"
+local = "Let's give these little birds some space so they can settle in."

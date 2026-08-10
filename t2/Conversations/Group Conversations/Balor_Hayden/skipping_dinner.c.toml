@@ -1,0 +1,19 @@
+[skipping_dinner]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "hayden" }] },
+	{ balor_activity = "eat" },
+	{ hayden_activity = "eat" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ balor_zone = "<hayden_zone>" }
+]
+actions = [{ item = "quiche" }]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "[Ari]! Are you skipping dinner? That won't do, grab yourself some quiche!"
+next = "1"
+
+[skipping_dinner.1]
+speaker = "balor"
+portrait = "wink"
+local = "If there's one thing I know about Hayden, it's that he never lets a friend skip dinner."

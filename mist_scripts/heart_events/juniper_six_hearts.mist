@@ -1,0 +1,561 @@
+scene(bathhouse_bedroom);
+camera_position(j6h_camera_1);
+place_actor(ari, north, j6h_ari_entrance);
+place_actor(juniper, west, j6h_juniper_entrance);
+place_actor(dozy, west, j6h_dozy_entrance);
+animate(dozy, doze_1);
+setup_prop(j6h_package_1);
+setup_prop(j6h_package_2);
+request_music_play(juniper);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		walk_slow(ari, j6h_ari_start);
+		face(ari, north);
+	}
+	{
+		pan_camera(2.5, j6h_camera_2);
+	}
+	{
+		wait(1);
+		free bark_speech(juniper, exclamation_mark);
+		wait(0.5);
+		face(juniper, south);
+	}
+	{
+		wait(2.5);
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		pan_camera(2, j6h_camera_3);
+	}
+	{
+		walk(juniper, j6h_juniper_start);
+		face(juniper, east);
+		wait(0.5);
+		free bark_speech(juniper, exclamation_mark);
+		wait(0.5);
+	}
+	{
+		wait(1);
+		walk_slow(ari, j6h_ari_present);
+		face(ari, west);
+	}
+}
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, annoyed);
+wait(1.5);
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, question_mark);
+wait(1.5);
+next_line(); //
+close_textbox();
+wait(0.5);
+face(juniper, south);
+animate(juniper, spell_cast);
+wait(2.5);
+sim {
+	animate(juniper, idle);
+	place_actor(ari, east, j6h_juniper_start);
+	place_actor(juniper, west, j6h_ari_present);
+	create_animation(spr_fx_poof1_dirt_once, j6h_juniper_poof, 0, 0, 0, -500);
+	create_animation(spr_fx_poof1_dirt_once, j6h_ari_poof, 0, 0, 0, -500);
+	play_sound("SoundEffects/SpecialEvents/ConstructionPoof2D");
+}
+wait(1);
+free bark_speech(juniper, exclamation_mark);
+wait(1.5);
+free bark_speech(ari, cute_face);
+sim {
+	{
+		animate(dozy, idle);
+		walk(dozy, j6h_dozy_start);
+		face(dozy, west);
+		animate(dozy, tailwag);
+		wait(1);
+		animate(dozy, idle);
+	}
+	{
+		wait(2.5);
+		face(juniper, east);
+		wait(1.5);
+		face(juniper, west);
+		free bark_speech(juniper, ellipses);
+		wait(1.5);
+	}
+	{
+		wait(4.5);
+		face(ari, west);
+	}
+}
+sim {
+	{
+		pan_camera(2, j6h_camera_4);
+	}
+	{
+		walk_slow(dozy, j6h_dozy_entrance);
+		face(dozy, west);
+		animate(dozy, doze_2);
+	}
+	{
+		walk_slow(juniper, j6h_juniper_desk);
+		face(juniper, north);
+		animate(juniper, action);
+		wait(0.5);
+		destroy_prop(j6h_package_1);
+		animate(juniper, idle);
+		animate(juniper, action);
+		wait(0.5);
+		destroy_prop(j6h_package_2);
+		animate(juniper, idle);
+	}
+}
+sim {
+	{
+		walk_slow(juniper, j6h_ari_start);
+		face(juniper, south);
+		wait(0.5);
+		face(juniper, north);
+	}
+	{
+		pan_camera(2, j6h_camera_2);
+	}
+	{
+		wait(2);
+		face(ari, south);
+	}
+}
+wait(1);
+animate(ari, celebrate);
+wait(1.25);
+animate(ari, idle);
+wait(0.75);
+face(ari, west);
+wait(0.5);
+free bark_speech(juniper, annoyed);
+wait(1.5);
+sim {
+	{
+		walk_slow(juniper, j6h_ari_entrance);
+		remove_actor(juniper);
+	}
+	{
+		pan_camera(3, j6h_camera_1);
+	}
+	{
+		wait(1);
+		fade_out(2);
+	}
+}
+wait(1);
+
+scene(celines_room);
+camera_position(j6h_camera_5);
+place_actor(ari, north, j6h_ari_hide_celine);
+place_actor(celine, south, "ArmChair Seat");
+animate(celine, book_sit);
+place_actor(juniper, north, j6h_juniper_cr_entrance);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		pan_camera(3, j6h_camera_6);
+	}
+	{
+		walk_slow(juniper, j6h_juniper_cr_start);
+		face(juniper, west);
+	}
+	{
+		wait(1);
+		free bark_speech(celine, exclamation_mark);
+		wait(0.5);
+		animate(celine, sit);
+		wait(0.5);
+		walk_slow(celine, j6h_celine_entrance);
+		face(celine, east);
+	}
+	{
+		wait(3);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(juniper, cute_face);
+wait(0.5);
+walk_slow(juniper, j6h_juniper_cr_forward);
+face(juniper, west);
+animate(juniper, action);
+wait(0.5);
+animate(juniper, idle);
+sim {
+	{
+		walk_slow(juniper, j6h_juniper_cr_start);
+		face(juniper, west);
+	}
+	{
+		wait(0.5);
+		free bark_speech(celine, cute_face);
+	}
+	{
+		wait(1);
+		next_line(); //
+
+	}
+}
+close_textbox();
+sim {
+	{
+		walk_slow(celine, j6h_celine_start);
+		face(celine, north);
+		animate(celine, action);
+		wait(0.5);
+		setup_prop(j6h_tonic);
+		animate(celine, idle);
+	}
+	{
+		wait(1);
+		walk_slow(juniper, j6h_juniper_cr_north);
+		face(juniper, north);
+	}
+	{
+		pan_camera(2.5, j6h_camera_7);
+	}
+}
+wait(0.5);
+free bark_speech(celine, ellipses);
+wait(1.5);
+next_line(); //
+sim {
+	{
+		wait(0.5);
+		walk_slow(celine, j6h_celine_forward);
+		face(celine, south);
+	}
+	{
+		pan_camera(2, j6h_camera_8);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+//
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(celine, cute_face);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	sim {
+		//
+		//
+		//
+		//
+		{
+			next_line(); //
+		}
+	}
+}
+sim {
+	{
+		pan_camera(2, j6h_camera_7);
+	}
+	{
+		walk_slow(celine, "Desk Seat");
+		face(celine, north);
+		animate(celine, sit);
+		wait(0.75);
+		face(celine, south);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(celine, cute_face);
+wait(1);
+sim {
+	{
+		face(celine, north);
+	}
+	{
+		wait(0.5);
+		walk_slow(juniper, j6h_juniper_cr_entrance);
+		remove_actor(juniper);
+	}
+	{
+		pan_camera(3, j6h_camera_5);
+	}
+	{
+		wait(1);
+		fade_out(2);
+	}
+}
+
+wait(1);
+
+scene(manor_house_entry);
+place_actor(ari, north, j6h_ari_hide_elsie);
+place_actor(elsie, south, j6h_elsie_entrance);
+place_actor(juniper, north, j6h_juniper_mh_entrance);
+camera_position(j6h_camera_9);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		walk(elsie, j6h_elsie_start);
+		face(elsie, east);
+		free bark_speech(elsie, exclamation_mark);
+		wait(1);
+		walk(elsie, j6h_elsie_forward);
+		face(elsie, east);
+	}
+	{
+		walk_slow(juniper, j6h_juniper_mh_start);
+		face(juniper, west);
+		wait(1.5);
+		walk_slow(juniper, j6h_juniper_mh_forward);
+		face(juniper, west);
+	}
+	{
+		pan_camera(3, j6h_camera_10);
+		wait(1);
+		pan_camera(2, j6h_camera_11);
+	}
+	{
+		wait(4);
+		next_line(); //
+	}
+}
+close_textbox(); //
+wait(0.5);
+free bark_speech(juniper, plant_tonic);
+wait(1);
+next_line(); //
+close_textbox();
+wait(0.5);
+animate(juniper, action);
+wait(0.5);
+animate(juniper, idle);
+free bark_speech(elsie, cute_face);
+wait(1);
+sim {
+	//
+	//
+	//
+	//
+	{
+		wait(0.5);
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(juniper, cute_face);
+wait(0.5);
+free bark_speech(elsie, cute_face);
+wait(1.5);
+sim {
+	{
+		sim {
+			walk(juniper, j6h_juniper_mh_exit);
+			set_move_speed(juniper, 0.4);
+		}
+		face(juniper, south);
+		wait(0.5);
+		face(juniper, west);
+	}
+	{
+		sim {
+			walk(elsie, j6h_elsie_exit);
+			set_move_speed(elsie, 0.4);
+		}
+		face(elsie, east);
+	}
+	{
+		pan_camera(3, j6h_camera_12);
+	}
+	{
+		wait(0.5);
+		next_line(); //
+		//
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(elsie, cute_face);
+wait(1);
+free bark_speech(juniper, cute_face);
+wait(1);
+sim {
+	{
+		walk_slow(juniper, j6h_juniper_mh_entrance);
+		remove_actor(juniper);
+	}
+	{
+		pan_camera(3, j6h_camera_9);
+	}
+	{
+		wait(0.75);
+		face(elsie, south);
+	}
+	{
+		wait(0.5);
+		fade_out(2);
+	}
+}
+
+wait(1);
+
+scene(bathhouse_bedroom);
+camera_position(j6h_camera_1);
+place_actor(ari, south, j6h_ari_magic);
+animate(ari, spellcast_loop);
+place_actor(juniper, west, j6h_ari_entrance);
+place_actor(dozy, west, j6h_dozy_entrance);
+animate(dozy, doze_1);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		pan_camera(4.5, j6h_camera_3);
+	}
+	{
+		wait(3);
+		free bark_speech(ari, exclamation_mark);
+		wait(1.5);
+		animate(ari, idle);
+		//
+		face(ari, east);
+	}
+	{
+		wait(2);
+		walk_slow(juniper, j6h_ari_start);
+		face(juniper, north);
+		free bark_speech(juniper, question_mark);
+		wait(1.5);
+		walk_slow(juniper, j6h_ari_present);
+		face(juniper, west);
+	}
+}
+
+wait(1);
+sim {
+	animate(ari, idle);
+	place_actor(ari, west, j6h_ari_present);
+	place_actor(juniper, east, j6h_juniper_start);
+	create_animation(spr_fx_poof1_dirt_once, j6h_juniper_poof, 0, 0, 0, -500);
+	create_animation(spr_fx_poof1_dirt_once, j6h_ari_poof, 0, 0, 0, -500);
+	play_sound("SoundEffects/SpecialEvents/ConstructionPoof2D");
+}
+wait(1);
+next_line(); //
+
+//
+
+if get_response() == 0 {
+	next_line(); //
+	close_textbox();
+	wait(0.5);
+	free bark(dozy, cute_face);
+	wait(0.5);
+	face(ari, east);
+	wait(1);
+	face(ari, west);
+} else {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(juniper, exclamation_mark);
+		}
+		{
+			next_line(); //
+		}
+	}
+	close_textbox();
+	wait(1);
+	free bark_speech(juniper, ellipses);
+	wait(1.5);
+}
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+free bark_speech(juniper, blush);
+wait(1);
+sim {
+	{
+		walk(juniper, j6h_juniper_desk);
+		face(juniper, north);
+	}
+	{
+		pan_camera(3, j6h_camera_4);
+	}
+	{
+		wait(0.5);
+		face(ari, north);
+	}
+	{
+		wait(0.5);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+face(ari, east);
+wait(0.5);
+animate(dozy, idle);
+face(dozy, west);
+wait(0.5);
+free bark_speech(ari, cute_face);
+free bark(dozy, cute_face);
+wait(0.5);
+animate(dozy, tailwag);
+wait(0.5);
+face(juniper, south);
+wait(0.5);
+face(ari, north);
+wait(0.5);
+animate(dozy, idle);
+face(dozy, west);
+wait(0.5);
+animate(juniper, laugh);
+play_sound("SoundEffects/NPCs/Vocal/JuniperLaugh");
+wait(2);
+fade_out(2);
+
+
+

@@ -1,0 +1,182 @@
+[deep_woods_picnic_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "celine" },
+	{ date = "deep_woods_picnic" },
+	{ da_celine_deep_woods_picnic = 0 },
+	{ celine_is_spouse = false }
+]
+writes = [
+	{ da_celine_deep_woods_picnic = 1 },
+	{ da_celine_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "You want to go on a picnic, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_accept_1.1]
+speaker = "celine"
+portrait = "embarrassed"
+local = "With me?"
+next = "2"
+
+[deep_woods_picnic_accept_1.2]
+speaker = "celine"
+portrait = "blush_special"
+local = "On a date?"
+next = "3"
+
+[deep_woods_picnic_accept_1.3]
+speaker = "celine"
+portrait = "very_happy"
+effect = "cheery"
+local = "That sounds wonderful!"
+
+[deep_woods_picnic_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "celine" },
+	{ date = "deep_woods_picnic" },
+	{ da_celine_deep_woods_picnic = 1 },
+	{ celine_is_spouse = false }
+]
+writes = [
+	{ da_celine_deep_woods_picnic = 2 },
+	{ da_celine_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "celine"
+portrait = "very_happy"
+local = "Oh, [Ari]!"
+next = "1"
+
+[deep_woods_picnic_accept_2.1]
+speaker = "celine"
+portrait = "shy_blush"
+local = "I had the most lovely dream last night..."
+next = "2"
+
+[deep_woods_picnic_accept_2.2]
+speaker = "celine"
+portrait = "embarrassed"
+local = "We were having a picnic in the $Deep Woods$ again."
+next = "3"
+
+[deep_woods_picnic_accept_2.3]
+speaker = "celine"
+portrait = "blush_special"
+local = "There were =Temple Flowers= and =Marigolds= all around us."
+next = "4"
+
+[deep_woods_picnic_accept_2.4]
+speaker = "celine"
+portrait = "blush"
+local = "It was so beautiful..."
+next = "5"
+
+[deep_woods_picnic_accept_2.5]
+speaker = "celine"
+portrait = "shy_blush"
+local = "What do you think, should we go again?"
+
+[deep_woods_picnic_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "celine" },
+	{ date = "deep_woods_picnic" },
+	{ celine_has_child = false },
+	{ any = [
+		{ celine_is_spouse = true },
+		{ da_celine_deep_woods_picnic = 2, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_celine_deep_woods_picnic = 3 },
+	{ da_celine_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "celine"
+portrait = "neutral"
+local = "What's that you've got there, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_accept_3.1]
+speaker = "celine"
+portrait = "blush"
+local = "Oh, a picnic basket! Do you want to go to the $Deep Woods$ again?"
+next = "2"
+
+[deep_woods_picnic_accept_3.2]
+speaker = "celine"
+portrait = "very_happy"
+effect = "cheery"
+local = "Yay, let's go!"
+
+[deep_woods_picnic_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ da_celine_deep_woods_picnic = 1 },
+	{ da_celine_deep_woods_picnic_follow_up_gate = true },
+	{ celine_is_spouse = false }
+]
+writes = [{ da_celine_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "blush"
+local = "I had a great time on our picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_1.1]
+portrait = "embarrassed"
+local = "The $Deep Woods$... It's such a magical place."
+next = "2"
+
+[deep_woods_picnic_follow_up_1.2]
+portrait = "blush_closed_eyes"
+local = "I felt so at home there with you. Hehe."
+
+[deep_woods_picnic_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ da_celine_deep_woods_picnic = 2 },
+	{ da_celine_deep_woods_picnic_follow_up_gate = true },
+	{ celine_is_spouse = false }
+]
+writes = [{ da_celine_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "blush_closed_eyes"
+local = "That was a really fun picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_2.1]
+portrait = "embarrassed"
+local = "Even though we didn't see too many flowers this time..."
+next = "2"
+
+[deep_woods_picnic_follow_up_2.2]
+portrait = "shy_blush"
+local = "It still felt like something out of a dream!"
+
+[deep_woods_picnic_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "celine" },
+	{ celine_has_child = false },
+	{ any = [
+		{ celine_is_spouse = true },
+		{ da_celine_deep_woods_picnic = 3 }
+	] },
+	{ da_celine_deep_woods_picnic_follow_up_gate = true },
+]
+writes = [{ da_celine_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "blush_closed_eyes"
+local = "Thank you for taking me out for a picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_3.1]
+portrait = "blush"
+local = "It's one of my favorite places to go!"

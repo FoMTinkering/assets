@@ -1,0 +1,52 @@
+[travel_0]
+refresh = "2m"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_traveling = true },
+	{ valen_is_inside = false },
+]
+portrait = "neutral"
+local = "Nothing like a walk to get the blood pumping."
+
+[travel_1]
+refresh = "2m"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_traveling = true },
+	{ valen_is_traveling_from_building = "bathhouse", comparator = "!=" },
+	{ valen_is_inside = false },
+	{ valen_heart_level = 8, comparator = "<" },
+]
+portrait = "think"
+local = "I was thinking of going to Dozy's bathhouse soon."
+
+[travel_2]
+refresh = "2m"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_traveling = true },
+	{ valen_is_inside = false },
+]
+portrait = "neutral"
+local = "It's good to see you enjoying the day, [Ari]."
+next = "1"
+
+[travel_2.1]
+portrait = "happy"
+local = "Let's both make the most of it."
+
+[travel_3]
+refresh = "2m"
+requires = [
+	{ npc = "valen" },
+	{ valen_is_traveling = true },
+	{ valen_is_inside = false },
+	{ valen_is_dating = true },
+]
+portrait = "neutral"
+local = "Nice to see you with a bit of pink in your cheeks."
+next = "1"
+
+[travel_3.1]
+portrait = "think_blush"
+local = "Oh, they got pinker!"

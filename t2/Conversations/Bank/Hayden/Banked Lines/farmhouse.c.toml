@@ -1,0 +1,21 @@
+[farmhouse]
+refresh = "1y"
+requires = [
+	{ npc = "hayden" },
+	{ location = "haydens_house" },
+	{ henrietta_is_at_location = "haydens_house" },
+	{ date_time = "1y", comparator = ">=" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "henrietta" } }]
+portrait = "neutral"
+local = "Grandma always kept the farmhouse in good shape. I'm thankful for that."
+next = "1"
+
+[farmhouse.1]
+portrait = "think"
+local = "She always said the secret was not letting the farm animals into the house..."
+next = "2"
+
+[farmhouse.2]
+portrait = "embarrassed"
+local = "Sorry, Grandma!"

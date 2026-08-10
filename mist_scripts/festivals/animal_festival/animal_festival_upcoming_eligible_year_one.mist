@@ -1,0 +1,144 @@
+scene(farm);
+
+var speaker = "undefined";
+
+if read_world_fact("adeline_is_spouse") == true {
+	speaker = "nora";
+	set_conversation("Cutscenes/Festival Events/the_animal_festival/animal_festival_upcoming_alt");
+	request_music_play("Music/Events/Cutscene");
+	camera_position(afm_camera_1);
+	place_actor(ari, south, afm_ari_door);
+	place_actor(speaker, west, afm_adeline_entrance);
+
+	sim {
+		{
+			wait(0.25);
+			fade_in(2);
+		}
+		{
+			walk_slow(speaker, afm_adeline_start);
+			face(speaker, west);
+		}
+		{
+			wait(0.5);
+			free bark_speech(speaker, exclamation_mark);
+			wait(0.5);
+			free bark_speech(ari, exclamation_mark);
+			wait(0.5);
+			face(ari, east);
+		}
+		{
+			walk(ari, afm_ari_entrance);
+			face(ari, south);
+		}
+		{
+			wait(2);
+			next_line(); //
+		}
+		pan_camera(1.5, afm_camera_2);
+	}
+	next_line(); //
+	next_line(); //
+	next_line(); //
+	next_line(); //
+	next_line(); //
+	next_line(); //
+	next_line(); //
+
+	close_textbox();
+	wait(0.5);
+	free bark_speech(speaker, cute_face);
+	wait(1);
+	sim {
+		fade_out(2);
+		{
+			wait(0.5);
+			walk_slow(speaker, afm_adeline_exit);
+			face(speaker, east);
+		}
+	}
+} else {
+	speaker = "adeline";
+	set_conversation("Cutscenes/Festival Events/the_animal_festival/animal_festival_upcoming_eligible_year_one");
+	request_music_play("Music/Events/Cutscene");
+	camera_position(afm_camera_1);
+	place_actor(ari, south, afm_ari_door);
+	place_actor(adeline, west, afm_adeline_entrance);
+
+	sim {
+		{
+			wait(0.25);
+			fade_in(2);
+		}
+		{
+			walk_slow(adeline, afm_adeline_start);
+			face(adeline, west);
+		}
+		{
+			wait(0.5);
+			free bark_speech(adeline, exclamation_mark);
+			wait(0.5);
+			free bark_speech(ari, exclamation_mark);
+			wait(0.5);
+			face(ari, east);
+		}
+		{
+			walk(ari, afm_ari_entrance);
+			face(ari, south);
+		}
+		{
+			wait(2);
+			next_line(); //
+		}
+		pan_camera(1.5, afm_camera_2);
+	}
+	next_line(); //
+	next_line(); //
+	next_line(); //
+	close_textbox();
+	wait(0.25);
+	free bark_speech(adeline, cute_face);
+	wait(1.5);
+	next_line(); //
+	next_line(); //
+	next_line(); //
+
+	//
+
+	if get_response() == 0 {
+		sim {
+			{
+				wait(1);
+				free bark_speech(adeline, cute_face);
+			}
+			{
+				next_line(); //
+			}
+		}
+	} else {
+		sim {
+			{
+				wait(0.75);
+				free bark_speech(adeline, exclamation_mark);
+			}
+			{
+				next_line(); //
+				next_line(); //
+			}
+		}
+	}
+	next_line(); //
+
+	close_textbox();
+	wait(0.5);
+	free bark_speech(adeline, cute_face);
+	wait(1);
+	sim {
+		fade_out(2);
+		{
+			wait(0.5);
+			walk_slow(adeline, afm_adeline_exit);
+			face(adeline, east);
+		}
+	}
+}

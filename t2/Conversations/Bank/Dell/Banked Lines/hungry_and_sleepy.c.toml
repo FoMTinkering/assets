@@ -1,0 +1,14 @@
+[hungry_and_sleepy]
+refresh = "1y"
+requires = [
+	{ npc = "dell" },
+	{ day_time = "4:00pm", comparator = ">=" },
+	{ any = [
+		{ dell_is_traveling_to_location = "inn" },
+		{ dell_is_traveling_to_location = "general_store_home" },
+		{ dell_is_traveling_to_location = "dells_bedroom" }
+	] },
+	{ day_of_the_week = "friday", comparator = "!=" },
+]
+portrait = "ugh"
+local = "Grownups always say we're lucky to play all day, but playing is hard work! I'm hungry and sleepy!"

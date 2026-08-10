@@ -1,0 +1,122 @@
+[beach_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "juniper" },
+	{ date = "beach" },
+	{ da_juniper_beach = 0 },
+	{ juniper_is_spouse = false }
+]
+writes = [
+	{ da_juniper_beach = 1 },
+	{ da_juniper_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "juniper"
+portrait = "sly"
+local = "A walk... on the Beach?"
+next = "1"
+
+[beach_accept_1.1]
+speaker = "juniper"
+portrait = "think_special"
+local = "Maybe a little cliché, but..."
+next = "2"
+
+[beach_accept_1.2]
+speaker = "juniper"
+portrait = "blush"
+local = "Sure. It could be fun."
+
+[beach_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "juniper" },
+	{ date = "beach" },
+	{ juniper_has_child = false },
+	{ any = [
+		{ juniper_is_spouse = true },
+		{ da_juniper_beach = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_juniper_beach = 2 },
+	{ da_juniper_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "juniper"
+portrait = "think_special"
+local = "You want to go to the Beach again?"
+next = "1"
+
+[beach_accept_2.1]
+speaker = "juniper"
+portrait = "blush"
+local = "Sure, I could go for a walk."
+
+[beach_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ da_juniper_beach = 1 },
+	{ da_juniper_beach_follow_up_gate = true },
+	{ juniper_is_spouse = false }
+]
+writes = [{ da_juniper_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "think_special"
+local = "Hmmm..."
+next = "1"
+
+[beach_follow_up_1.1]
+portrait = "happy"
+local = "I guess it is kind of nice to go for a long walk on the Beach."
+prompts = [
+	{ local = "You're a regular romantic, Juniper!", next = "2" },
+	{ local = "What did you like about it?", next = "5" },
+]
+
+[beach_follow_up_1.2]
+portrait = "angry_blush"
+local = "N-no I'm not!"
+next = "3"
+
+[beach_follow_up_1.3]
+portrait = "annoyed"
+local = "I mean-"
+next = "4"
+
+[beach_follow_up_1.4]
+portrait = "embarrassed"
+local = "Fine. You got me. Maybe I am!"
+
+[beach_follow_up_1.5]
+portrait = "angry_blush"
+local = "What? You want me to gush about the scenery and the conversation?"
+next = "6"
+
+[beach_follow_up_1.6]
+portrait = "annoyed"
+local = "Well-"
+next = "7"
+
+[beach_follow_up_1.7]
+portrait = "embarrassed"
+local = "Fine. I enjoyed them both."
+
+[beach_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_has_child = false },
+	{ any = [{ juniper_is_spouse = true }, { da_juniper_beach = 2 }] },
+	{ da_juniper_beach_follow_up_gate = true }
+]
+writes = [{ da_juniper_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "think_special"
+local = "Thanks, [Ari]..."
+next = "1"
+
+[beach_follow_up_2.1]
+portrait = "blush"
+local = "I had a nice time at the Beach."

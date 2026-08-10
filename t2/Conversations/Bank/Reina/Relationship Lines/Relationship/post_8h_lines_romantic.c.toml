@@ -1,0 +1,623 @@
+[reina_post_8h_romantic_0]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ reina_post_8h_romantic_grouping = 0 },
+	{ reina_post_8h_romantic_progression = false }
+]
+writes = [
+	{ reina_post_8h_romantic_gate = true, expires = "20h" },
+	{ reina_post_8h_romantic_grouping = 1 }
+]
+actions = [{ bark = { bark = "blush", npc = "reina" } }]
+portrait = "blush"
+local = "[Ari]! Every time I see you lately I get butterflies."
+next = "1"
+
+[reina_post_8h_romantic_0.1]
+portrait = "blush_open_eyes"
+local = "It's okay, though... I'm getting used to it!"
+
+[reina_post_8h_romantic_1]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ reina_post_8h_romantic_grouping = 1 },
+	{ reina_post_8h_romantic_progression = false }
+]
+writes = [
+	{ reina_post_8h_romantic_gate = true, expires = "20h" },
+	{ reina_post_8h_romantic_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "think"
+local = "I've been meaning to ask since the cooking competition..."
+next = "1"
+
+[reina_post_8h_romantic_1.1]
+portrait = "blush_special"
+local = "I know I kind of roped you into being my sous chef, but I'm curious-"
+next = "2"
+
+[reina_post_8h_romantic_1.2]
+portrait = "neutral"
+local = "How strongly do you feel about cooking? Is it a skill you're planning to pursue further?"
+prompts = [
+	{ local = "I adore cooking!", next = "3" },
+	{ local = "I adore cooking with you, Reina.", next = "6" }
+]
+
+[reina_post_8h_romantic_1.3]
+portrait = "neutral"
+local = "Aw, I'm so happy you feel that way!"
+next = "4"
+
+[reina_post_8h_romantic_1.4]
+portrait = "blush"
+local = "It was really fun, being shoulder to shoulder with you in the kitchen."
+next = "5"
+
+[reina_post_8h_romantic_1.5]
+portrait = "blush_special"
+local = "I hope we can do more of that in the future."
+
+[reina_post_8h_romantic_1.6]
+portrait = "blush_special"
+local = "Really? I'm so happy you feel that way, too."
+next = "7"
+
+[reina_post_8h_romantic_1.7]
+portrait = "blush"
+local = "It was really fun, being shoulder to shoulder with you in the kitchen."
+next = "8"
+
+[reina_post_8h_romantic_1.8]
+portrait = "blush_special"
+local = "I hope we can do more of that in the future."
+
+[reina_post_8h_romantic_2]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ reina_post_8h_romantic_grouping = 2 },
+	{ reina_post_8h_romantic_progression = false }
+]
+writes = [
+	{ reina_post_8h_romantic_gate = true, expires = "20h" },
+	{ reina_post_8h_romantic_grouping = 3 }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "reina" } },
+	{ item = "cauliflower_curry" }
+]
+portrait = "neutral"
+local = "Ooh, I was hoping to see you, [Ari]!"
+next = "1"
+
+[reina_post_8h_romantic_2.1]
+portrait = "wink"
+local = "I made this =Cauliflower Curry= this morning. I want to make sure you're eating well!"
+next = "2"
+
+[reina_post_8h_romantic_2.2]
+portrait = "blush"
+effect = "hearts"
+local = "Now I gotta decide what I'm making for you next! Haha!"
+
+[reina_post_8h_romantic_3]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ reina_post_8h_romantic_grouping = 3 },
+	{ reina_post_8h_romantic_progression = false }
+]
+writes = [
+	{ reina_post_8h_romantic_gate = true, expires = "2d" },
+	{ reina_post_8h_romantic_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush_think"
+local = "I'm curious, [Ari]..."
+next = "1"
+
+[reina_post_8h_romantic_3.1]
+portrait = "neutral"
+local = "I loved growing up in a big family... Do you come from a big family, too?"
+prompts = [
+	{ local = "I sure do!", next = "2" },
+	{ local = "I wouldn't say that.", next = "5" }
+]
+
+[reina_post_8h_romantic_3.2]
+portrait = "happy"
+local = "It's fun, isn't it?"
+next = "3"
+
+[reina_post_8h_romantic_3.3]
+portrait = "neutral"
+local = "Someone's always up to something, and there's always a helping hand."
+next = "4"
+
+[reina_post_8h_romantic_3.4]
+portrait = "blush"
+effect = "hearts"
+local = "There's never a dull moment!"
+
+[reina_post_8h_romantic_3.5]
+portrait = "happy"
+local = "No? Then you'll have to come over more often and see what it's like."
+next = "6"
+
+[reina_post_8h_romantic_3.6]
+portrait = "neutral"
+local = "Someone's always up to something, there's always a helping hand..."
+next = "7"
+
+[reina_post_8h_romantic_3.7]
+portrait = "blush"
+effect = "hearts"
+local = "There's never a dull moment... you'll see!"
+
+[reina_post_8h_romantic_4]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ reina_post_8h_romantic_progression = false },
+	{ reina_post_8h_romantic_grouping = 4 }
+]
+writes = [{ reina_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "blush", npc = "reina" } },
+	{ item = "sweet_potato_pie" }
+]
+portrait = "blush_special"
+local = "Have you had anything to eat yet, [Ari]?"
+next = "1"
+
+[reina_post_8h_romantic_4.1]
+portrait = "blush"
+local = "You're always working so hard... I thought I'd make you a little something today."
+
+[reina_post_8h_romantic_5]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ reina_post_8h_romantic_progression = false },
+	{ reina_post_8h_romantic_grouping = 4 }
+]
+writes = [{ reina_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "reina" } }]
+portrait = "neutral"
+local = "[Ari]! I've been thinking... you're a steady hand at fishing, right?"
+next = "1"
+
+[reina_post_8h_romantic_5.1]
+portrait = "blush"
+local = "I wouldn't mind if you gave me a few pointers, some time."
+next = "2"
+
+[reina_post_8h_romantic_5.2]
+portrait = "blush_think"
+local = "I always manage to get tangled up in my own line."
+next = "3"
+
+[reina_post_8h_romantic_5.3]
+portrait = "blush_special"
+local = "I apologize in advance if we end up tangled together."
+
+[reina_post_8h_romantic_6]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ any = [
+		{ reina_post_8h_romantic_progression = false },
+		{ reina_post_8h_best_friend_grouping = 0 },
+		{ reina_post_8h_best_friend_grouping = 4 }
+	] },
+	{ reina_post_8h_romantic_grouping = 4 },
+	{ season = "spring" }
+]
+writes = [
+	{ reina_post_8h_romantic_gate = true, expires = "2d" },
+	{ reina_post_8h_best_friend_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "reina" } },
+	{ item = "spring_galette" }
+]
+portrait = "neutral"
+local = "[Ari]! I hope you have room in your bag!"
+next = "1"
+
+[reina_post_8h_romantic_6.1]
+portrait = "happy"
+local = "I made you a $Spring Galette$ today!"
+next = "2"
+
+[reina_post_8h_romantic_6.2]
+portrait = "blush_think"
+local = "Actually, you inspired me to go out and forage the ingredients myself."
+next = "3"
+
+[reina_post_8h_romantic_6.3]
+portrait = "blush"
+effect = "hearts"
+local = "I hope that all comes through in the taste!"
+
+[reina_post_8h_romantic_7]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ reina_post_8h_romantic_progression = false },
+	{ reina_post_8h_romantic_grouping = 4 }
+]
+writes = [{ reina_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "reina" } }]
+portrait = "blush_think"
+local = "Maple and Luc heard that we're seeing each other and got really excited."
+next = "1"
+
+[reina_post_8h_romantic_7.1]
+portrait = "think"
+local = "Luc mostly thinks we're special friends, but Maple... she asked all kinds of questions."
+next = "2"
+
+[reina_post_8h_romantic_7.2]
+portrait = "embarrassed"
+effect = "drop"
+local = "Like whether she'll be able to count on you for a political alliance in the future. Where does she learn this stuff?"
+
+[reina_post_8h_romantic_8]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ any = [
+		{ reina_post_8h_romantic_progression = false },
+		{ reina_post_8h_best_friend_grouping = 0 },
+		{ reina_post_8h_best_friend_grouping = 4 }
+	] },
+	{ reina_post_8h_romantic_grouping = 4 },
+	{ season = "spring" }
+]
+writes = [
+	{ reina_post_8h_romantic_gate = true, expires = "2d" },
+	{ reina_post_8h_best_friend_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "reina" } },
+	{ item = "turnip_and_potato_gratin" }
+]
+portrait = "neutral"
+local = "It's Spring, which means it's root vegetable season in Mistria!"
+next = "1"
+
+[reina_post_8h_romantic_8.1]
+portrait = "blush"
+local = "I just got this =Turnip and Potato Gratin= out of the oven for you!"
+next = "2"
+
+[reina_post_8h_romantic_8.2]
+portrait = "happy"
+local = "The turnips are super fresh and I made the cheese on top extra toasty."
+next = "3"
+
+[reina_post_8h_romantic_8.3]
+portrait = "blush_special"
+effect = "hearts"
+local = "It's one of my favorites... I hope you'll like it, too."
+
+[reina_post_8h_romantic_9]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ any = [
+		{ reina_post_8h_romantic_progression = false },
+		{ reina_post_8h_best_friend_grouping = 0 },
+		{ reina_post_8h_best_friend_grouping = 4 }
+	] },
+	{ reina_post_8h_romantic_grouping = 4 },
+	{ season = "summer" }
+]
+writes = [
+	{ reina_post_8h_romantic_gate = true, expires = "2d" },
+	{ reina_post_8h_best_friend_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "reina" } },
+	{ item = "summer_salad" }
+]
+portrait = "happy"
+local = "Summer is the best time for vegetables, isn't it?"
+next = "1"
+
+[reina_post_8h_romantic_9.1]
+portrait = "blush_special"
+local = "The $Corn$ and $Tomatoes$ this season have been really sweet."
+next = "2"
+
+[reina_post_8h_romantic_9.2]
+portrait = "blush_think"
+local = "They made me think of you, actually."
+next = "3"
+
+[reina_post_8h_romantic_9.3]
+portrait = "blush"
+effect = "hearts"
+local = "I hope this $Summer Salad$ will make you feel refreshed!"
+
+[reina_post_8h_romantic_10]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ any = [
+		{ reina_post_8h_romantic_progression = false },
+		{ reina_post_8h_best_friend_grouping = 0 },
+		{ reina_post_8h_best_friend_grouping = 4 }
+	] },
+	{ reina_post_8h_romantic_grouping = 4 },
+	{ season = "fall" }
+]
+writes = [
+	{ reina_post_8h_romantic_gate = true, expires = "2d" },
+	{ reina_post_8h_best_friend_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "reina" } },
+	{ item = "pumpkin_stew" }
+]
+portrait = "neutral"
+local = "Fall might just be my favorite time of year! The changing leaves are so romantic... plus it's the beginning of soup season!"
+next = "1"
+
+[reina_post_8h_romantic_10.1]
+portrait = "wink"
+local = "In celebration, I wanted to cook you up something hearty and festive..."
+next = "2"
+
+[reina_post_8h_romantic_10.2]
+portrait = "blush"
+effect = "hearts"
+local = "So, enjoy this $Pumpkin Stew$! It was made with lots of love."
+
+[reina_post_8h_romantic_11]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ any = [
+		{ reina_post_8h_romantic_progression = false },
+		{ reina_post_8h_best_friend_grouping = 0 },
+		{ reina_post_8h_best_friend_grouping = 4 }
+	] },
+	{ reina_post_8h_romantic_grouping = 4 },
+	{ season = "winter" }
+]
+writes = [
+	{ reina_post_8h_romantic_gate = true, expires = "2d" },
+	{ reina_post_8h_best_friend_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "reina" } },
+	{ item = "winter_stew" }
+]
+portrait = "neutral"
+local = "Winter can only mean one thing: it's stew season!"
+next = "1"
+
+[reina_post_8h_romantic_11.1]
+portrait = "blush"
+local = "I wanted to make you something hot and hearty to keep you going through the day, no matter how cold it gets."
+next = "2"
+
+[reina_post_8h_romantic_11.2]
+portrait = "blush_special"
+local = "Eat this $Winter Stew$ and think of me, okay?"
+
+[reina_post_8h_romantic_12]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ reina_post_8h_romantic_progression = false },
+	{ reina_post_8h_romantic_grouping = 4 }
+]
+writes = [{ reina_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "neutral"
+local = "I'm always amazed at the variety of crops you cultivate on your farm, [Ari]."
+next = "1"
+
+[reina_post_8h_romantic_12.1]
+portrait = "blush_special"
+local = "I can really tell how much love you put into your work by how good everything tastes."
+next = "2"
+
+[reina_post_8h_romantic_12.2]
+portrait = "blush"
+local = "You put a lot of love into all kinds of aspects of your life, don't you?"
+prompts = [
+	{ local = "I put love into everything I do.", next = "3" },
+	{ local = "Some things more than others!", next = "5" }
+]
+
+[reina_post_8h_romantic_12.3]
+portrait = "blush"
+local = "It's really fulfilling, isn't it?"
+next = "4"
+
+[reina_post_8h_romantic_12.4]
+portrait = "blush_special"
+effect = "hearts"
+local = "And it... really comes across to me, [Ari]. Just so you know."
+
+[reina_post_8h_romantic_12.5]
+portrait = "blush"
+local = "Haha! Well..."
+next = "6"
+
+[reina_post_8h_romantic_12.6]
+portrait = "blush_special"
+effect = "hearts"
+local = "It... really comes across to me, [Ari]. Just so you know."
+
+[reina_post_8h_romantic_13]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ reina_post_8h_romantic_progression = false },
+	{ reina_post_8h_romantic_grouping = 4 }
+]
+writes = [{ reina_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "think"
+local = "I'm reading a new book right now, and it's really interesting..."
+next = "1"
+
+[reina_post_8h_romantic_13.1]
+portrait = "blush_special"
+local = "Actually, it's about an adventurer from a big city guild and all <she>her</she><he>his</he><they>their</they><it>its</it><none>their</none> escapades. Fictional, of course."
+next = "2"
+
+[reina_post_8h_romantic_13.2]
+portrait = "blush_think"
+local = "But now I'm wondering... Do you have swashbuckling stories from when you were with the Adventurer's Guild?"
+prompts = [
+	{ local = "Oh yeah, I've been in plenty of duels.", next = "3" },
+	{ local = "I usually took jobs helping people rather than fighting them.", next = "5" }
+]
+
+[reina_post_8h_romantic_13.3]
+portrait = "happy"
+local = "Wow, that's so exciting!"
+next = "4"
+
+[reina_post_8h_romantic_13.4]
+portrait = "wink"
+local = "You'll have to fill me in on all the details over a meal soon... hehe."
+
+[reina_post_8h_romantic_13.5]
+portrait = "blush"
+local = "That doesn't surprise me, [Ari]."
+next = "6"
+
+[reina_post_8h_romantic_13.6]
+portrait = "blush_open_eyes"
+local = "I think it's very heroic of you."
+next = "7"
+
+[reina_post_8h_romantic_13.7]
+portrait = "wink"
+local = "You'll have to fill me in on all the details over a meal soon... hehe."
+
+[reina_post_8h_romantic_14]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ reina_post_8h_romantic_progression = false },
+	{ reina_post_8h_romantic_grouping = 4 },
+	{ has_spouse = false }
+]
+writes = [{ reina_post_8h_romantic_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "think"
+local = "Can I ask you a question, [Ari]?"
+next = "1"
+
+[reina_post_8h_romantic_14.1]
+portrait = "neutral"
+local = "How do you feel about big parties and get-togethers?"
+next = "2"
+
+[reina_post_8h_romantic_14.2]
+portrait = "blush_special"
+local = "Um... I'm just thinking how I'll probably do a lot more hosting in the future, when I inherit the Inn."
+prompts = [
+	{ local = "I'm a party animal!", next = "3" },
+	{ local = "I'm kind of a wallflower, but I'm happy to support you!", next = "6" }
+]
+
+[reina_post_8h_romantic_14.3]
+portrait = "happy"
+local = "Hehe! Me too!"
+next = "4"
+
+[reina_post_8h_romantic_14.4]
+portrait = "blush_special"
+local = "I really like bringing people together, and joining in as well."
+next = "5"
+
+[reina_post_8h_romantic_14.5]
+portrait = "blush"
+effect = "hearts"
+local = "Just think about how much fun we could have together!"
+
+[reina_post_8h_romantic_14.6]
+portrait = "happy"
+local = "I'm glad you're being honest about it!"
+next = "7"
+
+[reina_post_8h_romantic_14.7]
+portrait = "blush_special"
+local = "It means a lot to me that you'd help me even though it's not your scene..."
+next = "8"
+
+[reina_post_8h_romantic_14.8]
+portrait = "blush"
+local = "Just know that there's no pressure, okay? It's important to me that you're comfortable, too."
+
+# last line
+[reina_post_8h_romantic_15]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_dating = true },
+	{ reina_post_8h_romantic_gate = false },
+	{ reina_post_8h_romantic_grouping = 4 }
+]
+writes = [
+	{ reina_post_8h_romantic_gate = true, expires = "2d" },
+	{ reina_post_8h_best_friend_gate = true, expires = "2d" },
+	{ reina_post_8h_romantic_progression = true }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "neutral"
+local = "I was just thinking about the different kinds of food you produce on your farm..."
+next = "1"
+
+[reina_post_8h_romantic_15.1]
+portrait = "blush_special"
+local = "Many of those ingredients find their way to my kitchen, where I cook them up into all sorts of dishes!"
+next = "2"
+
+[reina_post_8h_romantic_15.2]
+portrait = "blush"
+effect = "hearts"
+local = "I never realized before... It's kind of romantic, don't you think?"

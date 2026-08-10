@@ -1,0 +1,12 @@
+[early_winter]
+refresh = "3m"
+requires = [
+	{ npc = "holt" },
+	{ season = "winter" },
+	{ is_inside = false },
+	{ year_time = "3m 3d", comparator = "<=", parser = "date_time" },
+	{ year_time = "3m", comparator = ">", parser = "date_time" },
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+portrait = "wink"
+local = "Finally, my favorite season has arrived! It's a Winter Pun-derland!"

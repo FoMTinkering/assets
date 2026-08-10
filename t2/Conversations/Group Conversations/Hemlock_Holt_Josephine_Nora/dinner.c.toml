@@ -1,0 +1,54 @@
+[dinner]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "hemlock" },
+		{ npc = "holt" },
+		{ npc = "josephine" },
+		{ npc = "nora" }
+	] },
+	{ hemlock_zone = "<holt_zone>" },
+	{ hemlock_zone = "<josephine_zone>" },
+	{ hemlock_zone = "<nora_zone>" },
+	{ hemlock_zone = "<celine_zone>", comparator = "!=" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ hemlock_activity = "eat" },
+	{ holt_activity = "eat" },
+	{ josephine_activity = "eat" },
+	{ nora_activity = "eat" },
+]
+speaker = "hemlock"
+portrait = "neutral"
+local = "I walked by Celine's cottage the other day! She's doing great on her own."
+next = "1"
+
+[dinner.1]
+speaker = "holt"
+portrait = "neutral"
+local = "She is! I'm proud of her, though I know Nora frets."
+next = "2"
+
+[dinner.2]
+speaker = "nora"
+portrait = "sad"
+local = "Oh, I can't help it. She's struck out on her own much earlier than I did."
+next = "3"
+
+[dinner.3]
+speaker = "josephine"
+portrait = "happy"
+effect = "hearts"
+local = "Oh, Nora! She's not so far away! And we're even eating greens from her garden!"
+next = "4"
+
+[dinner.4]
+speaker = "nora"
+portrait = "think"
+local = "True... that does save us a lot of money."
+next = "5"
+
+[dinner.5]
+speaker = "nora"
+portrait = "embarrassed"
+effect = "hearts"
+local = "And it's nice to have her so close."

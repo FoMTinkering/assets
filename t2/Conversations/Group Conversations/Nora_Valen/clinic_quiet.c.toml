@@ -1,0 +1,17 @@
+[clinic_quiet]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "nora" }, { npc = "valen" }] },
+	{ nora_zone = "<valen_zone>" },
+	{ march_heart_event = "eight_heart", comparator = "!=" },
+	{ valen_heart_event = "eight_heart", comparator = "!=" }
+]
+speaker = "nora"
+portrait = "neutral"
+local = "How's the Clinic, Valen?"
+next = "1"
+
+[clinic_quiet.1]
+speaker = "valen"
+portrait = "neutral"
+local = "Nice and quiet. Which means people in town are well, so I don't mind it at all."

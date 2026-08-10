@@ -1,0 +1,26 @@
+[not_seeing_everything]
+refresh = "1y"
+requires = [
+	{ npc = "errol" },
+	{ location = "western_ruins" },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ eog_not_seeing_everything = true, expires = "1y" }]
+portrait = "mad"
+local = "There's just something about these ruins. I'm not seeing everything, I know it. Does anything catch your eye, [Ari]?"
+
+[not_seeing_everything_alt]
+refresh = "1y"
+requires = [
+	{ npc = "errol" },
+	{ location = "western_ruins" },
+	{ caldarus_seridia_town = true },
+	{ eog_not_seeing_everything = false }
+]
+portrait = "think"
+local = "We have learned many new things about these ruins since Seridia arrived to town."
+next = "1"
+
+[not_seeing_everything_alt.1]
+portrait = "neutral"
+local = "Yet, somehow... I sense that there is still much waiting to be discovered."

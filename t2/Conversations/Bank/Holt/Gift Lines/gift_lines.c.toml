@@ -1,0 +1,193 @@
+# Hated gift
+[puddle_spider_1]
+kind = "gift"
+requires = [
+	{ npc = "holt" },
+	{ gift_desire = "hated" },
+	{ gift_given = "puddle_spider" }
+]
+portrait = "ugh"
+local = "..."
+next = "1"
+
+[puddle_spider_1.1]
+portrait = "sad"
+local = "I don't think I get the joke, [Ari]."
+
+# Generic lines
+[loved_gift_1]
+kind = "gift"
+requires = [{ npc = "holt" }, { gift_desire = "loved" }]
+portrait = "happy"
+local = "Wow, is this really for me? I love it!"
+next = "1"
+
+[loved_gift_1.1]
+portrait = "wink"
+effect = "sparkles"
+local = "Thank you, [Ari]! This is so thoughtful."
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "holt" }, { gift_desire = "loved" }]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+portrait = "happy"
+effect = "sparkles"
+local = "[Ari], you're so gifted at giving gifts! It's like you're always present in the moment."
+
+[loved_gift_edible_2]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "holt" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "baked_potato" },
+		{ gift_given = "coffee" },
+		{ gift_given = "gazpacho" },
+		{ gift_given = "loaded_baked_potato" },
+		{ gift_given = "watermelon" },
+	] }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "This is going to hit the spot! Bullseye, [Ari]!"
+
+[loved_gift_grain_1]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "holt" },
+	{ gift_desire = "loved" },
+	{ any = [{ gift_given = "flour" }, { gift_given = "wheat" }] }
+]
+portrait = "wink"
+effect = "sparkles"
+local = "Thanks, [Ari]! I'll turn this into something tasty later!"
+
+[loved_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "holt" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "loaded_baked_potato" },
+		{ gift_given = "lemon_pie" },
+		{ gift_given = "vegetable_soup" },
+	] }
+]
+portrait = "happy"
+effect = "hearts"
+local = "Oho, this looks delicious! Thank you, [Ari], I love it!"
+
+[liked_gift_1]
+kind = "gift"
+requires = [{ npc = "holt" }, { gift_desire = "liked" }]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+portrait = "neutral"
+local = "Thanks, [Ari], I really like this!"
+next = "1"
+
+[liked_gift_1.1]
+portrait = "wink"
+local = "It's just what I needed to gift my spirits!"
+
+[liked_gift_2]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "holt" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "beet" },
+		{ gift_given = "broccoli" },
+		{ gift_given = "cabbage" },
+		{ gift_given = "carrot" },
+		{ gift_given = "cauliflower" },
+		{ gift_given = "chili_pepper" },
+		{ gift_given = "corn" },
+		{ gift_given = "cranberry" },
+		{ gift_given = "cucumber" },
+		{ gift_given = "daikon_radish" },
+		{ gift_given = "onion" },
+		{ gift_given = "peas" },
+		{ gift_given = "potato" },
+		{ gift_given = "pumpkin" },
+		{ gift_given = "rice_stalk" },
+		{ gift_given = "snow_peas" },
+		{ gift_given = "strawberry" },
+		{ gift_given = "sugar_cane" },
+		{ gift_given = "sweet_potato" },
+		{ gift_given = "turnip" },
+	] }
+]
+portrait = "neutral"
+local = "You're a pro at producing produce! Thanks, [Ari]!"
+
+[liked_gift_3]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "holt" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "beet" },
+		{ gift_given = "broccoli" },
+		{ gift_given = "cabbage" },
+		{ gift_given = "carrot" },
+		{ gift_given = "cauliflower" },
+		{ gift_given = "chili_pepper" },
+		{ gift_given = "corn" },
+		{ gift_given = "cranberry" },
+		{ gift_given = "cucumber" },
+		{ gift_given = "daikon_radish" },
+		{ gift_given = "onion" },
+		{ gift_given = "peas" },
+		{ gift_given = "potato" },
+		{ gift_given = "pumpkin" },
+		{ gift_given = "rice_stalk" },
+		{ gift_given = "snow_peas" },
+		{ gift_given = "strawberry" },
+		{ gift_given = "sugar_cane" },
+		{ gift_given = "sweet_potato" },
+		{ gift_given = "turnip" },
+	] }
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+portrait = "neutral"
+local = "You're a peach! I'm so grape-ful, thank you berry much!"
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "holt" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Well, thanks!"
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "holt" }, { gift_desire = "disliked" }]
+portrait = "think"
+local = "Well... they say not to look a gift horse in the mouth..."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "holt" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ holt_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "neutral"
+local = "Ooh! No time like the present for a present!"
+next = "1"
+
+[birthday_gift.1]
+portrait = "wink"
+effect = "sparkles"
+local = "Thank you for the birthday gift, [Ari]!"

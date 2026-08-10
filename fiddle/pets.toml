@@ -1,0 +1,1705 @@
+celebration_animation = "happy"
+pet_cosmetic_sub_icon = "spr_ui_item_sub_animal_dog"
+
+[jobs.wood]
+	location_id = "town"
+	pet_position = [1166, 2658]
+	reward = "basic_wood"
+	conversation_name = "pet_job_wood"
+	icon = "spr_ui_icon_pet_job_wood"
+
+	reward_table = [
+		[2, 3],
+		[2, 3],
+		[4, 5],
+		[4, 5],
+		[6, 7],
+		[6, 7],
+		[8, 9],
+		[8, 9],
+		[10, 12],
+		[10, 12],
+		[13, 15],
+	]
+
+	[[jobs.wood.props]]
+		sprite = "spr_pet_prop_stick_1_spring"
+		position = [1167, 2631]
+
+	[[jobs.wood.props]]
+		sprite = "spr_pet_prop_stick_2_spring"
+		position = [1143, 2650]
+
+	[[jobs.wood.props]]
+		sprite = "spr_pet_prop_stick_3_spring"
+		position = [1190, 2649]
+
+[jobs.stone]
+	location_id = "narrows"
+	pet_position = [707, 608]
+	reward = "ore_stone"
+	conversation_name = "pet_job_stone"
+	icon = "spr_ui_icon_pet_job_stone"
+	reward_table = [
+		[2, 3],
+		[2, 3],
+		[4, 5],
+		[4, 5],
+		[6, 7],
+		[6, 7],
+		[8, 9],
+		[8, 9],
+		[10, 12],
+		[10, 12],
+		[13, 15],
+	]
+
+	[[jobs.stone.props]]
+		sprite = "spr_pet_prop_rock_1_spring"
+		position = [727, 604]
+
+	[[jobs.stone.props]]
+		sprite = "spr_pet_prop_rock_2_spring"
+		position = [679, 618]
+
+	[[jobs.stone.props]]
+		sprite = "spr_pet_prop_rock_3_spring"
+		position = [713, 620]
+
+[jobs.forageables]
+	location_id = "eastern_road"
+	pet_position = [1080.0, 696.0]
+	reward = "custom"
+	conversation_name = "pet_job_forageables"
+	icon = "spr_ui_icon_pet_job_forage"
+	reward_table = [
+		[1, 1],
+		[1, 1],
+		[1, 2],
+		[1, 2],
+		[2, 2],
+		[2, 2],
+		[2, 3],
+		[2, 3],
+		[3, 3],
+		[3, 3],
+		[3, 4],
+	]
+
+	[[jobs.forageables.props]]
+		sprite = "spr_forageable_regrow_dirt_spring"
+		position = [1056.0, 704.0]
+
+	[[jobs.forageables.props]]
+		sprite = "spr_forageable_regrow_dirt_spring"
+		position = [1096.0, 712.0]
+
+[bark_offsets]
+	north = [2, -29]
+	south = [2, -28]
+	east = [2, -28]
+	west = [1, -28]
+
+[animations.idle]
+	randomly_selected = false
+	duration = [3, 7]
+	end_with_animation = false
+	time_range = [6, 20]
+
+[animations.walk]
+	randomly_selected = false
+	duration = [1, 2]
+	end_with_animation = false
+	time_range = [6, 20]
+
+[animations.sleep]
+	randomly_selected = false
+	duration = "<n/a>"
+	end_with_animation = false
+	time_range = [6, 20]
+
+[animations.eat]
+	randomly_selected = false
+	duration = "<n/a>"
+	end_with_animation = false
+	time_range = [6, 20]
+
+[animations.happy]
+	end_with_animation = true
+	randomly_selected = false
+	duration = "<n/a>"
+	time_range = [6, 20]
+
+[animations.action]
+	end_with_animation = false
+	randomly_selected = false
+	duration = "<n/a>"
+	time_range = [6, 20]
+
+[animations.lick]
+	white_list = ["cat"]
+	end_with_animation = false
+	randomly_selected = true
+	duration = [6, 10]
+	time_range = [6, 20]
+
+[animations.loaf]
+	white_list = ["cat"]
+	end_with_animation = false
+	randomly_selected = true
+	duration = [6, 10]
+	time_range = [6, 20]
+
+[animations.sit_tailwag]
+	white_list = ["dog"]
+	end_with_animation = false
+	randomly_selected = true
+	duration = [6, 10]
+	time_range = [6, 20]
+
+[animations.tailwag]
+	white_list = ["dog"]
+	end_with_animation = false
+	randomly_selected = true
+	duration = [6, 10]
+	time_range = [6, 20]
+
+[animations.look_around]
+	white_list = ["sapling"]
+	end_with_animation = true
+	randomly_selected = true
+	duration = "<n/a>"
+	time_range = [6, 20]
+
+[animations.blink]
+	white_list = ["mushroom"]
+	end_with_animation = true
+	randomly_selected = true
+	duration = "<n/a>"
+	time_range = [6, 20]
+
+[animations.swim]
+	end_with_animation = false
+	randomly_selected = false
+	duration = "<n/a>"
+	time_range = [6, 20]
+
+[variants.cat_tabby]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_basic_cat_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_cat_small_tabby"
+	name = "Tabby Cat"
+	lut = "spr_animal_cat_lut"
+	lut_index = 1
+	ui_icon = "spr_ui_icon_animal_cat_basic"
+	preview_direction = "east"
+
+[variants.cat_black]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_basic_cat_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_cat_small_black"
+	name = "Black Cat"
+	lut = "spr_animal_cat_lut"
+	lut_index = 2
+	ui_icon = "spr_ui_icon_animal_cat_basic"
+	preview_direction = "east"
+
+[variants.cat_grey]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_basic_cat_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_cat_small_grey"
+	name = "Grey Cat"
+	lut = "spr_animal_cat_lut"
+	lut_index = 3
+	ui_icon = "spr_ui_icon_animal_cat_basic"
+	preview_direction = "east"
+
+[variants.cat_white]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_basic_cat_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_cat_small_white"
+	name = "White Cat"
+	lut = "spr_animal_cat_lut"
+	lut_index = 4
+	ui_icon = "spr_ui_icon_animal_cat_basic"
+	preview_direction = "east"
+
+[variants.cat_tuxedo]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_basic_cat_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_cat_small_tuxedo"
+	name = "Tuxedo Cat"
+	lut = "spr_animal_cat_lut"
+	lut_index = 5
+	ui_icon = "spr_ui_icon_animal_cat_basic"
+	preview_direction = "east"
+
+[variants.cat_orange]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_basic_cat_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_cat_small_orange"
+	name = "Orange Cat"
+	lut = "spr_animal_cat_lut"
+	lut_index = 6
+	ui_icon = "spr_ui_icon_animal_cat_basic"
+	preview_direction = "east"
+
+[variants.cat_tortie]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_tortie_cat_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_cat_small_tortie"
+	name = "Tortie Cat"
+	lut = "<n/a>"
+	ui_icon = "spr_ui_icon_animal_cat_tortie"
+	preview_direction = "east"
+
+[variants.cat_siamese]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_siamese_cat_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_cat_small_siamese"
+	name = "Siamese Cat"
+	lut = "<n/a>"
+	ui_icon = "spr_ui_icon_animal_cat_siamese"
+	preview_direction = "east"
+
+[variants.cat_calico]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_calico_cat_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_cat_small_calico"
+	name = "Calico Cat"
+	lut = "<n/a>"
+	ui_icon = "spr_ui_icon_animal_cat_calico"
+	preview_direction = "east"
+
+[variants.cat_purple]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_basic_cat_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_cat_small_purple"
+	name = "Purple Cat"
+	lut = "spr_animal_cat_lut"
+	lut_index = 7
+	ui_icon = "spr_ui_icon_animal_cat_basic"
+	preview_direction = "east"
+
+[variants.cat_navy]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_basic_cat_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_cat_small_navy"
+	name = "Navy Cat"
+	lut = "spr_animal_cat_lut"
+	lut_index = 8
+	ui_icon = "spr_ui_icon_animal_cat_basic"
+	preview_direction = "east"
+
+[variants.cat_pink]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_basic_cat_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_cat_small_pink"
+	name = "Pink Cat"
+	lut = "spr_animal_cat_lut"
+	lut_index = 9
+	ui_icon = "spr_ui_icon_animal_cat_basic"
+	preview_direction = "east"
+
+[variants.dog_yellow]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_basic_dog_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_dog_small_yellow"
+	name = "Yellow Dog"
+	lut = "spr_animal_dog_lut"
+	lut_index = 1
+	ui_icon = "spr_ui_icon_animal_dog_basic"
+	preview_direction = "east"
+
+[variants.dog_beige]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_basic_dog_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_dog_small_beige"
+	name = "Beige Dog"
+	lut = "spr_animal_dog_lut"
+	lut_index = 2
+	ui_icon = "spr_ui_icon_animal_dog_basic"
+	preview_direction = "east"
+
+[variants.dog_brown]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_basic_dog_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_dog_small_brown"
+	name = "Brown Dog"
+	lut = "spr_animal_dog_lut"
+	lut_index = 3
+	ui_icon = "spr_ui_icon_animal_dog_basic"
+	preview_direction = "east"
+
+[variants.dog_black]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_basic_dog_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_dog_small_black"
+	name = "Black Dog"
+	lut = "spr_animal_dog_lut"
+	lut_index = 4
+	ui_icon = "spr_ui_icon_animal_dog_basic"
+	preview_direction = "east"
+
+[variants.dog_grey]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_basic_dog_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_dog_small_grey"
+	name = "Grey Dog"
+	lut = "spr_animal_dog_lut"
+	lut_index = 5
+	ui_icon = "spr_ui_icon_animal_dog_basic"
+	preview_direction = "east"
+
+[variants.dog_white]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_basic_dog_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_dog_small_white"
+	name = "White Dog"
+	lut = "spr_animal_dog_lut"
+	lut_index = 6
+	ui_icon = "spr_ui_icon_animal_dog_basic"
+	preview_direction = "east"
+
+[variants.dog_spots]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_basic_dog_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_dog_small_spots"
+	name = "Spotted Dog"
+	lut = "spr_animal_dog_lut"
+	lut_index = 7
+	ui_icon = "spr_ui_icon_animal_dog_basic"
+	preview_direction = "east"
+
+[variants.dog_orange]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_basic_dog_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_dog_small_orange"
+	name = "Orange Dog"
+	lut = "spr_animal_dog_lut"
+	lut_index = 8
+	ui_icon = "spr_ui_icon_animal_dog_basic"
+	preview_direction = "east"
+
+[variants.dog_dalmation]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_basic_dog_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_dog_small_dalmation"
+	name = "Dalmation Dog"
+	lut = "spr_animal_dog_lut"
+	lut_index = 9
+	ui_icon = "spr_ui_icon_animal_dog_basic"
+	preview_direction = "east"
+
+[variants.dog_purple]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_basic_dog_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_dog_small_purple"
+	name = "Purple Dog"
+	lut = "spr_animal_dog_lut"
+	lut_index = 10
+	ui_icon = "spr_ui_icon_animal_dog_basic"
+	preview_direction = "east"
+
+[variants.dog_navy]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_basic_dog_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_dog_small_navy"
+	name = "Navy Dog"
+	lut = "spr_animal_dog_lut"
+	lut_index = 11
+	ui_icon = "spr_ui_icon_animal_dog_basic"
+	preview_direction = "east"
+
+[variants.dog_pink]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_basic_dog_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_dog_small_pink"
+	name = "Pink Dog"
+	lut = "spr_animal_dog_lut"
+	lut_index = 12
+	ui_icon = "spr_ui_icon_animal_dog_basic"
+	preview_direction = "east"
+
+[variants.sapling_green]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_green_main_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Green Sapling"
+	lut = "spr_pet_sapling_lut"
+	lut_index = 1
+	ui_icon = "spr_ui_icon_pet_sapling_green"
+	unlock_key = "sapling"
+	preview_direction = "east"
+
+[variants.sapling_cool]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_green_main_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Cool Sapling"
+	lut = "spr_pet_sapling_lut"
+	lut_index = 2
+	ui_icon = "spr_ui_icon_pet_sapling_green"
+	unlock_key = "sapling"
+	preview_direction = "east"
+
+[variants.sapling_blue]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_green_main_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Blue Sapling"
+	lut = "spr_pet_sapling_lut"
+	lut_index = 3
+	ui_icon = "spr_ui_icon_pet_sapling_green"
+	unlock_key = "sapling"
+	preview_direction = "east"
+
+[variants.sapling_purple]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_green_main_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Purple Sapling"
+	lut = "spr_pet_sapling_lut"
+	lut_index = 4
+	ui_icon = "spr_ui_icon_pet_sapling_green"
+	unlock_key = "sapling"
+	preview_direction = "east"
+
+[variants.sapling_orange]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_green_main_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Orange Sapling"
+	lut = "spr_pet_sapling_lut"
+	lut_index = 5
+	ui_icon = "spr_ui_icon_pet_sapling_green"
+	unlock_key = "sapling"
+	preview_direction = "east"
+
+[variants.sapling_pink]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_green_main_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Pink Sapling"
+	lut = "spr_pet_sapling_lut"
+	lut_index = 6
+	ui_icon = "spr_ui_icon_pet_sapling_green"
+	unlock_key = "sapling"
+	preview_direction = "east"
+
+[variants.mushroom_red]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_basic_main_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Mushroom"
+	lut = "spr_pet_mushroom_lut"
+	lut_index = 1
+	ui_icon = "spr_ui_icon_pet_mushroom_basic"
+	unlock_key = "mushroom"
+	preview_direction = "east"
+
+[variants.mushroom_green]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_basic_main_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Green Mushroom"
+	lut = "spr_pet_mushroom_lut"
+	lut_index = 2
+	ui_icon = "spr_ui_icon_pet_mushroom_basic"
+	unlock_key = "mushroom"
+	preview_direction = "east"
+
+[variants.mushroom_blue]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_basic_main_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Blue Mushroom"
+	lut = "spr_pet_mushroom_lut"
+	lut_index = 3
+	ui_icon = "spr_ui_icon_pet_mushroom_basic"
+	unlock_key = "mushroom"
+	preview_direction = "east"
+
+[variants.mushroom_purple]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_basic_main_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Purple Mushroom"
+	lut = "spr_pet_mushroom_lut"
+	lut_index = 4
+	ui_icon = "spr_ui_icon_pet_mushroom_basic"
+	unlock_key = "mushroom"
+	preview_direction = "east"
+
+[variants.rockclod]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_clod_rockclod_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Rockclod"
+	lut = "spr_pet_rockclod_lut"
+	lut_index = 1
+	ui_icon = "spr_ui_icon_pet_rockclod"
+	unlock_key = "rockclod"
+	preview_direction = "south"
+
+[variants.rockclod_blue]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_clod_rockclod_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Blue Rockclod"
+	lut = "spr_pet_rockclod_lut"
+	lut_index = 2
+	ui_icon = "spr_ui_icon_pet_rockclod"
+	unlock_key = "rockclod"
+	preview_direction = "south"
+
+[variants.rockclod_green]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_clod_rockclod_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Green Rockclod"
+	lut = "spr_pet_rockclod_lut"
+	lut_index = 3
+	ui_icon = "spr_ui_icon_pet_rockclod"
+	unlock_key = "rockclod"
+	preview_direction = "south"
+
+[variants.rockclod_red]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_clod_rockclod_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Red Rockclod"
+	lut = "spr_pet_rockclod_lut"
+	lut_index = 4
+	ui_icon = "spr_ui_icon_pet_rockclod"
+	unlock_key = "rockclod"
+	preview_direction = "south"
+
+[variants.copperclod]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_clod_oreclod_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Copperclod"
+	lut = "spr_pet_oreclod_lut"
+	lut_index = 1
+	ui_icon = "spr_ui_icon_pet_oreclod"
+	unlock_key = "oreclod"
+	preview_direction = "south"
+
+[variants.ironclod]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_clod_oreclod_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Ironclod"
+	lut = "spr_pet_oreclod_lut"
+	lut_index = 2
+	ui_icon = "spr_ui_icon_pet_oreclod"
+	unlock_key = "oreclod"
+	preview_direction = "south"
+
+[variants.silverclod]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_clod_oreclod_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Silverclod"
+	lut = "spr_pet_oreclod_lut"
+	lut_index = 3
+	ui_icon = "spr_ui_icon_pet_oreclod"
+	unlock_key = "oreclod"
+	preview_direction = "south"
+
+[variants.goldclod]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_clod_oreclod_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Goldclod"
+	lut = "spr_pet_oreclod_lut"
+	lut_index = 4
+	ui_icon = "spr_ui_icon_pet_oreclod"
+	unlock_key = "oreclod"
+	preview_direction = "south"
+
+[variants.enchantern_yellow]
+	pet_kind = "enchantern"
+	sprite_template = "spr_pet_enchantern_yellow_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Yellow Enchantern"
+	lut = "<n/a>"
+	unlock_key = "enchantern"
+	ui_icon = "spr_ui_icon_pet_enchantern_yellow"
+	preview_direction = "east"
+
+[variants.enchantern_blue]
+	pet_kind = "enchantern"
+	sprite_template = "spr_pet_enchantern_blue_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Blue Enchantern"
+	lut = "<n/a>"
+	unlock_key = "enchantern"
+	ui_icon = "spr_ui_icon_pet_enchantern_blue"
+	preview_direction = "east"
+
+[variants.stalagmite_blue]
+	pet_kind = "stalagmite"
+	sprite_template = "spr_pet_stalagmite_basic_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Stalagmite"
+	lut = "<n/a>"
+	unlock_key = "stalagmite"
+	ui_icon = "spr_ui_icon_pet_stalagmite"
+	preview_direction = "south"
+
+[variants.stalagmite_green]
+	pet_kind = "stalagmite"
+	sprite_template = "spr_pet_stalagmite_basic_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Green Stalagmite"
+	lut = "spr_pet_stalagmite_lut"
+	lut_index = 2
+	unlock_key = "stalagmite"
+	ui_icon = "spr_ui_icon_pet_stalagmite"
+	preview_direction = "south"
+
+[variants.stalagmite_purple]
+	pet_kind = "stalagmite"
+	sprite_template = "spr_pet_stalagmite_basic_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Purple Stalagmite"
+	lut = "spr_pet_stalagmite_lut"
+	lut_index = 3
+	unlock_key = "stalagmite"
+	ui_icon = "spr_ui_icon_pet_stalagmite"
+	preview_direction = "south"
+
+[variants.essence_bat_purple]
+	pet_kind = "essence_bat"
+	sprite_template = "spr_pet_essence_bat_purple_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Essence Bat"
+	lut = "<n/a>"
+	unlock_key = "essence_bat"
+	ui_icon = "spr_ui_icon_pet_essence_bat_purple"
+	preview_direction = "east"
+
+[variants.essence_bat_blue]
+	pet_kind = "essence_bat"
+	sprite_template = "spr_pet_essence_bat_blue_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Blue Essence Bat"
+	lut = "<n/a>"
+	unlock_key = "essence_bat"
+	ui_icon = "spr_ui_icon_pet_essence_bat_blue"
+	preview_direction = "east"
+
+[variants.mimic]
+	pet_kind = "mimic"
+	sprite_template = "spr_pet_mimic_main_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Mimic"
+	lut = "<n/a>"
+	unlock_key = "mimic"
+	ui_icon = "spr_ui_icon_pet_mimic"
+	preview_direction = "south"
+
+[variants.flame_spirit_orange]
+	pet_kind = "flame_spirit"
+	sprite_template = "spr_pet_flame_spirit_orange_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Orange Flame Spirit"
+	lut = "<n/a>"
+	unlock_key = "flame_spirit"
+	ui_icon = "spr_ui_icon_pet_flame_spirit_orange"
+	preview_direction = "south"
+
+[variants.flame_spirit_purple]
+	pet_kind = "flame_spirit"
+	sprite_template = "spr_pet_flame_spirit_purple_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Purple Flame Spirit"
+	lut = "<n/a>"
+	unlock_key = "flame_spirit"
+	ui_icon = "spr_ui_icon_pet_flame_spirit_purple"
+	preview_direction = "south"
+
+[variants.lava_cat]
+	pet_kind = "lava_cat"
+	sprite_template = "spr_pet_lava_cat_lava_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Lava Cat"
+	lut = "<n/a>"
+	unlock_key = "lava_cat"
+	ui_icon = "spr_ui_icon_pet_lava_cat_lava"
+	preview_direction = "south"
+
+[variants.void_cat]
+	pet_kind = "void_cat"
+	sprite_template = "spr_pet_void_cat_void_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Void Cat"
+	lut = "<n/a>"
+	unlock_key = "void_cat"
+	ui_icon = "spr_ui_icon_pet_lava_cat_void"
+	preview_direction = "south"
+
+[variants.rock_stack]
+	pet_kind = "rock_stack"
+	sprite_template = "spr_pet_rock_stack_main_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Rock Stack"
+	lut = "<n/a>"
+	unlock_key = "rock_stack"
+	ui_icon = "spr_ui_icon_pet_rock_stack"
+	preview_direction = "south"
+
+[variants.flying_tome]
+	pet_kind = "flying_tome"
+	sprite_template = "spr_pet_flying_tome_main_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Flying Tome"
+	lut = "<n/a>"
+	unlock_key = "flying_tome"
+	ui_icon = "spr_ui_icon_pet_flying_tome"
+	preview_direction = "south"
+
+[variants.griffin_statue]
+	pet_kind = "griffin_statue"
+	sprite_template = "spr_pet_griffin_statue_main_{ANIMATION_KEY}"
+	map_icon = "spr_ui_generic_icon_pet_monster_small"
+	name = "Gryphon Statue"
+	lut = "<n/a>"
+	unlock_key = "griffin_statue"
+	ui_icon = "spr_ui_icon_pet_griffin_statue"
+	preview_direction = "south"
+
+[cosmetics.cat_sun_hat]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.cat_unicorn_horn]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.cat_halo]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.cat_flower_crown]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.cat_purple_bow]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.cat_green_bow]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.cat_yellow_bow]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.cat_red_bow]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.cat_blue_bow]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.cat_black_bow]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.cat_pink_bow]
+	pet_kind = "cat"
+	sprite_template = "spr_animal_cat_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.dog_sun_hat]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.dog_unicorn_horn]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.dog_halo]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.dog_flower_crown]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.dog_purple_bow]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.dog_green_bow]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.dog_yellow_bow]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.dog_red_bow]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.dog_blue_bow]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.dog_black_bow]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.dog_pink_bow]
+	pet_kind = "dog"
+	sprite_template = "spr_animal_dog_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.sapling_sun_hat]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.sapling_unicorn_horn]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.sapling_halo]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.sapling_flower_crown]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.sapling_purple_bow]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.sapling_green_bow]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.sapling_yellow_bow]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.sapling_red_bow]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.sapling_blue_bow]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.sapling_black_bow]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.sapling_pink_bow]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.sapling_skull_mask]
+	pet_kind = "sapling"
+	sprite_template = "spr_pet_sapling_cosmetic_skull_mask_{ANIMATION_KEY}"
+	cosmetic_set = "skull_mask"
+
+[cosmetics.mushroom_sun_hat]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.mushroom_unicorn_horn]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.mushroom_halo]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.mushroom_flower_crown]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.mushroom_purple_bow]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.mushroom_green_bow]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.mushroom_yellow_bow]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.mushroom_red_bow]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.mushroom_blue_bow]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.mushroom_black_bow]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.mushroom_pink_bow]
+	pet_kind = "mushroom"
+	sprite_template = "spr_pet_mushroom_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.rockclod_sun_hat]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_rockclod_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.rockclod_unicorn_horn]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_rockclod_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.rockclod_halo]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_rockclod_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.rockclod_flower_crown]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_rockclod_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.rockclod_purple_bow]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_rockclod_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.rockclod_green_bow]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_rockclod_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.rockclod_yellow_bow]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_rockclod_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.rockclod_red_bow]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_rockclod_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.rockclod_blue_bow]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_rockclod_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.rockclod_black_bow]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_rockclod_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.rockclod_pink_bow]
+	pet_kind = "rockclod"
+	sprite_template = "spr_pet_rockclod_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.oreclod_sun_hat]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_oreclod_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.oreclod_unicorn_horn]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_oreclod_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.oreclod_halo]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_oreclod_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.oreclod_flower_crown]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_oreclod_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.oreclod_purple_bow]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_oreclod_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.oreclod_green_bow]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_oreclod_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.oreclod_yellow_bow]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_oreclod_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.oreclod_red_bow]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_oreclod_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.oreclod_blue_bow]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_oreclod_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.oreclod_black_bow]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_oreclod_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.oreclod_pink_bow]
+	pet_kind = "oreclod"
+	sprite_template = "spr_pet_oreclod_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.enchantern_sun_hat]
+	pet_kind = "enchantern"
+	sprite_template = "spr_pet_enchantern_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.enchantern_unicorn_horn]
+	pet_kind = "enchantern"
+	sprite_template = "spr_pet_enchantern_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.enchantern_halo]
+	pet_kind = "enchantern"
+	sprite_template = "spr_pet_enchantern_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.enchantern_flower_crown]
+	pet_kind = "enchantern"
+	sprite_template = "spr_pet_enchantern_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.enchantern_purple_bow]
+	pet_kind = "enchantern"
+	sprite_template = "spr_pet_enchantern_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.enchantern_green_bow]
+	pet_kind = "enchantern"
+	sprite_template = "spr_pet_enchantern_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.enchantern_yellow_bow]
+	pet_kind = "enchantern"
+	sprite_template = "spr_pet_enchantern_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.enchantern_red_bow]
+	pet_kind = "enchantern"
+	sprite_template = "spr_pet_enchantern_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.enchantern_blue_bow]
+	pet_kind = "enchantern"
+	sprite_template = "spr_pet_enchantern_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.enchantern_black_bow]
+	pet_kind = "enchantern"
+	sprite_template = "spr_pet_enchantern_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.enchantern_pink_bow]
+	pet_kind = "enchantern"
+	sprite_template = "spr_pet_enchantern_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.stalagmite_sun_hat]
+	pet_kind = "stalagmite"
+	sprite_template = "spr_pet_stalagmite_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.stalagmite_unicorn_horn]
+	pet_kind = "stalagmite"
+	sprite_template = "spr_pet_stalagmite_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.stalagmite_halo]
+	pet_kind = "stalagmite"
+	sprite_template = "spr_pet_stalagmite_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.stalagmite_flower_crown]
+	pet_kind = "stalagmite"
+	sprite_template = "spr_pet_stalagmite_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.stalagmite_purple_bow]
+	pet_kind = "stalagmite"
+	sprite_template = "spr_pet_stalagmite_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.stalagmite_green_bow]
+	pet_kind = "stalagmite"
+	sprite_template = "spr_pet_stalagmite_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.stalagmite_yellow_bow]
+	pet_kind = "stalagmite"
+	sprite_template = "spr_pet_stalagmite_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.stalagmite_red_bow]
+	pet_kind = "stalagmite"
+	sprite_template = "spr_pet_stalagmite_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.stalagmite_blue_bow]
+	pet_kind = "stalagmite"
+	sprite_template = "spr_pet_stalagmite_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.stalagmite_black_bow]
+	pet_kind = "stalagmite"
+	sprite_template = "spr_pet_stalagmite_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.stalagmite_pink_bow]
+	pet_kind = "stalagmite"
+	sprite_template = "spr_pet_stalagmite_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.essence_bat_sun_hat]
+	pet_kind = "essence_bat"
+	sprite_template = "spr_pet_essence_bat_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.essence_bat_unicorn_horn]
+	pet_kind = "essence_bat"
+	sprite_template = "spr_pet_essence_bat_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.essence_bat_halo]
+	pet_kind = "essence_bat"
+	sprite_template = "spr_pet_essence_bat_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.essence_bat_flower_crown]
+	pet_kind = "essence_bat"
+	sprite_template = "spr_pet_essence_bat_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.essence_bat_purple_bow]
+	pet_kind = "essence_bat"
+	sprite_template = "spr_pet_essence_bat_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.essence_bat_green_bow]
+	pet_kind = "essence_bat"
+	sprite_template = "spr_pet_essence_bat_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.essence_bat_yellow_bow]
+	pet_kind = "essence_bat"
+	sprite_template = "spr_pet_essence_bat_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.essence_bat_red_bow]
+	pet_kind = "essence_bat"
+	sprite_template = "spr_pet_essence_bat_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.essence_bat_blue_bow]
+	pet_kind = "essence_bat"
+	sprite_template = "spr_pet_essence_bat_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.essence_bat_black_bow]
+	pet_kind = "essence_bat"
+	sprite_template = "spr_pet_essence_bat_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.essence_bat_pink_bow]
+	pet_kind = "essence_bat"
+	sprite_template = "spr_pet_essence_bat_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.mimic_sun_hat]
+	pet_kind = "mimic"
+	sprite_template = "spr_pet_mimic_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.mimic_unicorn_horn]
+	pet_kind = "mimic"
+	sprite_template = "spr_pet_mimic_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.mimic_halo]
+	pet_kind = "mimic"
+	sprite_template = "spr_pet_mimic_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.mimic_flower_crown]
+	pet_kind = "mimic"
+	sprite_template = "spr_pet_mimic_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.mimic_purple_bow]
+	pet_kind = "mimic"
+	sprite_template = "spr_pet_mimic_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.mimic_green_bow]
+	pet_kind = "mimic"
+	sprite_template = "spr_pet_mimic_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.mimic_yellow_bow]
+	pet_kind = "mimic"
+	sprite_template = "spr_pet_mimic_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.mimic_red_bow]
+	pet_kind = "mimic"
+	sprite_template = "spr_pet_mimic_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.mimic_blue_bow]
+	pet_kind = "mimic"
+	sprite_template = "spr_pet_mimic_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.mimic_black_bow]
+	pet_kind = "mimic"
+	sprite_template = "spr_pet_mimic_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.mimic_pink_bow]
+	pet_kind = "mimic"
+	sprite_template = "spr_pet_mimic_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.flame_spirit_sun_hat]
+	pet_kind = "flame_spirit"
+	sprite_template = "spr_pet_flame_spirit_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.flame_spirit_unicorn_horn]
+	pet_kind = "flame_spirit"
+	sprite_template = "spr_pet_flame_spirit_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.flame_spirit_halo]
+	pet_kind = "flame_spirit"
+	sprite_template = "spr_pet_flame_spirit_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.flame_spirit_flower_crown]
+	pet_kind = "flame_spirit"
+	sprite_template = "spr_pet_flame_spirit_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.flame_spirit_purple_bow]
+	pet_kind = "flame_spirit"
+	sprite_template = "spr_pet_flame_spirit_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.flame_spirit_green_bow]
+	pet_kind = "flame_spirit"
+	sprite_template = "spr_pet_flame_spirit_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.flame_spirit_yellow_bow]
+	pet_kind = "flame_spirit"
+	sprite_template = "spr_pet_flame_spirit_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.flame_spirit_red_bow]
+	pet_kind = "flame_spirit"
+	sprite_template = "spr_pet_flame_spirit_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.flame_spirit_blue_bow]
+	pet_kind = "flame_spirit"
+	sprite_template = "spr_pet_flame_spirit_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.flame_spirit_black_bow]
+	pet_kind = "flame_spirit"
+	sprite_template = "spr_pet_flame_spirit_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.flame_spirit_pink_bow]
+	pet_kind = "flame_spirit"
+	sprite_template = "spr_pet_flame_spirit_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.lava_cat_sun_hat]
+	pet_kind = "lava_cat"
+	sprite_template = "spr_pet_lava_cat_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.lava_cat_unicorn_horn]
+	pet_kind = "lava_cat"
+	sprite_template = "spr_pet_lava_cat_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.lava_cat_halo]
+	pet_kind = "lava_cat"
+	sprite_template = "spr_pet_lava_cat_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.lava_cat_flower_crown]
+	pet_kind = "lava_cat"
+	sprite_template = "spr_pet_lava_cat_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.lava_cat_purple_bow]
+	pet_kind = "lava_cat"
+	sprite_template = "spr_pet_lava_cat_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.lava_cat_green_bow]
+	pet_kind = "lava_cat"
+	sprite_template = "spr_pet_lava_cat_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.lava_cat_yellow_bow]
+	pet_kind = "lava_cat"
+	sprite_template = "spr_pet_lava_cat_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.lava_cat_red_bow]
+	pet_kind = "lava_cat"
+	sprite_template = "spr_pet_lava_cat_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.lava_cat_blue_bow]
+	pet_kind = "lava_cat"
+	sprite_template = "spr_pet_lava_cat_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.lava_cat_black_bow]
+	pet_kind = "lava_cat"
+	sprite_template = "spr_pet_lava_cat_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.lava_cat_pink_bow]
+	pet_kind = "lava_cat"
+	sprite_template = "spr_pet_lava_cat_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.void_cat_sun_hat]
+	pet_kind = "void_cat"
+	sprite_template = "spr_pet_void_cat_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.void_cat_unicorn_horn]
+	pet_kind = "void_cat"
+	sprite_template = "spr_pet_void_cat_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.void_cat_halo]
+	pet_kind = "void_cat"
+	sprite_template = "spr_pet_void_cat_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.void_cat_flower_crown]
+	pet_kind = "void_cat"
+	sprite_template = "spr_pet_void_cat_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.void_cat_purple_bow]
+	pet_kind = "void_cat"
+	sprite_template = "spr_pet_void_cat_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.void_cat_green_bow]
+	pet_kind = "void_cat"
+	sprite_template = "spr_pet_void_cat_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.void_cat_yellow_bow]
+	pet_kind = "void_cat"
+	sprite_template = "spr_pet_void_cat_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.void_cat_red_bow]
+	pet_kind = "void_cat"
+	sprite_template = "spr_pet_void_cat_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.void_cat_blue_bow]
+	pet_kind = "void_cat"
+	sprite_template = "spr_pet_void_cat_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.void_cat_black_bow]
+	pet_kind = "void_cat"
+	sprite_template = "spr_pet_void_cat_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.void_cat_pink_bow]
+	pet_kind = "void_cat"
+	sprite_template = "spr_pet_void_cat_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.rock_stack_sun_hat]
+	pet_kind = "rock_stack"
+	sprite_template = "spr_pet_rock_stack_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.rock_stack_unicorn_horn]
+	pet_kind = "rock_stack"
+	sprite_template = "spr_pet_rock_stack_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.rock_stack_halo]
+	pet_kind = "rock_stack"
+	sprite_template = "spr_pet_rock_stack_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.rock_stack_flower_crown]
+	pet_kind = "rock_stack"
+	sprite_template = "spr_pet_rock_stack_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.rock_stack_purple_bow]
+	pet_kind = "rock_stack"
+	sprite_template = "spr_pet_rock_stack_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.rock_stack_green_bow]
+	pet_kind = "rock_stack"
+	sprite_template = "spr_pet_rock_stack_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.rock_stack_yellow_bow]
+	pet_kind = "rock_stack"
+	sprite_template = "spr_pet_rock_stack_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.rock_stack_red_bow]
+	pet_kind = "rock_stack"
+	sprite_template = "spr_pet_rock_stack_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.rock_stack_blue_bow]
+	pet_kind = "rock_stack"
+	sprite_template = "spr_pet_rock_stack_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.rock_stack_black_bow]
+	pet_kind = "rock_stack"
+	sprite_template = "spr_pet_rock_stack_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.rock_stack_pink_bow]
+	pet_kind = "rock_stack"
+	sprite_template = "spr_pet_rock_stack_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.flying_tome_sun_hat]
+	pet_kind = "flying_tome"
+	sprite_template = "spr_pet_flying_tome_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.flying_tome_unicorn_horn]
+	pet_kind = "flying_tome"
+	sprite_template = "spr_pet_flying_tome_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.flying_tome_halo]
+	pet_kind = "flying_tome"
+	sprite_template = "spr_pet_flying_tome_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.flying_tome_flower_crown]
+	pet_kind = "flying_tome"
+	sprite_template = "spr_pet_flying_tome_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.flying_tome_purple_bow]
+	pet_kind = "flying_tome"
+	sprite_template = "spr_pet_flying_tome_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.flying_tome_green_bow]
+	pet_kind = "flying_tome"
+	sprite_template = "spr_pet_flying_tome_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.flying_tome_yellow_bow]
+	pet_kind = "flying_tome"
+	sprite_template = "spr_pet_flying_tome_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.flying_tome_red_bow]
+	pet_kind = "flying_tome"
+	sprite_template = "spr_pet_flying_tome_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.flying_tome_blue_bow]
+	pet_kind = "flying_tome"
+	sprite_template = "spr_pet_flying_tome_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.flying_tome_black_bow]
+	pet_kind = "flying_tome"
+	sprite_template = "spr_pet_flying_tome_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.flying_tome_pink_bow]
+	pet_kind = "flying_tome"
+	sprite_template = "spr_pet_flying_tome_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetics.griffin_statue_sun_hat]
+	pet_kind = "griffin_statue"
+	sprite_template = "spr_pet_griffin_statue_cosmetic_sun_hat_{ANIMATION_KEY}"
+	cosmetic_set = "sun_hat"
+
+[cosmetics.griffin_statue_unicorn_horn]
+	pet_kind = "griffin_statue"
+	sprite_template = "spr_pet_griffin_statue_cosmetic_unicorn_horn_{ANIMATION_KEY}"
+	cosmetic_set = "unicorn_horn"
+
+[cosmetics.griffin_statue_halo]
+	pet_kind = "griffin_statue"
+	sprite_template = "spr_pet_griffin_statue_cosmetic_halo_{ANIMATION_KEY}"
+	cosmetic_set = "halo"
+
+[cosmetics.griffin_statue_flower_crown]
+	pet_kind = "griffin_statue"
+	sprite_template = "spr_pet_griffin_statue_cosmetic_flower_crown_{ANIMATION_KEY}"
+	cosmetic_set = "flower_crown"
+
+[cosmetics.griffin_statue_purple_bow]
+	pet_kind = "griffin_statue"
+	sprite_template = "spr_pet_griffin_statue_cosmetic_purple_bow_{ANIMATION_KEY}"
+	cosmetic_set = "purple_bow"
+
+[cosmetics.griffin_statue_green_bow]
+	pet_kind = "griffin_statue"
+	sprite_template = "spr_pet_griffin_statue_cosmetic_green_bow_{ANIMATION_KEY}"
+	cosmetic_set = "green_bow"
+
+[cosmetics.griffin_statue_yellow_bow]
+	pet_kind = "griffin_statue"
+	sprite_template = "spr_pet_griffin_statue_cosmetic_yellow_bow_{ANIMATION_KEY}"
+	cosmetic_set = "yellow_bow"
+
+[cosmetics.griffin_statue_red_bow]
+	pet_kind = "griffin_statue"
+	sprite_template = "spr_pet_griffin_statue_cosmetic_red_bow_{ANIMATION_KEY}"
+	cosmetic_set = "red_bow"
+
+[cosmetics.griffin_statue_blue_bow]
+	pet_kind = "griffin_statue"
+	sprite_template = "spr_pet_griffin_statue_cosmetic_blue_bow_{ANIMATION_KEY}"
+	cosmetic_set = "blue_bow"
+
+[cosmetics.griffin_statue_black_bow]
+	pet_kind = "griffin_statue"
+	sprite_template = "spr_pet_griffin_statue_cosmetic_black_bow_{ANIMATION_KEY}"
+	cosmetic_set = "black_bow"
+
+[cosmetics.griffin_statue_pink_bow]
+	pet_kind = "griffin_statue"
+	sprite_template = "spr_pet_griffin_statue_cosmetic_pink_bow_{ANIMATION_KEY}"
+	cosmetic_set = "pink_bow"
+
+[cosmetic_sets.halo]
+	ui_icon = "spr_ui_item_pet_cosmetic_halo"
+	name = "Halo"
+
+[cosmetic_sets.flower_crown]
+	ui_icon = "spr_ui_item_pet_cosmetic_flower_crown"
+	name = "Flower Crown"
+
+[cosmetic_sets.purple_bow]
+	ui_icon = "spr_ui_item_pet_cosmetic_purple_bow"
+	name = "Purple Bow"
+
+[cosmetic_sets.green_bow]
+	ui_icon = "spr_ui_item_pet_cosmetic_green_bow"
+	name = "Green Bow"
+
+[cosmetic_sets.yellow_bow]
+	ui_icon = "spr_ui_item_pet_cosmetic_yellow_bow"
+	name = "Yellow Bow"
+
+[cosmetic_sets.red_bow]
+	ui_icon = "spr_ui_item_pet_cosmetic_red_bow"
+	name = "Red Bow"
+
+[cosmetic_sets.blue_bow]
+	ui_icon = "spr_ui_item_pet_cosmetic_blue_bow"
+	name = "Blue Bow"
+
+[cosmetic_sets.black_bow]
+	ui_icon = "spr_ui_item_pet_cosmetic_black_bow"
+	name = "Black Bow"
+
+[cosmetic_sets.pink_bow]
+	ui_icon = "spr_ui_item_pet_cosmetic_pink_bow"
+	name = "Pink Bow"
+
+[cosmetic_sets.sun_hat]
+	ui_icon = "spr_ui_item_pet_cosmetic_sun_hat"
+	name = "Sun Hat"
+
+[cosmetic_sets.unicorn_horn]
+	ui_icon = "spr_ui_item_pet_cosmetic_unicorn_horn"
+	name = "Unicorn Horn"
+
+[cosmetic_sets.skull_mask]
+	ui_icon = "spr_ui_item_pet_cosmetic_skull_mask"
+	name = "Skull Mask"

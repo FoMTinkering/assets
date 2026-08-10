@@ -1,0 +1,106 @@
+[beach_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "reina" },
+	{ date = "beach" },
+	{ da_reina_beach = 0 },
+	{ reina_is_spouse = false }
+]
+writes = [
+	{ da_reina_beach = 1 },
+	{ da_reina_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "Oh! A walk on the Beach?"
+next = "1"
+
+[beach_accept_1.1]
+speaker = "reina"
+portrait = "blush_think"
+local = "You know, [Ari]..."
+next = "2"
+
+[beach_accept_1.2]
+speaker = "reina"
+portrait = "blush"
+local = "That sounds pretty romantic!"
+
+[beach_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "reina" },
+	{ date = "beach" },
+	{ reina_has_child = false },
+	{ any = [
+		{ reina_is_spouse = true },
+		{ da_reina_beach = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_reina_beach = 2 },
+	{ da_reina_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "reina"
+portrait = "blush_open_eyes"
+local = "Should we go look for some shells at the Beach, [Ari]?"
+
+[beach_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ da_reina_beach = 1 },
+	{ da_reina_beach_follow_up_gate = true },
+	{ reina_is_spouse = false }
+]
+writes = [{ da_reina_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush_open_eyes"
+local = "I had a great time at the Beach, [Ari]!"
+next = "1"
+
+[beach_follow_up_1.1]
+portrait = "blush_think"
+local = "It's silly, but I honestly had so much fun looking for shells with you!"
+prompts = [
+	{ local = "They were pretty... but not as pretty as you!", next = "2" },
+	{ local = "We should start a collection!", next = "4" },
+]
+
+[beach_follow_up_1.2]
+portrait = "blush_special"
+local = "Haha! [Ari]!"
+next = "3"
+
+[beach_follow_up_1.3]
+portrait = "embarrassed"
+local = "So smooth!"
+
+[beach_follow_up_1.4]
+portrait = "blush_open_eyes"
+local = "Oooh that would be cute!"
+next = "5"
+
+[beach_follow_up_1.5]
+portrait = "wink"
+local = "I suppose we'll have to go again soon and look for more!"
+
+[beach_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "reina" },
+	{ reina_has_child = false },
+	{ any = [{ reina_is_spouse = true }, { da_reina_beach = 2 }] },
+	{ da_reina_beach_follow_up_gate = true }
+]
+writes = [{ da_reina_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "embarrassed"
+local = "That was really fun, [Ari]!"
+next = "1"
+
+[beach_follow_up_2.1]
+portrait = "blush_open_eyes"
+local = "Our shell collection is getting bigger and bigger!"

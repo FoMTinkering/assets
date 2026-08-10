@@ -1,0 +1,393 @@
+var ari_is_hammering = false;
+var ari_is_sawing = false;
+
+fun ari_saw_sound() {
+	if ari_is_sawing == false {
+		return;
+	}
+	play_sound("SoundEffects/Tools/SawBackAndForth2D");
+	wait(0.9);
+	if ari_is_sawing == false {
+		return;
+	}
+	ari_saw_sound();
+}
+
+fun ari_saw() {
+	sim {
+		animate(ari, saw);
+		ari_set_attachment(craftingsaw);
+		face(ari, east);
+	}
+	{
+		ari_saw_sound();
+	}
+}
+fun ari_hammer_sound() {
+	if ari_is_hammering == false {
+		return;
+	}
+	wait(0.1);
+	play_sound("SoundEffects/Tools/BlacksmithingHammerSwingAndHit2D");
+	wait(0.35);
+	if ari_is_hammering == false {
+		return;
+	}
+	ari_hammer_sound();
+}
+
+fun ari_hammer() {
+	sim {
+		{
+			animate(ari, axe);
+			ari_set_attachment(craftinghammer);
+			face(ari, east);
+		}
+		{
+			free ari_hammer_sound();
+		}
+	}
+
+}
+
+fun ari_dig() {
+	animate(ari, shovel);
+	ari_set_attachment(shovel_worn);
+}
+
+scene(beach);
+place_actor(adeline, west, rtbb2_adeline_entrance);
+place_actor(terithia, west, rtbb2_terithia_construction_1);
+animate(terithia, action);
+place_actor(ari, west, rtbb2_ari_construction_1);
+ari_dig();
+camera_position(rtbb2_camera_1);
+request_music_play("Music/Events/Cutscene");
+
+sim {
+	{
+		wait(0.25);
+		play_sound("SoundEffects/SpecialEvents/Construction");
+		play_sound("SoundEffects/SpecialEvents/Construction");
+		wait(3);
+		play_sound("SoundEffects/SpecialEvents/Construction");
+		play_sound("SoundEffects/SpecialEvents/Construction");
+		//
+		//
+		//
+	}
+	{
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_1, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_6, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_2, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_5, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_3, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_4, 0, 0, 0, -5000);
+	}
+	{
+		wait(0.75);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_1, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_6, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_2, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_5, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_3, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_4, 0, 0, 0, -5000);
+	}
+	{
+		wait(1.25);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_1, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_6, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_2, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_5, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_3, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_4, 0, 0, 0, -5000);
+	}
+	{
+		wait(2);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_1, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_6, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_2, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_5, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_3, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_4, 0, 0, 0, -5000);
+	}
+	{
+		wait(2.75);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_1, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_6, 0, 0, 0, -5000);
+		wait(0.5);
+	}
+	{
+		wait(3.75);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_7, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_12, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_8, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_11, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_10, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_9, 0, 0, 0, -5000);
+	}
+	{
+		wait(4.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_7, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_12, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_8, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_11, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_10, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_9, 0, 0, 0, -5000);
+	}
+	{
+		wait(5.25);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_7, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_12, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_8, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_11, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_10, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_9, 0, 0, 0, -5000);
+	}
+	{
+		wait(6);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_7, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_12, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_8, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_poof1_dirt_once, rtbb2_dust_11, 0, 0, 0, -5000);
+	}
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		wait(3.5);
+		animate(ari, idle);
+		ari_is_hammering = false;
+		place_actor(ari, east, rtbb2_ari_construction_2);
+		ari_is_hammering = true;
+		free ari_hammer();
+		wait(3);
+	}
+	{
+		wait(1);
+		animate(terithia, idle);
+		animate(terithia, action);
+		wait(1);
+		animate(terithia, idle);
+		animate(terithia, action);
+		wait(1);
+		animate(terithia, idle);
+		animate(terithia, action);
+		wait(1);
+		animate(terithia, idle);
+		place_actor(terithia, east, rtbb2_terithia_construction_2);
+		animate(terithia, action);
+		wait(1);
+		animate(terithia, idle);
+		animate(terithia, action);
+		wait(1);
+		animate(terithia, idle);
+		animate(terithia, action);
+		wait(1);
+		animate(terithia, idle);
+		animate(terithia, action);
+	}
+	{
+		pan_camera(8, rtbb2_camera_3);
+	}
+}
+ari_is_hammering = false;
+
+sim {
+	sim {
+		override_requirement("repaired_beach_bridge");
+		refresh_room_layers();
+		play_sound("SoundEffects/SpecialEvents/RevealTransition");
+		free bark_speech(adeline, exclamation_mark);
+	}
+	{
+		wait(3);
+		pan_camera(3, rtbb2_camera_2);
+	}
+	{
+		wait(0.25);
+		animate(ari, idle);
+		wait(0.25);
+		face(ari, east);
+		wait(2.5);
+		walk_slow(ari, rtbb2_ari_start);
+		face(ari, north);
+		wait(0.25);
+		free bark_speech(ari, cute_face);
+		free bark_speech(terithia, cute_face);
+	}
+	{
+		wait(0.5);
+		animate(terithia, idle);
+		wait(0.5);
+		face(terithia, east);
+		wait(1.75);
+		walk_slow(terithia, rtbb2_terithia_start);
+		face(terithia, south);
+	}
+	{
+		wait(2.5);
+		walk_slow(adeline, rtbb2_adeline_start);
+		face(adeline, west);
+		wait(1);
+		face(adeline, east);
+		wait(1);
+		face(adeline, north);
+	}
+	free {
+		wait(1);
+		create_animation(spr_fx_twinkle_1, rtbb2_dust_1, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_sparkle_1, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_dust_6, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_sparkle_2, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_dust_2, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_sparkle_3, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_dust_12, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_sparkle_4, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_dust_9, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_sparkle_5, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_dust_8, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_dust_4, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_dust_9, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_dust_5, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_dust_10, 0, 0, 0, -5000);
+	}
+	free {
+		wait(2);
+		create_animation(spr_fx_twinkle_1, rtbb2_dust_1, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_sparkle_1, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_dust_6, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_sparkle_2, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_dust_2, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_sparkle_3, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_dust_12, 0, 0, 0, -5000);
+		wait(0.25);
+		create_animation(spr_fx_twinkle_1, rtbb2_sparkle_4, 0, 0, 0, -5000);
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(adeline, west);
+	}
+	{
+		wait(0.75);
+		face(terithia, east);
+	}
+	{
+		wait(1.25);
+		face(ari, east);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		face(terithia, west);
+		wait(3);
+		face(terithia, east);
+	}
+	{
+		next_line(); //
+	}
+}
+next_line(); //
+//
+sim {
+	{
+		wait(0.75);
+		free bark_speech(terithia, exclamation_mark);
+		wait(0.5);
+		face(terithia, south);
+	}
+	{
+		wait(1.5);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.75);
+		face(terithia, east);
+	}
+	{
+		wait(1.25);
+		face(ari, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(adeline, cute_face);
+wait(1);
+free bark_speech(ari, cute_face);
+free bark_speech(terithia, cute_face);
+wait(1);
+fade_out(2);

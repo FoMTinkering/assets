@@ -1,0 +1,50 @@
+[rum]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "eiland" },
+		{ npc = "elsie" },
+		{ npc = "errol" },
+		{ npc = "juniper" },
+		{ npc = "terithia" }
+	] },
+	{ eiland_zone = "<elsie_zone>" },
+	{ eiland_zone = "<errol_zone>" },
+	{ eiland_zone = "<juniper_zone>" },
+	{ eiland_zone = "<terithia_zone>" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ juniper_can_drink = true }
+]
+speaker = "eiland"
+portrait = "ugh"
+local = "Help me, [Ari]! Terithia is making us try some rum she fished out of the bay!"
+next = "1"
+
+[rum.1]
+speaker = "errol"
+portrait = "happy"
+local = "No need to be worried, Lord Eiland. The rum is perfectly safe, I assure you."
+next = "2"
+
+[rum.2]
+speaker = "elsie"
+portrait = "wink"
+local = "I think Eiland's more worried because rum goes straight to his head."
+next = "3"
+
+[rum.3]
+speaker = "juniper"
+portrait = "annoyed"
+local = "Ugh, me too."
+next = "4"
+
+[rum.4]
+speaker = "juniper"
+portrait = "wink"
+local = "But it's hard to pass up a drink of such unique circumstance."
+next = "5"
+
+[rum.5]
+speaker = "terithia"
+portrait = "happy"
+local = "That's the spirit! Bottoms up!"

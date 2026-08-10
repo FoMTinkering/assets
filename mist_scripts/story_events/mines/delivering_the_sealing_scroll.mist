@@ -1,0 +1,117 @@
+scene(farm);
+request_music_play("Music/Events/Cutscene");
+camera_position(tss_camera_1);
+place_actor(ari, south, tss_ari_door);
+place_actor(balor, west, tss_balor_entrance);
+request_music_play("Music/Events/DragonCutscene");
+
+sim {
+	fade_in(2);
+	{
+		walk_slow(balor, tss_balor_start);
+		face(balor, west);
+	}
+	{
+		wait(0.75);
+		free bark_speech(ari, exclamation_mark);
+		wait(0.5);
+		face(ari, east);
+	}
+	{
+		wait(0.25);
+		sim {
+			walk(ari, tss_ari_entrance);
+			set_move_speed(ari, 0.4);
+		}
+		face(ari, south);
+	}
+	{
+		wait(1.5);
+		next_line(); //
+	}
+	pan_camera(1.5, tss_camera_2);
+}
+close_textbox();
+sim {
+	{
+		wait(0.5);
+		animate(balor, action);
+		wait(0.5);
+		animate(balor, idle);
+	}
+	{
+		wait(1);
+		ari_hold_item(sealing_scroll);
+		wait(0.75);
+		animate(ari, idle);
+		face(ari, east);
+	}
+}
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(balor, cute_face);
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.75);
+sim {
+	{
+		pan_camera(1.25, tss_camera_3);
+	}
+	{
+		sim {
+			walk(balor, tss_balor_pause);
+			set_move_speed(balor, 0.4);
+		}
+		face(balor, east);
+	}
+
+}
+wait(1);
+sim {
+	{
+		face(balor, west);
+	}
+	{
+		wait(0.5);
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1.25);
+		face(balor, east);
+	}
+	{
+		wait(0.5);
+		pan_camera(2, tss_camera_4);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(balor, ellipses);
+wait(2);
+sim {
+	{
+		face(balor, west);
+	}
+	{
+		wait(0.5);
+		next_line(); //
+	}
+	{
+		pan_camera(2, tss_camera_2);
+	}
+}
+close_textbox();
+sim {
+	fade_out(2);
+	{
+		wait(1);
+		walk_slow(balor, tss_balor_exit);
+		face(balor, east);
+	}
+}

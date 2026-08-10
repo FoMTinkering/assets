@@ -1,0 +1,590 @@
+[celine_eight_hearts_follow_up_celine_romantic]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_heart_event = "eight_heart" },
+	{ celine_is_partner = true },
+	{ celine_eight_heart_priority_bump = true }
+]
+actions = [{ bark = { bark = "blush", npc = "celine" } }]
+portrait = "embarrassed"
+local = "I had such a wonderful time on our picnic, [Ari]."
+next = "1"
+
+[celine_eight_hearts_follow_up_celine_romantic.1]
+portrait = "blush_closed_eyes"
+local = "Thank you again for joining me. We should do it again sometime!"
+
+[celine_eight_hearts_follow_up_dell_romantic]
+refresh = "never"
+requires = [
+	{ npc = "dell" },
+	{ celine_heart_event = "eight_heart" },
+	{ celine_is_partner = true },
+	{ dell_zone = "<celine_zone>", comparator = "!=" }
+]
+portrait = "neutral"
+local = "Hey [Ari]! You and my sister like each other, huh?"
+next = "1"
+
+[celine_eight_hearts_follow_up_dell_romantic.1]
+portrait = "think"
+local = "You know... Celine told me it would be REALLY cool if you gave me any old swords you had lying around..."
+next = "2"
+
+[celine_eight_hearts_follow_up_dell_romantic.2]
+portrait = "happy"
+local = "Just so you know! Okay, bye!"
+
+[celine_eight_hearts_follow_up_nora_romantic]
+refresh = "never"
+requires = [
+	{ npc = "nora" },
+	{ celine_heart_event = "eight_heart" },
+	{ celine_is_partner = true },
+	{ nora_zone = "<celine_zone>", comparator = "!=" }
+]
+portrait = "neutral"
+local = "Celine seems to have a little extra spring in her step today..."
+next = "1"
+
+[celine_eight_hearts_follow_up_nora_romantic.1]
+portrait = "happy"
+local = "Why do I suspect you have something to do with that, [Ari]?"
+
+[celine_eight_hearts_follow_up_celine_best_friend]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ celine_heart_event = "eight_heart" },
+	{ celine_is_best_friend = true },
+	{ celine_eight_heart_priority_bump = true }
+]
+portrait = "happy"
+local = "I had such a wonderful time at our picnic, [Ari]."
+next = "1"
+
+[celine_eight_hearts_follow_up_celine_best_friend.1]
+portrait = "neutral"
+local = "Thank you again for joining me. We should do it again sometime!"
+
+[celine_eight_hearts_follow_up_dell_best_friend]
+refresh = "never"
+requires = [
+	{ npc = "dell" },
+	{ celine_heart_event = "eight_heart" },
+	{ celine_is_best_friend = true },
+	{ dell_zone = "<celine_zone>", comparator = "!=" }
+]
+portrait = "neutral"
+local = "Hey [Ari]! You and my sister are best friends, huh?"
+next = "1"
+
+[celine_eight_hearts_follow_up_dell_best_friend.1]
+portrait = "think"
+local = "You know... Celine told me it would be REALLY cool if you gave me any old swords you had lying around..."
+next = "2"
+
+[celine_eight_hearts_follow_up_dell_best_friend.2]
+portrait = "happy"
+local = "Just so you know! Okay, bye!"
+
+[celine_eight_hearts_follow_up_nora_best_friend]
+refresh = "never"
+requires = [
+	{ npc = "nora" },
+	{ celine_heart_event = "eight_heart" },
+	{ celine_is_best_friend = true },
+	{ nora_zone = "<celine_zone>", comparator = "!=" }
+]
+portrait = "neutral"
+local = "Celine is lucky to have a good friend like you, [Ari]."
+next = "1"
+
+[celine_eight_hearts_follow_up_nora_best_friend.1]
+portrait = "happy"
+local = "Thank you for always looking out for her."
+
+[celine_eight_hearts]
+kind = "gameplay_triggered"
+writes = [
+	{ celine_heart_event = "eight_heart", expires = "4d" },
+	{ celine_eight_heart_priority_bump = true, expires = "4d" }
+]
+speaker = "celine"
+portrait = "neutral"
+local = "Hi [Ari]!"
+next = "1"
+
+[celine_eight_hearts.1]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "I'm glad you could make it!"
+next = "2"
+
+[celine_eight_hearts.2]
+speaker = "celine"
+portrait = "neutral"
+local = "I'm just finishing up the picnic preparations."
+next = "3"
+
+[celine_eight_hearts.3]
+speaker = "celine"
+portrait = "happy"
+local = "I made cucumber sandwiches, cake, and tea."
+prompts = [
+	{ local = "That sounds delicious!", next = "4" },
+	{ local = "What kind of cake?", next = "5" }
+]
+
+[celine_eight_hearts.4]
+speaker = "celine"
+portrait = "very_happy"
+local = "Yay! I'll just finish packing everything up and we can get going."
+next = "6"
+
+[celine_eight_hearts.5]
+speaker = "celine"
+portrait = "sweat"
+local = "I went with strawberry, I hope that's okay! I'll just finish packing everything up and we can get going."
+next = "6"
+
+[celine_eight_hearts.6]
+speaker = "celine"
+portrait = "think"
+local = "I was thinking we could walk up to the summit."
+next = [
+	{ target = "7r", requires = [{ shooting_star_celine_attended = true }] },
+	{ target = "7f", requires = [] }
+]
+
+[celine_eight_hearts.7r]
+speaker = "celine"
+portrait = "embarrassed"
+local = "Ever since the Shooting Star Festival, it's become one of my favorite places..."
+next = "8"
+
+[celine_eight_hearts.7f]
+speaker = "celine"
+portrait = "happy"
+local = "I'm not always the best with heights but... the view is so beautiful! I'm sure I'll be fine with you there."
+next = "8"
+
+[celine_eight_hearts.8]
+speaker = "celine"
+portrait = "neutral"
+local = "Okay, I think we're all ready to go!"
+next = "9"
+
+[celine_eight_hearts.9]
+speaker = "celine"
+portrait = "happy"
+local = "Would you mind carrying the flower?"
+next = "10"
+
+[celine_eight_hearts.10]
+speaker = "celine"
+portrait = "sweat"
+local = "I thought it might like to join us for some fresh air and..."
+next = "11"
+
+[celine_eight_hearts.11]
+speaker = "celine"
+portrait = "think"
+local = "Well, it has something to do with my theory, too."
+next = "12"
+
+[celine_eight_hearts.12]
+speaker = "celine"
+portrait = "happy"
+local = "Thanks, [Ari]. I'll carry the picnic basket."
+next = [
+	{ target = "13r", requires = [{ shooting_star_celine_attended = true }] },
+	{ target = "13f", requires = [] }
+]
+
+[celine_eight_hearts.13r]
+speaker = "celine"
+portrait = "blush"
+local = "Isn't the view wonderful? I knew it would make the perfect setting for our date."
+next = "14"
+
+[celine_eight_hearts.13f]
+speaker = "celine"
+portrait = "neutral"
+local = "Isn't this nice? You can see all around us for miles..."
+next = "14"
+
+[celine_eight_hearts.14]
+speaker = "celine"
+portrait = "happy"
+local = "Here, I'll pour us some tea!"
+next = "15"
+
+[celine_eight_hearts.15]
+speaker = "celine"
+portrait = "neutral"
+local = "I've been meaning to ask you..."
+next = [
+	{ target = "16r", requires = [{ shooting_star_celine_attended = true }] },
+	{ target = "16f", requires = [] }
+]
+
+[celine_eight_hearts.16r]
+speaker = "celine"
+portrait = "embarrassed"
+local = "Um... How are things going on the farm lately, [Ari]?"
+prompts = [
+	{ local = "They're going well!", next = "17" },
+	{ local = "Still a work in progress...", next = "18" }
+]
+
+[celine_eight_hearts.16f]
+speaker = "celine"
+portrait = "happy"
+local = "How are things going on the farm lately, [Ari]?"
+prompts = [
+	{ local = "They're going well!", next = "17" },
+	{ local = "Still a work in progress...", next = "18" }
+]
+
+[celine_eight_hearts.17]
+speaker = "celine"
+portrait = "neutral"
+local = "I'm so glad!"
+next = "19"
+
+[celine_eight_hearts.18]
+speaker = "celine"
+portrait = "neutral"
+local = "I know that feeling! My garden is a continuous work in progress, too."
+next = "19"
+
+[celine_eight_hearts.19]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "I can tell you put a lot of care into raising your crops."
+next = "20"
+
+[celine_eight_hearts.20]
+speaker = "celine"
+portrait = "neutral"
+local = "It sounds silly but... it's almost magical to watch them grow, isn't it?"
+next = "21"
+
+[celine_eight_hearts.21]
+speaker = "celine"
+portrait = "think"
+local = "You know, I never met anyone who really gets me when I talk about gardening..."
+next = [
+	{ target = "22r", requires = [{ shooting_star_celine_attended = true }] },
+	{ target = "22f", requires = [] }
+]
+
+[celine_eight_hearts.22r]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "U-Until I met you."
+next = "23"
+
+[celine_eight_hearts.22f]
+speaker = "celine"
+portrait = "happy"
+local = "Until I met you."
+next = "23"
+
+[celine_eight_hearts.23]
+speaker = "celine"
+portrait = "neutral"
+local = "It's not that I'm the only one in town with a green thumb. There's Hayden, and even Errol..."
+next = "24"
+
+[celine_eight_hearts.24]
+speaker = "celine"
+portrait = "sweat"
+local = "But I can't picture either of them chasing after a lost flower from the Codex Mistria, can you?"
+next = "25"
+
+[celine_eight_hearts.25]
+speaker = "celine"
+portrait = "embarrassed"
+local = "Growing up, I always loved to read stories about enchanted blossoms, giant beanstalks-"
+next = "26"
+
+[celine_eight_hearts.26]
+speaker = "celine"
+portrait = "blush_special"
+local = "Fantastical tales full of magic and dragons."
+next = "27"
+
+[celine_eight_hearts.27]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "At night I'd dream of mysterious forests and hidden sanctuaries filled with beautiful flowers. White, purple, and brilliant gold."
+next = "28"
+
+[celine_eight_hearts.28]
+speaker = "celine"
+portrait = "shy_blush"
+local = "I'd dream that I had grown them all myself."
+next = "29"
+
+[celine_eight_hearts.29]
+speaker = "celine"
+portrait = "neutral"
+local = "So you can imagine my excitement when Errol let me borrow an ancient book of flora he found in the town's archives."
+next = "30"
+
+[celine_eight_hearts.30]
+speaker = "celine"
+portrait = "sweat"
+local = "My nose was always in one book or another, but poring through the Codex for the first time, something happened..."
+next = "31"
+
+[celine_eight_hearts.31]
+speaker = "celine"
+portrait = "embarrassed"
+local = "It felt meant to be. Like my own adventure was finally beginning."
+next = [
+	{ target = "32r", requires = [{ shooting_star_celine_attended = true }] },
+	{ target = "32f", requires = [] }
+]
+
+[celine_eight_hearts.32r]
+speaker = "celine"
+portrait = "shy_blush"
+local = "And I'm so happy that it's become... our adventure."
+next = "33"
+
+[celine_eight_hearts.32f]
+speaker = "celine"
+portrait = "neutral"
+local = "Thank you for being part of it, [Ari]."
+next = "33"
+
+[celine_eight_hearts.33]
+speaker = "celine"
+portrait = "happy"
+local = "Who would have thought our search to revive a lost flower would come this far?"
+prompts = [
+	{ local = "Speaking of which, how is our flower doing?", next = "34" },
+	{ local = "Speaking of which, you mentioned you have a theory about it?", next = "35" }
+]
+
+[celine_eight_hearts.34]
+speaker = "celine"
+portrait = "laugh"
+local = "Well, aside from remaining a bud, it seems to be doing well."
+next = "36"
+
+[celine_eight_hearts.35]
+speaker = "celine"
+portrait = "laugh"
+local = "Oh, right! Well-"
+next = "36"
+
+[celine_eight_hearts.36]
+speaker = "celine"
+portrait = "think"
+local = "I've observed that temperature, sunlight, and water levels don't seem to affect it like a normal plant."
+next = "37"
+
+[celine_eight_hearts.37]
+speaker = "celine"
+portrait = "gloomy"
+local = "When I first potted it, I couldn't get it to grow at all."
+next = "38"
+
+[celine_eight_hearts.38]
+speaker = "celine"
+portrait = "neutral"
+local = "In fact, the seed didn't even sprout until the day you came over to help me care for it."
+next = "39"
+
+[celine_eight_hearts.39]
+speaker = "celine"
+portrait = "shy_blush"
+local = "Then it unexpectedly grew again, at my parents' house... when we all laughed together."
+next = [
+	{ target = "40r", requires = [{ shooting_star_celine_attended = true }] },
+	{ target = "40f", requires = [] }
+]
+
+[celine_eight_hearts.40r]
+speaker = "celine"
+portrait = "embarrassed"
+local = "It got me wondering if maybe it grows on... emotion?"
+next = "41"
+
+[celine_eight_hearts.40f]
+speaker = "celine"
+portrait = "embarrassed"
+local = "It got me wondering if maybe it grows on... connection?"
+next = "41"
+
+[celine_eight_hearts.41]
+speaker = "celine"
+portrait = "blush_special"
+local = "I-it's just a theory!"
+next = [
+	{ target = "42r", requires = [{ shooting_star_celine_attended = true }] },
+	{ target = "42f", requires = [] }
+]
+
+[celine_eight_hearts.42r]
+speaker = "celine"
+portrait = "embarrassed"
+local = "But... It also got me thinking that I've been meaning to tell you how I feel-"
+next = "43r"
+
+[celine_eight_hearts.42f]
+speaker = "celine"
+portrait = "happy"
+local = "But... It also got me thinking that I've been meaning to tell you how much-"
+next = "43f"
+
+[celine_eight_hearts.43r]
+speaker = "celine"
+portrait = "sweat"
+local = "How much I like... w-what I mean is-"
+next = "44r"
+
+[celine_eight_hearts.43f]
+speaker = "celine"
+portrait = "sweat"
+local = "How much your help, um-"
+next = "44f"
+
+[celine_eight_hearts.44r]
+speaker = "celine"
+portrait = "blush_special"
+local = "I-"
+prompts = [
+	{ local = "You're my best friend too, Celine.", next = "45r" },
+	{ local = "I have feelings for you too, Celine.", next = "48r" }
+]
+
+[celine_eight_hearts.44f]
+speaker = "celine"
+portrait = "blush_special"
+local = "H-how much you mean to me, [Ari]."
+prompts = [
+	{ local = "You're my best friend too, Celine.", next = "45f" },
+	{ local = "I have feelings for you too, Celine.", next = "48f" }
+]
+
+[celine_eight_hearts.45r]
+actions = [{ update_status = { npc = "celine", status = "best_friend" } }]
+speaker = "celine"
+portrait = "think_special"
+local = "Oh...!"
+next = "46r"
+
+[celine_eight_hearts.45f]
+actions = [{ update_status = { npc = "celine", status = "best_friend" } }]
+speaker = "celine"
+portrait = "very_happy"
+local = "[Ari]...!"
+next = "46f"
+
+[celine_eight_hearts.46r]
+speaker = "celine"
+portrait = "shy_blush"
+local = "W-well..."
+next = "47r"
+
+[celine_eight_hearts.46f]
+speaker = "celine"
+portrait = "neutral"
+local = "Thank you."
+next = "47f"
+
+[celine_eight_hearts.47r]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "You're my best friend too, [Ari]!"
+next = "51"
+
+[celine_eight_hearts.47f]
+speaker = "celine"
+portrait = "happy"
+local = "I'm so glad you feel the same way."
+next = "51"
+
+[celine_eight_hearts.48r]
+actions = [{ update_status = { npc = "celine", status = "dating" } }]
+speaker = "celine"
+portrait = "teary_special"
+local = "[Ari]...!"
+next = "49r"
+
+[celine_eight_hearts.48f]
+actions = [{ update_status = { npc = "celine", status = "dating" } }]
+speaker = "celine"
+portrait = "teary_special"
+local = "[Ari]...!"
+next = "49f"
+
+[celine_eight_hearts.49r]
+speaker = "celine"
+portrait = "shy_blush"
+local = "Do you really?"
+next = "50r"
+
+[celine_eight_hearts.49f]
+speaker = "celine"
+portrait = "shy_blush"
+local = "You do?"
+next = "50f"
+
+[celine_eight_hearts.50r]
+speaker = "celine"
+portrait = "blush"
+local = "I'm so glad you feel the same way."
+next = "51"
+
+[celine_eight_hearts.50f]
+speaker = "celine"
+portrait = "blush"
+local = "I'm so glad you feel the same way."
+next = "51"
+
+[celine_eight_hearts.51]
+speaker = "celine"
+portrait = "blush"
+local = "Oh my gosh!"
+next = "52"
+
+[celine_eight_hearts.52]
+speaker = "celine"
+portrait = "very_happy"
+local = "It's bloomed!"
+next = "53"
+
+[celine_eight_hearts.53]
+speaker = "celine"
+portrait = "teary_special"
+local = "We actually did it... We cultivated a lost flower together!"
+next = [
+	{ target = "54r", requires = [{ shooting_star_celine_attended = true }] },
+	{ target = "54f", requires = [] }
+]
+
+[celine_eight_hearts.54r]
+speaker = "celine"
+portrait = "very_happy"
+effect = "cheery"
+local = "Thank you, [Ari]. For helping to make this dream come true."
+next = "55"
+
+[celine_eight_hearts.54f]
+speaker = "celine"
+portrait = "very_happy"
+effect = "cheery"
+local = "Thank you, [Ari]. For helping to make this dream come true."
+next = "55"
+
+[celine_eight_hearts.55]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "Why don't we celebrate with a little something to eat? And maybe you can tell me more about some of your dreams..."

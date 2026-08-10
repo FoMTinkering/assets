@@ -1,0 +1,102 @@
+[beach_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "celine" },
+	{ date = "beach" },
+	{ da_celine_beach = 0 },
+	{ celine_is_spouse = false }
+]
+writes = [
+	{ da_celine_beach = 1 },
+	{ da_celine_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "celine"
+portrait = "embarrassed"
+local = "You want to go out to the Beach, [Ari]?"
+next = "1"
+
+[beach_accept_1.1]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "That sounds really nice!"
+next = "2"
+
+[beach_accept_1.2]
+speaker = "celine"
+portrait = "blush_special"
+local = "And romantic!"
+
+[beach_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "celine" },
+	{ date = "beach" },
+	{ celine_has_child = false },
+	{ any = [
+		{ celine_is_spouse = true },
+		{ da_celine_beach = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_celine_beach = 2 },
+	{ da_celine_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "celine"
+portrait = "blush"
+local = "A walk on the Beach sounds perfect, [Ari]."
+next = "1"
+
+[beach_accept_2.1]
+speaker = "celine"
+portrait = "embarrassed"
+local = "I was hoping you might ask!"
+
+[beach_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ da_celine_beach = 1 },
+	{ da_celine_beach_follow_up_gate = true },
+	{ celine_is_spouse = false }
+]
+writes = [{ da_celine_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "blush", npc = "celine" } }]
+portrait = "embarrassed"
+local = "Thank you for taking me out for a walk on the Beach, [Ari]."
+next = "1"
+
+[beach_follow_up_1.1]
+portrait = "shy_blush"
+local = "Now I understand why it comes up in romance novels so much."
+prompts = [
+	{ local = "Oh? Why's that?", next = "2" },
+	{ local = "You've started reading romance novels?", next = "3" },
+]
+
+[beach_follow_up_1.2]
+portrait = "blush_special"
+local = "[Ari]... A-are you teasing me!?"
+
+[beach_follow_up_1.3]
+portrait = "blush_special"
+local = "Oh! Well... Elsie's been giving me some advice lately. And um. She did give me some reading material."
+
+[beach_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "celine" },
+	{ celine_has_child = false },
+	{ any = [{ celine_is_spouse = true }, { da_celine_beach = 2 }] },
+	{ da_celine_beach_follow_up_gate = true }
+]
+writes = [{ da_celine_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "blush_closed_eyes"
+local = "That was such a nice walk on the Beach, [Ari]."
+next = "1"
+
+[beach_follow_up_2.1]
+portrait = "blush"
+local = "I'm looking forward to next time!"

@@ -1,0 +1,166 @@
+[deep_woods_picnic_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "eiland" },
+	{ date = "deep_woods_picnic" },
+	{ da_eiland_deep_woods_picnic = 0 },
+	{ eiland_is_spouse = false }
+]
+writes = [
+	{ da_eiland_deep_woods_picnic = 1 },
+	{ da_eiland_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "You want to go on a picnic date? In the $Deep Woods$?"
+next = "1"
+
+[deep_woods_picnic_accept_1.1]
+speaker = "eiland"
+portrait = "hope_special"
+local = "Oh... that sounds so nice."
+next = "2"
+
+[deep_woods_picnic_accept_1.2]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "There's nothing I'd like more, [Ari]."
+
+[deep_woods_picnic_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "eiland" },
+	{ date = "deep_woods_picnic" },
+	{ da_eiland_deep_woods_picnic = 1 },
+	{ eiland_is_spouse = false }
+]
+writes = [
+	{ da_eiland_deep_woods_picnic = 2 },
+	{ da_eiland_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "What do you think about going on a picnic today, [Ari]?"
+next = "1"
+
+[deep_woods_picnic_accept_2.1]
+speaker = "eiland"
+portrait = "hope_special"
+local = "I prepared some nice things for us to eat."
+
+[deep_woods_picnic_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "eiland" },
+	{ date = "deep_woods_picnic" },
+	{ eiland_has_child = false },
+	{ any = [
+		{ eiland_is_spouse = true },
+		{ da_eiland_deep_woods_picnic = 2, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_eiland_deep_woods_picnic = 3 },
+	{ da_eiland_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
+]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "You'd like to go on a picnic today?"
+next = "1"
+
+[deep_woods_picnic_accept_3.1]
+speaker = "eiland"
+portrait = "hope_special"
+local = "Of course, I'd love to!"
+
+[deep_woods_picnic_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ da_eiland_deep_woods_picnic = 1 },
+	{ da_eiland_deep_woods_picnic_follow_up_gate = true },
+	{ eiland_is_spouse = false }
+]
+writes = [{ da_eiland_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "happy_blush"
+local = "I had a wonderful time on our picnic date, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_1.1]
+portrait = "hope_special"
+local = "The treats you prepared were simply divine."
+next = "2"
+
+[deep_woods_picnic_follow_up_1.2]
+portrait = "happy_blush"
+local = "I'll have to give some serious thought on what to prepare for next time!"
+
+[deep_woods_picnic_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ da_eiland_deep_woods_picnic = 2 },
+	{ da_eiland_deep_woods_picnic_follow_up_gate = true },
+	{ eiland_is_spouse = false }
+]
+writes = [{ da_eiland_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "hope_special"
+local = "I'm glad you had a nice time on our picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_2.1]
+portrait = "happy_blush"
+local = "I did too!"
+next = "2"
+
+[deep_woods_picnic_follow_up_2.2]
+portrait = "embarrassed"
+local = "What was your favorite part?"
+prompts = [
+	{ local = "I loved the sense of peace...", next = "3" },
+	{ local = "I loved the food!", next = "5" }
+]
+
+[deep_woods_picnic_follow_up_2.3]
+portrait = "hope_special"
+local = "Yes... it is a special place, isn't it?"
+next = "4"
+
+[deep_woods_picnic_follow_up_2.4]
+portrait = "happy_blush"
+local = "I'm so glad you think so too."
+
+[deep_woods_picnic_follow_up_2.5]
+portrait = "happy_blush"
+local = "Oh! I'm so glad!"
+next = "6"
+
+[deep_woods_picnic_follow_up_2.6]
+portrait = "hope_special"
+local = "Though honestly... I think you're the better cook."
+
+[deep_woods_picnic_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_has_child = false },
+	{ any = [
+		{ eiland_is_spouse = true },
+		{ da_eiland_deep_woods_picnic = 3 }
+	] },
+	{ da_eiland_deep_woods_picnic_follow_up_gate = true }
+]
+writes = [{ da_eiland_deep_woods_picnic_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "happy_blush"
+local = "Thank you for treating me to another picnic, [Ari]."
+next = "1"
+
+[deep_woods_picnic_follow_up_3.1]
+portrait = "hope_special"
+local = "You sure know how to make a guy feel special."

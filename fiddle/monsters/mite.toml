@@ -1,0 +1,191 @@
+[default]
+	hp = 1
+	damage = 0
+	essence = 0
+	drops = []
+	speed = 0.5
+	starting_dir = [0, 360]
+	hide_timer = [30, 45]
+	coin_count = [1, 3]
+
+	secondary_spikes = false
+	gm_object = "obj_monster_mite"
+	hitbox = "spr_monster_stalagmite_blue_attack"
+	hurtbox = "spr_monster_stalagmite_blue_attack"
+
+	damage_number_offset = -14
+
+	patience_acknowledgement_reset = -120
+	aggro_radius = 384
+	use_circle = true
+	attack_radius = 8
+	iframes = 1
+
+	# hurt timer...
+	hurt = [30, 38]
+
+	# physics
+	push_radius = 4
+	push_force = 0.25
+	pushed_radius = 7
+
+	sprites = { misc = {} }
+
+	status_effect_offset = -10
+	fire_effect_offset = -1
+
+	[default.tango]
+		windup = "SoundEffects/Enemies/Stalagmite/FormHole"
+		attack = "SoundEffects/Enemies/Stalagmite/PunchThru"
+		dying = "SoundEffects/Enemies/Rockclod/Die"
+		[default.tango.misc]
+			withdraw = "SoundEffects/Enemies/Stalagmite/Withdraw"
+			form_mound = "SoundEffects/Enemies/Stalagmite/FormMound"
+			weak_damage = "SoundEffects/Enemies/TakeDamageRockWeak"
+			strong_damage = "SoundEffects/Enemies/TakeDamageRockStrong"
+			death = "SoundEffects/Enemies/Rockclod/Die"
+
+[stalagmite]
+	hp = 24
+	damage = 25
+	essence = 5
+	coin_count = [2, 6]
+	drops = [
+		{ item = "ore_copper", chance = 70, count_range = [1, 1] },
+		{ item = "monster_horn", chance = 30, count_range = [1, 1] },
+		{ cosmetic = "head_stalagmite_hat", chance = 5 },
+		{ item = "pet_skin_stalagmite", chance = 5 },
+	]
+
+	[stalagmite.sprites]
+		idle = "spr_nothing"
+		walk = "spr_nothing"
+		windup = "spr_monster_stalagmite_blue_windup"
+		attack = "spr_monster_stalagmite_blue_attack"
+		tired = "spr_monster_stalagmite_blue_tired"
+		flee = "spr_monster_stalagmite_blue_flee"
+		hurt = "spr_monster_stalagmite_blue_hurt"
+		dying = "spr_monster_stalagmite_blue_hurt"
+
+		misc.ground_walk = "spr_monster_stalagmite_ground_blue_walk"
+		misc.ground_windup = "spr_monster_stalagmite_ground_blue_windup"
+		misc.ground_attack = "spr_monster_stalagmite_ground_blue_attack"
+		misc.ground_flee = "spr_monster_stalagmite_ground_blue_flee"
+
+		misc.giblits = "spr_part_rockclod_blue_projectile"
+
+[stalagmite_green]
+	hp = 36
+	damage = 30
+	essence = 10
+	coin_count = [5, 10]
+	drops = [
+		{ item = "ore_iron", chance = 70, count_range = [1, 1] },
+		{ item = "monster_horn", chance = 30, count_range = [1, 2] },
+		{ cosmetic = "head_stalagmite_hat", chance = 5 },
+		{ item = "pet_skin_stalagmite", chance = 5 },
+	]
+	secondary_spikes = [
+		# lhs, rhs ones
+		[-16, 0],
+		[16, 0],
+
+		# upper ones
+		[-8, -16],
+		[8, -16],
+
+		# lower ones
+		[-8, 16],
+		[8, 16],
+	]
+
+	[stalagmite_green.sprites]
+		idle = "spr_nothing"
+		walk = "spr_nothing"
+		windup = "spr_monster_stalagmite_green_windup"
+		attack = "spr_monster_stalagmite_green_attack"
+		tired = "spr_monster_stalagmite_green_tired"
+		flee = "spr_monster_stalagmite_green_flee"
+		hurt = "spr_monster_stalagmite_green_hurt"
+		dying = "spr_monster_stalagmite_green_hurt"
+
+		misc.ground_walk = "spr_monster_stalagmite_ground_green_walk"
+		misc.ground_windup = "spr_monster_stalagmite_ground_green_windup"
+		misc.ground_attack = "spr_monster_stalagmite_ground_green_attack"
+		misc.ground_flee = "spr_monster_stalagmite_ground_green_flee"
+
+		misc.giblits = "spr_part_rockclod_green_projectile"
+
+		misc.secondary_ground_windup = "spr_monster_stalagmite_green_secondary_ground_windup"
+		misc.secondary_spike_windup = "spr_monster_stalagmite_green_secondary_main_windup"
+
+		misc.secondary_ground_attack = "spr_monster_stalagmite_green_secondary_ground_attack"
+		misc.secondary_spike_attack = "spr_monster_stalagmite_green_secondary_main_attack"
+
+		misc.secondary_ground_tired = "spr_monster_stalagmite_green_secondary_ground_tired"
+		misc.secondary_spike_tired = "spr_monster_stalagmite_green_secondary_main_tired"
+
+	[stalagmite_green.tango]
+		dying = "SoundEffects/Enemies/Rockclod/Die"
+		windup = "SoundEffects/Enemies/Stalagmite/LargeFormHole"
+		attack = "SoundEffects/Enemies/Stalagmite/BigPunchThru"
+		[stalagmite_green.tango.misc]
+			withdraw = "SoundEffects/Enemies/Stalagmite/Withdraw"
+			form_mound = "SoundEffects/Enemies/Stalagmite/FormMound"
+			weak_damage = "SoundEffects/Enemies/TakeDamageRockWeak"
+			strong_damage = "SoundEffects/Enemies/TakeDamageRockStrong"
+			death = "SoundEffects/Enemies/Rockclod/Die"
+
+[stalagmite_purple]
+	hp = 65
+	damage = 35
+	essence = 15
+	coin_count = [5, 10]
+	drops = [
+		{ item = "ore_gold", chance = 70, count_range = [1, 1] },
+		{ item = "monster_horn", chance = 30, count_range = [1, 3] },
+		{ cosmetic = "head_stalagmite_hat", chance = 5 },
+		{ item = "pet_skin_stalagmite", chance = 5 },
+	]
+
+	secondary_spikes = [
+		# lhs, rhs ones
+		[-16, 0],
+		[16, 0],
+
+		# upper ones
+		[-8, -16],
+		[8, -16],
+		[0, -24],
+
+		# lower ones
+		[-8, 16],
+		[8, 16],
+		[0, 24],
+	]
+
+	[stalagmite_purple.sprites]
+		idle = "spr_nothing"
+		walk = "spr_nothing"
+		windup = "spr_monster_stalagmite_purple_windup"
+		attack = "spr_monster_stalagmite_purple_attack"
+		tired = "spr_monster_stalagmite_purple_tired"
+		flee = "spr_monster_stalagmite_purple_flee"
+		hurt = "spr_monster_stalagmite_purple_hurt"
+		dying = "spr_monster_stalagmite_purple_hurt"
+
+		misc.ground_walk = "spr_monster_stalagmite_ground_purple_walk"
+		misc.ground_windup = "spr_monster_stalagmite_ground_purple_windup"
+		misc.ground_attack = "spr_monster_stalagmite_ground_purple_attack"
+		misc.ground_flee = "spr_monster_stalagmite_ground_purple_flee"
+
+		misc.giblits = "spr_part_rockclod_purple_projectile"
+
+		misc.secondary_ground_windup = "spr_monster_stalagmite_purple_secondary_ground_windup"
+		misc.secondary_spike_windup = "spr_monster_stalagmite_purple_secondary_main_windup"
+
+		misc.secondary_ground_attack = "spr_monster_stalagmite_purple_secondary_ground_attack"
+		misc.secondary_spike_attack = "spr_monster_stalagmite_purple_secondary_main_attack"
+
+		misc.secondary_ground_tired = "spr_monster_stalagmite_purple_secondary_ground_tired"
+		misc.secondary_spike_tired = "spr_monster_stalagmite_purple_secondary_main_tired"

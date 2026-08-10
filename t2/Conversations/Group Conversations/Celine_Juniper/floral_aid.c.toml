@@ -1,0 +1,36 @@
+[floral_aid_0]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_routine = "eastern_road_foraging_north" },
+	{ celine_routine = "eastern_road_foraging_north" },
+	{ juniper_heart_level = 2, comparator = ">=" },
+	{ juniper_status = "undefined" }
+]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Between us, [Ari], I had written most of this village off as country bumpkins..."
+next = "1"
+
+[floral_aid_0.1]
+speaker = "juniper"
+portrait = "neutral"
+local = "But Celine really knows her stuff."
+
+[floral_aid_1]
+refresh = "2m"
+requires = [
+	{ npc = "celine" },
+	{ juniper_routine = "eastern_road_foraging_north" },
+	{ celine_routine = "eastern_road_foraging_north" }
+]
+speaker = "celine"
+portrait = "neutral"
+local = "Hi, [Ari]! I'm helping Juniper forage some rare flowers for one of her potions. They can be a bit tricky to identify if you're a novice to Mistria's flora."
+next = "1"
+
+[floral_aid_1.1]
+speaker = "celine"
+portrait = "think"
+effect = "cheery"
+local = "Gosh, I wonder what I'm helping her make. I should probably ask!"

@@ -1,0 +1,563 @@
+[shooting_star_anticipation]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ has_fiance = false },
+	{ has_spouse = false },
+	{ quest_repair_the_summit_stairs_complete = true }
+]
+portrait = "neutral"
+local = "The Shooting Star Festival is coming up soon..."
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "wink"
+local = "Is there anyone special you're thinking of inviting to watch the stars?"
+
+[shooting_star_anticipation_no_summit]
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = false }
+]
+portrait = "neutral"
+local = "The Shooting Star Festival is coming up soon..."
+next = "1"
+
+[shooting_star_anticipation_no_summit.1]
+portrait = "think"
+local = "It's a shame that the Summit is still inaccessible. $It was a great date spot$..."
+next = "2"
+
+[shooting_star_anticipation_no_summit.2]
+portrait = "happy"
+local = "But I'm sure it will still be a nice time without that aspect, right?"
+
+[shooting_star_evening]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ elsie_is_at = "town/star_festival_elsie" },
+	{ shooting_star_festival_date = "1d", time = "after" }
+]
+portrait = "happy"
+local = "The stars really do look more beautiful here than back home."
+next = "1"
+
+[shooting_star_evening.1]
+portrait = "wink"
+local = "Maybe I should host a viewing party for some old friends one of these years."
+
+[shooting_star_adeline_invited_anticipation_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "adeline_invited" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ adeline_is_partner = false }
+]
+portrait = "wink"
+local = "Ahh, so you invited my dear Adeline? I'm glad to hear it. Have a nice time!"
+
+[shooting_star_adeline_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "adeline_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ adeline_is_partner = false }
+]
+portrait = "wink"
+local = "My, Adeline has had a smile on her lips all day, [Ari]. I'm glad you two had a nice evening."
+
+[shooting_star_adeline_8h_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "adeline_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ adeline_is_dating = true }
+]
+portrait = "neutral"
+local = "Take good care of Adeline, dear. You mean the world to her."
+
+[shooting_star_balor_invited_anticipation_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "balor_invited" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ balor_is_partner = false }
+]
+portrait = "wink"
+local = "So you invited Balor, you say? That's lovely, I hope you two have fun!"
+
+[shooting_star_balor_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "balor_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ balor_is_partner = false }
+]
+portrait = "happy"
+local = "Did you have a nice time with Balor, dear?"
+next = "1"
+
+[shooting_star_balor_follow_up_elsie.1]
+portrait = "neutral"
+local = "Although he's hard to read at times, I know he has a good heart."
+
+[shooting_star_balor_8h_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "balor_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ balor_is_partner = true }
+]
+portrait = "neutral"
+local = "You and Balor make a lovely couple."
+next = "1"
+
+[shooting_star_balor_8h_follow_up_elsie.1]
+portrait = "happy"
+local = "The stars must have aligned to bring you both to Mistria."
+
+[shooting_star_caldarus_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "caldarus_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ caldarus_is_partner = false }
+]
+portrait = "neutral"
+local = "Oh, [Ari]! Did you end up inviting someone to see the stars yesterday?"
+next = [
+	{ target = "1_eog", requires = [{ caldarus_seridia_town = true }, { caldarus_seridia_town_timer = false }] },
+	{ target = "1_n", requires = [] }
+]
+
+[shooting_star_caldarus_follow_up_elsie.1_eog]
+portrait = "happy"
+local = "What's that? You went with Caldarus...?"
+next = "2_eog"
+
+[shooting_star_caldarus_follow_up_elsie.2_eog]
+portrait = "wink"
+local = "My, a date with a dragon... how thrilling!"
+next = "3_eog"
+
+[shooting_star_caldarus_follow_up_elsie.3_eog]
+portrait = "think"
+local = "You don't suppose he has an older brother, do you?"
+next = "4_eog"
+
+[shooting_star_caldarus_follow_up_elsie.4_eog]
+portrait = "wink"
+local = "Hehe!"
+
+[shooting_star_caldarus_follow_up_elsie.1_n]
+portrait = "happy"
+local = "What's that? It's a secret...?"
+next = "2_n"
+
+[shooting_star_caldarus_follow_up_elsie.2_n]
+portrait = "wink"
+local = "My, how thrilling!"
+
+[shooting_star_caldarus_8h_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "caldarus_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ caldarus_is_partner = true }
+]
+portrait = "neutral"
+local = "Oh, [Ari]! Did you have a nice time watching the stars yesterday?"
+next = "1"
+
+[shooting_star_caldarus_8h_follow_up_elsie.1]
+portrait = "happy"
+local = "Good, I'm glad to hear it!"
+
+[shooting_star_celine_invited_anticipation_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "celine_invited" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ celine_is_partner = false }
+]
+portrait = "wink"
+local = "Celine is your date for the night? Ah, how sweet. I hope you have a nice time!"
+
+[shooting_star_celine_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "celine_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ celine_is_partner = false }
+]
+portrait = "happy"
+local = "Did you have a nice time with Celine, dear? She's a sweet girl, be sure to treat her well."
+
+[shooting_star_celine_8h_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "celine_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ celine_is_partner = true }
+]
+portrait = "neutral"
+local = "How lovely that you and Celine have found each other."
+next = "1"
+
+[shooting_star_celine_8h_follow_up_elsie.1]
+portrait = "happy"
+local = "I couldn't be happier for you!"
+
+[shooting_star_eiland_invited_anticipation_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "eiland_invited" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ eiland_is_partner = false }
+]
+portrait = "wink"
+local = "Ahh, so you invited Eiland to watch the stars tonight? I'm glad to hear it. Have a nice time!"
+
+[shooting_star_eiland_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "eiland_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ eiland_is_partner = false }
+]
+portrait = "wink"
+local = "Well well, Eiland certainly seems in high spirits today. Did you two have a nice evening together?"
+
+[shooting_star_eiland_8h_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "eiland_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ eiland_is_partner = true }
+]
+portrait = "neutral"
+local = "Take good care of Eiland, dear. You mean the world to him."
+
+[shooting_star_hayden_invited_anticipation_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "hayden_invited" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ hayden_is_partner = false }
+]
+portrait = "wink"
+local = "You're going to watch the stars with Hayden tonight? Ohhh, I hope you two have a nice time!"
+
+[shooting_star_hayden_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "hayden_went" },
+	{ shooting_star_festival_date = "2d", time = "after" }
+]
+portrait = "wink"
+local = "Did you and Hayden have a nice evening together?"
+next = "1"
+
+[shooting_star_hayden_follow_up_elsie.1]
+portrait = "happy"
+local = "I'm glad to hear it!"
+
+[shooting_star_juniper_invited_anticipation_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "juniper_invited" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ juniper_is_partner = false }
+]
+portrait = "neutral"
+local = "So you invited Juniper to watch the stars with you tonight?"
+next = "1"
+
+[shooting_star_juniper_invited_anticipation_elsie.1]
+portrait = "think"
+local = "And she said yes...?"
+next = "2"
+
+[shooting_star_juniper_invited_anticipation_elsie.2]
+portrait = "happy"
+local = "Well, that's wonderful! I hope you two have a nice time."
+
+[shooting_star_juniper_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "juniper_went" },
+	{ shooting_star_festival_date = "2d", time = "after" }
+]
+portrait = "wink"
+local = "Did you and Juniper have a nice evening together?"
+next = "1"
+
+[shooting_star_juniper_follow_up_elsie.1]
+portrait = "happy"
+local = "I'm glad to hear it!"
+
+[shooting_star_march_invited_anticipation_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "march_invited" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ march_is_partner = false }
+]
+portrait = "neutral"
+local = "So you invited March to watch the stars with you tonight?"
+next = "1"
+
+[shooting_star_march_invited_anticipation_elsie.1]
+portrait = "think"
+local = "And he agreed, did he?"
+next = "2"
+
+[shooting_star_march_invited_anticipation_elsie.2]
+portrait = "happy"
+local = "Well, that's delightful! I hope you two have a nice time."
+
+[shooting_star_march_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "march_went" },
+	{ shooting_star_festival_date = "2d", time = "after" }
+]
+portrait = "wink"
+local = "Did you and March have a nice time together last night?"
+next = "1"
+
+[shooting_star_march_follow_up_elsie.1]
+portrait = "happy"
+local = "Good... I'm glad to hear it!"
+
+[shooting_star_reina_invited_anticipation_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "reina_invited" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ reina_is_partner = false }
+]
+portrait = "wink"
+local = "So you're taking Reina out to the Summit tonight? Lovely! I hope you have a nice time!"
+
+[shooting_star_reina_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "reina_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ reina_is_partner = false }
+]
+portrait = "happy"
+local = "Did you enjoy watching the stars with Reina last night, dear?"
+next = "1"
+
+[shooting_star_reina_follow_up_elsie.1]
+portrait = "wink"
+local = "She's a nice girl."
+
+[shooting_star_reina_8h_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "reina_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ reina_is_partner = true }
+]
+portrait = "happy"
+local = "Did you enjoy watching the stars with Reina last night, dear?"
+next = "1"
+
+[shooting_star_reina_8h_follow_up_elsie.1]
+portrait = "wink"
+local = "You two are a good match."
+
+[shooting_star_ryis_invited_anticipation_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "ryis_invited" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ ryis_is_partner = false }
+]
+portrait = "wink"
+local = "So you invited Ryis, you say? I hope you two have fun!"
+
+[shooting_star_ryis_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "ryis_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ ryis_is_partner = false }
+]
+portrait = "happy"
+local = "Did you have a nice time with Ryis, dear?"
+next = "1"
+
+[shooting_star_ryis_follow_up_elsie.1]
+portrait = "wink"
+local = "He's a sweet young man, to be sure."
+
+[shooting_star_ryis_8h_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "ryis_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ ryis_is_partner = true }
+]
+portrait = "happy"
+local = "Did you have a nice time with Ryis, dear?"
+next = "1"
+
+[shooting_star_ryis_8h_follow_up_elsie.1]
+portrait = "wink"
+local = "You two are so sweet together."
+
+[shooting_star_seridia_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "seridia_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false },
+	{ seridia_is_partner = false }
+]
+portrait = "neutral"
+local = "Oh, [Ari]! Did you end up inviting someone to see the stars yesterday?"
+next = "1"
+
+[shooting_star_seridia_follow_up_elsie.1]
+portrait = "happy"
+local = "What's that? You went with Seridia...?"
+next = "2"
+
+[shooting_star_seridia_follow_up_elsie.2]
+portrait = "wink"
+local = "My, a date with a dragon... how thrilling!"
+next = "3"
+
+[shooting_star_seridia_follow_up_elsie.3]
+portrait = "think"
+local = "You don't suppose she has an older sister, do you?"
+next = "4"
+
+[shooting_star_seridia_follow_up_elsie.4]
+portrait = "wink"
+local = "Hehe!"
+
+[shooting_star_seridia_8h_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "seridia_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ seridia_is_partner = true }
+]
+portrait = "neutral"
+local = "Oh, [Ari]! Did you have a nice time watching the stars yesterday?"
+next = "1"
+
+[shooting_star_seridia_8h_follow_up_elsie.1]
+portrait = "happy"
+local = "Good, I'm glad to hear it!"
+
+[shooting_star_valen_invited_anticipation_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "valen_invited" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ valen_is_partner = false }
+]
+portrait = "neutral"
+local = "Ah, so you're going to watch the stars tonight with Valen?"
+next = "1"
+
+[shooting_star_valen_invited_anticipation_elsie.1]
+portrait = "happy"
+local = "I'm glad to hear she accepted your $Star Brooch$. I hope you two have a nice time!"
+
+[shooting_star_valen_follow_up_elsie]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "elsie" },
+	{ shooting_star_date_status = "valen_went" },
+	{ shooting_star_festival_date = "2d", time = "after" }
+]
+portrait = "wink"
+local = "Did you and Valen have a nice evening together?"
+next = "1"
+
+[shooting_star_valen_follow_up_elsie.1]
+portrait = "happy"
+local = "Good! You both deserve to relax once in a while."

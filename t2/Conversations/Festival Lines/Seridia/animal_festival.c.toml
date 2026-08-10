@@ -1,0 +1,95 @@
+[animal_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "seridia" },
+	{ animal_festival_today = true },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+	{ caldarus_seridia_town = true },
+]
+portrait = "unsure"
+local = "Strange... these Petting Zoo animals..."
+next = "1"
+
+[animal_festival_0.1]
+portrait = "neutral"
+local = "They seem not to fear me at all."
+
+[animal_festival_first]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "seridia" },
+	{ animal_festival_today = true },
+	{ any = [{ small_animal_place = 3 }, { large_animal_place = 3 }] },
+	{ caldarus_seridia_town = true },
+	{  },
+	{  },
+	{  },
+]
+portrait = "smile"
+local = "Of course my Dragonsworn would take first place! Was there any doubt?"
+
+[animal_festival_other_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "seridia" },
+	{ animal_festival_today = true },
+	{ any = [
+		{ small_animal_place = 0 },
+		{ small_animal_place = 1 },
+		{ small_animal_place = 2 }
+	] },
+	{ any = [
+		{ large_animal_place = 0 },
+		{ large_animal_place = 1 },
+		{ large_animal_place = 2 }
+	] },
+	{ caldarus_seridia_town = true },
+	{  },
+	{  },
+]
+portrait = "unsure"
+local = "To be frank, you deserved First Place."
+next = "1"
+
+[animal_festival_other_place.1]
+portrait = "sinister"
+local = "I shall have a quick... word with the judges."
+prompts = [
+	{ local = "I'm sure the best animals won.", next = "2" },
+	{ local = "I'd rather lose if I can't win fairly.", next = "3" }
+]
+
+[animal_festival_other_place.2]
+portrait = "think"
+local = "Well... if you are sure."
+
+[animal_festival_other_place.3]
+portrait = "think"
+local = "Hm. Very well."
+
+[animal_festival_chicken_cutout]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "seridia" },
+	{ animal_festival_today = true },
+	{ seridia_is_at = "town/af_chicken_cutout" },
+	{ caldarus_seridia_town = true },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  },
+	{  },
+]
+portrait = "happy"
+local = "[Ari], behold!"
+next = "1"
+
+[animal_festival_chicken_cutout.1]
+portrait = "smile"
+local = "Am I not simply adorable?"

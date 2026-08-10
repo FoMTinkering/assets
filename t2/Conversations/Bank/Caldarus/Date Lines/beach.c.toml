@@ -1,0 +1,294 @@
+[beach_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "beach" },
+	{ da_caldarus_beach = 0 },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ da_caldarus_beach = 1 },
+	{ da_caldarus_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "A walk? On the Beach?"
+next = "1"
+
+[beach_accept_1.1]
+speaker = "caldarus"
+portrait = "unsure_special"
+local = "While that does sound nice..."
+next = "2"
+
+[beach_accept_1.2]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "I am afraid that I cannot stray so far from the $Deep Woods$."
+next = "3"
+
+[beach_accept_1.3]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "Would you perhaps-"
+next = "4"
+
+[beach_accept_1.4]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "Join me for a walk by the waterfall, instead?"
+next = "5"
+
+[beach_accept_1.5]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "Really? You do not mind? I am glad, [Ari]."
+
+[beach_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "beach" },
+	{ da_caldarus_beach = 1, comparator = ">=" },
+	{ caldarus_seridia_town = false }
+]
+writes = [
+	{ da_caldarus_beach = 2 },
+	{ da_caldarus_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "caldarus"
+portrait = "caring_special"
+local = "A walk by the waterfall?"
+next = "1"
+
+[beach_accept_2.1]
+speaker = "caldarus"
+portrait = "laugh_special"
+local = "I would like that very much, [Ari]."
+
+[beach_accept_eog_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "beach" },
+	{ da_caldarus_eog_beach = 0 },
+	{ caldarus_seridia_town = true },
+	{ caldarus_is_spouse = false }
+]
+writes = [
+	{ da_caldarus_eog_beach = 1 },
+	{ da_caldarus_eog_beach_follow_up_gate = true, expires = "1d" }
+]
+portrait = "smile"
+local = "A promenade along the coast?"
+next = "1"
+
+[beach_accept_eog_1.1]
+portrait = "embarrassed"
+local = "I was hoping that you would ask. I am fond of the Beach."
+next = "2"
+
+[beach_accept_eog_1.2]
+portrait = "think_special"
+local = "I especially enjoy the feeling of sand beneath my talons."
+next = "3"
+
+[beach_accept_eog_1.3]
+portrait = "caring_special"
+local = "Lead the way, [Ari]."
+
+[beach_accept_eog_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "caldarus" },
+	{ date = "beach" },
+	{ caldarus_has_child = false },
+	{ any = [
+		{ caldarus_is_spouse = true },
+		{ da_caldarus_eog_beach = 1, comparator = ">=" },
+	] },
+	{ caldarus_seridia_town = true }
+]
+writes = [
+	{ da_caldarus_eog_beach = 2 },
+	{ da_caldarus_eog_beach_follow_up_gate = true, expires = "1d" }
+]
+portrait = "smile"
+local = "You wish to walk along the shore together?"
+next = "1"
+
+[beach_accept_eog_2.1]
+portrait = "caring_special"
+local = "I wish for that as well."
+next = "2"
+
+[beach_accept_eog_2.2]
+portrait = "laugh_special"
+local = "Let us waste no time, then."
+
+[beach_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_beach = 1 },
+	{ da_caldarus_beach_follow_up_gate = true },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ da_caldarus_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "unsure_special"
+local = "I am grateful for our time together at the waterfall, [Ari]."
+next = "1"
+
+[beach_follow_up_1.1]
+portrait = "serious_blush"
+local = "I understand that you had hoped to go to the Beach..."
+next = "2"
+
+[beach_follow_up_1.2]
+portrait = "avoidant_special"
+local = "And yet, you were willing to compromise, for the sake of my comfort."
+prompts = [
+	{ local = "The waterfall was magical! Even better than the Beach!", next = "3" },
+	{ local = "It's not about the location, it's about being with you.", next = "6" },
+]
+
+[beach_follow_up_1.3]
+portrait = "caring_special"
+local = "[Ari]..."
+next = "4"
+
+[beach_follow_up_1.4]
+portrait = "laugh_special"
+local = "I am glad to hear so."
+next = "5"
+
+[beach_follow_up_1.5]
+portrait = "unsure_special"
+local = "Perhaps someday, I may join you at the Beach and experience it for myself."
+
+[beach_follow_up_1.6]
+portrait = "caring_special"
+local = "[Ari]..."
+next = "7"
+
+[beach_follow_up_1.7]
+portrait = "laugh_special"
+local = "I am glad to hear so."
+next = "8"
+
+[beach_follow_up_1.8]
+portrait = "unsure_special"
+local = "Perhaps someday, I may join you at the Beach and experience it for myself."
+
+[beach_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_beach = 2 },
+	{ da_caldarus_beach_follow_up_gate = true },
+	{ caldarus_seridia_town = false }
+]
+writes = [{ da_caldarus_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "caring_special"
+local = "Thank you for joining me on that walk, [Ari]."
+next = "1"
+
+[beach_follow_up_2.1]
+portrait = "serious_blush"
+local = "The beauty of the waterfall always stirs my heart..."
+next = "2"
+
+[beach_follow_up_2.2]
+portrait = "laugh_special"
+local = "As does your own."
+
+[beach_follow_up_eog_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ da_caldarus_eog_beach = 1 },
+	{ da_caldarus_eog_beach_follow_up_gate = true },
+	{ caldarus_seridia_town = true },
+	{ caldarus_is_spouse = false }
+]
+writes = [{ da_caldarus_eog_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "I enjoyed walking along the Beach with you, [Ari]."
+next = "1"
+
+[beach_follow_up_eog_1.1]
+portrait = "caring_special"
+local = "Something about the ocean air is invigorating."
+next = "2"
+
+[beach_follow_up_eog_1.2]
+portrait = "embarrassed"
+local = "Or perhaps it is your presence."
+prompts = [
+	{ local = "I love the Beach!", next = "3" },
+	{ local = "I love being with you.", next = "6" }
+]
+
+[beach_follow_up_eog_1.3]
+portrait = "think_special"
+local = "Being serenaded by the cry of shorebirds, our footsteps washing away behind us..."
+next = "4"
+
+[beach_follow_up_eog_1.4]
+portrait = "embarrassed"
+local = "It is etched in my mind."
+next = "5"
+
+[beach_follow_up_eog_1.5]
+portrait = "laugh_special"
+local = "Thank you for showing me an unforgettable time."
+
+[beach_follow_up_eog_1.6]
+portrait = "caring_special"
+local = "I feel the same way."
+next = "7"
+
+[beach_follow_up_eog_1.7]
+portrait = "unsure_special"
+local = "The sight of you, with the vast, glittering ocean behind you..."
+next = "8"
+
+[beach_follow_up_eog_1.8]
+portrait = "embarrassed"
+local = "I have etched it in my mind."
+next = "9"
+
+[beach_follow_up_eog_1.9]
+portrait = "laugh_special"
+local = "Thank you for showing me an unforgettable time."
+
+[beach_follow_up_eog_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_has_child = false },
+	{ any = [{ caldarus_is_spouse = true }, { da_caldarus_eog_beach = 2 }] },
+	{ da_caldarus_eog_beach_follow_up_gate = true },
+	{ caldarus_seridia_town = true },
+]
+writes = [{ da_caldarus_eog_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "I enjoyed our time at the shore together."
+next = "1"
+
+[beach_follow_up_eog_2.1]
+portrait = "caring_special"
+local = "There is something special about that place..."
+next = "2"
+
+[beach_follow_up_eog_2.2]
+portrait = "laugh_special"
+local = "And about you."

@@ -1,0 +1,74 @@
+[harvest_festival_anticipation]
+refresh = "never"
+requires = [{ npc = "juniper" }, { harvest_festival_setup = true }]
+portrait = "think"
+local = "These $Queen Berries$..."
+next = "1"
+
+[harvest_festival_anticipation.1]
+portrait = "unimpressed"
+local = "They're odd, don't you think?"
+next = "2"
+
+[harvest_festival_anticipation.2]
+portrait = "think"
+local = "Everyone in Mistria takes them for granted, but I'm sensing an undercurrent of old, old magic..."
+
+[harvest_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "juniper" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{location = "town"}
+]
+portrait = "think"
+local = "Strange berries containing traces of magic..."
+next = "1"
+
+[harvest_festival_0.1]
+portrait = "annoyed"
+local = "Of COURSE Mistria would throw a festival and give them away for free."
+next = "2"
+
+[harvest_festival_0.2]
+portrait = "sly"
+local = "At least it makes my research into them easier."
+
+[harvest_festival_place_follow_up]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "juniper" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ any = [
+		{ hf_third_place = true },
+		{ hf_second_place = true },
+		{ hf_first_place = true },
+	] },
+]
+portrait = "neutral"
+local = "Congratulations on collecting all those berries."
+next = "1"
+
+[harvest_festival_place_follow_up.1]
+portrait = "think"
+local = "I assume that you too could feel their mysterious, latent magical properties."
+next = "2"
+
+[harvest_festival_place_follow_up.2]
+portrait = "sly"
+local = "Come, [Ari]. Reveal to me the $Queen Berries$ secrets."
+prompts = [
+	{ local = "They, uh... they taste good.", next = "3" },
+	{ local = "If you turn in enough of them, you get neat prizes!", next = "3" }
+]
+
+[harvest_festival_place_follow_up.3]
+portrait = "unimpressed"
+local = "..."
+next = "4"
+
+[harvest_festival_place_follow_up.4]
+portrait = "ugh"
+local = "Forget I asked, [Ari]."

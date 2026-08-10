@@ -1,0 +1,145 @@
+# Loved gift
+[dog_treat]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "dozy" },
+	{ gift_desire = "loved" },
+	{ gift_given = "dog_treat" },
+	{  }
+]
+portrait = "neutral"
+local = "(Dozy's tail wags so fast, it looks like he might fly away. He must really like it!)"
+
+# Hated gift
+[chili_pepper]
+kind = "gift"
+requires = [
+	{ npc = "dozy" },
+	{ gift_desire = "hated" },
+	{ gift_given = "chili_pepper" }
+]
+portrait = "neutral"
+local = "(Dozy is attempting to bury your gift into the hardwood floor...)"
+
+# Generic lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "dozy" }, { gift_desire = "loved" }]
+portrait = "neutral"
+local = "(Dozy's tail wags furiously, he's overwhelmed by your thoughtfulness.)"
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "dozy" }, { gift_desire = "loved" }]
+portrait = "neutral"
+effect = "hearts"
+local = "(Dozy offers a paw, and you can feel the warmth of his gratitude as you shake.)"
+
+[loved_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "dozy" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "catfish" },
+		{ gift_given = "hard_boiled_egg" },
+		{ gift_given = "golden_duck_egg" },
+		{ gift_given = "golden_egg" },
+		{ gift_given = "monster_cookie" },
+		{ gift_given = "dog_treat" }
+	] }
+]
+portrait = "neutral"
+effect = "hearts"
+local = "(Dozy accepts the delicious treat with great enthusiasm.)"
+
+[loved_gift_wood]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "dozy" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "basic_wood" },
+		{ gift_given = "hard_wood" },
+		{ gift_given = "petrified_wood" }
+	] }
+]
+portrait = "neutral"
+effect = "hearts"
+local = "(Dozy is thrilled to have a new stick to play with! His tail whips back and forth excitedly.)"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "dozy" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "(Dozy licks your hand in appreciation.)"
+
+[liked_gift_2]
+kind = "gift"
+requires = [{ npc = "dozy" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "(Dozy seems content with your gift.)"
+
+[liked_gift_fish_1]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "dozy" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "mackerel" },
+		{ gift_given = "red_snapper" },
+		{ gift_given = "salmon" },
+		{ gift_given = "tuna" }
+	] }
+]
+portrait = "neutral"
+local = "(Dozy cheerfully accepts your fishy gift.)"
+
+[liked_gift_fish_2]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "dozy" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "mackerel" },
+		{ gift_given = "red_snapper" },
+		{ gift_given = "salmon" },
+		{ gift_given = "tuna" }
+	] }
+]
+portrait = "neutral"
+local = "(Dozy gladly accepts the gift of a fish.)"
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "dozy" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "(Dozy wags his tail.)"
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "dozy" }, { gift_desire = "disliked" }]
+portrait = "neutral"
+local = "(Dozy does not appear to know what to do with your gift.)"
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "dozy" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ dozy_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "happy"
+effect = "sparkles"
+local = "(Dozy seems happy to receive a birthday present! He's wagging his tail extra hard.)"

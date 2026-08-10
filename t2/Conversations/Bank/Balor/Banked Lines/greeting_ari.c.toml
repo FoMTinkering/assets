@@ -1,0 +1,25 @@
+[greeting_ari]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ date_time = "2d", comparator = "<=" },
+	{ balor_has_met = true },
+]
+portrait = "neutral"
+local = "Hey! I'm glad I bumped into you. I'd forgotten to mention..."
+next = "1"
+
+[greeting_ari.1]
+portrait = "think"
+local = "Make sure that you put $anything that you want to sell$ into the $Shipping Bin$ next to your house."
+next = "2"
+
+[greeting_ari.2]
+portrait = "neutral"
+local = "I'll pick up your shipments and leave your payment overnight."
+next = "3"
+
+[greeting_ari.3]
+portrait = "wink"
+local = "The shops in this town depend on the stock I procure for them, so we're all looking forward to your business."

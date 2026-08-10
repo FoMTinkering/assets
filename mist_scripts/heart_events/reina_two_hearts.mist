@@ -1,0 +1,223 @@
+scene(inn);
+camera_position(r2h_camera_1);
+place_actor(ari, north, r2h_ari_entrance);
+place_actor(reina, north, "Stove-Top Kitchen");
+animate(reina, action);
+request_music_play(reina);
+
+sim {
+	fade_in(2);
+	pan_camera(4, r2h_camera_2);
+	{
+		walk_slow(ari, r2h_ari_start);
+		face(ari, north);
+	}
+	{
+		wait(3);
+		free bark_speech(reina, exclamation_mark);
+		wait(0.5);
+		animate(reina, idle);
+		wait(0.5);
+		face(reina, south);
+	}
+	{
+		wait(4);
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		pan_camera(3, r2h_camera_3);
+	}
+	{
+		wait(1);
+		walk_slow(ari, "Top Bar Seat");
+		face(ari, west);
+		animate(ari, sit);
+	}
+	{
+		walk_slow(reina, "Hot Pass");
+		face(reina, west);
+		animate(reina, action);
+		wait(0.5);
+		animate(reina, idle);
+		wait(0.25);
+		walk_slow(reina, "Bartender 1");
+		face(reina, east);
+		animate(reina, action);
+		wait(0.5);
+		animate(reina, idle);
+		setup_prop(reina_pie_1);
+		wait(0.5);
+		free bark_speech(ari, exclamation_mark);
+	}
+}
+next_line(); //
+close_textbox();
+
+wait(0.5);
+destroy_prop(reina_pie_1);
+use_item(wildberry_pie);
+face(ari, west);
+animate(ari, sit);
+sim {
+	{
+		show_menu(vitals);
+		wait(0.5);
+		if __get_ari_health() == __get_ari_max_health() {
+			play_sound("SoundEffects/Ari/Heal");
+		}
+		set_ari_health(__get_ari_max_health());
+		set_ari_stamina(__get_ari_max_stamina());
+		wait(1);
+		hide_menu(vitals);
+	}
+	{
+		wait(1.25);
+		free bark_speech(reina, cute_face);
+	}
+}
+wait(0.5);
+next_line(); //
+
+//
+
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+
+sim {
+	{
+		place_actor(adeline, north, r2h_ari_entrance);
+		walk(adeline, r2h_adeline_pause);
+		face(adeline, north);
+		wait(1.5);
+		walk(adeline, r2h_adeline_give);
+		face(adeline, south);
+		animate(adeline, action);
+		wait(0.5);
+		animate(adeline, idle);
+	}
+	{
+		wait(1);
+		free bark_speech(ari, exclamation_mark);
+		free bark_speech(reina, exclamation_mark);
+		wait(0.5);
+		face(reina, south);
+		wait(0.5);
+		face(ari, south);
+		wait(2.5);
+		face(reina, east);
+		wait(1);
+		face(ari, west);
+		wait(1.25);
+		face(reina, north);
+	}
+	{
+		wait(0.5);
+		pan_camera(1.5, r2h_camera_1);
+		wait(1);
+		pan_camera(2.5, r2h_camera_3);
+	}
+	{
+		wait(1.5);
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(reina, east);
+	}
+	{
+		walk_slow(adeline, r2h_adeline_bar);
+		face(adeline, west);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.75);
+		face(reina, north);
+	}
+	{
+		wait(1.25);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(reina, west);
+		wait(2);
+		free bark_speech(reina, ellipses);
+	}
+	{
+		wait(1);
+		face(ari, west);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	free bark_speech(reina, sweat_drop);
+	{
+		next_line(); //
+	}
+}
+
+
+//
+sim {
+	{
+		wait(0.75);
+		free bark_speech(reina, exclamation_mark);
+		wait(0.25);
+		face(reina, east);
+	}
+	{
+		wait(1.25);
+		face(adeline, east);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		face(reina, north);
+	}
+	{
+		wait(0.5);
+		face(adeline, west);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(reina, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+free bark_speech(ari, cute_face);
+free bark_speech(adeline, cute_face);
+wait(1);
+free bark_speech(reina, cute_face);
+wait(1);
+fade_out(2);

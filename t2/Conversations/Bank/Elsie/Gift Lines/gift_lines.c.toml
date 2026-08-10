@@ -1,0 +1,141 @@
+# Hated gift
+[praying_mantis]
+kind = "gift"
+requires = [
+	{ npc = "elsie" },
+	{ gift_desire = "hated" },
+	{ gift_given = "praying_mantis" },
+]
+portrait = "ugh"
+local = "Don't tell little Luc, but I simply can't abide the $Praying Mantis$. I prefer a romance with a happier ending."
+
+# General Lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "elsie" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "hearts"
+local = "You're certainly a charmer, [Ari]. Thank you, I love it."
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "elsie" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "sparkles"
+local = "Oh [Ari], you know my heart so well! I adore this!"
+
+[loved_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "elsie" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "cranberry_orange_scone" },
+		{ gift_given = "jasmine_tea" },
+		{ gift_given = "mont_blanc" },
+		{ gift_given = "poached_pear" },
+		{ gift_given = "wildberry_scone" }
+	] }
+]
+portrait = "happy"
+effect = "sparkles"
+local = "What a lovely morsel you've brought me! The kind of refreshment that brings back sweet memories of the Capital. Thank you [Ari]!"
+
+[loved_gift_jewelry]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "elsie" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "alda_feather_pendant" },
+		{ gift_given = "crystal_rose" },
+		{ gift_given = "perfect_diamond" }
+	] }
+]
+portrait = "happy"
+effect = "hearts"
+local = "Oh [Ari], what an exquisite gift! The glitter reminds me of the stage lights when I was a prima donna!"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "elsie" }, { gift_desire = "liked" }]
+portrait = "happy"
+local = "Aren't you kind, thinking of me like this? Thank you, [Ari] dear."
+
+[liked_gift_2]
+kind = "gift"
+requires = [{ npc = "elsie" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "You're such a darling, [Ari]. Thank you."
+
+[liked_gift_flowers]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "elsie" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "chrysanthemum" },
+		{ gift_given = "cosmos" },
+		{ gift_given = "iris" },
+		{ gift_given = "jasmine" },
+		{ gift_given = "lilac" },
+		{ gift_given = "tulip" }
+	] }
+]
+portrait = "neutral"
+local = "What a sublime blossom! Thank you, [Ari]."
+
+[liked_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "elsie" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "blackberry_jam" },
+		{ gift_given = "cherry_tart" },
+		{ gift_given = "crystal_berry_pie" },
+		{ gift_given = "marmalade" },
+		{ gift_given = "moon_fruit_cake" },
+		{ gift_given = "pomegranate_sorbet" },
+		{ gift_given = "quiche" },
+		{ gift_given = "red_wine" },
+		{ gift_given = "rosehip_jam" },
+		{ gift_given = "rose_hip" },
+		{ gift_given = "white_wine" },
+		{ gift_given = "wild_berry_jam" },
+	] }
+]
+portrait = "wink"
+local = "How lovely! This will be perfect for after dinner. If I can wait that long!"
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "elsie" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Well isn't this nice."
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "elsie" }, { gift_desire = "disliked" }]
+portrait = "ugh"
+local = "It's for me? I... see... I don't think this is making it into my memoirs."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "elsie" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ elsie_birthday = "1d", time = "after" },
+	{  },
+]
+portrait = "happy"
+local = "Oh, a gift? It's terribly sweet of you to remember my birthday, [Ari]."

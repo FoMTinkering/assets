@@ -1,0 +1,19 @@
+[miss_the_mines]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }] },
+	{ march_zone = "<olric_zone>" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" }
+	] },
+]
+speaker = "olric"
+local = "I miss working at the Mines, but it's fun hanging out with March all day!"
+next = "1"
+
+[miss_the_mines.1]
+speaker = "march"
+portrait = "ugh"
+local = "I'm glad one of us is having fun."

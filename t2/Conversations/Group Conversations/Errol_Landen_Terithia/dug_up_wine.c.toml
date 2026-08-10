@@ -1,0 +1,39 @@
+[dug_up_wine]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "landen" }, { npc = "terithia" }] },
+	{ errol_zone = "<landen_zone>" },
+	{ errol_zone = "<terithia_zone>" },
+	{ errol_activity = "drink" },
+	{ landen_activity = "drink" },
+	{ terithia_activity = "drink" },
+	{ location = "terithias_house", comparator = "!=" }
+]
+speaker = "errol"
+portrait = "neutral"
+local = "This wine's not bad, you two! Where'd you dig it up?"
+next = "1"
+
+[dug_up_wine.1]
+speaker = "landen"
+portrait = "think"
+local = "I'm not sure... Terithia brought it with her."
+next = "2"
+
+[dug_up_wine.2]
+speaker = "terithia"
+portrait = "neutral"
+local = "This one's from the bottom of the bay!"
+next = "3"
+
+[dug_up_wine.3]
+speaker = "terithia"
+portrait = "wink"
+local = "And this next one I found in a sand dune on the Beach."
+next = "4"
+
+[dug_up_wine.4]
+speaker = "errol"
+portrait = "happy"
+effect = "drop"
+local = "So you quite literally dug them up... I see..."

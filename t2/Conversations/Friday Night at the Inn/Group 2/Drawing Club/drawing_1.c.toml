@@ -1,0 +1,69 @@
+[drawing_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ elsie_zone = "inn/north_table" },
+	{ hayden_zone = "inn/north_table" },
+	{ landen_zone = "inn/north_table" },
+	{ march_zone = "inn/north_table" },
+	{ olric_zone = "inn/north_table" },
+	{ valen_zone = "inn/north_table" },
+	{ any = [
+		{ npc = "elsie" },
+		{ npc = "hayden" },
+		{ npc = "landen" },
+		{ npc = "march" },
+		{ npc = "olric" },
+		{ npc = "valen" },
+	] },
+]
+writes = [{ drawing_fnati = 1 }]
+actions = [
+	{ bark = { bark = "sweat_drop", npc = "elsie" } },
+	{ bark = { bark = "sweat_drop", npc = "hayden" } },
+	{ bark = { bark = "sweat_drop", npc = "landen" } },
+	{ bark = { bark = "sweat_drop", npc = "olric" } },
+	{ bark = { bark = "sweat_drop", npc = "valen" } },
+]
+speaker = "landen"
+local = "Welcome to the first drawing club session of the season, [Ari]! We've got all kinds of talents here."
+next = "1"
+
+[drawing_1.1]
+speaker = "hayden"
+local = "I joined the drawing club because I want to start sketching my animals. They grow up so fast, you know?"
+next = "2"
+
+[drawing_1.2]
+speaker = "elsie"
+local = "Valen's the model this week! I thought she'd be quite stiff, but she actually seems very comfortable in her poses."
+next = "3"
+
+[drawing_1.3]
+speaker = "valen"
+local = "An understanding of muscle groups is a must in my line of work. Now, are you ready? Next pose!"
+next = "4"
+
+[drawing_1.4]
+speaker = "march"
+portrait = "mad"
+local = "Wait, I'm still drawing! I can't create a masterpiece under these conditions."
+next = "5"
+
+[drawing_1.5]
+speaker = "olric"
+portrait = "wink"
+local = "It's not about creating a masterpiece, March! It's about having fun and spending time with your big bro!"
+next = "6"
+
+[drawing_1.6]
+speaker = "march"
+portrait = "think"
+local = "It's not about being the best at drawing?"
+next = "7"
+
+[drawing_1.7]
+portrait = "unimpressed"
+effect = "sparkles"
+local = "I see. So it's about being the best at having fun and hanging out."

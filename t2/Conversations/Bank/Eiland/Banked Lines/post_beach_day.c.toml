@@ -1,0 +1,16 @@
+[post_beach_day]
+refresh = "3m"
+requires = [
+	{ npc = "eiland" },
+	{ group_one_beach_day = true },
+	{ location = "beach", comparator = "!=" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+]
+portrait = "think"
+local = "I went looking for artifacts, and my sister inspected the Beach..."
+next = "1"
+
+[post_beach_day.1]
+portrait = "happy"
+effect = "drop"
+local = "We were both supposed to relax today, but like brother, like sister..."

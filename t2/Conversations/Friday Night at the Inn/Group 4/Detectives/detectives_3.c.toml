@@ -1,0 +1,82 @@
+[detectives_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ adeline_zone = "inn/north_table" },
+	{ balor_zone = "inn/north_table" },
+	{ celine_zone = "inn/north_table" },
+	{ errol_zone = "inn/north_table" },
+	{ nora_zone = "inn/north_table" },
+	{ ryis_zone = "inn/north_table" },
+	{ detectives_fnati = 2 },
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "balor" },
+		{ npc = "celine" },
+		{ npc = "errol" },
+		{ npc = "nora" },
+		{ npc = "ryis" },
+	] },
+]
+actions = [
+	{ bark = { bark = "ellipses", npc = "adeline" } },
+	{ bark = { bark = "ellipses", npc = "balor" } },
+	{ bark = { bark = "ellipses", npc = "celine" } },
+	{ bark = { bark = "ellipses", npc = "errol" } },
+	{ bark = { bark = "ellipses", npc = "nora" } },
+	{ bark = { bark = "ellipses", npc = "ryis" } },
+]
+writes = [{ detectives_fnati = 3 }]
+speaker = "celine"
+portrait = "gloomy"
+local = "This painting is mesmerizing me. There's something about the clown's eyes. Like he's torn between two worlds."
+next = "1"
+
+[detectives_3.1]
+speaker = "errol"
+portrait = "mad"
+local = "I dug further into the artist, and though she did many portraits, she did most of them for three noble families: The Wainscotts, The Meridians, and The Hawthornes."
+next = "2"
+
+[detectives_3.2]
+speaker = "adeline"
+portrait = "think"
+local = "I'm familiar with all those names, though the Wainscott name ended when the last daughter of the line married into another house."
+next = "3"
+
+[detectives_3.3]
+speaker = "nora"
+portrait = "think"
+local = "\"If revealed, 'twould gain naught but scorn. My true name is...\""
+next = "4"
+
+[detectives_3.4]
+speaker = "ryis"
+portrait = "mad"
+local = "Lord Hawthorne!"
+next = "5"
+
+[detectives_3.5]
+speaker = "ryis"
+portrait = "think"
+local = "Of course! Hawthorne is a famous name in the Capital. You see their faces on campaign posters a few times a year!"
+next = "6"
+
+[detectives_3.6]
+speaker = "balor"
+portrait = "mad"
+effect = "shock"
+local = "That explains why the clown looks so familiar! I think we're onto something!"
+next = "7"
+
+[detectives_3.7]
+speaker = "balor"
+portrait = "neutral"
+local = "I'll contact the family to verify the truth. If we return the painting, perhaps we'll get a nice reward for reuniting them with a beloved heirloom!"
+next = "8"
+
+[detectives_3.8]
+speaker = "celine"
+portrait = "annoyed"
+local = "One question remains, though... why a clown?"

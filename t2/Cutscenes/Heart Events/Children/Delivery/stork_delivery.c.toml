@@ -1,0 +1,120 @@
+[stork_delivery]
+writes = [
+    { child_born_bump = true, expires = "2d" },
+    { baby_born_timer = true, expires = "5d" }
+]
+kind = "gameplay_triggered"
+speaker = "great_bird"
+portrait = "neutral"
+local = "Congratulations, [Ari], [spouse]!"
+next = [
+    { target = "1_boy", requires = [
+        { any = [
+            { balor_is_spouse = true },
+            { celine_is_spouse = true },
+            { hayden_is_spouse = true },
+            { reina_is_spouse = true },
+            { ryis_is_spouse = true },
+            { valen_is_spouse = true }
+        ] }
+    ] },
+    { target = "1_girl", requires = [] }
+]
+
+[stork_delivery.1_boy]
+speaker = "great_bird"
+portrait = "happy"
+local = "You are now the proud parents of a healthy $baby boy$!"
+next = "2_boy"
+
+[stork_delivery.2_boy]
+speaker = "great_bird"
+portrait = "neutral"
+local = "Now, it is time to decide $what you will name him$."
+next = "3_boy"
+
+[stork_delivery.3_boy]
+speaker = "great_bird"
+portrait = "happy"
+local = "Wonderful! [child_0] is an excellent name."
+next = "4_boy"
+
+[stork_delivery.4_boy]
+speaker = "great_bird"
+portrait = "neutral"
+local = "It is as if that name were already chosen for him long ago."
+next = "5"
+
+[stork_delivery.1_girl]
+speaker = "great_bird"
+portrait = "happy"
+local = "You are now the proud parents of a healthy $baby girl$!"
+next = "2_girl"
+
+[stork_delivery.2_girl]
+speaker = "great_bird"
+portrait = "neutral"
+local = "Now, it is time to decide $what you will name her$."
+next = "3_girl"
+
+[stork_delivery.3_girl]
+speaker = "great_bird"
+portrait = "happy"
+local = "Wonderful! [child_0] is an excellent name."
+next = "4_girl"
+
+[stork_delivery.4_girl]
+speaker = "great_bird"
+portrait = "neutral"
+local = "It is as if that name were already chosen for her long ago."
+next = "5"
+
+[stork_delivery.5]
+speaker = "great_bird"
+portrait = "neutral_closed"
+local = "Let's see. Before I depart..."
+next = "6"
+
+[stork_delivery.6]
+speaker = "great_bird"
+portrait = "neutral"
+local = "Would you like me to $tell you more about raising a child$?"
+prompts = [
+    { local = "Yes, please!", next = "7" },
+    { local = "No, I think we've got it covered.", next = "8" }
+]
+
+[stork_delivery.7]
+speaker = "great_bird"
+portrait = "neutral_closed"
+local = "There we are. I believe that is everything."
+next = "10"
+
+[stork_delivery.8]
+speaker = "great_bird"
+portrait = "neutral"
+local = "Understood."
+next = "9"
+
+[stork_delivery.9]
+speaker = "great_bird"
+portrait = "neutral_closed"
+local = "I believe that is everything, then!"
+next = "10"
+
+[stork_delivery.10]
+speaker = "great_bird"
+portrait = "happy"
+local = "Congratulations once more."
+next = "11"
+
+[stork_delivery.11]
+speaker = "great_bird"
+portrait = "neutral"
+local = "Fare thee well... [Ari], [spouse], and little [child_0]."
+next = "12"
+
+[stork_delivery.12]
+speaker = "great_bird"
+portrait = "happy"
+local = "Until we meet again!"

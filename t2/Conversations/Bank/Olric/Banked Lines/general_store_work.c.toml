@@ -1,0 +1,83 @@
+[general_store_work]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ holt_just_punned = 1, comparator = ">=" },
+	{ olric_routine = "general_store" },
+	{ olric_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+]
+portrait = "neutral"
+local = "Hey! I'm on call here at the General Store, so let me know if I can help with anything!"
+next = "1"
+
+[general_store_work.1]
+portrait = "sad"
+local = "Um, except for puns. You gotta ask Holt for that."
+
+[general_store_work_2]
+requires = [
+	{ npc = "olric" },
+	{ olric_routine = "general_store" },
+	{ olric_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+]
+refresh = "1y"
+portrait = "happy"
+local = "Hey [Ari]! I picked up a shift at the General Store. Turns out moving produce is a great workout, too!"
+
+[general_store_work_3]
+requires = [
+	{ npc = "olric" },
+	{ any = [
+		{ olric_routine = "general_store" },
+		{ olric_routine = "general_store_shopping" }
+	] }
+]
+refresh = "1y"
+portrait = "happy"
+local = "Fruits and vegetables! That's the good stuff."
+
+[general_store_work_4]
+requires = [
+	{ npc = "olric" },
+	{ olric_routine = "general_store" },
+	{ olric_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+]
+refresh = "1y"
+portrait = "happy"
+effect = "cheery"
+local = "I love flowers! It's me, Celine!"
+next = "1"
+
+[general_store_work_4.1]
+portrait = "wink"
+local = "Just kidding, it's Olric. And I love rocks!"
+
+[general_store_work_5]
+requires = [
+	{ npc = "olric" },
+	{ olric_routine = "general_store" },
+	{ olric_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+]
+refresh = "1y"
+portrait = "wink"
+local = "We got all kinds of cool stuff, [Ari]!"
+next = "1"
+
+[general_store_work_5.1]
+portrait = "think"
+local = "We also got some boring stuff..."
+next = "2"
+
+[general_store_work_5.2]
+portrait = "happy"
+local = "And some stuff that isn't either! Take a look!"
+
+[general_store_work_6]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ olric_routine = "general_store" },
+	{ olric_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+]
+portrait = "mad"
+local = "Are you shopping, [Ari]? We got some seriously cool fruits and vegetables."

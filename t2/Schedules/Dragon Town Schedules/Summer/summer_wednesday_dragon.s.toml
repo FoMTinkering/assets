@@ -1,0 +1,175 @@
+requires = [
+	{ weather = "pleasant" },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+	{ season = "summer" },
+	{ day_of_the_week = "wednesday" },
+]
+
+# adeline
+[adeline."6:00am"]
+destination = "adelines_bedroom/Bed"
+
+[adeline."6:21am"]
+destination = "bathhouse_change_room/Middle Bench Left Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[adeline."9:51am"]
+destination = "inn/South Table Top 1"
+on_arrival_actions = [{ animation = "write_sit" }]
+delayed_arrival_actions = [{ after = "1h 2n", activity = "order_food" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[adeline."4:13pm"]
+destination = "general_store_store/shopping_entrance"
+on_arrival_actions = [{ routine = "general_store_shopping" }]
+
+[adeline."6:42pm"]
+destination = "adelines_office/routine_entrance"
+on_arrival_actions = [{ routine = "adeline_office_work" }]
+
+[adeline."9:42pm"]
+destination = "manor_house_dining_room/Table Right Seat 2"
+on_arrival_actions = [{ activity = "drink" }]
+
+[adeline."12:33am"]
+destination = "adelines_bedroom/Bed"
+
+# dozy
+[dozy."6:00am"]
+destination = "bathhouse/Dozy"
+on_arrival_actions = [{ routine = "dozy_snooze" }]
+
+[dozy."3:36pm"]
+destination = "bathhouse/dozy_bed_chat_2"
+
+# eiland
+[eiland."6:00am"]
+destination = "western_ruins/routine_entrance"
+occupy_point = false
+on_arrival_actions = [{ routine = "western_ruins_archaeology_pit" }]
+on_departure_writes = [{ archaeology_discussion_inn = true }]
+
+[eiland."10:12am"]
+destination = "western_ruins/Dig Site Tour 3"
+
+[eiland."1:41pm"]
+destination = "bathhouse_change_room/Left Bench Left Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[eiland."7:13pm"]
+destination = "inn/Top Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[eiland."12:12am"]
+destination = "eilands_bedroom/Loveseat Left Seat"
+
+# elsie
+[elsie."6:00am"]
+destination = "inn/North Table Top 1"
+on_arrival_actions = [{ activity = "eat" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[elsie."9:59am"]
+destination = "general_store_store/shopping_entrance"
+on_arrival_actions = [{ routine = "general_store_shopping" }]
+
+[elsie."1:21pm"]
+destination = "town/Gazebo Hang Left"
+
+[elsie."4:35pm"]
+destination = "bathhouse_change_room/Left Bench Right Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[elsie."8:12pm"]
+destination = "manor_house_dining_room/Table Right Seat 1"
+on_arrival_actions = [{ activity = "drink" }]
+
+[elsie."12:35am"]
+destination = "elsies_bedroom/Chaise Right Seat"
+
+# errol
+[errol."6:00am"]
+destination = "museum_entry/Museum Desk"
+
+[errol."6:01am"]
+destination = "western_ruins/routine_entrance"
+occupy_point = false
+on_arrival_actions = [{ routine = "western_ruins_archaeology_pit_errol" }]
+
+[errol."10:11am"]
+destination = "western_ruins/Dig Site Tour 1"
+
+[errol."1:45pm"]
+destination = "clinic_f1/Bothering Valen"
+on_arrival_writes = [{ clinic_counter = 1, operator = "+=" }]
+on_departure_writes = [{ clinic_counter = 1, operator = "-=" }]
+
+[errol."7:14pm"]
+destination = "inn/Top-Middle Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [
+	{ inn_counter = 1, operator = "-=" },
+	{ archaeology_discussion_inn = false }
+]
+
+[errol."10:58pm"]
+destination = "errols_bedroom/Desk Chair"
+
+# ryis
+[ryis."6:00am"]
+destination = "eastern_road/Carpenter's Workshop Stool"
+on_arrival_actions = [{ routine = "eastern_road_woodwork" }]
+
+[ryis."12:12pm"]
+destination = "eastern_road/explanation"
+
+[ryis."1:16pm"]
+destination = "eastern_road/supervising_1"
+
+[ryis."4:22pm"]
+destination = "town/business_inn"
+
+[ryis."6:24pm"]
+destination = "bathhouse_change_room/Middle Bench Right Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[ryis."10:41pm"]
+destination = "inn/South Table Bottom 2"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[ryis."12:32am"]
+destination = "landens_house_f2/Ryis Wake Point"
+
+# seridia
+[seridia."6:00am"]
+destination = "western_ruins/watch_dig"
+
+[seridia."9:22am"]
+destination = "western_ruins/Dig Site Tour Guide"
+
+[seridia."12:22pm"]
+destination = "bathhouse/dozy_bed_chat_1"
+
+[seridia."7:16pm"]
+destination = "bathhouse_change_room/Left Stool Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[seridia."8:14pm"]
+destination = "manor_house_dining_room/Table Left Seat 1"
+on_arrival_actions = [{ activity = "drink" }]
+
+[seridia."12:32am"]
+destination = "narrows/western_ruins_cutscene_exit"

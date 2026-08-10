@@ -1,0 +1,1890 @@
+# town romanceables
+[adeline_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "adeline" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_romanceable_timer = true },
+]
+actions = [{ bark = { bark = "relationship_status", npc = "adeline" } }]
+portrait = "sad"
+local = "[Ari]! I'm so glad you're safe!"
+next = "1"
+
+[adeline_post_endgame_0.1]
+portrait = "sick_eyes_closed"
+local = "I was so scared."
+next = "2"
+
+[adeline_post_endgame_0.2]
+portrait = "sad"
+local = "Those mysterious people you appeared with... you stopped that earthquake somehow, didn't you?"
+next = "3"
+
+[adeline_post_endgame_0.3]
+portrait = "gloomy_special"
+local = "[Ari]... what's really going on?"
+next = [
+	{ target = "4r", requires = [{ adeline_is_partner = true }] },
+	{ target = "4f", requires = [] },
+]
+
+[adeline_post_endgame_0.4r]
+portrait = "hope_special"
+local = "..."
+next = "5r"
+
+[adeline_post_endgame_0.5r]
+portrait = "embarrassed"
+local = "You know you can tell me anything..."
+prompts = [
+	{ local = "I'm sorry I couldn't tell you until now. Let me explain...", next = "6" },
+	{ local = "Well...", next = "6" },
+]
+
+[adeline_post_endgame_0.4f]
+portrait = "sad"
+local = "..."
+next = "5f"
+
+[adeline_post_endgame_0.5f]
+portrait = "neutral"
+local = "You know you can tell me anything..."
+prompts = [
+	{ local = "I'm sorry I couldn't tell you until now. Let me explain...", next = "6" },
+	{ local = "Well...", next = "6" },
+]
+
+[adeline_post_endgame_0.6]
+actions = [{ blackout = 60 }]
+portrait = "shocked"
+effect = "shock"
+local = "Magic and ancient ruins... Two dragons......"
+next = "7"
+
+[adeline_post_endgame_0.7]
+portrait = "mad"
+local = "You really joined forces to save the town together!?"
+next = [
+	{ target = "8r", requires = [{ adeline_is_partner = true }] },
+	{ target = "8f", requires = [] },
+]
+
+[adeline_post_endgame_0.8r]
+portrait = "happy_blush"
+local = "Wow, [Ari]! You really are Mistria's hero!"
+next = "9"
+
+[adeline_post_endgame_0.8f]
+portrait = "happy"
+local = "Wow, [Ari]! You really are Mistria's hero!"
+next = "9"
+
+[adeline_post_endgame_0.9]
+portrait = "mad"
+effect = "shock"
+local = "This has to be the development of the century-"
+next = "10"
+
+[adeline_post_endgame_0.10]
+portrait = "happy"
+effect = "music_notes"
+local = "There's no time to waste!"
+next = "11"
+
+[adeline_post_endgame_0.11]
+portrait = "think"
+local = "For my first order of business..."
+next = "12"
+
+[adeline_post_endgame_0.12]
+portrait = "happy"
+effect = "sparkles"
+local = "I'll get started on organizing a welcoming committee."
+next = "13"
+
+[adeline_post_endgame_0.13]
+portrait = "wink"
+local = "We have to make sure our resident dragons get settled into modern village life!"
+next = "14"
+
+[adeline_post_endgame_0.14]
+portrait = "think"
+local = "And I'd better get started on a letter to Mother and Father to explain everything..."
+next = "15"
+
+[adeline_post_endgame_0.15]
+portrait = "happy"
+effect = "drop"
+local = "I hope I have enough paper!"
+
+[balor_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_romanceable_timer = true },
+]
+actions = [{ bark = { bark = "relationship_status", npc = "balor" } }]
+portrait = "shocked"
+local = "What WAS all that, [Ari]?"
+next = "1"
+
+[balor_post_endgame_0.1]
+portrait = "think"
+local = "In all my travels... I've never seen anything like it."
+next = [
+	{ target = "2r", requires = [{ balor_is_partner = true }] },
+	{ target = "2f", requires = [] },
+]
+
+[balor_post_endgame_0.2r]
+portrait = "blush_special"
+local = "That circle of light, those people you were with...?"
+prompts = [
+	{ local = "Well, it all started when I first came to Mistria...", next = "3r" },
+	{ local = "I guess I'd better explain everything, huh?", next = "3r" },
+]
+
+[balor_post_endgame_0.2f]
+portrait = "sad"
+local = "That circle of light, those people you were with...?"
+prompts = [
+	{ local = "Well, it all started when I first came to Mistria...", next = "3f" },
+	{ local = "I guess I'd better explain everything, huh?", next = "3f" },
+]
+
+[balor_post_endgame_0.3r]
+actions = [{ blackout = 60 }]
+portrait = "hope_special"
+local = "W-wow."
+next = "4r"
+
+[balor_post_endgame_0.4r]
+portrait = "happy_blush"
+local = "You saved the town! Of course you did... that's my [Ari]!"
+next = "5"
+
+[balor_post_endgame_0.3f]
+actions = [{ blackout = 60 }]
+portrait = "shocked"
+local = "W-wow, [Ari]."
+next = "4f"
+
+[balor_post_endgame_0.4f]
+portrait = "happy"
+local = "You saved the town! Somehow... I'm not even that surprised!"
+next = "5"
+
+[balor_post_endgame_0.5]
+portrait = "ugh"
+local = "But you're saying dragons are... real?"
+next = "6"
+
+[balor_post_endgame_0.6]
+portrait = "think"
+local = "And those mysterious orders I've been delivering to the $Deep Woods$ were from the one named $Caldarus$ this whole time?"
+next = "7"
+
+[balor_post_endgame_0.7]
+portrait = "neutral"
+effect = "shock"
+local = "No wonder I've been getting paid with ancient coins and gems!"
+next = "8"
+
+[balor_post_endgame_0.8]
+portrait = "sly"
+local = "Do you suppose either dragon has a real treasure hoard, like in the stories?"
+next = "9"
+
+[balor_post_endgame_0.9]
+portrait = "happy"
+effect = "sparkles"
+local = "I'd better go and introduce myself properly-"
+next = "10"
+
+[balor_post_endgame_0.10]
+portrait = "wink"
+local = "To make sure they have everything they need to get settled!"
+
+[celine_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "celine" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_romanceable_timer = true },
+]
+actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
+portrait = "concerned"
+local = "[Ari]! Thank goodness you're okay!"
+next = "1"
+
+[celine_post_endgame_0.1]
+portrait = "ugh"
+local = "I don't know how to explain it, but I had the most terrible feeling..."
+next = "2"
+
+[celine_post_endgame_0.2]
+portrait = "sad"
+local = "I was just going about my day when my blood suddenly ran cold!"
+next = "3"
+
+[celine_post_endgame_0.3]
+portrait = "concerned"
+local = "A few minutes later, the earth started to tremble beneath my feet..."
+next = "4"
+
+[celine_post_endgame_0.4]
+portrait = "gloomy"
+local = "But then you appeared out of nowhere, hovering in the air... the three of you."
+next = "5"
+
+[celine_post_endgame_0.5]
+portrait = "embarrassed"
+local = """You stopped it, didn't you? Whatever "it" was."""
+next = [
+	{ target = "6r", requires = [{ celine_is_partner = true }] },
+	{ target = "6f", requires = [] },
+]
+
+[celine_post_endgame_0.6r]
+portrait = "shy_special"
+local = "You protected me..."
+next = "7r"
+
+[celine_post_endgame_0.6f]
+portrait = "happy"
+local = "You protected everyone."
+next = "7f"
+
+[celine_post_endgame_0.7r]
+portrait = "blush_special"
+local = "You protect everyone. You saved the whole village!"
+next = "8r"
+
+[celine_post_endgame_0.7f]
+portrait = "very_happy"
+local = "You saved the whole village!"
+next = "8f"
+
+[celine_post_endgame_0.8r]
+portrait = "think_special"
+local = "But... [Ari]..."
+next = "9r"
+
+[celine_post_endgame_0.8f]
+portrait = "think_special"
+local = "But... [Ari]..."
+next = "9f"
+
+[celine_post_endgame_0.9r]
+portrait = "angry_blush"
+local = "What WAS all that?"
+next = "10r"
+
+[celine_post_endgame_0.9f]
+portrait = "mad"
+local = "What WAS all that?"
+next = "10f"
+
+[celine_post_endgame_0.10r]
+portrait = "think_special"
+local = "And why do I feel like you've been keeping something from me?"
+prompts = [
+	{ local = "I'm sorry I couldn't tell you before! Please, just listen...", next = "11" },
+	{ local = "I can explain...", next = "11" },
+]
+
+[celine_post_endgame_0.10f]
+portrait = "think_special"
+local = "And who were those people?"
+prompts = [
+	{ local = "I'm sorry I couldn't tell you before! Let me explain...", next = "11" },
+	{ local = "It's story time!", next = "11" },
+]
+
+[celine_post_endgame_0.11]
+actions = [{ blackout = 60 }]
+portrait = "think"
+local = "..."
+next = "12"
+
+[celine_post_endgame_0.12]
+portrait = "sad"
+local = "Oh [Ari]..."
+next = "13"
+
+[celine_post_endgame_0.13]
+portrait = "sweat"
+local = "You've been carrying so much on your shoulders, haven't you?"
+next = "14"
+
+[celine_post_endgame_0.14]
+portrait = "embarrassed"
+local = "I understand why you needed to keep it quiet until now."
+next = [
+	{ target = "15r", requires = [{ celine_is_partner = true }] },
+	{ target = "15f", requires = [] },
+]
+
+[celine_post_endgame_0.15r]
+portrait = "shy_blush"
+local = "Though I wish I could have helped you more."
+next = "16"
+
+[celine_post_endgame_0.15f]
+portrait = "think"
+local = "Though I wish I could have helped you more."
+next = "16"
+
+[celine_post_endgame_0.16]
+portrait = "happy"
+local = "Still... I'm looking forward to meeting $Caldarus$."
+next = "17"
+
+[celine_post_endgame_0.17]
+portrait = "neutral"
+effect = "cheery"
+local = "I bet he knows about all kinds of ancient flora!"
+next = "18"
+
+[celine_post_endgame_0.18]
+portrait = "think"
+local = "Oh..."
+next = "19"
+
+[celine_post_endgame_0.19]
+portrait = "happy"
+effect = "drop"
+local = "And um, I'd be curious to meet $Seridia$, too."
+
+[eiland_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "eiland" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_romanceable_timer = true },
+]
+actions = [{ bark = { bark = "relationship_status", npc = "eiland" } }]
+portrait = "surprised"
+effect = "shock"
+local = "[Ari]! Is everything okay?"
+next = "1"
+
+[eiland_post_endgame_0.1]
+portrait = "sad"
+local = "What happened down in the Ruins?"
+next = "2"
+
+[eiland_post_endgame_0.2]
+portrait = "mad"
+local = "Tell. me. Everything!"
+next = "3"
+
+[eiland_post_endgame_0.3]
+portrait = "embarrassed"
+local = "Please."
+prompts = [
+	{ local = "Um, so about the Priestess...", next = "4" },
+	{ local = "Well, after I broke the final seal...", next = "4" },
+]
+
+[eiland_post_endgame_0.4]
+actions = [{ blackout = 60 }]
+portrait = "surprised"
+local = "A second dragon..."
+next = "5"
+
+[eiland_post_endgame_0.5]
+portrait = "think"
+local = "Seridia."
+next = "6"
+
+[eiland_post_endgame_0.6]
+portrait = "mad"
+local = "The former $Witch Queen$."
+next = "7"
+
+[eiland_post_endgame_0.7]
+portrait = "think"
+local = "[Ari]..."
+next = "8"
+
+[eiland_post_endgame_0.8]
+portrait = "embarrassed"
+effect = "cheery"
+local = "This changes EVERYTHING!"
+next = "9"
+
+[eiland_post_endgame_0.9]
+portrait = "happy"
+local = "You've uncovered an entire volume of Mistrian history, previously shrouded by time..."
+next = "10"
+
+[eiland_post_endgame_0.10]
+portrait = "surprised"
+local = "All while saving the town from certain destruction!"
+next = [
+	{ target = "11r", requires = [{ eiland_is_partner = true }] },
+	{ target = "11f", requires = [] },
+]
+
+[eiland_post_endgame_0.11r]
+portrait = "happy_blush"
+effect = "sparkles"
+local = "You are truly incredible!"
+next = "12"
+
+[eiland_post_endgame_0.11f]
+portrait = "happy"
+effect = "sparkles"
+local = "You are truly incredible!"
+next = "12"
+
+[eiland_post_endgame_0.12]
+portrait = "think"
+local = "Now..."
+next = "13"
+
+[eiland_post_endgame_0.13]
+portrait = "happy"
+local = "How soon do you think I could get an audience with the dragons?"
+next = "14"
+
+[eiland_post_endgame_0.14]
+portrait = "neutral"
+effect = "cheery"
+local = "There's so much I want to ask them!"
+
+[hayden_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "hayden" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_romanceable_timer = true },
+]
+actions = [{ bark = { bark = "relationship_status", npc = "hayden" } }]
+portrait = "mad"
+local = "Are you alright, [Ari]!? What happened?"
+next = "1"
+
+[hayden_post_endgame_0.1]
+portrait = "gloomy"
+local = "Those people with you in that circle of light..."
+next = "2"
+
+[hayden_post_endgame_0.2]
+portrait = "mad"
+local = "They weren't hurting you, were they?"
+next = [
+	{ target = "3r", requires = [{ hayden_is_partner = true }] },
+	{ target = "3f", requires = [] },
+]
+
+[hayden_post_endgame_0.3r]
+portrait = "mad" # listed as super_mad_blush
+local = "Because if they were-"
+prompts = [
+	{ local = "They're friends, Hayden! Let me explain...", next = "4" },
+	{ local = "I'm sorry I couldn't tell you all of this sooner, but...", next = "4" },
+]
+
+[hayden_post_endgame_0.3f]
+portrait = "mad" # listed as super_mad
+local = "Because if they were-"
+prompts = [
+	{ local = "They're friends, Hayden! Let me explain...", next = "4" },
+	{ local = "I'm sorry I couldn't tell you all of this sooner, but...", next = "4" },
+]
+
+[hayden_post_endgame_0.4]
+actions = [{ blackout = 60 }]
+portrait = "sweat"
+local = "Well color me shocked! Amazed, even!"
+next = [
+	{ target = "5r", requires = [{ hayden_is_partner = true }] },
+	{ target = "5f", requires = [] },
+]
+
+[hayden_post_endgame_0.5r]
+portrait = "blush"
+local = "You're something else, [Ari]... a real hero!"
+next = "6"
+
+[hayden_post_endgame_0.5f]
+portrait = "neutral"
+local = "You're something else, [Ari]... a real hero!"
+next = "6"
+
+[hayden_post_endgame_0.6]
+portrait = "embarrassed"
+local = "Sorry for suspecting your friends there for a minute there."
+next = "7"
+
+[hayden_post_endgame_0.7]
+portrait = "happy"
+local = "From what you've told me, I oughta shake both their hands instead, huh?"
+
+[juniper_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "juniper" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_romanceable_timer = true },
+]
+actions = [{ bark = { bark = "relationship_status", npc = "juniper" } }]
+portrait = "happy"
+local = "[Ari], you certainly made an entrance back there!"
+next = "1"
+
+[juniper_post_endgame_0.1]
+portrait = "unimpressed"
+local = "I saw you casting that magic circle with Caldarus and that exceptionally tall woman."
+next = "2"
+
+[juniper_post_endgame_0.2]
+portrait = "sad"
+local = "Your form could use some refinement..."
+next = "3"
+
+[juniper_post_endgame_0.3]
+portrait = "wink"
+local = "But I digress, there will be plenty of time for a critique of your magical technique later."
+next = "4"
+
+[juniper_post_endgame_0.4]
+portrait = "embarrassed"
+local = "Please enlighten me. What in the world happened!?"
+prompts = [
+	{ local = "There I was, at the bottom of the Mines...", next = "5" },
+	{ local = "The power of magic was strong, at the edge of our world...", next = "5" },
+]
+
+[juniper_post_endgame_0.5]
+actions = [{ blackout = 60 }]
+portrait = "annoyed"
+local = "So you're telling me there's a dragon named Seridia, who is also the former Witch Queen?"
+next = "6"
+
+[juniper_post_endgame_0.6]
+portrait = "mad"
+local = "And now she's been freed... and plans to live in the Western Ruins?"
+next = "7"
+
+[juniper_post_endgame_0.7]
+portrait = "think"
+local = "..."
+next = "8"
+
+[juniper_post_endgame_0.8]
+portrait = "angry_brows"
+effect = "sparkles"
+local = "NO. WAY. You MUST introduce me to her, [Ari]!"
+next = "9"
+
+[juniper_post_endgame_0.9]
+portrait = "happy"
+local = "I'm sure she'll be delighted to meet the sorceress who helped free her!"
+
+[[juniper_post_endgame_0.9.prompts]]
+local = "I'm glad you're excited..."
+next = "10"
+
+[[juniper_post_endgame_0.9.prompts]]
+local = "I couldn't have done it without you, Juniper."
+next = [
+	{ target = "12r", requires = [{ juniper_is_partner = true }] },
+	{ target = "12f", requires = [] },
+]
+
+[juniper_post_endgame_0.10]
+portrait = "neutral"
+local = "Of course I am!"
+next = "11"
+
+[juniper_post_endgame_0.11]
+portrait = "unimpressed"
+local = "But don't get me wrong..."
+next = "14"
+
+[juniper_post_endgame_0.12r]
+portrait = "happy_blush"
+local = "It's true."
+next = "13"
+
+[juniper_post_endgame_0.12f]
+portrait = "neutral"
+local = "It's true."
+next = "13"
+
+[juniper_post_endgame_0.13]
+portrait = "unimpressed"
+local = "But you know, [Ari]..."
+next = "14"
+
+[juniper_post_endgame_0.14]
+portrait = "sincere_special"
+local = "I was worried about you. I'm glad you survived that ordeal."
+next = "15"
+
+[juniper_post_endgame_0.15]
+portrait = "happy"
+local = "You've done Mistria a great service."
+next = [
+	{ target = "16r", requires = [{ juniper_is_partner = true }] },
+	{ target = "16f", requires = [] },
+]
+
+[juniper_post_endgame_0.16r]
+portrait = "blush"
+local = "I hope you know that you can rely on me to help you whenever you need it."
+next = "17"
+
+[juniper_post_endgame_0.16f]
+portrait = "neutral"
+local = "I'm only glad I could aid you in such a noble cause."
+next = "17"
+
+[juniper_post_endgame_0.17]
+portrait = "think"
+local = "..."
+next = "18"
+
+[juniper_post_endgame_0.18]
+portrait = "sly"
+local = "So, about Seridia... do you think you could introduce me now?"
+
+[march_post_endgame_0_low_hearts]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_romanceable_timer = true },
+	{ march_heart_level = 4, comparator = "<" },
+	{ march_endgame_line_seen = false },
+]
+writes = [{ march_endgame_line_seen = true }]
+actions = [{ bark = { bark = "annoyed", npc = "march" } }]
+portrait = "neutral"
+local = "So people are saying you saved us from that earthquake."
+next = "1"
+
+[march_post_endgame_0_low_hearts.1]
+portrait = "mad"
+local = "But they're also saying you caused it when you released some kind of seal?"
+next = "2"
+
+[march_post_endgame_0_low_hearts.2]
+portrait = "eight_heart_think"
+local = "Which also freed... dragons?"
+next = "3"
+
+[march_post_endgame_0_low_hearts.3]
+portrait = "sigh"
+local = "Maybe next time just... stay home."
+next = "4"
+
+[march_post_endgame_0_low_hearts.4]
+portrait = "unimpressed"
+local = "It would save us all a lot of trouble."
+
+[march_post_endgame_0_middle_hearts]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_romanceable_timer = true },
+	{ march_heart_level = 4, comparator = ">=" },
+	{ march_heart_level = 8, comparator = "<=" },
+	{ march_status = "undefined" },
+	{ march_endgame_line_seen = false },
+]
+writes = [{ march_endgame_line_seen = true }]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "shock_special"
+local = "[Ari]! What was all that!?"
+next = "1"
+
+[march_post_endgame_0_middle_hearts.1]
+portrait = "eight_heart_think"
+local = "When the earthquake started, I thought you might be down in the Mines and-"
+next = "2"
+
+[march_post_endgame_0_middle_hearts.2]
+portrait = "shock_special"
+local = "A-and then you suddenly appeared in the air with those people and the shaking just... stopped."
+next = "3"
+
+[march_post_endgame_0_middle_hearts.3]
+portrait = "eight_heart_think"
+local = "You wouldn't believe some of the rumors that are flying around..."
+prompts = [
+	{ local = "So about that...", next = "4" },
+	{ local = "Let me see if I can explain...", next = "4" },
+]
+
+[march_post_endgame_0_middle_hearts.4]
+actions = [{ blackout = 60 }]
+portrait = "sincere_special"
+local = "Wow..."
+next = "5"
+
+[march_post_endgame_0_middle_hearts.5]
+portrait = "eight_heart_think"
+local = "I don't know what to say."
+next = "6"
+
+[march_post_endgame_0_middle_hearts.6]
+portrait = "sad_special"
+local = "Are you serious? That all really happened?"
+next = "7"
+
+[march_post_endgame_0_middle_hearts.7]
+portrait = "ugh"
+local = "I... I might have misjudged you, [Ari]."
+prompts = [
+	{ local = "It's fine March, really.", next = "8" },
+	{ local = "Water under the bridge.", next = "8" },
+]
+
+[march_post_endgame_0_middle_hearts.8]
+portrait = "sad"
+local = "I'm glad to hear you say that but..."
+next = "9"
+
+[march_post_endgame_0_middle_hearts.9]
+portrait = "unimpressed"
+local = "Still, what were you thinking? Breaking some kind of ancient seal underground?"
+next = "10"
+
+[march_post_endgame_0_middle_hearts.10]
+portrait = "ugh"
+local = "Of course it would release something like a dragon! Haven't you ever read a book before?"
+next = "11"
+
+[march_post_endgame_0_middle_hearts.11]
+portrait = "sigh"
+local = "Whatever. I guess I still owe you one for saving the town."
+next = "12"
+
+[march_post_endgame_0_middle_hearts.12]
+portrait = "tsundere"
+local = "Thanks, [Ari]."
+
+[march_post_endgame_0_high_hearts]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_romanceable_timer = true },
+	{ march_heart_level = 8, comparator = ">=" },
+	{ march_status = "undefined", comparator = "!=" },
+	{ march_endgame_line_seen = false },
+]
+writes = [{ march_endgame_line_seen = true }]
+actions = [{ bark = { bark = "relationship_status", npc = "march" } }]
+portrait = "shock_special"
+local = "[Ari]! What happened!?"
+next = "1"
+
+[march_post_endgame_0_high_hearts.1]
+portrait = "sad_special"
+local = "When the earthquake started, and I knew you were down in the Mines, I was so worried-"
+next = "2"
+
+[march_post_endgame_0_high_hearts.2]
+portrait = "shock_special"
+local = "And then you suddenly appeared in the air with those people and the shaking just... stopped."
+next = "3"
+
+[march_post_endgame_0_high_hearts.3]
+portrait = "eight_heart_think"
+local = "You wouldn't believe some of the rumors that are flying around..."
+prompts = [
+	{ local = "So about that...", next = "4" },
+	{ local = "Let me see if I can explain...", next = "4" },
+]
+
+[march_post_endgame_0_high_hearts.4]
+actions = [{ blackout = 60 }]
+portrait = "sincere_special"
+local = "Wow..."
+next = "5"
+
+[march_post_endgame_0_high_hearts.5]
+portrait = "eight_heart_think"
+local = "I don't know what to say."
+next = "6"
+
+[march_post_endgame_0_high_hearts.6]
+portrait = "sad_special"
+local = "Are you serious? All of that really happened?"
+next = "7"
+
+[march_post_endgame_0_high_hearts.7]
+portrait = "sincere_special"
+local = "And you've been carrying all that all by yourself this whole time?"
+next = [
+	{ target = "8r", requires = [{ march_is_partner = true }] },
+	{ target = "8f", requires = [] },
+]
+
+[march_post_endgame_0_high_hearts.8r]
+portrait = "sad_special"
+local = "I really misjudged you in the past, [Ari]. I'm sorry."
+
+[[march_post_endgame_0_high_hearts.8r.prompts]]
+local = "It's fine March, really."
+next = "9"
+
+[[march_post_endgame_0_high_hearts.8r.prompts]]
+local = "Water under the bridge."
+next = "9"
+
+[[march_post_endgame_0_high_hearts.8r.prompts]]
+local = "Yeah well, you were worth the work."
+next = "9r"
+
+[march_post_endgame_0_high_hearts.8f]
+portrait = "sad_special"
+local = "I really misjudged you in the past, [Ari]. I'm sorry."
+
+[[march_post_endgame_0_high_hearts.8f.prompts]]
+local = "It's fine March, really."
+next = "9"
+
+[[march_post_endgame_0_high_hearts.8f.prompts]]
+local = "Water under the bridge."
+next = "9"
+
+[[march_post_endgame_0_high_hearts.8f.prompts]]
+local = "I'm just glad you finally warmed up to me."
+next = "9"
+
+[march_post_endgame_0_high_hearts.9r]
+portrait = "eight_heart_flustered"
+local = "I'm glad to hear you say that but..."
+next = "10"
+
+[march_post_endgame_0_high_hearts.9]
+portrait = "sad"
+local = "I'm glad to hear you say that but..."
+next = "10"
+
+[march_post_endgame_0_high_hearts.10]
+portrait = "tsundere"
+local = "Still, looking back... it was low of me."
+next = "11"
+
+[march_post_endgame_0_high_hearts.11]
+portrait = "eight_heart_closed_eyes"
+local = "..."
+next = "12"
+
+[march_post_endgame_0_high_hearts.12]
+portrait = "sincere_special"
+local = "Thank you [Ari]. Really, truly."
+next = [
+	{ target = "13r", requires = [{ march_is_partner = true }] },
+	{ target = "13f", requires = [] },
+]
+
+[march_post_endgame_0_high_hearts.13r]
+portrait = "super_flustered"
+local = "I hope... I hope that one day I can properly make it up to you. Mistria is a much better place with you in it."
+
+[march_post_endgame_0_high_hearts.13f]
+portrait = "eight_heart_happy"
+local = "I've never had a better friend than you, and Mistria is a much better place with you in it."
+
+[reina_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "reina" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_romanceable_timer = true },
+]
+actions = [{ bark = { bark = "relationship_status", npc = "reina" } }]
+portrait = "sad"
+local = "There you are, [Ari]! Is everything okay?"
+next = "1"
+
+[reina_post_endgame_0.1]
+portrait = "think"
+local = "I'm sure the whole town is bombarding you with questions..."
+next = [
+	{ target = "2r", requires = [{ reina_is_partner = true }] },
+	{ target = "2f", requires = [] },
+]
+
+[reina_post_endgame_0.2r]
+portrait = "blush_open_eyes"
+effect = "drop"
+local = "And to be honest I want to do the same!"
+next = "3"
+
+[reina_post_endgame_0.2f]
+portrait = "happy"
+effect = "drop"
+local = "And to be honest I want to do the same!"
+next = "3"
+
+[reina_post_endgame_0.3]
+portrait = "embarrassed"
+local = "But there's no need to rush. I'm sure you're feeling overwhelmed..."
+prompts = [
+	{ local = "Of course I want to tell you all about it!", next = "4" },
+	{ local = "I can explain! Now where to start...", next = "4" },
+]
+
+[reina_post_endgame_0.4]
+actions = [{ blackout = 60 }]
+portrait = "think"
+local = "Ancient dragons, lost ruins, dangerous adventures underground..."
+next = "5"
+
+[reina_post_endgame_0.5]
+portrait = "blush_special"
+local = "You're like a hero straight out of one of my favorite novels!"
+next = "6"
+
+[reina_post_endgame_0.6]
+portrait = "gloomy_special"
+local = "But, oh, [Ari]!"
+next = [
+	{ target = "7r", requires = [{ reina_is_partner = true }] },
+	{ target = "7f", requires = [] },
+]
+
+[reina_post_endgame_0.7r]
+portrait = "sad"
+local = "I'm so glad you didn't get hurt."
+prompts = [
+	{ local = "I was doing it to protect the town.", next = "8" },
+	{ local = "I wanted to keep you safe.", next = "9r" },
+]
+
+[reina_post_endgame_0.7f]
+portrait = "sad"
+local = "I'm so glad you didn't get hurt."
+prompts = [
+	{ local = "I was doing it to protect the town.", next = "8" },
+	{ local = "I wanted to keep everyone safe.", next = "9f" },
+]
+
+[reina_post_endgame_0.8]
+portrait = "neutral"
+local = "That's so like you..."
+next = "10"
+
+[reina_post_endgame_0.9r]
+portrait = "blush_open_eyes"
+local = "Oh [Ari]..."
+next = "10"
+
+[reina_post_endgame_0.9f]
+portrait = "happy"
+local = "And you did!"
+next = "10"
+
+[reina_post_endgame_0.10]
+portrait = "mad"
+local = "Now listen to me. No more secrets, okay?"
+next = [
+	{ target = "11r", requires = [{ reina_is_partner = true }] },
+	{ target = "11f", requires = [] },
+]
+
+[reina_post_endgame_0.11r]
+portrait = "blush_special"
+local = "You're the person I care about most. You shouldn't have to carry these kinds of things by yourself!"
+next = "12"
+
+[reina_post_endgame_0.11f]
+portrait = "neutral"
+local = "You're a dear friend to me. You shouldn't have to carry these kinds of things by yourself!"
+next = "12"
+
+[reina_post_endgame_0.12]
+portrait = "happy"
+local = "Whether it's a hot meal or a listening ear, I want to be someone you can always rely on to be there for you!"
+
+[[reina_post_endgame_0.12.prompts]]
+local = "Thank you, Reina. I will."
+next = [
+	{ target = "13r", requires = [{ reina_is_partner = true }] },
+	{ target = "13f", requires = [] },
+]
+
+[[reina_post_endgame_0.12.prompts]]
+local = "That means a lot to me, Reina."
+next = [
+	{ target = "14r", requires = [{ reina_is_partner = true }] },
+	{ target = "14f", requires = [] },
+]
+
+[reina_post_endgame_0.13r]
+portrait = "blush_open_eyes"
+local = "Good!"
+next = "15"
+
+[reina_post_endgame_0.13f]
+portrait = "neutral"
+local = "Good!"
+next = "15"
+
+[reina_post_endgame_0.14r]
+portrait = "blush_open_eyes"
+local = "Good, cause you mean a lot to me, and to this whole town!"
+next = "15"
+
+[reina_post_endgame_0.14f]
+portrait = "happy"
+local = "Good, cause you mean a lot to me, and to this whole town!"
+next = "15"
+
+[reina_post_endgame_0.15]
+portrait = "neutral"
+local = "I get the feeling that Mistria's future is looking brighter than ever, and it's thanks to you..."
+next = "16"
+
+[reina_post_endgame_0.16]
+portrait = "happy"
+local = "But it's still hard to believe that the legend of the sleeping dragon was really true..."
+next = "17"
+
+[reina_post_endgame_0.17]
+portrait = "wink"
+local = "I hope you'll introduce me to these new friends of yours soon!"
+
+[ryis_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_romanceable_timer = true },
+]
+actions = [{ bark = { bark = "relationship_status", npc = "ryis" } }]
+portrait = "shocked"
+local = "[Ari]! That was unreal!"
+next = "1"
+
+[ryis_post_endgame_0.1]
+portrait = "mad"
+local = "That earthquake..."
+next = "2"
+
+[ryis_post_endgame_0.2]
+portrait = "sad"
+local = "It felt like the whole town was going to shake apart around us..."
+next = "3"
+
+[ryis_post_endgame_0.3]
+portrait = "surprised"
+local = "I couldn't believe it when you appeared in that glowing circle!"
+next = "4"
+
+[ryis_post_endgame_0.4]
+portrait = "shocked"
+local = "How did you make it stop like that? And who were those horned people with you?"
+prompts = [
+	{ local = "I should start at the beginning...", next = "5" },
+	{ local = "Funny you should ask...", next = "5" },
+]
+
+[ryis_post_endgame_0.5]
+actions = [{ blackout = 60 }]
+portrait = "surprised"
+local = "What a story. I can hardly believe it!"
+next = "6"
+
+[ryis_post_endgame_0.6]
+portrait = "sad"
+local = "[Ari]... I had no idea."
+next = "7"
+
+[ryis_post_endgame_0.7]
+portrait = "sincere_special"
+local = "I thought we were just focusing on fixing Mistria back up together, but you were carrying all that on your shoulders, too..."
+next = [
+	{ target = "8r", requires = [{ ryis_is_partner = true }] },
+	{ target = "8f", requires = [] },
+]
+
+[ryis_post_endgame_0.8r]
+portrait = "embarrassed"
+local = "You're an inspiration."
+next = "9"
+
+[ryis_post_endgame_0.8f]
+portrait = "neutral"
+local = "You're an inspiration."
+next = "9"
+
+[ryis_post_endgame_0.9]
+portrait = "happy"
+local = "It really fires me up, you know?"
+next = "10"
+
+[ryis_post_endgame_0.10]
+portrait = "neutral"
+local = "I'm not sure if the quake caused much damage, but... let me handle any repairs this time."
+next = [
+	{ target = "11r", requires = [{ ryis_is_partner = true }] },
+	{ target = "11f", requires = [] },
+]
+
+[ryis_post_endgame_0.11r]
+portrait = "blush_special"
+local = "You deserve a break. Just relax and I'll take care of you, okay? It's the least I can do after everything you've done."
+
+[ryis_post_endgame_0.11f]
+portrait = "happy"
+local = "You deserve a break. It's the least I can do after everything you've done!"
+
+[valen_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "valen" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_romanceable_timer = true },
+]
+actions = [{ bark = { bark = "relationship_status", npc = "valen" } }]
+portrait = "panic"
+local = "[Ari]! You're not hurt, are you?"
+next = "1"
+
+[valen_post_endgame_0.1]
+portrait = "sad"
+local = "Come here, let me take a look!"
+
+[[valen_post_endgame_0.1.prompts]]
+local = "I'm fine!"
+next = [
+	{ target = "2r", requires = [{ valen_is_partner = true }] },
+	{ target = "2f", requires = [] },
+]
+
+[[valen_post_endgame_0.1.prompts]]
+local = "Just a bit tired."
+next = [
+	{ target = "2r", requires = [{ valen_is_partner = true }] },
+	{ target = "2f", requires = [] },
+]
+
+[valen_post_endgame_0.2r]
+portrait = "teary"
+local = "Thank goodness."
+next = "3"
+
+[valen_post_endgame_0.2f]
+portrait = "embarrassed"
+local = "Thank goodness."
+next = "3"
+
+[valen_post_endgame_0.3]
+portrait = "mad"
+local = "As if I didn't have enough to worry about! The earthquake hit, and then-"
+next = "4"
+
+[valen_post_endgame_0.4]
+portrait = "sad"
+local = "And then you suddenly appeared..."
+next = "5"
+
+[valen_post_endgame_0.5]
+portrait = "think"
+local = "..."
+next = [
+	{ target = "6r", requires = [{ valen_is_partner = true }] },
+	{ target = "6f", requires = [] },
+]
+
+[valen_post_endgame_0.6r]
+portrait = "neutral_blush"
+local = "I don't really understand how, but you saved all of us, didn't you? You and your friends."
+prompts = [
+	{ local = "It's a bit of a long story...", next = "7" },
+	{ local = "I'll tell you what happened...", next = "7" },
+]
+
+[valen_post_endgame_0.6f]
+portrait = "neutral"
+local = "I don't really understand how, but you saved all of us, didn't you? You and your friends."
+prompts = [
+	{ local = "It's a bit of a long story...", next = "7" },
+	{ local = "I'll tell you what happened...", next = "7" },
+]
+
+[valen_post_endgame_0.7]
+actions = [{ blackout = 60 }]
+portrait = "sad"
+local = "Oh [Ari], you've been through so much."
+next = [
+	{ target = "8r", requires = [{ valen_is_partner = true }] },
+	{ target = "8f", requires = [] },
+]
+
+[valen_post_endgame_0.8r]
+portrait = "embarrassed"
+local = "Thank you for everything you've done."
+next = "9"
+
+[valen_post_endgame_0.8f]
+portrait = "neutral"
+local = "Thank you for everything you've done."
+next = "9"
+
+[valen_post_endgame_0.9]
+portrait = "happy"
+local = "You saved Mistria!"
+next = "10"
+
+[valen_post_endgame_0.10]
+portrait = "neutral"
+local = "I know that you're the kind of person that looks out for others..."
+next = "11"
+
+[valen_post_endgame_0.11]
+portrait = "embarrassed"
+local = "But don't forget that you're important to all of us, too."
+next = [
+	{ target = "12r", requires = [{ valen_is_partner = true }] },
+	{ target = "12f", requires = [] },
+]
+
+[valen_post_endgame_0.12r]
+portrait = "happy_blush"
+local = "Just know I'll always be here when you need me."
+
+[valen_post_endgame_0.12f]
+portrait = "happy"
+local = "Just know I'll always be here when you need me."
+
+# dragon romanceables
+[caldarus_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_romanceable_timer = true },
+]
+actions = [{ bark = { bark = "relationship_status", npc = "caldarus" } }]
+portrait = "think"
+local = "It has been strange, having my old memories begin to return..."
+next = "1"
+
+[caldarus_post_endgame_0.1]
+portrait = "neutral"
+local = "Particularly because I am now able to view them from a mortal perspective."
+next = "2"
+
+[caldarus_post_endgame_0.2]
+portrait = "sigh"
+local = "In hindsight, I recognize that my decision to seal Seridia had wide-reaching consequences for humanity."
+next = "3"
+
+[caldarus_post_endgame_0.3]
+portrait = "avoidant"
+local = "I used to think in terms of black and white. I based my actions on such thinking."
+next = "4"
+
+[caldarus_post_endgame_0.4]
+portrait = "unsure_special"
+local = "How foolish of me."
+next = "5"
+
+[caldarus_post_endgame_0.5]
+portrait = "sigh"
+local = "We live this life in neither coldest dark, nor in searing light-"
+next = "6"
+
+[caldarus_post_endgame_0.6]
+portrait = "smile"
+local = "But in the habitable shades in between."
+next = "7"
+
+[caldarus_post_endgame_0.7]
+portrait = "think"
+local = "..."
+next = "8"
+
+[caldarus_post_endgame_0.8]
+portrait = "avoidant"
+local = "It leaves me to wonder, however, if I truly made the right choice all those years ago..."
+prompts = [
+	{ local = "I think you made the best choice you could...", next = "9" },
+	{ local = "I guess that might depend on who you ask...", next = "10" },
+]
+
+[caldarus_post_endgame_0.9]
+portrait = "laugh"
+local = "You are kind to say so, [Ari]."
+next = "11"
+
+[caldarus_post_endgame_0.10]
+portrait = "sad"
+local = "That is a fair point. I am sure that Seridia would argue it was a poor choice indeed."
+next = "11"
+
+[caldarus_post_endgame_0.11]
+portrait = "think"
+local = "I suppose that the uncertainty I feel is something I must learn to live with."
+next = [
+	{ target = "12r", requires = [{ caldarus_is_partner = true }] },
+	{ target = "12f", requires = [] },
+]
+
+[caldarus_post_endgame_0.12r]
+portrait = "embarrassed"
+local = "Though I remain grateful that the path I chose ultimately led me to today."
+next = "13r"
+
+[caldarus_post_endgame_0.12f]
+portrait = "smile"
+local = "Though I remain grateful that the path I chose ultimately led me to today."
+next = "13f"
+
+[caldarus_post_endgame_0.13r]
+portrait = "laugh_special"
+local = "To live among the people of this village, in a time of peace, with you by my side..."
+next = "14r"
+
+[caldarus_post_endgame_0.13f]
+portrait = "laugh"
+local = "To live among the people of this village, in a time of peace, with a friend like you by my side..."
+next = "14f"
+
+[caldarus_post_endgame_0.14r]
+portrait = "embarrassed"
+local = "That is something I shall never regret."
+
+[caldarus_post_endgame_0.14f]
+portrait = "smile"
+local = "That is something I shall never regret."
+
+[seridia_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "seridia" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_romanceable_timer = true },
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "sly"
+local = "I must thank you again for freeing me, [Ari]."
+next = "1"
+
+[seridia_post_endgame_0.1]
+portrait = "sly_think"
+local = "Much has changed above ground since I last set foot here."
+next = "2"
+
+[seridia_post_endgame_0.2]
+portrait = "smile"
+local = "I shall enjoy acclimating myself in the coming days!"
+next = "3"
+
+[seridia_post_endgame_0.3]
+portrait = "neutral"
+local = "..."
+next = "4"
+
+[seridia_post_endgame_0.4]
+portrait = "sinister"
+local = "What is that look for?"
+next = "5"
+
+[seridia_post_endgame_0.5]
+portrait = "think"
+local = "I do intend to keep my promise, you know."
+next = "6"
+
+[seridia_post_endgame_0.6]
+portrait = "closed_eyes"
+local = "Truth be told, I have had a long time to consider the circumstances that lead to my imprisonment."
+next = "7"
+
+[seridia_post_endgame_0.7]
+portrait = "closed_eyes_brow"
+local = "Perhaps I was reckless in my handling of certain past conflicts."
+prompts = [
+	{ local = "I'm glad to hear you've changed your ways...", next = "8" },
+	{ local = "But those things you did as the Witch Queen...", next = "8" },
+]
+
+[seridia_post_endgame_0.8]
+portrait = "serious"
+local = "One should not repeat the same mistake twice, after one has recognised it as such."
+next = "9"
+
+[seridia_post_endgame_0.9]
+portrait = "think"
+local = "Not if one truly desires to grow."
+next = "10"
+
+[seridia_post_endgame_0.10]
+portrait = "sly"
+local = "To that end, I have a particular interest that I would like to focus on now..."
+next = "11"
+
+[seridia_post_endgame_0.11]
+portrait = "happy"
+local = "Without the responsibilities of ruling to worry about, I shall have much more time to investigate new forms of $Magic$."
+next = "12"
+
+[seridia_post_endgame_0.12]
+portrait = "sly_think"
+local = "Now, I wonder what kind of spell I should start developing first...?"
+
+# villagers
+[dell_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "dell" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_villager_timer = true },
+]
+actions = [{ bark = { bark = "cute_face", npc = "dell" } }]
+portrait = "happy"
+local = "[Ari]! You're alright!"
+next = "1"
+
+[dell_post_endgame_0.1]
+portrait = "mad"
+local = "I mobilized the Dragonguard to go after you when I realized you might be in trouble."
+next = "2"
+
+[dell_post_endgame_0.2]
+portrait = "think"
+local = "But then my mom asked me who was gonna protect the villagers!"
+next = "3"
+
+[dell_post_endgame_0.3]
+portrait = "neutral"
+effect = "sparkles"
+local = "I'm glad that between us, we managed to keep everyone safe."
+
+[dozy_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "dozy" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_villager_timer = true },
+]
+actions = [{ bark = { bark = "cute_face", bubble = "thought", npc = "dozy" } }]
+portrait = "happy"
+local = "(Dozy wags his tail in admiration.)"
+next = "1"
+
+[dozy_post_endgame_0.1]
+portrait = "neutral"
+local = "(You can tell he's grateful to you for saving Mistria.)"
+
+[elsie_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "elsie" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_villager_timer = true },
+]
+actions = [{ bark = { bark = "cute_face", npc = "elsie" } }]
+portrait = "happy"
+local = "[Ari], what a magnificent performance!"
+next = "1"
+
+[elsie_post_endgame_0.1]
+portrait = "wink"
+local = "It seems that there's far more to you than meets the eye."
+next = "2"
+
+[elsie_post_endgame_0.2]
+portrait = "happy"
+local = "And I was already quite impressed with what I've seen!"
+next = "3"
+
+[elsie_post_endgame_0.3]
+portrait = "neutral"
+local = "You simply must come by sometime and tell me all the details."
+next = "4"
+
+[elsie_post_endgame_0.4]
+portrait = "happy"
+local = "And please, bring those new friends of yours too!"
+
+[errol_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "errol" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_villager_timer = true },
+]
+actions = [{ bark = { bark = "cute_face", npc = "errol" } }]
+portrait = "sad"
+local = "Goodness, what a time that was!"
+next = "1"
+
+[errol_post_endgame_0.1]
+portrait = "neutral"
+local = "We are lucky indeed to have you in Mistria, [Ari]. You have proven your worth a hundred times over."
+next = "2"
+
+[errol_post_endgame_0.2]
+portrait = "happy"
+local = "And you will be happy to know the Museum and all the donations you worked so hard to collect have made it through safely."
+next = "3"
+
+[errol_post_endgame_0.3]
+portrait = "think"
+local = "Of course, with our new dragon residents in town..."
+next = "4"
+
+[errol_post_endgame_0.4]
+portrait = "happy"
+local = "It seems Eiland and I will have our work cut out for us cataloguing this new era for Mistria!"
+
+[hemlock_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "hemlock" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_villager_timer = true },
+]
+actions = [{ bark = { bark = "cute_face", npc = "hemlock" } }]
+portrait = "happy"
+local = "You really are something else, you know that [Ari]?"
+next = "1"
+
+[hemlock_post_endgame_0.1]
+portrait = "neutral"
+local = "I can't thank you enough for protecting Mistria..."
+next = "2"
+
+[hemlock_post_endgame_0.2]
+portrait = "think"
+local = "Though it's hard to believe everything that happened is really..."
+next = "3"
+
+[hemlock_post_endgame_0.3]
+portrait = "happy"
+effect = "drop"
+local = "Well, real!"
+next = "4"
+
+[hemlock_post_endgame_0.4]
+portrait = "embarrassed"
+local = """Who'd have thought I'd one day get to meet the real "Sleeping Dragon" for myself?"""
+next = "5"
+
+[hemlock_post_endgame_0.5]
+portrait = "happy"
+local = "I'll have to mix up a new drink for the occasion!"
+
+[henrietta_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "henrietta" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_villager_timer = true },
+]
+actions = [
+	{ bark = { bark = "cute_face", bubble = "thought", npc = "henrietta" } },
+]
+portrait = "happy"
+local = "(You can tell that Henrietta is proud of you for saving the town.)"
+next = "1"
+
+[henrietta_post_endgame_0.1]
+portrait = "ugh"
+local = """(Though it seems she just realized your new "hero" title outranks her own.)"""
+
+[holt_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "holt" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_villager_timer = true },
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+actions = [{ bark = { bark = "cute_face", npc = "holt" } }]
+portrait = "think"
+local = "After the first earthquake, I thought up a bunch of good puns in case we got another..."
+next = "1"
+
+[holt_post_endgame_0.1]
+portrait = "mad"
+local = "But it turns out this was too serious for jokes!"
+next = "2"
+
+[holt_post_endgame_0.2]
+portrait = "neutral"
+local = "Thank you for saving the town [Ari]."
+prompts = [
+	{ local = "Thank you Holt, that means a lot.", next = "3" },
+	{ local = "Not even one pun? For your old buddy?", next = "4" },
+]
+
+[holt_post_endgame_0.3]
+portrait = "happy"
+local = "You're very welcome."
+
+[holt_post_endgame_0.4]
+portrait = "happy"
+local = "That's what I like about you [Ari], you're always ready to shake things up."
+
+[josephine_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "josephine" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_villager_timer = true },
+	{ any = [
+		{ animal_festival_today = false },
+		{ jo_explained_animal_festival = true },
+	] },
+]
+actions = [{ bark = { bark = "cute_face", npc = "josephine" } }]
+portrait = "embarrassed"
+local = "[Ari]! There you are!"
+next = "1"
+
+[josephine_post_endgame_0.1]
+portrait = "happy"
+local = "I heard about what happened..."
+next = "2"
+
+[josephine_post_endgame_0.2]
+portrait = "embarrassed"
+local = "My family's safety, the town's safety..."
+next = "3"
+
+[josephine_post_endgame_0.3]
+portrait = "happy"
+local = "Thank you for protecting everyone!"
+next = "4"
+
+[josephine_post_endgame_0.4]
+portrait = "neutral"
+local = "Please tell your new friends that they are welcome at the Sleeping Dragon Inn anytime."
+next = "5"
+
+[josephine_post_endgame_0.5]
+portrait = "happy"
+local = "I'll make sure their first meals are on the house!"
+
+[landen_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "landen" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_villager_timer = true },
+]
+actions = [{ bark = { bark = "cute_face", npc = "landen" } }]
+portrait = "neutral"
+local = "[Ari]! There's our hero!"
+next = "1"
+
+[landen_post_endgame_0.1]
+portrait = "think"
+local = "I can't believe you managed to save the town from that $earthquake$..."
+next = "2"
+
+[landen_post_endgame_0.2]
+portrait = "ugh"
+local = "There's no way I could have stayed in retirement if the town had been damaged again."
+next = "3"
+
+[landen_post_endgame_0.3]
+portrait = "embarrassed"
+local = "That is to say... thank you [Ari]. Sincerely."
+next = "4"
+
+[landen_post_endgame_0.4]
+portrait = "happy"
+local = "I hope you'll introduce me to those new friends of yours so I can tell them the same!"
+
+[luc_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "luc" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_villager_timer = true },
+]
+actions = [{ bark = { bark = "cute_face", npc = "luc" } }]
+portrait = "sad"
+local = "[Ari], I'm so glad you're okay!"
+next = "1"
+
+[luc_post_endgame_0.1]
+portrait = "ugh"
+local = "That was really scary..."
+next = "2"
+
+[luc_post_endgame_0.2]
+portrait = "think"
+local = "Dell told me that a real Dragonguard believes in their comrades, so I did my best to believe in you."
+next = "3"
+
+[luc_post_endgame_0.3]
+portrait = "neutral"
+local = "Still, instead of breaking any more scary seals... maybe you can just play with us instead?"
+
+[maple_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "maple" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_villager_timer = true },
+]
+actions = [{ bark = { bark = "cute_face", npc = "maple" } }]
+portrait = "happy"
+local = "[Ari], [Ari]!"
+next = "1"
+
+[maple_post_endgame_0.1]
+portrait = "neutral"
+local = "Is it true? That you saved everyone with the help of two DRAGONS?"
+next = "2"
+
+[maple_post_endgame_0.2]
+portrait = "happy"
+effect = "sparkles"
+local = "Can you introduce me? Do they have an internship program?"
+next = "3"
+
+[maple_post_endgame_0.3]
+portrait = "think"
+local = "Oh, and um-"
+next = "4"
+
+[maple_post_endgame_0.4]
+portrait = "neutral"
+effect = "sparkles"
+local = "Thanks for saving everyone! That was super cool!!"
+
+[nora_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "nora" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_villager_timer = true },
+]
+actions = [{ bark = { bark = "cute_face", npc = "nora" } }]
+portrait = "happy"
+local = "[Ari], on behalf of the family, thank you for protecting Mistria."
+next = "1"
+
+[nora_post_endgame_0.1]
+portrait = "ugh"
+local = "To think that another earthquake nearly hit us..."
+next = "2"
+
+[nora_post_endgame_0.2]
+portrait = "neutral"
+local = "It just goes to show you can never be too prepared!"
+next = "3"
+
+[nora_post_endgame_0.3]
+portrait = "think"
+local = "And now I suppose I should start preparing the General Store for two new customers..."
+next = "4"
+
+[nora_post_endgame_0.4]
+portrait = "happy"
+effect = "drop"
+local = "I wonder what a dragon's shopping list looks like?"
+
+[olric_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "olric" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_villager_timer = true },
+]
+actions = [{ bark = { bark = "cute_face", npc = "olric" } }]
+portrait = "happy"
+local = "[Ari]! You're totally incredible!"
+next = "1"
+
+[olric_post_endgame_0.1]
+portrait = "think"
+local = "I didn't think anyone could be strong enough to stop an earthquake..."
+next = "2"
+
+[olric_post_endgame_0.2]
+portrait = "neutral"
+local = "But then you and those cool looking friends of yours and showed up and were like-"
+next = "3"
+
+[olric_post_endgame_0.3]
+portrait = "happy"
+local = "Nuh uh! Totally rad."
+next = "4"
+
+[olric_post_endgame_0.4]
+portrait = "neutral"
+local = "I guess anything is possible with the power of friendship huh?"
+next = "5"
+
+[olric_post_endgame_0.5]
+portrait = "happy"
+local = "You let your buds know they're welcome to lift with me anytime!"
+
+[terithia_post_endgame_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "terithia" },
+	{ caldarus_seridia_town = true },
+	{ post_endgame_villager_timer = true },
+]
+actions = [{ bark = { bark = "cute_face", npc = "terithia" } }]
+portrait = "happy"
+local = "I owe you my thanks for saving the town, [Ari]."
+next = "1"
+
+[terithia_post_endgame_0.1]
+portrait = "think"
+local = """To think your "big one" would turn out to be a "big two"."""
+next = "2"
+
+[terithia_post_endgame_0.2]
+portrait = "wink"
+local = "And two dragons at that!"
+next = "3"
+
+[terithia_post_endgame_0.3]
+portrait = "happy"
+local = "KYA HA HA HA!"
+next = "4"
+
+[terithia_post_endgame_0.4]
+portrait = "wink"
+local = "Life is always full of surprises, eh?"

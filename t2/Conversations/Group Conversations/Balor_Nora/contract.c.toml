@@ -1,0 +1,22 @@
+[contract]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "nora" }] },
+	{ balor_zone = "<nora_zone>" },
+	{ date_time = "1y", comparator = ">=" },
+]
+speaker = "nora"
+portrait = "neutral"
+local = "Did you have a chance to look at that supplier's contract, Balor?"
+next = "1"
+
+[contract.1]
+speaker = "balor"
+portrait = "mad"
+local = "I did, and I don't like that third clause about unsold stock..."
+next = "2"
+
+[contract.2]
+speaker = "balor"
+portrait = "sly"
+local = "Have them strike it, and tell them Balor says hello. They'll get the message."

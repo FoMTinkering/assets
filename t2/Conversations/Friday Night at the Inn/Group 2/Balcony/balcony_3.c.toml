@@ -1,0 +1,108 @@
+[balcony_3_follow_up_kids]
+refresh = "never"
+requires = [
+	{ balcony_fnati = 3 },
+	{ balcony_kids = true },
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+]
+speaker = "luc"
+local = "Juniper said we would make adorable pirates."
+next = "1"
+
+[balcony_3_follow_up_kids.1]
+speaker = "maple"
+portrait = "happy"
+local = "Well, I'm adorable, and Dell would make a great pirate."
+next = "2"
+
+[balcony_3_follow_up_kids.2]
+speaker = "dell"
+portrait = "wink"
+local = "Arrrrr matey!"
+
+[balcony_3_follow_up_elsie]
+refresh = "never"
+requires = [{ npc = "elsie" }, { balcony_fnati = 3 }, { balcony_elsie = true }]
+portrait = "think"
+local = "Juniper asked if I'd ever romanced a pirate, and Terithia asked me the same thing later."
+next = "1"
+
+[balcony_3_follow_up_elsie.1]
+portrait = "wink"
+local = "I can't say I have, but there's always time."
+
+[balcony_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ juniper_zone = "inn/balcony_hang" },
+	{ terithia_zone = "inn/balcony_hang" },
+	{ any = [
+		{ npc = "juniper" },
+		{ npc = "terithia" },
+	] },
+	{ balcony_fnati = 2 },
+]
+writes = [{ balcony_fnati = 3 }]
+speaker = "juniper"
+local = "Now Terithia, I've put a lot of thought into this question, so I hope you'll take it seriously. Same to you, [Ari]."
+next = "1"
+
+[balcony_3.1]
+speaker = "juniper"
+portrait = "sly"
+local = "Who here would make the best pirate?"
+next = "2"
+
+[balcony_3.2]
+speaker = "terithia"
+portrait = "happy"
+local = "Oho, I was born to answer this question. Errol would look dashing with a tricorn hat, but he gets a tad seasick. Hemlock strikes me as a right salty dog."
+next = "3"
+
+[balcony_3.3]
+speaker = "terithia"
+portrait = "think"
+local = "And Nora would make a fearful captain, but a fair one. Oh, it's difficult to choose!"
+next = "4"
+
+[balcony_3.4]
+speaker = "juniper"
+portrait = "think"
+local = "March has that look in his eye that says everyone is his enemy. He might even pull off an eyepatch."
+next = "5"
+
+[balcony_3.5]
+speaker = "juniper"
+local = "What do you think, [Ari]?"
+prompts = [
+	{ local = "Dell, Maple and Luc! They play pirates all the time.", next = "6" },
+	{ local = "Elsie! She'd plunder everyone's hearts!", next = "8" },
+]
+
+[balcony_3.6]
+writes = [{ balcony_kids = true }]
+speaker = "juniper"
+local = "I have to throw in with [Ari] on this one, Terithia. They're half pirate already!"
+next = "7"
+
+[balcony_3.7]
+speaker = "terithia"
+portrait = "happy"
+effect = "cheery"
+local = "Mistria's original rapscallions."
+
+[balcony_3.8]
+writes = [{ balcony_elsie = true }]
+speaker = "juniper"
+portrait = "sly"
+local = "She does have a heart of adventure."
+next = "9"
+
+[balcony_3.9]
+speaker = "terithia"
+portrait = "happy"
+local = "She'd be the siren of the sea! No one could resist her charms."

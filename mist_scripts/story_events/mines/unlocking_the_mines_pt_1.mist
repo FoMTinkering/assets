@@ -1,0 +1,254 @@
+scene(museum_entry);
+place_actor(errol, east, utm1_errol_start);
+place_actor(eiland, west, utm1_eiland_start);
+place_actor(ari, north, utm1_ari_entrance);
+camera_position(utm1_camera_1);
+request_music_play("Music/Events/DragonCutscene");
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		free bark_speech(errol, archaeology);
+		wait(1);
+		free bark_speech(eiland, mining);
+		wait(0.5);
+		free bark_speech(errol, exclamation_mark);
+		free bark_speech(eiland, exclamation_mark);
+		wait(0.5);
+		face(errol, south);
+		wait(0.25);
+		face(eiland, south);
+	}
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	{
+		//
+		//
+		//
+		walk_slow(ari, utm1_ari_start);
+		face(ari, north);
+	}
+	{
+		//
+		//
+		pan_camera(3, utm1_camera_2);
+	}
+	{
+		wait(2.5);
+		next_line(); //
+		next_line(); //
+	}
+}
+
+
+//
+sim {
+	{
+		wait(0.5);
+		face(errol, south);
+	}
+	{
+		next_line(); //
+	}
+}
+
+
+sim {
+	{
+		wait(0.5);
+		face(errol, east);
+		wait(1);
+		face(eiland, west);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(errol, north);
+		wait(2);
+		face(errol, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1.5);
+		face(eiland, south);
+		wait(2);
+		face(eiland, west);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+
+//
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.5);
+			face(eiland, south);
+			face(errol, south);
+		}
+		{
+			next_line(); //
+		}
+	}
+	sim {
+		{
+			wait(0.5);
+			face(errol, east);
+		}
+		{
+			wait(2);
+			face(eiland, west);
+		}
+		{
+			next_line(); //
+			next_line(); //
+		}
+	}
+	sim {
+		{
+			wait(0.5);
+			face(eiland, south);
+			face(errol, south);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	sim {
+		{
+			free bark_speech(errol, sweat_drop);
+			wait(0.5);
+			face(eiland, south);
+			face(errol, south);
+		}
+		{
+			next_line(); //
+		}
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(errol, east);
+		wait(1);
+		face(eiland, west);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+free bark_speech(errol, ellipses);
+sim {
+	request_music_stop(4);
+	{
+		wait(1);
+		face(errol, west);
+		wait(0.5);
+		sim {
+			walk(errol, utm1_errol_wander);
+			set_move_speed(errol, 0.4);
+		}
+		face(errol, west);
+	}
+	{
+		wait(1.5);
+		pan_camera(2.5, utm1_camera_spookypan);
+	}
+	{
+		wait(1.5);
+		next_line(); //
+	}
+}
+close_textbox();
+play_sound("SoundEffects/SpecialEvents/Premonition");
+wait(3.5);
+sim {
+	request_music_play("Music/Events/DragonCutscene");
+	pan_camera(1, utm1_camera_2);
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		face(errol, east);
+		wait(0.5);
+		walk(errol, utm1_errol_start);
+		face(errol, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(eiland, south);
+		wait(1);
+		face(errol, south);
+	}
+	{
+		next_line(); //
+	}
+}
+//
+if get_response() == 0 {
+	next_line(); //
+} else {
+	next_line(); //
+	next_line(); //
+}
+next_line(); //
+sim {
+	{
+		wait(0.5);
+		face(errol, east);
+		wait(0.5);
+		face(eiland, west);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+face(eiland, south);
+wait(0.5);
+free bark_speech(eiland, cute_face);
+free bark_speech(ari, cute_face);
+wait(1);
+free bark_speech(errol, sweat_drop);
+wait(0.5);
+face(errol, south);
+wait(0.5);
+fade_out(2);

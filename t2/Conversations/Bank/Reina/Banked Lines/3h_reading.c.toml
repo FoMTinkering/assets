@@ -1,0 +1,59 @@
+[3h_reading]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ reina_heart_level = 3 },
+	{ location = "inn" }
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "reina" } }
+]
+portrait = "neutral"
+local = "There's something I've been meaning to ask you, [Ari]!"
+next = "1"
+
+[3h_reading.1]
+portrait = "happy"
+local = "Do you like to read?"
+prompts = [
+	{ local = "Yeah! I love to read.", next = "2" },
+	{ local = "I read a bit, when the mood strikes me.", next = "4" },
+	{ local = "I'm not much of a reader...", next = "6" }
+]
+
+# OPTION ONE
+[3h_reading.2]
+portrait = "blush_open_eyes"
+local = "Really? I thought that might be the case..."
+next = "3"
+
+[3h_reading.3]
+portrait = "happy"
+effect = "cheery"
+local = "Let's trade some book recommendations next time!"
+
+# OPTION TWO
+[3h_reading.4]
+portrait = "neutral"
+local = "Only a bit?"
+next = "5"
+
+[3h_reading.5]
+portrait = "neutral"
+local = "Sounds to me like I might need to give you some good book recommendations!"
+
+# OPTION THREE
+
+[3h_reading.6]
+portrait = "shocked"
+local = "Oh, really?"
+next = "7"
+
+[3h_reading.7]
+portrait = "think"
+local = "I'm kind of surprised!"
+next = "8"
+
+[3h_reading.8]
+portrait = "embarrassed"
+local = "That's okay though. I'm sure you must be too busy to read much, running the farm and all."

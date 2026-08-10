@@ -1,0 +1,41 @@
+[business_check]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "ryis" }] },
+	{ adeline_zone = "eastern_road/business_check_in" },
+	{ ryis_zone = "eastern_road/business_check_in" },
+	{ adeline_business_review = true },
+	{ quest_repair_the_mill_complete = true }
+]
+speaker = "adeline"
+portrait = "think"
+local = "Don't let me interrupt, I'm just here to do a quick check-in."
+next = "1"
+
+[business_check.1]
+speaker = "adeline"
+local = "We're getting through the repair projects around town faster than expected thanks to [Ari]'s help! Are you doing okay?"
+next = "2"
+
+[business_check.2]
+speaker = "ryis"
+local = "Not a problem, I can keep up. It's exciting, honestly."
+
+[business_check_2]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "ryis" }] },
+	{ adeline_zone = "eastern_road/business_check_in" },
+	{ ryis_zone = "eastern_road/business_check_in" },
+	{ adeline_business_review = true },
+	{ quest_repair_the_mill_complete = true }
+]
+speaker = "ryis"
+portrait = "neutral"
+local = "Uncle Landen says we could use more lumber! Never know when the jobs come in, y'know?"
+next = "1"
+
+[business_check_2.1]
+speaker = "adeline"
+portrait = "happy"
+local = "I'll see what I can do!"

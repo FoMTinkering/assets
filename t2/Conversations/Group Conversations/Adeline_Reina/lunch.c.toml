@@ -1,0 +1,22 @@
+[lunch]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "reina" }] },
+	{ adeline_is_at_location = "adelines_office" },
+	{ reina_is_at_location = "adelines_office" },
+	{ any = [
+		{ adeline_animation = "write_sit" },
+		{ adeline_animation = "write" },
+		{ adeline_routine = "adeline_office_work" }
+	] },
+	{ time_of_day = "morning" }
+]
+speaker = "adeline"
+portrait = "think"
+local = "Before I get carried away with work, maybe we should schedule lunch..."
+next = "1"
+
+[lunch.1]
+speaker = "reina"
+portrait = "think"
+local = """What do you mean "maybe"...?"""

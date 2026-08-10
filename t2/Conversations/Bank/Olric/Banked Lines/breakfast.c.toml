@@ -1,0 +1,10 @@
+[breakfast]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ any = [{ olric_activity = "eat" }, { olric_activity = "order_food" }] },
+	{ time_of_day = "morning" },
+	{ olric_was_last_spoken_to = "6h", time = "after", comparator = ">" }
+]
+portrait = "happy"
+local = "Hey [Ari]! Happy breakfast!"

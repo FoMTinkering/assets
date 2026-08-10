@@ -1,0 +1,26 @@
+[silverware]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }, { npc = "reina" }] },
+	{ location = "inn", comparator = "!=" },
+	{ march_zone = "<olric_zone>" },
+	{ march_zone = "<reina_zone>" },
+	{ inn_silverware = true },
+	{ quest_repair_the_inn_complete = true },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "reina"
+portrait = "neutral"
+local = "The silverware you guys made for the Inn has really held up!"
+next = "1"
+
+[silverware.1]
+speaker = "march"
+portrait = "happy"
+local = "Glad to hear it."
+next = "2"
+
+[silverware.2]
+speaker = "olric"
+portrait = "happy"
+local = "If you need a melon baller or a lemon zester, we've got ideas!"

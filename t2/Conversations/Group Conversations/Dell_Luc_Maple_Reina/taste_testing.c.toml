@@ -1,0 +1,47 @@
+[taste_testing]
+refresh = "never"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "reina" },
+	] },
+	{ dell_activity = "eat" },
+	{ luc_activity = "eat" },
+	{ maple_activity = "eat" },
+	{ location = "inn" },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "<reina_zone>" },
+	{ dell_taste_test = true },
+	{ luc_taste_test = true },
+	{ maple_taste_test = true },
+]
+actions = [{ item = "sour_lemon_cake" }]
+speaker = "reina"
+local = "Hey [Ari]! The kids are trying out my new sour lemon cake with a sugar crust."
+next = "1"
+
+[taste_testing.1]
+speaker = "maple"
+portrait = "happy"
+local = "And it's SOUR!"
+next = "2"
+
+[taste_testing.2]
+speaker = "luc"
+portrait = "happy"
+local = "SUPER SOUR!"
+next = "3"
+
+[taste_testing.3]
+speaker = "dell"
+portrait = "think"
+local = "But is it sour enough?"
+next = "4"
+
+[taste_testing.4]
+speaker = "reina"
+portrait = "wink"
+local = "Here you go, [Ari]! I think you'll find it refreshing."

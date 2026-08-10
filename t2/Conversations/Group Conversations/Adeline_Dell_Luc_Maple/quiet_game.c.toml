@@ -1,0 +1,40 @@
+[quiet_game]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ adeline_zone = "<dell_zone>" },
+	{ adeline_zone = "<luc_zone>" },
+	{ adeline_zone = "<maple_zone>" },
+	{ any = [
+		{ location = "manor_house_entry" },
+		{ location = "adelines_office" }
+	] }
+]
+writes = [{ queen_maple = true, expires = "18h" }]
+actions = [{ bark = { bark = "sweat_drop", npc = "adeline" } }]
+speaker = "adeline"
+portrait = "neutral"
+local = "Maple, Luc, Dell... I think it's in the country's best interest for us to play the quiet game. Only the Queen's quietest warriors will be rewarded!"
+next = "1"
+
+[quiet_game.1]
+speaker = "dell"
+portrait = "mad"
+local = "I'm so good at the quiet game! Nobody is quieter than me, you'll see!"
+next = "2"
+
+[quiet_game.2]
+speaker = "luc"
+portrait = "think"
+local = "You sound more like the Queen's loudest warrior, Dell."
+next = "3"
+
+[quiet_game.3]
+speaker = "maple"
+portrait = "mad"
+local = "I royally decree that the quiet game is boring! We are now playing... the screaming game!"

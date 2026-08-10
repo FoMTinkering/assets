@@ -1,0 +1,229 @@
+var partner = get_from_blackboard("date_partner");
+set_on_blackboard("block_skip", true);
+var alt_scene = partner == "caldarus" and read_world_fact("caldarus_seridia_town") != true;
+if alt_scene {
+	set_on_blackboard("end_position", "deep_woods/caldarus' front door");
+} else {
+	set_on_blackboard("end_position", "town/inn front door");
+}
+var outfit = get_from_blackboard("outfit");
+var bark_one = "";
+var bark_two = "";
+var bark_three = "";
+var bark_four = "";
+var roll = "";
+if read_world_fact("weather") == "rainy" {
+	bark_one = "rainy";
+	bark_two = "sleepy";
+	bark_three = "fire";
+	bark_four = "music";
+} else if read_world_fact("weather") == "snowy" {
+	bark_one = "snow";
+	bark_two = "stars";
+	bark_three = "hot_drink";
+	bark_four = "winter";
+} else if read_world_fact("weather") == "pleasant" {
+	roll = irandom(3);
+	if roll == 0 {
+		bark_one = "yum";
+		bark_two = "cooking";
+		bark_three = "fishing";
+		bark_four = "cold_drink";
+	} else if roll == 1 and partner == "caldarus" {
+		bark_one = "music";
+		bark_two = "thread";
+		bark_three = "moon";
+		bark_four = "stars";
+	} else if roll == 1 {
+		bark_one = "music";
+		bark_two = "hemlock";
+		bark_three = "elsie";
+		bark_four = "music";
+	} else if roll == 2 {
+		bark_one = "farming";
+		bark_two = "question_mark";
+		bark_three = "crafting";
+		bark_four = "hay";
+	} else {
+		bark_one = "question_mark";
+		bark_two = "cold_drink";
+		bark_three = "yum";
+		bark_four = "sunny";
+	}
+}
+
+
+
+//
+free bark_speech(partner, heart);
+wait(1);
+fade_out(2);
+
+if alt_scene {
+	scene(caldarus_house);
+	camera_position(idc_camera_1);
+	setup_prop(idc_ari_bowl);
+	setup_prop(idc_partner_bowl);
+
+	//
+	capture_date_photo();
+	wait_one_tick();
+	set_on_blackboard("block_skip", false);
+
+	destroy_prop(idc_ari_bowl);
+	destroy_prop(idc_partner_bowl);
+	setup_prop(idc_ari_bowl_empty);
+	setup_prop(idc_partner_bowl_empty);
+	place_actor(partner, east, "Caldarus Pouf Left");
+	place_actor(ari, west, "Caldarus Pouf Right");
+	set_outfit(partner, outfit);
+	animate(partner, "sit");
+	animate(ari, sit);
+
+	sim {
+		{
+			fade_in(2);
+		}
+		{
+			wait(1);
+			free bark_speech(ari, bark_one);
+			wait(1.5);
+			free bark_speech(partner, bark_two);
+			wait(1.5);
+			free bark_speech(ari, bark_three);
+			wait(1.5);
+			free bark_speech(partner, bark_four);
+			wait(2);
+			free bark_speech(ari, cute_face);
+			free bark_speech(partner, cute_face);
+			wait(2);
+		}
+	}
+
+	sim {
+		{
+			wait(0.5);
+			face(ari, south);
+			wait(0.25);
+			place_actor(ari, south, idc_ari_stand);
+			animate(ari, idle);
+			wait(0.25);
+			walk_slow(ari, idc_ari_kiss);
+			face(ari, west);
+		}
+		{
+			face(partner, south);
+			wait(0.25);
+			place_actor(partner, south, idc_partner_stand);
+			animate(partner, "idle");
+			wait(0.25);
+			walk_slow(partner, idc_partner_kiss);
+			face(partner, east);
+		}
+		{
+			pan_camera(3, idc_camera_2);
+		}
+	}
+	kiss_npc(partner);
+	wait(2);
+	sim {
+		{
+			walk_slow(ari, idc_ari_exit);
+			face(ari, south);
+		}
+		{
+			wait(0.75);
+			walk_slow(partner, idc_partner_exit);
+			face(partner, south);
+		}
+		{
+			pan_camera(3, idc_camera_3);
+		}
+		{
+			fade_out(2);
+		}
+	}
+
+} else {
+	scene(inn);
+	camera_position(id_camera_1);
+	setup_prop(id_ari_bowl);
+	setup_prop(id_partner_bowl);
+
+	//
+	capture_date_photo();
+	wait_one_tick();
+	set_on_blackboard("block_skip", false);
+
+	destroy_prop(id_ari_bowl);
+	destroy_prop(id_partner_bowl);
+	setup_prop(id_ari_bowl_empty);
+	setup_prop(id_partner_bowl_empty);
+	place_actor(partner, south, "North Table Top 2");
+	place_actor(ari, north, "North Table Bottom 2");
+	set_outfit(partner, outfit);
+	animate(partner, "sit");
+	animate(ari, sit);
+
+	sim {
+		{
+			fade_in(2);
+		}
+		{
+			wait(1);
+			free bark_speech(ari, bark_one);
+			wait(1.5);
+			free bark_speech(partner, bark_two);
+			wait(1.5);
+			free bark_speech(ari, bark_three);
+			wait(1.5);
+			free bark_speech(partner, bark_four);
+			wait(2);
+			free bark_speech(ari, cute_face);
+			free bark_speech(partner, cute_face);
+			wait(2);
+		}
+	}
+
+	sim {
+		{
+			wait(0.5);
+			face(ari, south);
+			wait(0.25);
+			place_actor(ari, south, id_ari_stand);
+			animate(ari, idle);
+			wait(0.25);
+			walk_slow(ari, id_ari_kiss);
+			face(ari, west);
+		}
+		{
+			face(partner, north);
+			wait(0.25);
+			place_actor(partner, north, id_partner_stand);
+			animate(partner, "idle");
+			wait(0.25);
+			walk_slow(partner, id_partner_kiss);
+			face(partner, east);
+		}
+		{
+			pan_camera(5, id_camera_2);
+		}
+	}
+    kiss_npc(partner);
+	sim {
+		{
+			walk_slow(ari, id_ari_exit);
+			face(ari, south);
+		}
+		{
+			walk_slow(partner, id_partner_exit);
+			face(partner, south);
+		}
+		{
+			pan_camera(3, id_camera_3);
+		}
+		{
+			fade_out(2);
+		}
+	}
+}

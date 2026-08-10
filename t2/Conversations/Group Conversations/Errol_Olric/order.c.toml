@@ -1,0 +1,22 @@
+[order]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "olric" }] },
+	{ errol_zone = "<olric_zone>" },
+	{ any = [
+		{ errol_zone = "town/blacksmith_forge" },
+		{ errol_zone = "town/blacksmith_business" },
+		{ errol_zone = "town/forge_lesson" },
+		{ errol_zone = "blacksmith_store/workbench" }
+	] },
+	{ museum_total_count = 20, comparator = ">=" }
+]
+speaker = "errol"
+portrait = "neutral"
+local = "We have some new items going up on display, and so I'm here with another work order of nameplates!"
+next = "1"
+
+[order.1]
+speaker = "olric"
+portrait = "neutral"
+local = "This looks good, Errol! We're on it!"

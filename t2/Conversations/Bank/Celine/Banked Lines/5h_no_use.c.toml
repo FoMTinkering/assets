@@ -1,0 +1,58 @@
+[5h_no_use]
+refresh = "never"
+actions = [
+	{ bark = { bark = "cute_face", npc = "celine" } }
+
+]
+requires = [
+	{ npc = "celine" },
+	{ celine_heart_level = 5 }
+]
+portrait = "gloomy"
+local = "Sigh... It's no use, [Ari]."
+next = "1"
+
+[5h_no_use.1]
+portrait = "sad"
+local = "I haven't been able to get our sprout to grow at all since last time you were over."
+next = "2"
+
+[5h_no_use.2]
+portrait = "think_special"
+local = "You don't think I'm wasting my time with all of this, do you?"
+prompts = [
+	{ local = "What? Why would you say that?", next = "3" },
+	{ local = "It's not a waste of time if you're enjoying yourself.", next = "7" }
+]
+# CHOICE ONE
+
+[5h_no_use.3]
+portrait = "embarrassed"
+local = "S-sorry, [Ari]. I don't really think it's a waste of time."
+next = "4"
+
+[5h_no_use.4]
+portrait = "embarrassed"
+local = "I've just been feeling a little blue, I suppose."
+next = "5"
+
+[5h_no_use.5]
+portrait = "gloomy"
+local = "I can't explain why, but reviving this flower is really important to me."
+next = "6"
+
+[5h_no_use.6]
+portrait = "embarrassed"
+local = "Even if my family doesn't quite get it... I'm really glad that you do."
+
+# CHOICE TWO
+
+[5h_no_use.7]
+portrait = "blush_special"
+local = "O-oh. Really?"
+next = "8"
+
+[5h_no_use.8]
+portrait = "embarrassed"
+local = "That's a nice way of thinking about it!"
+next = "4"

@@ -1,0 +1,21 @@
+[shooting_star_evening]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "henrietta" },
+	{ henrietta_is_at = "town/star_festival_henrietta" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "hayden_invited" },
+]
+portrait = "happy"
+local = "(Henrietta looks like she wants to chase after the stars.)"
+
+[shooting_star_follow_up]
+refresh = "3m"
+requires = [
+	{ npc = "henrietta" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "neutral_closed"
+local = "(Henrietta appears to be cranky from staying up too late watching the stars.)"

@@ -1,0 +1,29 @@
+[pottery]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "olric" }] },
+	{ location = "western_ruins" },
+	{ errol_zone = "<olric_zone>" },
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "errol" } }]
+speaker = "errol"
+portrait = "neutral"
+local = "What's that you've got there, Olric?"
+next = "1"
+
+[pottery.1]
+speaker = "errol"
+portrait = "mad"
+local = "Egads! That's some splendid pottery you've found! Well done!"
+next = "2"
+
+[pottery.2]
+speaker = "olric"
+portrait = "happy"
+local = "Oh, nice!"
+next = "3"
+
+[pottery.3]
+speaker = "olric"
+portrait = "think"
+local = "Got any cool rocks to trade for it, Errol?"

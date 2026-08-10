@@ -1,0 +1,55 @@
+[condiments]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "eiland" },
+		{ npc = "elsie" },
+		{ npc = "errol" },
+		{ npc = "valen" }
+	] },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "<elsie_zone>" },
+	{ adeline_zone = "<errol_zone>" },
+	{ adeline_zone = "<valen_zone>" },
+	{ location = "manor_house_dining_room" },
+	{ any = [{ adeline_activity = "eat" }, { adeline_activity = "drink" }] },
+	{ any = [{ eiland_activity = "eat" }, { eiland_activity = "drink" }] },
+	{ any = [{ elsie_activity = "eat" }, { elsie_activity = "drink" }] },
+	{ any = [{ errol_activity = "eat" }, { errol_activity = "drink" }] },
+	{ any = [{ valen_activity = "eat" }, { valen_activity = "drink" }] },
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "Can someone pass the salt?"
+next = "1"
+
+[condiments.1]
+speaker = "eiland"
+portrait = "think"
+local = "Of course! Wait, no this is the pepper."
+next = "2"
+
+[condiments.2]
+speaker = "elsie"
+portrait = "mad"
+local = "Hm, and this is the hot sauce."
+next = "3"
+
+[condiments.3]
+speaker = "errol"
+portrait = "happy"
+effect = "drop"
+local = "I think I've got the sugar."
+next = "4"
+
+[condiments.4]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "This is a house of condiments, it seems."
+next = "5"
+
+[condiments.5]
+speaker = "valen"
+portrait = "wink"
+local = "Ah, and the salt's right here."

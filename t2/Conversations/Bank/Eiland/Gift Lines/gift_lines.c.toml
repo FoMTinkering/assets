@@ -1,0 +1,767 @@
+[void_cake]
+kind = "gift"
+requires = [{ npc = "eiland" }, { gift_given = "void_cake" }, {  }, {  }, {  }]
+writes = [
+	{ void_cake_given = true },
+	{ void_cake_follow_up_delay = true, expires = "8h" }
+]
+portrait = "surprised"
+local = "W-what kind of cake is this?"
+next = "1"
+
+[void_cake.1]
+portrait = "gloomy_special"
+local = "I-"
+next = "2"
+
+[void_cake.2]
+portrait = "neutral"
+effect = "shock"
+local = "Oh!"
+next = "3"
+
+[void_cake.3]
+portrait = "happy"
+effect = "sparkles_dark"
+local = "Thank you [Ari], I love it!"
+
+# Loved gift
+[caldosian_chocolate_cake]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "loved" },
+	{ gift_given = "caldosian_chocolate_cake" },
+]
+portrait = "neutral"
+local = "I just love a slice of =Chocolate Cake=, it's the perfect dessert!"
+next = "1"
+
+[caldosian_chocolate_cake.1]
+portrait = "happy"
+local = "Thank you [Ari], you're too kind."
+
+[coconut_cream_pie]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "loved" },
+	{ gift_given = "coconut_cream_pie" },
+]
+portrait = "neutral"
+local = "What a splendid =Coconut Cream Pie=! And that mouthwatering aroma!"
+next = "1"
+
+[coconut_cream_pie.1]
+portrait = "happy"
+local = "I'm certainly going to enjoy this! Thank you, [Ari]."
+
+[glowberry_cookies]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "loved" },
+	{ gift_given = "glowberry_cookies" },
+]
+portrait = "neutral"
+local = "Look at all the glowberries on these =Glowberry Cookies=!"
+next = "1"
+
+[glowberry_cookies.1]
+portrait = "happy"
+local = "Such a perfect taste of Mistria! Thank you, [Ari]."
+
+[golden_cheesecake]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "loved" },
+	{ gift_given = "golden_cheesecake" },
+]
+portrait = "neutral"
+local = "=Golden Cheesecake=?!"
+next = "1"
+
+[golden_cheesecake.1]
+portrait = "happy"
+local = "There's no finer cheesecake to be had in all of Aldaria!"
+next = "2"
+
+[golden_cheesecake.2]
+portrait = "neutral"
+local = "Thank you [Ari], I'll be sure to give this dessert the attention it deserves!"
+
+[golden_cookies]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "loved" },
+	{ gift_given = "golden_cookies" },
+]
+portrait = "neutral"
+local = "Goodness, these are the legendary =Golden Cookies=!"
+next = "1"
+
+[golden_cookies.1]
+portrait = "happy"
+local = "Your generosity is truly moving, [Ari]! Thank you!"
+
+[ice_cream_sundae]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "loved" },
+	{ gift_given = "ice_cream_sundae" },
+]
+portrait = "neutral"
+local = "An =Ice Cream Sundae=! For me?"
+next = "1"
+
+[ice_cream_sundae.1]
+portrait = "happy"
+local = "Thank you, [Ari]!"
+next = "2"
+
+[ice_cream_sundae.2]
+portrait = "neutral"
+local = "It would be a shame to let it melt... I'd better eat it right away!"
+
+[mont_blanc]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "loved" },
+	{ gift_given = "mont_blanc" },
+]
+portrait = "neutral"
+local = "The =Mont Blanc= is truly a work of art."
+next = "1"
+
+[mont_blanc.1]
+portrait = "happy"
+local = "And it tastes as good as it looks! Thank you, [Ari]."
+
+[pumpkin_pie]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "loved" },
+	{ gift_given = "pumpkin_pie" },
+]
+portrait = "neutral"
+local = "=Pumpkin Pie=! You know, it's my very favorite way to enjoy pumpkin."
+next = "1"
+
+[pumpkin_pie.1]
+portrait = "happy"
+local = "Thank you!"
+
+[spell_fruit_parfait]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "loved" },
+	{ gift_given = "spell_fruit_parfait" },
+]
+portrait = "neutral"
+local = "This =Spell Fruit Parfait= is a masterpiece of the dessert maker's art. Truly sublime in profile and flavor."
+next = "1"
+
+[spell_fruit_parfait.1]
+portrait = "happy"
+local = "You've made my day, thank you, [Ari]!"
+
+[strawberry_shortcake]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "loved" },
+	{ gift_given = "strawberry_shortcake" },
+]
+portrait = "neutral"
+local = "Oh, [Ari]! This =Strawberry Shortcake= is for me?"
+next = "1"
+
+[strawberry_shortcake.1]
+portrait = "happy"
+local = "It's one of my favorite treats, thank you!"
+
+# Liked gifts
+[apple_pie]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "apple_pie" },
+]
+portrait = "neutral"
+local = "Would you smell that =Apple Pie=!"
+next = "1"
+
+[apple_pie.1]
+portrait = "happy"
+local = "Thank you, [Ari]! This is quite the treat."
+
+[berries_and_cream]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "berries_and_cream" },
+]
+portrait = "embarrassed"
+local = "I suppose it's obvious, but I'm quite the =Berries and Cream= fan."
+next = "1"
+
+[berries_and_cream.1]
+portrait = "happy"
+local = "Thank you, [Ari]."
+
+[candied_lemon_peel]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "candied_lemon_peel" },
+]
+portrait = "neutral"
+local = "=Candied Lemon Peel=, for me? I'll certainly enjoy it."
+next = "1"
+
+[candied_lemon_peel.1]
+portrait = "happy"
+local = "Thanks, [Ari]!"
+
+[candied_strawberries]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "candied_strawberries" },
+]
+portrait = "neutral"
+local = "=Candied Strawberries=! Sweet, tart, and crunchy."
+next = "1"
+
+[candied_strawberries.1]
+portrait = "happy"
+local = "Thank you, [Ari]."
+
+[caramelized_moon_fruit]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "caramelized_moon_fruit" },
+]
+portrait = "neutral"
+local = "Oh, =Caramelized Moon Fruit=! I'll certainly enjoy this."
+next = "1"
+
+[caramelized_moon_fruit.1]
+portrait = "happy"
+local = "This is very thoughtful of you, [Ari]!"
+
+[caramel_candy]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "caramel_candy" },
+]
+portrait = "happy"
+local = "Ah, a =Caramel Candy=! How thoughtful."
+next = "1"
+
+[caramel_candy.1]
+portrait = "neutral"
+local = "Thanks, [Ari]."
+
+[cherry_cobbler]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "cherry_cobbler" },
+]
+portrait = "neutral"
+local = "What a generous slice of =Cherry Cobbler=!"
+next = "1"
+
+[cherry_cobbler.1]
+portrait = "happy"
+local = "Thank you!"
+
+[cherry_tart]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "cherry_tart" },
+]
+portrait = "neutral"
+local = "A good =Cherry Tart= is a work of art! Just look at how carefully all those cherries are arranged. Almost makes me not want to eat it."
+next = "1"
+
+[cherry_tart.1]
+portrait = "wink"
+local = "Almost."
+next = "2"
+
+[cherry_tart.2]
+portrait = "happy"
+local = "Thank you, [Ari]!"
+
+[chocolate]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "chocolate" },
+]
+portrait = "happy"
+local = "A bar of =Chocolate= for me? You're too kind, [Ari]."
+next = "1"
+
+[chocolate.1]
+portrait = "neutral"
+local = "It's the perfect pick me up when I need some quick energy during a dig!"
+
+[crystal_berry_pie]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "crystal_berry_pie" },
+]
+portrait = "neutral"
+local = "This =Crystal Berry Pie= glitters in the light. It looks as pretty as it tastes!"
+next = "1"
+
+[crystal_berry_pie.1]
+portrait = "happy"
+local = "Thank you, [Ari]."
+
+[sour_lemon_cake]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "sour_lemon_cake" },
+]
+portrait = "happy"
+local = "A =Lemon Cake=?"
+next = "1"
+
+[sour_lemon_cake.1]
+portrait = "wink"
+local = "Don't mind if I do, [Ari]!"
+
+[lemon_pie]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "lemon_pie" },
+]
+portrait = "neutral"
+local = "This piece of =Lemon Pie= looks tart and sweet. A winning combination!"
+next = "1"
+
+[lemon_pie.1]
+portrait = "happy"
+local = "Thank you!"
+
+[peaches_and_cream]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "peaches_and_cream" },
+]
+portrait = "neutral"
+local = "Oh! Fluffy cream, succulent slices of peach... I do so like =Peaches and Cream=."
+next = "1"
+
+[peaches_and_cream.1]
+portrait = "happy"
+local = "Thank you, [Ari]."
+
+[pomegranate_sorbet]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "pomegranate_sorbet" },
+]
+portrait = "happy"
+local = "=Pomegranate Sorbet=! Thanks, [Ari]!"
+next = "1"
+
+[pomegranate_sorbet.1]
+portrait = "wink"
+local = "They say this is a perfect summer dessert, but I'd eat one any time of year."
+
+[pudding]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "pudding" },
+]
+portrait = "neutral"
+local = "I do enjoy a good =Pudding=. Who doesn't?"
+next = "1"
+
+[pudding.1]
+portrait = "wink"
+local = "Thank you!"
+
+[roasted_rice_tea]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "roasted_rice_tea" },
+]
+portrait = "neutral"
+local = "Oh, =Roasted Rice Tea=! That toasty flavor pairs with nearly any dessert."
+next = "1"
+
+[roasted_rice_tea.1]
+portrait = "happy"
+local = "[Ari], thank you."
+
+[strawberries_and_cream]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "strawberries_and_cream" },
+]
+portrait = "neutral"
+local = "=Strawberries and Cream= is a wonderful treat."
+next = "1"
+
+[strawberries_and_cream.1]
+portrait = "happy"
+local = "Thank you, [Ari]!"
+
+[sweet_sesame_balls]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "sweet_sesame_balls" },
+]
+portrait = "neutral"
+local = "=Sweet Sesame Balls=! I'm certainly partial to sweet sesame."
+next = "1"
+
+[sweet_sesame_balls.1]
+portrait = "happy"
+local = "Thank you!"
+
+[wildberry_pie]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "wildberry_pie" },
+]
+portrait = "neutral"
+local = "=Wild Berry Pie=! Truly a classic treat of Mistria."
+next = "1"
+
+[wildberry_pie.1]
+portrait = "happy"
+local = "Thanks, [Ari]."
+
+[wintergreen_ice_cream]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ gift_given = "wintergreen_ice_cream" },
+]
+portrait = "neutral"
+local = "The flavor of =Wintergreen Ice Cream= is so refreshing, don't you think?"
+next = "1"
+
+[wintergreen_ice_cream.1]
+portrait = "happy"
+local = "Thanks!"
+
+# Hated gift
+[frog]
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "hated" },
+	{ gift_given = "frog" },
+]
+portrait = "sad"
+local = "I have a terrible dislike of frogs, [Ari]."
+next = "1"
+
+[frog.1]
+portrait = "think"
+local = "Have you ever heard the story of the frog prince?"
+next = "2"
+
+[frog.2]
+portrait = "ugh"
+local = "I find the whole idea unsettling."
+
+# Special Gift
+[honey_curry]
+kind = "gift"
+requires = [{ npc = "eiland" }, { gift_given = "honey_curry" }]
+portrait = "neutral"
+effect = "shock"
+local = "$Honey Curry$! The rumors were true!"
+next = "1"
+
+[honey_curry.1]
+portrait = "think"
+local = "Luc told me about it, but Reina refused to tell me the details. I was starting to think he dreamed it up."
+next = "2"
+
+[honey_curry.2]
+portrait = "happy"
+local = "Thank you, [Ari]!"
+
+# Generic lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "eiland" }, { gift_desire = "loved" }]
+portrait = "happy"
+effect = "hearts"
+local = "[Ari]! This is just so thoughtful, I don't know what to say. So I suppose I'll say thank you!"
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "eiland" }, { gift_desire = "loved" }]
+portrait = "blush"
+effect = "sparkles"
+local = "Goodness, this is a gift fit for a king!"
+next = "1"
+
+[loved_gift_2.1]
+portrait = "happy"
+effect = "drop"
+local = "Maybe even the scion of a country baron!"
+
+[loved_gift_edible_1]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "berries_and_cream" },
+		{ gift_given = "caldosian_chocolate_cake" },
+		{ gift_given = "coconut_cream_pie" },
+		{ gift_given = "glowberry_cookies" },
+		{ gift_given = "golden_cookies" },
+		{ gift_given = "ice_cream_sundae" },
+		{ gift_given = "mont_blanc" },
+		{ gift_given = "pumpkin_pie" },
+		{ gift_given = "spell_fruit_parfait" },
+		{ gift_given = "strawberry_shortcake" },
+	] },
+]
+effect = "hearts"
+local = "I was just thinking it was treat time!"
+next = "1"
+
+[loved_gift_edible_1.1]
+portrait = "embarrassed"
+local = "Not that it's something I do regularly! Or have an official name for!"
+
+[loved_gift_edible_2]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "berries_and_cream" },
+		{ gift_given = "caldosian_chocolate_cake" },
+		{ gift_given = "coconut_cream_pie" },
+		{ gift_given = "glowberry_cookies" },
+		{ gift_given = "golden_cookies" },
+		{ gift_given = "ice_cream_sundae" },
+		{ gift_given = "mont_blanc" },
+		{ gift_given = "pumpkin_pie" },
+		{ gift_given = "spell_fruit_parfait" },
+		{ gift_given = "strawberry_shortcake" },
+	] },
+]
+portrait = "mad"
+effect = "hearts"
+local = "[Ari]! This looks delicious! Just know, it's taking every bit of willpower to not eat it right here in front of you."
+
+[loved_gift_edible_3]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "berries_and_cream" },
+		{ gift_given = "caldosian_chocolate_cake" },
+		{ gift_given = "coconut_cream_pie" },
+		{ gift_given = "glowberry_cookies" },
+		{ gift_given = "golden_cookies" },
+		{ gift_given = "ice_cream_sundae" },
+		{ gift_given = "mont_blanc" },
+		{ gift_given = "pumpkin_pie" },
+		{ gift_given = "spell_fruit_parfait" },
+		{ gift_given = "strawberry_shortcake" },
+	] },
+]
+portrait = "happy"
+effect = "cheery"
+local = "Ah, you got me [Ari]! I can't resist something so sweet. It's one of the great pleasures in life!"
+
+[liked_gift_1]
+kind = "gift"
+requires = [{ npc = "eiland" }, { gift_desire = "liked" }]
+portrait = "happy"
+local = "You know, gift-giving is a long-standing tradition in many cultures-"
+next = "1"
+
+[liked_gift_1.1]
+portrait = "embarrassed"
+local = "Er, that is to say... thank you, [Ari]."
+
+[liked_gift_2]
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "apple_pie" },
+		{ gift_given = "berries_and_cream" },
+		{ gift_given = "candied_lemon_peel" },
+		{ gift_given = "candied_strawberries" },
+		{ gift_given = "caramelized_moon_fruit" },
+		{ gift_given = "caramel_candy" },
+		{ gift_given = "cherry_cobbler" },
+		{ gift_given = "cherry_tart" },
+		{ gift_given = "chocolate" },
+		{ gift_given = "crystal_berry_pie" },
+		{ gift_given = "lemon_pie" },
+		{ gift_given = "peaches_and_cream" },
+		{ gift_given = "pomegranate_sorbet" },
+		{ gift_given = "pudding" },
+		{ gift_given = "roasted_rice_tea" },
+		{ gift_given = "sour_lemon_cake" },
+		{ gift_given = "strawberries_and_cream" },
+		{ gift_given = "sweet_sesame_balls" },
+		{ gift_given = "wildberry_pie" },
+		{ gift_given = "wintergreen_ice_cream" },
+	] },
+]
+portrait = "neutral"
+local = "Oho, this will make a tasty snack for later. Thank you, [Ari]!"
+
+[liked_gift_3]
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "apple_pie" },
+		{ gift_given = "berries_and_cream" },
+		{ gift_given = "candied_lemon_peel" },
+		{ gift_given = "candied_strawberries" },
+		{ gift_given = "caramelized_moon_fruit" },
+		{ gift_given = "caramel_candy" },
+		{ gift_given = "cherry_cobbler" },
+		{ gift_given = "cherry_tart" },
+		{ gift_given = "chocolate" },
+		{ gift_given = "crystal_berry_pie" },
+		{ gift_given = "lemon_pie" },
+		{ gift_given = "peaches_and_cream" },
+		{ gift_given = "pomegranate_sorbet" },
+		{ gift_given = "pudding" },
+		{ gift_given = "roasted_rice_tea" },
+		{ gift_given = "sour_lemon_cake" },
+		{ gift_given = "strawberries_and_cream" },
+		{ gift_given = "sweet_sesame_balls" },
+		{ gift_given = "wildberry_pie" },
+		{ gift_given = "wintergreen_ice_cream" },
+	] },
+]
+portrait = "wink"
+local = "This looks scrumptious! Thank you."
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "eiland" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Thank you, [Ari]."
+
+[disliked_gift_1]
+kind = "gift"
+requires = [{ npc = "eiland" }, { gift_desire = "disliked" }]
+portrait = "ugh"
+local = "Ah."
+next = "1"
+
+[disliked_gift_1.1]
+portrait = "think"
+local = "I'll see what I can do with this. After all, regifting is a long-standing tradition in many cultures..."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ eiland_birthday = "1d", time = "after" },
+	{  },
+]
+portrait = "neutral"
+local = "A birthday gift? You have a wonderful memory for custom."
+next = "1"
+
+[birthday_gift.1]
+portrait = "happy"
+local = "Thank you, [Ari]."

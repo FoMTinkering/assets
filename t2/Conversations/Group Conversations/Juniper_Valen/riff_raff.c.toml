@@ -1,0 +1,26 @@
+[riff_raff]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "juniper" }, { npc = "valen" }] },
+	{ juniper_zone = "<valen_zone>" },
+	{ location = "inn" },
+	{ juniper_animation = "drink" },
+	{ valen_animation = "drink" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ juniper_heart_level = 4, comparator = "<" }
+]
+speaker = "juniper"
+portrait = "sly"
+local = "[Ari]! You wouldn't believe what some of the locals are drinking tonight, it's really quite embarrassing."
+next = "1"
+
+[riff_raff.1]
+speaker = "valen"
+portrait = "wink"
+local = "Don't mind Juniper, that's just her way of being friendly."
+next = "2"
+
+[riff_raff.2]
+speaker = "juniper"
+portrait = "mad"
+local = "It's NOT."

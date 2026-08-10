@@ -1,0 +1,14 @@
+[royal_dinner]
+refresh = "1y"
+requires = [
+	{ npc = "maple" },
+	{ day_time = "4:00pm", comparator = ">=" },
+	{ any = [
+		{ maple_is_traveling_to_location = "inn" },
+		{ maple_is_traveling_to_location = "general_store_home" },
+		{ maple_is_traveling_to_location = "maples_room" }
+	] },
+	{ day_of_the_week = "friday", comparator = "!=" },
+]
+portrait = "happy"
+local = "Royal dinner... and then a royal sleep... that's what Queen Maple wants..."

@@ -1,0 +1,1776 @@
+# villagers
+# dell
+[engagement_dell]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "dell" },
+	{ has_fiance = true },
+	{ celine_is_fiance = false },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "dell" } }]
+portrait = "happy"
+effect = "music_notes"
+local = "[fiance] and [Ari] sitting in a tree..."
+next = "1"
+
+[engagement_dell.1]
+portrait = "wink"
+effect = "sparkles"
+local = "M-A-R-Y-I-N-G."
+next = "2"
+
+[engagement_dell.2]
+portrait = "think"
+local = "Wait... how many Rs was it?"
+next = "3"
+
+[engagement_dell.3]
+portrait = "neutral"
+local = "Um, anyway... Congrats, [Ari]!"
+
+[engagement_dell_celine]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "dell" },
+	{ has_fiance = true },
+	{ celine_is_fiance = true },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "dell" } }]
+portrait = "happy"
+local = "[Ari], are you really gonna marry my sister?"
+next = "1"
+
+[engagement_dell_celine.1]
+portrait = "neutral"
+local = "I'm glad she's marrying someone cool like you."
+next = "2"
+
+[engagement_dell_celine.2]
+portrait = "happy"
+local = "Let me know if you want me to be the sword bearer for the wedding, okay?"
+next = "3"
+
+[engagement_dell_celine.3]
+portrait = "think"
+local = "Oh, it's ring bearer? Nevermind."
+
+# elsie
+[engagement_elsie]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "elsie" },
+	{ has_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "elsie" } }]
+portrait = "happy"
+effect = "cheery"
+local = "Congratulations, [Ari]! I just heard the news!"
+next = [
+	{ target = "1_adeline", requires = [{ adeline_is_fiance = true }] },
+	{ target = "1_eiland", requires = [{ eiland_is_fiance = true }] },
+	{ target = "1_else", requires = [] }
+]
+
+[engagement_elsie.1_adeline]
+portrait = "embarrassed"
+local = "I'm so happy for you and Adeline. What a joy it is to know you'll be joining the family!"
+next = "2"
+
+[engagement_elsie.1_eiland]
+portrait = "embarrassed"
+local = "I'm so happy for you and Eiland. What a joy it is to know you'll be joining the family!"
+next = "2"
+
+[engagement_elsie.1_else]
+portrait = "wink"
+local = "I'm so happy for you and [fiance]."
+next = "2"
+
+[engagement_elsie.2]
+portrait = "happy"
+local = "I look forward to celebrating the big day with you both!"
+
+# errol
+[engagement_errol]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "errol" },
+	{ has_fiance = true },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "errol" } }]
+portrait = "happy"
+local = "Felicitations, [Ari]!"
+next = "1"
+
+[engagement_errol.1]
+portrait = "neutral"
+local = "Word has it that you and [fiance] are to be married!"
+next = "2"
+
+[engagement_errol.2]
+portrait = "happy"
+local = "I'll look forward to the celebration."
+
+# hemlock
+[engagement_hemlock]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "hemlock" },
+	{ has_fiance = true },
+	{ reina_is_fiance = false },
+	{ balor_is_fiance = false },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "hemlock" } }]
+portrait = "happy"
+local = "I hear that congratulations are in order!"
+next = "1"
+
+[engagement_hemlock.1]
+portrait = "wink"
+local = "You and [fiance] make a great couple."
+next = "2"
+
+[engagement_hemlock.2]
+portrait = "happy"
+local = "I'm looking forward to celebrating with you both!"
+
+[engagement_hemlock_balor]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "hemlock" },
+	{ has_fiance = true },
+	{ balor_is_fiance = true },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "hemlock" } }]
+portrait = "happy"
+local = "I heard the good news! Congratulations to you and Balor!"
+next = "1"
+
+[engagement_hemlock_balor.1]
+portrait = "neutral"
+local = "You should know... you make him so happy."
+next = "2"
+
+[engagement_hemlock_balor.2]
+portrait = "neutral"
+local = "Ever since the two of you got close, he's had this spring in his step... it makes me smile to see it."
+next = "3"
+
+[engagement_hemlock_balor.3]
+portrait = "wink"
+local = "And let him know, I've got a bottle of something special on reserve... we'll celebrate properly!"
+
+[engagement_hemlock_reina]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "hemlock" },
+	{ has_fiance = true },
+	{ reina_is_fiance = true },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "hemlock" } }]
+portrait = "happy"
+local = "[Ari]! I hear that congratulations are in order!"
+next = "1"
+
+[engagement_hemlock_reina.1]
+portrait = "embarrassed"
+local = "To think my little Reina is all grown up and getting married..."
+next = "2"
+
+[engagement_hemlock_reina.2]
+portrait = "happy"
+local = "I can hardly believe it. I'm so happy for the two of you!"
+
+# holt
+[engagement_holt]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "holt" },
+	{ has_fiance = true },
+	{ celine_is_fiance = false },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "holt" } }]
+portrait = "happy"
+local = "Congrats, [Ari]! I hear you're engaged!"
+next = "1"
+
+[engagement_holt.1]
+portrait = "wink"
+local = "Has a nice ring to it, doesn't it?"
+next = "2"
+
+[engagement_holt.2]
+portrait = "happy"
+local = "I'm sure that you and [fiance] will be very happy together!"
+
+[engagement_holt_celine]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "holt" },
+	{ has_fiance = true },
+	{ celine_is_fiance = true },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "holt" } }]
+portrait = "happy"
+local = "Congrats, [Ari]! I hear you and Celine are engaged!"
+next = "1"
+
+[engagement_holt_celine.1]
+portrait = "neutral"
+local = "Has a nice ring to it, doesn't it?"
+next = "2"
+
+[engagement_holt_celine.2]
+portrait = "happy"
+local = "I couldn't be happier for you two!"
+
+# josephine
+[engagement_josephine]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "josephine" },
+	{ has_fiance = true },
+	{ balor_is_fiance = false },
+	{ reina_is_fiance = false },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "josephine" } }]
+portrait = "neutral"
+local = "Is it true, [Ari]? Did you and [fiance] really get engaged?"
+next = "1"
+
+[engagement_josephine.1]
+portrait = "happy"
+effect = "cheery"
+local = "How wonderful! We're going to have a wedding in Mistria!"
+next = "2"
+
+[engagement_josephine.2]
+portrait = "embarrassed"
+local = "It's been a while since we last had one..."
+next = "3"
+
+[engagement_josephine.3]
+portrait = "happy"
+local = "We would be honored to hold the $reception$ at the Sleeping Dragon Inn!"
+next = "4"
+
+[engagement_josephine.4]
+portrait = "wink"
+local = "Just let us know when you and [fiance] have decided on the $decor$ and the $menu$."
+next = "5"
+
+[engagement_josephine.5]
+portrait = "happy"
+local = "We'll make sure everything is set up just so for the celebration."
+
+[engagement_josephine_balor]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "josephine" },
+	{ has_fiance = true },
+	{ balor_is_fiance = true },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "josephine" } }]
+portrait = "neutral"
+local = "I heard the most wonderful rumor, [Ari]..."
+next = "1"
+
+[engagement_josephine_balor.1]
+portrait = "embarrassed"
+local = "It's true? You and Balor are engaged?"
+next = "2"
+
+[engagement_josephine_balor.2]
+portrait = "happy"
+effect = "sparkles"
+local = "Oh, you two make such a lovely couple!"
+next = "3"
+
+[engagement_josephine_balor.3]
+portrait = "neutral"
+local = "Hemlock and I have seen Balor up close for many seasons, ever since he rented that room..."
+next = "4"
+
+[engagement_josephine_balor.4]
+portrait = "wink"
+local = "That merchant will never admit it, but he has a kind heart. He's going to make you so happy."
+next = "5"
+
+[engagement_josephine_balor.5]
+portrait = "happy"
+local = "Oh! And I insist that you hold the $wedding reception$ at the Sleeping Dragon Inn!"
+next = "6"
+
+[engagement_josephine_balor.6]
+portrait = "neutral"
+local = "Let us know when you've decided on the details and we'll take it from there."
+next = "7"
+
+[engagement_josephine_balor.7]
+portrait = "embarrassed"
+local = "Oh, I can't wait! Another wedding in Mistria at last! Congratulations, you two!"
+
+[engagement_josephine_reina]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "josephine" },
+	{ has_fiance = true },
+	{ reina_is_fiance = true },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "josephine" } }]
+portrait = "happy"
+effect = "cheery"
+local = "Oh, [Ari]! Congratulations to you and Reina!"
+next = "1"
+
+[engagement_josephine_reina.1]
+portrait = "embarrassed"
+local = "I'm so happy for you both. This is so exciting!"
+next = "2"
+
+[engagement_josephine_reina.2]
+portrait = "happy"
+local = "I would be honored to hold the $reception$ at the Sleeping Dragon Inn!"
+next = "3"
+
+[engagement_josephine_reina.3]
+portrait = "wink"
+local = "Just let me know when you and Reina have decided on the $decor$ and the $menu$."
+next = "4"
+
+[engagement_josephine_reina.4]
+portrait = "happy"
+local = "I'll make sure everything is set up perfectly for the celebration."
+
+# landen
+[engagement_landen]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "landen" },
+	{ has_fiance = true },
+	{ ryis_is_fiance = false },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "landen" } }]
+portrait = "happy"
+local = "Well, if it isn't the talk of the town!"
+next = "1"
+
+[engagement_landen.1]
+portrait = "neutral"
+local = "Congratulations on your engagement, [Ari]."
+next = "2"
+
+[engagement_landen.2]
+portrait = "happy"
+local = "I'm sure you and [fiance] will make a wonderful couple!"
+
+[engagement_landen_ryis]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "landen" },
+	{ has_fiance = true },
+	{ ryis_is_fiance = true },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "landen" } }]
+portrait = "neutral"
+local = "Ryis told me all about the engagement, [Ari]!"
+next = "1"
+
+[engagement_landen_ryis.1]
+portrait = "embarrassed"
+local = "I can't believe it... you're going to make my nephew so happy. He's already over the moon."
+next = "2"
+
+[engagement_landen_ryis.2]
+portrait = "wink"
+local = "And you and I are going to be family! You have to call me Uncle, okay?"
+
+# luc
+[engagement_luc]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "luc" },
+	{ has_fiance = true },
+	{ reina_is_fiance = false },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "luc" } }]
+portrait = "happy"
+local = "[Ari]! Congratulations on your engagement!"
+next = "1"
+
+[engagement_luc.1]
+portrait = "neutral"
+local = "Did you know that termite monarchs pair for life, too?"
+next = "2"
+
+[engagement_luc.2]
+portrait = "happy"
+local = "May you form a happy colony together-"
+next = "3"
+
+[engagement_luc.3]
+portrait = "embarrassed"
+effect = "drop"
+local = "Um, family! I meant family!"
+
+[engagement_luc_reina]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "luc" },
+	{ has_fiance = true },
+	{ reina_is_fiance = true },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "luc" } }]
+portrait = "happy"
+local = "[Ari]! Reina told me the big news! Congratulations!"
+next = "1"
+
+[engagement_luc_reina.1]
+portrait = "neutral"
+local = "Did you know that termite monarchs pair for life, too?"
+next = "2"
+
+[engagement_luc_reina.2]
+portrait = "happy"
+local = "Welcome to our colony-"
+next = "3"
+
+[engagement_luc_reina.3]
+portrait = "embarrassed"
+effect = "drop"
+local = "Um, family! I meant family!"
+
+# maple
+[engagement_maple]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "maple" },
+	{ has_fiance = true },
+	{ reina_is_fiance = false },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "maple" } }]
+portrait = "wink"
+local = "I hereby congratulate you on your engagement to [fiance]!"
+next = "1"
+
+[engagement_maple.1]
+portrait = "embarrassed"
+local = "Wow, I guess this means I'll finally get to see a real wedding in person."
+next = "2"
+
+[engagement_maple.2]
+portrait = "happy"
+effect = "cheery"
+local = "To witness the joining of two families in a social and political alliance... I can't wait!"
+next = "3"
+
+[engagement_maple.3]
+portrait = "neutral"
+local = "May your strategic union yield many benefits, [Ari]."
+
+[engagement_maple_reina]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "maple" },
+	{ has_fiance = true },
+	{ reina_is_fiance = true },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "maple" } }]
+portrait = "neutral"
+local = "[Ari]!"
+next = "1"
+
+[engagement_maple_reina.1]
+portrait = "wink"
+local = "I hereby congratulate you on your engagement to my sister!"
+next = "2"
+
+[engagement_maple_reina.2]
+portrait = "happy"
+effect = "cheery"
+local = "Just think, our two families shall form a social and political alliance... I can't wait!"
+next = "3"
+
+[engagement_maple_reina.3]
+portrait = "neutral"
+local = "May your most strategic union with Reina yield many benefits, [Ari]."
+
+# nora
+[engagement_nora]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "nora" },
+	{ has_fiance = true },
+	{ celine_is_fiance = false },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "nora" } }]
+portrait = "happy"
+local = "[Ari]! Congratulations!"
+next = "1"
+
+[engagement_nora.1]
+portrait = "wink"
+local = "[fiance] stopped by the store earlier and shared the news."
+next = "2"
+
+[engagement_nora.2]
+portrait = "happy"
+local = "We're all so happy for you. If you need any help preparing for the big day, just let me know!"
+
+[engagement_nora_celine]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "nora" },
+	{ has_fiance = true },
+	{ celine_is_fiance = true },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "nora" } }]
+portrait = "happy"
+local = "[Ari]! Congratulations!"
+next = "1"
+
+[engagement_nora_celine.1]
+portrait = "wink"
+local = "Celine stopped by the store earlier and shared the news."
+next = "2"
+
+[engagement_nora_celine.2]
+portrait = "happy"
+local = "I'm so thrilled that you'll be part of the family!"
+
+# olric
+[engagement_olric]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "olric" },
+	{ has_fiance = true },
+	{ march_is_fiance = false },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "olric" } }]
+portrait = "wink"
+local = "Woah, [Ari]! Are you really getting married to [fiance]?"
+next = "1"
+
+[engagement_olric.1]
+portrait = "happy"
+local = "Congrats! That's so exciting!"
+
+[engagement_olric_march]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "olric" },
+	{ has_fiance = true },
+	{ march_is_fiance = true },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "olric" } }]
+portrait = "happy"
+effect = "cheery"
+local = "[Ari]!!!"
+next = "1"
+
+[engagement_olric_march.1]
+portrait = "embarrassed"
+local = "Congrats! March told me you got engaged!"
+next = "2"
+
+[engagement_olric_march.2]
+portrait = "neutral"
+local = "We're gonna be like... one big happy family."
+next = "3"
+
+[engagement_olric_march.3]
+portrait = "happy"
+local = "This rules! I can't wait!"
+
+# terithia
+[engagement_terithia]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "terithia" },
+	{ has_fiance = true },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "terithia" } }]
+portrait = "happy"
+local = "Just heard the big news, [Ari]!"
+next = "1"
+
+[engagement_terithia.1]
+portrait = "wink"
+local = "Congrats. [fiance] has been telling anyone who'll listen that you're quite the catch."
+next = "2"
+
+[engagement_terithia.2]
+portrait = "happy"
+local = "KYA HA HA!"
+
+# dateables
+[engagement_adeline]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "adeline" },
+	{ has_fiance = true },
+	{ adeline_is_fiance = false },
+	{ eiland_is_fiance = false },
+	{ adeline_is_ex = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "What is it, [Ari]?"
+next = "1"
+
+[engagement_adeline.1]
+portrait = "think"
+local = "Your face is all flushed..."
+next = "2"
+
+[engagement_adeline.2]
+portrait = "angry_blush"
+effect = "shock"
+local = "You got engaged!?"
+next = "3"
+
+[engagement_adeline.3]
+portrait = "embarrassed"
+local = "NO. WAY."
+next = "4"
+
+[engagement_adeline.4]
+portrait = "happy_blush"
+effect = "cheery"
+local = "I knew it! I always thought you and [fiance] were meant for each other!"
+next = [
+	{ target = "5_male", requires = [
+		{ any = [
+			{ balor_is_fiance = true },
+			{ caldarus_is_fiance = true },
+			{ eiland_is_fiance = true },
+			{ hayden_is_fiance = true },
+			{ march_is_fiance = true },
+			{ ryis_is_fiance = true }
+		] }
+	] },
+	{ target = "5_female", requires = [] }
+]
+
+[engagement_adeline.5_male]
+portrait = "blush"
+local = "Tell me all about it! Who asked who? What did he say? Have you set a date yet...?"
+
+[engagement_adeline.5_female]
+portrait = "blush"
+local = "Tell me all about it! Who asked who? What did she say? Have you set a date yet...?"
+
+[engagement_adeline_eiland]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "adeline" },
+	{ has_fiance = true },
+	{ eiland_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "adeline" } }]
+portrait = "neutral"
+local = "Hey [Ari]!"
+next = "1"
+
+[engagement_adeline_eiland.1]
+portrait = "happy"
+local = "What's that big grin about?"
+next = "2"
+
+[engagement_adeline_eiland.2]
+portrait = "cartoon_embarrassed"
+local = "Y-You and Eiland are getting MARRIED?"
+next = "3"
+
+[engagement_adeline_eiland.3]
+portrait = "happy"
+effect = "cheery"
+local = "Ahhhh!  I'm so happy for you two!"
+next = "4"
+
+[engagement_adeline_eiland.4]
+portrait = "neutral"
+local = "This is huge! Huger than huge!"
+next = "5"
+
+[engagement_adeline_eiland.5]
+portrait = "happy"
+effect = "sparkles"
+local = "Do you two need a wedding planner?"
+
+# Balor
+[engagement_balor]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ has_fiance = true },
+	{ balor_is_fiance = false },
+	{ balor_is_ex = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "balor" } }]
+portrait = "happy"
+local = "What's that big grin all about? Did you have a good Mines run today? Pull in a big harvest?"
+next = "1"
+
+[engagement_balor.1]
+portrait = "shocked"
+effect = "shock"
+local = "What? You and [fiance] got engaged!?"
+next = "2"
+
+[engagement_balor.2]
+portrait = "happy_blush"
+effect = "cheery"
+local = "Well... it's about time! Haha!"
+next = "3"
+
+[engagement_balor.3]
+portrait = "wink"
+local = "Congratulations, [Ari]."
+next = "4"
+
+[engagement_balor.4]
+portrait = "happy"
+local = "I'll make sure I'm in town for the big celebration. I wouldn't miss it for the world!"
+
+# Caldarus
+[engagement_caldarus]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ has_fiance = true },
+	{ caldarus_is_fiance = false },
+	{ seridia_is_fiance = false },
+	{ caldarus_is_ex = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "caldarus" } }]
+portrait = "smile"
+local = "Greetings, [Ari]. Are you well? Something seems different about you today..."
+next = "1"
+
+[engagement_caldarus.1]
+portrait = "laugh_special"
+local = "You have become engaged to [fiance]?"
+next = "2"
+
+[engagement_caldarus.2]
+portrait = "caring_special"
+local = "That is wonderful news!"
+next = "3"
+
+[engagement_caldarus.3]
+portrait = "laugh_special"
+effect = "cheery"
+local = "May your joined light shine brightly in this life and beyond."
+
+[engagement_caldarus_seridia]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ has_fiance = true },
+	{ seridia_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "caldarus" } }]
+portrait = "smile"
+local = "Oh... something important has happened. I can tell."
+next = "1"
+
+[engagement_caldarus_seridia.1]
+portrait = "neutral"
+local = "You are engaged? To Seridia?"
+next = "2"
+
+[engagement_caldarus_seridia.2]
+portrait = "think"
+local = "I see..."
+next = "3"
+
+[engagement_caldarus_seridia.3]
+portrait = "laugh"
+local = "This is wonderful news. You will be a good influence on her."
+next = "4"
+
+[engagement_caldarus_seridia.4]
+portrait = "sigh"
+local = "And... she has been through much. She deserves happiness."
+next = "5"
+
+[engagement_caldarus_seridia.5]
+portrait = "happy"
+local = "Congratulations to you both! Join your light with my blessing."
+
+# Celine
+[engagement_celine]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "celine" },
+	{ has_fiance = true },
+	{ celine_is_fiance = false },
+	{ caldarus_is_fiance = false },
+	{ celine_is_ex = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "celine" } }]
+portrait = "happy"
+local = "You're all smiles today, hehe! What's on your mind...?"
+next = "1"
+
+[engagement_celine.1]
+portrait = "blush"
+local = "W-what? You got engaged?"
+next = "2"
+
+[engagement_celine.2]
+portrait = "embarrassed"
+local = "Oh my gosh, what did [fiance] say?"
+next = "3"
+
+[engagement_celine.3]
+portrait = "blush_special"
+local = "Ahhh.. that's so romantic!"
+next = "4"
+
+[engagement_celine.4]
+portrait = "blush_closed_eyes"
+effect = "cheery"
+local = "Congratulations [Ari]! This is so exciting, I'm so happy for you!"
+
+[engagement_celine_caldarus]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "celine" },
+	{ has_fiance = true },
+	{ caldarus_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "celine" } }]
+portrait = "neutral"
+local = "Did something nice happen, [Ari]? There's something about you today..."
+next = "1"
+
+[engagement_celine_caldarus.1]
+portrait = "shocked"
+local = "You and Caldarus got engaged? Oh my gosh!"
+next = "2"
+
+[engagement_celine_caldarus.2]
+portrait = "teary_special"
+local = "Oh my gosh..."
+next = "3"
+
+[engagement_celine_caldarus.3]
+portrait = "concerned"
+local = "Sorry... I don't know why I'm tearing up. I just got this strange feeling..."
+next = "4"
+
+[engagement_celine_caldarus.4]
+portrait = "blush_closed_eyes"
+local = "Like this was meant to be."
+next = "5"
+
+[engagement_celine_caldarus.5]
+portrait = "very_happy"
+effect = "cheery"
+local = "I'm just so happy for you two."
+next = "6"
+
+[engagement_celine_caldarus.6]
+portrait = "think"
+local = "I should start gathering flowers for the ceremony... I know just the place."
+next = "7"
+
+[engagement_celine_caldarus.7]
+portrait = "laugh"
+local = "Congratulations to you both, [Ari]. I'm so excited!"
+
+# Eiland
+[engagement_eiland]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "eiland" },
+	{ has_fiance = true },
+	{ eiland_is_fiance = false },
+	{ adeline_is_fiance = false },
+	{ eiland_is_ex = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "eiland" } }]
+portrait = "happy"
+local = "I'm glad I bumped into you, [Ari]. I wanted to tell you about this new idea for an exhibit-"
+next = "1"
+
+[engagement_eiland.1]
+portrait = "think"
+local = "Oh! Do you have news to share, too?"
+next = "2"
+
+[engagement_eiland.2]
+portrait = "neutral"
+effect = "drop"
+local = "You appear to be vibrating slightly. Why don't I let you go first?"
+next = "3"
+
+[engagement_eiland.3]
+portrait = "happy"
+local = "E-engaged? You and [fiance]!?"
+next = "4"
+
+[engagement_eiland.4]
+portrait = "embarrassed"
+effect = "cheery"
+local = "Amazing! This is incredible news!"
+next = "5"
+
+[engagement_eiland.5]
+portrait = "happy"
+local = "You must be so excited! Are you already making plans for the wedding?"
+next = "6"
+
+[engagement_eiland.6]
+portrait = "wink"
+local = "If you need an extra taste tester for your cake selection, I wholeheartedly volunteer!"
+
+[engagement_eiland_adeline]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "eiland" },
+	{ has_fiance = true },
+	{ adeline_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "eiland" } }]
+portrait = "happy"
+local = "Congratulations, [Ari]! Adeline just told me the big news!"
+next = "1"
+
+[engagement_eiland_adeline.1]
+portrait = "embarrassed"
+local = "I'm so happy for the two of you. I wish you nothing but happiness."
+next = "2"
+
+[engagement_eiland_adeline.2]
+portrait = "happy_blush"
+local = "Welcome to the family!"
+
+# Hayden
+[engagement_hayden]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "hayden" },
+	{ has_fiance = true },
+	{ hayden_is_fiance = false },
+	{ valen_is_fiance = false },
+	{ hayden_is_ex = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "hayden" } }]
+portrait = "happy"
+local = "Well now! What's gotten into you today, [Ari]?"
+next = "1"
+
+[engagement_hayden.1]
+portrait = "happy_arm_down"
+local = "You look like you just got the best news of your life!"
+next = "2"
+
+[engagement_hayden.2]
+portrait = "shocked"
+effect = "shock"
+local = "Wait, don't tell me-"
+next = "3"
+
+[engagement_hayden.3]
+portrait = "happy_arm_down_blush"
+local = "You and [fiance] got engaged!?"
+next = "4"
+
+[engagement_hayden.4]
+portrait = "sweat"
+local = "Wow! I knew it was coming sooner or later... way to go!"
+next = "5"
+
+[engagement_hayden.5]
+portrait = "happy_arm_down_blush"
+effect = "cheery"
+local = "Congratulations to you both! I'm looking forward to your big day!"
+
+[engagement_hayden_valen]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "hayden" },
+	{ has_fiance = true },
+	{ valen_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "hayden" } }]
+portrait = "wink"
+local = "Oho, what's that look you've got? Did something good happen?"
+next = "1"
+
+[engagement_hayden_valen.1]
+portrait = "shocked"
+local = "You're engaged? To Valen?"
+next = "2"
+
+[engagement_hayden_valen.2]
+portrait = "happy_fist"
+local = "That's the best news I've heard all day! All week! All season!"
+next = "3"
+
+[engagement_hayden_valen.3]
+portrait = "neutral_arm_down"
+local = "You and Valen, together at last..."
+next = "4"
+
+[engagement_hayden_valen.4]
+portrait = "wink_arm_down"
+local = "Oh, I gotta help you two make it special!"
+next = "5"
+
+[engagement_hayden_valen.5]
+portrait = "happy_fist"
+local = "I'm your guy! Put me to work!"
+next = "6"
+
+[engagement_hayden_valen.6]
+portrait = "sweat"
+local = "And a big congratulations to both of you!"
+
+# Juniper
+[engagement_juniper]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "juniper" },
+	{ has_fiance = true },
+	{ juniper_is_fiance = false },
+	{ celine_is_fiance = false },
+	{ seridia_is_fiance = false },
+	{ valen_is_fiance = false },
+	{ juniper_is_ex = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "happy"
+local = "What's with that look, [Ari]?"
+next = "1"
+
+[engagement_juniper.1]
+portrait = "shocked"
+effect = "surprise"
+local = "Engaged!"
+next = "2"
+
+[engagement_juniper.2]
+portrait = "wild_laugh_blush"
+local = "Oh ho ho ho!"
+next = "3"
+
+[engagement_juniper.3]
+portrait = "happy"
+local = "Congratulations to you and [fiance]!"
+next = "4"
+
+[engagement_juniper.4]
+portrait = "think"
+local = "It's been ages since we last had a good excuse for a big party..."
+next = "5"
+
+[engagement_juniper.5]
+portrait = "angry_brows"
+effect = "cheery"
+local = "I can't wait!"
+
+# Juniper
+[engagement_juniper_celine]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "juniper" },
+	{ has_fiance = true },
+	{ celine_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "think"
+local = "I know that look. Did you find another undecipherable tablet?"
+next = "1"
+
+[engagement_juniper_celine.1]
+portrait = "shocked"
+effect = "shock"
+local = "You... you got ENGAGED?"
+next = "2"
+
+[engagement_juniper_celine.2]
+portrait = "laugh"
+local = "Oh ho ho ho!"
+next = "3"
+
+[engagement_juniper_celine.3]
+portrait = "happy"
+local = "What incredible news! You and Celine?"
+next = "4"
+
+[engagement_juniper_celine.4]
+portrait = "neutral"
+local = "You two are just perfect for each other!"
+next = "5"
+
+[engagement_juniper_celine.5]
+portrait = "happy"
+local = "Let me know if you need any help with the party, we've got to celebrate this in style!"
+
+# Juniper
+[engagement_juniper_seridia]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "juniper" },
+	{ has_fiance = true },
+	{ seridia_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "neutral"
+local = "That look... did something happen, [Ari]?"
+next = "1"
+
+[engagement_juniper_seridia.1]
+portrait = "shocked"
+local = "Engaged?"
+next = "2"
+
+[engagement_juniper_seridia.2]
+portrait = "angry_brows"
+local = "To SERIDIA?"
+next = "3"
+
+[engagement_juniper_seridia.3]
+portrait = "closed_eyes"
+local = "You..."
+next = "4"
+
+[engagement_juniper_seridia.4]
+portrait = "sly"
+local = "Oh..."
+next = "5"
+
+[engagement_juniper_seridia.5]
+portrait = "laugh"
+local = "Ohoho..."
+next = "6"
+
+[engagement_juniper_seridia.6]
+portrait = "wild_laugh"
+local = "OHOHOHO!"
+next = "7"
+
+[engagement_juniper_seridia.7]
+portrait = "angry_brows"
+local = "Treat her well, [Ari]..."
+next = "8"
+
+[engagement_juniper_seridia.8]
+portrait = "happy"
+local = "And congratulations to you both!"
+
+# Juniper
+[engagement_juniper_valen]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "juniper" },
+	{ has_fiance = true },
+	{ valen_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "unimpressed"
+local = "Did you get new shoes? There's a spring in your step..."
+next = "1"
+
+[engagement_juniper_valen.1]
+portrait = "neutral"
+local = "You? Engaged?"
+next = "2"
+
+[engagement_juniper_valen.2]
+portrait = "shocked"
+local = "To the doctor?"
+next = "3"
+
+[engagement_juniper_valen.3]
+portrait = "laugh"
+local = "Oh ho ho ho!"
+next = "4"
+
+[engagement_juniper_valen.4]
+portrait = "neutral"
+local = "Incredible. Congratulations to you both!"
+
+# March
+[engagement_march]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ has_fiance = true },
+	{ march_is_fiance = false },
+	{ ryis_is_fiance = false },
+	{ march_is_ex = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "think"
+local = "Hey, what's up? Why are you smiling like that?"
+next = "1"
+
+[engagement_march.1]
+portrait = "shock_special"
+effect = "shock"
+local = "You got engaged? No way!"
+next = "2"
+
+[engagement_march.2]
+portrait = "drunk"
+effect = "cheery"
+local = "That's awesome, congratulations [Ari]!"
+next = "3"
+
+[engagement_march.3]
+portrait = "eight_heart_happy"
+local = "Tell [fiance] I said so too, okay?"
+
+[engagement_march_ryis]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ has_fiance = true },
+	{ ryis_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "shock_special"
+local = "[Ari]! Ryis told me you got engaged!"
+next = "1"
+
+[engagement_march_ryis.1]
+portrait = "happy"
+local = "Ryis is a great guy... be nice to him, okay?"
+next = "2"
+
+[engagement_march_ryis.2]
+portrait = "sincere_special"
+local = "If you guys need help with any wedding stuff, me and Olric are always available."
+next = "3"
+
+[engagement_march_ryis.3]
+portrait = "eight_heart_happy"
+local = "Oh, and... congratulations!"
+
+# Reina
+[engagement_reina]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "reina" },
+	{ has_fiance = true },
+	{ reina_is_fiance = false },
+	{ reina_is_ex = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "Hey [Ari]!"
+next = "1"
+
+[engagement_reina.1]
+portrait = "happy"
+local = "Is that a blush I detect...? Were you out with [fiance] today?"
+next = "2"
+
+[engagement_reina.2]
+portrait = "shocked"
+effect = "shock"
+local = "Engaged?"
+next = "3"
+
+[engagement_reina.3]
+portrait = "blush"
+effect = "cheery"
+local = "You two got engaged!?"
+next = "4"
+
+[engagement_reina.4]
+portrait = "blush_open_eyes"
+local = "That's sooo exciting! Oh my gosh!"
+next = "5"
+
+[engagement_reina.5]
+portrait = "closed_eyes_smile_blush"
+local = "I can just picture it now... the gazebo all decorated with flowers, a big reception at the Inn..."
+next = "6"
+
+[engagement_reina.6]
+portrait = "shocked"
+local = "A big reception at the Inn!"
+next = "7"
+
+[engagement_reina.7]
+portrait = "blush"
+effect = "cheery"
+local = "Oooh this is going to be so much fun!"
+next = "8"
+
+[engagement_reina.8]
+portrait = "blush_open_eyes"
+local = "Keep me in the loop with your plans. I want to help make your big day perfect!"
+
+# Ryis
+[engagement_ryis]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ has_fiance = true },
+	{ ryis_is_fiance = false },
+	{ march_is_fiance = false },
+	{ ryis_is_ex = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "happy"
+local = "What is it, [Ari]?"
+next = "1"
+
+[engagement_ryis.1]
+portrait = "neutral"
+local = "I can always tell you have news to share when you've got that look on your face."
+next = "2"
+
+[engagement_ryis.2]
+portrait = "surprised"
+effect = "surprise"
+local = "You and [fiance] got engaged!? Woah, that IS big news!"
+next = "3"
+
+[engagement_ryis.3]
+portrait = "happy_blush"
+effect = "cheery"
+local = "Congratulations!"
+next = [
+	{ target = "4_male", requires = [
+		{ any = [
+			{ balor_is_fiance = true },
+			{ caldarus_is_fiance = true },
+			{ eiland_is_fiance = true },
+			{ hayden_is_fiance = true },
+			{ march_is_fiance = true }
+		] }
+	] },
+	{ target = "4_female", requires = [] }
+]
+
+[engagement_ryis.4_male]
+portrait = "wink"
+local = "Did you ask him? Did he ask you?"
+next = "5"
+
+[engagement_ryis.4_female]
+portrait = "wink"
+local = "Did you ask her? Did she ask you?"
+next = "5"
+
+[engagement_ryis.5]
+portrait = "happy"
+local = "I want to hear the whole story!"
+
+[engagement_ryis_march]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ has_fiance = true },
+	{ march_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "ryis" } }]
+portrait = "happy"
+local = "[Ari]! I just heard the news from March!"
+next = "1"
+
+[engagement_ryis_march.1]
+portrait = "happy_blush"
+effect = "cheery"
+local = "Congratulations!"
+next = "2"
+
+[engagement_ryis_march.2]
+portrait = "wink"
+local = "He's been telling me for weeks now he was planning to propose soon..."
+next = "3"
+
+[engagement_ryis_march.3]
+portrait = "happy"
+local = "I can't believe you beat him to it! That's so you!"
+
+# Seridia
+[engagement_seridia]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "seridia" },
+	{ has_fiance = true },
+	{ seridia_is_fiance = false },
+	{ caldarus_is_fiance = false },
+	{ juniper_is_fiance = false },
+	{ seridia_is_ex = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "happy"
+local = "Congratulations, [Ari]!"
+next = "1"
+
+[engagement_seridia.1]
+portrait = "sly_think"
+local = "Oh, there was no need to tell me the news yourself."
+next = "2"
+
+[engagement_seridia.2]
+portrait = "smile"
+local = "I could easily foresee that you and [fiance] were destined to wed."
+next = "3"
+
+[engagement_seridia.3]
+portrait = "embarrassed"
+local = "That is to say, you two have my blessing."
+
+[engagement_seridia_caldarus]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "seridia" },
+	{ has_fiance = true },
+	{ caldarus_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "closed_eyes"
+local = "As I foresaw, you have decided to marry Caldarus."
+next = "1"
+
+[engagement_seridia_caldarus.1]
+portrait = "smile"
+local = "It is an occasion worth celebrating."
+next = "2"
+
+[engagement_seridia_caldarus.2]
+portrait = "surprise"
+local = "What? Did you think I would be against it? Joined light is precious in this world."
+next = "3"
+
+[engagement_seridia_caldarus.3]
+portrait = "closed_eyes_smile"
+local = "He and I have had our differences, but I do not begrudge anyone their happiness. However..."
+next = "4"
+
+[engagement_seridia_caldarus.4]
+portrait = "wink"
+local = "I will leave the conveyance of my congratulations to you."
+next = "5"
+
+[engagement_seridia_caldarus.5]
+portrait = "happy"
+local = "Blessings on you both, [Ari]. It is an auspicious day."
+
+[engagement_seridia_juniper]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ has_fiance = true },
+	{ juniper_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "happy"
+local = "Congratulations, [Ari]!"
+next = "1"
+
+[engagement_seridia_juniper.1]
+portrait = "sly_think"
+local = "Oh, there was no need to tell me the news yourself."
+next = "2"
+
+[engagement_seridia_juniper.2]
+portrait = "smile"
+local = "I could easily foresee that you and Juniper were destined to wed."
+next = "3"
+
+[engagement_seridia_juniper.3]
+portrait = "happy_blush"
+local = "To think... My $Dragonsworn$ and my disciple, joining their light as one..."
+next = "4"
+
+[engagement_seridia_juniper.4]
+portrait = "closed_eyes_brow"
+effect = "cheery"
+local = "A serendipitous consolidation of power."
+next = "5"
+
+[engagement_seridia_juniper.5]
+portrait = "embarrassed"
+local = "That is to say, you two have my blessing."
+
+# Valen
+[engagement_valen]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "valen" },
+	{ has_fiance = true },
+	{ valen_is_fiance = false },
+	{ celine_is_fiance = false },
+	{ hayden_is_fiance = false },
+	{ juniper_is_fiance = false },
+	{ valen_is_ex = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "happy"
+local = "You have quite the spring in your step today, [Ari]!"
+next = "1"
+
+[engagement_valen.1]
+portrait = "raised_eyebrow"
+local = "Could it be... the rumor is true?"
+next = "2"
+
+[engagement_valen.2]
+portrait = "happy"
+local = "You got engaged to [fiance]?"
+next = "3"
+
+[engagement_valen.3]
+portrait = "neutral_blush"
+local = "Congratulations!"
+
+[engagement_valen_celine]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "valen" },
+	{ has_fiance = true },
+	{ celine_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "think"
+local = "[Ari], you have a bit of a, well, dazed expression on your face. Is everything alright?"
+next = "1"
+
+[engagement_valen_celine.1]
+portrait = "neutral"
+local = "Anything you'd like to share with your doctor?"
+next = "2"
+
+[engagement_valen_celine.2]
+portrait = "happy"
+effect = "surprise"
+local = "You and Celine are engaged?!"
+next = "3"
+
+[engagement_valen_celine.3]
+portrait = "neutral"
+local = "How wonderful!"
+next = "4"
+
+[engagement_valen_celine.4]
+portrait = "happy"
+effect = "cheery"
+local = "I'm so happy for you two!"
+next = "5"
+
+[engagement_valen_celine.5]
+portrait = "neutral"
+local = "Just let me know if there's anything I can do to help with the wedding!"
+
+# Valen
+[engagement_valen_hayden]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "valen" },
+	{ has_fiance = true },
+	{ hayden_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "happy"
+local = "You have quite the spring in your step today, [Ari]!"
+next = "1"
+
+[engagement_valen_hayden.1]
+portrait = "raised_eyebrow"
+local = "Could it be... the rumor is true?"
+next = "2"
+
+[engagement_valen_hayden.2]
+portrait = "happy"
+local = "Hayden finally asked you to marry him?"
+next = "3"
+
+[engagement_valen_hayden.3]
+portrait = "neutral_blush"
+local = "Oh, my! Congratulations!"
+next = "4"
+
+[engagement_valen_hayden.4]
+portrait = "happy"
+local = "He must be over the moon. I know how much he adores you!"
+next = "5"
+
+[engagement_valen_hayden.5]
+portrait = "neutral"
+local = "I can't wait to celebrate with the two of you!"
+
+[engagement_valen_juniper]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "valen" },
+	{ has_fiance = true },
+	{ juniper_is_fiance = true },
+	{ engagement_delay = false },
+	{ engagement_cap = false }
+]
+actions = [{ bark = { bark = "cute_face", npc = "valen" } }]
+portrait = "happy"
+local = "You have quite the spring in your step today, [Ari]!"
+next = "1"
+
+[engagement_valen_juniper.1]
+portrait = "raised_eyebrow"
+local = "Why do I get the feeling you've been getting up to some kind of trouble?"
+next = "2"
+
+[engagement_valen_juniper.2]
+portrait = "panic"
+effect = "shock"
+local = "E-engaged?"
+next = "3"
+
+[engagement_valen_juniper.3]
+portrait = "happy"
+effect = "drop"
+local = "You got engaged to Juniper?"
+next = "4"
+
+[engagement_valen_juniper.4]
+portrait = "think"
+local = "Not the kind of trouble I was expecting, but..."
+next = "5"
+
+[engagement_valen_juniper.5]
+portrait = "happy_blush"
+local = "Well, nevermind. If you're happy, [Ari], then I'm happy."
+next = "6"
+
+[engagement_valen_juniper.6]
+portrait = "neutral_blush"
+local = "I'll do my best to support you..."
+next = "7"
+
+[engagement_valen_juniper.7]
+portrait = "happy"
+effect = "drop"
+local = "B-both of you."

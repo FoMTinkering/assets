@@ -1,0 +1,153 @@
+[lunch_0]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "caldarus" }, { npc = "elsie" }] },
+	{ balor_zone = "<caldarus_zone>" },
+	{ balor_zone = "<elsie_zone>" },
+	{ location = "inn" },
+	{ caldarus_seridia_town = true }
+]
+actions = [
+	{ bark = { bark = "sweat_drop", npc = "balor" } },
+	{ bark = { bark = "sweat_drop", npc = "elsie" } }
+]
+speaker = "balor"
+portrait = "think"
+local = "Caldarus, we've been wondering... the name of this establishment is the Sleeping Dragon Inn."
+next = "1"
+
+[lunch_0.1]
+speaker = "elsie"
+portrait = "neutral"
+local = "Is that... you?"
+next = "2"
+
+[lunch_0.2]
+speaker = "caldarus"
+portrait = "smile"
+local = "Oh! Do you think that is true? Surely not."
+next = "3"
+
+[lunch_0.3]
+speaker = "caldarus"
+portrait = "think"
+local = "But if it were... I am awake now. Would the name be changed?"
+next = "4"
+
+[lunch_0.4]
+speaker = "caldarus"
+portrait = "sigh"
+local = "That would be a pity. The Awake Dragon Inn does not have the same ring to it."
+
+[lunch_1]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "caldarus" }, { npc = "elsie" }] },
+	{ balor_zone = "<caldarus_zone>" },
+	{ balor_zone = "<elsie_zone>" },
+	{ location = "inn" },
+	{ caldarus_seridia_town = true }
+]
+actions = [
+	{ bark = { bark = "sweat_drop", npc = "balor" } },
+	{ bark = { bark = "cute_face", npc = "caldarus" } },
+	{ bark = { bark = "sweat_drop", npc = "elsie" } }
+]
+speaker = "caldarus"
+portrait = "smile"
+local = "The dishes here are delicious, and so colorful!"
+next = "1"
+
+[lunch_1.1]
+speaker = "caldarus"
+portrait = "neutral"
+local = "My cooking ends up being the same dour hue, more often than not."
+next = "2"
+
+[lunch_1.2]
+speaker = "balor"
+portrait = "concerned"
+local = "It... does?"
+next = "3"
+
+[lunch_1.3]
+speaker = "elsie"
+portrait = "ugh"
+local = "Do elaborate, Caldarus."
+next = "4"
+
+[lunch_1.4]
+speaker = "caldarus"
+portrait = "think"
+local = "Hm, how could one describe it..."
+next = "5"
+
+[lunch_1.5]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Do mortals have a word for the color of burnt food?"
+next = "6"
+
+[lunch_1.6]
+speaker = "caldarus"
+portrait = "smile"
+local = "Perhaps I could invent it. It would please me to leave my mark on history."
+
+[lunch_2]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "caldarus" }, { npc = "elsie" }] },
+	{ balor_zone = "<caldarus_zone>" },
+	{ balor_zone = "<elsie_zone>" },
+	{ balor_activity = "eat" },
+	{ caldarus_activity = "eat" },
+	{ elsie_activity = "eat" },
+	{ location = "inn" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "I've never seen someone so excited about food. Feel free to take anything off of my plate, Caldarus."
+next = "1"
+
+[lunch_2.1]
+speaker = "elsie"
+portrait = "happy"
+local = "Mine as well! Here, don't be shy!"
+next = "2"
+
+[lunch_2.2]
+speaker = "caldarus"
+portrait = "happy"
+local = "Oh, then please partake of my food as well."
+next = "3"
+
+[lunch_2.3]
+speaker = "caldarus"
+portrait = "smile"
+local = "This brings back memories... the priestesses of my temple often shared in communal meals."
+next = "4"
+
+[lunch_2.4]
+speaker = "balor"
+portrait = "happy"
+local = "I like the sound of that. Let's raise a glass to old friends, Caldarus."
+next = "5"
+
+[lunch_2.5]
+speaker = "elsie"
+portrait = "wink"
+local = "Cheers!"
+next = "6"
+
+[lunch_2.6]
+speaker = "caldarus"
+portrait = "happy"
+local = "Cheers!"
+next = "7"
+
+[lunch_2.7]
+speaker = "caldarus"
+portrait = "smile"
+local = "And here is to new friends as well."

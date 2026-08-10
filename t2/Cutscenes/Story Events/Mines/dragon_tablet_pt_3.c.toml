@@ -1,0 +1,627 @@
+[dragon_tablet_pt_3_follow_up_eiland]
+refresh = "never"
+requires = [{ npc = "eiland" }, { dt = "part_three" }]
+actions = [{ bark = { npc = "eiland", bark = "cute_face" } }]
+portrait = "neutral"
+local = "Have you had a chance to check out the $Dragonsworn Tablet$ yet, [Ari]?"
+next = "1"
+
+[dragon_tablet_pt_3_follow_up_eiland.1]
+portrait = "happy"
+effect = "drop"
+local = "Sorry, I'm just so excited to hear what happens next!"
+
+[dragon_tablet_pt_3_follow_up_juniper]
+refresh = "never"
+requires = [{ npc = "juniper" }, { dt = "part_three" }]
+actions = [{ bark = { npc = "juniper", bark = "cute_face" } }]
+portrait = "neutral"
+local = "Let us know how things work out with the $Dragonsworn Tablet$."
+next = "1"
+
+[dragon_tablet_pt_3_follow_up_juniper.1]
+portrait = "happy"
+effect = "drop"
+local = "I hate to admit it, but I suspect Eiland's theory is right."
+next = "2"
+
+[dragon_tablet_pt_3_follow_up_juniper.2]
+portrait = "neutral"
+local = "I bet you'll be able to read it now, no problem."
+
+[dragon_tablet_pt_3_follow_up_seridia_0]
+refresh = "instantly"
+priority = "max"
+requires = [{ npc = "seridia" }, { dt = "part_three" }]
+portrait = "neutral"
+local = "So $Juniper$ and $Eiland$ were able to help you after all?"
+next = "1"
+
+[dragon_tablet_pt_3_follow_up_seridia_0.1]
+portrait = "happy"
+local = "How wonderful!"
+next = "2"
+
+[dragon_tablet_pt_3_follow_up_seridia_0.2]
+portrait = "neutral"
+local = "Well done, Hero."
+next = "3"
+
+[dragon_tablet_pt_3_follow_up_seridia_0.3]
+portrait = "neutral_closed"
+local = "Go now and see if you have truly gained the ability to read the $Dragonsworn Tablet$."
+
+[dragon_tablet_pt_3_follow_up_seridia_1]
+refresh = "instantly"
+priority = "max"
+requires = [
+	{ npc = "seridia" },
+	{ dt = "part_four" },
+	{ cutscene_seen_dragon_tablet_pt_4 = false },
+]
+portrait = "neutral"
+local = "I knew that you would be able to uncover the secret of the $Dragonsworn Tablet$, Hero!"
+next = "1"
+
+[dragon_tablet_pt_3_follow_up_seridia_1.1]
+portrait = "happy"
+local = "All you need to do now is craft the necessary items at the $Dragon Forge$ in the $Priestess Quarters$ and then offer them at the $Dragonsworn Tablet$."
+next = "2"
+
+[dragon_tablet_pt_3_follow_up_seridia_1.2]
+portrait = "neutral"
+local = "I will be waiting."
+
+[dragon_tablet_pt_3_turn_in]
+kind = "gameplay_triggered"
+actions = [{ cutscene = "dragon_tablet_pt_3" }]
+speaker = "juniper"
+portrait = "neutral"
+local = "Hey [Ari], what's up?"
+next = "1"
+
+[dragon_tablet_pt_3_turn_in.1]
+speaker = "juniper"
+portrait = "think"
+local = "You want to speak to me... privately?"
+next = "2"
+
+[dragon_tablet_pt_3_turn_in.2]
+speaker = "juniper"
+portrait = "sly"
+local = "Ooooh, how fun. I've been wondering when you might have an update for me!"
+next = "3"
+
+[dragon_tablet_pt_3_turn_in.3]
+speaker = "juniper"
+portrait = "happy"
+effect = "cheery"
+local = "Right this way!"
+
+[dragon_tablet_pt_3]
+kind = "gameplay_triggered"
+writes = [{ dt = "part_three" }]
+actions = [{ can_talk = "seridia" }]
+speaker = "juniper"
+portrait = "neutral"
+local = "Alright, [Ari]. Here we are."
+next = "1"
+
+[dragon_tablet_pt_3.1]
+speaker = "juniper"
+portrait = "sly"
+local = "Now spill it."
+next = "2"
+
+[dragon_tablet_pt_3.2]
+speaker = "juniper"
+portrait = "annoyed"
+local = "You've been talking to some kind of ghost?"
+next = "3"
+
+[dragon_tablet_pt_3.3]
+speaker = "juniper"
+portrait = "mad"
+local = "The spirit of a $Dragon Priestess$... standing guard at $The Gate Between Worlds$?"
+next = "4"
+
+[dragon_tablet_pt_3.4]
+speaker = "juniper"
+portrait = "angry_blush"
+local = "The place from which $all Magic originates$?"
+next = "5"
+
+[dragon_tablet_pt_3.5]
+speaker = "juniper"
+portrait = "embarrassed"
+local = "And you want my help again to break this $Final Seal$!?"
+next = "6"
+
+[dragon_tablet_pt_3.6]
+speaker = "juniper"
+portrait = "laugh"
+local = "OH HO HO HO HO!"
+next = "7"
+
+[dragon_tablet_pt_3.7]
+speaker = "juniper"
+portrait = "wild_laugh"
+local = "..."
+next = "8"
+
+[dragon_tablet_pt_3.8]
+speaker = "juniper"
+portrait = "closed_eyes"
+local = "AHEM!"
+next = "9"
+
+[dragon_tablet_pt_3.9]
+speaker = "juniper"
+portrait = "embarrassed"
+effect = "cheery"
+local = "I would LOVE to, [Ari]."
+next = "10"
+
+[dragon_tablet_pt_3.10]
+speaker = "juniper"
+portrait = "think"
+local = "Now let's see, where do we start..."
+prompts = [
+	{ local = "I was thinking we should fill in Eiland next.", next = "11" },
+	{ local = "Well, we could use an expert on ancient artifacts...", next = "11" },
+]
+
+[dragon_tablet_pt_3.11]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Eiland, huh?"
+next = "12"
+
+[dragon_tablet_pt_3.12]
+speaker = "juniper"
+portrait = "neutral"
+local = "Well, I guess that makes sense. He seems to know a lot about the last $Dragonsworn$."
+next = "13"
+
+[dragon_tablet_pt_3.13]
+speaker = "juniper"
+portrait = "think"
+local = "More than either of us, anyway."
+next = "14"
+
+[dragon_tablet_pt_3.14]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Though... couldn't we just go and ask Caldarus-"
+next = "15"
+
+[dragon_tablet_pt_3.15]
+speaker = "juniper"
+portrait = "sincere_special"
+local = "I see... so the $Dragon Priestess$ thinks his involvement would be risky?"
+next = "16"
+
+[dragon_tablet_pt_3.16]
+speaker = "juniper"
+portrait = "ugh"
+local = "Poor guy. Didn't realize he was in such bad shape."
+next = "17"
+
+[dragon_tablet_pt_3.17]
+speaker = "juniper"
+portrait = "sincere_special"
+local = "We'd better keep him in the dark for now."
+next = "18"
+
+[dragon_tablet_pt_3.18]
+speaker = "juniper"
+portrait = "neutral"
+local = "I suppose we should go get Eiland, then."
+next = "19"
+
+[dragon_tablet_pt_3.19]
+speaker = "juniper"
+portrait = "think"
+local = "I'm not sure how much he can help, but..."
+next = "20"
+
+[dragon_tablet_pt_3.20]
+speaker = "juniper"
+portrait = "sly"
+local = "I really want to see his face when you reveal what's been going on."
+next = "21"
+
+[dragon_tablet_pt_3.21]
+speaker = "eiland"
+portrait = "neutral"
+effect = "surprise"
+local = "[Ari], Juniper!"
+next = "22"
+
+[dragon_tablet_pt_3.22]
+speaker = "eiland"
+portrait = "happy"
+local = "To what do I owe the pleasure...?"
+next = "23"
+
+[dragon_tablet_pt_3.23]
+speaker = "juniper"
+portrait = "sly"
+local = "Get ready, Eiland."
+next = "24"
+
+[dragon_tablet_pt_3.24]
+speaker = "juniper"
+portrait = "happy"
+effect = "sparkles_dark"
+local = "We're about to turn your world upside down."
+next = "25"
+
+[dragon_tablet_pt_3.25]
+speaker = "eiland"
+portrait = "sad"
+local = "U-um. [Ari]?"
+next = "26"
+
+[dragon_tablet_pt_3.26]
+speaker = "eiland"
+portrait = "ugh"
+local = "Should I be scared?"
+next = "27"
+
+[dragon_tablet_pt_3.27]
+speaker = "juniper"
+portrait = "sly"
+local = "Eiland, Eiland, Eiland..."
+next = "28"
+
+[dragon_tablet_pt_3.28]
+speaker = "juniper"
+portrait = "think"
+local = "You might want to sit back down for this."
+next = "29"
+
+[dragon_tablet_pt_3.29]
+speaker = "juniper"
+portrait = "happy"
+local = "Go ahead, [Ari]. Tell him everything that you told me."
+next = "30"
+
+[dragon_tablet_pt_3.30]
+speaker = "eiland"
+portrait = "surprised"
+local = "Is it all true?"
+next = "31"
+
+[dragon_tablet_pt_3.31]
+speaker = "eiland"
+portrait = "hope_special"
+local = "Really, honestly true?"
+next = "32"
+
+[dragon_tablet_pt_3.32]
+speaker = "eiland"
+portrait = "happy"
+effect = "cheery"
+local = "I can't believe it!"
+next = "33"
+
+[dragon_tablet_pt_3.33]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "The dragon $Caldarus$, the $Seals$ underground..."
+next = "34"
+
+[dragon_tablet_pt_3.34]
+speaker = "eiland"
+portrait = "happy"
+local = "Please, continue!"
+next = "35"
+
+[dragon_tablet_pt_3.35]
+speaker = "eiland"
+portrait = "surprised"
+local = "W-wow."
+next = "36"
+
+[dragon_tablet_pt_3.36]
+speaker = "eiland"
+portrait = "happy"
+local = "All of this... it changes everything!"
+next = "37"
+
+[dragon_tablet_pt_3.37]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "It's a lot to take in."
+next = "38"
+
+[dragon_tablet_pt_3.38]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "I don't know that I've ever been this excited-"
+next = "39"
+
+[dragon_tablet_pt_3.39]
+speaker = "eiland"
+portrait = "hope_special"
+local = "About the past... or about the future!"
+next = "40"
+
+[dragon_tablet_pt_3.40]
+speaker = "eiland"
+portrait = "happy"
+local = "Thank you for entrusting me with your secret, [Ari]."
+next = "41"
+
+[dragon_tablet_pt_3.41]
+speaker = "eiland"
+portrait = "neutral"
+effect = "cheery"
+local = "I promise that I will help you however I can!"
+next = "42"
+
+[dragon_tablet_pt_3.42]
+speaker = "juniper"
+portrait = "sly"
+local = "Yes, yes. How very touching."
+next = "43"
+
+[dragon_tablet_pt_3.43]
+speaker = "juniper"
+portrait = "happy"
+local = "Now pick your jaw up off the floor so we can start brainstorming on how to crack that $Tablet$!"
+next = "44"
+
+[dragon_tablet_pt_3.44]
+speaker = "eiland"
+portrait = "happy"
+local = "Right..."
+next = "45"
+
+[dragon_tablet_pt_3.45]
+speaker = "eiland"
+portrait = "think"
+local = "Hm. So the $Tablet$ has a blank engraving plate..."
+next = "46"
+
+[dragon_tablet_pt_3.46]
+speaker = "juniper"
+portrait = "think"
+local = "But you could sense there were words hidden there, [Ari]?"
+next = "47"
+
+[dragon_tablet_pt_3.47]
+speaker = "juniper"
+portrait = "sincere_special"
+local = "It sounds to me like a form of $Magic$ encryption."
+next = "48"
+
+[dragon_tablet_pt_3.48]
+speaker = "juniper"
+portrait = "think"
+local = "These types of spells are incredibly rare and powerful."
+next = "49"
+
+[dragon_tablet_pt_3.49]
+speaker = "juniper"
+portrait = "happy"
+local = "The fact that you can sense words there at all is actually a great sign!"
+next = "50"
+
+[dragon_tablet_pt_3.50]
+speaker = "juniper"
+portrait = "neutral"
+local = "It means you must meet part of the requirements to read it already."
+next = "51"
+
+[dragon_tablet_pt_3.51]
+speaker = "juniper"
+portrait = "think"
+local = "But what would the requirements be to read this so-called $Dragonsworn Tablet$?"
+next = "52"
+
+[dragon_tablet_pt_3.52]
+speaker = "eiland"
+portrait = "mad"
+effect = "surprise"
+local = """Did you say $"Dragonsworn" Tablet$?"""
+next = "53"
+
+[dragon_tablet_pt_3.53]
+speaker = "eiland"
+portrait = "surprised"
+effect = "shock"
+local = "The $Dragonsworn$-"
+next = "54"
+
+[dragon_tablet_pt_3.54]
+speaker = "eiland"
+portrait = "neutral"
+local = "That's it!"
+next = "55"
+
+[dragon_tablet_pt_3.55]
+speaker = "eiland"
+portrait = "think"
+local = "[Ari]..."
+next = "56"
+
+[dragon_tablet_pt_3.56]
+speaker = "eiland"
+portrait = "neutral"
+local = "You repaired Caldarus' Shrine when you first came to Mistria."
+next = "57"
+
+[dragon_tablet_pt_3.57]
+speaker = "eiland"
+portrait = "think"
+local = "You have been tasked with returning his power with offerings of $Magic Essence$."
+next = "58"
+
+[dragon_tablet_pt_3.58]
+speaker = "eiland"
+portrait = "happy"
+local = "In return, he has granted you the ability not only to see that $Magic$, but to wield it, too."
+next = "59"
+
+[dragon_tablet_pt_3.59]
+speaker = "eiland"
+portrait = "neutral"
+local = "That makes YOU the $Dragonsworn$ of this age."
+next = "60"
+
+[dragon_tablet_pt_3.60]
+speaker = "eiland"
+portrait = "happy"
+local = "And the $Dragonsworn Armor$ is sitting at Mistria's $Museum$ at this very moment!"
+next = "61"
+
+[dragon_tablet_pt_3.61]
+speaker = "eiland"
+portrait = "neutral"
+local = "By all rights, that armor is yours, [Ari]."
+next = "62"
+
+[dragon_tablet_pt_3.62]
+speaker = "eiland"
+portrait = "happy"
+local = "It's just a hunch, but... I think we should go and get it for you."
+next = "63"
+
+[dragon_tablet_pt_3.63]
+speaker = "eiland"
+portrait = "neutral"
+local = "It may turn out to be the missing piece of the puzzle."
+next = "64"
+
+[dragon_tablet_pt_3.64]
+speaker = "juniper"
+portrait = "think"
+local = "Eiland... That's not a bad theory."
+next = "65"
+
+[dragon_tablet_pt_3.65]
+speaker = "juniper"
+portrait = "happy"
+effect = "drop"
+local = "I'm actually pretty impressed!"
+next = "66"
+
+[dragon_tablet_pt_3.66]
+speaker = "eiland"
+portrait = "neutral"
+local = "Good, it looks like we're alone."
+next = "67"
+
+[dragon_tablet_pt_3.67]
+speaker = "eiland"
+portrait = "happy"
+local = "That saves us the trouble of needing to explain ourselves to Errol."
+next = "68"
+
+[dragon_tablet_pt_3.68]
+speaker = "eiland"
+portrait = "neutral"
+local = "Just a moment, I'll go and get the $Dragonsworn Armor$."
+next = "69"
+
+[dragon_tablet_pt_3.69]
+speaker = "eiland"
+portrait = "happy"
+local = "There we are."
+next = "70"
+
+[dragon_tablet_pt_3.70]
+speaker = "juniper"
+portrait = "happy"
+local = "Go on, [Ari]! Try it on!"
+next = "71"
+
+[dragon_tablet_pt_3.71]
+speaker = "juniper"
+portrait = "mad"
+effect = "shock"
+local = "!"
+next = "72"
+
+[dragon_tablet_pt_3.72]
+speaker = "eiland"
+portrait = "mad"
+effect = "surprise"
+local = "!"
+next = "73"
+
+[dragon_tablet_pt_3.73]
+speaker = "juniper"
+portrait = "sincere_special"
+local = "That light...!"
+next = "74"
+
+[dragon_tablet_pt_3.74]
+speaker = "eiland"
+portrait = "surprised"
+local = "What was that?"
+next = "75"
+
+[dragon_tablet_pt_3.75]
+speaker = "eiland"
+portrait = "neutral"
+local = "Um, how do you feel, [Ari]?"
+prompts = [
+	{ local = "It fits surprisingly well!", next = "76" },
+	{ local = "It feels like it was made for me.", next = "76" },
+]
+
+[dragon_tablet_pt_3.76]
+speaker = "eiland"
+portrait = "happy"
+local = "Incredible..."
+next = "77"
+
+[dragon_tablet_pt_3.77]
+speaker = "juniper"
+portrait = "think"
+local = "Imagine that."
+next = "78"
+
+[dragon_tablet_pt_3.78]
+speaker = "juniper"
+portrait = "neutral"
+local = "It would make sense, wouldn't it?"
+next = "79"
+
+[dragon_tablet_pt_3.79]
+speaker = "juniper"
+portrait = "think"
+local = "I bet only the true $Dragonsworn$ can read the $Dragonsworn Tablet$."
+next = "80"
+
+[dragon_tablet_pt_3.80]
+speaker = "juniper"
+portrait = "neutral"
+local = "And now you have the proof!"
+next = "81"
+
+[dragon_tablet_pt_3.81]
+speaker = "juniper"
+portrait = "think"
+local = "You certainly look the part, [Ari]."
+next = "82"
+
+[dragon_tablet_pt_3.82]
+speaker = "juniper"
+portrait = "neutral"
+local = "But will you really be able to read the $Tablet$ now?"
+next = "83"
+
+[dragon_tablet_pt_3.83]
+speaker = "eiland"
+portrait = "neutral"
+local = "I suppose there's only one way to find out."
+next = "84"
+
+[dragon_tablet_pt_3.84]
+speaker = "eiland"
+portrait = "happy"
+local = "You'd better go back down into the Ruins and see if you can read the $Dragonsworn Tablet$!"

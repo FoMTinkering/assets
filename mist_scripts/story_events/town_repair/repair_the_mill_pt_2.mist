@@ -1,0 +1,374 @@
+scene(town);
+place_actor(adeline, north, rtm_adeline);
+place_actor(hayden, north, rtm_hayden);
+place_actor(ryis, west, rtm_ryis_construction_4);
+place_actor(ari, north, rtm_ari);
+animate(ryis, hammer);
+request_music_play("Music/Events/Cutscene");
+camera_position(rtm_camera_2);
+
+var ryis_is_hammering = true;
+var ryis_is_sawing = false;
+
+fun ryis_hammer_sound() {
+	if ryis_is_hammering == false {
+		wait(0.5);
+		return;
+	}
+	play_sound("SoundEffects/Tools/RyisHammerSwingAndHitWood2D");
+	wait(0.7);
+}
+
+fun ryis_saw_sound() {
+	if ryis_is_sawing == false {
+		wait(0.5);
+		return;
+	}
+	play_sound("SoundEffects/Tools/SawBackAndForth2D");
+	wait(0.45);
+}
+
+//
+sim {
+	{
+		play_sound("SoundEffects/SpecialEvents/Construction");
+		play_sound("SoundEffects/SpecialEvents/Construction");
+		wait(4);
+		play_sound("SoundEffects/SpecialEvents/Construction");
+		play_sound("SoundEffects/SpecialEvents/Construction");
+		wait(2);
+		play_sound("SoundEffects/SpecialEvents/Construction");
+		play_sound("SoundEffects/SpecialEvents/Construction");
+	}
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	free {
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+		ryis_hammer_sound();
+	}
+	free {
+		wait(4);
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+		ryis_saw_sound();
+	}
+	free pan_camera(10, rtm_camera_1);
+	{
+		wait(2);
+		place_actor(ryis, east, rtm_ryis_construction_3);
+		animate(ryis, hammer);
+		wait(3);
+		place_actor(ryis, west, rtm_ryis_construction_2);
+		animate(ryis, saw);
+		ryis_is_hammering = false;
+		ryis_is_sawing = true;
+		wait(3);
+		place_actor(ryis, east, rtm_ryis_construction_1);
+		animate(ryis, hammer);
+		ryis_is_sawing = false;
+		ryis_is_hammering = true;
+		wait(3);
+		ryis_is_hammering = false;
+		place_actor(ryis, north, rtm_ryis_construction_5);
+		animate(ryis, idle);
+	}
+	{
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_8, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_15, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_7, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_14, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_6, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_13, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_5, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_12, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_4, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_11, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_3, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_10, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_2, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_9, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_1, 0, 0, 0, -5000);
+	}
+	{
+		wait(0.75);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_8, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_15, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_7, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_14, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_6, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_13, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_5, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_12, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_4, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_11, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_3, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_10, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_2, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_9, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_1, 0, 0, 0, -5000);
+	}
+	{
+		wait(1.25);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_8, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_15, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_7, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_14, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_6, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_13, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_5, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_12, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_4, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_11, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_3, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_10, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_2, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_9, 0, 0, 0, -5000);
+		wait(0.5);
+
+		create_animation(spr_fx_poof1_dirt_once, rtm_dust_1, 0, 0, 0, -5000);
+	}
+}
+play_sound("SoundEffects/SpecialEvents/RevealTransition");
+override_requirement("repaired_mill");
+refresh_room_layers();
+free {
+		create_animation(spr_fx_twinkle_1, rtm_dust_1, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_twinkle_1, rtm_dust_9, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_twinkle_1, rtm_dust_2, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_twinkle_1, rtm_dust_10, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_twinkle_1, rtm_dust_3, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_twinkle_1, rtm_dust_11, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_twinkle_1, rtm_dust_4, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_twinkle_1, rtm_dust_12, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_twinkle_1, rtm_dust_5, 0, 0, 0, -5000);
+		wait(0.5);
+		create_animation(spr_fx_twinkle_1, rtm_dust_13, 0, 0, 0, -5000);
+}
+wait(2);
+free pan_camera(5, rtm_camera_2);
+sim {
+	{
+		wait(3);
+		walk_slow(ryis, rtm_ryis);
+		face(ryis, north);
+	}
+	{
+		wait(4.5);
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(ryis, south);
+		wait(0.5);
+		animate(ryis, wipebrow);
+		wait(1);
+		animate(ryis, idle);
+	}
+	{
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(adeline, east);
+		wait(0.5);
+		face(ari, west);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		if get_response() == 0 {
+			close_textbox();
+			wait(0.25);
+			run_tutorial("milling");
+		} else {
+			next_line();
+		}
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(hayden, east);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(ryis, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(ryis, south);
+		wait(0.5);
+		face(hayden, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(adeline, cute_face);
+free bark_speech(hayden, cute_face);
+free bark_speech(ryis, cute_face);
+wait(1);
+free bark_speech(ari, cute_face);
+wait(1);
+fade_out(2);
+//
+//
+//
+//
+//

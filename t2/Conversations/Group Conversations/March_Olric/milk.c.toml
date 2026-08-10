@@ -1,0 +1,23 @@
+[milk]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }] },
+	{ march_zone = "<olric_zone>" },
+	{ olric_drinking = "milk" },
+	{ location = "inn" }
+]
+speaker = "march"
+portrait = "neutral"
+local = "Hey, remember that one week where you only drank milk?"
+next = "1"
+
+[milk.1]
+speaker = "olric"
+portrait = "happy"
+local = "You mean last week?"
+next = "2"
+
+[milk.2]
+speaker = "march"
+portrait = "mad"
+local = "Yeah. Don't do that."

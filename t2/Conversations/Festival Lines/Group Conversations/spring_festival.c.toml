@@ -1,0 +1,136 @@
+[errol_march_olric]
+refresh = "never"
+priority = "max"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "march" }, { npc = "olric" }] },
+	{ errol_zone = "<march_zone>" },
+	{ errol_zone = "<olric_zone>" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ date_time = "1y", comparator = "<" }
+]
+speaker = "olric"
+portrait = "neutral"
+local = "You enjoying the festival, bro?"
+next = "1"
+
+[errol_march_olric.1]
+speaker = "march"
+portrait = "neutral"
+local = "Hmm? Yeah, I guess."
+next = "2"
+
+[errol_march_olric.2]
+speaker = "errol"
+portrait = "neutral"
+local = "The atmosphere is certainly enough to make one cheery!"
+next = "3"
+
+[errol_march_olric.3]
+speaker = "olric"
+portrait = "happy"
+local = "Oh, totes! Speaking of which, I happened to bring along these three hacky sacks, March."
+next = "4"
+
+[errol_march_olric.4]
+speaker = "march"
+portrait = "ugh"
+local = "That's... nice?"
+next = "5"
+
+[errol_march_olric.5]
+speaker = "olric"
+portrait = "think"
+local = "Maybe you could use them for your juggling routine? I haven't even seen you practicing, so I'm way excited!"
+next = "6"
+
+[errol_march_olric.6]
+speaker = "march"
+portrait = "ugh"
+local = "Oh for-"
+next = "7"
+
+[errol_march_olric.7]
+speaker = "march"
+portrait = "mad"
+local = """I'm not juggling! When Celine asked if I could gather flowers for the festival, I told her I was "juggling" enough already."""
+next = "8"
+
+[errol_march_olric.8]
+speaker = "march"
+portrait = "unimpressed"
+local = "I don't know how that turned into me performing, and if one more person asks me about it..."
+next = "9"
+
+[errol_march_olric.9]
+speaker = "errol"
+portrait = "sad"
+local = "Ah well."
+next = "10"
+
+[errol_march_olric.10]
+speaker = "olric"
+portrait = "sad"
+local = "Bummer."
+
+[errol_march_olric_year_2]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "march" }, { npc = "olric" }] },
+	{ errol_zone = "<march_zone>" },
+	{ errol_zone = "<olric_zone>" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "olric"
+portrait = "neutral"
+local = "A flower festival is cool and all, but you know what would be rad?"
+next = "1"
+
+[errol_march_olric_year_2.1]
+speaker = "olric"
+portrait = "wink"
+local = "A ROCK festival!"
+next = "2"
+
+[errol_march_olric_year_2.2]
+speaker = "errol"
+portrait = "think"
+local = "Hmm, perhaps with popular minerals and metals on display?"
+next = "3"
+
+[errol_march_olric_year_2.3]
+speaker = "march"
+portrait = "unimpressed"
+local = "You could even make everyone hunt for rocks to decorate the festival with."
+next = "4"
+
+[errol_march_olric_year_2.4]
+speaker = "olric"
+portrait = "happy"
+effect = "cheery"
+local = "Whoa, that's such a good idea, bro!"
+
+[errol_olric]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "olric" }] },
+	{ errol_zone = "<olric_zone>" },
+	{ spring_festival_date = "1d", time = "after" },
+]
+speaker = "errol"
+portrait = "happy"
+local = "I can't believe I took home a prize!"
+next = "1"
+
+[errol_olric.1]
+speaker = "errol"
+portrait = "neutral"
+local = "I did so want the Spring Festival to turn out well this year. Everyone in town looks forward to it, you know."
+next = "2"
+
+[errol_olric.2]
+speaker = "olric"
+portrait = "happy"
+local = "I'm all about this festival vibe. Nothing better than a party with all your favorite people!"

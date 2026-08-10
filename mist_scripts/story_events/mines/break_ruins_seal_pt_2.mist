@@ -1,0 +1,419 @@
+scene(void_seal);
+camera_position(ari);
+face(ari, north);
+fade_out(2);
+play_sound("SoundEffects/SpecialEvents/Premonition");
+wait(1);
+fade_in(2);
+wait(0.5);
+place_actor(seridia, south, rs2_priestess_entrance);
+play_sound("SoundEffects/NPCs/SeridiaFadeOut");
+fade_npc_alpha(seridia, 0.0, 1, 180);
+wait(0.5);
+pan_camera(3, rs2_camera_1);
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1.5);
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+sim {
+	{
+		walk_slow(seridia, rs2_priestess_start);
+		face(seridia, south);
+		animate(seridia, action);
+		wait(1);
+	}
+	{
+		pan_camera(2, rs2_camera_2);
+	}
+}
+wait(0.25);
+sim {
+	{
+		animate(seridia, idle);
+		walk_slow(seridia, rs2_priestess_entrance);
+		face(seridia, south);
+	}
+	{
+		wait(0.5);
+		setup_prop(rs2_void_mass);
+      	play_sound("SoundEffects/SpecialEvents/VoidMassAppear");
+		free fade_prop_alpha(rs2_void_mass, 0.0, 1.0, 120);
+	}
+	{
+		pan_camera(2, rs2_camera_void);
+	}
+}
+
+free bark_speech(ari, exclamation_mark);
+wait(1.5);
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(ari, exclamation_mark);
+wait(1.5);
+walk(ari, rs2_ari_entrance);
+face(ari, north);
+wait(0.5);
+sim {
+	{
+		wait(0.5);
+		animate(seridia, blink);
+		wait(0.1);
+		anim_speed(seridia, 0);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(1);
+		anim_speed(seridia, 1);
+		animate(seridia, spell_cast);
+		play_sound("SoundEffects/NPCs/SeridiaMagic");
+		wait(3);
+	}
+	{
+		pan_camera(3, rs2_camera_3);
+	}
+}
+
+free fade_prop_alpha(rs2_void_mass, 1.0, 0.0, 10);
+wait(0.1);
+destroy_prop(rs2_void_mass);
+place_actor(void_ari, south, rs2_void_ari_entrance);
+play_sound("SoundEffects/SpecialEvents/VoidMassTransformationComplete");
+create_animation(spr_fx_poof1_dirt_once, rs2_void_poof, 0, 0, 0, -5000);
+animate(seridia, idle);
+wait(0.75);
+next_line(); //
+close_textbox();
+free bark_speech(ari, exclamation_mark);
+wait(1);
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(1);
+free bark_speech(ari, cute_face);
+wait(1.5);
+free bark_speech(void_ari, ellipses);
+wait(1.5);
+next_line(); //
+close_textbox();
+wait(0.25);
+sim {
+	{
+		walk_slow(seridia, rs2_priestess_exit);
+		face(seridia, south);
+	}
+	{
+		wait(1);
+		walk_slow(ari, rs2_ari_exit);
+		face(ari, south);
+	}
+	{
+		wait(1);
+		walk_slow(void_ari, rs2_void_ari_exit);
+		face(void_ari, south);
+	}
+	{
+		pan_camera(3.5, rs2_camera_4);
+	}
+	{
+		wait(1);
+		fade_out(2);
+	}
+}
+
+scene(ruins_seal);
+place_actor(ari, south, rs2_ari_ruins_entrance);
+place_actor(seridia, north, rs2_priestess_ruins_entrance);
+place_actor(void_ari, south, rs2_void_ari_ruins_entrance);
+camera_position(rs2_camera_5);
+request_music_play("Music/Events/TheSeal");
+wait(1);
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		pan_camera(2, rs2_camera_6);
+	}
+	{
+		wait(2);
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+face(ari, east);
+face(void_ari, west);
+wait(1);
+free bark_speech(ari, cute_face);
+//
+//
+wait(1.5);
+checkpoint("test");
+free bark_speech(void_ari, ellipses);
+wait(1.5);
+sim {
+	{
+		pan_camera(3, rs2_camera_7);
+	}
+	{
+		walk_slow(void_ari, rs2_void_ari_ruins_tablet);
+		face(void_ari, north);
+
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+	}
+	{
+		wait(0.75);
+		face(ari, north);
+	}
+}
+wait(0.5);
+sim {
+	animate(void_ari, action);
+	turn_on_sparky_asset(0);
+}
+wait(0.3);
+freeze_void_ari();
+wait(0.2);
+free bark_speech(ari, exclamation_mark);
+wait(3);
+unfreeze_void_ari();
+animate(void_ari, idle);
+face(void_ari, north);
+turn_off_sparky_asset(0);
+wait(0.5);
+face(void_ari, south);
+wait(0.5);
+sim {
+	{
+		walk_slow(void_ari, rs2_void_ari_ruins_entrance);
+		face(void_ari, south);
+		wait(0.25);
+		face(void_ari, west);
+		wait(0.75);
+		animate(void_ari, action);
+		wait(0.1);
+		animate(ari, action);
+		wait(0.4);
+		animate(void_ari, idle);
+		wait(0.1);
+		animate(ari, idle);
+		wait(0.25);
+		ari_hold_item(ruins_tablet_rubbing);
+	}
+	{
+		wait(1);
+		face(ari, east);
+	}
+	{
+		pan_camera(3, rs2_camera_6);
+	}
+}
+sim {
+	{
+		next_line(); //
+		next_line(); //
+	}
+	{
+		wait(1);
+		face(ari, south);
+	}
+	{
+		wait(1.25);
+		face(void_ari, south);
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, sweat_drop);
+wait(1.5);
+free bark_speech(void_ari, ellipses);
+wait(0.5);
+face(ari, east);
+wait(1);
+sim {
+	{
+		sim {
+			set_move_speed(void_ari, 0.4);
+			walk_slow(void_ari, rs2_void_ari_ruins_stand);
+		}
+		face(void_ari, south);
+	}
+	{
+		wait(0.5);
+		face(ari, north);
+	}
+}
+wait(0.5);
+sim {
+	{
+		wait(0.5);
+		face(ari, south);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+sim {
+	{
+		pan_camera(2, rs2_camera_8);
+	}
+	{
+		walk_slow(ari, rs2_ari_ruins_start);
+		face(ari, south);
+		ari_identify_item(ruins_tablet_rubbing);
+	}
+}
+
+wait(1);
+free bark_speech(ari, exclamation_mark);
+wait(0.5);
+animate(ari, idle);
+wait(1);
+next_line(); //
+
+//
+close_textbox();
+wait(0.75);
+free bark_speech(seridia, exclamation_mark);
+wait(0.5);
+sim {
+	{
+		walk(seridia, rs2_void_ari_ruins_entrance);
+		face(seridia, west);
+	}
+	{
+		wait(0.5);
+		walk_slow(ari, rs2_ari_ruins_entrance);
+		face(ari, east);
+	}
+	{
+		pan_camera(2, rs2_camera_9);
+	}
+	{
+		wait(1.5);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+set_on_blackboard("next_bark_sfx", "SoundEffects/Barks/BubbleNeutral");
+free bark_speech(ari, breath_of_flame);
+wait(1);
+set_on_blackboard("next_bark_sfx", "SoundEffects/Barks/BubbleNeutral");
+free bark_speech(ari, smoke_moth);
+wait(1);
+set_on_blackboard("next_bark_sfx", "SoundEffects/Barks/BubbleNeutral");
+free bark_speech(ari, firesail);
+wait(1);
+set_on_blackboard("next_bark_sfx", "SoundEffects/Barks/BubbleNeutral");
+free bark_speech(ari, obsidian);
+wait(1);
+next_line(); //
+next_line(); //
+next_line(); //
+sim {
+	{
+		wait(0.75);
+		face(seridia, north);
+	}
+	{
+		wait(1.25);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+	{
+		pan_camera(2, rs2_camera_10);
+	}
+}
+close_textbox();
+wait(1);
+sim {
+	{
+		wait(0.5);
+		face(seridia, west);
+	}
+	{
+		wait(1);
+		face(ari, east);
+	}
+	{
+		pan_camera(2.5, rs2_camera_9);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(seridia, cute_face);
+wait(1);
+free bark_speech(ari, cute_face);
+wait(0.5);
+sim {
+	{
+		play_sound("SoundEffects/NPCs/SeridiaFadeOut");
+		fade_npc_alpha(seridia, 1, 0.0, 180);
+		wait(3);
+		remove_actor(seridia);
+	}
+	{
+		wait(2.5);
+		set_shadow_enabled(seridia, false);
+	}
+	{
+		wait(4);
+		free pan_camera(2, rs2_ari_ruins_start);
+		walk_slow(ari, rs2_ari_ruins_start);
+		face(ari, north);
+		fade_out(2);
+	}
+}

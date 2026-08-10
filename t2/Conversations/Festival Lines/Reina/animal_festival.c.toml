@@ -1,0 +1,77 @@
+[animal_festival_anticipation]
+refresh = "3m"
+requires = [{ npc = "reina" }, { animal_festival_date = "3d", time = "before" }]
+portrait = "happy"
+local = "The Animal Festival should be a good time this year!"
+next = "1"
+
+[animal_festival_anticipation.1]
+portrait = "neutral"
+local = "I'm in charge of stocking up the drinks and treats for Nora's Booth."
+next = "2"
+
+[animal_festival_anticipation.2]
+portrait = "wink"
+local = "And trust me, they're going to be cuuuuute!"
+
+[animal_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "reina" },
+	{ animal_festival_today = true },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+]
+portrait = "neutral"
+local = "Have you had any of the treats from Nora's booth, [Ari]?"
+next = "1"
+
+[animal_festival_0.1]
+portrait = "happy"
+local = "Not to brag, but I think they're some of the cutest and tastiest I've ever made!"
+
+[animal_festival_first]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "reina" },
+	{ animal_festival_today = true },
+	{ any = [
+		{ small_animal_place = 3 },
+		{ large_animal_place = 3 },
+	] },
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "happy"
+local = "Wow, [Ari]! Congrats!"
+next = "1"
+
+[animal_festival_first.1]
+portrait = "neutral"
+local = "You win enough awards at the Animal Festival, and I might just have to make a cookie that looks like you for next year's event!"
+next = "2"
+
+[animal_festival_first.2]
+portrait = "wink"
+local = "What? I'm kidding!"
+
+[animal_festival_horse_cutout]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "reina" },
+	{ animal_festival_today = true },
+	{ reina_is_at = "town/af_horse_cutout" },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "happy"
+local = "Haha, how cute are these? Join me, [Ari]!"

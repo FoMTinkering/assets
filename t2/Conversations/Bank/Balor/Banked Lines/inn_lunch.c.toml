@@ -1,0 +1,31 @@
+[inn_lunch]
+refresh = "1y"
+requires = [
+	{ npc = "balor" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "4:00pm", comparator = "<=" },
+	{ location = "inn" },
+	{ any = [{ balor_activity = "order_food" }, { balor_activity = "eat" }] },
+	{ date_time = "1y", comparator = "<" }
+]
+portrait = "neutral"
+local = "Can't recommend lunch at the Inn enough."
+next = "1"
+
+[inn_lunch.1]
+portrait = "wink"
+local = "The quality for the price can't be beat."
+
+[inn_lunch_2]
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "4:00pm", comparator = "<=" },
+	{ location = "inn" },
+	{ any = [{ balor_activity = "order_food" }, { balor_activity = "eat" }] },
+	{ season = "winter" }
+]
+portrait = "happy"
+effect = "cheery"
+local = "I'd happily eat curry for every meal in the winter."

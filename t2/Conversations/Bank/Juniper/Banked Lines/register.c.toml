@@ -1,0 +1,63 @@
+[register]
+refresh = "2m"
+requires = [{ npc = "juniper" }, { juniper_is_at = "bathhouse/Front Desk" }]
+portrait = "angry_brows"
+local = "Oh, you want to take a bath while I watch the register? What if I want to take a bath while you watch the register?"
+next = "1"
+
+[register.1]
+portrait = "unimpressed"
+local = "Ahem. Sorry. Dozy says I should stop antagonizing customers."
+
+[register_2]
+refresh = "2m"
+requires = [{ npc = "juniper" }, { juniper_is_at = "bathhouse/Front Desk" }]
+portrait = "sly"
+local = "Do enjoy the bath. It's quite normal, I assure you."
+
+[register_3]
+refresh = "2m"
+requires = [{ npc = "juniper" }, { juniper_is_at = "bathhouse/Front Desk" }]
+portrait = "unimpressed"
+local = "Dozy says it's my shift, so here I am."
+next = "1"
+
+[register_3.1]
+portrait = "annoyed"
+local = "But I don't have to like it!"
+
+[register_4]
+refresh = "2m"
+requires = [{ npc = "juniper" }, { juniper_is_at = "bathhouse/Front Desk" }]
+portrait = "angry_brows"
+local = "Don't forget to pay tribute to Dozy."
+next = "1"
+
+[register_4.1]
+portrait = "happy"
+local = "It's important."
+
+[register_5]
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "bathhouse/Front Desk" },
+	{ time_of_day = "morning" }
+]
+portrait = "unimpressed"
+local = "I shouldn't have stayed up so late looking at my crystal ball... ugh."
+
+[register_6]
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "bathhouse/Front Desk" },
+	{ season = "winter" }
+]
+portrait = "think"
+local = "You're looking a bit chapped from the cold."
+next = "1"
+
+[register_6.1]
+portrait = "happy"
+local = "Well, the bath's hot, and the lotion is complimentary."

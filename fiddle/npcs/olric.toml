@@ -1,0 +1,259 @@
+birthday = { season = "spring", day = 10 }
+loved_gifts = [
+	"perfect_copper_ore",
+	"perfect_diamond",
+	"perfect_emerald",
+	"perfect_gold_ore",
+	"perfect_iron_ore",
+	"perfect_mistril_ore",
+	"perfect_pink_diamond",
+	"perfect_ruby",
+	"perfect_sapphire",
+	"perfect_silver_ore",
+
+]
+liked_gifts = [
+	"ore_copper",
+	"crystal",
+	"ore_diamond",
+	"ore_emerald",
+	"ore_gold",
+	"hard_boiled_egg",
+	"ore_iron",
+	"miners_mushroom_stew",
+	"ore_mistril",
+	"obsidian",
+	"ore_pink_diamond",
+	"rock_with_a_hole",
+	"rockroot",
+	"ore_ruby",
+	"ore_sapphire",
+	"ore_silver",
+	"ore_stone",
+	"stone_horse",
+	"rock_statue",
+	"weightless_stone",
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "rockbiter"
+name = "Olric"
+aldarian_name = "OLRK"
+outfits = [
+	"spring",
+	"spring_bunny_ears",
+	"summer",
+	"summer_bunny_ears",
+	"autumn",
+	"autumn_bunny_ears",
+	"winter",
+	"winter_bunny_ears",
+]
+tags = ["townsfolk", "forge_family"]
+journal_portrait_offset = [-115, -23]
+journal_background_color = [255, 205, 199]
+date_photo_offset = [0, 0]
+job = "Part-Timer"
+icon_sprite = "spr_ui_generic_icon_npc_olric"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_olric"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_olric"
+dateable = false
+
+[gossip]
+	line = "olric_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["coffee"]
+	"12" = ["juice", "coffee"]
+	"16" = ["beer"]
+	"22" = ["milk"]
+
+[offsets]
+	portrait = [-122, -65]
+	sweat = [-1, -2]
+	hearts = [-1, -2]
+	angry = [-6, -4]
+	sparkles = [-1, -4]
+	sparkles_dark = [-1, -4]
+	sick = [2, -8]
+	music_notes = [-1, -4]
+	intensity = [-2, -15]
+	surprise = [-2, -4]
+	shock = [0, -16]
+	sigh = [-3, -9]
+	loud = [3, -14]
+	cheery = [0, -9]
+	drop = [0, -9]
+
+[portraits]
+	neutral = [
+		"spring",
+		"spring_bunny_ears",
+		"summer",
+		"summer_bunny_ears",
+		"autumn",
+		"autumn_bunny_ears",
+		"winter",
+		"winter_bunny_ears",
+	]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = [
+		"spring",
+		"spring_bunny_ears",
+		"summer",
+		"summer_bunny_ears",
+		"autumn",
+		"autumn_bunny_ears",
+		"winter",
+		"winter_bunny_ears",
+	]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = [
+		"spring",
+		"spring_bunny_ears",
+		"summer",
+		"summer_bunny_ears",
+		"autumn",
+		"autumn_bunny_ears",
+		"winter",
+		"winter_bunny_ears",
+	]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = [
+		"spring",
+		"spring_bunny_ears",
+		"summer",
+		"summer_bunny_ears",
+		"autumn",
+		"autumn_bunny_ears",
+		"winter",
+		"winter_bunny_ears",
+	]
+	type = "linear"
+
+[cycles.shocked]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.hammer]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	sound = "SoundEffects/Tools/MarchBlacksmithingHammerSwingAndHit"
+	on_pause_speaking = "idle"
+
+[cycles.pickaxe]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "idle"
+
+[cycles.drink_potion]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.sweep]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	on_pause_speaking = "idle"
+
+[cycles.squat]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.lift]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+
+[cycles.write]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+
+[cycles.wipebrow]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.tongs]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	on_pause_speaking = "idle"
+
+[cycles.polish]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"

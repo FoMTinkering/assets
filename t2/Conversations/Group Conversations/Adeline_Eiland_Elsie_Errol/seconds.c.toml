@@ -1,0 +1,40 @@
+[seconds]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "eiland" },
+		{ npc = "elsie" },
+		{ npc = "errol" },
+	] },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "<elsie_zone>" },
+	{ adeline_zone = "<errol_zone>" },
+	{ location = "manor_house_dining_room" },
+	{ any = [{ adeline_activity = "eat" }, { adeline_activity = "drink" }] },
+	{ any = [{ eiland_activity = "eat" }, { eiland_activity = "drink" }] },
+	{ any = [{ elsie_activity = "eat" }, { elsie_activity = "drink" }] },
+	{ any = [{ errol_activity = "eat" }, { errol_activity = "drink" }] },
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "Would you like seconds, Errol?"
+next = "1"
+
+[seconds.1]
+speaker = "errol"
+portrait = "happy"
+local = "Certainly! Thank you, Lady Adeline!"
+next = "2"
+
+[seconds.2]
+speaker = "elsie"
+portrait = "neutral"
+local = "And you, Eiland?"
+next = "3"
+
+[seconds.3]
+speaker = "eiland"
+portrait = "wink"
+effect = "sparkles"
+local = "No, thank you! I'm saving that room for seconds of dessert."

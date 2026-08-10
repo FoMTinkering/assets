@@ -1,0 +1,27 @@
+[western_ruins]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "eiland" },
+		{ npc = "landen" },
+		{ npc = "valen" },
+	] },
+	{ eiland_zone = "<landen_zone>" },
+	{ eiland_zone = "<valen_zone>" },
+	{ location = "western_ruins", comparator = "!=" }
+]
+speaker = "landen"
+portrait = "neutral"
+local = "So how are things going over at the Western Ruins, Eiland?"
+next = "1"
+
+[western_ruins.1]
+speaker = "eiland"
+portrait = "neutral"
+local = "Very well! With Errol's help, I've been able to identify and catalog many of our finds."
+next = "2"
+
+[western_ruins.2]
+speaker = "valen"
+portrait = "neutral"
+local = "It's impressive how much has turned up at that dig site."

@@ -1,0 +1,42 @@
+[dragonguard_report]
+refresh = "2m"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ adeline_zone = "<dell_zone>" },
+	{ adeline_zone = "<luc_zone>" },
+	{ adeline_zone = "<maple_zone>" },
+	{ adeline_business_review = true }
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "You three want to file a report?"
+next = "1"
+
+[dragonguard_report.1]
+speaker = "dell"
+portrait = "neutral"
+local = "Yeah! The Dragonguard's doing great. We're helping so many people, and beating up so many bad guys!"
+next = "2"
+
+[dragonguard_report.2]
+speaker = "maple"
+portrait = "think"
+local = "We're your eyes and ears in town, Lady Adeline! You didn't hear it from me, but I saw Lord Eiland sneak seconds on strawberry shortcake. Pretty suspicious."
+next = "3"
+
+[dragonguard_report.3]
+speaker = "luc"
+portrait = "happy"
+effect = "sparkles"
+local = "And we're all stocked up on supplies! Lots of sticks, and sweets, and spiders! Want to see my chart?"
+next = "4"
+
+[dragonguard_report.4]
+speaker = "adeline"
+portrait = "happy"
+local = "Ooh, I love a good chart! Excellent work, Dragonguard!"

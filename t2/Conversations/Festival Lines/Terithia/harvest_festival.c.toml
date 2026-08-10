@@ -1,0 +1,27 @@
+[harvest_festival_anticipation]
+refresh = "never"
+requires = [{ npc = "terithia" }, { harvest_festival_setup = true }]
+portrait = "neutral"
+local = "Mistria throws the best $Harvest Festival$ I've ever been to, and I've been to a lot!"
+next = "1"
+
+[harvest_festival_anticipation.1]
+portrait = "happy"
+local = "Wait till you see the loaded Festival table, [Ari]!"
+
+[harvest_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "terithia" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" }
+]
+portrait = "wink"
+local = "Now this is what I call a festival!"
+next = "1"
+
+[harvest_festival_0.1]
+portrait = "happy"
+local = "Plenty of free grub and good company!"

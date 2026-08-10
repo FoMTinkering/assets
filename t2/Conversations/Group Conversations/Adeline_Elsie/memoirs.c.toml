@@ -1,0 +1,40 @@
+[memoirs]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "elsie" }] },
+	{ date_time = "3m", comparator = ">=" },
+	{ adeline_zone = "<elsie_zone>" },
+]
+speaker = "adeline"
+portrait = "happy"
+local = "Your memoirs have really been coming along, Aunt Elsie!"
+next = "1"
+
+[memoirs.1]
+speaker = "elsie"
+portrait = "think"
+local = "They have, and yet the memory of every dalliance brings to mind another that I'd forgotten."
+next = "2"
+
+[memoirs.2]
+speaker = "elsie"
+portrait = "wink"
+effect = "hearts"
+local = "My notes are quite extensive!"
+
+[memoirs_2]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "elsie" }] },
+	{ date_time = "1y", comparator = ">=" },
+	{ adeline_zone = "<elsie_zone>" },
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "How are your memoirs coming along, Great Aunt Elsie?"
+next = "1"
+
+[memoirs_2.1]
+speaker = "elsie"
+portrait = "happy"
+local = "Swimmingly! Which is to say, I've reached the chapter where I dated the captain of the Aldaria national swim team."

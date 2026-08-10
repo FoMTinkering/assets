@@ -1,0 +1,30 @@
+[toast]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "hayden" }, { npc = "juniper" }, { npc = "valen" }] },
+	{ hayden_zone = "<juniper_zone>" },
+	{ hayden_zone = "<valen_zone>" },
+	{ location = "haydens_house" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ any = [{ hayden_activity = "eat" }, { hayden_activity = "drink" }] },
+	{ any = [{ juniper_activity = "eat" }, { juniper_activity = "drink" }] },
+	{ any = [{ valen_activity = "eat" }, { valen_activity = "drink" }] },
+]
+speaker = "hayden"
+portrait = "happy"
+effect = "cheery"
+local = "Let's have a toast! To friendship!"
+next = "1"
+
+[toast.1]
+speaker = "juniper"
+portrait = "happy"
+effect = "cheery"
+local = "To be clear, I'm only toasting you, Hayden."
+next = "2"
+
+[toast.2]
+speaker = "valen"
+portrait = "happy"
+effect = "cheery"
+local = "Funny, I was thinking the same thing."

@@ -1,0 +1,65 @@
+[caldarus_recovery]
+kind = "gameplay_triggered"
+writes = [
+	{ caldarus_home = true },
+	{ caldarus_recovery_delay = "two_weeks", expires = "2w" },
+	{ caldarus_post_recovery_conversation = "available" },
+]
+actions = [{ can_talk = "caldarus" }]
+speaker = "caldarus"
+portrait = "neutral"
+local = "[Ari]!"
+next = "1"
+
+[caldarus_recovery.1]
+speaker = "caldarus"
+portrait = "think"
+local = "Do not look so worried."
+next = "2"
+
+[caldarus_recovery.2]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Taking this form... it was a small price to pay to ensure your safety."
+prompts = [{ local = "Will you be okay?", next = "3" }, { local = "Is there anything I can do?", next = "4" }]
+
+[caldarus_recovery.3]
+speaker = "caldarus"
+portrait = "sigh"
+local = "I will mend, in time."
+next = "5"
+
+[caldarus_recovery.4]
+speaker = "caldarus"
+portrait = "sigh"
+local = "You have already done much for my sake. However..."
+next = "5"
+
+[caldarus_recovery.5]
+speaker = "caldarus"
+portrait = "neutral"
+local = "$Breaking the final seals$ will aid me in my recovery. I ask that you continue to offer up $Essence$ at my shrine as well."
+next = "6"
+
+[caldarus_recovery.6]
+speaker = "caldarus"
+portrait = "think"
+local = "..."
+next = "7"
+
+[caldarus_recovery.7]
+speaker = "caldarus"
+portrait = "smile"
+local = "And... if you have time, a visit now and then would be greatly appreciated."
+next = "8"
+
+[caldarus_recovery.8]
+speaker = "caldarus"
+portrait = "neutral"
+local = "Despite my condition, it is a marvel to be able to experience this world in a physical form once more."
+next = "9"
+
+[caldarus_recovery.9]
+speaker = "caldarus"
+portrait = "happy"
+local = "Thank you for everything, [Ari]."

@@ -1,0 +1,26 @@
+[eyes_on_the_prize]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "reina" }] },
+	{ season = "summer" },
+	{ adeline_zone = "<reina_zone>" },
+	{ any = [
+		{ adeline_animation = "write_sit" },
+		{ adeline_animation = "write" },
+		{ adeline_routine = "adeline_office_work" }
+	] },
+	{ location = "beach", comparator = "!=" },
+	{ group_one_beach_day = false },
+	{ group_three_beach_day = false },
+]
+speaker = "reina"
+portrait = "sad"
+effect = "sick"
+local = "Ughhh, I wish I was at the Beach."
+next = "1"
+
+[eyes_on_the_prize.1]
+speaker = "adeline"
+portrait = "mad"
+effect = "sparkles"
+local = "Eyes on the prize, Reina! We're almost done with these invoices!"

@@ -1,0 +1,65 @@
+scene(clinic_f1);
+camera_position(d_camera_1);
+place_actor(ari, south, d_ari_entrance);
+place_actor(valen, south, d_valen_entrance);
+animate(valen, write);
+animate(ari, blink);
+wait(0.2);
+freeze_ari();
+request_music_play("Music/Location Tracks/Clinic");
+
+if is_spouse("valen") {
+    set_conversation("Cutscenes/Story Events/dying/dying_married_valen");
+} else if is_partner("valen") {
+    set_conversation("Cutscenes/Story Events/dying/dying_dating_valen");
+} else {
+    set_conversation("Cutscenes/Story Events/dying/dying");
+}
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		wait(3);
+		animate(ari, idle);
+		wait(1);
+		face(ari, west);
+	}
+	{
+		wait(3.5);
+		free bark_speech(valen, exclamation_mark);
+		wait(0.5);
+		animate(valen, idle);
+		face(valen, east);
+	}
+	{
+		wait(4.75);
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		animate(valen, write);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		animate(valen, idle);
+		face(valen, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+fade_out(2);

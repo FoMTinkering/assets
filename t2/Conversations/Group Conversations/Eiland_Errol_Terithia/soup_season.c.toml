@@ -1,0 +1,25 @@
+[soup_season]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "errol" }, { npc = "terithia" }] },
+	{ eiland_zone = "<errol_zone>" },
+	{ eiland_zone = "<terithia_zone>" },
+	{ season = "winter" },
+	{ location = "inn", comparator = "!=" }
+]
+speaker = "eiland"
+portrait = "think"
+local = "In winter, hot meals are just the thing. Soup with breakfast, soup with lunch, and soup with dinner."
+next = "1"
+
+[soup_season.1]
+speaker = "errol"
+portrait = "happy"
+effect = "drop"
+local = "He calls it soup season."
+next = "2"
+
+[soup_season.2]
+speaker = "terithia"
+portrait = "think"
+local = "Soup season, eh? Maybe I'll get myself a helping from the pot in the Inn..."

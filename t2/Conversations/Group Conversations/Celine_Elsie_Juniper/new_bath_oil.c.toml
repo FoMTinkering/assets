@@ -1,0 +1,24 @@
+[new_bath_oil]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "elsie" }, { npc = "juniper" }] },
+	{ celine_zone = "<elsie_zone>" },
+	{ celine_zone = "<juniper_zone>" },
+	{ location = "bathhouse" },
+	{ season = "summer" },
+]
+speaker = "elsie"
+portrait = "neutral"
+local = "Your new bath oil does smell nice, Juniper, but it's missing something."
+next = "1"
+
+[new_bath_oil.1]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "I want it to conjure that summery ocean feeling, but it doesn't quite get there, does it? How frustrating."
+next = "2"
+
+[new_bath_oil.2]
+speaker = "celine"
+portrait = "neutral"
+local = "Try adding something citrus! I think you'll be surprised at how breezy it smells."

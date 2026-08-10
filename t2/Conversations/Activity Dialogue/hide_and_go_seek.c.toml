@@ -1,0 +1,174 @@
+[dell_hgs_1]
+priority = "max"
+refresh = "1y"
+requires = [
+	{ npc = "dell" },
+	{ any = [
+		{ dell_is_at = "town/playground_hgs_count" },
+		{ dell_is_at = "eastern_road/kids_2" }
+	] },
+	{ hide_and_go_seek = true }
+]
+speaker = "dell"
+portrait = "happy"
+local = "One... two... three..."
+
+[dell_hgs_2]
+priority = "max"
+refresh = "1y"
+requires = [
+	{ npc = "dell" },
+	{ any = [
+		{ dell_is_at = "town/playground_hgs_tree" },
+		{ dell_is_at = "town/playground_hgs_lamppost" },
+		{ dell_is_at = "eastern_road/hgs_1" },
+		{ dell_is_at = "eastern_road/hgs_2" },
+		{ dell_is_at = "eastern_road/hgs_3" }
+	] },
+	{ luc_routine = "hgs_it" },
+	{ hide_and_go_seek = true }
+]
+speaker = "dell"
+portrait = "think"
+local = "I think Luc is it?"
+
+[dell_hgs_3]
+priority = "max"
+refresh = "1y"
+requires = [
+	{ npc = "dell" },
+	{ dell_routine = "hgs_it" },
+	{ hide_and_go_seek = true }
+]
+portrait = "mad"
+local = "I'm so going to find you guys! Just wait!"
+
+[luc_hgs_1]
+priority = "max"
+refresh = "1y"
+requires = [
+	{ npc = "luc" },
+	{ any = [
+		{ luc_is_at = "town/playground_hgs_tree" },
+		{ luc_is_at = "town/playground_hgs_lamppost" },
+		{ luc_is_at = "eastern_road/hgs_1" },
+		{ luc_is_at = "eastern_road/hgs_2" },
+		{ luc_is_at = "eastern_road/hgs_3" }
+	] },
+	{ dell_routine = "hgs_it" },
+	{ hide_and_go_seek = true }
+]
+speaker = "luc"
+local = "Dell's never going to find me here!"
+
+[luc_hgs_2]
+priority = "max"
+refresh = "1y"
+requires = [
+	{ npc = "luc" },
+	{ any = [
+		{ luc_is_at = "town/playground_hgs_tree" },
+		{ luc_is_at = "town/playground_hgs_lamppost" },
+		{ luc_is_at = "eastern_road/hgs_1" },
+		{ luc_is_at = "eastern_road/hgs_2" },
+		{ luc_is_at = "eastern_road/hgs_3" }
+	] },
+	{ maple_routine = "hgs_it" },
+	{ hide_and_go_seek = true }
+]
+speaker = "luc"
+local = "Based on my observations, Maple is it."
+
+[luc_hgs_3]
+priority = "max"
+refresh = "1y"
+requires = [
+	{ npc = "luc" },
+	{ dell_routine = "hgs_it" },
+	{ hide_and_go_seek = true }
+]
+portrait = "mad"
+local = "Dell will never find me! Not while I utilize the camouflage powers of the mighty grasshopper!"
+
+[maple_hgs_1]
+priority = "max"
+refresh = "1y"
+requires = [
+	{ npc = "maple" },
+	{ any = [
+		{ maple_is_at = "town/playground_hgs_tree" },
+		{ maple_is_at = "town/playground_hgs_lamppost" },
+		{ maple_is_at = "eastern_road/hgs_1" },
+		{ maple_is_at = "eastern_road/hgs_2" },
+		{ maple_is_at = "eastern_road/hgs_3" }
+	] },
+	{ any = [{ dell_routine = "hgs_it" }, { luc_routine = "hgs_it" }] },
+	{ hide_and_go_seek = true }
+]
+speaker = "maple"
+portrait = "embarrassed"
+local = "Sorry [Ari], this is my hiding spot! Find another!"
+
+[maple_hgs_2]
+priority = "max"
+refresh = "1y"
+requires = [
+	{ npc = "maple" },
+	{ any = [
+		{ maple_is_at = "town/playground_hgs_tree" },
+		{ maple_is_at = "town/playground_hgs_lamppost" },
+		{ maple_is_at = "eastern_road/hgs_1" },
+		{ maple_is_at = "eastern_road/hgs_2" },
+		{ maple_is_at = "eastern_road/hgs_3" }
+	] },
+	{ dell_routine = "hgs_it" },
+	{ hide_and_go_seek = true }
+]
+speaker = "maple"
+local = "Dell is definitely it."
+
+[maple_hgs_3]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ maple_routine = "hgs_it" },
+	{ dell_is_at_location = "<luc_is_at_location>" },
+	{ dell_is_at_location = "<maple_is_at_location>" }
+]
+speaker = "maple"
+portrait = "happy"
+local = "One, two, three..."
+next = "1"
+
+[maple_hgs_3.1]
+speaker = "dell"
+portrait = "mad"
+local = "We're playing royal hide and seek!"
+next = "2"
+
+[maple_hgs_3.2]
+speaker = "luc"
+portrait = "think"
+local = "It's like regular hide and seek, except we let Queen Maple find us right away so we can curry favor with her at court."
+
+[maple_hgs_4]
+priority = "max"
+refresh = "1y"
+requires = [
+	{ npc = "maple" },
+	{ dell_routine = "hgs_it" },
+	{ hide_and_go_seek = true }
+]
+portrait = "wink"
+local = "Dell's getting desperate, I can tell. And... oh, is Luc entering grasshopper mode? Yeah, Dell's never going to find us."
+
+# onlookers/supervisors
+[josephine_hgs_1]
+refresh = "1y"
+requires = [{ npc = "josephine" }, { dell_routine = "hgs_it" }]
+local = "Dell's uncanny good at hiding, so I'm always relieved when she's the one seeking."
+next = "1"
+
+[josephine_hgs_1.1]
+portrait = "embarrassed"
+local = "Once they couldn't find her for hours. When they came home to dinner, Dell came out from under the dining table. I screamed, [Ari]."

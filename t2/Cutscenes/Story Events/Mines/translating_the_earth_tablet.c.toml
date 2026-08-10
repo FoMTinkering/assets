@@ -1,0 +1,303 @@
+[translating_the_earth_tablet_follow_up_celine]
+refresh = "never"
+requires = [{ npc = "celine" }, { tet = true }]
+local = "I never would have thought that the Codex Mistria could be used to help solve an ancient riddle!"
+next = "1"
+
+[translating_the_earth_tablet_follow_up_celine.1]
+portrait = "think"
+local = "I wonder what other secrets it's hiding..."
+
+[translating_the_earth_tablet_follow_up_eiland]
+refresh = "never"
+requires = [{ npc = "eiland" }, { tet = true }]
+local = "Juniper showed me the rubbing of the second tablet! What an amazing find."
+next = "1"
+
+[translating_the_earth_tablet_follow_up_eiland.1]
+portrait = "happy"
+local = "To think she was stumped and had to ask for help!"
+
+[translating_the_earth_tablet_follow_up_juniper]
+refresh = "never"
+requires = [{ npc = "juniper" }, { tet = true }]
+portrait = "think"
+local = "I'll admit that the difficulty of that tablet's translation was humbling."
+next = "1"
+
+[translating_the_earth_tablet_follow_up_juniper.1]
+local = "Of course, without me, you never would have solved it."
+next = "2"
+
+[translating_the_earth_tablet_follow_up_juniper.2]
+portrait = "laugh"
+local = "Oh ho ho ho!"
+
+[translating_the_earth_tablet_turn_in]
+kind = "gameplay_triggered"
+actions = [{ cutscene = "translating_the_earth_tablet" }]
+speaker = "juniper"
+portrait = "happy"
+local = "You found another tablet, even deeper underground?"
+next = "1"
+
+[translating_the_earth_tablet_turn_in.1]
+speaker = "juniper"
+portrait = "sly"
+local = "Come with me, the last thing we need are gawkers."
+
+[translating_the_earth_tablet]
+kind = "gameplay_triggered"
+writes = [{ tet = true, expires = "4d" }]
+actions = [
+	{ heart_points = { amount = 20, npc = "celine" } },
+	{ heart_points = { amount = 40, npc = "eiland" } },
+	{ heart_points = { amount = 60, npc = "juniper" } },
+]
+speaker = "juniper"
+local = "I should only need a moment to translate this."
+next = "1"
+
+[translating_the_earth_tablet.1]
+speaker = "juniper"
+portrait = "think"
+local = "..."
+next = "2"
+
+[translating_the_earth_tablet.2]
+speaker = "juniper"
+portrait = "mad"
+effect = "sweat"
+local = "..."
+prompts = [
+	{ local = "Offer your thoughts.", next = "3" },
+	{ local = "Try not to breathe loudly.", next = "3" }
+]
+
+[translating_the_earth_tablet.3]
+speaker = "juniper"
+portrait = "annoyed"
+local = "Hush!"
+next = "4"
+
+[translating_the_earth_tablet.4]
+speaker = "juniper"
+portrait = "ugh"
+local = "..."
+next = "5"
+
+[translating_the_earth_tablet.5]
+speaker = "juniper"
+portrait = "annoyed"
+local = "Well!"
+next = "6"
+
+[translating_the_earth_tablet.6]
+speaker = "juniper"
+local = "There are some extremely unusual terms here that I haven't encountered before. I can't be sure of the translation."
+next = "7"
+
+[translating_the_earth_tablet.7]
+speaker = "juniper"
+portrait = "think"
+local = "You said that the caverns below the Mines are elementally charged with water?"
+next = "8"
+
+[translating_the_earth_tablet.8]
+speaker = "juniper"
+local = "We're going to need the assistance of someone who specializes in very exotic flora."
+prompts = [
+	{ local = "Celine loves plants!", next = "9" },
+	{ local = "Dozy! But what can we bribe him with?", next = "10" },
+]
+
+[translating_the_earth_tablet.9]
+speaker = "juniper"
+portrait = "happy"
+local = "I'm glad to see you've been paying attention!"
+next = "11"
+
+[translating_the_earth_tablet.10]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "It's always SUCH a delight when you open your mouth."
+next = "11"
+
+[translating_the_earth_tablet.11]
+speaker = "juniper"
+local = "I'm sure you've seen Celine with her head buried in that tome, the Codex Mistria."
+next = "12"
+
+[translating_the_earth_tablet.12]
+speaker = "juniper"
+portrait = "happy"
+local = "From what I've heard, esoteric hardly begins to describe the contents. It may be just what we need!"
+next = "13"
+
+[translating_the_earth_tablet.13]
+speaker = "celine"
+portrait = "happy"
+local = "[Ari] and Juniper? This is a surprise!"
+next = "14"
+
+[translating_the_earth_tablet.14]
+speaker = "juniper"
+portrait = "mad"
+local = "Celine, we come to you with a mission of utmost importance."
+next = "15"
+
+[translating_the_earth_tablet.15]
+speaker = "celine"
+local = "Ooh, sounds fun. I'll put on some tea."
+next = "16"
+
+[translating_the_earth_tablet.16]
+speaker = "celine"
+portrait = "happy"
+local = "And I just picked up a packet of those cookies you like, Juniper."
+next = "17"
+
+[translating_the_earth_tablet.17]
+speaker = "juniper"
+portrait = "happy"
+local = "How lovely!"
+next = "18"
+
+[translating_the_earth_tablet.18]
+speaker = "juniper"
+effect = "drop"
+local = "Er- I mean... I suppose this will give us time to fill you in on all the details..."
+next = "19"
+
+[translating_the_earth_tablet.19]
+speaker = "celine"
+local = "What an incredible sounding place! I'd love to see what grows in the Tide Caverns."
+prompts = [
+	{ local = "Sure, let's go!", next = "20" },
+	{ local = "It's really incredibly dangerous down there...", next = "21" },
+]
+
+[translating_the_earth_tablet.20]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Please focus, you two."
+next = "23"
+
+[translating_the_earth_tablet.21]
+speaker = "celine"
+portrait = "happy"
+effect = "drop"
+local = "I think I'll stick with viewing the samples in the Museum."
+next = "22"
+
+[translating_the_earth_tablet.22]
+speaker = "celine"
+local = "Let's see what the Codex has to say..."
+next = "23"
+
+[translating_the_earth_tablet.23]
+speaker = "celine"
+portrait = "think"
+local = "An elementally charged, underground environment... That certainly narrows down our search."
+next = "24"
+
+[translating_the_earth_tablet.24]
+speaker = "celine"
+local = "Is there anything else that could aid us, Juniper?"
+next = "25"
+
+[translating_the_earth_tablet.25]
+speaker = "juniper"
+portrait = "think"
+local = "Witchspeak is a highly contextual language, so there's a good chance the correct plant will help me translate the rest of the text."
+next = "26"
+
+[translating_the_earth_tablet.26]
+speaker = "celine"
+portrait = "happy"
+local = "That's useful!"
+next = "27"
+
+[translating_the_earth_tablet.27]
+speaker = "celine"
+local = "I think our best bet is probably $Jade Dulse$."
+next = "28"
+
+[translating_the_earth_tablet.28]
+speaker = "juniper"
+local = "Let's give it a try..."
+next = "29"
+
+[translating_the_earth_tablet.29]
+no_speaker = true
+local = "Find the $fish whose arrow flies true$;"
+next = "30"
+
+[translating_the_earth_tablet.30]
+no_speaker = true
+local = "A $jewel the color of the blue sea$;"
+next = "31"
+
+[translating_the_earth_tablet.31]
+no_speaker = true
+local = "Gather up $dulse of jade$;"
+next = "32"
+
+[translating_the_earth_tablet.32]
+no_speaker = true
+local = "Find the $hunter in the coral$."
+next = "33"
+
+[translating_the_earth_tablet.33]
+speaker = "juniper"
+portrait = "happy"
+local = "This is certainly it!"
+next = "34"
+
+[translating_the_earth_tablet.34]
+speaker = "celine"
+portrait = "very_happy"
+local = "How exciting!"
+next = "35"
+
+[translating_the_earth_tablet.35]
+speaker = "celine"
+local = "Sounds like there's still some puzzle solving to do huh, [Ari]."
+prompts = [
+	{ local = "I'll have it solved in no time!", next = "36" },
+	{ local = "But what if the Museum needs those things too?", next = "37" },
+]
+
+[translating_the_earth_tablet.36]
+speaker = "juniper"
+portrait = "think"
+local = "Well, I suppose you have succeeded once already."
+next = "38"
+
+[translating_the_earth_tablet.37]
+speaker = "juniper"
+portrait = "angry_brows"
+local = "I trust you'll make the obvious and correct choice."
+next = "38"
+
+[translating_the_earth_tablet.38]
+speaker = "juniper"
+local = "Your assistance has been invaluable, Celine. Thank you."
+next = "39"
+
+[translating_the_earth_tablet.39]
+speaker = "celine"
+local = "Anytime!"
+next = "40"
+
+[translating_the_earth_tablet.40]
+speaker = "juniper"
+portrait = "sly"
+local = "Let us know if you need any further assistance, [Ari]. I look forward to hearing what you discover next."
+next = "41"
+
+[translating_the_earth_tablet.41]
+speaker = "celine"
+portrait = "wink"
+effect = "cheery"
+local = "And feel free to come over anytime, you two! This was fun!"

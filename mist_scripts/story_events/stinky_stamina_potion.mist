@@ -1,0 +1,208 @@
+scene(bathhouse);
+place_actor(juniper, west, ssp_juniper_center);
+place_actor(ari, east, ssp_ari_center);
+camera_position(ssp_camera_1);
+request_music_play(juniper);
+
+//
+sim {
+	fade_in(2);
+	{
+		wait(1.5);
+		free bark_speech(juniper, exclamation_mark);
+		wait(0.5);
+		face(juniper, south);
+	}
+	{
+		wait(2.5);
+		face(ari, south);
+	}
+	{
+		wait(1.5);
+		place_actor(dell, north, ssp_kid_spawn);
+		walk_slow(dell, ssp_dell);
+		face(dell, north);
+	}
+	{
+		wait(2.25);
+		place_actor(maple, north, ssp_kid_spawn);
+		walk_slow(maple, ssp_maple);
+		face(maple, north);
+	}
+	{
+		wait(3);
+		place_actor(luc, north, ssp_kid_spawn);
+		walk_slow(luc, ssp_luc);
+		face(luc, north);
+	}
+	{
+		wait(3);
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+
+//
+
+free pan_camera(5, ssp_camera_2);
+sim {
+	{
+		wait(0.5);
+		walk_slow(juniper, ssp_juniper_cauldron);
+		face(juniper, south);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+		close_textbox();
+	}
+	{
+		sim {
+			{
+				wait(1);
+				walk_slow(ari, ssp_ari_cauldron);
+				face(ari, south);
+			}
+			{
+				wait(2);
+				walk_slow(luc, ssp_luc_cauldron);
+				face(luc, east);
+			}
+			{
+				wait(2.5);
+				sim {
+					{
+						walk_slow(dell, ssp_dell_cauldron);
+						face(dell, east);
+					}
+					{
+						walk_slow(maple, ssp_maple_cauldron);
+						face(maple, east);
+					}
+				}
+			}
+		}
+	}
+}
+
+wait(0.5);
+animate(ari, pickup);
+__ari_hold_item(lilac);
+wait(1);
+animate(ari, throw);
+play_sound("SoundEffects/Ari/Swim");
+await_ari_animation();
+animate(ari, idle);
+wait(0.5);
+animate(juniper, spell_cast);
+wait(2.5);
+animate(juniper, idle);
+next_line(); //
+//
+next_line(); //
+free bark_speech(dell, exclamation_mark);
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+face(juniper, west);
+animate(ari, pickup);
+__ari_hold_item(stinky_stamina_potion);
+wait(1);
+use_item(stinky_stamina_potion);
+wait(1);
+show_menu(vitals);
+set_ari_health(1);
+set_ari_stamina(1);
+free sim {
+	bark_speech(juniper, exclamation_mark);
+	bark_speech(dell, exclamation_mark);
+	bark_speech(maple, exclamation_mark);
+	bark_speech(luc, exclamation_mark);
+}
+await_ari_animation();
+animate(ari, faint);
+freeze_ari_on_last_frame();
+await_ari_animation();
+hide_menu(vitals);
+
+next_line(); //
+next_line(); //
+next_line(); //
+face(juniper, south);
+next_line(); //
+close_textbox();
+
+sim {
+	sim {
+		unfreeze_ari();
+		walk_slow(ari, ssp_ari_exit);
+		set_move_speed(ari, 0.2);
+	}
+	{
+		wait(1);
+		face(juniper, north);
+	}
+	{
+		wait(1);
+		fade_out(2);
+	}
+}
+
+play_bathhouse_scene();
+scene(bathhouse);
+place_actor(ari, west, ssp_ari_exit);
+place_actor(dell, east, ssp_dell_cauldron);
+place_actor(maple, east, ssp_maple_cauldron);
+place_actor(luc, east, ssp_luc_cauldron);
+place_actor(juniper, north, ssp_juniper_cauldron);
+camera_position(ssp_camera_2);
+animate(ari, idle);
+
+sim {
+	fade_in(2);
+	{
+		walk_slow(ari, ssp_ari_cauldron);
+		face(ari, west);
+	}
+	pan_camera(2, ssp_camera_2);
+	{
+		wait(0.5);
+		free bark_speech(juniper, cute_face);
+		wait(0.75);
+		face(juniper, west);
+	}
+	{
+		wait(2);
+		next_line(); //
+	}
+}
+free {
+	face(juniper, south);
+	wait(0.5);
+	face(ari, south);
+}
+next_line(); //
+free {
+	face(juniper, west);
+	wait(0.5);
+	face(ari, east);
+}
+next_line(); //
+next_line(); //
+next_line(); //
+free {
+	face(juniper, south);
+	wait(0.5);
+	face(ari, south);
+}
+next_line(); //
+close_textbox();
+free bark_speech(juniper, sweat_drop);
+free bark_speech(ari, sweat_drop);
+wait(1);
+fade_out(2);
+wait_one_tick();

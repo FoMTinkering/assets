@@ -1,0 +1,85 @@
+[board_games_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ celine_zone = "inn/north_table" },
+	{ eiland_zone = "inn/north_table" },
+	{ holt_zone = "inn/north_table" },
+	{ nora_zone = "inn/north_table" },
+	{ valen_zone = "inn/north_table" },
+	{ board_games_fnati = 3 },
+	{ any = [
+		{ npc = "celine" },
+		{ npc = "eiland" },
+		{ npc = "holt" },
+		{ npc = "nora" },
+		{ npc = "valen" },
+	] },
+]
+actions = [
+	{ bark = { bark = "ellipses", npc = "celine" } },
+	{ bark = { bark = "ellipses", npc = "eiland" } },
+	{ bark = { bark = "ellipses", npc = "holt" } },
+	{ bark = { bark = "ellipses", npc = "nora" } },
+	{ bark = { bark = "ellipses", npc = "valen" } },
+]
+writes = [{ fnati = 3 }, { board_games_fnati = 4 }]
+speaker = "nora"
+portrait = "happy"
+local = "These shortcakes are delicious, Celine."
+next = "1"
+
+[board_games_4.1]
+speaker = "celine"
+portrait = "happy"
+local = "It's true! Reina really outdid herself. And Eiland, this tea is so lovely and floral! Thank you for sharing it with us."
+next = "2"
+
+[board_games_4.2]
+speaker = "eiland"
+portrait = "happy"
+local = "Of course! Good things are meant to be shared."
+next = "3"
+
+[board_games_4.3]
+speaker = "eiland"
+portrait = "think"
+local = "Weren't we playing a board game, though?"
+next = "4"
+
+[board_games_4.4]
+speaker = "holt"
+portrait = "think"
+local = "That's right! Lords of the Land. Didn't Valen take it home last time?"
+next = "5"
+
+[board_games_4.5]
+speaker = "valen"
+portrait = "happy"
+local = "I threw it in the river."
+next = "6"
+
+[board_games_4.6]
+speaker = "eiland"
+portrait = "sad"
+effect = "drop"
+local = "You threw a historical artifact... in the river?"
+next = "7"
+
+[board_games_4.7]
+speaker = "valen"
+portrait = "wink"
+local = "It seemed the best place for it. And look at us! We're all getting along quite nicely."
+next = "8"
+
+[board_games_4.8]
+speaker = "celine"
+portrait = "gloomy"
+local = "But Valen... what happens when it washes up in the next town over?"
+next = "9"
+
+[board_games_4.9]
+speaker = "celine"
+portrait = "concerned"
+local = "It'll tear that village apart!"

@@ -1,0 +1,43 @@
+# Menus that appear "attached" to the screen while Ari is navigating the room.
+[default]
+	layer = "hud"
+	canvas_kind = "screen"
+	run_tests = false
+
+# The top-right element of the hud that displays the time, gold, essence, etc.
+[info_hud]
+	# The amount of time the gold animation (increases and decreases) sits with the preview number before it starts
+	# ticking the gold.
+	# This number is in frames, so 60 == 1 second
+	gold_adder_wait_time = 45
+
+# The toast notifications that appear on the left side of the screen with various updates and
+# messages for Ari.
+[info_toasts]
+	# The amount of time information toast notifications (left side of screen) display before transitioning out.
+	# This number is in frames, so 60 == 1 second
+	duration = 240
+	layer = "above_fader"
+
+# The toast notifications that appear on the right side of the screen when Ari receives items.
+[item_toasts]
+	# Similar to the info toasts, this is how long item notifications stay on the screen.
+	duration = 120
+	layer = "above_fader"
+
+# The toolbar of items at the bottom of the screen.
+[toolbar]
+	# The number of frames an item must be held over a toolbar tab before the page changes
+	tab_hover_time = 45
+	# The number of frames that buffer toolbar selection when holding down the input to cycle slots.
+	switch_cooldown = 10
+
+# The top-left element of the hud that displays Ari's health, stamina, etc.
+[vitals]
+
+# The bottom-left element of the hud that displays hints to which inputs Ari can currently use.
+[glyph_guide]
+	layer = "popup"
+
+# The top-center element of the hud that appears in dungeons to show what floor Ari is on.
+[mines]

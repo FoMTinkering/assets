@@ -1,0 +1,50 @@
+[ale]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "hayden" }] },
+	{ errol_zone = "<hayden_zone>" },
+	{ errol_activity = "drink" },
+	{ hayden_activity = "drink" },
+	{ any = [{ errol_zone = "inn/bar" }, { location = "haydens_house" }] },
+	{ season = "winter" }
+]
+speaker = "errol"
+portrait = "happy"
+local = "Hemlock called this his seasonal winter ale? It's delightful! Heavenly, even!"
+next = "1"
+
+[ale.1]
+speaker = "hayden"
+portrait = "happy"
+local = "Made from our own Mistria's grain! Warms the belly, and fills you up to boot! Cheers!"
+
+[ale_2]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "hayden" }] },
+	{ errol_zone = "<hayden_zone>" },
+	{ errol_activity = "drink" },
+	{ hayden_activity = "drink" },
+	{ any = [{ errol_zone = "inn/bar" }, { location = "haydens_house" }] },
+]
+speaker = "errol"
+portrait = "neutral"
+local = "Oh my, this is the exact type of beer Miss Greta used to drink!"
+next = "1"
+
+[ale_2.1]
+speaker = "errol"
+portrait = "happy"
+local = "I see she passed on her good taste."
+next = "2"
+
+[ale_2.2]
+speaker = "hayden"
+portrait = "happy"
+local = "Shucks, I'm glad to hear Grandma passed on more than her square jaw!"
+next = "3"
+
+[ale_2.3]
+speaker = "hayden"
+portrait = "laugh"
+local = "Gya ha ha!"

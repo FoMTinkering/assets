@@ -1,0 +1,30 @@
+[wine]
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ season = "spring" },
+	{ juniper_activity = "drink" },
+	{ any = [
+		{ juniper_drinking = "wine" },
+		{ juniper_drinking = "white_wine" },
+		{ juniper_drinking = "rose" }
+	] }
+]
+portrait = "neutral"
+local = "I like a lighter wine in the spring."
+
+[wine_2]
+refresh = "1y"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_activity = "drink" },
+	{ date_time = "1y", comparator = ">=" },
+	{ any = [
+		{ juniper_drinking = "wine" },
+		{ juniper_drinking = "white_wine" },
+		{ juniper_drinking = "rose" }
+	] },
+	{ location = "inn" }
+]
+portrait = "neutral"
+local = "It's simply magical how Hemlock finds new vintages for me to try, year after year! He and Balor make a good team."

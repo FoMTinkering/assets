@@ -1,0 +1,45 @@
+[zero_to_one_0]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 2, comparator = "<" },
+	{ date_time = "1y", comparator = "<=" }
+]
+portrait = "think"
+local = "I don't know what you're hoping to gain by taking over that farm."
+next = "1"
+
+[zero_to_one_0.1]
+portrait = "unimpressed"
+local = "And I don't know what Adeline was thinking, giving it away to some stranger."
+
+[two_to_three_0]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 4, comparator = "<" },
+	{ march_heart_level = 2, comparator = ">=" }
+]
+writes = [{ march_was_mean = 1, operator = "+=", expires = "24h" }]
+portrait = "neutral"
+local = "What do you want? Make it quick."
+
+[four_to_five_0]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 6, comparator = "<" },
+	{ march_heart_level = 4, comparator = ">=" }
+]
+portrait = "neutral"
+local = "Hey, [Ari]. How's it going?"
+next = "1"
+
+[four_to_five_0.1]
+portrait = "think"
+local = "What?"
+next = "2"
+
+[four_to_five_0.2]
+portrait = "tsundere"
+local = "Why are you looking at me like that...?"

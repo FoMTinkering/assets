@@ -1,0 +1,188 @@
+[shooting_star_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+	{ reina_heart_level = 4, comparator = ">=" },
+	{ reina_heart_level = 8, comparator = "<" },
+]
+portrait = "neutral"
+local = "Are you looking forward to the Shooting Star Festival, [Ari]?"
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "think"
+local = "I've heard couples often go to watch them up at the Summit..."
+next = "2"
+
+[shooting_star_anticipation.2]
+portrait = "blush"
+local = "Sounds pretty romantic, huh?"
+
+[shooting_star_not_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_at = "town/star_festival_reina" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "reina_invited", comparator = "!=" },
+]
+portrait = "happy"
+local = "They're so beautiful..."
+next = "1"
+
+[shooting_star_not_invited.1]
+portrait = "neutral"
+local = "The night feels full of magic, doesn't it?"
+
+[shooting_star_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_at = "town/star_festival_reina" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "reina_invited" },
+]
+portrait = "embarrassed"
+local = "Hi [Ari]! Should we start heading up to the Summit?"
+
+[shooting_star_invited_anticipation]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ shooting_star_date_status = "reina_invited" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ reina_is_at = "town/star_festival_reina", comparator = "!=" },
+]
+portrait = "happy"
+local = "See you at 8 pm, [Ari]? I'm looking forward to it!"
+
+[shooting_star_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ shooting_star_date_status = "reina_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ reina_is_partner = false },
+]
+portrait = "happy"
+local = "Hey [Ari]!"
+next = "1"
+
+[shooting_star_follow_up.1]
+portrait = "blush"
+local = "Thank you again for inviting me out last night. I had a really nice time."
+next = "2"
+
+[shooting_star_follow_up.2]
+portrait = "blush_special"
+local = "I had a really nice time."
+
+[shooting_star_8h_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ shooting_star_date_status = "reina_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ reina_is_partner = true },
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush_open_eyes"
+local = "Last night was really special, [Ari]."
+next = "1"
+
+[shooting_star_8h_follow_up.1]
+portrait = "blush"
+local = "The stars were so beautiful, weren't they?"
+
+[shooting_star_missed_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ shooting_star_date_status = "reina_invited" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "sad"
+local = "What happened yesterday, [Ari]?"
+next = "1"
+
+[shooting_star_missed_follow_up.1]
+portrait = "ugh"
+local = "I didn't know what to think when you just... didn't show up."
+
+[shooting_star_follow_up_not_invited]
+refresh = "3m"
+requires = [
+	{ npc = "reina" },
+	{ shooting_star_date_status = "reina_invited", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "reina_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "neutral"
+local = "Ahh last night was so nice!"
+next = "1"
+
+[shooting_star_follow_up_not_invited.1]
+portrait = "happy"
+local = "It's nice to spend some quality time with family now and then."
+next = "2"
+
+[shooting_star_follow_up_not_invited.2]
+portrait = "wink"
+local = "And the stars were really pretty, too!"
+
+# NEW ROMANCE LINE FOLLOW UPS
+
+[shooting_star_romantic_follow_up_A]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ shooting_star_date_status = "reina_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+	{ reina_is_spouse = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "reina" } },
+]
+portrait = "neutral"
+local = "Hi [Ari]! Are you hungry by any chance...?"
+next = "1"
+
+[shooting_star_romantic_follow_up_A.1]
+portrait = "blush"
+actions = [{ item = "roasted_chestnuts" }]
+local = "You're always so busy... I thought I'd make you a snack that you can eat on the go!"
+
+[shooting_star_romantic_follow_up_B]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ shooting_star_date_status = "reina_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "blush", npc = "reina" } },
+]
+portrait = "blush"
+local = "You look nice today, [Ari]..."
+next = "1"
+
+[shooting_star_romantic_follow_up_B.1]
+portrait = "blush_special"
+local = "I just thought you should know, hehe."

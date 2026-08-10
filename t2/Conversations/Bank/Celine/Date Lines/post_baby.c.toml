@@ -1,0 +1,52 @@
+[post_baby_date_accept]
+requires = [
+    { npc = "celine" },
+    { any = [
+        { date = "bathhouse" },
+        { date = "beach" },
+        { date = "deep_woods_picnic" },
+        { date = "gem_cutting" },
+        { date = "inn_meal" },
+        { date = "park" }
+    ] },
+    { celine_is_spouse = true },
+    { celine_has_child = true }
+]
+writes = [{ da_celine_post_baby_follow_up_gate = true, expires = "1d" }]
+kind = "date_acceptance"
+portrait = "blush"
+local = "A date? I'd love to!"
+next = "1"
+
+[post_baby_date_accept.1]
+portrait = "blush_closed_eyes"
+local = "Let's swing by the General Store and drop off [child_0] with my parents first."
+next = "2"
+
+[post_baby_date_accept.2]
+portrait = "wink"
+local = "I know they've both been clamoring for more time with their grandson, so this works out perfectly."
+
+[post_baby_date_follow_up]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "celine" },
+	{ da_celine_post_baby_follow_up_gate = true },
+    { celine_is_spouse = true },
+    { celine_has_child = true }
+]
+writes = [{ da_celine_post_baby_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "blush_closed_eyes"
+local = "That was such a fun date, [Ari]!"
+next = "1"
+
+[post_baby_date_follow_up.1]
+portrait = "embarrassed"
+local = "It was nice to share some time alone together."
+next = "2"
+
+[post_baby_date_follow_up.2]
+portrait = "happy"
+local = "And I can tell [child_0] had a great time with my parents too!"

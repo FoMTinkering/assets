@@ -1,0 +1,23 @@
+[days_planned]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "landen" }, { npc = "ryis" }] },
+	{ errol_zone = "<landen_zone>" },
+	{ errol_zone = "<ryis_zone>" },
+	{ time_of_day = "morning" },
+]
+speaker = "errol"
+portrait = "neutral"
+local = "So, do you gents have your days planned out?"
+next = "1"
+
+[days_planned.1]
+speaker = "landen"
+portrait = "think"
+local = "Oh, you know... a little of this, a little of that!"
+next = "2"
+
+[days_planned.2]
+speaker = "ryis"
+portrait = "wink"
+local = "That translates to a no, Errol."

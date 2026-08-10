@@ -1,0 +1,174 @@
+[default]
+	hp = 1
+	damage = 0
+	essence = 0
+	drops = []
+	coin_count = [1, 3]
+
+	attack_duration = [45, 90]
+	windup_duration = [60, 75]
+	petrification_death_duration = 30
+	tired_duration = 60
+	hurt_duration = 60
+	acknowledgment_duration = 60
+	petrified_duration = 300
+	petrified_shakes = 60
+
+	starting_dir = [0, 360]
+	acknowledgment = [45, 55]
+
+	damage_number_offset = -15
+
+	iframes = 1
+	gm_object = "obj_monster_cat"
+	hurtbox = "spr_monster_cat_hurtbox"
+
+	knockback = 2
+	knockback_decline = 0.8
+
+	flee_speed = 0.75
+	speed = 0.75
+	patience_acknowledgement_reset = -120
+
+	sprites = { misc = {} }
+
+	push_radius = 4
+	push_force = 0.25
+	pushed_radius = 7
+
+	walk_speed = 0.25
+
+	status_effect_offset = -13
+	fire_effect_offset = -4
+
+	light_hater = false
+	water_hater = false
+
+	[default.tango]
+		misc.weak_damage = "SoundEffects/Enemies/TakeDamageFleshWeak"
+		misc.strong_damage = "SoundEffects/Enemies/TakeDamageRockStrong"
+[cat]
+	hp = 120
+	damage = 35
+	essence = 15
+	coin_count = [6, 10]
+	light_hater = false
+	water_hater = true
+
+	aggro_radius = 384
+	charge_range = 64
+	attack_movement_speed = 6
+	attack_movement_deccel = 0.2
+	attack_movement_gate = 2
+	attack_movement_gate_deccel = 0.2
+	attack_stall_duration = [60, 60]
+
+	drops = [
+		{ item = "glass", chance = 70, count_range = [3, 5] },
+		{ item = "ore_stone", chance = 70, count_range = [3, 5] },
+		{ item = "obsidian", chance = 30, count_range = [1, 1] },
+		{ item = "monster_whisker", chance = 30 },
+		{ cosmetic = "head_lava_cat_hat", chance = 5 },
+		{ item = "pet_skin_lava_cat", chance = 10 },
+	]
+
+	[cat.sprites]
+		idle.north = "spr_monster_lava_cat_main_idle_north"
+		idle.south = "spr_monster_lava_cat_main_idle_south"
+
+		acknowledgment.north = "spr_monster_lava_cat_main_alert_north"
+		acknowledgment.south = "spr_monster_lava_cat_main_alert_south"
+
+		walk.north = "spr_monster_lava_cat_main_walk_north"
+		walk.south = "spr_monster_lava_cat_main_walk_south"
+
+		windup.north = "spr_monster_lava_cat_main_windup_north"
+		windup.south = "spr_monster_lava_cat_main_windup_south"
+
+		attack.north = "spr_monster_lava_cat_main_attack_north"
+		attack.south = "spr_monster_lava_cat_main_attack_south"
+
+		hurt.north = "spr_monster_lava_cat_main_hurt_north"
+		hurt.south = "spr_monster_lava_cat_main_hurt_south"
+
+		dying.north = "spr_monster_lava_cat_main_hurt_north"
+		dying.south = "spr_monster_lava_cat_main_hurt_south"
+
+		tired.north = "spr_monster_lava_cat_main_idle_north"
+		tired.south = "spr_monster_lava_cat_main_idle_south"
+
+		misc.rock_particle = "spr_part_rockclod_projectile"
+		misc.lava_bits = "spr_part_lava_cat_bits_lava"
+		misc.lava_bits_transition = "spr_part_lava_cat_bits_transition"
+		misc.lava_bits_stone = "spr_part_lava_cat_bits_stone"
+		misc.lut = "spr_monster_lava_cat_lut"
+		misc.petrified_hurt_north = "spr_monster_lava_cat_main_petrified_hurt_north"
+		misc.petrified_hurt_south = "spr_monster_lava_cat_main_petrified_hurt_south"
+
+		petrified.north = "spr_monster_cat_petrified_walk_north"
+		petrified.south = "spr_monster_cat_petrified_walk_north"
+
+[cat_void]
+	hp = 220
+	damage = 45
+	essence = 20
+	coin_count = [8, 12]
+
+	aggro_radius = 384
+	charge_range = 64
+	attack_movement_speed = 6
+	attack_movement_deccel = 0.2
+	attack_movement_gate = 2
+	attack_movement_gate_deccel = 0.2
+	attack_stall_duration = [60, 60]
+	drops = [
+		{ item = "monster_whisker", chance = 30 },
+		{ cosmetic = "head_void_cat_hat", chance = 5 },
+		{ item = "pet_skin_void_cat", chance = 10 },
+	]
+
+	[cat_void.light_hater]
+		light_health = 300
+		buffer = 4
+		pre_petrified_buckets = 100
+		pre_petrified_steam = 30
+		pre_petrified_flash = 40
+		player_value = 1.0
+		neutral_value = 0.5
+
+	[cat_void.sprites]
+		idle.north = "spr_monster_void_cat_main_idle_north"
+		idle.south = "spr_monster_void_cat_main_idle_south"
+
+		acknowledgment.north = "spr_monster_void_cat_main_alert_north"
+		acknowledgment.south = "spr_monster_void_cat_main_alert_south"
+
+		walk.north = "spr_monster_void_cat_main_walk_north"
+		walk.south = "spr_monster_void_cat_main_walk_south"
+
+		windup.north = "spr_monster_void_cat_main_windup_north"
+		windup.south = "spr_monster_void_cat_main_windup_south"
+
+		attack.north = "spr_monster_void_cat_main_attack_north"
+		attack.south = "spr_monster_void_cat_main_attack_south"
+
+		hurt.north = "spr_monster_void_cat_main_hurt_north"
+		hurt.south = "spr_monster_void_cat_main_hurt_south"
+
+		dying.north = "spr_monster_void_cat_main_hurt_north"
+		dying.south = "spr_monster_void_cat_main_hurt_south"
+
+		tired.north = "spr_monster_void_cat_main_idle_north"
+		tired.south = "spr_monster_void_cat_main_idle_south"
+
+		petrified.north = "spr_monster_cat_petrified_walk_north"
+		petrified.south = "spr_monster_cat_petrified_walk_north"
+
+		misc.lut = "spr_monster_void_cat_lut"
+		misc.rock_particle = "spr_part_rockclod_projectile"
+		misc.lava_bits = "spr_part_lava_cat_bits_void"
+		misc.lava_bits_transition = "spr_part_lava_cat_bits_transition"
+		misc.lava_bits_stone = "spr_part_lava_cat_bits_stone"
+
+		misc.petrified_hurt_north = "spr_monster_void_cat_main_petrified_hurt_north"
+		misc.petrified_hurt_south = "spr_monster_void_cat_main_petrified_hurt_south"

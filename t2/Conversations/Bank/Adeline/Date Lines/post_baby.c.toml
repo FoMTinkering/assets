@@ -1,0 +1,52 @@
+[post_baby_date_accept]
+requires = [
+    { npc = "adeline" },
+    { any = [
+        { date = "bathhouse" },
+        { date = "beach" },
+        { date = "deep_woods_picnic" },
+        { date = "gem_cutting" },
+        { date = "inn_meal" },
+        { date = "park" }
+    ] },
+    { adeline_is_spouse = true },
+    { adeline_has_child = true }
+]
+writes = [{ da_adeline_post_baby_follow_up_gate = true, expires = "1d" }]
+kind = "date_acceptance"
+portrait = "blush"
+local = "A date sounds perfect!"
+next = "1"
+
+[post_baby_date_accept.1]
+portrait = "happy_blush"
+local = "Let's drop off [child_0] with Great Aunt Elsie first."
+next = "2"
+
+[post_baby_date_accept.2]
+portrait = "wink"
+local = "I'm sure she won't mind doing a little babysitting for us!"
+
+[post_baby_date_follow_up]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "adeline" },
+	{ da_adeline_post_baby_follow_up_gate = true },
+    { adeline_is_spouse = true },
+    { adeline_has_child = true }
+]
+writes = [{ da_adeline_post_baby_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "blush"
+local = "Thanks for inviting me out, [Ari]."
+next = "1"
+
+[post_baby_date_follow_up.1]
+portrait = "happy_blush"
+local = "It was nice to have a little alone time together... hehe!"
+next = "2"
+
+[post_baby_date_follow_up.2]
+portrait = "blush"
+local = "And I can tell [child_0] enjoyed his time with Great Aunt Elsie, too!"

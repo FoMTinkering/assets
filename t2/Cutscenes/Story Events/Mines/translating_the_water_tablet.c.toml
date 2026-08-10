@@ -1,0 +1,283 @@
+[translating_the_water_tablet_turn_in]
+kind = "gameplay_triggered"
+speaker = "eiland"
+portrait = "neutral"
+actions = [{ cutscene = "translating_the_water_tablet" }]
+local = "Well hello [Ari]! What's this you've given me?"
+prompts = [
+	{ local = "Give Eiland a summary of the events in the Mines.", next = "1" },
+	{ local = "Exaggerate your adventures in the Mines.", next = "1" },
+]
+
+[translating_the_water_tablet_turn_in.1]
+speaker = "eiland"
+portrait = "think"
+local = "You found a hidden chamber in the depths of the Mines..."
+next = "2"
+
+[translating_the_water_tablet_turn_in.2]
+speaker = "eiland"
+local = "Filled with unknown artifacts..."
+next = "3"
+
+[translating_the_water_tablet_turn_in.3]
+speaker = "eiland"
+portrait = "happy"
+local = "Including a stone seal and a tablet with an unknown language on it?"
+next = "4"
+
+[translating_the_water_tablet_turn_in.4]
+speaker = "eiland"
+portrait = "happy"
+effect = "cheery"
+local = "Which you want my help translating?"
+next = "5"
+
+[translating_the_water_tablet_turn_in.5]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "@INCREDIBLE!"
+next = "6"
+
+[translating_the_water_tablet_turn_in.6]
+speaker = "eiland"
+local = "Let's get this to my office!"
+
+[translating_the_water_tablet]
+kind = "gameplay_triggered"
+actions = [
+	{ heart_points = { amount = 50, npc = "eiland" } },
+	{ heart_points = { amount = 40, npc = "juniper" } }
+]
+speaker = "eiland"
+portrait = "think"
+local = "To think this has been below Mistria this whole time!"
+next = "1"
+
+[translating_the_water_tablet.1]
+speaker = "eiland"
+portrait = "ugh"
+local = "I hate to admit it, but this translation is a bit beyond me..."
+next = "2"
+
+[translating_the_water_tablet.2]
+speaker = "eiland"
+portrait = "neutral"
+local = "[Ari], this is written in a language called $Witchspeak$. It was spoken a very long time ago."
+next = "3"
+
+[translating_the_water_tablet.3]
+speaker = "eiland"
+portrait = "think"
+local = "There are a lot of legends surrounding it. Most spectacularly, there are claims it was how humans and dragons originally communicated with each other."
+next = "4"
+
+[translating_the_water_tablet.4]
+speaker = "eiland"
+portrait = "neutral"
+local = "Today we have an incomplete knowledge of it. Much of our understanding comes from unreliable secondary sources."
+next = "5"
+
+[translating_the_water_tablet.5]
+speaker = "eiland"
+portrait = "think"
+local = "But lately I've begun to suspect that there might be someone in town who knows a lot more about it than I do..."
+prompts = [
+	{ local = "Let's go ask Juniper!", next = "6" },
+	{ local = "Balor! I know he's hiding something...", next = "7" },
+]
+
+[translating_the_water_tablet.6]
+speaker = "eiland"
+portrait = "happy"
+local = "I can see we're on the same page!"
+next = "8"
+
+[translating_the_water_tablet.7]
+speaker = "eiland"
+portrait = "think"
+local = "While I'm sure Balor has many secrets, I don't think a working knowledge of Witchspeak is one of them."
+next = "8"
+
+[translating_the_water_tablet.8]
+speaker = "eiland"
+portrait = "neutral"
+local = "Juniper has dropped a few hints about the arcane and unknown. I'm sure she can help us."
+next = "9"
+
+[translating_the_water_tablet.9]
+speaker = "eiland"
+portrait = "think"
+local = "I suspect requesting for her to meet us at the Manor House will not bear fruit. She'll want to be on her home territory."
+next = "10"
+
+[translating_the_water_tablet.10]
+speaker = "eiland"
+portrait = "mad"
+local = "To the Bathhouse!"
+next = "11"
+
+[translating_the_water_tablet.11]
+speaker = "juniper"
+portrait = "neutral"
+local = "Ah, I can just tell by the look on your faces that you're here to discuss something interesting."
+next = "12"
+
+[translating_the_water_tablet.12]
+speaker = "juniper"
+portrait = "angry_brows"
+local = "That is to say, interesting to you. If it's not interesting to me, you'll find my help to be very expensive."
+next = "13"
+
+[translating_the_water_tablet.13]
+speaker = "juniper"
+portrait = "laugh"
+local = "Oh ho ho ho!"
+next = "14"
+
+[translating_the_water_tablet.14]
+speaker = "eiland"
+portrait = "neutral"
+local = "Perceptive as always, Juniper. Our friend [Ari] found a Witchspeak tablet deep in the Mines."
+next = "15"
+
+[translating_the_water_tablet.15]
+speaker = "juniper"
+portrait = "mad"
+effect = "surprise"
+local = "What!"
+next = "16"
+
+[translating_the_water_tablet.16]
+speaker = "juniper"
+portrait = "neutral"
+local = "Well, that is to say... I suppose I could take a look."
+next = "17"
+
+[translating_the_water_tablet.17]
+speaker = "eiland"
+portrait = "neutral"
+local = "We're grateful for your assistance! Let me fill you in on the details..."
+next = "18"
+
+[translating_the_water_tablet.18]
+speaker = "eiland"
+portrait = "neutral"
+local = "I have some thoughts about the tablet's syntax, Juniper-"
+next = "19"
+
+[translating_the_water_tablet.19]
+speaker = "juniper"
+portrait = "sly"
+local = "Silence, nerd."
+next = "20"
+
+[translating_the_water_tablet.20]
+speaker = "juniper"
+portrait = "neutral"
+local = "Fascinating."
+next = "21"
+
+[translating_the_water_tablet.21]
+speaker = "juniper"
+portrait = "think"
+local = "Before I tell you what's on the tablet, I have one request in return."
+next = "22"
+
+[translating_the_water_tablet.22]
+speaker = "juniper"
+portrait = "sly"
+local = "If you find any more of these tablets, [Ari], you bring the rubbings directly to me."
+prompts = [
+	{ local = "Fair enough.", next = "23" },
+	{ local = "Hmm, I dunno...", next = "24" }
+]
+
+[translating_the_water_tablet.23]
+speaker = "eiland"
+portrait = "neutral"
+local = "Of course Juniper, we're all in this together."
+next = "25"
+
+[translating_the_water_tablet.24]
+speaker = "eiland"
+portrait = "sad"
+local = "Now isn't the time to bargain, [Ari]! We agree!"
+next = "25"
+
+[translating_the_water_tablet.25]
+speaker = "juniper"
+portrait = "neutral"
+local = "Lovely! Let me read it aloud for you two."
+next = "26"
+
+[translating_the_water_tablet.26]
+no_speaker = true
+local = """Oh earthbound mortals who wish to remove the seal,
+Gather proof of your desire to unite these lands again,
+Place in the dragon's hold four offerings:"""
+next = "27"
+
+[translating_the_water_tablet.27]
+no_speaker = true
+local = "From the earth's good graces, a $Ruby$;"
+next = "28"
+
+[translating_the_water_tablet.28]
+no_speaker = true
+local = "Catch a swiftly flowing $Fish of Stone$;"
+next = "29"
+
+[translating_the_water_tablet.29]
+no_speaker = true
+local = "A $Moth$ who gathers near the flame;"
+next = "30"
+
+[translating_the_water_tablet.30]
+no_speaker = true
+local = "A $Brown Mushroom$ of the Mines."
+next = "31"
+
+[translating_the_water_tablet.31]
+speaker = "eiland"
+portrait = "happy"
+local = "Incredible!"
+next = "32"
+
+[translating_the_water_tablet.32]
+speaker = "juniper"
+portrait = "neutral"
+local = "Please understand that in Witchspeak it's much more poetic and expressive, but I've done the best I can with our common tongue."
+next = "33"
+
+[translating_the_water_tablet.33]
+speaker = "eiland"
+portrait = "think"
+local = "The only one I'm familiar with is the ruby, which I believe you can find in the Mines."
+next = "34"
+
+[translating_the_water_tablet.34]
+speaker = "eiland"
+portrait = "neutral"
+local = "I would assume that means the rest can be found in the Mines as well."
+prompts = [
+	{ local = "You can count on me!", next = "35" },
+	{ local = "A millennia old scavenger hunt!", next = "36" }
+]
+
+[translating_the_water_tablet.35]
+speaker = "eiland"
+portrait = "neutral"
+local = "I'm sure we can!"
+next = "37"
+
+[translating_the_water_tablet.36]
+speaker = "juniper"
+portrait = "annoyed"
+local = "I suppose that's one way of looking at it..."
+next = "37"
+
+[translating_the_water_tablet.37]
+speaker = "eiland"
+portrait = "happy"
+local = "What an incredible mystery! Good luck, [Ari]. We'll be waiting to hear an update with bated breath."

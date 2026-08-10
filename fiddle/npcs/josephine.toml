@@ -1,0 +1,182 @@
+birthday = { season = "summer", day = 16 }
+loved_gifts = [
+	"jasmine_tea",
+	"green_tea",
+	"lavender_tea",
+	"quiche",
+	"roasted_rice_tea",
+	"rose_tea",
+	"cup_of_tea",
+	"incredibly_hot_pot",
+	"chili_coconut_curry",
+	"crayfish_etouffee",
+]
+liked_gifts = [
+	"breath_of_fire",
+	"chili_pepper",
+	"curry_powder",
+	"essence_blossom",
+	"flour",
+	"honey",
+	"jam_sandwich",
+	"jasmine",
+	"oil",
+	"rice",
+	"rose",
+	"soy_sauce",
+	"spicy_cheddar_biscuit",
+	"spicy_corn",
+	"spicy_crab_sushi",
+	"spicy_water_chestnuts",
+	"sugar",
+	"sunflower",
+	"tea",
+	"wild_berry_jam",
+
+
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "worm"
+name = "Josephine"
+aldarian_name = "JSFN"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["townsfolk", "inn_family"]
+journal_portrait_offset = [-114, -31]
+journal_background_color = [255, 227, 200]
+date_photo_offset = [0, 0]
+job = "Inn Co-Owner"
+icon_sprite = "spr_ui_generic_icon_npc_josephine"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_josephine"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_josephine"
+dateable = false
+
+[gossip]
+	line = "josephine_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["black_tea", "green_tea"]
+	"12" = ["lemonade", "green_tea"]
+	"16" = ["wine"]
+	"20" = ["wine", "cocktail"]
+
+[offsets]
+	portrait = [-129, -65]
+	sweat = [-2, 7]
+	hearts = [-2, 7]
+	angry = [-3, 11]
+	sparkles = [2, 4]
+	sparkles_dark = [2, 4]
+	sick = [-2, 8]
+	music_notes = [0, 4]
+	intensity = [2, 0]
+	surprise = [0, -4]
+	shock = [0, -6]
+	sigh = [4, 4]
+	loud = [8, 2]
+	cheery = [0, 11]
+	drop = [0, 6]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.shocked]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.action]
+	default_direction = "north"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.write]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+
+[cycles.sweep]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	on_pause_speaking = "idle"
+
+[cycles.sing]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	on_pause_speaking = "idle"
+
+[cycles.chop]
+	default_direction = "north"
+	directions = ["north"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	sound = "SoundEffects/SpecialEvents/ReinaChop"
+	on_pause_speaking = "idle"
+
+[cycles.polish]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"

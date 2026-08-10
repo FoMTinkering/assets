@@ -1,0 +1,41 @@
+# this is in terms of 8 cells, so this is an 8*16 pixel
+# sized cell in the game.
+cell_size = 16
+
+# how many colliders per cell allowed
+max_colliders = 20
+
+# how many colliders we try to spawn on a new season, destroying
+# grass to do so
+colliders_to_spawn_new_season = 60
+
+# how many days before trying to spawn more grass in a cell
+grass_wait_range = [1, 3]
+
+# this is the most amount of grass we'll try to spawn in a single
+# cell on a single day
+max_grass_spawned_per_day = 6
+
+# how many days before trying to spawn more colliders in a cell
+colliders_wait_range = [1, 3]
+
+# the maximum number of colliders we'll try to spawn in a single
+# cell on a single day
+max_colliders_spawned_per_day = 2
+
+# these are the collider objects. All grass is also elligible to be placed!
+[[elligible_objects]]
+	candidate = "small_rock_stone_one"
+	votes = 2
+[[elligible_objects]]
+	candidate = "branch"
+	votes = 2
+[[elligible_objects]]
+	candidate = "weed"
+	votes = 2
+[[elligible_objects]]
+	candidate = "tree_pine"
+	votes = 2
+[[elligible_objects]]
+	candidate = "tree_oak"
+	votes = 2

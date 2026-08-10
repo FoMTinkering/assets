@@ -1,0 +1,25 @@
+[skipped_breakfast]
+refresh = "1y"
+requires = [
+	{ npc = "nora" },
+	{ nora_zone = "<holt_zone>" },
+	{ nora_activity = "eat", comparator = "!=" },
+	{ location = "inn", comparator = "!=" },
+	{ location = "general_store_home", comparator = "!=" },
+	{ time_of_day = "morning" }
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+portrait = "happy"
+local = "Hahaha, [Ari]... my husband, I can't take it. I told him I was going to skip breakfast, and you know what he said?"
+next = "1"
+
+[skipped_breakfast.1]
+portrait = "mad"
+effect = "angry"
+local = "\"Omelet that slide.\""
+next = "2"
+
+[skipped_breakfast.2]
+portrait = "happy"
+effect = "cheery"
+local = "Hahaha!"

@@ -1,0 +1,605 @@
+[juniper_eight_hearts_lead_up_juniper]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ cutscene_seen_break_fire_seal = true },
+	{ cutscene_seen_juniper_eight_hearts = false }
+]
+portrait = "sincere_special"
+local = "Are you feeling okay, [Ari]?"
+next = "1"
+
+[juniper_eight_hearts_lead_up_juniper.1]
+portrait = "unimpressed"
+local = "You seem a little... tired."
+next = "2"
+
+[juniper_eight_hearts_lead_up_juniper.2]
+portrait = "neutral"
+local = "I bet a bath would help!"
+
+[juniper_eight_hearts_follow_up_juniper_0]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_heart_event = "eight_heart" },
+	{ juniper_eight_heart_priority_bump = true }
+]
+writes = [
+	{ juniper_seeks_out_caldarus = true },
+	{ juniper_seeks_out_caldarus_gate = true, expires = "24h" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
+portrait = "think"
+local = "The power of the dragon... Caldarus."
+next = "1"
+
+[juniper_eight_hearts_follow_up_juniper_0.1]
+portrait = "happy"
+local = "Perhaps a little walk in the woods is in order."
+
+[juniper_eight_hearts_follow_up_juniper_1]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_seeks_out_caldarus = true },
+	{ juniper_seeks_out_caldarus_gate = false }
+]
+portrait = "think"
+local = "..."
+next = "1"
+
+[juniper_eight_hearts_follow_up_juniper_1.1]
+portrait = "unimpressed"
+local = "I met up with that, er, rather tall friend of yours, [Ari]."
+next = "2"
+
+[juniper_eight_hearts_follow_up_juniper_1.2]
+portrait = "mad"
+local = "He's... not what I expected."
+next = "3"
+
+[juniper_eight_hearts_follow_up_juniper_1.3]
+portrait = "annoyed"
+local = "I thought he'd be fierce, powerful, overflowing with arcane energy."
+next = "4"
+
+[juniper_eight_hearts_follow_up_juniper_1.4]
+portrait = "unimpressed"
+local = "But instead he demurely served me these little burnt cookie things with oversteeped tea."
+next = "5"
+
+[juniper_eight_hearts_follow_up_juniper_1.5]
+portrait = "ugh"
+local = "He wouldn't stop apologizing when he saw I couldn't stomach either."
+next = "6"
+
+[juniper_eight_hearts_follow_up_juniper_1.6]
+portrait = "annoyed"
+local = "He's... kind of a nerd, [Ari]."
+next = "7"
+
+[juniper_eight_hearts_follow_up_juniper_1.7]
+portrait = "laugh"
+local = "Oh ho ho ho!"
+
+[juniper_eight_hearts_follow_up_caldarus_0]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ juniper_seeks_out_caldarus = true },
+	{ juniper_seeks_out_caldarus_gate = false }
+]
+portrait = "think"
+local = "I had the pleasure of meeting your friend, Juniper."
+next = "1"
+
+[juniper_eight_hearts_follow_up_caldarus_0.1]
+portrait = "ugh"
+local = """She walked through the woods calling "Dragon! Here Dragon!"."""
+next = "2"
+
+[juniper_eight_hearts_follow_up_caldarus_0.2]
+portrait = "sigh"
+local = "I caught up with her and then invited her in for tea... but it did not go as well as it could have."
+next = "3"
+
+[juniper_eight_hearts_follow_up_caldarus_0.3]
+portrait = "embarrassed"
+local = "I do not think she liked my cooking."
+next = "4"
+
+[juniper_eight_hearts_follow_up_caldarus_0.4]
+portrait = "happy"
+local = "All the same, it was nice to have company."
+
+[juniper_eight_hearts_follow_up_dozy]
+refresh = "never"
+requires = [{ npc = "dozy" }, { juniper_heart_event = "eight_heart" }]
+actions = [{ item = { item = "basic_wood", count = 1 } }]
+portrait = "neutral"
+local = "(Dozy shyly gives you a stick. It seems he's thanking you for saving Juniper while he was out.)"
+
+[juniper_eight_hearts_turn_in]
+kind = "gameplay_triggered"
+speaker = "juniper"
+portrait = "neutral"
+local = "Excellent, you brought the $Breath of Flame$. Come, [Ari]. It's time to test my latest infusion."
+actions = [{ cutscene = "juniper_eight_hearts" }]
+
+[juniper_eight_hearts]
+kind = "gameplay_triggered"
+writes = [
+	{ juniper_heart_event = "eight_heart", expires = "5d" },
+	{ juniper_eight_heart_priority_bump = true, expires = "5d" }
+]
+speaker = "juniper"
+portrait = "neutral"
+local = "So this is what you're wearing into the bath?"
+next = "1"
+
+[juniper_eight_hearts.1]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Whatever, I can work with it. Go on in-"
+next = "2"
+
+[juniper_eight_hearts.2]
+speaker = "juniper"
+portrait = "sly"
+local = "I've added the flower, so the water should be ready for you."
+next = "3"
+
+[juniper_eight_hearts.3]
+speaker = "juniper"
+portrait = "think"
+local = "I'll be there in a minute, I just need to change first."
+next = "4"
+
+[juniper_eight_hearts.4]
+speaker = "juniper"
+portrait = "neutral"
+local = "What? Didn't I mention?"
+next = "5"
+
+[juniper_eight_hearts.5]
+speaker = "juniper"
+portrait = "sly"
+local = "This is a special bath infusion. It's formulated for two people."
+next = [
+	{ target = "6r", requires = [{ shooting_star_juniper_attended = true }] },
+	{ target = "6f", requires = [] }
+]
+
+[juniper_eight_hearts.6r]
+speaker = "juniper"
+portrait = "think"
+local = "I'm thinking of it as a potential... couples spa deal."
+next = "7"
+
+[juniper_eight_hearts.6f]
+speaker = "juniper"
+portrait = "think"
+local = "I'm thinking of it as a potential... two-for-one spa deal."
+next = "7"
+
+[juniper_eight_hearts.7]
+speaker = "juniper"
+portrait = "angry_brows"
+local = "Plus, how can I write up the results of my experiment if I'm not there to observe it?"
+next = "8"
+
+[juniper_eight_hearts.8]
+speaker = "juniper"
+portrait = "sad_special"
+local = "..."
+next = "9"
+
+[juniper_eight_hearts.9]
+speaker = "juniper"
+portrait = "neutral"
+local = "So what do you think? How's the temperature?"
+prompts = [
+	{ local = "It's perfect!", next = "10" },
+	{ local = "I'm more concerned about the color...", next = "12" }
+]
+
+[juniper_eight_hearts.10]
+speaker = "juniper"
+portrait = "happy"
+local = "Good, good."
+next = "11"
+
+[juniper_eight_hearts.11]
+speaker = "juniper"
+portrait = "neutral"
+local = "The $Breath of Flame$ is stabilizing the heat nicely."
+next = "14"
+
+[juniper_eight_hearts.12]
+speaker = "juniper"
+portrait = "annoyed"
+local = "I'll have you know I carefully selected the ingredients to create this shade."
+next = "13"
+
+[juniper_eight_hearts.13]
+speaker = "juniper"
+portrait = "wink"
+local = "Aesthetics are important."
+next = "14"
+
+[juniper_eight_hearts.14]
+speaker = "juniper"
+portrait = "think"
+local = "How about the scent? Nice, isn't it?"
+prompts = [
+	{ local = "It's surprisingly... really nice?", next = "15" },
+	{ local = "It's very soothing!", next = "15" }
+]
+
+[juniper_eight_hearts.15]
+speaker = "juniper"
+portrait = "happy"
+local = "Right? Let your stress melt away..."
+next = "16"
+
+[juniper_eight_hearts.16]
+speaker = "juniper"
+portrait = "think"
+local = "..."
+next = "17"
+
+[juniper_eight_hearts.17]
+speaker = "juniper"
+portrait = "sincere_special"
+local = "Okay, [Ari]. Let's get this experiment started."
+next = "18"
+
+[juniper_eight_hearts.18]
+speaker = "juniper"
+portrait = "sad_special"
+local = "Close your eyes and relax..."
+next = "19"
+
+[juniper_eight_hearts.19]
+speaker = "juniper"
+portrait = "mad"
+local = "I-it's working! I knew it!"
+next = "20"
+
+[juniper_eight_hearts.20]
+speaker = "juniper"
+portrait = "angry_blush"
+local = "Agh!"
+next = "21"
+
+[juniper_eight_hearts.21]
+speaker = "juniper"
+portrait = "think"
+local = "Don't... don't look at me, [Ari]."
+next = "22"
+
+[juniper_eight_hearts.22]
+speaker = "juniper"
+portrait = "closed_eyes"
+local = "I was expecting pain, but the scales..."
+next = "23"
+
+[juniper_eight_hearts.23]
+speaker = "juniper"
+portrait = "smile"
+local = "You're going to be okay now. The $Sealing Scroll's$ final curse... I removed it from you."
+next = "24"
+
+[juniper_eight_hearts.24]
+speaker = "juniper"
+portrait = "think"
+local = "I never should have helped you track down that scroll in the first place. I don't know what you did with it down in the Mines..."
+next = "25"
+
+[juniper_eight_hearts.25]
+speaker = "juniper"
+portrait = "closed_eyes"
+local = "But I could feel the shift happen. You opened it, didn't you? I don't know how you survived-"
+next = "26"
+
+[juniper_eight_hearts.26]
+speaker = "juniper"
+portrait = "think"
+local = "But I DO know these scrolls were often crafted with a secondary curse."
+next = "27"
+
+[juniper_eight_hearts.27]
+speaker = "juniper"
+portrait = "closed_eyes"
+local = "These auxiliary curses stay hidden until it's too late, undetectable by even the most skilled magic users."
+next = "28"
+
+[juniper_eight_hearts.28]
+speaker = "juniper"
+portrait = "think"
+local = "I learned all about them in my studies."
+next = "29"
+
+[juniper_eight_hearts.29]
+speaker = "juniper"
+portrait = "closed_eyes"
+local = "I couldn't dispel the curse, only weaken and transfer it. To dispel it would require $Essence Magic$..."
+next = "30"
+
+[juniper_eight_hearts.30]
+speaker = "juniper"
+portrait = "smile"
+local = "A type of magic the ancients used. Power I don't have."
+next = "31"
+
+[juniper_eight_hearts.31]
+speaker = "juniper"
+portrait = "think"
+local = "How ironic. It serves me right."
+next = "32"
+
+[juniper_eight_hearts.32]
+speaker = "juniper"
+portrait = "think"
+local = "I've been lying to you, [Ari]."
+next = "33"
+
+[juniper_eight_hearts.33]
+speaker = "juniper"
+portrait = "smile"
+local = "Well, I really have been using you as a test subject."
+next = "34"
+
+[juniper_eight_hearts.34]
+speaker = "juniper"
+portrait = "think"
+local = "It was never about potions and errands. It's YOU I've been studying."
+next = "35"
+
+[juniper_eight_hearts.35]
+speaker = "juniper"
+portrait = "closed_eyes"
+local = "I didn't know why I'd been pulled to Mistria, at first..."
+next = "36"
+
+[juniper_eight_hearts.36]
+speaker = "juniper"
+portrait = "think"
+local = "A sorceress is taught early to follow her intuition. Clairvoyance is one of the few magics that still pass down through human blood."
+next = "37"
+
+[juniper_eight_hearts.37]
+speaker = "juniper"
+portrait = "closed_eyes"
+local = "I understood the pieces would fall into place when the time was right."
+next = "38"
+
+[juniper_eight_hearts.38]
+speaker = "juniper"
+portrait = "smile"
+local = "The reason became clear after you moved to town."
+next = "39"
+
+[juniper_eight_hearts.39]
+speaker = "juniper"
+portrait = "think"
+local = "Magic began to flow throughout Mistria, always just beyond my reach. Witchspeak artifacts started being unearthed under my very feet."
+next = "40"
+
+[juniper_eight_hearts.40]
+speaker = "juniper"
+portrait = "closed_eyes"
+local = "The signs were there. I knew you must be hiding some kind of power."
+next = "41"
+
+[juniper_eight_hearts.41]
+speaker = "juniper"
+portrait = "think"
+local = "The body swap, the transformation incident... I was trying to uncover it, to seize it for myself."
+next = "42"
+
+[juniper_eight_hearts.42]
+speaker = "juniper"
+portrait = "smile"
+local = "I couldn't stop myself. Not until..."
+next = "43"
+
+[juniper_eight_hearts.43]
+speaker = "juniper"
+portrait = "think"
+local = "Forgive me [Ari]. Even now, I want that power. But it's not worth the price. I never meant for you to get hurt."
+prompts = [
+	{ local = "Enough, Juniper. Please just let me help you.", next = "44" },
+	{ local = "I forgive you Juniper, please just let me help you.", next = "44" }
+]
+
+[juniper_eight_hearts.44]
+speaker = "juniper"
+portrait = "smile"
+local = "Help me? Don't fool yourself, you can't-"
+next = "45"
+
+[juniper_eight_hearts.45]
+speaker = "juniper"
+portrait = "shocked"
+local = "[Ari]...?"
+next = "46"
+
+[juniper_eight_hearts.46]
+speaker = "juniper"
+portrait = "embarrassed"
+local = "I'm... I'm cured? Just like that? H-how!?"
+next = "47"
+
+[juniper_eight_hearts.47]
+speaker = "juniper"
+portrait = "annoyed"
+local = "You. You really let me get carried away. G-go sit in the other room and wait for me."
+next = "48"
+
+[juniper_eight_hearts.48]
+speaker = "juniper"
+portrait = "embarrassed"
+local = "I need to change and then we're going to continue this conversation."
+next = "49"
+
+[juniper_eight_hearts.49]
+speaker = "juniper"
+portrait = "sincere_special"
+local = "That spell..."
+next = "50"
+
+[juniper_eight_hearts.50]
+speaker = "juniper"
+portrait = "ugh"
+local = "I've never seen anything like it."
+next = "51"
+
+[juniper_eight_hearts.51]
+speaker = "juniper"
+portrait = "mad"
+local = "I see my suspicions were well-founded... but how, [Ari]? How did you come to possess Essence Magic?"
+prompts = [
+	{ local = "(Give her the long version)", next = "52" },
+	{ local = "(Give her the short version)", next = "52" }
+]
+
+[juniper_eight_hearts.52]
+speaker = "juniper"
+portrait = "think_special"
+local = "Wow."
+next = "53"
+
+[juniper_eight_hearts.53]
+speaker = "juniper"
+portrait = "sincere_special"
+local = "I hardly know what to say. Caldarus... the seals... your magic."
+next = "54"
+
+[juniper_eight_hearts.54]
+speaker = "juniper"
+portrait = "think"
+local = "It's really no wonder why-"
+next = [
+	{ target = "55r", requires = [{ shooting_star_juniper_attended = true }] },
+	{ target = "55f", requires = [] }
+]
+
+[juniper_eight_hearts.55r]
+speaker = "juniper"
+portrait = "think_special"
+local = "I feel this way about you."
+next = "56r"
+
+[juniper_eight_hearts.55f]
+speaker = "juniper"
+portrait = "sad_special"
+local = "I felt myself drawn to you."
+next = "56f"
+
+[juniper_eight_hearts.56r]
+speaker = "juniper"
+portrait = "sincere_special"
+local = "I'm sorry for everything."
+prompts = [
+	{ local = "We're best friends, Juniper. I forgive you.", next = "57" },
+	{ local = "I have feelings for you too, Juniper.", next = "60r" }
+]
+
+[juniper_eight_hearts.56f]
+speaker = "juniper"
+portrait = "sincere_special"
+local = "I'm sorry for everything."
+prompts = [
+	{ local = "We're best friends, Juniper. I forgive you. ", next = "57" },
+	{ local = "My feelings for you haven't changed, Juniper.", next = "60f" }
+]
+
+[juniper_eight_hearts.57]
+actions = [{ update_status = { npc = "juniper", status = "best_friend" } }]
+speaker = "juniper"
+portrait = "neutral"
+local = "[Ari]... thank you."
+next = "58"
+
+[juniper_eight_hearts.58]
+speaker = "juniper"
+portrait = "think"
+local = "I promise I won't try to take your power again."
+next = "59"
+
+[juniper_eight_hearts.59]
+speaker = "juniper"
+portrait = "angry_brows"
+local = "But I'm absolutely going to make you spill all the details from now on!"
+next = "63"
+
+[juniper_eight_hearts.60r]
+actions = [{ update_status = { npc = "juniper", status = "dating" } }]
+speaker = "juniper"
+portrait = "think_special"
+local = "You have feelings for me? I didn't think you felt the same way."
+next = "61r"
+
+[juniper_eight_hearts.60f]
+actions = [{ update_status = { npc = "juniper", status = "dating" } }]
+speaker = "juniper"
+portrait = "blush"
+local = "Your feelings for me? I didn't think you felt the same way."
+next = "61f"
+
+[juniper_eight_hearts.61r]
+speaker = "juniper"
+portrait = "blush"
+local = "I- I promise I won't try to take your power again."
+next = "62"
+
+[juniper_eight_hearts.61f]
+speaker = "juniper"
+portrait = "think_special"
+local = "I- I promise I won't try to take your power again."
+next = "62"
+
+[juniper_eight_hearts.62]
+speaker = "juniper"
+portrait = "embarrassed"
+local = "But I'm absolutely going to make you spill all the details from now on!"
+next = "63"
+
+[juniper_eight_hearts.63]
+speaker = "juniper"
+portrait = "think"
+local = "In the meantime... we should keep all this to ourselves. I don't think these backwater-"
+next = "64"
+
+[juniper_eight_hearts.64]
+speaker = "juniper"
+portrait = "ugh"
+local = "Er- the fine townspeople of Mistria-"
+next = "65"
+
+[juniper_eight_hearts.65]
+speaker = "juniper"
+portrait = "neutral"
+local = "Are quite ready to learn what's been going on right underneath their noses."
+next = "66"
+
+[juniper_eight_hearts.66]
+speaker = "juniper"
+portrait = "think"
+local = "But... I sense that time will come."
+next = [
+	{ target = "67r", requires = [{ juniper_is_partner = true }] },
+	{ target = "67f", requires = [] }
+]
+
+[juniper_eight_hearts.67r]
+speaker = "juniper"
+portrait = "blush"
+local = "Things are going to get interesting from here, [Ari]. I have to admit I'm looking forward to it."
+
+[juniper_eight_hearts.67f]
+speaker = "juniper"
+portrait = "wink"
+local = "Things are going to get interesting from here, [Ari]. I have to admit I'm looking forward to it."

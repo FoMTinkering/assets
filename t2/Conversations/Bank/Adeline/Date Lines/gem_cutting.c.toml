@@ -1,0 +1,105 @@
+[gem_cutting_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "adeline" },
+	{ date = "gem_cutting" },
+	{ da_adeline_gem_cutting = 0 },
+	{ adeline_is_spouse = false }
+]
+writes = [
+	{ da_adeline_gem_cutting = 1 },
+	{ da_adeline_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "blush"
+local = "What's that?"
+next = "1"
+
+[gem_cutting_accept_1.1]
+portrait = "happy_blush"
+local = "You want to go on a $Gem Cutting Date$?"
+next = "2"
+
+[gem_cutting_accept_1.2]
+portrait = "hope_special"
+local = "I've never heard of that before..."
+next = "3"
+
+[gem_cutting_accept_1.3]
+portrait = "cartoon_embarrassed"
+local = "Oh, it sounds fun though!"
+next = "4"
+
+[gem_cutting_accept_1.4]
+portrait = "embarrassed"
+local = "You'll just have to show me what to do!"
+
+[gem_cutting_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "adeline" },
+	{ date = "gem_cutting" },
+	{ adeline_has_child = false },
+	{ any = [
+		{ adeline_is_spouse = true },
+		{ da_adeline_gem_cutting = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_adeline_gem_cutting = 2 },
+	{ da_adeline_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "happy_blush"
+local = "Should we do some $Gem Cutting$, [Ari]?"
+next = "1"
+
+[gem_cutting_accept_2.1]
+portrait = "blush"
+local = "I feel like I've been getting the hang of it!"
+
+[gem_cutting_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ da_adeline_gem_cutting = 1 },
+	{ da_adeline_gem_cutting_follow_up_gate = true },
+	{ adeline_is_spouse = false }
+]
+writes = [{ da_adeline_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy_blush"
+local = "Oooh that was fun, [Ari]!"
+next = "1"
+
+[gem_cutting_follow_up_1.1]
+portrait = "hope_special"
+local = "I think I'm starting to understand the appeal of blacksmithing..."
+next = "2"
+
+[gem_cutting_follow_up_1.2]
+portrait = "blush"
+local = "It's nice... being able to transform something with your own two hands!"
+
+[gem_cutting_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "adeline" },
+	{ adeline_has_child = false },
+	{ any = [{ adeline_is_spouse = true }, { da_adeline_gem_cutting = 2 }] },
+	{ da_adeline_gem_cutting_follow_up_gate = true }
+]
+writes = [{ da_adeline_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "blush"
+local = "Our gems turned out so pretty, didn't they?"
+next = "1"
+
+[gem_cutting_follow_up_2.1]
+portrait = "hope_special"
+local = "I love the way they sparkle..."
+next = "2"
+
+[gem_cutting_follow_up_2.2]
+portrait = "happy_blush"
+local = "I think maybe I've got a knack for polishing!"

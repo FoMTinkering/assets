@@ -1,0 +1,93 @@
+[harvest_festival_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ harvest_festival_setup = true },
+]
+portrait = "neutral"
+local = "Ah, [Ari]! Have you heard that the $Harvest Festival$ is coming up?"
+next = "1"
+
+[harvest_festival_anticipation.1]
+portrait = "happy"
+local = "I hope you've been collecting lots of $Queen Berries$ for it!"
+next = "2"
+
+[harvest_festival_anticipation.2]
+portrait = "wink"
+local = "I promise you that a slice of =Queen Berry Pie= is definitely worth all the work!"
+
+
+[harvest_festival_0]
+refresh = "3m"
+priority = "max"
+actions = [{ bark = { bark = "sweat_drop", npc = "eiland" } }]
+requires = [
+	{ npc = "eiland" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ location = "town" },
+]
+portrait = "happy"
+local = "Ah, [Ari]. It's another Harvest Festival to remember, isn't it?"
+next = "1"
+
+[harvest_festival_0.1]
+portrait = "neutral"
+local = "This festival is actually one of Mistria's oldest..."
+next = "2"
+
+[harvest_festival_0.2]
+portrait = "think"
+local = "The story goes that long ago, an ancient queen was separated from her sworn love during a time of war."
+next = "3"
+
+[harvest_festival_0.3]
+portrait = "sad"
+local = "She conjured the first $Queen Berries$ from the ashes left in the wake of the final battle-"
+next = "4"
+
+[harvest_festival_0.4]
+portrait = "gloomy_special"
+local = "And bade them to return here briefly each autumn."
+next = "5"
+
+[harvest_festival_0.5]
+portrait = "neutral"
+local = "In that way, she could immortalize the sweetness of her lost love..."
+next = "6"
+
+[harvest_festival_0.6]
+portrait = "neutral_closed"
+local = "..."
+next = "7"
+
+[harvest_festival_0.7]
+portrait = "embarrassed"
+local = "It's hard to say exactly when the feasting and dancing entered the equation..."
+
+
+[harvest_festival_place_follow_up]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "eiland" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ any = [
+		{ hf_third_place = true },
+		{ hf_second_place = true },
+		{ hf_first_place = true },
+	] },
+	{},
+]
+portrait = "happy"
+local = "Wonderful work, [Ari]!"
+next = "1"
+
+[harvest_festival_place_follow_up.1]
+portrait = "neutral"
+local = "Most years I lead the berry hunting pack, but I can't say I mind the competition."
+next = "2"
+
+[harvest_festival_place_follow_up.2]
+portrait = "happy"
+local = "After all, we all get to enjoy the benefits of more $Queen Berries$!"

@@ -1,0 +1,197 @@
+[replenishing_mistrias_food_reserves_1_ryis_pre]
+refresh = "never"
+requires = [{ npc = "ryis" }, { rmfr1 = "pre" }]
+portrait = "happy"
+local = "Adeline told me you're pitching in for the emergency stockpile, [Ari]."
+next = "1"
+
+[replenishing_mistrias_food_reserves_1_ryis_pre.1]
+portrait = "neutral"
+local = "I've been putting together a brace of new barrels for it!"
+
+[replenishing_mistrias_food_reserves_1_valen_pre]
+refresh = "never"
+requires = [{ npc = "valen" }, { rmfr1 = "pre" }]
+portrait = "neutral"
+local = "Adeline's always had a knack for emergency planning, even as a child she had a well-stocked go bag."
+next = "1"
+
+[replenishing_mistrias_food_reserves_1_valen_pre.1]
+portrait = "wink"
+local = "Although I'm sure her current one has less chocolate bars in it."
+
+[replenishing_mistrias_food_reserves_1_march_pre]
+refresh = "never"
+requires = [{ npc = "march" }, { rmfr1 = "pre" }]
+portrait = "think"
+local = "Adeline wanted extra nails, barrel hoops, pots..."
+next = "1"
+
+[replenishing_mistrias_food_reserves_1_march_pre.1]
+portrait = "unimpressed"
+local = "Emergency preparedness is a job for everyone, and that includes you."
+
+[replenishing_mistrias_food_reserves_1_ryis_post]
+refresh = "never"
+requires = [{ npc = "ryis" }, { rmfr1 = "post" }]
+writes = [{ rmfr1_seeds = true, expires = "4d" }]
+portrait = "think"
+local = "Not that I was expecting to be paid but..."
+next = "1"
+
+[replenishing_mistrias_food_reserves_1_ryis_post.1]
+portrait = "ugh"
+local = "Adeline gave me some seeds after I turned in my part for the stockpile, and... well..."
+next = "2"
+
+[replenishing_mistrias_food_reserves_1_ryis_post.2]
+portrait = "neutral"
+local = "Here you go, [Ari]."
+actions = [{ item = { item = "seed_turnip", count = 2 } }]
+
+[replenishing_mistrias_food_reserves_1_valen_post]
+refresh = "never"
+requires = [{ npc = "valen" }, { rmfr1 = "post" }]
+writes = [{ rmfr1_seeds = true, expires = "4d" }]
+portrait = "raised_eyebrow"
+local = "While I appreciate the thought, I think you'll get more use out of my reward from Adeline then I will, [Ari]."
+next = "1"
+
+[replenishing_mistrias_food_reserves_1_valen_post.1]
+portrait = "neutral"
+local = "Enjoy."
+actions = [{ item = { item = "seed_turnip", count = 2 } }]
+
+[replenishing_mistrias_food_reserves_1_march_post]
+refresh = "never"
+requires = [{ npc = "march" }, { rmfr1 = "post" }, { rmfr1_seeds = true }]
+portrait = "neutral"
+local = "What?"
+prompts = [
+	{ local = "Just thought you might have something you want to offload...", next = "1" },
+	{ local = "Cough up the seeds Adeline gave you, March!", next = "2" },
+]
+
+[replenishing_mistrias_food_reserves_1_march_post.1]
+portrait = "unimpressed"
+local = "Why am I surprised. You're a real piece of work."
+actions = [{ item = "seed_turnip" }]
+
+[replenishing_mistrias_food_reserves_1_march_post.2]
+portrait = "ugh"
+local = "Get out of here!"
+
+[replenishing_mistrias_food_reserves_1]
+kind = "gameplay_triggered"
+writes = [{ rmfr1 = "pre" }]
+speaker = "valen"
+portrait = "neutral"
+local = "Your request is reasonable, but could I suggest we add a sleep aid to the list of medicines? It keeps well."
+next = "1"
+
+[replenishing_mistrias_food_reserves_1.1]
+speaker = "valen"
+portrait = "think"
+local = "We ran short in the days after the earthquake, it'd be a weight off my mind to know we have extra stock."
+next = "2"
+
+[replenishing_mistrias_food_reserves_1.2]
+speaker = "adeline"
+portrait = "neutral"
+local = "That's a great idea! Our first aid supplies should cover all the bases."
+next = "3"
+
+[replenishing_mistrias_food_reserves_1.3]
+speaker = "valen"
+portrait = "happy"
+local = "Excellent, I'll get to work."
+next = "4"
+
+[replenishing_mistrias_food_reserves_1.4]
+speaker = "valen"
+portrait = "neutral"
+local = "Here to pitch in as well, [Ari]?"
+next = "5"
+
+[replenishing_mistrias_food_reserves_1.5]
+speaker = "valen"
+portrait = "wink"
+local = "Many hands make light work, I'll leave you two to it."
+next = "6"
+
+[replenishing_mistrias_food_reserves_1.6]
+speaker = "adeline"
+portrait = "happy"
+local = "Thanks for answering my letter."
+next = "7"
+
+[replenishing_mistrias_food_reserves_1.7]
+speaker = "adeline"
+portrait = "neutral"
+local = "I've sent out personal requests to anyone who might be able to help us rebuild our emergency stockpile."
+next = "8"
+
+[replenishing_mistrias_food_reserves_1.8]
+speaker = "adeline"
+portrait = "concerned"
+local = "I don't like to think about what might have happened without it in the aftermath of the earthquake. Unfortunately it's pretty much used up..."
+prompts = [
+	{ local = "You can count on me!", next = "9" },
+	{ local = "You won't believe how many berries I can donate!", next = "10" },
+]
+
+[replenishing_mistrias_food_reserves_1.9]
+speaker = "adeline"
+portrait = "happy"
+local = "If only we could stockpile your enthusiasm too!"
+next = "11"
+
+[replenishing_mistrias_food_reserves_1.10]
+speaker = "adeline"
+portrait = "neutral"
+effect = "drop"
+local = "I had something a little more substantial in mind..."
+next = "11"
+
+[replenishing_mistrias_food_reserves_1.11]
+speaker = "adeline"
+portrait = "think"
+local = "Could you ship $10 Crops$ to help resupply our food rations? I'll give you these seeds to get you started!"
+next = "12"
+
+[replenishing_mistrias_food_reserves_1.12]
+speaker = "adeline"
+portrait = "happy"
+local = "Locally grown crops keep well, and they're filling and nutritious too."
+next = "13"
+
+[replenishing_mistrias_food_reserves_1.13]
+speaker = "adeline"
+portrait = "neutral"
+local = "I think we'll all sleep easier with the emergency stockpile refilled, don't you?"
+
+[replenishing_mistrias_food_reserves_1_turn_in_complete]
+kind = "gameplay_triggered"
+writes = [{ rmfr1 = "post", expires = "4d" }]
+speaker = "adeline"
+portrait = "neutral"
+local = "Oh, you completed the shipment for our emergency stockpile! Wonderful!"
+next = "1"
+
+[replenishing_mistrias_food_reserves_1_turn_in_complete.1]
+speaker = "adeline"
+portrait = "happy"
+local = "On behalf of the whole town, thank you, [Ari]!"
+next = "2"
+
+[replenishing_mistrias_food_reserves_1_turn_in_complete.2]
+speaker = "adeline"
+portrait = "neutral"
+local = "Now, as you know, funds are a bit tight in Mistria at the moment, but I don't want you to leave empty handed."
+next = "3"
+
+[replenishing_mistrias_food_reserves_1_turn_in_complete.3]
+speaker = "adeline"
+portrait = "sly"
+local = "You earned these! Thank you again."
+actions = [{ item = { item = "seed_turnip", count = 10 } }]

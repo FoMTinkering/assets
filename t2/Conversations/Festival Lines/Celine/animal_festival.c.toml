@@ -1,0 +1,48 @@
+[animal_festival_petting_zoo]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "celine" },
+	{ animal_festival_today = true },
+	{ location = "town" },
+	{ time_of_day = "night", comparator = "!=" },
+]
+portrait = "happy"
+local = "Aren't all the petting zoo animals so fluffy, [Ari]? And friendly!"
+
+[animal_festival_first]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "celine" },
+	{ animal_festival_today = true },
+	{ any = [{ small_animal_place = 3 }, { large_animal_place = 3 }] },
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "happy"
+local = "Ooh, congratulations [Ari]!"
+
+[animal_festival_horse_cutout]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "celine" },
+	{ animal_festival_today = true },
+	{ celine_is_at = "town/af_horse_cutout" },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "happy"
+local = "[Ari], look at me! Aren't these cutouts so cute?"
+next = "1"
+
+[animal_festival_horse_cutout.1]
+portrait = "blush"
+local = "Why don't you stand next to me?"

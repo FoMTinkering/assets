@@ -1,0 +1,22 @@
+[morning_quiet]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "landen" }] },
+	{ balor_zone = "<landen_zone>" },
+	{ location = "eastern_road", comparator = "!=" }
+]
+speaker = "landen"
+portrait = "neutral"
+local = "I like having a place just outside of town! Ryis especially seems to like it."
+next = "1"
+
+[morning_quiet.1]
+speaker = "landen"
+portrait = "think"
+local = "Sometimes he'll sit out on the porch and watch the birds over morning coffee."
+next = "2"
+
+[morning_quiet.2]
+speaker = "balor"
+portrait = "neutral"
+local = "Sounds like a perfect piece of morning quiet."

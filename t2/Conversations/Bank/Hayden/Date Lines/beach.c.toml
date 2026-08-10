@@ -1,0 +1,127 @@
+[beach_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "hayden" },
+	{ date = "beach" },
+	{ da_hayden_beach = 0 },
+	{ hayden_is_spouse = false }
+]
+writes = [
+	{ da_hayden_beach = 1 },
+	{ da_hayden_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "hayden"
+portrait = "shy_special"
+local = "You want to go down to the Beach, [Ari]?"
+next = "1"
+
+[beach_accept_1.1]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "Well, of course!"
+next = "2"
+
+[beach_accept_1.2]
+speaker = "hayden"
+portrait = "confident_blush"
+local = "I'd been hoping we could watch the waves together again..."
+
+[beach_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "hayden" },
+	{ date = "beach" },
+	{ hayden_has_child = false },
+	{ any = [
+		{ hayden_is_spouse = true },
+		{ da_hayden_beach = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_hayden_beach = 2 },
+	{ da_hayden_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "hayden"
+portrait = "confident_blush"
+local = "Can I interest you in a walk on the Beach, [Ari]?"
+next = "1"
+
+[beach_accept_2.1]
+speaker = "hayden"
+portrait = "happy_arm_down_blush"
+local = "Yeah? Great!"
+
+[beach_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ da_hayden_beach = 1 },
+	{ da_hayden_beach_follow_up_gate = true },
+	{ hayden_is_spouse = false }
+]
+writes = [{ da_hayden_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "confident_blush"
+local = "Thanks for suggesting we go to the Beach, [Ari]."
+next = "1"
+
+[beach_follow_up_1.1]
+portrait = "embarrassed"
+local = "It really is one of my favorite places to spend time..."
+prompts = [
+	{ local = "Because it's peaceful?", next = "2" },
+	{ local = "Because you used to go there with your Grandma?", next = "5" },
+]
+
+[beach_follow_up_1.2]
+portrait = "think"
+local = "Well, sure... that's one reason."
+next = "3"
+
+[beach_follow_up_1.3]
+portrait = "shy_blush"
+local = "But these days it's because I think of the Beach as-"
+next = "4"
+
+[beach_follow_up_1.4]
+portrait = "confident_blush"
+local = "As our place."
+
+[beach_follow_up_1.5]
+portrait = "think"
+local = "Well, sure... that's one reason."
+next = "6"
+
+[beach_follow_up_1.6]
+portrait = "shy_blush"
+local = "But these days it's because I think of the Beach as-"
+next = "7"
+
+[beach_follow_up_1.7]
+portrait = "confident_blush"
+local = "As our place."
+
+[beach_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_has_child = false },
+	{ any = [{ hayden_is_spouse = true }, { da_hayden_beach = 2 }] },
+	{ da_hayden_beach_follow_up_gate = true }
+]
+writes = [{ da_hayden_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "think"
+local = "Hard to decide what I like more."
+next = "1"
+
+[beach_follow_up_2.1]
+portrait = "happy_arm_down_blush"
+local = "Walking together on the Beach-"
+next = "2"
+
+[beach_follow_up_2.2]
+portrait = "embarrassed"
+local = "Or holding your hand as we go!"

@@ -1,0 +1,1098 @@
+[default]
+	sprites = ["spr_illegal_16"]
+	size = [2, 2]
+	# `harvest` is inferred from the name of the name (so `acorn` has a `harvest = "acorn"`).
+	# you can override that by setting:
+	# harvest = "something_else"
+	harvest = "<..>"
+	day_to_stage = [0]
+	# by default, crops offset as `[8, 8]`, which puts their origin at the center of
+	# their 2x2 structure. For anything not `2x2` in size, you'll probably want to override `offset`
+	offset = [8, 8]
+	# If you provide a non-zero regrow_days value, then this crop, isntead of being destroyed on harvest
+	# will infinitely regrow.
+	regrow_days = 0
+	# This is how big the interaction bubble, as a circle, is around stuff.
+	interact_size = 4
+	# noise we play when we walk over it
+	sound_on_collide = "SoundEffects/Objects/TallGrassRustle"
+	# How many things to make on harvest
+	count = 1
+	# If this is true, then non-seeds will sway.
+	sways = true
+	# this is automatically set to `false` if this is only a single stage crop. If for some reason we
+	# have a multi-stage crop which doesn't start as a seed, set to `false`.
+	stage_zero_is_seed = true
+	# required for each crop
+	seasons = -1
+	# when a crop is a managed forageable, they always regrow, and it takes them 3 days to do it!
+	managed_regrow_days = 3
+	# this is for managed forageables only. It's meaningless in every other context. This is the little mound.
+	mound_sprite = "spr_forageable_regrow_dirt_spring"
+	# this is what we use for the winter
+	winter_mound_sprite = "spr_forageable_regrow_dirt_winter"
+	# this is a hack for the ice basically!
+	mound_sprite_is_floor = false
+	# this is the regrow sprite used when spawned as a managed forageable
+	managed_regrow_sprite = "spr_forage_sprout_spring"
+
+	# how much animal currency to provide when eaten by animals
+	currency = 1
+
+	# any "slow growing crop", used to accelerate their growth by one day with the perk harvest_time in perks.toml
+	harvest_time_enabled = false
+
+	# an animated asset related to the crop the variable is connected to
+	animated_sprite = false
+
+	# whether or not this is a "plant"
+	is_plant = true
+
+[mystery_bag]
+	harvest = "apple" # this is just a lie, for fun!
+	faux_crop = "crop_faux_mystery_bag"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_crop_mystery_bag_seed",
+		"spr_crop_mystery_bag_stage1",
+		"spr_crop_mystery_bag_stage2",
+		"spr_crop_mystery_bag_stage3",
+		"spr_crop_mystery_bag_stage4_stage4",
+	]
+	seasons = ["spring", "summer", "fall", "winter"]
+	currency = 3
+
+[ash_mushroom]
+	faux_crop = "crop_faux_ash_mushroom"
+	sprites = ["spr_forage_ash_mushroom_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+
+[basil]
+	faux_crop = "crop_faux_basil"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_basil_seed",
+		"spr_forage_basil_stage1",
+		"spr_forage_basil_stage2",
+		"spr_forage_basil_stage3",
+		"spr_forage_basil_stage4",
+	]
+	seasons = "summer"
+	regrow_days = 3
+	currency = 3
+
+[beet]
+	faux_crop = "crop_faux_beet"
+	day_to_stage = [0, 1, 2, 3, 4]
+	sprites = [
+		"spr_crop_beet_seed",
+		"spr_crop_beet_stage1",
+		"spr_crop_beet_stage2",
+		"spr_crop_beet_stage3",
+		"spr_crop_beet_stage4",
+	]
+	seasons = "winter"
+	currency = 2
+
+
+[blue_conch_shell]
+	is_plant = false
+	faux_crop = "crop_faux_blue_conch_shell"
+	sprites = ["spr_shell_small_blue_conch_main"]
+	sways = false
+	seasons = ["spring", "summer", "fall", "winter"]
+
+[breath_of_fire]
+	faux_crop = "crop_faux_breath_of_fire"
+	sprites = ["spr_forage_breath_of_flame_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+
+[broccoli]
+	faux_crop = "crop_faux_broccoli"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_crop_broccoli_seed",
+		"spr_crop_broccoli_stage1",
+		"spr_crop_broccoli_stage2",
+		"spr_crop_broccoli_stage3",
+		"spr_crop_broccoli_stage4",
+	]
+	seasons = "fall"
+	currency = 4
+
+[burdock_root]
+	faux_crop = "crop_faux_burdock_root"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_burdock_root_seed",
+		"spr_forage_burdock_root_stage1",
+		"spr_forage_burdock_root_stage2",
+		"spr_forage_burdock_root_stage3",
+		"spr_forage_burdock_root_stage4",
+	]
+	seasons = "winter"
+	managed_regrow_sprite = "spr_forage_sprout_winter"
+	regrow_days = 3
+	currency = 3
+
+[cabbage]
+	faux_crop = "crop_faux_cabbage"
+	day_to_stage = [0, 1, 1, 1, 2, 2, 3, 3, 3, 4]
+	harvest_time_enabled = true
+	sprites = [
+		"spr_crop_cabbage_seed",
+		"spr_crop_cabbage_stage1",
+		"spr_crop_cabbage_stage2",
+		"spr_crop_cabbage_stage3",
+		"spr_crop_cabbage_stage4",
+	]
+	seasons = "spring"
+	currency = 6
+
+[carrot]
+	faux_crop = "crop_faux_carrot"
+	day_to_stage = [0, 1, 2, 3, 3, 3, 4]
+	sprites = [
+		"spr_crop_carrot_seed",
+		"spr_crop_carrot_stage1",
+		"spr_crop_carrot_stage2",
+		"spr_crop_carrot_stage3",
+		"spr_crop_carrot_stage4",
+	]
+	seasons = "spring"
+	currency = 4
+
+[catmint]
+	faux_crop = "crop_faux_catmint"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_flower_catmint_seed",
+		"spr_flower_catmint_stage1",
+		"spr_flower_catmint_stage2",
+		"spr_flower_catmint_stage3",
+		"spr_flower_catmint_stage4",
+	]
+	seasons = "summer"
+
+[cauliflower]
+	faux_crop = "crop_faux_cauliflower"
+	day_to_stage = [0, 1, 2, 3, 3, 3, 4]
+	sprites = [
+		"spr_crop_cauliflower_seed",
+		"spr_crop_cauliflower_stage1",
+		"spr_crop_cauliflower_stage2",
+		"spr_crop_cauliflower_stage3",
+		"spr_crop_cauliflower_stage4",
+	]
+	seasons = "winter"
+	currency = 4
+
+[cave_kelp]
+	faux_crop = "crop_faux_cave_kelp"
+	sprites = ["spr_forage_cave_kelp_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+	currency = 2
+
+[celosia]
+	faux_crop = "crop_faux_celosia"
+	day_to_stage = [0, 1, 2, 3, 4]
+	sprites = [
+		"spr_crop_celosia_seed",
+		"spr_crop_celosia_stage1",
+		"spr_crop_celosia_stage2",
+		"spr_crop_celosia_stage3",
+		"spr_crop_celosia_stage4",
+	]
+	seasons = "fall"
+
+
+[chestnut]
+	faux_crop = "crop_faux_chestnut"
+	seasons = "fall"
+	sprites = ["spr_forage_chestnut_stage1"]
+	managed_regrow_sprite = "spr_forage_chestnut_shell_spring"
+	currency = 2
+
+[chickpea]
+	faux_crop = "crop_faux_chickpea"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_chickpea_seed",
+		"spr_forage_chickpea_stage1",
+		"spr_forage_chickpea_stage2",
+		"spr_forage_chickpea_stage3",
+		"spr_forage_chickpea_stage4",
+	]
+	regrow_days = 3
+	seasons = "spring"
+	currency = 3
+
+[chili_pepper]
+	faux_crop = "crop_faux_chili_pepper"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_crop_chili_pepper_seed",
+		"spr_crop_chili_pepper_stage1",
+		"spr_crop_chili_pepper_stage2",
+		"spr_crop_chili_pepper_stage3",
+		"spr_crop_chili_pepper_stage4",
+	]
+	seasons = "summer"
+	currency = 4
+
+[chirping_fern]
+	faux_crop = "crop_faux_chirping_fern"
+	sprites = ["spr_forage_chirping_fern_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+
+[chrysanthemum]
+	faux_crop = "crop_faux_chrysanthemum"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_crop_chrysanthemum_seed",
+		"spr_crop_chrysanthemum_stage1",
+		"spr_crop_chrysanthemum_stage2",
+		"spr_crop_chrysanthemum_stage3",
+		"spr_crop_chrysanthemum_stage4",
+	]
+	seasons = "fall"
+
+[corn]
+	faux_crop = "crop_faux_corn"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_crop_corn_seed",
+		"spr_crop_corn_stage1",
+		"spr_crop_corn_stage2",
+		"spr_crop_corn_stage3",
+		"spr_crop_corn_stage4",
+	]
+	seasons = "summer"
+	regrow_days = 3
+	currency = 3
+
+[cranberry]
+	faux_crop = "crop_faux_cranberry"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_crop_cranberry_seed",
+		"spr_crop_cranberry_stage1",
+		"spr_crop_cranberry_stage2",
+		"spr_crop_cranberry_stage3",
+		"spr_crop_cranberry_stage4",
+	]
+	seasons = "fall"
+	regrow_days = 3
+	currency = 3
+
+
+[crocus]
+	faux_crop = "crop_faux_crocus"
+	seasons = "winter"
+	managed_regrow_sprite = "spr_forage_sprout_winter"
+	sprites = ["spr_forage_crocus_stage1"]
+
+[crystal_berries]
+	faux_crop = "crop_faux_crystal_berries"
+	sprites = ["spr_forage_crystal_berries_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+	currency = 2
+
+[crystal_rose]
+	faux_crop = "crop_faux_crystal_rose"
+	sprites = ["spr_forage_crystal_rose_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+
+[cucumber]
+	faux_crop = "crop_faux_cucumber"
+	day_to_stage = [0, 1, 2, 3, 4]
+	sprites = [
+		"spr_crop_cucumber_seed",
+		"spr_crop_cucumber_stage1",
+		"spr_crop_cucumber_stage2",
+		"spr_crop_cucumber_stage3",
+		"spr_crop_cucumber_stage4",
+	]
+	seasons = "summer"
+	currency = 2
+
+[daffodil]
+	faux_crop = "crop_faux_daffodil"
+	day_to_stage = [0, 1, 2, 3, 4]
+	sprites = [
+		"spr_flower_daffodil_seed",
+		"spr_flower_daffodil_stage1",
+		"spr_flower_daffodil_stage2",
+		"spr_flower_daffodil_stage3",
+		"spr_flower_daffodil_stage4",
+	]
+	seasons = "spring"
+
+[daikon_radish]
+	faux_crop = "crop_faux_daikon_radish"
+	day_to_stage = [0, 1, 1, 1, 2, 2, 3, 3, 3, 4]
+	harvest_time_enabled = true
+	sprites = [
+		"spr_forage_daikon_radish_seed",
+		"spr_forage_daikon_radish_stage1",
+		"spr_forage_daikon_radish_stage2",
+		"spr_forage_daikon_radish_stage3",
+		"spr_forage_daikon_radish_stage4",
+	]
+	seasons = "winter"
+	currency = 6
+
+[daisy]
+	faux_crop = "crop_faux_daisy"
+	day_to_stage = [0, 1, 2, 3, 4]
+	sprites = [
+		"spr_forage_daisy_seed",
+		"spr_forage_daisy_stage1",
+		"spr_forage_daisy_stage2",
+		"spr_forage_daisy_stage3",
+		"spr_forage_daisy_stage4",
+	]
+	seasons = "summer"
+	currency = 3
+
+[dandelion]
+	faux_crop = "crop_faux_dandelion"
+	seasons = "spring"
+	sprites = ["spr_forage_dandelion_stage1"]
+	stage_zero_is_seed = false
+
+[dill]
+	faux_crop = "crop_faux_dill"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_dill_seed",
+		"spr_forage_dill_stage1",
+		"spr_forage_dill_stage2",
+		"spr_forage_dill_stage3",
+		"spr_forage_dill_stage4",
+	]
+	seasons = "summer"
+	regrow_days = 3
+	currency = 3
+
+[earthshroom]
+	faux_crop = "crop_faux_earthshroom"
+	sprites = ["spr_forage_earthshroom_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+	currency = 2
+
+[essence_blossom]
+	faux_crop = "crop_faux_essence_blossom"
+	sprites = ["spr_forage_essence_blossom_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+	currency = 2
+
+[ethereal_grass]
+	faux_crop = "crop_faux_ethereal_grass"
+	sprites = ["spr_forage_ethereal_grass_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+	currency = 2
+
+[fennel]
+	faux_crop = "crop_faux_fennel"
+	seasons = "spring"
+	sprites = ["spr_forage_fennel_stage1"]
+	currency = 2
+
+[fiddlehead]
+	faux_crop = "crop_faux_fiddlehead"
+	seasons = "spring"
+	sprites = ["spr_forage_fiddleheads_stage1"]
+	currency = 2
+
+[flame_pepper]
+	faux_crop = "crop_faux_flame_pepper"
+	sprites = ["spr_forage_flame_pepper_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+
+[fog_orchid]
+	faux_crop = "crop_faux_fog_orchid"
+	seasons = "fall"
+	sprites = ["spr_forage_fogorchid_stage1"]
+
+
+[frost_lily]
+	faux_crop = "crop_faux_frost_lily"
+	day_to_stage = [0, 1, 2, 3, 4]
+	sprites = [
+		"spr_flower_frost_lily_seed",
+		"spr_flower_frost_lily_stage1",
+		"spr_flower_frost_lily_stage2",
+		"spr_flower_frost_lily_stage3",
+		"spr_flower_frost_lily_stage4",
+	]
+	seasons = "winter"
+	managed_regrow_sprite = "spr_forage_sprout_winter"
+
+[cosmos]
+	faux_crop = "crop_faux_cosmos"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_flower_cosmos_seed",
+		"spr_flower_cosmos_stage1",
+		"spr_flower_cosmos_stage2",
+		"spr_flower_cosmos_stage3",
+		"spr_flower_cosmos_stage4",
+	]
+	seasons = "summer"
+
+[garlic]
+	faux_crop = "crop_faux_garlic"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_garlic_seed",
+		"spr_forage_garlic_stage1",
+		"spr_forage_garlic_stage2",
+		"spr_forage_garlic_stage3",
+		"spr_forage_garlic_stage4",
+	]
+	seasons = "fall"
+	regrow_days = 3
+	currency = 3
+
+[heather]
+	faux_crop = "crop_faux_heather"
+	day_to_stage = [0, 1, 1, 1, 2, 2, 3, 3, 3, 4]
+	harvest_time_enabled = true
+	sprites = [
+		"spr_forage_heather_seed",
+		"spr_forage_heather_stage1",
+		"spr_forage_heather_stage2",
+		"spr_forage_heather_stage3",
+		"spr_forage_heather_stage4",
+	]
+	seasons = "fall"
+	regrow_days = 3
+	currency = 3
+
+[holly]
+	faux_crop = "crop_faux_holly"
+	seasons = "winter"
+	managed_regrow_sprite = "spr_forage_sprout_winter"
+	sprites = ["spr_forage_holly_stage1"]
+
+[horseradish]
+	faux_crop = "crop_faux_horseradish"
+	seasons = "fall"
+	sprites = ["spr_forage_horseradish_stage1"]
+	currency = 2
+
+[hot_potato]
+	faux_crop = "crop_faux_hot_potato"
+	sprites = ["spr_forage_hot_potato_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+
+[ice_block]
+	faux_crop = "crop_faux_ice_block"
+	seasons = "winter"
+	sways = false
+	sprites = ["spr_forage_ice_block_stage1"]
+	managed_regrow_sprite = "spr_nothing"
+	winter_mound_sprite = "spr_forage_ice_block_ground"
+	mound_sprite_is_floor = true
+
+[iris]
+	faux_crop = "crop_faux_iris"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_iris_seed",
+		"spr_forage_iris_stage1",
+		"spr_forage_iris_stage2",
+		"spr_forage_iris_stage3",
+		"spr_forage_iris_stage4",
+	]
+	seasons = "summer"
+	currency = 3
+
+[jasmine]
+	faux_crop = "crop_faux_jasmine"
+	day_to_stage = [0, 1, 1, 1, 2, 2, 3, 3, 3, 4]
+	harvest_time_enabled = true
+	sprites = [
+		"spr_forage_jasmine_seed",
+		"spr_forage_jasmine_stage1",
+		"spr_forage_jasmine_stage2",
+		"spr_forage_jasmine_stage3",
+		"spr_forage_jasmine_stage4",
+	]
+	seasons = "winter"
+	managed_regrow_sprite = "spr_forage_sprout_winter"
+	regrow_days = 3
+	currency = 3
+
+[lava_chestnuts]
+	faux_crop = "crop_faux_lava_chestnuts"
+	sprites = ["spr_forage_lava_chestnut_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+
+[lilac]
+	faux_crop = "crop_faux_lilac"
+	day_to_stage = [0, 1, 1, 1, 2, 2, 3, 3, 3, 4]
+	harvest_time_enabled = true
+	sprites = [
+		"spr_forage_lilac_seed",
+		"spr_forage_lilac_stage1",
+		"spr_forage_lilac_stage2",
+		"spr_forage_lilac_stage3",
+		"spr_forage_lilac_stage4",
+	]
+	seasons = "spring"
+	regrow_days = 3
+
+[marigold]
+	faux_crop = "crop_faux_marigold"
+	day_to_stage = [0, 1, 1, 1, 2, 2, 3, 3, 3, 4]
+	harvest_time_enabled = true
+	sprites = [
+		"spr_flower_marigolds_seed",
+		"spr_flower_marigolds_stage1",
+		"spr_flower_marigolds_stage2",
+		"spr_flower_marigolds_stage3",
+		"spr_flower_marigolds_stage4",
+	]
+	seasons = "summer"
+	currency = 3
+
+[temple_marigold]
+	faux_crop = "crop_faux_marigold"
+	day_to_stage = [0]
+	sprites = ["spr_flower_marigolds_stage4"]
+	seasons = ["spring", "summer", "fall", "winter"]
+	harvest = "marigold"
+
+[middlemist]
+	faux_crop = "crop_faux_middlemist"
+	sprites = ["spr_forage_middlemistred_stage1"]
+	seasons = "spring"
+
+[mines_mussels]
+	faux_crop = "crop_faux_mines_mussels"
+	sprites = ["spr_forage_mines_mussels_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+
+[moon_fruit]
+	faux_crop = "crop_faux_moon_fruit"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_moon_fruit_seed",
+		"spr_forage_moon_fruit_stage1",
+		"spr_forage_moon_fruit_stage2",
+		"spr_forage_moon_fruit_stage3",
+		"spr_forage_moon_fruit_stage4",
+	]
+	seasons = "fall"
+	regrow_days = 3
+	currency = 3
+
+[morel_mushroom]
+	faux_crop = "crop_faux_morel_mushroom"
+	sprites = ["spr_forage_morelmushroom_stage1"]
+	seasons = "spring"
+	currency = 2
+
+[narrows_moss]
+	faux_crop = "crop_faux_narrows_moss"
+	sprites = ["spr_forage_narrows_moss_stage1"]
+	sways = false
+	seasons = ["spring", "summer", "fall", "winter"]
+
+[nettle]
+	faux_crop = "crop_faux_nettle"
+	sprites = ["spr_forage_nettle_stage1"]
+	seasons = "spring"
+	currency = 2
+
+[night_queen]
+	faux_crop = "crop_faux_night_queen"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_night_queen_seed",
+		"spr_forage_night_queen_stage1",
+		"spr_forage_night_queen_stage2",
+		"spr_forage_night_queen_stage3",
+		"spr_forage_night_queen_stage4",
+	]
+	seasons = "summer"
+
+[onion]
+	faux_crop = "crop_faux_onion"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_crop_onion_seed",
+		"spr_crop_onion_stage1",
+		"spr_crop_onion_stage2",
+		"spr_crop_onion_stage3",
+		"spr_crop_onion_stage4",
+	]
+	seasons = "fall"
+	regrow_days = 3
+	currency = 3
+
+[oregano]
+	faux_crop = "crop_faux_oregano"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_oregano_seed",
+		"spr_forage_oregano_stage1",
+		"spr_forage_oregano_stage2",
+		"spr_forage_oregano_stage3",
+		"spr_forage_oregano_stage4",
+	]
+	seasons = "summer"
+	regrow_days = 3
+	currency = 3
+
+[oyster_mushroom]
+	faux_crop = "crop_faux_oyster_mushroom"
+	seasons = "winter"
+	managed_regrow_sprite = "spr_forage_sprout_winter"
+	sprites = ["spr_forage_oyster_mushroom_stage1"]
+	currency = 2
+
+[peas]
+	faux_crop = "crop_faux_peas"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_crop_peas_seed",
+		"spr_crop_peas_stage1",
+		"spr_crop_peas_stage2",
+		"spr_crop_peas_stage3",
+		"spr_crop_peas_stage4",
+	]
+	seasons = "spring"
+	regrow_days = 3
+	currency = 3
+
+[pineshroom]
+	faux_crop = "crop_faux_pineshroom"
+	seasons = "winter"
+	managed_regrow_sprite = "spr_forage_sprout_winter"
+	sprites = ["spr_forage_pineshroom_stage1"]
+	currency = 2
+
+[pink_scallop_shell]
+	faux_crop = "crop_faux_pink_scallop_shell"
+	sprites = ["spr_shell_pink_scallop_main"]
+	sways = false
+	is_plant = false
+	seasons = ["spring", "summer", "fall", "winter"]
+
+[poinsettia]
+	faux_crop = "crop_faux_poinsettia"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_flower_poinsettia_seed",
+		"spr_flower_poinsettia_stage1",
+		"spr_flower_poinsettia_stage2",
+		"spr_flower_poinsettia_stage3",
+		"spr_flower_poinsettia_stage4",
+	]
+	seasons = "winter"
+	managed_regrow_sprite = "spr_forage_sprout_winter"
+
+[potato]
+	faux_crop = "crop_faux_potato"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_crop_potato_seed",
+		"spr_crop_potato_stage1",
+		"spr_crop_potato_stage2",
+		"spr_crop_potato_stage3",
+		"spr_crop_potato_stage4",
+	]
+	seasons = "spring"
+	currency = 4
+
+[pumpkin]
+	faux_crop = "crop_faux_pumpkin"
+	day_to_stage = [0, 1, 1, 1, 2, 2, 3, 3, 3, 4]
+	harvest_time_enabled = true
+	sprites = [
+		"spr_crop_pumpkin_seed",
+		"spr_crop_pumpkin_stage1",
+		"spr_crop_pumpkin_stage2",
+		"spr_crop_pumpkin_stage3",
+		"spr_crop_pumpkin_stage4",
+	]
+	seasons = "fall"
+	currency = 6
+
+[rice]
+	faux_crop = "crop_faux_rice"
+	day_to_stage = [0, 1, 1, 1, 2, 2, 3, 3, 3, 4]
+	harvest_time_enabled = true
+	sprites = [
+		"spr_crop_rice_seed",
+		"spr_crop_rice_stage1",
+		"spr_crop_rice_stage2",
+		"spr_crop_rice_stage3",
+		"spr_crop_rice_stage4",
+	]
+	harvest = "rice_stalk"
+	seasons = "fall"
+	regrow_days = 3
+	currency = 3
+
+[rockroot]
+	faux_crop = "crop_faux_rockroot"
+	sprites = ["spr_forage_rockroot_stage1"]
+	sways = false
+	seasons = ["spring", "summer", "fall", "winter"]
+	currency = 2
+
+[rosemary]
+	faux_crop = "crop_faux_rosemary"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_rosemary_seed",
+		"spr_forage_rosemary_stage1",
+		"spr_forage_rosemary_stage2",
+		"spr_forage_rosemary_stage3",
+		"spr_forage_rosemary_stage4",
+	]
+	seasons = "fall"
+	regrow_days = 3
+	currency = 3
+
+[sage]
+	faux_crop = "crop_faux_sage"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_sage_seed",
+		"spr_forage_sage_stage1",
+		"spr_forage_sage_stage2",
+		"spr_forage_sage_stage3",
+		"spr_forage_sage_stage4",
+	]
+	seasons = "summer"
+	regrow_days = 3
+	currency = 3
+
+[sand_dollar]
+	is_plant = false
+	faux_crop = "crop_faux_sand_dollar"
+	sprites = ["spr_shell_sand_dollar_main"]
+	seasons = ["spring", "summer", "fall", "winter"]
+	sways = false
+
+[sea_grapes]
+	faux_crop = "crop_faux_sea_grapes"
+	sprites = ["spr_forage_sea_grapes_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+	currency = 2
+
+[sesame]
+	faux_crop = "crop_faux_sesame"
+	sprites = ["spr_forage_sesame_stage1"]
+	seasons = "summer"
+	currency = 2
+
+[shadow_flower]
+	faux_crop = "crop_faux_shadow_flower"
+	sprites = ["spr_forage_shadow_flower_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+
+[shale_grass]
+	faux_crop = "crop_faux_shale_grass"
+	sprites = ["spr_forage_shale_grass_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+
+[snapdragon]
+	faux_crop = "crop_faux_snapdragon"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_snapdragon_seed",
+		"spr_forage_snapdragon_stage1",
+		"spr_forage_snapdragon_stage2",
+		"spr_forage_snapdragon_stage3",
+		"spr_forage_snapdragon_stage4",
+	]
+	seasons = "winter"
+	managed_regrow_sprite = "spr_forage_sprout_winter"
+
+[snowdrop_anemone]
+	faux_crop = "crop_faux_snowdrop_anemone"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_snowdrop_anemone_seed",
+		"spr_forage_snowdrop_anemone_stage1",
+		"spr_forage_snowdrop_anemone_stage2",
+		"spr_forage_snowdrop_anemone_stage3",
+		"spr_forage_snowdrop_anemone_stage4",
+	]
+	seasons = "spring"
+	currency = 3
+
+[snow_peas]
+	faux_crop = "crop_faux_snow_peas"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_crop_snow_peas_seed",
+		"spr_crop_snow_peas_stage1",
+		"spr_crop_snow_peas_stage2",
+		"spr_crop_snow_peas_stage3",
+		"spr_crop_snow_peas_stage4",
+	]
+	seasons = "winter"
+	regrow_days = 3
+	currency = 3
+
+[spell_fruit]
+	faux_crop = "crop_faux_spell_fruit"
+	sprites = ["spr_forage_spell_fruit_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+	currency = 2
+
+[void_herb]
+	faux_crop = "crop_faux_void_herb"
+	sprites = ["spr_forage_void_herb_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+	currency = 2
+
+[spirit_mushroom]
+	faux_crop = "crop_faux_spirit_mushroom"
+	seasons = ["spring", "summer", "fall", "winter"]
+	managed_regrow_sprite = "spr_forage_sprout_winter"
+	sprites = ["spr_forage_spirit_mushroom_stage1"]
+
+[spirula_shell]
+	faux_crop = "crop_faux_spirula_shell"
+	sprites = ["spr_shell_common_spirula_main"]
+	sways = false
+	is_plant = false
+	seasons = ["spring", "summer", "fall", "winter"]
+
+[strawberry]
+	faux_crop = "crop_faux_strawberry"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_crop_strawberry_seed",
+		"spr_crop_strawberry_stage1",
+		"spr_crop_strawberry_stage2",
+		"spr_crop_strawberry_stage3",
+		"spr_crop_strawberry_stage4",
+	]
+	seasons = "spring"
+	regrow_days = 3
+	currency = 3
+
+[sugar_cane]
+	faux_crop = "crop_faux_sugar_cane"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_crop_sugar_cane_seed",
+		"spr_crop_sugar_cane_stage1",
+		"spr_crop_sugar_cane_stage2",
+		"spr_crop_sugar_cane_stage3",
+		"spr_crop_sugar_cane_stage4",
+	]
+	seasons = "summer"
+	currency = 4
+
+
+[sunflower]
+	faux_crop = "crop_faux_sunflower"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_flower_sunflower_seed",
+		"spr_flower_sunflower_stage1",
+		"spr_flower_sunflower_stage2",
+		"spr_flower_sunflower_stage3",
+		"spr_flower_sunflower_stage4",
+	]
+	seasons = "summer"
+
+[sweetroot]
+	faux_crop = "crop_faux_sweetroot"
+	sprites = ["spr_forage_sweetroot_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+	currency = 2
+
+[sweet_potato]
+	faux_crop = "crop_faux_sweet_potato"
+	day_to_stage = [0, 1, 2, 3, 4]
+	sprites = [
+		"spr_crop_sweet_potato_seed",
+		"spr_crop_sweet_potato_stage1",
+		"spr_crop_sweet_potato_stage2",
+		"spr_crop_sweet_potato_stage3",
+		"spr_crop_sweet_potato_stage4",
+	]
+	seasons = "fall"
+	currency = 2
+
+[tea]
+	faux_crop = "crop_faux_tea"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_crop_tea_seed",
+		"spr_crop_tea_stage1",
+		"spr_crop_tea_stage2",
+		"spr_crop_tea_stage3",
+		"spr_crop_tea_stage4",
+	]
+	seasons = "summer"
+	regrow_days = 3
+	currency = 3
+
+[temple_flower]
+	faux_crop = "crop_faux_temple_flower"
+	day_to_stage = [0, 1, 1, 1, 2, 2, 3, 3, 3, 4]
+	harvest_time_enabled = true
+	sprites = [
+		"spr_forage_temple_flower_seed",
+		"spr_forage_temple_flower_stage1",
+		"spr_forage_temple_flower_stage2",
+		"spr_forage_temple_flower_stage3",
+		"spr_forage_temple_flower_stage4",
+	]
+	seasons = ["spring", "summer", "fall", "winter"]
+	managed_regrow_sprite = "spr_forage_sprout_winter"
+	regrow_days = 3
+	currency = 3
+
+[thorn_vine]
+	faux_crop = "crop_faux_thorn_vine"
+	seasons = ["spring", "summer", "fall", "winter"]
+	managed_regrow_sprite = "spr_forage_chestnut_shell_spring"
+	sprites = ["spr_forage_thorn_vine_stage1"]
+
+[thyme]
+	faux_crop = "crop_faux_thyme"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_thyme_seed",
+		"spr_forage_thyme_stage1",
+		"spr_forage_thyme_stage2",
+		"spr_forage_thyme_stage3",
+		"spr_forage_thyme_stage4",
+	]
+	seasons = "summer"
+	regrow_days = 3
+	currency = 3
+
+[tide_lettuce]
+	faux_crop = "crop_faux_tide_lettuce"
+	sprites = ["spr_forage_tide_lettuce_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+	currency = 2
+
+[tomato]
+	faux_crop = "crop_faux_tomato"
+	day_to_stage = [0, 1, 2, 3, 3, 4]
+	sprites = [
+		"spr_crop_tomato_seed",
+		"spr_crop_tomato_stage1",
+		"spr_crop_tomato_stage2",
+		"spr_crop_tomato_stage3",
+		"spr_crop_tomato_stage4",
+	]
+	seasons = "summer"
+	regrow_days = 3
+	currency = 3
+
+[tulip]
+	faux_crop = "crop_faux_tulip"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_flower_tulip_seed",
+		"spr_flower_tulip_stage1",
+		"spr_flower_tulip_stage2",
+		"spr_flower_tulip_stage3",
+		"spr_flower_tulip_stage4",
+	]
+	seasons = "spring"
+
+[turnip]
+	faux_crop = "crop_faux_turnip"
+	day_to_stage = [0, 1, 2, 3, 4]
+	sprites = [
+		"spr_crop_turnip_seed",
+		"spr_crop_turnip_stage1",
+		"spr_crop_turnip_stage2",
+		"spr_crop_turnip_stage3",
+		"spr_crop_turnip_stage4",
+	]
+	seasons = "spring"
+	currency = 2
+
+[upper_mines_mushroom]
+	faux_crop = "crop_faux_upper_mines_mushroom"
+	sprites = ["spr_forage_upper_mines_mushroom_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+	currency = 2
+
+[viola]
+	faux_crop = "crop_faux_viola"
+	day_to_stage = [0, 1, 2, 2, 3, 3, 4]
+	sprites = [
+		"spr_forage_viola_seed",
+		"spr_forage_viola_stage1",
+		"spr_forage_viola_stage2",
+		"spr_forage_viola_stage3",
+		"spr_forage_viola_stage4",
+	]
+	seasons = "fall"
+
+[walnut]
+	faux_crop = "crop_faux_walnut"
+	seasons = ["spring", "summer", "fall", "winter"]
+	sprites = ["spr_forage_walnut_stage1"]
+	managed_regrow_sprite = "spr_forage_chestnut_shell_spring"
+	currency = 2
+
+[watermelon]
+	faux_crop = "crop_faux_watermelon"
+	day_to_stage = [0, 1, 1, 1, 2, 2, 3, 3, 3, 4]
+	harvest_time_enabled = true
+	sprites = [
+		"spr_crop_watermelon_seed",
+		"spr_crop_watermelon_stage1",
+		"spr_crop_watermelon_stage2",
+		"spr_crop_watermelon_stage3",
+		"spr_crop_watermelon_stage4",
+	]
+	seasons = "summer"
+	currency = 6
+
+[wheat]
+	faux_crop = "crop_faux_wheat"
+	day_to_stage = [0, 1, 1, 1, 2, 2, 3, 3, 3, 4]
+	harvest_time_enabled = true
+	sprites = [
+		"spr_crop_wheat_seed",
+		"spr_crop_wheat_stage1",
+		"spr_crop_wheat_stage2",
+		"spr_crop_wheat_stage3",
+		"spr_crop_wheat_stage4",
+	]
+	seasons = "fall"
+	regrow_days = 3
+	currency = 3
+
+[wild_leek]
+	faux_crop = "crop_faux_wild_leek"
+	sprites = ["spr_forage_springonion_stage1"]
+	seasons = "spring"
+	currency = 2
+
+[written_root]
+	faux_crop = "crop_faux_written_root"
+	sprites = ["spr_forage_written_root_stage1"]
+	seasons = ["spring", "summer", "fall", "winter"]
+	currency = 2
+
+[magic_key]
+	day_to_stage = [0, 1, 2, 2, 3]
+	sprites = [
+		"spr_forage_magic_key_seed",
+		"spr_forage_magic_key_stage1",
+		"spr_forage_magic_key_stage2",
+		"spr_forage_magic_key_stage3",
+	]
+	seasons = ["spring", "summer", "fall", "winter"]

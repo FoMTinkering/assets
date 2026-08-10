@@ -1,0 +1,323 @@
+[core]
+	name = "Chicken"
+	plural_name = "Chickens"
+	female_other = "a hen"
+	male_other = "a rooster"
+	new_baby_born = "A new Chicken was born! Enter new name"
+	size = "small"
+	default_icon_variant = "white"
+	cosmetic_sub_icon = "spr_ui_item_sub_animal_chicken"
+
+[celebration_data]
+	baby_animation = "happy"
+	adult_animation = "crow"
+
+[production.male]
+	days_to_produce = 3
+	normal_product = "feather"
+	golden_product = "golden_feather"
+
+[production.female]
+	days_to_produce = 1
+	normal_product = "egg"
+	golden_product = "golden_egg"
+
+[breeding]
+	uses_egg = true
+	days_until_adult = 3
+	treat = "heart_shaped_chicken_treat"
+	sparkle_offset = [0, -12]
+
+[eating]
+	kind = "seed"
+	offset = [8, -2]
+	baby_offset = [4, 0]
+	shake_frames = [0, 10]
+
+[petting]
+	kind = "pick_up"
+	held_offset = [9, 16]
+
+[pricing]
+	buy_price = 1000
+	baby_sell_price = 250
+	adult_sell_prices = [
+		350,
+		375,
+		450,
+		500,
+		550,
+		600,
+		700,
+		800,
+		1000,
+		1100,
+		1150,
+	]
+
+[mounting]
+	is_mount = false
+
+[bark_offsets]
+	adult = { north = [2, -29], south = [2, -28], east = [2, -28], west = [1, -28] }
+	baby = { north = [2, -19], south = [2, -19], east = [3, -19], west = [1, -19] }
+
+[[sounds.baby]]
+	ambient = "SoundEffects/Animals/ChickenBabyAmbient"
+	positive_react = "SoundEffects/Animals/ChickBabyAPositiveReact"
+	negative_react = "SoundEffects/Animals/ChickenUpsetReact"
+
+[[sounds.adult]]
+	ambient = "SoundEffects/Animals/ChickenAAmbient"
+	positive_react = "SoundEffects/Animals/ChickenPositiveReact"
+	negative_react = "SoundEffects/Animals/ChickenUpsetReact"
+
+[[sounds.adult]]
+	ambient = "SoundEffects/Animals/ChickenBAmbient"
+	positive_react = "SoundEffects/Animals/ChickenPositiveReact"
+	negative_react = "SoundEffects/Animals/ChickenUpsetReact"
+
+[[sounds.adult]]
+	ambient = "SoundEffects/Animals/ChickenCAmbient"
+	positive_react = "SoundEffects/Animals/ChickenPositiveReact"
+	negative_react = "SoundEffects/Animals/ChickenUpsetReact"
+
+[[sounds.adult]]
+	ambient = "SoundEffects/Animals/ChickenDAmbient"
+	positive_react = "SoundEffects/Animals/ChickenPositiveReact"
+	negative_react = "SoundEffects/Animals/ChickenUpsetReact"
+
+[animations.blink]
+	end_with_animation = true
+
+[animations.crow]
+	end_with_animation = true
+	valid_for = ["male", "female"]
+
+[animations.flap]
+	end_with_animation = true
+	valid_for = ["male", "female"]
+
+[animations.happy]
+	end_with_animation = true
+	valid_for = ["baby"]
+
+[animations.swim]
+	randomly_selected = false
+	end_with_animation = false
+	valid_for = ["male", "female"]
+
+# Variants
+[variants.default]
+	lut = "spr_animal_chicken_lut"
+
+	[variants.default.male]
+		key = "basic_male"
+		top_key = "<n/a>"
+
+	[variants.default.female]
+		key = "basic_female"
+		top_key = "<n/a>"
+
+	[variants.default.baby]
+		key = "basic_baby_chick"
+		top_key = "<n/a>"
+
+# White
+[variants.white]
+	name = "White"
+	default_unlocked = true
+	lut_index = 1
+
+# Brown
+[variants.brown]
+	name = "Brown"
+	default_unlocked = true
+	lut_index = 2
+
+# Spotted
+[variants.spotted]
+	name = "Spotted"
+	default_unlocked = true
+	lut = "<n/a>"
+
+	[variants.spotted.male]
+		key = "spotted_male"
+
+	[variants.spotted.female]
+		key = "spotted_female"
+
+	[variants.spotted.baby]
+		lut = "spr_animal_chicken_lut"
+		lut_index = 3
+
+# Red
+[variants.red]
+	name = "Red"
+	tier = 2
+	lut_index = 4
+
+# Yellow
+[variants.yellow]
+	name = "Yellow"
+	tier = 2
+	lut_index = 5
+
+# Silver
+[variants.gray]
+	name = "Gray"
+	tier = 2
+	lut_index = 6
+
+# Blue
+[variants.blue]
+	name = "Blue"
+	tier = 3
+	lut_index = 7
+
+# Purple
+[variants.purple]
+	name = "Purple"
+	tier = 3
+	lut_index = 8
+
+# Pink
+[variants.pink]
+	name = "Pink"
+	tier = 3
+	lut_index = 9
+
+# Silver
+[variants.silver]
+	name = "Silver"
+	tier = 4
+	lut = "<n/a>"
+
+	[variants.silver.male]
+		key = "silver_male"
+
+	[variants.silver.female]
+		key = "silver_female"
+
+	[variants.silver.baby]
+		key = "silver_baby_chick"
+
+# Gold
+[variants.gold]
+	name = "Gold"
+	tier = 5
+	lut = "<n/a>"
+
+	[variants.gold.male]
+		key = "gold_male"
+
+	[variants.gold.female]
+		key = "gold_female"
+
+	[variants.gold.baby]
+		key = "gold_baby_chick"
+
+# Spring
+[variants.spring]
+	name = "Spring"
+	tier = 6
+	born_in = "spring"
+	lut_index = 10
+	default_cosmetic = "flower_crown"
+
+# Summer
+[variants.summer]
+	name = "Summer"
+	tier = 6
+	born_in = "summer"
+	lut = "<n/a>"
+	default_cosmetic = "sunglasses"
+
+	[variants.summer.male]
+		key = "summer_male"
+
+	[variants.summer.female]
+		key = "summer_female"
+
+	[variants.summer.baby]
+		key = "summer_baby_chick"
+
+# Fall
+[variants.fall]
+	name = "Fall"
+	tier = 6
+	born_in = "fall"
+	default_cosmetic = "red_eyes"
+	lut = "<n/a>"
+
+	[variants.fall.male]
+		key = "fall_male"
+
+	[variants.fall.female]
+		key = "fall_female"
+
+	[variants.fall.baby]
+		lut = "spr_animal_chicken_lut"
+		lut_index = 11
+
+# Winter
+[variants.winter]
+	name = "Winter"
+	tier = 6
+	born_in = "winter"
+	lut = "<n/a>"
+	default_cosmetic = "winter_hat"
+
+	[variants.winter.male]
+		key = "winter_male"
+
+	[variants.winter.female]
+		key = "winter_female"
+
+	[variants.winter.baby]
+		key = "winter_baby_chick"
+
+[cosmetics.business_tie]
+	name = "Chicken Business Tie"
+
+[cosmetics.ear_muffs]
+	name = "Chicken Ear Muffs"
+
+[cosmetics.egg_hat]
+	name = "Chicken Egg Hat"
+
+[cosmetics.sunglasses]
+	name = "Chicken Sunglasses"
+
+[cosmetics.flower_crown]
+	name = "Chicken Flower Crown"
+
+[cosmetics.pearl_necklace]
+	name = "Chicken Pearl Necklace"
+
+[cosmetics.red_eyes]
+	name = "Chicken Red Eyes"
+
+[cosmetics.ribbon_blue]
+    name = "Chicken Blue Ribbon"
+
+[cosmetics.ribbon_red]
+    name = "Chicken Red Ribbon"
+
+[cosmetics.ribbon_white]
+    name = "Chicken White Ribbon"
+
+[cosmetics.top_hat]
+	name = "Chicken Top Hat"
+
+[cosmetics.winter_hat]
+	name = "Chicken Winter Hat"
+
+[cosmetics.yellow_bow]
+	name = "Yellow Chicken Bow"
+
+[cosmetics.apple]
+	name = "Chicken Apple Hat"
+
+[cosmetics.baseball_cap]
+	name = "Chicken Baseball Cap"

@@ -1,0 +1,395 @@
+//
+scene(town);
+place_actor(ari, east, b2h_balor_inventory);
+place_actor(balor, east, b2h_balor_entrance);
+place_actor(nora, west, b2h_nora_entrance);
+setup_prop(b2h_wagon);
+setup_prop(b2h_box_1);
+setup_prop(b2h_box_2);
+setup_prop(b2h_box_3);
+camera_position(b2h_camera_wagon);
+request_music_play(balor);
+
+sim {
+    {
+        wait(0.25);
+        fade_in(2);
+    }
+    pan_camera(4, b2h_camera_1);
+    {
+        wait(0.75);
+        free bark_speech(balor, coin);
+        wait(0.5);
+        free bark_speech(nora, annoyed);
+    }
+    //
+    //
+    //
+    //
+    //
+    //
+    {
+        wait(2.25);
+        next_line(); //
+        next_line(); //
+        next_line(); //
+        next_line(); //
+        next_line(); //
+    }
+}
+close_textbox();
+sim {
+    {
+        wait(0.25);
+        free bark_speech(nora, annoyed);
+    }
+    {
+        wait(0.5);
+        walk(nora, "General Store Front Door");
+        face(nora, north);
+        use_door(nora);
+    }
+    {
+        wait(0.75);
+        walk_slow(ari, b2h_ari_chat);
+        face(ari, north);
+    }
+    {
+        wait(0.75);
+        pan_camera(3, b2h_camera_2);
+    }
+    {
+        wait(0.5);
+        face(balor, north);
+        wait(1.5);
+        walk_slow(balor, b2h_balor_start);
+        face(balor, south);
+    }
+    {
+        wait(2.5);
+        next_line(); //
+        //
+        next_line(); //
+        next_line(); //
+    }
+}
+sim {
+    {
+        wait(0.5);
+        face(balor, west);
+        wait(1.75);
+        face(balor, south);
+    }
+    {
+        next_line(); //
+    }
+}
+close_textbox();
+free bark_speech(ari, cute_face);
+wait(0.5);
+free bark_speech(balor, cute_face);
+wait(1);
+sim {
+    {
+        walk(balor, b2h_balor_inventory);
+        face(balor, north);
+        wait(1);
+        animate(balor, action);
+    }
+    {
+        wait(1);
+        pan_camera(4, b2h_camera_wagon);
+    }
+    {
+        wait(1);
+        walk_slow(ari, b2h_ari_box);
+        face(ari, north);
+        wait(0.5);
+        animate(ari, pickup);
+        __ari_hold_item(balors_crate, 9, 5);
+        destroy_prop(b2h_box_2);
+        wait(0.5);
+    }
+}
+sim {
+    free {
+        sim {
+            walk(ari, "General Store Front Door");
+            set_move_speed(ari, 0.4);
+        }
+        face(ari, north);
+    }
+    free pan_camera(3, b2h_camera_3);
+    {
+        wait(0.5);
+        fade_out(2);
+    }
+}
+wait(1);
+destroy_prop(b2h_wagon);
+destroy_prop(b2h_box_1);
+destroy_prop(b2h_box_3);
+
+scene(general_store_store);
+place_actor(nora, south, b2h_nora_box_check);
+place_actor(ari, north, b2h_ari_entrance_gss);
+animate(nora, tap);
+camera_position(b2h_camera_4);
+setup_prop(b2h_box_4);
+
+sim {
+    {
+        wait(0.25);
+        fade_in(2);
+    }
+    {
+        wait(2);
+        animate(ari, pickup);
+        __ari_hold_item(balors_crate, 9, 5);
+        sim {
+            walk(ari, b2h_ari_start_gss);
+            set_move_speed(ari, 0.4);
+        }
+        face(ari, north);
+        wait(0.5);
+        animate(ari, idle);
+        setup_prop(b2h_box_5);
+        walk(ari, b2h_ari_entrance_gss);
+        face(ari, north);
+        wait(1.5);
+        animate(ari, pickup);
+        __ari_hold_item(balors_crate, 9, 5);
+        sim {
+            walk(ari, b2h_ari_other_gss);
+            set_move_speed(ari, 0.4);
+        }
+        face(ari, north);
+        wait(0.5);
+        animate(ari, idle);
+        setup_prop(b2h_box_7);
+        walk(ari, b2h_ari_entrance_gss);
+        face(ari, north);
+        wait(1.5);
+        animate(ari, pickup);
+        __ari_hold_item(balors_crate, 9, 5);
+        sim {
+            walk(ari, b2h_ari_box_gss);
+            set_move_speed(ari, 0.4);
+        }
+        face(ari, east);
+        wait(0.5);
+        animate(ari, idle);
+        setup_prop(b2h_box_6);
+    }
+    {
+        wait(1.25);
+        animate(nora, idle);
+        face(nora, north);
+        wait(0.5);
+        animate(nora, action);
+        wait(0.5);
+        animate(nora, idle);
+        free bark_speech(nora, exclamation_mark);
+        wait(0.5);
+        face(nora, south);
+        wait(0.5);
+        free bark_speech(nora, cute_face);
+        wait(1);
+        face(nora, north);
+        animate(nora, action);
+        wait(1.5);
+        free {
+            wait(1);
+            free bark_speech(nora, two);
+            wait(0.75);
+            free bark_speech(nora, three);
+            wait(0.75);
+            free bark_speech(nora, four);
+            wait(3);
+            free bark_speech(nora, ellipses);
+            wait(1);
+            face(nora, south);
+            animate(nora, tap);
+            wait(3);
+            animate(nora, idle);
+        }
+        wait(9.5);
+        free pan_camera(3, b2h_camera_extra);
+        walk(nora, b2h_ari_start_gss);
+        face(nora, north);
+        wait(1.5);
+        animate(nora, action);
+        free {
+            wait(1);
+            free bark_speech(nora, seven);
+            wait(0.75);
+            free bark_speech(nora, eight);
+            wait(0.75);
+            free bark_speech(nora, ellipses);
+        }
+    }
+}
+sim {
+    {
+        wait(0.75);
+        face(ari, south);
+        animate(ari, tired);
+        await_ari_animation();
+        animate(ari, idle);
+        wait(0.5);
+        free bark_speech(ari, exclamation_mark);
+        wait(0.5);
+        face(ari, north);
+    }
+    {
+        wait(1.5);
+        animate(nora, idle);
+        wait(1);
+        next_line(); //
+    }
+}
+close_textbox();
+sim {
+    {
+        wait(1.5);
+        face(nora, east);
+    }
+    {
+        walk_slow(ari, b2h_ari_other_gss);
+        face(ari, west);
+    }
+    {
+        wait(1);
+        next_line(); //
+    }
+}
+sim {
+    {
+        wait(1);
+        face(nora, south);
+        animate(nora, tap);
+    }
+    {
+        next_line(); //
+    }
+}
+sim {
+    {
+        wait(0.5);
+        animate(nora, idle);
+        face(nora, east);
+    }
+    {
+        next_line(); //
+    }
+}
+close_textbox();
+wait(0.5);
+face(nora, south);
+wait(1);
+free bark_speech(nora, ellipses);
+wait(1);
+face(ari, south);
+wait(1);
+face(ari, west);
+wait(0.5);
+sim {
+    {
+        next_line(); //
+    }
+
+    {
+        wait(0.5);
+        face(nora, east);
+    }
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+free bark_speech(nora, cute_face);
+wait(0.5);
+sim {
+    free walk_slow(ari, b2h_ari_entrance_gss);
+    fade_out(2);
+    {
+        wait(0.5);
+        face(nora, south);
+        wait(1.75);
+        face(nora, north);
+    }
+}
+wait(1);
+destroy_prop(b2h_box_4);
+destroy_prop(b2h_box_5);
+destroy_prop(b2h_box_6);
+destroy_prop(b2h_box_7);
+
+scene(town);
+place_actor(ari, south, b2h_ari_gss_exit);
+place_actor(balor, north, b2h_balor_inventory);
+animate(balor, action);
+setup_prop(b2h_wagon);
+camera_position(b2h_camera_3);
+
+sim {
+    {
+        wait(0.25);
+        fade_in(2);
+    }
+    {
+        pan_camera(2.25, b2h_camera_1);
+    }
+    {
+        walk_slow(ari, b2h_nora_entrance);
+        face(ari, west);
+    }
+    {
+        wait(0.5);
+        free bark_speech(balor, exclamation_mark);
+        wait(0.5);
+        face(balor, east);
+        walk(balor, b2h_balor_entrance);
+        face(balor, east);
+    }
+}
+free bark_speech(balor, cute_face);
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+animate(balor, action);
+wait(0.5);
+animate(balor, idle);
+wait(0.5);
+sim {
+    {
+        walk_slow(balor, b2h_balor_inventory);
+        face(balor, north);
+        wait(1);
+        animate(balor, action);
+    }
+    {
+        wait(0.5);
+        walk(ari, b2h_ari_start_east);
+        face(ari, east);
+        sim {
+            walk(ari, b2h_ari_entrance_east);
+            set_move_speed(ari, 0.4);
+        }
+        face(ari, east);
+        wait(1);
+        face(ari, west);
+        bark_speech(ari, ellipses);
+        wait(1.5);
+    }
+    {
+        wait(0.5);
+        pan_camera(3.5, b2h_camera_5);
+    }
+}
+free sim {
+    walk(ari, b2h_ari_exit);
+    pan_camera(5, b2h_camera_6);
+}
+wait(0.5);
+fade_out(2);

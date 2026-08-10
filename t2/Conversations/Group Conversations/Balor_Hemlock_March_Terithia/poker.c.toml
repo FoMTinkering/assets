@@ -1,0 +1,88 @@
+[poker]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "balor" },
+		{ npc = "hemlock" },
+		{ npc = "march" },
+		{ npc = "terithia" }
+	] },
+	{ balor_zone = "<hemlock_zone>" },
+	{ balor_zone = "<march_zone>" },
+	{ balor_zone = "<terithia_zone>" },
+	{ balor_playing_poker = true },
+	{ hemlock_playing_poker = true },
+	{ march_playing_poker = true },
+	{ terithia_playing_poker = true },
+	{ location = "inn" }
+]
+actions = [{ bark = { bark = "annoyed", npc = "march" } }]
+speaker = "balor"
+portrait = "neutral"
+local = "You've got a tell, March."
+next = "1"
+
+[poker.1]
+speaker = "march"
+portrait = "mad"
+local = "Don't try and psyche me out, Balor."
+next = "2"
+
+[poker.2]
+speaker = "hemlock"
+portrait = "think"
+local = "Sorry pal, you definitely have a tell."
+next = "3"
+
+[poker.3]
+speaker = "terithia"
+portrait = "happy"
+effect = "sparkles"
+local = "It's really obvious, actually."
+
+
+[poker_2]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "balor" },
+		{ npc = "hemlock" },
+		{ npc = "march" },
+		{ npc = "terithia" }
+	] },
+	{ balor_zone = "<hemlock_zone>" },
+	{ balor_zone = "<march_zone>" },
+	{ balor_zone = "<terithia_zone>" },
+	{ balor_playing_poker = true },
+	{ hemlock_playing_poker = true },
+	{ march_playing_poker = true },
+	{ terithia_playing_poker = true },
+	{ location = "inn" }
+]
+speaker = "balor"
+portrait = "neutral"
+local = "And one more card on the table makes the riverbank. Now, how's the table feeling in this last go around?"
+next = "1"
+
+[poker_2.1]
+speaker = "hemlock"
+portrait = "neutral"
+local = "I'm in."
+next = "2"
+
+[poker_2.2]
+speaker = "march"
+portrait = "mad"
+local = "Me too. And I'll raise."
+next = "3"
+
+[poker_2.3]
+speaker = "terithia"
+portrait = "happy"
+local = "Oho. I'll match that, March."
+next = "4"
+
+[poker_2.4]
+speaker = "balor"
+portrait = "wink"
+local = "Looks like we've got ourselves a game!"

@@ -1,0 +1,719 @@
+[shooting_star_not_yet]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "It's not time for the Shooting Star Festival yet! Come back after 8pm."
+
+[shooting_star_done]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The Shooting Star Festival has ended. You can come back tomorrow!"
+
+[shooting_star_adeline_basic_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "adeline_invited", expires = "2w" }]
+speaker = "adeline"
+portrait = "neutral"
+local = "Oh! You're inviting me to watch the stars tonight...?"
+next = "1"
+
+[shooting_star_adeline_basic_accept.1]
+speaker = "adeline"
+portrait = "blush"
+local = "That sounds great. I'll meet you at 8 pm!"
+
+[shooting_star_adeline_super_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "adeline_invited", expires = "2w" }]
+speaker = "adeline"
+portrait = "happy"
+local = "[Ari], thank you for asking..."
+next = "1"
+
+[shooting_star_adeline_super_accept.1]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "Let's watch the stars together tonight."
+
+[shooting_star_adeline_decline]
+kind = "gameplay_triggered"
+speaker = "adeline"
+portrait = "think"
+local = "Is that a $Star Brooch$...?"
+next = "1"
+
+[shooting_star_adeline_decline.1]
+portrait = "neutral"
+local = "You can give it to $someone you're close to$ if you want to watch the stars together."
+
+[shooting_star_adeline_friend_decline]
+kind = "gameplay_triggered"
+speaker = "adeline"
+portrait = "neutral"
+local = "Oooh is that a $Star Brooch$?"
+next = "1"
+
+[shooting_star_adeline_friend_decline.1]
+portrait = "wink"
+local = "I hope you have fun with your date tonight, [Ari]!"
+
+[shooting_star_balor_basic_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "balor_invited", expires = "2w" }]
+speaker = "balor"
+portrait = "think"
+local = "What's this now...?"
+next = "1"
+
+[shooting_star_balor_basic_accept.1]
+speaker = "balor"
+portrait = "neutral"
+local = "You want to watch the stars together tonight?"
+next = "2"
+
+[shooting_star_balor_basic_accept.2]
+speaker = "balor"
+portrait = "happy"
+local = "Sure, let's go. Meet me at 8 pm and we can walk up to the Summit together."
+
+[shooting_star_balor_super_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "balor_invited", expires = "2w" }]
+speaker = "balor"
+portrait = "happy"
+local = "Shall we watch the stars tonight, then?"
+next = "1"
+
+[shooting_star_balor_super_accept.1]
+speaker = "balor"
+portrait = "hope_special"
+local = "I'm looking forward to it."
+
+[shooting_star_balor_decline]
+kind = "gameplay_triggered"
+speaker = "balor"
+portrait = "think"
+local = "Oh, what's this...?"
+next = "1"
+
+[shooting_star_balor_decline.1]
+speaker = "balor"
+portrait = "neutral"
+local = "Thanks, but you should probably invite $someone you're close with$... right?"
+
+[shooting_star_balor_friend_decline]
+kind = "gameplay_triggered"
+speaker = "balor"
+portrait = "neutral"
+local = "Oh, are you planning to ask someone to see the stars tonight?"
+next = "1"
+
+[shooting_star_balor_friend_decline.1]
+speaker = "balor"
+portrait = "happy"
+local = "Have fun, [Ari]!"
+
+[shooting_star_caldarus_basic_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "caldarus_invited", expires = "2w" }]
+speaker = "caldarus"
+portrait = "neutral"
+local = "A brooch...?"
+next = [
+	{ target = "2_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "1_n", requires = [] },
+]
+
+[shooting_star_caldarus_basic_accept.1_n]
+speaker = "caldarus"
+portrait = "think"
+local = "Now where have I seen this design before..."
+next = "2_n"
+
+[shooting_star_caldarus_basic_accept.2_eog]
+portrait = "smile"
+effect = "surprise"
+local = "Are you asking me to join you tonight to watch the stars?"
+next = "3"
+
+[shooting_star_caldarus_basic_accept.2_n]
+speaker = "caldarus"
+portrait = "smile"
+effect = "surprise"
+local = "Ah! Are you asking me to join you tonight to watch the stars?"
+next = "3"
+
+[shooting_star_caldarus_basic_accept.3]
+speaker = "caldarus"
+portrait = "think"
+local = "I-"
+next = "4"
+
+[shooting_star_caldarus_basic_accept.4]
+speaker = "caldarus"
+portrait = "happy"
+local = "I gratefully accept your invitation."
+next = [
+	{ target = "5_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "5_n", requires = [] },
+]
+
+[shooting_star_caldarus_basic_accept.5_eog]
+speaker = "caldarus"
+portrait = "smile"
+local = "Let us meet tonight at 8 pm. I am looking forward to it."
+
+[shooting_star_caldarus_basic_accept.5_n]
+speaker = "caldarus"
+portrait = "think"
+local = "I will need to guide you to a secret path through the woods to reach the summit..."
+next = "6"
+
+[shooting_star_caldarus_basic_accept.6]
+speaker = "caldarus"
+portrait = "avoidant_special"
+local = "For I should not stray too far from its protection in my current state."
+next = "7"
+
+[shooting_star_caldarus_basic_accept.7]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "Do not worry, [Ari]. I will take care to conserve my energy."
+next = "8"
+
+[shooting_star_caldarus_basic_accept.8]
+speaker = "caldarus"
+portrait = "happy"
+local = "Let us meet tonight at 8 pm. I am looking forward to it."
+
+[shooting_star_caldarus_super_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "caldarus_invited", expires = "2w" }]
+speaker = "caldarus"
+portrait = "smile"
+local = "Shall we watch the stars tonight, [Ari]?"
+next = "1"
+
+[shooting_star_caldarus_super_accept.1]
+speaker = "caldarus"
+portrait = "embarrassed"
+local = "I have been looking forward to spending the evening with you."
+
+[shooting_star_caldarus_friend_decline]
+kind = "gameplay_triggered"
+speaker = "caldarus"
+portrait = "smile"
+local = "Ah, so you are planning to watch the stars with someone tonight, [Ari]?"
+next = "1"
+
+[shooting_star_caldarus_friend_decline.1]
+speaker = "caldarus"
+portrait = "happy"
+local = "It is an auspicious night to do so. I hope that you enjoy yourself."
+
+[shooting_star_celine_basic_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "celine_invited", expires = "2w" }]
+speaker = "celine"
+portrait = "happy"
+local = "You want to watch the stars tonight...?"
+next = "1"
+
+[shooting_star_celine_basic_accept.1]
+speaker = "celine"
+portrait = "blush_special"
+local = "W-with me?"
+next = "2"
+
+[shooting_star_celine_basic_accept.2]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "Okay, meet me at 8 pm! We can walk up to the Summit together."
+
+[shooting_star_celine_super_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "celine_invited", expires = "2w" }]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "Would you like to watch the stars together tonight?"
+next = "1"
+
+[shooting_star_celine_super_accept.1]
+speaker = "celine"
+portrait = "blush"
+local = "Yay, I can't wait!"
+
+[shooting_star_celine_decline]
+kind = "gameplay_triggered"
+speaker = "celine"
+portrait = "neutral"
+local = "Oh, [Ari]! Are you planning to invite someone to the festival...?"
+next = "1"
+
+[shooting_star_celine_decline.1]
+speaker = "celine"
+portrait = "happy"
+local = "Elsie says it's best to invite $someone you've built a close relationship with$."
+next = "2"
+
+[shooting_star_celine_decline.2]
+speaker = "celine"
+portrait = "neutral"
+local = "I'm planning to watch them with my family again this year."
+
+[shooting_star_celine_friend_decline]
+kind = "gameplay_triggered"
+speaker = "celine"
+portrait = "neutral"
+local = "Oh, [Ari]! Are you planning to invite someone to the festival?"
+next = "1"
+
+[shooting_star_celine_friend_decline.1]
+speaker = "celine"
+portrait = "happy"
+local = "I'm planning to watch them with my family again this year."
+
+[shooting_star_eiland_basic_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "eiland_invited", expires = "2w" }]
+speaker = "eiland"
+portrait = "happy"
+local = "Oh, [Ari]!"
+next = "1"
+
+[shooting_star_eiland_basic_accept.1]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "Are you inviting me to watch the stars tonight...?"
+next = "2"
+
+[shooting_star_eiland_basic_accept.2]
+speaker = "eiland"
+portrait = "happy"
+local = "I'd love to! Meet me at 8 pm and we can head to the Summit together."
+
+[shooting_star_eiland_super_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "eiland_invited", expires = "2w" }]
+speaker = "eiland"
+portrait = "hope_special"
+local = "Shall we watch the stars together tonight?"
+next = "1"
+
+[shooting_star_eiland_super_accept.1]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "I'm looking forward to it."
+
+[shooting_star_eiland_decline]
+kind = "gameplay_triggered"
+speaker = "eiland"
+portrait = "neutral"
+local = "Oh, is that a $Star Brooch$?"
+next = "1"
+
+[shooting_star_eiland_decline.1]
+portrait = "happy"
+local = "Traditionally these are used to invite $someone you're close with$ to watch the stars."
+
+[shooting_star_eiland_friend_decline]
+kind = "gameplay_triggered"
+speaker = "eiland"
+portrait = "neutral"
+local = "Oh, is that a $Star Brooch$?"
+next = "1"
+
+[shooting_star_eiland_friend_decline.1]
+portrait = "happy"
+local = "I hope you have a nice time watching the stars later!"
+
+[shooting_star_hayden_basic_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "hayden_invited", expires = "2w" }]
+speaker = "hayden"
+portrait = "neutral"
+local = "Hey [Ari]! What's that you've got there...?"
+next = "1"
+
+[shooting_star_hayden_basic_accept.1]
+speaker = "hayden"
+portrait = "happy_arm_down"
+local = "Oh! You want to watch the stars together tonight?"
+next = "2"
+
+[shooting_star_hayden_basic_accept.2]
+speaker = "hayden"
+portrait = "wink"
+local = "Well, I'd love to! Meet me at 8 pm and we can head to the Summit together."
+
+[shooting_star_hayden_super_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "hayden_invited", expires = "2w" }]
+speaker = "hayden"
+portrait = "happy_arm_down"
+local = "Would you like to watch the stars together tonight?"
+next = "1"
+
+[shooting_star_hayden_super_accept.1]
+speaker = "hayden"
+portrait = "shy_special"
+local = "Of course, I'd love to. It's a date!"
+
+[shooting_star_hayden_decline]
+kind = "gameplay_triggered"
+speaker = "hayden"
+portrait = "neutral"
+local = "Is that a $Star Brooch$ you've got there?"
+next = "1"
+
+[shooting_star_hayden_decline.1]
+portrait = "think"
+local = "I believe these are used to invite $someone you're close with$ to watch the stars..."
+
+[shooting_star_hayden_friend_decline]
+kind = "gameplay_triggered"
+speaker = "hayden"
+portrait = "neutral"
+local = "Is that a $Star Brooch$ you've got there?"
+next = "1"
+
+[shooting_star_hayden_friend_decline.1]
+portrait = "happy"
+local = "I hope you have a nice time with your date tonight, [Ari]!"
+
+[shooting_star_juniper_basic_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "juniper_invited", expires = "2w" }]
+speaker = "juniper"
+portrait = "neutral"
+local = "Oh my, are you inviting me out tonight?"
+next = "1"
+
+[shooting_star_juniper_basic_accept.1]
+speaker = "juniper"
+portrait = "laugh"
+local = "Oh ho ho ho!"
+next = "2"
+
+[shooting_star_juniper_basic_accept.2]
+speaker = "juniper"
+portrait = "sly"
+local = "Well... alright, I suppose. Meet me at 8 pm."
+
+[shooting_star_juniper_super_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "juniper_invited", expires = "2w" }]
+speaker = "juniper"
+portrait = "sly"
+local = "I'll allow you to escort me to watch the stars tonight, [Ari]."
+next = "1"
+
+[shooting_star_juniper_super_accept.1]
+speaker = "juniper"
+portrait = "wink"
+local = "You're welcome."
+next = "2"
+
+[shooting_star_juniper_super_accept.2]
+speaker = "juniper"
+portrait = "laugh"
+local = "Oh ho ho ho!"
+
+[shooting_star_juniper_decline]
+kind = "gameplay_triggered"
+speaker = "juniper"
+portrait = "think"
+local = "No thank you, [Ari]."
+next = "1"
+
+[shooting_star_juniper_decline.1]
+portrait = "happy"
+local = "While I admire your audacity, I don't particularly feel like going on a $date$."
+
+[shooting_star_juniper_friend_decline]
+kind = "gameplay_triggered"
+speaker = "juniper"
+portrait = "neutral"
+local = "Planning to ask someone to watch the stars with you tonight?"
+next = "1"
+
+[shooting_star_juniper_friend_decline.1]
+portrait = "wink"
+local = "Why not take a bath first? Increase your chances of them agreeing?"
+next = "2"
+
+[shooting_star_juniper_friend_decline.2]
+portrait = "ugh"
+local = "I'm joking! I'm joking!"
+next = "3"
+
+[shooting_star_juniper_friend_decline.3]
+portrait = "neutral"
+local = "Have fun, [Ari]."
+
+[shooting_star_march_basic_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "march_invited", expires = "2w" }]
+speaker = "march"
+portrait = "shock_special"
+local = "...?"
+next = "1"
+
+[shooting_star_march_basic_accept.1]
+speaker = "march"
+portrait = "think"
+local = "......"
+next = "2"
+
+[shooting_star_march_basic_accept.2]
+speaker = "march"
+portrait = "tsundere"
+local = "F-fine. I'll go with you."
+next = "3"
+
+[shooting_star_march_basic_accept.3]
+speaker = "march"
+portrait = "sigh"
+local = "Olric will definitely badger me if I say no."
+
+[shooting_star_march_super_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "march_invited", expires = "2w" }]
+speaker = "march"
+portrait = "think"
+local = "Should we go and watch the stars...?"
+next = "1"
+
+[shooting_star_march_super_accept.1]
+speaker = "march"
+portrait = "happy"
+local = "Yeah... let's do it."
+
+[shooting_star_march_decline]
+kind = "gameplay_triggered"
+speaker = "march"
+portrait = "neutral"
+local = "...?"
+next = "1"
+
+[shooting_star_march_decline.1]
+portrait = "unimpressed"
+local = "You're supposed to give that to $someone who likes you$."
+
+[shooting_star_march_friend_decline]
+kind = "gameplay_triggered"
+speaker = "march"
+portrait = "neutral"
+local = "Are you going to watch the stars with someone tonight?"
+next = "1"
+
+[shooting_star_march_friend_decline.1]
+portrait = "happy"
+local = "Have fun."
+
+[shooting_star_reina_basic_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "reina_invited", expires = "2w" }]
+speaker = "reina"
+portrait = "happy"
+local = "You're inviting me to watch the stars tonight...?"
+next = "1"
+
+[shooting_star_reina_basic_accept.1]
+speaker = "reina"
+portrait = "blush"
+local = "Sure, [Ari], I'd love to!"
+next = "2"
+
+[shooting_star_reina_basic_accept.2]
+speaker = "reina"
+portrait = "neutral"
+local = "Let's meet up at 8 pm!"
+
+[shooting_star_reina_super_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "reina_invited", expires = "2w" }]
+speaker = "reina"
+portrait = "blush"
+local = "Let's watch the stars together tonight, [Ari]!"
+next = "1"
+
+[shooting_star_reina_super_accept.1]
+speaker = "reina"
+portrait = "blush_special"
+local = "I've been looking forward to it."
+
+[shooting_star_reina_decline]
+kind = "gameplay_triggered"
+speaker = "reina"
+portrait = "neutral"
+local = "Hey, [Ari]! What's this...?"
+next = "1"
+
+[shooting_star_reina_decline.1]
+portrait = "think"
+local = "Oh! I think you're supposed to give this to $someone you're close with$."
+next = "2"
+
+[shooting_star_reina_decline.2]
+portrait = "embarrassed"
+local = "You know, like um... someone you want to take on a $date$."
+
+[shooting_star_reina_friend_decline]
+kind = "gameplay_triggered"
+speaker = "reina"
+portrait = "neutral"
+local = "Hey, [Ari]! What's this...?"
+next = "1"
+
+[shooting_star_reina_friend_decline.1]
+portrait = "happy"
+local = "Oh! Are you bringing someone to see the stars tonight?"
+next = "2"
+
+[shooting_star_reina_friend_decline.2]
+portrait = "wink"
+local = "Have fun!"
+
+[shooting_star_ryis_basic_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "ryis_invited", expires = "2w" }]
+speaker = "ryis"
+portrait = "neutral"
+local = "Oh! You're inviting me to watch the stars together tonight...?"
+next = "1"
+
+[shooting_star_ryis_basic_accept.1]
+speaker = "ryis"
+portrait = "happy"
+local = "That sounds great. Meet me at 8 pm and we'll go up to the Summit together."
+
+[shooting_star_ryis_super_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "ryis_invited", expires = "2w" }]
+speaker = "ryis"
+portrait = "happy"
+local = "Do you want to watch the stars tonight, [Ari]?"
+next = "1"
+
+[shooting_star_ryis_super_accept.1]
+speaker = "ryis"
+portrait = "hope_special"
+local = "I'm looking forward to it."
+
+[shooting_star_ryis_decline]
+kind = "gameplay_triggered"
+speaker = "ryis"
+portrait = "neutral"
+local = "Thanks for thinking of me..."
+next = "1"
+
+[shooting_star_ryis_decline.1]
+portrait = "happy"
+local = "But I think this is meant for inviting $someone you're close with$..."
+
+[shooting_star_ryis_friend_decline]
+kind = "gameplay_triggered"
+speaker = "ryis"
+portrait = "neutral"
+local = "Are you planning to invite someone to the summit?"
+next = "1"
+
+[shooting_star_ryis_friend_decline.1]
+portrait = "happy"
+local = "Nice. Have fun!"
+
+[shooting_star_seridia_basic_accept]
+kind = "gameplay_triggered"
+speaker = "seridia"
+portrait = "neutral"
+local = "What is this, now?"
+next = "1"
+
+[shooting_star_seridia_basic_accept.1]
+portrait = "sly"
+local = "You wish to invite me to the Shooting Star Festival?"
+next = "2"
+
+[shooting_star_seridia_basic_accept.2]
+portrait = "sly_think"
+local = "I see."
+next = "3"
+
+[shooting_star_seridia_basic_accept.3]
+portrait = "smile"
+local = "Certainly, [Ari]. I accept your invitation."
+
+[shooting_star_seridia_super_accept]
+kind = "gameplay_triggered"
+speaker = "seridia"
+portrait = "smile"
+local = "Tonight. The summit."
+next = "1"
+
+[shooting_star_seridia_super_accept.1]
+portrait = "closed_eyes_blush"
+local = "You shall accompany me there."
+
+[shooting_star_seridia_friend_decline]
+kind = "gameplay_triggered"
+speaker = "seridia"
+portrait = "think"
+local = "Are you going to invite someone to watch the stars?"
+next = "1"
+
+[shooting_star_seridia_friend_decline.1]
+portrait = "sly_think"
+local = "Do let me know if they turn you down."
+next = "2"
+
+[shooting_star_seridia_friend_decline.2]
+portrait = "sinister"
+local = "I would be happy to help ensure that they regret that decision."
+
+[shooting_star_valen_basic_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "valen_invited", expires = "2w" }]
+speaker = "valen"
+portrait = "neutral"
+local = "My, are you asking me to watch the stars with you tonight?"
+next = "1"
+
+[shooting_star_valen_basic_accept.1]
+speaker = "valen"
+portrait = "happy"
+local = "That sounds lovely. Meet me at 8 pm, [Ari]. We'll walk up together."
+
+[shooting_star_valen_super_accept]
+kind = "gameplay_triggered"
+writes = [{ shooting_star_date_status = "valen_invited", expires = "2w" }]
+speaker = "valen"
+portrait = "happy"
+local = "Would you like to watch the stars tonight?"
+next = "1"
+
+[shooting_star_valen_super_accept.1]
+speaker = "valen"
+portrait = "embarrassed"
+local = "I'm glad, I was hoping you did. It's a date."
+
+[shooting_star_valen_decline]
+kind = "gameplay_triggered"
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "Oh...?"
+next = "1"
+
+[shooting_star_valen_decline.1]
+portrait = "happy"
+local = "Ah, you should give that to $someone you're close with$, [Ari]."
+
+[shooting_star_valen_friend_decline]
+kind = "gameplay_triggered"
+speaker = "valen"
+portrait = "neutral"
+local = "Are you planning to watch the stars with someone tonight, [Ari]?"
+next = "1"
+
+[shooting_star_valen_friend_decline.1]
+portrait = "happy"
+local = "Have fun! Just don't catch a cold up there on the summit, okay?"

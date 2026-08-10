@@ -1,0 +1,28 @@
+requires = [
+	{ day_of_the_week = "saturday" },
+	{ weather = "pleasant" },
+	{ quest_repair_the_bridge_complete = true },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+	{ dragon_market = "seridia" }
+]
+end_writes = [
+	{ dragon_market = "caldarus" },
+	{ seridia_market_count = 1, operator = "+=" }
+]
+
+[seridia."6:00am"]
+destination = "narrows/mines_chat_1"
+
+[seridia."6:01am"]
+destination = "town/north_west_routine_entrance"
+on_arrival_actions = [{ routine = "saturday_market" }]
+occupy_point = false
+delayed_arrival_actions = [
+	{ after = "4h", can_talk = {  } },
+	{ after = "8h", can_talk = {  } },
+]
+
+[seridia."7:25pm"]
+destination = "seridias_house/Seridia Desk Chair"
+on_arrival_actions = [{ animation = "write_sit" }]

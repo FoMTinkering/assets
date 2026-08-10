@@ -1,0 +1,49 @@
+[beach]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ location = "beach" },
+	{ weather = "pleasant" }
+]
+portrait = "neutral"
+local = "The Beach is so peaceful..."
+next = "1"
+
+[beach.1]
+portrait = "happy"
+local = "I'm glad you're here to enjoy it too, [Ari]!"
+
+[beach_2]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ location = "beach" },
+	{ weather = "pleasant" },
+	{ time_of_day = "morning", comparator = "!=" },
+	{ time_of_day = "night", comparator = "!=" }
+]
+portrait = "happy"
+local = "I saw a crab, [Ari]! It was so cute!"
+next = "1"
+
+[beach_2.1]
+portrait = "embarrassed"
+local = "Even though it pinched me!"
+
+[beach_3]
+refresh = "1y"
+requires = [
+	{ npc = "adeline" },
+	{ location = "beach" },
+	{ weather = "pleasant" },
+	{ time_of_day = "morning", comparator = "!=" },
+	{ time_of_day = "night", comparator = "!=" },
+	{ balor_is_at_location = "beach" }
+]
+portrait = "neutral"
+local = "I tried to talk to Balor about some of our supply issues, but he said the beach is for relaxing."
+next = "1"
+
+[beach_3.1]
+portrait = "think"
+local = "I suppose it's not a bad rule."

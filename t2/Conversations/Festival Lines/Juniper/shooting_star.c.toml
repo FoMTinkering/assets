@@ -1,0 +1,225 @@
+[shooting_star_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+	{ juniper_heart_level = 4, comparator = ">=" },
+	{ juniper_heart_level = 8, comparator = "<" },
+]
+portrait = "think"
+local = "It seems that it's almost time for another of the village's quaint gatherings..."
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "sly"
+local = "This Shooting Star Festival... I'm interested to see it for myself."
+
+[shooting_star_not_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "town/star_festival_juniper" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "juniper_invited", comparator = "!=" },
+]
+portrait = "think"
+local = "Impressive..."
+next = "1"
+
+[shooting_star_not_invited.1]
+portrait = "sly"
+local = "The stars appear to hold immense power tonight, [Ari]."
+
+[shooting_star_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "town/star_festival_juniper" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "juniper_invited" },
+]
+portrait = "sly"
+local = "There you are, [Ari]."
+next = "1"
+
+[shooting_star_invited.1]
+portrait = "think"
+local = "This lot are going to look after Dozy tonight."
+next = "2"
+
+[shooting_star_invited.2]
+portrait = "sly"
+local = "Are you ready to go to the Summit?"
+
+[shooting_star_invited_anticipation]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ shooting_star_date_status = "juniper_invited" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ juniper_is_at = "town/star_festival_juniper", comparator = "!=" },
+	{ juniper_is_partner = false }
+]
+portrait = "happy"
+local = "I'll see you at 8 pm..."
+next = "1"
+
+[shooting_star_invited_anticipation.1]
+portrait = "angry_brows"
+local = "You better not be late."
+
+[shooting_star_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ shooting_star_date_status = "juniper_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ juniper_is_partner = false },
+]
+portrait = "sly"
+local = "Well, if it isn't [Ari]!"
+next = "1"
+
+[shooting_star_follow_up.1]
+portrait = "think"
+local = "Don't tell me... you simply can't stop thinking about last night, right?"
+next = "2"
+
+[shooting_star_follow_up.2]
+portrait = "laugh"
+local = "Oh ho ho ho!"
+
+[shooting_star_8h_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ shooting_star_date_status = "juniper_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ juniper_is_partner = true },
+]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "blush"
+local = "I had fun last night, [Ari]."
+next = "1"
+
+[shooting_star_8h_follow_up.1]
+portrait = "think_special"
+local = "Let's do it again next year."
+
+[shooting_star_missed_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ shooting_star_date_status = "juniper_invited" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "mad"
+local = "[Ari]...!"
+next = "1"
+
+[shooting_star_missed_follow_up.1]
+portrait = "angry_blush"
+local = "What kind of joke were you playing at, not showing up last night?"
+next = "2"
+
+[shooting_star_missed_follow_up.2]
+portrait = "annoyed"
+local = "You'd better have a good excuse!"
+
+[shooting_star_follow_up_not_invited]
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ shooting_star_date_status = "juniper_invited", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "juniper_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "think"
+local = "Hmmm..."
+next = "1"
+
+[shooting_star_follow_up_not_invited.1]
+portrait = "neutral"
+local = "Did you notice anything unusual last night, [Ari]?"
+next = "2"
+
+[shooting_star_follow_up_not_invited.2]
+portrait = "unimpressed"
+local = "Like... energetically?"
+next = "3"
+
+[shooting_star_follow_up_not_invited.3]
+portrait = "neutral"
+local = "It seems the shooting stars warrant some additional studying next year."
+
+# NEW ROMANCE LINE FOLLOW UPS
+
+[shooting_star_romantic_follow_up_A]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ shooting_star_date_status = "juniper_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+	{ juniper_is_partner = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "sweat_drop", npc = "juniper" } },
+]
+portrait = "think"
+local = "I'm aware that you're always thinking about me, [Ari]..."
+next = "1"
+
+[shooting_star_romantic_follow_up_A.1]
+portrait = "sly"
+local = "Bringing me trinkets, treats, etcetera."
+next = "2"
+
+[shooting_star_romantic_follow_up_A.2]
+portrait = "think"
+local = "Dozy suggested that I return the favor... so I cooked up a little something for you to eat."
+next = "3"
+
+[shooting_star_romantic_follow_up_A.3]
+portrait = "embarrassed"
+actions = [{ item = "monster_mash" }]
+local = "I-it isn't really supposed to look like that... but I'm sure it still tastes excellent."
+
+[shooting_star_romantic_follow_up_B]
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ shooting_star_date_status = "juniper_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+	{ juniper_is_partner = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "blush", npc = "juniper" } },
+]
+portrait = "think"
+local = "Hmm, you look nice today, [Ari]."
+next = "1"
+
+[shooting_star_romantic_follow_up_B.1]
+portrait = "angry_blush"
+local = "W-what? Why are you looking at me like that?"
+next = "2"
+
+[shooting_star_romantic_follow_up_B.2]
+portrait = "embarrassed"
+local = "Forget I said anything!"

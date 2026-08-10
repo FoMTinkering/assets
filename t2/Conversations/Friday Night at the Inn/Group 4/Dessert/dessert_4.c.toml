@@ -1,0 +1,107 @@
+[dessert_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ eiland_zone = "inn/bar" },
+	{ hayden_zone = "inn/bar" },
+	{ holt_zone = "inn/bar" },
+	{ march_zone = "inn/bar" },
+	{ reina_zone = "inn/bar" },
+	{ terithia_zone = "inn/bar" },
+	{ dessert_fnati = 3 },
+	{ any = [
+		{ npc = "eiland" },
+		{ npc = "hayden" },
+		{ npc = "holt" },
+		{ npc = "march" },
+		{ npc = "reina" },
+		{ npc = "terithia" },
+	] },
+]
+actions = [
+	{ item = "golden_cookies" },
+	{ bark = { bark = "hungry", npc = "eiland" } },
+	{ bark = { bark = "sweat_drop", npc = "hayden" } },
+	{ bark = { bark = "sweat_drop", npc = "holt" } },
+	{ bark = { bark = "sweat_drop", npc = "march" } },
+	{ bark = { bark = "sweat_drop", npc = "reina" } },
+	{ bark = { bark = "sweat_drop", npc = "terithia" } },
+]
+writes = [{ fnati = 4 }, { dessert_fnati = 4 }]
+speaker = "reina"
+portrait = "wink"
+local = "I think Hayden's been fit to burst keeping this week's dessert a secret!"
+next = "1"
+
+[dessert_4.1]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "I can't believe I kept a lid on it! I've been gathering the best of the best ingredients from my farm, so this week we're having..."
+next = "2"
+
+[dessert_4.2]
+speaker = "hayden"
+portrait = "wink"
+local = "$Golden Cookies$! Fresh out of the oven!"
+next = "3"
+
+[dessert_4.3]
+speaker = "eiland"
+portrait = "embarrassed"
+effect = "sparkles"
+local = "Golden... cookies? The cookies made from only the most perfect of ingredients? The cookies that bring us closest to the divine?"
+next = "4"
+
+[dessert_4.4]
+speaker = "terithia"
+portrait = "happy"
+local = "Someone catch Eiland, he looks like he's going to faint from happiness!"
+prompts = [
+	{ local = "I'll catch him!", next = "5" },
+	{ local = "The only thing I'm catching are these cookies!", next = "6" },
+]
+
+[dessert_4.5]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "Thank you, and apologies [Ari]."
+next = "7"
+
+[dessert_4.6]
+speaker = "eiland"
+portrait = "mad"
+local = "We are of a mind, [Ari]!"
+next = "7"
+
+[dessert_4.7]
+speaker = "holt"
+portrait = "think"
+local = "One for Dell, and one for me, and one for Dell, and one for me..."
+next = "8"
+
+[dessert_4.8]
+speaker = "march"
+portrait = "neutral"
+local = "Hmm, yeah. It's pretty good, for a cookie."
+next = "9"
+
+[dessert_4.9]
+speaker = "eiland"
+portrait = "mad"
+effect = "sparkles"
+local = "The richness of top-shelf eggs and butter meld to create a chewiness that melts in your mouth. Superb!"
+next = "10"
+
+[dessert_4.10]
+speaker = "reina"
+portrait = "happy"
+effect = "drop"
+local = "That's it for dessert club, you guys! Now, I think we'd better leave Eiland alone with the rest of these cookies."
+next = "11"
+
+[dessert_4.11]
+speaker = "eiland"
+portrait = "happy"
+effect = "cheery"
+local = "It's going to be a disaster."

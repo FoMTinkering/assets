@@ -1,0 +1,53 @@
+[post_baby_date_accept]
+requires = [
+    { npc = "hayden" },
+    { any = [
+        { date = "bathhouse" },
+        { date = "beach" },
+        { date = "deep_woods_picnic" },
+        { date = "gem_cutting" },
+        { date = "inn_meal" },
+        { date = "park" }
+    ] },
+    { hayden_is_spouse = true },
+    { hayden_has_child = true }
+]
+writes = [{ da_hayden_post_baby_follow_up_gate = true, expires = "1d" }]
+kind = "date_acceptance"
+portrait = "happy_arm_down_blush"
+local = "Well now, I'd love to go on a date!"
+next = "1"
+
+[post_baby_date_accept.1]
+portrait = "confident_blush"
+local = "Let's head over to the Inn and leave [child_0] with Jo."
+next = "2"
+
+[post_baby_date_accept.2]
+portrait = "wink"
+local = "You know how Luc and Maple have been asking to play with him, so I'm sure they'll all have a grand time!"
+
+
+[post_baby_date_follow_up]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "hayden" },
+    { da_hayden_post_baby_follow_up_gate = true },
+    { hayden_is_spouse = true },
+    { hayden_has_child = true }
+]
+writes = [{ da_hayden_post_baby_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "hayden" } }]
+portrait = "happy_arm_down_blush"
+local = "I had such a good time on our date, [Ari]."
+next = "1"
+
+[post_baby_date_follow_up.1]
+portrait = "shy_special"
+local = "It was real nice to have some alone time together, wasn't it?"
+next = "2"
+
+[post_baby_date_follow_up.2]
+portrait = "wink_fist"
+local = "And you can tell that [child_0] had a good time playing with Jo and her kids!"

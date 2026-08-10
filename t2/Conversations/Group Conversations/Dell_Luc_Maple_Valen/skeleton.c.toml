@@ -1,0 +1,49 @@
+[skeleton]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "valen" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "<valen_zone>" },
+	{ valen_babysits = true },
+	{ location = "clinic_f1" },
+]
+writes = [{ dell_skeleton = true }]
+speaker = "valen"
+portrait = "neutral"
+local = "Did you know, children? Each of us has a skeleton inside us."
+next = "1"
+
+[skeleton.1]
+speaker = "maple"
+portrait = "happy"
+local = "Not me."
+next = "2"
+
+[skeleton.2]
+speaker = "dell"
+portrait = "mad"
+local = "Really? Why not?"
+next = "3"
+
+[skeleton.3]
+speaker = "maple"
+portrait = "ugh"
+local = "Because it's gross..."
+next = "4"
+
+[skeleton.4]
+speaker = "valen"
+portrait = "happy"
+local = "It's actually quite normal."
+next = "5"
+
+[skeleton.5]
+speaker = "luc"
+portrait = "think"
+local = "But is Maple normal?"

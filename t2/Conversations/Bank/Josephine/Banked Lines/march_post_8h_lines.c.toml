@@ -1,0 +1,38 @@
+[march_post_8h_follow_up_steak]
+refresh = "never"
+requires = [
+	{ npc = "josephine" },
+	{ march_post_8h_steak = true },
+]
+portrait = "neutral"
+local = "Did March give you that =Mushroom Steak Dinner=? Don't tell him I told you, but he worked so hard on that."
+next = "1"
+
+[march_post_8h_follow_up_steak.1]
+portrait = "happy"
+local = "The plates kept piling up because he kept remaking it..."
+next = "2"
+
+[march_post_8h_follow_up_steak.2]
+portrait = "wink"
+local = "He wanted it to be perfect. Eventually, there was nothing to do but shoo him out of the kitchen!"
+
+[march_post_8h_ambient]
+refresh = "never"
+requires = [
+	{ npc = "josephine" },
+	{ march_is_dating = true },
+]
+actions = [{ bark = { bark = "cute_face", npc = "josephine" } }]
+portrait = "neutral"
+local = "I've known March since he was a little one, so I can read him like a book."
+next = "1"
+
+[march_post_8h_ambient.1]
+portrait = "sad"
+local = "He's not the best at communicating his feelings. He's always been like that."
+next = "2"
+
+[march_post_8h_ambient.2]
+portrait = "happy"
+local = "But it looks like he's getting better... Congratulations on getting through to him!"

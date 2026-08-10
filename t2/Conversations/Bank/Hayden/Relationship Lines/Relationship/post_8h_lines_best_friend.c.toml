@@ -1,0 +1,483 @@
+[hayden_post_8h_best_friend_0]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = false },
+	{ any = [
+		{ hayden_post_8h_romantic_progression = true },
+		{ hayden_is_best_friend = true }
+	] },
+	{ hayden_post_8h_best_friend_gate = false },
+	{ hayden_post_8h_best_friend_grouping = 0 }
+]
+writes = [
+	{ hayden_post_8h_best_friend_gate = true, expires = "20h" },
+	{ hayden_post_8h_best_friend_grouping = 1 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "hayden" } }]
+portrait = "neutral_arm_down"
+local = "I was thinking about how things used to be, before you came to Mistria..."
+next = "1"
+
+[hayden_post_8h_best_friend_0.1]
+portrait = "think"
+local = "I never told anyone this, but... well, it was a lot of pressure being the only farmer in town."
+next = "2"
+
+[hayden_post_8h_best_friend_0.2]
+portrait = "sad"
+local = "Especially after the earthquake. I often lost sleep wondering how folks would get by if a harvest failed."
+next = "3"
+
+[hayden_post_8h_best_friend_0.3]
+portrait = "wink_arm_down"
+local = "But then you came along! And now? I sleep like a lamb."
+
+[hayden_post_8h_best_friend_question_0]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ any = [
+		{ hayden_post_8h_romantic_progression = true },
+		{ hayden_is_best_friend = true }
+	] },
+	{ hayden_post_8h_best_friend_gate = false },
+	{ hayden_post_8h_best_friend_grouping = 1 }
+]
+writes = [
+	{ hayden_post_8h_best_friend_gate = true, expires = "20h" },
+	{ hayden_post_8h_best_friend_grouping = 2 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "hayden" } }]
+portrait = "think"
+local = "I was tidying up the house the other day and found Grandma's old journals."
+next = "1"
+
+[hayden_post_8h_best_friend_question_0.1]
+portrait = "sweat"
+local = "It was mostly just farmer's wisdom... crop yields and so forth."
+next = "2"
+
+[hayden_post_8h_best_friend_question_0.2]
+portrait = "neutral_arm_down"
+local = "You keep a journal too, don't you? Maybe I should take up writing one as well."
+next = "3"
+
+[hayden_post_8h_best_friend_question_0.3]
+portrait = "sweat"
+local = "I'm not sure where I'd start though. What do you write about in yours?"
+prompts = [
+	{ local = "I use mine as a management tool, tracking my various goals.", next = "4" },
+	{ local = "I like to write about my everyday life, as something to look back on.", next = "6" }
+]
+
+[hayden_post_8h_best_friend_question_0.4]
+portrait = "happy"
+local = "Sounds like you and Grandma had the same approach."
+next = "5"
+
+[hayden_post_8h_best_friend_question_0.5]
+portrait = "think"
+local = "Maybe I ought to start doing the same!"
+
+[hayden_post_8h_best_friend_question_0.6]
+portrait = "neutral"
+local = "Ohhh, really?"
+next = "7"
+
+[hayden_post_8h_best_friend_question_0.7]
+portrait = "sweat"
+local = "The days can sometimes blend together when you're busy running a farm!"
+next = "8"
+
+[hayden_post_8h_best_friend_question_0.8]
+portrait = "think"
+local = "Having a record you can look back on sounds really nice."
+
+[hayden_post_8h_best_friend_1]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ any = [
+		{ hayden_post_8h_romantic_progression = true },
+		{ hayden_is_best_friend = true }
+	] },
+	{ hayden_post_8h_best_friend_gate = false },
+	{ hayden_post_8h_best_friend_grouping = 2 }
+]
+writes = [
+	{ hayden_post_8h_best_friend_gate = true, expires = "20h" },
+	{ hayden_post_8h_best_friend_grouping = 3 }
+]
+actions = [
+	{ bark = { bark = "relationship_status", npc = "hayden" } },
+	{ item = "riceball" }
+]
+portrait = "neutral_arm_down"
+local = "I know how long a farmer's day can be, so I went ahead and made a little something!"
+next = "1"
+
+[hayden_post_8h_best_friend_1.1]
+portrait = "wink"
+local = "It's simple fare, but it'll keep your energy up, no matter what you get up to!"
+
+[hayden_post_8h_best_friend_question_1]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = false },
+	{ any = [
+		{ hayden_post_8h_romantic_progression = true },
+		{ hayden_is_best_friend = true }
+	] },
+	{ hayden_post_8h_best_friend_gate = false },
+	{ hayden_post_8h_best_friend_grouping = 3 }
+]
+writes = [
+	{ hayden_post_8h_best_friend_gate = true, expires = "20h" },
+	{ hayden_post_8h_best_friend_grouping = 4 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "hayden" } }]
+portrait = "neutral_fist"
+local = "When you first came to town, it seemed like you took to farming like a fish to water!"
+next = "1"
+
+[hayden_post_8h_best_friend_question_1.1]
+portrait = "think"
+local = "Did you do much farming before then? Or are you just a fast learner?"
+prompts = [
+	{ local = "I've always had a bit of a green thumb.", next = "2" },
+	{ local = "I never had the chance before, but I'm a quick study!", next = "4" }
+]
+
+[hayden_post_8h_best_friend_question_1.2]
+portrait = "wink_arm_down"
+local = "Oho, I had a feeling."
+next = "3"
+
+[hayden_post_8h_best_friend_question_1.3]
+portrait = "happy_fist"
+local = "You've really got a knack for it!"
+
+[hayden_post_8h_best_friend_question_1.4]
+portrait = "neutral_arm_down"
+local = "I've noticed you're not afraid of hard work, either."
+next = "5"
+
+[hayden_post_8h_best_friend_question_1.5]
+portrait = "happy_fist"
+local = "I don't know that I've seen anyone else put their shoulder into it like you do."
+
+[hayden_post_8h_best_friend_2]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = false },
+	{ any = [
+		{ hayden_post_8h_romantic_progression = true },
+		{ hayden_is_best_friend = true }
+	] },
+	{ hayden_post_8h_best_friend_gate = false },
+	{ greta = "read", ignore_priority = true },
+	{ grave_text_delay = false, ignore_priority = true },
+	{ hayden_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ hayden_post_8h_best_friend_gate = true, expires = "2d" },
+	{ hayden_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "hayden" } }]
+portrait = "happy_arm_down"
+local = "My Grandma..."
+next = "1"
+
+[hayden_post_8h_best_friend_2.1]
+portrait = "think"
+local = "She was the toughest lady I ever met... even tougher than Terithia, if you can imagine that!"
+next = "2"
+
+[hayden_post_8h_best_friend_2.2]
+portrait = "think_special"
+local = "She raised me all by herself, you know. She was all the family I ever had."
+next = "3"
+
+[hayden_post_8h_best_friend_2.3]
+portrait = "neutral_arm_down"
+local = "After she passed, I used to walk a picnic basket up to her grave and have a chat now and then."
+next = "4"
+
+[hayden_post_8h_best_friend_2.4]
+portrait = "embarrassed"
+local = "It sounds silly but... I always got the feeling she was there with me, listening with that quiet smile of hers."
+next = "5"
+
+[hayden_post_8h_best_friend_2.5]
+portrait = "happy_arm_down"
+local = "You're welcome to join me some time... I think she'd like to meet you."
+
+[hayden_post_8h_best_friend_3]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = false },
+	{ any = [
+		{ hayden_post_8h_romantic_progression = true },
+		{ hayden_is_best_friend = true }
+	] },
+	{ hayden_post_8h_best_friend_gate = false },
+	{ location = "inn" },
+	{ hayden_activity = "eat" },
+	{ hayden_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ hayden_post_8h_best_friend_gate = true, expires = "2d" },
+	{ hayden_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "relationship_status", npc = "hayden" } },
+	{ item = "loaded_baked_potato" }
+]
+portrait = "wink"
+local = "[Ari]! Are you as famished as I am?"
+next = "1"
+
+[hayden_post_8h_best_friend_3.1]
+portrait = "neutral_fist"
+local = "I was just thinking about how nice it'd be to share a meal with you!"
+next = "2"
+
+[hayden_post_8h_best_friend_3.2]
+portrait = "happy_arm_down"
+local = "Here, let me treat you!"
+
+# Final Best Friend Line
+[hayden_post_8h_best_friend_4]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = false },
+	{ any = [
+		{ hayden_post_8h_romantic_progression = true },
+		{ hayden_is_best_friend = true }
+	] },
+	{ hayden_post_8h_best_friend_gate = false }
+]
+writes = [
+	{ hayden_post_8h_best_friend_gate = true, expires = "2d" },
+	{ hayden_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "hayden" } }]
+portrait = "think"
+local = "When I was young, Mistria was real lively. Lots of hands made light work."
+next = "1"
+
+[hayden_post_8h_best_friend_4.1]
+portrait = "gloomy"
+local = "Then after the earthquake... that was a tough time."
+next = "2"
+
+[hayden_post_8h_best_friend_4.2]
+portrait = "think_special"
+local = "Some folks had to move on in search of new opportunities."
+next = "3"
+
+[hayden_post_8h_best_friend_4.3]
+portrait = "neutral_arm_down"
+local = "But you went the opposite way and came here. I'm thankful for that."
+next = "4"
+
+[hayden_post_8h_best_friend_4.4]
+portrait = "happy"
+local = "It all feels easier with you around!"
+
+[hayden_post_8h_best_friend_question_2]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = false },
+	{ any = [
+		{ hayden_post_8h_romantic_progression = true },
+		{ hayden_is_best_friend = true }
+	] },
+	{ hayden_post_8h_best_friend_gate = false },
+	{ water_seal = "seen" },
+	{ hayden_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ hayden_post_8h_best_friend_gate = true, expires = "2d" },
+	{ hayden_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "hayden" } }]
+portrait = "neutral_arm_down"
+local = "You've spent a good deal of time down in the Mines, haven't you [Ari]?"
+next = "1"
+
+[hayden_post_8h_best_friend_question_2.1]
+portrait = "sweat"
+effect = "drop"
+local = "Cramped places like that give me the heebie jeebies, myself!"
+next = "2"
+
+[hayden_post_8h_best_friend_question_2.2]
+portrait = "think"
+local = "I still wonder how Errol did it all those years."
+next = "3"
+
+[hayden_post_8h_best_friend_question_2.3]
+portrait = "neutral_arm_down"
+local = "What is about that place that keeps pulling you back?"
+prompts = [
+	{ local = "I love exploring!", next = "4" },
+	{ local = "I love a bit of danger.", next = "6" }
+]
+
+[hayden_post_8h_best_friend_question_2.4]
+portrait = "happy_arm_down"
+local = "I suppose that's what brought you to Mistria, too!"
+next = "5"
+
+[hayden_post_8h_best_friend_question_2.5]
+portrait = "wink_fist"
+local = "I admire that fearlessness of yours... here's hoping it rubs off on me!"
+
+[hayden_post_8h_best_friend_question_2.6]
+portrait = "think"
+local = "I'd tell you to mind yourself down there, but that might take the fun out of it."
+next = "7"
+
+[hayden_post_8h_best_friend_question_2.7]
+portrait = "happy"
+effect = "drop"
+local = "Just promise me you'll come back in one piece, okay?"
+
+[hayden_post_8h_best_friend_question_3]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_is_spouse = false },
+	{ any = [
+		{ hayden_post_8h_romantic_progression = true },
+		{ hayden_is_best_friend = true }
+	] },
+	{ hayden_post_8h_best_friend_gate = false },
+	{ hayden_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ hayden_post_8h_best_friend_gate = true, expires = "2d" },
+	{ hayden_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "hayden" } }]
+portrait = "neutral_arm_down"
+local = "It's so nice to see how close Reina is with Maple and Luc."
+next = "1"
+
+[hayden_post_8h_best_friend_question_3.1]
+portrait = "sweat"
+local = "Being an only child, I always wondered what it would be like to have a sibling of my own."
+next = "2"
+
+[hayden_post_8h_best_friend_question_3.2]
+portrait = "think"
+local = "Though I suppose Valen treated me a bit like a kid brother growing up, now that I think about it."
+next = "3"
+
+[hayden_post_8h_best_friend_question_3.3]
+portrait = "happy_arm_down"
+local = "What about you? Did you grow up with any siblings?"
+prompts = [
+	{ local = "I did! Things were always very... lively.", next = "4" },
+	{ local = "I was an only child too.", next = "6" }
+]
+
+[hayden_post_8h_best_friend_question_3.4]
+portrait = "think"
+local = "You don't say!"
+next = "5"
+
+[hayden_post_8h_best_friend_question_3.5]
+portrait = "happy_arm_down"
+local = "I'd love to hear more about your family some time."
+
+[hayden_post_8h_best_friend_question_3.6]
+portrait = "think"
+local = "Well now, I guess that's another thing we have in common."
+next = "7"
+
+[hayden_post_8h_best_friend_question_3.7]
+portrait = "wink_fist"
+local = "It's lucky we found each other, isn't it?"
+
+[hayden_post_8h_best_friend_question_4]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ any = [
+		{ hayden_post_8h_romantic_progression = true },
+		{ hayden_is_best_friend = true }
+	] },
+	{ hayden_post_8h_best_friend_gate = false },
+	{ hayden_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ hayden_post_8h_best_friend_gate = true, expires = "2d" },
+	{ hayden_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "hayden" } }]
+portrait = "neutral_arm_down"
+local = "Did I ever tell you the story behind this scar on my hand?"
+next = "1"
+
+[hayden_post_8h_best_friend_question_4.1]
+portrait = "think"
+local = "To be honest... I've been through so many scrapes, I can't recall which one caused it!"
+next = "2"
+
+[hayden_post_8h_best_friend_question_4.2]
+portrait = "neutral"
+local = "It might have been when that calf got out during a blizzard, or the time Henrietta got on the barn roof..."
+prompts = [
+	{ local = "A calf in a blizzard?", next = "3" },
+	{ local = "Henrietta on the roof?", next = "8" }
+]
+
+[hayden_post_8h_best_friend_question_4.3]
+portrait = "happy_arm_down"
+effect = "drop"
+local = "Oh yeah, poor little thing slipped right into a ditch hidden under the snow."
+next = "4"
+
+[hayden_post_8h_best_friend_question_4.4]
+portrait = "wink_fist"
+local = "Unfortunately for me, I got the brunt of it, trying to help her back out."
+next = "5"
+
+[hayden_post_8h_best_friend_question_4.5]
+portrait = "happy_arm_down"
+local = "The important thing is she came out okay in the end, though."
+next = "6"
+
+[hayden_post_8h_best_friend_question_4.6]
+portrait = "think"
+local = "I don't recall for certain if that's how I got this scar..."
+next = "7"
+
+[hayden_post_8h_best_friend_question_4.7]
+portrait = "neutral"
+effect = "sparkles"
+local = "But I figure it's a badge of honor no matter which mishap accounts for it."
+
+[hayden_post_8h_best_friend_question_4.8]
+portrait = "happy_arm_down"
+effect = "drop"
+local = "Oh yeah. She seemed to think it was unfair the roosters got to do all the crowing in the morning."
+next = "9"
+
+[hayden_post_8h_best_friend_question_4.9]
+portrait = "think"
+local = "She couldn't get down from the roof once she got up, though, and she spent the morning pacing until I climbed on up there."
+next = "10"
+
+[hayden_post_8h_best_friend_question_4.10]
+portrait = "sweat"
+local = "Then I was laughing so hard that I slipped, and we both came tumbling down!"
+next = "6"

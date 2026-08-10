@@ -1,0 +1,106 @@
+# Hated gift
+[garlic]
+kind = "gift"
+requires = [
+	{ npc = "henrietta" },
+	{ gift_desire = "hated" },
+	{ gift_given = "garlic" }
+]
+local = "(Henrietta doesn't like the smell of garlic one bit, her clucks seem to be scolding you.)"
+
+# General Lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "henrietta" }, { gift_desire = "loved" }]
+local = "(Judging by her excited clucking, Henrietta loves your gift.)"
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "henrietta" }, { gift_desire = "loved" }]
+portrait = "neutral"
+effect = "hearts"
+local = "(Henrietta wastes no time pecking away at your thoughtful offering.)"
+
+[loved_gift_3]
+kind = "gift"
+requires = [{ npc = "henrietta" }, { gift_desire = "loved" }]
+portrait = "neutral"
+effect = "hearts"
+local = "(Henrietta fluffs up her feathers and clucks. She's quite pleased with your tribute.)"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "henrietta" }, { gift_desire = "liked" }]
+local = "(Henrietta clucks appreciatively.)"
+
+[liked_gift_2]
+kind = "gift"
+requires = [{ npc = "henrietta" }, { gift_desire = "liked" }]
+portrait = "neutral"
+effect = "sparkles"
+local = "(Henrietta seems content with your gift.)"
+
+[liked_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "henrietta" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "apple" },
+		{ gift_given = "blackberry" },
+		{ gift_given = "blueberry" },
+		{ gift_given = "broccoli" },
+		{ gift_given = "cherry" },
+		{ gift_given = "chestnut" },
+		{ gift_given = "coconut" },
+		{ gift_given = "cranberry" },
+		{ gift_given = "cucumber" },
+		{ gift_given = "grass_seed" },
+		{ gift_given = "moon_fruit" },
+		{ gift_given = "orange" },
+		{ gift_given = "peach" },
+		{ gift_given = "pear" },
+		{ gift_given = "peas" },
+		{ gift_given = "pomegranate" },
+		{ gift_given = "pumpkin" },
+		{ gift_given = "wild_berries" },
+		{ gift_given = "wild_grapes" },
+		{ gift_given = "wintergreen_berry" },
+	] }
+]
+portrait = "neutral"
+effect = "sparkles"
+local = "(Henrietta seems to enjoy the snack you've brought her.)"
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "henrietta" }, { gift_desire = "neutral" }]
+local = "(Henrietta clucks in a strangely neutral manner.)"
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "henrietta" }, { gift_desire = "disliked" }]
+local = "(Henrietta seems uninterested.)"
+
+[basement_gift]
+kind = "gift"
+requires = [{ npc = "henrietta" }]
+portrait = "neutral"
+local = "(Henrietta is a chicken.)"
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "henrietta" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ henrietta_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "neutral"
+local = "(Henrietta seems pleased that you remembered her birthday.)"

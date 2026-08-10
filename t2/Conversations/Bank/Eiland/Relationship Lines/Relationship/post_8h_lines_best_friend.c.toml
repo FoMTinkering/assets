@@ -1,0 +1,703 @@
+[eiland_post_8h_best_friend_0]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_spouse = false },
+	{ any = [
+		{ eiland_post_8h_romantic_progression = true },
+		{ eiland_is_best_friend = true }
+	] },
+	{ eiland_post_8h_best_friend_gate = false },
+	{ eiland_post_8h_best_friend_grouping = 0 }
+]
+writes = [
+	{ eiland_post_8h_best_friend_gate = true, expires = "20h" },
+	{ eiland_post_8h_best_friend_grouping = 1 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "eiland" } }]
+portrait = "think"
+local = "When I was a child, I didn't spend as much time outdoors as I do now."
+next = "1"
+
+[eiland_post_8h_best_friend_0.1]
+portrait = "neutral"
+local = "I passed most afternoons in my mother's library, studying history and ancient languages. It was a wonderful way to travel to faraway places!"
+next = "2"
+
+[eiland_post_8h_best_friend_0.2]
+portrait = "think"
+local = "In fact, it wasn't until I found that Caldosian signet ring that I began to appreciate the history that had been around me all along."
+next = "3"
+
+[eiland_post_8h_best_friend_0.3]
+portrait = "happy"
+local = "These days, I'm grateful to my younger self for taking such a circuitous path to archaeology!"
+
+[eiland_post_8h_best_friend_1]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_spouse = false },
+	{ any = [
+		{ eiland_post_8h_romantic_progression = true },
+		{ eiland_is_best_friend = true }
+	] },
+	{ eiland_post_8h_best_friend_gate = false },
+	{ eiland_post_8h_best_friend_grouping = 1 }
+]
+writes = [
+	{ eiland_post_8h_best_friend_gate = true, expires = "20h" },
+	{ eiland_post_8h_best_friend_grouping = 2 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "eiland" } }]
+portrait = "neutral"
+local = "[Ari]! Do you have a moment to talk about research?"
+next = [
+	{ target = "1_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "1_n", requires = [] }
+]
+
+[eiland_post_8h_best_friend_1.1_eog]
+portrait = "think"
+local = "I had an interesting realization last night."
+next = "2"
+
+[eiland_post_8h_best_friend_1.1_n]
+portrait = "think"
+local = "I have a budding theory... but it isn't one I can share with just anybody."
+next = "2"
+
+[eiland_post_8h_best_friend_1.2]
+portrait = "neutral"
+local = "It's about the $Dragonsworn's Armor$..."
+next = [
+	{ target = "3_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "3_n", requires = [] }
+]
+
+[eiland_post_8h_best_friend_1.3_eog]
+portrait = "surprised"
+local = "Its protective qualities might be even greater than we thought!"
+prompts = [
+	{ local = "What do you mean?", next = "4_eog" },
+	{ local = "Go on...", next = "4_eog" }
+]
+
+[eiland_post_8h_best_friend_1.4_eog]
+portrait = "happy"
+local = "Well, you see..."
+next = "5_eog"
+
+[eiland_post_8h_best_friend_1.5_eog]
+portrait = "think"
+local = "We know now that the armor offers physical defence to the $Dragonsworn$, who in turn protects Mistria."
+next = "6_eog"
+
+[eiland_post_8h_best_friend_1.6_eog]
+portrait = "neutral"
+local = "But I've been thinking more about the legends claiming each armor piece previously provided protection over the areas they were hidden in."
+next = "7_eog"
+
+[eiland_post_8h_best_friend_1.7_eog]
+portrait = "mad"
+local = "And I realized... the places we found them were largely undamaged in the earthquake!"
+next = "8_eog"
+
+[eiland_post_8h_best_friend_1.8_eog]
+portrait = "think"
+local = "The northern end of Mistria, the Western Ruins, and the Deep Woods..."
+next = "9_eog"
+
+[eiland_post_8h_best_friend_1.9_eog]
+portrait = "happy"
+local = "It seems that the old stories hold some truth after all!"
+
+[eiland_post_8h_best_friend_1.3_n]
+portrait = "mad"
+local = "And what I suspect its true purpose is."
+prompts = [
+	{ local = "It was used for protecting Mistria, right?", next = "4" },
+	{ local = "It was for defending the Dragonsworn, right?", next = "10" }
+]
+
+[eiland_post_8h_best_friend_1.4]
+portrait = "happy"
+local = "Yes... but in more ways than one!"
+next = "5"
+
+[eiland_post_8h_best_friend_1.5]
+portrait = "think"
+local = "Surely the armor originally offered physical defence to the $Dragonsworn$, who in turn protected Mistria."
+next = "6"
+
+[eiland_post_8h_best_friend_1.6]
+portrait = "neutral"
+local = "But I've been thinking more about the legends claiming each armor piece provided protection over the areas they were hidden in."
+next = "7"
+
+[eiland_post_8h_best_friend_1.7]
+portrait = "mad"
+local = "And I realized... the places we found them were largely undamaged in the earthquake!"
+next = "8"
+
+[eiland_post_8h_best_friend_1.8]
+portrait = "think"
+local = "The northern end of Mistria, the Western Ruins, and the Deep Woods..."
+next = "9"
+
+[eiland_post_8h_best_friend_1.9]
+portrait = "happy"
+local = "It's just a theory, but I think it's worth considering that the legends may hold some truth to them!"
+
+[eiland_post_8h_best_friend_1.10]
+portrait = "happy"
+local = "Almost certainly, yes."
+next = "11"
+
+[eiland_post_8h_best_friend_1.11]
+portrait = "think"
+local = "But not just that..."
+next = "12"
+
+[eiland_post_8h_best_friend_1.12]
+portrait = "neutral"
+local = "I've been thinking more about the legends claiming each armor piece provided protection over the areas they were hidden in."
+next = "13"
+
+[eiland_post_8h_best_friend_1.13]
+portrait = "mad"
+local = "And I realized... the places we found them were largely undamaged in the earthquake!"
+next = "14"
+
+[eiland_post_8h_best_friend_1.14]
+portrait = "think"
+local = "The northern end of Mistria, the Western Ruins, and the Deep Woods..."
+next = "15"
+
+[eiland_post_8h_best_friend_1.15]
+portrait = "happy"
+local = "It's just a theory, but I think it's worth considering that the legends may hold some truth to them!"
+
+[eiland_post_8h_best_friend_2]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_spouse = false },
+	{ any = [
+		{ eiland_post_8h_romantic_progression = true },
+		{ eiland_is_best_friend = true }
+	] },
+	{ eiland_post_8h_best_friend_gate = false },
+	{ eiland_post_8h_best_friend_grouping = 2 }
+]
+writes = [
+	{ eiland_post_8h_best_friend_gate = true, expires = "20h" },
+	{ eiland_post_8h_best_friend_grouping = 3 }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "eiland" } }]
+portrait = "mad"
+effect = "shock"
+local = "Have you heard the big news from the Capital, [Ari]?"
+next = "1"
+
+[eiland_post_8h_best_friend_2.1]
+portrait = "sad"
+local = "The newest dessert trend has arrived... black pepper on ice cream!"
+next = "2"
+
+[eiland_post_8h_best_friend_2.2]
+portrait = "think"
+local = "Salt is one thing, but pepper? It's preposterous."
+next = "3"
+
+[eiland_post_8h_best_friend_2.3]
+portrait = "happy"
+local = "Anyway, I simply must try it as soon as possible."
+next = "4"
+
+[eiland_post_8h_best_friend_2.4]
+portrait = "wink"
+local = "Maybe we can try it together!"
+
+[eiland_post_8h_best_friend_3]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_spouse = false },
+	{ any = [
+		{ eiland_post_8h_romantic_progression = true },
+		{ eiland_is_best_friend = true }
+	] },
+	{ eiland_post_8h_best_friend_gate = false },
+	{ eiland_post_8h_best_friend_grouping = 3 }
+]
+writes = [
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" },
+	{ eiland_post_8h_romantic_gate = true, expires = "2d" },
+	{ eiland_post_8h_best_friend_grouping = 4 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "eiland" } }]
+portrait = "think"
+local = "You know, when you first came to Mistria..."
+next = "1"
+
+[eiland_post_8h_best_friend_3.1]
+portrait = "happy"
+local = "I'm not sure that Adeline and I truly anticipated the fortuitous winds you'd bring with you!"
+next = "2"
+
+[eiland_post_8h_best_friend_3.2]
+portrait = "neutral"
+local = "Finding that likeness of Caldarus on your farm was the first sign of good things to come."
+next = [
+	{ target = "3_eog", requires = [{ caldarus_seridia_town = true }] },
+	{ target = "3_n", requires = [] }
+]
+
+[eiland_post_8h_best_friend_3.3_eog]
+portrait = "think"
+local = "Speaking of, how is he doing? Is he getting settled into town alright?"
+prompts = [
+	{ local = "He seems to be doing well!", next = "4_eog" },
+	{ local = "Caldarus has been a good neighbor!", next = "6_eog" }
+]
+
+[eiland_post_8h_best_friend_3.4_eog]
+portrait = "happy"
+local = "Oh! I'm glad to hear that."
+next = "5_eog"
+
+[eiland_post_8h_best_friend_3.5_eog]
+portrait = "happy"
+local = "The care you've shown him ever since repairing his statue is certainly symbolic of Mistria's revitalization!"
+
+[eiland_post_8h_best_friend_3.6_eog]
+portrait = "happy"
+local = "I imagine so! He spent quite a bit of time as a statue on your farm, didn't he?"
+next = "7_eog"
+
+[eiland_post_8h_best_friend_3.7_eog]
+portrait = "neutral"
+local = "I'm grateful that you continue to care for Mistria's patron guardian."
+next = "8_eog"
+
+[eiland_post_8h_best_friend_3.8_eog]
+portrait = "happy"
+local = "It's certainly symbolic of Mistria's revitalization!"
+
+[eiland_post_8h_best_friend_3.3_n]
+portrait = "think"
+local = "Speaking of, how is he holding up since we did our repairs?"
+prompts = [
+	{ local = "I tidied up the area around him!", next = "4" },
+	{ local = "Caldarus has been a good neighbor!", next = "7" }
+]
+
+[eiland_post_8h_best_friend_3.4]
+portrait = "happy"
+local = "Oh! I'm grateful to hear that."
+next = "5"
+
+[eiland_post_8h_best_friend_3.5]
+portrait = "think"
+local = "I have a reverence for all artifacts I come across, but even more so for a statue of our patron guardian."
+next = "6"
+
+[eiland_post_8h_best_friend_3.6]
+portrait = "happy"
+local = "The care you've shown him is certainly symbolic of Mistria's revitalization!"
+
+[eiland_post_8h_best_friend_3.7]
+portrait = "happy"
+local = "I imagine so! Having a statue of Mistria's protector on your farm is quite auspicious!"
+next = "8"
+
+[eiland_post_8h_best_friend_3.8]
+portrait = "neutral"
+local = "I'm grateful that you continue to care for him."
+next = "9"
+
+[eiland_post_8h_best_friend_3.9]
+portrait = "happy"
+local = "It's certainly symbolic of Mistria's revitalization!"
+
+[eiland_post_8h_best_friend_4]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ eiland_post_8h_romantic_progression = true },
+		{ eiland_is_best_friend = true }
+	] },
+	{ eiland_post_8h_best_friend_gate = false },
+	{ eiland_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" },
+	{ eiland_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "eiland" } }]
+portrait = "think"
+local = "Do you ever wonder what things might have been like if you had been born in a different Era?"
+next = "1"
+
+[eiland_post_8h_best_friend_4.1]
+portrait = "happy"
+local = "Wouldn't it be a wonder to live in the age of the Alda? Or the epoch of the Witch Queens?"
+next = "2"
+
+[eiland_post_8h_best_friend_4.2]
+portrait = "neutral"
+local = "Ah, but I'm certain people will one day look at the mundanities of our daily lives today and consider them wondrous, too."
+next = "3"
+
+[eiland_post_8h_best_friend_4.3]
+portrait = "neutral"
+local = "And of course... you live in this age!"
+next = "4"
+
+[eiland_post_8h_best_friend_4.4]
+portrait = "happy"
+local = "I couldn't possibly miss out on that!"
+
+[eiland_post_8h_best_friend_5]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ eiland_post_8h_romantic_progression = true },
+		{ eiland_is_best_friend = true }
+	] },
+	{ eiland_post_8h_best_friend_gate = false },
+	{ eiland_post_8h_best_friend_grouping = 4 },
+	{ location = "inn" }
+]
+writes = [
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" },
+	{ eiland_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [
+	{ bark = { bark = "relationship_status", npc = "eiland" } },
+	{ item = "hot_cocoa" }
+]
+portrait = "neutral"
+local = "Ah, [Ari]! I was just thinking it would be nice to share a drink."
+next = "1"
+
+[eiland_post_8h_best_friend_5.1]
+portrait = "happy"
+local = "Let me get you one! Then you can tell me about your day."
+next = "2"
+
+[eiland_post_8h_best_friend_5.2]
+portrait = "wink"
+local = "Here you are, a mug of the Inn's finest! Please, enjoy!"
+
+[eiland_post_8h_best_friend_6]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ eiland_post_8h_romantic_progression = true },
+		{ eiland_is_best_friend = true }
+	] },
+	{ eiland_post_8h_best_friend_gate = false },
+	{ eiland_post_8h_best_friend_grouping = 4 },
+	{ location = "museum_entry" }
+]
+writes = [
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" },
+	{ eiland_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "eiland" } }]
+portrait = "neutral_closed"
+effect = "sparkles"
+local = "Ahem. Welcome, honored guest! To the world-renowned Mistrian Museum of History and Culture!"
+next = "1"
+
+[eiland_post_8h_best_friend_6.1]
+portrait = "neutral"
+local = "Take your time exploring the various wings of our establishment, where you'll find local wonders and uncover the storied history of Mistria..."
+next = "2"
+
+[eiland_post_8h_best_friend_6.2]
+portrait = "happy"
+local = "Much of which has been single-handedly curated by our local adventurer and Historical Society member, [Ari]!"
+next = "3"
+
+[eiland_post_8h_best_friend_6.3]
+portrait = "wink"
+local = "So? What do you think of my tour guide script so far? I think it's off to a strong start!"
+
+[eiland_post_8h_best_friend_7]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ eiland_post_8h_romantic_progression = true },
+		{ eiland_is_best_friend = true }
+	] },
+	{ eiland_post_8h_best_friend_gate = false },
+	{ eiland_post_8h_best_friend_grouping = 4 },
+	{ any = [
+		{ eiland_zone = "<dell_zone>" },
+		{ eiland_zone = "<luc_zone>" },
+		{ eiland_zone = "<maple_zone>" }
+	] }
+]
+writes = [
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" },
+	{ eiland_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "eiland" } }]
+portrait = "neutral"
+local = "It seems that Maple, Luc, and Dell are always getting up to mischief of some kind."
+next = "1"
+
+[eiland_post_8h_best_friend_7.1]
+portrait = "happy"
+local = "I was no different at that age..."
+next = "2"
+
+[eiland_post_8h_best_friend_7.2]
+portrait = "think"
+local = "Once, I decided that I wanted to go to the Capital to attend the grand opening of the King's Museum."
+next = "3"
+
+[eiland_post_8h_best_friend_7.3]
+portrait = "neutral"
+local = "I attempted to borrow my father's horse and... Well..."
+next = "4"
+
+[eiland_post_8h_best_friend_7.4]
+portrait = "happy"
+effect = "drop"
+local = "Adeline caught me before I could finish tacking up."
+next = "5"
+
+[eiland_post_8h_best_friend_7.5]
+portrait = "ugh"
+local = "I guess you could say she's always been the more responsible one."
+prompts = [
+	{ local = "Did you get in trouble?", next = "6" },
+	{ local = "What did Adeline do when she caught you?", next = "10" }
+]
+
+[eiland_post_8h_best_friend_7.6]
+portrait = "neutral"
+local = "Oh, no, Father never found out about it."
+next = "7"
+
+[eiland_post_8h_best_friend_7.7]
+portrait = "happy"
+local = "Adeline would never tattle on me."
+next = "8"
+
+[eiland_post_8h_best_friend_7.8]
+portrait = "think"
+local = "She did make me promise never to try it again, though..."
+next = "9"
+
+[eiland_post_8h_best_friend_7.9]
+portrait = "ugh"
+local = "And I had to do her chores for two weeks."
+
+[eiland_post_8h_best_friend_7.10]
+portrait = "think"
+local = "Well, she did give me quite the lecture on the legal ramifications of grand theft equus."
+next = "11"
+
+[eiland_post_8h_best_friend_7.11]
+portrait = "happy"
+local = "But thankfully, Father never found out about it. Adeline would never tattle on me."
+next = "12"
+
+[eiland_post_8h_best_friend_7.12]
+portrait = "think"
+local = "She did make me promise never to try it again, though..."
+next = "13"
+
+[eiland_post_8h_best_friend_7.13]
+portrait = "ugh"
+local = "And I had to do her chores for two weeks."
+
+[eiland_post_8h_best_friend_8]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ eiland_post_8h_romantic_progression = true },
+		{ eiland_is_best_friend = true }
+	] },
+	{ eiland_post_8h_best_friend_gate = false },
+	{ eiland_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" },
+	{ eiland_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "eiland" } }]
+portrait = "sad"
+local = "Sigh. It pains me to think that so many manuscripts have been lost to moisture and decay over the centuries..."
+next = "1"
+
+[eiland_post_8h_best_friend_8.1]
+portrait = "think"
+local = "Think of what we might know today, if our ancestors had used more archival materials."
+next = "2"
+
+[eiland_post_8h_best_friend_8.2]
+portrait = "sad"
+local = "I wish they had simply written all of their documents onto fired clay tablets."
+prompts = [
+	{ local = "Awfully inconsiderate of them!", next = "3" },
+	{ local = "But Eiland... you write all your manuscripts on paper.", next = "6" }
+]
+
+[eiland_post_8h_best_friend_8.3]
+portrait = "neutral"
+local = "Yes, awfully so! It's like they never considered a future archaeologist's needs when recording all their missives!"
+next = "4"
+
+[eiland_post_8h_best_friend_8.4]
+portrait = "think"
+local = "Actually, now that I think about it..."
+next = "5"
+
+[eiland_post_8h_best_friend_8.5]
+portrait = "neutral"
+local = "Perhaps I should take to transcribing all my field notes into clay...?"
+
+[eiland_post_8h_best_friend_8.6]
+portrait = "happy"
+effect = "drop"
+local = "Ah! Point taken."
+next = "7"
+
+[eiland_post_8h_best_friend_8.7]
+portrait = "neutral"
+local = "Perhaps I should take to transcribing all my field notes into clay...?"
+
+[eiland_post_8h_best_friend_9]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_is_spouse = false },
+	{ any = [
+		{ eiland_post_8h_romantic_progression = true },
+		{ eiland_is_best_friend = true }
+	] },
+	{ eiland_post_8h_best_friend_gate = false },
+	{ eiland_post_8h_best_friend_grouping = 4 }
+]
+writes = [
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" },
+	{ eiland_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "eiland" } }]
+portrait = "neutral"
+local = "[Ari]!"
+next = "1"
+
+[eiland_post_8h_best_friend_9.1]
+portrait = "embarrassed"
+local = "Do you mind if I ask... a rather direct question?"
+next = "2"
+
+[eiland_post_8h_best_friend_9.2]
+portrait = "think"
+local = "Do you think I could convince Nora to bring a second dessert vendor to the Saturday Market?"
+prompts = [
+	{ local = "I'm not sure that would be good for Darcy's business.", next = "3" },
+	{ local = "I'm not sure that Nora shares your priorities...", next = "7" }
+]
+
+[eiland_post_8h_best_friend_9.3]
+portrait = "surprised"
+effect = "shock"
+local = "Oh! I didn't even consider that!"
+next = "4"
+
+[eiland_post_8h_best_friend_9.4]
+portrait = "sad"
+local = "I suppose not everyone would patronize both stalls each week."
+next = "5"
+
+[eiland_post_8h_best_friend_9.5]
+portrait = "neutral"
+local = "Thank you for your honesty, [Ari]."
+next = "6"
+
+[eiland_post_8h_best_friend_9.6]
+portrait = "happy"
+local = "I'll plan to double up my orders with Darcy instead!"
+
+[eiland_post_8h_best_friend_9.7]
+portrait = "think"
+local = "Ah, yes... she must have many things to consider on the business side of things."
+next = "8"
+
+[eiland_post_8h_best_friend_9.8]
+portrait = "sad"
+local = "I suppose there is a risk that not everyone would patronize both dessert stalls each week."
+next = "9"
+
+[eiland_post_8h_best_friend_9.9]
+portrait = "neutral"
+local = "Thank you for your honesty, [Ari]."
+next = "10"
+
+[eiland_post_8h_best_friend_9.10]
+portrait = "happy"
+local = "I'll plan to double up my orders with Darcy instead!"
+
+# last line
+[eiland_post_8h_best_friend_10]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ any = [
+		{ eiland_post_8h_romantic_progression = true },
+		{ eiland_is_best_friend = true }
+	] },
+	{ eiland_post_8h_best_friend_gate = false },
+	{ eiland_post_8h_best_friend_grouping = 4, ignore_priority = true }
+]
+writes = [
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" },
+	{ eiland_post_8h_romantic_gate = true, expires = "2d" }
+]
+actions = [{ bark = { bark = "relationship_status", npc = "eiland" } }]
+portrait = "think"
+local = "I've been thinking lately how rare it is to find someone who shares my particular interests."
+next = "1"
+
+[eiland_post_8h_best_friend_10.1]
+portrait = "embarrassed"
+local = "With a comparable level of enthusiasm, anyway."
+next = "2"
+
+[eiland_post_8h_best_friend_10.2]
+portrait = "neutral"
+local = "I'm grateful that Errol has indulged my historical interests as much as he has..."
+next = "3"
+
+[eiland_post_8h_best_friend_10.3]
+portrait = "sad"
+local = "But I've never found it easy to forge close bonds the way Adeline does."
+next = "4"
+
+[eiland_post_8h_best_friend_10.4]
+portrait = "neutral"
+local = "What I'm trying to say is..."
+next = "5"
+
+[eiland_post_8h_best_friend_10.5]
+portrait = "mad"
+effect = "sparkles"
+local = "I will always appreciate how much you share my passions!"
+next = "6"
+
+[eiland_post_8h_best_friend_10.6]
+portrait = "happy"
+local = "I won't take that for granted, [Ari]!"

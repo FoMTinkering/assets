@@ -1,0 +1,190 @@
+
+[shooting_star_not_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_at = "western_ruins/star_festival_seridia" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "seridia_invited", comparator = "!=" },
+	{ day_time = "8:00pm", comparator = ">=" },
+]
+portrait = "sly_think"
+local = "The stars... Pretty, are they not?"
+next = "1"
+
+[shooting_star_not_invited.1]
+portrait = "sinister"
+local = "Do let me know if you would like me to pull one down for you."
+
+[shooting_star_invited]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_at = "western_ruins/star_festival_seridia" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "seridia_invited" },
+]
+portrait = "smile"
+local = "Good evening."
+next = "1"
+
+[shooting_star_invited.1]
+portrait = "sly"
+local = "If you are ready, let us proceed to the summit."
+
+
+[shooting_star_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "seridia" },
+	{ shooting_star_date_status = "seridia_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ seridia_is_partner = false },
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "neutral"
+local = "There you are, [Ari]."
+next = "1"
+
+[shooting_star_follow_up.1]
+portrait = "smile"
+local = "Last night was fun... was it not?"
+next = "2"
+
+[shooting_star_follow_up.2]
+portrait = "sly"
+local = "I am glad that we chose to spend it together."
+
+[shooting_star_8h_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "seridia" },
+	{ shooting_star_date_status = "seridia_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ seridia_is_partner = true },
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "blush"
+local = "I enjoyed our $Starbinding$ last night, [Ari]."
+next = "1"
+
+[shooting_star_8h_follow_up.1]
+portrait = "blush_think"
+local = "Let us plan to repeat it next year as well."
+
+
+[shooting_star_invited_anticipation]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "seridia" },
+	{ shooting_star_date_status = "seridia_invited" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ seridia_is_at = "western_ruins/star_festival_seridia", comparator = "!=" },
+]
+portrait = "smile"
+local = "Meet me tonight at 8 pm, [Ari]."
+next = "1"
+
+[shooting_star_invited_anticipation.1]
+portrait = "sinister"
+local = "Pray, do not be late."
+
+[shooting_star_romantic_follow_up_A]
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ shooting_star_date_status = "seridia_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+	{ seridia_is_spouse = false }
+]
+writes = [
+	{ shooting_star_gate = true, expires = "2d" },
+	{ shooting_star_seridia_cheesecake = true, expires = "3d" },
+]
+actions = [
+	{ bark = { bark = "cute_face", npc = "seridia" } },
+	{ item = "golden_cheesecake" },
+]
+portrait = "smile"
+local = "[Ari]!"
+next = "1"
+
+[shooting_star_romantic_follow_up_A.1]
+portrait = "embarrassed"
+local = "I have something for you."
+next = "2"
+
+[shooting_star_romantic_follow_up_A.2]
+portrait = "closed_eyes_blush"
+local = "No need to lavish me with thanks."
+next = "3"
+
+[shooting_star_romantic_follow_up_A.3]
+portrait = "embarrassed"
+local = "Just... enjoy."
+
+[shooting_star_romantic_follow_up_B]
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ shooting_star_date_status = "seridia_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+	{ seridia_is_spouse = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [{ bark = { bark = "blush", npc = "seridia" } }]
+portrait = "smile"
+local = "Hello, [Ari]."
+next = "1"
+
+[shooting_star_romantic_follow_up_B.1]
+portrait = "blush_think"
+local = "Are you here to see me?"
+next = "2"
+
+[shooting_star_romantic_follow_up_B.2]
+portrait = "embarrassed"
+local = "It does seem that you enjoy seeking me out..."
+next = "3"
+
+[shooting_star_romantic_follow_up_B.3]
+portrait = "blush_think"
+local = "Perhaps the chase also makes your heart race."
+
+[shooting_star_missed_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "seridia" },
+	{ shooting_star_date_status = "seridia_invited" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+actions = [{ bark = { bark = "ellipses", npc = "seridia" } }]
+portrait = "think"
+local = "You surprise me, [Ari]."
+next = "1"
+
+[shooting_star_missed_follow_up.1]
+portrait = "mad"
+local = "To invite me to see the stars, only to stand me up..."
+next = "2"
+
+[shooting_star_missed_follow_up.2]
+portrait = "sinister"
+local = "Have you no fear of my wrath?"
+next = "3"
+
+[shooting_star_missed_follow_up.3]
+portrait = "closed_eyes_brow"
+local = "Curious."

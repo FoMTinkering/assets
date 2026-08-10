@@ -1,0 +1,30 @@
+[roots_of_festival]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "eiland" },
+	{ spring_festival_date = "1d", time = "after" },
+]
+portrait = "neutral"
+local = "While the roots of Spring Festival are a bit murky, there's no arguing that it's been held in Mistria for untold generations."
+next = "1"
+
+[roots_of_festival.1]
+portrait = "happy"
+local = "Which just goes to show you that folks of any era love to have a good time!"
+
+[first_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "eiland" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ any = [{ sf_first_place = true }, { sf_first_place_plus = true }] },
+]
+portrait = "happy"
+local = "Your placement in the Spring Festival is one for the history books, [Ari]."
+next = "1"
+
+[first_place.1]
+portrait = "wink"
+local = "And I mean that literally, since I'll be writing the entry myself."

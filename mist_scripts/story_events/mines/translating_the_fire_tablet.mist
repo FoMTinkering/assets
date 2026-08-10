@@ -1,0 +1,410 @@
+scene(bathhouse);
+place_actor(juniper, south, "Front Desk");
+animate(juniper, sit);
+place_actor(ari, north, tft_ari_entrance);
+setup_prop(tft_bathhouse_fire_tablet);
+camera_position(tft_camera_1);
+request_music_play("Music/Events/DragonCutscene");
+
+sim {
+	fade_in(2);
+	{
+		wait(1.5);
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(0.5);
+		request_music_stop(2);
+		wait(0.5);
+		request_music_play(caldarus);
+	}
+	{
+		wait(2);
+		fade_out(5);
+	}
+	{
+		wait(1);
+		pan_camera(5, tft_camera_2);
+	}
+	{
+		wait(7);
+		__raise_textbox();
+		next_line(); //
+	}
+}
+close_textbox();
+request_music_stop(0.2);
+wait(0.5);
+sim {
+	fade_in(1);
+	pan_camera(1, tft_camera_1);
+}
+free bark_speech(ari, exclamation_mark);
+wait(1);
+sim {
+	{
+		wait(0.25);
+		animate(juniper, laugh);
+	}
+	{
+		next_line(); //
+	}
+	{
+		request_music_play("Music/Events/DragonCutscene");
+	}
+}
+sim {
+	{
+		wait(0.5);
+		animate(juniper, sit);
+	}
+	{
+		next_line(); //
+	}
+}
+
+//
+
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(juniper, cute_face);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	next_line(); //
+}
+next_line(); //
+next_line(); //
+close_textbox();
+
+wait(0.5);
+free bark_speech(ari, question_mark);
+wait(1);
+sim {
+	{
+		wait(0.25);
+		animate(juniper, idle);
+		walk(juniper, tft_juniper_start);
+		face(juniper, east);
+		walk(juniper, tft_juniper_entrance);
+		face(juniper, east);
+	}
+	{
+		wait(1.25);
+		face(ari, west);
+	}
+	{
+		wait(0.5);
+		pan_camera(3, tft_camera_3);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+
+sim {
+	{
+		wait(1);
+		sim {
+			walk(juniper, tft_juniper_start);
+			set_move_speed(juniper, 0.4);
+		}
+		face(juniper, west);
+	}
+	{
+		wait(0.5);
+		pan_camera(2.5, tft_camera_4);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(1);
+free bark_speech(ari, question_mark);
+wait(1);
+sim {
+	{
+		wait(0.5);
+		face(juniper, east);
+		wait(1.25);
+		walk_slow(juniper, tft_juniper_entrance);
+		face(juniper, east);
+	}
+	{
+		pan_camera(2.5, tft_camera_3);
+	}
+	{
+		next_line(); //
+	}
+}
+
+//
+
+if get_response() == 0 {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(juniper, cute_face);
+		}
+		{
+			next_line(); //
+		}
+	}
+} else {
+	sim {
+		{
+			wait(0.75);
+			free bark_speech(juniper, sweat_drop);
+		}
+		{
+			next_line(); //
+		}
+	}
+}
+next_line(); //
+close_textbox();
+
+sim {
+	{
+		walk(juniper, tft_exit);
+		remove_actor(juniper);
+	}
+	{
+		wait(0.75);
+		face(ari, south);
+		wait(0.5);
+		walk_slow(ari, tft_exit);
+	}
+	{
+		wait(1.25);
+		pan_camera(2.5, tft_camera_exit);
+	}
+	{
+		wait(1.5);
+		fade_out(2);
+	}
+}
+
+scene(balors_room);
+place_actor(balor, west, tft_balor_entrance);
+animate(balor, action);
+place_actor(juniper, west, tft_juniper_br_entrance);
+place_actor(ari, north, tft_juniper_br_entrance);
+camera_position(tft_camera_6);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	{
+		pan_camera(2, tft_camera_7);
+	}
+	{
+		wait(0.5);
+		play_sound("SoundEffects/Entrances/DoorSlamOpen");
+	}
+	{
+		wait(1.25);
+		free bark_speech(balor, exclamation_mark);
+		wait(0.25);
+		animate(balor, idle);
+		face(balor, east);
+	}
+	{
+		wait(1);
+		walk(juniper, tft_juniper_br_start);
+		face(juniper, west);
+	}
+	{
+		wait(1.5);
+		walk_slow(ari, tft_ari_br_start);
+		face(ari, west);
+	}
+}
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+free bark_speech(balor, annoyed);
+wait(1);
+sim {
+	{
+		next_line(); //
+	}
+	{
+		wait(1);
+		face(balor, east);
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(0.5);
+		free bark_speech(balor, exclamation_mark);
+		wait(1);
+		walk_slow(balor, tft_balor_start);
+		face(balor, east);
+	}
+	{
+		wait(1);
+		pan_camera(2, tft_camera_8);
+	}
+	{
+		wait(1);
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(balor, exclamation_mark);
+wait(1.5);
+free bark_speech(balor, ellipses);
+wait(1.5);
+//
+//
+//
+//
+//
+//
+//
+next_line(); //
+sim {
+	{
+		sim {
+			walk(balor, tft_balor_entrance);
+			set_move_speed(balor, 0.4);
+		}
+		face(balor, west);
+	}
+	{
+		pan_camera(2.5, tft_camera_7);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.5);
+		face(juniper, south);
+	}
+	{
+		wait(1.25);
+		face(balor, east);
+	}
+	{
+		wait(1);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, sweat_drop);
+wait(1.5);
+sim {
+	{
+		wait(0.5);
+		face(ari, west);
+	}
+	{
+		wait(1);
+		face(juniper, west);
+	}
+	{
+		sim {
+			walk_slow(balor, tft_balor_handshake);
+			{
+				wait(1.5);
+				face(ari, north);
+			}
+		}
+		face(balor, east);
+		sim {
+			animate(balor, action);
+			animate(juniper, action);
+		}
+		wait(0.5);
+		animate(balor, idle);
+		animate(juniper, idle);
+		wait(0.5);
+		sim {
+			walk_slow(balor, tft_balor_handshake_ari);
+			{
+				wait(0.75);
+				face(juniper, south);
+			}
+			{
+				wait(0.5);
+				face(ari, west);
+			}
+		}
+		face(balor, east);
+		sim {
+			animate(balor, action);
+			animate(ari, action);
+		}
+		wait(0.5);
+		animate(balor, idle);
+		animate(ari, idle);
+		wait(0.5);
+		sim {
+			walk_slow(balor, tft_balor_start);
+			{
+				wait(0.5);
+				face(juniper, west);
+			}
+		}
+
+		face(balor, east);
+	}
+	{
+		pan_camera(2, tft_camera_8);
+	}
+	{
+		next_line(); //
+	}
+}
+next_line(); //
+close_textbox();
+wait(0.5);
+sim {
+	{
+		walk(juniper, tft_juniper_br_entrance);
+		remove_actor(juniper);
+	}
+	{
+		wait(1);
+		face(ari, east);
+		wait(1);
+		face(ari, west);
+		free bark_speech(ari, cute_face);
+		wait(1.5);
+		walk_slow(ari, tft_juniper_br_entrance);
+	}
+	{
+		wait(2.5);
+		free bark_speech(balor, cute_face);
+		wait(1.5);
+		walk_slow(balor, tft_balor_entrance);
+		face(balor, west);
+	}
+	{
+		wait(4);
+		fade_out(2);
+	}
+}

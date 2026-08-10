@@ -1,0 +1,22 @@
+[mines_hint_0]
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_human = true },
+	{ cutscene_seen_break_fire_seal = true },
+	{ cutscene_seen_break_ruins_seal_pt_1 = false },
+	{ caldarus_mines_tips_and_tricks = false }
+]
+writes = [{ caldarus_mines_tips_and_tricks = true, expires = "3d" }]
+portrait = "think"
+local = "The $Lava Caves$ in the Mines..."
+next = "1"
+
+[mines_hint_0.1]
+portrait = "neutral"
+local = "Your $Watering Can$ should be useful for $traversing pools of magma$."
+next = "2"
+
+[mines_hint_0.2]
+portrait = "happy"
+local = "Of course, you could also use the $Summon Rain$ spell I bestowed to you as well!"

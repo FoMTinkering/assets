@@ -1,0 +1,23 @@
+[water_for_tea]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "reina" }] },
+	{ celine_zone = "<reina_zone>" },
+	{ location = "celines_room" },
+]
+speaker = "celine"
+portrait = "neutral"
+local = "I'll get some water going for tea!"
+next = "1"
+
+[water_for_tea.1]
+speaker = "reina"
+portrait = "wink"
+local = "I brought cocoa powder, Celine."
+next = "2"
+
+[water_for_tea.2]
+speaker = "celine"
+portrait = "happy"
+effect = "sparkles"
+local = "Ohhh that sounds great!"

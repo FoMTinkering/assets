@@ -1,0 +1,376 @@
+fun ari_hammer() {
+	face(ari, west);
+	play_sound("SoundEffects/Tools/BlacksmithingHammerSwingAndHit");
+	face(ari, west);
+	animate(ari, axe);
+	ari_set_attachment(craftinghammer);
+	face(ari, west);
+	await_ari_animation();
+	animate(ari, idle);
+	wait(0.25);
+}
+scene(town);
+camera_position(m4h_camera_1);
+place_actor(ari, west, m4h_ari_entrance);
+place_actor(olric, north, m4h_march_forge);
+request_music_play("Music/Events/Cutscene");
+
+sim {
+	fade_in(2);
+	{
+		walk_slow(ari, m4h_ari_pause);
+		face(ari, west);
+		wait_one_tick();
+		walk_slow(ari, m4h_ari_start);
+		face(ari, west);
+	}
+	{
+		wait(3);
+		free bark_speech(olric, exclamation_mark);
+		wait(0.5);
+		animate(olric, idle);
+		wait(0.5);
+		face(olric, east);
+		wait(0.5);
+		walk(olric, m4h_olric_start);
+		face(olric, east);
+	}
+	{
+		wait(5.5);
+		next_line(); //
+		next_line(); //
+		//
+		next_line(); //
+		next_line(); //
+	}
+	{
+		pan_camera(6, m4h_camera_3);
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(olric, west);
+		wait(1.5);
+		face(olric, east);
+	}
+	{
+		next_line(); //
+	}
+}
+
+close_textbox();
+
+sim {
+	{
+		free bark_speech(ari, cute_face);
+		wait(1);
+		free bark_speech(olric, cute_face);
+		wait(1);
+		free bark_speech(olric, exclamation_mark);
+		wait(0.5);
+		face(ari, east);
+	}
+	{
+		wait(1.5);
+		request_music_stop();
+		request_music_play(march);
+	}
+	{
+		place_actor(march, north, m4h_march_entrance);
+		sim {
+			fade_npc_alpha(march, 0, 1, 60);
+			walk(march, m4h_march_start);
+		}
+		face(march, west);
+	}
+	{
+		wait(1.5);
+		pan_camera(2, m4h_camera_4);
+	}
+	{
+		wait(1.5);
+		next_line(); //
+	}
+}
+close_textbox();
+free bark_speech(march, exclamation_mark);
+wait(1);
+
+sim {
+	{
+		walk_slow(march, m4h_march_suspicious);
+		face(march, west);
+	}
+	{
+		next_line(); //
+		next_line(); //
+
+		//
+
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+face(march, east);
+wait(0.5);
+free bark_speech(march, ellipses);
+wait(1.5);
+
+sim {
+	{
+		wait(0.5);
+		face(march, west);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(1);
+		sim {
+			walk(olric, m4h_march_entrance);
+			set_move_speed(olric, 2);
+			{
+				wait(3);
+				fade_npc_alpha(olric, 1, 0, 60);
+			}
+		}
+		face(olric, south);
+		remove_actor(olric);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(0.5);
+free bark_speech(march, annoyed);
+fade_out(2);
+
+//
+wait(1);
+place_actor(ari, north, m4h_ari_forge);
+animate(ari, action);
+place_actor(march, north, m4h_march_forge);
+camera_position(m4h_camera_before_5);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	free pan_camera(8, m4h_camera_5);
+	{
+		wait(2);
+		next_line(); //
+	}
+}
+close_textbox();
+wait(1);
+fade_out(2);
+
+//
+
+wait(1);
+place_actor(ari, west, m4h_ari_pause);
+animate(ari, pickup);
+__ari_hold_item(iron_ingot);
+place_actor(olric, south, m4h_olric_sit);
+animate(olric, sit);
+place_actor(march, east, "Anvil");
+animate(march, action);
+camera_position(m4h_camera_5);
+setup_prop(m4h_ingots);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	free pan_camera(8, m4h_camera_6);
+	{
+		walk(ari, m4h_ari_start);
+		face(ari, west);
+	}
+	{
+		wait(2);
+		free bark_speech(olric, sweat_drop);
+	}
+}
+animate(march, idle);
+next_line(); //
+close_textbox();
+wait(0.5);
+sim {
+	{
+		walk(ari, m4h_ari_ingot_pile);
+		face(ari, north);
+		wait(0.5);
+		animate(ari, idle);
+		wait(0.5);
+		free walk(ari, m4h_march_entrance);
+	}
+	{
+		wait(0.5);
+		animate(march, action);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		wait(0.5);
+		animate(olric, idle);
+		walk(olric, "Anvil Olric Helping");
+		face(olric, west);
+		wait(0.5);
+		animate(march, idle);
+	}
+	{
+		fade_out(2);
+	}
+}
+
+//
+wait(1);
+destroy_prop(m4h_ingots);
+set_ari_to_idle(); //
+place_actor(ari, west, "Anvil Olric Helping");
+fade_npc_alpha(ari, 0, 1, 1);
+face(ari, west);
+place_actor(march, east, "Anvil");
+animate(march, hammer);
+place_actor(olric, north, m4h_olric_watch);
+animate(olric, idle);
+camera_position(m4h_camera_6);
+setup_prop(m4h_barrel_1);
+setup_prop(m4h_barrel_2);
+setup_prop(m4h_barrel_3);
+free ari_hammer();
+wait(0.1);
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	free pan_camera(8, m4h_camera_7);
+	{
+		face(ari, west);
+		ari_hammer();
+		ari_hammer();
+		ari_hammer();
+		ari_hammer();
+		ari_hammer();
+		ari_hammer();
+	}
+	{
+		wait(4);
+		next_line(); //
+	}
+	{
+		wait(5.5);
+		animate(march, idle);
+		animate(ari, idle);
+	}
+}
+sim {
+	{
+		wait(2.5);
+		face(march, south);
+	}
+	{
+		wait(1);
+		walk(olric, m4h_olric_collect);
+		face(olric, north);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+
+
+//
+sim {
+	{
+		wait(0.5);
+		face(march, east);
+	}
+	{
+		next_line(); //
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(1);
+free bark_speech(march, ellipses);
+wait(1.5);
+sim {
+	{
+		wait(1);
+		sim {
+			walk(march, m4h_march_suspicious);
+			set_move_speed(march, 2);
+		}
+		face(march, north);
+		use_door(march);
+	}
+	{
+		wait(3);
+		face(ari, east);
+	}
+	{
+		wait(3);
+		face(olric, east);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(1);
+sim {
+	{
+		wait(0.5);
+		walk_slow(olric, m4h_olric_final);
+		face(olric, east);
+	}
+	{
+		wait(0.5);
+		face(ari, south);
+		wait(0.5);
+		walk_slow(ari, m4h_ari_final);
+		face(ari, west);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+face(ari, east);
+wait(0.5);
+bark_speech(ari, ellipses);
+wait(0.5);
+face(ari, west);
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+free bark_speech(olric, cute_face);
+wait(1);
+fade_out(2);
+

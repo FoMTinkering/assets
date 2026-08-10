@@ -1,0 +1,150 @@
+requires = [
+	{ weather = "pleasant" },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+	{ season = "spring" },
+	{ day_of_the_week = "monday" }
+]
+
+# adeline
+[adeline."6:00am"]
+destination = "adelines_bedroom/Armchair Seat"
+
+[adeline."6:21am"]
+destination = "town/Quest Board"
+
+[adeline."10:45am"]
+destination = "town/Quest Board"
+on_arrival_actions = [{ animation = "write" }]
+
+[adeline."12:23pm"]
+destination = "adelines_office/Desk Chair Seat"
+on_arrival_actions = [{ animation = "write_sit" }]
+
+[adeline."7:59pm"]
+destination = "manor_house_dining_room/Table Right Seat 1"
+on_arrival_actions = [{ activity = "eat" }]
+on_arrival_writes = [
+	{ manor_dinner_eeea = true },
+	{ manor_dinner_argument = true },
+]
+on_departure_writes = [
+	{ manor_dinner_eeea = false },
+	{ manor_dinner_argument = false },
+]
+
+[adeline."12:12am"]
+destination = "adelines_bedroom/Armchair Seat"
+
+# caldarus
+[caldarus."6:00am"]
+destination = "museum_entry/museum_conversation_shadow"
+
+[caldarus."10:54am"]
+destination = "eastern_road/Porch Conversation Left"
+
+[caldarus."3:43pm"]
+destination = "landens_house_f1/Register Chatting"
+
+[caldarus."6:55pm"]
+destination = "caldarus_house/routine_entrance"
+on_arrival_actions = [{ routine = "caldarus_house_reading" }]
+
+[caldarus."11:12pm"]
+destination = "caldarus_house/Caldarus Wake Point"
+on_arrival_actions = [{ animation = "eyes_closed" }]
+
+# celine
+[celine."6:00am"]
+destination = "town/Celine Garden 1"
+on_arrival_actions = [
+	{ outfit = "spring_garden" },
+	{ routine = "celine_gardening" },
+]
+on_departure_actions = [{ outfit = "spring" }]
+
+[celine."11:49am"]
+destination = "inn/North Table Bottom 1"
+on_arrival_actions = [{ activity = "eat" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+
+[celine."4:12pm"]
+destination = "inn/Top Bar Seat"
+on_arrival_actions = [{ animation = "book_sit" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[celine."7:35pm"]
+destination = "town/Celine Cottage Bench Right"
+
+[celine."9:26pm"]
+destination = "celines_room/Couch Seat Upper"
+
+# juniper
+[juniper."6:00am"]
+destination = "bathhouse/Front Desk"
+on_arrival_actions = [{ animation = "snooze" }]
+
+[juniper."11:35am"]
+destination = "bathhouse/cauldron_convo_2"
+
+[juniper."5:24pm"]
+destination = "bathhouse_bedroom/Desk Stool"
+
+[juniper."7:44pm"]
+destination = "inn/Bottom Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[juniper."11:21pm"]
+destination = "bathhouse_bedroom/magic_routine_entrance"
+on_arrival_actions = [{ routine = "bathhouse_magic"}]
+
+# landen
+[landen."6:00am"]
+destination = "landens_house_f1/Register"
+
+[landen."12:21pm"]
+destination = "eastern_road/Porch Near Lumber"
+
+[landen."1:25pm"]
+destination = "eastern_road/Porch Conversation Right"
+
+[landen."6:49pm"]
+destination = "landens_house_f1/shop_south_1"
+
+[landen."11:59pm"]
+destination = "landens_house_f2/Landen Wake Point"
+
+# ryis
+[ryis."6:00am"]
+destination = "town/Town Center Flower Beds"
+on_arrival_actions = [{ routine = "town_repair_work" }]
+
+[ryis."11:56am"]
+destination = "landens_house_f1/Register"
+
+[ryis."6:56pm"]
+destination = "landens_house_f1/shop_south_3"
+
+[ryis."11:58pm"]
+destination = "landens_house_f2/Ryis Wake Point"
+
+# seridia
+[seridia."6:00am"]
+destination = "town/north_west_routine_entrance"
+
+[seridia."6:01am"]
+destination = "town/Quest Board Friend"
+
+[seridia."10:44am"]
+destination = "bathhouse/cauldron_convo_1"
+
+[seridia."5:23pm"]
+destination = "town/Celine Cottage Bench Left"
+
+[seridia."9:27pm"]
+destination = "celines_room/ArmChair Seat"
+
+[seridia."12:18am"]
+destination = "western_ruins/routine_entrance"

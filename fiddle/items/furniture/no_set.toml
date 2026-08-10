@@ -1,0 +1,260 @@
+# <---------FURNITURE ITEMS NOT PART OF A SPECIFIC "SET"------------->
+
+
+# <---------WEATHER CRYSTAL BALLS------------->
+
+[weather_crystal_ball]
+	icon_sprite = "spr_ui_item_weather_crystal_ball"
+	description = "Peer beyond the curtain, into...the weather."
+	name = "Weather Crystal Ball"
+	object = "weather_crystal_ball"
+	value = { bin = 20, store = 500 }
+
+	# <---------ESPRESSO MACHINES------------->
+
+[espresso_machine]
+	icon_sprite = "spr_ui_item_espresso_machine_gold"
+	description = "Prepares a hot cup of espresso for you each morning!"
+	name = "Espresso Machine"
+	value = { bin = "self.recipe * 1.1", store = 20000 }
+	object = "espresso_machine"
+	tags = ["furniture", "misc_functional"]
+	crafting_level_requirement = 30
+	recipe = [
+		{ count = 20, item = "gold_ingot" },
+		{ count = 10, item = "ore_diamond" },
+		{ count = 1, item = "dragon_forged_core" },
+		{ hours = 0, minutes = 30 },
+
+	]
+
+	# <---------TILED FENCES AND MOON GATES------------->
+
+[tile_roof_fence_v1]
+	description = "A stone fence with a blue tiled roof."
+	value = { bin = "self.recipe * 1.1" }
+	icon_sprite = "spr_ui_item_tile_roof_fence_v1"
+	crafting_preview_sprite = "spr_ui_decor_tile_roof_fence_preview_v1"
+	name = "Tile Roof Fence"
+	object = "tile_roof_fence_v1"
+	recipe_key = "tile_roof_fence"
+	tags = ["furniture", "fencing"]
+	crafting_level_requirement = 4
+	recipe = [
+		{ count = 3, item = "ore_stone" },
+		{ count = 3, item = "clay" },
+		{ hours = 0, minutes = 20 },
+	]
+
+[tile_roof_fence_v2]
+	description = "A stone fence with a red-brown tiled roof."
+	value = { bin = "self.recipe * 1.1" }
+	icon_sprite = "spr_ui_item_tile_roof_fence_v2"
+	crafting_preview_sprite = "spr_ui_decor_tile_roof_fence_preview_v2"
+	name = "Tile Roof Fence"
+	object = "tile_roof_fence_v2"
+	recipe_key = "tile_roof_fence"
+	tags = ["furniture", "fencing"]
+	crafting_level_requirement = 4
+	recipe = [
+		{ count = 3, item = "ore_stone" },
+		{ count = 3, item = "clay" },
+		{ hours = 0, minutes = 20 },
+	]
+
+[tile_roof_fence_v3]
+	description = "A stone fence with a green tiled roof."
+	value = { bin = "self.recipe * 1.1" }
+	icon_sprite = "spr_ui_item_tile_roof_fence_v3"
+	crafting_preview_sprite = "spr_ui_decor_tile_roof_fence_preview_v3"
+	name = "Tile Roof Fence"
+	object = "tile_roof_fence_v3"
+	recipe_key = "tile_roof_fence"
+	tags = ["furniture", "fencing"]
+	crafting_level_requirement = 4
+	recipe = [
+		{ count = 3, item = "ore_stone" },
+		{ count = 3, item = "clay" },
+		{ hours = 0, minutes = 20 },
+	]
+
+[moon_gate_v1]
+	description = "A stone moon gate with a blue tiled roof."
+	value = { bin = "self.recipe * 1.1" }
+	icon_sprite = "spr_ui_item_decor_moon_gate_v1"
+	name = "Moon Gate"
+	object = "moon_gate_v1"
+	recipe_key = "moon_gate"
+	tags = ["furniture", "misc_outdoor_decor"]
+	crafting_level_requirement = 10
+	recipe = [
+		{ count = 50, item = "ore_stone" },
+		{ count = 10, item = "clay" },
+		{ hours = 0, minutes = 30 },
+	]
+
+[moon_gate_v2]
+	description = "A stone moon gate with a red-brown tiled roof."
+	value = { bin = "self.recipe * 1.1" }
+	icon_sprite = "spr_ui_item_decor_moon_gate_v2"
+	name = "Moon Gate"
+	object = "moon_gate_v2"
+	recipe_key = "moon_gate"
+	tags = ["furniture", "misc_outdoor_decor"]
+	crafting_level_requirement = 10
+	recipe = [
+		{ count = 50, item = "ore_stone" },
+		{ count = 10, item = "clay" },
+		{ hours = 0, minutes = 30 },
+	]
+
+[moon_gate_v3]
+	description = "A stone moon gate with a green tiled roof."
+	value = { bin = "self.recipe * 1.1" }
+	icon_sprite = "spr_ui_item_decor_moon_gate_v3"
+	name = "Moon Gate"
+	object = "moon_gate_v3"
+	recipe_key = "moon_gate"
+	tags = ["furniture", "misc_outdoor_decor"]
+	crafting_level_requirement = 10
+	recipe = [
+		{ count = 50, item = "ore_stone" },
+		{ count = 10, item = "clay" },
+		{ hours = 0, minutes = 30 },
+	]
+
+[mournful_clown_painting]
+	icon_sprite = "spr_ui_item_decor_mournful_clown_painting"
+	name = "Mournful Clown Painting"
+	object = "mournful_clown_painting"
+	description = "This painting is a true masterpiece, each stroke imbued with the melancholy of this mournful clown."
+	value = { bin = 500 }
+	tags = ["furniture"]
+
+	# MISC RENOWN REWARDS
+
+
+	# STARRY / SUMMIT STUFF
+
+[summit_wallpaper_v1]
+	name = "Summit Wallpaper"
+	icon_sprite = "spr_ui_item_furniture_summit_wallpaper_v1"
+	description = "A beautiful wallpaper resembling the summit sky at night."
+	value = { bin = "self.recipe*1.1" }
+	crafting_level_requirement = 30
+	crafting_preview_sprite = "spr_ui_furniture_summit_wall_v1_preview"
+	recipe = [
+		{ count = 5, item = "paper" },
+		{ count = 3, item = "essence_drop" },
+		{ hours = 0, minutes = 20 },
+	]
+	recipe_key = "summit_wallpaper"
+	wallpaper = "starry_v1"
+	door_mold = "spr_carpenter_house_f2_doorway2_spring"
+	tags = ["furniture", "wallpaper"]
+
+[starry_flooring_v1]
+	name = "Starry Flooring"
+	icon_sprite = "spr_ui_item_furniture_starry_flooring_v1"
+	description = "Starry patterned flooring with blue and orange stars."
+	value = { bin = "self.recipe*1.1" }
+	crafting_level_requirement = 30
+	crafting_preview_sprite = "spr_ui_furniture_starry_floor_v1_preview"
+	recipe = [
+		{ count = 5, item = "hard_wood" },
+		{ count = 5, item = "crystal" },
+		{ count = 3, item = "essence_drop" },
+		{ hours = 0, minutes = 30 },
+	]
+	flooring = "starry_v1"
+	recipe_key = "starry_flooring"
+	tags = ["furniture", "novelty_flooring"]
+
+[summit_wallpaper_v2]
+	name = "Summit Wallpaper"
+	icon_sprite = "spr_ui_item_furniture_summit_wallpaper_v2"
+	description = "A beautiful wallpaper resembling the summit sky at sunset."
+	value = { bin = "self.recipe*1.1" }
+	crafting_level_requirement = 30
+	crafting_preview_sprite = "spr_ui_furniture_summit_wall_v2_preview"
+	recipe = [
+		{ count = 5, item = "paper" },
+		{ count = 3, item = "essence_drop" },
+		{ hours = 0, minutes = 20 },
+	]
+	wallpaper = "starry_v2"
+	recipe_key = "summit_wallpaper"
+	door_mold = "spr_carpenter_house_f2_doorway2_spring"
+	tags = ["furniture", "wallpaper"]
+
+[starry_flooring_v2]
+	name = "Starry Flooring"
+	icon_sprite = "spr_ui_item_furniture_starry_flooring_v2"
+	description = "Starry patterned flooring with pink and purple stars."
+	value = { bin = "self.recipe*1.1" }
+	crafting_level_requirement = 30
+	crafting_preview_sprite = "spr_ui_furniture_starry_floor_v2_preview"
+	recipe = [
+		{ count = 5, item = "hard_wood" },
+		{ count = 5, item = "crystal" },
+		{ count = 3, item = "essence_drop" },
+		{ hours = 0, minutes = 30 },
+	]
+	flooring = "starry_v2"
+	recipe_key = "starry_flooring"
+	tags = ["furniture", "novelty_flooring"]
+
+	#Museum rewards no set
+	# <---- NO SET MUSEUM REWARD ITEMS ---->
+
+
+[crystal_string_lights_blue]
+	name = "Crystal Wall String Lights"
+	icon_sprite = "spr_ui_item_decor_crystal_string_lights_blue"
+	description = "Blue crystal string lights to hang on your wall."
+	value = { bin = "self.recipe*1.1" }
+	crafting_preview_sprite = "spr_ui_decor_crystal_string_lights_blue_preview"
+	crafting_level_requirement = 20
+	recipe = [
+		{ count = 3, item = "crystal" },
+		{ count = 3, item = "monster_core" },
+		{ count = 3, item = "essence_drop" },
+		{ hours = 0, minutes = 30 },
+	]
+	object = "crystal_string_lights_blue"
+	recipe_key = "crystal_string_lights"
+	tags = ["furniture", "wall_lighting"]
+
+[crystal_string_lights_pink]
+	name = "Crystal Wall String Lights"
+	icon_sprite = "spr_ui_item_decor_crystal_string_lights_pink"
+	description = "Pink crystal string lights to hang on your wall."
+	value = { bin = "self.recipe*1.1" }
+	crafting_preview_sprite = "spr_ui_decor_crystal_string_lights_pink_preview"
+	crafting_level_requirement = 20
+	recipe = [
+		{ count = 3, item = "crystal" },
+		{ count = 3, item = "monster_core" },
+		{ count = 3, item = "essence_drop" },
+		{ hours = 0, minutes = 30 },
+	]
+	object = "crystal_string_lights_pink"
+	recipe_key = "crystal_string_lights"
+	tags = ["furniture", "wall_lighting"]
+
+[crystal_string_lights_purple]
+	name = "Crystal Wall String Lights"
+	icon_sprite = "spr_ui_item_decor_crystal_string_lights_purple"
+	description = "Purple crystal string lights to hang on your wall."
+	value = { bin = "self.recipe*1.1" }
+	crafting_preview_sprite = "spr_ui_decor_crystal_string_lights_purple_preview"
+	crafting_level_requirement = 20
+	recipe = [
+		{ count = 3, item = "crystal" },
+		{ count = 3, item = "monster_core" },
+		{ count = 3, item = "essence_drop" },
+		{ hours = 0, minutes = 30 },
+	]
+	object = "crystal_string_lights_purple"
+	recipe_key = "crystal_string_lights"
+	tags = ["furniture", "wall_lighting"]

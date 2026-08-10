@@ -1,0 +1,82 @@
+[surprise]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "juniper" },
+	{ spring_festival_date = "1d", time = "after" },
+]
+portrait = "happy"
+local = "Isn't this festival a pleasant surprise? It's nice to see Dozy enjoying himself."
+
+[first_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "juniper" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ any = [{ sf_first_place = true }, { sf_first_place_plus = true }] },
+]
+portrait = "happy"
+local = "Congrats, I suppose. It's nice to see you embracing the rustic traditions that make Mistria so positively... quaint."
+next = "1"
+
+[first_place.1]
+portrait = "laugh"
+local = "Oh ho ho!"
+
+[middle_place_low_hearts]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "juniper" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ juniper_heart_level = 6, comparator = "<" },
+	{ any = [{ sf_second_place = true }, { sf_third_place = true }] },
+]
+portrait = "sly"
+local = "Well it seems you had fun picking flowers! How lovely."
+next = "1"
+
+[middle_place_low_hearts.1]
+portrait = "laugh"
+local = "Oh ho ho!"
+
+[middle_place_high_hearts]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "juniper" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ juniper_heart_level = 6, comparator = ">=" },
+	{ any = [{ sf_second_place = true }, { sf_third_place = true }] },
+]
+portrait = "neutral"
+local = "It's nice that you let Celine win, you can see how much it means to her."
+next = "1"
+
+[middle_place_high_hearts.1]
+portrait = "laugh"
+local = "Oh ho ho!"
+
+[no_place]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "juniper" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ juniper_heart_level = 2, comparator = "<=" },
+	{ sf_no_place = true },
+	{ date_time = "1y", comparator = "<=" }
+]
+portrait = "neutral"
+local = "Oh dear, the new farmer couldn't place in the flower gathering contest?"
+next = "1"
+
+[no_place.1]
+portrait = "laugh"
+local = "Oh ho ho!"
+next = "2"
+
+[no_place.2]
+portrait = "neutral"
+local = "Alright, I'm done. You can go now."

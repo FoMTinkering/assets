@@ -1,0 +1,72 @@
+[water_seal]
+kind = "gameplay_triggered"
+writes = [{ water_seal = "seen" }]
+no_speaker = true
+local = "A faint whisper breaks the silence..."
+next = "1"
+
+[water_seal.1]
+no_speaker = true
+local = "^Hero... the Water Seal...^"
+next = "2"
+
+[water_seal.2]
+no_speaker = true
+local = "The tablet has an unknown language inscribed upon it. $Eiland might be able to translate the text if you take a rubbing of the tablet to him$."
+
+[break_water_seal_follow_up_eiland]
+refresh = "never"
+requires = [{ npc = "eiland" }, { bws = true }]
+local = "The tablet translation helped you find a path leading deeper underground? Incredible!"
+next = "1"
+
+[break_water_seal_follow_up_eiland.1]
+portrait = "happy"
+effect = "sparkles"
+local = "I can't wait to find out what you discover next. How exciting!"
+
+[break_water_seal_follow_up_juniper]
+refresh = "never"
+requires = [{ npc = "juniper" }, { bws = true }]
+local = "[Ari], [Ari], [Ari]..."
+next = "1"
+
+[break_water_seal_follow_up_juniper.1]
+portrait = "sly"
+local = "You're hiding something from me aren't you?"
+next = "2"
+
+[break_water_seal_follow_up_juniper.2]
+portrait = "angry_brows"
+local = "I can feel an increase in magic energy. What exactly did you do?"
+next = "3"
+
+[break_water_seal_follow_up_juniper.3]
+portrait = "ugh"
+local = "You broke a magic seal!? You expect me to believe that?"
+next = "4"
+
+[break_water_seal_follow_up_juniper.4]
+portrait = "laugh"
+local = "Oh ho ho ho!"
+next = "5"
+
+[break_water_seal_follow_up_juniper.5]
+portrait = "wink"
+local = "You should really stick to farming. Leave the magic stuff to me."
+
+[break_water_seal]
+kind = "gameplay_triggered"
+writes = [{ bws = true, expires = "4d" }]
+speaker = "seridia"
+local = "^Hero... thank you... I am...^"
+next = "1"
+
+[break_water_seal.1]
+local = "^Dragon... Priestess...^"
+portrait = "neutral_closed"
+next = "2"
+
+[break_water_seal.2]
+local = "^Meet... below...^"
+portrait = "neutral"

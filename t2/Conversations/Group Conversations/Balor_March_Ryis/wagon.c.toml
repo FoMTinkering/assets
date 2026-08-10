@@ -1,0 +1,24 @@
+[wagon]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "march" }, { npc = "ryis" }] },
+	{ balor_zone = "<march_zone>" },
+	{ balor_zone = "<ryis_zone>" },
+	{ balor_zone = "town/wagon" }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "balor" } }]
+speaker = "balor"
+portrait = "neutral"
+local = "The wagon's looking pretty good, actually. But thanks for checking in, boys."
+next = "1"
+
+[wagon.1]
+speaker = "march"
+portrait = "unimpressed"
+local = "That can't be right. There's always something wrong with the wagon."
+next = "2"
+
+[wagon.2]
+speaker = "ryis"
+portrait = "sad"
+local = "Yeah, you don't have to lie to us, Balor. We're happy to do the work."

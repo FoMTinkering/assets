@@ -1,0 +1,182 @@
+fun ari_stele_open() {
+	play_sound("SoundEffects/SpecialEvents/SteleOpen");
+	animate(ari, action);
+	await_ari_animation();
+	animate(ari, idle);
+}
+fun ari_give_greaves() {
+	animate(ari, pickup);
+	__ari_hold_item(dragonsworn_greaves);
+	await_ari_animation();
+	walk_slow(ari, ei2h_ari_give);
+	face(ari, west);
+	wait(1);
+	animate(ari, idle);
+	wait(0.5);
+	walk_slow(ari, ei2h_ari_stele_forward);
+	face(ari, west);
+}
+
+scene(town);
+camera_position(ei2h_camera_1);
+place_actor(ari, north, ei2h_ari_entrance);
+place_actor(eiland, west, ei2h_eiland_start);
+request_music_play(eiland);
+
+sim {
+	fade_in(2);
+	pan_camera(3, ei2h_camera_2);
+	{
+		walk_slow(ari, ei2h_ari_start);
+		face(ari, north);
+	}
+	{
+		free bark_speech(eiland, ellipses);
+		wait(2);
+		free bark_speech(eiland, exclamation_mark);
+		wait(0.5);
+		face(eiland, south);
+		wait(1);
+	}
+	{
+		wait(2.5);
+		next_line(); //
+	}
+}
+close_textbox();
+sim {
+	{
+		walk_slow(eiland, ei2h_exit);
+	}
+	{
+		wait(1);
+		fade_out(2);
+	}
+	{
+		wait(1);
+		walk_slow(ari, ei2h_ari_exit);
+	}
+}
+wait(0.25);
+camera_position(ei2h_camera_3);
+place_actor(ari, north, ei2h_ari_stele);
+place_actor(eiland, north, ei2h_eiland_stele);
+sim {
+	{
+		wait(0.5);
+		fade_in(2);
+	}
+	pan_camera(3, ei2h_camera_4);
+	{
+		wait(2);
+		next_line(); //
+		//
+		next_line(); //
+		next_line(); //
+	}
+	{
+		wait(2.5);
+		face(eiland, east);
+		wait(0.5);
+		face(ari, west);
+	}
+}
+
+sim {
+	{
+		wait(0.5);
+		face(eiland, north);
+	}
+	{
+		next_line(); //
+	}
+}
+
+//
+free {
+	wait(0.5);
+	face(eiland, east);
+}
+next_line(); //
+next_line(); //
+sim {
+	{
+		walk_slow(eiland, ei2h_eiland_stele_forward);
+		face(eiland, north);
+	}
+	{
+		wait(0.5);
+		face(ari, north);
+		wait(0.25);
+		walk_slow(ari, ei2h_ari_stele_forward);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+wait(1);
+ari_stele_open();
+free bark_speech(eiland, exclamation_mark);
+wait(0.5);
+next_line(); //
+close_textbox();
+wait(0.5);
+ari_hold_item(dragonsworn_greaves);
+
+//
+//
+wait(0.25);
+face(eiland, east);
+animate(ari, idle);
+face(ari, west);
+next_line(); //
+sim {
+	{
+		face(eiland, north);
+	}
+	{
+		wait(0.5);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	face(eiland, east);
+	{
+		wait(0.5);
+		face(ari, west);
+	}
+	{
+		next_line(); //
+	}
+}
+close_textbox();
+ari_give_greaves();
+next_line(); //
+close_textbox();
+free bark_speech(eiland, cute_face);
+wait(1);
+sim {
+	free sim {
+		{
+			walk(eiland, ei2h_exit_2);
+			set_move_speed(eiland, 1);
+		}
+	}
+	{
+		wait(1);
+		face(ari, east);
+		wait(0.25);
+		free bark_speech(ari, sweat_drop);
+	}
+	{
+		wait(2);
+		fade_out(2);
+	}
+}
+
+wait_one_tick();

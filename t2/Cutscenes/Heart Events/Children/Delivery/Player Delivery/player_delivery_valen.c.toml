@@ -1,0 +1,98 @@
+[player_delivery_valen]
+writes = [
+    { child_born_bump = true, expires = "2d" },
+    { baby_born_timer = true, expires = "5d" }
+]
+kind = "gameplay_triggered"
+speaker = "valen"
+portrait = "sad"
+local = "What is it, [Ari]? Are you alright?"
+next = "1"
+
+[player_delivery_valen.1]
+speaker = "valen"
+portrait = "neutral"
+effect = "surprise"
+local = "The baby is coming!?"
+next = "2"
+
+[player_delivery_valen.2]
+speaker = "valen"
+portrait = "happy"
+local = "Don't worry, I'm here. Everything's going to be okay."
+next = "3"
+
+[player_delivery_valen.3]
+speaker = "valen"
+portrait = "neutral"
+local = "Let's get you to the Clinic!"
+next = "4"
+
+[player_delivery_valen.4]
+speaker = "valen"
+portrait = "neutral_blush"
+local = "You did it, [Ari], well done!"
+next = "5"
+
+[player_delivery_valen.5]
+speaker = "valen"
+portrait = "happy_blush"
+effect = "cheery"
+local = "We are the proud parents of a healthy and beautiful $baby boy$!"
+next = "6"
+
+[player_delivery_valen.6]
+speaker = "valen"
+portrait = "neutral"
+local = "What shall we $name him$?"
+next = "7a"
+
+[player_delivery_valen.7a]
+speaker = "valen"
+portrait = "happy_blush"
+local = "Oh!"
+next = [
+    { target = "7b_torin", requires = [{ child_0_has_default_name = true }] },
+    { target = "7b_standard", requires = [] }
+]
+
+[player_delivery_valen.7b_torin]
+speaker = "valen"
+portrait = "teary"
+local = "$Torin$... My father's name."
+next = "8"
+
+[player_delivery_valen.7b_standard]
+speaker = "valen"
+portrait = "caring_special"
+local = "Yes, [child_0]..."
+next = "8"
+
+[player_delivery_valen.8]
+speaker = "valen"
+portrait = "happy_blush"
+local = "It suits him perfectly. It's as if it were already chosen for him long ago."
+next = "9"
+
+[player_delivery_valen.9]
+speaker = "valen"
+portrait = "neutral"
+local = "Now, why don't we see about getting you two home?"
+next = "10"
+
+[player_delivery_valen.10]
+speaker = "valen"
+portrait = "think_special"
+local = "You need to get plenty of rest, [Ari]."
+next = "11"
+
+[player_delivery_valen.11]
+speaker = "valen"
+portrait = "happy"
+local = "You should focus on recovering and I'll handle everything else."
+next = "12"
+
+[player_delivery_valen.12]
+no_speaker = true
+local = "Do you want to view the $Raising a Child$ Tutorial?"
+prompts = [{ local = "Yes" }, { local = "No" }]

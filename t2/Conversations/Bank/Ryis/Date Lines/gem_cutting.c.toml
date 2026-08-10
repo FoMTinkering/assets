@@ -1,0 +1,105 @@
+[gem_cutting_accept_1]
+kind = "date_acceptance"
+requires = [
+    { npc = "ryis" },
+    { date = "gem_cutting" },
+    { da_ryis_gem_cutting = 0 },
+    { ryis_is_spouse = false }
+]
+writes = [
+    { da_ryis_gem_cutting = 1 },
+    { da_ryis_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "neutral"
+local = "You want to do some $Gem Cutting$, [Ari]?"
+next = "1"
+
+[gem_cutting_accept_1.1]
+portrait = "happy_blush"
+local = "Sounds great!"
+next = "2"
+
+[gem_cutting_accept_1.2]
+portrait = "think"
+local = "I usually work with softer materials like wood and stone..."
+next = "3"
+
+[gem_cutting_accept_1.3]
+portrait = "blush_special"
+local = "So this should be interesting!"
+
+[gem_cutting_accept_2]
+kind = "date_acceptance"
+requires = [
+    { npc = "ryis" },
+    { date = "gem_cutting" },
+    { ryis_has_child = false },
+    { any = [
+        { ryis_is_spouse = true },
+        { da_ryis_gem_cutting = 1, comparator = ">=" }
+    ] }
+]
+writes = [
+    { da_ryis_gem_cutting = 2 },
+    { da_ryis_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "happy_blush"
+local = "How about some $Gem Cutting$, [Ari]?"
+next = "1"
+
+[gem_cutting_accept_2.1]
+portrait = "blush_special"
+local = "It's nice to work together on a little project!"
+
+[gem_cutting_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "ryis" },
+    { da_ryis_gem_cutting = 1 },
+    { da_ryis_gem_cutting_follow_up_gate = true },
+    { ryis_is_spouse = false }
+]
+writes = [{ da_ryis_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy_blush"
+local = "Wow, [Ari]! You really know what you're doing when it comes to $Gem Cutting$!"
+next = "1"
+
+[gem_cutting_follow_up_1.1]
+portrait = "blush_special"
+local = "Your gem turned out perfect."
+next = "2"
+
+[gem_cutting_follow_up_1.2]
+portrait = "thoughtful_blush"
+local = "I'm pretty happy with how mine came out, too..."
+next = "3"
+
+[gem_cutting_follow_up_1.3]
+portrait = "embarrassed"
+local = "They make a nice pair, huh?"
+
+[gem_cutting_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "ryis" },
+    { ryis_has_child = false },
+    { any = [{ ryis_is_spouse = true }, { da_ryis_gem_cutting = 2 }] },
+    { da_ryis_gem_cutting_follow_up_gate = true }
+]
+writes = [{ da_ryis_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy_blush"
+local = "I had a great time, [Ari]!"
+next = "1"
+
+[gem_cutting_follow_up_2.1]
+portrait = "blush_special"
+local = "I always enjoy working beside you..."
+next = "2"
+
+[gem_cutting_follow_up_2.2]
+portrait = "happy_blush"
+local = "And our gems came out great!"

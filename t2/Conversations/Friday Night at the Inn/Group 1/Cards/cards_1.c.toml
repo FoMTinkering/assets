@@ -1,0 +1,74 @@
+[cards_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ errol_zone = "inn/north_table" },
+	{ hayden_zone = "inn/north_table" },
+	{ nora_zone = "inn/north_table" },
+	{ olric_zone = "inn/north_table" },
+	{ ryis_zone = "inn/north_table" },
+	{ terithia_zone = "inn/north_table" },
+	{ any = [
+		{ npc = "errol" },
+		{ npc = "hayden" },
+		{ npc = "nora" },
+		{ npc = "olric" },
+		{ npc = "ryis" },
+		{ npc = "terithia" },
+	] },
+	{ any = [{ fnati = 0 }, { fnati = 1 }]},
+]
+writes = [{ cards_fnati = 1 }]
+actions = [
+	{ bark = { bark = "angry", npc = "errol" } },
+	{ bark = { bark = "ellipses", npc = "hayden" } },
+	{ bark = { bark = "angry", npc = "nora" } },
+	{ bark = { bark = "sweat_drop", npc = "ryis" } },
+	{ bark = { bark = "angry", npc = "terithia" } },
+]
+speaker = "terithia"
+portrait = "think"
+local = "Hit me."
+next = "1"
+
+[cards_1.1]
+speaker = "hayden"
+portrait = "happy_arm_down"
+local = "Ooh, she sounds pretty confident, don't you think, Ryis?"
+next = "2"
+
+[cards_1.2]
+speaker = "ryis"
+portrait = "neutral"
+local = "Wish I could say... I just deal the cards, man."
+next = "3"
+
+[cards_1.3]
+speaker = "nora"
+portrait = "neutral"
+local = "I'm in for fifty more tesserae."
+next = "4"
+
+[cards_1.4]
+speaker = "errol"
+portrait = "wink"
+local = "Ho ho... that bluff won't work on me. Are you quite certain you don't need any more cards, Nora?"
+next = "5"
+
+[cards_1.5]
+speaker = "nora"
+portrait = "mad"
+local = "Are YOU sure you don't need any more cards, Errol?"
+next = "6"
+
+[cards_1.6]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "Now now, let's keep it friendly... no need to get worked up."
+next = "7"
+
+[cards_1.7]
+speaker = "olric"
+portrait = "think"
+local = "Hey guys, four of a kind is good, right? Or should I hold out for five of a kind? Guys?"

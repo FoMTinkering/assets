@@ -1,0 +1,455 @@
+[hayden_eight_hearts_follow_up_hayden_friendship]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_heart_event = "eight_heart" },
+	{ hayden_is_best_friend = true },
+	{ hayden_eight_heart_priority_bump = true }
+]
+portrait = "neutral"
+local = "I had a great time with you, [Ari]. Let's do it again sometime soon!"
+
+[hayden_eight_hearts_follow_up_hayden_romance]
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_heart_event = "eight_heart" },
+	{ hayden_is_partner = true },
+	{ hayden_eight_heart_priority_bump = true }
+]
+portrait = "shy_special"
+local = "I had a great time with you, [Ari]. Let's do it again sometime soon."
+
+[hayden_eight_hearts_follow_up_hemlock_romance]
+refresh = "never"
+requires = [
+	{ npc = "hemlock" },
+	{ hayden_heart_event = "eight_heart" },
+	{ hayden_is_partner = true }
+]
+portrait = "neutral"
+local = "I've known Hayden for a long time, but I've never seen him quite this cheerful."
+next = "1"
+
+[hayden_eight_hearts_follow_up_hemlock_romance.1]
+portrait = "happy"
+local = "Suddenly he's buying everyone at the Inn a round of drinks! I wonder what's gotten into him?"
+
+[hayden_eight_hearts_follow_up_henrietta]
+refresh = "never"
+requires = [{ npc = "henrietta" }, { hayden_heart_event = "eight_heart" }]
+portrait = "neutral"
+local = "(Henrietta gives a gentle coo as you draw near. She looks pleased.)"
+
+[hayden_eight_hearts_follow_up_luc]
+refresh = "never"
+requires = [{ npc = "luc" }, { hayden_heart_event = "eight_heart" }]
+portrait = "think"
+local = "I can't believe it took us so long to get Henrietta into the Dragonguard."
+next = "1"
+
+[hayden_eight_hearts_follow_up_luc.1]
+portrait = "happy"
+effect = "cheery"
+local = "She's great at finding bugs!"
+
+[hayden_eight_hearts]
+writes = [
+	{ hayden_heart_event = "eight_heart", expires = "4d" },
+	{ hayden_eight_heart_priority_bump = true, expires = "4d" }
+]
+kind = "gameplay_triggered"
+speaker = "hayden"
+portrait = "happy"
+local = "[Ari]! Pull up a chair, I just finished cooking."
+next = "1"
+
+[hayden_eight_hearts.1]
+speaker = "hayden"
+portrait = "neutral"
+local = "Careful, the =Vegetable Quiche= is still piping hot!"
+next = "2"
+
+[hayden_eight_hearts.2]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "Nothing quite like a meal made farm-to-table."
+next = "3"
+
+[hayden_eight_hearts.3]
+speaker = "hayden"
+portrait = "think"
+local = "Eggs from my hens, vegetables from my fields, and wheat ground at the town mill..."
+
+[[hayden_eight_hearts.3.prompts]]
+local = "It's delicious, Hayden!"
+next = [
+	{ target = "4r", requires = [{ shooting_star_hayden_attended = true }] },
+	{ target = "4f", requires = [] }
+]
+
+[[hayden_eight_hearts.3.prompts]]
+local = "You can taste the difference!"
+next = [
+	{ target = "4r", requires = [{ shooting_star_hayden_attended = true }] },
+	{ target = "4f", requires = [] }
+]
+
+[hayden_eight_hearts.4r]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "Well now, I'm glad to hear it! Dig in, [Ari]!"
+next = "5"
+
+[hayden_eight_hearts.4f]
+speaker = "hayden"
+portrait = "sweat"
+local = "Well now, I'm glad to hear it! Dig in, [Ari]!"
+next = "5"
+
+[hayden_eight_hearts.5]
+speaker = "hayden"
+portrait = "neutral"
+local = "Thanks for making the time to come over. I know it can be hard to get away when you're running a farm."
+next = "6"
+
+[hayden_eight_hearts.6]
+speaker = "hayden"
+portrait = "happy_arm_down"
+local = "Watering crops, feeding animals... There's always something that needs doing."
+prompts = [
+	{ local = "Speaking of which, where's Henrietta?", next = "7" },
+	{ local = "Is Henrietta going to be joining us?", next = "7" }
+]
+
+[hayden_eight_hearts.7]
+speaker = "hayden"
+portrait = "neutral"
+local = "Oh! I nearly forgot to mention..."
+next = "8"
+
+[hayden_eight_hearts.8]
+speaker = "hayden"
+portrait = "happy_fist"
+local = "Today is just for the two of us. Henrietta is out with her friends."
+next = "9"
+
+[hayden_eight_hearts.9]
+speaker = "hayden"
+portrait = "think"
+local = "They want to induct her into the Dragonguard. Said she'd make a good watchbird."
+next = "10"
+
+[hayden_eight_hearts.10]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "I don't know about all that, but I can tell that Henrietta is having fun."
+
+[[hayden_eight_hearts.10.prompts]]
+local = "Wow, she's come such a long way!"
+next = [
+	{ target = "11r", requires = [{ shooting_star_hayden_attended = true }] },
+	{ target = "11f", requires = [] }
+]
+
+[[hayden_eight_hearts.10.prompts]]
+local = "How are you handling it?"
+next = [
+	{ target = "12r", requires = [{ shooting_star_hayden_attended = true }] },
+	{ target = "12f", requires = [] }
+]
+
+[hayden_eight_hearts.11r]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "She sure has! You should see how gentle and patient she is with those kids."
+next = "14"
+
+[hayden_eight_hearts.11f]
+speaker = "hayden"
+portrait = "happy"
+local = "She sure has! You should see how gentle and patient she is with those kids."
+next = "14"
+
+[hayden_eight_hearts.12r]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "I admit it can be a little quiet around here when she's out, but I'm real proud of her."
+next = "13"
+
+[hayden_eight_hearts.12f]
+speaker = "hayden"
+portrait = "sweat"
+local = "I admit it can be a little quiet around here when she's out, but I'm real proud of her."
+next = "13"
+
+[hayden_eight_hearts.13]
+speaker = "hayden"
+portrait = "happy"
+local = "You should see how gentle and patient she is with those kids."
+next = "14"
+
+[hayden_eight_hearts.14]
+speaker = "hayden"
+portrait = "neutral_fist"
+local = "She couldn't have done it without your help, [Ari]."
+next = "15"
+
+[hayden_eight_hearts.15]
+speaker = "hayden"
+portrait = "wink_fist"
+local = "Whew, am I full!"
+next = "16"
+
+[hayden_eight_hearts.16]
+speaker = "hayden"
+portrait = "think"
+local = "What do you say we take a little walk? Down to the Beach maybe?"
+next = "17"
+
+[hayden_eight_hearts.17]
+speaker = "hayden"
+portrait = "neutral"
+local = "Nothing more refreshing than some sea air after a big meal."
+next = "18"
+
+[hayden_eight_hearts.18]
+speaker = "hayden"
+portrait = "happy_arm_down"
+local = "Ahh..."
+next = "19"
+
+[hayden_eight_hearts.19]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "I like to come down here when I need a break."
+next = "20"
+
+[hayden_eight_hearts.20]
+speaker = "hayden"
+portrait = "happy"
+local = "Helps me unwind and clear my head."
+next = "21"
+
+[hayden_eight_hearts.21]
+speaker = "hayden"
+portrait = "think_special"
+local = "..."
+
+[[hayden_eight_hearts.21.prompts]]
+local = "What's on your mind?"
+next = [
+	{ target = "22r", requires = [{ shooting_star_hayden_attended = true }] },
+	{ target = "22f", requires = [] }
+]
+
+[[hayden_eight_hearts.21.prompts]]
+local = "Whatcha thinking about?"
+next = [
+	{ target = "22r", requires = [{ shooting_star_hayden_attended = true }] },
+	{ target = "22f", requires = [] }
+]
+
+[hayden_eight_hearts.22r]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "Oh it's just..."
+next = "23r"
+
+[hayden_eight_hearts.22f]
+speaker = "hayden"
+portrait = "sweat"
+local = "Oh! It's nothing, just..."
+next = "23f"
+
+[hayden_eight_hearts.23r]
+speaker = "hayden"
+portrait = "shy_special"
+local = "It's nice to be able to share this with someone. With you."
+next = "24"
+
+[hayden_eight_hearts.23f]
+speaker = "hayden"
+portrait = "gloomy"
+local = "It's nice to be able to share this with someone, that's all."
+next = "24"
+
+[hayden_eight_hearts.24]
+speaker = "hayden"
+portrait = "sweat"
+local = "It's been a long time."
+next = "25"
+
+[hayden_eight_hearts.25]
+speaker = "hayden"
+portrait = "think"
+local = "Grandma used to take me out here. Said it was a good place to be alone with your thoughts."
+next = "26"
+
+[hayden_eight_hearts.26]
+speaker = "hayden"
+portrait = "think_special"
+local = "But you know, I think I've spent enough time alone since she passed."
+next = "27"
+
+[hayden_eight_hearts.27]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "I prefer having someone to share my thoughts with."
+next = "28"
+
+[hayden_eight_hearts.28]
+speaker = "hayden"
+portrait = "happy_arm_down"
+local = "Someone to share a meal with. And a nice walk after."
+next = "29"
+
+[hayden_eight_hearts.29]
+speaker = "hayden"
+portrait = "think"
+local = "..."
+next = [
+	{ target = "30r", requires = [{ shooting_star_hayden_attended = true }] },
+	{ target = "30f", requires = [] }
+]
+
+[hayden_eight_hearts.30r]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "How about you, [Ari]? You look mighty thoughtful. Something on your mind?"
+prompts = [
+	{ local = "I'm glad to have a best friend like you, Hayden.", next = "31r" },
+	{ local = "I wish you'd just kiss me already, Hayden.", next = "34r" }
+]
+
+[hayden_eight_hearts.30f]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "How about you, [Ari]? You look mighty thoughtful. Something on your mind?"
+prompts = [
+	{ local = "I'm glad to have a best friend like you, Hayden.", next = "31f" },
+	{ local = "I've been meaning to tell you...\nI really like you, Hayden.", next = "34f" }
+]
+
+[hayden_eight_hearts.31r]
+actions = [{ update_status = { npc = "hayden", status = "best_friend" } }]
+speaker = "hayden"
+portrait = "gloomy"
+local = "[Ari]..."
+next = "32r"
+
+[hayden_eight_hearts.31f]
+actions = [{ update_status = { npc = "hayden", status = "best_friend" } }]
+speaker = "hayden"
+portrait = "happy_fist"
+local = "[Ari]..."
+next = "32f"
+
+[hayden_eight_hearts.32r]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "T-thank you."
+next = "33r"
+
+[hayden_eight_hearts.32f]
+speaker = "hayden"
+portrait = "neutral"
+local = "You took the words right out of my mouth."
+next = "33f"
+
+[hayden_eight_hearts.33r]
+speaker = "hayden"
+portrait = "happy_arm_down"
+local = "I'm glad to call you my best friend, too."
+next = "37r"
+
+[hayden_eight_hearts.33f]
+speaker = "hayden"
+portrait = "laugh"
+local = "Gya ha ha!"
+next = "37f"
+
+[hayden_eight_hearts.34r]
+actions = [{ update_status = { npc = "hayden", status = "dating" } }]
+speaker = "hayden"
+portrait = "shy_special"
+local = "[Ari]!"
+next = "35r"
+
+[hayden_eight_hearts.34f]
+actions = [{ update_status = { npc = "hayden", status = "dating" } }]
+speaker = "hayden"
+portrait = "shy_special"
+local = "Do... do you mean it?"
+next = "35f"
+
+[hayden_eight_hearts.35r]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "Do... do you mean it?"
+next = "36r"
+
+[hayden_eight_hearts.35f]
+speaker = "hayden"
+portrait = "embarrassed"
+local = "Truthfully, I've been meaning to tell you the same for some time now..."
+next = "36f"
+
+[hayden_eight_hearts.36r]
+speaker = "hayden"
+portrait = "shy_special"
+local = "You've got no idea how long I've been wanting to do just that!"
+next = "37r"
+
+[hayden_eight_hearts.36f]
+speaker = "hayden"
+portrait = "happy"
+local = "Maybe we can consider today... our first date?"
+next = "37f"
+
+[hayden_eight_hearts.37r]
+speaker = "hayden"
+portrait = "blush"
+local = "This is nice... I could watch the waves forever like this..."
+prompts = [
+	{ local = "Do you need to get back for Henrietta?", next = "38r" },
+	{ local = "You're not in a rush to get back?", next = "39r" }
+]
+
+[hayden_eight_hearts.37f]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "I don't know about you, but I could just keep watching the waves like this..."
+prompts = [
+	{ local = "Do you need to get back for Henrietta?", next = "38f" },
+	{ local = "You're not in a rush to get back?", next = "39f" }
+]
+
+[hayden_eight_hearts.38r]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "She'll be just fine. I want to be here with you."
+next = "40"
+
+[hayden_eight_hearts.38f]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "No, it's okay. She'll be just fine."
+next = "40"
+
+[hayden_eight_hearts.39r]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "Not at all. I want to be here with you."
+next = "40"
+
+[hayden_eight_hearts.39f]
+speaker = "hayden"
+portrait = "neutral_arm_down"
+local = "Not at all."
+next = "40"
+
+[hayden_eight_hearts.40]
+speaker = "hayden"
+portrait = "happy_arm_down"
+local = "Let's enjoy ourselves a little while longer."

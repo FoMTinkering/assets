@@ -1,0 +1,15 @@
+[giant_worm]
+refresh = "1y"
+requires = [
+	{ npc = "elsie" },
+	{ museum_donated_giant_worm = true },
+	{ building = "museum", comparator = "!=" },
+]
+actions = [{ bark = { bark = "angry", npc = "elsie" } }]
+portrait = "think"
+local = "I was by the Museum, and got a glimpse of that $Giant Worm$ in the collection..."
+next = "1"
+
+[giant_worm.1]
+portrait = "mad"
+local = "A friendly bit of advice from experience, [Ari]. If someone asks whether you'd still love them if they were a $Giant Worm$... run for the hills!"

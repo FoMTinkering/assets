@@ -1,0 +1,403 @@
+[marriage_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ caldarus_is_spouse = true },
+	{ wedding_was_yesterday = true },
+	{ time_of_day = "morning" },
+	{ post_wedding_bump = true },
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "embarrassed"
+local = "I am still accepting that yesterday was no dream... no fantasy conjured by the mind of an eternally slumbering dragon."
+next = "1"
+
+[marriage_0.1]
+portrait = "caring_special"
+local = "To think, every day we share will be happier than the last. Yes..."
+next = "2"
+
+[marriage_0.2]
+portrait = "laugh_special"
+local = "Every day we share, I am born anew."
+prompts = [
+	{ local = "I can't wait for our future together!", next = "3" },
+	{ local = "I'm so happy you're finally mine.", next = "6" }
+]
+
+[marriage_0.3]
+portrait = "smile"
+local = "Nor I."
+next = "4"
+
+[marriage_0.4]
+portrait = "think"
+local = "Once, I saw my future as an unchanging, immutable path... but I could not have been more wrong."
+next = "5"
+
+[marriage_0.5]
+portrait = "caring_special"
+local = "And you are the one who awakened me to that world of myriad possibilities."
+
+[marriage_0.6]
+portrait = "caring_special"
+local = "I am yours."
+next = "7"
+
+[marriage_0.7]
+portrait = "laugh_special"
+local = "My heart and body both, for as long as I draw breath."
+
+[marriage_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 0 },
+	{ wedding_was_yesterday = false }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "2d" },
+	{ post_wedding_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "I have finished exploring the entire farmstead..."
+next = "1"
+
+[marriage_1.1]
+portrait = "smile"
+local = "It is astonishing how large [farm_name] is. I cannot comprehend how you have single-handedly accomplished so much."
+next = "2"
+
+[marriage_1.2]
+portrait = "laugh_special"
+local = "Do not hesitate to put me to work. I am eager to learn this new occupation."
+
+[marriage_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 1 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "embarrassed"
+local = "Ah, [Ari]. I was drowsy this morning and bonked my horns on the doorframe once again..."
+next = "1"
+
+[marriage_2.1]
+portrait = "think"
+local = "I must be more diligent in stooping as I pass between rooms. I am afraid my height is not compatible with the doorways."
+prompts = [
+	{ local = "Are you okay?", next = "2" },
+	{ local = "I'll remake all the doors to be taller!", next = "5" }
+]
+
+[marriage_2.2]
+portrait = "smile"
+local = "Oh, yes... only my pride was hurt."
+next = "3"
+
+[marriage_2.3]
+portrait = "laugh"
+effect = "drop"
+local = "And the doorframe as well... it might have acquired some damage from jousting with my horns."
+next = "4"
+
+[marriage_2.4]
+portrait = "caring_special"
+local = "Do not worry... I will learn in time. You will find me to be quite adaptable."
+
+[marriage_2.5]
+portrait = "smile"
+local = "It is kind of you to offer, but there is no need. I must simply become more accustomed to our new home together."
+next = "6"
+
+[marriage_2.6]
+portrait = "laugh"
+effect = "drop"
+local = "Though, you may want to look at the doorframe. It might have acquired some damage from jousting with my horns."
+next = "7"
+
+[marriage_2.7]
+portrait = "caring_special"
+local = "It is a temporary situation. Do not worry... I learn quickly. You will find me to be quite adaptable."
+
+[marriage_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 2 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "sad"
+local = "Ah, my hands feel a bit stiff today."
+next = "1"
+
+[marriage_3.1]
+portrait = "avoidant"
+local = "No matter the season, they seem to be susceptible to a chill."
+prompts = [
+	{ local = "Let me warm them up!", next = "2" },
+	{ local = "Do you want to hold hands?", next = "4" }
+]
+
+[marriage_3.2]
+portrait = "embarrassed"
+local = "Yes, I would like that very much."
+next = "3"
+
+[marriage_3.3]
+portrait = "caring_special"
+local = "It would please me to hold your hands regardless."
+
+[marriage_3.4]
+portrait = "embarrassed"
+local = "Such an idea is so very tempting..."
+next = "5"
+
+[marriage_3.5]
+portrait = "laugh_special"
+local = "Yes, I would like that very much."
+
+[marriage_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 3 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "neutral"
+local = "In my long life, I have not known many who I would refer to as family."
+next = "1"
+
+[marriage_4.1]
+portrait = "think"
+local = "Dragons tend to be quite solitary, as you well know."
+next = "2"
+
+[marriage_4.2]
+portrait = "sigh"
+local = "As a result, I do not have a significant frame of reference to draw upon regarding the norms of marriage."
+next = "3"
+
+[marriage_4.3]
+portrait = "caring_special"
+local = "All this to say, I hope you will be patient with me, [Ari]."
+next = "4"
+
+[marriage_4.4]
+portrait = "laugh_special"
+local = "Though there is much to learn... I believe we will enjoy doing so together."
+
+
+[marriage_5]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 4 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 5 }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "caldarus" } }]
+portrait = "embarrassed"
+local = "Ah, [Ari]! I hope the occasional plume of smoke in the kitchen is not bothersome to you."
+next = "1"
+
+[marriage_5.1]
+portrait = "laugh_special"
+effect = "drop"
+local = "You are married to a dragon, after all. One might say it comes with the territory."
+
+[marriage_6]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 5 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 6 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "think"
+local = "Ryis tells me many species of birds mate for life..."
+next = "1"
+
+[marriage_6.1]
+portrait = "neutral"
+local = "Such a thing is not always true for dragons, in the same way it is not always true for mortals."
+next = "2"
+
+[marriage_6.2]
+portrait = "caring_special"
+local = "But in my case, it is. I am yours forever, [Ari]."
+
+[marriage_7]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 6 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 7 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "Since the day you repaired my shrine, you have grounded me, and kept me tethered to the world."
+next = "1"
+
+[marriage_7.1]
+portrait = "sigh"
+local = "I do not know if our binding was decreed by fate, but every day I am grateful for it."
+prompts = [
+	{ local = "I was always drawn to you!", next = "2" },
+	{ local = "Well, you were a handsome statue.", next = "4" }
+]
+
+[marriage_7.2]
+portrait = "smile"
+local = "Even as a talking statue? Was it my voice?"
+next = "3"
+
+[marriage_7.3]
+portrait = "caring_special"
+local = "I am glad to know you find me pleasing no matter what form I take."
+
+[marriage_7.4]
+portrait = "embarrassed"
+local = "Oh, you must cease teasing."
+next = "5"
+
+[marriage_7.5]
+portrait = "caring_special"
+local = "You should know better than to provoke a dragon's vanity."
+
+[marriage_8]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 7 },
+	{ time_of_day = "morning", comparator = "!=" }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 8 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "Here <he>he is</he><she>she is</she><they>they are</they><it>it is</it><none>[Ari] is</none>... my beguiling creature, returned from the forests and deep earth."
+next = "1"
+
+[marriage_8.1]
+portrait = "happy"
+local = "The very sky brightens at <he>his</he><she>her</she><they>their</they><it>its</it><none>[Ari]'s</none> presence... the wind sings in <he>his</he><she>her</she><they>their</they><it>its</it><none>[Ari]'s</none> wake."
+prompts = [
+	{ local = "Careful, Caldarus. Your flattery is working.", next = "2" },
+	{ local = "You're definitely MY beguiling creature.", next = "5" }
+]
+
+[marriage_8.2]
+portrait = "think"
+local = "You would call my truthful observations flattery?"
+next = "3"
+
+[marriage_8.3]
+portrait = "smile"
+local = "Though, if such words spark your ego... I am pleased to hear it."
+next = "4"
+
+[marriage_8.4]
+portrait = "think_special"
+local = "I have a few more for you, but the rest I'll whisper in your ear."
+
+[marriage_8.5]
+portrait = "embarrassed"
+local = "Am I? Perhaps I am."
+next = "6"
+
+[marriage_8.6]
+portrait = "caring_special"
+local = "In that case, we make for a matching pair."
+
+[marriage_9]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "caldarus" },
+	{ caldarus_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 8 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 9 }
+]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "neutral"
+local = "I have come to consider this mortal shape a privilege."
+next = "1"
+
+[marriage_9.1]
+portrait = "think"
+local = "Once, I was fated to exile outside the passage of time. Now, I am free to experience its flow for myself."
+next = "2"
+
+[marriage_9.2]
+portrait = "smile"
+local = "It is a blessing to do so by your side, [Ari]."
+next = "3"
+
+[marriage_9.3]
+portrait = "sigh"
+local = "..."
+next = "4"
+
+[marriage_9.4]
+portrait = "serious_blush"
+local = "It is my hope, in future lives, we might be able to reunite as we are now..."
+next = "5"
+
+[marriage_9.5]
+portrait = "caring_special"
+local = "And share in this dance again and again."

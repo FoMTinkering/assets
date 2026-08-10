@@ -1,0 +1,40 @@
+[use_the_forge]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "olric" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "<olric_zone>" },
+]
+speaker = "dell"
+portrait = "neutral"
+local = "Mister Olric, can I use the forge? I want to make the coolest sword in all of Mistria."
+next = "1"
+
+[use_the_forge.1]
+speaker = "olric"
+portrait = "happy"
+local = "I don't see why not! We'll just need some iron."
+next = "2"
+
+[use_the_forge.2]
+speaker = "dell"
+portrait = "neutral"
+local = "There's lot of iron stuff at the kitchen at the Inn! Let's go borrow some!"
+next = "3"
+
+[use_the_forge.3]
+speaker = "maple"
+portrait = "ugh"
+local = "This seems like a bad idea..."
+next = "4"
+
+[use_the_forge.4]
+speaker = "luc"
+portrait = "ugh"
+local = "My sister needs that stuff for making snacks and stuff! Sorry Dell."

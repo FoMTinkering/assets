@@ -1,0 +1,139 @@
+[inn_meal_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "adeline" },
+	{ date = "inn_meal" },
+	{ da_adeline_inn_meal = 0 },
+	{ adeline_is_spouse = false }
+]
+writes = [
+	{ da_adeline_inn_meal = 1 },
+	{ da_adeline_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "adeline"
+portrait = "blush"
+local = "You want to take me out on a date to the Inn?"
+next = "1"
+
+[inn_meal_accept_1.1]
+speaker = "adeline"
+portrait = "happy"
+local = "I would love to, [Ari]! I was just thinking I could use a break!"
+
+[inn_meal_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "adeline" },
+	{ date = "inn_meal" },
+	{ da_adeline_inn_meal = 1 },
+	{ adeline_is_spouse = false }
+]
+writes = [
+	{ da_adeline_inn_meal = 2 },
+	{ da_adeline_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "adeline"
+portrait = "happy"
+local = "Oooh, should we go grab a meal at the Inn again?"
+next = "1"
+
+[inn_meal_accept_2.1]
+speaker = "adeline"
+portrait = "blush"
+effect = "hearts"
+local = "Last time was really fun. Let's do it!"
+
+[inn_meal_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "adeline" },
+	{ date = "inn_meal" },
+	{ adeline_has_child = false },
+	{ any = [
+		{ adeline_is_spouse = true },
+		{ da_adeline_inn_meal = 2, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_adeline_inn_meal = 3 },
+	{ da_adeline_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+speaker = "adeline"
+portrait = "blush"
+local = "You want to go get something to eat, [Ari]?"
+next = "1"
+
+[inn_meal_accept_3.1]
+speaker = "adeline"
+portrait = "happy"
+effect = "hearts"
+local = "That sounds great! Let's go!"
+
+[inn_meal_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ da_adeline_inn_meal = 1 },
+	{ da_adeline_inn_meal_follow_up_gate = true },
+	{ adeline_is_spouse = false }
+]
+writes = [{ da_adeline_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "blush"
+local = "I had a great time at the Inn, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_1.1]
+portrait = "happy"
+effect = "hearts"
+local = "The food was great, but the company was better... hehe!"
+next = "2"
+
+[inn_meal_follow_up_1.2]
+portrait = "blush"
+local = "You're just so full of interesting stories!"
+
+[inn_meal_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ da_adeline_inn_meal = 2 },
+	{ da_adeline_inn_meal_follow_up_gate = true },
+	{ adeline_is_spouse = false }
+]
+writes = [{ da_adeline_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "happy"
+local = "Thank you for the meal, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_2.1]
+portrait = "blush"
+local = "It was so nice to relax, unwind, and have a good chat..."
+next = "2"
+
+[inn_meal_follow_up_2.2]
+portrait = "blush"
+local = "I feel like I'm learning so much about you!"
+
+[inn_meal_follow_up_3]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "adeline" },
+	{ da_adeline_inn_meal_follow_up_gate = true },
+	{ adeline_has_child = false },
+	{ any = [{ adeline_is_spouse = true }, { da_adeline_inn_meal = 3 }] }
+]
+writes = [{ da_adeline_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "adeline" } }]
+portrait = "blush"
+local = "I really enjoyed sharing that meal at the Inn with you, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_3.1]
+portrait = "happy"
+effect = "hearts"
+local = "Let's do it again soon!"

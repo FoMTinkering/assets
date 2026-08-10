@@ -1,0 +1,28 @@
+[breakfast]
+refresh = "2m"
+requires = [
+	{ npc = "balor" },
+	{ time_of_day = "morning" },
+	{ balor_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ balor_activity = "eat" },
+	{ balor_heart_level = 4, comparator = ">=" },
+	{ location = "inn" }
+]
+portrait = "wink"
+local = "Morning, [Ari]! Slow down, why don't you join me for breakfast?"
+
+[breakfast_2]
+refresh = "1y"
+requires = [
+	{ npc = "balor" },
+	{ time_of_day = "morning" },
+	{ balor_activity = "eat" },
+	{ location = "inn" }
+]
+portrait = "think"
+local = "Breakfast in the Capital can be a decadent affair, and breakfast on the road is a frugal one."
+next = "1"
+
+[breakfast_2.1]
+portrait = "wink"
+local = "Breakfast at the Sleeping Dragon Inn lands nicely in the middle."

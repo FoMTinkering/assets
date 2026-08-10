@@ -1,0 +1,53 @@
+requires = [
+	{ weather = "pleasant" },
+	{ caldarus_home = true },
+	{ caldarus_seridia_town = true },
+	{ season = "winter" },
+	{ day_of_the_week = "wednesday" },
+]
+
+# olric
+[olric."6:00am"]
+destination = "blacksmith_room_right/Olric Wake Point"
+
+[olric."6:52am"]
+destination = "town/blacksmith_routine_entrance"
+on_arrival_actions = [{ routine = "forge_work_principal" }]
+
+[olric."11:34am"]
+destination = "narrows/mines_chat_2"
+
+[olric."5:42pm"]
+destination = "inn/bartender_entrance"
+on_arrival_actions = [{ routine = "inn_bar_service" }]
+
+[olric."10:35pm"]
+destination = "inn/Top Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+
+[olric."12:42am"]
+destination = "blacksmith_room_right/Olric Wake Point"
+
+# terithia
+[seridia."6:00am"]
+destination = "beach/Picnic Bench Bottom Left"
+
+[seridia."9:22am"]
+destination = "terithias_house/Couch Seat Bottom"
+on_arrival_actions = [{ activity = "drink" }]
+
+[seridia."10:54am"]
+destination = "narrows/mines_chat_1"
+
+[seridia."5:41pm"]
+destination = "town/garden_wander_entrance"
+on_arrival_actions = [{ routine = "manor_garden_wander" }]
+
+[seridia."9:12pm"]
+destination = "town/Manor Pond Edge"
+
+[seridia."10:48pm"]
+destination = "town/Stele"
+
+[seridia."1:12am"]
+destination = "western_ruins/routine_entrance"

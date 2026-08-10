@@ -1,0 +1,20 @@
+show_menu(mines);
+
+__play_sound_free("Music/Combat/RuinsArenaOutro");
+
+var ladder_x = get_from_blackboard(ladder_x);
+var ladder_y = get_from_blackboard(ladder_y);
+
+wait(0.5);
+__setup_arena("lights_finished");
+wait(1.0);
+
+pan_camera(2, ladder_x + 16, ladder_y);
+
+wait(1.0);
+__setup_arena("ladder_open");
+wait(1.0);
+__setup_arena("chest_unlocked");
+wait(1);
+pan_camera(1, ari);
+

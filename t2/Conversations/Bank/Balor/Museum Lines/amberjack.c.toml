@@ -1,0 +1,24 @@
+[amberjack]
+refresh = "1y"
+requires = [
+	{ npc = "balor" },
+	{ museum_donated_amberjack = true },
+	{ building = "museum", comparator = "!=" },
+]
+portrait = "neutral"
+local = "Did you catch the $Amberjack$ that's at the Museum? Congrats!"
+next = "1"
+
+[amberjack.1]
+portrait = "think"
+local = "It's a shame that they're so rare in Mistria's waters."
+next = "2"
+
+[amberjack.2]
+portrait = "neutral"
+local = "Still... I wonder if Terithia would ever want to run a little charter fishing operation?"
+next = "3"
+
+[amberjack.3]
+portrait = "happy"
+local = "Could be lucrative."

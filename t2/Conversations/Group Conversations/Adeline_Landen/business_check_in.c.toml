@@ -1,0 +1,23 @@
+[business_check_in]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "landen" }] },
+	{ adeline_zone = "eastern_road/business_check_in" },
+	{ landen_zone = "eastern_road/business_check_in" },
+	{ adeline_business_review = true }
+]
+speaker = "adeline"
+portrait = "concerned"
+local = "So you'll pass this work order on to Ryis? You won't try to fill it yourself?"
+next = "1"
+
+[business_check_in.1]
+speaker = "landen"
+portrait = "neutral"
+local = "Of course! Not saying that I couldn't do it, but that's my nephew's name on the dotted line, so I'll pass it on to him!"
+next = "2"
+
+[business_check_in.2]
+speaker = "landen"
+portrait = "wink"
+local = "Besides, between you and me, I think he's a bit quicker than I was at his age. You're lucky to have him!"

@@ -1,0 +1,206 @@
+[shooting_star_anticipation]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ shooting_star_festival_date = "3d", time = "before" },
+	{ quest_repair_the_summit_stairs_complete = true },
+	{ balor_heart_level = 4, comparator = ">=" },
+	{ balor_heart_level = 8, comparator = "<" },
+]
+portrait = "think"
+local = "Jo filled me in on the details of the upcoming Shooting Star Festival..."
+next = "1"
+
+[shooting_star_anticipation.1]
+portrait = "wink"
+local = "Apparently the view of the stars is clearest here in Mistria. I'm curious to see it for myself!"
+
+[shooting_star_not_invited]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_at = "town/star_festival_balor" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "balor_invited", comparator = "!=" },
+]
+portrait = "neutral"
+local = "I've seen these shooting stars from the road and from the Capital..."
+next = "1"
+
+[shooting_star_not_invited.1]
+portrait = "happy"
+local = "But they really are clearest in Mistria!"
+
+[shooting_star_invited]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_at = "town/star_festival_balor" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ shooting_star_date_status = "balor_invited" },
+]
+portrait = "neutral"
+local = "Evening, [Ari]."
+next = "1"
+
+[shooting_star_invited.1]
+portrait = "wink"
+local = "Ready to go up to the Summit?"
+
+[shooting_star_invited_anticipation]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ shooting_star_date_status = "balor_invited" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ day_time = "8:00pm", comparator = "<" },
+	{ balor_is_at = "town/star_festival_balor", comparator = "!=" },
+]
+portrait = "wink"
+local = "See you at 8 pm?"
+
+[shooting_star_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ shooting_star_date_status = "balor_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ balor_is_partner = false },
+]
+portrait = "neutral"
+local = "It's nice to take a break like that once in a while, isn't it?"
+next = "1"
+
+[shooting_star_follow_up.1]
+portrait = "wink"
+local = "The stars last night sure were nice, but it's back to work today."
+
+[shooting_star_8h_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ shooting_star_date_status = "balor_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ balor_is_partner = true },
+]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "blush"
+local = "Last night was nice, huh? Let's watch the stars together again next year."
+
+[shooting_star_missed_follow_up]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ shooting_star_date_status = "balor_invited" },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "think"
+local = "Ah... [Ari]."
+next = "1"
+
+[shooting_star_missed_follow_up.1]
+portrait = "ugh"
+local = "I waited for you last night, but you never showed up... did something happen?"
+
+[shooting_star_hayden_follow_up_balor]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ shooting_star_date_status = "hayden_went" },
+	{ shooting_star_festival_date = "2d", time = "after" },
+	{ hayden_is_partner = false },
+	{ balor_is_partner = false }
+]
+portrait = "think"
+local = "I bumped into Hayden when I was picking up his shipment this morning..."
+next = "1"
+
+[shooting_star_hayden_follow_up_balor.1]
+portrait = "happy"
+effect = "drop"
+local = "He had a huge smile on his face. Did something happen last night?"
+
+[shooting_star_follow_up_not_invited]
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ shooting_star_date_status = "balor_invited", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "balor_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_date_status = "hayden_went", comparator = "!=", ignore_priority = true },
+	{ shooting_star_festival_day = false },
+	{ shooting_star_festival_date = "2d", time = "after" },
+]
+portrait = "neutral"
+local = "Hmmm... I keep thinking about those $Star Brooches$ that were going around yesterday."
+next = "1"
+
+[shooting_star_follow_up_not_invited.1]
+portrait = "wink"
+local = "I'm thinking they're the kind of thing couples in the Capital might like to buy."
+next = "2"
+
+[shooting_star_follow_up_not_invited.2]
+portrait = "ugh"
+local = "If I could get anyone in town to agree to export them... sigh."
+
+# NEW ROMANCE LINE FOLLOW UPS
+
+[shooting_star_romantic_follow_up_A]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ shooting_star_date_status = "balor_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ shooting_star_gate = false },
+	{ balor_is_spouse = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "balor" } },
+]
+portrait = "neutral"
+local = "Hey [Ari]!"
+next = "1"
+
+[shooting_star_romantic_follow_up_A.1]
+portrait = "happy"
+local = "I just got back from the Capital. I saw this one bakery that made me think of you..."
+next = "2"
+
+[shooting_star_romantic_follow_up_A.2]
+portrait = "embarrassed"
+actions = [{ item = "big_cookie" }]
+local = "So I brought you back a little something."
+
+[shooting_star_romantic_follow_up_B]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ shooting_star_date_status = "balor_went" },
+	{ shooting_star_festival_date = "2w 1d", time = "after" },
+	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
+	{ time_of_day = "morning" },
+	{ shooting_star_gate = false },
+	{ balor_is_fiance = false },
+	{ balor_is_spouse = false }
+]
+writes = [{ shooting_star_gate = true, expires = "2d" }]
+actions = [
+	{ bark = { bark = "blush", npc = "balor" } },
+]
+portrait = "neutral"
+local = "You look nice today, [Ari]!"
+next = "1"
+
+[shooting_star_romantic_follow_up_B.1]
+portrait = "embarrassed"
+local = "I mean... of course you do! What am I saying?"

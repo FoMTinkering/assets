@@ -1,0 +1,492 @@
+[marriage_0]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ seridia_is_spouse = true },
+	{ wedding_was_yesterday = true },
+	{ time_of_day = "morning" },
+	{ post_wedding_bump = true },
+]
+
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "blush"
+local = "[Ari]... you are the one who returned my life to me, from the bottom of an abyss..."
+next = "1"
+
+[marriage_0.1]
+portrait = "embarrassed"
+local = "And now, we join those lives together. I will do the utmost to make this union joyful."
+next = "2"
+
+[marriage_0.2]
+portrait = "happy_blush"
+local = "I am elated, and unbearably excited. Together, we will make something new."
+prompts = [
+	{ local = "I can't wait.", next = "3" },
+	{ local = "I'm so excited for our life together.", next = "5" }
+]
+
+[marriage_0.3]
+portrait = "blush_think"
+local = "Nor I. And why should we?"
+next = "4"
+
+[marriage_0.4]
+portrait = "embarrassed"
+local = "We can begin today. Right here and now."
+
+[marriage_0.5]
+portrait = "happy_blush"
+local = "Yes... I know already, this life will be an anchor. It will be good."
+next = "6"
+
+[marriage_0.6]
+portrait = "blush"
+local = "And know this, [Ari]. Anything you desire, physical or spiritual... I will see it done."
+
+[marriage_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 0 },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ wedding_was_yesterday = false }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 1 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "closed_eyes_smile"
+local = "I have now taken full account of the farm."
+next = "1"
+
+[marriage_1.1]
+portrait = "smile"
+local = "It is all very charming. The animals in particular are far cuter than they have any right to be."
+next = "2"
+
+[marriage_1.2]
+portrait = "think"
+local = "However... Have you considered upgrading our little cottage into a castle? With towers? Ramparts? Fortifications?"
+next = "3"
+
+[marriage_1.3]
+portrait = "happy"
+local = "It is important to be able to protect what is most important to one's self."
+next = "4"
+
+[marriage_1.4]
+portrait = "sly"
+local = "Not to mention, towers were quite popular during my reign. They give a home a sense of gravitas."
+
+[marriage_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 1 },
+	{ any = [{ location = "farm" }, { building = "player_home" }] }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "sly"
+local = "[Ari]... I have a perfectly innocent, cleaning-related inquiry for you."
+next = "1"
+
+[marriage_2.1]
+portrait = "sly_think"
+local = "I take it that you have not seen any furniture moving of its own will recently? Dancing and prancing about?"
+next = "2"
+
+[marriage_2.2]
+portrait = "happy"
+local = "Yes, excellent. Then all is rectified and in proper order."
+prompts = [
+	{ local = "Wait, you... brought the furniture to life?", next = "3" },
+	{ local = "Wait, you were cleaning?", next = "6" }
+]
+
+[marriage_2.3]
+portrait = "surprise"
+local = "Hm? Oh yes."
+next = "4"
+
+[marriage_2.4]
+portrait = "happy"
+local = "It was just for a moment. Do not fret, it is an occasional side-effect of the spell I use to clean my lair. Perfectly normal."
+next = "5"
+
+[marriage_2.5]
+portrait = "smile"
+local = "Very common, very mundane."
+
+[marriage_2.6]
+portrait = "think"
+local = "I once reigned over everything, which makes all realms my domain."
+next = "7"
+
+[marriage_2.7]
+portrait = "smile"
+local = "Which is to say, I may clean if the mood takes me. Or if it is of benefit to my beloved."
+
+[marriage_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 2 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 3 }
+]
+portrait = "closed_eyes_brow"
+local = "Ah, [Ari]. I am once again reminded that mortal homes are not built with tails in mind."
+next = "1"
+
+[marriage_3.1]
+portrait = "ugh"
+local = "Worry not, I have mended all damaged furniture. As well as the puncture in the wall."
+next = "2"
+
+[marriage_3.2]
+portrait = "closed_eyes"
+local = "But as your wife, I do have a request. Please do not mention any of this to the neighbors."
+prompts = [
+	{ local = "Oh no! Are you okay?", next = "3" },
+	{ local = "I'm sorry, that's so funny...", next = "5" }
+]
+
+[marriage_3.3]
+portrait = "surprise"
+local = "Certainly. My tail is far more resilient than our furniture, after all."
+next = "4"
+
+[marriage_3.4]
+portrait = "closed_eyes_blush"
+local = "It is only my ego that is bruised."
+
+[marriage_3.5]
+portrait = "surprise"
+local = "You make merriment at my clumsiness?"
+next = "6"
+
+[marriage_3.6]
+portrait = "closed_eyes_blush"
+local = "If you were anyone else, I would see you punished."
+next = "7"
+
+[marriage_3.7]
+portrait = "blush"
+local = "But since it is you... I must admit, it was rather amusing."
+
+[marriage_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 3 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 4 }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "think"
+local = "In my life, there have been precious few role models for a loving partnership..."
+next = "1"
+
+[marriage_4.1]
+portrait = "neutral"
+local = "Court was full of unhappy arrangements for the sake of family and country."
+next = "2"
+
+[marriage_4.2]
+portrait = "smile"
+local = "I did once have a vizier who seemed deeply infatuated with his partner, despite their marriage being arranged..."
+next = "3"
+
+[marriage_4.3]
+portrait = "think"
+local = "Though, he did try to poison me once. He was a complicated man."
+
+[marriage_5]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 4 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 5 }
+]
+actions = [{ bark = { bark = "blush", npc = "seridia" } }]
+portrait = "ugh"
+local = "[Ari], my jewelry feels crooked."
+next = "1"
+
+[marriage_5.1]
+portrait = "sad"
+local = "Will you adjust it for me?"
+prompts = [
+	{ local = "Of course!", next = "2" },
+	{ local = "Oh, it's a bit tangled.", next = "6" }
+]
+
+[marriage_5.2]
+portrait = "smile"
+local = "Thank you."
+next = "3"
+
+[marriage_5.3]
+portrait = "closed_eyes"
+local = "..."
+next = "4"
+
+[marriage_5.4]
+portrait = "unsure_blush"
+local = "It is... good that I can ask you such things. In the past, to request assistance was to expose a fatal flaw."
+next = "5"
+
+[marriage_5.5]
+portrait = "blush"
+local = "Your hands feel nice, too. That is also good."
+
+[marriage_5.6]
+portrait = "smile"
+local = "That explains it... thank you."
+next = "7"
+
+[marriage_5.7]
+portrait = "closed_eyes"
+local = "..."
+next = "8"
+
+[marriage_5.8]
+portrait = "unsure_blush"
+local = "It is... good that I can ask you such things. In the past, to request assistance was to expose a fatal flaw."
+next = "9"
+
+[marriage_5.9]
+portrait = "blush"
+local = "Your hands feel nice, too. That is also good."
+
+[marriage_6]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 5 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 6 }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "neutral"
+local = "Despite her mortal lifespan, Elsie has accumulated great insight on life and love."
+next = "1"
+
+[marriage_6.1]
+portrait = "think"
+local = "I have learned of her many paramours, and her many near-marriages..."
+next = "2"
+
+[marriage_6.2]
+portrait = "smile"
+local = "And she understands herself well enough to know none of those would-be fiancees would have made her happy."
+next = "3"
+
+[marriage_6.3]
+portrait = "blush"
+local = "I am not so self-assured as her. To have found someone who makes me so fulfilled... I celebrate it every day."
+prompts = [
+	{ local = "I'll always celebrate you, too!", next = "4" },
+	{ local = "You celebrate me?", next = "8" }
+]
+
+[marriage_6.4]
+portrait = "surprise_blush"
+local = "[Ari]..."
+next = "5"
+
+[marriage_6.5]
+portrait = "blush"
+local = "Yes. In my heart I have always known this."
+next = "6"
+
+[marriage_6.6]
+portrait = "happy_blush"
+local = "You need not even say it. You scoured the Mines endlessly to free me..."
+next = "7"
+
+[marriage_6.7]
+portrait = "embarrassed"
+local = "Know that I share your love, and will return your affections tenfold."
+
+[marriage_6.8]
+portrait = "surprise_blush"
+local = "Of course... it is not even a question!"
+next = "9"
+
+[marriage_6.9]
+portrait = "embarrassed"
+local = "Know that I share your love, and will return your affections tenfold."
+
+[marriage_7]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 6 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 7 }
+]
+actions = [{ bark = { bark = "blush", npc = "seridia" } }]
+portrait = "think"
+local = "I have been ruminating on what I thought was my eternal imprisonment."
+next = "1"
+
+[marriage_7.1]
+portrait = "neutral"
+local = "Living on this farm with you... it is precisely the opposite of what I endured for countless centuries."
+next = "2"
+
+[marriage_7.2]
+portrait = "surprise"
+local = "It is as though I suddenly find myself in paradise, overflowing with lush green and flowers and... you."
+next = "3"
+
+[marriage_7.3]
+portrait = "embarrassed"
+local = "You show me eternal paradise every day, [Ari]."
+
+[marriage_8]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 7 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 8 }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "surprise_blush"
+local = "[Ari]..."
+next = "1"
+
+[marriage_8.1]
+portrait = "blush_think"
+local = "I felt you come near before I saw you. Your presence is like a gentle touch on my spine."
+next = "2"
+
+[marriage_8.2]
+portrait = "embarrassed"
+local = "The aura of your energy does something to me. In all my life, I have never felt anything like it..."
+next = "3"
+
+[marriage_8.3]
+portrait = "blush"
+local = "And I am drawn to it like nothing else."
+prompts = [
+	{ local = "Oh? What do you like about my magic?", next = "4" },
+	{ local = "I'm drawn to you, too, Seridia.", next = "9" }
+]
+
+[marriage_8.4]
+portrait = "sinister_blush"
+local = "Such impertinence."
+next = "5"
+
+[marriage_8.5]
+portrait = "blush"
+local = "I want to burn like a moth in your fire, [Ari]."
+next = "6"
+
+[marriage_8.6]
+portrait = "embarrassed"
+local = "To feel your flames singe my wings, before I am swallowed up in a moment of searing ecstasy..."
+next = "7"
+
+[marriage_8.7]
+portrait = "blush_think"
+local = "..."
+next = "8"
+
+[marriage_8.8]
+portrait = "blush"
+local = "That is what I like about your magic, [Ari]."
+
+[marriage_8.9]
+portrait = "blush"
+local = "Come closer, then, and tell me how I make you feel."
+next = "10"
+
+[marriage_8.10]
+portrait = "blush_think"
+local = "Whisper it in my ear, so I might make a memory of it."
+next = "11"
+
+[marriage_8.11]
+portrait = "embarrassed"
+local = "And tonight, or another night, I will remind you of what you've told me."
+
+[marriage_9]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ post_wedding_gate = false },
+	{ post_wedding_grouping = 8 }
+]
+writes = [
+	{ post_wedding_gate = true, expires = "3d" },
+	{ post_wedding_grouping = 9 }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "closed_eyes"
+local = "I am used to having relationships in the public eye, played out in the court of public opinion."
+next = "1"
+
+[marriage_9.1]
+portrait = "smile"
+local = "That feels so far away, now. I am looking forward to a long, private romance with you, [Ari]..."
+next = "2"
+
+[marriage_9.2]
+portrait = "blush"
+local = "A special, secret history that is ours alone, with its own epochs, each making our life fuller than the last."
+next = "3"
+
+[marriage_9.3]
+portrait = "embarrassed"
+local = "I will savor every moment with you."

@@ -1,0 +1,101 @@
+#SPRING FESTIVAL
+[spring_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ balor_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ balor_morning_greeting = false }
+]
+writes = [{ balor_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "neutral"
+local = "Nora was happy that I got all the supplies for the $Spring Festival$ in early..."
+next = "1"
+
+[spring_festival.1]
+portrait = "happy"
+local = "So now you and I can enjoy the festival to our heart's content!"
+
+
+#SHOOTING STAR FESTIVAL
+[shooting_star_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ balor_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ balor_morning_greeting = false }
+]
+writes = [{ balor_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "happy"
+local = "Morning, [Ari]... tonight's the $Shooting Star Festival$."
+next = "1"
+
+[shooting_star_festival.1]
+portrait = "embarrassed"
+local = "I'm... really excited to spend the evening up on the summit with you."
+
+
+#HARVEST FESTIVAL
+
+[harvest_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ balor_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ balor_morning_greeting = false }
+]
+writes = [{ balor_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "happy"
+local = "Today's the $Harvest Festival$, isn't it?"
+next = "1"
+
+[harvest_festival.1]
+portrait = "embarrassed"
+local = "I'd love to sneak an early dance and dance with you..."
+
+
+#ANIMAL FESTIVAL
+
+[animal_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ animal_festival_date = "1d", time = "after" },
+	{ balor_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ balor_morning_greeting = false }
+]
+writes = [{ balor_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "balor" } }]
+portrait = "think"
+local = "I know the $Animal Festival$ isn't all about winning..."
+next = "1"
+
+[animal_festival.1]
+portrait = "neutral"
+local = "But I also know our animals are top quality..."
+next = "2"
+
+[animal_festival.2]
+portrait = "happy"
+local = "If we don't bring home a blue ribbon, I'll be very suspicious of the judges!"

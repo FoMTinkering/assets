@@ -1,0 +1,680 @@
+# ari pregnant
+[ari_pregnant_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ day_time = "11:00am", comparator = "<=" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ ryis_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 0 },
+	{ ari_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy"
+local = "[Ari]! We're going to be parents! I'm going to be a dad!"
+next = "1"
+
+[ari_pregnant_0.1]
+portrait = "starry_eyed"
+local = "This is great. Kids are so fun..."
+next = "2"
+
+[ari_pregnant_0.2]
+portrait = "thoughtful_blush"
+local = "I can't wait to see them running around. But I'm getting ahead of myself."
+next = "3"
+
+[ari_pregnant_0.3]
+portrait = "blush_special"
+local = "Don't worry, I had two older sisters to teach me how to raise three baby sisters. You can rely on me, I'm an old pro at diapers!"
+
+[ari_pregnant_1]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 1 },
+	{ ari_utero = true },
+	{ building = "general_store", comparator = "!=" }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "1d" },
+	{ pregnant_line_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "surprised"
+local = "Anything I can do for you, [Ari]?"
+next = "1"
+
+[ari_pregnant_1.1]
+portrait = "neutral"
+local = "Have something you're craving? I'll whip it up in the kitchen right now."
+prompts = [
+	{ local = "Ohhh, I'm really craving fresh Bread.", next = "2" },
+	{ local = "I could really go for some Apple Pie.", next = "5" },
+	{ local = "I want a Loaded Baked Potato? For some reason?", next = "8" }
+]
+
+[ari_pregnant_1.2]
+portrait = "wink"
+local = "You married the right guy, [Ari]."
+next = "3"
+
+[ari_pregnant_1.3]
+portrait = "neutral"
+local = "I trained for this my whole life."
+next = "4"
+
+[ari_pregnant_1.4]
+actions = [{ item = "bread" }]
+portrait = "happy"
+local = "One fresh loaf of Bread... coming right up!"
+
+[ari_pregnant_1.5]
+portrait = "surprise"
+local = "Oh, totally."
+next = "6"
+
+[ari_pregnant_1.6]
+portrait = "happy"
+local = "I just picked up some apples at the General Store, too."
+next = "7"
+
+[ari_pregnant_1.7]
+actions = [{ item = "apple_pie" }]
+portrait = "wink"
+local = "Okay, you just relax. One Apple Pie, coming right up!"
+
+[ari_pregnant_1.8]
+portrait = "neutral"
+local = "No reason needed!"
+next = "9"
+
+[ari_pregnant_1.9]
+portrait = "wink"
+local = "You just relax while I crack the case of the Loaded Baked Potato."
+next = "10"
+
+[ari_pregnant_1.10]
+actions = [{ item = "loaded_baked_potato" }]
+portrait = "happy"
+local = "Coming right up!"
+
+[ari_pregnant_2]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 2 },
+	{ ari_utero = true },
+	{ building = "clinic", comparator = "!=" }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 3 }
+]
+actions = [
+	{ bark = { bark = "heart", npc = "ryis" } },
+	{ item = "restorative_syrup" }
+]
+portrait = "shocked"
+local = "Hey [Ari], how are you holding up?"
+next = "1"
+
+[ari_pregnant_2.1]
+portrait = "think"
+local = "I noticed you've been feeling rough in the mornings and asked around..."
+next = "2"
+
+[ari_pregnant_2.2]
+portrait = "neutral"
+local = "Josephine recommended I pick up one of Valen's syrups. She'd get them from Valen's dad when she was pregnant."
+next = "3"
+
+[ari_pregnant_2.3]
+portrait = "happy"
+local = "Take it when you're feeling bad, okay?"
+
+[ari_pregnant_3]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 3 },
+	{ ari_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "neutral"
+local = "Hey, you. How are you holding up?"
+prompts = [
+	{ local = "The baby is definitely getting bigger...", next = "1" },
+	{ local = "My clothes are fitting a little tighter, I think.", next = "4" },
+	{ local = "I'm feeling great, actually!", next = "7" }
+]
+
+[ari_pregnant_3.1]
+portrait = "surprised"
+local = "That so? I guess it's about that time."
+next = "2"
+
+[ari_pregnant_3.2]
+portrait = "neutral"
+local = "How's your back feeling? Here, turn around and let me rub it a while."
+next = "3"
+
+[ari_pregnant_3.3]
+portrait = "happy"
+local = "I know you're tough, but let me help."
+
+[ari_pregnant_3.4]
+portrait = "surprised"
+local = "That so? Want me to go through the dressers and find you something more comfortable?"
+next = "5"
+
+[ari_pregnant_3.5]
+portrait = "thoughtful"
+local = "If I can't find anything there, I can get in touch with Louis."
+next = "6"
+
+[ari_pregnant_3.6]
+portrait = "happy"
+local = "Just let me know what you want to do."
+
+[ari_pregnant_3.7]
+portrait = "happy"
+local = "I'm so glad."
+next = "8"
+
+[ari_pregnant_3.8]
+portrait = "thoughtful"
+local = "I gotta say... You're pretty tough, [Ari]."
+next = "9"
+
+[ari_pregnant_3.9]
+portrait = "embarrassed"
+local = "I guess that's one of the reasons I'm so into you."
+
+[ari_pregnant_4]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 4 },
+	{ ari_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 5 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "shocked"
+local = "The baby is kicking? Seriously? Can I...?"
+next = "1"
+
+[ari_pregnant_4.1]
+portrait = "surprised"
+local = "Wow. That's so amazing."
+next = "2"
+
+[ari_pregnant_4.2]
+portrait = "happy"
+local = "Oh, and again! This kid's got strong legs!"
+
+[ari_pregnant_5]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 5 },
+	{ ari_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 6 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "embarrassed"
+local = "[Ari]... I don't want to hex anything, but do you think our baby might be a boy?"
+next = "1"
+
+[ari_pregnant_5.1]
+portrait = "thoughtful_blush"
+local = "I grew up with so many sisters... I think it would be fun to have a boy. To shake things up, you know? But I'd be happy either way."
+next = "2"
+
+[ari_pregnant_5.2]
+portrait = "blush_special"
+local = """And boy or girl, I've always liked the name "$Kam$"... but honestly, I'm easy. If you have a name in mind, let's talk about it!"""
+
+[ari_pregnant_6]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 6 },
+	{ ari_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 7 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "Kinda feels like I should keep on my toes today, in case the baby decides to come around."
+next = "1"
+
+[ari_pregnant_6.1]
+portrait = "blush_special"
+local = "Just say the word if it's time, okay?"
+
+# stork pregnant
+[stork_pregnant_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 0 },
+	{ stork_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "1d" },
+	{ pregnant_line_grouping = 1 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy"
+local = "[Ari]! We're going to be parents! I'm going to be a dad!"
+next = "1"
+
+[stork_pregnant_0.1]
+portrait = "starry_eyed"
+local = "This is great. Kids are so fun..."
+next = "2"
+
+[stork_pregnant_0.2]
+portrait = "thoughtful_blush"
+local = "I can't wait to see them running around. But I'm getting ahead of myself."
+next = "3"
+
+[stork_pregnant_0.3]
+portrait = "blush_special"
+local = "Don't worry, I had two older sisters to teach me how to raise three baby sisters. You can rely on me, I'm an old pro at diapers!"
+
+[stork_pregnant_1]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 1 },
+	{ stork_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 2 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "neutral"
+local = "Okay! Think I got everything we'll need for the baby..."
+next = "1"
+
+[stork_pregnant_1.1]
+portrait = "thoughtful"
+local = "Got a bunch of onesies because babies get them dirty quickly, lots of socks because babies lose those a lot..."
+next = "2"
+
+[stork_pregnant_1.2]
+portrait = "sincere_special"
+local = "A hat with a brim so the baby won't have the sun in their eyes, some other knit hats with animal ears... that's important..."
+next = "3"
+
+[stork_pregnant_1.3]
+portrait = "closed_eyes"
+local = "Some striped overalls and a matching jacket... little fluffy slippers that look really cute..."
+next = "4"
+
+[stork_pregnant_1.4]
+portrait = "blush_special"
+local = "Did I leave anything out?"
+prompts = [
+	{ local = "I'm glad we'll have a stylish baby!", next = "5" },
+	{ local = "Did you get anything that's not clothes?", next = "7" }
+]
+
+[stork_pregnant_1.5]
+portrait = "happy"
+local = "Yeah!"
+next = "6"
+
+[stork_pregnant_1.6]
+portrait = "mad"
+effect = "sparkles"
+local = "If you've got a baby, you have to dress them up all cute. It's important!"
+
+[stork_pregnant_1.7]
+portrait = "happy"
+local = "Yeah, my folks sent a bunch of hand-me-downs from my sisters!"
+next = "8"
+
+[stork_pregnant_1.8]
+portrait = "think"
+local = "They're, uh..."
+next = "9"
+
+[stork_pregnant_1.9]
+portrait = "happy"
+effect = "drop"
+local = "Mostly baby clothes, too."
+
+[stork_pregnant_2]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 2 },
+	{ stork_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 3 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "think"
+local = "[Ari], I'm so excited to raise a kid with you... but I'm nervous, too."
+next = "1"
+
+[stork_pregnant_2.1]
+portrait = "sad"
+local = "What if... what if..."
+prompts = [
+	{ local = "You're so reliable. You're going to be a great father, Ryis.", next = "2" },
+	{ local = "There's no one I'd rather raise this child with than you, Ryis.", next = "7" }
+]
+
+[stork_pregnant_2.2]
+portrait = "shocked"
+local = "Oh... oh."
+next = "3"
+
+[stork_pregnant_2.3]
+portrait = "sincere_special"
+local = "I was actually just worried..."
+next = "4"
+
+[stork_pregnant_2.4]
+portrait = "embarrassed"
+local = "That our kid might think I'm corny. Haha."
+next = "5"
+
+[stork_pregnant_2.5]
+portrait = "closed_eyes_smile_blush"
+local = "I'm glad you said that, though. I want to be a really good dad..."
+next = "6"
+
+[stork_pregnant_2.6]
+portrait = "blush_special"
+local = "And I want you to think so, too. If there's anything I can do better... you just say the word, okay?"
+
+[stork_pregnant_2.7]
+portrait = "shocked"
+local = "Oh... oh."
+next = "8"
+
+[stork_pregnant_2.8]
+portrait = "sincere_special"
+local = "I was actually just worried..."
+next = "9"
+
+[stork_pregnant_2.9]
+portrait = "embarrassed"
+local = "That our kid might think I'm corny. Haha."
+next = "10"
+
+[stork_pregnant_2.10]
+portrait = "closed_eyes_smile_blush"
+local = "I'm glad you said that, though. I feel the same way..."
+next = "11"
+
+[stork_pregnant_2.11]
+portrait = "blush_special"
+local = "And I want to be a really good dad. If there's anything I can do better... you just say the word, okay?"
+
+[stork_pregnant_3]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 3 },
+	{ stork_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 4 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "think"
+local = "I had a long talk with Uncle Landen the other day."
+next = "1"
+
+[stork_pregnant_3.1]
+portrait = "sincere_special"
+local = "I asked him if he had any advice about becoming a parent, and he got all quiet."
+next = "2"
+
+[stork_pregnant_3.2]
+portrait = "sad"
+local = "Then he said he didn't want to be a nuisance, going around giving advice on something he didn't know much about."
+next = "3"
+
+[stork_pregnant_3.3]
+portrait = "shocked"
+local = "That was a first. I was kind of stunned. You know him... he loves giving advice."
+next = "4"
+
+[stork_pregnant_3.4]
+portrait = "neutral"
+local = "Also, I didn't agree. I had to remind him... he's been looking out for me ever since I got to Mistria."
+next = "5"
+
+[stork_pregnant_3.5]
+portrait = "think"
+local = "Then his lip got all trembly and he had to take a minute out on the porch. After a while, I got kind of worried..."
+next = "6"
+
+[stork_pregnant_3.6]
+portrait = "happy"
+local = "But then he came back inside, and oh boy. The advice just kept coming! I filled half a ledger with it!"
+
+[stork_pregnant_4]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 4 },
+	{ stork_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 5 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "Folks always ask which of us I think the baby will take more after..."
+next = "1"
+
+[stork_pregnant_4.1]
+portrait = "happy"
+local = "Personally, I'm looking forward to being surprised."
+next = "2"
+
+[stork_pregnant_4.2]
+portrait = "blush_special"
+local = "I do hope they have your smile, though. It'd be nice to see that no matter where I was looking."
+
+[stork_pregnant_5]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 5 },
+	{ stork_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 6 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "embarrassed"
+local = "[Ari]... I don't want to hex anything, but do you think our baby might be a boy?"
+next = "1"
+
+[stork_pregnant_5.1]
+portrait = "thoughtful_blush"
+local = "I grew up with so many sisters... I think it would be fun to have a boy. To shake things up, you know? But I'd be happy either way."
+next = "2"
+
+[stork_pregnant_5.2]
+portrait = "blush_special"
+local = """And boy or girl, I've always liked the name "$Kam$"... but honestly, I'm easy. If you have a name in mind, let's talk about it."""
+
+[stork_pregnant_6]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ pregnant_line_gate = false },
+	{ pregnant_line_grouping = 6 },
+	{ stork_utero = true }
+]
+writes = [
+	{ pregnant_line_gate = true, expires = "2d" },
+	{ pregnant_line_grouping = 7 }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "Kinda feels like I should keep on my toes today, in case the baby decides to come around."
+next = "1"
+
+[stork_pregnant_6.1]
+portrait = "blush_special"
+local = "Just say the word if it's time, okay?"
+
+# friends and family
+[pregnancy_ryis_josephine_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "josephine" },
+	{ ryis_is_spouse = true },
+	{ child_in_utero = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "josephine" } }]
+portrait = "happy"
+local = "[Ari]! Goodness, congratulations to you and Ryis! You're going to be wonderful parents."
+next = "1"
+
+[pregnancy_ryis_josephine_0.1]
+portrait = "wink"
+local = "Landen is telling everyone he sees he's going to be a grand-uncle. He keeps buying rounds for everyone at the bar!"
+
+[pregnancy_ryis_landen_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "landen" },
+	{ ryis_is_spouse = true },
+	{ child_in_utero = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "landen" } }]
+portrait = "happy"
+local = "Haha! I heard the news! I'm banging on every door, telling everyone I see!"
+next = "1"
+
+[pregnancy_ryis_landen_0.1]
+portrait = "neutral"
+local = "I'm gonna be an uncle again! A grand-uncle even!"
+next = "2"
+
+[pregnancy_ryis_landen_0.2]
+portrait = "wink"
+effect = "cheery"
+local = "I'm gonna spoil the socks off that baby, just you see!"
+
+[pregnancy_ryis_march_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "march" },
+	{ ryis_is_spouse = true },
+	{ child_in_utero = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "shock_special"
+local = "You and Ryis are having a baby?"
+next = "1"
+
+[pregnancy_ryis_march_0.1]
+portrait = "happy"
+local = "I can't believe it... well, congratulations! I can't wait to be an uncle!"
+next = "2"
+
+[pregnancy_ryis_march_0.2]
+portrait = "mad_special"
+effect = "sparkles"
+local = "You think I'm going to let Landen be your kid's only uncle? I'll fight him!"
+
+[pregnancy_ryis_olric_0]
+refresh = "never"
+priority = "max"
+requires = [
+	{ npc = "olric" },
+	{ ryis_is_spouse = true },
+	{ child_in_utero = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "olric" } }]
+portrait = "neutral"
+local = "Landen just told me the big news! Congratulations, you and Ryis have gotta be so excited!"
+next = "1"
+
+[pregnancy_ryis_olric_0.1]
+portrait = "think"
+local = "It's so cool there's gonna be another kid in town..."
+next = "2"
+
+[pregnancy_ryis_olric_0.2]
+portrait = "happy"
+effect = "sparkles"
+local = "I can already carry the full Dragonguard on my shoulders... I better start training up for one more!"

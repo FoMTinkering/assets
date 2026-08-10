@@ -1,0 +1,165 @@
+
+#Makers
+[apiary]
+	icon_sprite = "spr_ui_item_object_apiary"
+	name = "Apiary"
+	description = "Place this item on your farm and populate it with bees to make honey."
+	value = { bin = "self.recipe * 1.1" }
+	object = "apiary"
+	recipe_key = "apiary"
+	tags = ["furniture", "misc_functional"]
+	crafting_preview_sprite = "spr_ui_object_apiary_preview"
+	crafting_level_requirement = 10
+	recipe = [
+		{ count = 25, item = "basic_wood" },
+		{ count = 5, item = "clay" },
+		{ count = 5, item = "honey" },
+		{ count = 4, item = "iron_ingot" },
+		{ hours = 0, minutes = 40 },
+	]
+
+[terrarium]
+	icon_sprite = "spr_ui_item_object_terrarium"
+	name = "Terrarium"
+	description = "Place this item on your farm and fill it with bugs to make bait & pheromones."
+	value = { bin = "self.recipe * 1.1" }
+	object = "terrarium"
+	recipe_key = "terrarium"
+	tags = ["furniture", "misc_functional"]
+	crafting_preview_sprite = "spr_ui_object_terrarium_preview"
+	crafting_level_requirement = 10
+	recipe = [
+		{ count = 25, item = "basic_wood" },
+		{ count = 5, item = "glass" },
+		{ count = 5, item = "sod" },
+		{ count = 4, item = "iron_ingot" },
+		{ hours = 0, minutes = 40 },
+	]
+
+	#Items
+
+[honey_premium]
+	description = "A premium syrup made by uncommon bees. Better than your average honey."
+	icon_sprite = "spr_ui_item_honey_premium"
+	name = "Premium Honey"
+	restore = 5
+	tags = ["pantry", "material"]
+	value = { bin = 100 }
+	edible = false
+
+[honey_deluxe]
+	description = "A sought-after syrup made by rare bees. It's a local delicacy!"
+	icon_sprite = "spr_ui_item_honey_deluxe"
+	name = "Deluxe Honey"
+	restore = 5
+	tags = ["pantry", "material"]
+	value = { bin = 200 }
+	edible = false
+
+[honey_legendary]
+	description = "A legendary syrup made by legendary bees. Truly the best honey."
+	icon_sprite = "spr_ui_item_honey_legendary"
+	name = "Legendary Honey"
+	restore = 5
+	tags = ["pantry", "material"]
+	value = { bin = 500 }
+	edible = false
+
+[bug_pheromone_common]
+	description = "Use on open ground to summon a common bug."
+	icon_sprite = "spr_ui_item_bug_pheromone_common"
+	name = "Common Bug Pheromones"
+	value = { bin = 25 }
+	[bug_pheromone_common.attract]
+		bug = true
+		sprinkle = "spr_fx_bug_pheromone_common"
+		min_rarity = 10000
+		max_rarity = "common"
+
+[bug_pheromone_uncommon]
+	description = "Use on open ground to summon an uncommon bug."
+	icon_sprite = "spr_ui_item_bug_pheromone_uncommon"
+	name = "Uncommon Bug Pheromones"
+	value = { bin = 50 }
+	[bug_pheromone_uncommon.attract]
+		bug = true
+		sprinkle = "spr_fx_bug_pheromone_uncommon"
+		min_rarity = "common"
+		max_rarity = "uncommon"
+
+[bug_pheromone_rare]
+	description = "Use on open ground to summon a rare bug."
+	icon_sprite = "spr_ui_item_bug_pheromone_rare"
+	name = "Rare Bug Pheromones"
+	value = { bin = 75 }
+	[bug_pheromone_rare.attract]
+		bug = true
+		sprinkle = "spr_fx_bug_pheromone_rare"
+		min_rarity = "uncommon"
+		max_rarity = "rare"
+
+[bug_pheromone_legendary]
+	description = "Use on open ground to summon an legendary bug."
+	icon_sprite = "spr_ui_item_bug_pheromone_legendary"
+	name = "Legendary Bug Pheromones"
+	value = { bin = 100 }
+
+	[bug_pheromone_legendary.attract]
+		bug = true
+		sprinkle = "spr_fx_bug_pheromone_legendary"
+		min_rarity = "rare"
+		max_rarity = "very_rare"
+
+[fish_bait_common]
+	description = "Use while facing water to summon a common fish shadow. Can also be used to bait a fish trap."
+	icon_sprite = "spr_ui_item_fish_bait_common"
+	name = "Common Fish Bait"
+	range = 10
+	value = { bin = 25 }
+	tags = ["fish_bait"]
+	[fish_bait_common.attract]
+		bug = false
+		hold_sprite = "spr_tool_fish_bait_common_idle"
+		spin_sprite = "spr_tool_fish_bait_common_cast"
+		land_sprite = "spr_tool_fish_bait_common_water_land"
+		min_rarity = 10000
+		max_rarity = "common"
+
+[fish_bait_uncommon]
+	description = "Use while facing water to summon an uncommon fish shadow. Can also be used to bait a fish trap."
+	icon_sprite = "spr_ui_item_fish_bait_uncommon"
+	name = "Uncommon Fish Bait"
+	range = 10
+	value = { bin = 50 }
+	tags = ["fish_bait"]
+	[fish_bait_uncommon.attract]
+		bug = false
+		hold_sprite = "spr_tool_fish_bait_uncommon_idle"
+		spin_sprite = "spr_tool_fish_bait_uncommon_cast"
+		land_sprite = "spr_tool_fish_bait_uncommon_water_land"
+		min_rarity = "common"
+		max_rarity = "uncommon"
+
+[fish_bait_rare]
+	description = "Use while facing water to summon a rare fish shadow. Can also be used to bait a fish trap."
+	icon_sprite = "spr_ui_item_fish_bait_rare"
+	name = "Rare Fish Bait"
+	range = 10
+	value = { bin = 75 }
+	tags = ["fish_bait"]
+	[fish_bait_rare.attract]
+		bug = false
+		hold_sprite = "spr_tool_fish_bait_rare_idle"
+		spin_sprite = "spr_tool_fish_bait_rare_cast"
+		land_sprite = "spr_tool_fish_bait_rare_water_land"
+		min_rarity = "uncommon"
+		max_rarity = "rare"
+
+[honeycomb]
+	name = "Honeycomb"
+	description = "A beautiful piece of honeycomb especially made for you by the bees. Sells for a good price!"
+	restore = 5
+	icon_sprite = "spr_ui_item_honeycomb"
+
+	value = { bin = 500 }
+	tags = ["crop"]

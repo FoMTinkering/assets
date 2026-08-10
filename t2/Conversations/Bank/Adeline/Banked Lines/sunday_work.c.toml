@@ -1,0 +1,18 @@
+[sunday_work]
+refresh = "3m"
+requires = [
+	{ npc = "adeline" },
+	{ day_of_the_week = "sunday" },
+	{ adeline_animation = "write", comparator = "!=" },
+	{ adeline_animation = "write_sit", comparator = "!=" },
+	{ adeline_routine = "adeline_office_work", comparator = "!=" },
+	{ date_time = "1y", comparator = ">=" },
+	{ adeline_heart_level = 4, comparator = ">=" }
+]
+portrait = "embarrassed"
+local = "I promise I'm not working on a Sunday! I'm relaxing! Really, [Ari]!"
+next = "1"
+
+[sunday_work.1]
+portrait = "wink"
+local = "But let me know if I can help with anything! I don't mind at all!"

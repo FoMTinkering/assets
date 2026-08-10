@@ -1,0 +1,46 @@
+[nails]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "ryis" }
+	] },
+	{ adeline_zone = "<dell_zone>" },
+	{ adeline_zone = "<luc_zone>" },
+	{ adeline_zone = "<maple_zone>" },
+	{ adeline_zone = "<ryis_zone>" },
+	{ adeline_business_review = true },
+	{ asked_for_nails = true }
+]
+writes = [{ asked_for_nails = false }]
+speaker = "adeline"
+portrait = "neutral"
+local = "Low on any supplies? I can make a note of it."
+next = "1"
+
+[nails.1]
+speaker = "ryis"
+portrait = "think"
+local = "We can always use more nails, but I don't want to get on March's nerves..."
+next = "2"
+
+[nails.2]
+speaker = "dell"
+portrait = "happy"
+local = "Oh, don't worry Mister Ryis."
+next = "3"
+
+[nails.3]
+speaker = "luc"
+portrait = "happy"
+local = "We already got on his nerves."
+next = "4"
+
+[nails.4]
+speaker = "maple"
+portrait = "happy"
+effect = "sparkles"
+local = "We asked for so many nails!"

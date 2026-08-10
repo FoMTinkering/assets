@@ -1,0 +1,286 @@
+scene(town);
+place_actor(ari, north, sf_ari_entrance);
+place_actor(josephine, east, sf_josephine_entrance);
+place_actor(adeline, south, sf_adeline_tally);
+place_actor(ryis, west, sf_ryis_entrance);
+
+place_actor(elsie, west, sf_elsie_entrance);
+place_actor(juniper, north, sf_juniper_entrance);
+place_actor(dozy, north, sf_dozy_entrance);
+place_actor(landen, north, sf_landen_entrance);
+place_actor(terithia, north, sf_terithia_entrance);
+place_actor(errol, north, sf_errol_entrance);
+place_actor(eiland, north, sf_eiland_entrance);
+place_actor(luc, north, sf_luc_entrance);
+place_actor(reina, north, sf_reina_entrance);
+place_actor(maple, north, sf_maple_entrance);
+place_actor(valen, north, sf_valen_entrance);
+place_actor(hemlock, north, sf_hemlock_entrance);
+place_actor(celine, north, sf_celine_entrance);
+place_actor(nora, north, sf_nora_entrance);
+place_actor(dell, north, sf_dell_entrance);
+place_actor(holt, north, sf_holt_entrance);
+place_actor(balor, west, sf_balor_entrance);
+place_actor(olric, east, sf_olric_entrance);
+place_actor(march, west, sf_march_entrance);
+place_actor(hayden, east, sf_hayden_entrance);
+place_actor(henrietta, east, sf_henrietta_entrance);
+if read_world_fact("caldarus_seridia_town") == true {
+	place_actor(caldarus, north, sf_caldarus_entrance);
+	place_actor(seridia, east, sf_seridia_entrance);
+}
+animate(adeline, write);
+camera_position(sf_camera_1);
+
+sim {
+	{
+		wait(0.25);
+		fade_in(2);
+	}
+	pan_camera(7.5, sf_camera_2);
+	{
+		wait(2);
+		free bark_speech(josephine, three);
+		wait(1);
+		free bark_speech(adeline, errol);
+		wait(1);
+		animate(adeline, idle);
+		face(adeline, west);
+		wait(0.5);
+		free bark_speech(josephine, cute_face);
+		wait(0.5);
+		free bark_speech(adeline, cute_face);
+		wait(1);
+		sim {
+			{
+				walk_slow(josephine, sf_josephine_start);
+				face(josephine, south);
+			}
+			{
+				wait(0.5);
+				walk(adeline, sf_adeline_entrance);
+				face(adeline, west);
+			}
+		}
+	}
+	{
+		free bark_speech(valen, spring);
+		free bark_speech(terithia, celebration);
+		wait(0.25);
+		free bark_speech(nora, cherry_blossoms);
+		wait(0.5);
+		free bark_speech(landen, woodcrafting);
+		wait(0.25);
+		free bark_speech(luc, hot_drink);
+		wait(0.25);
+		free bark_speech(errol, spring);
+	}
+}
+wait(1);
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+free bark_speech(errol, exclamation_mark);
+sim {
+	{
+		wait(0.5);
+		walk(errol, sf_third_place);
+		face(errol, south);
+	}
+	{
+		wait(1);
+		next_line(); //
+		close_textbox();
+	}
+	{
+		wait(0.5);
+		free bark_speech(landen, errol);
+		wait(0.1);
+		free bark_speech(olric, exclamation_mark);
+		wait(0.1);
+		free bark_speech(terithia, errol);
+		wait(0.1);
+		free bark_speech(hayden, cute_face);
+		wait(0.1);
+		free bark_speech(eiland, errol);
+		wait(0.1);
+		free bark_speech(elsie, music);
+		wait(0.1);
+		if read_world_fact("caldarus_seridia_town") == true {
+			free bark_speech(caldarus, cute_face);
+			wait(0.1);
+		}
+		free bark_speech(valen, errol);
+		wait(0.1);
+		free bark_speech(dell, annoyed);
+		wait(0.5);
+		face(nora, east);
+		free bark_speech(nora, exclamation_mark);
+		wait(0.25);
+		free bark_speech(dell, errol);
+		wait(0.25);
+		face(nora, north);
+	}
+}
+wait(0.5);
+next_line(); //
+next_line(); //
+close_textbox();
+free bark_speech(celine, cute_face);
+sim {
+	{
+		wait(1);
+		sim {
+			walk(celine, sf_second_place);
+			set_move_speed(celine, 1);
+		}
+		face(celine, south);
+	}
+	{
+		wait(1.5);
+		next_line(); //
+		close_textbox();
+	}
+	{
+		wait(0.5);
+		free bark_speech(reina, celine);
+		wait(0.1);
+		free bark_speech(ryis, exclamation_mark);
+		wait(0.1);
+		free bark_speech(adeline, celine);
+		wait(0.1);
+		if read_world_fact("caldarus_seridia_town") == true {
+			free bark_speech(caldarus, celine);
+			wait(0.1);
+		}
+		free bark_speech(holt, cute_face);
+		wait(0.1);
+		free bark_speech(nora, celine);
+		wait(0.1);
+		free bark_speech(elsie, cute_face);
+		wait(0.1);
+		free bark_speech(juniper, celine);
+		wait(0.1);
+		free bark(dozy, celine);
+		wait(0.1);
+		free bark_speech(hemlock, exclamation_mark);
+		wait(0.1);
+		free bark_speech(hayden, celine);
+		wait(0.1);
+		free bark_speech(luc, celine);
+		wait(0.1);
+		free bark_speech(maple, celine);
+	}
+}
+wait(0.5);
+next_line(); //
+next_line(); //
+close_textbox();
+free bark_speech(ari, exclamation_mark);
+sim {
+	{
+		wait(0.25);
+		face(ari, west);
+		wait(1);
+		face(ari, east);
+		wait(1);
+		face(ari, north);
+	}
+	{
+		wait(2.5);
+		walk_slow(ari, sf_first_place);
+		face(ari, south);
+	}
+	{
+		wait(2.5);
+		pan_camera(2, sf_camera_3);
+	}
+	{
+		wait(1);
+		face(eiland, west);
+		wait(0.5);
+		face(holt, east);
+		face(landen, west);
+		wait(0.25);
+		face(nora, east);
+		face(terithia, west);
+		wait(0.25);
+		face(dell, east);
+		face(eiland, west);
+		wait(1.5);
+		face(holt, north);
+		face(eiland, north);
+		wait(0.1);
+		face(landen, north);
+		face(nora, north);
+		wait(0.1);
+		face(terithia, north);
+		face(dell, north);
+	}
+	{
+		wait(0.5);
+		free bark_speech(adeline, cute_face);
+		wait(0.1);
+		free bark_speech(olric, cute_face);
+		wait(0.1);
+		free bark_speech(hemlock, exclamation_mark);
+		wait(0.1);
+		free bark_speech(ryis, cute_face);
+		wait(0.1);
+		if read_world_fact("caldarus_seridia_town") == true {
+			free bark_speech(caldarus, cute_face);
+			wait(0.1);
+		}
+		free bark_speech(celine, cute_face);
+		wait(0.1);
+		free bark_speech(hayden, exclamation_mark);
+		wait(0.1);
+		free bark_speech(landen, cute_face);
+		free bark_speech(elsie, cute_face);
+		wait(0.1);
+		free bark_speech(reina, cute_face);
+		wait(0.1);
+		free bark_speech(maple, cute_face);
+		free bark_speech(luc, exclamation_mark);
+		wait(0.1);
+		free bark_speech(valen, cute_face);
+		wait(0.1);
+		if read_world_fact("caldarus_seridia_town") == true {
+			free bark_speech(seridia, cute_face);
+			wait(0.1);
+		}
+		free bark(dozy, cute_face);
+		free bark(henrietta, music);
+		wait(0.1);
+		free bark_speech(dell, cute_face);
+		wait(0.1);
+		free bark_speech(holt, cute_face);
+		wait(0.1);
+		free bark_speech(nora, cute_face);
+	}
+}
+sim {
+	{
+		wait(0.75);
+		face(ari, north);
+	}
+	{
+		next_line(); //
+	}
+}
+sim {
+	{
+		wait(0.75);
+		face(ari, south);
+	}
+	{
+		next_line(); //
+		next_line(); //
+	}
+}
+close_textbox();
+wait(0.5);
+free bark_speech(ari, cute_face);
+wait(1);
+fade_out(2);

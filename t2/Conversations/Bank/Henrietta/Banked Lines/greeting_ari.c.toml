@@ -1,0 +1,46 @@
+[greeting_ari]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "henrietta" },
+	{ henrietta_has_met = false },
+]
+local = "(This chicken clucks at you with a regal air. You're sure this must be Henrietta, Hayden's prize-winning chicken.)"
+prompts = [
+	{ local = "A pleasure to meet you, Henrietta.", next = "1" },
+	{ local = "Hey chicken! Who's a good chicken?", next = "2" },
+]
+
+[greeting_ari.1]
+local = "(Henrietta pecks the ground indifferently to your blatant attempt to get on her good side.)"
+
+[greeting_ari.2]
+local = "(Henrietta squawks and flaps her wings. You don't know Henrietta well enough to know if this is a good thing.)"
+
+[hayden_meeting_henrietta_follow_up]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "hayden" },
+	{ henrietta_has_met = true },
+	{ hayden_has_met = true },
+	{ henrietta_was_last_spoken_to = "12h", time = "after", comparator = ">" },
+]
+local = "Henrietta said you came by and said hello. That was thoughtful of you, [Ari]!"
+prompts = [
+	{ local = "She's an incredible chicken!", next = "1" },
+	{ local = """Wait, what do you mean by "she said"?""", next = "2" },
+]
+
+[hayden_meeting_henrietta_follow_up.1]
+portrait = "happy_fist"
+effect = "cheery"
+local = "She sure is!"
+
+[hayden_meeting_henrietta_follow_up.2]
+portrait = "laugh"
+local = "Haha!"
+next = "3"
+
+[hayden_meeting_henrietta_follow_up.3]
+local = "Well, talk to you later, [Ari]."

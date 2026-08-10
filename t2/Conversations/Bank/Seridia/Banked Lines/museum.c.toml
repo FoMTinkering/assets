@@ -1,0 +1,103 @@
+[museum_0]
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ building = "museum" },
+	{ caldarus_seridia_town = true }
+]
+portrait = "neutral"
+local = "To think the sum of mortal knowledge could be reduced to trinkets in a room..."
+
+[museum_1]
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ building = "museum" },
+	{ caldarus_seridia_town = true }
+]
+portrait = "sly"
+local = "What a charming hoard this museum is..."
+next = "1"
+
+[museum_1.1]
+portrait = "sly_think"
+local = "Errol does a passable impression of a dragon, I think."
+
+[museum_2]
+refresh = "2m"
+requires = [
+	{ npc = "seridia" },
+	{ building = "museum" },
+	{ caldarus_seridia_town = true },
+	{ museum_archaeology_count = 10, comparator = ">=" }
+]
+portrait = "neutral"
+local = "I do not recognize the stylistic elements that decorate some of these artifacts."
+next = "1"
+
+[museum_2.1]
+portrait = "closed_eyes"
+local = "It seems an age or two passed whilst I slumbered."
+
+[museum_ancient_crystal_goblet]
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ building = "museum" },
+	{ caldarus_seridia_town = true },
+	{ museum_donated_ancient_crystal_goblet = true }
+]
+portrait = "neutral"
+local = "It is unusual to see what is considered an antiquity in this day and age."
+next = "1"
+
+[museum_ancient_crystal_goblet.1]
+portrait = "closed_eyes"
+local = "Just now, I saw a common crystal goblet on display. I recognized a scratch on the stem... I drank from that very goblet during mealtimes."
+next = "2"
+
+[museum_ancient_crystal_goblet.2]
+portrait = "serious"
+local = "Such a mundane thing. Who knew it might be revered as emblematic of the past?"
+
+[museum_ancient_horn_circlet]
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ building = "museum" },
+	{ caldarus_seridia_town = true },
+	{ museum_donated_ancient_horn_circlet = true }
+]
+portrait = "neutral"
+local = "I just saw an old circlet of mine on display."
+next = "1"
+
+[museum_ancient_horn_circlet.1]
+portrait = "think"
+local = "I no longer find it fashionable, but... if the notion takes me, perhaps I will take it back."
+next = "2"
+
+[museum_ancient_horn_circlet.2]
+portrait = "sly"
+local = "It is rightfully mine, after all."
+
+[museum_ancient_gold_coin]
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ building = "museum" },
+	{ caldarus_seridia_town = true },
+	{ museum_donated_ancient_gold_coin = true }
+]
+portrait = "neutral"
+local = "That coin in the Museum display... it is a currency that circulated during my reign."
+next = "1"
+
+[museum_ancient_gold_coin.1]
+portrait = "closed_eyes"
+local = "I commissioned that denomination myself. It was minted to commemorate my hundredth year of rule."
+next = "2"
+
+[museum_ancient_gold_coin.2]
+portrait = "serious"
+local = "You may find it difficult to make out due to the wear of centuries, but each is emblazoned with my likeness."

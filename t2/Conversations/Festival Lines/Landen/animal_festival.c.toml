@@ -1,0 +1,54 @@
+[animal_festival_0]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "landen" },
+	{ animal_festival_today = true },
+	{ small_animal_place = "undefined" },
+	{ large_animal_place = "undefined" },
+	{ landen_is_at = "town/af_small_animal_booth" },
+]
+portrait = "think"
+local = "Built most of the decorations with Ryis for the festival, and now I'm running a booth!"
+next = "1"
+
+[animal_festival_0.1]
+portrait = "happy"
+effect = "cheery"
+local = "What would Mistria do without me?"
+next = "2"
+
+[animal_festival_0.2]
+portrait = "neutral"
+local = "Anyway, if you want to enter a small animal into the competition, put their info into the ledger right there!"
+
+[animal_festival_1]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "landen" },
+	{ animal_festival_today = true },
+	{ any = [
+		{ small_animal_place = 3 },
+		{ small_animal_place = 2 },
+		{ small_animal_place = 1 },
+		{ small_animal_place = 0 },
+	] },
+	{ any = [
+		{ large_animal_place = 3 },
+		{ large_animal_place = 2 },
+		{ large_animal_place = 1 },
+		{ large_animal_place = 0 },
+	] },
+	{ landen_is_at = "town/af_small_animal_booth" },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+]
+portrait = "happy"
+local = "The judging is always exciting, isn't it? Hope you enjoy the rest of the festival, [Ari]."

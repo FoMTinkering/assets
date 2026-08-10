@@ -1,0 +1,106 @@
+[luc_bee_facts_1]
+refresh = "1y"
+requires = [
+	{ npc = "luc" },
+	{ nd_thread_mutex = "undefined" },
+	{ nd_thread_delay = false },
+	{ luc_bee_facts_finished = false },
+	{ luc_heart_level = 3, comparator = ">=" }
+]
+writes = [
+	{ nd_thread_mutex = "luc_bee_facts_1", expires = "1w" },
+	{ nd_thread_delay = true, expires = "1d" },
+]
+local = "[Ari]! I've enrolled you in my bee facts!"
+next = "1"
+
+[luc_bee_facts_1.1]
+portrait = "think"
+local = "Did you know that bees have six legs and five eyes? It's true!"
+next = "2"
+
+[luc_bee_facts_1.2]
+portrait = "wink"
+local = "They have two big eyes, and three tiny eyes in the middle of their forehead!"
+next = "3"
+
+[luc_bee_facts_1.3]
+portrait = "happy"
+local = "Okay, bye!"
+
+[luc_bee_facts_2]
+refresh = "instantly"
+requires = [
+	{ npc = "luc" },
+	{ nd_thread_mutex = "luc_bee_facts_1" },
+	{ nd_thread_delay = false },
+]
+writes = [
+	{ nd_thread_mutex = "luc_bee_facts_2", expires = "1w" },
+	{ nd_thread_delay = true, expires = "1d" },
+]
+local = "It's time for another bee fact, [Ari]!"
+next = "1"
+
+[luc_bee_facts_2.1]
+portrait = "happy"
+local = "A queen bee can lay over three thousand eggs per day! Worker bees come from eggs fertilized by the queen."
+next = "2"
+
+[luc_bee_facts_2.2]
+local = "Drones come from unfertilized eggs! And that's the end of today's bee fact!"
+
+[luc_bee_facts_3]
+refresh = "instantly"
+requires = [
+	{ npc = "luc" },
+	{ nd_thread_mutex = "luc_bee_facts_2" },
+	{ nd_thread_delay = false },
+]
+writes = [
+	{ nd_thread_mutex = "undefined" },
+	{ nd_thread_delay = true, expires = "1d" },
+	{ luc_bee_facts_finished = true },
+	{ luc_bee_facts_day = true, expires = "3d" },
+]
+local = "[Ari]! New bee fact alert! It's super cool!"
+next = "1"
+
+[luc_bee_facts_3.1]
+portrait = "wink"
+local = """Dad said it was a "real thinker"! Here it is:"""
+next = "2"
+
+[luc_bee_facts_3.2]
+portrait = "happy"
+local = "Our entire ecosystem would collapse without pollinators like bees."
+next = "3"
+
+[luc_bee_facts_3.3]
+effect = "sparkles"
+local = "Okay, bye!"
+
+[luc_bee_facts_reina]
+refresh = "never"
+requires = [{ npc = "reina" }, { nd_thread_mutex = "luc_bee_facts_1" }]
+portrait = "happy"
+effect = "sparkles"
+local = "Did Luc tell you his bee fact? He worked so hard on it!"
+
+[luc_bee_facts_maple]
+refresh = "never"
+requires = [{ npc = "maple" }, { nd_thread_mutex = "luc_bee_facts_2" }]
+portrait = "think"
+local = "I didn't care much about bees until Luc told me there was a queen."
+next = "1"
+
+[luc_bee_facts_maple.1]
+portrait = "happy"
+local = "Now they're my favorite!"
+
+[luc_bee_facts_hemlock]
+refresh = "never"
+requires = [{ npc = "hemlock" }, { luc_bee_facts_day = true }]
+portrait = "happy"
+effect = "drop"
+local = "Did you hear Luc's latest bee fact? Bit of a barnburner, that one."

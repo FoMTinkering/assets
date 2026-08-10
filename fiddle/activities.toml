@@ -1,0 +1,1502 @@
+# Small activities that NPCs can perform around Mistria.
+#
+# Here are the kinds of activities we currently support:
+#
+# "trellis_point"
+# These activities can be created with just this TOML file. They follow
+# a standard behavior:
+# 1. Walk to a location
+# 2. Play an animations
+# 3. End after a certain amount of time
+#
+# "grid_object"
+# These can also be created just with TOML. They follow the same behavior
+# as the "trellis_point" kind above, but instead they seek objects on the
+# grid that have a given tag (defined in furniture.toml).
+#
+# "custom_programming"
+# These are activities that have unique behavior that the programmers
+# hand-write.
+#
+# "wander"
+# This is just used for the wander activity. It makes the NPC choose a random spot in the room and
+# walk there.
+#
+# You can directly request an NPC to perform an activity, or can set
+# up a routine in routines.toml.
+#
+# Below is the default entry which will show you what properties are
+# available and what they will default to if not provided.
+[default]
+	# The number of game-minutes this activity can take to complete.
+	# You can set this to "<n/a>" to make the activity indefinite.
+	duration_range = [60, 120]
+	# The trellis points that are valid for this activity. NPCs will only
+	# select ones within their current room. If none are available, the
+	# activity will cancel.
+	#
+	# If you do not provide any trellis points, the NPC will not move as a
+	# part of this activity and will simply animate in place.
+	trellis_points = []
+	# The animations the NPC should play during this activity. You can provide just one ("idle") or an
+	# array of random options (["idle", "walk"])
+	animations = []
+	# The kind of activity, listed towards the top of this file.
+	kind = "trellis_point"
+	# Used for Saturday Market activities. Providing an NPC will require that vendor to be present at
+	# an active Saturday Market for this activity to run.
+	required_vendor = "<n/a>"
+	# Used for activities that seek grid objects rather than trellis points.
+	object_tag = "<n/a>"
+
+[wander]
+	kind = "wander"
+	animations = "idle"
+	duration_range = [20, 40]
+
+[attend_register]
+	trellis_points = [
+		"inn/inn register",
+		"general_store_store/general store register",
+	]
+	duration_range = [120, 240]
+	animations = "idle"
+
+[cook]
+	trellis_points = ["inn/stove-top kitchen"]
+	animations = "action"
+	duration_range = [60, 80]
+
+[stir_soup_pot]
+	trellis_points = ["inn/soup pot"]
+	animations = "action"
+	duration_range = [30, 50]
+
+[polish_glass]
+	trellis_points = [
+		"inn/bartender 1",
+		"inn/bartender 2",
+		"inn/bartender 3",
+		"inn/bartender 4",
+	]
+	animations = "polish"
+	duration_range = [30, 40]
+
+[bartend_idle]
+	trellis_points = [
+		"inn/bartender 1",
+		"inn/bartender 2",
+		"inn/bartender 3",
+		"inn/bartender 4",
+	]
+	animations = "idle"
+	duration_range = [30, 50]
+
+[chop_vegetables]
+	trellis_points = ["inn/cutting board"]
+	animations = "chop"
+	duration_range = [60, 80]
+
+[chop_vegetables_fnati_kids]
+	trellis_points = ["inn/cutting board"]
+	animations = "action"
+	duration_range = [20, 40]
+
+[hot_pass]
+	trellis_points = ["inn/hot pass"]
+	duration_range = [5, 6]
+	animations = "action"
+
+[hot_pass_fnati_kids]
+	trellis_points = ["inn/hot pass", "inn/kitchen shelf"]
+	duration_range = [5, 6]
+	animations = "action"
+
+[cook_fnati_kids]
+	trellis_points = ["inn/stove-top kitchen"]
+	animations = "action"
+	duration_range = [20, 40]
+
+[scratch_head_fnati_kids]
+	trellis_points = ["inn/cooking_tutorial_3"]
+	animations = "scratch_head"
+	duration_range = [10, 20]
+
+[stir_soup_pot_fnati_kids]
+	trellis_points = ["inn/soup pot"]
+	animations = "action"
+	duration_range = [20, 30]
+
+[sweep]
+	trellis_points = [
+		"inn/sweeping 1",
+		"inn/sweeping 2",
+		"general_store_store/sweeping 1",
+		"general_store_store/sweeping 2",
+		"general_store_home/chores_sweep_1",
+		"general_store_home/chores_sweep_2",
+		"general_store_home/chores_sweep_3",
+		"celines_room/tidy_1",
+		"celines_room/tidy_2",
+		"celines_room/tidy_3",
+		"celines_room/tidy_4",
+		"town/general_store_sweep_1",
+		"town/general_store_sweep_2",
+		"town/general_store_sweep_3",
+		"lucs_room/tidy_4",
+		"lucs_room/tidy_5",
+		"maples_room/tidy_4",
+		"maples_room/tidy_5",
+		"clinic_f1/sweep_1",
+		"clinic_f1/sweep_2",
+	]
+	animations = "sweep"
+	duration_range = [30, 40]
+
+[tidy_action]
+	trellis_points = [
+		"lucs_room/tidy_1",
+		"lucs_room/tidy_2",
+		"lucs_room/tidy_3",
+		"maples_room/tidy_1",
+		"maples_room/tidy_2",
+		"maples_room/tidy_3",
+		"clinic_f1/fix_bed_1",
+		"clinic_f1/fix_bed_2",
+		"clinic_f1/inventory",
+	]
+	animations = "action"
+	duration_range = [20, 30]
+
+[stock_shelves]
+	trellis_points = [
+		"inn/inventory",
+		"general_store_store/stocking 1",
+		"general_store_store/stocking 2",
+		"general_store_store/shopping 1",
+		"general_store_store/shopping 4",
+	]
+	animations = "action"
+	duration_range = [40, 70]
+
+[sing]
+	trellis_points = ["inn/inventory"]
+	animations = "sing"
+
+[repair_work]
+	# CHECK AFTER ANIMATIONS ARE IN
+	animations = ["hammer", "saw", "action"]
+	duration_range = [30, 50]
+	trellis_points = [
+		# "town/town center flower beds",
+		# "town/other town center flower beds",
+		# "town/ryis repair wall",
+		# "town/ryis repair bathhouse flowers",
+		# "town/ryis repair manor house",
+		# "town/ryis inn yard wall repair",
+		# "town/ryis playground wall repair",
+		# "town/repair_work_1",
+		"town/repair_work_2",
+		"town/repair_work_5",
+		"haydens_farm/fence repair 1",
+		"haydens_farm/fence repair 2",
+		"haydens_farm/well repair",
+		"haydens_farm/coop repair",
+	]
+
+[repair_work_action]
+	animations = ["action"]
+	duration_range = [10, 20]
+	trellis_points = ["town/repair_work_4"]
+
+[wipe_brow]
+	animations = "wipebrow"
+	duration_range = [1, 1]
+	trellis_points = [
+		"haydens_farm/well repair",
+		"town/repair_work_2",
+		"town/repair_work_5",
+		"eastern_road/Porch Near Lumber",
+	]
+
+[pond_wander]
+	trellis_points = [
+		"eastern_road/north side of pond",
+		"eastern_road/west side of pond",
+		"eastern_road/south side of pond",
+		"eastern_road/east side of pond",
+		"eastern_road/Bench Left",
+		"eastern_road/Bench Right",
+	]
+	duration_range = [40, 60]
+	animations = "idle"
+
+[manor_garden_wander]
+	trellis_points = [
+		"town/manor_garden_north_west",
+		"town/manor_garden_south_west",
+		"town/manor_garden_north_east",
+		"town/manor_garden_south_east",
+		"town/manor_garden_north_west_2",
+		"town/manor_garden_south_west_2",
+		"town/manor_garden_north_east_2",
+		"town/manor_garden_south_east_2",
+	]
+	duration_range = [30, 50]
+	animations = "idle"
+
+[museum_rotation]
+	trellis_points = [
+		"museum_entry/rotation_1",
+		"museum_entry/rotation_2",
+		"museum_entry/rotation_3",
+		"museum_entry/rotation_4",
+	]
+	duration_range = [20, 30]
+	animations = "idle"
+
+[museum_sitting]
+	trellis_points = [
+		"museum_entry/Left Bench",
+		"museum_entry/Middle-Left Bench",
+		"museum_entry/Middle-Right Bench",
+		"museum_entry/Right Bench",
+	]
+	duration_range = [40, 60]
+	animations = "sit"
+
+[celine_gardening]
+	trellis_points = [
+		"town/celine garden 1",
+		"town/celine garden 2",
+		"town/celine garden 3",
+		"town/celine garden 4",
+	]
+	duration_range = [60, 80]
+	animations = "harvest"
+
+[manor_gardening]
+	trellis_points = [
+		"town/manor_gardening_1",
+		"town/manor_gardening_2",
+		"town/manor_gardening_3",
+		"town/manor_gardening_4",
+		"town/manor_gardening_5",
+		"town/manor_gardening_6",
+		"town/manor_gardening_7",
+		"town/manor_gardening_8",
+		"town/manor_gardening_9",
+		"town/manor_gardening_10",
+		"town/manor_gardening_11",
+		"town/manor_gardening_12",
+	]
+	duration_range = [20, 40]
+	animations = "harvest"
+
+[till]
+	trellis_points = [
+		"haydens_farm/fieldwork_1",
+		"haydens_farm/fieldwork_2",
+		"haydens_farm/fieldwork_3",
+	]
+	duration_range = [40, 60]
+	animations = "till"
+
+[water_plants]
+	trellis_points = [
+		"haydens_farm/fieldwork_1",
+		"haydens_farm/fieldwork_2",
+		"haydens_farm/fieldwork_3",
+	]
+	duration_range = [40, 60]
+	animations = "water"
+
+[shopping]
+	trellis_points = [
+		"general_store_store/shopping 1",
+		"general_store_store/shopping 2",
+		"general_store_store/shopping 3",
+		"general_store_store/shopping 4",
+	]
+	duration_range = [20, 40]
+	animations = "action"
+
+[checking_out]
+	trellis_points = ["general_store_store/checking out"]
+	duration_range = [40, 50]
+	animations = "idle"
+
+[notetake]
+	trellis_points = [
+		"clinic_f1/doctor's desk",
+		"town/north of fountain",
+		"town/quest board",
+		"town/eiland wake point",
+		"town/mill inspection 1",
+		"town/mill inspection 2",
+	]
+	animations = "write"
+
+[adeline_office_work]
+	trellis_points = [
+		"adelines_office/Left Bookshelf",
+		"adelines_office/Right Bookshelf",
+		"adelines_office/Pacing Left",
+		"adelines_office/Pacing Right",
+	]
+	animations = "write"
+	duration_range = [30, 70]
+
+[adeline_desk_work]
+	trellis_points = ["adelines_office/Desk Chair Seat"]
+	animations = "write_sit"
+	duration_range = [40, 80]
+
+[narrows_ruins_wander]
+	trellis_points = [
+		"narrows/North West Ruins Corner",
+		"narrows/South East Ruins Corner",
+		"narrows/Right Statue",
+	]
+	animations = "idle"
+	duration_range = [30, 80]
+
+[haydens_farm_foraging]
+	trellis_points = [
+		"haydens_farm/foraging_1",
+		"haydens_farm/foraging_2",
+		"haydens_farm/foraging_3",
+		"haydens_farm/foraging_4",
+		"haydens_farm/foraging_5",
+		"haydens_farm/foraging_6",
+	]
+	animations = "harvest"
+	duration_range = [30, 80]
+
+[hgs_it]
+	trellis_points = [
+		"town/playground_hgs_it_1",
+		"town/playground_hgs_it_2",
+		"town/playground_hgs_it_3",
+		"eastern_road/hgs_it_1",
+		"eastern_road/hgs_it_2",
+		"eastern_road/hgs_it_3",
+		"eastern_road/hgs_it_4",
+		"eastern_road/hgs_it_5",
+		"narrows/hgs_it_1",
+		"narrows/hgs_it_2",
+	]
+	animations = ["scratch_head", "idle"]
+	duration_range = [5, 10]
+
+[archaeology_trowel]
+	trellis_points = [
+		"eastern_road/archaeology_1",
+		"eastern_road/archaeology_6",
+		"narrows/archaeology_7",
+		"western_ruins/pit_1",
+		"western_ruins/pit_2",
+		"western_ruins/pit_3",
+		"western_ruins/pit_4",
+	]
+	animations = "trowel"
+	duration_range = [20, 30]
+
+[archaeology_magnify]
+	trellis_points = [
+		"eastern_road/archaeology_3",
+		"eastern_road/archaeology_4",
+		"eastern_road/archaeology_7",
+		"narrows/archaeology_5",
+		"narrows/archaeology_2",
+		"western_ruins/artifacts_1",
+		"western_ruins/artifacts_2",
+		"western_ruins/pit_1",
+		"western_ruins/pit_2",
+		"western_ruins/pit_3",
+		"western_ruins/pit_4",
+	]
+	animations = "magnify"
+	duration_range = [10, 30]
+
+[look_for_sticks]
+	trellis_points = [
+		"eastern_road/archaeology_5",
+		"eastern_road/archaeology_6",
+		"eastern_road/archaeology_7",
+	]
+	animations = "action"
+	duration_range = [20, 30]
+
+[archaeology_pickaxe]
+	trellis_points = [
+		"eastern_road/archaeology_1",
+		"eastern_road/archaeology_6",
+		"narrows/archaeology_7",
+		"western_ruins/pit_1",
+		"western_ruins/pit_2",
+		"western_ruins/pit_3",
+		"western_ruins/pit_4",
+	]
+	animations = "pickaxe"
+	duration_range = [5, 8]
+
+[archaeology_brush]
+	trellis_points = [
+		"eastern_road/archaeology_2",
+		"eastern_road/archaeology_5",
+		"narrows/archaeology_1",
+		"narrows/archaeology_4",
+		"western_ruins/pit_1",
+		"western_ruins/pit_2",
+		"western_ruins/pit_3",
+		"western_ruins/pit_4",
+		"western_ruins/pit_edges_1",
+		"western_ruins/pit_edges_2",
+	]
+	animations = "brush"
+	duration_range = [20, 30]
+
+[archaeology_action]
+	trellis_points = [
+		"narrows/archaeology_3",
+		"narrows/archaeology_6",
+		"western_ruins/artifacts_1",
+		"western_ruins/artifacts_2",
+	]
+	animations = "action"
+	duration_range = [10, 30]
+
+[archaeology_buckets]
+	trellis_points = ["western_ruins/bucket_1", "western_ruins/bucket_2"]
+	animations = "action"
+	duration_range = [5, 10]
+
+[eiland_office_work_action]
+	trellis_points = [
+		"eilands_office/Left Cabinet",
+		"eilands_office/Right Cabinet",
+		"eilands_office/South Table",
+		"eilands_office/Front of Desk",
+	]
+	animations = "action"
+	duration_range = [10, 20]
+
+[eiland_office_work_write]
+	trellis_points = [
+		"eilands_office/Pacing Left",
+		"eilands_office/Pacing Right",
+		"eilands_office/South Table",
+	]
+	animations = "write"
+	duration_range = [30, 50]
+
+[eiland_office_work_magnify]
+	trellis_points = ["eilands_office/South Table", "eilands_office/Front of Desk"]
+	animations = "magnify"
+	duration_range = [50, 60]
+
+[eiland_office_work_idle]
+	trellis_points = [
+		"eilands_office/Left Cabinet",
+		"eilands_office/Right Cabinet",
+		"eilands_office/South Table",
+		"eilands_office/Front of Desk",
+	]
+	animations = "idle"
+	duration_range = [30, 40]
+
+[inn_yard_chores_action]
+	trellis_points = [
+		"town/inn_yard_chores_1",
+		"town/inn_yard_chores_2",
+		"town/inn_yard_chores_3",
+		"town/inn_yard_chores_4",
+		"town/inn_yard_chores_5",
+	]
+	animations = "action"
+	duration_range = [30, 50]
+
+[inn_yard_chores_idle]
+	trellis_points = [
+		"town/inn_yard_chores_1",
+		"town/inn_yard_chores_2",
+		"town/inn_yard_chores_3",
+		"town/inn_yard_chores_4",
+		"town/inn_yard_chores_5",
+	]
+	animations = "idle"
+	duration_range = [30, 40]
+
+[clean]
+	trellis_points = [
+		"general_store_home/chores_cleaning_1",
+		"general_store_home/chores_cleaning_2",
+		"general_store_home/chores_cleaning_3",
+		"general_store_home/chores_cleaning_4",
+		"celines_room/clean_1",
+		"celines_room/clean_2",
+		"celines_room/clean_3",
+		"celines_room/clean_4",
+	]
+	animations = "action"
+	duration_range = [20, 30]
+
+[eastern_road_foraging_north]
+	trellis_points = [
+		"eastern_road/foraging_north_1",
+		"eastern_road/foraging_north_2",
+		"eastern_road/foraging_north_3",
+		"eastern_road/foraging_north_4",
+		"eastern_road/foraging_north_5",
+	]
+	animations = ["action", "harvest"]
+	duration_range = [30, 40]
+
+[arm_day]
+	trellis_points = [
+		# "town/town_workout_1",
+		"town/town_workout_2",
+		"town/town_workout_3",
+		# "town/town_workout_4",
+		# "town/town_workout_5",
+		# "town/town_workout_6",
+
+	]
+	duration_range = [20, 30]
+	animations = "lift"
+
+[leg_day]
+	trellis_points = [
+		# "town/town_workout_1",
+		"town/town_workout_2",
+		"town/town_workout_3",
+		# "town/town_workout_4",
+		# "town/town_workout_5",
+		# "town/town_workout_6",
+
+	]
+	duration_range = [20, 30]
+	animations = "squat"
+
+[workout_wipe_brow]
+	trellis_points = [
+		"town/Fountain Inspection",
+		# "town/town_workout_1",
+		# "town/town_workout_2",
+		# "town/town_workout_3",
+		# "town/town_workout_4",
+		# "town/town_workout_5",
+		# "town/town_workout_6",
+
+	]
+	duration_range = [1, 1]
+	animations = "wipebrow"
+
+[fishing]
+	trellis_points = [
+		"town/fishing_1",
+		"town/fishing_2",
+		"town/fishing_3",
+		"eastern_road/fishing_1",
+		"eastern_road/fishing_2",
+		"eastern_road/fishing_3",
+		"narrows/fishing_1",
+		"narrows/fishing_2",
+		"narrows/fishing_3",
+	]
+	duration_range = [40, 80]
+	animations = "fish"
+
+[leylines]
+	trellis_points = [
+		"town/leylines_1",
+		"town/leylines_2",
+		"town/leylines_3",
+		"town/leylines_4",
+		"town/leylines_5",
+		"town/leylines_6",
+		"western_ruins/north_wander_5",
+	]
+	animations = ["idle"]
+	duration_range = [20, 40]
+
+[home_cooking]
+	trellis_points = [
+		"general_store_home/General Store Kitchen Mat",
+		"general_store_home/Stove",
+		"general_store_home/Kitchen Counter",
+	]
+	animations = "action"
+	duration_range = [20, 30]
+
+[inspect]
+	trellis_points = [
+		"town/inspection_1",
+		"town/inspection_2",
+		"town/inspection_3",
+		"town/inspection_4",
+		"town/inspection_5",
+		"town/inspection_6",
+	]
+	animations = ["tap", "write"]
+	duration_range = [80, 200]
+
+[inspect_upgrade_one]
+	required_vendor = "wheedle"
+	trellis_points = [
+		"town/inspection_5",
+		"town/inspection_6",
+	]
+	animations = ["tap", "write"]
+	duration_range = [80, 200]
+
+[inspect_upgrade_two]
+	required_vendor = "zorel"
+	trellis_points = [
+		"town/inspection_7",
+	]
+	animations = ["tap", "write"]
+	duration_range = [80, 200]
+
+[fix_shutters]
+	trellis_points = ["town/general_store_action_1", "town/general_store_action_2"]
+	animations = ["action"]
+
+[anvil]
+	trellis_points = ["town/Anvil", "town/Anvil Olric Helping"]
+	animations = "hammer"
+	duration_range = [20, 60]
+
+[anvil_tongs]
+	trellis_points = ["town/Anvil", "town/Anvil Olric Helping"]
+	animations = "tongs"
+	duration_range = [20, 60]
+
+[forge]
+	trellis_points = ["town/Forge"]
+	animations = "action"
+	duration_range = [5, 10]
+
+[forge_wipe_brow_principal]
+	trellis_points = ["town/Forge", "town/Anvil"]
+	animations = "wipebrow"
+	duration_range = [1, 1]
+
+[forge_wipe_brow_secondary]
+	trellis_points = ["town/Forge", "town/Anvil Olric Helping"]
+	animations = "wipebrow"
+	duration_range = [1, 1]
+
+[dozy_snooze]
+	trellis_points = ["bathhouse/Dozy"]
+	animations = ["sleep_1"]
+	duration_range = [30, 60]
+
+[dozy_sleep]
+	trellis_points = ["bathhouse/Dozy"]
+	animations = ["sleep_2"]
+	duration_range = [30, 60]
+
+[western_ruins_south_wander]
+	trellis_points = [
+		"western_ruins/south_wander_1",
+		"western_ruins/south_wander_2",
+		"western_ruins/south_wander_3",
+	]
+	animations = "idle"
+	duration_range = [20, 40]
+
+[western_ruins_north_wander]
+	trellis_points = [
+		"western_ruins/north_wander_1",
+		"western_ruins/north_wander_2",
+		"western_ruins/north_wander_3",
+		"western_ruins/north_wander_4",
+		"western_ruins/north_wander_5",
+		"western_ruins/north_wander_6",
+		"western_ruins/north_wander_7",
+	]
+	animations = "idle"
+	duration_range = [10, 30]
+
+[woodwork]
+	trellis_points = ["eastern_road/Workbench 1", "eastern_road/Workbench 2"]
+	animations = ["saw", "hammer"]
+	duration_range = [20, 40]
+
+[woodwork_action]
+	trellis_points = [
+		# "eastern_road/Lumber 1",
+		"eastern_road/Workbench 1",
+		"eastern_road/Workbench 2",
+	]
+	animations = ["action"]
+	duration_range = [10, 10]
+
+[woodwork_planning]
+	trellis_points = ["eastern_road/Carpenter's Workshop Stool"]
+	animations = "idle"
+	duration_range = [60, 80]
+
+[beach_dock_fishing]
+	trellis_points = [
+		"beach/Fishing",
+		"beach/fishing_1",
+		"beach/fishing_2",
+		"beach/fishing_4",
+	]
+	animations = "fish"
+	duration_range = [30, 50]
+
+[beach_wave_fishing]
+	trellis_points = ["beach/fishing_3"]
+	animations = "fish"
+	duration_range = [30, 50]
+
+[beach_dock_baiting]
+	trellis_points = ["beach/bait_1"]
+	animations = "bait"
+	duration_range = [10, 10]
+
+[beach_wave_baiting]
+	trellis_points = ["beach/bait_2"]
+	animations = "bait"
+	duration_range = [10, 10]
+
+[catch]
+	trellis_points = ["beach/catch_1", "beach/catch_2", "beach/catch_3"]
+	animations = "action"
+	duration_range = [10, 10]
+
+[spring_festival_dozy_wander]
+	trellis_points = [
+		"town/sf_dozy_wander_1",
+		"town/sf_dozy_wander_2",
+		"town/sf_dozy_wander_3",
+	]
+	animations = ["idle", "tailwag"]
+	duration_range = [40, 70]
+
+[animal_festival_dozy_wander]
+	trellis_points = [
+		"town/af_dozy_wander_1",
+		"town/af_dozy_wander_2",
+		"town/af_dozy_wander_3",
+	]
+	animations = ["idle", "tailwag"]
+	duration_range = [20, 50]
+
+[pumpkin_patch]
+	trellis_points = [
+		"haydens_farm/pumpkin_patch_1",
+		"haydens_farm/pumpkin_patch_2",
+		"haydens_farm/pumpkin_patch_3",
+		"haydens_farm/pumpkin_patch_4",
+		"haydens_farm/pumpkin_patch_5",
+		"haydens_farm/pumpkin_patch_6",
+	]
+	animations = ["idle", "action"]
+	duration_range = [20, 40]
+
+[cottage_sweep]
+	trellis_points = [
+		"town/cottage_sweep_1",
+		"town/cottage_sweep_2",
+		"town/cottage_sweep_3",
+	]
+	animations = ["sweep"]
+	duration_range = [20, 40]
+
+[cottage_windows]
+	trellis_points = [
+		"town/cottage_windows_1",
+		"town/cottage_windows_2",
+	]
+	animations = ["action"]
+	duration_range = [30, 40]
+
+[museum_sweep]
+	trellis_points = [
+		"museum_entry/rotation_1",
+		"museum_entry/rotation_2",
+		"museum_entry/rotation_3",
+		"museum_entry/rotation_4",
+		"museum_entry/Museum Admiring Painting Right",
+		"museum_entry/Museum Admiring Painting Left",
+	]
+	duration_range = [30, 50]
+	animations = "sweep"
+
+[reading]
+	trellis_points = [
+		"caldarus_house/reading_1",
+		"caldarus_house/reading_2",
+	]
+	duration_range = [20, 40]
+	animations = "read"
+
+[desk_reading]
+	trellis_points = [
+		"caldarus_house/Caldarus Desk Chair",
+	]
+	duration_range = [20, 40]
+	animations = "sit"
+
+[scroll_rearranging]
+	trellis_points = [
+		"caldarus_house/scroll_1",
+		"caldarus_house/scroll_2",
+		"caldarus_house/scroll_3",
+		"caldarus_house/scroll_4",
+	]
+	duration_range = [10, 20]
+	animations = "action"
+
+[tea_making]
+	trellis_points = [
+		"caldarus_house/tea_1",
+		"caldarus_house/tea_2",
+		"caldarus_house/tea_3",
+		"caldarus_house/tea_4",
+	]
+	duration_range = [15, 30]
+	animations = "action"
+
+[tea_drinking]
+	trellis_points = [
+		"caldarus_house/Caldarus Pouf Left",
+		"caldarus_house/Caldarus Pouf Right",
+	]
+	duration_range = [40, 60]
+	animations = ["drink", "sit"]
+
+[statue_cleaning]
+	trellis_points = [
+		"caldarus_house/dragon_cleaning_1",
+		"caldarus_house/dragon_cleaning_2",
+	]
+	duration_range = [15, 30]
+	animations = ["action"]
+
+[tree_pruning]
+	trellis_points = [
+		"caldarus_house/tree_1",
+		"caldarus_house/tree_2",
+		"caldarus_house/tree_3",
+		"caldarus_house/tree_4",
+	]
+	duration_range = [10, 20]
+	animations = ["action"]
+
+[deep_woods_gardening]
+	trellis_points = [
+		"deep_woods/gardening_1",
+		"deep_woods/gardening_2",
+		"deep_woods/gardening_3",
+		"deep_woods/gardening_4",
+		"deep_woods/gardening_5",
+		"deep_woods/gardening_6",
+		"deep_woods/gardening_7",
+		"deep_woods/gardening_8",
+	]
+	duration_range = [20, 40]
+	animations = ["harvest"]
+
+[deep_woods_pond_wander]
+	trellis_points = [
+		"deep_woods/pond_1",
+		"deep_woods/pond_2",
+		"deep_woods/pond_3",
+		"deep_woods/pond_4",
+		"deep_woods/pond_5",
+		"deep_woods/pond_6",
+		"deep_woods/pond_7",
+		"deep_woods/pond_8",
+		"deep_woods/pond_9",
+		"deep_woods/pond_10",
+		"deep_woods/pond_11",
+		"deep_woods/pond_12",
+	]
+	duration_range = [20, 40]
+	animations = ["idle"]
+
+[deep_woods_wander]
+	trellis_points = [
+		"deep_woods/wander_1",
+		"deep_woods/wander_2",
+		"deep_woods/wander_3",
+		"deep_woods/wander_4",
+		"deep_woods/wander_5",
+		"deep_woods/wander_6",
+	]
+	duration_range = [20, 40]
+	animations = ["idle", "lute_play"]
+
+[deep_woods_forage]
+	trellis_points = [
+		"deep_woods/forage_1",
+		"deep_woods/forage_2",
+		"deep_woods/forage_3",
+		"deep_woods/forage_4",
+		"deep_woods/forage_5",
+		"deep_woods/forage_6",
+	]
+	duration_range = [20, 40]
+	animations = ["action", "harvest"]
+
+[deep_woods_west_forage]
+	trellis_points = [
+		"deep_woods/west_forage_0",
+		"deep_woods/west_forage_1",
+		"deep_woods/west_forage_2",
+		"deep_woods/west_forage_3",
+	]
+	duration_range = [20, 40]
+	animations = ["action", "harvest"]
+
+[hf_action]
+	trellis_points = [
+		"town/hf_kitchen_0",
+		"town/hf_kitchen_1",
+		"town/hf_kitchen_2",
+		"town/hf_kitchen_4",
+		"town/hf_kitchen_5",
+	]
+	duration_range = [20, 40]
+	animations = ["action"]
+
+[hf_chop]
+	trellis_points = [
+		"town/hf_kitchen_1",
+	]
+	duration_range = [40, 60]
+	animations = ["chop"]
+
+[hf_polish]
+	trellis_points = [
+		"town/hf_kitchen_4",
+		"town/hf_kitchen_5",
+	]
+	duration_range = [40, 60]
+	animations = ["polish"]
+
+[hf_stand]
+	trellis_points = [
+		"town/hf_kitchen_3",
+	]
+	duration_range = [30, 40]
+	animations = ["idle"]
+
+[hf_eat]
+	trellis_points = [
+		"town/hf_table_north_1",
+		"town/hf_table_north_2",
+		"town/hf_table_north_3",
+		"town/hf_table_north_4",
+		"town/hf_table_north_5",
+		"town/hf_table_south_1",
+		"town/hf_table_south_2",
+		"town/hf_table_south_3",
+		"town/hf_table_south_4",
+		"town/hf_table_south_5",
+	]
+	duration_range = [60, 80]
+	animations = ["action"]
+
+[hf_dozy_wander]
+	trellis_points = [
+		"town/hf_dozy_wander_0",
+		"town/hf_dozy_wander_1",
+		"town/hf_dozy_wander_2",
+	]
+	duration_range = [30, 50]
+	animations = ["idle", "tailwag"]
+
+[ingredients]
+	trellis_points = [
+		"bathhouse_bedroom/ingredients_0",
+		"bathhouse_bedroom/ingredients_1",
+	]
+	duration_range = [5, 10]
+	animations = ["action"]
+
+[study_sit]
+	trellis_points = [
+		"bathhouse_bedroom/Desk Stool",
+		"bathhouse_bedroom/Crystal Ball Seat",
+	]
+	duration_range = [30, 50]
+	animations = ["sit"]
+
+[study]
+	trellis_points = [
+		"bathhouse_bedroom/study_0",
+		"bathhouse_bedroom/cauldron_1",
+	]
+	duration_range = [20, 40]
+	animations = ["idle"]
+
+[spell_cast]
+	trellis_points = [
+		"bathhouse_bedroom/cauldron_1",
+	]
+	duration_range = [10, 20]
+	animations = ["spell_cast"]
+
+[grove_of_rest_wander]
+	trellis_points = [
+		"deep_woods/gor_0",
+		"deep_woods/gor_1",
+		"deep_woods/gor_2",
+		"deep_woods/gor_3",
+		"deep_woods/gor_4",
+		"deep_woods/gor_5",
+		"deep_woods/gor_6",
+	]
+	duration_range = [30, 40]
+	animations = ["idle"]
+
+[narrows_workout]
+	trellis_points = [
+		"narrows/workout_0",
+		"narrows/workout_1",
+		"narrows/workout_2",
+		"narrows/workout_3",
+	]
+	duration_range = [20, 30]
+	animations = ["lift", "squat"]
+
+[seridia_inside_writing]
+	trellis_points = [
+		"seridias_house/Seridia Desk Chair",
+		"seridias_house/Seridia Fire Bench",
+	]
+	duration_range = [40, 60]
+	animations = ["write_sit"]
+
+[seridia_bookshelf_writing]
+	trellis_points = [
+		"seridias_house/shelf_writing",
+	]
+	duration_range = [40, 60]
+	animations = ["write"]
+
+[seridia_shelf_rearranging]
+	trellis_points = [
+		"seridias_house/shelf_rearranging_1",
+		"seridias_house/shelf_rearranging_2",
+	]
+	duration_range = [20, 30]
+	animations = ["action"]
+
+[seridia_statue_cleaning]
+	trellis_points = [
+		"seridias_house/statue_cleaning_1",
+		"seridias_house/statue_cleaning_2",
+	]
+	duration_range = [20, 30]
+	animations = ["action"]
+
+[seridia_spell_cast]
+	trellis_points = [
+		"seridias_house/spell_cast_1",
+		"seridias_house_back/spell_cast_1",
+		"western_ruins/spell_cast_1",
+	]
+	duration_range = [40, 60]
+	animations = ["spell_cast"]
+
+[seridia_fire_stoke]
+	trellis_points = [
+		"seridias_house/fire_stoke_west",
+		"seridias_house/fire_stoke_east",
+	]
+	duration_range = [20, 30]
+	animations = ["action"]
+
+[seridia_coffee]
+	trellis_points = [
+		"seridias_house/Seridia Fire Bench",
+	]
+	duration_range = [30, 40]
+	animations = ["drink"]
+
+[seridia_gold_arrange]
+	trellis_points = [
+		"seridias_house_back/touch_gold_west",
+		"seridias_house_back/touch_gold_east",
+	]
+	duration_range = [20, 30]
+	animations = ["action"]
+
+[seridia_gold_count]
+	trellis_points = [
+		"seridias_house_back/count_gold_west",
+		"seridias_house_back/count_gold_east",
+	]
+	duration_range = [20, 30]
+	animations = ["write"]
+
+[seridia_dig_site_wander]
+	trellis_points = [
+		"western_ruins/seridia_dig_site_wander_1",
+		"western_ruins/seridia_dig_site_wander_2",
+		"western_ruins/seridia_dig_site_wander_3",
+		"western_ruins/seridia_dig_site_wander_4",
+		"western_ruins/seridia_dig_site_wander_5",
+	]
+	duration_range = [20, 30]
+	animations = ["idle"]
+
+[seridia_western_ruins_writing]
+	trellis_points = [
+		"western_ruins/writing_1",
+		"western_ruins/writing_2",
+		"western_ruins/writing_3",
+	]
+	duration_range = [40, 60]
+	animations = ["write"]
+
+[seridia_beach_wander]
+	trellis_points = [
+		"beach/seridia_beach_wander_1",
+		"beach/seridia_beach_wander_2",
+		"beach/seridia_beach_wander_3",
+		"beach/seridia_beach_wander_4",
+	]
+	duration_range = [30, 50]
+	animations = ["idle"]
+
+[seridia_narrows_ruins_wander]
+	trellis_points = [
+		"narrows/seridia_ruins_wander_1",
+		"narrows/seridia_ruins_wander_2",
+		"narrows/seridia_ruins_wander_3",
+	]
+	duration_range = [30, 50]
+	animations = ["idle"]
+# Please know that for ordering food and drinks the NPC must already be
+# on one of the inn chairs. This isn't automatic so that you can still
+# manually define seating arrangements.
+[order_food]
+	kind = "custom_programming"
+	request_key = "wants_food"
+	request_bark = "hungry"
+	followup_activity = "eat"
+	animations = "sit"
+
+# See above!
+[order_drink]
+	kind = "custom_programming"
+	request_key = "wants_drink"
+	request_bark = "cold_drink"
+	followup_activity = "drink"
+	animations = "sit"
+
+# Runs whenever someone is on the inn_table_service routine. This lets
+# us have them do general tasks but always interrupt it when an order
+# is made.
+[serve_table]
+	kind = "custom_programming"
+	service_positions = ["inn/north table service", "inn/south table service"]
+
+# Runs whenever someone is on the inn_bar_service routine for the same
+# reasons above.
+[serve_bar]
+	kind = "custom_programming"
+	service_positions = [
+		"inn/bartender 1",
+		"inn/bartender 2",
+		"inn/bartender 3",
+		"inn/bartender 4",
+	]
+
+[eat]
+	animations = "eat"
+	duration_range = "<n/a>"
+
+[drink]
+	animations = "drink"
+	duration_range = "<n/a>"
+
+[visit_merri_stall]
+	required_vendor = "merri"
+	trellis_points = [
+		"town/market_merri_0",
+		"town/market_merri_1",
+		"town/market_merri_2",
+		"town/market_merri_3",
+		"town/market_merri_4",
+		"town/market_merri_5",
+	]
+	duration_range = [230, 380]
+	animations = "idle"
+
+[merri_packing]
+	trellis_points = [
+		"town/merri_packing_1",
+		"town/merri_packing_2",
+		"town/merri_packing_3",
+	]
+	duration_range = [10, 40]
+	animations = "action"
+
+[visit_stillwell_stall]
+	required_vendor = "stillwell"
+	trellis_points = [
+		"town/market_stillwell_0",
+		"town/market_stillwell_1",
+		"town/market_stillwell_2",
+		"town/market_stillwell_3",
+		"town/market_stillwell_4",
+		"town/market_stillwell_5",
+	]
+	duration_range = [230, 380]
+	animations = "idle"
+
+[stillwell_packing]
+	trellis_points = [
+		"town/stillwell_packing_1",
+		"town/stillwell_packing_2",
+		"town/stillwell_packing_3",
+		"town/stillwell_packing_4",
+	]
+	duration_range = [10, 40]
+	animations = "action"
+
+[visit_wheedle_stall]
+	required_vendor = "wheedle"
+	trellis_points = [
+		"town/market_wheedle_0",
+		"town/market_wheedle_1",
+		"town/market_wheedle_2",
+		"town/market_wheedle_3",
+		"town/market_wheedle_4",
+		"town/market_wheedle_5",
+	]
+	duration_range = [230, 380]
+	animations = "idle"
+
+[wheedle_packing]
+	trellis_points = [
+		"town/wheedle_packing_1",
+		"town/wheedle_packing_2",
+		"town/wheedle_packing_3",
+		"town/wheedle_packing_4",
+	]
+	duration_range = [10, 40]
+	animations = "action"
+
+[visit_darcy_stall]
+	required_vendor = "darcy"
+	trellis_points = [
+		"town/market_darcy_0",
+		"town/market_darcy_1",
+		"town/market_darcy_2",
+		"town/market_darcy_3",
+		"town/market_darcy_4",
+		"town/market_darcy_5",
+	]
+	duration_range = [230, 380]
+	animations = "idle"
+
+[darcy_packing]
+	trellis_points = [
+		"town/darcy_packing_1",
+		"town/darcy_packing_2",
+		"town/darcy_packing_3",
+	]
+	duration_range = [10, 40]
+	animations = "action"
+
+[visit_vera_stall]
+	required_vendor = "vera"
+	trellis_points = [
+		"town/market_vera_0",
+		"town/market_vera_1",
+		"town/market_vera_2",
+		"town/market_vera_3",
+		"town/market_vera_4",
+		"town/market_vera_5",
+	]
+	duration_range = [230, 380]
+	animations = "idle"
+
+[vera_packing]
+	trellis_points = [
+		"town/vera_packing_1",
+		"town/vera_packing_2",
+		"town/vera_packing_3",
+		"town/vera_packing_4",
+	]
+	duration_range = [10, 40]
+	animations = "action"
+
+[visit_louis_stall]
+	required_vendor = "louis"
+	trellis_points = [
+		"town/market_louis_0",
+		"town/market_louis_1",
+		"town/market_louis_2",
+		"town/market_louis_3",
+		"town/market_louis_4",
+		"town/market_louis_5",
+	]
+	duration_range = [230, 380]
+	animations = "idle"
+
+[louis_packing]
+	trellis_points = [
+		"town/louis_packing_1",
+		"town/louis_packing_2",
+		"town/louis_packing_3",
+		"town/louis_packing_4",
+		"town/louis_packing_5",
+		"town/louis_packing_6",
+	]
+	duration_range = [10, 40]
+	animations = "action"
+
+[visit_taliferro_stall]
+	required_vendor = "taliferro"
+	trellis_points = [
+		"town/market_taliferro_0",
+		"town/market_taliferro_1",
+		"town/market_taliferro_2",
+		"town/market_taliferro_3",
+		"town/market_taliferro_4",
+		"town/market_taliferro_5",
+	]
+	duration_range = [230, 380]
+	animations = "idle"
+
+[taliferro_packing]
+	trellis_points = [
+		"town/taliferro_packing_1",
+		"town/taliferro_packing_2",
+		"town/taliferro_packing_3",
+		"town/taliferro_packing_4",
+	]
+	duration_range = [10, 40]
+	animations = "action"
+
+[visit_zorel_stall]
+	required_vendor = "zorel"
+	trellis_points = [
+		"town/market_zorel_0",
+		"town/market_zorel_1",
+		"town/market_zorel_2",
+		"town/market_zorel_3",
+		"town/Zorel",
+	]
+	duration_range = [230, 380]
+	animations = "idle"
+
+[zorel_packing]
+	trellis_points = [
+		"town/zorel_packing_1",
+		"town/zorel_packing_2",
+		"town/zorel_packing_3",
+		"town/zorel_packing_4",
+		"town/Zorel",
+	]
+	duration_range = [10, 40]
+	animations = "action"
+
+[roommate_cooking]
+	kind = "grid_object"
+	object_tag = "kitchen"
+	animations = "action"
+	duration_range = [20, 40]
+
+[roommate_sitting]
+	kind = "grid_object"
+	object_tag = "seat"
+	animations = ["read_sit", "book_sit", "sit"]
+
+[roommate_sitting_idle]
+	kind = "grid_object"
+	object_tag = "seat_idle"
+	animations = ["sit"]
+
+[roommate_write_sitting]
+	kind = "grid_object"
+	object_tag = "write_sit"
+	animations = "write_sit"
+
+[roommate_write]
+	kind = "grid_object"
+	object_tag = "write"
+	animations = "write"
+
+[roommate_read_sitting]
+	kind = "grid_object"
+	object_tag = "read_sit"
+	animations = ["read_sit", "book_sit"]
+
+[roommate_work_sitting]
+	kind = "grid_object"
+	object_tag = "work_sit"
+	animations = "work_sit"
+
+[roommate_spell_cast]
+	kind = "grid_object"
+	object_tag = "spell_cast"
+	animations = ["spell_cast"]
+
+[roommate_action]
+	kind = "grid_object"
+	object_tag = "action"
+	animations = ["action"]
+	duration_range = [10, 40]
+
+[roommate_water]
+	kind = "grid_object"
+	object_tag = "water"
+	animations = ["water"]
+	duration_range = [20, 30]
+
+[roommate_sweep]
+	kind = "grid_object"
+	object_tag = "sweep"
+	animations = ["sweep"]
+	duration_range = [20, 30]
+
+[roommate_brush]
+	kind = "grid_object"
+	object_tag = "brush"
+	animations = ["brush"]
+	duration_range = [20, 30]
+
+[roommate_dozy_bed_sleep]
+	kind = "grid_object"
+	object_tag = "dozy_bed"
+	animations = ["sleep_1", "sleep_2"]
+
+[roommate_inspect_gem]
+	kind = "grid_object"
+	object_tag = "inspect_gem"
+	animations = "inspect_gem"
+	duration_range = [30, 40]
+
+[roommate_lute_playing]
+	kind = "grid_object"
+	object_tag = "lute_play"
+	animations = "lute_play"
+
+[roommate_hammer]
+	kind = "grid_object"
+	object_tag = "hammer"
+	animations = "hammer"
+
+[roommate_chop]
+	kind = "grid_object"
+	object_tag = "chop"
+	animations = ["chop", "action"]
+	duration_range = [20, 40]
+
+[roommate_saw]
+	kind = "grid_object"
+	object_tag = "saw"
+	animations = "saw"

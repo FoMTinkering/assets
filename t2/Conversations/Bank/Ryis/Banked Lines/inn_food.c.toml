@@ -1,0 +1,38 @@
+[inn_food]
+refresh = "1y"
+requires = [
+	{ npc = "ryis" },
+	{ location = "inn" },
+	{ any = [{ ryis_activity = "eat" }, { ryis_activity = "order_food" }] },
+	{ date_time = "2m", comparator = ">=" },
+	{ any = [
+		{ reina_routine = "inn_solo_reina" },
+		{ reina_routine = "inn_table_service" },
+		{ reina_activity = "attend_register" },
+		{ reina_animation = "write" }
+	] },
+]
+portrait = "neutral"
+local = "I've been asking Reina to hold the salt on Uncle Landen's meals, and then I figured it was only fair if I did the same thing."
+next = "1"
+
+[inn_food.1]
+portrait = "happy"
+effect = "drop"
+local = "Honestly, I'm getting used to it."
+
+[inn_food_2]
+refresh = "2m"
+requires = [
+	{ npc = "ryis" },
+	{ location = "inn" },
+	{ ryis_activity = "eat" },
+	{ date_time = "2m", comparator = ">=" },
+	{ any = [
+		{ reina_routine = "inn_solo_reina" },
+		{ reina_routine = "inn_table_service" },
+		{ reina_activity = "attend_register" },
+	] },
+]
+portrait = "neutral"
+local = "Reina said the special was good today, and she wasn't kidding."

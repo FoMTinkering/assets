@@ -1,0 +1,64 @@
+# Menus that get attached to a journal. Because the journals supply all the common behavior,
+# these are pretty slim.
+[default]
+	canvas_name = "<n/a>"
+
+# The main page of the journal with the inventory.
+[player]
+
+# The journal menu that displays the NPCs.
+[relationships]
+
+# The journal menu that displays your animals.
+[animal]
+
+# The journal menu that displays which items Ari has collected.
+[almanac]
+	# The categories (in order) the menu contains. Each entry should have the following format:
+	# { key = "NAME_KEY", tags = ["ITEM_TAG"], icon_sprite = "spr_..." }
+	# If the icon sprite is not provided, we will attempt to find it with the following pattern:
+	# "spr_ui_journal_almanac_icon_itemcategory_" + key
+	categories = [
+		{ key = "artifacts", tags = ["archaeology"] },
+		{ key = "blacksmithing", tags = ["blacksmithing"] },
+		{ key = "bugs", tags = ["bugs"] },
+		{ key = "cooked_dishes", tags = ["food"] },
+		{ key = "crops", tags = ["crop"] },
+		{ key = "date_inspiration", tags = ["date_inspiration"] },
+		{ key = "fish", tags = ["fishable", "dive"], local_key = "misc_local/fishing_and_diving" },
+		{ key = "forageables", tags = ["forageable"] },
+		{ key = "furniture", tags = ["furniture"] },
+		{ key = "materials", tags = ["material"] },
+		{ key = "ranching", tags = ["ranching"] },
+		{ key = "song_crystal", tags = ["song_crystal"], icon_sprite = "spr_ui_journal_almanac_icon_song_crystals" },
+	]
+
+# Both the in-journal quest log and the noticeboard.
+[quest_log]
+
+# The character customization menu, including the preset browser.
+[customization]
+	hides_hud = true # for the sake of character creation
+	pause = "main"   # this too
+
+# The journal menu that displays, you guessed it, the map.
+[map]
+	# The order, from left to right, that the tabs for each location appear at the top of the menu.
+	tab_order = [
+		"farm",
+		"town",
+		"narrows",
+		"haydens_farm",
+		"beach",
+		"western_ruins",
+		"summit",
+		"eastern_road",
+		"deep_woods",
+		"dragonsworn_glade",
+	]
+
+# These are getting redundant.
+[settings]
+
+# Take a wild guess!
+[spellcasting]

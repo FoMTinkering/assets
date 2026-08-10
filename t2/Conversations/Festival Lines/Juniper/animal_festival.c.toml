@@ -1,0 +1,74 @@
+[animal_festival_0]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ animal_festival_today = true },
+	{ location = "town" }
+]
+portrait = "think"
+local = "Dozy asked me to sign his permission form to enter the large animal bracket."
+next = "1"
+
+[animal_festival_0.1]
+portrait = "unimpressed"
+local = "I offered to magic him up some opposable thumbs so he could do it himself, but he turned me down."
+next = "2"
+
+[animal_festival_0.2]
+portrait = "sly"
+local = "How about you, [Ari]? Extra pair of opposable thumbs? Free of charge."
+prompts = [{ local = "That sure would be handy!", next = "3" }, { local = "I think I'll pass.", next = "4" }]
+
+[animal_festival_0.3]
+portrait = "angry_brows"
+local = "Oooh, what a terrible pun! My offer is rescinded."
+
+[animal_festival_0.4]
+portrait = "wink"
+local = "Just let me know if you change your mind."
+
+[animal_festival_first]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "juniper" },
+	{ animal_festival_today = true },
+	{ any = [
+		{ small_animal_place = 3 },
+		{ large_animal_place = 3 }
+	] },
+	{},
+	{},
+	{},
+	{}
+]
+portrait = "happy"
+local = "I suppose congratulations are in order."
+next = "1"
+
+[animal_festival_first.1]
+portrait = "neutral"
+local = "Well done on your superior animal raising skills."
+
+[animal_festival_chicken_cutout]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "juniper" },
+	{ animal_festival_today = true },
+	{ juniper_is_at = "town/af_duck_cutout" },
+	{},
+	{},
+	{},
+	{},
+	{},
+	{}
+]
+portrait = "happy"
+local = "Aren't these cutouts charming? A pity Dozy is too short to join me."
+next = "1"
+
+[animal_festival_chicken_cutout.1]
+portrait = "sly"
+local = "I suppose you'll have to do, [Ari]."

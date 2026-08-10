@@ -1,0 +1,201 @@
+[inn_meal_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "seridia" },
+	{ date = "inn_meal" },
+	{ da_seridia_inn_meal = 0 },
+	{ seridia_is_spouse = false }
+]
+writes = [
+	{ da_seridia_inn_meal = 1 },
+	{ da_seridia_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+portrait = "surprise"
+local = "An invitation to eat at the $Inn$? With you?"
+next = "1"
+
+[inn_meal_accept_1.1]
+portrait = "closed_eyes"
+local = "When I was Queen, such invitations arrived with pomp and show."
+next = "2"
+
+[inn_meal_accept_1.2]
+portrait = "smile"
+local = "To be asked so directly, with no preamble..."
+next = "3"
+
+[inn_meal_accept_1.3]
+portrait = "blush"
+local = "I like it."
+next = "4"
+
+[inn_meal_accept_1.4]
+portrait = "happy_blush"
+local = "Let us eat without pretext, [Ari]."
+
+[inn_meal_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "seridia" },
+	{ date = "inn_meal" },
+	{ da_seridia_inn_meal = 1 },
+	{ seridia_is_spouse = false }
+]
+writes = [
+	{ da_seridia_inn_meal = 2 },
+	{ da_seridia_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+portrait = "closed_eyes_smile"
+local = "Allow me to take a page from your book, [Ari], and speak directly."
+next = "1"
+
+[inn_meal_accept_2.1]
+portrait = "smile"
+local = "I would like to eat, and desire your company. You will accompany me to the $Sleeping Dragon Inn$."
+next = "2"
+
+[inn_meal_accept_2.2]
+portrait = "embarrassed"
+local = "At least... that is my hope. It is your choice. What say you?"
+next = "3"
+
+[inn_meal_accept_2.3]
+portrait = "blush"
+local = "Yes?"
+next = "4"
+
+[inn_meal_accept_2.4]
+portrait = "happy_blush"
+local = "Then come, let us dine together."
+
+[inn_meal_accept_3]
+kind = "date_acceptance"
+requires = [
+	{ npc = "seridia" },
+	{ date = "inn_meal" },
+	{ seridia_has_child = false },
+	{ any = [
+		{ seridia_is_spouse = true },
+		{ da_seridia_inn_meal = 2, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_seridia_inn_meal = 3 },
+	{ da_seridia_inn_meal_follow_up_gate = true, expires = "1d" }
+]
+portrait = "closed_eyes_smile"
+local = "I hunger for sustenance, and company."
+next = "1"
+
+[inn_meal_accept_3.1]
+portrait = "blush_think"
+local = "Will you join me, so I might satisfy both needs together?"
+next = "2"
+
+[inn_meal_accept_3.2]
+portrait = "blush"
+local = "Excellent. Let us go."
+
+[inn_meal_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ da_seridia_inn_meal = 1 },
+	{ da_seridia_inn_meal_follow_up_gate = true },
+	{ seridia_is_spouse = false }
+]
+writes = [{ da_seridia_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "smile"
+local = "I enjoyed eating with you at the $Inn$, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_1.1]
+portrait = "think"
+local = "I often dreamed of dispensing with the useless table etiquette required of me at diplomatic luncheons."
+next = "2"
+
+[inn_meal_follow_up_1.2]
+portrait = "smile"
+local = "It is vastly preferable to eat with simply one fork and one spoon."
+next = "3"
+
+[inn_meal_follow_up_1.3]
+portrait = "blush"
+local = "Especially in your company."
+
+[inn_meal_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ da_seridia_inn_meal = 2 },
+	{ da_seridia_inn_meal_follow_up_gate = true },
+	{ seridia_is_spouse = false }
+]
+writes = [{ da_seridia_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "smile"
+local = "That was our second time dining at the $Inn$ together."
+next = "1"
+
+[inn_meal_follow_up_2.1]
+portrait = "unsure_blush"
+local = "I am told that the essence of the $Date$ is to be... casual."
+next = "2"
+
+[inn_meal_follow_up_2.2]
+portrait = "surprise_blush"
+local = "Tell me, did I succeed?"
+prompts = [
+	{ local = "You did! Especially the part where we shared a straw.", next = "3" },
+	{ local = "You don't have to push yourself.", next = "6" }
+]
+
+[inn_meal_follow_up_2.3]
+portrait = "happy_blush"
+local = "Yes... much planning and consideration went into that stratagemn."
+next = "4"
+
+[inn_meal_follow_up_2.4]
+portrait = "blush"
+local = "It was my coup de grace. And you fell right into it!"
+next = "5"
+
+[inn_meal_follow_up_2.5]
+portrait = "embarrassed"
+local = "Much to my delight."
+
+[inn_meal_follow_up_2.6]
+portrait = "closed_eyes_blush"
+local = "Ah, did I come across as stiff, then?"
+next = "7"
+
+[inn_meal_follow_up_2.7]
+portrait = "unsure_blush"
+local = "Perhaps I was overthinking things."
+next = "8"
+
+[inn_meal_follow_up_2.8]
+portrait = "blush"
+local = "Next time, I shall endeavor to... relax."
+
+[inn_meal_follow_up_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_has_child = false },
+	{ any = [{ seridia_is_spouse = true }, { da_seridia_inn_meal = 3 }] },
+	{ da_seridia_inn_meal_follow_up_gate = true }
+]
+writes = [{ da_seridia_inn_meal_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "smile"
+local = "Our meal together was quite memorable, [Ari]."
+next = "1"
+
+[inn_meal_follow_up_3.1]
+portrait = "blush"
+local = "I hope we will make more memories soon."

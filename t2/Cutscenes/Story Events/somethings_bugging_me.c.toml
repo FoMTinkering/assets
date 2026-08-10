@@ -1,0 +1,140 @@
+[somethings_bugging_me_follow_up_1]
+refresh = "never"
+requires = [
+	{ npc = "luc" },
+	{ quest_somethings_bugging_me_complete = true },
+	{ sbm = true },
+]
+local = "I'm so excited that you're bug-catching, [Ari]!"
+next = "1"
+
+[somethings_bugging_me_follow_up_1.1]
+portrait = "happy"
+local = "If you need any tips, you can ask me any time. I'm always happy to help a new entomologist!"
+
+[somethings_bugging_me_follow_up_2]
+refresh = "never"
+requires = [
+	{ npc = "hemlock" },
+	{ quest_somethings_bugging_me_complete = true },
+	{ sbm = true },
+]
+portrait = "sad"
+local = "Little Luc was so excited to see you take up that bug net!"
+next = "1"
+
+[somethings_bugging_me_follow_up_2.1]
+portrait = "happy"
+local = "It's all he's been able to talk about lately!"
+
+[somethings_bugging_me_follow_up_3]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ quest_somethings_bugging_me_complete = true },
+	{ sbm = true },
+]
+local = "[Ari], it's really sweet that you took an interest in Luc's bug hobby. Thank you!"
+
+[somethings_bugging_me_follow_up_4]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ quest_somethings_bugging_me_complete = true },
+	{ sbm = true },
+]
+portrait = "happy"
+local = "Young Luc showed you the wonders of the bug net, did he?"
+next = "1"
+
+[somethings_bugging_me_follow_up_4.1]
+local = "Be sure to bring me any specimens you find for the insect wing of the Museum! You'll be compensated for your contribution."
+
+[somethings_bugging_me]
+writes = [{ sbm = true, expires = "4d" }]
+kind = "gameplay_triggered"
+speaker = "luc"
+portrait = "happy"
+local = "And then it was all like whoosh, and then bzzt and I was all WHAM!"
+next = "1"
+
+[somethings_bugging_me.1]
+speaker = "hemlock"
+portrait = "happy"
+local = "Oooh, amazing!"
+next = "2"
+
+[somethings_bugging_me.2]
+speaker = "luc"
+portrait = "neutral"
+local = "[Ari], you came! Are you ready to become an Entomologist?"
+next = "3"
+
+[somethings_bugging_me.3]
+speaker = "hemlock"
+portrait = "neutral"
+local = "It means someone who studies insects."
+next = "4"
+
+[somethings_bugging_me.4]
+speaker = "luc"
+portrait = "happy"
+local = "Yeah, that's what I do!"
+next = "5"
+
+[somethings_bugging_me.5]
+speaker = "luc"
+portrait = "neutral"
+local = "There are a lot of cool bugs in Mistria. And Mister Errol at the Museum agreed to have a whole wing dedicated to them! I'm so excited!"
+next = "6"
+
+[somethings_bugging_me.6]
+speaker = "hemlock"
+portrait = "happy"
+effect = "drop"
+local = "So are we! Until now Luc's been bringing all his finds back to his room...."
+next = "7"
+
+[somethings_bugging_me.7]
+speaker = "luc"
+local = "But it's a big job, being the only Entomologist in Mistria! Will you join me?"
+prompts = [
+	{ local = "I've got to catch them all!", next = "8" },
+	{ local = "I'm not sure I've got what it takes...", next = "9" },
+]
+
+[somethings_bugging_me.8]
+speaker = "luc"
+portrait = "happy"
+local = "That's what I like to hear!"
+next = "10"
+
+[somethings_bugging_me.9]
+speaker = "luc"
+portrait = "happy"
+local = "You won't know until you try! I believe in you!"
+next = "10"
+
+[somethings_bugging_me.10]
+speaker = "luc"
+portrait = "think"
+local = "I want to give you my old $Net$. It's brought me lots of luck over the years, but I think it's time... to pass it on to a new generation of bug catchers."
+next = "11"
+
+[somethings_bugging_me.11]
+speaker = "luc"
+portrait = "happy"
+local = "Look at that form!"
+next = "12"
+
+[somethings_bugging_me.12]
+speaker = "hemlock"
+portrait = "happy"
+effect = "drop"
+local = "Don't forget to bring any new bugs you find to Errol at the $Museum$! Please don't bring them here..."
+next = "13"
+
+[somethings_bugging_me.13]
+speaker = "luc"
+portrait = "happy"
+local = "Be sure to tell me about any neat bugs you find, [Ari]!"

@@ -1,0 +1,15 @@
+[running_around]
+refresh = "1y"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 2, comparator = "<=" },
+	{ march_heart_level = 1, comparator = ">=" },
+]
+writes = [{ march_was_mean = 1, operator = "+=", expires = "24h" }]
+portrait = "think"
+local = "How is it that I always see you running around town?"
+next = "1"
+
+[running_around.1]
+portrait = "ugh"
+local = "Don't you have work to do?"

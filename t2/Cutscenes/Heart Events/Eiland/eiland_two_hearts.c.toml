@@ -1,0 +1,106 @@
+[eiland_two_hearts_follow_up_1]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_heart_event = "two_heart" }
+]
+portrait = "think"
+local = "I don't know if the earthquake dislodged something from the mechanism in the stele, or if it was just luck, but I can't thank you enough."
+next = "1"
+
+[eiland_two_hearts_follow_up_1.1]
+local = "I'll let you know as soon as I'm done translating the new text. Could you imagine if it led us to another piece of the armor?"
+
+
+[eiland_two_hearts_follow_up_2]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_heart_event = "two_heart" }
+]
+portrait = "happy"
+local = "[Ari]! Would you look at you! A find like a piece of the $Dragonsworn Armor$ set is every archaeologist's dream!"
+
+[eiland_two_hearts]
+kind = "gameplay_triggered"
+writes = [{ eiland_heart_event = "two_heart", expires = "4d" }]
+speaker = "eiland"
+portrait = "happy"
+local = "[Ari], welcome! Come on, it's this way."
+next = "1"
+
+[eiland_two_hearts.1]
+portrait = "neutral"
+local = "Magnificent, isn't it? It's very old, certainly older than the town around it. You can find steles like this all over the country, although ours is in particularly good shape."
+prompts = [
+	{ local = "Stele?", next = "2" },
+	{ local = "Do you think it marks where treasure is buried?", next = "3" },
+]
+
+[eiland_two_hearts.2]
+portrait = "think"
+local = "An ancient monument. They were put up for all sorts of reasons. Memorials, to mark boundaries, or to commemorate great events."
+next = "4"
+
+[eiland_two_hearts.3]
+portrait = "wink"
+local = "Wouldn't that be nice! However, people who hide treasure usually don't mark it so obviously."
+next = "4"
+
+[eiland_two_hearts.4]
+portrait = "happy"
+local = "Our stele depicts a legendary set of armor, worn by someone called the $Dragonsworn$. It's quite unique!"
+next = "5"
+
+[eiland_two_hearts.5]
+portrait = "neutral"
+local = "Supposedly the $Dragonsworn$ was a nearly mythical being who aided the dragons in the ancient days of the world. Could you imagine!"
+prompts = [
+	{ local = "Y-you don't say!", next = "6" },
+	{ local = "Haha, d-do you think they're still around?", next = "7" },
+]
+
+[eiland_two_hearts.6]
+portrait = "think"
+local = "Of course, legends do tend to be full of, well, legendary figures. The truth of the matter has been lost."
+next = "8"
+
+[eiland_two_hearts.7]
+portrait = "happy"
+local = "Very funny! I'd settle just for finding their armor!"
+next = "8"
+
+[eiland_two_hearts.8]
+portrait = "neutral"
+local = "Although the armor and the details around the $Dragonsworn$ have been lost to us, thanks to this stele, we do have some clues. Come here!"
+next = "9"
+
+[eiland_two_hearts.9]
+portrait = "think"
+local = "If you place your hands along the surface of the stele, you should still be able to feel raised lettering that's undetectable at first glance."
+next = "10"
+
+[eiland_two_hearts.10]
+portrait = "neutral"
+local = "A hidden compartment?! Don't tell me-"
+next = "11"
+
+[eiland_two_hearts.11]
+portrait = "mad"
+effect = "shock"
+local = "Incredible, they're a perfect match for the ones on the stele! The $Dragonsworn Greaves$! Here this whole time!"
+next = "12"
+
+[eiland_two_hearts.12]
+portrait = "neutral"
+local = "And look inside the hidden compartment, there's more writing!"
+next = "13"
+
+[eiland_two_hearts.13]
+portrait = "think"
+local = "This will take time to translate... Can you hand me the greaves, [Ari]?"
+next = "14"
+
+[eiland_two_hearts.14]
+portrait = "neutral"
+local = "Thank you. Now to get these to the Museum!"

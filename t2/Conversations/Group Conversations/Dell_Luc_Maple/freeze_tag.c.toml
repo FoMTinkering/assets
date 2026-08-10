@@ -1,0 +1,24 @@
+[freeze_tag]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ is_inside = false },
+	{ any = [{ season = "fall" }, { season = "winter" }] }
+]
+speaker = "maple"
+portrait = "neutral"
+local = "I think the rules of freeze tag are that if you get tagged, you have to stand still."
+next = "1"
+
+[freeze_tag.1]
+speaker = "dell"
+portrait = "mad"
+local = "But I don't wanna stand still! That's boring!"
+next = "2"
+
+[freeze_tag.2]
+speaker = "luc"
+portrait = "think"
+local = "And how do you get unfrozen? Do you have to wait until spring?"

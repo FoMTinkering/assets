@@ -1,0 +1,38 @@
+[forge_work]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ any = [
+		{ olric_routine = "forge_work_solo" },
+		{ olric_routine = "forge_work_principal" },
+		{ olric_routine = "forge_work_secondary" }
+	] },
+	{ olric_forge_work_day = true }
+]
+portrait = "neutral"
+local = "I can help with the simple jobs, but I let March deal with the complicated stuff. He's got a good eye for all that."
+
+[forge_work_2]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ any = [
+		{ olric_routine = "forge_work_solo" },
+		{ olric_routine = "forge_work_principal" },
+		{ olric_routine = "forge_work_secondary" }
+	] },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" }
+	] },
+	{ olric_forge_work_day = true },
+	{ march_forge_work_day = true }
+]
+portrait = "neutral"
+local = "I don't mind helping out once in a while, but March is the real mastermind blacksmith."
+next = "1"
+
+[forge_work_2.1]
+portrait = "happy"
+local = "I'm glad he's here to keep the forge going!"

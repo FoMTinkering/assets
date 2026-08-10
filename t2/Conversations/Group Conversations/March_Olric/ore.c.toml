@@ -1,0 +1,31 @@
+[ore]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "march" }, { npc = "olric" }] },
+	{ march_zone = "<olric_zone>" },
+	{ march_zone = "narrows/mines_chat" },
+	{ march_heart_level = 6, comparator = "<" },
+	{ quest_unlocking_the_mines_pt_2_complete = true }
+]
+speaker = "march"
+portrait = "unimpressed"
+local = "I can get the ore myself, Olric. I don't see why we have to let [Ari] do it."
+next = "1"
+
+[ore.1]
+speaker = "olric"
+portrait = "think"
+local = "[Ari] is from the Adventurer's Guild in the Capital! Adventurers are super qualified for doing the dangerous stuff."
+next = "2"
+
+[ore.2]
+speaker = "olric"
+portrait = "neutral"
+local = "Why don't we ask Adeline to post a request on the board?"
+next = "3"
+
+[ore.3]
+speaker = "march"
+portrait = "sigh"
+effect = "sigh"
+local = "Fine..."

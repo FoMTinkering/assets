@@ -1,0 +1,21 @@
+[brewing_supplies_lift]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "hemlock" }, { npc = "olric" }] },
+	{ hemlock_zone = "<olric_zone>" },
+	{ brewing_supplies = true },
+	{ any = [
+		{ location = "inn" },
+		{ hemlock_zone = "town/inn_yard_chores" },
+		{ hemlock_zone = "town/inn_yard_chat" }
+	] }
+]
+speaker = "hemlock"
+portrait = "neutral"
+local = "Thanks for the assist, Olric. I think this beer brewing project is going to be big!"
+next = "1"
+
+[brewing_supplies_lift.1]
+speaker = "olric"
+portrait = "wink"
+local = "Any time! I'm not much for beer, but I do love picking up heavy stuff!"

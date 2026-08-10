@@ -1,0 +1,19 @@
+[fire_going]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ season = "winter" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" }
+	] },
+	{ march_heart_level = 4, comparator = ">=" }
+]
+portrait = "sigh"
+local = "It was a battle to get the fire going earlier."
+next = "1"
+
+[fire_going.1]
+portrait = "ugh"
+local = "It'll be hard to keep up on my work if it stays this cold."

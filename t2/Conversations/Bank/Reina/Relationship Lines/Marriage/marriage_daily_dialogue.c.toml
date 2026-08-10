@@ -1,0 +1,1057 @@
+# morning
+[morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "happy"
+local = "Gooood morning, [Ari]!"
+next = "1"
+
+[morning_0.1]
+portrait = "blush_open_eyes"
+local = "Did you sleep well?"
+
+[morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "happy"
+local = "Morning!"
+next = "1"
+
+[morning_1.1]
+portrait = "neutral"
+local = "I can tell it's going to be a great one, can't you?"
+
+[dreams_0]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush_think"
+local = "I had such an interesting dream last night, but now I can hardly remember it!"
+next = "1"
+
+[dreams_0.1]
+portrait = "blush"
+local = "All I know for sure is that you were in it..."
+next = "2"
+
+[dreams_0.2]
+portrait = "wink"
+local = "Hehe!"
+
+[ari_plans_0]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false },
+	{ reina_planning_line = "undefined" }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "happy"
+local = "Good morning!"
+next = "1"
+
+[ari_plans_0.1]
+portrait = "blush_open_eyes"
+local = "What are your plans for the day, [Ari]?"
+prompts = [
+	{ local = "I'm going to get some work done on the farm!", next = "2" },
+	{ local = "I was thinking of heading to the Mines...", next = "4" },
+	{ local = "Today feels like a good day for fishing.", next = "6" }
+]
+
+[ari_plans_0.2]
+writes = [{ reina_planning_line = "farming", expires = "20h" }]
+portrait = "neutral"
+local = "Sounds good!"
+next = "3"
+
+[ari_plans_0.3]
+portrait = "wink"
+local = "Be sure to bring your wife any extra yummy ingredients you harvest, okay?"
+
+[ari_plans_0.4]
+writes = [{ reina_planning_line = "mining", expires = "20h" }]
+portrait = "gloomy_special"
+local = "I'm sure I don't need to tell you, but be careful!"
+next = "5"
+
+[ari_plans_0.5]
+portrait = "wink"
+local = "Don't make your wife have to go in after you, cause I will!"
+
+[ari_plans_0.6]
+writes = [{ reina_planning_line = "fishing", expires = "20h" }]
+portrait = "neutral"
+local = "That's giving me ideas for dinner!"
+next = "7"
+
+[ari_plans_0.7]
+portrait = "wink"
+local = "I'm sure you'll bring home a nice catch."
+
+[sleepy_0]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] }
+]
+portrait = "gloomy_special"
+local = "Feeling pretty sleepy this morning..."
+next = "1"
+
+[sleepy_0.1]
+portrait = "neutral"
+local = "It's a good excuse to play around a little with a new coffee blend!"
+
+[spouse_plans_0]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "think"
+local = "Lots to do today..."
+next = "1"
+
+[spouse_plans_0.1]
+portrait = "neutral"
+local = "Be sure to stop by the Inn if you have the chance, okay?"
+
+[spring_morning_0]
+refresh = "14d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+portrait = "think"
+local = "Our latest delivery to the Inn is late..."
+next = "1"
+
+[spring_morning_0.1]
+portrait = "sad"
+local = "All the spring rain makes the roads into Mistria a slog. Nothing to be done about it but make do."
+
+[spring_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ weather = "pleasant" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "Isn't this spring weather just perfect?"
+next = "1"
+
+[spring_morning_1.1]
+portrait = "happy"
+local = "Let's try and make the most of it."
+
+[summer_morning_0]
+refresh = "14d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+portrait = "gloomy_special"
+local = "It's so hard to get a good night's sleep in this heat."
+next = "1"
+
+[summer_morning_0.1]
+portrait = "sad"
+local = "Hopefully tonight's a little cooler."
+
+[summer_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "Gonna be a scorcher today!"
+next = "1"
+
+[summer_morning_1.1]
+portrait = "happy"
+local = "I'm going to get the Dragonguard to help me make ice cream."
+
+[fall_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+portrait = "think"
+local = "No time to slack off in the fall, there's just too much to do!"
+
+[fall_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "happy"
+local = "The produce is top notch this time of year, and the customers all have big appetites!"
+next = "1"
+
+[fall_morning_1.1]
+portrait = "wink"
+local = "I love fall, don't you?"
+
+[winter_morning_0]
+refresh = "14d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+portrait = "think"
+local = "It gets harder to find good quality ingredients in the winter."
+next = "1"
+
+[winter_morning_0.1]
+portrait = "neutral"
+local = "I'll just have to do my best with what's available."
+
+[winter_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "happy"
+local = "Isn't the air brisk today?"
+next = "1"
+
+[winter_morning_1.1]
+portrait = "wink"
+local = "Better look out, I heard Luc and Maple were planning a snowball fight."
+
+[rainy_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ weather = "rainy" },
+	{ reina_is_spouse = true },
+	{ building = "player_home" },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+portrait = "think"
+local = "The Inn is always so full when it rains..."
+next = "1"
+
+[rainy_morning_0.1]
+portrait = "neutral"
+local = "Should be a fun day!"
+
+[snowy_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ time_of_day = "morning" },
+	{ weather = "snowy" },
+	{ reina_is_spouse = true },
+	{ building = "player_home" },
+	{ reina_morning_greeting = false }
+]
+writes = [{ reina_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "Would you look at that snow!"
+next = "1"
+
+[snowy_morning_0.1]
+portrait = "happy"
+local = "Feels like a perfect day to make a big pot of curry to keep folks warm!"
+
+# basement
+[basement_0]
+
+refresh = "1w"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "happy"
+local = "[Ari]! Having a good day?"
+next = "1"
+
+[basement_0.1]
+portrait = "neutral"
+local = "I can't wait to tell you all about mine tonight!"
+
+[basement_1]
+
+refresh = "1w"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" },
+	{ building = "general_store", comparator = "!=" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "think"
+local = "I've got a couple of things to pick up at the General Store..."
+next = "1"
+
+[basement_1.1]
+portrait = "neutral"
+local = "Let me know if you need anything too, okay?"
+
+[basement_2]
+refresh = "1w"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "Hope you've been working up an appetite today."
+next = "1"
+
+[basement_2.1]
+portrait = "wink"
+local = "I've got a new recipe I want to try out!"
+
+[basement_3]
+
+refresh = "1w"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "Let me know if you have any laundry you want to add to mine, okay?"
+next = "1"
+
+[basement_3.1]
+portrait = "happy"
+local = "Less work all around to do one big load."
+
+[basement_4]
+
+refresh = "1w"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush"
+local = "Hey [Ari]!"
+next = "1"
+
+[basement_4.1]
+portrait = "blush_special"
+local = "Come here and kiss me, good looking!"
+
+[basement_5]
+
+refresh = "1w"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush_open_eyes"
+local = "I feel really lucky to be with you, [Ari]."
+next = "1"
+
+[basement_5.1]
+portrait = "blush"
+local = "You're so sweet!"
+
+[basement_6]
+
+refresh = "1w"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "happy"
+local = "Nothing makes me happier than when you make time to see me!"
+next = "1"
+
+[basement_6.1]
+portrait = "blush_open_eyes"
+local = "Give me a kiss."
+
+# Evening
+[evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_evening_greeting = false },
+	{ reina_in_bed = false }
+]
+writes = [{ reina_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "happy"
+local = "Welcome home, [Ari]!"
+next = "1"
+
+[evening_0.1]
+portrait = "blush_open_eyes"
+local = "I'm sure you'll be glad to hear that my plans tonight are spending lots of time with you!"
+
+[evening_1]
+refresh = "8d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_evening_greeting = false },
+	{ reina_in_bed = false }
+]
+writes = [{ reina_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "happy"
+local = "There you are, [Ari]!"
+next = "1"
+
+[evening_1.1]
+portrait = "blush_open_eyes"
+local = "Nothing like wrapping up my day, knowing I'll be in your arms soon."
+
+[evening_2]
+refresh = "8d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_evening_greeting = false },
+	{ reina_in_bed = false }
+]
+writes = [{ reina_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "How was your day, [Ari]?"
+next = "1"
+
+[evening_2.1]
+portrait = "happy"
+local = "I can't wait to hear all about it!"
+
+[evening_3]
+refresh = "8d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_evening_greeting = false },
+	{ reina_in_bed = false }
+]
+writes = [{ reina_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush_open_eyes"
+local = "There you are, [Ari]! Don't I get a kiss?"
+next = "1"
+
+[evening_3.1]
+portrait = "blush"
+local = "Hehe, love you."
+
+[spring_evening_0]
+refresh = "14d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_evening_greeting = false },
+	{ reina_in_bed = false },
+	{ season = "spring" }
+]
+writes = [{ reina_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "sweat_drop", npc = "reina" } }]
+portrait = "think"
+local = "Felt like I was playing catch up all day..."
+next = "1"
+
+[spring_evening_0.1]
+portrait = "sad"
+local = "Spring is always so busy!"
+
+[spring_evening_1]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_evening_greeting = false },
+	{ reina_in_bed = false },
+	{ season = "spring" }
+]
+writes = [{ reina_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "neutral"
+local = "Isn't springtime in Mistria lovely?"
+next = "1"
+
+[spring_evening_1.1]
+portrait = "happy"
+local = "Everywhere I've been today I could smell the flowers!"
+
+[summer_evening_0]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_evening_greeting = false },
+	{ reina_in_bed = false },
+	{ season = "summer" }
+]
+writes = [{ reina_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "sad"
+local = "I was hoping the weather was going to cool off, but it's just getting hotter!"
+next = "1"
+
+[summer_evening_0.1]
+portrait = "think"
+local = "How would you feel about an =Ice Cream Sundae= for dinner?"
+
+[summer_evening_1]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_evening_greeting = false },
+	{ reina_in_bed = false },
+	{ season = "summer" }
+]
+writes = [{ reina_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "I'm so glad Mistria has a beach."
+next = "1"
+
+[summer_evening_1.1]
+portrait = "happy"
+local = "We should take advantage of this nice weather and go together sometime!"
+
+[fall_evening_0]
+refresh = "13d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_evening_greeting = false },
+	{ reina_in_bed = false },
+	{ season = "fall" }
+]
+writes = [{ reina_evening_greeting = true, expires = "7h" }]
+portrait = "think"
+local = "There's so much fresh produce in the fall!"
+next = "1"
+
+[fall_evening_0.1]
+portrait = "neutral"
+local = "I keep getting distracted thinking of new dishes to cook."
+
+[fall_evening_1]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_evening_greeting = false },
+	{ reina_in_bed = false },
+	{ season = "fall" }
+]
+writes = [{ reina_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "There's so much to love about fall, isn't there?"
+next = "1"
+
+[fall_evening_1.1]
+portrait = "happy"
+local = "Still, I think my favorite thing is that it's the time for fresh =Garlic=!"
+
+[winter_evening_0]
+refresh = "14d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_evening_greeting = false },
+	{ reina_in_bed = false },
+	{ season = "winter" }
+]
+writes = [{ reina_evening_greeting = true, expires = "7h" }]
+portrait = "think"
+local = "What a day! Everyone kept tracking snow into the Inn."
+next = "1"
+
+[winter_evening_0.1]
+portrait = "ugh"
+local = "I lost count of the number of times we needed to mop."
+
+[winter_evening_1]
+refresh = "8d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_evening_greeting = false },
+	{ reina_in_bed = false },
+	{ season = "winter" }
+]
+writes = [{ reina_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "neutral"
+local = "With the sun down, it's getting even colder out."
+next = "1"
+
+[winter_evening_1.1]
+portrait = "blush_open_eyes"
+local = "Let's call it early tonight, okay?"
+
+[rainy_evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ reina_is_spouse = true },
+	{ building = "player_home" },
+	{ reina_evening_greeting = false },
+	{ reina_in_bed = false },
+	{ weather = "rainy" }
+]
+writes = [{ reina_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "happy"
+local = "It's so good to be home!"
+next = "1"
+
+[rainy_evening_0.1]
+portrait = "neutral"
+local = "Let's get all snuggled up and enjoy the sound of the rain."
+
+[snowy_evening_0]
+refresh = "8d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_evening_greeting = false },
+	{ reina_in_bed = false },
+	{ weather = "snowy" }
+]
+writes = [{ reina_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "think"
+local = "Brr, I'm chilled through."
+next = "1"
+
+[snowy_evening_0.1]
+portrait = "neutral"
+local = "I could go for a hot drink, how about you?"
+
+# domestic flavor
+[domestic_flavor_0]
+refresh = "30d"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = true },
+	{ cutscene_seen_pet_arrival = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "If [pet_name] is giving you sad eyes, just know that I already fed them."
+next = "1"
+
+[domestic_flavor_0.1]
+portrait = "wink"
+local = "Though I'm sure they'd appreciated a treat!"
+
+[domestic_flavor_1]
+refresh = "30d"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = true },
+	{ cutscene_seen_pet_arrival = true }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "happy"
+local = "[pet_name] sure is cute."
+next = "1"
+
+[domestic_flavor_1.1]
+portrait = "neutral"
+local = "Makes me wish I had had a pet growing up!"
+
+[domestic_flavor_2]
+refresh = "30d"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = true },
+	{ ari_has_double_bed_placed = false },
+	{ spouse_slept_in_double_bed_night_before = false },
+	{ wedding_was_yesterday = false, ignore_priority = true }
+]
+actions = [{ bark = { bark = "annoyed", npc = "reina" } }]
+portrait = "think"
+local = "[Ari], we need to get a bigger bed."
+next = "1"
+
+[domestic_flavor_2.1]
+portrait = "ugh"
+local = "Unless you feel like sleeping on the floor! Because that's where one of us is going to end up!"
+
+[domestic_flavor_3]
+refresh = "30d"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = true },
+	{ reina_chair_placed = true },
+	{ reina_desk_placed = true },
+	{ reina_test_kitchen_placed = true },
+	{ wedding_was_yesterday = false, ignore_priority = true }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "happy"
+local = "I love how the house feels, don't you?"
+next = "1"
+
+[domestic_flavor_3.1]
+portrait = "neutral"
+local = "I appreciate that all my things are in place and easy to access!"
+
+[domestic_flavor_4]
+refresh = "30d"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = true },
+	{ reina_chair_placed = false },
+	{ reina_desk_placed = false },
+	{ reina_test_kitchen_placed = false },
+	{ wedding_was_yesterday = false, ignore_priority = true }
+]
+portrait = "think"
+local = "Can you make sure all my stuff has a place to go in the house?"
+next = "1"
+
+[domestic_flavor_4.1]
+portrait = "neutral"
+local = "I hate to ask, but having my things set up in the house would make it feel more like home!"
+
+# workstation
+[workstation_0]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_is_spouse = true },
+	{ reina_activity_object = "reina_desk" }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "neutral"
+local = "Hey, [Ari]! Just working on my cookbook."
+next = "1"
+
+[workstation_0.1]
+portrait = "think"
+local = """I need to find a better thesaurus, this one doesn't have enough alternatives for the word "delicious"."""
+
+[workstation_1]
+refresh = "9d"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = true },
+	{ reina_routine = "reina_roommate" }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "neutral"
+local = "We should plan a trip to the Capital sometime."
+next = "1"
+
+[workstation_1.1]
+portrait = "happy"
+local = "It'd be fun to see what food trends are popular there!"
+
+[workstation_2]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_is_spouse = true },
+	{ reina_activity_object = "reina_desk" }
+]
+portrait = "neutral"
+local = """I picked up a cookbook for "healthly" eating."""
+next = "1"
+
+[workstation_2.1]
+portrait = "think"
+local = "But I don't think the author actually tried any of these recipes, they're terrible."
+next = "2"
+
+[workstation_2.2]
+portrait = "happy"
+local = "So I thought I'd see if I can improve them!"
+
+[workstation_3]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_is_spouse = true },
+	{ reina_activity_object = "reina_chair" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "Ahh, there's nothing better than a comfy chair."
+next = "1"
+
+[workstation_3.1]
+portrait = "happy"
+local = "I might even have a little nap!"
+
+[workstation_4]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ reina_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ any = [
+		{ reina_activity = "roommate_sitting" },
+		{ reina_activity = "roommate_read_sitting" }
+	] },
+	{ reina_animation = "read_sit" },
+	{ caldarus_seridia_town = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "[Ari]! Someone left this book behind at the Inn."
+next = "1"
+
+[workstation_4.1]
+portrait = "happy"
+local = "It's a fantasy novel about a land with talking dragons!"
+next = "2"
+
+[workstation_4.2]
+portrait = "think"
+local = "Huh... that's actually not that fantastical is it?"
+
+[workstation_5]
+refresh = "9d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_is_spouse = true },
+	{ any = [
+		{ reina_activity = "roommate_sitting" },
+		{ reina_activity = "roommate_read_sitting" }
+	] },
+	{ reina_animation = "read_sit" }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "neutral"
+local = "There really isn't much better than a good book, is there?"
+next = "1"
+
+[workstation_5.1]
+portrait = "happy"
+local = "I can go on a grand adventure while being cozy at home!"
+
+[workstation_6]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_is_spouse = true },
+	{ any = [
+		{ reina_activity = "roommate_cooking" },
+		{ reina_activity = "roommate_chop" },
+		{ reina_activity_object = "reina_kitchen" }
+	] }
+]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "neutral"
+local = "Perfect timing! Here, try this."
+next = "1"
+
+[workstation_6.1]
+portrait = "happy"
+effect = "cheery"
+local = "Good, right?"
+next = "2"
+
+[workstation_6.2]
+portrait = "wink"
+local = "I think this might be one for my cookbook!"
+
+[workstation_7]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_is_spouse = true },
+	{ any = [
+		{ reina_activity = "roommate_cooking" },
+		{ reina_activity = "roommate_chop" },
+		{ reina_activity_object = "reina_kitchen" }
+	] },
+	{ time_of_day = "night", comparator = "!=" },
+	{ time_of_day = "morning", comparator = "!=" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "think"
+local = "Dinner might be late tonight, I gotta finish making this new test recipe..."
+next = "1"
+
+[workstation_7.1]
+portrait = "neutral"
+local = "Of course, I suppose we could just have it for dinner if it works out!"
+
+[workstation_8]
+refresh = "12d"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ reina_is_spouse = true },
+	{ any = [
+		{ reina_activity = "roommate_cooking" },
+		{ reina_activity = "roommate_chop" },
+		{ reina_activity_object = "reina_kitchen" }
+	] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "reina" } }]
+portrait = "neutral"
+local = "It's so relaxing, cooking here at home."
+next = "1"
+
+[workstation_8.1]
+portrait = "neutral"
+local = "Back at the Inn, if anything I was making started smelling nice, half the patrons would want a bite!"
+next = "2"
+
+[workstation_8.2]
+portrait = "wink"
+local = "Now I just need to worry about keeping an extra bite for you!"

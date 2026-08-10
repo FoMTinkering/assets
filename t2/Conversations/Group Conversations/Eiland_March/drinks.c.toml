@@ -1,0 +1,18 @@
+[drinks]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "march" }] },
+	{ eiland_zone = "<march_zone>" },
+	{ eiland_activity = "drink" },
+	{ march_activity = "drink" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+]
+speaker = "eiland"
+portrait = "sad"
+local = "But it's... it's so bitter!"
+next = "1"
+
+[drinks.1]
+speaker = "march"
+portrait = "drunk"
+local = "We're going to sit here all night until we find a beer you like, Eiland! On my word as a blacksmith!"

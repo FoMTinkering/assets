@@ -1,0 +1,23 @@
+[favorite]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "eiland" }, { npc = "elsie" }] },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "<elsie_zone>" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+]
+speaker = "elsie"
+portrait = "happy"
+local = "My favorite niece and nephew! Tell me about your day. Regale me!"
+next = "1"
+
+[favorite.1]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "Awww!"
+next = "2"
+
+[favorite.2]
+speaker = "eiland"
+portrait = "neutral"
+local = "Wait, aren't we your only niece and nephew?"

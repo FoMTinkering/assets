@@ -1,0 +1,137 @@
+[inn_dinner]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "hemlock" },
+		{ npc = "josephine" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "march" },
+		{ npc = "olric" },
+		{ npc = "reina" },
+	] },
+	{ location = "inn" },
+	{ hemlock_zone = "<josephine_zone>" },
+	{ hemlock_zone = "<luc_zone>" },
+	{ hemlock_zone = "<maple_zone>" },
+	{ hemlock_zone = "<march_zone>" },
+	{ hemlock_zone = "<olric_zone>" },
+	{ hemlock_zone = "<reina_zone>" },
+]
+actions = [{ bark = { bark = "annoyed", npc = "march" } }]
+speaker = "maple"
+portrait = "neutral"
+local = "Mister March, why are you always frowning like that?"
+next = "1"
+
+[inn_dinner.1]
+speaker = "march"
+portrait = "mad"
+local = "Frowning? I don't frown..."
+next = "2"
+
+[inn_dinner.2]
+speaker = "reina"
+portrait = "mad"
+local = "Maple, mind your manners!"
+next = "3"
+
+[inn_dinner.3]
+speaker = "reina"
+portrait = "embarrassed"
+local = "And you do frown, March. Like, a little."
+next = "4"
+
+[inn_dinner.4]
+speaker = "hemlock"
+portrait = "think"
+local = "More like a lot."
+next = "5"
+
+[inn_dinner.5]
+speaker = "josephine"
+portrait = "ugh"
+local = "Honey, manners!"
+next = "6"
+
+[inn_dinner.6]
+speaker = "luc"
+portrait = "happy"
+local = "I have good manners, so I'm not going to talk about how Mister March frowns all day, every day. I'm going to keep that thought to myself."
+next = "7"
+
+[inn_dinner.7]
+speaker = "olric"
+portrait = "happy"
+local = "Wow, Luc! You're such a grown-up!"
+
+[inn_dinner_2]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "hemlock" },
+		{ npc = "josephine" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "march" },
+		{ npc = "olric" },
+		{ npc = "reina" },
+	] },
+	{ location = "inn" },
+	{ hemlock_zone = "<josephine_zone>" },
+	{ hemlock_zone = "<luc_zone>" },
+	{ hemlock_zone = "<maple_zone>" },
+	{ hemlock_zone = "<march_zone>" },
+	{ hemlock_zone = "<olric_zone>" },
+	{ hemlock_zone = "<reina_zone>" },
+	{ any = [{ hemlock_activity = "eat" }, { hemlock_activity = "drink" }] },
+	{ any = [
+		{ josephine_activity = "eat" },
+		{ josephine_activity = "drink" }
+	] },
+	{ any = [{ luc_activity = "eat" }, { luc_activity = "drink" }] },
+	{ any = [{ maple_activity = "eat" }, { maple_activity = "drink" }] },
+	{ any = [{ march_activity = "eat" }, { march_activity = "drink" }] },
+	{ any = [{ olric_activity = "eat" }, { olric_activity = "drink" }] },
+	{ any = [{ reina_activity = "eat" }, { reina_activity = "drink" }] },
+]
+speaker = "march"
+portrait = "neutral"
+local = "Can someone pass the salt?"
+next = "1"
+
+[inn_dinner_2.1]
+speaker = "hemlock"
+portrait = "neutral"
+local = "Honey, can you slide over the salt?"
+next = "2"
+
+[inn_dinner_2.2]
+speaker = "josephine"
+portrait = "neutral"
+local = "Luc, would you be a sweetheart and give me the salt?"
+next = "3"
+
+[inn_dinner_2.3]
+speaker = "luc"
+portrait = "neutral"
+local = "I think Maple has it?"
+next = "4"
+
+[inn_dinner_2.4]
+speaker = "maple"
+portrait = "think"
+local = "I don't have it."
+next = "5"
+
+[inn_dinner_2.5]
+speaker = "olric"
+portrait = "happy"
+local = "Here it is!"
+next = "6"
+
+[inn_dinner_2.6]
+speaker = "reina"
+portrait = "happy"
+effect = "drop"
+local = "That's sugar, Olric."

@@ -1,0 +1,101 @@
+[office_work]
+refresh = "1m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "celine" }, { npc = "reina" }] },
+	{ location = "adelines_office" },
+	{ any = [
+		{ adeline_animation = "write" },
+		{ adeline_animation = "write_sit" },
+		{ adeline_routine = "adeline_office_work" }
+	] },
+	{ adeline_zone = "<celine_zone>" },
+	{ adeline_zone = "<reina_zone>" },
+]
+speaker = "reina"
+portrait = "mad"
+local = "Go Adeline go! You can do it!"
+next = "1"
+
+[office_work.1]
+speaker = "celine"
+portrait = "mad"
+local = "Show that paperwork who's boss!"
+next = "2"
+
+[office_work.2]
+speaker = "adeline"
+portrait = "mad"
+effect = "sparkles"
+local = "You guys were right! Work does go faster when your friends are rooting for you!"
+
+[office_work_2]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "celine" }, { npc = "reina" }] },
+	{ location = "adelines_office" },
+	{ any = [
+		{ adeline_animation = "write" },
+		{ adeline_animation = "write_sit" },
+		{ adeline_routine = "adeline_office_work" }
+	] },
+	{ adeline_zone = "<celine_zone>" },
+	{ adeline_zone = "<reina_zone>" },
+]
+speaker = "reina"
+portrait = "neutral"
+local = "Thanks for letting us work in here, Adeline!"
+next = "1"
+
+[office_work_2.1]
+speaker = "celine"
+portrait = "happy"
+local = "Yeah, it's so cozy!"
+next = "2"
+
+[office_work_2.2]
+speaker = "adeline"
+portrait = "neutral"
+local = "Of course! I love the company."
+next = "3"
+
+[office_work_2.3]
+speaker = "adeline"
+portrait = "wink"
+local = "Oh, [Ari]! Do you have bookkeeping to finish up, too? Take a seat!"
+
+[office_work_3]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "celine" }, { npc = "reina" }] },
+	{ location = "adelines_office" },
+	{ any = [
+		{ adeline_animation = "write" },
+		{ adeline_animation = "write_sit" },
+		{ adeline_routine = "adeline_office_work" }
+	] },
+	{ adeline_zone = "<celine_zone>" },
+	{ adeline_zone = "<reina_zone>" },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "celine"
+portrait = "think"
+local = "I've been experimenting with some berries from around Mistria, extracting pigment for ink."
+next = "1"
+
+[office_work_3.1]
+speaker = "celine"
+portrait = "happy"
+local = "I thought it might be helpful for Adeline. Color-coding my notes really helps me keep organized!"
+next = "2"
+
+[office_work_3.2]
+speaker = "reina"
+portrait = "wink"
+local = "You might have done too good of a job... Adeline's obsessed!"
+next = "3"
+
+[office_work_3.3]
+speaker = "adeline"
+portrait = "mad"
+effect = "sparkles"
+local = "You guys, my notes are so pretty when I can write them in PINK!"

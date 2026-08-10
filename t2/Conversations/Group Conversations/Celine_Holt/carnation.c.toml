@@ -1,0 +1,28 @@
+[carnation]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "holt" }] },
+	{ celine_zone = "<holt_zone>" },
+	{ any = [
+		{ celine_zone = "town/celine_bench" },
+		{ celine_zone = "town/celine_garden" },
+		{ celine_zone = "town/celine_bench" }
+	] },
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+speaker = "holt"
+portrait = "wink"
+local = "Now what in carnation is going on here?"
+next = "1"
+
+[carnation.1]
+speaker = "celine"
+portrait = "happy"
+effect = "drop"
+local = "I'm not planting carnations, dad..."
+next = "2"
+
+[carnation.2]
+speaker = "holt"
+portrait = "sad"
+local = "But... but how else is my pun going to work?"

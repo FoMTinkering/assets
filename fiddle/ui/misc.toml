@@ -1,0 +1,363 @@
+# The order of the categories in the dragon shrine menu
+
+# The very similar order that appears in the journal but with combat and mining added
+player_menu_skill_category_order = [
+	["farming", "fishing", "archaeology", "cooking", "mining"],
+	["ranching", "woodcrafting", "blacksmithing", "combat"],
+]
+# When tapping on a node with a mouse, the button enters a "depressed" state until the user releases
+# their mouse. On gamepad we simulate this by doing the effect for X number of frames, since
+# directional inputs tap nodes immediately. This number controls how many frames that effect remains
+# active.
+directional_tap_depress_frames = 4
+# The alpha of the black background we display behind many menus.
+background_alpha = 0.5
+# The sub-icons that should render on items in the corner of their sprite based on the tags they have.
+item_sub_icons = [
+	{ tag = "alpaca_treat", sprite = "spr_ui_item_sub_animal_treat_alpaca" },
+	{ tag = "capybara_treat", sprite = "spr_ui_item_sub_animal_treat_capybara" },
+	{ tag = "chicken_treat", sprite = "spr_ui_item_sub_animal_treat_chicken" },
+	{ tag = "cow_treat", sprite = "spr_ui_item_sub_animal_treat_cow" },
+	{ tag = "duck_treat", sprite = "spr_ui_item_sub_animal_treat_duck" },
+	{ tag = "horse_treat", sprite = "spr_ui_item_sub_animal_treat_horse" },
+	{ tag = "rabbit_treat", sprite = "spr_ui_item_sub_animal_treat_rabbit" },
+	{ tag = "sheep_treat", sprite = "spr_ui_item_sub_animal_treat_sheep" },
+	{ tag = "archaeology", sprite = "spr_ui_item_sub_shovel" },
+	{ tag = "cosmetic", sprite = "spr_ui_item_sub_animal_cow" },
+	{ tag = "armor", sprite = "spr_ui_item_sub_armor" },
+	{ tag = "replica", sprite = "spr_ui_item_sub_artifact_stand" },
+	{ tag = "adeline_furniture", sprite = "spr_ui_item_sub_npc_adeline" },
+	{ tag = "balor_furniture", sprite = "spr_ui_item_sub_npc_balor" },
+	{ tag = "caldarus_furniture", sprite = "spr_ui_item_sub_npc_caldarus" },
+	{ tag = "celine_furniture", sprite = "spr_ui_item_sub_npc_celine" },
+	{ tag = "dozy_furniture", sprite = "spr_ui_item_sub_npc_dozy" },
+	{ tag = "eiland_furniture", sprite = "spr_ui_item_sub_npc_eiland" },
+	{ tag = "hayden_furniture", sprite = "spr_ui_item_sub_npc_hayden" },
+	{ tag = "juniper_furniture", sprite = "spr_ui_item_sub_npc_juniper" },
+	{ tag = "march_furniture", sprite = "spr_ui_item_sub_npc_march" },
+	{ tag = "reina_furniture", sprite = "spr_ui_item_sub_npc_reina" },
+	{ tag = "ryis_furniture", sprite = "spr_ui_item_sub_npc_ryis" },
+	{ tag = "seridia_furniture", sprite = "spr_ui_item_sub_npc_seridia" },
+	{ tag = "valen_furniture", sprite = "spr_ui_item_sub_npc_valen" },
+]
+
+# The default line height that text in our menus use.
+default_line_height = 12
+# The default size of elements (each box on a scrolling list)
+default_element_height = 31
+# The amount of time information toast notifications (left side of screen) display before transitioning out.
+# This number is in frames, so 60 == 1 second
+information_toast_timer = 300
+# The amount of time the gold animation (increases and decreases) sits with the preview number before it starts
+# ticking the gold.
+# This number is in frames, so 60 == 1 second
+gold_adder_wait_time = 45
+# The number of frames an item must be held over a toolbar tab before the page changes
+toolbar_tab_hover_time = 45
+# The number of frames that buffer toolbar selection when holding down the input to cycle slots.
+toolbar_switch_cooldown = 10
+# the number of pixels of text we can use
+textbox_pixel_width = 358
+prompt_pixel_width = 159
+# The maximum height a tooltip can expand to. Any item that tries to eclipse this will emit an
+# error in the suite.
+max_tooltip_height = 118
+
+# The prefix names of sprites we use for our buttons with all their various states.
+button_sprite_prefixes = [
+	"spr_ui_journal_magic_fire_spell_icon",
+	"spr_ui_scroller_arrow_up",
+	"spr_ui_scroller_arrow_down",
+	"spr_ui_journal_tab_inventory",
+	"spr_ui_journal_tab_customization",
+	"spr_ui_journal_tab_quests",
+	"spr_ui_journal_tab_relationships",
+	"spr_ui_journal_tab_animals",
+	"spr_ui_journal_tab_magic",
+	"spr_ui_journal_tab_map",
+	"spr_ui_journal_tab_almanac",
+	"spr_ui_journal_tab_settings",
+	"spr_ui_generic_box",
+	"spr_ui_journal_inventory_trash_button",
+	"spr_ui_journal_inventory_sort_button",
+	"spr_ui_journal_tab_inventory_selected",
+	"spr_ui_journal_tab_almanac_selected",
+	"spr_ui_generic_box_category",
+	"spr_ui_button",
+	"spr_ui_journal_animal_pet_appearance_icon",
+	"spr_ui_journal_animal_cosmetics_button_icon",
+	"spr_ui_journal_tab_animals_selected",
+	"spr_ui_journal_animal_steed_appearance_icon",
+	"spr_ui_generic_edit_pencil_icon",
+	"spr_nothing_nineslice",
+	"spr_ui_crafting_button_invalid",
+	"spr_ui_crafting_big_button_invalid",
+	"spr_ui_store_button",
+	"spr_ui_store_left_arrow",
+	"spr_ui_store_right_arrow",
+	"spr_ui_crafting_button",
+	"spr_ui_journal_customization_slot_icon_head_accessory",
+	"spr_ui_journal_customization_slot_icon_face_accessory",
+	"spr_ui_journal_customization_slot_icon_top",
+	"spr_ui_journal_customization_slot_icon_back",
+	"spr_ui_journal_customization_slot_icon_hairstyle",
+	"spr_ui_journal_customization_slot_icon_eye_style",
+	"spr_ui_journal_customization_slot_icon_bottom",
+	"spr_ui_journal_customization_slot_icon_shoe",
+	"spr_ui_journal_customization_slot_icon_facial_hair",
+	"spr_ui_journal_customization_slot_icon_skin_color",
+	"spr_ui_journal_customization_outfit_button_icon",
+	"spr_ui_ranching_daycare_right_button",
+	"spr_ui_skills_domain_icon_farming",
+	"spr_ui_skills_domain_icon_fishing",
+	"spr_ui_skills_domain_icon_archaeology",
+	"spr_ui_skills_domain_icon_cooking",
+	"spr_ui_skills_domain_icon_ranching",
+	"spr_ui_skills_domain_icon_crafting",
+	"spr_ui_skills_domain_icon_blacksmithing",
+	"spr_ui_skills_skill_slot",
+	"spr_ui_skills_domain_icon_mining",
+	"spr_ui_skills_domain_icon_combat",
+	"spr_ui_gift_hint_card_dateable",
+	"spr_ui_gift_hint_card_villager",
+	"spr_ui_gift_hint_card_vendor",
+	"spr_ui_generic_box_header",
+	"spr_ui_map_tab",
+	"spr_ui_map_arrow_up",
+	"spr_ui_map_arrow_down",
+	"spr_ui_map_arrow_left",
+	"spr_ui_map_arrow_right",
+	"spr_ui_journal_tab_map_selected",
+	"spr_ui_museum_archaeology_wing_button",
+	"spr_ui_museum_fish_wing_button",
+	"spr_ui_museum_flora_wing_button",
+	"spr_ui_museum_insects_wing_button",
+	"spr_ui_museum_box_complete",
+	"spr_ui_inventory_slot",
+	"spr_ui_journal_quests_expand_arrow_icon",
+	"spr_ui_journal_tab_relationships_selected",
+	"spr_ui_journal_magic_restore_spell_icon",
+	"spr_ui_journal_magic_growth_spell_icon",
+	"spr_ui_journal_magic_rain_spell_icon",
+	"spr_ui_journal_tab_magic_selected",
+	"spr_ui_journal_meta_icon_all_unlocks",
+	"spr_ui_journal_meta_icon_no_unlocks",
+	"spr_ui_journal_meta_icon_story_enabled",
+	"spr_ui_journal_meta_icon_story_disabled",
+	"spr_ui_main_menu_button",
+	"spr_ui_dialogue_box",
+	"spr_ui_dialogue_box_pink",
+	"spr_ui_dialogue_box_heart_icon",
+	"spr_ui_inventory_select_icon_button",
+	"spr_ui_inventory_storage_pull_button_open",
+	"spr_ui_inventory_sort_button",
+	"spr_ui_inventory_trash_button",
+	"spr_ui_inventory_stack_button",
+	"spr_ui_inventory_help_button",
+	"spr_ui_inventory_storage_pull_button_closed",
+	"spr_ui_journal_customization_slot_icon_none",
+	"spr_ui_journal_magic_sacred_light_spell_icon",
+	"spr_ui_calendar_button_spring",
+	"spr_ui_calendar_left_arrow_spring",
+	"spr_ui_calendar_right_arrow_spring",
+	"spr_ui_calendar_button_summer",
+	"spr_ui_calendar_left_arrow_summer",
+	"spr_ui_calendar_right_arrow_summer",
+	"spr_ui_calendar_button_fall",
+	"spr_ui_calendar_left_arrow_fall",
+	"spr_ui_calendar_right_arrow_fall",
+	"spr_ui_calendar_button_winter",
+	"spr_ui_calendar_left_arrow_winter",
+	"spr_ui_calendar_right_arrow_winter",
+	"spr_ui_dungeon_elevator_button_gold_g",
+	"spr_ui_dungeon_elevator_button_grey_5",
+	"spr_ui_dungeon_elevator_button_grey_10",
+	"spr_ui_dungeon_elevator_button_grey_15",
+	"spr_ui_dungeon_elevator_button_grey_20",
+	"spr_ui_dungeon_elevator_button_grey_25",
+	"spr_ui_dungeon_elevator_button_grey_30",
+	"spr_ui_dungeon_elevator_button_grey_35",
+	"spr_ui_dungeon_elevator_button_grey_40",
+	"spr_ui_dungeon_elevator_button_grey_45",
+	"spr_ui_dungeon_elevator_button_grey_50",
+	"spr_ui_dungeon_elevator_button_grey_55",
+	"spr_ui_dungeon_elevator_button_grey_60",
+	"spr_ui_dungeon_elevator_button_grey_65",
+	"spr_ui_dungeon_elevator_button_grey_70",
+	"spr_ui_dungeon_elevator_button_grey_75",
+	"spr_ui_dungeon_elevator_button_grey_80",
+	"spr_ui_dungeon_elevator_button_grey_85",
+	"spr_ui_dungeon_elevator_button_grey_90",
+	"spr_ui_dungeon_elevator_button_grey_95",
+	"spr_ui_dungeon_elevator_button_grey_100",
+    "spr_ui_crafting_big_button",
+    "spr_ui_button_chunky_arrow",
+    "spr_ui_eod_summary_button_icon",
+    "spr_ui_button_chunky",
+    "spr_ui_museum_box_incomplete",
+    "spr_ui_ranching_daycare_left_button",
+    "spr_ui_skills_skill_slot_locked",
+
+]
+
+pet_variant_order = [
+	"cat_tabby",
+	"cat_black",
+	"cat_grey",
+	"cat_white",
+	"cat_tuxedo",
+	"cat_orange",
+	"cat_tortie",
+	"cat_siamese",
+	"cat_calico",
+	"cat_purple",
+	"cat_navy",
+	"cat_pink",
+	"dog_yellow",
+	"dog_beige",
+	"dog_brown",
+	"dog_black",
+	"dog_grey",
+	"dog_white",
+	"dog_spots",
+	"dog_orange",
+	"dog_dalmation",
+	"dog_purple",
+	"dog_navy",
+	"dog_pink",
+	"sapling_green",
+	"sapling_cool",
+	"sapling_blue",
+	"sapling_purple",
+	"sapling_orange",
+	"sapling_pink",
+	"mushroom_red",
+	"mushroom_green",
+	"mushroom_blue",
+	"mushroom_purple",
+	"rockclod",
+	"rockclod_blue",
+	"rockclod_green",
+	"rockclod_red",
+	"copperclod",
+	"ironclod",
+	"silverclod",
+	"goldclod",
+	"mimic",
+	"enchantern_yellow",
+	"enchantern_blue",
+	"stalagmite_blue",
+	"stalagmite_green",
+	"stalagmite_purple",
+	"essence_bat_purple",
+	"essence_bat_blue",
+	"flame_spirit_orange",
+	"flame_spirit_purple",
+	"lava_cat",
+	"void_cat",
+	"rock_stack",
+	"flying_tome",
+	"griffin_statue",
+]
+
+# Values used for the "press and hold" behavior with directional controls.
+[holding]
+	# How long the user holds before the press and hold starts
+	start = 20
+	# How many ticks after the start it takes each time to simulate a press
+	period = 8
+
+# Default layout for carousels
+[carousel_layout]
+	items = 7
+	icon_size = 14
+	icon_padding = 2
+	slide_duration = 8
+	arrow_left_button_size = 18
+	arrow_right_button_size = 18
+	arrow_button_offset = 2
+
+[shrine_categories]
+	caldarus = [
+		["farming", "fishing", "archaeology", "cooking"],
+		["ranching", "woodcrafting", "blacksmithing"],
+	]
+
+	seridia = [["mining", "combat"]]
+
+	horse = [["mount"]]
+
+[inventory.backpack.10]
+	backplate = "spr_ui_inventory_backpack_backplate_10"
+	rows = 5
+
+[inventory.backpack.20]
+	backplate = "spr_ui_inventory_backpack_backplate_20"
+	rows = 5
+
+[inventory.backpack.30]
+	backplate = "spr_ui_inventory_backpack_backplate_30"
+	rows = 5
+
+[inventory.storage.4]
+	backplate = "spr_ui_dungeon_offer_backplate"
+	storage_x = 50
+	backpack_x = -50
+	rows = 4
+
+[inventory.storage.10]
+	backplate = "spr_ui_turn_in_chest_backplate_10"
+	rows = 5
+	storage_x = 30
+	backpack_x = -30
+
+[inventory.storage.25]
+	backplate = "spr_ui_museum_donate_backplate_25"
+	rows = 5
+	storage_x = 30
+	backpack_x = -30
+
+[inventory.storage.30]
+	backplate = "spr_ui_storage_chest_backplate_30"
+	rows = 5
+	storage_x = 30
+	backpack_x = -30
+
+[inventory.storage.42]
+	backplate = "spr_ui_storage_chest_backplate_42"
+	rows = 7
+	storage_x = 20
+	backpack_x = -20
+
+[inventory.storage.54]
+	backplate = "spr_ui_storage_chest_backplate_54"
+	rows = 9
+	storage_x = 10
+	backpack_x = -10
+
+[inventory.apiary.4]
+	backplate = "spr_ui_apiary_backplate"
+	guide_box = "spr_ui_apiary_terrarium_guide_box"
+	header = "spr_ui_apiary_terrarium_guide_header_box"
+	header_local = "misc_local/honey_guide"
+	storage_x = 20
+	storage_y = -53
+	backpack_x = -20
+	rows = 4
+
+[inventory.terrarium.4]
+	backplate = "spr_ui_terrarium_backplate"
+	guide_box = "spr_ui_apiary_terrarium_guide_box"
+	header = "spr_ui_apiary_terrarium_guide_header_box"
+	header_local = "misc_local/item_guide"
+	storage_x = 20
+	storage_y = -53
+	backpack_x = -20
+	rows = 4
+
+[local_adjustments]
+	title_menu_button.default = 90
+	title_menu_button.jpn = 105
+    title_menu_button.rus = 100
+    title_menu_button.spa = 100
+    title_menu_button.fra = 100

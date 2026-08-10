@@ -1,0 +1,16 @@
+[living_alone]
+refresh = "1y"
+requires = [
+	{ npc = "celine" },
+	{ "<npc>_is_at_location" = "<celine_is_at_location>", comparator = "!=" },
+	{ location = "celines_room" },
+	{ celine_heart_level = 8, comparator = "<" }
+]
+portrait = "think"
+local = "Living by myself can be a little lonely sometimes..."
+next = "1"
+
+[living_alone.1]
+portrait = "happy"
+effect = "drop"
+local = "But it sure beats sharing a room with Dell."

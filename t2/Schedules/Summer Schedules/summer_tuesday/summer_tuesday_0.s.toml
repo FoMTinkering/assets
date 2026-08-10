@@ -1,0 +1,622 @@
+requires = [
+	{ day_of_the_week = "tuesday" },
+	{ weather = "pleasant" },
+	{ season = "summer" },
+	{ summer_tuesday_progress = false },
+]
+start_writes = [
+	{ eiland_dig_day_wr = true },
+	{ march_forge_work_day = true },
+	{ taste_testing_day = true },
+]
+end_writes = [
+	{ summer_tuesday_progress = true, expires = "3m" },
+	{ jh_date_night = false },
+	{ clinic_counter = 0 },
+	{ eiland_dig_day_wr = false },
+	{ march_forge_work_day = false },
+	{ taste_testing_day = false },
+]
+
+# adeline
+[adeline."6:00am"]
+destination = "town/Adeline Wake Point"
+
+[adeline."8:41am"]
+destination = "adelines_office/routine_entrance"
+on_arrival_actions = [{ routine = "adeline_office_work" }]
+
+[adeline."1:23pm"]
+destination = "town/Quest Board"
+on_arrival_actions = [{ animation = "write" }]
+
+[adeline."5:56pm"]
+destination = "inn/North Table Bottom 1"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+
+[adeline."9:12pm"]
+destination = "inn/North Table Bottom 1"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[adeline."11:53pm"]
+destination = "adelines_bedroom/Bed"
+
+# balor
+[balor."6:00am"]
+destination = "balors_room/Balor Wake Point"
+
+[balor."6:23am"]
+destination = "inn/Storyteller"
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+
+[balor."8:25am"]
+destination = "inn/North Table Bottom 2"
+on_arrival_actions = [{ activity = "order_food" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[balor."10:21am"]
+destination = "western_ruins/Grid Supervisor"
+delayed_arrival_actions = [
+	{ after = "2h 3n", routine = "western_ruins_south_wander" },
+]
+
+[balor."4:12pm"]
+destination = "haydens_house/Table Seat 2"
+on_arrival_actions = [{ activity = "eat" }]
+
+[balor."9:18pm"]
+destination = "haydens_house/Couch Seat Right"
+on_arrival_actions = [{ activity = "drink" }]
+
+[balor."11:33pm"]
+destination = "balors_room/Balor Wake Point"
+
+# celine
+[celine."6:00am"]
+destination = "celines_room/Celine Wake Point"
+
+[celine."6:21am"]
+destination = "town/Celine Cottage Bench Left"
+on_arrival_actions = [{ animation = "book_sit" }]
+
+[celine."9:14am"]
+destination = "town/Celine Cottage Bench Left"
+on_arrival_actions = [{ animation = "sit" }]
+delayed_arrival_actions = [{ after = "2h 23n", animation = "book_sit" }]
+
+[celine."12:16pm"]
+destination = "bathhouse/Cauldron 2"
+
+[celine."4:09pm"]
+destination = "bathhouse_change_room/Middle Bench Left Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[celine."7:12pm"]
+destination = "inn/North Table Top 2"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+
+[celine."10:15pm"]
+destination = "inn/North Table Top 2"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[celine."11:51pm"]
+destination = "celines_room/ArmChair Seat"
+on_arrival_actions = [{ animation = "book_sit" }]
+
+# dell
+[dell."6:00am"]
+destination = "general_store_store/Shopping 1"
+
+[dell."6:01am"]
+destination = "inn/Story Listener 1"
+
+[dell."8:35am"]
+destination = "town/Celine Bench Group 1"
+
+[dell."12:14pm"]
+destination = "inn/South Table Bottom 1"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [
+	{ dell_taste_test = true },
+	{ inn_counter = 1, operator = "+=" },
+]
+on_departure_writes = [
+	{ dell_taste_test = false },
+	{ inn_counter = 1, operator = "-=" },
+]
+
+[dell."4:42pm"]
+destination = "bathhouse/Cauldron 1"
+
+[dell."6:11pm"]
+destination = "clinic_f1/Kids 1"
+on_arrival_writes = [
+	{ clinic_counter = 1, operator = "+=" },
+	{ valen_babysits = true },
+]
+on_departure_writes = [{ clinic_counter = 1, operator = "-=" }]
+
+[dell."8:25pm"]
+destination = "inn/Story Listener 1"
+
+[dell."9:56pm"]
+destination = "dells_bedroom/Dell Bed"
+
+# dozy
+[dozy."6:00am"]
+destination = "bathhouse/Dozy"
+on_arrival_actions = [{ routine = "dozy_snooze" }]
+
+# eiland
+[eiland."6:00am"]
+destination = "western_ruins/routine_entrance"
+on_arrival_actions = [{ routine = "western_ruins_archaeology_pit" }]
+on_departure_writes = [{ archaeology_discussion_museum = true }]
+
+[eiland."1:51pm"]
+destination = "museum_entry/Museum Admiring Painting Right"
+on_departure_writes = [{ archaeology_discussion_museum = false }]
+clear_zone = false
+
+[eiland."5:13pm"]
+destination = "inn/North Table Bottom 2"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+
+[eiland."11:51pm"]
+destination = "inn/Top-Middle Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[eiland."12:22am"]
+destination = "eilands_bedroom/Loveseat Left Seat"
+
+# elsie
+[elsie."6:00am"]
+destination = "town/Eiland Wake Point"
+
+[elsie."8:39am"]
+destination = "bathhouse_change_room/Middle Bench Right Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[elsie."12:31pm"]
+destination = "bathhouse/Cauldron 4"
+
+[elsie."5:25pm"]
+destination = "inn/North Table Top 1"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+
+[elsie."8:25pm"]
+destination = "inn/North Table Top 1"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[elsie."11:24pm"]
+destination = "elsies_bedroom/Chaise Right Seat"
+
+# errol
+[errol."6:00am"]
+destination = "eastern_road/adeline_business_carpenter"
+
+[errol."8:12am"]
+destination = "museum_entry/Museum Desk"
+
+[errol."3:45pm"]
+destination = "museum_entry/Museum Admiring Painting Left"
+
+[errol."5:14pm"]
+destination = "inn/Top Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[errol."10:18pm"]
+destination = "errols_bedroom/Desk Chair"
+
+# hayden
+[hayden."6:00am"]
+destination = "town/north_west_routine_entrance"
+
+[hayden."6:01am"]
+destination = "town/adeline_business_general_store"
+
+[hayden."8:41am"]
+destination = "general_store_store/shopping_entrance"
+on_arrival_actions = [{ routine = "general_store_shopping" }]
+
+[hayden."11:04am"]
+destination = "haydens_farm/north_to_chores"
+on_arrival_actions = [{ routine = "hayden_farm_work" }]
+
+[hayden."7:31pm"]
+destination = "haydens_house/Table Seat 1"
+on_arrival_actions = [{ activity = "eat" }]
+
+[hayden."9:17pm"]
+destination = "haydens_house/Haybale Seat 2"
+on_arrival_actions = [{ activity = "drink" }]
+
+# hemlock
+[hemlock."6:00am"]
+destination = "inn/North Table Bottom 2"
+on_arrival_actions = [{ activity = "eat" }]
+
+[hemlock."7:42am"]
+destination = "inn/North Table Bottom 2"
+occupy_point = false
+on_arrival_actions = [{ routine = "inn_solo_hemlock" }]
+
+[hemlock."12:42pm"]
+destination = "general_store_store/shopping_entrance"
+on_arrival_actions = [{ routine = "general_store_shopping" }]
+
+[hemlock."4:12pm"]
+destination = "town/Fountain Square Right 2"
+on_departure_writes = [{ jh_date_night = true }]
+
+[hemlock."5:22pm"]
+destination = "town/garden_wander_entrance"
+on_arrival_actions = [{ routine = "manor_garden_wander" }]
+
+[hemlock."8:49pm"]
+destination = "inn/Storyteller"
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+
+[hemlock."10:52pm"]
+destination = "inn/Bar Stand Middle"
+on_arrival_actions = [{ routine = "inn_bar_service" }]
+
+[hemlock."1:31am"]
+destination = "jo_and_hemlocks_room/Hemlock Wake Point"
+
+# henrietta
+[henrietta]
+"6:00am" = "haydens_house/Hayden Kitchen"
+
+# holt
+[holt."6:00am"]
+destination = "town/general_store_entrance_routine"
+on_arrival_actions = [{ routine = "general_store_outside_chores" }]
+
+[holt."7:01am"]
+destination = "town/business_general_store"
+
+[holt."8:43am"]
+destination = "town/general_store_entrance_routine"
+on_arrival_actions = [{ routine = "general_store_outside_chores" }]
+
+[holt."11:08am"]
+destination = "general_store_store/south_entrance_to_shift"
+on_arrival_actions = [{ routine = "general_store" }]
+
+[holt."5:22pm"]
+destination = "inn/South Table Left End"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [
+	{ inn_counter = 1, operator = "+=" },
+	{ nh_date_night = true },
+]
+on_departure_writes = [
+	{ inn_counter = 1, operator = "-=" },
+	{ nh_date_night = false },
+]
+
+[holt."9:57pm"]
+destination = "general_store_home/Upper Couch Right Seat"
+on_arrival_actions = [{ activity = "drink" }]
+
+# josephine
+[josephine."6:00am"]
+destination = "inn/North Table Top 3"
+on_arrival_actions = [{ activity = "eat" }]
+
+[josephine."7:15am"]
+destination = "bathhouse_change_room/Middle Bench Left Seat"
+on_arrival_writes = [{ bathhouse_counter = 1, operator = "+=" }]
+on_departure_writes = [{ bathhouse_counter = 1, operator = "-=" }]
+
+[josephine."11:21am"]
+destination = "town/Fountain Square Right 1"
+
+[josephine."5:21pm"]
+destination = "town/garden_wander_entrance"
+on_arrival_actions = [{ routine = "manor_garden_wander" }]
+
+[josephine."8:51pm"]
+destination = "inn/Top Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+
+[josephine."1:24am"]
+destination = "jo_and_hemlocks_room/Jo Wake Point"
+
+# juniper
+[juniper."6:00am"]
+destination = "inn/South Table Left End"
+on_arrival_actions = [{ activity = "eat" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[juniper."9:54am"]
+destination = "bathhouse/Front Desk"
+on_arrival_actions = [{ animation = "snooze" }]
+
+[juniper."12:36pm"]
+destination = "bathhouse/Cauldron 3"
+
+[juniper."6:15pm"]
+destination = "town/clinic_routine_entrance"
+
+[juniper."6:49pm"]
+destination = "western_ruins/routine_entrance"
+on_arrival_actions = [{ routine = "western_ruins_south_wander" }]
+delayed_arrival_actions = [
+	{ after = "2h", routine = "western_ruins_north_wander" },
+]
+
+# landen
+[landen."6:00am"]
+destination = "eastern_road/business_carpenter"
+
+[landen."8:13am"]
+destination = "inn/North Table Top 1"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[landen."12:33pm"]
+destination = "eastern_road/north_west_routine_entrance"
+on_arrival_actions = [{ routine = "eastern_road_woodwork" }]
+
+[landen."9:21pm"]
+destination = "landens_house_f1/Carpentry Point Left"
+
+[landen."11:49pm"]
+destination = "landens_house_f2/Landen Wake Point"
+
+# luc
+[luc."6:00am"]
+destination = "inn/Bottom Bar Seat"
+
+[luc."6:01am"]
+destination = "inn/Story Listener 2"
+
+[luc."8:36am"]
+destination = "town/Celine Bench Group 2"
+
+[luc."12:13pm"]
+destination = "inn/South Table Bottom 2"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ luc_taste_test = true }]
+on_departure_writes = [{ luc_taste_test = false }]
+
+[luc."4:43pm"]
+destination = "bathhouse/Cauldron 2"
+
+[luc."6:12pm"]
+destination = "clinic_f1/Kids 3"
+on_arrival_writes = [{ clinic_counter = 1, operator = "+=" }]
+on_departure_writes = [{ clinic_counter = 1, operator = "-=" }]
+
+[luc."8:23pm"]
+destination = "inn/Story Listener 2"
+
+[luc."10:39pm"]
+destination = "lucs_room/Luc Bed"
+
+# maple
+[maple."6:00am"]
+destination = "inn/Bottom-Middle Bar Seat"
+
+[maple."6:01am"]
+destination = "inn/Story Listener 3"
+
+[maple."8:34am"]
+destination = "town/Celine Bench Group 3"
+
+[maple."12:14pm"]
+destination = "inn/South Table Bottom 3"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ maple_taste_test = true }]
+on_departure_writes = [{ maple_taste_test = false }]
+
+[maple."4:44pm"]
+destination = "bathhouse/Cauldron 4"
+
+[maple."6:11pm"]
+destination = "clinic_f1/Kids 2"
+on_arrival_writes = [{ clinic_counter = 1, operator = "+=" }]
+on_departure_writes = [{ clinic_counter = 1, operator = "-=" }]
+
+[maple."8:22pm"]
+destination = "inn/Story Listener 3"
+
+[maple."10:39pm"]
+destination = "maples_room/Maple Wake Point"
+
+# march
+[march."6:00am"]
+destination = "blacksmith_room_left/March Bed"
+
+[march."6:15am"]
+destination = "blacksmith_store/Workbench Stool"
+
+[march."8:12am"]
+destination = "blacksmith_store/Store Chatting Right"
+
+[march."10:25am"]
+destination = "town/blacksmith_routine_entrance"
+on_arrival_actions = [{ routine = "forge_work_principal" }]
+
+[march."12:56pm"]
+destination = "town/Anvil Chatting 2"
+
+[march."2:43pm"]
+destination = "town/Anvil Chatting 2"
+on_arrival_actions = [{ routine = "forge_work_principal" }]
+
+[march."6:12pm"]
+destination = "inn/Bottom-Middle Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[march."10:43pm"]
+destination = "blacksmith_room_left/March Bed"
+
+# nora
+[nora."6:00am"]
+destination = "holt_and_noras_bedroom/Nora's Desk"
+on_arrival_actions = [{ animation = "write_sit" }]
+
+[nora."6:12am"]
+destination = "general_store_store/north_entrance_to_shift"
+on_arrival_actions = [{ routine = "general_store" }]
+
+[nora."11:11am"]
+destination = "town/Fountain Square Right 3"
+
+[nora."4:42pm"]
+destination = "inn/South Table Top 1"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[nora."9:58pm"]
+destination = "general_store_home/Armchair"
+on_arrival_actions = [{ activity = "drink" }]
+
+# olric
+[olric."6:00am"]
+destination = "inn/North Table Top 2"
+on_arrival_actions = [{ activity = "eat" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[olric."9:18am"]
+destination = "blacksmith_store/Blacksmith Till"
+
+[olric."3:23pm"]
+destination = "inn/food_service_entrance"
+on_arrival_actions = [{ routine = "inn_olric" }]
+
+[olric."12:23am"]
+destination = "blacksmith_room_right/Olric Wake Point"
+
+# reina
+[reina."6:00am"]
+destination = "inn/Cutting Board"
+on_arrival_actions = [{ routine = "inn_solo_reina" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[reina."7:21am"]
+destination = "adelines_office/Ad Couch Top Seat"
+
+[reina."11:17am"]
+destination = "inn/food_service_entrance"
+on_arrival_actions = [{ routine = "inn_solo_reina" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[reina."1:12pm"]
+destination = "inn/South Table Top 2"
+on_arrival_actions = [{ activity = "eat" }]
+
+[reina."4:21pm"]
+destination = "inn/South Table Top 2"
+on_arrival_actions = [{ routine = "inn_solo_reina" }]
+
+[reina."12:27am"]
+destination = "inn/Top Bar Hang"
+
+[reina."12:45am"]
+destination = "reinas_room/Reina Wake Point"
+
+# ryis
+[ryis."6:00am"]
+destination = "landens_house_f1/Carpentry Point Left"
+
+[ryis."6:11am"]
+destination = "blacksmith_store/Store Chatting Left"
+
+[ryis."10:26am"]
+destination = "town/Anvil Chatting 1"
+
+[ryis."11:41am"]
+destination = "town/Anvil Chatting 1"
+on_arrival_actions = [{ routine = "forge_work_secondary" }]
+
+[ryis."12:48pm"]
+destination = "town/Anvil Chatting 1"
+
+[ryis."2:41pm"]
+destination = "eastern_road/north_west_routine_entrance"
+on_arrival_actions = [{ routine = "eastern_road_woodwork" }]
+
+[ryis."9:23pm"]
+destination = "landens_house_f1/Carpentry Point Right"
+
+[ryis."11:58pm"]
+destination = "landens_house_f2/Ryis Wake Point"
+
+# terithia
+[terithia."6:00am"]
+destination = "town/River Fishing Near Celine's House"
+on_arrival_actions = [{ routine = "fishing" }]
+
+[terithia."8:36am"]
+destination = "inn/North Table Bottom 1"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[terithia."11:17am"]
+destination = "town/business_inn"
+
+[terithia."1:32pm"]
+destination = "beach/north_routine_entrance"
+on_arrival_actions = [{ routine = "beach_wave_fishing" }]
+delayed_arrival_actions = [{ after = "3h", routine = "beach_dock_fishing" }]
+
+# valen
+[valen."6:00am"]
+destination = "clinic_f2/Valen Wake Point"
+
+[valen."6:01am"]
+destination = "clinic_f1/Research"
+
+[valen."8:22am"]
+destination = "inn/North Table Left End"
+on_arrival_actions = [{ activity = "order_food" }]
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[valen."11:18am"]
+destination = "town/adeline_business_inn"
+
+[valen."1:31pm"]
+destination = "clinic_f1/Doctor's Desk"
+on_arrival_actions = [{ animation = "write" }]
+
+[valen."6:58pm"]
+destination = "clinic_f1/Valen Babysitting"
+
+[valen."8:26pm"]
+destination = "inn/Storyteller"
+on_arrival_writes = [{ inn_counter = 1, operator = "+=" }]
+on_departure_writes = [{ valen_babysits = false }]
+
+[valen."9:49pm"]
+destination = "inn/Top-Middle Bar Seat"
+on_arrival_actions = [{ activity = "order_drink" }]
+on_departure_writes = [{ inn_counter = 1, operator = "-=" }]
+
+[valen."11:12pm"]
+destination = "clinic_f2/Valen Wake Point"

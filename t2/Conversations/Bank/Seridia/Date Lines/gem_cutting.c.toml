@@ -1,0 +1,153 @@
+[gem_cutting_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "seridia" },
+	{ date = "gem_cutting" },
+	{ da_seridia_gem_cutting = 0 },
+	{ seridia_is_spouse = false }
+]
+writes = [
+	{ da_seridia_gem_cutting = 1 },
+	{ da_seridia_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "surprise"
+local = "You wish for my company... in re-shaping a gemstone?"
+next = "1"
+
+[gem_cutting_accept_1.1]
+portrait = "neutral"
+local = "I see..."
+next = "2"
+
+[gem_cutting_accept_1.2]
+portrait = "think"
+local = "To cut away at the rough exterior of a natural form, to reveal its true potential..."
+next = "3"
+
+[gem_cutting_accept_1.3]
+portrait = "smile"
+local = "Such an activity sounds very much to my tastes."
+next = "4"
+
+[gem_cutting_accept_1.4]
+portrait = "blush"
+local = "You know me well, [Ari]. Let us go."
+
+[gem_cutting_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "seridia" },
+	{ date = "gem_cutting" },
+	{ seridia_has_child = false },
+	{ any = [
+		{ seridia_is_spouse = true },
+		{ da_seridia_gem_cutting = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_seridia_gem_cutting = 2 },
+	{ da_seridia_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "neutral"
+local = "[Ari]. I desire once more to cut a gemstone together. Our previous undertaking was quite gratifying."
+next = "1"
+
+[gem_cutting_accept_2.1]
+portrait = "think"
+local = "And I wish to assist you in growing your hoard..."
+next = "2"
+
+[gem_cutting_accept_2.2]
+portrait = "smile"
+effect = "sparkles"
+local = "For a magnificent hoard is greatly attractive to a dragon such as myself."
+next = "3"
+
+[gem_cutting_accept_2.3]
+portrait = "blush"
+local = "Come. Let us create a treasure together."
+
+[gem_cutting_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ da_seridia_gem_cutting = 1 },
+	{ da_seridia_gem_cutting_follow_up_gate = true },
+	{ seridia_is_spouse = false }
+]
+writes = [{ da_seridia_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "blush"
+local = "In my many lives, I have never cut a gem in such an intimate setting."
+next = "1"
+
+[gem_cutting_follow_up_1.1]
+portrait = "embarrassed"
+local = "It was with our hands joined that we were able to create such a striking jewel..."
+next = "2"
+
+[gem_cutting_follow_up_1.2]
+portrait = "blush_think"
+local = "You have, of course, added it to your personal hoard?"
+prompts = [
+	{ local = "Of course, I'll treasure it!", next = "3" },
+	{ local = "Right, I'll definitely never sell it!", next = "6" }
+]
+
+[gem_cutting_follow_up_1.3]
+portrait = "closed_eyes_smile"
+local = "Yes, good."
+next = "4"
+
+[gem_cutting_follow_up_1.4]
+portrait = "smile"
+local = "It is in a dragon's nature to commit the story of every bauble in her hoard to heart."
+next = "5"
+
+[gem_cutting_follow_up_1.5]
+portrait = "blush"
+local = "They do well to remind you of what has passed, and what is important."
+
+[gem_cutting_follow_up_1.6]
+portrait = "closed_eyes_smile"
+local = "Of course."
+next = "7"
+
+[gem_cutting_follow_up_1.7]
+portrait = "neutral"
+local = "However, gems are not the only type of hoard one can keep..."
+next = "8"
+
+[gem_cutting_follow_up_1.8]
+portrait = "smile"
+local = "So do not hesitate to sell such tokens, if you have cause."
+next = "9"
+
+[gem_cutting_follow_up_1.9]
+portrait = "sinister_blush"
+local = "I simply expect you to demand an exorbitant price for it."
+
+[gem_cutting_follow_up_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_has_child = false },
+	{ any = [{ seridia_is_spouse = true }, { da_seridia_gem_cutting = 2 }] },
+	{ da_seridia_gem_cutting_follow_up_gate = true }
+]
+writes = [{ da_seridia_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "closed_eyes"
+local = "It is most pleasurable to watch your hands manipulate the facets of a gemstone..."
+next = "1"
+
+[gem_cutting_follow_up_2.1]
+portrait = "smile"
+local = "To turn it into a unique, glittering treasure."
+next = "2"
+
+[gem_cutting_follow_up_2.2]
+portrait = "blush"
+local = "I look forward to our next foray together."

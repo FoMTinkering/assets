@@ -1,0 +1,241 @@
+[core]
+	name = "Capybara"
+	plural_name = "Capybara"
+	female_other = "a female capybara"
+	male_other = "a male capybara"
+	new_baby_born = "A new Capybara was born! Enter new name"
+	size = "small"
+	default_icon_variant = "light_brown"
+	cosmetic_sub_icon = "spr_ui_item_sub_animal_capybara"
+	requirements = { repaired_haydens_farm = true, reached_date = { season = "winter", day = 1, year = 1 } }
+
+[celebration_data]
+	baby_animation = "happy"
+	adult_animation = "happy"
+
+[production.male]
+	days_to_produce = 3
+	normal_product = "bristle"
+	golden_product = "golden_bristle"
+
+[production.female]
+	days_to_produce = 3
+	normal_product = "bristle"
+	golden_product = "golden_bristle"
+
+[breeding]
+	uses_egg = false
+	days_until_adult = 3
+	treat = "heart_shaped_capybara_treat"
+
+[eating]
+	kind = "seed"
+	offset = [18, -2]
+	baby_offset = [18, -2]
+	shake_frames = [1, 9]
+
+[petting]
+	kind = "pick_up"
+	held_offset = [9, 15]
+
+[pricing]
+	buy_price = 2000
+	baby_sell_price = 500
+	adult_sell_prices = [
+		700,
+		750,
+		900,
+		1000,
+		1150,
+		1200,
+		1400,
+		1600,
+		2000,
+		2200,
+		2300,
+	]
+
+[mounting]
+	is_mount = false
+
+[bark_offsets]
+	adult = { north = [2, -28], south = [2, -27], east = [3, -26], west = [0, -26] }
+	baby = { north = [2, -23], south = [2, -23], east = [3, -21], west = [1, -21] }
+
+[[sounds.baby]]
+	ambient = "SoundEffects/Animals/BabyCapybaraAmbient"
+	positive_react = "SoundEffects/Animals/BabyCapybaraPositiveReact"
+	negative_react = "SoundEffects/Animals/BabyCapybaraNegativeReact"
+
+[[sounds.adult]]
+	ambient = "SoundEffects/Animals/CapybaraAmbient"
+	positive_react = "SoundEffects/Animals/CapybaraPositiveReact"
+	negative_react = "SoundEffects/Animals/CapybaraNegativeReact"
+
+[animations.idle_2]
+	end_with_animation = true
+	valid_for = ["male", "female"]
+
+[animations.happy]
+	randomly_selected = false
+
+[animations.swim]
+	randomly_selected = false
+	end_with_animation = false
+	valid_for = ["male", "female"]
+
+# Variants
+[variants.default]
+	lut = "spr_animal_capybara_lut"
+
+	[variants.default.male]
+		key = "basic_capybara"
+		top_key = "<n/a>"
+
+	[variants.default.female]
+		key = "basic_capybara"
+		top_key = "<n/a>"
+
+	[variants.default.baby]
+		key = "basic_baby_capybara"
+		top_key = "<n/a>"
+
+# Light Brown
+[variants.light_brown]
+	name = "Light Brown"
+	lut_index = 1
+	default_unlocked = true
+
+# Dark Brown
+[variants.dark_brown]
+	name = "Dark Brown"
+	lut_index = 2
+	default_unlocked = true
+
+# Pale
+[variants.pale]
+	name = "Pale"
+	lut_index = 3
+	default_unlocked = true
+
+# Gray
+[variants.gray]
+	name = "Gray"
+	tier = 2
+	lut_index = 4
+
+# White
+[variants.white]
+	name = "White"
+	tier = 2
+	lut_index = 5
+
+# Red
+[variants.red]
+	name = "Red"
+	tier = 2
+	lut_index = 6
+
+# Blue
+[variants.blue]
+	name = "Blue"
+	tier = 3
+	lut_index = 7
+
+# Purple
+[variants.purple]
+	name = "Purple"
+	tier = 3
+	lut_index = 8
+
+# Pink
+[variants.pink]
+	name = "Pink"
+	tier = 3
+	lut_index = 9
+
+# Gold
+[variants.gold]
+	name = "Gold"
+	tier = 5
+	lut_index = 10
+
+# Silver
+[variants.silver]
+	name = "Silver"
+	tier = 4
+	lut_index = 11
+
+# Spring
+[variants.spring]
+	name = "Spring"
+	tier = 6
+	lut_index = 12
+	born_in = "spring"
+	default_cosmetic = "flower_crown"
+
+# Summer
+[variants.summer]
+	name = "Summer"
+	tier = 6
+	lut_index = 13
+	born_in = "summer"
+	default_cosmetic = "umbrella_hat"
+
+# Fall
+[variants.fall]
+	name = "Fall"
+	tier = 6
+	lut_index = 14
+	born_in = "fall"
+	default_cosmetic = "horns"
+
+# Winter
+[variants.winter]
+	name = "Winter"
+	tier = 6
+	lut_index = 15
+	born_in = "winter"
+	default_cosmetic = "winter_hat"
+
+[cosmetics.baseball_cap]
+	name = "Capybara Baseball Cap"
+
+[cosmetics.bow]
+	name = "Capybara Bow"
+
+[cosmetics.bowler_hat]
+	name = "Capybara Bowler Hat"
+
+[cosmetics.flower_crown]
+	name = "Capybara Flower Crown"
+
+[cosmetics.horns]
+	name = "Capybara Horns"
+
+[cosmetics.leaf]
+	name = "Capybara Leaf Hat"
+
+[cosmetics.ribbon_blue]
+	name = "Capybara Blue Ribbon"
+
+[cosmetics.ribbon_red]
+	name = "Capybara Red Ribbon"
+
+[cosmetics.ribbon_white]
+	name = "Capybara White Ribbon"
+
+[cosmetics.umbrella_hat]
+	name = "Capybara Umbrella Hat"
+
+[cosmetics.winter_hat]
+	name = "Capybara Winter Hat"
+
+[cosmetics.yuzu]
+	name = "Capybara Yuzu Hat"
+
+[cosmetics.angel_wings]
+	name = "Capybara Angel Wings"
+
+[cosmetics.bat_wings]
+	name = "Capybara Bat Wings"

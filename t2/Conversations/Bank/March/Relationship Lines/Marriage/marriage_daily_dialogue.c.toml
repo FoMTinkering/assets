@@ -1,0 +1,1167 @@
+[morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "I was thinking about this when I woke up, but... I sleep a lot better next to you, you know that?"
+
+[morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "blush", npc = "march" } }]
+portrait = "eight_heart_flustered"
+local = "Morning, [Ari]."
+next = "1"
+
+[morning_1.1]
+portrait = "eight_heart_happy_blush"
+local = "You sleep okay?"
+
+[dreams_0]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "eight_heart_think"
+local = "I had that crazy dream again last night..."
+next = "1"
+
+[dreams_0.1]
+portrait = "eight_heart_happy"
+local = "You and I had discovered some kind of new ore in the Mines, and we were trying to figure out how to work it on the anvil..."
+next = "2"
+
+[dreams_0.2]
+portrait = "shock_special"
+local = "Then you picked it up, and you started molding it in your hands like it was dough..."
+next = "3"
+
+[dreams_0.3]
+portrait = "eight_heart_closed_eyes"
+local = "And then I woke up."
+next = "4"
+
+[dreams_0.4]
+portrait = "eight_heart_happy"
+local = "Wild, right?"
+
+[ari_plans_0]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false },
+	{ march_planning_line = "undefined" }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "neutral"
+local = "Heading out soon?"
+next = "1"
+
+[ari_plans_0.1]
+portrait = "eight_heart_happy"
+local = "I was wondering what you'd get up to today."
+prompts = [
+	{ local = "Probably check on the farm.", next = "2" },
+	{ local = "Fishing, maybe?", next = "4" },
+	{ local = "Might make a trip into the Mines...", next = "6" }
+]
+
+[ari_plans_0.2]
+writes = [{ march_planning_line = "farming", expires = "20h" }]
+portrait = "think"
+local = "You're really on top of stuff... I never really knew how much you were juggling until I moved into the homestead with you."
+next = "3"
+
+[ari_plans_0.3]
+portrait = "happy"
+local = "You're inspiring me... I'll work extra hard at the forge today."
+
+[ari_plans_0.4]
+writes = [{ march_planning_line = "fishing", expires = "20h" }]
+portrait = "eight_heart_closed_eyes"
+local = "Man, I'm lucky you're the angler between the two of us. I hate dealing with that stuff, so thanks."
+next = "5"
+
+[ari_plans_0.5]
+portrait = "happy"
+local = "Oh, I could go to the forge today and make you some hooks, though. I have time... there's a little less demand for nails these days."
+
+[ari_plans_0.6]
+writes = [{ march_planning_line = "mining", expires = "20h" }]
+portrait = "eight_heart_closed_eyes"
+local = "Oh yeah? I can always use more ore."
+next = "7"
+
+[ari_plans_0.7]
+portrait = "think"
+local = "Obviously I worry about you, but I told myself I wouldn't be a husband who holds you back."
+next = "8"
+
+[ari_plans_0.8]
+portrait = "tsundere"
+local = "So just... I'll see you tonight, okay?"
+
+[sleepy_0]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] }
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "sigh"
+local = "Ugh, I can't stop yawning."
+next = "1"
+
+[sleepy_0.1]
+portrait = "think"
+local = "I wouldn't have minded a late morning lying around in bed with you..."
+next = "2"
+
+[sleepy_0.2]
+portrait = "sly"
+local = "There's still time, you know."
+
+[spouse_plans_0]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "think"
+local = "Think I'll head over to the forge today. There's some last minute orders from Adeline..."
+next = "1"
+
+[spouse_plans_0.1]
+portrait = "eight_heart_closed_eyes"
+local = "And I got pretty into the details on a piece for a client in the Capital."
+next = "2"
+
+[spouse_plans_0.2]
+portrait = "eight_heart_happy"
+local = "Also want to check in on Olric. He's pretty self-sufficient, but sometimes he stays up all night looking at his rock collection..."
+
+[spring_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "annoyed", npc = "march" } }]
+portrait = "sad_special"
+local = "Hey, are my eyes red? My allergies are going crazy."
+next = "1"
+
+[spring_morning_0.1]
+portrait = "eight_heart_closed_eyes"
+local = "Do you think Valen's got an allergy syrup or something?"
+next = "2"
+
+[spring_morning_0.2]
+portrait = "ugh"
+local = "Maybe I'll swing by the Clinic... ugh..."
+
+[spring_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "neutral"
+local = "I always get so much energy in the spring."
+next = "1"
+
+[spring_morning_1.1]
+portrait = "happy"
+local = "So if you need an extra pair of hands around the farm, just say the word."
+
+[summer_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "annoyed", npc = "march" } }]
+portrait = "think"
+local = "The beginning of summer always throws me off my game."
+next = "1"
+
+[summer_morning_0.1]
+portrait = "shock_special"
+local = "I'm usually pretty good at keeping the forge fire steady just by feeling the heat..."
+next = "2"
+
+[summer_morning_0.2]
+portrait = "unimpressed"
+local = "Except in this season. It's already hot, so it trips me up!"
+
+[summer_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "happy"
+local = "Spending summer with you is... pretty great."
+next = "1"
+
+[summer_morning_1.1]
+portrait = "eight_heart_think"
+local = "I used to spend every day working, but now I want to take more time off and spend it with you."
+next = "2"
+
+[summer_morning_1.2]
+portrait = "eight_heart_happy"
+local = "Hey, let's go to the Beach soon!"
+
+[fall_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "annoyed", npc = "march" } }]
+portrait = "think"
+local = "I'm always sweeping leaves around the anvil in fall..."
+next = "1"
+
+[fall_morning_0.1]
+portrait = "unimpressed"
+local = "The trees aren't even that close! How are leaves getting over to the forge?"
+next = "2"
+
+[fall_morning_0.2]
+portrait = "tsundere"
+local = "Can trees mess with you? Should we ask Celine!?"
+
+[fall_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "happy"
+local = "Olric and I used to go diving into leaf piles when we were kids."
+next = "1"
+
+[fall_morning_1.1]
+portrait = "embarrassed"
+local = "And I've been thinking... it's just us out here, right?"
+next = "2"
+
+[fall_morning_1.2]
+portrait = "eight_heart_flustered"
+local = "So maybe if I sweep up the leaves while you're out, we can do it later. If you want."
+
+[winter_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "ellipses", npc = "march" } }]
+portrait = "eight_heart_closed_eyes"
+local = "Winter means the freeloaders hang around the forge to warm themselves up."
+next = "1"
+
+[winter_morning_0.1]
+portrait = "unimpressed"
+local = "Then they look over my shoulder and say whatever they want..."
+next = "2"
+
+[winter_morning_0.2]
+portrait = "tsundere"
+local = "Well... I guess I don't mind the company, so it's alright."
+
+[winter_morning_1]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "blush", npc = "march" } }]
+portrait = "eight_heart_think"
+local = "The view out here on the farm is beautiful in winter, [Ari]."
+next = "1"
+
+[winter_morning_1.1]
+portrait = "eight_heart_blush"
+local = "I'm glad I can share it with you."
+
+[rainy_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ weather = "rainy" },
+	{ march_is_spouse = true },
+	{ building = "player_home" },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "think"
+local = "Do you ever take the day off when it's raining?"
+next = "1"
+
+[rainy_morning_0.1]
+portrait = "sly"
+local = "Heh. Me, either. No wonder we're married."
+
+[snowy_morning_0]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ weather = "snowy" },
+	{ march_is_spouse = true },
+	{ building = "player_home" },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "neutral"
+local = "Are you heading out today? Bundle up."
+next = "1"
+
+[snowy_morning_0.1]
+portrait = "eight_heart_happy"
+local = "I might go out, too. I like studying how icicles freeze along the edge of the roof... sometimes it looks like filigree."
+
+# Basement
+[basement_0]
+refresh = "1w"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "Oh, I'm glad I ran into you."
+next = "1"
+
+[basement_0.1]
+portrait = "eight_heart_flustered"
+local = "I guess I was missing you. Or something."
+
+[basement_1]
+refresh = "1w"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" },
+	{ building = "general_store", comparator = "!=" }
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "think"
+local = "What was it we needed from the store again?"
+next = "1"
+
+[basement_1.1]
+portrait = "eight_heart_happy"
+local = "I'll pick it up on the way home. See you tonight."
+
+[basement_2]
+refresh = "1w"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "think"
+local = "Did you have thoughts about dinner?"
+next = "1"
+
+[basement_2.1]
+portrait = "eight_heart_happy"
+local = "You should decide. I always want =Sushi=... I'm depending on you to expand my horizons."
+
+[basement_3]
+refresh = "1w"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "neutral"
+local = "You got laundry? Give it here, I can take care of it."
+
+[basement_4]
+refresh = "1w"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "eight_heart_blush"
+local = "You're kind of... close, [Ari]..."
+next = "1"
+
+[basement_4.1]
+portrait = "eight_heart_flustered"
+local = "Um."
+next = "2"
+
+[basement_4.2]
+portrait = "super_flustered"
+local = "Are you going to kiss me or not?!"
+
+[basement_5]
+refresh = "1w"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "neutral"
+local = "[Ari]... just... wait a minute there. I have to say something."
+next = "1"
+
+[basement_5.1]
+portrait = "eight_heart_blush"
+local = "I'm... really lucky to have you by my side."
+next = "2"
+
+[basement_5.2]
+portrait = "eight_heart_flustered"
+local = "I was just thinking about you, that's all."
+next = "3"
+
+[basement_5.3]
+portrait = "super_flustered"
+local = "We're married! I'm allowed!"
+
+[basement_6]
+refresh = "1w"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ location = "farm", comparator = "!=" },
+	{ building = "player_home", comparator = "!=" },
+	{ day_time = "11:00am", comparator = ">=" },
+	{ day_time = "7:00pm", comparator = "<=" }
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "shock_special"
+local = "Oh, were you looking for me?"
+next = "1"
+
+[basement_6.1]
+portrait = "eight_heart_flustered"
+local = "That makes me kind of happy, for some reason..."
+
+# Evening
+[evening_0]
+refresh = "10d"
+requires = [
+	{ npc = "march" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_evening_greeting = false },
+	{ march_in_bed = false }
+]
+writes = [{ march_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "Hey, you."
+next = "1"
+
+[evening_0.1]
+portrait = "eight_heart_flustered"
+local = "I, uh. Missed you today."
+
+[evening_1]
+refresh = "10d"
+requires = [
+	{ npc = "march" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_evening_greeting = false },
+	{ march_in_bed = false }
+]
+writes = [{ march_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "sigh"
+local = "What a long day... should we start getting ready for bed?"
+next = "1"
+
+[evening_1.1]
+portrait = "shock_special"
+local = "Maybe we can read... or you can tell me about your day."
+next = "2"
+
+[evening_1.2]
+portrait = "sly"
+local = "Or we can do whatever you feel like doing."
+
+[evening_2]
+refresh = "8d"
+requires = [
+	{ npc = "march" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_evening_greeting = false },
+	{ march_in_bed = false }
+]
+writes = [{ march_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "Hey, did you have a good day?"
+next = "1"
+
+[evening_2.1]
+portrait = "eight_heart_flustered"
+local = "Mine is way nicer, now that you're home."
+
+[evening_3]
+refresh = "14d"
+requires = [
+	{ npc = "march" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_evening_greeting = false },
+	{ march_in_bed = false }
+]
+writes = [{ march_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "unimpressed"
+local = "[Ari]..."
+next = "1"
+
+[evening_3.1]
+portrait = "sly"
+local = "I..."
+next = "2"
+
+[evening_3.2]
+portrait = "eight_heart_blush"
+local = "I love you."
+next = "3"
+
+[evening_3.3]
+portrait = "eight_heart_happy_blush"
+local = "You make me really happy."
+
+[spring_evening_0]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_evening_greeting = false },
+	{ march_in_bed = false },
+	{ season = "spring" }
+]
+writes = [{ march_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "sweat_drop", npc = "march" } }]
+portrait = "ugh"
+local = "Ugh, the roads get so muddy in spring..."
+next = "1"
+
+[spring_evening_0.1]
+portrait = "sigh"
+effect = "sigh"
+local = "I don't like the idea of tracking dirt all over our cute house."
+
+[spring_evening_1]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_evening_greeting = false },
+	{ march_in_bed = false },
+	{ season = "spring" }
+]
+writes = [{ march_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "think"
+local = "The spring breeze smells so nice on the farm... it's so earthy."
+next = "1"
+
+[spring_evening_1.1]
+portrait = "eight_heart_happy"
+local = "It's a nice change from the smell of charcoal."
+
+[summer_evening_0]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_evening_greeting = false },
+	{ march_in_bed = false },
+	{ season = "summer" }
+]
+writes = [{ march_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "sigh"
+effect = "sigh"
+local = "Ugh, this heat..."
+next = "1"
+
+[summer_evening_0.1]
+portrait = "sad"
+local = "Is it too hot to cuddle in bed? We should try anyway."
+
+[summer_evening_1]
+refresh = "10d"
+requires = [
+	{ npc = "march" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_evening_greeting = false },
+	{ march_in_bed = false },
+	{ season = "summer" }
+]
+writes = [{ march_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "think"
+local = "I love keeping the windows open in summer..."
+next = "1"
+
+[summer_evening_1.1]
+portrait = "happy"
+local = "It's nice to fall asleep together with a cool breeze, right?"
+
+[fall_evening_0]
+refresh = "13d"
+requires = [
+	{ npc = "march" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_evening_greeting = false },
+	{ march_in_bed = false },
+	{ season = "fall" }
+]
+writes = [{ march_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "sweat_drop", npc = "march" } }]
+portrait = "ugh"
+local = "Now that fall's here, Dell's favorite pastime is back..."
+next = "1"
+
+[fall_evening_0.1]
+portrait = "mad"
+local = "Throwing dead leaves into the forge."
+next = "2"
+
+[fall_evening_0.2]
+portrait = "sigh"
+effect = "sigh"
+local = "It's not like it's really bad, but it makes the temperature fluctuate!"
+
+[fall_evening_1]
+refresh = "13d"
+requires = [
+	{ npc = "march" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_evening_greeting = false },
+	{ march_in_bed = false },
+	{ season = "fall" }
+]
+writes = [{ march_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "happy"
+local = "Fall colors in town look great, but they look even more amazing here on the farm."
+next = "1"
+
+[fall_evening_1.1]
+portrait = "wink"
+local = "Everything's blazing red... it gets me fired up!"
+
+[winter_evening_0]
+refresh = "13d"
+requires = [
+	{ npc = "march" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_evening_greeting = false },
+	{ march_in_bed = false },
+	{ season = "winter" }
+]
+writes = [{ march_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "sad"
+local = "The night got cold really fast, didn't it?"
+next = "1"
+
+[winter_evening_0.1]
+portrait = "happy"
+local = "Come on, let's get into bed. I'll warm you up."
+
+[winter_evening_1]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_evening_greeting = false },
+	{ march_in_bed = false },
+	{ season = "winter" }
+]
+writes = [{ march_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "think"
+local = "Winter's a really nice time for stargazing..."
+next = "1"
+
+[winter_evening_1.1]
+portrait = "happy"
+local = "When the sky's clear, we should go up to the summit together."
+
+[rainy_evening_0]
+refresh = "12d"
+requires = [
+	{ npc = "march" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_evening_greeting = false },
+	{ march_in_bed = false },
+	{ weather = "rainy" }
+]
+writes = [{ march_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "sigh"
+local = "It's been really coming down all day, huh..."
+next = "1"
+
+[rainy_evening_0.1]
+portrait = "sincere_special"
+local = "Did you get soaked working all day out there? Want me to warm you up?"
+
+[snowy_evening_0]
+refresh = "10d"
+requires = [
+	{ npc = "march" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_evening_greeting = false },
+	{ march_in_bed = false },
+	{ weather = "snowy" }
+]
+writes = [{ march_evening_greeting = true, expires = "7h" }]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "happy"
+local = "The snow looks so pretty out here on the farm."
+next = "1"
+
+[snowy_evening_0.1]
+portrait = "think"
+local = "It's so pristine I don't want to touch it..."
+next = "2"
+
+[snowy_evening_0.2]
+portrait = "wink"
+local = "On the other hand, it makes me want to build a big double-decker snow house with you."
+
+# Domestic Flavor
+[domestic_flavor_0]
+refresh = "30d"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ cutscene_seen_pet_arrival = true }
+]
+portrait = "unimpressed"
+effect = "drop"
+local = "I think [pet_name] tricked me into a second feeding time..."
+next = "1"
+
+[domestic_flavor_0.1]
+portrait = "shock_special"
+local = "Unless you didn't feed them yet?"
+
+[domestic_flavor_1]
+refresh = "30d"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ cutscene_seen_pet_arrival = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "think"
+local = "I've never had a pet that wasn't one of Olric's pet rocks..."
+next = "1"
+
+[domestic_flavor_1.1]
+portrait = "wink"
+local = "Don't tell him I said so, but [pet_name]'s running circles around Rocky the Granitite."
+next = "2"
+
+[domestic_flavor_1.2]
+portrait = "happy"
+local = "Not that Rocky doesn't have his charms, too."
+
+[domestic_flavor_2]
+refresh = "30d"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ ari_has_double_bed_placed = false },
+	{ spouse_slept_in_double_bed_night_before = false },
+	{ location = "player_home" },
+	{ wedding_was_yesterday = false, ignore_priority = true }
+]
+actions = [{ bark = { bark = "sweat_drop", npc = "march" } }]
+portrait = "unimpressed"
+local = "[Ari]..."
+next = "1"
+
+[domestic_flavor_2.1]
+portrait = "sigh"
+local = "What's going on? What's with this tiny bed?"
+next = "2"
+
+[domestic_flavor_2.2]
+portrait = "mad_special"
+local = "Come on, we're married. If you want us to sleep together, you need to get a proper double-sized bed."
+next = "3"
+
+[domestic_flavor_2.3]
+portrait = "mad"
+local = "Or is this furnace too hot to handle?"
+
+[domestic_flavor_3]
+refresh = "30d"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ march_chair_placed = true },
+	{ march_desk_placed = true },
+	{ march_forge_placed = true },
+	{ wedding_was_yesterday = false, ignore_priority = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] }
+]
+actions = [{ bark = { bark = "heart", npc = "march" } }]
+portrait = "neutral"
+local = "Hey, [Ari]..."
+next = "1"
+
+[domestic_flavor_3.1]
+portrait = "eight_heart_happy"
+local = "Thanks for making a space for me here. Seeing my stuff around the farmhouse..."
+next = "2"
+
+[domestic_flavor_3.2]
+portrait = "drunk"
+local = "It makes me feel I really belong here, you know?"
+
+# workstation
+[workstation_0]
+refresh = "9d"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ any = [
+		{ march_activity_object = "march_desk" },
+		{ march_activity_object = "march_forge" },
+		{ march_activity = "roommate_hammer" },
+		{ march_activity = "roommate_work_sitting" }
+	] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "shock_special"
+local = "Oh! Sorry, [Ari], I was totally in the zone with work..."
+next = "1"
+
+[workstation_0.1]
+portrait = "eight_heart_happy"
+local = "I'll be back with you soon, okay?"
+
+[workstation_1]
+refresh = "9d"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ any = [
+		{ march_activity_object = "march_desk" },
+		{ march_activity_object = "march_forge" },
+		{ march_activity = "roommate_hammer" },
+		{ march_activity = "roommate_work_sitting" }
+	] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "think"
+local = "Iron, Silver, Gold... they all have different attributes."
+next = "1"
+
+[workstation_1.1]
+portrait = "neutral"
+local = "So when you're making an alloy, you have to be mindful of how the metals change each other."
+next = "2"
+
+[workstation_1.2]
+portrait = "eight_heart_flustered"
+local = "I guess people are like that, too..."
+
+[workstation_2]
+refresh = "9d"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ march_activity_object = "march_desk" }
+]
+actions = [{ bark = { bark = "ellipses", npc = "march" } }]
+portrait = "think"
+local = "How should I tackle this project..."
+next = "1"
+
+[workstation_2.1]
+portrait = "neutral"
+local = "If the whole thing's going to be ornamental, then maybe I should cast it instead of forging it..."
+
+[workstation_3]
+refresh = "9d"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ march_activity_object = "march_chair" },
+	{ march_animation = "sit" }
+]
+actions = [{ bark = { bark = "ellipses", npc = "march" } }]
+portrait = "think"
+local = "I was just going to sit down for a second but then I got real tired..."
+next = "1"
+
+[workstation_3.1]
+portrait = "ugh"
+local = "Ugh, I can't fall asleep now! I have work to do!"
+
+[workstation_4]
+refresh = "9d"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ any = [
+		{ march_activity = "roommate_sitting" },
+		{ march_activity = "roommate_read_sitting" }
+	] },
+	{ march_animation = "read_sit" }
+]
+actions = [{ bark = { bark = "blush", npc = "march" } }]
+portrait = "shock_special"
+local = "Elsie insisted I borrow this book from her."
+next = "1"
+
+[workstation_4.1]
+portrait = "eight_heart_flustered"
+local = "It's not a bad book or anything but there's a lot of, um..."
+next = "2"
+
+[workstation_4.2]
+portrait = "eight_heart_blush"
+local = "..."
+next = "3"
+
+[workstation_4.3]
+portrait = "super_flustered"
+local = "Nevermind! I'm going to keep reading!"
+
+[workstation_5]
+refresh = "9d"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ any = [
+		{ march_activity = "roommate_sitting" },
+		{ march_activity = "roommate_read_sitting" }
+	] },
+	{ march_animation = "read_sit" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "unimpressed"
+local = "I might look like I'm relaxing..."
+next = "1"
+
+[workstation_5.1]
+portrait = "sly"
+local = "But I'm actually thinking deeply about my craft."
+next = "2"
+
+[workstation_5.2]
+portrait = "sigh"
+local = "As you're aware, this is an important part of being an artisan."
+next = "3"
+
+[workstation_5.3]
+portrait = "sad"
+local = "Also, please wake me up if I fall asleep."
+
+[workstation_6]
+refresh = "9d"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ any = [
+		{ march_activity_object = "march_desk" },
+		{ march_activity_object = "march_forge" },
+		{ march_activity = "roommate_hammer" },
+		{ march_activity = "roommate_work_sitting" }
+	] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "Did you know that copper burns green?"
+next = "1"
+
+[workstation_6.1]
+portrait = "think"
+local = "Iron burns bright orange, though."
+next = "2"
+
+[workstation_6.2]
+portrait = "drunk"
+local = "I'll show you some time."
+
+[workstation_7]
+refresh = "9d"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ any = [
+		{ march_activity_object = "march_desk" },
+		{ march_activity_object = "march_forge" },
+		{ march_activity = "roommate_hammer" },
+		{ march_activity = "roommate_work_sitting" }
+	] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "It's nice living in town with an eccentric noble who's obsessed with commissioning reproductions."
+next = "1"
+
+[workstation_7.1]
+portrait = "eight_heart_think"
+local = "Most smiths would kill for a patron like Eiland, you know."
+
+[workstation_8]
+refresh = "9d"
+requires = [
+	{ npc = "march" },
+	{ march_is_spouse = true },
+	{ any = [
+		{ march_activity_object = "march_desk" },
+		{ march_activity_object = "march_forge" },
+		{ march_activity = "roommate_hammer" },
+		{ march_activity = "roommate_work_sitting" }
+	] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "think"
+local = "I've been getting more and more custom orders from the Capital lately."
+next = "1"
+
+[workstation_8.1]
+portrait = "wink"
+local = "Looks like March's star is rising!"

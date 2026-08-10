@@ -1,0 +1,51 @@
+[inn_poker]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "balor" },
+		{ npc = "celine" },
+		{ npc = "hemlock" },
+		{ npc = "reina" }
+	] },
+	{ balor_zone = "<celine_zone>" },
+	{ balor_zone = "<hemlock_zone>" },
+	{ balor_zone = "<reina_zone>" },
+	{ balor_playing_poker = true },
+	{ celine_playing_poker = true },
+	{ hemlock_playing_poker = true },
+	{ reina_playing_poker = true },
+	{ location = "inn" }
+]
+actions = [
+	{ bark = { bark = "sweat_drop", npc = "balor" } },
+	{ bark = { bark = "cute_face", npc = "celine" } },
+	{ bark = { bark = "sweat_drop", npc = "hemlock" } }
+]
+speaker = "hemlock"
+portrait = "neutral"
+local = "Read 'em and weep, kiddos."
+next = "1"
+
+[inn_poker.1]
+speaker = "balor"
+portrait = "wink"
+local = "Not so fast, Hemlock. That hand doesn't beat my triple."
+next = "2"
+
+[inn_poker.2]
+speaker = "celine"
+portrait = "annoyed"
+local = "But my hand does, right Balor?"
+next = "3"
+
+[inn_poker.3]
+speaker = "celine"
+portrait = "happy"
+local = "What did Hemlock just say? Read them and cry, children!"
+next = "4"
+
+[inn_poker.4]
+speaker = "reina"
+portrait = "mad"
+effect = "cheery"
+local = "This is riveting, [Ari]!"

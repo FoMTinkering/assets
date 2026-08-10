@@ -1,0 +1,360 @@
+[reina_six_hearts_follow_up_maple]
+refresh = "never"
+requires = [{ npc = "maple" }, { reina_heart_event = "six_heart" }]
+portrait = "neutral"
+local = "Reina told me that nobles eat all sorts of unique food, but I've never seen Adeline or Eiland eat anything I wouldn't!"
+next = "1"
+
+[reina_six_hearts_follow_up_maple.1]
+portrait = "think"
+local = "Maybe I should try and steal a taste off their plates one day, just to be sure it isn't a special noble version."
+
+[reina_six_hearts_follow_up_hemlock]
+refresh = "never"
+requires = [{ npc = "hemlock" }, { reina_heart_event = "six_heart" }]
+portrait = "neutral"
+local = "That daughter of mine! She came up with some interesting recipes, huh? Reminds me of my early bartending days."
+next = "1"
+
+[reina_six_hearts_follow_up_hemlock.1]
+portrait = "happy"
+local = "One time I made a sundae with a whole slice of cake on top! And a sparkler! I called it the Hemlock Hooray."
+
+[reina_six_hearts_follow_up_josephine]
+refresh = "never"
+requires = [{ npc = "josephine" }, { reina_heart_event = "six_heart" }]
+portrait = "think"
+local = "Reina's been spending a lot of time lost in thought..."
+next = "1"
+
+[reina_six_hearts_follow_up_josephine.1]
+portrait = "neutral"
+local = "Do your best to support her, [Ari]!"
+
+[reina_six_hearts_follow_up_reina]
+refresh = "never"
+requires = [{ npc = "reina" }, { reina_heart_event = "six_heart" }]
+portrait = "think"
+local = "I've been cooking for as long as I can remember, it's one of my favorite things to do."
+next = "1"
+
+[reina_six_hearts_follow_up_reina.1]
+portrait = "neutral"
+local = "I want to share that lifelong love through my food, you know?"
+
+[reina_six_hearts]
+kind = "gameplay_triggered"
+writes = [{ reina_heart_event = "six_heart", expires = "4d" }]
+speaker = "reina"
+portrait = "neutral"
+local = "Hey, [Ari]! You got my letter?"
+next = "1"
+
+[reina_six_hearts.1]
+speaker = "reina"
+portrait = "embarrassed"
+local = "I've been giving this a lot of thought and..."
+next = "2"
+
+[reina_six_hearts.2]
+speaker = "reina"
+portrait = "happy"
+local = "Will you... be my sous chef? For the contest? I don't think I can do it without you!"
+prompts = [{ local = "Of course, Reina!", next = "3" }, { local = "I'd... I'd love to!", next = "4" }]
+
+[reina_six_hearts.3]
+speaker = "reina"
+portrait = "neutral"
+local = "That's a weight off my mind! Thank you!"
+next = "5"
+
+[reina_six_hearts.4]
+speaker = "reina"
+portrait = "embarrassed"
+local = "R-really? I'm so glad. Thank you!"
+next = "5"
+
+[reina_six_hearts.5]
+speaker = "josephine"
+portrait = "neutral"
+local = "Would you listen to these two!"
+next = "6"
+
+[reina_six_hearts.6]
+speaker = "hemlock"
+portrait = "happy"
+local = "Let them cook, dear."
+next = "7"
+
+[reina_six_hearts.7]
+speaker = "reina"
+portrait = "neutral"
+local = "Mom, Dad, we'll be taking over the Inn's kitchen to get some practice dishes in."
+next = "8"
+
+[reina_six_hearts.8]
+speaker = "josephine"
+portrait = "neutral"
+local = "As long you're planning to share what you two cook up with the family, feel free!"
+next = "9"
+
+[reina_six_hearts.9]
+speaker = "reina"
+portrait = "mad"
+local = "Alright, [Ari]. I've got the oven pre-heating, so now it's time to get mixing!"
+next = "10"
+
+[reina_six_hearts.10]
+speaker = "hemlock"
+portrait = "neutral"
+local = "Balor! Back from the Capital?"
+next = "11"
+
+[reina_six_hearts.11]
+speaker = "balor"
+portrait = "neutral"
+local = "I am, and I come bearing some interesting news. The final judge for the Cooking Panel has been selected."
+next = "12"
+
+[reina_six_hearts.12]
+speaker = "balor"
+portrait = "think"
+local = "It's Taliferro..."
+next = "13"
+
+[reina_six_hearts.13]
+speaker = "reina"
+portrait = "serious"
+local = "There isn't a chef more acclaimed in all of Aldaria, so you can't doubt his abilities, but..."
+next = "14"
+
+[reina_six_hearts.14]
+speaker = "josephine"
+portrait = "think"
+local = "He's also... prickly."
+next = "15"
+
+[reina_six_hearts.15]
+speaker = "balor"
+portrait = "sigh"
+local = "Arrogant and overcritical, I'd say."
+prompts = [
+	{ local = "No judge is too tough for Reina!", next = "16" },
+	{ local = "Someone has to win, so why not Reina?", next = "17" },
+]
+
+[reina_six_hearts.16]
+speaker = "reina"
+portrait = "blush"
+local = "I hope you're right!"
+next = "18"
+
+[reina_six_hearts.17]
+speaker = "reina"
+portrait = "think"
+local = "That is one way of looking at it..."
+next = "18"
+
+[reina_six_hearts.18]
+speaker = "josephine"
+portrait = "neutral"
+local = "If there's anyone's cooking who can impress him, it's definitely Reina's!"
+next = "19"
+
+[reina_six_hearts.19]
+speaker = "reina"
+portrait = "neutral"
+local = "Thanks for the heads up, Balor."
+next = "20"
+
+[reina_six_hearts.20]
+speaker = "balor"
+portrait = "happy"
+local = "Of course."
+next = "21"
+
+[reina_six_hearts.21]
+speaker = "reina"
+portrait = "closed_eyes"
+local = """I think I may have to redo the menu I planned... Taliferro likes food that has been "elevated"."""
+next = "22"
+
+[reina_six_hearts.22]
+speaker = "reina"
+portrait = "ugh"
+local = "This isn't going to be easy..."
+prompts = [{ local = "Sounds fun! Let's experiment.", next = "23" }, { local = "\"Elevated\", huh...", next = "24" }]
+
+[reina_six_hearts.23]
+speaker = "reina"
+portrait = "neutral"
+local = "Yeah... yeah! It will be fun!"
+next = "25"
+
+[reina_six_hearts.24]
+speaker = "reina"
+portrait = "wink"
+local = "Yeah! We'll just have to think outside the box!"
+next = "25"
+
+[reina_six_hearts.25]
+speaker = "reina"
+portrait = "mad"
+local = "Let's get cooking, [Ari]! We'll create a menu Taliferro is going to love!"
+next = "26"
+
+[reina_six_hearts.26]
+speaker = "reina"
+portrait = "neutral"
+local = "Alright taste testers! [Ari] and I have made some dishes you've definitely never had before! Help yourselves!"
+next = "27"
+
+[reina_six_hearts.27]
+speaker = "josephine"
+portrait = "happy"
+local = "This curry looks wonderful! Why I-"
+next = "28"
+
+[reina_six_hearts.28]
+speaker = "josephine"
+portrait = "think"
+local = "It's so sweet!"
+next = "29"
+
+[reina_six_hearts.29]
+speaker = "reina"
+portrait = "happy"
+local = "That's right! I've heard extra sweet curry is popular in the Capital. I went with a lot more honey than usual!"
+next = "30"
+
+[reina_six_hearts.30]
+speaker = "maple"
+portrait = "think"
+local = "I should have started with that, this chocolate cake is... spicy?"
+prompts = [
+	{ local = "That's the layer of chili-infused ganache!", next = "31" },
+	{ local = "It adds a bold kick, right?", next = "32" },
+]
+
+[reina_six_hearts.31]
+speaker = "luc"
+portrait = "sad"
+local = "Mom always told us to have dessert last, I've learned my lesson."
+next = "33"
+
+[reina_six_hearts.32]
+speaker = "luc"
+portrait = "sad"
+local = "[Ari], I thought we were friends."
+next = "33"
+
+[reina_six_hearts.33]
+speaker = "hemlock"
+portrait = "think"
+local = "This drink sure is... interesting."
+next = "34"
+
+[reina_six_hearts.34]
+speaker = "reina"
+portrait = "neutral"
+local = "We mixed in agar to make it richer and thicker. Taliferro's restaurant is well-known for incorporating innovative textures to its menu!"
+next = "35"
+
+[reina_six_hearts.35]
+speaker = "reina"
+portrait = "neutral"
+local = "So what does everyone think?"
+next = "36"
+
+[reina_six_hearts.36]
+speaker = "josephine"
+portrait = "think"
+local = "Well, it does all taste like something Taliferro might serve..."
+next = "37"
+
+[reina_six_hearts.37]
+speaker = "maple"
+portrait = "ugh"
+local = "I want a =Grilled Cheese=..."
+next = "38"
+
+[reina_six_hearts.38]
+speaker = "hemlock"
+portrait = "mad"
+local = "Maple, hush!"
+next = "39"
+
+[reina_six_hearts.39]
+speaker = "maple"
+portrait = "sad"
+local = "Just make some of the stuff you normally cook, Reina!"
+next = "40"
+
+[reina_six_hearts.40]
+speaker = "reina"
+portrait = "embarrassed"
+local = "Haha..."
+next = "41"
+
+[reina_six_hearts.41]
+speaker = "reina"
+portrait = "think"
+local = "Well thanks for taste testing, everyone. [Ari] and I better get this all cleaned up. Does anyone want leftovers?"
+next = "42"
+
+[reina_six_hearts.42]
+speaker = "josephine"
+portrait = "neutral"
+effect = "drop"
+local = "Oh no dear, I'm simply too full!"
+next = "43"
+
+[reina_six_hearts.43]
+speaker = "reina"
+portrait = "ugh"
+local = "Well that could have gone better."
+prompts = [{ local = "It was fun though!", next = "44" }, { local = "I think the curry has potential.", next = "45" }]
+
+[reina_six_hearts.44]
+speaker = "reina"
+portrait = "sad"
+local = "It was, but I don't know..."
+next = "46"
+
+[reina_six_hearts.45]
+speaker = "reina"
+portrait = "sad"
+local = "Yeah, I suppose Eiland might like it."
+next = "46"
+
+[reina_six_hearts.46]
+speaker = "reina"
+portrait = "think"
+local = "Maybe Maple is right. We didn't really showcase Mistrian cooking today, did we?"
+next = "47"
+
+[reina_six_hearts.47]
+speaker = "reina"
+portrait = "sad"
+local = "I'm not really sure which direction to go in anymore. This is going to be even harder than I thought."
+prompts = [
+	{ local = "Whatever you decide to make, I'll be right here to help.", next = "48" },
+	{ local = "Win or lose, you're still the best chef I know.", next = "48" },
+]
+
+[reina_six_hearts.48]
+speaker = "reina"
+portrait = "blush"
+local = "Thanks, [Ari]. That means a lot."
+next = "49"
+
+[reina_six_hearts.49]
+speaker = "reina"
+portrait = "neutral"
+local = "Now, I'm going to need you to do me one last favor..."
+next = "50"
+
+[reina_six_hearts.50]
+speaker = "reina"
+portrait = "embarrassed"
+local = "Take some of this $Honey Curry$ home with you. We made WAY too much!"

@@ -1,0 +1,75 @@
+[book_club_3]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ elsie_zone = "inn/bar" },
+	{ errol_zone = "inn/bar" },
+	{ landen_zone = "inn/bar" },
+	{ ryis_zone = "inn/bar" },
+	{ terithia_zone = "inn/bar" },
+	{ book_club_fnati = 2 },
+	{ any = [
+		{ npc = "elsie" },
+		{ npc = "errol" },
+		{ npc = "landen" },
+		{ npc = "ryis" },
+		{ npc = "terithia" },
+	] },
+]
+actions = [
+	{ bark = { bark = "sweat_drop", npc = "elsie" } },
+	{ bark = { bark = "sweat_drop", npc = "errol" } },
+	{ bark = { bark = "sweat_drop", npc = "terithia" } },
+]
+writes = [{ book_club_fnati = 3 }]
+speaker = "terithia"
+portrait = "happy"
+effect = "drop"
+local = "So, ah... Landen and Ryis' choice of book was a bit unique, don't ya think?"
+next = "1"
+
+[book_club_3.1]
+speaker = "errol"
+portrait = "ugh"
+local = "Yes... unique... rarely have I seen a book written with such, ah... deliberate precision."
+next = "2"
+
+[book_club_3.2]
+speaker = "errol"
+portrait = "happy"
+effect = "drop"
+local = "But the diagrams! Illustrations were a welcome addition."
+next = "3"
+
+[book_club_3.3]
+speaker = "elsie"
+portrait = "sad"
+effect = "sweat"
+local = "I thought the author's note at the end was rather romantic. In his heart, he dedicated that building to his wife."
+next = "4"
+
+[book_club_3.4]
+speaker = "elsie"
+portrait = "think"
+local = "Even if he was rather dry about it."
+next = "5"
+
+[book_club_3.5]
+speaker = "landen"
+portrait = "wink"
+local = "See, Ryis? What'd I tell you? We spent a whole summer bonding over that book, and now they're appreciating it too!"
+next = "6"
+
+[book_club_3.6]
+speaker = "ryis"
+portrait = "sad"
+effect = "sweat"
+local = "Uncle, it's a technical manual for reconstructing a wooden cathedral... I don't think this is the kind of book Elsie was talking about. Sorry guys, I tried to talk him out of it."
+next = "7"
+
+[book_club_3.7]
+speaker = "ryis"
+portrait = "happy"
+effect = "sparkles"
+local = "I did enjoy rereading it, though..."

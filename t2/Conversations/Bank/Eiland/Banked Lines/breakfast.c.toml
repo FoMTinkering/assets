@@ -1,0 +1,63 @@
+[breakfast]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ time_of_day = "morning" },
+	{ eiland_activity = "eat" },
+	{ any = [
+		{ eiland_eating = "caldosian_chocolate_cake" },
+		{ eiland_eating = "sour_lemon_cake" },
+		{ eiland_eating = "strawberry_shortcake" },
+		{ eiland_eating = "golden_cheesecake" },
+		{ eiland_eating = "moon_fruit_cake" },
+		{ eiland_eating = "tulip_cake" },
+	] },
+	{ location = "inn" }
+]
+portrait = "think"
+local = "One shouldn't have cake for breakfast..."
+next = "1"
+
+[breakfast.1]
+portrait = "happy"
+effect = "cheery"
+local = "But one does, from time to time."
+
+[breakfast_2]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ time_of_day = "morning" },
+	{ eiland_activity = "eat" },
+	{ any = [
+		{ eiland_eating = "caldosian_chocolate_cake" },
+		{ eiland_eating = "sour_lemon_cake" },
+		{ eiland_eating = "strawberry_shortcake" },
+		{ eiland_eating = "golden_cheesecake" },
+		{ eiland_eating = "moon_fruit_cake" },
+		{ eiland_eating = "tulip_cake" },
+	] },
+	{ location = "inn" }
+]
+portrait = "think"
+local = "If pancakes count as breakfast, why not regular cake?"
+next = "1"
+
+[breakfast_2.1]
+portrait = "mad"
+local = "Is the issue that cake is made in an oven?"
+next = "2"
+
+[breakfast_2.2]
+portrait = "think"
+local = "If =Strawberry Shortcake= was made in a pan, would it be an acceptable breakfast?"
+
+[breakfast_3]
+refresh = "2m"
+requires = [
+	{ npc = "eiland" },
+	{ time_of_day = "morning" },
+	{ eiland_activity = "eat" },
+]
+portrait = "happy"
+local = "Have yourself some breakfast, [Ari]! I'm doing the same."

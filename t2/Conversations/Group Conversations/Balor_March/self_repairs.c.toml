@@ -1,0 +1,28 @@
+[self_repairs]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "march" }] },
+	{ any = [
+		{ balor_zone = "town/wagon" },
+		{ balor_zone = "town/forge_lesson" },
+		{ balor_zone = "town/blacksmith_forge" },
+		{ balor_zone = "blacksmith_store/workbench" }
+	] },
+	{ balor_zone = "<march_zone>" },
+	{ date_time = "2m", comparator = ">=" }
+]
+speaker = "march"
+portrait = "think"
+local = "You ever wanted to learn how to do your own repairs, Balor? I could teach you, if you want."
+next = "1"
+
+[self_repairs.1]
+speaker = "balor"
+portrait = "ugh"
+local = "Oh, absolutely not. That sounds exhausting."
+next = "2"
+
+[self_repairs.2]
+speaker = "balor"
+portrait = "neutral"
+local = "Happy to leave it to the expert."

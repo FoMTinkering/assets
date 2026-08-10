@@ -1,0 +1,31 @@
+[ocarina_sprite_statue]
+	name = "Animal Sprite Statue"
+	description = "Place in a Large Barn/Coop & add an Essence Stone to automatically pet its animals."
+	icon_sprite = "spr_ui_item_object_ocarina_statue"
+	value = { bin = "self.recipe*1.1" }
+	object = "ocarina_sprite_statue"
+	recipe_key = "ocarina_sprite_statue"
+	crafting_level_requirement = 20
+	recipe = [
+		{ count = 10, item = "refined_stone" },
+		{ essence = 50 },
+		{ count = 3, item = "animal_currency" },
+		{ hours = 0, minutes = 30 },
+	]
+	tags = ["furniture", "automation"]
+
+[big_bell]
+	icon_sprite = "spr_ui_item_big_bell"
+	name = "Big Bell"
+	description = "A big bell that can be used to call all animals in and out of their buildings at once."
+	object = "big_bell"
+	value = { bin = "self.recipe * 1.1" }
+	crafting_level_requirement = 1
+	recipe = [
+		{ count = 5, item = "copper_ingot" },
+		{ count = 5, item = "iron_ingot" },
+		{ count = 5, item = "silver_ingot" },
+		{ count = 10, item = "hard_wood" },
+		{ hours = 0, minutes = 40 },
+	]
+	tags = ["furniture", "automation"]

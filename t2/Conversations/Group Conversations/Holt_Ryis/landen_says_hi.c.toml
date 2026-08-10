@@ -1,0 +1,17 @@
+[landen_says_hi]
+refresh = "1m"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "ryis" }] },
+	{ holt_zone = "<ryis_zone>" },
+	{ holt_zone = "<landen_zone>", comparator = "!=" }
+]
+speaker = "ryis"
+portrait = "happy"
+local = "Uncle Landen says hi, Holt!"
+next = "1"
+
+[landen_says_hi.1]
+speaker = "holt"
+portrait = "wink"
+local = "Oh, does he now? Well, right back at him!"
+

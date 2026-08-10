@@ -1,0 +1,22 @@
+[new_supplies]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ location = "general_store_store" },
+]
+speaker = "maple"
+local = "Hi [Ari]! We're getting supplies for the Dragonguard! Now everyone, pool your money! I have two tesserae."
+next = "1"
+
+[new_supplies.1]
+speaker = "dell"
+portrait = "mad"
+local = "I have four pebbles. This one's red!"
+next = "2"
+
+[new_supplies.2]
+speaker = "luc"
+portrait = "happy"
+local = "I have a leaf!"

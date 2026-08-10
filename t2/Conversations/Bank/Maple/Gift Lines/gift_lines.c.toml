@@ -1,0 +1,188 @@
+# Loved gifts
+[lost_crown_of_aldaria]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "maple" },
+	{ gift_desire = "loved" },
+	{ gift_given = "lost_crown_of_aldaria" }
+]
+portrait = "neutral"
+local = "Oh my gosh! [Ari]! Thank you so so much!"
+next = "1"
+
+[lost_crown_of_aldaria.1]
+portrait = "happy"
+effect = "sparkles"
+local = "I finally have my own crown."
+
+[berries_and_cream]
+refresh = "2w"
+kind = "gift"
+requires = [
+	{ npc = "maple" },
+	{ gift_desire = "loved" },
+	{ gift_given = "berries_and_cream" }
+]
+portrait = "happy"
+effect = "hearts"
+local = "I love =Berries and Cream=! It's a dessert fit for royalty!"
+
+# Hated gift
+[peat]
+kind = "gift"
+requires = [
+	{ npc = "maple" },
+	{ gift_desire = "hated" },
+	{ gift_given = "peat" }
+]
+portrait = "mad"
+effect = "sparkles_dark"
+local = "$Peat$? $PEAT$? You insult Princess Maple! Begone, peasant!"
+
+# General lines
+[loved_gift]
+kind = "gift"
+requires = [{ npc = "maple" }, { gift_desire = "loved" }]
+portrait = "happy"
+local = "It's so pretty! Thank you, I love it!"
+next = "1"
+
+[loved_gift.1]
+portrait = "mad"
+effect = "hearts"
+local = "I mean, Princess Maple thanks you for your tribute."
+
+[loved_gift_2]
+kind = "gift"
+requires = [{ npc = "maple" }, { gift_desire = "loved" }]
+portrait = "mad"
+local = "Princess Maple acknowledges your contribution to her royal treasury and graciously extends her most gracious gratitude!"
+next = "1"
+
+[loved_gift_2.1]
+portrait = "happy"
+effect = "sparkles"
+local = "Thanks, [Ari]!"
+
+[loved_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "maple" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "berries_and_cream" },
+		{ gift_given = "chocolate" },
+		{ gift_given = "hot_cocoa" },
+		{ gift_given = "lemon_pie" },
+		{ gift_given = "mont_blanc" },
+	] }
+]
+portrait = "happy"
+local = "Princess Maple loves only the fanciest and most royal of desserts! [Ari]'s offering pleases her greatly."
+
+[loved_gift_royal]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "maple" },
+	{ gift_desire = "loved" },
+	{ any = [
+		{ gift_given = "ancient_horn_circlet" },
+		{ gift_given = "lost_crown_of_aldaria" },
+		{ gift_given = "middlemist" },
+		{ gift_given = "monarch_butterfly" }
+	] }
+]
+portrait = "happy"
+local = "Princess Maple's influence grows with the many symbols of her kingdom!"
+next = "1"
+
+[loved_gift_royal.1]
+portrait = "mad"
+effect = "sparkles"
+local = "She's gonna become, like... so powerful!"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "maple" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "BY ROYAL DECREE, I DECLARE... that Princess Maple is most pleased with your gift, [Ari]."
+
+[liked_gift_2]
+kind = "gift"
+requires = [{ npc = "maple" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "Princess Maple thanks you for your generosity, [Ari]."
+
+[liked_gift_edible]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "maple" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "blackberry" },
+		{ gift_given = "cheese" },
+		{ gift_given = "glowberry_cookies" },
+		{ gift_given = "golden_cookies" },
+		{ gift_given = "grilled_cheese" },
+		{ gift_given = "ice_cream_sundae" },
+		{ gift_given = "jam_sandwich" },
+		{ gift_given = "pomegranate_sorbet" },
+		{ gift_given = "pudding" },
+		{ gift_given = "strawberry_shortcake" },
+		{ gift_given = "trail_mix" },
+		{ gift_given = "wildberry_pie" },
+		{ gift_given = "wintergreen_ice_cream" },
+	] }
+]
+portrait = "neutral"
+local = "Princess Maple is always happy to accept a tasty treat!"
+
+[liked_gift_royal]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "maple" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "blue_conch_shell" },
+		{ gift_given = "daisy" },
+		{ gift_given = "pink_scallop_shell" },
+		{ gift_given = "sand_dollar" },
+		{ gift_given = "spirula_shell" },
+	] }
+]
+portrait = "happy"
+local = "Princess Maple appreciates your offering. She thinks it's really pretty!"
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "maple" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "BY ROYAL DECREE, I DECLARE... that this gift is okay!"
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "maple" }, { gift_desire = "disliked" }]
+portrait = "ugh"
+local = "BY ROYAL DECREE, I DECLARE... this to be kind of a whatever gift, [Ari]."
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "maple" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ maple_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "happy"
+effect = "hearts"
+local = "You remembered my birthday! Thank you [Ari]! I feel like a queen!"

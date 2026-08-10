@@ -1,0 +1,22 @@
+[museum_is_hard]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "errol" }] },
+	{ eiland_zone = "<errol_zone>" },
+	{ building = "museum" },
+]
+speaker = "eiland"
+portrait = "think"
+local = "Who knew that starting a museum would be so much work?"
+next = "1"
+
+[museum_is_hard.1]
+speaker = "errol"
+portrait = "ugh"
+local = "Me, sir. I did try and warn you."
+next = "2"
+
+[museum_is_hard.2]
+speaker = "eiland"
+portrait = "happy"
+local = "So you did. Well... it's fun work!"

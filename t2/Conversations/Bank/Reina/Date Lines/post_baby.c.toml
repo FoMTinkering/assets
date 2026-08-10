@@ -1,0 +1,52 @@
+[post_baby_date_accept]
+requires = [
+    { npc = "reina" },
+    { any = [
+        { date = "bathhouse" },
+        { date = "beach" },
+        { date = "deep_woods_picnic" },
+        { date = "gem_cutting" },
+        { date = "inn_meal" },
+        { date = "park" }
+    ] },
+    { reina_is_spouse = true },
+    { reina_has_child = true }
+]
+writes = [{ da_reina_post_baby_follow_up_gate = true, expires = "1d" }]
+kind = "date_acceptance"
+portrait = "blush_open_eyes"
+local = "A date? Oooh, I'd love to!"
+next = "1"
+
+[post_baby_date_accept.1]
+portrait = "blush"
+local = "Let's just drop off [child_0] with my parents first."
+next = "2"
+
+[post_baby_date_accept.2]
+portrait = "wink"
+local = "They always have such a great time together!"
+
+[post_baby_date_follow_up]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "reina" },
+    { da_reina_post_baby_follow_up_gate = true },
+    { reina_is_spouse = true },
+    { reina_has_child = true }
+]
+writes = [{ da_reina_post_baby_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "reina" } }]
+portrait = "blush"
+local = "That was such a fun date, [Ari]!"
+next = "1"
+
+[post_baby_date_follow_up.1]
+portrait = "blush_special"
+local = "It was nice to spend some time alone together."
+next = "2"
+
+[post_baby_date_follow_up.2]
+portrait = "happy"
+local = "And I can tell that my parents really enjoyed taking care of [child_0], too!"

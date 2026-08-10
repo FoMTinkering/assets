@@ -1,0 +1,66 @@
+[inn_keepers_josephine]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ any = [
+		{ josephine_zone = "inn/bar" },
+		{ josephine_zone = "inn/kitchen" },
+		{ location = "inn" },
+		# remove when zones are fixed
+	] },
+	{ npc = "josephine" },
+	{ juniper_zone = "inn/balcony_hang" },
+	{ terithia_zone = "inn/balcony_hang" },
+	{ fnati = 1, comparator = ">=" },
+	{ fnati = 2, comparator = "<=" },
+]
+writes = [{ josephine_second_fnati = 1 }]
+local = "Juniper and Terithia look thick as thieves up there on the balcony! What do you suppose they're talking about?"
+
+[inn_keepers_maple]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ any = [
+		{ maple_zone = "inn/bar" },
+		{ maple_zone = "inn/kitchen" },
+		{ location = "inn" },
+		# remove when zones are fixed
+	] },
+	{ npc = "maple" },
+	{ juniper_zone = "inn/balcony_hang" },
+	{ terithia_zone = "inn/balcony_hang" },
+	{ fnati = 1, comparator = ">=" },
+	{ fnati = 2, comparator = "<=" },
+]
+writes = [{ maple_first_fnati = 1 }]
+portrait = "think"
+local = "I once asked Mama why Miss Juniper and Miss Terithia laugh like that, and Mama told me to shush and be polite."
+next = "1"
+
+[inn_keepers_maple.1]
+portrait = "happy"
+local = "Anyway, that's how I know Miss Juniper and Miss Terithia are both up on the balcony."
+
+[inn_keepers_luc]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ any = [
+		{ luc_zone = "inn/bar" },
+		{ luc_zone = "inn/kitchen" },
+		{ location = "inn" },
+		# remove when zones are fixed
+	] },
+	{ npc = "luc" },
+	{ juniper_zone = "inn/balcony_hang" },
+	{ terithia_zone = "inn/balcony_hang" },
+	{ fnati = 1, comparator = ">=" },
+	{ fnati = 2, comparator = "<=" },
+]
+writes = [{ luc_first_fnati = 1 }]
+portrait = "happy"
+local = "Miss Terithia looks like a sailor when she leans over the balcony! It's like she's on a ship!"

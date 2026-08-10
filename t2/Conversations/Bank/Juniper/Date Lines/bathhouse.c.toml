@@ -1,0 +1,153 @@
+[bathhouse_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "juniper" },
+	{ date = "bathhouse" },
+	{ da_juniper_bathhouse = 0 },
+	{ juniper_is_spouse = false }
+]
+writes = [
+	{ da_juniper_bathhouse = 1 },
+	{ da_juniper_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "think_special"
+local = "Are you busy, [Ari]?"
+next = "1"
+
+[bathhouse_accept_1.1]
+portrait = "blush"
+local = "No? Good."
+next = "2"
+
+[bathhouse_accept_1.2]
+portrait = "think_special"
+local = "I... prepared a new bath infusion."
+next = "3"
+
+[bathhouse_accept_1.3]
+portrait = "embarrassed"
+local = "And I thought we could enjoy it."
+next = "4"
+
+[bathhouse_accept_1.4]
+portrait = "angry_blush"
+local = "Together."
+next = "5"
+
+[bathhouse_accept_1.5]
+portrait = "happy_blush"
+local = "You'd love to?"
+next = "6"
+
+[bathhouse_accept_1.6]
+portrait = "blush"
+local = "Of course you would. Excellent. I'll start filling the bath!"
+
+[bathhouse_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "juniper" },
+	{ date = "bathhouse" },
+	{ juniper_has_child = false },
+	{ any = [
+		{ juniper_is_spouse = true },
+		{ da_juniper_bathhouse = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_juniper_bathhouse = 2 },
+	{ da_juniper_bathhouse_follow_up_gate = true, expires = "1d" }
+]
+portrait = "think_special"
+local = "Would you like to join me for a bath, [Ari]?"
+next = "1"
+
+[bathhouse_accept_2.1]
+portrait = "blush"
+local = "I reserved it especially for us today."
+
+[bathhouse_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "juniper" },
+	{ da_juniper_bathhouse = 1 },
+	{ da_juniper_bathhouse_follow_up_gate = true },
+	{ juniper_is_spouse = false }
+]
+writes = [{ da_juniper_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "happy_blush"
+effect = "cheery"
+local = "Ahhh..."
+next = "1"
+
+[bathhouse_follow_up_1.1]
+portrait = "think_special"
+local = "That was nice, wasn't it, [Ari]?"
+prompts = [
+	{ local = "Definitely better than that last bath...", next = "2" },
+	{ local = "It was wonderful!", next = "6" },
+]
+
+[bathhouse_follow_up_1.2]
+portrait = "embarrassed"
+local = "Hey!"
+next = "3"
+
+[bathhouse_follow_up_1.3]
+portrait = "angry_blush"
+local = "You're not the one who had to deal with a sudden scaly complexion!"
+next = "4"
+
+[bathhouse_follow_up_1.4]
+portrait = "think_special"
+local = "But, um. Yes. I suppose you're right."
+next = "5"
+
+[bathhouse_follow_up_1.5]
+portrait = "blush"
+local = "I'd say this time was much, much better."
+
+[bathhouse_follow_up_1.6]
+portrait = "happy_blush"
+local = "It was, wasn't it? I'd say I outdid myself this time."
+next = "7"
+
+[bathhouse_follow_up_1.7]
+portrait = "angry_blush"
+local = "Though..."
+next = "8"
+
+[bathhouse_follow_up_1.8]
+portrait = "ugh"
+local = "I suppose last time did involve dealing with a sudden scaly complexion."
+next = "9"
+
+[bathhouse_follow_up_1.9]
+portrait = "think_special"
+local = "Anyway, I'd say this time was much, much better."
+
+[bathhouse_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_has_child = false },
+	{ any = [{ juniper_is_spouse = true }, { da_juniper_bathhouse = 2 }] },
+	{ da_juniper_bathhouse_follow_up_gate = true }
+]
+writes = [{ da_juniper_bathhouse_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "juniper" } }]
+portrait = "think_special"
+local = "Did you have a nice time at the $Bathhouse$, [Ari]?"
+next = "1"
+
+[bathhouse_follow_up_2.1]
+portrait = "embarrassed"
+local = "What am I saying, of course you did!"
+next = "2"
+
+[bathhouse_follow_up_2.2]
+portrait = "blush"
+local = "I always make sure of that."

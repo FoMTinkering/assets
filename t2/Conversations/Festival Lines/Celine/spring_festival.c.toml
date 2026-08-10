@@ -1,0 +1,72 @@
+[good_time]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "celine" },
+	{ spring_festival_date = "1d", time = "after" },
+]
+portrait = "happy"
+local = "I hope you're having as good a time as I am, [Ari]!"
+
+[first_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "celine" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ any = [{ sf_first_place = true }, { sf_first_place_plus = true }] },
+]
+portrait = "blush"
+local = "Congratulations on taking first place, [Ari]. Thank you for caring so much about the festival!"
+
+[middle_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "celine" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ any = [{ sf_second_place = true }, { sf_third_place = true }] },
+]
+portrait = "happy"
+local = "It's so exciting that you placed, [Ari]!"
+next = "1"
+
+[middle_place.1]
+portrait = "wink"
+local = "I'll have to keep my eye on you next year."
+
+[no_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "celine" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ sf_no_place = true },
+]
+portrait = "sad"
+local = "Hey, [Ari]. Sorry to hear you didn't place this time. There's always next year, right?"
+
+[follow_up]
+refresh = "1y"
+requires = [
+	{ npc = "celine" },
+	{ spring_festival_date = "5d", subtract_from = "year_time", comparator = "<", parser = "date_time" },
+	{ spring_festival_date = "1d", subtract_from = "year_time", comparator = ">", parser = "date_time" },
+]
+portrait = "think"
+local = "I was so busy at the festival that I didn't have time to check up on March's juggling act."
+next = "1"
+
+[follow_up.1]
+portrait = "gloomy"
+local = "When I asked him how it went afterwards, he got really annoyed..."
+next = "2"
+
+[follow_up.2]
+portrait = "sweat"
+local = "He said he told me had a lot to juggle for the festival already, not that he'd be juggling."
+next = "3"
+
+[follow_up.3]
+portrait = "blush_special"
+local = "Hahaha..."

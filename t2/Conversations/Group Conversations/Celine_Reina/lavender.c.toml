@@ -1,0 +1,17 @@
+[lavender]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "reina" }] },
+	{ celine_zone = "<reina_zone>" },
+	{ celine_zone = "<josephine_zone>", comparator = "!=" },
+	{ reina_zone = "<josephine_zone>", comparator = "!=" },
+]
+speaker = "reina"
+portrait = "think"
+local = "Do you think you'll grow lavender next season? Papa and I want to surprise Mama with a new tea, and I've got some ideas..."
+next = "1"
+
+[lavender.1]
+speaker = "celine"
+portrait = "happy"
+local = "Of course! Let me know how much you want and I'll start planning!"

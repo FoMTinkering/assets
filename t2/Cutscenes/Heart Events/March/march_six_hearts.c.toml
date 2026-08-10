@@ -1,0 +1,406 @@
+[march_six_hearts_follow_up_elsie]
+refresh = "never"
+requires = [{ npc = "elsie" }, { march_heart_event = "six_heart" }]
+portrait = "neutral"
+local = "Adeline was over the moon at how the shield turned out, I'm sure Linnet feels the same."
+next = "1"
+
+[march_six_hearts_follow_up_elsie.1]
+portrait = "happy"
+local = "Well done."
+
+[march_six_hearts_follow_up_hemlock]
+refresh = "never"
+requires = [{ npc = "hemlock" }, { march_heart_event = "six_heart" }]
+portrait = "neutral"
+local = "Seems my cutlery order at the blacksmith is a bit delayed."
+next = "1"
+
+[march_six_hearts_follow_up_hemlock.1]
+portrait = "wink"
+local = "Might want to order something you don't need to eat with a fork today."
+
+[march_six_hearts_follow_up_olric]
+refresh = "never"
+requires = [{ npc = "olric" }, { march_heart_event = "six_heart" }]
+portrait = "neutral"
+local = "I've been telling everyone about that rad shield you and March made!"
+next = "1"
+
+[march_six_hearts_follow_up_olric.1]
+portrait = "sad"
+local = "Though I thought he'd be happier about the whole thing, you know?"
+next = "2"
+
+[march_six_hearts_follow_up_olric.2]
+portrait = "think"
+local = "He always talks about wanting to make his mark as a blacksmith with bigger projects like this."
+next = "3"
+
+[march_six_hearts_follow_up_olric.3]
+portrait = "embarrassed"
+local = "M-maybe he's just not used to sharing credit?"
+
+[march_six_hearts_follow_up_ryis]
+refresh = "never"
+requires = [{ npc = "ryis" }, { march_heart_event = "six_heart"}]
+portrait = "neutral"
+local = "Adeline came by and let me know some of my blacksmithing orders would be delayed. I told her no problem."
+next = "1"
+
+[march_six_hearts_follow_up_ryis.1]
+portrait = "happy"
+local = "More importantly, look at you! Just think about your work being shown off in the Capital!"
+
+[march_six_hearts]
+kind = "gameplay_triggered"
+writes = [{ march_heart_event = "six_heart", expires = "4d" }]
+speaker = "march"
+portrait = "mad"
+local = "I don't think we can squeeze anything else into our schedule."
+next = "1"
+
+[march_six_hearts.1]
+speaker = "olric"
+portrait = "think"
+effect = "drop"
+local = "It's going to be rough, bro."
+next = "2"
+
+[march_six_hearts.2]
+speaker = "march"
+portrait = "happy"
+local = "Oh! Hey."
+next = "3"
+
+[march_six_hearts.3]
+speaker = "olric"
+portrait = "happy"
+local = "You asked [Ari] for help? That's so smart of you, March!"
+next = "4"
+
+[march_six_hearts.4]
+speaker = "march"
+portrait = "ugh"
+local = "I-It sped things along last time, so..."
+prompts = [{ local = "You don't have to be shy about asking for my help!", next = "5" }, { local = "Happy to chip in for Mistria's sake.", next = "6" }]
+
+[march_six_hearts.5]
+speaker = "march"
+portrait = "sigh"
+local = "Don't make me regret calling you over..."
+next = "7"
+
+[march_six_hearts.6]
+speaker = "march"
+portrait = "think"
+local = "Y-yeah."
+next = "7"
+
+[march_six_hearts.7]
+speaker = "olric"
+portrait = "neutral"
+local = "You're the raddest, [Ari]! Now let's see what we can do about this pile of orders!"
+next = "8"
+
+[march_six_hearts.8]
+speaker = "adeline"
+portrait = "happy"
+local = "Oh hi everyone!"
+next = "9"
+
+[march_six_hearts.9]
+speaker = "adeline"
+portrait = "neutral"
+local = "[Ari], I'm glad you're here too!"
+next = "10"
+
+[march_six_hearts.10]
+speaker = "march"
+portrait = "unimpressed"
+local = "Adeline, if this is a rush request, I'm not sure we'll be able to-"
+next = "11"
+
+[march_six_hearts.11]
+speaker = "adeline"
+portrait = "concerned"
+effect = "drop"
+local = "W-wait, just hear me out!"
+next = "12"
+
+[march_six_hearts.12]
+speaker = "adeline"
+portrait = "neutral"
+local = "My mother, Baroness Linnet, was just awarded the Shield of the Realm award for her services to the king!"
+next = "13"
+
+[march_six_hearts.13]
+speaker = "olric"
+portrait = "happy"
+local = "Wooooah, what an honor! Big congrats, Adeline!"
+next = "14"
+
+[march_six_hearts.14]
+speaker = "adeline"
+portrait = "neutral"
+local = "Thank you Olric! Better yet, she's requested that the shield itself be made here in Mistria!"
+next = "15"
+
+[march_six_hearts.15]
+speaker = "march"
+portrait = "embarrassed"
+local = "So she wants me to make it?"
+next = "16"
+
+[march_six_hearts.16]
+speaker = "adeline"
+portrait = "happy"
+local = "It seems that way, yes!"
+next = "17"
+
+[march_six_hearts.17]
+speaker = "march"
+portrait = "happy"
+local = "Really? That's... that's great!"
+next = "18"
+
+[march_six_hearts.18]
+speaker = "adeline"
+portrait = "think"
+local = "However..."
+next = "19"
+
+[march_six_hearts.19]
+speaker = "adeline"
+portrait = "sigh"
+local = "The letter appears to have been delayed on its way here..."
+next = "20"
+
+[march_six_hearts.20]
+speaker = "adeline"
+portrait = "concerned"
+local = "And to make it in time for the award ceremony, the shield needs to be done... today."
+next = "21"
+
+[march_six_hearts.21]
+speaker = "olric"
+portrait = "sad"
+local = "That's some gnarly timing..."
+next = "22"
+
+[march_six_hearts.22]
+speaker = "march"
+portrait = "sad"
+local = "Adeline, you know how much it'd mean to me to craft this shield, but-"
+prompts =[{ local = "Let me help you make the shield, March!", next = "23" }, { local = "Just leave it to me and March!", next = "24" }]
+
+[march_six_hearts.23]
+speaker = "march"
+portrait = "unimpressed"
+local = "I... I don't-"
+next = "25"
+
+[march_six_hearts.24]
+speaker = "march"
+portrait = "ugh"
+local = "Wait... I don't-"
+next = "25"
+
+[march_six_hearts.25]
+speaker = "adeline"
+portrait = "happy"
+local = "That sounds like a great solution, [Ari]! If you work together, it should be possible to finish it today, right?"
+next = "26"
+
+[march_six_hearts.26]
+speaker = "adeline"
+portrait = "wink"
+effect = "cheery"
+local = "Mother will be so happy!"
+next = "27"
+
+[march_six_hearts.27]
+speaker = "adeline"
+portrait = "neutral"
+local = "What do you say, March?"
+next = "28"
+
+[march_six_hearts.28]
+speaker = "march"
+portrait = "sigh"
+local = "What is there to say?"
+next = "29"
+
+[march_six_hearts.29]
+speaker = "march"
+portrait = "mad"
+#mad_special
+local = "Baroness Linnet, we won't let you down!"
+next = "30"
+
+[march_six_hearts.30]
+speaker = "march"
+portrait = "neutral"
+local = "Olric, gather our materials! [Ari], don't just stand there, get the forge going!"
+next = "31"
+
+[march_six_hearts.31]
+speaker = "adeline"
+portrait= "neutral"
+local = "Thank you for taking this on, it means a lot!"
+next = "32"
+
+[march_six_hearts.32]
+speaker = "adeline"
+portrait = "think"
+local = "I'll go around town and let folks know to expect their orders a bit late."
+next = "33"
+
+[march_six_hearts.33]
+speaker = "adeline"
+portrait = "happy"
+local = "I'm sure everyone will understand."
+next = "34"
+
+[march_six_hearts.34]
+speaker = "march"
+portrait = "think"
+local = "We're almost done. I just need to finish the detailing."
+next = "35"
+
+[march_six_hearts.35]
+speaker = "march"
+portrait = "neutral"
+local = "Hold the shield steady for me."
+next = "36"
+
+[march_six_hearts.36]
+speaker = "march"
+portrait = "think"
+local = "Not like that, hold it closer to the edge."
+prompts = [{ local = "Like this?", next = "37" }, { local = "You mean here?", next = "37" }]
+
+[march_six_hearts.37]
+speaker = "march"
+portrait = "mad"
+local = "No no, you'll get hurt like that!"
+next = "38"
+
+[march_six_hearts.38]
+speaker = "march"
+portrait = "think"
+local = "Give me your hand. Like this, see?"
+next = "39"
+
+[march_six_hearts.39]
+speaker = "march"
+portrait = "neutral"
+local = "Hold your fingers out of the way and keep the pressure even."
+prompts =[{ local = "Okay, is this better?", next = "40" }, { local = "March, you can let go of my hand now...", next = "41" }]
+
+[march_six_hearts.40]
+speaker = "march"
+portrait = "happy"
+local = "Yeah, perfect."
+next = "42"
+
+[march_six_hearts.41]
+speaker = "march"
+portrait = "tsundere"
+local = "Ah... s-sorry."
+next = "42"
+
+[march_six_hearts.42]
+speaker = "march"
+portrait = "think"
+local = "Alright, now keep holding it steady, just like that."
+next = "43"
+
+[march_six_hearts.43]
+speaker = "adeline"
+portrait = "happy"
+local = "Oh my gosh! Is it done?"
+next = "44"
+
+[march_six_hearts.44]
+speaker = "march"
+portrait = "happy"
+local = "Yes!"
+next = "45"
+
+[march_six_hearts.45]
+speaker = "olric"
+portrait = "happy"
+local = "Whoa..."
+next = "46"
+
+[march_six_hearts.46]
+speaker = "adeline"
+portrait = "neutral"
+local = "I'll get this bundled up and have a courier take it to my mother as fast as they can ride."
+next = "47"
+
+[march_six_hearts.47]
+speaker = "adeline"
+portrait = "wink"
+local = "[Ari], March, thank you. You two have done something incredible."
+next = "48"
+
+[march_six_hearts.48]
+speaker = "march"
+portrait = "ugh"
+local = "I could have handled it myself any other day, you know."
+next = "49"
+
+[march_six_hearts.49]
+speaker = "march"
+portrait = "sigh"
+local = "But at least we got it done."
+next = "50"
+
+[march_six_hearts.50]
+speaker = "march"
+portrait = "mad"
+local = "..."
+prompts = [{ local = "We make a pretty good team, huh?", next = "51" }, { local = "Do you two still need help with the other orders?", next = "52" }]
+
+[march_six_hearts.51]
+speaker = "march"
+portrait = "tsundere"
+local = "You just happened to be in the right place at the right time."
+next = "53"
+
+[march_six_hearts.52]
+speaker = "olric"
+portrait = "happy"
+local = "Actually about that..."
+next = "53"
+
+[march_six_hearts.53]
+speaker = "olric"
+portrait = "neutral"
+local = "Adeline arranged for extensions on everyone's orders. We have the time to handle them now!"
+next = "54"
+
+[march_six_hearts.54]
+speaker = "olric"
+portrait = "think"
+local = "She's like... way good at organizing stuff."
+next = "55"
+
+[march_six_hearts.55]
+speaker = "march"
+portrait = "neutral"
+local = "Sounds like we've got it from here."
+next = "56"
+
+[march_six_hearts.56]
+speaker = "olric"
+portrait = "happy"
+local = "Thanks for your help, [Ari]!"
+next = "57"
+
+[march_six_hearts.57]
+speaker = "march"
+portrait = "think"
+local = "Y-yeah."

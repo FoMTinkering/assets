@@ -1,0 +1,128 @@
+[beach_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "eiland" },
+	{ date = "beach" },
+	{ da_eiland_beach = 0 },
+	{ eiland_is_spouse = false }
+]
+writes = [
+	{ da_eiland_beach = 1 },
+	{ da_eiland_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "A walk on the Beach?"
+next = "1"
+
+[beach_accept_1.1]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "Why, that sounds lovely."
+
+[beach_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "eiland" },
+	{ date = "beach" },
+	{ eiland_has_child = false },
+	{ any = [
+		{ eiland_is_spouse = true },
+		{ da_eiland_beach = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_eiland_beach = 2 },
+	{ da_eiland_beach_follow_up_gate = true, expires = "1d" }
+]
+speaker = "eiland"
+portrait = "happy_blush"
+local = "A walk on the Beach sounds perfect, [Ari]."
+next = "1"
+
+[beach_accept_2.1]
+speaker = "eiland"
+portrait = "embarrassed"
+local = "I would be delighted to join you!"
+
+[beach_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ da_eiland_beach = 1 },
+	{ da_eiland_beach_follow_up_gate = true },
+	{ eiland_is_spouse = false }
+]
+writes = [{ da_eiland_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "blush", npc = "eiland" } }]
+portrait = "happy_blush"
+local = "Thank you for the walk, [Ari]."
+next = "1"
+
+[beach_follow_up_1.1]
+portrait = "embarrassed"
+local = "I really enjoyed sharing those old stories with you."
+prompts = [
+	{ local = "It was fun to hear about your beach excavation!", next = "2" },
+	{ local = "It's a shame you didn't find any artifacts that time!", next = "6" },
+]
+
+[beach_follow_up_1.2]
+portrait = "happy_blush"
+local = "Hahaha!"
+next = "3"
+
+[beach_follow_up_1.3]
+portrait = "hope_special"
+local = "I never could resist archaeology, even as a kid."
+next = "4"
+
+[beach_follow_up_1.4]
+portrait = "embarrassed"
+local = "Still, I should have been more considerate toward Adeline."
+next = "5"
+
+[beach_follow_up_1.5]
+portrait = "think"
+effect = "drop"
+local = "That wave hardly finished knocking her sand castle over before I began excavating its ruins."
+
+[beach_follow_up_1.6]
+portrait = "happy_blush"
+local = "Hahaha!"
+next = "7"
+
+[beach_follow_up_1.7]
+portrait = "hope_special"
+local = "I never could never resist archaeology, even as a kid."
+next = "8"
+
+[beach_follow_up_1.8]
+portrait = "embarrassed"
+local = "Still, I should have been more considerate toward Adeline."
+next = "9"
+
+[beach_follow_up_1.9]
+portrait = "think"
+effect = "drop"
+local = "That wave hardly finished knocking her sand castle over before I began excavating its ruins."
+
+[beach_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "eiland" },
+	{ eiland_has_child = false },
+	{ any = [{ eiland_is_spouse = true }, { da_eiland_beach = 2 }] },
+	{ da_eiland_beach_follow_up_gate = true }
+]
+writes = [{ da_eiland_beach_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "eiland" } }]
+portrait = "hope_special"
+local = "Thank you, [Ari]. I really enjoyed our time at the Beach."
+next = "1"
+
+[beach_follow_up_2.1]
+portrait = "blush"
+local = "I hope that we can do it again soon, when the weather is nice!"

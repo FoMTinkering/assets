@@ -1,0 +1,29 @@
+scene(water_seal);
+fade_out(2);
+play_sound("SoundEffects/SpecialEvents/CaldarusStatueFix");
+trigger_scene_object_removals();
+wait(1.5);
+play_sound("SoundEffects/SpecialEvents/Premonition");
+wait(1);
+fade_in(2);
+wait(0.5);
+place_actor("seridia", "south", "ws_priestess");
+set_shadow_enabled("seridia", false);
+fade_npc_alpha("seridia", 0.0, 0.5, 180);
+wait(1);
+free pan_camera(3, "ws_camera_priestess");
+wait(2);
+next_line();
+next_line();
+next_line();
+close_textbox();
+sim {
+	fade_npc_alpha("seridia", 0.5, 0.0, 180);
+	{
+		wait(3);
+		drop_item("heart_crystal");
+	}
+}
+wait(2);
+pan_camera(3, "ari");
+remove_actor("seridia");

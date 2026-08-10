@@ -1,0 +1,834 @@
+[spring_festival_setup_celine_follow_up]
+refresh = "3m"
+requires = [{ npc = "celine" }, { spring_festival_setup = true }]
+portrait = "neutral"
+local = "Thanks again for helping to gather flowers! I'm collecting as many as I can too."
+
+[spring_festival_setup_josephine_follow_up]
+refresh = "3m"
+requires = [{ npc = "josephine" }, { spring_festival_setup = true }]
+portrait = "neutral"
+local = "Nobody does the Spring Festival better than Mistria, I hope you're ready for a good time!"
+
+[spring_festival_setup_ryis_follow_up]
+refresh = "3m"
+requires = [{ npc = "ryis" }, { spring_festival_setup = true }]
+portrait = "neutral"
+local = "I hope you're planning on going to the Spring Festival."
+next = "1"
+
+[spring_festival_setup_ryis_follow_up.1]
+portrait = "happy"
+local = "It's one of my favorites!"
+
+[spring_festival_setup_landen_follow_up]
+refresh = "3m"
+requires = [{ npc = "landen" }, { spring_festival_setup = true }]
+portrait = "neutral"
+local = "Even knowing I'm retired, Jo came straight to me to ask me to make my famous decorations for the Spring Festival."
+
+[spring_festival_setup_balor_follow_up]
+refresh = "3m"
+requires = [{ npc = "balor" }, { spring_festival_setup = true }]
+portrait = "neutral"
+local = "Be sure to keep your eyes open for $Breath of Spring$."
+next = "1"
+
+[spring_festival_setup_balor_follow_up.1]
+portrait = "happy"
+local = "The more flowers are donated, the more kinds of items the festival vendors will be able to sell!"
+
+[spring_festival_setup_errol_follow_up]
+refresh = "3m"
+requires = [{ npc = "errol" }, { spring_festival_setup = true }]
+portrait = "neutral"
+local = "I'm quite fond of the Spring Festival, it encourages even an old timer like me to get out and appreciate nature!"
+
+[spring_festival_setup_eiland_follow_up]
+refresh = "3m"
+requires = [{ npc = "eiland" }, { spring_festival_setup = true }]
+portrait = "neutral"
+local = "Ah, the Spring Festival! There are records of it being celebrated hundreds of years ago. What a storied tradition!"
+
+[spring_festival_setup_adeline_follow_up]
+refresh = "3m"
+requires = [{ npc = "adeline" }, { spring_festival_setup = true }]
+portrait = "neutral"
+local = "It's been so nice having Jo and Celine run the Spring Festival! It's been a real weight off my shoulders."
+next = "1"
+
+[spring_festival_setup_adeline_follow_up.1]
+portrait = "think"
+local = "..."
+next = "2"
+
+[spring_festival_setup_adeline_follow_up.2]
+portrait = "think"
+effect = "sweat"
+local = "M-Maybe I'll go see if they need any help..."
+
+[spring_festival_setup_dell_follow_up]
+refresh = "3m"
+requires = [{ npc = "dell" }, { spring_festival_setup = true }]
+portrait = "neutral"
+local = "My sister always wins the flower collecting contest at the festival...but not this year!"
+next = "1"
+
+[spring_festival_setup_dell_follow_up.1]
+portrait = "mad"
+effect = "sparkles"
+local = "I've been learning all her secret flower gathering techniques!"
+
+[spring_festival_setup_luc_follow_up]
+refresh = "3m"
+requires = [{ npc = "luc" }, { spring_festival_setup = true }]
+portrait = "neutral"
+local = "Good luck collecting flowers, [Ari]! A lot of my favorite insects show up in flowers, so I'm having lots of fun!"
+
+[spring_festival_setup_maple_follow_up]
+refresh = "3m"
+requires = [{ npc = "maple" }, { spring_festival_setup = true }]
+portrait = "neutral"
+local = "I'm so excited, mom said I get to help with our booth at the Spring Festival this year!"
+
+[spring_festival_setup_march_follow_up]
+refresh = "3m"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 5, comparator = "<" },
+	{ spring_festival_setup = true }
+]
+portrait = "neutral"
+local = "Hmm? What's with that look?"
+prompts = [
+	{ local = "Looking forward to your act at the Festival!", next = "1" },
+	{ local = "I'm surprised you know how to juggle!", next = "2" }
+]
+
+[spring_festival_setup_march_follow_up.1]
+portrait = "ugh"
+local = "My... what? Huh?"
+
+[spring_festival_setup_march_follow_up.2]
+portrait = "ugh"
+local = "What are you talking about? Who told you that?!"
+
+[spring_festival_setup]
+kind = "gameplay_triggered"
+writes = [{ spring_festival_setup = true }]
+speaker = "celine"
+portrait = "neutral"
+effect = "surprise"
+local = "Oh, [Ari]!"
+next = "1"
+
+[spring_festival_setup.1]
+speaker = "celine"
+portrait = "happy"
+local = "What good timing! I was just going to leave you a letter, but I'd much rather tell you in person."
+next = "2"
+
+[spring_festival_setup.2]
+speaker = "celine"
+portrait = "neutral"
+local = "We're holding Mistria's $Spring Festival$ in the town square this $Wednesday$!"
+next = "3"
+
+[spring_festival_setup.3]
+speaker = "celine"
+portrait = "very_happy"
+local = "The whole town gets decorated with flowers, and there will be special booths selling all kinds of things to celebrate Spring!"
+next = "4"
+
+[spring_festival_setup.4]
+speaker = "celine"
+portrait = "neutral"
+local = "Ryis and Landen are making new booths, March will be juggling, and everyone is gathering flowers!"
+next = "5"
+
+[spring_festival_setup.5]
+speaker = "celine"
+portrait = "sweat"
+local = "I don't suppose... you'd like to help?"
+prompts = [
+	{ local = "Of course, neighbor!", next = "6" },
+	{ local = "Anything for you, Celine.", next = "7" }
+]
+
+[spring_festival_setup.6]
+speaker = "celine"
+portrait = "happy"
+local = "Oh, I'm so glad!"
+next = "9"
+
+[spring_festival_setup.7]
+speaker = "celine"
+portrait = "blush_special"
+local = "O-oh!"
+next = "8"
+
+[spring_festival_setup.8]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "I'm... I'm happy to hear that."
+next = "9"
+
+[spring_festival_setup.9]
+speaker = "celine"
+portrait = "neutral"
+local = "We celebrate the Spring Festival around this time every year, coinciding with the blooming of a special type of flower."
+next = "10"
+
+[spring_festival_setup.10]
+speaker = "celine"
+portrait = "think"
+local = "It's called $Breath of Spring$, and you can only find them here in Mistria! We traditionally use them to decorate the festival grounds."
+next = "11"
+
+[spring_festival_setup.11]
+speaker = "celine"
+portrait = "neutral"
+local = "So the more that you $collect$, the better the festival will be! There are even special prizes for the person who gathers the most."
+next = "12"
+
+[spring_festival_setup.12]
+speaker = "celine"
+portrait = "wink"
+local = "I could give you some tips on finding them, if you like."
+prompts = [
+	{ local = "Please teach me!", next = "14" },
+	{ local = "Don't worry, I got it!", next = "13" }
+]
+
+[spring_festival_setup.13]
+speaker = "celine"
+portrait = "happy"
+local = "Oh good!"
+next = "14"
+
+[spring_festival_setup.14]
+speaker = "celine"
+portrait = "neutral"
+local = "I'll stop by the morning of the festival to collect any $Breath of Spring$ you have."
+next = "15"
+
+[spring_festival_setup.15]
+speaker = "celine"
+portrait = "very_happy"
+local = "Let's make this year's $Spring Festival$ the best one yet!"
+
+[spring_festival_setup_year_2]
+kind = "gameplay_triggered"
+writes = [{ spring_festival_setup = true }]
+speaker = "celine"
+portrait = "neutral"
+effect = "surprise"
+local = "Oh, [Ari]!"
+next = "1"
+
+[spring_festival_setup_year_2.1]
+speaker = "celine"
+portrait = "happy"
+local = "What good timing! I was going to leave you a letter, but I'd much rather tell you in person."
+next = "2"
+
+[spring_festival_setup_year_2.2]
+speaker = "celine"
+portrait = "neutral"
+local = "I wanted to remind you that we're holding Mistria's $Spring Festival$ in the town square this $Wednesday$!"
+next = "3"
+
+[spring_festival_setup_year_2.3]
+speaker = "celine"
+portrait = "very_happy"
+local = "The whole town gets decorated with flowers, and there will be special booths selling all kinds of things to celebrate Spring!"
+next = "4"
+
+[spring_festival_setup_year_2.4]
+speaker = "celine"
+portrait = "neutral"
+local = "Ryis and Landen are making new booths, March will be juggling, and everyone is gathering flowers!"
+next = "5"
+
+[spring_festival_setup_year_2.5]
+speaker = "celine"
+portrait = "sweat"
+local = "I don't suppose... you'd like to help this year too?"
+prompts = [
+	{ local = "Of course, neighbor!", next = "6" },
+	{ local = "Anything for you, Celine.", next = "7" }
+]
+
+[spring_festival_setup_year_2.6]
+speaker = "celine"
+portrait = "happy"
+local = "Oh, I'm so glad!"
+next = "9"
+
+[spring_festival_setup_year_2.7]
+speaker = "celine"
+portrait = "blush_special"
+local = "O-oh!"
+next = "8"
+
+[spring_festival_setup_year_2.8]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "I'm... I'm happy to hear that."
+next = "9"
+
+[spring_festival_setup_year_2.9]
+speaker = "celine"
+portrait = "neutral"
+local = "We celebrate the Spring Festival around this time every year, coinciding with the blooming of a special type of flower."
+next = "10"
+
+[spring_festival_setup_year_2.10]
+speaker = "celine"
+portrait = "think"
+local = "Then I need you to collect $Breath Of Spring$ flowers, as many as you can! We traditionally use them to decorate the festival grounds."
+next = "11"
+
+[spring_festival_setup_year_2.11]
+speaker = "celine"
+portrait = "neutral"
+local = "So the more that you $collect$, the better the festival will be! There are even special prizes for the person who gathers the most."
+next = "12"
+
+[spring_festival_setup_year_2.12]
+speaker = "celine"
+portrait = "wink"
+local = "I could give you some tips on finding them, if you like."
+prompts = [
+	{ local = "Please teach me!", next = "14" },
+	{ local = "Don't worry, I got it!", next = "13" }
+]
+
+[spring_festival_setup_year_2.13]
+speaker = "celine"
+portrait = "happy"
+local = "Oh good!"
+next = "14"
+
+[spring_festival_setup_year_2.14]
+speaker = "celine"
+portrait = "neutral"
+local = "I'll stop by the morning of the festival to collect any $Breath of Spring$ you have."
+next = "15"
+
+[spring_festival_setup_year_2.15]
+speaker = "celine"
+portrait = "very_happy"
+local = "Let's make this year's $Spring Festival$ the best one yet!"
+
+[spring_festival_setup_alt]
+kind = "gameplay_triggered"
+writes = [{ spring_festival_setup = true }]
+speaker = "holt"
+portrait = "neutral"
+local = "Morning, [Ari]!"
+next = "1"
+
+[spring_festival_setup_alt.1]
+speaker = "holt"
+portrait = "wink"
+local = "Bet you weren't expecting to see your old father-in-law first thing this morning, eh?"
+next = "2"
+
+[spring_festival_setup_alt.2]
+speaker = "holt"
+portrait = "neutral"
+local = "Truth be told, Nora sent me over."
+next = "3"
+
+[spring_festival_setup_alt.3]
+speaker = "holt"
+portrait = "think"
+local = "She's busy with the store, you know how it is."
+next = "4"
+
+[spring_festival_setup_alt.4]
+speaker = "holt"
+portrait = "neutral"
+local = "Anywho, I'm just here to remind you that the $Spring Festival$ is coming up again!"
+next = "5"
+
+[spring_festival_setup_alt.5]
+speaker = "holt"
+portrait = "wink"
+local = "You'll help out with collecting $Breath of Spring$ again this year, won't you?"
+prompts = [
+	{ local = "Of course, pops!", next = "6" },
+	{ local = "I be-leaf I will!", next = "7" }
+]
+
+[spring_festival_setup_alt.6]
+speaker = "holt"
+portrait = "happy"
+local = "Oh ho! I knew you would!"
+next = "9"
+
+[spring_festival_setup_alt.7]
+speaker = "holt"
+portrait = "wink"
+local = "Oh ho! I knew you would!"
+next = "8"
+
+[spring_festival_setup_alt.8]
+speaker = "holt"
+portrait = "think"
+local = "But you know,[Ari], I feel I should warn you..."
+next = "9"
+
+[spring_festival_setup_alt.9]
+speaker = "holt"
+portrait = "neutral"
+local = "That daughter of mine won't go easy on you just because you're family now."
+next = "10"
+
+[spring_festival_setup_alt.10]
+speaker = "holt"
+portrait = "think"
+local = "Trust me, she's been in it to win it since she was old enough to walk on her own."
+next = "11"
+
+[spring_festival_setup_alt.11]
+speaker = "holt"
+portrait = "neutral"
+local = "But the more $Breath of Spring$ that you $collect$, the better the festival will be. So it's worth putting in the effort!"
+next = "12"
+
+[spring_festival_setup_alt.12]
+speaker = "holt"
+portrait = "wink"
+local = "And if you need some extra tips... I don't mind sharing what I know."
+prompts = [
+	{ local = "Please teach me!", next = "14" },
+	{ local = "Don't worry, I got it!", next = "13" }
+]
+
+[spring_festival_setup_alt.13]
+speaker = "holt"
+portrait = "happy"
+local = "I figured as much!"
+next = "14"
+
+[spring_festival_setup_alt.14]
+speaker = "holt"
+portrait = "neutral"
+local = "I'll stop by the morning of the festival to collect any $Breath of Spring$ you have."
+next = "15"
+
+[spring_festival_setup_alt.15]
+speaker = "holt"
+portrait = "wink"
+local = "I'll look forward to seeing who collects the most. Good luck!"
+
+[spring_festival_morning]
+kind = "gameplay_triggered"
+writes = [{ spring_festival_setup = false }]
+speaker = "celine"
+portrait = "neutral"
+effect = "surprise"
+local = "Oh! I was just about to knock."
+next = "1"
+
+[spring_festival_morning.1]
+speaker = "celine"
+portrait = "happy"
+local = "I'm here to pick up all the $Breath of Spring$ you collected so that we can start the final count!"
+next = "2"
+
+[spring_festival_morning.2]
+speaker = "celine"
+portrait = "neutral"
+local = "Okay! I've gotta run. Hope to see you at the festival!"
+
+[spring_festival_morning_alt]
+kind = "gameplay_triggered"
+writes = [{ spring_festival_setup = false }]
+speaker = "holt"
+portrait = "neutral"
+local = "Goooood morning!"
+next = "1"
+
+[spring_festival_morning_alt.1]
+speaker = "holt"
+portrait = "happy"
+local = "I'm here to pick up the $Breath of Spring$ you collected, as promised!"
+next = "2"
+
+[spring_festival_morning_alt.2]
+speaker = "holt"
+portrait = "neutral"
+local = "Thanks, [Ari]. I'll see you and Celine at the festival!"
+
+[spring_festival_no_place]
+kind = "gameplay_triggered"
+writes = [{ sf_no_place = true, expires = "3m" }]
+speaker = "josephine"
+portrait = "neutral"
+local = "The moment you've all been waiting for is here, it's time to announce the three people who turned in the most $Breath of Spring$ flowers!"
+next = "1"
+
+[spring_festival_no_place.1]
+speaker = "josephine"
+portrait = "neutral"
+local = "In third place..."
+next = "2"
+
+[spring_festival_no_place.2]
+speaker = "josephine"
+portrait = "happy"
+local = "Dell!"
+next = "3"
+
+[spring_festival_no_place.3]
+speaker = "dell"
+portrait = "happy"
+local = "I won! I knew spending extra time flower hunting instead of doing my chores was worth it!"
+next = "4"
+
+[spring_festival_no_place.4]
+speaker = "nora"
+portrait = "ugh"
+effect = "drop"
+local = "Let's talk when we get home, Dell."
+next = "5"
+
+[spring_festival_no_place.5]
+speaker = "josephine"
+portrait = "neutral"
+local = "In second place..."
+next = "6"
+
+[spring_festival_no_place.6]
+speaker = "josephine"
+portrait = "happy"
+local = "Errol!"
+next = "7"
+
+[spring_festival_no_place.7]
+speaker = "errol"
+portrait = "happy"
+local = "How exciting!"
+next = "8"
+
+[spring_festival_no_place.8]
+speaker = "josephine"
+portrait = "neutral"
+local = "And finally, in first place..."
+next = "9"
+
+[spring_festival_no_place.9]
+speaker = "josephine"
+portrait = "happy"
+effect = "cheery"
+local = "Celine!"
+next = "10"
+
+[spring_festival_no_place.10]
+speaker = "celine"
+portrait = "very_happy"
+local = "Oh my gosh!"
+next = "11"
+
+[spring_festival_no_place.11]
+speaker = "josephine"
+portrait = "happy"
+local = "Congrats to all of our winners!"
+next = "12"
+
+[spring_festival_no_place.12]
+speaker = "josephine"
+portrait = "neutral"
+local = "And thank you to everyone who participated this year."
+
+[spring_festival_third_place]
+kind = "gameplay_triggered"
+writes = [{ sf_third_place = true, expires = "3m" }]
+speaker = "josephine"
+portrait = "neutral"
+local = "The moment you've all been waiting for is here, it's time to announce the three people who turned in the most $Breath of Spring$ flowers!"
+next = "1"
+
+[spring_festival_third_place.1]
+speaker = "josephine"
+portrait = "neutral"
+local = "In third place..."
+next = "2"
+
+[spring_festival_third_place.2]
+speaker = "josephine"
+portrait = "happy"
+local = "[Ari]! Not too shabby!"
+next = "3"
+
+[spring_festival_third_place.3]
+speaker = "josephine"
+portrait = "neutral"
+local = "In second place..."
+next = "4"
+
+[spring_festival_third_place.4]
+speaker = "josephine"
+portrait = "happy"
+local = "Errol!"
+next = "5"
+
+[spring_festival_third_place.5]
+speaker = "errol"
+portrait = "happy"
+local = "How exciting!"
+next = "6"
+
+[spring_festival_third_place.6]
+speaker = "josephine"
+portrait = "neutral"
+local = "And finally, in first place..."
+next = "7"
+
+[spring_festival_third_place.7]
+speaker = "josephine"
+portrait = "happy"
+effect = "cheery"
+local = "Celine!"
+next = "8"
+
+[spring_festival_third_place.8]
+speaker = "celine"
+portrait = "very_happy"
+local = "Oh my gosh!"
+next = "9"
+
+[spring_festival_third_place.9]
+speaker = "josephine"
+portrait = "neutral"
+local = "A big congrats to all our winners, and thank you all for being part of our Spring Festival!"
+next = "10"
+
+[spring_festival_third_place.10]
+speaker = "josephine"
+portrait = "happy"
+local = "Please enjoy your prizes!"
+
+[spring_festival_second_place]
+kind = "gameplay_triggered"
+writes = [{ sf_second_place = true, expires = "3m" }]
+speaker = "josephine"
+portrait = "neutral"
+local = "The moment you've all been waiting for is here, it's time to announce the three people who turned in the most $Breath of Spring$ flowers!"
+next = "1"
+
+[spring_festival_second_place.1]
+speaker = "josephine"
+portrait = "neutral"
+local = "In third place..."
+next = "2"
+
+[spring_festival_second_place.2]
+speaker = "josephine"
+portrait = "happy"
+local = "Errol!"
+next = "3"
+
+[spring_festival_second_place.3]
+speaker = "errol"
+portrait = "happy"
+local = "How exciting!"
+next = "4"
+
+[spring_festival_second_place.4]
+speaker = "josephine"
+portrait = "neutral"
+local = "In second place..."
+next = "5"
+
+[spring_festival_second_place.5]
+speaker = "josephine"
+portrait = "happy"
+local = "[Ari]! Great job!"
+next = "6"
+
+[spring_festival_second_place.6]
+speaker = "josephine"
+portrait = "neutral"
+local = "And finally, in first place..."
+next = "7"
+
+[spring_festival_second_place.7]
+speaker = "josephine"
+portrait = "happy"
+local = "Celine!"
+next = "8"
+
+[spring_festival_second_place.8]
+speaker = "celine"
+portrait = "very_happy"
+local = "Oh my gosh!"
+next = "9"
+
+[spring_festival_second_place.9]
+speaker = "josephine"
+portrait = "neutral"
+local = "A big congrats to all our winners, your hard work has made this a special Spring Festival!"
+next = "10"
+
+[spring_festival_second_place.10]
+speaker = "josephine"
+portrait = "happy"
+local = "Please enjoy your prizes!"
+
+[spring_festival_first_place]
+kind = "gameplay_triggered"
+writes = [{ sf_first_place = true, expires = "3m" }]
+speaker = "josephine"
+portrait = "neutral"
+local = "The moment you've all been waiting for is here, it's time to announce the three people who turned in the most $Breath of Spring$ flowers!"
+next = "1"
+
+[spring_festival_first_place.1]
+speaker = "josephine"
+portrait = "neutral"
+local = "In third place..."
+next = "2"
+
+[spring_festival_first_place.2]
+speaker = "josephine"
+portrait = "happy"
+local = "Errol!"
+next = "3"
+
+[spring_festival_first_place.3]
+speaker = "errol"
+portrait = "happy"
+local = "How exciting!"
+next = "4"
+
+[spring_festival_first_place.4]
+speaker = "josephine"
+portrait = "neutral"
+local = "In second place..."
+next = "5"
+
+[spring_festival_first_place.5]
+speaker = "josephine"
+portrait = "happy"
+local = "Celine!"
+next = "6"
+
+[spring_festival_first_place.6]
+speaker = "celine"
+portrait = "very_happy"
+local = "Oh my gosh!"
+next = "7"
+
+[spring_festival_first_place.7]
+speaker = "josephine"
+portrait = "wink"
+local = "And finally, in first place; a surprise contender!"
+next = "8"
+
+[spring_festival_first_place.8]
+speaker = "josephine"
+portrait = "happy"
+effect = "cheery"
+local = "[Ari]!"
+next = "9"
+
+[spring_festival_first_place.9]
+speaker = "josephine"
+portrait = "neutral"
+local = "Amazing job, [Ari]! You really made this Spring Festival one to remember!"
+next = "10"
+
+[spring_festival_first_place.10]
+speaker = "josephine"
+portrait = "neutral"
+local = "A big congrats to all our winners, your hard work has made this an extra special Spring Festival!"
+next = "11"
+
+[spring_festival_first_place.11]
+speaker = "josephine"
+portrait = "happy"
+local = "Please enjoy your prizes!"
+
+[spring_festival_first_place_plus]
+writes = [{ sf_first_place_plus = true, expires = "3m" }]
+kind = "gameplay_triggered"
+speaker = "josephine"
+portrait = "neutral"
+local = "The moment you've all been waiting for is here, it's time to announce the three people who turned in the most $Breath of Spring$ flowers!"
+next = "1"
+
+[spring_festival_first_place_plus.1]
+speaker = "josephine"
+portrait = "neutral"
+local = "In third place..."
+next = "2"
+
+[spring_festival_first_place_plus.2]
+speaker = "josephine"
+portrait = "happy"
+local = "Errol!"
+next = "3"
+
+[spring_festival_first_place_plus.3]
+speaker = "errol"
+portrait = "happy"
+local = "How exciting!"
+next = "4"
+
+[spring_festival_first_place_plus.4]
+speaker = "josephine"
+portrait = "neutral"
+local = "In second place..."
+next = "5"
+
+[spring_festival_first_place_plus.5]
+speaker = "josephine"
+portrait = "happy"
+local = "Celine!"
+next = "6"
+
+[spring_festival_first_place_plus.6]
+speaker = "celine"
+portrait = "very_happy"
+local = "Oh my gosh!"
+next = "7"
+
+[spring_festival_first_place_plus.7]
+speaker = "josephine"
+portrait = "wink"
+local = "And finally, in first place; a surprise contender!"
+next = "8"
+
+[spring_festival_first_place_plus.8]
+speaker = "josephine"
+portrait = "neutral"
+local = "With more Breath of Spring turn ins than anyone else in the history of the Spring Festival..."
+next = "9"
+
+[spring_festival_first_place_plus.9]
+speaker = "josephine"
+portrait = "happy"
+effect = "cheery"
+local = "[Ari]!"
+next = "10"
+
+[spring_festival_first_place_plus.10]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "Wow, [Ari]!"
+next = "11"
+
+[spring_festival_first_place_plus.11]
+speaker = "josephine"
+portrait = "neutral"
+local = "A big congrats to all our winners, this Spring Festival will be one to look back on and treasure!"
+next = "12"
+
+[spring_festival_first_place_plus.12]
+speaker = "josephine"
+portrait = "happy"
+local = "Please enjoy your prizes!"

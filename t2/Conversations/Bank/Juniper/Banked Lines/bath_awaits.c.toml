@@ -1,0 +1,15 @@
+[bath_awaits]
+refresh = "2m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "bathhouse/Front Desk" },
+	{ time_of_day = "night", comparator = "!=" },
+	{ juniper_heart_level = 8, comparator = "<" }
+]
+portrait = "happy"
+local = "Your bath awaits! I, however, do not."
+next = "1"
+
+[bath_awaits.1]
+portrait = "annoyed"
+local = "So make up your mind or leave already."

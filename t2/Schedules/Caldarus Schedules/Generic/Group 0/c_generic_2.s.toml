@@ -1,0 +1,30 @@
+requires = [
+	{ weather = "pleasant" },
+	{ caldarus_home = true },
+	{ caldarus_counter = 0 }
+]
+end_writes = [{ caldarus_counter = 1 }]
+
+# Caldarus
+[caldarus."6:00am"]
+destination = "caldarus_house/Caldarus Wake Point"
+on_arrival_actions = [{ animation = "eyes_closed" }]
+
+[caldarus."6:32am"]
+destination = "deep_woods/wander_4"
+on_arrival_actions = [{ animation = "read" }]
+
+[caldarus."12:11pm"]
+destination = "deep_woods/gardening_routine_entrance"
+on_arrival_actions = [{ routine = "deep_woods_gardening" }]
+
+[caldarus."3:54pm"]
+destination = "deep_woods/temple_routine_exit"
+on_arrival_actions = [{ routine = "deep_woods_wander" }]
+
+[caldarus."7:22pm"]
+destination = "deep_woods/Caldarus Bench Right"
+
+[caldarus."9:55pm"]
+destination = "caldarus_house/Caldarus Wake Point"
+on_arrival_actions = [{ animation = "eyes_closed" }]

@@ -1,0 +1,29 @@
+[accounting]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "reina" }] },
+	{ adeline_is_at_location = "adelines_office" },
+	{ reina_is_at_location = "adelines_office" },
+	{ any = [
+		{ adeline_animation = "write_sit" },
+		{ adeline_animation = "write" },
+		{ adeline_routine = "adeline_office_work" }
+	] },
+	{ time_of_day = "morning" }
+]
+speaker = "adeline"
+portrait = "wink"
+local = "Think of it like the quick math you do for recipes, Reina! Accounting's not so different. Try filling out the next line!"
+next = "1"
+
+[accounting.1]
+speaker = "reina"
+portrait = "think"
+local = "A pinch of... tesserae..."
+next = "2"
+
+[accounting.2]
+speaker = "adeline"
+portrait = "happy"
+effect = "drop"
+local = "Actually, let's take it from the top."

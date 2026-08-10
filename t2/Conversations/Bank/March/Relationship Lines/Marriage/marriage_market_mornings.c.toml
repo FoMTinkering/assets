@@ -1,0 +1,224 @@
+# DARCY
+[market_darcy]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "Morning, [Ari]! You going to the Saturday Market today?"
+next = "1"
+
+
+[market_darcy.1]
+portrait = "eight_heart_think"
+local = "I'm thinking of going to Darcy's to get a =Mocha=... she always draws something cool in the foam for me."
+
+
+# LOUIS
+[market_louis]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "Hey, you. Going to the Saturday Market soon?"
+next = "1"
+
+
+[market_louis.1]
+portrait = "eight_heart_think"
+local = "I might stop by Louis' stall today... he's really good at patching the burns in my work aprons."
+
+
+# MERRI
+[market_merri]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "eight_heart_think"
+local = "Morning! You going to the Saturday Market later?"
+next = "1"
+
+
+[market_merri.1]
+portrait = "eight_heart_happy"
+local = "I might tag along... I have some antique metalworking questions that Merri might be able to help me with."
+
+
+# VERA
+[market_vera]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "Hey, morning."
+next = "1"
+
+
+[market_vera.1]
+portrait = "eight_heart_closed_eyes"
+local = "I have an appointment with Vera later..."
+next = "2"
+
+[market_vera.2]
+portrait = "happy"
+local = "She's going to give my roots a touchup."
+
+# TALIFERRO
+
+
+[market_taliferro]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "sweat_drop", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "Hey, you heading over to the Market?"
+next = "1"
+
+
+[market_taliferro.1]
+portrait = "eight_heart_think"
+local = "I was thinking of trying out Taliferro's $Cooking Challenge$ again... but he never has anything nice to say."
+
+
+# WHEEDLE
+
+
+[market_wheedle]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "eight_heart_think"
+local = "I might stop by Wheedle's Market booth later..."
+next = "1"
+
+
+[market_wheedle.1]
+portrait = "unimpressed"
+local = "He said he has a special deal for me on some rare material this week."
+next = "2"
+
+[market_wheedle.2]
+portrait = "eight_heart_happy"
+effect = "sparkles"
+local = "Obviously, I gotta have it."
+
+# STILLWELL
+
+
+[market_stillwell]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ stillwell_has_met = true },
+	{ march_morning_greeting = false }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "Hey, morning. I'm thinking of stopping by Stillwell's booth later."
+next = "1"
+
+
+[market_stillwell.1]
+portrait = "eight_heart_think"
+local = "He sent me a weird letter earlier saying the town faces certain doom unless I can avert fate."
+next = "2"
+
+[market_stillwell.2]
+portrait = "eight_heart_think"
+local = "Glad someone around here appreciates me."
+next = "3"
+
+[market_stillwell.3]
+portrait = "eight_heart_happy_blush"
+local = "Besides you, of course!"
+
+# ZOREL
+
+
+[market_zorel]
+priority = "max"
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ time_of_day = "morning" },
+	{ day_of_the_week = "saturday" },
+	{ march_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ march_morning_greeting = false },
+	{ zorel_has_met = true }
+]
+writes = [{ march_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "march" } }]
+portrait = "eight_heart_happy"
+local = "Morning. Want to go to the Saturday Market later?"
+next = "1"
+
+
+[market_zorel.1]
+portrait = "eight_heart_think"
+local = "It would be cool if we picked up some new music from Zorel."
+next = "2"
+
+
+[market_zorel.2]
+portrait = "eight_heart_happy"
+local = "Something you can really swing a hammer to, you know?"

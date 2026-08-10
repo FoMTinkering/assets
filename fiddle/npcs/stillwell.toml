@@ -1,0 +1,131 @@
+birthday = { season = "winter", day = 27 }
+loved_gifts = [
+	"ancient_crystal_goblet",
+	"black_tablet",
+	"crystal_apple",
+	"crystal_berry_pie",
+	"fog_orchid",
+	"red_wine",
+	"spell_fruit_parfait",
+	"weightless_stone",
+	"fire_crystal",
+	"completely_wrong_map",
+]
+liked_gifts = [
+	"caramelized_moon_fruit",
+	"coffee",
+	"crystal",
+	"crystal_berries",
+	"crystal_rose",
+	"crystal_wing_moth",
+	"crystal_caterpillar",
+	"crystalline_cricket",
+	"monster_cookie",
+	"obsidian",
+	"voidite",
+	"monster_mash",
+	"moon_fruit",
+	"moon_fruit_cake",
+	"muttering_cube",
+	"night_queen",
+	"poached_pear",
+	"rose",
+	"shadow_flower",
+	"spell_fruit",
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "sunflower"
+name = "Stillwell"
+aldarian_name = "STLWL"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["vendor"]
+journal_portrait_offset = [-134, -38]
+journal_background_color = [202, 179, 255]
+date_photo_offset = [0, 0]
+job = "Fortune Telling Vendor"
+icon_sprite = "spr_ui_generic_icon_npc_stillwell"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_stillwell"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_stillwell"
+dateable = false
+
+[gossip]
+	line = "stillwell_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["coffee"]
+	"17" = ["wine"]
+
+[offsets]
+	portrait = [-132, -65]
+	sweat = [19, 9]
+	hearts = [19, 9]
+	angry = [23, 13]
+	sparkles = [22, 5]
+	sparkles_dark = [22, 5]
+	sick = [27, 6]
+	music_notes = [19, 5]
+	intensity = [21, 0]
+	surprise = [23, 4]
+	shock = [27, 5]
+	sigh = [13, 6]
+	loud = [30, 8]
+	cheery = [22, 9]
+	drop = [27, -1]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+	closed_eyes = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]

@@ -1,0 +1,40 @@
+[greeting_ari]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ march_has_met = false },
+]
+local = "..."
+next = "1"
+
+[greeting_ari.1]
+portrait = "unimpressed"
+local = "The name's March... What do you want?"
+prompts = [
+	{ local = "I'm [Ari], the new farmer in town!", next = "2" },
+	{ local = "Charming.", next = "4" },
+]
+
+[greeting_ari.2]
+local = "I don't see what that has to do with me."
+next = "3"
+
+[greeting_ari.3]
+portrait = "think"
+local = "Regardless of what Adeline says, we really don't need an outsider to come in and solve our problems for us."
+next = "6"
+
+[greeting_ari.4]
+portrait = "annoyed"
+local = """You must be this "farmer" folks are talking about."""
+next = "5"
+
+[greeting_ari.5]
+portrait = "think"
+local = """Regardless of what Adeline says, we don't need an outsider to come in and solve our problems for us."""
+next = "6"
+
+[greeting_ari.6]
+portrait = "unimpressed"
+local = "I- We have everything under control. Just don't get in the way."

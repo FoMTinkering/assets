@@ -1,0 +1,21 @@
+[taste_testing]
+refresh = "1y"
+requires = [
+	{ npc = "reina" },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ taste_testing_day = true }
+]
+actions = [{ item = "strawberry_shortcake" }]
+portrait = "happy"
+local = "What a great day of taste testing! I saved a slice of cake for you, [Ari]!"
+
+[taste_testing_2]
+refresh = "2m"
+requires = [{ npc = "reina" }, { reina_zone = "inn/kitchen" }]
+portrait = "think"
+local = "I'm tinkering with a new salad recipe, and it's tasting pretty good, but something's missing. Lemon? Pepper?"
+next = "1"
+
+[taste_testing_2.1]
+portrait = "mad"
+local = "Let's add both!"

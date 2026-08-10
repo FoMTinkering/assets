@@ -1,0 +1,18 @@
+[sing_tonight]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "josephine" }, { npc = "nora" }] },
+	{ josephine_zone = "<nora_zone>" },
+	{ jo_and_hem_performance_night = true },
+	{ jo_and_hem_performance = false },
+	{ any = [{ time_of_day = "morning" }, { time_of_day = "afternoon" }] }
+]
+speaker = "josephine"
+portrait = "think"
+local = "I think we might sing a little tonight."
+next = "1"
+
+[sing_tonight.1]
+speaker = "nora"
+portrait = "happy"
+local = "Really? I can't wait! Holt and I will be there!"

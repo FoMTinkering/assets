@@ -1,0 +1,1047 @@
+[juniper_bathhouse_free_one]
+kind = "gameplay_triggered"
+speaker = "juniper"
+portrait = "neutral"
+local = "That'll be [BATHHOUSE_COST]-- ah."
+next = "1"
+
+[juniper_bathhouse_free_one.1]
+portrait = "annoyed"
+local = "Just go on in."
+prompts = [
+	{ local = "Thanks Juniper!" },
+	{ local = "On second thought, I'll come back later." }
+]
+
+[juniper_bathhouse_free_two]
+kind = "gameplay_triggered"
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Back again, are we? Maybe I should have fed that potion to Dell..."
+prompts = [
+	{ local = "Thanks Juniper, I'll head on in." },
+	{ local = "On second thought, I'll come back later." }
+]
+
+[juniper_bathhouse_free_three]
+kind = "gameplay_triggered"
+speaker = "juniper"
+portrait = "think"
+local = "Dozy told me I should be viewing your free baths as a good way to drum up business..."
+next = "1"
+
+[juniper_bathhouse_free_three.1]
+portrait = "mad"
+local = "I never should have encouraged him to get that business degree."
+prompts = [
+	{ local = "Dozy's a smart dog. Thanks for the free baths." },
+	{ local = "On second thought, I'll come back later." }
+]
+
+[juniper_bathhouse_free_four]
+kind = "gameplay_triggered"
+speaker = "juniper"
+local = "Today's herbal mixture for the bath is exceptional. You'll leave today simply glowing."
+next = "1"
+
+[juniper_bathhouse_free_four.1]
+portrait = "sly"
+local = "If you get any compliments, be sure to tell them to stop by the Bathhouse as well!"
+prompts = [
+	{ local = "You got it Juniper, I'll head on in." },
+	{ local = "On second thought, I'll come back later." }
+]
+
+[juniper_bathhouse_free_five]
+kind = "gameplay_triggered"
+speaker = "juniper"
+portrait = "happy"
+local = "Your last free bath!"
+next = "1"
+
+[juniper_bathhouse_free_five.1]
+portrait = "neutral"
+local = "I'm sure you're hooked now. I'll look forward to lots of paying visits from you in the future, hmm?"
+prompts = [
+	{ local = "Of course! I'll head on in." },
+	{ local = "On second thought, I'll come back later." }
+]
+
+[dozy_bathhouse_free_one]
+kind = "gameplay_triggered"
+speaker = "dozy"
+local = "(Dozy cheerfully reminds you that you have five free baths)"
+prompts = [
+	{ local = "Thanks Dozy! I'll head on in." },
+	{ local = "On second thought, I'll come back later." }
+]
+
+[dozy_bathhouse_free_two]
+kind = "gameplay_triggered"
+speaker = "dozy"
+local = "(Dozy seems to encourage you to take advantage of your free baths, you have four left!)"
+prompts = [
+	{ local = "Thanks Dozy! I'll head on in." },
+	{ local = "On second thought, I'll come back later." }
+]
+
+[dozy_bathhouse_free_three]
+kind = "gameplay_triggered"
+speaker = "dozy"
+local = "(Dozy hopes your free bath today will be just the thing for you)"
+prompts = [
+	{ local = "Thanks Dozy! I'll head on in." },
+	{ local = "On second thought, I'll come back later." }
+]
+
+[dozy_bathhouse_free_four]
+kind = "gameplay_triggered"
+speaker = "dozy"
+local = "(Dozy indicates that today's bath is exceptional, and hopes you agree)"
+prompts = [
+	{ local = "Thanks Dozy! I'll head on in." },
+	{ local = "On second thought, I'll come back later." }
+]
+
+[dozy_bathhouse_free_five]
+kind = "gameplay_triggered"
+speaker = "dozy"
+local = "(Dozy gently acknowledges that this is your last free bath... but he hopes you'll be back soon)"
+prompts = [
+	{ local = "Thanks Dozy! I'll head on in." },
+	{ local = "On second thought, I'll come back later." }
+]
+
+[juniper_bathhouse_offer]
+kind = "gameplay_triggered"
+speaker = "juniper"
+portrait = "neutral"
+local = "Hm? Oh you're here for the bath... yes, you do look like you need one. Of course, it'll cost you [BATHHOUSE_COST] tesserae... can you afford that?"
+prompts = [
+	{ local = "Yes, here you are!", next = "1" },
+	{ local = "On second thought, maybe not.", next = "2" }
+]
+
+[juniper_bathhouse_offer.1]
+portrait = "happy"
+local = "Excellent. Right this way..."
+
+[juniper_bathhouse_offer.2]
+portrait = "annoyed"
+local = "How disappointing."
+
+[juniper_bathhouse_cannot_afford]
+kind = "gameplay_triggered"
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Your pockets look a little light, [Ari]... why don't you come back when you have [BATHHOUSE_COST] tesserae, hm?"
+
+[dozy_bathhouse_offer]
+kind = "gameplay_triggered"
+speaker = "dozy"
+portrait = "neutral"
+local = "(Dozy tilts his head, it's clear he wants to know if you're here for a bath)"
+prompts = [
+	{ local = "Here's [BATHHOUSE_COST] tesserae for the bath!", next = "1" },
+	{ local = "Uh... no thank you!", next = "2" }
+]
+
+[dozy_bathhouse_offer.1]
+portrait = "neutral"
+effect = "hearts"
+local = "(Dozy wags his tail furiously)"
+
+[dozy_bathhouse_offer.2]
+portrait = "neutral"
+local = "(Dozy understands, and doesn't judge you)"
+
+[dozy_bathhouse_cannot_afford]
+kind = "gameplay_triggered"
+speaker = "dozy"
+portrait = "neutral"
+local = "(Dozy looks apologetic that you don't have enough tesserae for the bath)"
+
+[juniper_bathhouse_farewell]
+kind = "gameplay_triggered"
+speaker = "juniper"
+portrait = "neutral"
+local = "I hope you enjoyed your bath. But remember, if you feel any ill effects, such as light headache, insomnia, or sudden tail growth..."
+next = "1"
+
+[juniper_bathhouse_farewell.1]
+portrait = "wink"
+effect = "sparkles_dark"
+local = "It is merely a random coincidence!"
+
+[dozy_bathhouse_farewell]
+kind = "gameplay_triggered"
+speaker = "dozy"
+portrait = "neutral"
+local = "(You can tell that Dozy is wishing you a pleasant rest of your day)"
+
+[inn_soup]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Soup looks great today! Today's flavor is... [INN_SOUP_OF_THE_DAY]!"
+next = "1"
+
+[inn_soup.1]
+no_speaker = true
+local = "Do you want a bowl of soup?"
+prompts = [
+	{ local = "Yes" },
+	{ local = "No" }
+]
+
+[generic_fetch_quest_turn_in]
+kind = "gameplay_triggered"
+portrait = "happy"
+local = "Oh, you completed my request? Thank you [Ari], here's your reward!"
+
+[unfinished_content]
+kind = "gameplay_triggered"
+speaker = "caldarus"
+portrait = "embarrassed"
+local = """You see an ancient set of runes carved into the fence. You're loosely able to translate it to "Developers... finish... not yet..."."""
+next = "1"
+
+[unfinished_content.1]
+portrait = "think"
+local = "What could that possibly mean...?"
+
+[inspect_caldarus_statue]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The statue has a dignified presence. It almost seems alive."
+
+[inspect_seridia_statue]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The crumbling statue emanates a faint presence... It seems that $you can offer essence here$, despite the statue's condition."
+
+[inspect_water_tablet]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The ancient text must hold clues to breaking the seal. $Eiland might know more$."
+
+[inspect_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "It looks like the claw once $held something in its grip$."
+
+[inspect_lantern_moth_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold a $Lantern Moth$."
+
+[inspect_upper_mines_mushroom_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold an $Upper Mines Mushroom$."
+
+[inspect_ruby_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold a $Ruby$."
+
+[inspect_stone_loach_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold a $Stone Loach$."
+
+[inspect_water_seal]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "It appears to be a seal of some kind. You can feel a small amount of power trickling through the crack."
+
+[inspect_coral_mantis_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold a $Coral Mantis$."
+
+[inspect_archerfish_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold an $Archerfish$."
+
+[inspect_sapphire_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold a $Sapphire$."
+
+[inspect_cave_kelp_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold a $Jade Dulse$."
+
+[inspect_earth_tablet]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The ancient text must hold clues to breaking the seal. I'd better talk to $Juniper$."
+
+[inspect_earth_seal]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "It appears to be a seal of some kind. You can feel a small amount of power trickling through the crack."
+
+[inspect_crystal_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold a $Crystal Claw$."
+
+[inspect_shardfin_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold a $Shardfin$."
+
+[inspect_crystal_berry_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold $Crystal Berries$."
+
+[inspect_deep_earthworm_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold a $Deep Earthworm$."
+
+[inspect_fire_seal]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "It appears to be a seal of some kind. You can feel power trickling through the crack."
+
+[inspect_fire_tablet]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The ancient text must hold clues to breaking the seal. I'd better talk to $Juniper$."
+
+[inspect_ruins_seal]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "It appears to be a seal of some kind. You can feel a steady amount of power trickling through the crack."
+
+[inspect_faceted_rock_gem_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold a $Faceted Rock Gem$."
+
+[inspect_rockroot_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold a $Rockroot$."
+
+[inspect_emerald_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold an $Emerald$."
+
+[inspect_sealing_scroll_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to Juniper's translation, this claw is meant to hold a $Sealing Scroll$."
+
+[weather_sunny]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "An image forms in the crystal ball... Tomorrow's weather will be $sunny and clear$."
+
+[weather_rainy]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "An image forms in the crystal ball... Tomorrow's weather will be $rainy$."
+
+[weather_stormy]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "An image forms in the crystal ball... Tomorrow there will be a $thunderstorm$."
+
+[weather_cherry_blossoms]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "An image forms in the crystal ball... Tomorrow's weather will be $breezy with cherry blossoms in the air$."
+
+[weather_falling_leaves]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "An image forms in the crystal ball... Tomorrow's weather will be $breezy with falling leaves in the air$."
+
+[weather_snowy]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "An image forms in the crystal ball... Tomorrow's weather will be $snowy$."
+
+[weather_blizzard]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "An image forms in the crystal ball... Tomorrow there will be a $blizzard$."
+
+[animal_treat_initial]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Give $[ANIMAL_NAME]$ a Heart Treat? If you give $[ANIMAL_PAIR]$ a Heart Treat, they'll mate."
+prompts = [
+	{ local = "Yes" },
+	{ local = "No" }
+]
+
+[animal_treat_second]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Give $[ANIMAL_NAME]$ a Heart Treat? If you do, they'll mate with $[BREEDING_PARTNER]$."
+prompts = [
+	{ local = "Yes" },
+	{ local = "No" }
+]
+
+[animal_treat_already_incubating]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "$[ANIMAL_NAME]$ already has a baby on the way!"
+
+[animal_treat_already_taken]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "$[ANIMAL_NAME]$ has already eaten a treat!"
+
+[animal_treat_already_taken_by_other]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "[ANIMAL_PAIR], $[BREEDING_PARTNER]$, has already eaten a =[TREAT_ITEM]=, so $[ANIMAL_NAME]$ cannot!"
+
+[animal_treat_baby]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "$[ANIMAL_NAME]$ can't eat this until they've grown up!"
+
+[animal_treat_no_room]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "There isn't enough room in $[ANIMAL_NAME]'s$ building for a baby!"
+
+[animal_treat_no_incubator_space]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "There are no incubators available in $[ANIMAL_NAME]'s$ building!"
+
+[animal_treat_below_two_hearts]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "$[ANIMAL_NAME]$ cannot breed until they've reached $2 Hearts$!"
+
+[incubation_long]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "$[ANIMAL_NAME]$ and $[BREEDING_PARTNER]'s$ egg. It's quiet."
+
+[incubation_short]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "$[ANIMAL_NAME]$ and $[BREEDING_PARTNER]$'s egg. You can hear something moving -- its going to hatch soon!"
+
+[chicken_statue_no_currency]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "A mysterious looking chicken statue. There are shiny beads glinting from the bottom of its container."
+
+[chicken_statue_has_currency]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "A mysterious looking chicken statue. Throw in some shiny beads?"
+prompts = [
+	{ local = "[statue_cost_low] Beads" },
+	{ local = "[statue_cost_high] Beads" },
+	{ local = "Not Today" }
+]
+
+[chicken_statue_egg]
+actions = [{ cutscene = "big_chicken" }]
+kind = "gameplay_triggered"
+no_speaker = true
+local = [
+    "You feel a sense of recognition and appreciation emanating from the chicken statue.",
+    "It would appear that you've helped to bring many kinds of chickens into this world.",
+    "You receive a $Big Egg$ as thanks for your kindness."
+]
+
+[horse_statue_inspect]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "This statue wasn't here before the windstorm..."
+next = "1"
+
+[horse_statue_inspect.1]
+local = "You can sense it drawing your essence toward it. Offer Essence?"
+prompts = [
+	{ local = "Offer 100 Essence." },
+	{ local = "Nay." }
+]
+
+[offering_interaction]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "A statue with an altar. Make an offering?"
+prompts = [
+	{ local = "Place [offering_item_count] [offering_item_name]" },
+	{ local = "Not Now" }
+]
+
+[wishing_well_interaction]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "A mysterious looking well. Throw in some coins?"
+prompts = [
+	{ local = "[statue_cost_low] t" },
+	{ local = "[statue_cost_high] t" },
+	{ local = "Not Today" }
+
+]
+
+[nothing_festival_post]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "There are no events today."
+
+[saturday_market_festival_post]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The Saturday Market is today!"
+
+[spring_festival_post]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The Spring Festival is today!"
+
+[shooting_star_post]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The Shooting Star Festival is today!"
+
+[animal_festival_post]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The Animal Festival is today!"
+
+[harvest_festival_post]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The Harvest Festival is today!"
+
+[eastern_road_fountain]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Clear water fills the fountain. Drink some?"
+prompts = [
+	{ local = "Yes" },
+	{ local = "No" }
+]
+
+[essence_charge_remaining_plural]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Essence Charge Remaining: $[ESSENCE_CHARGE] Days"
+
+[essence_charge_remaining_singular]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Essence Charge Remaining: $[ESSENCE_CHARGE] Day"
+
+[caldarus_teleport]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The statue of Caldarus looks peaceful."
+next = "1"
+
+[caldarus_teleport.1]
+local = "..."
+speaker = "caldarus"
+portrait = "neutral"
+prompts = [
+	{ local = "Teleport to the Deep Woods.\n(10 Essence)" },
+	{ local = "Maybe later." }
+]
+
+[caldarus_teleport_farm]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Would you like to teleport to [farm_name]?"
+prompts = [
+	{ local = "Teleport to [farm_name].\n(10 Essence)" },
+	{ local = "Maybe later." }
+]
+
+[caldarus_teleport_fail]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "You do not have the 10 essence needed to teleport."
+
+[pet_job_wood]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "$[pet_name]$ is hard at work collecting wood and can't play right now."
+next = "1"
+
+[pet_job_wood.1]
+no_speaker = true
+local = "You can change their current $Job$ in the Journal."
+
+[pet_job_stone]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "$[pet_name]$ is hard at work collecting stone and can't play right now."
+next = "1"
+
+[pet_job_stone.1]
+no_speaker = true
+local = "You can change their current $Job$ in the Journal."
+
+[pet_job_forageables]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "$[pet_name]$ is hard at work collecting forageables and can't play right now."
+next = "1"
+
+[pet_job_forageables.1]
+no_speaker = true
+local = "You can change their current $Job$ in the Journal."
+
+[cannot_pass_vines]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The stairs to the Deep Woods are covered in giant, impassable vines."
+
+[vines_can_be_burned]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Casting $Dragon's Breath$ on these giant vines should clear the way..."
+
+[cannot_open_secret]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The door is sealed with impassable rocks and debris."
+
+[can_open_secret]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Casting $Dragon's Breath$ here should clear the way..."
+
+[caldarus_awaiting_ari]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The statue of Caldarus looks peaceful. You sense that he awaits you in the $Deep Woods$..."
+
+[caldarus_asleep]
+kind = "gameplay_triggered"
+portrait = "sigh"
+local = "Zzz..."
+
+# needs review
+[harvest_pie]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "What a delicious looking $Harvest Festival Feast$!"
+next = "1"
+
+[harvest_pie.1]
+no_speaker = true
+local = "Grab a plate?"
+prompts = [
+	{ local = "Yes" },
+	{ local = "No" }
+]
+
+[pumpkin_patch]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Buy a surprise pumpkin from the pumpkin patch for 200t?"
+prompts = [
+	{ local = "Yes" },
+	{ local = "No" }
+]
+
+[pumpkin_patch_no_money]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "You need 200 Tesserae to purchase a pumpkin!"
+
+[harvest_festival_rejection]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Your heart level is too low to invite this person to dance."
+
+[harvest_festival_friend_rejection]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "You should invite a romantic interest to dance with you instead of one of your best friends."
+
+[pq_scroll]
+kind = "gameplay_triggered"
+writes = [{ read_pq_scroll = true }]
+no_speaker = true
+local = "A scrap of parchment sits upon the dusty shelf..."
+next = "1"
+
+[pq_scroll.1]
+no_speaker = true
+local = "^\"If one seeks to $forge$ ahead-\"^"
+next = "2"
+
+[pq_scroll.2]
+no_speaker = true
+local = "^\"$Dragon Fire will open the way$.\"^"
+
+[pq_dragon_forge_not_ready]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "It doesn't seem useable at the moment. Perhaps there is a $hint in one of the other rooms$."
+
+[pq_dragon_forge_ready]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The Dragon Forge remains unlit. Perhaps $Dragon's Breath$ can light it."
+
+[pq_tablet]
+kind = "gameplay_triggered"
+writes = [{ read_pq_tablet = true }]
+no_speaker = true
+local = "A prophecy appears carved into the stone tablet."
+next = "1"
+
+[pq_tablet.1]
+no_speaker = true
+local = "\"$One that slumbers in the forest's shade$.\""
+next = "2"
+
+[pq_tablet.2]
+no_speaker = true
+local = "\"$Sworn by its side, despite all odds$.\""
+next = "3"
+
+[pq_tablet.3]
+no_speaker = true
+local = "\"$Reunited, a return to balance.$\""
+
+[pq_ne_shelf]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "An old scroll lays open on the shelf..."
+next = "1"
+
+[pq_ne_shelf.1]
+no_speaker = true
+local = "^\"It happened again last night.\"^"
+next = "2"
+
+[pq_ne_shelf.2]
+no_speaker = true
+local = "^\"Power surged through $The Gate$, ascending through the $Ritual Chambers$-\"^"
+next = "3"
+
+[pq_ne_shelf.3]
+no_speaker = true
+local = "^\"As if pulled forth by unseen hands.\"^"
+next = "4"
+
+[pq_ne_shelf.4]
+no_speaker = true
+local = "^\"It seems that our rituals can no longer regulate the flow of $Magic$.\"^"
+
+[pq_nw_shelf]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "An old scroll lays open on the shelf..."
+next = "1"
+
+[pq_nw_shelf.1]
+no_speaker = true
+local = "^\"Her Highness walks among us-\"^"
+next = "2"
+
+[pq_nw_shelf.2]
+no_speaker = true
+local = "^\"Yet our prayers no longer reach her.\"^"
+
+[pq_se_shelf]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "An old scroll lays open on the shelf..."
+next = "1"
+
+[pq_se_shelf.1]
+no_speaker = true
+local = "^\"There has been a shift.\"^"
+next = "2"
+
+[pq_se_shelf.2]
+no_speaker = true
+local = "^\"Even his Lordship can sense it...\"^"
+next = "3"
+
+[pq_se_shelf.3]
+no_speaker = true
+local = "^\"What will become of us all?\"^"
+
+[pq_sw_shelf]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "An ornate scroll sits prominently on the shelf..."
+next = "1"
+
+[pq_sw_shelf.1]
+no_speaker = true
+local = "^\"I met his Lordship and the Dragonsworn in the Glade today.\"^"
+next = "2"
+
+[pq_sw_shelf.2]
+no_speaker = true
+local = "^\"I know what must come next, and yet...\"^"
+next = "3"
+
+[pq_sw_shelf.3]
+no_speaker = true
+local = "^\"If only there was another way.\"^"
+next = "4"
+
+[pq_sw_shelf.4]
+no_speaker = true
+local = "^\"I shall begin the necessary preparations.\"^"
+
+[cannot_plant_key]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "This seed can only grow in deep darkness."
+next = "1"
+
+[cannot_plant_key.1]
+no_speaker = true
+local = "I should try planting it in the field room in the $Priestess Quarters$."
+[inspect_void_stone_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "$Void Stone$ can be found throughout the Mines. $Break it with a pickaxe to harvest$."
+
+[inspect_void_powder_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "$Void Powder$ can be obtained $after defeating any kind of Monster$ throughout the Mines."
+
+[inspect_void_herb_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "$Void Herbs$ can be found $growing on the ground$ throughout the Mines."
+
+[inspect_void_pearl_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "$Void Pearls$ can be found $by fishing up small fish shadows$ throughout the Mines."
+
+[inspect_breath_of_fire_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to my translation, this claw is meant to hold a $Breath of Flame$."
+
+[inspect_smoke_moth_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to my translation, this claw is meant to hold a $Smoke Moth$."
+
+[inspect_firesail_fish_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to my translation, this claw is meant to hold a $Firesail Fish$."
+
+[inspect_obsidian_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to my translation, this claw is meant to hold $Obsidian$."
+
+[inspect_dragon_forged_fang_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to my translation, this claw is meant to hold a $Dragon Forged Fang$."
+
+[inspect_dragon_forged_horn_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to my translation, this claw is meant to hold a $Dragon Forged Horn$."
+
+[inspect_dragon_forged_core_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to my translation, this claw is meant to hold a $Dragon Forged Core$."
+
+[inspect_dragon_forged_powder_claw]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "According to my translation, this claw is meant to hold a $Dragon Forged Powder$."
+
+[inspect_dragonsworn_tablet]
+kind = "gameplay_triggered"
+writes = [{ dt = "part_four" }]
+actions = [{ can_talk = "seridia" }]
+no_speaker = true
+local = "Time and Magic flow;\nStanding across the current;\nThe Gate Between Worlds."
+next = "1"
+
+[inspect_dragonsworn_tablet.1]
+no_speaker = true
+local = "Light descends;\nDarkness rises;\nBetween, fields bloom."
+next = "2"
+
+[inspect_dragonsworn_tablet.2]
+no_speaker = true
+local = "<he>He who is</he><she>She who is</she><they>They who are</they><else>The one who is</else> called $Dragonsworn$;\n$Restore balance to all$."
+
+[factory_days_remaining_plural]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Days until next item request: $[factory_days_remaining] Days$"
+
+[factory_days_remaining_singular]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Days until next item request: $[factory_days_remaining] Day$"
+
+[factory_item_inspect]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Current item request: $[factory_item_request]$"
+
+[perpetual_soup]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Soup looks like it needs a top-up before you can eat more."
+next = "1"
+
+[perpetual_soup.1]
+no_speaker = true
+local = "Do you want to add your $[CURRENTLY_HELD_ITEM]$ to the soup before you have some?"
+prompts = [
+	{ local = "Yes" },
+	{ local = "No" }
+]
+
+[perpetual_soup_no_item]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Soup looks like it needs a top-up before you can eat more."
+next = "1"
+
+[perpetual_soup_no_item.1]
+no_speaker = true
+local = "You can add any edible food to the soup."
+
+[inspect_lost_and_found]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The Lost & Found Box is currently empty. Check back for new items on $Monday$!"
+
+[inspect_fish_trap]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Load the fish trap with $Fish Bait$ made with a $Terrarium$, then check back tomorrow to see what you've caught."
+
+[inspect_baited_fish_trap]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The fish trap currently has bait in it. Check back tomorrow to see what you've caught!"
+
+[inspect_artifact_replicator]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Put any artifact inside to receive a placeable decorative version!"
+
+[inspect_seed_maker]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Put a valid crop or forageable inside to receive 1-3 seeds."
+
+[empty_bathhouse]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Nobody is at the Bathhouse right now. Leave [BATHHOUSE_COST] behind and take a bath?"
+prompts = [
+	{ local = "Yes" },
+	{ local = "No" }
+]
+
+[empty_bathhouse_farewell]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "You feel great!"
+
+[take_baby]
+kind = "gameplay_triggered"
+portrait = "neutral"
+local = "Would you like me to take [child_held_by_ari] for a while?"
+prompts = [{ local = "Yes, please!" }, { local = "Nevermind!" }]
+
+# 10-Heart Special Item Interaction text
+
+[adelines_lifetime_planner_text]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Looking at your $Lifetime Planner$ fills you with hope for the future. You feel $your energy renewed$."
+
+[balors_polished_gem_text]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Looking at the sea glass gem reminds you of how far you've come. You feel $your energy renewed$."
+
+[caldarus_dragonsworn_statue_text]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Upon closer inspection, it appears that Caldarus has been making offerings to your statue. You receive some $Essence$."
+
+[celines_revived_flower_text]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Looking at this lost flower which has been brought back to life, you feel $your energy renewed$."
+
+[eilands_legacy_stele_text]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Looking at this $Stele$ reminds you of your legacy. You feel $your energy renewed$."
+
+[haydens_carved_nest_text]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Looking at this sculpture reminds you of your own found family. You feel $your energy renewed$."
+
+[junipers_protection_scroll_text]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The scroll emanates a strong protective energy. You feel certain that $nothing bad will happen$, should you faint in the Mines."
+
+[marchs_mistrian_shield_text]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "A beautiful $Mistrian Shield$ crafted for you by March. You can $wear the cosmetic version on your back$, anytime you want!"
+
+[reinas_cookbook_manuscript_text]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Reading the dedication that Reina wrote to you in her cookbook, you feel $your energy renewed$."
+
+[ryis_hawthorn_tree_text]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "Seeing that the hawthorn tree is thriving, you feel $your energy renewed$."
+
+[seridias_dragonsworn_armor_text]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "A set of $Dragonsworn Armor$, granted to you by Seridia. You can $wear the cosmetic version$, anytime you want!"
+
+[valens_panacea_jar_text]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "A large jar of $Panacea$ that Valen made for you. Taking a small sip, you feel $your energy renewed$."
+
+[caldarus_proposal_edge_case]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "The timing isn't right to propose, with $Caldarus still bound to the Deep Woods$. For now it would be best to focus on $breaking the Final Seal$."
+
+[replica_statue]
+kind = "gameplay_triggered"
+no_speaker = true
+local = "This replica of the Dragonsworn Armor is indistinguishable to anyone but you."

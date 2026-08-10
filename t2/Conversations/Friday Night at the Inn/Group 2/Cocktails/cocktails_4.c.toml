@@ -1,0 +1,107 @@
+[cocktails_4]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ adeline_zone = "inn/bar" },
+	{ celine_zone = "inn/bar" },
+	{ errol_zone = "inn/bar" },
+	{ hemlock_zone = "inn/bar" },
+	{ holt_zone = "inn/bar" },
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "celine" },
+		{ npc = "errol" },
+		{ npc = "hemlock" },
+		{ npc = "holt" },
+	] },
+	{ cocktails_fnati = 3 },
+]
+writes = [{ fnati = 2 }, { cocktails_fnati = 4 }]
+speaker = "errol"
+portrait = "happy"
+local = "Hemlock's been so generously mixing the drinks the past few weeks, I thought I'd share a recipe of my own!"
+next = "1"
+
+[cocktails_4.1]
+speaker = "errol"
+local = "This is something we used to make after a long day in the Mines. It went by many names! Rock Juice, the Mineshaft, Blood from the Stone, the Sinkhole..."
+next = "2"
+
+[cocktails_4.2]
+speaker = "errol"
+portrait = "think"
+local = "Helmet Hash, Miner's Mash, Bucket Brew..."
+next = "3"
+
+[cocktails_4.3]
+speaker = "hemlock"
+portrait = "ugh"
+effect = "drop"
+local = "So what was the recipe?"
+next = "4"
+
+[cocktails_4.4]
+speaker = "errol"
+portrait = "think"
+local = "Well, it wasn't a recipe so much as we all poured whatever dregs we had into a canteen and gave it a good shake!"
+next = "5"
+
+[cocktails_4.5]
+speaker = "adeline"
+portrait = "ugh"
+effect = "sick"
+local = "Errol, as the one responsible for the wellbeing of this town, I have to ask. What was safer, the Mines or this drink?"
+next = "6"
+
+[cocktails_4.6]
+speaker = "errol"
+portrait = "happy"
+local = "Hah! You're quite a card, Lady Adeline."
+next = "7"
+
+[cocktails_4.7]
+speaker = "celine"
+portrait = "sad"
+local = "He didn't answer the question, did he?"
+next = "8"
+
+[cocktails_4.8]
+speaker = "holt"
+portrait = "think"
+local = "He sure didn't..."
+next = "9"
+
+[cocktails_4.9]
+speaker = "hemlock"
+portrait = "happy"
+effect = "drop"
+local = "How about a round of beers instead?"
+next = "10"
+
+[cocktails_4.10]
+speaker = "errol"
+portrait = "wink"
+local = "Oh, you're all giving up in favor a normal drink? That's how we did it in the old days, too."
+next = "11"
+
+[cocktails_4.11]
+speaker = "hemlock"
+effect = "drop"
+local = "What about you, [Ari]? You can have a beer, but someone's got to, ah, handle this Bucket Brew."
+prompts = [
+	{ local = "Bucket Brew me!", next = "12" },
+	{ local = "I'll stick with beer.", next = "13" },
+]
+
+[cocktails_4.12]
+actions = [{ item = "bucket_brew" }]
+speaker = "errol"
+portrait = "happy"
+local = "Hoho, you're an adventurous one! That's the spirit!"
+
+[cocktails_4.13]
+actions = [{ item = "beer" }]
+speaker = "errol"
+portrait = "think"
+local = "You've wisdom beyond your years, [Ari]."

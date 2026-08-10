@@ -1,0 +1,23 @@
+[lost]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "errol" }, { npc = "hayden" }] },
+	{ errol_zone = "<hayden_zone>" },
+	{ date_time = "2m", comparator = ">=" },
+	{ season = "winter" },
+	{ errol_activity = "drink" },
+	{ hayden_activity = "drink" }
+]
+actions = [
+	{ bark = { bark = "mining", npc = "errol" } },
+	{ bark = { bark = "exclamation_mark", npc = "hayden" } }
+]
+speaker = "hayden"
+portrait = "wink"
+local = "Let me top you off, old-timer! A little bit of drink keeps a fella warm in this weather."
+next = "1"
+
+[lost.1]
+speaker = "errol"
+portrait = "happy"
+local = "Much obliged, sir! Now where was I? Oh, the time Landen and I were lost in the Mines..."

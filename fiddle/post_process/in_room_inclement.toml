@@ -1,0 +1,47 @@
+multiply_by_light_count = 1
+min_multiply_level = 30
+
+# what we start at
+init.shading.vivid = [0, 0, 0, 0]
+init.shading.multiply = [15, 0, 90, 90]
+init.shading.levels = { black = 0, grey = 232, white = 240 }
+
+init.light = [1.0, 1.0, 0.6, 0.14]
+init.shadow = [190, 180, 200, 230]
+
+["7:15am".shading]
+	vivid = { kind = "constant", value = [0, 0, 0, 0] }
+	multiply = { kind = "linear", value = [0, 0, 0, 60] }
+	levels = { kind = "linear", value = { black = 0, grey = 232, white = 240 } }
+
+["7:45am".light]
+	kind = "linear"
+	value = [1.0, 1.0, 0.8, 0.6]
+	stop_time = "10:00am"
+
+# go to sleep
+["9:30am".shading]
+	vivid = { kind = "constant", value = [0, 0, 0, 0] }
+	multiply = { kind = "constant", value = [0, 0, 0, 60] }
+	levels = { kind = "constant", value = { black = 0, grey = 232, white = 240 } }
+
+# go to sleep
+["7:00pm".shading]
+	vivid = { kind = "linear", value = [80, 70, 255, 12] }
+	multiply = { kind = "linear", value = [0, 0, 0, 90] }
+	levels = { kind = "linear", value = { black = 0, grey = 232, white = 240 } }
+
+["7:00pm".light]
+	kind = "linear"
+	value = [1.0, 1.0, 0.90, 0.75]
+
+["7:45pm".light]
+	kind = "linear"
+	value = [1.0, 0.9, 0.6, 0.14]
+	stop_time = "8:30pm"
+
+# go to sleep
+["9:30pm".shading]
+	vivid = { kind = "constant", value = [80, 70, 255, 12] }
+	multiply = { kind = "constant", value = [0, 0, 0, 90] }
+	levels = { kind = "constant", value = { black = 0, grey = 232, white = 240 } }

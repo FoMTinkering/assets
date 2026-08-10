@@ -1,0 +1,63 @@
+[archaeology_0]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "seridia" }] },
+	{ caldarus_seridia_town = true },
+	{ eiland_zone = "<seridia_zone>" }
+]
+actions = [{ bark = { npc = "eiland", bark = "ellipses" } }]
+speaker = "eiland"
+portrait = "neutral"
+local = "A moment of your time, Lady Seridia. I was hoping you might lend me your insight."
+next = "1"
+
+[archaeology_0.1]
+speaker = "eiland"
+portrait = "mad"
+local = "We made quite a find at the dig site today. An onyx tablet, covered in inscriptions."
+next = "2"
+
+[archaeology_0.2]
+speaker = "eiland"
+portrait = "think"
+local = "I have some thoughts about the syntax-"
+next = "3"
+
+[archaeology_0.3]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "Silence, pedant."
+
+[archaeology_1]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "eiland" }, { npc = "seridia" }] },
+	{ eiland_zone = "<seridia_zone>" },
+	{ caldarus_seridia_town = true }
+]
+actions = [
+	{ bark = { npc = "eiland", bark = "ellipses" } },
+	{ bark = { npc = "seridia", bark = "ellipses" } }
+]
+speaker = "eiland"
+portrait = "neutral"
+local = "Lady Seridia, do not take this the wrong way but..."
+next = "1"
+
+[archaeology_1.1]
+speaker = "eiland"
+portrait = "happy"
+effect = "drop"
+local = "I thought dragons would be more... benevolent."
+next = "2"
+
+[archaeology_1.2]
+speaker = "seridia"
+portrait = "neutral"
+local = "And I thought mortals of this era would give more tribute."
+next = "3"
+
+[archaeology_1.3]
+speaker = "seridia"
+portrait = "closed_eyes"
+local = "It seems we are both disappointed."

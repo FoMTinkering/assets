@@ -1,0 +1,23 @@
+camera_out();
+wait(3);
+create_ghost_pet();
+wait(2);
+__raise_textbox();
+
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+start_pet_creation();
+await_flag_from_blackboard("pet_done");
+update_pet_sprite();
+free {
+	wait(1);
+	play_pet_positive_sound();
+}
+wait(1.5);
+next_line(); //
+
+destroy_pet_sprite();
+close_textbox();
+wait(3);

@@ -1,0 +1,22 @@
+[rain_or_shine]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ weather = "rainy" },
+]
+speaker = "maple"
+local = "The Dragonguard gathers, rain or shine! Duty is very important to an aspiring royal."
+next = "1"
+
+[rain_or_shine.1]
+speaker = "dell"
+portrait = "mad"
+local = "We can't only defend Mistria when it's nice out... what kind of protectors would we be!"
+next = "2"
+
+[rain_or_shine.2]
+speaker = "luc"
+portrait = "ugh"
+local = "Dry protectors, for one."

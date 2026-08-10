@@ -1,0 +1,30 @@
+[travel_0]
+refresh = "1y"
+requires = [
+	{ npc = "march" },
+	{ march_is_traveling = true },
+	{ march_is_inside = false }
+]
+portrait = "think"
+local = "Olric said I've been neglecting leg day, so he made me take a walk."
+next = "1"
+
+[travel_0.1]
+portrait = "mad"
+local = "I can't help it if every day at the forge is an arm day."
+
+[travel_1]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ march_is_traveling = true },
+	{ march_is_inside = false },
+	{ march_heart_level = 8, comparator = "<" }
+]
+portrait = "unimpressed"
+local = "You're working hard, aren't you?"
+next = "1"
+
+[travel_1.1]
+portrait = "think"
+local = "Hm."

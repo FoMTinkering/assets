@@ -1,0 +1,21 @@
+[seridia_pickle]
+refresh = "1y"
+requires = [
+	{ npc = "reina" },
+	{ caldarus_seridia_town = true },
+	{ caldarus_seridia_town_timer = false },
+	{ seridia_market_count = 2, comparator = ">=" },
+	{ reina_zone = "<seridia_zone>", comparator = "!=" }
+]
+portrait = "think"
+local = "I asked Seridia to help me open a pickle jar the other day..."
+next = "1"
+
+[seridia_pickle.1]
+portrait = "neutral"
+local = "And she just... disappeared the jar!"
+next = "2"
+
+[seridia_pickle.2]
+portrait = "mad"
+local = "She didn't even offer to help clean up! There were pickles everywhere!"

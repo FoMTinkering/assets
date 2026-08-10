@@ -1,0 +1,32 @@
+[food_prep]
+refresh = "1m"
+requires = [
+	{ npc = "reina" },
+	{ reina_zone = "inn/kitchen" },
+	{ time_of_day = "morning" }
+]
+portrait = "happy"
+effect = "music_notes"
+local = "Hmm hmmm..."
+next = "1"
+
+[food_prep.1]
+portrait = "embarrassed"
+local = "Oh, don't mind me [Ari]! Just humming a little tune while I do the food prep."
+
+[food_prep_2]
+refresh = "2m"
+requires = [
+	{ npc = "reina" },
+	{ reina_zone = "inn/kitchen" },
+	{ any = [{ time_of_day = "morning" }, { time_of_day = "afternoon" }] },
+	{ reina_animation = "chop" },
+	{ reina_was_last_spoken_to = "4h", time = "after", comparator = ">" }
+]
+portrait = "neutral"
+local = "Hi [Ari]! I'm doing some meal prep for the next rush."
+next = "1"
+
+[food_prep_2.1]
+portrait = "wink"
+local = "Don't worry, I can chat and chop at the same time!"

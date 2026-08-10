@@ -1,0 +1,42 @@
+[temper]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "march" }] },
+	{ holt_zone = "<march_zone>" },
+	{ march_heart_level = 4, comparator = ">=" }
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+speaker = "holt"
+portrait = "wink"
+local = "Has anyone ever told you you've got a temper when you're at the forge, March? And you get mad easily, too."
+next = "1"
+
+[temper.1]
+speaker = "march"
+portrait = "mad"
+local = "I-"
+next = "2"
+
+[temper.2]
+speaker = "holt"
+portrait = "wink"
+local = "And you get mad easily, too."
+next = "3"
+
+[temper.3]
+speaker = "march"
+portrait = "sigh"
+local = "Bravo, Holt."
+next = "4"
+
+[temper.4]
+speaker = "holt"
+portrait = "happy"
+effect = "cheery"
+local = "Aw shucks!"
+next = "5"
+
+[temper.5]
+speaker = "holt"
+portrait = "wink"
+local = "I've had that one in my pocket for weeks!"

@@ -1,0 +1,32 @@
+[breakfast]
+refresh = "2m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_inn_breakfast_farm_work = true },
+	{ hayden_activity = "eat" },
+	{ location = "inn" },
+	{ time_of_day = "morning" }
+]
+portrait = "neutral"
+local = "Long day ahead of me at the farm."
+next = "1"
+
+[breakfast.1]
+portrait = "happy"
+local = "Time to build up the ol' energy reserves!"
+
+[breakfast_2]
+refresh = "3m"
+requires = [
+	{ npc = "hayden" },
+	{ hayden_activity = "eat" },
+	{ time_of_day = "morning" },
+	{ hayden_heart_level = 6, comparator = "<" }
+]
+portrait = "think"
+local = "There was a time in my youth when I gave the farm animals breakfast and forgot all about myself!"
+next = "1"
+
+[breakfast_2.1]
+portrait = "wink_fist"
+local = "Not anymore, of course. A reliable farmer can't go skipping breakfast!"

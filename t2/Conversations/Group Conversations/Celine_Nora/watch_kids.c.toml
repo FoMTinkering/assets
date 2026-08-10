@@ -1,0 +1,30 @@
+[watch_kids]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "celine" }, { npc = "nora" }] },
+	{ celine_zone = "<nora_zone>" },
+	{ ryis_zone = "<dell_zone>" },
+	{ ryis_zone = "<luc_zone>" },
+	{ ryis_zone = "<maple_zone>" },
+	{ celine_zone = "<ryis_zone>", comparator = "!=" },
+	{ any = [
+		{ ryis_is_at_location = "eastern_road" },
+		{ ryis_is_at_location = "landens_house_f1" }
+	] }
+]
+speaker = "celine"
+portrait = "neutral"
+local = "Do you need me to watch Dell today? I don't mind."
+next = "1"
+
+[watch_kids.1]
+speaker = "nora"
+portrait = "neutral"
+local = "Ryis is watching the kids!"
+next = "2"
+
+[watch_kids.2]
+speaker = "nora"
+portrait = "think"
+effect = "drop"
+local = "I just hope he doesn't let Dell near the tools."

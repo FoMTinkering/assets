@@ -1,0 +1,16 @@
+[green_thumb]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "nora" }] },
+	{ holt_zone = "<nora_zone>" },
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+speaker = "nora"
+portrait = "think"
+local = "Where do you suppose Celine got her green thumb?"
+next = "1"
+
+[green_thumb.1]
+speaker = "holt"
+portrait = "wink"
+local = "I have no idea! But whenever I see a flower, I think of her frondly."

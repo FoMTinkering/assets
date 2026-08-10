@@ -1,0 +1,155 @@
+bio = "Suave, 'retired' carpenter who, ah, you're doing it wrong, let me show you how a pro does it! Uncle to Ryis."
+birthday = { season = "fall", day = 4 }
+loved_gifts = [
+	"coconut_cream_pie",
+	"golden_bristle",
+	"golden_bull_horn",
+	"golden_cheesecake",
+	"golden_cookies",
+	"golden_duck_feather",
+	"golden_horse_hair",
+	"golden_feather",
+	"hard_wood",
+	"shard_mass",
+]
+
+liked_gifts = [
+	"basic_wood",
+	"bristle",
+	"bull_horn",
+	"canned_sardines",
+	"clay",
+	"coconut",
+	"coconut_milk",
+	"crystal",
+	"deep_sea_soup",
+	"duck_feather",
+	"glass",
+	"horse_hair",
+	"obsidian",
+	"paper",
+	"feather",
+	"ore_stone",
+	"shards",
+	"tomato_soup",
+	"vegetable_pot_pie",
+	"vegetable_soup",
+]
+disliked_gift_tags = ["junk", "bugs", "weird_gift"]
+hated_gift = "roly_poly"
+name = "Landen"
+aldarian_name = "LNDN"
+outfits = ["spring", "summer", "autumn", "winter"]
+tags = ["townsfolk", "carpenter_family"]
+journal_portrait_offset = [-121, -29]
+journal_background_color = [250, 223, 255]
+date_photo_offset = [0, 0]
+job = "Semi-Retired Carpenter"
+icon_sprite = "spr_ui_generic_icon_npc_landen"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_landen"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_landen"
+dateable = false
+
+[gossip]
+	line = "landen_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["coffee"]
+	"12" = ["coffee", "water"]
+	"15" = ["wine", "beer", "green_bottle"]
+	"21" = ["whiskey", "wine"]
+
+[offsets]
+	portrait = [-135, -65]
+	sweat = [4, 4]
+	hearts = [4, 4]
+	angry = [6, 1]
+	sparkles = [9, -2]
+	sparkles_dark = [9, -2]
+	sick = [5, 0]
+	music_notes = [7, -2]
+	intensity = [8, -7]
+	surprise = [9, -4]
+	shock = [11, -6]
+	sigh = [11, -3]
+	loud = [12, -8]
+	cheery = [5, 3]
+	drop = [7, -4]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter"]
+	think = ["spring", "summer", "autumn", "winter"]
+	happy = ["spring", "summer", "autumn", "winter"]
+	wink = ["spring", "summer", "autumn", "winter"]
+	mad = ["spring", "summer", "autumn", "winter"]
+	embarrassed = ["spring", "summer", "autumn", "winter"]
+	sad = ["spring", "summer", "autumn", "winter"]
+	ugh = ["spring", "summer", "autumn", "winter"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.shocked]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring"]
+	type = "complex"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.action]
+	default_direction = "north"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.hammer]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	on_pause_speaking = "idle"

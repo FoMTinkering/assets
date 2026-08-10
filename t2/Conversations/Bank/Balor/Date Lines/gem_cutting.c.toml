@@ -1,0 +1,108 @@
+[gem_cutting_accept_1]
+kind = "date_acceptance"
+requires = [
+    { npc = "balor" },
+    { date = "gem_cutting" },
+    { da_balor_gem_cutting = 0 },
+    { balor_is_spouse = false }
+]
+writes = [
+    { da_balor_gem_cutting = 1 },
+    { da_balor_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "blush"
+local = "A $Gem Cutting Date$...?"
+next = "1"
+
+[gem_cutting_accept_1.1]
+portrait = "angry_blush"
+local = "[Ari]..."
+next = "2"
+
+[gem_cutting_accept_1.2]
+portrait = "embarrassed"
+effect = "cheery"
+local = "T-that sounds incredible!"
+next = "3"
+
+[gem_cutting_accept_1.3]
+portrait = "happy_blush"
+local = "I would love to!"
+
+[gem_cutting_accept_2]
+kind = "date_acceptance"
+requires = [
+    { npc = "balor" },
+    { date = "gem_cutting" },
+    { balor_has_child = false },
+    { any = [
+        { balor_is_spouse = true },
+        { da_balor_gem_cutting = 1, comparator = ">=" }
+    ] }
+]
+writes = [
+    { da_balor_gem_cutting = 2 },
+    { da_balor_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "embarrassed"
+local = "So um. If you're not too busy..."
+next = "1"
+
+[gem_cutting_accept_2.1]
+portrait = "blush"
+local = "Would you want to do some $Gem Cutting$ together?"
+next = "2"
+
+[gem_cutting_accept_2.2]
+portrait = "happy_blush"
+effect = "cheery"
+local = "Yeah? Alright!"
+
+[gem_cutting_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+    { npc = "balor" },
+    { da_balor_gem_cutting = 1 },
+    { da_balor_gem_cutting_follow_up_gate = true },
+    { balor_is_spouse = false }
+]
+writes = [{ da_balor_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "happy_blush"
+local = "I can't believe I got to cut and polish my own gem!"
+next = "1"
+
+[gem_cutting_follow_up_1.1]
+portrait = "embarrassed"
+local = "I don't know what inspired you to propose $Gem Cutting$ as a date..."
+next = "2"
+
+[gem_cutting_follow_up_1.2]
+portrait = "blush"
+effect = "cheery"
+local = "But I loved every minute of it, [Ari]."
+
+[gem_cutting_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+    { npc = "balor" },
+    { balor_has_child = false },
+    { any = [{ balor_is_spouse = true }, { da_balor_gem_cutting = 2 }] },
+    { da_balor_gem_cutting_follow_up_gate = true },
+]
+writes = [{ da_balor_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "happy_blush"
+local = "I feel like our gems turned out really good this time!"
+next = "1"
+
+[gem_cutting_follow_up_2.1]
+portrait = "embarrassed"
+local = "Thank you for showing me how to do it, [Ari]."
+next = "2"
+
+[gem_cutting_follow_up_2.2]
+portrait = "happy_blush"
+local = "It's been fun to work on a new skill!"

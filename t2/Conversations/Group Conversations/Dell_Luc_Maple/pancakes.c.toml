@@ -1,0 +1,27 @@
+[pancakes]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ time_of_day = "morning" },
+	{ dell_activity = "eat" },
+	{ luc_activity = "eat" },
+	{ maple_activity = "eat" },
+]
+speaker = "luc"
+portrait = "neutral"
+local = "Dell, you have to eat all kinds of foods if you want to grow up big and strong. It's been proven. By science."
+next = "1"
+
+[pancakes.1]
+speaker = "dell"
+portrait = "mad"
+effect = "sparkles_dark"
+local = "What about all kinds of pancakes? Maybe that's the same!"
+next = "2"
+
+[pancakes.2]
+speaker = "maple"
+portrait = "happy"
+local = "Come on Luc, let's run a pancake experiment! For science!"

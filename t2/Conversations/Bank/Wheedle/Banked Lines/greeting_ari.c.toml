@@ -1,0 +1,34 @@
+[greeting_ari]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "wheedle" },
+	{ day_of_the_week = "saturday" },
+	{ quest_repair_the_bridge_complete = true },
+	{ quest_upgrade_the_saturday_market_complete = true },
+	{ any = [
+		{ wheedle_is_at = "town/Wheedle" },
+		{ wheedle_routine = "wheedle_packing" },
+	] },
+]
+local = "Step right up, #step right up#!"
+next = "1"
+
+[greeting_ari.1]
+portrait = "happy"
+local = "Are you ready to be wowed and amazed!?"
+next = "2"
+
+[greeting_ari.2]
+portrait = "wink"
+local = "Believe me, you won't find items like this available anywhere else."
+next = "3"
+
+[greeting_ari.3]
+portrait = "sad"
+local = "And at such reasonable prices, too!"
+next = "4"
+
+[greeting_ari.4]
+portrait = "happy"
+local = "I'm practically giving them away!"

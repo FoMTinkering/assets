@@ -1,0 +1,44 @@
+[business_check_in]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "march" }] },
+	{ adeline_zone = "town/blacksmith_business" },
+	{ march_zone = "town/blacksmith_business" },
+	{ olric_zone = "town/blacksmith_business", comparator = "!=" },
+	{ adeline_business_review = true },
+	{ date_time = "1y", comparator = ">=" }
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "Does the forge need any extra resources from the town, March?"
+next = "1"
+
+[business_check_in.1]
+speaker = "march"
+portrait = "think"
+local = "We're getting by just fine."
+next = "2"
+
+[business_check_in.2]
+speaker = "adeline"
+portrait = "sigh"
+effect = "sigh"
+local = "Olric said I should remind you that you're not taking away resources from anyone else."
+next = "3"
+
+[business_check_in.3]
+speaker = "adeline"
+portrait = "wink"
+local = "He also said I should ask you twice if I want an honest answer."
+next = "4"
+
+[business_check_in.4]
+speaker = "march"
+portrait = "think"
+local = "Fine... I could always use some more ore."
+next = "5"
+
+[business_check_in.5]
+speaker = "march"
+portrait = "unimpressed"
+local = "Also, don't listen to Olric."

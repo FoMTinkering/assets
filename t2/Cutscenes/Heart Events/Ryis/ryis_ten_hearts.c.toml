@@ -1,0 +1,327 @@
+[engagement_ring_ryis]
+kind = "gameplay_triggered"
+actions = [
+	{ bark = { bark = "cute_face", npc = "ryis" } },
+	{ cutscene = "ryis_ten_hearts" }
+]
+speaker = "ryis"
+portrait = "neutral"
+local = "What's up, [Ari]?"
+next = "1"
+
+[engagement_ring_ryis.1]
+speaker = "ryis"
+portrait = "happy"
+local = "Sure, I have time to talk. For you, I always have time."
+next = "2"
+
+[engagement_ring_ryis.2]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "Why don't we go by the $Hawthorn Tree$ ? We can check in on it and have ourselves a chat."
+
+# scene
+[ryis_ten_hearts]
+kind = "gameplay_triggered"
+speaker = "ryis"
+portrait = "happy"
+local = "It's nice to see our tree looking so healthy. Our birdhouse is holding up well, too!"
+next = "1"
+
+[ryis_ten_hearts.1]
+speaker = "ryis"
+portrait = "neutral"
+local = "I loved doing this whole restoration project with you..."
+next = "2"
+
+[ryis_ten_hearts.2]
+speaker = "ryis"
+portrait = "happy"
+local = "Now every time I walk by this spot, it makes me think of you."
+next = "3"
+
+[ryis_ten_hearts.3]
+speaker = "ryis"
+portrait = "think"
+local = "If it weren't for you, these would still be empty ruins. No tree, no birdhouse..."
+next = "4"
+
+[ryis_ten_hearts.4]
+speaker = "ryis"
+portrait = "closed_eyes"
+local = "The Mistrian Bluebirds would still be searching for \"home\". Maybe I'd still be searching, too."
+next = "5"
+
+[ryis_ten_hearts.5]
+speaker = "ryis"
+portrait = "closed_eyes_smile"
+local = "Yeah. Looking back at everything..."
+next = "6"
+
+[ryis_ten_hearts.6]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "You were helping me more than I realized."
+prompts = [
+	{ local = "How could I say no to a face like that?", next = "7" },
+	{ local = "I'm glad you talked to me about it, Ryis.", next = "8" }
+]
+
+[ryis_ten_hearts.7]
+speaker = "ryis"
+portrait = "blush_special"
+local = "Haha! Glad you liked what you saw."
+next = "9"
+
+[ryis_ten_hearts.8]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "You're my favorite person to talk to."
+next = "9"
+
+[ryis_ten_hearts.9]
+speaker = "ryis"
+portrait = "think"
+local = "You know, [Ari]... You're really special."
+next = "10"
+
+[ryis_ten_hearts.10]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "Seriously! When we first met, I already knew there was something different about you."
+next = "11"
+
+[ryis_ten_hearts.11]
+speaker = "ryis"
+portrait = "happy"
+local = "You saw me for me. Right from the get-go."
+next = "12"
+
+[ryis_ten_hearts.12]
+speaker = "ryis"
+portrait = "blush_special"
+local = "And you keep seeing me."
+next = "13"
+
+[ryis_ten_hearts.13]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "I guess what I'm saying is..."
+next = "14"
+
+[ryis_ten_hearts.14]
+speaker = "ryis"
+portrait = "neutral"
+local = "You really helped me figure things out."
+next = "15"
+
+[ryis_ten_hearts.15]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "I realize now what's really important to me..."
+next = "16"
+
+[ryis_ten_hearts.16]
+speaker = "ryis"
+portrait = "thoughtful_blush"
+local = "And I feel confident in finally putting down my roots."
+prompts = [
+	{ local = "You also showed me how to find my place in Mistria.", next = "17" },
+	{ local = "Same, Ryis. I feel at home when I'm with you.", next = "17" }
+]
+
+[ryis_ten_hearts.17]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "Really?"
+next = "18"
+
+[ryis_ten_hearts.18]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "That makes me so happy to hear."
+next = "19"
+
+[ryis_ten_hearts.19]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "It's funny that we ended up having so much in common, isn't it?"
+next = "20"
+
+[ryis_ten_hearts.20]
+speaker = "ryis"
+portrait = "thoughtful_blush"
+local = "You came to Mistria not long after I did, took on that old farm..."
+next = "21"
+
+[ryis_ten_hearts.21]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "And then we started knocking down all of Adeline's town repair projects, one by one."
+next = "22"
+
+[ryis_ten_hearts.22]
+speaker = "ryis"
+portrait = "blush_special"
+local = "I came to Mistria thinking I'd be helping out Uncle Landen..."
+next = "23"
+
+[ryis_ten_hearts.23]
+speaker = "ryis"
+portrait = "closed_eyes_smile_blush"
+local = "But together, we ended up helping the whole town."
+next = "24"
+
+[ryis_ten_hearts.24]
+speaker = "ryis"
+portrait = "starry_eyed"
+local = "And we found our own sense of belonging in the process."
+next = [
+	{ target = "25_second", requires = [
+		{ cutscene_seen_ryis_ten_hearts = true }
+	] },
+	{ target = "25_first", requires = [] }
+]
+
+[ryis_ten_hearts.25_second]
+speaker = "ryis"
+portrait = "happy"
+local = "That's why I wanted you to have that potted $Hawthorn Tree$."
+next = "26_second"
+
+[ryis_ten_hearts.26_second]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "It's like a memento of what we did together."
+next = "27_second"
+
+[ryis_ten_hearts.27_second]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "I hope you'll think of those times whenever you see it."
+next = "28"
+
+[ryis_ten_hearts.25_first]
+speaker = "ryis"
+portrait = "happy"
+local = "On that note, I have something for you. It took a bit to grow, but it's finally ready."
+next = "26_first"
+
+[ryis_ten_hearts.26_first]
+speaker = "ryis"
+portrait = "thoughtful"
+local = "It's a $Potted Hawthorn Tree$, grown from a cutting of our big tree here."
+next = "27_first"
+
+[ryis_ten_hearts.27_first]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "It's got a matching birdhouse too. So our Mistrian Bluebird family will have room to grow."
+next = "28"
+
+[ryis_ten_hearts.28]
+speaker = "ryis"
+portrait = "thoughtful_blush"
+local = "What I'm saying is..."
+next = "29"
+
+[ryis_ten_hearts.29]
+speaker = "ryis"
+portrait = "blush_special"
+local = "I want to keep on putting my roots down here in Mistria. With you by my side."
+next = "30"
+
+[ryis_ten_hearts.30]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "But maybe I'm getting too ahead of myself."
+next = "31"
+
+[ryis_ten_hearts.31]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "There was something we came out here to talk about, right?"
+prompts = [
+	{ local = "I wanted to talk to you about our future together...", next = "32" },
+	{ local = "Let's talk about it another time...", next = "42" }
+]
+
+[ryis_ten_hearts.32]
+speaker = "ryis"
+portrait = "happy"
+local = "That's cool-"
+next = "33"
+
+[ryis_ten_hearts.33]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "Wait. Our future? Together?"
+prompts = [
+	{ local = "I love you, Ryis. Will you marry me?", next = "34" },
+	{ local = "Actually, let's talk about it more another day.", next = "42" }
+]
+
+[ryis_ten_hearts.34]
+speaker = "ryis"
+writes = [
+	{ breakup_bump = true, expires = "3d" },
+	{ engagement_bump = true, expires = "2d" },
+	{ engagement_delay = true, expires = "20h" },
+	{ engagement_cap = false, expires = "3d" }
+]
+actions = [{ can_talk = "ryis" }]
+portrait = "closed_eyes_blush"
+local = "Oh man, I'm having that dream again."
+next = "35"
+
+[ryis_ten_hearts.35]
+speaker = "ryis"
+portrait = "shocked"
+local = "Wait, this is real?"
+next = "36"
+
+[ryis_ten_hearts.36]
+speaker = "ryis"
+portrait = "embarrassed"
+local = "[Ari]... Yes!"
+next = "37"
+
+[ryis_ten_hearts.37]
+speaker = "ryis"
+portrait = "starry_eyed"
+local = "YES!"
+next = "38"
+
+[ryis_ten_hearts.38]
+speaker = "ryis"
+portrait = "blush_special"
+local = "This is... oh wow. I thought... I hoped..."
+next = "39"
+
+[ryis_ten_hearts.39]
+speaker = "ryis"
+portrait = "happy_blush"
+local = "You just made me the happiest guy in the world, [Ari]! I love you so much!"
+next = "40"
+
+[ryis_ten_hearts.40]
+speaker = "ryis"
+portrait = "thoughtful_blush"
+local = "What if we eloped? Right now? No... calm down, Ryis. [Ari] deserves a beautiful wedding."
+next = "41"
+
+[ryis_ten_hearts.41]
+speaker = "ryis"
+portrait = "blush_special"
+local = "I can't wait to start planning!"
+
+[ryis_ten_hearts.42]
+speaker = "ryis"
+portrait = "shocked"
+local = "Oh... really?"
+next = "43"
+
+[ryis_ten_hearts.43]
+speaker = "ryis"
+portrait = "neutral"
+local = "That's cool. I can always make time to talk, okay?"

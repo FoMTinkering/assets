@@ -1,0 +1,1256 @@
+[archaeology_1_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1 },
+	{ date_time = "1d", comparator = ">=" },
+	{ archaeology_1_ms_line = false }
+]
+writes = [{ archaeology_1_ms_line = true }]
+local = "You can find artifacts all over Mistria! They can be donated to the Museum or sold..."
+next = "1"
+
+[archaeology_1_eiland.1]
+portrait = "embarrassed"
+local = "But I really hope you'll donate them!"
+
+[archaeology_1_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1 },
+	{ date_time = "1d", comparator = ">=" },
+	{ archaeology_1_ms_line = false }
+]
+writes = [{ archaeology_1_ms_line = true }]
+local = "You can find artifacts all over Mistria! They can be donated to the Museum or sold..."
+next = "1"
+
+[archaeology_1_errol.1]
+portrait = "embarrassed"
+local = "But I really hope you'll donate them!"
+
+[archaeology_2_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1 },
+	{ date_time = "1d", comparator = ">=" },
+	{ archaeology_2_ms_line = false }
+]
+writes = [{ archaeology_2_ms_line = true }]
+local = "You can dig up artifacts with a pickaxe or a shovel. Either one works great!"
+
+[archaeology_2_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1 },
+	{ date_time = "1d", comparator = ">=" },
+	{ archaeology_2_ms_line = false }
+]
+writes = [{ archaeology_2_ms_line = true }]
+local = "You can dig up artifacts with a pickaxe or a shovel. Either one works great!"
+
+# TUTORIAL LINES
+[archaeology_3_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ archaeology_3_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_3_ms_line = true }
+]
+local = "The Western Ruins are an excellent place for finding artifacts. There are so many discoveries waiting to be made!"
+
+[archaeology_3_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ archaeology_3_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_3_ms_line = true }
+]
+local = "The Western Ruins are an excellent place for finding artifacts. There are so many discoveries waiting to be made!"
+
+[archaeology_4_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ archaeology_4_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_4_ms_line = true }
+]
+local = "The Eastern Road frequently turns up valuable historical and archaeological finds."
+next = "1"
+
+[archaeology_4_eiland.1]
+portrait = "wink"
+local = "People have been using that road for hundreds of years, maybe longer."
+
+[archaeology_4_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ archaeology_4_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_4_ms_line = true }
+]
+local = "The Eastern Road frequently turns up valuable historical and archaeological finds."
+next = "1"
+
+[archaeology_4_errol.1]
+portrait = "wink"
+local = "People have been using that road for hundreds of years, maybe longer."
+
+[archaeology_5_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ archaeology_5_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_5_ms_line = true }
+]
+local = "Dig sites can be found all over Mistria, except for your farm."
+next = "1"
+
+[archaeology_5_eiland.1]
+portrait = "think"
+local = "Of course, a place with a lack of artifacts in an otherwise rich area is an interesting discovery in itself!"
+
+[archaeology_5_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ archaeology_5_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_5_ms_line = true }
+]
+local = "Dig sites can be found all over Mistria, except for your farm."
+next = "1"
+
+[archaeology_5_errol.1]
+portrait = "think"
+local = "Of course, a place with a lack of artifacts in an otherwise rich area is an interesting discovery in itself!"
+
+[archaeology_6_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ archaeology_6_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_6_ms_line = true }
+]
+local = "As you dig for artifacts and uncover new discoveries, you'll find your aptitude for archaeology will increase! It's only natural."
+
+[archaeology_6_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ archaeology_6_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_6_ms_line = true }
+]
+local = "As you dig for artifacts and uncover new discoveries, you'll find your aptitude for archaeology will increase! It's only natural."
+
+[archaeology_7_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ archaeology_7_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_7_ms_line = true }
+]
+local = "As your study of archaeology deepens, you'll begin noticing artifacts in new places!"
+next = "1"
+
+[archaeology_7_eiland.1]
+portrait = "think"
+local = "Terithia sometimes fishes them up, and Olric used to stumble across them in the Mines! With practice, you'll be able to do the same."
+
+[archaeology_7_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ archaeology_7_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_7_ms_line = true }
+]
+local = "As your study of archaeology deepens, you'll begin noticing artifacts in new places!"
+next = "1"
+
+[archaeology_7_errol.1]
+portrait = "think"
+local = "Terithia sometimes fishes them up, and Olric used to stumble across them in the Mines! With practice, you'll be able to do the same."
+
+[archaeology_8_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_aldarian_count = 1, comparator = "<=" },
+	{ archaeology_8_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_8_ms_line = true }
+]
+portrait = "think"
+local = "You'll find mostly Aldarian artifacts in the Narrows. You can tell due to their characteristic geometric elements and golden accents."
+
+[archaeology_8_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_aldarian_count = 1, comparator = "<=" },
+	{ archaeology_8_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_8_ms_line = true }
+]
+portrait = "think"
+local = "You'll find mostly Aldarian artifacts in the Narrows. You can tell due to their characteristic geometric elements and golden accents."
+
+[archaeology_9_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_caldosian_count = 1, comparator = "<=" },
+	{ archaeology_9_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_9_ms_line = true }
+]
+portrait = "think"
+local = "The Eastern Road dig sites seem to turn up Caldosian artifacts. They share similarities with Aldarian artifacts, but feature more filigree and silver accents."
+
+[archaeology_9_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_caldosian_count = 1, comparator = "<=" },
+	{ archaeology_9_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_9_ms_line = true }
+]
+portrait = "think"
+local = "The Eastern Road dig sites seem to turn up Caldosian artifacts. They share similarities with Aldarian artifacts, but feature more filigree and silver accents."
+
+[archaeology_10_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_alda_count = 1, comparator = "<=" },
+	{ archaeology_10_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_10_ms_line = true }
+]
+local = "Alda artifacts seem to keep turning up around Hayden's farm. They're characterized by their geometry and a blue patina."
+
+[archaeology_10_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_alda_count = 1, comparator = "<=" },
+	{ archaeology_10_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_10_ms_line = true }
+]
+local = "Alda artifacts seem to keep turning up around Hayden's farm. They're characterized by their geometry and a blue patina."
+
+[archaeology_11_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_ancient_count = 1, comparator = "<=" },
+	{ archaeology_11_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_11_ms_line = true }
+]
+portrait = "neutral"
+local = "The Western Ruins are of particular interest to me, because they yield a steady supply of Ancient artifacts from the era of the Witch Queens."
+
+[archaeology_11_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_ancient_count = 1, comparator = "<=" },
+	{ archaeology_11_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_11_ms_line = true }
+]
+portrait = "neutral"
+local = "The Western Ruins are of particular interest to me, because they yield a steady supply of Ancient artifacts from the era of the Witch Queens."
+
+[archaeology_13_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_prehistoric_count = 1, comparator = "<=" },
+	{ archaeology_13_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_13_ms_line = true }
+]
+local = "A wealth of Prehistoric artifacts wash up on the Beach! You can often find them buried in the sand. Be careful with them, they're unimaginably old!"
+
+[archaeology_13_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_prehistoric_count = 1, comparator = "<=" },
+	{ archaeology_13_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_13_ms_line = true }
+]
+local = "A wealth of Prehistoric artifacts wash up on the Beach! You can often find them buried in the sand. Be careful with them, they're unimaginably old!"
+
+[archaeology_14_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_oopart_count = 1, comparator = "<=" },
+	{ archaeology_14_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_14_ms_line = true }
+]
+local = "Ooparts are out-of-place artifacts of, ah, dubious archaeological value. They can be found all over Mistria!"
+next = "1"
+
+[archaeology_14_eiland.1]
+portrait = "embarrassed"
+local = "I was torn on whether to include them in our museum's catalog, but they certainly catch the imagination!"
+
+[archaeology_14_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_oopart_count = 1, comparator = "<=" },
+	{ archaeology_14_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_14_ms_line = true }
+]
+local = "Ooparts are out-of-place artifacts of, ah, dubious archaeological value. They can be found all over Mistria!"
+next = "1"
+
+[archaeology_14_errol.1]
+portrait = "embarrassed"
+local = "I was torn on whether to include them in our museum's catalog, but they certainly catch the imagination!"
+
+[archaeology_15_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_aquatic_count = 1, comparator = "<=" },
+	{ archaeology_15_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_15_ms_line = true }
+]
+local = "It takes a bit of study to fish up Aquatic artifacts, but they're worth the effort!"
+next = "1"
+
+[archaeology_15_eiland.1]
+portrait = "happy"
+local = "Who knew a fishing rod could be part of an archaeologist's toolbox?"
+
+[archaeology_15_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_aquatic_count = 1, comparator = "<=" },
+	{ archaeology_15_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_15_ms_line = true }
+]
+local = "It takes a bit of study to fish up Aquatic artifacts, but they're worth the effort!"
+next = "1"
+
+[archaeology_15_errol.1]
+portrait = "happy"
+local = "Who knew a fishing rod could be part of an archaeologist's toolbox?"
+
+[archaeology_16_eiland]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_sunken_count = 1, comparator = "<=" },
+	{ archaeology_16_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_16_ms_line = true }
+]
+portrait = "mad"
+local = "Diving for Sunken artifacts is a learned skill, and it's worthwhile."
+next = "1"
+
+[archaeology_16_eiland.1]
+portrait = "wink"
+local = "Keep an eye out, you'll often see bubbles where something is hidden!"
+
+[archaeology_16_errol]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_sunken_count = 1, comparator = "<=" },
+	{ archaeology_16_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_16_ms_line = true }
+]
+portrait = "mad"
+local = "Diving for Sunken artifacts is a learned skill, and it's worthwhile."
+next = "1"
+
+[archaeology_16_errol.1]
+portrait = "wink"
+local = "Keep an eye out, you'll often see bubbles where something is hidden!"
+
+[archaeology_18_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 5, comparator = ">" },
+	{ eiland_heart_level = 7, comparator = "<=" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_archaeology_count = 10, comparator = ">=" },
+	{ archaeology_18_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_18_ms_line = true }
+]
+local = "The Museum's collection has come a long way, and it can go a long ways yet! Let's keep digging!"
+
+[archaeology_18_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 5, comparator = ">" },
+	{ eiland_heart_level = 7, comparator = "<=" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_archaeology_count = 10, comparator = ">=" },
+	{ archaeology_18_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_18_ms_line = true }
+]
+local = "The Museum's collection has come a long way, and it can go a long ways yet! Let's keep digging!"
+
+[archaeology_19_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ archaeology_19_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_19_ms_line = true }
+]
+portrait = "think"
+local = "You never know what you'll find at a dig site! It could be sod..."
+next = "1"
+
+[archaeology_19_eiland.1]
+portrait = "happy"
+effect = "sparkles"
+local = "Or it could be the next big discovery that fills in a piece of Mistria's history!"
+
+[archaeology_19_errol]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ archaeology_19_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_19_ms_line = true }
+]
+portrait = "think"
+local = "You never know what you'll find at a dig site! It could be sod..."
+next = "1"
+
+[archaeology_19_errol.1]
+portrait = "happy"
+effect = "sparkles"
+local = "Or it could be the next big discovery that fills in a piece of Mistria's history!"
+
+[archaeology_20_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_archaeology_count = 10, comparator = ">=" },
+	{ archaeology_20_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_20_ms_line = true }
+]
+portrait = "happy"
+local = "I see that the Museum's collection has been filling up, [Ari]! I can't thank you enough for your generosity and hard work!"
+
+[archaeology_20_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_archaeology_count = 10, comparator = ">=" },
+	{ archaeology_20_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_20_ms_line = true }
+]
+portrait = "happy"
+local = "I see that the Museum's collection has been filling up, [Ari]! I can't thank you enough for your generosity and hard work!"
+
+[archaeology_21_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_archaeology_count = 15, comparator = ">=" },
+	{ archaeology_21_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_21_ms_line = true }
+]
+local = "[Ari], I was taking a walk through the collection and suddenly felt so much pride and gratitude."
+next = "1"
+
+[archaeology_21_eiland.1]
+portrait = "happy"
+effect = "cheery"
+local = "Thank you for believing in Mistria."
+
+[archaeology_21_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_archaeology_count = 15, comparator = ">=" },
+	{ archaeology_21_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_21_ms_line = true }
+]
+local = "[Ari], I was taking a walk through the collection and suddenly felt so much pride and gratitude."
+next = "1"
+
+[archaeology_21_errol.1]
+portrait = "happy"
+effect = "cheery"
+local = "Thank you for believing in Mistria."
+
+[archaeology_22_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_archaeology_count = 20, comparator = ">=" },
+	{ archaeology_22_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_22_ms_line = true }
+]
+local = "The Museum will be key to Mistria's revival, and you're key to the Museum's revival."
+next = "1"
+
+[archaeology_22_eiland.1]
+portrait = "mad"
+effect = "sparkles"
+local = "Together, we'll build a record of history that rivals the Capital Library!"
+
+[archaeology_22_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_archaeology_count = 20, comparator = ">=" },
+	{ archaeology_22_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_22_ms_line = true }
+]
+local = "The Museum will be key to Mistria's revival, and you're key to the Museum's revival."
+next = "1"
+
+[archaeology_22_errol.1]
+portrait = "mad"
+effect = "sparkles"
+local = "Together, we'll build a record of history that rivals the Capital Library!"
+
+[archaeology_23_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_archaeology_count = 10, comparator = ">=" },
+	{ archaeology_23_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_23_ms_line = true }
+]
+local = "Your hard work gathering donations for the Museum makes me want to work hard, too! Thank you, [Ari]."
+
+[archaeology_23_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_archaeology_count = 10, comparator = ">=" },
+	{ archaeology_23_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_23_ms_line = true }
+]
+local = "Your hard work gathering donations for the Museum makes me want to work hard, too! Thank you, [Ari]."
+
+[archaeology_24_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_aldarian_count = 1, comparator = ">=" },
+	{ museum_set_aldarian_count = 4, comparator = "<" },
+	{ archaeology_24_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_24_ms_line = true }
+]
+portrait = "think"
+local = "More Aldarian artifacts in the Museum would really help us get a fuller picture of life during that period."
+
+[archaeology_24_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_aldarian_count = 1, comparator = ">=" },
+	{ museum_set_aldarian_count = 4, comparator = "<" },
+	{ archaeology_24_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_24_ms_line = true }
+]
+portrait = "think"
+local = "More Aldarian artifacts in the Museum would really help us get a fuller picture of life during that period."
+
+[archaeology_25_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_caldosian_count = 1, comparator = ">=" },
+	{ museum_set_caldosian_count = 4, comparator = "<" },
+	{ archaeology_25_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_25_ms_line = true }
+]
+local = "Adding more Caldosian artifacts to the Museum's collection would help us understand their split with the Alda after the age of the Witch Queens ended."
+
+[archaeology_25_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_caldosian_count = 1, comparator = ">=" },
+	{ museum_set_caldosian_count = 4, comparator = "<" },
+	{ archaeology_25_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_25_ms_line = true }
+]
+local = "Adding more Caldosian artifacts to the Museum's collection would help us understand their split with the Alda after the age of the Witch Queens ended."
+
+[archaeology_26_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_alda_count = 1, comparator = ">=" },
+	{ museum_set_alda_count = 4, comparator = "<" },
+	{ archaeology_26_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_26_ms_line = true }
+]
+portrait = "think"
+local = "Every Alda artifact we add to the Museum's collection helps us understand the dark ages that preceded the Kingdom of Aldaria."
+
+[archaeology_26_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_alda_count = 1, comparator = ">=" },
+	{ museum_set_alda_count = 4, comparator = "<" },
+	{ archaeology_26_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_26_ms_line = true }
+]
+portrait = "think"
+local = "Every Alda artifact we add to the Museum's collection helps us understand the dark ages that preceded the Kingdom of Aldaria."
+
+[archaeology_27_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_archaeology_count = 5, comparator = "<=" },
+	{ archaeology_27_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_27_ms_line = true }
+]
+local = "It would be wonderful to share a fuller picture of our history with the people of Mistria!"
+
+[archaeology_27_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_archaeology_count = 5, comparator = "<=" },
+	{ archaeology_27_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_27_ms_line = true }
+]
+local = "It would be wonderful to share a fuller picture of our history with the people of Mistria!"
+
+[archaeology_28_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_ancient_count = 1, comparator = ">=" },
+	{ museum_set_ancient_count = 4, comparator = "<" },
+	{ archaeology_28_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_28_ms_line = true }
+]
+portrait = "think"
+local = "I'm very interested in growing our collection of Ancient artifacts from the reign of the Witch Queens."
+next = "1"
+
+[archaeology_28_eiland.1]
+portrait = "mad"
+local = "With enough pieces, I might even be able to entice Juniper into revealing some of their secrets!"
+
+[archaeology_28_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_ancient_count = 1, comparator = ">=" },
+	{ museum_set_ancient_count = 4, comparator = "<" },
+	{ archaeology_28_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_28_ms_line = true }
+]
+portrait = "think"
+local = "I'm very interested in growing our collection of Ancient artifacts from the reign of the Witch Queens."
+next = "1"
+
+[archaeology_28_errol.1]
+portrait = "mad"
+local = "With enough pieces, I might even be able to entice Juniper into revealing some of their secrets!"
+
+[archaeology_30_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_prehistoric_count = 1, comparator = ">=" },
+	{ museum_set_prehistoric_count = 4, comparator = "<" },
+	{ archaeology_30_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_30_ms_line = true }
+]
+portrait = "happy"
+local = "I'd love to expand our collection of Pre-History artifacts for Luc! He seems especially curious about animals, whether they're ancient or modern."
+
+[archaeology_30_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_prehistoric_count = 1, comparator = ">=" },
+	{ museum_set_prehistoric_count = 4, comparator = "<" },
+	{ archaeology_30_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_30_ms_line = true }
+]
+portrait = "happy"
+local = "I'd love to expand our collection of Pre-History artifacts for Luc! He seems especially curious about animals, whether they're ancient or modern."
+
+[archaeology_31_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_oopart_count = 2, comparator = ">=" },
+	{ museum_set_oopart_count = 4, comparator = "<" },
+	{ archaeology_31_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_31_ms_line = true }
+]
+portrait = "think"
+local = "Dell seems especially taken with the Ooparts in the Museum's collection."
+next = "1"
+
+[archaeology_31_eiland.1]
+portrait = "happy"
+local = "If we get some more pieces in, it might kindle a love of archaeology in her!"
+
+[archaeology_31_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_oopart_count = 2, comparator = ">=" },
+	{ museum_set_oopart_count = 4, comparator = "<" },
+	{ archaeology_31_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_31_ms_line = true }
+]
+portrait = "think"
+local = "Dell seems especially taken with the Ooparts in the Museum's collection."
+next = "1"
+
+[archaeology_31_errol.1]
+portrait = "happy"
+local = "If we get some more pieces in, it might kindle a love of archaeology in her!"
+
+[archaeology_32_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_aquatic_count = 1, comparator = ">=" },
+	{ museum_set_aquatic_count = 4, comparator = "<" },
+	{ archaeology_32_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_32_ms_line = true }
+]
+portrait = "mad"
+local = "I'll be relying on you to help us fill out the Aquatic artifacts section of the Museum, [Ari]!"
+next = "1"
+
+[archaeology_32_eiland.1]
+portrait = "embarrassed"
+effect = "drop"
+local = "I'm a bit hopeless when it comes to fishing."
+
+[archaeology_32_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_aquatic_count = 1, comparator = ">=" },
+	{ museum_set_aquatic_count = 4, comparator = "<" },
+	{ archaeology_32_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_32_ms_line = true }
+]
+portrait = "mad"
+local = "I'll be relying on you to help us fill out the Aquatic artifacts section of the Museum, [Ari]!"
+next = "1"
+
+[archaeology_32_errol.1]
+portrait = "embarrassed"
+effect = "drop"
+local = "I'm a bit hopeless when it comes to fishing."
+
+[archaeology_33_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_sunken_count = 1, comparator = ">=" },
+	{ museum_set_sunken_count = 4, comparator = "<" },
+	{ archaeology_33_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_33_ms_line = true }
+]
+local = "I hope we can add some more Sunken artifacts to our collection!"
+next = "1"
+
+[archaeology_33_eiland.1]
+portrait = "think"
+local = "They'll help in the study of ancient trade routes and migration patterns."
+
+[archaeology_33_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_sunken_count = 1, comparator = ">=" },
+	{ museum_set_sunken_count = 4, comparator = "<" },
+	{ archaeology_33_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_33_ms_line = true }
+]
+local = "I hope we can add some more Sunken artifacts to our collection!"
+next = "1"
+
+[archaeology_33_errol.1]
+portrait = "think"
+local = "They'll help in the study of ancient trade routes and migration patterns."
+
+[archaeology_34_eiland]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_mine_count = 1, comparator = ">=" },
+	{ museum_set_mine_count = 4, comparator = "<" },
+	{ archaeology_34_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_34_ms_line = true }
+]
+portrait = "think"
+local = "I'd love to have more artifacts from the depths of the Mines."
+next = "1"
+
+[archaeology_34_eiland.1]
+local = "You're the only one who can go down there, [Ari]. I'd be grateful for any contributions you find!"
+
+[archaeology_34_errol]
+refresh = "never"
+requires = [
+	{ npc = "errol" },
+	{ archaeology_level = 1, comparator = ">" },
+	{ quest_museum_donation_wanted_complete = true },
+	{ archaeology_tutorial = 0 },
+	{ museum_set_mine_count = 1, comparator = ">=" },
+	{ museum_set_mine_count = 4, comparator = "<" },
+	{ archaeology_34_ms_line = false }
+]
+writes = [
+	{ archaeology_tutorial = 1, expires = "3d" },
+	{ archaeology_34_ms_line = true }
+]
+portrait = "think"
+local = "I'd love to have more artifacts from the depths of the Mines."
+next = "1"
+
+[archaeology_34_errol.1]
+local = "You're the only one who can go down there, [Ari]. I'd be grateful for any contributions you find!"
+
+# SKILL LEVEL LINES
+[archaeology_level_2]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 2, comparator = ">=" },
+	{ quest_museum_donation_wanted_complete = true },
+]
+writes = [{ archaeology_tutorial = 1, expires = "3d" }]
+portrait = "wink"
+local = "How exciting that you're beginning your archaeological journey! We're in it together, so don't hesitate to rely on me!"
+
+[archaeology_level_20]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 20, comparator = ">=" },
+	{ quest_museum_donation_wanted_complete = true },
+]
+writes = [{ archaeology_tutorial = 1, expires = "3d" }]
+portrait = "mad"
+local = "Your excavation techniques are becoming more refined, [Ari]. I can tell by the artifacts you're bringing in."
+next = "1"
+
+[archaeology_level_20.1]
+portrait = "wink"
+local = "Keep it up, and one day you'll be a master archaeologist! I'm sure of it!"
+
+[archaeology_level_50]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 50, comparator = ">=" },
+	{ quest_museum_donation_wanted_complete = true },
+]
+writes = [{ archaeology_tutorial = 1, expires = "3d" }]
+portrait = "mad"
+effect = "sparkles"
+local = "You've become very skilled with archaeological fieldwork, [Ari]."
+next = "1"
+
+[archaeology_level_50.1]
+portrait = "happy"
+local = "To say I'm impressed would understate it. Good work!"
+
+[archaeology_level_75]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 75, comparator = ">=" },
+	{ quest_museum_donation_wanted_complete = true },
+]
+writes = [{ archaeology_tutorial = 1, expires = "3d" }]
+local = "With your ability and time in the field, you've surpassed many of the premier archaeologists of the Capital, [Ari]."
+next = "1"
+
+[archaeology_level_75.1]
+portrait = "mad"
+local = "It's an honor working to discover the secrets of Mistria's history with you."
+
+[archaeology_level_99]
+refresh = "never"
+requires = [
+	{ npc = "eiland" },
+	{ archaeology_level = 99, comparator = ">=" },
+	{ quest_museum_donation_wanted_complete = true },
+]
+writes = [{ archaeology_tutorial = 1, expires = "3d" }]
+local = "Never in Mistria's history has there been an archaeologist so prolific as you, [Ari]."
+next = "1"
+
+[archaeology_level_99.1]
+portrait = "think"
+local = "The breadth of your discoveries have opened so many lines of research."
+next = "2"
+
+[archaeology_level_99.2]
+portrait = "happy"
+local = "They'll be singing your praises for generations to come!"

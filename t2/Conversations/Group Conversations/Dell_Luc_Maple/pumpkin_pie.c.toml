@@ -1,0 +1,27 @@
+[pumpkin_pie]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ day_time = "4:00pm", comparator = ">=" },
+	{ dell_activity = "eat" },
+	{ luc_activity = "eat" },
+	{ maple_activity = "eat" },
+	{ season = "fall" }
+]
+speaker = "dell"
+portrait = "mad"
+local = "I don't see why we can't have pumpkin pie for dinner."
+next = "1"
+
+[pumpkin_pie.1]
+speaker = "luc"
+portrait = "sad"
+local = "Grown-ups are so unreasonable."
+next = "2"
+
+[pumpkin_pie.2]
+speaker = "maple"
+portrait = "mad"
+local = "Seriously! Pumpkin is a vegetable!"

@@ -1,0 +1,47 @@
+[manor_dinner]
+refresh = "2m"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "eiland" },
+		{ npc = "elsie" },
+		{ npc = "juniper" }
+	] },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "<elsie_zone>" },
+	{ adeline_zone = "<juniper_zone>" },
+	{ any = [{ adeline_activity = "eat" }, { adeline_activity = "drink" }] },
+	{ any = [{ eiland_activity = "eat" }, { eiland_activity = "drink" }] },
+	{ any = [{ elsie_activity = "eat" }, { elsie_activity = "drink" }] },
+	{ any = [{ juniper_activity = "eat" }, { juniper_activity = "drink" }] },
+	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
+	{ juniper_can_drink = true }
+]
+speaker = "elsie"
+portrait = "wink"
+local = "Have some more wine, Juniper!"
+next = "1"
+
+[manor_dinner.1]
+speaker = "juniper"
+portrait = "neutral"
+local = "Oh, I really shouldn't."
+next = "2"
+
+[manor_dinner.2]
+speaker = "juniper"
+portrait = "think"
+local = "Well... one more."
+next = "3"
+
+[manor_dinner.3]
+speaker = "adeline"
+portrait = "happy"
+effect = "drop"
+local = "Juniper, don't feel obliged to keep pace with Aunt Elsie."
+next = "4"
+
+[manor_dinner.4]
+speaker = "eiland"
+portrait = "happy"
+local = "Yes, keep pace with me and have another round of dessert!"

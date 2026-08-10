@@ -1,0 +1,120 @@
+[harvest_festival_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ location = "town", comparator = "!=", ignore_priority = true },
+	{ caldarus_seridia_town = false }
+]
+portrait = "neutral"
+local = "Ah, there is a Harvest Festival today?"
+next = "1"
+
+[harvest_festival_0.1]
+portrait = "happy"
+local = "The bounty of nature is indeed worth celebrating."
+
+[harvest_festival_place_follow_up]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ any = [
+		{ hf_third_place = true },
+		{ hf_second_place = true },
+		{ hf_first_place = true },
+	] },
+	{ caldarus_seridia_town = false },
+	{ }
+]
+portrait = "neutral"
+local = "You have won an award for berry-picking?"
+next = "1"
+
+[harvest_festival_place_follow_up.1]
+portrait = "happy"
+local = "Congratulations!"
+next = "2"
+
+[harvest_festival_place_follow_up.2]
+portrait = "think"
+local = "With my claws, I suspect I would not have much luck with such a delicate task."
+
+[harvest_festival_eog_0]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ location = "town" },
+	{ caldarus_seridia_town = true }
+]
+portrait = "think"
+local = "$Queen Berries$ have ancient traces of Seridia's magic on them."
+next = "1"
+
+[harvest_festival_eog_0.1]
+portrait= "smile"
+local = "Yet they seem to bring people much happiness."
+next = "2"
+
+[harvest_festival_eog_0.2]
+portrait = "happy"
+local = "I suppose I should be encouraging when she puts her magic to the general good."
+
+[harvest_festival_first_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_first_place = true },
+	{ caldarus_seridia_town = true },
+	{ }
+]
+portrait = "happy"
+local = "First place! You must have worked hard, [Ari]."
+next = "1"
+
+[harvest_festival_first_place.1]
+portrait = "smile"
+local = "I can see I have much practice to do before I can match your foraging skill."
+
+[harvest_festival_second_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_second_place = true },
+	{ caldarus_seridia_town = true },
+	{ }
+]
+portrait = "happy"
+local = "Second place! You must have worked hard, [Ari]."
+next = "1"
+
+[harvest_festival_second_place.1]
+portrait = "smile"
+local = "I can see I have much practice to do before I can match your foraging skill."
+
+[harvest_festival_third_place]
+refresh = "3m"
+priority = "max"
+requires = [
+	{ npc = "caldarus" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ hf_third_place = true },
+	{ caldarus_seridia_town = true },
+	{ }
+]
+portrait = "happy"
+local = "Third place! You must have worked hard, [Ari]."
+next = "1"
+
+[harvest_festival_third_place.1]
+portrait = "smile"
+local = "I can see I have much practice to do before I can match your foraging skill."
+

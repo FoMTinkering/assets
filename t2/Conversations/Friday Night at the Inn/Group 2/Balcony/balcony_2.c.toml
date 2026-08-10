@@ -1,0 +1,113 @@
+[balcony_2_follow_up_errol]
+refresh = "never"
+requires = [{ npc = "errol" }, { balcony_fnati = 2 }]
+portrait = "embarrassed"
+local = "[Ari], I couldn't help but notice that Terithia and Juniper were both pointing at me the other night."
+next = "1"
+
+[balcony_2_follow_up_errol.1]
+portrait = "happy"
+effect = "drop"
+local = "You wouldn't happen to know why, would you?"
+next = "2"
+
+[balcony_2_follow_up_errol.2]
+portrait = "ugh"
+local = "Ah, I can tell by your expression that I shouldn't pursue the matter further."
+
+[balcony_2]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ juniper_zone = "inn/balcony_hang" },
+	{ terithia_zone = "inn/balcony_hang" },
+	{ any = [
+		{ npc = "juniper" },
+		{ npc = "terithia" },
+	] },
+	{ balcony_fnati = 1 },
+]
+writes = [{ balcony_fnati = 2 }]
+speaker = "terithia"
+local = "Ahoy there, [Ari]! Help me answer Juniper's strange question."
+next = "1"
+
+[balcony_2.1]
+speaker = "juniper"
+local = "It's a perfectly normal thing to wonder about! Who in Mistria would make the best frog?"
+next = "2"
+
+[balcony_2.2]
+speaker = "terithia"
+portrait = "think"
+local = "March would run through all his energy trying to jump higher than the other frogs. Landen would croak up a storm and drive the rest off."
+next = "3"
+
+[balcony_2.3]
+speaker = "juniper"
+portrait = "think"
+local = "What about Ryis? He seems the type to be content with the simple life."
+next = "4"
+
+[balcony_2.4]
+speaker = "terithia"
+local = "He's a city boy, Juniper. No frogs in the city."
+next = "5"
+
+[balcony_2.5]
+speaker = "terithia"
+portrait = "happy"
+local = "Surely you've got some thoughts, [Ari]! Who do you think would make the best frog?"
+prompts = [
+	{ local = "Juniper! The Bathhouse is like your pond!", next = "6" },
+	{ local = "Olric! He loves sitting on rocks!", next = "11" },
+]
+
+[balcony_2.6]
+speaker = "terithia"
+portrait = "happy"
+local = "KYA HA HA!"
+next = "7"
+
+[balcony_2.7]
+speaker = "juniper"
+portrait = "annoyed"
+local = "I'm going to pretend I didn't hear that, [Ari]."
+next = "8"
+
+[balcony_2.8]
+speaker = "terithia"
+portrait = "wink"
+effect = "hearts"
+local = "Now now, I think you'd make an adorable little frog. One of those poisonous ones."
+next = "9"
+
+[balcony_2.9]
+speaker = "terithia"
+portrait = "happy"
+local = "Besides, we all know the real answer. It has to be Errol! Have you seen that man's legs in a bathing suit?"
+next = "10"
+
+[balcony_2.10]
+speaker = "juniper"
+portrait = "sad"
+local = "I haven't had enough wine for this conversation."
+
+[balcony_2.11]
+speaker = "juniper"
+portrait = "sly"
+local = "Oh. Yes. It seems so obvious when you put it like that."
+next = "12"
+
+[balcony_2.12]
+speaker = "terithia"
+portrait = "think"
+local = "It really fits, doesn't it?"
+next = "13"
+
+[balcony_2.13]
+speaker = "terithia"
+portrait = "happy"
+local = "But I've got our real answer. It's Errol! Have you seen that man's legs in a bathing suit?"
+next = "10"

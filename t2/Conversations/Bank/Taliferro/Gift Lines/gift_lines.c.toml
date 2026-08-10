@@ -1,0 +1,128 @@
+# Hated gift
+[monster_mash]
+kind = "gift"
+requires = [
+	{ npc = "taliferro" },
+	{ gift_desire = "hated" },
+	{ gift_given = "monster_mash" }
+]
+portrait = "happy"
+effect = "angry"
+local = "What do you even call this dish? $Monster Mash$?"
+next = "1"
+
+[monster_mash.1]
+portrait = "mad"
+local = "Absolutely disgusting. Was it made with real monsters?"
+next = "2"
+
+[monster_mash.2]
+portrait = "ugh"
+local = "It was??"
+
+# Generic lines
+[loved_gift]
+kind = "gift"
+requires = [
+	{ npc = "taliferro" },
+	{ gift_desire = "loved" },
+	{ gift_given = "scent_of_spring", comparator = "!=" }
+]
+portrait = "happy"
+local = "Look at this dish! Top marks for aroma, flavor, and visual appeal. Marvelous!"
+
+[loved_gift_2]
+kind = "gift"
+requires = [
+	{ npc = "taliferro" },
+	{ gift_desire = "loved" },
+	{ gift_given = "scent_of_spring", comparator = "!=" }
+]
+portrait = "happy"
+local = "A stunning dish... just how maman used to make! Bravo!"
+
+[loved_gift_3]
+kind = "gift"
+requires = [{ npc = "taliferro" }, { gift_desire = "loved" }]
+portrait = "happy"
+local = "[Ari], this is a superb gift... truly befitting of me, Taliferro!"
+
+[liked_gift]
+kind = "gift"
+requires = [{ npc = "taliferro" }, { gift_desire = "liked" }]
+portrait = "neutral"
+local = "Oh? This looks interesting... I'll accept it."
+
+[liked_gift_cooked]
+refresh = "1w"
+kind = "gift"
+requires = [
+	{ npc = "taliferro" },
+	{ gift_desire = "liked" },
+	{ any = [
+		{ gift_given = "chili_coconut_curry" },
+		{ gift_given = "coconut_cream_pie" },
+		{ gift_given = "crab_cakes" },
+		{ gift_given = "fish_tacos" },
+		{ gift_given = "glowberry_cookies" },
+		{ gift_given = "golden_cheesecake" },
+		{ gift_given = "golden_cookies" },
+		{ gift_given = "herb_salad" },
+		{ gift_given = "ice_cream_sundae" },
+		{ gift_given = "incredibly_hot_pot" },
+		{ gift_given = "lobster_roll" },
+		{ gift_given = "mushroom_steak_dinner" },
+		{ gift_given = "perch_risotto" },
+		{ gift_given = "pumpkin_pie" },
+		{ gift_given = "sea_bream_rice" },
+		{ gift_given = "vegetable_pot_pie" },
+		{ gift_given = "vegetable_quiche" },
+		{ gift_given = "veggie_sub_sandwich" },
+	] }
+]
+portrait = "neutral"
+local = "What do we have here? It looks like some effort was put into this."
+next = "1"
+
+[liked_gift_cooked.1]
+portrait = "happy"
+local = "I'll take it... for further inspection."
+
+[neutral_gift]
+kind = "gift"
+requires = [{ npc = "taliferro" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Hmm. A solid 5 out of 10 gift."
+
+[neutral_gift_2]
+kind = "gift"
+requires = [{ npc = "taliferro" }, { gift_desire = "neutral" }]
+portrait = "neutral"
+local = "Hmm. This gift gets a passing grade."
+
+[disliked_gift]
+kind = "gift"
+requires = [{ npc = "taliferro" }, { gift_desire = "disliked" }]
+portrait = "ugh"
+local = "What am I supposed to do with your rubbish? Throw it out yourself!"
+
+[birthday_gift]
+priority = "max"
+kind = "gift"
+requires = [
+	{ npc = "taliferro" },
+	{ any = [
+		{ gift_desire = "neutral" },
+		{ gift_desire = "liked" },
+		{ gift_desire = "loved" },
+	] },
+	{ taliferro_birthday = "24h", time = "after" },
+	{  },
+]
+portrait = "neutral"
+local = "A birthday gift? From a fan?"
+next = "1"
+
+[birthday_gift.1]
+portrait = "happy"
+local = "Oh, I love to be adored by the people."

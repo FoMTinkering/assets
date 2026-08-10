@@ -1,0 +1,23 @@
+[anvil]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "balor" }, { npc = "march" }] },
+	{ any = [
+		{ balor_zone = "town/wagon" },
+		{ balor_zone = "town/forge_lesson" },
+		{ balor_zone = "town/blacksmith_forge" },
+		{ balor_zone = "blacksmith_store/workbench" }
+	] },
+	{ balor_zone = "<march_zone>" },
+	{ date_time = "2m", comparator = ">=" }
+]
+speaker = "balor"
+portrait = "sad"
+effect = "sweat"
+local = "I had to ship an anvil once. Never again."
+next = "1"
+
+[anvil.1]
+speaker = "march"
+portrait = "unimpressed"
+local = "Noted."

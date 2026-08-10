@@ -1,0 +1,42 @@
+[project]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "landen" }, { npc = "ryis" }] },
+	{ landen_zone = "<ryis_zone>" },
+	{ any = [
+		{ location = "landens_house_f1" },
+		{ landen_zone = "eastern_road/porch_conversation" },
+		{ landen_zone = "eastern_road/work_station" },
+		{ landen_zone = "eastern_road/work_station_teaching" },
+	] }
+]
+speaker = "ryis"
+portrait = "think"
+local = "I don't know, Uncle Landen... the lumber we've got on hand is too soft for a project like this."
+next = "1"
+
+[project.1]
+speaker = "landen"
+portrait = "happy"
+local = "Well, I'll be! Your eye's gotten real good, kiddo."
+
+[project_2]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "landen" }, { npc = "ryis" }] },
+	{ landen_zone = "<ryis_zone>" },
+	{ any = [
+		{ location = "landens_house_f1" },
+		{ landen_zone = "eastern_road/work_station" },
+		{ landen_zone = "eastern_road/work_station_teaching" },
+	] }
+]
+speaker = "landen"
+portrait = "wink"
+local = "Now don't fret, nephew of mine. All you need is an extra anchor point, hereabouts."
+next = "1"
+
+[project_2.1]
+speaker = "ryis"
+portrait = "happy"
+local = "Oh! I thought we'd have to start all over. Thanks, Uncle Landen!"

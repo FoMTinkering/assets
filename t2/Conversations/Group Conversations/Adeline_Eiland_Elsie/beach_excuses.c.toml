@@ -1,0 +1,26 @@
+[beach_excuses]
+refresh = "3m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "eiland" }, { npc = "elsie" }] },
+	{ adeline_zone = "<eiland_zone>" },
+	{ adeline_zone = "<elsie_zone>" },
+	{ weather = "pleasant" },
+	{ season = "summer" },
+	{ group_one_beach_day = false },
+]
+speaker = "eiland"
+portrait = "think"
+local = "I suppose I could do some excavations on the Beach. For, ah, research purposes."
+next = "1"
+
+[beach_excuses.1]
+speaker = "adeline"
+portrait = "think"
+local = "I could do some paperwork by the Beach, too. There's that picnic bench that overlooks the sand."
+next = "2"
+
+[beach_excuses.2]
+speaker = "elsie"
+portrait = "neutral"
+effect = "cheery"
+local = "Oh you two, you don't need an excuse to go to the Beach in the summer!"

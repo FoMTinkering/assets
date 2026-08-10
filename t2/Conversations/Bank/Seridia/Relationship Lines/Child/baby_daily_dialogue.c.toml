@@ -1,0 +1,322 @@
+[baby_0]
+refresh = "10d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ ari_has_infant = true }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "smile"
+local = "That little laugh... [infant], I see you are in high spirits today!"
+next = "1"
+
+[baby_0.1]
+portrait = "closed_eyes_smile"
+local = "That is well, for all you see is your domain."
+
+[baby_1]
+refresh = "10d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "smile"
+local = "Have you seen, [Ari]? [child_0] is smiling at you."
+next = "1"
+
+[baby_1.1]
+portrait = "happy"
+local = "Though if you wish to make her laugh, you must swing her around. She enjoys the wind on her face, as any dragon should."
+
+[baby_2]
+refresh = "10d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ ari_has_infant = true },
+	{ seridia_zone = "<juniper_zone>", comparator = "!=", ignore_priority = true },
+	{ building = "bathhouse", comparator = "!=", ignore_priority = true },
+	{ time_of_day = "morning" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "closed_eyes"
+local = "Though she will not admit it, Juniper wishes to dote on [child_0], so we are making a visit to the Bathhouse."
+next = "1"
+
+[baby_2.1]
+portrait = "surprise"
+local = "She does begrudgingly enjoy the company of children, you know. In fact, I find her to be quite unskilled at concealing her true feelings in such matters."
+
+[baby_3]
+refresh = "10d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "smile"
+local = "As [child_0] ages, I am pleased to see your features mirrored in hers."
+next = "1"
+
+[baby_3.1]
+portrait = "happy"
+local = "She is becoming quite the little [Ari]."
+
+[baby_4]
+refresh = "10d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ ari_has_infant = true }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "angry_brows"
+local = "Ah [infant], how fine and lustrous your horns have become!"
+next = "1"
+
+[baby_4.1]
+portrait = "smile"
+local = "It pleases me that they are coming in so well."
+
+[baby_5]
+refresh = "10d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ seridia_has_child = true }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "smile"
+local = "I do adore being a mother... even the parts that are tiring and slightly wet."
+next = "1"
+
+[baby_5.1]
+portrait = "wink"
+local = "When one experiences all aspects of life countless times, its mundane troubles become charming..."
+next = "2"
+
+[baby_5.2]
+portrait = "happy"
+local = "And one finds themselves more able to focus on the joys found within."
+
+[baby_6]
+refresh = "10d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ ari_has_infant = true }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "smile"
+local = "It is a joy to see you, myself, and [infant] tied together in the cycle of souls."
+next = "1"
+
+[baby_6.1]
+portrait = "blush"
+local = "Such a bond is special. I am glad to share it with you, [Ari]."
+
+[baby_7]
+refresh = "10d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "surprise"
+local = "[child_0], what a powerful grip you have!"
+next = "1"
+
+[baby_7.1]
+portrait = "smile"
+local = "She is strong for her age, is she not?"
+next = "2"
+
+[baby_7.2]
+portrait = "happy"
+local = "You are becoming such a fearsome dragon, [child_0]! Yes you are!"
+
+[baby_8]
+refresh = "10d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ child_0_status = "infant" },
+	{ any = [{ ari_holding_child = true }, { spouse_holding_child = true }] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "think"
+local = "Ah. [child_0], you seem to be more damp than usual. Do you wish for this to be remedied?"
+next = "1"
+
+[baby_8.1]
+portrait = "neutral"
+local = "[Ari]. It seems our little princess is in need of a change of attire."
+prompts = [
+    { local = "Don't worry, I've got her!", next = "2" },
+    { local = "Could you change her this time?", next = "4" }
+]
+
+[baby_8.2]
+portrait = "sly"
+local = "Perfect."
+next = "3"
+
+[baby_8.3]
+portrait = "sly_think"
+local = "While you are doing that, I will find her a change of clothes. Something... cute."
+next = "6"
+
+[baby_8.4]
+portrait = "smile"
+local = "Of course. I have become quite adept at using magic to change [child_0]'s diapers."
+next = "5"
+
+[baby_8.5]
+portrait = "sly"
+local = "It is a spell I have perfected over the ages, for an occasion such as this."
+next = "6"
+
+[baby_8.6]
+actions = [{ blackout = 60 }]
+portrait = "happy"
+local = "There you are, [child_0]. All done."
+next = "7"
+
+[baby_8.7]
+portrait = "smile"
+local = "You look so adorable in your fresh clothes, I could gobble you up."
+
+[baby_9]
+refresh = "10d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ child_0_status = "infant" },
+	{ any = [{ ari_holding_child = true }, { spouse_holding_child = true }] }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "surprise"
+local = "[child_0] grows fussy. It is time for her to eat, is it not?"
+next = "1"
+
+[baby_9.1]
+portrait = "smile"
+local = "Come, [child_0]. Let us feed you so you may grow big and strong."
+prompts = [
+    { local = "If you feed her, I'll make us a snack!", next = "2" },
+    { local = "I'll feed her if you get us a snack!", next = "4" }
+]
+
+[baby_9.2]
+portrait = "smile"
+local = "Yes, of course."
+next = "3"
+
+[baby_9.3]
+portrait = "think"
+local = "I could summon a lavish meal for us... but I must admit that there is something special about home cooking."
+next = "6"
+
+[baby_9.4]
+portrait = "smile"
+local = "Yes, of course."
+next = "5"
+
+[baby_9.5]
+portrait = "think"
+local = "Now let us see... perhaps this will do?"
+
+[baby_9.6]
+actions = [{ blackout = 60 }]
+portrait = "happy"
+local = "How was that, [child_0]? Was it tasty?"
+
+# ari holding baby
+[ari_holding_baby_0]
+refresh = "5d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ ari_holding_child = true }
+]
+actions = [{ bark = { bark = "heart", npc = "seridia" } }]
+portrait = "smile"
+local = "Little [infant], how is today's adventure?"
+next = "1"
+
+[ari_holding_baby_0.1]
+portrait = "happy"
+local = "Oh, what a perfect smile. I see you are enjoying yourself."
+
+[ari_holding_baby_1]
+refresh = "5d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ ari_holding_child = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "smile"
+local = "Here are my greatest treasures."
+next = "1"
+
+[ari_holding_baby_1.1]
+portrait = "happy"
+local = "I do hope you two are getting up to some exciting mischief."
+
+[ari_holding_baby_2]
+refresh = "5d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ ari_holding_child = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "smile"
+local = "It is helpful that you are watching [child_0], today..."
+next = "1"
+
+[ari_holding_baby_2.1]
+portrait = "happy"
+local = "It frees me up to experiment with more... volatile magics."
+
+[ari_holding_baby_3]
+refresh = "5d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ ari_holding_child = true }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "smile"
+local = "Look at the two of you, romping around like a pair of dragons..."
+next = "1"
+
+[ari_holding_baby_3.1]
+portrait = "happy"
+local = "The sight of it makes me smile."
+next = "2"
+
+[ari_holding_baby_3.2]
+portrait = "surprise_blush"
+local = "I suppose... I have been smiling a lot of late."
+
+[ari_holding_baby_4]
+refresh = "5d"
+requires = [
+	{ npc = "seridia" },
+	{ seridia_is_spouse = true },
+	{ child_0_location = "with_ari" }
+]
+actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
+portrait = "smile"
+local = "If you desire a respite from carrying duties, do not hesitate to give [child_0] to me."
+next = "1"
+
+[ari_holding_baby_4.1]
+portrait = "happy"
+local = "Try as she might, she cannot tire me."

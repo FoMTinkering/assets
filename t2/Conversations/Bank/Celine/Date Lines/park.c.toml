@@ -1,0 +1,94 @@
+[park_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "celine" },
+	{ date = "park" },
+	{ da_celine_park = 0 },
+	{ celine_is_spouse = false }
+]
+writes = [
+	{ da_celine_park = 1 },
+	{ da_celine_park_follow_up_gate = true, expires = "1d" },
+]
+speaker = "celine"
+portrait = "neutral"
+local = "Hey, [Ari]! Got anything fun planned today?"
+prompts = [
+	{ local = "Depends, want to go to the Park together?", next = "1" },
+	{ local = "Yeah, I'm planning to take you to the Park!", next = "1" },
+]
+
+[park_accept_1.1]
+speaker = "celine"
+portrait = "blush_special"
+local = "Oh!"
+next = "2"
+
+[park_accept_1.2]
+speaker = "celine"
+portrait = "blush_closed_eyes"
+local = "T-That would be wonderful! I'd love to!"
+
+[park_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "celine" },
+	{ date = "park" },
+	{ celine_has_child = false },
+	{ any = [
+		{ celine_is_spouse = true },
+		{ da_celine_park = 1, comparator = ">=" },
+	] }
+]
+writes = [
+	{ da_celine_park = 2 },
+	{ da_celine_park_follow_up_gate = true, expires = "1d" },
+]
+speaker = "celine"
+portrait = "embarrassed"
+local = "If you're not busy [Ari], would you like to go on a date to the $Park$?"
+next = "1"
+
+[park_accept_2.1]
+speaker = "celine"
+portrait = "happy"
+local = "You would? Great!"
+next = "2"
+
+[park_accept_2.2]
+speaker = "celine"
+portrait = "blush"
+local = "Let's go!"
+
+[park_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ da_celine_park = 1 },
+	{ da_celine_park_follow_up_gate = true },
+	{ celine_is_spouse = false }
+]
+writes = [{ da_celine_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "happy"
+local = "The time flew by while we were at the park together."
+next = "1"
+
+[park_follow_up_1.1]
+portrait = "embarrassed"
+local = "If you dry the flower I gave you, it could be be a nice souvenir."
+
+[park_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "celine" },
+	{ celine_has_child = false },
+	{ any = [{ celine_is_spouse = true }, { da_celine_park = 2 }] },
+	{ da_celine_park_follow_up_gate = true },
+]
+writes = [{ da_celine_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "celine" } }]
+portrait = "blush"
+local = "I... I had a really nice time at the $Park$ with you, [Ari]."

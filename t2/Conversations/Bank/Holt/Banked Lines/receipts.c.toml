@@ -1,0 +1,15 @@
+[receipts]
+refresh = "1y"
+requires = [
+	{ npc = "holt" },
+	{ location = "general_store_store" },
+	{ holt_is_at = "general_store_store/General Store Register" }
+]
+writes = [{ holt_just_punned = 1, operator = "+=", expires = "24h" }]
+portrait = "neutral"
+local = "Do you want to hear a joke about receipts?"
+next = "1"
+
+[receipts.1]
+portrait = "wink"
+local = "Never mind, it's tearable."

@@ -1,0 +1,24 @@
+requires = [
+	{ day_of_the_week = "saturday" },
+	{ weather = "pleasant" },
+    { season = "winter" },
+	{ quest_repair_the_bridge_complete = true },
+	{ quest_upgrade_the_saturday_market_complete = true },
+    { quest_upgrade_the_saturday_market_plaza_complete = true }
+]
+
+# taliferro
+[stillwell."6:00am"]
+destination = "town/Stillwell"
+
+[stillwell."8:55pm"]
+destination = "town/Stillwell"
+on_arrival_actions = [{ routine = "stillwell_packing" }]
+
+# wheedle
+[zorel."6:00am"]
+destination = "town/Zorel"
+
+[zorel."9:32pm"]
+destination = "town/Zorel"
+on_arrival_actions = [{ routine = "zorel_packing" }]

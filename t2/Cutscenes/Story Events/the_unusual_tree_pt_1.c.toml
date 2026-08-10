@@ -1,0 +1,149 @@
+[the_unusual_tree_pt_1_follow_up_1]
+refresh = "never"
+requires = [{ npc = "adeline" }, { tut = "part_1" }]
+local = "Did Eiland rush over your house because he was excited about an ancient artifact? It's practically a rite of passage in Mistria."
+next = "1"
+
+[the_unusual_tree_pt_1_follow_up_1.1]
+portrait = "happy"
+effect = "drop"
+local = "He certainly is passionate about history."
+
+[the_unusual_tree_pt_1_follow_up_2]
+refresh = "never"
+requires = [{ npc = "errol" }, { tut = "part_1" }]
+local = "Lord Eiland has singlehandedly revived the Mistria Historical Society! He's relentless in his search for ancient artifacts."
+next = "1"
+
+[the_unusual_tree_pt_1_follow_up_2.1]
+portrait = "wink"
+local = "He believes all old relics have purpose! Even an old mine worker like me, haha!"
+
+[the_unusual_tree_pt_1_follow_up_3_hemlock]
+refresh = "never"
+requires = [
+	{ npc = "hemlock" },
+	{ tut = "part_1" },
+	{ the_unusual_tree_pt_1_follow_up_3_ms_line = false }
+]
+writes = [{ the_unusual_tree_pt_1_follow_up_3_ms_line = true }]
+local = "I heard Eiland found an ancient statue on your farmstead! That happens a lot around here."
+next = "1"
+
+[the_unusual_tree_pt_1_follow_up_3_hemlock.1]
+portrait = "think"
+local = "He even said the Sleeping Dragon Inn was a historical landmark! It does go pretty far back, come to think of it."
+
+[the_unusual_tree_pt_1_follow_up_3_josephine]
+refresh = "never"
+requires = [
+	{ npc = "josephine" },
+	{ tut = "part_1" },
+	{ the_unusual_tree_pt_1_follow_up_3_ms_line = false }
+]
+writes = [{ the_unusual_tree_pt_1_follow_up_3_ms_line = true }]
+local = "I heard Eiland found an ancient statue on your farmstead! That happens a lot around here."
+next = "1"
+
+[the_unusual_tree_pt_1_follow_up_3_josephine.1]
+portrait = "think"
+local = "He even said the Sleeping Dragon Inn was a historical landmark! It does go pretty far back, come to think of it."
+
+[the_unusual_tree_pt_1_follow_up_3_reina]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ tut = "part_1" },
+	{ the_unusual_tree_pt_1_follow_up_3_ms_line = false }
+]
+writes = [{ the_unusual_tree_pt_1_follow_up_3_ms_line = true }]
+local = "I heard Eiland found an ancient statue on your farmstead! That happens a lot around here."
+next = "1"
+
+[the_unusual_tree_pt_1_follow_up_3_reina.1]
+portrait = "think"
+local = "He even said the Sleeping Dragon Inn was a historical landmark! It does go pretty far back, come to think of it."
+
+[the_unusual_tree_pt_1_follow_up_4]
+refresh = "never"
+requires = [{ npc = "elsie" }, { tut = "part_1" }]
+portrait = "happy"
+local = "Eiland's enthusiasm for the ancient mysteries of Mistria is endless! It's fun getting swept up in it."
+
+[the_unusual_tree_pt_1]
+kind = "gameplay_triggered"
+writes = [{ tut = "part_1", expires = "4d" }]
+speaker = "eiland"
+portrait = "neutral"
+local = "Ah, good morning [Ari]! When I was here the other day I noticed something suspicious about this tree. I believe it's covering old stonework."
+next = "1"
+
+[the_unusual_tree_pt_1.1]
+portrait = "neutral"
+local = "As head of the Historical Society, I thought I'd investigate, but this old bark is proving to be surprisingly tough..."
+prompts = [
+	{ local = "Historical Society?", next = "2" },
+	{ local = "It's awfully early for this kind of thing.", next = "3" },
+]
+
+[the_unusual_tree_pt_1.2]
+portrait = "happy"
+effect = "sweat"
+local = "Haha, that is to say, Errol, Terithia and Olric... when he can remember. I'd be delighted if you joined us!"
+next = "4"
+
+[the_unusual_tree_pt_1.3]
+portrait = "embarrassed"
+local = "I'm terribly sorry! It's been on my mind and I just had to investigate. How about I make you an honorary member to make amends?"
+next = "4"
+
+[the_unusual_tree_pt_1.4]
+portrait = "ugh"
+effect = "drop"
+local = "Whew... I think I need a moment."
+prompts = [
+	{ local = "Let me take a swing at it!", next = "5" },
+	{ local = "Let me have the axe, and I'll take care of it!", next = "6" },
+]
+
+[the_unusual_tree_pt_1.5]
+portrait = "neutral"
+effect = "surprise"
+local = "Oh, by all means! Here, you can have my $Axe$."
+next = "7"
+
+[the_unusual_tree_pt_1.6]
+portrait = "neutral"
+effect = "surprise"
+local = "Haha, in that case, you're welcome to it!"
+next = "7"
+
+[the_unusual_tree_pt_1.7]
+portrait = "happy"
+local = "Incredible!"
+next = "8"
+
+[the_unusual_tree_pt_1.8]
+portrait = "neutral"
+local = "This is a statue of $Caldarus$, the mythological guardian of Mistria. Our ancient ancestors used to worship statues like this one. What an incredible find!"
+next = "9"
+
+[the_unusual_tree_pt_1.9]
+portrait = "neutral"
+local = "Shame about the head, but with a little help from the newest member of the Historical Society I think we can see him as good as new. If you would, [Ari]?"
+next = "10"
+
+[the_unusual_tree_pt_1.10]
+portrait = "happy"
+effect = "sparkles"
+local = "There we are! Don't you just love that sense of achievement?"
+next = "11"
+
+[the_unusual_tree_pt_1.11]
+portrait = "neutral"
+local = "I believe that reconnecting with Mistria's past is the key to our future."
+next = "12"
+
+[the_unusual_tree_pt_1.12]
+portrait = "neutral"
+local = "This has been a most productive morning! Thank you for all of your help. Please keep the $Axe$, and do let me know if you stumble upon any intriguing archaeological finds yourself!"

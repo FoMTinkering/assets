@@ -1,0 +1,305 @@
+[baby_0]
+refresh = "10d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ ari_has_infant = true }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy"
+local = "Look at you [infant]. Having a good one?"
+next = "1"
+
+[baby_0.1]
+portrait = "neutral"
+local = "Must be tough, being so cute. Guess someone's gotta do it."
+
+[baby_1]
+refresh = "10d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "surprised"
+local = "Aw, look at you, [child_0]. You're all smiles today!"
+next = "1"
+
+[baby_1.1]
+portrait = "happy"
+local = "What's the occasion, buddy? Tell me all about it!"
+
+[baby_2]
+refresh = "10d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ ari_has_infant = true },
+	{ building = "landens_house", comparator = "!=", ignore_priority = true },
+	{ time_of_day = "morning" },
+	{ ryis_zone = "<landen_zone>", comparator = "!=", ignore_priority = true }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "I'm thinking of taking [infant] to visit Uncle Landen today."
+next = "1"
+
+[baby_2.1]
+portrait = "happy"
+local = "Have you seen him with the kiddo yet? I swear, he was born to be a doting uncle."
+
+[baby_3]
+refresh = "10d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "neutral"
+local = "I can already see how [child_0] takes after you, [Ari]. Total farmer at heart."
+next = "1"
+
+[baby_3.1]
+portrait = "happy"
+local = "Right, buddy? You wanna get your hands in the dirt and plant some veggies?"
+
+[baby_4]
+refresh = "10d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "You think [child_0] is starting to look like me?"
+next = "1"
+
+[baby_4.1]
+portrait = "closed_eyes_smile_blush"
+effect = "sparkles"
+local = "What do you think... will he grow up to have a face this handsome?"
+
+[baby_5]
+refresh = "10d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "embarrassed"
+local = "It's so great being a dad..."
+next = "1"
+
+[baby_5.1]
+portrait = "happy_blush"
+local = "I get to hang out with this cool little guy, show him all the things I like... what's better than that?"
+
+[baby_6]
+refresh = "10d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ ari_has_infant = true }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "embarrassed"
+local = "I really love doing this with you, [Ari]... the parenting thing."
+next = "1"
+
+[baby_6.1]
+portrait = "blush_special"
+local = "It's, like... simultaneously the easiest thing and the hardest thing I've ever done. I can't imagine doing it with anyone else."
+
+[baby_7]
+refresh = "10d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "neutral"
+local = "[child_0] is such a quiet kid... it's like he's always looking around, just absorbing everything he sees."
+next = "1"
+
+[baby_7.1]
+portrait = "thoughtful"
+local = "Mom and Dad said I was a real quiet kid, too. I just liked looking at stuff."
+next = "2"
+
+[baby_7.2]
+portrait = "happy"
+local = "[child_0], you having a good time watching the world go by? It's fun, right?"
+
+[baby_8]
+refresh = "10d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "thoughtful"
+local = "Hey kiddo, you're wetter than normal. Probably need to do something about that."
+next = "1"
+
+[baby_8.1]
+portrait = "neutral"
+local = "[Ari], looks like someone needs a costume change."
+prompts = [
+	{ local = "Don't worry, I got him!", next = "2" },
+	{ local = "Can you take care of him this time?", next = "4" }
+]
+
+[baby_8.2]
+portrait = "happy"
+local = "Nice, thanks."
+next = "3"
+
+[baby_8.3]
+portrait = "wink"
+local = "While you're doing that, let me see what's in his closet... don't worry, I'll find him something extra cute."
+next = "6"
+
+[baby_8.4]
+portrait = "happy"
+local = "Yeah, no problem!"
+next = "5"
+
+[baby_8.5]
+portrait = "neutral"
+local = "Come on, [child_0]. Time to get you all cleaned up!"
+next = "6"
+
+[baby_8.6]
+actions = [{ blackout = 60 }]
+portrait = "neutral"
+local = "There you go, [child_0]. Looking dry and cute as ever."
+
+[baby_9]
+refresh = "10d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ child_0_status = "infant" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "surprised"
+local = "Hey, [child_0]. You feeling hungry, buddy?"
+next = "1"
+
+[baby_9.1]
+portrait = "neutral"
+local = "[Ari], [child_0] says he's hungry. You want a snack, too?"
+prompts = [
+	{ local = "I'll feed him if you make a snack!", next = "2" },
+	{ local = "If you feed him I'll make a snack!", next = "4" }
+]
+
+[baby_9.2]
+portrait = "happy"
+local = "Sounds good."
+next = "3"
+
+[baby_9.3]
+portrait = "wink"
+local = "Master chef Ryis is on the case. He'll whip up something before you know it."
+next = "6"
+
+[baby_9.4]
+portrait = "happy"
+local = "Sounds good."
+next = "5"
+
+[baby_9.5]
+portrait = "wink"
+local = "Come on [child_0]. Let's see what's on the menu for you today."
+next = "6"
+
+[baby_9.6]
+actions = [{ blackout = 60 }]
+portrait = "happy"
+local = "Good job, [child_0]. Delicious, right?"
+
+# ari holding baby
+[ari_holding_baby_0]
+refresh = "5d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ child_0_location = "with_ari" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy"
+local = "Hey [Ari], how's your adventure with [child_0] today? Looks like he's having fun."
+next = "1"
+
+[ari_holding_baby_0.1]
+portrait = "wink"
+local = "[child_0], you having fun?"
+
+[ari_holding_baby_1]
+refresh = "5d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ ari_holding_child = true }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy"
+effect = "hearts"
+local = "Hey! There's my two favorite people!"
+
+[ari_holding_baby_2]
+refresh = "5d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ ari_holding_child = true }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "neutral"
+local = "Thanks for watching [infant] today, [Ari]."
+next = "1"
+
+[ari_holding_baby_2.1]
+portrait = "happy"
+effect = "sparkles"
+local = "If I have both hands free, it means I can bring out... The Big Saw."
+
+[ari_holding_baby_3]
+refresh = "5d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ child_0_location = "with_ari" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "happy"
+local = "It's fun watching you guys zoom around the farm."
+next = "1"
+
+[ari_holding_baby_3.1]
+portrait = "wink"
+local = "You're really putting [child_0] through his paces, huh?"
+
+[ari_holding_baby_4]
+refresh = "5d"
+requires = [
+	{ npc = "ryis" },
+	{ ryis_is_spouse = true },
+	{ child_0_location = "with_ari" }
+]
+actions = [{ bark = { bark = "heart", npc = "ryis" } }]
+portrait = "neutral"
+local = "If you ever get tired carrying [child_0], give him here."
+next = "1"
+
+[ari_holding_baby_4.1]
+portrait = "happy"
+effect = "sparkles"
+local = "I need time with my best buddy, too!"

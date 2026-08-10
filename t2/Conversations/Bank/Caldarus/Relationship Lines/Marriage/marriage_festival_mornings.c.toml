@@ -1,0 +1,108 @@
+#SPRING FESTIVAL
+[spring_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ time_of_day = "morning" },
+	{ season = "spring" },
+	{ spring_festival_date = "1d", time = "after" },
+	{ caldarus_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ caldarus_morning_greeting = false }
+]
+writes = [{ caldarus_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "cute_face", npc = "caldarus" } }]
+portrait = "smile"
+local = "Have you been collecting $Breath of Spring$ for the $Spring Festival$?"
+next = "1"
+
+
+[spring_festival.1]
+portrait = "happy"
+local = "I have as well... but I do not believe I am as adept at foraging as you."
+next = "2"
+
+
+[spring_festival.2]
+portrait = "laugh"
+local = "I am curious to see who triumphs this year. Perhaps there will be an upset."
+
+
+#SHOOTING STAR FESTIVAL
+[shooting_star_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ time_of_day = "morning" },
+	{ season = "summer" },
+	{ shooting_star_festival_date = "1d", time = "after" },
+	{ caldarus_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ caldarus_morning_greeting = false }
+]
+writes = [{ caldarus_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "The $Starbinding Ceremony$ is this evening..."
+next = "1"
+
+
+[shooting_star_festival.1]
+portrait = "embarrassed"
+local = "It would be a joy to watch the stars with you, [Ari]."
+
+
+#HARVEST FESTIVAL
+
+
+[harvest_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ time_of_day = "morning" },
+	{ season = "fall" },
+	{ harvest_festival_date = "1d", time = "after" },
+	{ caldarus_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ caldarus_morning_greeting = false }
+]
+writes = [{ caldarus_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "happy"
+local = "Good morning, my love... are you looking forward to the $Harvest Festival$?"
+next = "1"
+
+
+[harvest_festival.1]
+portrait = "caring_special"
+local = "If you would like a partner to dance with... my hand and heart will always belong to you."
+
+
+#ANIMAL FESTIVAL
+
+
+[animal_festival]
+priority = "max"
+refresh = "3m"
+requires = [
+	{ npc = "caldarus" },
+	{ time_of_day = "morning" },
+	{ season = "winter" },
+	{ animal_festival_date = "1d", time = "after" },
+	{ caldarus_is_spouse = true },
+	{ any = [{ location = "farm" }, { building = "player_home" }] },
+	{ caldarus_morning_greeting = false }
+]
+writes = [{ caldarus_morning_greeting = true, expires = "6h" }]
+actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
+portrait = "smile"
+local = "Ah, good morning. The $Animal Festival$ is today, is it not?"
+next = "1"
+
+
+[animal_festival.1]
+portrait = "laugh"
+local = "I believe the animals of [farm_name] are the cutest in all of Mistria... but alas, I am not one of the judges."

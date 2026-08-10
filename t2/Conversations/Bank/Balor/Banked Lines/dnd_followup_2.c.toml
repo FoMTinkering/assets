@@ -1,0 +1,12 @@
+[dnd_followup_2]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ day_of_the_week = "friday", comparator = "!=" },
+	{ dnd_fnati = 3, comparator = "<=" },
+	{ dnd_fnati = 2, comparator = ">=" },
+	{ dnd_fnati_discussion = 2, comparator = "<" }
+]
+writes = [{ dnd_fnati_discussion = 1, operator = "+=", expires = "1w" }]
+portrait = "think"
+local = "I was skeptical, but there may be something to this Dragons & Drama that Lord Eiland's so on about."

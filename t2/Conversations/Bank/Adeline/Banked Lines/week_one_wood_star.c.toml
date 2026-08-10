@@ -1,0 +1,23 @@
+[week_one_wood_star]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ day_time = "3:00pm", comparator = ">=" },
+	{ quest_unlocking_the_mines_pt_2_in_progress = false },
+	{ quest_unlocking_the_mines_pt_2_complete = false },
+	{ date_time = "7d", comparator = "<" }
+]
+portrait = "sigh"
+effect = "sigh"
+local = "Sigh..."
+next = "1"
+
+[week_one_wood_star.1]
+portrait = "evasive_tired"
+local = "It's hard to believe that Mistria's $Town Rank$ has fallen all the way down to $Wood Star Rank$."
+next = "2"
+
+[week_one_wood_star.2]
+portrait = "happy"
+local = "But I'm sure we can get it back up to $Stone Star Rank$ by the end of Spring, if we work at it!"

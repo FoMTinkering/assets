@@ -1,0 +1,137 @@
+[gem_cutting_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "valen" },
+	{ date = "gem_cutting" },
+	{ da_valen_gem_cutting = 0 },
+	{ valen_is_spouse = false }
+]
+writes = [
+	{ da_valen_gem_cutting = 1 },
+	{ da_valen_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "neutral"
+local = "Oh?"
+next = "1"
+
+[gem_cutting_accept_1.1]
+portrait = "think"
+local = "A $Gem Cutting Date$?"
+next = "2"
+
+[gem_cutting_accept_1.2]
+portrait = "happy_blush"
+local = "I can't say I've ever done that before!"
+next = "3"
+
+[gem_cutting_accept_1.3]
+portrait = "caring_special"
+local = "Sure, [Ari], I'd be happy to join you."
+next = "4"
+
+[gem_cutting_accept_1.4]
+portrait = "happy_blush"
+local = "It's always fun to try something new!"
+
+[gem_cutting_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "valen" },
+	{ date = "gem_cutting" },
+	{ valen_has_child = false },
+	{ any = [
+		{ valen_is_spouse = true },
+		{ da_valen_gem_cutting = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_valen_gem_cutting = 2 },
+	{ da_valen_gem_cutting_follow_up_gate = true, expires = "1d" }
+]
+portrait = "happy_blush"
+local = "You want to go $Gem Cutting$ again, [Ari]?"
+next = "1"
+
+[gem_cutting_accept_2.1]
+portrait = "caring_special"
+local = "Sure, I'd love to!"
+
+[gem_cutting_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "valen" },
+	{ da_valen_gem_cutting = 1 },
+	{ da_valen_gem_cutting_follow_up_gate = true },
+	{ valen_is_spouse = false }
+]
+writes = [{ da_valen_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "happy_blush"
+local = "That was really fun, [Ari]!"
+next = "1"
+
+[gem_cutting_follow_up_1.1]
+portrait = "think_blush"
+local = "I had no idea I'd enjoy $Gem Cutting$ so much..."
+prompts = [
+	{ local = "You're so good! Was that really your first try?", next = "2" },
+	{ local = "Wow Valen, you're a natural!", next = "6" },
+]
+
+[gem_cutting_follow_up_1.2]
+portrait = "happy_blush"
+local = "Haha! Thank you!"
+next = "3"
+
+[gem_cutting_follow_up_1.3]
+portrait = "embarrassed"
+local = "And really, it was!"
+next = "4"
+
+[gem_cutting_follow_up_1.4]
+portrait = "think_blush"
+local = "Precision focus and fine motor skills are required in my line of work."
+next = "5"
+
+[gem_cutting_follow_up_1.5]
+portrait = "happy_blush"
+local = "I suppose that's why I took to it easily!"
+
+[gem_cutting_follow_up_1.6]
+portrait = "happy_blush"
+local = "Haha! Thank you, [Ari]."
+next = "7"
+
+[gem_cutting_follow_up_1.7]
+portrait = "think_blush"
+local = "Precision focus and fine motor skills are required in my line of work."
+next = "8"
+
+[gem_cutting_follow_up_1.8]
+portrait = "happy_blush"
+local = "I suppose that's why I took to it easily!"
+
+[gem_cutting_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "valen" },
+	{ valen_has_child = false },
+	{ any = [{ valen_is_spouse = true }, { da_valen_gem_cutting = 2 }] },
+	{ da_valen_gem_cutting_follow_up_gate = true }
+]
+writes = [{ da_valen_gem_cutting_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "valen" } }]
+portrait = "happy_blush"
+local = "Thanks for inviting me out $Gem Cutting$, [Ari]."
+next = "1"
+
+[gem_cutting_follow_up_2.1]
+portrait = "think_blush"
+local = "I never guessed I'd find a new hobby in it..."
+next = "2"
+
+[gem_cutting_follow_up_2.2]
+portrait = "caring_special"
+local = "I'm glad it's one we can share together."

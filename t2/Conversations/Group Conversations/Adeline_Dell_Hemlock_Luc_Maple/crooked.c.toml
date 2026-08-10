@@ -1,0 +1,44 @@
+[crooked]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "adeline" },
+		{ npc = "dell" },
+		{ npc = "hemlock" },
+		{ npc = "luc" },
+		{ npc = "maple" }
+	] },
+	{ adeline_zone = "<dell_zone>" },
+	{ adeline_zone = "<hemlock_zone>" },
+	{ adeline_zone = "<luc_zone>" },
+	{ adeline_zone = "<maple_zone>" },
+	{ adeline_business_review = true }
+]
+speaker = "adeline"
+portrait = "neutral"
+local = "How's everything at the Inn, Hemlock?"
+next = "1"
+
+[crooked.1]
+speaker = "hemlock"
+portrait = "neutral"
+local = "Can't complain. Although maybe Ryis can take a look at the sign... I think it's crooked again."
+next = "2"
+
+[crooked.2]
+speaker = "luc"
+portrait = "neutral"
+local = "Is it?"
+next = "3"
+
+[crooked.3]
+speaker = "dell"
+portrait = "think"
+local = "It does look crooked."
+next = "4"
+
+[crooked.4]
+speaker = "maple"
+portrait = "happy"
+effect = "drop"
+local = "Stop tilting your head, guys."

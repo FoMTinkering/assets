@@ -1,0 +1,45 @@
+[soup]
+refresh = "2m"
+requires = [{ npc = "reina" }, { location = "inn" }]
+portrait = "neutral"
+local = "You hungry, [Ari]? The soup came out pretty good today. Don't be shy now, grab a bowl!"
+
+[soup_2]
+refresh = "2m"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn" },
+	{ reina_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+]
+portrait = "happy"
+local = "Hi, [Ari]! Take a seat and have yourself something tasty!"
+next = "1"
+
+[soup_2.1]
+portrait = "wink"
+local = "The soup came out nice today, in my humble opinion."
+
+[soup_3]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn" },
+	{ date_time = "1m", comparator = "<=" }
+]
+portrait = "neutral"
+local = "There's the free soup, and our menu at the front, but if you ever want to make a meal yourself you're more than welcome to use our kitchen!"
+next = "1"
+
+[soup_3.1]
+portrait = "wink"
+local = "Don't be all shy about it!"
+
+[soup_4]
+refresh = "2m"
+requires = [
+	{ npc = "reina" },
+	{ location = "inn" },
+	{ date_time = "1m", comparator = ">=" }
+]
+portrait = "happy"
+local = "Folks really went through the soup today! I'll have to make sure I remember this recipe... I was just winging it!"

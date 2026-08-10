@@ -1,0 +1,223 @@
+[pace]
+refresh = "2w"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_traveling = true },
+	{ balor_is_inside = false },
+]
+portrait = "sigh"
+effect = "sigh"
+local = "In the Capital, I always need to make deliveries early so I have time to elbow through the crowds."
+next = "1"
+
+[pace.1]
+portrait = "neutral"
+local = "I'm glad Mistria's pace is a bit more relaxed."
+
+[tesserae]
+refresh = "2m"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_traveling = true },
+	{ balor_is_inside = false },
+	{ gold = 500, comparator = ">=" },
+	{ balor_heart_level = 6, comparator = "<" },
+]
+portrait = "wink"
+local = "There's no sound quite so pleasing as the jingling of tesserae in your pocket..."
+
+[new_boots]
+refresh = "1y"
+requires = [
+	{ npc = "balor" },
+	{ louis_has_met = true, ignore_priority = true },
+	{ market_is_back = true },
+]
+portrait = "happy"
+local = "My new boots broke in nicely!"
+next = "1"
+
+[new_boots.1]
+portrait = "wink"
+local = "Louis will be happy to hear it."
+
+[on_your_way]
+refresh = "2m"
+requires = [
+	{ npc = "balor" },
+	{ balor_is_inside = false },
+	{ balor_heart_level = 8, comparator = ">=" },
+	{ balor_is_partner = true },
+]
+portrait = "wink"
+local = "On your way somewhere?"
+next = "1"
+
+[on_your_way.1]
+portrait = "happy_blush"
+local = "I won't keep you, much as I'd like to."
+
+[new_deal]
+refresh = "2m"
+requires = [{ npc = "balor" }, { balor_heart_level = 6, comparator = "<" }]
+portrait = "neutral"
+local = "I've got a line on a new deal, but time is of the essence!"
+next = "1"
+
+[new_deal.1]
+portrait = "wink"
+local = "By your leave, [Ari]."
+
+[slow_down]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ season = "spring" },
+	{ date_time = "1y", comparator = "<" },
+]
+portrait = "neutral"
+local = "Mistria is the kind of place where you can slow down."
+next = "1"
+
+[slow_down.1]
+portrait = "think"
+local = "I don't mind it..."
+
+[capital_market]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ balor_heart_level = 6, comparator = "<" },
+	{ balor_is_traveling = true },
+	{ location = "town" },
+]
+portrait = "think"
+local = "Did I ever tell you I spend some time working the Capital market?"
+next = "1"
+
+[capital_market.1]
+portrait = "ugh"
+local = "I'd spend all day criss-crossing the same plaza..."
+next = "2"
+
+[capital_market.2]
+portrait = "happy"
+effect = "drop"
+local = "Buying low and selling high."
+
+[overnight]
+refresh = "2m"
+requires = [{ npc = "balor" }, { balor_heart_level = 7, comparator = "<" }]
+portrait = "neutral"
+local = "I'm getting ready for an overnight trade run..."
+next = "1"
+
+[overnight.1]
+portrait = "happy"
+local = "These are the deals I live for!"
+
+[shipments]
+refresh = "2m"
+requires = [{ npc = "balor" }, { balor_zone = "<nora_zone>" }]
+portrait = "neutral"
+local = "Coordinating shipments with Nora always goes smoothly..."
+next = "1"
+
+[shipments.1]
+portrait = "happy"
+local = "She really knows her stuff."
+
+[opportunities]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ season = "spring" },
+	{ date_time = "1y", comparator = ">=" },
+	{ date_time = "2y", comparator = "<" },
+]
+portrait = "neutral"
+local = "The economic opportunities in Mistria have really opened up thanks to Adeline's initiatives."
+next = "1"
+
+[opportunities.1]
+portrait = "think"
+local = "I used to think she was a bit green to be town leader, but she's got big ideas and the work ethic to make them happen."
+
+[winter_wagon]
+refresh = "3m"
+requires = [
+	{ npc = "balor" },
+	{ season = "winter" },
+	{ balor_status = "undefined" },
+]
+portrait = "neutral"
+local = "I'm used to spending winters sleeping in the back of my wagon, so having my own bed at the Inn has been a welcome change."
+
+[new_boots_2]
+refresh = "1y"
+requires = [
+	{ npc = "balor" },
+	{ louis_has_met = true, ignore_priority = true },
+	{ market_is_back = true },
+]
+portrait = "neutral"
+local = "With all the traveling I do, I wear out a lot of boots."
+next = "1"
+
+[new_boots_2.1]
+portrait = "wink"
+local = "Lucky for me, Louis always has a new pair ready just when I need it."
+next = "2"
+
+[new_boots_2.2]
+portrait = "think"
+local = "He practically has a sixth sense when it comes to matters of attire."
+
+[money]
+refresh = "1y"
+requires = [{ npc = "balor" }, { balor_heart_level = 7, comparator = "<" }]
+portrait = "think"
+local = "They say money won't buy happiness, but..."
+next = "1"
+
+[money.1]
+portrait = "wink"
+local = "I'd like to find out for myself whether that's true or not."
+
+[moon]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ time_of_day = "night" },
+	{ date_time = "1y", comparator = "<" },
+	{ balor_is_inside = false },
+]
+portrait = "think"
+local = "What do you suppose the moon is made of, [Ari]?"
+next = "1"
+
+[moon.1]
+portrait = "wink"
+local = "Silver? Diamonds?"
+
+[valuable]
+refresh = "1y"
+requires = [{ npc = "balor" }, { building = "museum" }]
+portrait = "think"
+local = "It's funny what sorts of old objects people find valuable these days."
+next = "1"
+
+[valuable.1]
+portrait = "neutral"
+local = "I wonder what kind of mundane clutter of ours will be priceless in the future?"
+
+[flair]
+refresh = "never"
+requires = [{ npc = "balor" }, { date_time = "1y", comparator = "<" }]
+portrait = "neutral"
+local = "I always like an outfit with a bit of flair."
+next = "1"
+
+[flair.1]
+portrait = "wink"
+local = "No one wants to work with a merchant who doesn't look prosperous."

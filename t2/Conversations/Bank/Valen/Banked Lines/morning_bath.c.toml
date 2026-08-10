@@ -1,0 +1,16 @@
+[morning_bath]
+refresh = "1y"
+requires = [
+	{ npc = "valen" },
+	{ location = "bathhouse_change_room" },
+	{ juniper_is_at_location = "bathhouse", comparator = "!=" },
+	{ time_of_day = "morning" }
+]
+portrait = "neutral"
+local = "This isn't medical advice per se, but I find that a bath in the morning sets a good tone for my day."
+next = "1"
+
+[morning_bath.1]
+portrait = "think"
+local = "Unless Juniper is at the till. Then I come back later."
+

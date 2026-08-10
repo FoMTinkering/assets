@@ -1,0 +1,44 @@
+[bradley]
+refresh = "3m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "hemlock" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+	] },
+	{ is_inside = false },
+	{ season = "winter" },
+	{ dell_zone = "<hemlock_zone>" },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+]
+speaker = "dell"
+portrait = "neutral"
+local = "We're playing hide and seek with Luc's friend, Bradley!"
+next = "1"
+
+[bradley.1]
+speaker = "maple"
+portrait = "think"
+local = "Bradley's really good at hiding, though. We've been searching forever!"
+next = "2"
+
+[bradley.2]
+speaker = "hemlock"
+portrait = "happy"
+effect = "drop"
+local = "Bradley is a Winterpillar..."
+next = "3"
+
+[bradley.3]
+speaker = "luc"
+portrait = "neutral"
+local = "We're going to find you, Bradley!"
+next = "4"
+
+[bradley.4]
+speaker = "luc"
+portrait = "mad"
+effect = "shock"
+local = "Unless you've already undergone metamorphosis... a scenario I had not considered!"

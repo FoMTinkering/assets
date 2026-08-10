@@ -1,0 +1,242 @@
+birthday = { season = "winter", day = 2 }
+loved_gifts = [
+	"dragon_forged_fang",
+	"dragon_forged_core",
+	"dragon_forged_horn",
+	"dragon_forged_powder",
+	"dragon_pact_tablet",
+	"monster_mash",
+	"perfect_mistril_ore",
+	"spell_fruit_parfait",
+	"hardened_essence",
+	"unknown_dragon_statuette",
+]
+liked_gifts = [
+	"void_powder",
+	"void_pearl",
+	"void_stone",
+	"void_herb",
+	"essence_blossom",
+	"monster_cookie",
+	"monster_horn",
+	"monster_powder",
+	"monster_shell",
+	"monster_fang",
+	"monster_whisker",
+	"monster_block",
+	"monster_wing",
+	"night_queen",
+	"ore_pink_diamond",
+	"plum_blossom",
+	"ancient_royal_scepter",
+	"dragon_forged_bracelet",
+	"purple_mushroom",
+	"red_toadstool",
+]
+disliked_gift_tags = [
+	"junk",
+	"bugs",
+	"dragon_part",
+	"weird_gift",
+]
+hated_gift = "statuette_of_caldarus"
+fallback_outfit = "spring"
+name = "Seridia"
+aldarian_name = "SRDY"
+music = "Music/Npc Tracks/Priestess"
+outfits = [
+	"priestess",
+	"flashback_priestess",
+	"dragon",
+	"spring",
+	"summer",
+	"autumn",
+	"winter",
+	"beach",
+	"wedding",
+]
+tags = ["draconic", "dateable"]
+journal_portrait_offset = [-118, -18]
+journal_background_color = [218, 246, 255]
+date_photo_offset = [0, 0]
+job = "Dragon"
+icon_sprite = "spr_ui_generic_icon_npc_priestess"
+small_icon_sprite = "spr_ui_generic_icon_npc_small_priestess"
+small_outlined_icon_sprite = "spr_ui_generic_icon_npc_small_outline_priestess"
+dateable = true
+roommate_routine = "seridia_roommate"
+proposal_cutscene = "seridia_ten_hearts"
+children = ["brid"]
+can_carry_child = true
+
+[gossip]
+	line = "seridia_gossip"
+	portrait = "happy"
+	effect = "hearts"
+
+[drink_preferences]
+	"6" = ["coffee"]
+	"15" = ["wine"]
+
+[offsets]
+	portrait = [-121, -65]
+	sweat = [-5, -6]
+	hearts = [-5, -6]
+	angry = [-5, -6]
+	sparkles = [8, -14]
+	sparkles_dark = [8, -14]
+	sick = [4, -10]
+	music_notes = [5, -16]
+	intensity = [4, -12]
+	surprise = [34, 2]
+	shock = [14, -9]
+	sigh = [1, -6]
+	loud = [11, -6]
+	cheery = [6, -6]
+	drop = [7, -6]
+
+[portraits]
+	neutral = ["spring", "summer", "autumn", "winter", "beach", "wedding", "priestess", "flashback_priestess", "dragon"]
+	neutral_closed = ["priestess"]
+	eyes_shine = ["priestess", "flashback_priestess"]
+	mad = ["spring", "summer", "autumn", "winter", "beach", "priestess"]
+	sigh = ["priestess"]
+	serious = ["spring", "summer", "autumn", "winter", "beach"]
+	smile = ["spring", "summer", "autumn", "winter", "beach"]
+	sly = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	think = ["spring", "summer", "autumn", "winter", "beach", "wedding", "priestess", "flashback_priestess"]
+	sly_think = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	happy = ["spring", "summer", "autumn", "winter", "beach", "wedding", "priestess", "flashback_priestess"]
+	wink = ["spring", "summer", "autumn", "winter", "beach", "priestess"]
+	blush = ["spring", "summer", "autumn", "winter", "beach"]
+	happy_blush = ["spring", "summer", "autumn", "winter", "beach"]
+	angry_brows = ["spring", "summer", "autumn", "winter", "beach"]
+	sinister = ["spring", "summer", "autumn", "winter", "beach"]
+	embarrassed = ["spring", "summer", "autumn", "winter", "beach", "wedding", "priestess"]
+	sad = ["spring", "summer", "autumn", "winter", "beach", "priestess", "flashback_priestess"]
+	ugh = ["spring", "summer", "autumn", "winter", "beach", "priestess"]
+	closed_eyes = ["spring", "summer", "autumn", "winter", "beach", "priestess", "flashback_priestess"]
+	closed_eyes_smile = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	closed_eyes_brow = ["spring", "summer", "autumn", "winter", "beach"]
+	closed_eyes_blush = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	blush_think = ["spring", "summer", "autumn", "winter", "beach"]
+	unsure = ["spring", "summer", "autumn", "winter", "beach"]
+	unsure_blush = ["spring", "summer", "autumn", "winter", "beach"]
+	surprise = ["spring", "summer", "autumn", "winter", "beach"]
+	surprise_blush = ["spring", "summer", "autumn", "winter", "beach"]
+	bath_neutral = ["beach"]
+	hurt = ["priestess", "flashback_priestess"]
+	serious_think = ["priestess"]
+	smirk = ["priestess"]
+	smirk_think = ["priestess"]
+	unmasking = ["priestess"]
+	sinister_blush = ["spring", "summer", "autumn", "winter", "beach"]
+
+[cycles.idle]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding", "priestess", "flashback_priestess"]
+	type = "linear"
+	on_pause_speaking_turn = true
+
+[cycles.walk]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "wedding", "beach", "priestess", "flashback_priestess"]
+	type = "linear"
+	on_pause_speaking_turn = true
+	on_pause_speaking = "idle"
+	on_pause_background = "idle"
+
+[cycles.blink]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding", "priestess", "flashback_priestess"]
+	type = "linear"
+
+[cycles.sit]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+
+[cycles.drink]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.eat]
+	default_direction = "south"
+	directions = ["south", "east", "north"]
+	is_seated = true
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+
+[cycles.kiss]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding"]
+	type = "linear"
+
+[cycles.action]
+	default_direction = "south"
+	directions = ["north", "south", "east"]
+	outfits = ["spring", "summer", "autumn", "winter", "beach", "wedding", "priestess"]
+	type = "linear"
+	last_frame_hold = [240, 360]
+	on_pause_speaking = "idle"
+
+[cycles.sleep]
+	default_direction = "east"
+	directions = ["east"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "linear"
+
+[cycles.bath_swim]
+	default_direction = "south"
+	directions = ["south", "east"]
+	outfits = ["beach"]
+	type = "linear"
+
+[cycles.write]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+
+[cycles.write_sit]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	is_seated = true
+
+[cycles.spell_cast]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter", "priestess"]
+	type = "complex"
+
+[cycles.spell_cast_flash]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["priestess"]
+	type = "complex"
+
+[cycles.flash]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["priestess"]
+	type = "linear"
+
+[cycles.read_sit]
+	default_direction = "south"
+	directions = ["south"]
+	outfits = ["spring", "summer", "autumn", "winter"]
+	type = "complex"
+	is_seated = true

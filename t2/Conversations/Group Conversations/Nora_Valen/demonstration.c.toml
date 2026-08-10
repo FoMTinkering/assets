@@ -1,0 +1,23 @@
+[demonstration]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "nora" }, { npc = "valen" }] },
+	{ nora_zone = "<valen_zone>" },
+	{ nora_zone = "<holt_zone>", comparator = "!=" }
+]
+speaker = "valen"
+portrait = "neutral"
+local = "Do you think Holt could whittle a medical model of a femur? I'd like one for a demonstration."
+next = "1"
+
+[demonstration.1]
+speaker = "nora"
+portrait = "wink"
+local = """I'll ask him! I'm sure he'll say something like, "Sounds like skele-tons of fun!" """
+next = "2"
+
+[demonstration.2]
+speaker = "valen"
+portrait = "happy"
+effect = "drop"
+local = "I'll leave it to you, then."

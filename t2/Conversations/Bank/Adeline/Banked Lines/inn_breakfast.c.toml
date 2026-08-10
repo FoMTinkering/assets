@@ -1,0 +1,17 @@
+[inn_breakfast]
+refresh = "never"
+requires = [
+	{ npc = "adeline" },
+	{ time_of_day = "morning" },
+	{ adeline_activity = "eat" },
+	{ location = "inn" },
+	{ adeline_was_last_spoken_to = "6h", time = "after", comparator = ">" },
+	{ date_time = "3m", comparator = "<" }
+]
+portrait = "neutral"
+local = "Morning, [Ari]! Have you tried anything off of the Inn's breakfast menu?"
+next = "1"
+
+[inn_breakfast.1]
+portrait = "happy"
+local = "I strongly recommend all of it!"

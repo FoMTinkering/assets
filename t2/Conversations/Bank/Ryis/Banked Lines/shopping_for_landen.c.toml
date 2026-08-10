@@ -1,0 +1,33 @@
+[shopping_for_landen]
+refresh = "2m"
+requires = [
+	{ npc = "ryis" },
+	{ landen_is_at_location = "general_store_store", comparator = "!=" },
+	{ ryis_routine = "general_store_shopping" },
+	{ date_time = "2m", comparator = ">=" }
+]
+portrait = "think"
+local = "I try to do the grocery shopping for me and Uncle Landen. Lots of fruits and vegetables."
+next = "1"
+
+[shopping_for_landen.1]
+portrait = "sad"
+effect = "drop"
+local = "He needs fiber."
+
+[shopping_for_landen_2]
+refresh = "2m"
+requires = [
+	{ npc = "ryis" },
+	{ landen_is_at_location = "general_store_store", comparator = "!=" },
+	{ ryis_routine = "general_store_shopping" },
+	{ date_time = "2m", comparator = ">=" }
+]
+portrait = "think"
+local = "Uncle Landen put =Bread= on this grocery list like three times."
+next = "1"
+
+[shopping_for_landen_2.1]
+portrait = "happy"
+effect = "drop"
+local = "Runs in the family, I guess."

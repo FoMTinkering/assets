@@ -1,0 +1,30 @@
+[business_check_in]
+refresh = "2m"
+requires = [
+	{ any = [{ npc = "adeline" }, { npc = "nora" }] },
+	{ adeline_zone = "town/general_store_business" },
+	{ nora_zone = "town/general_store_business" },
+	{ adeline_business_review = true },
+	{ quest_repair_the_general_store_complete = true }
+]
+speaker = "nora"
+portrait = "neutral"
+local = "How are you doing, Adeline?"
+next = "1"
+
+[business_check_in.1]
+speaker = "adeline"
+portrait = "happy"
+local = "The town's doing great! It seems like everyone's got what they need."
+next = "2"
+
+[business_check_in.2]
+speaker = "nora"
+portrait = "wink"
+local = "Hah! I'm happy to hear it, but I was asking how you were doing."
+next = "3"
+
+[business_check_in.3]
+speaker = "adeline"
+portrait = "embarrassed"
+local = "Oh! I'm doing great too, thank you for asking!"

@@ -1,0 +1,248 @@
+var partner = get_from_blackboard("date_partner");
+set_on_blackboard("block_skip", true);
+var alt_scene = partner == "caldarus" and read_world_fact("caldarus_seridia_town") != true;
+if alt_scene {
+	set_on_blackboard("end_position", "deep_woods/caldarus' front door");
+} else {
+	set_on_blackboard("end_position", "town/gcd_exit");
+}
+var outfit = get_from_blackboard("outfit");
+var bark_one = "";
+var bark_two = "";
+var bark_three = "";
+var roll = irandom(3);
+if roll == 0 {
+	bark_one = "heatwave";
+	bark_two = "fire";
+	bark_three = "mining";
+} else if roll == 1 {
+	bark_one = "crafting";
+	bark_two = "gem";
+	bark_three = "music";
+} else if roll == 2 {
+	bark_one = "question_mark";
+	bark_two = "cold_drink";
+	bark_three = "cute_face";
+} else {
+	bark_one = "coin";
+	bark_two = "cute_face";
+	bark_three = "gem";
+}
+
+var keep_swinging_ari = false;
+fun ari_hammer_sound() {
+	wait(0.1);
+	play_sound("SoundEffects/Tools/BlacksmithingHammerSwingAndHit2D");
+	wait(0.35);
+	wait(0.25); //
+	if keep_swinging_ari == false {
+		return;
+	}
+	ari_hammer_sound();
+}
+
+fun ari_hammer() {
+	animate(ari, axe);
+	ari_set_attachment(craftinghammer);
+	face(ari, west);
+	await_ari_animation();
+	animate(ari, idle);
+	wait(0.25);
+	if keep_swinging_ari == false {
+		return;
+	}
+	ari_hammer();
+}
+
+//
+free bark_speech(partner, heart);
+wait(1);
+fade_out(2);
+
+if alt_scene {
+	scene(deep_woods);
+	camera_position(gcdc_camera_snap);
+	setup_prop(gcdc_gem_polished);
+	date_prop_edit(gcdc_gem_polished);
+
+	//
+	capture_date_photo();
+	wait_one_tick();
+	set_on_blackboard("block_skip", false);
+	camera_position(gcdc_camera_1);
+	destroy_prop(gcdc_gem_polished);
+	setup_prop(gcdc_gem_unpolished);
+	place_actor(partner, east, gcdc_partner_entrance);
+	place_actor(ari, west, gcdc_ari_entrance);
+	set_outfit(partner, outfit);
+
+	sim {
+		{
+			fade_in(2);
+		}
+		{
+			wait(1.5);
+			free bark_speech(partner, bark_one);
+			wait(1.5);
+			free bark_speech(ari, bark_two);
+			wait(1.5);
+			free bark_speech(partner, bark_three);
+			wait(1.5);
+			free bark_speech(ari, exclamation_mark);
+			wait(2);
+			free bark_speech(partner, cute_face);
+			wait(1);
+		}
+		{
+
+			keep_swinging_ari = true;
+			free sim {
+				ari_hammer();
+				ari_hammer_sound();
+			}
+			wait(2.5);
+			keep_swinging_ari = false;
+		}
+		{
+			wait(3);
+			animate(partner, action);
+			wait(0.5);
+			animate(partner, idle);
+			wait(1);
+			animate(partner, action);
+			wait(0.5);
+			animate(partner, idle);
+			animate(partner, action);
+			wait(0.5);
+			animate(partner, idle);
+		}
+		{
+			wait(5.5);
+			destroy_prop(gcdc_gem_unpolished);
+			setup_prop(gcdc_gem_polished);
+			date_prop_edit(gcdc_gem_polished);
+		}
+	}
+	wait(0.5);
+	animate(partner, action);
+	wait(0.5);
+	destroy_prop(gcdc_gem_polished);
+	animate(partner, idle);
+	sim {
+		{
+			walk_slow(partner, gcdc_partner_start);
+			face(partner, east);
+		}
+		{
+			wait(0.5);
+			walk_slow(ari, gcdc_ari_start);
+			face(ari, west);
+		}
+		{
+			pan_camera(2, gcdc_camera_2);
+		}
+	}
+	animate(partner, action);
+	animate(ari, action);
+	wait(0.5);
+	animate(partner, idle);
+	animate(ari, idle);
+	wait(1);
+	free bark_speech(ari, heart);
+	free bark_speech(partner, heart);
+	wait(1);
+	fade_out(2);
+} else {
+	scene(town);
+	camera_position(gcd_camera_snap);
+	setup_prop(gcd_gem_polished);
+	date_prop_edit(gcd_gem_polished);
+
+	//
+	capture_date_photo();
+	wait_one_tick();
+	set_on_blackboard("block_skip", false);
+	camera_position(gcd_camera_1);
+	destroy_prop(gcd_gem_polished);
+	setup_prop(gcd_gem_unpolished);
+	place_actor(partner, east, gcd_partner_entrance);
+	place_actor(ari, west, gcd_ari_entrance);
+	set_outfit(partner, outfit);
+
+	sim {
+		{
+			fade_in(2);
+		}
+		{
+			wait(1.5);
+			free bark_speech(partner, bark_one);
+			wait(1.5);
+			free bark_speech(ari, bark_two);
+			wait(1.5);
+			free bark_speech(partner, bark_three);
+			wait(1.5);
+			free bark_speech(ari, exclamation_mark);
+			wait(2);
+			free bark_speech(partner, cute_face);
+			wait(1);
+		}
+		{
+
+			keep_swinging_ari = true;
+			free sim {
+				ari_hammer();
+				ari_hammer_sound();
+			}
+			wait(2.5);
+			keep_swinging_ari = false;
+		}
+		{
+			wait(3);
+			animate(partner, action);
+			wait(0.5);
+			animate(partner, idle);
+			wait(1);
+			animate(partner, action);
+			wait(0.5);
+			animate(partner, idle);
+			animate(partner, action);
+			wait(0.5);
+			animate(partner, idle);
+		}
+		{
+			wait(5.5);
+			destroy_prop(gcd_gem_unpolished);
+			setup_prop(gcd_gem_polished);
+			date_prop_edit(gcd_gem_polished);
+		}
+	}
+	wait(0.5);
+	animate(partner, action);
+	wait(0.5);
+	destroy_prop(gcd_gem_polished);
+	animate(partner, idle);
+	sim {
+		{
+			walk_slow(partner, gcd_partner_start);
+			face(partner, east);
+		}
+		{
+			wait(0.5);
+			walk_slow(ari, gcd_ari_start);
+			face(ari, west);
+		}
+		{
+			pan_camera(3, gcd_camera_2);
+		}
+	}
+	animate(partner, action);
+	animate(ari, action);
+	wait(0.5);
+	animate(partner, idle);
+	animate(ari, idle);
+	wait(1);
+	free bark_speech(ari, heart);
+	free bark_speech(partner, heart);
+	wait(1);
+	fade_out(2);
+}

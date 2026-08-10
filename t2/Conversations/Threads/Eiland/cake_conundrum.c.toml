@@ -1,0 +1,229 @@
+[eiland_cake_conundrum_1]
+refresh = "1y"
+requires = [
+	{ npc = "eiland" },
+	{ thread_mutex = "undefined" },
+	{ thread_delay = false },
+	{ eiland_cake_conundrum_finished = false },
+	{ eiland_heart_level = 3, comparator = ">=" },
+	{ eiland_heart_level = 8, comparator = "<" },
+]
+writes = [
+	{ thread_mutex = "eiland_cake_conundrum_1", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+local = "[Ari]! My dear friend, would you like a slice of delicious Caldosian chocolate cake?"
+prompts = [
+	{ local = "So generous, sure!", next = "1" },
+	{ local = "I had no idea I merited a slice of cake, thank you!", next = "1" },
+]
+
+[eiland_cake_conundrum_1.1]
+actions = [{ item = "caldosian_chocolate_cake" }]
+portrait = "happy"
+local = "Of course, here you are!"
+next = "2"
+
+[eiland_cake_conundrum_1.2]
+local = "..."
+next = "3"
+
+[eiland_cake_conundrum_1.3]
+effect = "drop"
+local = "Would you uh, like another slice of cake...?"
+prompts = [
+	{ local = "No...?", next = "4" },
+	{ local = "What is wrong with the cake, Eiland.", next = "5" },
+]
+
+[eiland_cake_conundrum_1.4]
+portrait = "think"
+local = "You're sure? No no, of course you are."
+next = "6"
+
+[eiland_cake_conundrum_1.5]
+effect = "sweat"
+local = "Nothing! It's incredibly delicious!"
+next = "6"
+
+[eiland_cake_conundrum_1.6]
+portrait = "embarrassed"
+local = "It's just..."
+next = "7"
+
+[eiland_cake_conundrum_1.7]
+local = "It was the special at Darcy's, and the slice I had was SO good that I told her I could eat a full size version no problem... and it just arrived..."
+next = "8"
+
+[eiland_cake_conundrum_1.8]
+portrait = "think"
+local = "It's so big I can barely lift it! I'll never get through the whole thing before it goes bad on my own!"
+next = "9"
+
+[eiland_cake_conundrum_1.9]
+portrait = "embarrassed"
+local = "You've got to help me get rid of this cake, [Ari]!"
+prompts = [
+	{ local = "Do you have any meetings that you could bring some of it to?", next = "10" },
+	{ local = "Chocolate cake is very nutritious, use it as a meal replacement?", next = "11" },
+]
+
+[eiland_cake_conundrum_1.10]
+local = "I've got the budget review meeting, that could work! We could all use a little extra treat for THAT meeting."
+next = "12"
+
+[eiland_cake_conundrum_1.11]
+local = "Hmm, I do like how you think... I wonder if I could get Adeline and Elise to go along with it as well..."
+next = "12"
+
+[eiland_cake_conundrum_1.12]
+portrait = "happy"
+local = "Thank you [Ari]."
+
+[eiland_cake_conundrum_2]
+refresh = "instantly"
+requires = [
+	{ npc = "eiland" },
+	{ thread_mutex = "eiland_cake_conundrum_1" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "eiland_cake_conundrum_2", expires = "1w" },
+	{ thread_delay = true, expires = "1d" },
+]
+local = "[Ari], oh chum! Old buddy, old pal! Would you, uh... care for a slice of cake?"
+prompts = [
+	{ local = "Oh dear.", next = "1" },
+	{ local = "How much do you have left?", next = "2" },
+]
+
+[eiland_cake_conundrum_2.1]
+portrait = "sad"
+local = "Even with your suggestion, I've hardly made a dent in it..."
+next = "3"
+
+[eiland_cake_conundrum_2.2]
+portrait = "sad"
+local = "Let's just say... most of it. I used to think I was a glutton for sweets, but this cake has me beat..."
+next = "3"
+
+[eiland_cake_conundrum_2.3]
+portrait = "think"
+local = "Also frankly, I was up half the night with a stomachache. But I can't bring myself to throw it away..."
+prompts = [
+	{ local = "Why not talk to Jo? Have a free cake night at the Inn!", next = "4" },
+	{ local = "Maybe give away slices as part of a government uh, stimulus package?", next = "5" },
+]
+
+[eiland_cake_conundrum_2.4]
+local = "Hmm, she's not normally okay with outside food, but a free dessert with dinner could be a nice boost for them!"
+next = "7"
+
+[eiland_cake_conundrum_2.5]
+portrait = "happy"
+local = "What an idea, Adeline would certainly love that!"
+next = "6"
+
+[eiland_cake_conundrum_2.6]
+local = "The Inn would make an ideal distribution point, but I'll have to talk Jo around, she's not a big fan of outside food."
+next = "7"
+
+[eiland_cake_conundrum_2.7]
+portrait = "happy"
+local = "I think this might be it, [Ari]! This cake won't beat us!"
+
+[eiland_cake_conundrum_3]
+refresh = "instantly"
+requires = [
+	{ npc = "eiland" },
+	{ thread_mutex = "eiland_cake_conundrum_2" },
+	{ thread_delay = false },
+]
+writes = [
+	{ thread_mutex = "undefined" },
+	{ thread_delay = true, expires = "1d" },
+	{ eiland_cake_conundrum_finished = true },
+	{ eiland_cake_conundrum_day = true, expires = "1d" },
+]
+portrait = "wink"
+effect = "cheery"
+local = "[Ari]! Isn't it a simply wonderful day?"
+prompts = [
+	{ local = "You seem cheerful!", next = "1" },
+	{ local = "Aww, where's my daily free slice of cake?", next = "2" },
+]
+
+[eiland_cake_conundrum_3.1]
+portrait = "happy"
+local = "I am! A huge burden has been lifted from my shoulders, the cake is no more!"
+next = "3"
+
+[eiland_cake_conundrum_3.2]
+portrait = "happy"
+local = "Haha, I'm afraid there simply isn't any more to give! I'm free!"
+next = "3"
+
+[eiland_cake_conundrum_3.3]
+local = "I went to the Inn with the cake as planned, but Jo was out."
+next = "4"
+
+[eiland_cake_conundrum_3.4]
+portrait = "happy"
+local = "While I was waiting for her, Reina asked me to sample a bit of the new quiche recipe she was working on!"
+next = "5"
+
+[eiland_cake_conundrum_3.5]
+local = "After so much cake, I was quite taken with the quiche, and left the cake unattended on a nearby table..."
+next = "6"
+
+[eiland_cake_conundrum_3.6]
+portrait = "surprised"
+local = "And when I turned back to it, the cake was... gone! The platter was completely empty, hardly a crumb remained!"
+next = "7"
+
+[eiland_cake_conundrum_3.7]
+local = "Reina and I searched high and low, but the good samaritan couldn't be found!"
+next = "8"
+
+[eiland_cake_conundrum_3.8]
+portrait = "happy"
+local = "Hopefully one day I'll be able to find and thank them, but I've learned my lesson about all good things in moderation..."
+next = "9"
+
+[eiland_cake_conundrum_3.9]
+effect = "sweat"
+local = "At least until the next time..."
+next = "10"
+
+[eiland_cake_conundrum_3.10]
+local = "At any rate, thank you for your help, [Ari]!"
+
+[dell_cake_conundrum]
+refresh = "2d"
+requires = [
+	{ npc = "dell" },
+	{ eiland_cake_conundrum_finished = true },
+	{ eiland_cake_conundrum_day = true },
+]
+portrait = "ugh"
+local = "[Ari], you'll never believe it. We pulled off the heist of the century! But maybe we bit off more than we could chew..."
+
+[maple_cake_conundrum]
+refresh = "2d"
+requires = [
+	{ npc = "maple" },
+	{ eiland_cake_conundrum_finished = true },
+	{ eiland_cake_conundrum_day = true },
+]
+portrait = "ugh"
+local = "Oooh that cake was so good! But if nobility eats like that every day, I might need to rethink my plans..."
+
+[luc_cake_conundrum]
+refresh = "2d"
+requires = [
+	{ npc = "luc" },
+	{ eiland_cake_conundrum_finished = true },
+	{ eiland_cake_conundrum_day = true },
+]
+portrait = "ugh"
+local = "I can't believe mom was right about there being such a thing as too much cake... urp!"

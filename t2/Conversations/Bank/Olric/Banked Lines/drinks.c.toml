@@ -1,0 +1,31 @@
+[drinks]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ olric_heart_level = 4, comparator = ">=" },
+	{ olric_activity = "drink" },
+	{ olric_drinking = "beer" }
+]
+portrait = "neutral"
+local = "March and Ryis said it takes me three drinks before I start calling everyone bro!"
+next = "1"
+
+[drinks.1]
+portrait = "sad"
+local = "Is that true, bro?"
+
+[drinks_2]
+refresh = "1y"
+requires = [
+	{ npc = "olric" },
+	{ location = "inn" },
+	{ olric_activity = "drink" },
+]
+portrait = "think"
+local = "Hemlock always lets me make my protein shakes at the bar, but on the condition that I don't tell him what goes into them."
+next = "1"
+
+[drinks_2.1]
+portrait = "mad"
+local = "He says drinks are sacred, but the body is sacred too! I need my protein, bro!"
+

@@ -1,0 +1,26 @@
+[bathhouse_4_follow_up]
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_zone = "<seridia_zone>", comparator = "!=" },
+	{ caldarus_seridia_town = true },
+	{ seridia_juniper_bath_follow_up = true }
+]
+writes = [{ seridia_juniper_bath_follow_up = false }]
+portrait = "think"
+local = "I know Seridia's the reborn Witch Queen and the origin of modern magic, so I don't feel like I can deny her much."
+next = "1"
+
+[bathhouse_4_follow_up.1]
+portrait = "unimpressed"
+local = "But [Ari]."
+next = "2"
+
+[bathhouse_4_follow_up.2]
+portrait = "angry_brows"
+local = "If you see her trying to do her laundry in the Bathhouse again..."
+next = "3"
+
+[bathhouse_4_follow_up.3]
+portrait = "annoyed"
+local = "Kindly dissuade her."

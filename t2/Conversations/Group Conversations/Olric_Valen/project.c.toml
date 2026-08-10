@@ -1,0 +1,32 @@
+[anvil]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "olric" }, { npc = "valen" }] },
+	{ olric_zone = "<valen_zone>" },
+	{ any = [
+		{ olric_zone = "town/blacksmith_forge" },
+		{ olric_zone = "town/forge_lesson" },
+		{ location = "blacksmith_store" }
+	] }
+]
+speaker = "valen"
+portrait = "raised_eyebrow"
+local = "And you say you can pick up the whole anvil? By yourself?"
+next = "1"
+
+[anvil.1]
+speaker = "valen"
+portrait = "neutral"
+local = "Fascinating, the way the human body can surpass its own limits."
+next = "2"
+
+[anvil.2]
+speaker = "olric"
+portrait = "neutral"
+local = "Want me to pick it up right now?"
+next = "3"
+
+[anvil.3]
+speaker = "valen"
+portrait = "think"
+local = "That's alright. I'm not interested in surpassing the limits of March's temper."

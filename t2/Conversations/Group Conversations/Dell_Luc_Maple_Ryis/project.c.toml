@@ -1,0 +1,82 @@
+[project]
+refresh = "2m"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "ryis" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "<ryis_zone>" },
+	{ dell_zone = "eastern_road/work_station_teaching" },
+]
+speaker = "maple"
+portrait = "neutral"
+local = "What're you building, Mister Ryis?"
+next = "1"
+
+[project.1]
+speaker = "ryis"
+portrait = "neutral"
+local = "It's a barstool. Your mom wanted another for the Inn."
+next = "2"
+
+[project.2]
+speaker = "dell"
+portrait = "mad"
+local = "I'll help! I can use a hammer. Or a saw! I'm allowed, because I'm in the Dragonguard."
+next = "3"
+
+[project.3]
+speaker = "luc"
+portrait = "think"
+local = "Dell is very not allowed."
+next = "4"
+
+[project.4]
+speaker = "ryis"
+portrait = "happy"
+effect = "drop"
+local = "I had a feeling."
+
+[project_2]
+refresh = "1y"
+requires = [
+	{ any = [
+		{ npc = "dell" },
+		{ npc = "luc" },
+		{ npc = "maple" },
+		{ npc = "ryis" },
+	] },
+	{ dell_zone = "<luc_zone>" },
+	{ dell_zone = "<maple_zone>" },
+	{ dell_zone = "<ryis_zone>" },
+	{ any = [
+		{ location = "landens_house_f1" },
+		{ dell_zone = "eastern_road/work_station_teaching" },
+	] }
+]
+speaker = "dell"
+portrait = "mad"
+local = "Let's make a pirate ship!"
+next = "1"
+
+[project_2.1]
+speaker = "luc"
+portrait = "happy"
+local = "With an ant colony inside!"
+next = "2"
+
+[project_2.2]
+speaker = "maple"
+portrait = "mad"
+local = "The captain's quarters are the biggest room, right? I call dibs!"
+next = "3"
+
+[project_2.3]
+speaker = "ryis"
+portrait = "happy"
+effect = "drop"
+local = "What if we started with a simpler project first? Like maybe one we can fit in the shop?"

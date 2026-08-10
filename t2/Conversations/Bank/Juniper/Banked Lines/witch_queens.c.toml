@@ -1,0 +1,32 @@
+[witch_queens]
+refresh = "2m"
+requires = [{ npc = "juniper" }, { location = "western_ruins" }]
+portrait = "think"
+local = "There are reminders of the Ancient Witch Queens everywhere."
+
+[witch_queens_1]
+refresh = "3m"
+requires = [
+	{ npc = "juniper" },
+	{ location = "beach" },
+	{ any = [{ time_of_day = "morning" }, { time_of_day = "afternoon" }] },
+	{ season = "summer" },
+	{ weather = "pleasant" }
+]
+portrait = "think"
+local = "I wonder if the Witch Queens ever went on a beach holiday."
+
+[witch_queens_2]
+refresh = "1y"
+requires = [
+	{ npc = "juniper" },
+	{ juniper_is_at = "bathhouse/Front Desk" },
+	{ juniper_heart_level = 4, comparator = ">=" }
+]
+portrait = "unimpressed"
+local = "I'm betting the Ancient Witch Queens never had to scrub tiles or clear hair from a drain..."
+next = "1"
+
+[witch_queens_2.1]
+portrait = "annoyed"
+local = "Dozy tells me everyone's got to start somewhere."

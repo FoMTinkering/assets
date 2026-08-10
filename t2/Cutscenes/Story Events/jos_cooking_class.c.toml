@@ -1,0 +1,176 @@
+[jos_cooking_class_follow_up_1]
+refresh = "never"
+requires = [
+	{ npc = "reina" },
+	{ quest_jos_cooking_class_complete = true },
+	{ jcc = true },
+]
+portrait = "happy"
+local = "You did great at the cooking class, [Ari]! Come by any time for pointers, okay?"
+
+[jos_cooking_class_follow_up_2]
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ quest_jos_cooking_class_complete = true },
+	{ jcc = true },
+]
+portrait = "wink"
+local = "Jo's cooking class was just the thing! Now my road rations don't taste like I picked them up off the road."
+
+[jos_cooking_class_follow_up_3]
+refresh = "never"
+requires = [
+	{ npc = "celine" },
+	{ quest_jos_cooking_class_complete = true },
+	{ jcc = true },
+]
+portrait = "very_happy"
+local = "Wasn't Jo's cooking class fun? She made it so easy!"
+
+[jos_cooking_class_follow_up_4]
+refresh = "never"
+requires = [
+	{ npc = "march" },
+	{ quest_jos_cooking_class_complete = true },
+	{ jcc = true },
+]
+portrait = "think"
+local = "Olric was pretty impressed with my cooking after I took Jo's class."
+next = "1"
+
+[jos_cooking_class_follow_up_4.1]
+portrait = "sly"
+local = "It's only natural. Soon I'll be the best blacksmith AND the best cook in Mistria."
+
+[jos_cooking_class_follow_up_5]
+refresh = "never"
+requires = [
+	{ npc = "josephine" },
+	{ quest_jos_cooking_class_complete = true },
+	{ jcc = true },
+]
+local = "[Ari]! I hope my cooking lesson opened your mind to the possibilities of the culinary arts!"
+
+[jos_cooking_class]
+kind = "gameplay_triggered"
+writes = [{ jcc = true, expires = "4d" }]
+speaker = "josephine"
+portrait = "happy"
+local = "[Ari]! You're just in time. We're just about to start the class."
+next = "1"
+
+[jos_cooking_class.1]
+speaker = "josephine"
+portrait = "neutral"
+local = "Ready to learn some cooking basics? Today we're making the Inn's famous $Vegetable Soup$!"
+prompts = [
+	{ local = "Mmm can't wait!", next = "2" },
+	{ local = "How about we start with something like a cake?", next = "3" },
+]
+
+[jos_cooking_class.2]
+speaker = "josephine"
+portrait = "happy"
+local = "Wonderful!"
+next = "4"
+
+[jos_cooking_class.3]
+speaker = "josephine"
+portrait = "wink"
+local = "Ooh, I like that attitude! Let's see how you do with the soup first, [Ari]!"
+next = "4"
+
+[jos_cooking_class.4]
+speaker = "josephine"
+portrait = "neutral"
+local = "We've got Balor chopping vegetables-"
+next = "5"
+
+[jos_cooking_class.5]
+speaker = "balor"
+portrait = "think"
+local = "I wouldn't have thought my knife technique could get any better, but Jo here is a talented woman."
+next = "6"
+
+[jos_cooking_class.6]
+speaker = "josephine"
+portrait = "neutral"
+local = "Celine is tending the cauldron-"
+next = "7"
+
+[jos_cooking_class.7]
+speaker = "celine"
+portrait = "shy_blush"
+local = "It turns out a watched pot DOES boil!"
+next = "8"
+
+[jos_cooking_class.8]
+speaker = "josephine"
+portrait = "neutral"
+local = "And Reina and I are here to give our expert guidance!"
+next = "9"
+
+[jos_cooking_class.9]
+speaker = "reina"
+portrait = "happy"
+local = "Come over here, [Ari]! You can help me sort through the produce."
+next = "10"
+
+[jos_cooking_class.10]
+speaker = "march"
+portrait = "embarrassed"
+local = "Oh! Uhh, I thought this would be a private cooking lesson...?"
+next = "11"
+
+[jos_cooking_class.11]
+speaker = "josephine"
+portrait = "happy"
+local = "Nonsense, the more the merrier! Come on in, March!"
+next = "12"
+
+[jos_cooking_class.12]
+no_speaker = true
+local = "Would you like to view the $Cooking Tutorial$?"
+prompts = [{ local = "Yes", next = "15" }, { local = "No", next = "15" }]
+
+[jos_cooking_class.15]
+speaker = "reina"
+portrait = "happy"
+local = "Wonderful job, everyone!"
+next = "16"
+
+[jos_cooking_class.16]
+speaker = "balor"
+portrait = "neutral"
+local = "This is going to make my time on the road so much more bearable! I should have asked for lessons ages ago."
+next = "17"
+
+[jos_cooking_class.17]
+speaker = "celine"
+portrait = "think"
+local = "Such a good way to use up leftovers too, I've already got some ideas..."
+next = "18"
+
+[jos_cooking_class.18]
+speaker = "march"
+portrait = "happy"
+local = "Olric makes such a production out of cooking, but it wasn't THAT hard."
+next = "19"
+
+[jos_cooking_class.19]
+speaker = "josephine"
+portrait = "happy"
+local = "I'm so proud of you all! It's not easy learning new things, but you've all taken your first step into the culinary world."
+next = "20"
+
+[jos_cooking_class.20]
+speaker = "josephine"
+portrait = "neutral"
+local = "Feel free to use our $Kitchen$ here if you want to practice! You can also get your own from the $Carpenter's Shop$!"
+next = "21"
+
+[jos_cooking_class.21]
+speaker = "reina"
+portrait = "happy"
+local = "Thanks for coming everyone!"

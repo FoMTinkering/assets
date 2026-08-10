@@ -1,0 +1,194 @@
+[juniper_six_hearts_follow_up_celine]
+refresh = "never"
+requires = [{ npc = "celine" }, { juniper_heart_event = "six_heart" }]
+portrait = "neutral"
+local = "Juniper tells me you've been giving her a hand."
+next = "1"
+
+[juniper_six_hearts_follow_up_celine.1]
+portrait = "happy"
+local = "That sounds so fun!"
+
+[juniper_six_hearts_follow_up_dozy]
+refresh = "never"
+requires = [{ npc = "dozy" }, { juniper_heart_event = "six_heart" }]
+portrait = "neutral"
+local = "(Dozy seems to be thanking you for helping out Juniper the other day.)"
+
+[juniper_six_hearts_follow_up_elsie]
+refresh = "never"
+requires = [{ npc = "elsie" }, { juniper_heart_event = "six_heart" }]
+portrait = "neutral"
+local = "Juniper isn't an easy person to get to know with that barbed tongue of hers, but that's half the fun, wouldn't you say?"
+
+[juniper_six_hearts]
+kind = "gameplay_triggered"
+writes = [{ juniper_heart_event = "six_heart", expires = "4d" }]
+speaker = "juniper"
+portrait = "neutral"
+local = "There you are!"
+next = "1"
+
+[juniper_six_hearts.1]
+speaker = "juniper"
+portrait = "unimpressed"
+local = "Ah, that's what you've decided to wear?"
+next = "2"
+
+[juniper_six_hearts.2]
+speaker = "juniper"
+portrait = "think"
+local = "Well this will hardly do. I suppose you'll have to go as me, and I'll have to borrow that unfashionably dressed body of yours in the meantime."
+next = "3"
+
+[juniper_six_hearts.3]
+speaker = "juniper"
+portrait = "neutral"
+local = "Your instructions and packages are on the desk."
+next = "4"
+
+[juniper_six_hearts.4]
+speaker = "celine"
+portrait = "neutral"
+local = "Hey Juniper! If you're stopping by that means the new plant growth tonic is ready, huh?"
+next = "5"
+
+[juniper_six_hearts.5]
+speaker = "celine"
+portrait = "happy"
+local = "Ooh, exciting!"
+next = "6"
+
+[juniper_six_hearts.6]
+speaker = "celine"
+portrait = "think"
+local = "You know..."
+next = "7"
+
+[juniper_six_hearts.7]
+speaker = "celine"
+portrait = "neutral"
+local = "Before you moved to town I was the only person here who was interested in this sort of thing."
+next = "8"
+
+[juniper_six_hearts.8]
+speaker = "celine"
+portrait = "happy"
+local = "It's been really fun collaborating with you on this."
+prompts = [
+	{ local = "It's been so nice having a project with you!", next = "9" },
+	{ local = "Let's not get too mushy.", next = "10" }
+]
+
+[juniper_six_hearts.9]
+speaker = "celine"
+portrait = "embarrassed"
+local = "O-oh! Thanks Juniper, it means a lot to hear you say that."
+next = "11"
+
+[juniper_six_hearts.10]
+speaker = "celine"
+portrait = "laugh"
+local = "Haha! Okay, okay."
+next = "11"
+
+[juniper_six_hearts.11]
+speaker = "celine"
+portrait = "wink"
+local = "I'll let you know how the new formula works out."
+next = "12"
+
+[juniper_six_hearts.12]
+speaker = "celine"
+portrait = "happy"
+local = "Say hi to Dozy for me."
+next = "13"
+
+[juniper_six_hearts.13]
+speaker = "elsie"
+portrait = "neutral"
+local = "Juniper! I was just about to go for a stroll, care to join me?"
+next = "14"
+
+[juniper_six_hearts.14]
+speaker = "elsie"
+portrait = "happy"
+local = "Ahh, making the delivery rounds? Thank you, dear."
+next = "15"
+
+[juniper_six_hearts.15]
+speaker = "elsie"
+portrait = "neutral"
+local = "There's something nearly magical about your skin serums, much better than anything I've used in the Capital."
+next = "16"
+
+[juniper_six_hearts.16]
+speaker = "elsie"
+portrait = "happy"
+local = "And I do so appreciate the home deliveries. So thoughtful!"
+next = "17"
+
+[juniper_six_hearts.17]
+speaker = "elsie"
+portrait = "think"
+local = "Dozy getting along alright? And how's that new friend of yours, [Ari]?"
+prompts = [
+	{ local = "[Ari] is a real saint.", next = "18" },
+	{ local = "[Ari] is a clown.", next = "19" }
+]
+
+[juniper_six_hearts.18]
+speaker = "elsie"
+portrait = "happy"
+local = "Well now! I'm glad you've finally started being a little more honest with yourself."
+next = "20"
+
+[juniper_six_hearts.19]
+speaker = "elsie"
+portrait = "wink"
+local = "Is that so? But we could all use someone around to make us laugh."
+next = "20"
+
+[juniper_six_hearts.20]
+speaker = "elsie"
+portrait = "neutral"
+local = "Take it from me and treasure those who choose to spend time with you, Juniper. We all appreciate your company, that's for sure."
+next = "21"
+
+[juniper_six_hearts.21]
+speaker = "elsie"
+portrait = "happy"
+local = "I won't keep you. I know we both have places to be! Let's catch up later this week."
+next = "22"
+
+[juniper_six_hearts.22]
+speaker = "juniper"
+portrait = "think"
+local = "Well, how did it go?"
+prompts = [
+	{ local = "No issues.", next = "23" },
+	{ local = "Everyone had such nice things to say about you!", next = "24" }
+]
+
+[juniper_six_hearts.23]
+speaker = "juniper"
+portrait = "ugh"
+local = "Seems you were right about [Ari] again, Dozy."
+next = "25"
+
+[juniper_six_hearts.24]
+speaker = "juniper"
+portrait = "angry_blush"
+local = "W-why is that a surprise?"
+next = "25"
+
+[juniper_six_hearts.25]
+speaker = "juniper"
+portrait = "neutral"
+local = "In any case, thank you for your help."
+next = "26"
+
+[juniper_six_hearts.26]
+speaker = "juniper"
+portrait = "embarrassed"
+local = "Don't let it go to your head, though!"

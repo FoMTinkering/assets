@@ -1,0 +1,16 @@
+[lost_rock]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "olric" }, { npc = "ryis" }] },
+	{ olric_zone = "<ryis_zone>" },
+	{ location = "narrows", comparator = "!=" }
+]
+speaker = "ryis"
+local = "I found this cool rock when I was wandering around the Narrows. Think you could identify it for me?"
+next = "1"
+
+[lost_rock.1]
+speaker = "olric"
+portrait = "happy"
+effect = "cheery"
+local = "This one's a pudding stone! You're a long way from home, little fella!"

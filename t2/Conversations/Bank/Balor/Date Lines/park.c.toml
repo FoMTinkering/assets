@@ -1,0 +1,90 @@
+[park_accept_1]
+kind = "date_acceptance"
+requires = [
+	{ npc = "balor" },
+	{ date = "park" },
+	{ da_balor_park = 0 },
+	{ balor_is_spouse = false }
+]
+writes = [
+	{ da_balor_park = 1 },
+	{ da_balor_park_follow_up_gate = true, expires = "1d" }
+]
+speaker = "balor"
+portrait = "blush"
+local = "What's that? You want to go somewhere with me?"
+next = "1"
+
+[park_accept_1.1]
+speaker = "balor"
+portrait = "embarrassed"
+local = "Well... how about the $Park$? It's a great spot to relax."
+next = "2"
+
+[park_accept_1.2]
+speaker = "balor"
+portrait = "happy"
+local = "I think you'll quite like it."
+
+[park_accept_2]
+kind = "date_acceptance"
+requires = [
+	{ npc = "balor" },
+	{ date = "park" },
+	{ balor_has_child = false },
+	{ any = [
+		{ balor_is_spouse = true },
+		{ da_balor_park = 1, comparator = ">=" }
+	] }
+]
+writes = [
+	{ da_balor_park = 2 },
+	{ da_balor_park_follow_up_gate = true, expires = "1d" }
+]
+speaker = "balor"
+portrait = "happy"
+local = "Would I like to go to the $Park$ with you?"
+next = "1"
+
+[park_accept_2.1]
+speaker = "balor"
+portrait = "blush"
+local = "Of course I would!"
+
+[park_follow_up_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ npc = "balor" },
+	{ da_balor_park = 1 },
+	{ da_balor_park_follow_up_gate = true },
+	{ balor_is_spouse = false }
+]
+writes = [{ da_balor_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "happy"
+local = "The $Park$ was fun, wasn't it?"
+next = "1"
+
+[park_follow_up_1.1]
+portrait = "blush"
+local = "Thanks for making the day special, [Ari]."
+
+[park_follow_up_2]
+priority = "max"
+refresh = "instantly"
+requires = [
+	{ npc = "balor" },
+	{ balor_has_child = false },
+	{ any = [{ balor_is_spouse = true }, { da_balor_park = 2 }] },
+	{ da_balor_park_follow_up_gate = true }
+]
+writes = [{ da_balor_park_follow_up_gate = false }]
+actions = [{ bark = { bark = "heart", npc = "balor" } }]
+portrait = "blush"
+local = "I had a great time with you at the $Park$."
+next = "1"
+
+[park_follow_up_2.1]
+portrait = "happy"
+local = "Let's go again soon!"

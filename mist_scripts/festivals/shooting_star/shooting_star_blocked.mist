@@ -1,0 +1,49 @@
+scene(farm);
+request_music_play("Music/Events/Cutscene");
+camera_position(ssf_camera_1);
+place_actor(ari, south, ssf_ari_door);
+place_actor(elsie, west, ssf_elsie_entrance);
+set_outfit(elsie, summer);
+
+sim {
+	fade_in(2);
+	{
+		walk_slow(elsie, ssf_elsie_start);
+		face(elsie, west);
+	}
+	{
+		wait(0.5);
+		free bark_speech(elsie, exclamation_mark);
+		wait(0.5);
+		free bark_speech(ari, exclamation_mark);
+		wait(0.5);
+		face(ari, east);
+	}
+	{
+		walk(ari, ssf_ari_entrance);
+		face(ari, south);
+	}
+	{
+		wait(2);
+		next_line(); //
+	}
+	pan_camera(1.5, ssf_camera_2);
+}
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+next_line(); //
+close_textbox();
+wait(0.5);
+sim {
+	fade_out(2);
+	{
+		wait(0.5);
+		walk_slow(elsie, ssf_elsie_exit);
+		face(elsie, east);
+	}
+}

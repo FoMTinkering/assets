@@ -1,0 +1,101 @@
+[charades_1]
+priority = "max"
+refresh = "never"
+requires = [
+	{ day_of_the_week = "friday" },
+	{ any = [{ dell_zone = "inn/balcony_hang" }, { dell_zone = "inn/story"}]},
+	{ any = [{ luc_zone = "inn/balcony_hang" }, { luc_zone = "inn/story"}]},
+	{ any = [{ maple_zone = "inn/balcony_hang" }, { maple_zone = "inn/story"}]},
+	{ any = [{ fnati = 3 }, { fnati = 4 }]},
+	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
+]
+writes = [{ charades_fnati = 1 }]
+speaker = "luc"
+portrait = "neutral"
+local = "[Ari]! We were just playing charades."
+next = "1"
+
+[charades_1.1]
+speaker = "maple"
+portrait = "think"
+local = "Can you guess who Dell is pretending to be? I'm stumped."
+next = "2"
+
+[charades_1.2]
+speaker = "dell"
+portrait = "wink"
+local = "Heh. I've got a shipment of super rare diamonds coming in."
+next = "3"
+
+[charades_1.3]
+speaker = "dell"
+portrait = "think"
+local = "Don't ask where I got them."
+next = "4"
+
+[charades_1.4]
+speaker = "luc"
+portrait = "think"
+local = "I've got a feeling, but I think we need more clues..."
+next = "5"
+
+[charades_1.5]
+speaker = "dell"
+portrait = "happy"
+effect = "sigh"
+local = "I'm soooo mysterious and cool."
+next = "6"
+
+[charades_1.6]
+speaker = "maple"
+portrait = "sad"
+local = "I'm gonna need a little more, Dell."
+next = "7"
+
+[charades_1.7]
+speaker = "dell"
+portrait = "wink"
+effect = "sparkles"
+local = "Want to check out my wagon? It's got... wheels... four of them."
+next = "8"
+
+[charades_1.8]
+speaker = "luc"
+portrait = "neutral"
+local = "Who do you think it is, [Ari]?"
+prompts = [{ local = "Juniper.", next = "10" }, { local = "Balor.", next = "9" }, { local = "Eiland.", next = "12" }]
+
+[charades_1.9]
+speaker = "maple"
+portrait = "think"
+local = "It's TOTALLY Balor."
+
+[charades_1.10]
+speaker = "maple"
+portrait = "think"
+local = "She IS cool and mysterious."
+next = "11"
+
+[charades_1.11]
+speaker = "luc"
+portrait = "happy"
+effect = "drop"
+local = "But the Bathhouse only has one wheel, not four!"
+next = "14"
+
+[charades_1.12]
+speaker = "maple"
+portrait = "think"
+local = "Eiland does love super rare things..."
+next = "13"
+
+[charades_1.13]
+speaker = "luc"
+portrait = "think"
+local = "But how mysterious is he really..."
+next = "14"
+
+[charades_1.14]
+speaker = "dell"
+portrait = "sad"
+local = "I guess my Balor impression needs work..."

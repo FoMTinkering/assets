@@ -1,0 +1,17 @@
+[need_something]
+refresh = "2m"
+requires = [
+	{ npc = "march" },
+	{ march_heart_level = 8, comparator = "<" },
+	{ any = [
+		{ march_routine = "forge_work_solo" },
+		{ march_routine = "forge_work_principal" },
+		{ march_routine = "forge_work_secondary" },
+	] },
+	{ any = [
+		{ march_zone = "blacksmith_store/till" },
+		{ march_zone = "blacksmith_store/workbench" },
+	] }
+]
+portrait = "neutral"
+local = "You need something? Otherwise I'm working."

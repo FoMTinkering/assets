@@ -1,0 +1,18 @@
+[irrigation]
+refresh = "1y"
+requires = [
+	{ npc = "celine" },
+	{ any = [
+		{ celine_animation = "book_sit" },
+		{ celine_animation = "book_stand" },
+	] },
+	{ celine_was_last_spoken_to = "6h", time = "after", comparator = ">" }
+]
+portrait = "neutral"
+local = "Oh, hello [Ari]! Eiland lent me this old book about ancient farming."
+next = "1"
+
+[irrigation.1]
+portrait = "happy"
+effect = "sparkles"
+local = "Irrigation really did change everything!"

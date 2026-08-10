@@ -1,0 +1,42 @@
+[nail_preference]
+refresh = "never"
+requires = [
+	{ any = [{ npc = "landen" }, { npc = "march" }, { npc = "ryis" }] },
+	{ landen_zone = "<march_zone>" },
+	{ landen_zone = "<ryis_zone>" }
+]
+speaker = "landen"
+portrait = "happy"
+local = "Well look who we have here! Maybe you can help sway our little debate, [Ari]."
+next = "1"
+
+[nail_preference.1]
+speaker = "ryis"
+portrait = "neutral"
+local = "What do you prefer for your nails, Ringwald Commons or Foundry Company's Box Nails?"
+prompts = [
+	{ local = "I uh, haven't really thought about it.", next = "2" },
+	{ local = "Ringwald Commons, of course.", next = "4" }
+]
+
+[nail_preference.2]
+speaker = "landen"
+portrait = "neutral"
+local = "Well now's the time! I can give you a quick lecture to get you up to speed-"
+next = "3"
+
+[nail_preference.3]
+speaker = "march"
+portrait = "sigh"
+local = "Let's just agree to disagree."
+
+[nail_preference.4]
+speaker = "march"
+portrait = "mad"
+local = "I told you two! Even [Ari] agrees with me!"
+next = "5"
+
+[nail_preference.5]
+speaker = "landen"
+portrait = "sigh"
+local = "When you do enough ornamental work, then you'll see the beauty of the box nail."

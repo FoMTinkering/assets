@@ -1,0 +1,25 @@
+[night_tea]
+refresh = "1y"
+requires = [
+	{ any = [{ npc = "holt" }, { npc = "nora" }] },
+	{ holt_zone = "<nora_zone>" },
+	{ time_of_day = "night" },
+	{ holt_drinking = "tea" },
+	{ location = "general_store_home" }
+]
+speaker = "holt"
+portrait = "wink"
+local = "No matter the season, nothing's better than cracking a cold one at home after the kids are tucked in."
+next = "1"
+
+[night_tea.1]
+speaker = "nora"
+portrait = "happy"
+effect = "drop"
+local = "You're drinking a cup of tea, dear."
+next = "2"
+
+[night_tea.2]
+speaker = "holt"
+portrait = "wink"
+local = "It's all about the metaphor, my sweet!"
