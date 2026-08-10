@@ -5,7 +5,7 @@ requires = [
 	{ shooting_star_festival_date = "3d", time = "before" },
 	{ quest_repair_the_summit_stairs_complete = true },
 	{ celine_heart_level = 4, comparator = ">=" },
-	{ celine_heart_level = 8, comparator = "<" }
+	{ celine_heart_level = 8, comparator = "<" },
 ]
 portrait = "neutral"
 local = "I can't believe summer is almost over!"
@@ -27,7 +27,7 @@ requires = [
 	{ npc = "celine" },
 	{ celine_is_at = "town/star_festival_celine" },
 	{ shooting_star_festival_date = "1d", time = "after" },
-	{ shooting_star_date_status = "celine_invited", comparator = "!=" }
+	{ shooting_star_date_status = "celine_invited", comparator = "!=" },
 ]
 portrait = "happy"
 local = "The stars are so beautiful..."
@@ -44,7 +44,7 @@ requires = [
 	{ npc = "celine" },
 	{ celine_is_at = "town/star_festival_celine" },
 	{ shooting_star_festival_date = "1d", time = "after" },
-	{ shooting_star_date_status = "celine_invited" }
+	{ shooting_star_date_status = "celine_invited" },
 ]
 portrait = "embarrassed"
 local = "[Ari]! Are you ready to go up to the Summit now...?"
@@ -57,7 +57,7 @@ requires = [
 	{ shooting_star_date_status = "celine_invited" },
 	{ shooting_star_festival_date = "1d", time = "after" },
 	{ day_time = "8:00pm", comparator = "<" },
-	{ celine_is_at = "town/star_festival_celine", comparator = "!=" }
+	{ celine_is_at = "town/star_festival_celine", comparator = "!=" },
 ]
 portrait = "happy"
 local = "Tonight will be fun. I'll see you at 8 pm?"
@@ -69,13 +69,13 @@ requires = [
 	{ npc = "celine" },
 	{ shooting_star_date_status = "celine_went" },
 	{ shooting_star_festival_date = "2d", time = "after" },
-	{ celine_is_partner = false }
+	{ celine_is_partner = false },
 ]
 portrait = "embarrassed"
 local = "H-hi [Ari], did you have a nice time last night?"
 prompts = [
 	{ local = "I did!", next = "1" },
-	{ local = "Of course!", next = "1" }
+	{ local = "Of course!", next = "1" },
 ]
 
 [shooting_star_follow_up.1]
@@ -89,7 +89,7 @@ requires = [
 	{ npc = "celine" },
 	{ shooting_star_date_status = "celine_went" },
 	{ shooting_star_festival_date = "2d", time = "after" },
-	{ celine_is_partner = true }
+	{ celine_is_partner = true },
 ]
 actions = [{ bark = { bark = "heart", npc = "celine" } }]
 portrait = "very_happy"
@@ -107,7 +107,7 @@ requires = [
 	{ npc = "celine" },
 	{ shooting_star_date_status = "celine_invited" },
 	{ shooting_star_festival_day = false },
-	{ shooting_star_festival_date = "2d", time = "after" }
+	{ shooting_star_festival_date = "2d", time = "after" },
 ]
 portrait = "think"
 local = "..."
@@ -128,7 +128,7 @@ refresh = "3m"
 requires = [
 	{ npc = "celine" },
 	{ shooting_star_date_status = "caldarus_went" },
-	{ shooting_star_festival_date = "2d", time = "after" }
+	{ shooting_star_festival_date = "2d", time = "after" },
 ]
 actions = [{ bark = { bark = "cute_face", npc = "celine" } }]
 portrait = "happy"
@@ -157,8 +157,6 @@ requires = [
 	{ npc = "celine" },
 	{ shooting_star_date_status = "juniper_went" },
 	{ shooting_star_festival_date = "2d", time = "after" },
-	{ celine_is_partner = false },
-	{ juniper_is_partner = false }
 ]
 portrait = "think"
 local = "Juniper was acting a little strange when I dropped off some herbs for her this morning..."
@@ -182,7 +180,7 @@ requires = [
 	{ shooting_star_date_status = "celine_went", comparator = "!=", ignore_priority = true },
 	{ shooting_star_date_status = "juniper_went", comparator = "!=", ignore_priority = true },
 	{ shooting_star_festival_day = false },
-	{ shooting_star_festival_date = "2d", time = "after" }
+	{ shooting_star_festival_date = "2d", time = "after" },
 ]
 portrait = "think"
 local = "Dell's definitely going to be running around looking for shooting stars with her friends."
@@ -202,8 +200,6 @@ requires = [
 	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
 	{ time_of_day = "morning" },
 	{ shooting_star_gate = false },
-	{ celine_is_fiance = false },
-	{ celine_is_spouse = false }
 ]
 writes = [{ shooting_star_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "cute_face", npc = "celine" } }]
@@ -225,13 +221,10 @@ local = "I... I hope you like extra marshmallows."
 refresh = "never"
 requires = [
 	{ npc = "celine" },
-	{ celine_is_ex = false },
 	{ shooting_star_date_status = "celine_went" },
 	{ shooting_star_festival_date = "2w 1d", time = "after" },
 	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
 	{ shooting_star_gate = false },
-	{ celine_is_fiance = false },
-	{ celine_is_spouse = false }
 ]
 writes = [{ shooting_star_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "blush", npc = "celine" } }]

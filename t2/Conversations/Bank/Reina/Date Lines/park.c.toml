@@ -1,11 +1,6 @@
 [park_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "reina" },
-	{ date = "park" },
-	{ da_reina_park = 0 },
-	{ reina_is_spouse = false }
-]
+requires = [{ npc = "reina" }, { date = "park" }, { da_reina_park = 0 }]
 writes = [
 	{ da_reina_park = 1 },
 	{ da_reina_park_follow_up_gate = true, expires = "1d" }
@@ -25,11 +20,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "reina" },
 	{ date = "park" },
-	{ reina_has_child = false },
-	{ any = [
-		{ reina_is_spouse = true },
-		{ da_reina_park = 1, comparator = ">=" }
-	] }
+	{ da_reina_park = 1, comparator = ">=" }
 ]
 writes = [
 	{ da_reina_park = 2 },
@@ -51,8 +42,7 @@ refresh = "never"
 requires = [
 	{ npc = "reina" },
 	{ da_reina_park = 1 },
-	{ da_reina_park_follow_up_gate = true },
-	{ reina_is_spouse = false }
+	{ da_reina_park_follow_up_gate = true }
 ]
 writes = [{ da_reina_park_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "reina" } }]
@@ -69,8 +59,7 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "reina" },
-	{ reina_has_child = false },
-	{ any = [{ reina_is_spouse = true }, { da_reina_park = 2 }] },
+	{ da_reina_park = 2 },
 	{ da_reina_park_follow_up_gate = true }
 ]
 writes = [{ da_reina_park_follow_up_gate = false }]

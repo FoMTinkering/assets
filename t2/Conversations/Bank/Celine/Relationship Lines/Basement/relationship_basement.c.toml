@@ -2,11 +2,7 @@
 refresh = "36h"
 priority = "basement"
 actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
-requires = [
-	{ npc = "celine" },
-	{ any = [{ celine_is_dating = true }, { celine_is_fiance = true }] },
-	{ time_of_day = "morning" },
-]
+requires = [{ npc = "celine" }, { celine_is_partner = true }, { time_of_day = "morning" }]
 speaker = "celine"
 portrait = "neutral"
 local = "Morning, [Ari]! How's the farm?"
@@ -21,11 +17,7 @@ local = "I'd love a tour of your fields sometime."
 refresh = "36h"
 priority = "basement"
 actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
-requires = [
-	{ npc = "celine" },
-	{ celine_is_partner = true },
-	{ time_of_day = "morning" }
-]
+requires = [{ npc = "celine" }, { celine_is_partner = true }, { time_of_day = "morning" }]
 speaker = "celine"
 portrait = "blush"
 local = "[Ari], I was just thinking..."
@@ -40,11 +32,7 @@ local = "Maybe we could do a little gardening together!"
 refresh = "36h"
 priority = "basement"
 actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
-requires = [
-	{ npc = "celine" },
-	{ celine_is_partner = true },
-	{ time_of_day = "morning" }
-]
+requires = [{ npc = "celine" }, { celine_is_partner = true }, { time_of_day = "morning" }]
 speaker = "celine"
 portrait = "blush"
 local = "Hey, [Ari]... wanna hold hands? Just for a bit."
@@ -53,11 +41,7 @@ local = "Hey, [Ari]... wanna hold hands? Just for a bit."
 refresh = "36h"
 priority = "basement"
 actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
-requires = [
-	{ npc = "celine" },
-	{ celine_is_partner = true },
-	{ time_of_day = "afternoon" }
-]
+requires = [{ npc = "celine" }, { celine_is_partner = true }, { time_of_day = "afternoon" }]
 speaker = "celine"
 portrait = "embarrassed"
 local = "I'm so lucky to be with someone like you [Ari]."
@@ -66,11 +50,7 @@ local = "I'm so lucky to be with someone like you [Ari]."
 refresh = "36h"
 priority = "basement"
 actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
-requires = [
-	{ npc = "celine" },
-	{ any = [{ celine_is_dating = true }, { celine_is_fiance = true }] },
-	{ time_of_day = "afternoon" },
-]
+requires = [{ npc = "celine" }, { celine_is_partner = true }, { time_of_day = "afternoon" }]
 speaker = "celine"
 portrait = "neutral"
 effect = "surprise"
@@ -86,11 +66,7 @@ local = "I was just thinking about you, [Ari]!"
 refresh = "36h"
 priority = "basement"
 actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
-requires = [
-	{ npc = "celine" },
-	{ celine_is_partner = true },
-	{ time_of_day = "afternoon" }
-]
+requires = [{ npc = "celine" }, { celine_is_partner = true }, { time_of_day = "afternoon" }]
 speaker = "celine"
 portrait = "embarrassed"
 local = "We should plan a date soon, [Ari]."
@@ -107,8 +83,11 @@ priority = "basement"
 actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
 requires = [
 	{ npc = "celine" },
-	{ any = [{ celine_is_dating = true }, { celine_is_fiance = true }] },
-	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+	{ celine_is_partner = true },
+	{ any = [
+		{ time_of_day = "evening" },
+		{ time_of_day = "night" },
+	] },
 ]
 speaker = "celine"
 portrait = "embarrassed"
@@ -120,8 +99,11 @@ priority = "basement"
 actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
 requires = [
 	{ npc = "celine" },
-	{ any = [{ celine_is_dating = true }, { celine_is_fiance = true }] },
-	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+	{ celine_is_partner = true },
+	{ any = [
+		{ time_of_day = "evening" },
+		{ time_of_day = "night" },
+	] },
 ]
 speaker = "celine"
 portrait = "neutral"
@@ -140,7 +122,10 @@ actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
 requires = [
 	{ npc = "celine" },
 	{ celine_is_partner = true },
-	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+	{ any = [
+		{ time_of_day = "evening" },
+		{ time_of_day = "night" },
+	] },
 ]
 speaker = "celine"
 portrait = "blush_closed_eyes"
@@ -150,11 +135,7 @@ local = "Good evening, [Ari]!"
 refresh = "36h"
 priority = "basement"
 actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
-requires = [
-	{ npc = "celine" },
-	{ celine_is_best_friend = true },
-	{ time_of_day = "morning" },
-]
+requires = [{ npc = "celine" }, { celine_is_best_friend = true }, { time_of_day = "morning" }]
 speaker = "celine"
 portrait = "neutral"
 local = "Morning, [Ari]! How's the farm?"
@@ -163,11 +144,7 @@ local = "Morning, [Ari]! How's the farm?"
 refresh = "36h"
 priority = "basement"
 actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
-requires = [
-	{ npc = "celine" },
-	{ celine_is_best_friend = true },
-	{ time_of_day = "morning" }
-]
+requires = [{ npc = "celine" }, { celine_is_best_friend = true }, { time_of_day = "morning" }]
 speaker = "celine"
 portrait = "neutral"
 local = "[Ari], I was just thinking..."
@@ -182,11 +159,7 @@ local = "Maybe we could do a little gardening together!"
 refresh = "36h"
 priority = "basement"
 actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
-requires = [
-	{ npc = "celine" },
-	{ celine_is_best_friend = true },
-	{ time_of_day = "morning" }
-]
+requires = [{ npc = "celine" }, { celine_is_best_friend = true }, { time_of_day = "morning" }]
 speaker = "celine"
 portrait = "neutral"
 local = "Hey, [Ari]! You're looking nice today."
@@ -201,11 +174,7 @@ local = "What's your secret?"
 refresh = "36h"
 priority = "basement"
 actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
-requires = [
-	{ npc = "celine" },
-	{ celine_is_best_friend = true },
-	{ time_of_day = "afternoon" },
-]
+requires = [{ npc = "celine" }, { celine_is_best_friend = true }, { time_of_day = "afternoon" }]
 speaker = "celine"
 portrait = "happy"
 local = "I'm lucky to have a best friend like you [Ari]. Thanks for always making time to chat."
@@ -214,11 +183,7 @@ local = "I'm lucky to have a best friend like you [Ari]. Thanks for always makin
 refresh = "36h"
 priority = "basement"
 actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
-requires = [
-	{ npc = "celine" },
-	{ celine_is_best_friend = true },
-	{ time_of_day = "afternoon" },
-]
+requires = [{ npc = "celine" }, { celine_is_best_friend = true }, { time_of_day = "afternoon" }]
 speaker = "celine"
 portrait = "neutral"
 effect = "surprise"
@@ -234,11 +199,7 @@ local = "I was just thinking about you, [Ari]!"
 refresh = "36h"
 priority = "basement"
 actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
-requires = [
-	{ npc = "celine" },
-	{ celine_is_best_friend = true },
-	{ time_of_day = "afternoon" },
-]
+requires = [{ npc = "celine" }, { celine_is_best_friend = true }, { time_of_day = "afternoon" }]
 speaker = "celine"
 portrait = "neutral"
 local = "We should plan a get together soon, [Ari]."
@@ -256,7 +217,10 @@ actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
 requires = [
 	{ npc = "celine" },
 	{ celine_is_best_friend = true },
-	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+	{ any = [
+		{ time_of_day = "evening" },
+		{ time_of_day = "night" },
+	] },
 ]
 speaker = "celine"
 portrait = "happy"
@@ -269,7 +233,10 @@ actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
 requires = [
 	{ npc = "celine" },
 	{ celine_is_best_friend = true },
-	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+	{ any = [
+		{ time_of_day = "evening" },
+		{ time_of_day = "night" },
+	] },
 ]
 speaker = "celine"
 portrait = "neutral"
@@ -288,7 +255,10 @@ actions = [{ bark = { bark = "relationship_status", npc = "celine" } }]
 requires = [
 	{ npc = "celine" },
 	{ celine_is_best_friend = true },
-	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] }
+	{ any = [
+		{ time_of_day = "evening" },
+		{ time_of_day = "night" },
+	] },
 ]
 speaker = "celine"
 portrait = "neutral"

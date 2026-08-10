@@ -1,15 +1,7 @@
 [inn_meal_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "valen" },
-	{ date = "inn_meal" },
-	{ da_valen_inn_meal = 0 },
-	{ valen_is_spouse = false }
-]
-writes = [
-	{ da_valen_inn_meal = 1 },
-	{ da_valen_inn_meal_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "valen" }, { date = "inn_meal" }, { da_valen_inn_meal = 0 }]
+writes = [{ da_valen_inn_meal = 1 }, { da_valen_inn_meal_follow_up_gate = true, expires = "1d" }]
 speaker = "valen"
 portrait = "neutral_blush"
 local = "Join you? For a meal at the Inn?"
@@ -28,16 +20,8 @@ local = "I'd be happy to."
 
 [inn_meal_accept_2]
 kind = "date_acceptance"
-requires = [
-	{ npc = "valen" },
-	{ date = "inn_meal" },
-	{ da_valen_inn_meal = 1 },
-	{ valen_is_spouse = false }
-]
-writes = [
-	{ da_valen_inn_meal = 2 },
-	{ da_valen_inn_meal_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "valen" }, { date = "inn_meal" }, { da_valen_inn_meal = 1 }]
+writes = [{ da_valen_inn_meal = 2 }, { da_valen_inn_meal_follow_up_gate = true, expires = "1d" }]
 speaker = "valen"
 portrait = "embarrassed"
 local = "Are you free, [Ari]?"
@@ -56,19 +40,8 @@ local = "You promised to tell me more about your time in the Capital, remember?"
 
 [inn_meal_accept_3]
 kind = "date_acceptance"
-requires = [
-	{ npc = "valen" },
-	{ date = "inn_meal" },
-	{ valen_has_child = false },
-	{ any = [
-		{ valen_is_spouse = true },
-		{ da_valen_inn_meal = 2, comparator = ">=" }
-	] }
-]
-writes = [
-	{ da_valen_inn_meal = 3 },
-	{ da_valen_inn_meal_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "valen" }, { date = "inn_meal" }, { da_valen_inn_meal = 2, comparator = ">=" }]
+writes = [{ da_valen_inn_meal = 3 }, { da_valen_inn_meal_follow_up_gate = true, expires = "1d" }]
 speaker = "valen"
 portrait = "neutral_blush"
 local = "You know what I could go for right now?"
@@ -95,12 +68,7 @@ local = "Great! Let's go."
 [inn_meal_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "valen" },
-	{ da_valen_inn_meal = 1 },
-	{ da_valen_inn_meal_follow_up_gate = true },
-	{ valen_is_spouse = false }
-]
+requires = [{ npc = "valen" }, { da_valen_inn_meal = 1 }, { da_valen_inn_meal_follow_up_gate = true }]
 writes = [{ da_valen_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
 portrait = "caring_special"
@@ -119,12 +87,7 @@ local = "Next time I'll tell you more about my time there."
 [inn_meal_follow_up_2]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "valen" },
-	{ da_valen_inn_meal = 2 },
-	{ da_valen_inn_meal_follow_up_gate = true },
-	{ valen_is_spouse = false }
-]
+requires = [{ npc = "valen" }, { da_valen_inn_meal = 2 }, { da_valen_inn_meal_follow_up_gate = true }]
 writes = [{ da_valen_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
 portrait = "happy"
@@ -158,6 +121,7 @@ next = "5"
 portrait = "happy"
 local = "I consider it field experience on the importance of not overdoing things."
 
+
 [inn_meal_follow_up_2.6]
 portrait = "embarrassed"
 local = "I know. Ironic isn't it?"
@@ -177,15 +141,11 @@ next = "9"
 portrait = "happy"
 local = "I consider it field experience on the importance of not overdoing things."
 
+
 [inn_meal_follow_up_3]
 priority = "max"
 refresh = "instantly"
-requires = [
-	{ npc = "valen" },
-	{ valen_has_child = false },
-	{ any = [{ valen_is_spouse = true }, { da_valen_inn_meal = 3 }] },
-	{ da_valen_inn_meal_follow_up_gate = true }
-]
+requires = [{ npc = "valen" }, { da_valen_inn_meal = 3 }, { da_valen_inn_meal_follow_up_gate = true }]
 writes = [{ da_valen_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
 portrait = "caring_special"

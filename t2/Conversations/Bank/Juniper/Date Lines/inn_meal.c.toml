@@ -1,15 +1,7 @@
 [inn_meal_accept_1]
 kind = "date_acceptance"
-requires = [
-    { npc = "juniper" },
-    { date = "inn_meal" },
-    { da_juniper_inn_meal = 0 },
-    { juniper_is_spouse = false }
-]
-writes = [
-    { da_juniper_inn_meal = 1 },
-    { da_juniper_inn_meal_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "juniper" }, { date = "inn_meal" }, { da_juniper_inn_meal = 0 }]
+writes = [{ da_juniper_inn_meal = 1 }, { da_juniper_inn_meal_follow_up_gate = true, expires = "1d" }]
 speaker = "juniper"
 portrait = "sly"
 local = "You want to take me out for a meal?"
@@ -28,16 +20,8 @@ local = "I'll allow it."
 
 [inn_meal_accept_2]
 kind = "date_acceptance"
-requires = [
-    { npc = "juniper" },
-    { date = "inn_meal" },
-    { da_juniper_inn_meal = 1 },
-    { juniper_is_spouse = false }
-]
-writes = [
-    { da_juniper_inn_meal = 2 },
-    { da_juniper_inn_meal_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "juniper" }, { date = "inn_meal" }, { da_juniper_inn_meal = 1 }]
+writes = [{ da_juniper_inn_meal = 2 }, { da_juniper_inn_meal_follow_up_gate = true, expires = "1d" }]
 speaker = "juniper"
 portrait = "angry_blush"
 local = "[Ari]. Come here."
@@ -56,19 +40,8 @@ local = "Since you asked me out last time we went..."
 
 [inn_meal_accept_3]
 kind = "date_acceptance"
-requires = [
-    { npc = "juniper" },
-    { date = "inn_meal" },
-    { juniper_has_child = false },
-    { any = [
-        { juniper_is_spouse = true },
-        { da_juniper_inn_meal = 2, comparator = ">=" }
-    ] }
-]
-writes = [
-    { da_juniper_inn_meal = 3 },
-    { da_juniper_inn_meal_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "juniper" }, { date = "inn_meal" }, { da_juniper_inn_meal = 2, comparator = ">=" }]
+writes = [{ da_juniper_inn_meal = 3 }, { da_juniper_inn_meal_follow_up_gate = true, expires = "1d" }]
 speaker = "juniper"
 portrait = "blush"
 local = "Want to go get some food?"
@@ -83,12 +56,7 @@ local = "Yes? Good. Excellent."
 [inn_meal_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-    { npc = "juniper" },
-    { da_juniper_inn_meal = 1 },
-    { da_juniper_inn_meal_follow_up_gate = true },
-    { juniper_is_spouse = false }
-]
+requires = [{ npc = "juniper" }, { da_juniper_inn_meal = 1 }, { da_juniper_inn_meal_follow_up_gate = true }]
 writes = [{ da_juniper_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "juniper" } }]
 portrait = "think_special"
@@ -103,12 +71,7 @@ local = "I had a nice time with you at the $Inn$, [Ari]."
 [inn_meal_follow_up_2]
 priority = "max"
 refresh = "never"
-requires = [
-    { npc = "juniper" },
-    { da_juniper_inn_meal = 2 },
-    { da_juniper_inn_meal_follow_up_gate = true },
-    { juniper_is_spouse = false }
-]
+requires = [{ npc = "juniper" }, { da_juniper_inn_meal = 2 }, { da_juniper_inn_meal_follow_up_gate = true }]
 writes = [{ da_juniper_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "juniper" } }]
 portrait = "think_special"
@@ -137,12 +100,7 @@ local = "Oh ho ho ho!"
 [inn_meal_follow_up_3]
 priority = "max"
 refresh = "instantly"
-requires = [
-    { npc = "juniper" },
-    { juniper_has_child = false },
-    { any = [{ juniper_is_spouse = true }, { da_juniper_inn_meal = 3 }] },
-    { da_juniper_inn_meal_follow_up_gate = true }
-]
+requires = [{ npc = "juniper" }, { da_juniper_inn_meal = 3 }, { da_juniper_inn_meal_follow_up_gate = true }]
 writes = [{ da_juniper_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "juniper" } }]
 portrait = "blush"

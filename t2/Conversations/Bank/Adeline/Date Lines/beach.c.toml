@@ -1,18 +1,13 @@
 [beach_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "adeline" },
-	{ date = "beach" },
-	{ da_adeline_beach = 0 },
-	{ adeline_is_spouse = false }
-]
+requires = [{ npc = "adeline" }, { date = "beach" }, { da_adeline_beach = 0 }]
 writes = [
 	{ da_adeline_beach = 1 },
 	{ da_adeline_beach_follow_up_gate = true, expires = "1d" }
 ]
 speaker = "adeline"
 portrait = "blush"
-local = "You want to go for a walk on the Beach?"
+local = "You want to go for a walk on the beach?"
 next = "1"
 
 [beach_accept_1.1]
@@ -31,11 +26,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "adeline" },
 	{ date = "beach" },
-	{ adeline_has_child = false },
-	{ any = [
-		{ adeline_is_spouse = true },
-		{ da_adeline_beach = 1, comparator = ">=" }
-	] }
+	{ da_adeline_beach = 1, comparator = ">=" }
 ]
 writes = [
 	{ da_adeline_beach = 2 },
@@ -43,7 +34,7 @@ writes = [
 ]
 speaker = "adeline"
 portrait = "sly"
-local = "Would you like to join me for a walk on the Beach, [Ari]?"
+local = "Would you like to join me for a walk on the beach, [Ari]?"
 next = "1"
 
 [beach_accept_2.1]
@@ -57,13 +48,12 @@ refresh = "never"
 requires = [
 	{ npc = "adeline" },
 	{ da_adeline_beach = 1 },
-	{ da_adeline_beach_follow_up_gate = true },
-	{ adeline_is_spouse = false }
+	{ da_adeline_beach_follow_up_gate = true }
 ]
 writes = [{ da_adeline_beach_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "adeline" } }]
 portrait = "happy"
-local = "I had a really nice time at the Beach, [Ari]!"
+local = "I had a really nice time at the beach, [Ari]!"
 next = "1"
 
 [beach_follow_up_1.1]
@@ -103,14 +93,13 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "adeline" },
-	{ adeline_has_child = false },
-	{ any = [{ adeline_is_spouse = true }, { da_adeline_beach = 2 }] },
+	{ da_adeline_beach = 2 },
 	{ da_adeline_beach_follow_up_gate = true }
 ]
 writes = [{ da_adeline_beach_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "adeline" } }]
 portrait = "sly"
-local = "Ah... I always feel so good after a walk on the Beach with you."
+local = "Ah... I always feel so good after a walk on the beach with you."
 next = "1"
 
 [beach_follow_up_2.1]

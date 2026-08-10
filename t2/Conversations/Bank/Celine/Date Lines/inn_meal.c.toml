@@ -1,15 +1,7 @@
 [inn_meal_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "celine" },
-	{ date = "inn_meal" },
-	{ da_celine_inn_meal = 0 },
-	{ celine_is_spouse = false }
-]
-writes = [
-	{ da_celine_inn_meal = 1 },
-	{ da_celine_inn_meal_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "celine" }, { date = "inn_meal" }, { da_celine_inn_meal = 0 }]
+writes = [{ da_celine_inn_meal = 1 }, { da_celine_inn_meal_follow_up_gate = true, expires = "1d" }]
 speaker = "celine"
 portrait = "embarrassed"
 local = "Would you um-"
@@ -28,16 +20,8 @@ local = "I was thinking we could go get something to eat!"
 
 [inn_meal_accept_2]
 kind = "date_acceptance"
-requires = [
-	{ npc = "celine" },
-	{ date = "inn_meal" },
-	{ da_celine_inn_meal = 1 },
-	{ celine_is_spouse = false }
-]
-writes = [
-	{ da_celine_inn_meal = 2 },
-	{ da_celine_inn_meal_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "celine" }, { date = "inn_meal" }, { da_celine_inn_meal = 1 }]
+writes = [{ da_celine_inn_meal = 2 }, { da_celine_inn_meal_follow_up_gate = true, expires = "1d" }]
 speaker = "celine"
 portrait = "blush"
 local = "Oh! You want to take me out for a meal at the Inn?"
@@ -51,19 +35,8 @@ local = "I would love that!"
 
 [inn_meal_accept_3]
 kind = "date_acceptance"
-requires = [
-	{ npc = "celine" },
-	{ date = "inn_meal" },
-	{ celine_has_child = false },
-	{ any = [
-		{ celine_is_spouse = true },
-		{ da_celine_inn_meal = 2, comparator = ">=" }
-	] }
-]
-writes = [
-	{ da_celine_inn_meal = 3 },
-	{ da_celine_inn_meal_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "celine" }, { date = "inn_meal" }, { da_celine_inn_meal = 2, comparator = ">=" }]
+writes = [{ da_celine_inn_meal = 3 }, { da_celine_inn_meal_follow_up_gate = true, expires = "1d" }]
 speaker = "celine"
 portrait = "blush_closed_eyes"
 local = "Should we go get a meal at the Inn?"
@@ -78,12 +51,7 @@ local = "Yay! Let's go!"
 [inn_meal_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "celine" },
-	{ da_celine_inn_meal = 1 },
-	{ da_celine_inn_meal_follow_up_gate = true },
-	{ celine_is_spouse = false }
-]
+requires = [{ npc = "celine" }, { da_celine_inn_meal = 1 }, { da_celine_inn_meal_follow_up_gate = true }]
 writes = [{ da_celine_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "celine" } }]
 portrait = "embarrassed"
@@ -103,12 +71,7 @@ local = "Turns out I had nothing to be nervous about!"
 [inn_meal_follow_up_2]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "celine" },
-	{ da_celine_inn_meal = 2 },
-	{ da_celine_inn_meal_follow_up_gate = true },
-	{ celine_is_spouse = false }
-]
+requires = [{ npc = "celine" }, { da_celine_inn_meal = 2 }, { da_celine_inn_meal_follow_up_gate = true }]
 writes = [{ da_celine_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "blush", npc = "celine" } }]
 portrait = "blush"
@@ -149,12 +112,7 @@ local = "It's.... Romantic."
 [inn_meal_follow_up_3]
 priority = "max"
 refresh = "instantly"
-requires = [
-	{ npc = "celine" },
-	{ celine_has_child = false },
-	{ any = [{ celine_is_spouse = true }, { da_celine_inn_meal = 3 }] },
-	{ da_celine_inn_meal_follow_up_gate = true }
-]
+requires = [{ npc = "celine" }, { da_celine_inn_meal = 3 }, { da_celine_inn_meal_follow_up_gate = true }]
 writes = [{ da_celine_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "celine" } }]
 portrait = "blush"

@@ -1,15 +1,7 @@
 [bathhouse_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "juniper" },
-	{ date = "bathhouse" },
-	{ da_juniper_bathhouse = 0 },
-	{ juniper_is_spouse = false }
-]
-writes = [
-	{ da_juniper_bathhouse = 1 },
-	{ da_juniper_bathhouse_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "juniper" }, { date = "bathhouse" }, { da_juniper_bathhouse = 0 }]
+writes = [{ da_juniper_bathhouse = 1 }, { da_juniper_bathhouse_follow_up_gate = true, expires = "1d" }]
 portrait = "think_special"
 local = "Are you busy, [Ari]?"
 next = "1"
@@ -45,19 +37,8 @@ local = "Of course you would. Excellent. I'll start filling the bath!"
 
 [bathhouse_accept_2]
 kind = "date_acceptance"
-requires = [
-	{ npc = "juniper" },
-	{ date = "bathhouse" },
-	{ juniper_has_child = false },
-	{ any = [
-		{ juniper_is_spouse = true },
-		{ da_juniper_bathhouse = 1, comparator = ">=" }
-	] }
-]
-writes = [
-	{ da_juniper_bathhouse = 2 },
-	{ da_juniper_bathhouse_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "juniper" }, { date = "bathhouse" }, { da_juniper_bathhouse = 1, comparator = ">=" }]
+writes = [{ da_juniper_bathhouse = 2 }, { da_juniper_bathhouse_follow_up_gate = true, expires = "1d" }]
 portrait = "think_special"
 local = "Would you like to join me for a bath, [Ari]?"
 next = "1"
@@ -69,12 +50,7 @@ local = "I reserved it especially for us today."
 [bathhouse_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "juniper" },
-	{ da_juniper_bathhouse = 1 },
-	{ da_juniper_bathhouse_follow_up_gate = true },
-	{ juniper_is_spouse = false }
-]
+requires = [{ npc = "juniper" }, { da_juniper_bathhouse = 1 }, { da_juniper_bathhouse_follow_up_gate = true }]
 writes = [{ da_juniper_bathhouse_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "juniper" } }]
 portrait = "happy_blush"
@@ -131,12 +107,7 @@ local = "Anyway, I'd say this time was much, much better."
 [bathhouse_follow_up_2]
 priority = "max"
 refresh = "instantly"
-requires = [
-	{ npc = "juniper" },
-	{ juniper_has_child = false },
-	{ any = [{ juniper_is_spouse = true }, { da_juniper_bathhouse = 2 }] },
-	{ da_juniper_bathhouse_follow_up_gate = true }
-]
+requires = [{ npc = "juniper" }, { da_juniper_bathhouse = 2 }, { da_juniper_bathhouse_follow_up_gate = true }]
 writes = [{ da_juniper_bathhouse_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "juniper" } }]
 portrait = "think_special"

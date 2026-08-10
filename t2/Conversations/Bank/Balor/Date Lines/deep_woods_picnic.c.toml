@@ -1,15 +1,7 @@
 [deep_woods_picnic_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "balor" },
-	{ date = "deep_woods_picnic" },
-	{ da_balor_deep_woods_picnic = 0 },
-	{ balor_is_spouse = false }
-]
-writes = [
-	{ da_balor_deep_woods_picnic = 1 },
-	{ da_balor_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "balor" }, { date = "deep_woods_picnic" }, { da_balor_deep_woods_picnic = 0 }]
+writes = [{ da_balor_deep_woods_picnic = 1 }, { da_balor_deep_woods_picnic_follow_up_gate = true, expires = "1d" }]
 speaker = "balor"
 portrait = "embarrassed"
 local = "A picnic? Out in the $Deep Woods$?"
@@ -40,16 +32,8 @@ local = "Of course I'll go with you."
 
 [deep_woods_picnic_accept_2]
 kind = "date_acceptance"
-requires = [
-	{ npc = "balor" },
-	{ date = "deep_woods_picnic" },
-	{ da_balor_deep_woods_picnic = 1 },
-	{ balor_is_spouse = false }
-]
-writes = [
-	{ da_balor_deep_woods_picnic = 2 },
-	{ da_balor_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "balor" }, { date = "deep_woods_picnic" }, { da_balor_deep_woods_picnic = 1 }]
+writes = [{ da_balor_deep_woods_picnic = 2 }, { da_balor_deep_woods_picnic_follow_up_gate = true, expires = "1d" }]
 speaker = "balor"
 portrait = "embarrassed"
 local = "Hey [Ari]. I was wondering..."
@@ -74,19 +58,8 @@ local = "I picked up some food from the Inn that we can share."
 
 [deep_woods_picnic_accept_3]
 kind = "date_acceptance"
-requires = [
-	{ npc = "balor" },
-	{ date = "deep_woods_picnic" },
-	{ balor_has_child = false },
-	{ any = [
-		{ balor_is_spouse = true },
-		{ da_balor_deep_woods_picnic = 2, comparator = ">=" }
-	] }
-]
-writes = [
-	{ da_balor_deep_woods_picnic = 3 },
-	{ da_balor_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "balor" }, { date = "deep_woods_picnic" }, { da_balor_deep_woods_picnic = 2, comparator = ">=" }]
+writes = [{ da_balor_deep_woods_picnic = 3 }, { da_balor_deep_woods_picnic_follow_up_gate = true, expires = "1d" }]
 speaker = "balor"
 portrait = "happy"
 effect = "cheery"
@@ -107,12 +80,7 @@ local = "I prepared everything myself."
 [deep_woods_picnic_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "balor" },
-	{ da_balor_deep_woods_picnic = 1 },
-	{ da_balor_deep_woods_picnic_follow_up_gate = true },
-	{ balor_is_spouse = false }
-]
+requires = [{ npc = "balor" }, { da_balor_deep_woods_picnic = 1 }, { da_balor_deep_woods_picnic_follow_up_gate = true }]
 writes = [{ da_balor_deep_woods_picnic_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "balor" } }]
 portrait = "blush"
@@ -132,12 +100,7 @@ local = "Let's do it again soon, eh?"
 [deep_woods_picnic_follow_up_2]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "balor" },
-	{ da_balor_deep_woods_picnic = 2 },
-	{ da_balor_deep_woods_picnic_follow_up_gate = true },
-	{ balor_is_spouse = false }
-]
+requires = [{ npc = "balor" }, { da_balor_deep_woods_picnic = 2 }, { da_balor_deep_woods_picnic_follow_up_gate = true }]
 writes = [{ da_balor_deep_woods_picnic_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "balor" } }]
 portrait = "happy"
@@ -183,12 +146,7 @@ local = "But if you like, I can try making something for us next time."
 [deep_woods_picnic_follow_up_3]
 priority = "max"
 refresh = "instantly"
-requires = [
-	{ npc = "balor" },
-	{ balor_has_child = false },
-	{ any = [{ balor_is_spouse = true }, { da_balor_deep_woods_picnic = 3 }] },
-	{ da_balor_deep_woods_picnic_follow_up_gate = true }
-]
+requires = [{ npc = "balor" }, { da_balor_deep_woods_picnic = 3 }, { da_balor_deep_woods_picnic_follow_up_gate = true }]
 writes = [{ da_balor_deep_woods_picnic_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "balor" } }]
 portrait = "blush"

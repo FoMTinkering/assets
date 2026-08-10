@@ -1,18 +1,10 @@
 [beach_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "ryis" },
-	{ date = "beach" },
-	{ da_ryis_beach = 0 },
-	{ ryis_is_spouse = false }
-]
-writes = [
-	{ da_ryis_beach = 1 },
-	{ da_ryis_beach_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "ryis" }, { date = "beach" }, { da_ryis_beach = 0 }]
+writes = [{ da_ryis_beach = 1 }, { da_ryis_beach_follow_up_gate = true, expires = "1d" }]
 speaker = "ryis"
 portrait = "embarrassed"
-local = "Would you like to come out to the Beach with me, [Ari]?"
+local = "Would you like to come out to the beach with me, [Ari]?"
 next = "1"
 
 [beach_accept_1.1]
@@ -28,22 +20,11 @@ local = "Yeah? Great!"
 
 [beach_accept_2]
 kind = "date_acceptance"
-requires = [
-	{ npc = "ryis" },
-	{ date = "beach" },
-	{ ryis_has_child = false },
-	{ any = [
-		{ ryis_is_spouse = true },
-		{ da_ryis_beach = 1, comparator = ">=" }
-	] }
-]
-writes = [
-	{ da_ryis_beach = 2 },
-	{ da_ryis_beach_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "ryis" }, { date = "beach" }, { da_ryis_beach = 1, comparator = ">=" }]
+writes = [{ da_ryis_beach = 2 }, { da_ryis_beach_follow_up_gate = true, expires = "1d" }]
 speaker = "ryis"
 portrait = "blush_special"
-local = "You want to go out to the Beach?"
+local = "You want to go out to the beach?"
 next = "1"
 
 [beach_accept_2.1]
@@ -54,12 +35,7 @@ local = "Of course! I'd love to."
 [beach_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "ryis" },
-	{ da_ryis_beach = 1 },
-	{ da_ryis_beach_follow_up_gate = true },
-	{ ryis_is_spouse = false }
-]
+requires = [{ npc = "ryis" }, { da_ryis_beach = 1 }, { da_ryis_beach_follow_up_gate = true }]
 writes = [{ da_ryis_beach_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "ryis" } }]
 portrait = "blush_special"
@@ -90,12 +66,7 @@ local = "Every day."
 [beach_follow_up_2]
 priority = "max"
 refresh = "instantly"
-requires = [
-	{ npc = "ryis" },
-	{ ryis_has_child = false },
-	{ any = [{ ryis_is_spouse = true }, { da_ryis_beach = 2 }] },
-	{ da_ryis_beach_follow_up_gate = true }
-]
+requires = [{ npc = "ryis" }, { da_ryis_beach = 2 }, { da_ryis_beach_follow_up_gate = true }]
 writes = [{ da_ryis_beach_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "ryis" } }]
 portrait = "blush_special"
@@ -104,4 +75,4 @@ next = "1"
 
 [beach_follow_up_2.1]
 portrait = "happy_blush"
-local = "I'm always up for a trip to the Beach with you!"
+local = "I'm always up for a trip to the beach with you!"

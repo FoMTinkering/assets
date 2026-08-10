@@ -6,7 +6,7 @@ requires = [
 	{ quest_repair_the_summit_stairs_complete = true },
 	{ cutscene_seen_the_unusual_tree_pt_2 = true },
 	{ caldarus_is_human = false },
-	{ cutscene_seen_break_fire_seal = false }
+	{ cutscene_seen_break_fire_seal = false },
 ]
 no_speaker = true
 local = "You feel compelled to talk to Caldarus' Statue."
@@ -36,11 +36,11 @@ requires = [
 	{ shooting_star_date_status = "undefined" },
 	{ caldarus_is_human = false },
 	{ cutscene_seen_break_fire_seal = false },
-	{  },
-	{  },
-	{  },
-	{  },
-	{  }
+	{},
+	{},
+	{},
+	{},
+	{},
 ]
 no_speaker = true
 local = "You feel compelled to talk to Caldarus' Statue."
@@ -56,7 +56,7 @@ speaker = "caldarus"
 local = "Would you like to watch them with... me?"
 prompts = [
 	{ local = "Yes! That's why I'm here!", next = "3" },
-	{ local = "I think I'm actually going to head to bed.", next = "11" }
+	{ local = "I think I'm actually going to head to bed.", next = "11" },
 ]
 
 [shooting_star_caldarus_statue.3]
@@ -66,7 +66,7 @@ next = "4"
 
 [shooting_star_caldarus_statue.4]
 speaker = "caldarus"
-local = "You are very kind to think of me. Let us enjoy them for a moment, shall we?"
+local = "You are very kind to think of me. Let's enjoy them for a moment, shall we?"
 next = "5"
 
 [shooting_star_caldarus_statue.5]
@@ -107,7 +107,7 @@ requires = [
 	{ day_time = "8:00pm", comparator = ">" },
 	{ shooting_star_date_status = "caldarus_invited", comparator = "!=" },
 	{ caldarus_is_human = true },
-	{ cutscene_seen_break_fire_seal = true }
+	{ cutscene_seen_break_fire_seal = true },
 ]
 portrait = "think"
 local = "The stars look different from this perspective."
@@ -127,7 +127,7 @@ requires = [
 	{ day_time = "8:00pm", comparator = ">" },
 	{ shooting_star_date_status = "caldarus_invited" },
 	{ caldarus_is_human = true },
-	{ cutscene_seen_break_fire_seal = true }
+	{ cutscene_seen_break_fire_seal = true },
 ]
 portrait = "smile"
 local = "Good evening, [Ari]. Shall we head to the summit?"
@@ -141,7 +141,7 @@ requires = [
 	{ shooting_star_festival_date = "1d", time = "after" },
 	{ day_time = "8:00pm", comparator = "<" },
 	{ caldarus_is_human = true },
-	{ cutscene_seen_break_fire_seal = true }
+	{ cutscene_seen_break_fire_seal = true },
 ]
 portrait = "neutral"
 local = "Let us meet tonight at 8 pm, [Ari]."
@@ -158,7 +158,7 @@ requires = [
 	{ npc = "caldarus" },
 	{ shooting_star_date_status = "caldarus_went" },
 	{ shooting_star_festival_date = "2d", time = "after" },
-	{ caldarus_is_partner = false }
+	{ caldarus_is_partner = false },
 ]
 actions = [{ bark = { bark = "blush", npc = "caldarus" } }]
 portrait = "neutral"
@@ -181,7 +181,7 @@ requires = [
 	{ npc = "caldarus" },
 	{ shooting_star_date_status = "caldarus_went" },
 	{ shooting_star_festival_date = "2d", time = "after" },
-	{ caldarus_is_partner = true }
+	{ caldarus_is_partner = true },
 ]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
 portrait = "unsure_special"
@@ -199,7 +199,7 @@ requires = [
 	{ npc = "caldarus" },
 	{ shooting_star_date_status = "caldarus_invited" },
 	{ shooting_star_festival_day = false },
-	{ shooting_star_festival_date = "2d", time = "after" }
+	{ shooting_star_festival_date = "2d", time = "after" },
 ]
 portrait = "think"
 local = "Is everything well, [Ari]?"
@@ -207,7 +207,7 @@ next = "1"
 
 [shooting_star_missed_follow_up.1]
 portrait = "avoidant_special"
-local = "Last night... I-"
+local = "Last night.. I-"
 next = "2"
 
 [shooting_star_missed_follow_up.2]
@@ -226,11 +226,11 @@ requires = [
 	{ shooting_star_date_status = "caldarus_went" },
 	{ shooting_star_festival_date = "2w 1d", time = "after" },
 	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
-	{ shooting_star_gate = false }
+	{ shooting_star_gate = false },
 ]
 actions = [
 	{ bark = { bark = "cute_face", npc = "caldarus" } },
-	{ item = "roasted_chestnuts" }
+	{ item = "roasted_chestnuts" },
 ]
 writes = [{ shooting_star_gate = true, expires = "2d" }]
 portrait = "smile"
@@ -260,8 +260,6 @@ requires = [
 	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
 	{ time_of_day = "morning" },
 	{ shooting_star_gate = false },
-	{ caldarus_is_human = true },
-	{ caldarus_is_spouse = false }
 ]
 writes = [{ shooting_star_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "blush", npc = "caldarus" } }]

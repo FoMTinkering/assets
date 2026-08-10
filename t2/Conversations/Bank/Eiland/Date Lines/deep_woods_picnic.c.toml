@@ -3,8 +3,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "eiland" },
 	{ date = "deep_woods_picnic" },
-	{ da_eiland_deep_woods_picnic = 0 },
-	{ eiland_is_spouse = false }
+	{ da_eiland_deep_woods_picnic = 0 }
 ]
 writes = [
 	{ da_eiland_deep_woods_picnic = 1 },
@@ -31,8 +30,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "eiland" },
 	{ date = "deep_woods_picnic" },
-	{ da_eiland_deep_woods_picnic = 1 },
-	{ eiland_is_spouse = false }
+	{ da_eiland_deep_woods_picnic = 1 }
 ]
 writes = [
 	{ da_eiland_deep_woods_picnic = 2 },
@@ -53,11 +51,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "eiland" },
 	{ date = "deep_woods_picnic" },
-	{ eiland_has_child = false },
-	{ any = [
-		{ eiland_is_spouse = true },
-		{ da_eiland_deep_woods_picnic = 2, comparator = ">=" }
-	] }
+	{ da_eiland_deep_woods_picnic = 2, comparator = ">=" }
 ]
 writes = [
 	{ da_eiland_deep_woods_picnic = 3 },
@@ -79,8 +73,7 @@ refresh = "never"
 requires = [
 	{ npc = "eiland" },
 	{ da_eiland_deep_woods_picnic = 1 },
-	{ da_eiland_deep_woods_picnic_follow_up_gate = true },
-	{ eiland_is_spouse = false }
+	{ da_eiland_deep_woods_picnic_follow_up_gate = true }
 ]
 writes = [{ da_eiland_deep_woods_picnic_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "eiland" } }]
@@ -103,8 +96,7 @@ refresh = "never"
 requires = [
 	{ npc = "eiland" },
 	{ da_eiland_deep_woods_picnic = 2 },
-	{ da_eiland_deep_woods_picnic_follow_up_gate = true },
-	{ eiland_is_spouse = false }
+	{ da_eiland_deep_woods_picnic_follow_up_gate = true }
 ]
 writes = [{ da_eiland_deep_woods_picnic_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "eiland" } }]
@@ -148,11 +140,7 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "eiland" },
-	{ eiland_has_child = false },
-	{ any = [
-		{ eiland_is_spouse = true },
-		{ da_eiland_deep_woods_picnic = 3 }
-	] },
+	{ da_eiland_deep_woods_picnic = 3 },
 	{ da_eiland_deep_woods_picnic_follow_up_gate = true }
 ]
 writes = [{ da_eiland_deep_woods_picnic_follow_up_gate = false }]

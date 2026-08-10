@@ -1,11 +1,6 @@
 [park_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "hayden" },
-	{ date = "park" },
-	{ da_hayden_park = 0 },
-	{ hayden_is_spouse = false }
-]
+requires = [{ npc = "hayden" }, { date = "park" }, { da_hayden_park = 0 }]
 writes = [
 	{ da_hayden_park = 1 },
 	{ da_hayden_park_follow_up_gate = true, expires = "1d" }
@@ -31,11 +26,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "hayden" },
 	{ date = "park" },
-	{ hayden_has_child = false },
-	{ any = [
-		{ hayden_is_spouse = true },
-		{ da_hayden_park = 1, comparator = ">=" }
-	] }
+	{ da_hayden_park = 1, comparator = ">=" }
 ]
 writes = [
 	{ da_hayden_park = 2 },
@@ -63,8 +54,7 @@ refresh = "never"
 requires = [
 	{ npc = "hayden" },
 	{ da_hayden_park = 1 },
-	{ da_hayden_park_follow_up_gate = true },
-	{ hayden_is_spouse = false }
+	{ da_hayden_park_follow_up_gate = true }
 ]
 writes = [{ da_hayden_park_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "hayden" } }]
@@ -81,8 +71,7 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "hayden" },
-	{ hayden_has_child = false },
-	{ any = [{ hayden_is_spouse = true }, { da_hayden_park = 2 }] },
+	{ da_hayden_park = 2 },
 	{ da_hayden_park_follow_up_gate = true }
 ]
 writes = [{ da_hayden_park_follow_up_gate = false }]

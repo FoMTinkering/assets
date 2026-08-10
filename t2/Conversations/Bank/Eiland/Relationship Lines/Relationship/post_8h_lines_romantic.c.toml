@@ -2,14 +2,14 @@
 refresh = "never"
 requires = [
 	{ npc = "eiland" },
-	{ eiland_is_dating = true },
+	{ eiland_is_partner = true },
 	{ eiland_post_8h_romantic_gate = false },
 	{ eiland_post_8h_romantic_grouping = 0 },
-	{ eiland_post_8h_romantic_progression = false }
+	{ eiland_post_8h_romantic_progression = false },
 ]
 writes = [
 	{ eiland_post_8h_romantic_gate = true, expires = "20h" },
-	{ eiland_post_8h_romantic_grouping = 1 }
+	{ eiland_post_8h_romantic_grouping = 1 },
 ]
 actions = [{ bark = { bark = "heart", npc = "eiland" } }]
 portrait = "think"
@@ -34,19 +34,19 @@ local = "But I'm grateful that I can stay close to the one I care about, and see
 refresh = "never"
 requires = [
 	{ npc = "eiland" },
-	{ eiland_is_dating = true },
+	{ eiland_is_partner = true },
 	{ eiland_post_8h_romantic_gate = false },
 	{ eiland_post_8h_romantic_grouping = 1 },
-	{ eiland_post_8h_romantic_progression = false }
+	{ eiland_post_8h_romantic_progression = false },
 ]
 writes = [
 	{ eiland_post_8h_romantic_gate = true, expires = "20h" },
-	{ eiland_post_8h_romantic_grouping = 2 }
+	{ eiland_post_8h_romantic_grouping = 2 },
 ]
 actions = [
 	{ bark = { bark = "blush", npc = "eiland" } },
 	{ item = "ore_ruby" },
-	{ item = "middlemist" }
+	{ item = "middlemist" },
 ]
 portrait = "neutral"
 local = "I've been meaning to tell you, [Ari]!"
@@ -67,7 +67,7 @@ portrait = "happy_blush"
 local = "But it's the things that have changed that I find most fascinating!"
 prompts = [
 	{ local = "Ooh, tell me more!", next = "4" },
-	{ local = "And why are you studying courtship practices?", next = "8" }
+	{ local = "And why are you studying courtship practices?", next = "8" },
 ]
 
 [eiland_post_8h_romantic_1.4]
@@ -117,14 +117,14 @@ local = "Here, [Ari]. These are for you."
 refresh = "never"
 requires = [
 	{ npc = "eiland" },
-	{ eiland_is_dating = true },
+	{ eiland_is_partner = true },
 	{ eiland_post_8h_romantic_gate = false },
 	{ eiland_post_8h_romantic_grouping = 2 },
-	{ eiland_post_8h_romantic_progression = false }
+	{ eiland_post_8h_romantic_progression = false },
 ]
 writes = [
 	{ eiland_post_8h_romantic_gate = true, expires = "20h" },
-	{ eiland_post_8h_romantic_grouping = 3 }
+	{ eiland_post_8h_romantic_grouping = 3 },
 ]
 actions = [{ bark = { bark = "blush", npc = "eiland" } }]
 portrait = "think"
@@ -139,14 +139,14 @@ local = "So how is it that I find myself tongue-tied whenever you draw near?"
 refresh = "never"
 requires = [
 	{ npc = "eiland" },
-	{ eiland_is_dating = true },
+	{ eiland_is_partner = true },
 	{ eiland_post_8h_romantic_gate = false },
 	{ eiland_post_8h_romantic_grouping = 3 },
-	{ eiland_post_8h_romantic_progression = false }
+	{ eiland_post_8h_romantic_progression = false },
 ]
 writes = [
 	{ eiland_post_8h_romantic_gate = true, expires = "2d" },
-	{ eiland_post_8h_romantic_grouping = 4 }
+	{ eiland_post_8h_romantic_grouping = 4 },
 ]
 actions = [{ bark = { bark = "heart", npc = "eiland" } }]
 portrait = "sad"
@@ -164,7 +164,7 @@ portrait = "hope_special"
 local = "Sorry, I was lost in thought."
 prompts = [
 	{ local = "What's on your mind?", next = "3" },
-	{ local = "Is everything okay?", next = "3" }
+	{ local = "Is everything okay?", next = "3" },
 ]
 
 [eiland_post_8h_romantic_3.3]
@@ -197,7 +197,7 @@ portrait = "hope_special"
 local = "How do you feel about that?"
 prompts = [
 	{ local = "I'm happy that you've been able to pursue your passions freely!", next = "9" },
-	{ local = "It doesn't matter. You're a prince to me, Eiland.", next = "13" }
+	{ local = "It doesn't matter. You're a prince to me, Eiland.", next = "13" },
 ]
 
 [eiland_post_8h_romantic_3.9]
@@ -238,15 +238,14 @@ refresh = "never"
 requires = [
 	{ npc = "eiland" },
 	{ eiland_is_partner = true },
-	{ ryis_is_partner = false },
 	{ eiland_post_8h_romantic_gate = false },
 	{ eiland_post_8h_romantic_progression = false },
-	{ eiland_post_8h_romantic_grouping = 4 }
+	{ eiland_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ eiland_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [
 	{ bark = { bark = "heart", npc = "eiland" } },
-	{ item = "golden_cheesecake" }
+	{ item = "golden_cheesecake" },
 ]
 portrait = "neutral"
 local = "There you are, [Ari]! I just received a most urgent parcel from the Capital..."
@@ -273,7 +272,7 @@ requires = [
 	{ eiland_is_partner = true },
 	{ eiland_post_8h_romantic_gate = false },
 	{ eiland_post_8h_romantic_progression = false },
-	{ eiland_post_8h_romantic_grouping = 4 }
+	{ eiland_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ eiland_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "eiland" } }]
@@ -304,14 +303,14 @@ requires = [
 	{ any = [
 		{ eiland_post_8h_romantic_progression = false },
 		{ eiland_post_8h_best_friend_grouping = 0 },
-		{ eiland_post_8h_best_friend_grouping = 4 }
+		{ eiland_post_8h_best_friend_grouping = 4 },
 	] },
 	{ eiland_post_8h_romantic_grouping = 4 },
-	{ weather = "pleasant" }
+	{ weather = "pleasant" },
 ]
 writes = [
 	{ eiland_post_8h_romantic_gate = true, expires = "2d" },
-	{ eiland_post_8h_best_friend_gate = true, expires = "2d" }
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" },
 ]
 actions = [{ bark = { bark = "heart", npc = "eiland" } }]
 portrait = "embarrassed"
@@ -329,12 +328,12 @@ requires = [
 	{ eiland_is_partner = true },
 	{ eiland_post_8h_romantic_gate = false },
 	{ eiland_post_8h_romantic_progression = false },
-	{ eiland_post_8h_romantic_grouping = 4 }
+	{ eiland_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ eiland_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [
 	{ bark = { bark = "heart", npc = "eiland" } },
-	{ item = { item = "chocolate", count = 5 } }
+	{ item = { item = "chocolate", count = 5 } },
 ]
 portrait = "neutral"
 local = "[Ari]! I got you something."
@@ -358,18 +357,18 @@ requires = [
 	{ any = [
 		{ eiland_post_8h_romantic_progression = false },
 		{ eiland_post_8h_best_friend_grouping = 0 },
-		{ eiland_post_8h_best_friend_grouping = 4 }
+		{ eiland_post_8h_best_friend_grouping = 4 },
 	] },
 	{ eiland_post_8h_romantic_grouping = 4 },
-	{ any = [{ location = "museum_entry" }, { location = "eilands_office" }] }
+	{ any = [{ location = "museum_entry" }, { location = "eilands_office" }] },
 ]
 writes = [
 	{ eiland_post_8h_romantic_gate = true, expires = "2d" },
-	{ eiland_post_8h_best_friend_gate = true, expires = "2d" }
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" },
 ]
 actions = [
 	{ bark = { bark = "heart", npc = "eiland" } },
-	{ item = "cranberry_orange_scone" }
+	{ item = "cranberry_orange_scone" },
 ]
 portrait = "neutral"
 local = "[Ari]! I couldn't imagine better timing!"
@@ -388,23 +387,23 @@ local = "These were freshly made this morning. Take this one, it looks the bigge
 refresh = "never"
 requires = [
 	{ npc = "eiland" },
-	{ eiland_is_dating = true },
+	{ eiland_is_partner = true },
 	{ eiland_post_8h_romantic_gate = false },
 	{ any = [
 		{ eiland_post_8h_romantic_progression = false },
 		{ eiland_post_8h_best_friend_grouping = 0 },
-		{ eiland_post_8h_best_friend_grouping = 4 }
+		{ eiland_post_8h_best_friend_grouping = 4 },
 	] },
 	{ eiland_post_8h_romantic_grouping = 4 },
-	{ day_time = "8:00pm", comparator = ">" }
+	{ day_time = "8:00pm", comparator = ">" },
 ]
 writes = [
 	{ eiland_post_8h_romantic_gate = true, expires = "2d" },
-	{ eiland_post_8h_best_friend_gate = true, expires = "2d" }
+	{ eiland_post_8h_best_friend_gate = true, expires = "2d" },
 ]
 actions = [
 	{ bark = { bark = "heart", npc = "eiland" } },
-	{ item = "night_queen" }
+	{ item = "night_queen" },
 ]
 portrait = "think"
 local = "It's said that a $Night Queen$ only flowers once, for a single night each year."
@@ -428,10 +427,10 @@ local = "Like... this moment here with you. I hope you'll remember it, too."
 refresh = "never"
 requires = [
 	{ npc = "eiland" },
-	{ eiland_is_dating = true },
+	{ eiland_is_partner = true },
 	{ eiland_post_8h_romantic_gate = false },
 	{ eiland_post_8h_romantic_progression = false },
-	{ eiland_post_8h_romantic_grouping = 4 }
+	{ eiland_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ eiland_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "blush", npc = "eiland" } }]
@@ -449,7 +448,7 @@ portrait = "happy_blush"
 local = "So, if there ever comes a time when you need help on the farm... know that you can rely on me to roll up my sleeves!"
 prompts = [
 	{ local = "I think you'd make a fine farmer!", next = "3" },
-	{ local = "Have you ever grown anything before?", next = "6" }
+	{ local = "Have you ever grown anything before?", next = "6" },
 ]
 
 [eiland_post_8h_romantic_10.3]
@@ -484,10 +483,10 @@ local = "When something or... someone piques my interest."
 refresh = "never"
 requires = [
 	{ npc = "eiland" },
-	{ eiland_is_dating = true },
+	{ eiland_is_partner = true },
 	{ eiland_post_8h_romantic_gate = false },
 	{ eiland_post_8h_romantic_progression = false },
-	{ eiland_post_8h_romantic_grouping = 4 }
+	{ eiland_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ eiland_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "eiland" } }]
@@ -516,7 +515,7 @@ portrait = "happy_blush"
 local = "She thinks we're well suited for each other, and I'm inclined to agree."
 prompts = [
 	{ local = "Because I'm an adventurer and you're a scholar?", next = "5" },
-	{ local = "Because you're way more into sweets than I am?", next = "8" }
+	{ local = "Because you're way more into sweets than I am?", next = "8" },
 ]
 
 [eiland_post_8h_romantic_11.5]
@@ -554,7 +553,7 @@ requires = [
 	{ eiland_is_partner = true },
 	{ eiland_post_8h_romantic_gate = false },
 	{ eiland_post_8h_romantic_progression = false },
-	{ eiland_post_8h_romantic_grouping = 4 }
+	{ eiland_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ eiland_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "eiland" } }]
@@ -572,7 +571,7 @@ portrait = "embarrassed"
 local = "But I understand why one may find the idea of fate a bit... stifling. What are your thoughts, [Ari]?"
 prompts = [
 	{ local = "I believe in fate.", next = "3" },
-	{ local = "I'm creating my own destiny!", next = "9" }
+	{ local = "I'm creating my own destiny!", next = "9" },
 ]
 
 [eiland_post_8h_romantic_12.3]
@@ -640,12 +639,12 @@ requires = [
 	{ npc = "eiland" },
 	{ eiland_is_partner = true },
 	{ eiland_post_8h_romantic_gate = false },
-	{ eiland_post_8h_romantic_grouping = 4 }
+	{ eiland_post_8h_romantic_grouping = 4 },
 ]
 writes = [
 	{ eiland_post_8h_romantic_gate = true, expires = "2d" },
 	{ eiland_post_8h_best_friend_gate = true, expires = "2d" },
-	{ eiland_post_8h_romantic_progression = true }
+	{ eiland_post_8h_romantic_progression = true },
 ]
 actions = [{ bark = { bark = "heart", npc = "eiland" } }]
 portrait = "think"
@@ -673,7 +672,7 @@ requires = [
 	{ eiland_is_partner = true },
 	{ eiland_post_8h_romantic_gate = false },
 	{ eiland_post_8h_romantic_progression = false },
-	{ eiland_post_8h_romantic_grouping = 4 }
+	{ eiland_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ eiland_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "eiland" } }]

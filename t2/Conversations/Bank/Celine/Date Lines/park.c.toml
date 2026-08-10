@@ -1,11 +1,6 @@
 [park_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "celine" },
-	{ date = "park" },
-	{ da_celine_park = 0 },
-	{ celine_is_spouse = false }
-]
+requires = [{ npc = "celine" }, { date = "park" }, { da_celine_park = 0 }]
 writes = [
 	{ da_celine_park = 1 },
 	{ da_celine_park_follow_up_gate = true, expires = "1d" },
@@ -34,11 +29,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "celine" },
 	{ date = "park" },
-	{ celine_has_child = false },
-	{ any = [
-		{ celine_is_spouse = true },
-		{ da_celine_park = 1, comparator = ">=" },
-	] }
+	{ da_celine_park = 1, comparator = ">=" },
 ]
 writes = [
 	{ da_celine_park = 2 },
@@ -67,7 +58,6 @@ requires = [
 	{ npc = "celine" },
 	{ da_celine_park = 1 },
 	{ da_celine_park_follow_up_gate = true },
-	{ celine_is_spouse = false }
 ]
 writes = [{ da_celine_park_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "celine" } }]
@@ -84,8 +74,7 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "celine" },
-	{ celine_has_child = false },
-	{ any = [{ celine_is_spouse = true }, { da_celine_park = 2 }] },
+	{ da_celine_park = 2 },
 	{ da_celine_park_follow_up_gate = true },
 ]
 writes = [{ da_celine_park_follow_up_gate = false }]

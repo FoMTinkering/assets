@@ -5,8 +5,8 @@ requires = [
 	{ caldarus_is_human = true },
 	{ any = [
 		{ caldarus_routine = "deep_woods_forage" },
-		{ caldarus_routine = "deep_woods_wander" }
-	] }
+		{ caldarus_routine = "deep_woods_wander" },
+	] },
 ]
 portrait = "neutral"
 local = "A word of advice, [Ari]."
@@ -27,7 +27,7 @@ requires = [
 	{ npc = "caldarus" },
 	{ caldarus_is_human = true },
 	{ caldarus_animation = "sit", comparator = "!=" },
-	{ caldarus_animation = "lute_play", comparator = "!=" }
+	{ caldarus_animation = "lute_play", comparator = "!=" },
 ]
 portrait = "ugh"
 local = """I had heard tales of humans "stubbing a toe"..."""
@@ -42,7 +42,7 @@ refresh = "1y"
 requires = [
 	{ npc = "caldarus" },
 	{ caldarus_is_human = true },
-	{ location = "deep_woods" }
+	{ location = "deep_woods" },
 ]
 portrait = "neutral"
 local = "Brushing one's hair takes a surprisingly long time."
@@ -61,12 +61,11 @@ local = "It smells nice, too."
 refresh = "1y"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_spouse = false },
 	{ caldarus_is_human = true },
 	{ any = [
 		{ caldarus_routine = "deep_woods_forage" },
-		{ caldarus_routine = "deep_woods_wander" }
-	] }
+		{ caldarus_routine = "deep_woods_wander" },
+	] },
 ]
 portrait = "neutral"
 local = "In the past, I was never concerned with trimming my claws."
@@ -143,7 +142,7 @@ requires = [
 	{ npc = "caldarus" },
 	{ caldarus_heart_level = 8, comparator = "<=" },
 	{ caldarus_is_human = true },
-	{ any = [{ location = "deep_woods" }, { building = "bathhouse" }] },
+	{ any = [{ location = "deep_woods" }, { building = "bathhouse"}, ]},
 	{ caldarus_seridia_town = true },
 	{ eog_fish_out_of_water_7 = false }
 ]
@@ -161,13 +160,13 @@ requires = [
 	{ npc = "caldarus" },
 	{ caldarus_is_human = true },
 	{ caldarus_routine = "tea_making" },
-	{ time_of_day = "morning", comparator = "!=" }
+	{ time_of_day = "morning", comparator = "!=" },
 ]
 portrait = "think"
 local = "Since awakening, I have observed many in Mistria drinking a beverage extracted from fire-darkened beans. They called it... $Coffee$."
 next = [
 	{ target = "1_eog", requires = [{ caldarus_seridia_town = true }] },
-	{ target = "1_n", requires = [] }
+	{ target = "1_n", requires = [] },
 ]
 
 [fish_out_of_water_8.1_eog]
@@ -201,7 +200,7 @@ refresh = "1y"
 requires = [
 	{ npc = "caldarus" },
 	{ caldarus_is_human = true },
-	{ location = "caldarus_house" }
+	{ location = "caldarus_house" },
 ]
 portrait = "neutral"
 local = "This temple was carved directly from stone, and creature comforts were added according to my taste."
@@ -217,7 +216,7 @@ requires = [
 	{ npc = "caldarus" },
 	{ caldarus_is_human = true },
 	{ caldarus_routine = "tea_making" },
-	{ any = [{ season = "fall" }, { season = "winter" }] }
+	{ any = [{ season = "fall" }, { season = "winter" }] },
 ]
 portrait = "think"
 local = "I once wondered what purpose humans had in boiling leaves."
@@ -267,8 +266,8 @@ requires = [
 	{ any = [
 		{ caldarus_routine = "tea_making" },
 		{ caldarus_is_at = "caldarus_house/Caldarus Pouf Left" },
-		{ caldarus_is_at = "caldarus_house/Caldarus Pouf Right" }
-	] }
+		{ caldarus_is_at = "caldarus_house/Caldarus Pouf Right" },
+	] },
 ]
 portrait = "happy"
 local = "Is it not marvelous how heat improves a meal?"
@@ -321,8 +320,8 @@ requires = [
 	{ caldarus_is_human = true },
 	{ any = [
 		{ caldarus_routine = "deep_woods_forage" },
-		{ caldarus_routine = "deep_woods_wander" }
-	] }
+		{ caldarus_routine = "deep_woods_wander" },
+	] },
 ]
 portrait = "neutral"
 local = "I rather enjoy foraging for wild ingredients in the Deep Woods, but I never have enough pockets to store them all."
@@ -333,7 +332,7 @@ requires = [
 	{ npc = "caldarus" },
 	{ caldarus_is_human = true },
 	{ time_of_day = "night" },
-	{ location = "caldarus_house" }
+	{ location = "caldarus_house" },
 ]
 portrait = "think"
 local = "I must admit, I am unused to the way my eyes perceive darkness as of late."
@@ -384,7 +383,7 @@ local = "It is quite enjoyable, leisurely browsing each booth."
 
 [fish_out_of_water_21]
 refresh = "1y"
-requires = [{ npc = "caldarus" }, { caldarus_is_human = true }, { caldarus_seridia_town = false }]
+requires = [{ npc = "caldarus" }, { caldarus_is_human = true }]
 portrait = "neutral"
 local = "Despite my foggy memory, I am thankful my fingers remember how to play the lute."
 
@@ -393,7 +392,7 @@ refresh = "1y"
 requires = [
 	{ npc = "caldarus" },
 	{ caldarus_is_human = true },
-	{ season = "winter" }
+	{ season = "winter" },
 ]
 portrait = "neutral"
 local = "Are you not chilled, [Ari]?"
@@ -409,7 +408,7 @@ requires = [
 	{ npc = "caldarus" },
 	{ caldarus_is_human = true },
 	{ season = "winter" },
-	{ caldarus_is_inside = false }
+	{ caldarus_is_inside = false },
 ]
 portrait = "think"
 local = "I was unprepared for the reality of the elements in a physical form. Now, I must work harder to keep warm."
@@ -455,7 +454,7 @@ local = "Since taking mortal form, I find myself enjoying the warmth of company.
 
 [fish_out_of_water_25]
 refresh = "1y"
-requires = [{ npc = "caldarus" }, { caldarus_is_human = true }, { caldarus_is_spouse = false }]
+requires = [{ npc = "caldarus" }, { caldarus_is_human = true }]
 portrait = "neutral"
 local = "I sometimes wonder if I should have kept my wings in this form..."
 next = "1"
@@ -464,23 +463,12 @@ next = "1"
 portrait = "think"
 local = "But perhaps they would make it difficult to sleep in my bed."
 
-[fish_out_of_water_25b]
-refresh = "1y"
-requires = [{ npc = "caldarus" }, { caldarus_is_human = true }, { caldarus_is_spouse = true }]
-portrait = "think"
-local = "I sometimes wonder if I should have kept my wings in this form..."
-next = "1"
-
-[fish_out_of_water_25b.1]
-portrait = "embarrassed"
-local = "But perhaps they would make it difficult to sleep in our bed."
-
 [fish_out_of_water_26]
 refresh = "1y"
 requires = [
 	{ npc = "caldarus" },
 	{ caldarus_is_human = true },
-	{ location = "caldarus_house" }
+	{ location = "caldarus_house" },
 ]
 portrait = "sigh"
 local = "Of the many and varied human inventions, weaving is one of my favorites. Such meticulous work, and such beautiful results."
@@ -495,7 +483,7 @@ refresh = "1y"
 requires = [
 	{ npc = "caldarus" },
 	{ caldarus_is_human = true },
-	{ location = "caldarus_house" }
+	{ location = "caldarus_house" },
 ]
 portrait = "neutral"
 local = "Looking around my home, one cannot help but wonder..."

@@ -3,8 +3,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "seridia" },
 	{ date = "gem_cutting" },
-	{ da_seridia_gem_cutting = 0 },
-	{ seridia_is_spouse = false }
+	{ da_seridia_gem_cutting = 0 }
 ]
 writes = [
 	{ da_seridia_gem_cutting = 1 },
@@ -38,11 +37,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "seridia" },
 	{ date = "gem_cutting" },
-	{ seridia_has_child = false },
-	{ any = [
-		{ seridia_is_spouse = true },
-		{ da_seridia_gem_cutting = 1, comparator = ">=" }
-	] }
+	{ da_seridia_gem_cutting = 1, comparator = ">=" }
 ]
 writes = [
 	{ da_seridia_gem_cutting = 2 },
@@ -73,8 +68,7 @@ refresh = "never"
 requires = [
 	{ npc = "seridia" },
 	{ da_seridia_gem_cutting = 1 },
-	{ da_seridia_gem_cutting_follow_up_gate = true },
-	{ seridia_is_spouse = false }
+	{ da_seridia_gem_cutting_follow_up_gate = true }
 ]
 writes = [{ da_seridia_gem_cutting_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "seridia" } }]
@@ -133,8 +127,7 @@ priority = "max"
 refresh = "never"
 requires = [
 	{ npc = "seridia" },
-	{ seridia_has_child = false },
-	{ any = [{ seridia_is_spouse = true }, { da_seridia_gem_cutting = 2 }] },
+	{ da_seridia_gem_cutting = 2 },
 	{ da_seridia_gem_cutting_follow_up_gate = true }
 ]
 writes = [{ da_seridia_gem_cutting_follow_up_gate = false }]

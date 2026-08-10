@@ -1,15 +1,7 @@
 [gem_cutting_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "valen" },
-	{ date = "gem_cutting" },
-	{ da_valen_gem_cutting = 0 },
-	{ valen_is_spouse = false }
-]
-writes = [
-	{ da_valen_gem_cutting = 1 },
-	{ da_valen_gem_cutting_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "valen" }, { date = "gem_cutting" }, { da_valen_gem_cutting = 0 }]
+writes = [{ da_valen_gem_cutting = 1 }, { da_valen_gem_cutting_follow_up_gate = true, expires = "1d" }]
 portrait = "neutral"
 local = "Oh?"
 next = "1"
@@ -35,19 +27,8 @@ local = "It's always fun to try something new!"
 
 [gem_cutting_accept_2]
 kind = "date_acceptance"
-requires = [
-	{ npc = "valen" },
-	{ date = "gem_cutting" },
-	{ valen_has_child = false },
-	{ any = [
-		{ valen_is_spouse = true },
-		{ da_valen_gem_cutting = 1, comparator = ">=" }
-	] }
-]
-writes = [
-	{ da_valen_gem_cutting = 2 },
-	{ da_valen_gem_cutting_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "valen" }, { date = "gem_cutting" }, { da_valen_gem_cutting = 1, comparator = ">=" }]
+writes = [{ da_valen_gem_cutting = 2 }, { da_valen_gem_cutting_follow_up_gate = true, expires = "1d" }]
 portrait = "happy_blush"
 local = "You want to go $Gem Cutting$ again, [Ari]?"
 next = "1"
@@ -59,12 +40,7 @@ local = "Sure, I'd love to!"
 [gem_cutting_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "valen" },
-	{ da_valen_gem_cutting = 1 },
-	{ da_valen_gem_cutting_follow_up_gate = true },
-	{ valen_is_spouse = false }
-]
+requires = [{ npc = "valen" }, { da_valen_gem_cutting = 1 }, { da_valen_gem_cutting_follow_up_gate = true }]
 writes = [{ da_valen_gem_cutting_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
 portrait = "happy_blush"
@@ -115,12 +91,7 @@ local = "I suppose that's why I took to it easily!"
 [gem_cutting_follow_up_2]
 priority = "max"
 refresh = "instantly"
-requires = [
-	{ npc = "valen" },
-	{ valen_has_child = false },
-	{ any = [{ valen_is_spouse = true }, { da_valen_gem_cutting = 2 }] },
-	{ da_valen_gem_cutting_follow_up_gate = true }
-]
+requires = [{ npc = "valen" }, { da_valen_gem_cutting = 2 }, { da_valen_gem_cutting_follow_up_gate = true }]
 writes = [{ da_valen_gem_cutting_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
 portrait = "happy_blush"

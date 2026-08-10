@@ -4,7 +4,6 @@ requires = [
 	{ npc = "caldarus" },
 	{ date = "deep_woods_picnic" },
 	{ da_caldarus_deep_woods_picnic = 0 },
-	{ caldarus_is_spouse = false }
 ]
 writes = [
 	{ da_caldarus_deep_woods_picnic = 1 },
@@ -80,8 +79,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "caldarus" },
 	{ date = "deep_woods_picnic" },
-	{ da_caldarus_deep_woods_picnic = 1 },
-	{ caldarus_is_spouse = false }
+	{ da_caldarus_deep_woods_picnic = 1 }
 ]
 writes = [
 	{ da_caldarus_deep_woods_picnic = 2 },
@@ -109,11 +107,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "caldarus" },
 	{ date = "deep_woods_picnic" },
-	{ caldarus_has_child = false },
-	{ any = [
-		{ caldarus_is_spouse = true },
-		{ da_caldarus_deep_woods_picnic = 2, comparator = ">=" },
-	] },
+	{ da_caldarus_deep_woods_picnic = 2, comparator = ">=" },
 ]
 writes = [
 	{ da_caldarus_deep_woods_picnic = 3 },
@@ -142,7 +136,6 @@ requires = [
 	{ npc = "caldarus" },
 	{ da_caldarus_deep_woods_picnic = 1 },
 	{ da_caldarus_deep_woods_picnic_follow_up_gate = true },
-	{ caldarus_is_spouse = false }
 ]
 writes = [{ da_caldarus_deep_woods_picnic_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
@@ -166,7 +159,6 @@ requires = [
 	{ npc = "caldarus" },
 	{ da_caldarus_deep_woods_picnic = 2 },
 	{ da_caldarus_deep_woods_picnic_follow_up_gate = true },
-	{ caldarus_is_spouse = false }
 ]
 writes = [{ da_caldarus_deep_woods_picnic_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
@@ -216,11 +208,7 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_has_child = false },
-	{ any = [
-		{ caldarus_is_spouse = true },
-		{ da_caldarus_deep_woods_picnic = 3 },
-	] },
+	{ da_caldarus_deep_woods_picnic = 3 },
 	{ da_caldarus_deep_woods_picnic_follow_up_gate = true },
 ]
 writes = [{ da_caldarus_deep_woods_picnic_follow_up_gate = false }]

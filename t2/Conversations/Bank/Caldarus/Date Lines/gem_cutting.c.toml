@@ -4,7 +4,7 @@ requires = [
 	{ npc = "caldarus" },
 	{ date = "gem_cutting" },
 	{ da_caldarus_gem_cutting = 0 },
-	{ caldarus_seridia_town = false },
+	{ caldarus_seridia_town = false }
 ]
 writes = [
 	{ da_caldarus_gem_cutting = 1 },
@@ -54,8 +54,7 @@ requires = [
 	{ npc = "caldarus" },
 	{ date = "gem_cutting" },
 	{ da_caldarus_eog_gem_cutting = 0 },
-	{ caldarus_seridia_town = true },
-	{ caldarus_is_spouse = false }
+	{ caldarus_seridia_town = true }
 ]
 writes = [
 	{ da_caldarus_eog_gem_cutting = 1 },
@@ -84,11 +83,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "caldarus" },
 	{ date = "gem_cutting" },
-	{ caldarus_has_child = false },
-	{ any = [
-		{ caldarus_is_spouse = true },
-		{ da_caldarus_eog_gem_cutting = 1, comparator = ">=" },
-	] },
+	{ da_caldarus_eog_gem_cutting = 1, comparator = ">=" },
 	{ caldarus_seridia_town = true }
 ]
 writes = [
@@ -158,8 +153,7 @@ requires = [
 	{ npc = "caldarus" },
 	{ da_caldarus_eog_gem_cutting = 1 },
 	{ da_caldarus_eog_gem_cutting_follow_up_gate = true },
-	{ caldarus_seridia_town = true },
-	{ caldarus_is_spouse = false }
+	{ caldarus_seridia_town = true }
 ]
 writes = [{ da_caldarus_eog_gem_cutting_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
@@ -186,11 +180,7 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_has_child = false },
-	{ any = [
-		{ caldarus_is_spouse = true },
-		{ da_caldarus_eog_gem_cutting = 2 },
-	] },
+	{ da_caldarus_eog_gem_cutting = 2 },
 	{ da_caldarus_eog_gem_cutting_follow_up_gate = true },
 	{ caldarus_seridia_town = true }
 ]

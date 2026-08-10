@@ -2,18 +2,18 @@
 refresh = "never"
 requires = [
 	{ npc = "valen" },
-	{ valen_is_dating = true },
+	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
 	{ valen_post_8h_romantic_grouping = 0 },
-	{ valen_post_8h_romantic_progression = false }
+	{ valen_post_8h_romantic_progression = false },
 ]
 writes = [
 	{ valen_post_8h_romantic_gate = true, expires = "20h" },
-	{ valen_post_8h_romantic_grouping = 1 }
+	{ valen_post_8h_romantic_grouping = 1 },
 ]
 actions = [
 	{ bark = { bark = "heart", npc = "valen" } },
-	{ item = "stamina_syrup" }
+	{ item = "stamina_syrup" },
 ]
 portrait = "neutral"
 local = "I like that you live an active lifestyle, [Ari]..."
@@ -47,14 +47,14 @@ local = "Here, take this. In case you ever need it."
 refresh = "never"
 requires = [
 	{ npc = "valen" },
-	{ valen_is_dating = true },
+	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
 	{ valen_post_8h_romantic_grouping = 1 },
-	{ valen_post_8h_romantic_progression = false }
+	{ valen_post_8h_romantic_progression = false },
 ]
 writes = [
 	{ valen_post_8h_romantic_gate = true, expires = "20h" },
-	{ valen_post_8h_romantic_grouping = 2 }
+	{ valen_post_8h_romantic_grouping = 2 },
 ]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
 portrait = "neutral"
@@ -76,7 +76,7 @@ portrait = "think"
 local = "It doesn't bother you, does it?"
 prompts = [
 	{ local = "Not at all! I work long hours too.", next = "4" },
-	{ local = "Well, as long as we can make time for each other...", next = "6" }
+	{ local = "Well, as long as we can make time for each other...", next = "6" },
 ]
 
 [valen_post_8h_romantic_1.4]
@@ -112,15 +112,14 @@ local = "I promise I'll always make time for you."
 refresh = "never"
 requires = [
 	{ npc = "valen" },
-	{ valen_is_dating = true },
+	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
 	{ valen_post_8h_romantic_grouping = 2 },
 	{ valen_post_8h_romantic_progression = false },
-	{ valen_can_drink = true }
 ]
 writes = [
 	{ valen_post_8h_romantic_gate = true, expires = "20h" },
-	{ valen_post_8h_romantic_grouping = 3 }
+	{ valen_post_8h_romantic_grouping = 3 },
 ]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
 portrait = "think"
@@ -153,11 +152,11 @@ requires = [
 	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
 	{ valen_post_8h_romantic_grouping = 3 },
-	{ valen_post_8h_romantic_progression = false }
+	{ valen_post_8h_romantic_progression = false },
 ]
 writes = [
 	{ valen_post_8h_romantic_gate = true, expires = "2d" },
-	{ valen_post_8h_romantic_grouping = 4 }
+	{ valen_post_8h_romantic_grouping = 4 },
 ]
 actions = [{ bark = { bark = "blush", npc = "valen" } }]
 portrait = "neutral"
@@ -180,7 +179,7 @@ requires = [
 	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
 	{ valen_post_8h_romantic_progression = false },
-	{ valen_post_8h_romantic_grouping = 4 }
+	{ valen_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ valen_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
@@ -206,10 +205,10 @@ local = "You truly bring color wherever you go, [Ari]. I'm happy we have each ot
 refresh = "never"
 requires = [
 	{ npc = "valen" },
-	{ valen_is_dating = true },
+	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
 	{ valen_post_8h_romantic_progression = false },
-	{ valen_post_8h_romantic_grouping = 4 }
+	{ valen_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ valen_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
@@ -240,24 +239,21 @@ local = "So... I hope to see you often."
 refresh = "never"
 requires = [
 	{ npc = "valen" },
-	{ valen_is_dating = true },
+	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
 	{ any = [
 		{ valen_post_8h_romantic_progression = false },
 		{ valen_post_8h_best_friend_grouping = 0 },
-		{ valen_post_8h_best_friend_grouping = 4 }
+		{ valen_post_8h_best_friend_grouping = 4 },
 	] },
 	{ valen_post_8h_romantic_grouping = 4 },
-	{ day_of_the_week = "saturday", comparator = "!=" }
+	{ day_of_the_week = "saturday", comparator = "!=" },
 ]
 writes = [
 	{ valen_post_8h_romantic_gate = true, expires = "2d" },
-	{ valen_post_8h_best_friend_gate = true, expires = "2d" }
+	{ valen_post_8h_best_friend_gate = true, expires = "2d" },
 ]
-actions = [
-	{ bark = { bark = "heart", npc = "valen" } },
-	{ item = { item = "purse", count = 1000 } }
-]
+actions = [{ bark = { bark = "heart", npc = "valen" } }, { item = { item = "purse", count = 1000 } }]
 portrait = "neutral"
 local = "I noticed you window-shopping at the last Saturday Market..."
 next = "1"
@@ -270,10 +266,10 @@ local = "It would make me happy if you bought yourself something nice."
 refresh = "never"
 requires = [
 	{ npc = "valen" },
-	{ valen_is_dating = true },
+	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
 	{ valen_post_8h_romantic_progression = false },
-	{ valen_post_8h_romantic_grouping = 4 }
+	{ valen_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ valen_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "blush", npc = "valen" } }]
@@ -307,7 +303,7 @@ requires = [
 	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
 	{ valen_post_8h_romantic_progression = false },
-	{ valen_post_8h_romantic_grouping = 4 }
+	{ valen_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ valen_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
@@ -329,16 +325,15 @@ local = "But around you, I'm given to feeling... youthful."
 refresh = "never"
 requires = [
 	{ npc = "valen" },
-	{ has_spouse = false },
 	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
 	{ valen_post_8h_romantic_progression = false },
-	{ valen_post_8h_romantic_grouping = 4 }
+	{ valen_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ valen_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "blush", npc = "valen" } }]
 portrait = "neutral"
-local = "The children stopped by the Clinic the other day."
+local = "The children stopped by the clinic the other day."
 next = "1"
 
 [valen_post_8h_romantic_9.1]
@@ -370,16 +365,15 @@ local = "Truthfully... I'd been thinking of you, if you must know."
 refresh = "never"
 requires = [
 	{ npc = "valen" },
-	{ has_spouse = false },
 	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
 	{ valen_post_8h_romantic_progression = false },
-	{ valen_post_8h_romantic_grouping = 4 }
+	{ valen_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ valen_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [
 	{ bark = { bark = "heart", npc = "valen" } },
-	{ item = "restorative_syrup" }
+	{ item = "restorative_syrup" },
 ]
 portrait = "neutral"
 local = "I hope you don't mind that I'm not one to express my feelings through cooking, [Ari]."
@@ -403,10 +397,10 @@ local = "To that end, please take this."
 refresh = "never"
 requires = [
 	{ npc = "valen" },
-	{ valen_is_dating = true },
+	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
 	{ valen_post_8h_romantic_progression = false },
-	{ valen_post_8h_romantic_grouping = 4 }
+	{ valen_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ valen_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
@@ -424,7 +418,7 @@ portrait = "think_smile"
 local = "Unless there's anything you have in mind...?"
 prompts = [
 	{ local = "You could help me grow some medicinal herbs!", next = "3" },
-	{ local = "You could consider doing house calls!", next = "7" }
+	{ local = "You could consider doing house calls!", next = "7" },
 ]
 
 [valen_post_8h_romantic_11.3]
@@ -469,10 +463,10 @@ local = "You just might get it!"
 refresh = "never"
 requires = [
 	{ npc = "valen" },
-	{ valen_is_dating = true },
+	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
 	{ valen_post_8h_romantic_progression = false },
-	{ valen_post_8h_romantic_grouping = 4 }
+	{ valen_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ valen_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "blush", npc = "valen" } }]
@@ -485,7 +479,7 @@ portrait = "embarrassed"
 local = "But I'm finding that I need to wear them more often, lately."
 prompts = [
 	{ local = "I'm sure they look nice on you!", next = "2" },
-	{ local = "I'm sure they look sexy on you!", next = "2" }
+	{ local = "I'm sure they look sexy on you!", next = "2" },
 ]
 
 [valen_post_8h_romantic_12.2]
@@ -506,10 +500,10 @@ local = "But... well. That makes me reconsider."
 refresh = "never"
 requires = [
 	{ npc = "valen" },
-	{ valen_is_dating = true },
+	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
 	{ valen_post_8h_romantic_progression = false },
-	{ valen_post_8h_romantic_grouping = 4 }
+	{ valen_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ valen_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
@@ -538,7 +532,7 @@ portrait = "happy_blush"
 local = "Do you have any advice for me?"
 prompts = [
 	{ local = "Just spend time with them!", next = "5" },
-	{ local = "Just don't be demanding of their affection.", next = "5" }
+	{ local = "Just don't be demanding of their affection.", next = "5" },
 ]
 
 [valen_post_8h_romantic_13.5]
@@ -574,14 +568,14 @@ local = "I'll keep that in mind!"
 refresh = "never"
 requires = [
 	{ npc = "valen" },
-	{ valen_is_dating = true },
+	{ valen_is_partner = true },
 	{ valen_post_8h_romantic_gate = false },
-	{ valen_post_8h_romantic_grouping = 4 }
+	{ valen_post_8h_romantic_grouping = 4 },
 ]
 writes = [
 	{ valen_post_8h_romantic_gate = true, expires = "2d" },
 	{ valen_post_8h_best_friend_gate = true, expires = "2d" },
-	{ valen_post_8h_romantic_progression = true }
+	{ valen_post_8h_romantic_progression = true },
 ]
 actions = [{ bark = { bark = "blush", npc = "valen" } }]
 portrait = "neutral"
@@ -598,7 +592,7 @@ portrait = "neutral_blush"
 local = "I hope it's okay if I mention you when I write back to him."
 prompts = [
 	{ local = "Of course! But why would they worry?", next = "3" },
-	{ local = "They sound sweet.", next = "8" }
+	{ local = "They sound sweet.", next = "8" },
 ]
 
 [valen_post_8h_romantic_14.3]

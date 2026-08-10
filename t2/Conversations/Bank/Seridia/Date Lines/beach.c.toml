@@ -1,11 +1,6 @@
 [beach_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "seridia" },
-	{ date = "beach" },
-	{ da_seridia_beach = 0 },
-	{ seridia_is_spouse = false }
-]
+requires = [{ npc = "seridia" }, { date = "beach" }, { da_seridia_beach = 0 }]
 writes = [
 	{ da_seridia_beach = 1 },
 	{ da_seridia_beach_follow_up_gate = true, expires = "1d" }
@@ -33,11 +28,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "seridia" },
 	{ date = "beach" },
-	{ seridia_has_child = false },
-	{ any = [
-		{ seridia_is_spouse = true },
-		{ da_seridia_beach = 1, comparator = ">=" }
-	] }
+	{ da_seridia_beach = 1, comparator = ">=" }
 ]
 writes = [
 	{ da_seridia_beach = 2 },
@@ -57,8 +48,7 @@ refresh = "never"
 requires = [
 	{ npc = "seridia" },
 	{ da_seridia_beach = 1 },
-	{ da_seridia_beach_follow_up_gate = true },
-	{ seridia_is_spouse = false }
+	{ da_seridia_beach_follow_up_gate = true }
 ]
 writes = [{ da_seridia_beach_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "seridia" } }]
@@ -148,11 +138,7 @@ refresh = "never"
 requires = [
 	{ npc = "seridia" },
 	{ da_seridia_beach = 2 },
-	{ seridia_has_child = false },
-	{ any = [
-		{ seridia_is_spouse = true },
-		{ da_seridia_beach_follow_up_gate = true }
-	] }
+	{ da_seridia_beach_follow_up_gate = true }
 ]
 writes = [{ da_seridia_beach_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "seridia" } }]

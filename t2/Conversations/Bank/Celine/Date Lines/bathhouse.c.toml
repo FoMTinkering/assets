@@ -1,15 +1,7 @@
 [bathhouse_accept_1]
 kind = "date_acceptance"
-requires = [
-    { npc = "celine" },
-    { date = "bathhouse" },
-    { da_celine_bathhouse = 0 },
-    { celine_is_spouse = false }
-]
-writes = [
-    { da_celine_bathhouse = 1 },
-    { da_celine_bathhouse_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "celine" }, { date = "bathhouse" }, { da_celine_bathhouse = 0 }]
+writes = [{ da_celine_bathhouse = 1 }, { da_celine_bathhouse_follow_up_gate = true, expires = "1d" }]
 portrait = "blush_closed_eyes"
 local = "You want to go over to the $Bathhouse$?"
 next = "1"
@@ -30,19 +22,8 @@ local = "I... I'd love to!"
 
 [bathhouse_accept_2]
 kind = "date_acceptance"
-requires = [
-    { npc = "celine" },
-    { date = "bathhouse" },
-    { celine_has_child = false },
-    { any = [
-        { celine_is_spouse = true },
-        { da_celine_bathhouse = 1, comparator = ">=" }
-    ] }
-]
-writes = [
-    { da_celine_bathhouse = 2 },
-    { da_celine_bathhouse_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "celine" }, { date = "bathhouse" }, { da_celine_bathhouse = 1, comparator = ">=" }]
+writes = [{ da_celine_bathhouse = 2 }, { da_celine_bathhouse_follow_up_gate = true, expires = "1d" }]
 portrait = "blush_special"
 local = "Would you like to go with me to the $Bathhouse$, [Ari]?"
 next = "1"
@@ -59,12 +40,7 @@ local = "Yay! I've been looking forward to going with you again!"
 [bathhouse_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-    { npc = "celine" },
-    { da_celine_bathhouse = 1 },
-    { da_celine_bathhouse_follow_up_gate = true },
-    { celine_is_spouse = false }
-]
+requires = [{ npc = "celine" }, { da_celine_bathhouse = 1 }, { da_celine_bathhouse_follow_up_gate = true }]
 writes = [{ da_celine_bathhouse_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "celine" } }]
 portrait = "embarrassed"
@@ -84,12 +60,7 @@ local = "Can we go again soon...?"
 [bathhouse_follow_up_2]
 priority = "max"
 refresh = "instantly"
-requires = [
-    { npc = "celine" },
-    { celine_has_child = false },
-    { any = [{ celine_is_spouse = true }, { da_celine_bathhouse = 2 }] },
-    { da_celine_bathhouse_follow_up_gate = true }
-]
+requires = [{ npc = "celine" }, { da_celine_bathhouse = 2 }, { da_celine_bathhouse_follow_up_gate = true }]
 writes = [{ da_celine_bathhouse_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "celine" } }]
 portrait = "blush_closed_eyes"

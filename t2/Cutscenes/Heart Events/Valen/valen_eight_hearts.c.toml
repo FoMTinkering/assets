@@ -46,7 +46,7 @@ refresh = "never"
 requires = [
 	{ npc = "errol" },
 	{ valen_heart_event = "eight_heart" },
-	{ valen_eight_heart_priority_bump = true }
+	{ valen_eight_heart_priority_bump = true },
 ]
 portrait = "sad"
 local = "Valen told me about what happened, I'm relieved you're alright, [Ari]."
@@ -78,7 +78,7 @@ requires = [
 	{ npc = "valen" },
 	{ valen_heart_event = "eight_heart" },
 	{ valen_is_best_friend = true },
-	{ valen_eight_heart_priority_bump = true }
+	{ valen_eight_heart_priority_bump = true },
 ]
 portrait = "neutral"
 local = "I feel such a sense of relief, now that we have recovered the panacea's recipe."
@@ -99,7 +99,7 @@ requires = [
 	{ npc = "valen" },
 	{ valen_heart_event = "eight_heart" },
 	{ valen_is_partner = true },
-	{ valen_eight_heart_priority_bump = true }
+	{ valen_eight_heart_priority_bump = true },
 ]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
 portrait = "neutral"
@@ -119,7 +119,7 @@ local = "I suppose it's another mystery for us to unravel."
 kind = "gameplay_triggered"
 writes = [
 	{ valen_heart_event = "eight_heart", expires = "4d" },
-	{ valen_eight_heart_priority_bump = true, expires = "4d" }
+	{ valen_eight_heart_priority_bump = true, expires = "4d" },
 ]
 speaker = "valen"
 portrait = "happy"
@@ -162,7 +162,7 @@ portrait = "raised_eyebrow"
 local = "Well, it's probably best that we do a circuit ourselves, don't you think?"
 prompts = [
 	{ local = "Cliffblossom... do we have any other details? ", next = "7" },
-	{ local = "I'll pick every flower I can find! ", next = "8" }
+	{ local = "I'll pick every flower I can find! ", next = "8" },
 ]
 
 [valen_eight_hearts.7]
@@ -195,7 +195,7 @@ portrait = "happy"
 local = "It's a bit like something out of a mystery novel, isn't it?"
 prompts = [
 	{ local = "It's exciting! ", next = "12" },
-	{ local = "You'll have to write it!", next = "13" }
+	{ local = "You'll have to write it!", next = "13" },
 ]
 
 [valen_eight_hearts.12]
@@ -224,10 +224,10 @@ prompts = [
 	{ local = "Why don't we check the ruins themselves?", next = "16" },
 	{ local = "But I want to spend more time with you.", next = [
 		{ target = "17r", requires = [
-			{ shooting_star_valen_attended = true }
+			{ shooting_star_valen_attended = true },
 		] },
-		{ target = "17f" }
-	] }
+		{ target = "17f" },
+	] },
 ]
 
 [valen_eight_hearts.16]
@@ -353,7 +353,7 @@ portrait = "teary"
 local = "Oh, thank goodness you're awake. How are you feeling, [Ari]?"
 prompts = [
 	{ local = "I feel... fine? What happened?", next = "35" },
-	{ local = "Good, but are you okay?", next = "36" }
+	{ local = "Good, but are you okay?", next = "36" },
 ]
 
 [valen_eight_hearts.35]
@@ -404,7 +404,7 @@ portrait = "think"
 local = "But as your doctor..."
 next = [
 	{ target = "43r", requires = [{ shooting_star_valen_attended = true }] },
-	{ target = "43f", requires = [] }
+	{ target = "43f", requires = [] },
 ]
 
 [valen_eight_hearts.43r]
@@ -426,22 +426,22 @@ local = "I never wanted to risk any harm coming to you. Why did you jump in the 
 prompts = [
 	{ local = "Because you're my best friend!", next = [
 		{ target = "45r", requires = [
-			{ shooting_star_valen_attended = true }
+			{ shooting_star_valen_attended = true },
 		] },
-		{ target = "45f" }
+		{ target = "45f" },
 	] },
-	{ local = "Because I care about you... more than anyone!", next = "51" }
+	{ local = "Because I care about you... more than anyone!", next = "51" },
 ]
 
 [valen_eight_hearts.45r]
-actions = [{ update_status = { npc = "valen", status = "best_friend" } }]
+writes = [{ valen_status = "best_friend" }]
 speaker = "valen"
 portrait = "sad"
 local = "[Ari]..."
 next = "46"
 
 [valen_eight_hearts.45f]
-actions = [{ update_status = { npc = "valen", status = "best_friend" } }]
+writes = [{ valen_status = "best_friend" }]
 speaker = "valen"
 portrait = "happy"
 local = "[Ari]..."
@@ -471,7 +471,7 @@ portrait = "raised_eyebrow"
 local = "Even though we figured out how to make more panacea... I'd prefer not to have occasion to use it."
 next = [
 	{ target = "50r", requires = [{ shooting_star_valen_attended = true }] },
-	{ target = "50f", requires = [] }
+	{ target = "50f", requires = [] },
 ]
 
 [valen_eight_hearts.50r]
@@ -487,13 +487,13 @@ local = "Okay? You promise?"
 next = "57"
 
 [valen_eight_hearts.51]
-actions = [{ update_status = { npc = "valen", status = "dating" } }]
+writes = [{ valen_status = "dating" }]
 speaker = "valen"
 portrait = "embarrassed"
 local = "Oh! [Ari]... do you mean it?"
 next = [
 	{ target = "52r", requires = [{ shooting_star_valen_attended = true }] },
-	{ target = "52f", requires = [] }
+	{ target = "52f", requires = [] },
 ]
 
 [valen_eight_hearts.52r]
@@ -526,7 +526,7 @@ portrait = "raised_eyebrow"
 local = "Even though we figured out how to make more panacea, I'd prefer not to have occasion to use it."
 next = [
 	{ target = "56r", requires = [{ shooting_star_valen_attended = true }] },
-	{ target = "56f", requires = [] }
+	{ target = "56f", requires = [] },
 ]
 
 [valen_eight_hearts.56r]
@@ -547,7 +547,7 @@ portrait = "happy"
 local = "I can't thank you enough for everything you've done, [Ari]."
 next = [
 	{ target = "58r", requires = [{ shooting_star_valen_attended = true }] },
-	{ target = "58f", requires = [] }
+	{ target = "58f", requires = [] },
 ]
 
 [valen_eight_hearts.58r]

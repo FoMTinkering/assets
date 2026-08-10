@@ -1,11 +1,6 @@
 [park_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "march" },
-	{ date = "park" },
-	{ da_march_park = 0 },
-	{ march_is_spouse = false }
-]
+requires = [{ npc = "march" }, { date = "park" }, { da_march_park = 0 }]
 writes = [
 	{ da_march_park = 1 },
 	{ da_march_park_follow_up_gate = true, expires = "1d" },
@@ -25,11 +20,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "march" },
 	{ date = "park" },
-	{ march_has_child = false },
-	{ any = [
-		{ march_is_spouse = true },
-		{ da_march_park = 1, comparator = ">=" }
-	] }
+	{ da_march_park = 1, comparator = ">=" },
 ]
 writes = [
 	{ da_march_park = 2 },
@@ -52,7 +43,6 @@ requires = [
 	{ npc = "march" },
 	{ da_march_park = 1 },
 	{ da_march_park_follow_up_gate = true },
-	{ march_is_spouse = false }
 ]
 writes = [{ da_march_park_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "march" } }]
@@ -81,8 +71,7 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "march" },
-	{ march_has_child = false },
-	{ any = [{ march_is_spouse = true }, { da_march_park = 2 }] },
+	{ da_march_park = 2 },
 	{ da_march_park_follow_up_gate = true },
 ]
 writes = [{ da_march_park_follow_up_gate = false }]

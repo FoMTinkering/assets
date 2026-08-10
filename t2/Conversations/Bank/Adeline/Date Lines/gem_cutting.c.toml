@@ -3,8 +3,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "adeline" },
 	{ date = "gem_cutting" },
-	{ da_adeline_gem_cutting = 0 },
-	{ adeline_is_spouse = false }
+	{ da_adeline_gem_cutting = 0 }
 ]
 writes = [
 	{ da_adeline_gem_cutting = 1 },
@@ -38,11 +37,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "adeline" },
 	{ date = "gem_cutting" },
-	{ adeline_has_child = false },
-	{ any = [
-		{ adeline_is_spouse = true },
-		{ da_adeline_gem_cutting = 1, comparator = ">=" }
-	] }
+	{ da_adeline_gem_cutting = 1, comparator = ">=" }
 ]
 writes = [
 	{ da_adeline_gem_cutting = 2 },
@@ -62,8 +57,7 @@ refresh = "never"
 requires = [
 	{ npc = "adeline" },
 	{ da_adeline_gem_cutting = 1 },
-	{ da_adeline_gem_cutting_follow_up_gate = true },
-	{ adeline_is_spouse = false }
+	{ da_adeline_gem_cutting_follow_up_gate = true }
 ]
 writes = [{ da_adeline_gem_cutting_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "adeline" } }]
@@ -85,8 +79,7 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "adeline" },
-	{ adeline_has_child = false },
-	{ any = [{ adeline_is_spouse = true }, { da_adeline_gem_cutting = 2 }] },
+	{ da_adeline_gem_cutting = 2 },
 	{ da_adeline_gem_cutting_follow_up_gate = true }
 ]
 writes = [{ da_adeline_gem_cutting_follow_up_gate = false }]

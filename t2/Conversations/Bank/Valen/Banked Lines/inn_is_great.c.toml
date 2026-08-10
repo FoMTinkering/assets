@@ -11,11 +11,10 @@ requires = [
 	{ npc = "valen" },
 	{ location = "inn" },
 	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
-	{ date_time = "1y", comparator = "<" },
-	{ valen_can_drink = true }
+	{ date_time = "1y", comparator = "<" }
 ]
 portrait = "happy"
-local = "The cooking at the Inn is excellent and their wine cellar is expansive, if you haven't indulged yet, [Ari]."
+local = "The cooking at the inn is excellent and their wine cellar is expansive, if you haven't indulged yet, [Ari]."
 
 [inn_is_great_2]
 refresh = "1y"
@@ -23,11 +22,7 @@ requires = [
 	{ npc = "valen" },
 	{ location = "inn" },
 	{ any = [{ time_of_day = "evening" }, { time_of_day = "night" }] },
-	{ any = [
-		{ valen_drinking = "wine" },
-		{ valen_drinking = "white_wine" },
-		{ valen_drinking = "rose_wine" },
-	] },
+	{ valen_activity = "drink" },
 	{ season = "winter" }
 ]
 portrait = "happy"

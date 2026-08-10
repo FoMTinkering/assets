@@ -4,7 +4,7 @@ requires = [
 	{ npc = "hayden" },
 	{ hayden_heart_event = "eight_heart" },
 	{ hayden_is_best_friend = true },
-	{ hayden_eight_heart_priority_bump = true }
+	{ hayden_eight_heart_priority_bump = true },
 ]
 portrait = "neutral"
 local = "I had a great time with you, [Ari]. Let's do it again sometime soon!"
@@ -15,7 +15,7 @@ requires = [
 	{ npc = "hayden" },
 	{ hayden_heart_event = "eight_heart" },
 	{ hayden_is_partner = true },
-	{ hayden_eight_heart_priority_bump = true }
+	{ hayden_eight_heart_priority_bump = true },
 ]
 portrait = "shy_special"
 local = "I had a great time with you, [Ari]. Let's do it again sometime soon."
@@ -25,7 +25,7 @@ refresh = "never"
 requires = [
 	{ npc = "hemlock" },
 	{ hayden_heart_event = "eight_heart" },
-	{ hayden_is_partner = true }
+	{ hayden_is_partner = true },
 ]
 portrait = "neutral"
 local = "I've known Hayden for a long time, but I've never seen him quite this cheerful."
@@ -56,7 +56,7 @@ local = "She's great at finding bugs!"
 [hayden_eight_hearts]
 writes = [
 	{ hayden_heart_event = "eight_heart", expires = "4d" },
-	{ hayden_eight_heart_priority_bump = true, expires = "4d" }
+	{ hayden_eight_heart_priority_bump = true, expires = "4d" },
 ]
 kind = "gameplay_triggered"
 speaker = "hayden"
@@ -85,14 +85,14 @@ local = "Eggs from my hens, vegetables from my fields, and wheat ground at the t
 local = "It's delicious, Hayden!"
 next = [
 	{ target = "4r", requires = [{ shooting_star_hayden_attended = true }] },
-	{ target = "4f", requires = [] }
+	{ target = "4f", requires = [] },
 ]
 
 [[hayden_eight_hearts.3.prompts]]
 local = "You can taste the difference!"
 next = [
 	{ target = "4r", requires = [{ shooting_star_hayden_attended = true }] },
-	{ target = "4f", requires = [] }
+	{ target = "4f", requires = [] },
 ]
 
 [hayden_eight_hearts.4r]
@@ -119,7 +119,7 @@ portrait = "happy_arm_down"
 local = "Watering crops, feeding animals... There's always something that needs doing."
 prompts = [
 	{ local = "Speaking of which, where's Henrietta?", next = "7" },
-	{ local = "Is Henrietta going to be joining us?", next = "7" }
+	{ local = "Is Henrietta going to be joining us?", next = "7" },
 ]
 
 [hayden_eight_hearts.7]
@@ -149,14 +149,14 @@ local = "I don't know about all that, but I can tell that Henrietta is having fu
 local = "Wow, she's come such a long way!"
 next = [
 	{ target = "11r", requires = [{ shooting_star_hayden_attended = true }] },
-	{ target = "11f", requires = [] }
+	{ target = "11f", requires = [] },
 ]
 
 [[hayden_eight_hearts.10.prompts]]
 local = "How are you handling it?"
 next = [
 	{ target = "12r", requires = [{ shooting_star_hayden_attended = true }] },
-	{ target = "12f", requires = [] }
+	{ target = "12f", requires = [] },
 ]
 
 [hayden_eight_hearts.11r]
@@ -204,7 +204,7 @@ next = "16"
 [hayden_eight_hearts.16]
 speaker = "hayden"
 portrait = "think"
-local = "What do you say we take a little walk? Down to the Beach maybe?"
+local = "What do you say we take a little walk? Down to the beach maybe?"
 next = "17"
 
 [hayden_eight_hearts.17]
@@ -240,14 +240,14 @@ local = "..."
 local = "What's on your mind?"
 next = [
 	{ target = "22r", requires = [{ shooting_star_hayden_attended = true }] },
-	{ target = "22f", requires = [] }
+	{ target = "22f", requires = [] },
 ]
 
 [[hayden_eight_hearts.21.prompts]]
 local = "Whatcha thinking about?"
 next = [
 	{ target = "22r", requires = [{ shooting_star_hayden_attended = true }] },
-	{ target = "22f", requires = [] }
+	{ target = "22f", requires = [] },
 ]
 
 [hayden_eight_hearts.22r]
@@ -310,7 +310,7 @@ portrait = "think"
 local = "..."
 next = [
 	{ target = "30r", requires = [{ shooting_star_hayden_attended = true }] },
-	{ target = "30f", requires = [] }
+	{ target = "30f", requires = [] },
 ]
 
 [hayden_eight_hearts.30r]
@@ -319,7 +319,7 @@ portrait = "neutral_arm_down"
 local = "How about you, [Ari]? You look mighty thoughtful. Something on your mind?"
 prompts = [
 	{ local = "I'm glad to have a best friend like you, Hayden.", next = "31r" },
-	{ local = "I wish you'd just kiss me already, Hayden.", next = "34r" }
+	{ local = "I wish you'd just kiss me already, Hayden.", next = "34r" },
 ]
 
 [hayden_eight_hearts.30f]
@@ -328,18 +328,18 @@ portrait = "neutral_arm_down"
 local = "How about you, [Ari]? You look mighty thoughtful. Something on your mind?"
 prompts = [
 	{ local = "I'm glad to have a best friend like you, Hayden.", next = "31f" },
-	{ local = "I've been meaning to tell you...\nI really like you, Hayden.", next = "34f" }
+	{ local = "I've been meaning to tell you...\nI really like you, Hayden.", next = "34f" },
 ]
 
 [hayden_eight_hearts.31r]
-actions = [{ update_status = { npc = "hayden", status = "best_friend" } }]
+writes = [{ hayden_status = "best_friend" }]
 speaker = "hayden"
 portrait = "gloomy"
 local = "[Ari]..."
 next = "32r"
 
 [hayden_eight_hearts.31f]
-actions = [{ update_status = { npc = "hayden", status = "best_friend" } }]
+writes = [{ hayden_status = "best_friend" }]
 speaker = "hayden"
 portrait = "happy_fist"
 local = "[Ari]..."
@@ -370,14 +370,14 @@ local = "Gya ha ha!"
 next = "37f"
 
 [hayden_eight_hearts.34r]
-actions = [{ update_status = { npc = "hayden", status = "dating" } }]
+writes = [{ hayden_status = "dating" }]
 speaker = "hayden"
 portrait = "shy_special"
 local = "[Ari]!"
 next = "35r"
 
 [hayden_eight_hearts.34f]
-actions = [{ update_status = { npc = "hayden", status = "dating" } }]
+writes = [{ hayden_status = "dating" }]
 speaker = "hayden"
 portrait = "shy_special"
 local = "Do... do you mean it?"
@@ -413,7 +413,7 @@ portrait = "blush"
 local = "This is nice... I could watch the waves forever like this..."
 prompts = [
 	{ local = "Do you need to get back for Henrietta?", next = "38r" },
-	{ local = "You're not in a rush to get back?", next = "39r" }
+	{ local = "You're not in a rush to get back?", next = "39r" },
 ]
 
 [hayden_eight_hearts.37f]
@@ -422,7 +422,7 @@ portrait = "neutral_arm_down"
 local = "I don't know about you, but I could just keep watching the waves like this..."
 prompts = [
 	{ local = "Do you need to get back for Henrietta?", next = "38f" },
-	{ local = "You're not in a rush to get back?", next = "39f" }
+	{ local = "You're not in a rush to get back?", next = "39f" },
 ]
 
 [hayden_eight_hearts.38r]

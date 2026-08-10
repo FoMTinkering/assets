@@ -1,15 +1,7 @@
 [gem_cutting_accept_1]
 kind = "date_acceptance"
-requires = [
-    { npc = "march" },
-    { date = "gem_cutting" },
-    { da_march_gem_cutting = 0 },
-    { march_is_spouse = false }
-]
-writes = [
-    { da_march_gem_cutting = 1 },
-    { da_march_gem_cutting_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "march" }, { date = "gem_cutting" }, { da_march_gem_cutting = 0 }]
+writes = [{ da_march_gem_cutting = 1 }, { da_march_gem_cutting_follow_up_gate = true, expires = "1d" }]
 portrait = "think"
 local = "Would you want to try some $Gem Cutting$ with me, [Ari]?"
 next = "1"
@@ -30,19 +22,8 @@ local = "Yeah, you're up for it? Great!"
 
 [gem_cutting_accept_2]
 kind = "date_acceptance"
-requires = [
-    { npc = "march" },
-    { date = "gem_cutting" },
-    { march_has_child = false },
-    { any = [
-        { march_is_spouse = true },
-        { da_march_gem_cutting = 1, comparator = ">=" }
-    ] }
-]
-writes = [
-    { da_march_gem_cutting = 2 },
-    { da_march_gem_cutting_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "march" }, { date = "gem_cutting" }, { da_march_gem_cutting = 1, comparator = ">=" }]
+writes = [{ da_march_gem_cutting = 2 }, { da_march_gem_cutting_follow_up_gate = true, expires = "1d" }]
 portrait = "eight_heart_happy_blush"
 local = "You want to do some $Gem Cutting$?"
 next = "1"
@@ -54,12 +35,7 @@ local = "Of course! I'll get the forge ready."
 [gem_cutting_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-    { npc = "march" },
-    { da_march_gem_cutting = 1 },
-    { da_march_gem_cutting_follow_up_gate = true },
-    { march_is_spouse = false }
-]
+requires = [{ npc = "march" }, { da_march_gem_cutting = 1 }, { da_march_gem_cutting_follow_up_gate = true }]
 writes = [{ da_march_gem_cutting_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "march" } }]
 portrait = "eight_heart_happy"
@@ -78,12 +54,7 @@ local = "But you're good at what you do."
 [gem_cutting_follow_up_2]
 priority = "max"
 refresh = "instantly"
-requires = [
-    { npc = "march" },
-    { march_has_child = false },
-    { any = [{ march_is_spouse = true }, { da_march_gem_cutting = 2 }] },
-    { da_march_gem_cutting_follow_up_gate = true }
-]
+requires = [{ npc = "march" }, { da_march_gem_cutting = 2 }, { da_march_gem_cutting_follow_up_gate = true }]
 writes = [{ da_march_gem_cutting_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "march" } }]
 portrait = "eight_heart_happy_blush"

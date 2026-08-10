@@ -3,7 +3,7 @@ refresh = "never"
 requires = [
 	{ npc = "juniper" },
 	{ cutscene_seen_break_fire_seal = true },
-	{ cutscene_seen_juniper_eight_hearts = false }
+	{ cutscene_seen_juniper_eight_hearts = false },
 ]
 portrait = "sincere_special"
 local = "Are you feeling okay, [Ari]?"
@@ -23,11 +23,11 @@ refresh = "never"
 requires = [
 	{ npc = "juniper" },
 	{ juniper_heart_event = "eight_heart" },
-	{ juniper_eight_heart_priority_bump = true }
+	{ juniper_eight_heart_priority_bump = true },
 ]
 writes = [
 	{ juniper_seeks_out_caldarus = true },
-	{ juniper_seeks_out_caldarus_gate = true, expires = "24h" }
+	{ juniper_seeks_out_caldarus_gate = true, expires = "24h" },
 ]
 actions = [{ bark = { bark = "cute_face", npc = "juniper" } }]
 portrait = "think"
@@ -43,7 +43,7 @@ refresh = "never"
 requires = [
 	{ npc = "juniper" },
 	{ juniper_seeks_out_caldarus = true },
-	{ juniper_seeks_out_caldarus_gate = false }
+	{ juniper_seeks_out_caldarus_gate = false },
 ]
 portrait = "think"
 local = "..."
@@ -88,7 +88,7 @@ refresh = "never"
 requires = [
 	{ npc = "caldarus" },
 	{ juniper_seeks_out_caldarus = true },
-	{ juniper_seeks_out_caldarus_gate = false }
+	{ juniper_seeks_out_caldarus_gate = false },
 ]
 portrait = "think"
 local = "I had the pleasure of meeting your friend, Juniper."
@@ -131,7 +131,7 @@ actions = [{ cutscene = "juniper_eight_hearts" }]
 kind = "gameplay_triggered"
 writes = [
 	{ juniper_heart_event = "eight_heart", expires = "5d" },
-	{ juniper_eight_heart_priority_bump = true, expires = "5d" }
+	{ juniper_eight_heart_priority_bump = true, expires = "5d" },
 ]
 speaker = "juniper"
 portrait = "neutral"
@@ -168,7 +168,7 @@ portrait = "sly"
 local = "This is a special bath infusion. It's formulated for two people."
 next = [
 	{ target = "6r", requires = [{ shooting_star_juniper_attended = true }] },
-	{ target = "6f", requires = [] }
+	{ target = "6f", requires = [] },
 ]
 
 [juniper_eight_hearts.6r]
@@ -201,7 +201,7 @@ portrait = "neutral"
 local = "So what do you think? How's the temperature?"
 prompts = [
 	{ local = "It's perfect!", next = "10" },
-	{ local = "I'm more concerned about the color...", next = "12" }
+	{ local = "I'm more concerned about the color...", next = "12" },
 ]
 
 [juniper_eight_hearts.10]
@@ -234,7 +234,7 @@ portrait = "think"
 local = "How about the scent? Nice, isn't it?"
 prompts = [
 	{ local = "It's surprisingly... really nice?", next = "15" },
-	{ local = "It's very soothing!", next = "15" }
+	{ local = "It's very soothing!", next = "15" },
 ]
 
 [juniper_eight_hearts.15]
@@ -411,7 +411,7 @@ portrait = "think"
 local = "Forgive me [Ari]. Even now, I want that power. But it's not worth the price. I never meant for you to get hurt."
 prompts = [
 	{ local = "Enough, Juniper. Please just let me help you.", next = "44" },
-	{ local = "I forgive you Juniper, please just let me help you.", next = "44" }
+	{ local = "I forgive you Juniper, please just let me help you.", next = "44" },
 ]
 
 [juniper_eight_hearts.44]
@@ -462,7 +462,7 @@ portrait = "mad"
 local = "I see my suspicions were well-founded... but how, [Ari]? How did you come to possess Essence Magic?"
 prompts = [
 	{ local = "(Give her the long version)", next = "52" },
-	{ local = "(Give her the short version)", next = "52" }
+	{ local = "(Give her the short version)", next = "52" },
 ]
 
 [juniper_eight_hearts.52]
@@ -483,7 +483,7 @@ portrait = "think"
 local = "It's really no wonder why-"
 next = [
 	{ target = "55r", requires = [{ shooting_star_juniper_attended = true }] },
-	{ target = "55f", requires = [] }
+	{ target = "55f", requires = [] },
 ]
 
 [juniper_eight_hearts.55r]
@@ -504,7 +504,7 @@ portrait = "sincere_special"
 local = "I'm sorry for everything."
 prompts = [
 	{ local = "We're best friends, Juniper. I forgive you.", next = "57" },
-	{ local = "I have feelings for you too, Juniper.", next = "60r" }
+	{ local = "I have feelings for you too, Juniper.", next = "60r" },
 ]
 
 [juniper_eight_hearts.56f]
@@ -513,11 +513,11 @@ portrait = "sincere_special"
 local = "I'm sorry for everything."
 prompts = [
 	{ local = "We're best friends, Juniper. I forgive you. ", next = "57" },
-	{ local = "My feelings for you haven't changed, Juniper.", next = "60f" }
+	{ local = "My feelings for you haven't changed, Juniper.", next = "60f" },
 ]
 
 [juniper_eight_hearts.57]
-actions = [{ update_status = { npc = "juniper", status = "best_friend" } }]
+writes = [{ juniper_status = "best_friend" }]
 speaker = "juniper"
 portrait = "neutral"
 local = "[Ari]... thank you."
@@ -536,14 +536,14 @@ local = "But I'm absolutely going to make you spill all the details from now on!
 next = "63"
 
 [juniper_eight_hearts.60r]
-actions = [{ update_status = { npc = "juniper", status = "dating" } }]
+writes = [{ juniper_status = "dating" }]
 speaker = "juniper"
 portrait = "think_special"
 local = "You have feelings for me? I didn't think you felt the same way."
 next = "61r"
 
 [juniper_eight_hearts.60f]
-actions = [{ update_status = { npc = "juniper", status = "dating" } }]
+writes = [{ juniper_status = "dating" }]
 speaker = "juniper"
 portrait = "blush"
 local = "Your feelings for me? I didn't think you felt the same way."
@@ -591,7 +591,7 @@ portrait = "think"
 local = "But... I sense that time will come."
 next = [
 	{ target = "67r", requires = [{ juniper_is_partner = true }] },
-	{ target = "67f", requires = [] }
+	{ target = "67f", requires = [] },
 ]
 
 [juniper_eight_hearts.67r]

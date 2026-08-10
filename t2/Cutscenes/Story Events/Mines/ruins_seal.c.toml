@@ -522,11 +522,7 @@ local = "^Best of luck with your task. I shall await your return.^"
 
 [break_ruins_seal_pt_3_follow_up_caldarus]
 refresh = "never"
-requires = [
-	{ npc = "caldarus" },
-	{ ruins_seal = "part_3" },
-	{ ruins_seal_follow_up_bump = true }
-]
+requires = [{ npc = "caldarus" }, { ruins_seal = "part_3" }, { ruins_seal_follow_up_bump = true }]
 portrait = "neutral"
 local = "[Ari]..."
 next = "1"
@@ -547,14 +543,7 @@ local = "Perhaps I just need to rest."
 
 [break_ruins_seal_pt_3]
 kind = "gameplay_triggered"
-writes = [
-	{ ruins_seal = "part_3", expires = "4d" },
-	{ ruins_seal_follow_up_bump = true }
-]
-actions = [
-	{ heart_points = { amount = 40, npc = "eiland" } },
-	{ heart_points = { amount = 40, npc = "juniper" } }
-]
+writes = [{ ruins_seal = "part_3", expires = "4d" }, { ruins_seal_follow_up_bump = true }]
 speaker = "seridia"
 portrait = "neutral"
 local = "^You have succeeded once again!^"

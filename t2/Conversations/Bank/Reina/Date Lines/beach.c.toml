@@ -1,18 +1,10 @@
 [beach_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "reina" },
-	{ date = "beach" },
-	{ da_reina_beach = 0 },
-	{ reina_is_spouse = false }
-]
-writes = [
-	{ da_reina_beach = 1 },
-	{ da_reina_beach_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "reina" }, { date = "beach" }, { da_reina_beach = 0 }]
+writes = [{ da_reina_beach = 1 }, { da_reina_beach_follow_up_gate = true, expires = "1d" }]
 speaker = "reina"
 portrait = "blush_open_eyes"
-local = "Oh! A walk on the Beach?"
+local = "Oh! A walk on the beach?"
 next = "1"
 
 [beach_accept_1.1]
@@ -28,36 +20,20 @@ local = "That sounds pretty romantic!"
 
 [beach_accept_2]
 kind = "date_acceptance"
-requires = [
-	{ npc = "reina" },
-	{ date = "beach" },
-	{ reina_has_child = false },
-	{ any = [
-		{ reina_is_spouse = true },
-		{ da_reina_beach = 1, comparator = ">=" }
-	] }
-]
-writes = [
-	{ da_reina_beach = 2 },
-	{ da_reina_beach_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "reina" }, { date = "beach" }, { da_reina_beach = 1, comparator = ">=" }]
+writes = [{ da_reina_beach = 2 }, { da_reina_beach_follow_up_gate = true, expires = "1d" }]
 speaker = "reina"
 portrait = "blush_open_eyes"
-local = "Should we go look for some shells at the Beach, [Ari]?"
+local = "Should we go look for some shells at the beach, [Ari]?"
 
 [beach_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "reina" },
-	{ da_reina_beach = 1 },
-	{ da_reina_beach_follow_up_gate = true },
-	{ reina_is_spouse = false }
-]
+requires = [{ npc = "reina" }, { da_reina_beach = 1 }, { da_reina_beach_follow_up_gate = true }]
 writes = [{ da_reina_beach_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "reina" } }]
 portrait = "blush_open_eyes"
-local = "I had a great time at the Beach, [Ari]!"
+local = "I had a great time at the beach, [Ari]!"
 next = "1"
 
 [beach_follow_up_1.1]
@@ -89,12 +65,7 @@ local = "I suppose we'll have to go again soon and look for more!"
 [beach_follow_up_2]
 priority = "max"
 refresh = "instantly"
-requires = [
-	{ npc = "reina" },
-	{ reina_has_child = false },
-	{ any = [{ reina_is_spouse = true }, { da_reina_beach = 2 }] },
-	{ da_reina_beach_follow_up_gate = true }
-]
+requires = [{ npc = "reina" }, { da_reina_beach = 2 }, { da_reina_beach_follow_up_gate = true }]
 writes = [{ da_reina_beach_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "reina" } }]
 portrait = "embarrassed"

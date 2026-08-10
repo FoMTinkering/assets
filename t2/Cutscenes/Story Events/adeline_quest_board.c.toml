@@ -4,7 +4,7 @@ requires = [
 	{ npc = "adeline" },
 	{ quest_greet_the_townsfolk_in_progress = true },
 	{ adeline_zone = "town/quest_board" },
-	{ date_time = "7d", comparator = "<=" }
+	{ date_time = "7d", comparator = "<=" },
 ]
 local = "Don't forget to check your Journal's $Map$, it's a great way to help you find your way around!"
 
@@ -30,16 +30,17 @@ portrait = "happy"
 local = "It's a great way to earn $Money$, $Equipment$, and most importantly, $Renown$!"
 prompts = [
 	{ local = "Renown?", next = "4" },
-	{ local = "Can't wait to get started!", next = "5" }
+	{ local = "Can't wait to get started!", next = "5" },
 ]
 
 [adeline_quest_board.4]
-portrait = "embarrassed"
+portrait = "happy"
+effect = "sweat"
 local = "Ah yes, let me explain the basics..."
 next = "6"
 
 [adeline_quest_board.5]
-portrait = "wink"
+portrait = "happy"
 local = "I'm so glad! Allow me to explain the basics of $Renown$..."
 next = "6"
 
@@ -89,7 +90,7 @@ portrait = "sly"
 local = "And as you get to know them better, your $Journal$ can keep track of your relationships with them and even document their favorite gifts."
 prompts = [
 	{ local = "And what do you like, Adeline?", next = "15" },
-	{ local = "And what can I do to make you like me, Adeline?", next = "16" }
+	{ local = "And what can I do to make you like me, Adeline?", next = "16" },
 ]
 
 [adeline_quest_board.15]
@@ -118,10 +119,10 @@ local = "You can view the $Map$ in your $Journal$. It should give you a good ide
 next = "20"
 
 [adeline_quest_board.20]
-portrait = "happy"
+portrait = "neutral"
 local = "You can think of this as the first step on our path to restoring the town."
 next = "21"
 
 [adeline_quest_board.21]
-portrait = "neutral"
+portrait = "happy"
 local = "Isn't this exciting? Come talk to me once you're done meeting everyone!"

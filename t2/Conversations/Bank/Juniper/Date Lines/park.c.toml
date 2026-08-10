@@ -1,11 +1,6 @@
 [park_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "juniper" },
-	{ date = "park" },
-	{ da_juniper_park = 0 },
-	{ juniper_is_spouse = false }
-]
+requires = [{ npc = "juniper" }, { date = "park" }, { da_juniper_park = 0 }]
 writes = [
 	{ da_juniper_park = 1 },
 	{ da_juniper_park_follow_up_gate = true, expires = "1d" }
@@ -37,11 +32,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "juniper" },
 	{ date = "park" },
-	{ juniper_has_child = false },
-	{ any = [
-		{ juniper_is_spouse = true },
-		{ da_juniper_park = 1, comparator = ">=" }
-	] }
+	{ da_juniper_park = 1, comparator = ">=" }
 ]
 writes = [
 	{ da_juniper_park = 2 },
@@ -63,8 +54,7 @@ refresh = "never"
 requires = [
 	{ npc = "juniper" },
 	{ da_juniper_park = 1 },
-	{ da_juniper_park_follow_up_gate = true },
-	{ juniper_is_spouse = false }
+	{ da_juniper_park_follow_up_gate = true }
 ]
 writes = [{ da_juniper_park_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "juniper" } }]
@@ -81,8 +71,7 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "juniper" },
-	{ juniper_has_child = false },
-	{ any = [{ juniper_is_spouse = true }, { da_juniper_park = 2 }] },
+	{ da_juniper_park = 2 },
 	{ da_juniper_park_follow_up_gate = true }
 ]
 writes = [{ da_juniper_park_follow_up_gate = false }]

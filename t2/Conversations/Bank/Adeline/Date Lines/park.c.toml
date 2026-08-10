@@ -1,11 +1,6 @@
 [park_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "adeline" },
-	{ date = "park" },
-	{ da_adeline_park = 0 },
-	{ adeline_is_spouse = false }
-]
+requires = [{ npc = "adeline" }, { date = "park" }, { da_adeline_park = 0 }]
 writes = [
 	{ da_adeline_park = 1 },
 	{ da_adeline_park_follow_up_gate = true, expires = "1d" }
@@ -25,11 +20,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "adeline" },
 	{ date = "park" },
-	{ adeline_has_child = false },
-	{ any = [
-		{ adeline_is_spouse = true },
-		{ da_adeline_park = 1, comparator = ">=" }
-	] },
+	{ da_adeline_park = 1, comparator = ">=" }
 ]
 writes = [
 	{ da_adeline_park = 2 },
@@ -51,8 +42,7 @@ refresh = "never"
 requires = [
 	{ npc = "adeline" },
 	{ da_adeline_park = 1 },
-	{ da_adeline_park_follow_up_gate = true },
-	{ adeline_is_spouse = false }
+	{ da_adeline_park_follow_up_gate = true }
 ]
 writes = [{ da_adeline_park_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "adeline" } }]
@@ -69,9 +59,8 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "adeline" },
-	{ adeline_has_child = false },
-	{ any = [{ adeline_is_spouse = true }, { da_adeline_park = 2 }] },
-	{ da_adeline_park_follow_up_gate = true },
+	{ da_adeline_park = 2 },
+	{ da_adeline_park_follow_up_gate = true }
 ]
 writes = [{ da_adeline_park_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "adeline" } }]

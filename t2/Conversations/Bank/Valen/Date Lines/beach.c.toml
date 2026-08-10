@@ -1,15 +1,7 @@
 [beach_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "valen" },
-	{ date = "beach" },
-	{ da_valen_beach = 0 },
-	{ valen_is_spouse = false }
-]
-writes = [
-	{ da_valen_beach = 1 },
-	{ da_valen_beach_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "valen" }, { date = "beach" }, { da_valen_beach = 0 }]
+writes = [{ da_valen_beach = 1 }, { da_valen_beach_follow_up_gate = true, expires = "1d" }]
 speaker = "valen"
 portrait = "think_blush"
 local = "Would you like to accompany me on a stroll, [Ari]?"
@@ -18,7 +10,7 @@ next = "1"
 [beach_accept_1.1]
 speaker = "valen"
 portrait = "neutral_blush"
-local = "I thought we could head over to the Beach for a while."
+local = "I thought we could head over to the beach for a while."
 next = "2"
 
 [beach_accept_1.2]
@@ -28,22 +20,11 @@ local = "Take in some fresh air!"
 
 [beach_accept_2]
 kind = "date_acceptance"
-requires = [
-	{ npc = "valen" },
-	{ date = "beach" },
-	{ valen_has_child = false },
-	{ any = [
-		{ valen_is_spouse = true },
-		{ da_valen_beach = 1, comparator = ">=" }
-	] }
-]
-writes = [
-	{ da_valen_beach = 2 },
-	{ da_valen_beach_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "valen" }, { date = "beach" }, { da_valen_beach = 1, comparator = ">=" }]
+writes = [{ da_valen_beach = 2 }, { da_valen_beach_follow_up_gate = true, expires = "1d" }]
 speaker = "valen"
 portrait = "think_blush"
-local = "A date at the Beach?"
+local = "A date at the beach?"
 next = "1"
 
 [beach_accept_2.1]
@@ -60,16 +41,11 @@ local = "Let's go!"
 [beach_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "valen" },
-	{ da_valen_beach = 1 },
-	{ da_valen_beach_follow_up_gate = true },
-	{ valen_is_spouse = false }
-]
+requires = [{ npc = "valen" }, { da_valen_beach = 1 }, { da_valen_beach_follow_up_gate = true }]
 writes = [{ da_valen_beach_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
 portrait = "happy_blush"
-local = "Thank you for coming to the Beach with me, [Ari]."
+local = "Thank you for coming to the beach with me, [Ari]."
 next = "1"
 
 [beach_follow_up_1.1]
@@ -101,16 +77,11 @@ local = "Thank you, [Ari]. That's very sweet."
 [beach_follow_up_2]
 priority = "max"
 refresh = "instantly"
-requires = [
-	{ npc = "valen" },
-	{ valen_has_child = false },
-	{ any = [{ valen_is_spouse = true }, { da_valen_beach = 2 }] },
-	{ da_valen_beach_follow_up_gate = true }
-]
+requires = [{ npc = "valen" }, { da_valen_beach = 2 }, { da_valen_beach_follow_up_gate = true }]
 writes = [{ da_valen_beach_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "valen" } }]
 portrait = "embarrassed"
-local = "I had a really nice time at the Beach."
+local = "I had a really nice time at the beach."
 next = "1"
 
 [beach_follow_up_2.1]

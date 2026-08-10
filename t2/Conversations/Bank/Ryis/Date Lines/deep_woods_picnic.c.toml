@@ -1,15 +1,7 @@
 [deep_woods_picnic_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "ryis" },
-	{ date = "deep_woods_picnic" },
-	{ da_ryis_deep_woods_picnic = 0 },
-	{ ryis_is_spouse = false }
-]
-writes = [
-	{ da_ryis_deep_woods_picnic = 1 },
-	{ da_ryis_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "ryis" }, { date = "deep_woods_picnic" }, { da_ryis_deep_woods_picnic = 0 }]
+writes = [{ da_ryis_deep_woods_picnic = 1 }, { da_ryis_deep_woods_picnic_follow_up_gate = true, expires = "1d" }]
 speaker = "ryis"
 portrait = "happy"
 local = "You want to go to the $Deep Woods$? For a picnic?"
@@ -28,16 +20,8 @@ local = "Maybe we'll get some good birdwatching in, while we're there!"
 
 [deep_woods_picnic_accept_2]
 kind = "date_acceptance"
-requires = [
-	{ npc = "ryis" },
-	{ date = "deep_woods_picnic" },
-	{ da_ryis_deep_woods_picnic = 1 },
-	{ ryis_is_spouse = false }
-]
-writes = [
-	{ da_ryis_deep_woods_picnic = 2 },
-	{ da_ryis_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "ryis" }, { date = "deep_woods_picnic" }, { da_ryis_deep_woods_picnic = 1 }]
+writes = [{ da_ryis_deep_woods_picnic = 2 }, { da_ryis_deep_woods_picnic_follow_up_gate = true, expires = "1d" }]
 speaker = "ryis"
 portrait = "blush_special"
 local = "How about another $Deep Woods$ picnic, [Ari]?"
@@ -56,19 +40,8 @@ local = "What do you say?"
 
 [deep_woods_picnic_accept_3]
 kind = "date_acceptance"
-requires = [
-	{ npc = "ryis" },
-	{ date = "deep_woods_picnic" },
-	{ ryis_has_child = false },
-	{ any = [
-		{ ryis_is_spouse = true },
-		{ da_ryis_deep_woods_picnic = 2, comparator = ">=" }
-	] }
-]
-writes = [
-	{ da_ryis_deep_woods_picnic = 3 },
-	{ da_ryis_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "ryis" }, { date = "deep_woods_picnic" }, { da_ryis_deep_woods_picnic = 2, comparator = ">=" }]
+writes = [{ da_ryis_deep_woods_picnic = 3 }, { da_ryis_deep_woods_picnic_follow_up_gate = true, expires = "1d" }]
 speaker = "ryis"
 portrait = "blush_special"
 local = "Would you like to go for another picnic, [Ari]?"
@@ -82,12 +55,7 @@ local = "I always enjoy the peace and the nature out in the $Deep Woods$!"
 [deep_woods_picnic_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "ryis" },
-	{ da_ryis_deep_woods_picnic = 1 },
-	{ da_ryis_deep_woods_picnic_follow_up_gate = true },
-	{ ryis_is_spouse = false }
-]
+requires = [{ npc = "ryis" }, { da_ryis_deep_woods_picnic = 1 }, { da_ryis_deep_woods_picnic_follow_up_gate = true }]
 writes = [{ da_ryis_deep_woods_picnic_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "ryis" } }]
 portrait = "blush_special"
@@ -112,12 +80,7 @@ local = "Let's do it again soon, okay?"
 [deep_woods_picnic_follow_up_2]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "ryis" },
-	{ da_ryis_deep_woods_picnic = 2 },
-	{ da_ryis_deep_woods_picnic_follow_up_gate = true },
-	{ ryis_is_spouse = false }
-]
+requires = [{ npc = "ryis" }, { da_ryis_deep_woods_picnic = 2 }, { da_ryis_deep_woods_picnic_follow_up_gate = true }]
 writes = [{ da_ryis_deep_woods_picnic_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "ryis" } }]
 portrait = "blush_special"
@@ -163,12 +126,7 @@ local = "Maybe we'll spot it one of these days!"
 [deep_woods_picnic_follow_up_3]
 priority = "max"
 refresh = "instantly"
-requires = [
-	{ npc = "ryis" },
-	{ ryis_has_child = false },
-	{ any = [{ ryis_is_spouse = true }, { da_ryis_deep_woods_picnic = 3 }] },
-	{ da_ryis_deep_woods_picnic_follow_up_gate = true }
-]
+requires = [{ npc = "ryis" }, { da_ryis_deep_woods_picnic = 3 }, { da_ryis_deep_woods_picnic_follow_up_gate = true }]
 writes = [{ da_ryis_deep_woods_picnic_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "ryis" } }]
 portrait = "happy"

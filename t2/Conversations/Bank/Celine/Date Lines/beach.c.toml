@@ -1,18 +1,10 @@
 [beach_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "celine" },
-	{ date = "beach" },
-	{ da_celine_beach = 0 },
-	{ celine_is_spouse = false }
-]
-writes = [
-	{ da_celine_beach = 1 },
-	{ da_celine_beach_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "celine" }, { date = "beach" }, { da_celine_beach = 0 }]
+writes = [{ da_celine_beach = 1 }, { da_celine_beach_follow_up_gate = true, expires = "1d" }]
 speaker = "celine"
 portrait = "embarrassed"
-local = "You want to go out to the Beach, [Ari]?"
+local = "You want to go out to the beach, [Ari]?"
 next = "1"
 
 [beach_accept_1.1]
@@ -28,22 +20,11 @@ local = "And romantic!"
 
 [beach_accept_2]
 kind = "date_acceptance"
-requires = [
-	{ npc = "celine" },
-	{ date = "beach" },
-	{ celine_has_child = false },
-	{ any = [
-		{ celine_is_spouse = true },
-		{ da_celine_beach = 1, comparator = ">=" }
-	] }
-]
-writes = [
-	{ da_celine_beach = 2 },
-	{ da_celine_beach_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "celine" }, { date = "beach" }, { da_celine_beach = 1, comparator = ">=" }]
+writes = [{ da_celine_beach = 2 }, { da_celine_beach_follow_up_gate = true, expires = "1d" }]
 speaker = "celine"
 portrait = "blush"
-local = "A walk on the Beach sounds perfect, [Ari]."
+local = "A walk on the beach sounds perfect, [Ari]."
 next = "1"
 
 [beach_accept_2.1]
@@ -54,16 +35,11 @@ local = "I was hoping you might ask!"
 [beach_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "celine" },
-	{ da_celine_beach = 1 },
-	{ da_celine_beach_follow_up_gate = true },
-	{ celine_is_spouse = false }
-]
+requires = [{ npc = "celine" }, { da_celine_beach = 1 }, { da_celine_beach_follow_up_gate = true }]
 writes = [{ da_celine_beach_follow_up_gate = false }]
 actions = [{ bark = { bark = "blush", npc = "celine" } }]
 portrait = "embarrassed"
-local = "Thank you for taking me out for a walk on the Beach, [Ari]."
+local = "Thank you for taking me out for a walk on the beach, [Ari]."
 next = "1"
 
 [beach_follow_up_1.1]
@@ -85,16 +61,11 @@ local = "Oh! Well... Elsie's been giving me some advice lately. And um. She did 
 [beach_follow_up_2]
 priority = "max"
 refresh = "instantly"
-requires = [
-	{ npc = "celine" },
-	{ celine_has_child = false },
-	{ any = [{ celine_is_spouse = true }, { da_celine_beach = 2 }] },
-	{ da_celine_beach_follow_up_gate = true }
-]
+requires = [{ npc = "celine" }, { da_celine_beach = 2 }, { da_celine_beach_follow_up_gate = true }]
 writes = [{ da_celine_beach_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "celine" } }]
 portrait = "blush_closed_eyes"
-local = "That was such a nice walk on the Beach, [Ari]."
+local = "That was such a nice walk on the beach, [Ari]."
 next = "1"
 
 [beach_follow_up_2.1]

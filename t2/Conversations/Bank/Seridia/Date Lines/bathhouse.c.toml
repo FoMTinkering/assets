@@ -4,7 +4,6 @@ requires = [
 	{ npc = "seridia" },
 	{ date = "bathhouse" },
 	{ da_seridia_bathhouse = 0 },
-	{ seridia_is_spouse = false }
 ]
 writes = [
 	{ da_seridia_bathhouse = 1 },
@@ -33,11 +32,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "seridia" },
 	{ date = "bathhouse" },
-	{ seridia_has_child = false },
-	{ any = [
-		{ seridia_is_spouse = true },
-		{ da_seridia_bathhouse = 1, comparator = ">=" }
-	] }
+	{ da_seridia_bathhouse = 1, comparator = ">=" },
 ]
 writes = [
 	{ da_seridia_bathhouse = 2 },
@@ -58,7 +53,6 @@ requires = [
 	{ npc = "seridia" },
 	{ da_seridia_bathhouse = 1 },
 	{ da_seridia_bathhouse_follow_up_gate = true },
-	{ seridia_is_spouse = false }
 ]
 writes = [{ da_seridia_bathhouse_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "seridia" } }]
@@ -132,8 +126,7 @@ priority = "max"
 refresh = "never"
 requires = [
 	{ npc = "seridia" },
-	{ seridia_has_child = false },
-	{ any = [{ seridia_is_spouse = true }, { da_seridia_bathhouse = 2 }] },
+	{ da_seridia_bathhouse = 2 },
 	{ da_seridia_bathhouse_follow_up_gate = true },
 ]
 writes = [{ da_seridia_bathhouse_follow_up_gate = false }]

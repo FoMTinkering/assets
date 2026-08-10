@@ -114,8 +114,6 @@ requires = [
 	{ npc = "hayden" },
 	{ shooting_star_date_status = "valen_went" },
 	{ shooting_star_festival_date = "2d", time = "after" },
-	{ hayden_is_partner = false },
-	{ valen_is_partner = false }
 ]
 portrait = "think"
 local = "I think there must be a cold going around..."
@@ -123,7 +121,7 @@ next = "1"
 
 [shooting_star_valen_follow_up_hayden.1]
 portrait = "gloomy"
-local = "I was at the Clinic with shivers this morning."
+local = "I was at the clinic with shivers this morning."
 next = "2"
 
 [shooting_star_valen_follow_up_hayden.2]
@@ -134,6 +132,7 @@ next = "3"
 [shooting_star_valen_follow_up_hayden.3]
 portrait = "wink"
 local = "When your name came up."
+
 
 [shooting_star_follow_up_not_invited]
 refresh = "3m"
@@ -159,6 +158,7 @@ portrait = "sweat"
 local = "But she was so excited to see the stars! How could I say no?"
 
 # NEW ROMANCE LINE FOLLOW UPS
+
 [shooting_star_romantic_follow_up_A]
 refresh = "never"
 requires = [
@@ -167,10 +167,11 @@ requires = [
 	{ shooting_star_festival_date = "2w 1d", time = "after" },
 	{ year_time = "2m 1d", comparator = ">", parser = "date_time" },
 	{ shooting_star_gate = false },
-	{ hayden_is_partner = false }
 ]
 writes = [{ shooting_star_gate = true, expires = "2d" }]
-actions = [{ bark = { bark = "cute_face", npc = "hayden" } }]
+actions = [
+	{ bark = { bark = "cute_face", npc = "hayden" } },
+]
 portrait = "happy"
 local = "Well if it isn't [Ari]! I have a little something for you..."
 next = "1"
@@ -185,6 +186,7 @@ portrait = "blush"
 actions = [{ item = "apple_pie" }]
 local = "I hope you like it."
 
+
 [shooting_star_romantic_follow_up_B]
 refresh = "never"
 requires = [
@@ -195,7 +197,9 @@ requires = [
 	{ shooting_star_gate = false },
 ]
 writes = [{ shooting_star_gate = true, expires = "2d" }]
-actions = [{ bark = { bark = "blush", npc = "hayden" } }]
+actions = [
+	{ bark = { bark = "blush", npc = "hayden" } },
+]
 portrait = "happy"
 local = "You look good today, [Ari]!"
 next = "1"

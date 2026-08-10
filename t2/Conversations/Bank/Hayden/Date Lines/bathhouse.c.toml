@@ -1,15 +1,7 @@
 [bathhouse_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "hayden" },
-	{ date = "bathhouse" },
-	{ da_hayden_bathhouse = 0 },
-	{ hayden_is_spouse = false }
-]
-writes = [
-	{ da_hayden_bathhouse = 1 },
-	{ da_hayden_bathhouse_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "hayden" }, { date = "bathhouse" }, { da_hayden_bathhouse = 0 }]
+writes = [{ da_hayden_bathhouse = 1 }, { da_hayden_bathhouse_follow_up_gate = true, expires = "1d" }]
 portrait = "confident_blush"
 local = "Would you like to go to the $Bathhouse$ with me, [Ari]?"
 next = "1"
@@ -50,19 +42,8 @@ local = "Come on, [Ari]. Let's go and have a nice time."
 
 [bathhouse_accept_2]
 kind = "date_acceptance"
-requires = [
-	{ npc = "hayden" },
-	{ date = "bathhouse" },
-	{ hayden_has_child = false },
-	{ any = [
-		{ hayden_is_spouse = true },
-		{ da_hayden_bathhouse = 1, comparator = ">=" }
-	] }
-]
-writes = [
-	{ da_hayden_bathhouse = 2 },
-	{ da_hayden_bathhouse_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "hayden" }, { date = "bathhouse" }, { da_hayden_bathhouse = 1, comparator = ">=" }]
+writes = [{ da_hayden_bathhouse = 2 }, { da_hayden_bathhouse_follow_up_gate = true, expires = "1d" }]
 portrait = "confident_blush"
 local = "You want to go to the $Bathhouse$?"
 next = "1"
@@ -79,12 +60,7 @@ local = "I'd love to."
 [bathhouse_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "hayden" },
-	{ da_hayden_bathhouse = 1 },
-	{ da_hayden_bathhouse_follow_up_gate = true },
-	{ hayden_is_spouse = false }
-]
+requires = [{ npc = "hayden" }, { da_hayden_bathhouse = 1 }, { da_hayden_bathhouse_follow_up_gate = true }]
 writes = [{ da_hayden_bathhouse_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "hayden" } }]
 portrait = "shy_blush"
@@ -128,12 +104,7 @@ local = "You're too cute. You know that?"
 [bathhouse_follow_up_2]
 priority = "max"
 refresh = "instantly"
-requires = [
-	{ npc = "hayden" },
-	{ hayden_has_child = false },
-	{ any = [{ hayden_is_spouse = true }, { da_hayden_bathhouse = 2 }] },
-	{ da_hayden_bathhouse_follow_up_gate = true }
-]
+requires = [{ npc = "hayden" }, { da_hayden_bathhouse = 2 }, { da_hayden_bathhouse_follow_up_gate = true }]
 writes = [{ da_hayden_bathhouse_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "hayden" } }]
 portrait = "confident_blush"

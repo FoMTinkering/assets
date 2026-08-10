@@ -3,8 +3,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "seridia" },
 	{ date = "deep_woods_picnic" },
-	{ da_seridia_deep_woods_picnic = 0 },
-	{ seridia_is_spouse = false }
+	{ da_seridia_deep_woods_picnic = 0 }
 ]
 writes = [
 	{ da_seridia_deep_woods_picnic = 1 },
@@ -43,8 +42,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "seridia" },
 	{ date = "deep_woods_picnic" },
-	{ da_seridia_deep_woods_picnic = 1 },
-	{ seridia_is_spouse = false }
+	{ da_seridia_deep_woods_picnic = 1 }
 ]
 writes = [
 	{ da_seridia_deep_woods_picnic = 2 },
@@ -73,11 +71,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "seridia" },
 	{ date = "deep_woods_picnic" },
-	{ seridia_has_child = false },
-	{ any = [
-		{ seridia_is_spouse = true },
-		{ da_seridia_deep_woods_picnic = 2, comparator = ">=" }
-	] }
+	{ da_seridia_deep_woods_picnic = 2, comparator = ">=" }
 ]
 writes = [
 	{ da_seridia_deep_woods_picnic = 3 },
@@ -102,8 +96,7 @@ refresh = "never"
 requires = [
 	{ npc = "seridia" },
 	{ da_seridia_deep_woods_picnic = 1 },
-	{ da_seridia_deep_woods_picnic_follow_up_gate = true },
-	{ seridia_is_spouse = false }
+	{ da_seridia_deep_woods_picnic_follow_up_gate = true }
 ]
 writes = [{ da_seridia_deep_woods_picnic_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "seridia" } }]
@@ -136,8 +129,7 @@ refresh = "never"
 requires = [
 	{ npc = "seridia" },
 	{ da_seridia_deep_woods_picnic = 2 },
-	{ da_seridia_deep_woods_picnic_follow_up_gate = true },
-	{ seridia_is_spouse = false }
+	{ da_seridia_deep_woods_picnic_follow_up_gate = true }
 ]
 writes = [{ da_seridia_deep_woods_picnic_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "seridia" } }]
@@ -201,11 +193,7 @@ priority = "max"
 refresh = "never"
 requires = [
 	{ npc = "seridia" },
-	{ seridia_has_child = false },
-	{ any = [
-		{ seridia_is_spouse = true },
-		{ da_seridia_deep_woods_picnic = 3 }
-	] },
+	{ da_seridia_deep_woods_picnic = 3 },
 	{ da_seridia_deep_woods_picnic_follow_up_gate = true }
 ]
 writes = [{ da_seridia_deep_woods_picnic_follow_up_gate = false }]

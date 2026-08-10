@@ -3,8 +3,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "adeline" },
 	{ date = "inn_meal" },
-	{ da_adeline_inn_meal = 0 },
-	{ adeline_is_spouse = false }
+	{ da_adeline_inn_meal = 0 }
 ]
 writes = [
 	{ da_adeline_inn_meal = 1 },
@@ -25,8 +24,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "adeline" },
 	{ date = "inn_meal" },
-	{ da_adeline_inn_meal = 1 },
-	{ adeline_is_spouse = false }
+	{ da_adeline_inn_meal = 1 }
 ]
 writes = [
 	{ da_adeline_inn_meal = 2 },
@@ -48,11 +46,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "adeline" },
 	{ date = "inn_meal" },
-	{ adeline_has_child = false },
-	{ any = [
-		{ adeline_is_spouse = true },
-		{ da_adeline_inn_meal = 2, comparator = ">=" }
-	] }
+	{ da_adeline_inn_meal = 2, comparator = ">=" }
 ]
 writes = [
 	{ da_adeline_inn_meal = 3 },
@@ -75,8 +69,7 @@ refresh = "never"
 requires = [
 	{ npc = "adeline" },
 	{ da_adeline_inn_meal = 1 },
-	{ da_adeline_inn_meal_follow_up_gate = true },
-	{ adeline_is_spouse = false }
+	{ da_adeline_inn_meal_follow_up_gate = true }
 ]
 writes = [{ da_adeline_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "adeline" } }]
@@ -100,8 +93,7 @@ refresh = "never"
 requires = [
 	{ npc = "adeline" },
 	{ da_adeline_inn_meal = 2 },
-	{ da_adeline_inn_meal_follow_up_gate = true },
-	{ adeline_is_spouse = false }
+	{ da_adeline_inn_meal_follow_up_gate = true }
 ]
 writes = [{ da_adeline_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "adeline" } }]
@@ -123,9 +115,8 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "adeline" },
-	{ da_adeline_inn_meal_follow_up_gate = true },
-	{ adeline_has_child = false },
-	{ any = [{ adeline_is_spouse = true }, { da_adeline_inn_meal = 3 }] }
+	{ da_adeline_inn_meal = 3 },
+	{ da_adeline_inn_meal_follow_up_gate = true }
 ]
 writes = [{ da_adeline_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "adeline" } }]

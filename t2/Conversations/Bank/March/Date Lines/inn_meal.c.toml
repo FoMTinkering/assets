@@ -1,15 +1,7 @@
 [inn_meal_accept_1]
 kind = "date_acceptance"
-requires = [
-    { npc = "march" },
-    { date = "inn_meal" },
-    { da_march_inn_meal = 0 },
-    { march_is_spouse = false }
-]
-writes = [
-    { da_march_inn_meal = 1 },
-    { da_march_inn_meal_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "march" }, { date = "inn_meal" }, { da_march_inn_meal = 0 }]
+writes = [{ da_march_inn_meal = 1 }, { da_march_inn_meal_follow_up_gate = true, expires = "1d" }]
 speaker = "march"
 portrait = "tsundere"
 local = "Wait, you're asking me out first?"
@@ -34,16 +26,8 @@ local = "Come on. Let's go."
 
 [inn_meal_accept_2]
 kind = "date_acceptance"
-requires = [
-    { npc = "march" },
-    { date = "inn_meal" },
-    { da_march_inn_meal = 1 },
-    { march_is_spouse = false }
-]
-writes = [
-    { da_march_inn_meal = 2 },
-    { da_march_inn_meal_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "march" }, { date = "inn_meal" }, { da_march_inn_meal = 1 }]
+writes = [{ da_march_inn_meal = 2 }, { da_march_inn_meal_follow_up_gate = true, expires = "1d" }]
 speaker = "march"
 portrait = "eight_heart_flustered"
 local = "Hey [Ari]... Are you free?"
@@ -68,19 +52,8 @@ local = "Cool. Let's go."
 
 [inn_meal_accept_3]
 kind = "date_acceptance"
-requires = [
-    { npc = "march" },
-    { date = "inn_meal" },
-    { march_has_child = false },
-    { any = [
-        { march_is_spouse = true },
-        { da_march_inn_meal = 2, comparator = ">=" }
-    ] }
-]
-writes = [
-    { da_march_inn_meal = 3 },
-    { da_march_inn_meal_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "march" }, { date = "inn_meal" }, { da_march_inn_meal = 2, comparator = ">=" }]
+writes = [{ da_march_inn_meal = 3 }, { da_march_inn_meal_follow_up_gate = true, expires = "1d" }]
 speaker = "march"
 portrait = "eight_heart_happy_blush"
 local = "Hey, [Ari]. Want to go grab something to eat?"
@@ -94,12 +67,7 @@ local = "Let's go."
 [inn_meal_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-    { npc = "march" },
-    { da_march_inn_meal = 1 },
-    { da_march_inn_meal_follow_up_gate = true },
-    { march_is_spouse = false }
-]
+requires = [{ npc = "march" }, { da_march_inn_meal = 1 }, { da_march_inn_meal_follow_up_gate = true }]
 writes = [{ da_march_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "blush", npc = "march" } }]
 portrait = "tsundere"
@@ -118,12 +86,7 @@ local = "Thanks for inviting me, [Ari]."
 [inn_meal_follow_up_2]
 priority = "max"
 refresh = "never"
-requires = [
-    { npc = "march" },
-    { da_march_inn_meal = 2 },
-    { da_march_inn_meal_follow_up_gate = true },
-    { march_is_spouse = false }
-]
+requires = [{ npc = "march" }, { da_march_inn_meal = 2 }, { da_march_inn_meal_follow_up_gate = true }]
 writes = [{ da_march_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "blush", npc = "march" } }]
 portrait = "eight_heart_happy_blush"
@@ -147,12 +110,7 @@ local = "But, well... now I do."
 [inn_meal_follow_up_3]
 priority = "max"
 refresh = "instantly"
-requires = [
-    { npc = "march" },
-    { march_has_child = false },
-    { any = [{ march_is_spouse = true }, { da_march_inn_meal = 3 }] },
-    { da_march_inn_meal_follow_up_gate = true }
-]
+requires = [{ npc = "march" }, { da_march_inn_meal = 3 }, { da_march_inn_meal_follow_up_gate = true }]
 writes = [{ da_march_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "march" } }]
 portrait = "eight_heart_happy_blush"

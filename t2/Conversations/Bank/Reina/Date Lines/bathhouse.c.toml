@@ -1,15 +1,7 @@
 [bathhouse_accept_1]
 kind = "date_acceptance"
-requires = [
-    { npc = "reina" },
-    { date = "bathhouse" },
-    { da_reina_bathhouse = 0 },
-    { reina_is_spouse = false }
-]
-writes = [
-    { da_reina_bathhouse = 1 },
-    { da_reina_bathhouse_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "reina" }, { date = "bathhouse" }, { da_reina_bathhouse = 0 }]
+writes = [{ da_reina_bathhouse = 1 }, { da_reina_bathhouse_follow_up_gate = true, expires = "1d" }]
 portrait = "blush_open_eyes"
 local = "The $Bathhouse$...?"
 next = "1"
@@ -26,19 +18,8 @@ local = "I'd love to, [Ari]!"
 
 [bathhouse_accept_2]
 kind = "date_acceptance"
-requires = [
-    { npc = "reina" },
-    { date = "bathhouse" },
-    { reina_has_child = false },
-    { any = [
-        { reina_is_spouse = true },
-        { da_reina_bathhouse = 1, comparator = ">=" }
-    ] }
-]
-writes = [
-    { da_reina_bathhouse = 2 },
-    { da_reina_bathhouse_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "reina" }, { date = "bathhouse" }, { da_reina_bathhouse = 1, comparator = ">=" }]
+writes = [{ da_reina_bathhouse = 2 }, { da_reina_bathhouse_follow_up_gate = true, expires = "1d" }]
 portrait = "blush_think"
 local = "Should we hit the $Bathhouse$, [Ari]?"
 next = "1"
@@ -55,12 +36,7 @@ local = "Oooh, great! Let's go!"
 [bathhouse_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-    { npc = "reina" },
-    { da_reina_bathhouse = 1 },
-    { da_reina_bathhouse_follow_up_gate = true },
-    { reina_is_spouse = false }
-]
+requires = [{ npc = "reina" }, { da_reina_bathhouse = 1 }, { da_reina_bathhouse_follow_up_gate = true }]
 writes = [{ da_reina_bathhouse_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "reina" } }]
 portrait = "blush"
@@ -86,12 +62,7 @@ local = "I hope we can go again soon!"
 [bathhouse_follow_up_2]
 priority = "max"
 refresh = "instantly"
-requires = [
-    { npc = "reina" },
-    { reina_has_child = false },
-    { any = [{ reina_is_spouse = true }, { da_reina_bathhouse = 2 }] },
-    { da_reina_bathhouse_follow_up_gate = true }
-]
+requires = [{ npc = "reina" }, { da_reina_bathhouse = 2 }, { da_reina_bathhouse_follow_up_gate = true }]
 writes = [{ da_reina_bathhouse_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "reina" } }]
 portrait = "blush_think"

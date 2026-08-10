@@ -3,7 +3,7 @@ refresh = "never"
 requires = [
 	{ npc = "balor" },
 	{ balor_heart_event = "eight_heart" },
-	{ balor_eight_heart_priority_bump = true }
+	{ balor_eight_heart_priority_bump = true },
 ]
 actions = [{ bark = { bark = "relationship_status", npc = "balor" } }]
 portrait = "sincere_special"
@@ -20,7 +20,7 @@ requires = [
 	{ any = [{ npc = "dell" }, { npc = "luc" }, { npc = "maple" }] },
 	{ dell_zone = "<luc_zone>" },
 	{ dell_zone = "<maple_zone>" },
-	{ balor_heart_event = "eight_heart" }
+	{ balor_heart_event = "eight_heart" },
 ]
 speaker = "maple"
 portrait = "neutral"
@@ -71,7 +71,7 @@ refresh = "never"
 requires = [
 	{ npc = "reina" },
 	{ reina_is_partner = false },
-	{ balor_heart_event = "eight_heart" }
+	{ balor_heart_event = "eight_heart" },
 ]
 portrait = "neutral"
 local = "I had to step out for a moment while getting your special meal ready, and mom said I missed quite the show!"
@@ -96,7 +96,7 @@ local = "Please rest assured that despite the... unpleasantness with Balor, you'
 kind = "gameplay_triggered"
 writes = [
 	{ balor_heart_event = "eight_heart", expires = "4d" },
-	{ balor_eight_heart_priority_bump = true, expires = "4d" }
+	{ balor_eight_heart_priority_bump = true, expires = "4d" },
 ]
 speaker = "balor"
 portrait = "happy"
@@ -121,9 +121,9 @@ portrait = "happy"
 local = "For today's menu, Reina is preparing some of her finest dishes."
 next = [
 	{ target = "4r", requires = [
-		{ shooting_star_balor_attended = true, comparator = "==" }
+		{ shooting_star_balor_attended = true, comparator = "==" },
 	] },
-	{ target = "4f", requires = [] }
+	{ target = "4f", requires = [] },
 ]
 
 [balor_eight_hearts.4r]
@@ -132,7 +132,7 @@ portrait = "wink"
 local = "It's worth enjoying a nice date since we have the time, don't you think?"
 prompts = [
 	{ local = "I can't wait!", next = "5" },
-	{ local = "It seems like you've put a lot of effort into this.", next = "6" }
+	{ local = "It seems like you've put a lot of effort into this.", next = "6" },
 ]
 
 [balor_eight_hearts.4f]
@@ -141,7 +141,7 @@ portrait = "neutral"
 local = "It's worth celebrating our success since we have the time, don't you think?"
 prompts = [
 	{ local = "I can't wait!", next = "5" },
-	{ local = "It seems like you've put a lot of effort into this.", next = "6" }
+	{ local = "It seems like you've put a lot of effort into this.", next = "6" },
 ]
 
 [balor_eight_hearts.5]
@@ -150,9 +150,9 @@ portrait = "neutral"
 local = "I'm sure the food will start arriving at any moment. But before it does..."
 next = [
 	{ target = "7r", requires = [
-		{ shooting_star_balor_attended = true, comparator = "==" }
+		{ shooting_star_balor_attended = true, comparator = "==" },
 	] },
-	{ target = "7f", requires = [] }
+	{ target = "7f", requires = [] },
 ]
 
 [balor_eight_hearts.6]
@@ -161,9 +161,9 @@ portrait = "happy"
 local = "I wanted to make up for last time. And, well..."
 next = [
 	{ target = "7r", requires = [
-		{ shooting_star_balor_attended = true, comparator = "==" }
+		{ shooting_star_balor_attended = true, comparator = "==" },
 	] },
-	{ target = "7f", requires = [] }
+	{ target = "7f", requires = [] },
 ]
 
 [balor_eight_hearts.7r]
@@ -271,18 +271,18 @@ local = "Sorry about that..."
 local = "Everything alright?"
 next = [
 	{ target = "23r", requires = [
-		{ shooting_star_balor_attended = true, comparator = "==" }
+		{ shooting_star_balor_attended = true, comparator = "==" },
 	] },
-	{ target = "23f", requires = [] }
+	{ target = "23f", requires = [] },
 ]
 
 [[balor_eight_hearts.22.prompts]]
 local = "If you're busy, we could reschedule..."
 next = [
 	{ target = "24r", requires = [
-		{ shooting_star_balor_attended = true, comparator = "==" }
+		{ shooting_star_balor_attended = true, comparator = "==" },
 	] },
-	{ target = "24f", requires = [] }
+	{ target = "24f", requires = [] },
 ]
 
 [balor_eight_hearts.23r]
@@ -327,7 +327,7 @@ portrait = "blush_special"
 local = "Since the Shooting Star Festival, I've been wondering... what am I to you, [Ari]? We're more than just business partners... right?"
 prompts = [
 	{ local = "You're one of my best friends, Balor!", next = "27r" },
-	{ local = "You're more to me than anyone, Balor.", next = "30r" }
+	{ local = "You're more to me than anyone, Balor.", next = "30r" },
 ]
 
 [balor_eight_hearts.26f]
@@ -336,19 +336,19 @@ portrait = "concerned"
 local = "About Mistria... would it matter to you if I stayed? Your business would continue to be successful, regardless. You don't really need-"
 prompts = [
 	{ local = "What are you saying, Balor? You're one of my best friends!", next = "27f" },
-	{ local = "What are you saying, Balor? It matters to me more than anything.", next = "30f" }
+	{ local = "What are you saying, Balor? It matters to me more than anything.", next = "30f" },
 ]
 
 # option one
 [balor_eight_hearts.27r]
-actions = [{ update_status = { npc = "balor", status = "best_friend" } }]
+writes = [{ balor_status = "best_friend" }]
 speaker = "balor"
 portrait = "concerned"
 local = "Ah, of course. Thank you, [Ari]. It means a lot to hear you say that."
 next = "28r"
 
 [balor_eight_hearts.27f]
-actions = [{ update_status = { npc = "balor", status = "best_friend" } }]
+writes = [{ balor_status = "best_friend" }]
 speaker = "balor"
 portrait = "hope_special"
 local = "Do you mean it, [Ari]? I feel the same way."
@@ -380,14 +380,14 @@ next = "34"
 
 # Romance branch two
 [balor_eight_hearts.30r]
-actions = [{ update_status = { npc = "balor", status = "dating" } }]
+writes = [{ balor_status = "dating" }]
 speaker = "balor"
 portrait = "embarrassed"
 local = "[Ari]!"
 next = "31r"
 
 [balor_eight_hearts.30f]
-actions = [{ update_status = { npc = "balor", status = "dating" } }]
+writes = [{ balor_status = "dating" }]
 speaker = "balor"
 portrait = "hope_special"
 local = "[Ari]!"
@@ -533,9 +533,9 @@ local = "I have been for a long time now. Even more so since I met you."
 next = [
 	{ target = "51r", requires = [
 		{ shooting_star_balor_attended = true, comparator = "==" },
-		{ balor_is_partner = true, comparator = "==" }
+		{ balor_is_partner = true, comparator = "==" },
 	] },
-	{ target = "51f", requires = [] }
+	{ target = "51f", requires = [] },
 ]
 
 [balor_eight_hearts.51r]
@@ -544,7 +544,7 @@ portrait = "neutral"
 local = "What a charmer! And so sincere! Don't let him fool you..."
 prompts = [
 	{ local = "I don't think so, Wheedle. (Kiss Balor)", next = "52r" },
-	{ local = "Shut the hell up, Wheedle.", next = "53" }
+	{ local = "Shut the hell up, Wheedle.", next = "53" },
 ]
 
 [balor_eight_hearts.51f]
@@ -553,7 +553,7 @@ portrait = "neutral"
 local = "What a charmer! And so sincere! Don't let him fool you..."
 prompts = [
 	{ local = "If you really knew him, you'd know he's changed. I believe in Balor.", next = "52f" },
-	{ local = "Shut the hell up, Wheedle.", next = "53" }
+	{ local = "Shut the hell up, Wheedle.", next = "53" },
 ]
 
 [balor_eight_hearts.52r]

@@ -5,7 +5,7 @@ requires = [
 	{ seridia_is_partner = true },
 	{ seridia_eight_heart_priority_bump = true },
 	{ seridia_heart_event = "eight_heart" },
-	{ caldarus_is_best_friend = true }
+	{ caldarus_is_best_friend = true },
 ]
 actions = [{ bark = { bark = "ellipses", npc = "caldarus" } }]
 portrait = "think"
@@ -39,7 +39,7 @@ requires = [
 	{ any = [{ seridia_is_best_friend = true }, { seridia_is_partner = true }] },
 	{ seridia_eight_heart_priority_bump = true },
 	{ seridia_heart_event = "eight_heart" },
-	{ any = [{ seridia_zone = "<elsie_zone>" }, { time_of_day = "morning", comparator = "!=" }] }
+	{ any = [{ seridia_zone = "<elsie_zone>" }, { time_of_day = "morning", comparator = "!=" }] },
 ]
 actions = [{ bark = { bark = "cute_face", npc = "elsie" } }]
 portrait = "neutral"
@@ -57,7 +57,7 @@ requires = [
 	{ npc = "seridia" },
 	{ seridia_is_partner = true },
 	{ seridia_eight_heart_priority_bump = true },
-	{ seridia_heart_event = "eight_heart" }
+	{ seridia_heart_event = "eight_heart" },
 ]
 actions = [{ bark = { bark = "heart", npc = "seridia" } }]
 portrait = "blush"
@@ -79,7 +79,7 @@ requires = [
 	{ npc = "seridia" },
 	{ seridia_is_best_friend = true },
 	{ seridia_eight_heart_priority_bump = true },
-	{ seridia_heart_event = "eight_heart" }
+	{ seridia_heart_event = "eight_heart" },
 ]
 actions = [{ bark = { bark = "cute_face", npc = "seridia" } }]
 portrait = "smile"
@@ -99,7 +99,7 @@ local = "Do let me know if you change your mind about seizing great power. I wou
 kind = "gameplay_triggered"
 writes = [
 	{ seridia_heart_event = "eight_heart", expires = "4d" },
-	{ seridia_eight_heart_priority_bump = true, expires = "4d" }
+	{ seridia_eight_heart_priority_bump = true, expires = "4d" },
 ]
 speaker = "seridia"
 portrait = "neutral"
@@ -112,7 +112,7 @@ portrait = "smile"
 local = "Welcome, [Ari]."
 next = [
 	{ target = "2r", requires = [{ shooting_star_seridia_attended = true }] },
-	{ target = "2f" }
+	{ target = "2f" },
 ]
 
 [seridia_eight_hearts.2r]
@@ -139,7 +139,7 @@ portrait = "smile"
 local = "May I offer you some refreshment?"
 next = [
 	{ target = "5r", requires = [{ shooting_star_seridia_attended = true }] },
-	{ target = "5f" }
+	{ target = "5f" },
 ]
 
 [seridia_eight_hearts.5r]
@@ -148,7 +148,7 @@ portrait = "blush_think"
 local = "A cup of tea? Some cake, perhaps?"
 prompts = [
 	{ local = "Cake sounds nice!", next = "6" },
-	{ local = "This isn't the start of some kind of experiment, is it?", next = "9" }
+	{ local = "This isn't the start of some kind of experiment, is it?", next = "9" },
 ]
 
 [seridia_eight_hearts.5f]
@@ -157,7 +157,7 @@ portrait = "sly_think"
 local = "A cup of tea? Some cake, perhaps?"
 prompts = [
 	{ local = "Cake sounds nice!", next = "6" },
-	{ local = "This isn't the start of some kind of experiment, is it?", next = "9" }
+	{ local = "This isn't the start of some kind of experiment, is it?", next = "9" },
 ]
 
 [seridia_eight_hearts.6]
@@ -172,7 +172,7 @@ portrait = "think"
 local = "Let me just... er-"
 next = [
 	{ target = "8r", requires = [{ shooting_star_seridia_attended = true }] },
-	{ target = "8f" }
+	{ target = "8f" },
 ]
 
 [seridia_eight_hearts.8r]
@@ -199,7 +199,7 @@ portrait = "ugh"
 local = "No, no, nothing like that."
 next = [
 	{ target = "11r", requires = [{ shooting_star_seridia_attended = true }] },
-	{ target = "11f" }
+	{ target = "11f" },
 ]
 
 [seridia_eight_hearts.11r]
@@ -226,7 +226,7 @@ portrait = "happy"
 local = "Delivered directly from Darcy's bakery."
 prompts = [
 	{ local = """Um... why does it say "Happy Anniversary"?""", next = "14" },
-	{ local = "Um... Thank you!", next = "16" }
+	{ local = "Um... Thank you!", next = "16" },
 ]
 
 [seridia_eight_hearts.14]
@@ -236,7 +236,7 @@ effect = "drop"
 local = "Nevermind that, [Ari]."
 next = [
 	{ target = "15r", requires = [{ shooting_star_seridia_attended = true }] },
-	{ target = "15f" }
+	{ target = "15f" },
 ]
 
 [seridia_eight_hearts.15r]
@@ -257,7 +257,7 @@ portrait = "happy"
 local = "Of course, please enjoy."
 next = [
 	{ target = "17r", requires = [{ shooting_star_seridia_attended = true }] },
-	{ target = "17f" }
+	{ target = "17f" },
 ]
 
 [seridia_eight_hearts.17r]
@@ -314,7 +314,7 @@ portrait = "smile"
 local = "Your faith and dedication... I acknowledge them."
 next = [
 	{ target = "25r", requires = [{ shooting_star_seridia_attended = true }] },
-	{ target = "25f" }
+	{ target = "25f" },
 ]
 
 [seridia_eight_hearts.25r]
@@ -347,7 +347,7 @@ portrait = "sinister"
 local = "But that does not mean that you must forgo such power yourself."
 next = [
 	{ target = "29r", requires = [{ shooting_star_seridia_attended = true }] },
-	{ target = "29f" }
+	{ target = "29f" },
 ]
 
 [seridia_eight_hearts.29r]
@@ -404,7 +404,7 @@ portrait = "smile"
 local = "Speak true, [Ari]. You need not hide anything from me."
 next = [
 	{ target = "36r", requires = [{ shooting_star_seridia_attended = true }] },
-	{ target = "36f" }
+	{ target = "36f" },
 ]
 
 [seridia_eight_hearts.36r]
@@ -413,7 +413,7 @@ portrait = "unsure_blush"
 local = "Surely there is something you have wanted to ask for, in exchange for all that you have done for me..."
 prompts = [
 	{ local = "All I want is to be a true friend to you, Seridia.", next = "37r" },
-	{ local = "The only thing I desire is to be with you, Seridia.", next = "43r" }
+	{ local = "The only thing I desire is to be with you, Seridia.", next = "43r" },
 ]
 
 [seridia_eight_hearts.36f]
@@ -422,12 +422,12 @@ portrait = "unsure"
 local = "Surely there is something you have wanted to ask for, in exchange for all that you have done for me..."
 prompts = [
 	{ local = "All I want is to be a good friend to you, Seridia.", next = "37f" },
-	{ local = "The only thing I desire is to be with you, Seridia.", next = "43f" }
+	{ local = "The only thing I desire is to be with you, Seridia.", next = "43f" },
 ]
 
 # shooting star best friend
 [seridia_eight_hearts.37r]
-actions = [{ update_status = { npc = "seridia", status = "best_friend" } }]
+writes = [{ seridia_status = "best_friend" }]
 speaker = "seridia"
 portrait = "think"
 local = "You want to be my... friend? Is that all?"
@@ -435,7 +435,7 @@ next = "38"
 
 # no shooting star best friend
 [seridia_eight_hearts.37f]
-actions = [{ update_status = { npc = "seridia", status = "best_friend" } }]
+writes = [{ seridia_status = "best_friend" }]
 speaker = "seridia"
 portrait = "surprise"
 local = "You want to be my... friend? Is that all?"
@@ -472,7 +472,7 @@ local = "Perhaps the truest I have had in any lifetime."
 
 # shooting star romantic
 [seridia_eight_hearts.43r]
-actions = [{ update_status = { npc = "seridia", status = "dating" } }]
+writes = [{ seridia_status = "dating" }]
 speaker = "seridia"
 portrait = "surprise_blush"
 local = "You desire... me?"
@@ -480,7 +480,7 @@ next = "44r"
 
 # no shooting star romantic
 [seridia_eight_hearts.43f]
-actions = [{ update_status = { npc = "seridia", status = "dating" } }]
+writes = [{ seridia_status = "dating" }]
 speaker = "seridia"
 portrait = "surprise_blush"
 local = "You desire... me?"

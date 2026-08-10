@@ -3,8 +3,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "eiland" },
 	{ date = "inn_meal" },
-	{ da_eiland_inn_meal = 0 },
-	{ eiland_is_spouse = false }
+	{ da_eiland_inn_meal = 0 }
 ]
 writes = [
 	{ da_eiland_inn_meal = 1 },
@@ -38,8 +37,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "eiland" },
 	{ date = "inn_meal" },
-	{ da_eiland_inn_meal = 1 },
-	{ eiland_is_spouse = false }
+	{ da_eiland_inn_meal = 1 }
 ]
 writes = [
 	{ da_eiland_inn_meal = 2 },
@@ -61,11 +59,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "eiland" },
 	{ date = "inn_meal" },
-	{ eiland_has_child = false },
-	{ any = [
-		{ eiland_is_spouse = true },
-		{ da_eiland_inn_meal = 2, comparator = ">=" }
-	] },
+	{ da_eiland_inn_meal = 2, comparator = ">=" }
 ]
 writes = [
 	{ da_eiland_inn_meal = 3 },
@@ -88,8 +82,7 @@ refresh = "never"
 requires = [
 	{ npc = "eiland" },
 	{ da_eiland_inn_meal = 1 },
-	{ da_eiland_inn_meal_follow_up_gate = true },
-	{ eiland_is_spouse = false }
+	{ da_eiland_inn_meal_follow_up_gate = true }
 ]
 writes = [{ da_eiland_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "eiland" } }]
@@ -112,8 +105,7 @@ refresh = "never"
 requires = [
 	{ npc = "eiland" },
 	{ da_eiland_inn_meal = 2 },
-	{ da_eiland_inn_meal_follow_up_gate = true },
-	{ eiland_is_spouse = false }
+	{ da_eiland_inn_meal_follow_up_gate = true }
 ]
 writes = [{ da_eiland_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "eiland" } }]
@@ -135,14 +127,13 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "eiland" },
-	{ eiland_has_child = false },
-	{ any = [{ eiland_is_spouse = true }, { da_eiland_inn_meal = 3 }] },
+	{ da_eiland_inn_meal = 3 },
 	{ da_eiland_inn_meal_follow_up_gate = true }
 ]
 writes = [{ da_eiland_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "eiland" } }]
 portrait = "happy_blush"
-local = "I had a great time at the Inn, [Ari]."
+local = "I had a great time at the inn, [Ari]."
 next = "1"
 
 [inn_meal_follow_up_3.1]

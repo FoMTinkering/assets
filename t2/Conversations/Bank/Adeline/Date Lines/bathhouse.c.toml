@@ -4,7 +4,6 @@ requires = [
 	{ npc = "adeline" },
 	{ date = "bathhouse" },
 	{ da_adeline_bathhouse = 0 },
-	{ adeline_is_spouse = false }
 ]
 writes = [
 	{ da_adeline_bathhouse = 1 },
@@ -34,11 +33,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "adeline" },
 	{ date = "bathhouse" },
-	{ adeline_has_child = false },
-	{ any = [
-		{ adeline_is_spouse = true },
-		{ da_adeline_bathhouse = 1, comparator = ">=" },
-	] }
+	{ da_adeline_bathhouse = 1, comparator = ">=" },
 ]
 writes = [
 	{ da_adeline_bathhouse = 2 },
@@ -65,7 +60,6 @@ requires = [
 	{ npc = "adeline" },
 	{ da_adeline_bathhouse = 1 },
 	{ da_adeline_bathhouse_follow_up_gate = true },
-	{ adeline_is_spouse = false }
 ]
 writes = [{ da_adeline_bathhouse_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "adeline" } }]
@@ -75,7 +69,7 @@ next = "1"
 
 [bathhouse_follow_up_1.1]
 portrait = "embarrassed"
-local = "I usually keep trips to the Bathhouse quick. I'm glad we could take our time."
+local = "I usually keep trips to the bathhouse quick. I'm glad we could take our time."
 next = "2"
 
 [bathhouse_follow_up_1.2]
@@ -88,8 +82,7 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "adeline" },
-	{ adeline_has_child = false },
-	{ any = [{ adeline_is_spouse = true }, { da_adeline_bathhouse = 2 }] },
+	{ da_adeline_bathhouse = 2 },
 	{ da_adeline_bathhouse_follow_up_gate = true },
 ]
 writes = [{ da_adeline_bathhouse_follow_up_gate = false }]

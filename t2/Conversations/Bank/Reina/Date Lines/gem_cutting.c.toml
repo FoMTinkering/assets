@@ -1,15 +1,7 @@
 [gem_cutting_accept_1]
 kind = "date_acceptance"
-requires = [
-    { npc = "reina" },
-    { date = "gem_cutting" },
-    { da_reina_gem_cutting = 0 },
-    { reina_is_spouse = false }
-]
-writes = [
-    { da_reina_gem_cutting = 1 },
-    { da_reina_gem_cutting_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "reina" }, { date = "gem_cutting" }, { da_reina_gem_cutting = 0 }]
+writes = [{ da_reina_gem_cutting = 1 }, { da_reina_gem_cutting_follow_up_gate = true, expires = "1d" }]
 portrait = "neutral"
 local = "Oh? $Gem Cutting$?"
 next = "1"
@@ -25,19 +17,8 @@ local = "Sure, why don't we give it a try?"
 
 [gem_cutting_accept_2]
 kind = "date_acceptance"
-requires = [
-    { npc = "reina" },
-    { date = "gem_cutting" },
-    { reina_has_child = false },
-    { any = [
-        { reina_is_spouse = true },
-        { da_reina_gem_cutting = 1, comparator = ">=" }
-    ] }
-]
-writes = [
-    { da_reina_gem_cutting = 2 },
-    { da_reina_gem_cutting_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "reina" }, { date = "gem_cutting" }, { da_reina_gem_cutting = 1, comparator = ">=" }]
+writes = [{ da_reina_gem_cutting = 2 }, { da_reina_gem_cutting_follow_up_gate = true, expires = "1d" }]
 portrait = "think"
 local = "I was wondering, [Ari]..."
 next = "1"
@@ -59,12 +40,7 @@ local = "Yay! I've been wanting to give it another go!"
 [gem_cutting_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-    { npc = "reina" },
-    { da_reina_gem_cutting = 1 },
-    { da_reina_gem_cutting_follow_up_gate = true },
-    { reina_is_spouse = false }
-]
+requires = [{ npc = "reina" }, { da_reina_gem_cutting = 1 }, { da_reina_gem_cutting_follow_up_gate = true }]
 writes = [{ da_reina_gem_cutting_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "reina" } }]
 portrait = "blush"
@@ -93,12 +69,7 @@ local = "I wouldn't mind doing that again... hehe."
 [gem_cutting_follow_up_2]
 priority = "max"
 refresh = "instantly"
-requires = [
-    { npc = "reina" },
-    { reina_has_child = false },
-    { any = [{ reina_is_spouse = true }, { da_reina_gem_cutting = 2 }] },
-    { da_reina_gem_cutting_follow_up_gate = true }
-]
+requires = [{ npc = "reina" }, { da_reina_gem_cutting = 2 }, { da_reina_gem_cutting_follow_up_gate = true }]
 writes = [{ da_reina_gem_cutting_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "reina" } }]
 portrait = "blush"

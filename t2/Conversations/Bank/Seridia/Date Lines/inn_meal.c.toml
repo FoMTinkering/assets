@@ -3,8 +3,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "seridia" },
 	{ date = "inn_meal" },
-	{ da_seridia_inn_meal = 0 },
-	{ seridia_is_spouse = false }
+	{ da_seridia_inn_meal = 0 }
 ]
 writes = [
 	{ da_seridia_inn_meal = 1 },
@@ -38,8 +37,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "seridia" },
 	{ date = "inn_meal" },
-	{ da_seridia_inn_meal = 1 },
-	{ seridia_is_spouse = false }
+	{ da_seridia_inn_meal = 1 }
 ]
 writes = [
 	{ da_seridia_inn_meal = 2 },
@@ -73,11 +71,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "seridia" },
 	{ date = "inn_meal" },
-	{ seridia_has_child = false },
-	{ any = [
-		{ seridia_is_spouse = true },
-		{ da_seridia_inn_meal = 2, comparator = ">=" }
-	] }
+	{ da_seridia_inn_meal = 2, comparator = ">=" }
 ]
 writes = [
 	{ da_seridia_inn_meal = 3 },
@@ -96,14 +90,14 @@ next = "2"
 portrait = "blush"
 local = "Excellent. Let us go."
 
+
 [inn_meal_follow_up_1]
 priority = "max"
 refresh = "never"
 requires = [
 	{ npc = "seridia" },
 	{ da_seridia_inn_meal = 1 },
-	{ da_seridia_inn_meal_follow_up_gate = true },
-	{ seridia_is_spouse = false }
+	{ da_seridia_inn_meal_follow_up_gate = true }
 ]
 writes = [{ da_seridia_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "seridia" } }]
@@ -131,8 +125,7 @@ refresh = "never"
 requires = [
 	{ npc = "seridia" },
 	{ da_seridia_inn_meal = 2 },
-	{ da_seridia_inn_meal_follow_up_gate = true },
-	{ seridia_is_spouse = false }
+	{ da_seridia_inn_meal_follow_up_gate = true }
 ]
 writes = [{ da_seridia_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "seridia" } }]
@@ -148,10 +141,7 @@ next = "2"
 [inn_meal_follow_up_2.2]
 portrait = "surprise_blush"
 local = "Tell me, did I succeed?"
-prompts = [
-	{ local = "You did! Especially the part where we shared a straw.", next = "3" },
-	{ local = "You don't have to push yourself.", next = "6" }
-]
+prompts = [{ local = "You did! Especially the part where we shared a straw.", next = "3" }, { local = "You don't have to push yourself.", next = "6"}]
 
 [inn_meal_follow_up_2.3]
 portrait = "happy_blush"
@@ -186,8 +176,7 @@ priority = "max"
 refresh = "never"
 requires = [
 	{ npc = "seridia" },
-	{ seridia_has_child = false },
-	{ any = [{ seridia_is_spouse = true }, { da_seridia_inn_meal = 3 }] },
+	{ da_seridia_inn_meal = 3 },
 	{ da_seridia_inn_meal_follow_up_gate = true }
 ]
 writes = [{ da_seridia_inn_meal_follow_up_gate = false }]
@@ -199,3 +188,4 @@ next = "1"
 [inn_meal_follow_up_3.1]
 portrait = "blush"
 local = "I hope we will make more memories soon."
+

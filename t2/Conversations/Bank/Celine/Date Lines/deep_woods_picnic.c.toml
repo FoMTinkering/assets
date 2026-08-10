@@ -1,15 +1,7 @@
 [deep_woods_picnic_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "celine" },
-	{ date = "deep_woods_picnic" },
-	{ da_celine_deep_woods_picnic = 0 },
-	{ celine_is_spouse = false }
-]
-writes = [
-	{ da_celine_deep_woods_picnic = 1 },
-	{ da_celine_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "celine" }, { date = "deep_woods_picnic" }, { da_celine_deep_woods_picnic = 0 }]
+writes = [{ da_celine_deep_woods_picnic = 1 }, { da_celine_deep_woods_picnic_follow_up_gate = true, expires = "1d" }]
 speaker = "celine"
 portrait = "blush_closed_eyes"
 local = "You want to go on a picnic, [Ari]?"
@@ -35,16 +27,8 @@ local = "That sounds wonderful!"
 
 [deep_woods_picnic_accept_2]
 kind = "date_acceptance"
-requires = [
-	{ npc = "celine" },
-	{ date = "deep_woods_picnic" },
-	{ da_celine_deep_woods_picnic = 1 },
-	{ celine_is_spouse = false }
-]
-writes = [
-	{ da_celine_deep_woods_picnic = 2 },
-	{ da_celine_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "celine" }, { date = "deep_woods_picnic" }, { da_celine_deep_woods_picnic = 1 }]
+writes = [{ da_celine_deep_woods_picnic = 2 }, { da_celine_deep_woods_picnic_follow_up_gate = true, expires = "1d" }]
 speaker = "celine"
 portrait = "very_happy"
 local = "Oh, [Ari]!"
@@ -81,19 +65,8 @@ local = "What do you think, should we go again?"
 
 [deep_woods_picnic_accept_3]
 kind = "date_acceptance"
-requires = [
-	{ npc = "celine" },
-	{ date = "deep_woods_picnic" },
-	{ celine_has_child = false },
-	{ any = [
-		{ celine_is_spouse = true },
-		{ da_celine_deep_woods_picnic = 2, comparator = ">=" }
-	] }
-]
-writes = [
-	{ da_celine_deep_woods_picnic = 3 },
-	{ da_celine_deep_woods_picnic_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "celine" }, { date = "deep_woods_picnic" }, { da_celine_deep_woods_picnic = 2, comparator = ">=" }]
+writes = [{ da_celine_deep_woods_picnic = 3 }, { da_celine_deep_woods_picnic_follow_up_gate = true, expires = "1d" }]
 speaker = "celine"
 portrait = "neutral"
 local = "What's that you've got there, [Ari]?"
@@ -118,7 +91,6 @@ requires = [
 	{ npc = "celine" },
 	{ da_celine_deep_woods_picnic = 1 },
 	{ da_celine_deep_woods_picnic_follow_up_gate = true },
-	{ celine_is_spouse = false }
 ]
 writes = [{ da_celine_deep_woods_picnic_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "celine" } }]
@@ -142,7 +114,6 @@ requires = [
 	{ npc = "celine" },
 	{ da_celine_deep_woods_picnic = 2 },
 	{ da_celine_deep_woods_picnic_follow_up_gate = true },
-	{ celine_is_spouse = false }
 ]
 writes = [{ da_celine_deep_woods_picnic_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "celine" } }]
@@ -164,11 +135,7 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "celine" },
-	{ celine_has_child = false },
-	{ any = [
-		{ celine_is_spouse = true },
-		{ da_celine_deep_woods_picnic = 3 }
-	] },
+	{ da_celine_deep_woods_picnic = 3 },
 	{ da_celine_deep_woods_picnic_follow_up_gate = true },
 ]
 writes = [{ da_celine_deep_woods_picnic_follow_up_gate = false }]

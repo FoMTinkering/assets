@@ -1,15 +1,7 @@
 [gem_cutting_accept_1]
 kind = "date_acceptance"
-requires = [
-    { npc = "ryis" },
-    { date = "gem_cutting" },
-    { da_ryis_gem_cutting = 0 },
-    { ryis_is_spouse = false }
-]
-writes = [
-    { da_ryis_gem_cutting = 1 },
-    { da_ryis_gem_cutting_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "ryis" }, { date = "gem_cutting" }, { da_ryis_gem_cutting = 0 }]
+writes = [{ da_ryis_gem_cutting = 1 }, { da_ryis_gem_cutting_follow_up_gate = true, expires = "1d" }]
 portrait = "neutral"
 local = "You want to do some $Gem Cutting$, [Ari]?"
 next = "1"
@@ -30,19 +22,8 @@ local = "So this should be interesting!"
 
 [gem_cutting_accept_2]
 kind = "date_acceptance"
-requires = [
-    { npc = "ryis" },
-    { date = "gem_cutting" },
-    { ryis_has_child = false },
-    { any = [
-        { ryis_is_spouse = true },
-        { da_ryis_gem_cutting = 1, comparator = ">=" }
-    ] }
-]
-writes = [
-    { da_ryis_gem_cutting = 2 },
-    { da_ryis_gem_cutting_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "ryis" }, { date = "gem_cutting" }, { da_ryis_gem_cutting = 1, comparator = ">=" }]
+writes = [{ da_ryis_gem_cutting = 2 }, { da_ryis_gem_cutting_follow_up_gate = true, expires = "1d" }]
 portrait = "happy_blush"
 local = "How about some $Gem Cutting$, [Ari]?"
 next = "1"
@@ -54,12 +35,7 @@ local = "It's nice to work together on a little project!"
 [gem_cutting_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-    { npc = "ryis" },
-    { da_ryis_gem_cutting = 1 },
-    { da_ryis_gem_cutting_follow_up_gate = true },
-    { ryis_is_spouse = false }
-]
+requires = [{ npc = "ryis" }, { da_ryis_gem_cutting = 1 }, { da_ryis_gem_cutting_follow_up_gate = true }]
 writes = [{ da_ryis_gem_cutting_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "ryis" } }]
 portrait = "happy_blush"
@@ -83,12 +59,7 @@ local = "They make a nice pair, huh?"
 [gem_cutting_follow_up_2]
 priority = "max"
 refresh = "instantly"
-requires = [
-    { npc = "ryis" },
-    { ryis_has_child = false },
-    { any = [{ ryis_is_spouse = true }, { da_ryis_gem_cutting = 2 }] },
-    { da_ryis_gem_cutting_follow_up_gate = true }
-]
+requires = [{ npc = "ryis" }, { da_ryis_gem_cutting = 2 }, { da_ryis_gem_cutting_follow_up_gate = true }]
 writes = [{ da_ryis_gem_cutting_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "ryis" } }]
 portrait = "happy_blush"

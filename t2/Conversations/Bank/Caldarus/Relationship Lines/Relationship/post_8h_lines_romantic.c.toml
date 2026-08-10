@@ -2,14 +2,14 @@
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_grouping = 0 },
-	{ caldarus_post_8h_romantic_progression = false }
+	{ caldarus_post_8h_romantic_progression = false },
 ]
 writes = [
 	{ caldarus_post_8h_romantic_gate = true, expires = "20h" },
-	{ caldarus_post_8h_romantic_grouping = 1 }
+	{ caldarus_post_8h_romantic_grouping = 1 },
 ]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
 portrait = "think"
@@ -29,16 +29,16 @@ local = "While adapting to this form has had its challenges, that alone has made
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_grouping = 1 },
 	{ caldarus_post_8h_romantic_progression = false },
-	{ caldarus_seridia_town = false }
+	{ caldarus_seridia_town = false },
 ]
 writes = [
 	{ caldarus_post_8h_romantic_gate = true, expires = "20h" },
 	{ caldarus_post_8h_romantic_grouping = 2 },
-	{ eog_caldarus_post_8h_romantic_1 = true }
+	{ eog_caldarus_post_8h_romantic_1 = true },
 ]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
 portrait = "think"
@@ -55,7 +55,7 @@ portrait = "happy"
 local = "Tell me, once I am strong enough to leave this place... what would you like to do first?"
 prompts = [
 	{ local = "I would introduce you to all of my friends in town!", next = "3" },
-	{ local = "I would bring you to my farmhouse and cook dinner for you.", next = "6" }
+	{ local = "I would bring you to my farmhouse and cook dinner for you.", next = "6" },
 ]
 
 [caldarus_post_8h_romantic_1.3]
@@ -85,16 +85,16 @@ local = "I would make certain to repay the favor in any way you desired."
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_grouping = 1 },
 	{ caldarus_post_8h_romantic_progression = false },
 	{ caldarus_seridia_town = true },
-	{ eog_caldarus_post_8h_romantic_1 = false }
+	{ eog_caldarus_post_8h_romantic_1 = false },
 ]
 writes = [
 	{ caldarus_post_8h_romantic_gate = true, expires = "20h" },
-	{ caldarus_post_8h_romantic_grouping = 2 }
+	{ caldarus_post_8h_romantic_grouping = 2 },
 ]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
 portrait = "think"
@@ -111,7 +111,7 @@ portrait = "happy"
 local = "I owe this blessing to you, [Ari]."
 prompts = [
 	{ local = "I'm so happy you could finally meet my friends in town!", next = "3" },
-	{ local = "I'm so glad I can finally have you over for dinner!", next = "6" }
+	{ local = "I'm so glad I can finally have you over for dinner!", next = "6" },
 ]
 
 [caldarus_post_8h_romantic_1_alt.3]
@@ -141,21 +141,21 @@ local = "I will make certain to repay the favor in any way you desire."
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_grouping = 2 },
-	{ caldarus_post_8h_romantic_progression = false }
+	{ caldarus_post_8h_romantic_progression = false },
 ]
 writes = [
 	{ caldarus_post_8h_romantic_gate = true, expires = "20h" },
-	{ caldarus_post_8h_romantic_grouping = 3 }
+	{ caldarus_post_8h_romantic_grouping = 3 },
 ]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
 portrait = "neutral"
 local = "There are times that I feel a strong desire to be near you."
 next = [
 	{ target = "1_eog", requires = [{ caldarus_seridia_town = true }] },
-	{ target = "1_n", requires = [] }
+	{ target = "1_n", requires = [] },
 ]
 
 [caldarus_post_8h_romantic_2.1_eog]
@@ -180,20 +180,20 @@ local = "But even then, you remain with me in my thoughts."
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_grouping = 3 },
 	{ caldarus_post_8h_romantic_progression = false },
-	{ caldarus_seridia_town = false }
+	{ caldarus_seridia_town = false },
 ]
 writes = [
 	{ caldarus_post_8h_romantic_gate = true, expires = "2d" },
 	{ caldarus_post_8h_romantic_grouping = 4 },
-	{ eog_caldarus_post_8h_romantic_3 = true }
+	{ eog_caldarus_post_8h_romantic_3 = true },
 ]
 actions = [
 	{ bark = { bark = "heart", npc = "caldarus" } },
-	{ item = "crop_faux_temple_flower" }
+	{ item = "crop_faux_temple_flower" },
 ]
 portrait = "neutral"
 local = "[Ari]... you have spared no effort when it comes to bringing me tokens of your affection."
@@ -204,7 +204,7 @@ portrait = "serious_blush"
 local = "I wish to return the favor."
 prompts = [
 	{ local = "You saved my life, you don't owe me!", next = "2" },
-	{ local = "What do dragons give as gifts?", next = "5" }
+	{ local = "What do dragons give as gifts?", next = "5" },
 ]
 
 [caldarus_post_8h_romantic_3.2]
@@ -244,20 +244,20 @@ local = "In the meantime, please consider this the first of many."
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_grouping = 3 },
 	{ caldarus_post_8h_romantic_progression = false },
 	{ caldarus_seridia_town = true },
-	{ eog_caldarus_post_8h_romantic_3 = false }
+	{ eog_caldarus_post_8h_romantic_3 = false },
 ]
 writes = [
 	{ caldarus_post_8h_romantic_gate = true, expires = "2d" },
-	{ caldarus_post_8h_romantic_grouping = 4 }
+	{ caldarus_post_8h_romantic_grouping = 4 },
 ]
 actions = [
 	{ bark = { bark = "heart", npc = "caldarus" } },
-	{ item = "crop_faux_temple_flower" }
+	{ item = "crop_faux_temple_flower" },
 ]
 portrait = "neutral"
 local = "[Ari]... you have spared no effort when it comes to gifting me with tokens of your affection."
@@ -268,7 +268,7 @@ portrait = "serious_blush"
 local = "I wish to return the favor."
 prompts = [
 	{ local = "You saved my life, you don't owe me!", next = "2" },
-	{ local = "What do dragons give as gifts?", next = "5" }
+	{ local = "What do dragons give as gifts?", next = "5" },
 ]
 
 [caldarus_post_8h_romantic_3_alt.2]
@@ -308,15 +308,15 @@ local = "In the meantime, please consider this the first of many."
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_progression = false },
-	{ caldarus_post_8h_romantic_grouping = 4 }
+	{ caldarus_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [
 	{ bark = { bark = "heart", npc = "caldarus" } },
-	{ item = "roasted_chestnuts" }
+	{ item = "roasted_chestnuts" },
 ]
 portrait = "neutral"
 local = "I am fond of =Mont Blanc=, and I am fond of you..."
@@ -348,13 +348,13 @@ requires = [
 	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_progression = false },
-	{ caldarus_post_8h_romantic_grouping = 4 }
+	{ caldarus_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [
 	{ bark = { bark = "heart", npc = "caldarus" } },
 	{ item = "spicy_water_chestnuts" },
-	{ item = "spirit_mushroom_tea" }
+	{ item = "spirit_mushroom_tea" },
 ]
 portrait = "think"
 local = "I have made you something... $Spicy Water Chestnuts$."
@@ -378,10 +378,10 @@ local = "But do not be alarmed. I made you a drink to go with it."
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_progression = false },
-	{ caldarus_post_8h_romantic_grouping = 4 }
+	{ caldarus_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
@@ -402,10 +402,10 @@ local = "And some are very creative."
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_progression = false },
-	{ caldarus_post_8h_romantic_grouping = 4 }
+	{ caldarus_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
@@ -424,12 +424,12 @@ requires = [
 	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_progression = false },
-	{ caldarus_post_8h_romantic_grouping = 4 }
+	{ caldarus_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [
 	{ bark = { bark = "heart", npc = "caldarus" } },
-	{ item = "breath_of_fire" }
+	{ item = "breath_of_fire" },
 ]
 portrait = "smile"
 local = "[Ari], I made a wonderful discovery while reading a scroll the other day."
@@ -458,10 +458,10 @@ local = "Please... I would like you to have it."
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_progression = false },
-	{ caldarus_post_8h_romantic_grouping = 4 }
+	{ caldarus_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
@@ -482,10 +482,10 @@ local = "I look forward to exploring more such experiences with you."
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_progression = false },
-	{ caldarus_post_8h_romantic_grouping = 4 }
+	{ caldarus_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
@@ -501,10 +501,10 @@ local = "In most regards, I am in fact, quite dextrous."
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_progression = false },
-	{ caldarus_post_8h_romantic_grouping = 4 }
+	{ caldarus_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
@@ -517,7 +517,7 @@ portrait = "smile"
 local = "Do not be shy. There is no question that you cannot ask me."
 prompts = [
 	{ local = "Can I touch your tail?", next = "2" },
-	{ local = "Well, I've wondered what your horns are like.", next = "6" }
+	{ local = "Well, I've wondered what your horns are like.", next = "6" },
 ]
 
 [caldarus_post_8h_romantic_11.2]
@@ -562,10 +562,10 @@ local = "That gentle touch of yours will do them no harm."
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_progression = false },
-	{ caldarus_post_8h_romantic_grouping = 4 }
+	{ caldarus_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "blush", npc = "caldarus" } }]
@@ -583,7 +583,7 @@ portrait = "avoidant_special"
 local = "And there is... another feeling that causes me to hesitate."
 prompts = [
 	{ local = "I'll wait as long as it takes!", next = "3" },
-	{ local = "Are you feeling... shy?", next = "7" }
+	{ local = "Are you feeling... shy?", next = "7" },
 ]
 
 [caldarus_post_8h_romantic_12.3]
@@ -628,10 +628,10 @@ local = "It is quite foreign to me. Is this what it is to be vulnerable?"
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_progression = false },
-	{ caldarus_post_8h_romantic_grouping = 4 }
+	{ caldarus_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
@@ -644,7 +644,7 @@ portrait = "avoidant_special"
 local = "It is one of the few times I have been truly afraid."
 prompts = [
 	{ local = "But you were so brave!", next = "2" },
-	{ local = "It's a risk I accepted when I became your Dragonsworn.", next = "6" }
+	{ local = "It's a risk I accepted when I became your Dragonsworn.", next = "6" },
 ]
 
 [caldarus_post_8h_romantic_13.2]
@@ -689,10 +689,10 @@ local = "Changed as I am, I have no regrets."
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
 	{ caldarus_post_8h_romantic_progression = false },
-	{ caldarus_post_8h_romantic_grouping = 4 }
+	{ caldarus_post_8h_romantic_grouping = 4 },
 ]
 writes = [{ caldarus_post_8h_romantic_gate = true, expires = "2d" }]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
@@ -705,7 +705,7 @@ portrait = "smile"
 local = "I do not know what inspired the Dragon Priestesses to amass such a collection, but I am grateful to them."
 prompts = [
 	{ local = "I don't know much about poetry.", next = "2" },
-	{ local = "I'd love it if you read something to me.", next = "10" }
+	{ local = "I'd love it if you read something to me.", next = "10" },
 ]
 
 [caldarus_post_8h_romantic_14.2]
@@ -757,14 +757,14 @@ next = "4"
 refresh = "never"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_is_dating = true },
+	{ caldarus_is_partner = true },
 	{ caldarus_post_8h_romantic_gate = false },
-	{ caldarus_post_8h_romantic_grouping = 4 }
+	{ caldarus_post_8h_romantic_grouping = 4 },
 ]
 writes = [
 	{ caldarus_post_8h_romantic_gate = true, expires = "2d" },
 	{ caldarus_post_8h_best_friend_gate = true, expires = "2d" },
-	{ caldarus_post_8h_romantic_progression = true }
+	{ caldarus_post_8h_romantic_progression = true },
 ]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
 portrait = "smile"

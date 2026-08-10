@@ -3,8 +3,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "eiland" },
 	{ date = "bathhouse" },
-	{ da_eiland_bathhouse = 0 },
-	{ eiland_is_spouse = false }
+	{ da_eiland_bathhouse = 0 }
 ]
 writes = [
 	{ da_eiland_bathhouse = 1 },
@@ -43,11 +42,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "eiland" },
 	{ date = "bathhouse" },
-	{ eiland_has_child = false },
-	{ any = [
-		{ eiland_is_spouse = true },
-		{ da_eiland_bathhouse = 1, comparator = ">=" }
-	] }
+	{ da_eiland_bathhouse = 1, comparator = ">=" }
 ]
 writes = [
 	{ da_eiland_bathhouse = 2 },
@@ -67,8 +62,7 @@ refresh = "never"
 requires = [
 	{ npc = "eiland" },
 	{ da_eiland_bathhouse = 1 },
-	{ da_eiland_bathhouse_follow_up_gate = true },
-	{ eiland_is_spouse = false }
+	{ da_eiland_bathhouse_follow_up_gate = true }
 ]
 writes = [{ da_eiland_bathhouse_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "eiland" } }]
@@ -91,8 +85,7 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "eiland" },
-	{ eiland_has_child = false },
-	{ any = [{ eiland_is_spouse = true }, { da_eiland_bathhouse = 2 }] },
+	{ da_eiland_bathhouse = 2 },
 	{ da_eiland_bathhouse_follow_up_gate = true }
 ]
 writes = [{ da_eiland_bathhouse_follow_up_gate = false }]

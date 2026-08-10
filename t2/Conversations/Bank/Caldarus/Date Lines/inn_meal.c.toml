@@ -106,8 +106,7 @@ requires = [
 	{ npc = "caldarus" },
 	{ date = "inn_meal" },
 	{ da_caldarus_eog_inn_meal = 0 },
-	{ caldarus_seridia_town = true },
-	{ caldarus_is_spouse = false }
+	{ caldarus_seridia_town = true }
 ]
 writes = [
 	{ da_caldarus_eog_inn_meal = 1 },
@@ -144,8 +143,7 @@ requires = [
 	{ npc = "caldarus" },
 	{ date = "inn_meal" },
 	{ da_caldarus_eog_inn_meal = 1 },
-	{ caldarus_seridia_town = true },
-	{ caldarus_is_spouse = false }
+	{ caldarus_seridia_town = true }
 ]
 writes = [
 	{ da_caldarus_eog_inn_meal = 2 },
@@ -174,12 +172,8 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "caldarus" },
 	{ date = "inn_meal" },
-	{ caldarus_has_child = false },
-	{ any = [
-		{ caldarus_is_spouse = true },
-		{ da_caldarus_eog_inn_meal = 2, comparator = ">=" },
-	] },
-	{ caldarus_seridia_town = true },
+	{ da_caldarus_eog_inn_meal = 2, comparator = ">=" },
+	{ caldarus_seridia_town = true }
 ]
 writes = [
 	{ da_caldarus_eog_inn_meal = 3 },
@@ -300,8 +294,7 @@ requires = [
 	{ npc = "caldarus" },
 	{ da_caldarus_eog_inn_meal = 1 },
 	{ da_caldarus_eog_inn_meal_follow_up_gate = true },
-	{ caldarus_seridia_town = true },
-	{ caldarus_is_spouse = false }
+	{ caldarus_seridia_town = true }
 ]
 writes = [{ da_caldarus_eog_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
@@ -330,17 +323,13 @@ requires = [
 	{ npc = "caldarus" },
 	{ da_caldarus_eog_inn_meal = 2 },
 	{ da_caldarus_eog_inn_meal_follow_up_gate = true },
-	{ caldarus_seridia_town = true },
-	{ caldarus_is_spouse = false }
+	{ caldarus_seridia_town = true }
 ]
 writes = [{ da_caldarus_eog_inn_meal_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "caldarus" } }]
 portrait = "embarrassed"
 local = "I hope that our shared meal pleased you, [Ari]..."
-prompts = [
-	{ local = "It was a nice time.", next = "1" },
-	{ local = "I like seeing you so relaxed", next = "4" }
-]
+prompts = [{ local = "It was a nice time.", next = "1" }, { local = "I like seeing you so relaxed", next = "4" }]
 
 [inn_meal_follow_up_eog_2.1]
 portrait = "embarrassed"
@@ -375,8 +364,7 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "caldarus" },
-	{ caldarus_has_child = false },
-	{ any = [{ caldarus_is_spouse = true }, { da_caldarus_eog_inn_meal = 3 }] },
+	{ da_caldarus_eog_inn_meal = 3 },
 	{ da_caldarus_eog_inn_meal_follow_up_gate = true },
 	{ caldarus_seridia_town = true }
 ]
@@ -389,3 +377,4 @@ next = "1"
 [inn_meal_follow_up_eog_3.1]
 portrait = "caring_special"
 local = "We shall need to do it again soon."
+

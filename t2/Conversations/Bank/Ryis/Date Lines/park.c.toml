@@ -1,11 +1,6 @@
 [park_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "ryis" },
-	{ date = "park" },
-	{ da_ryis_park = 0 },
-	{ ryis_is_spouse = false }
-]
+requires = [{ npc = "ryis" }, { date = "park" }, { da_ryis_park = 0 }]
 writes = [
 	{ da_ryis_park = 1 },
 	{ da_ryis_park_follow_up_gate = true, expires = "1d" },
@@ -25,11 +20,7 @@ kind = "date_acceptance"
 requires = [
 	{ npc = "ryis" },
 	{ date = "park" },
-	{ ryis_has_child = false },
-	{ any = [
-		{ ryis_is_spouse = true },
-		{ da_ryis_park = 1, comparator = ">=" },
-	] }
+	{ da_ryis_park = 1, comparator = ">=" },
 ]
 writes = [
 	{ da_ryis_park = 2 },
@@ -58,7 +49,6 @@ requires = [
 	{ npc = "ryis" },
 	{ da_ryis_park = 1 },
 	{ da_ryis_park_follow_up_gate = true },
-	{ ryis_is_spouse = false }
 ]
 writes = [{ da_ryis_park_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "ryis" } }]
@@ -82,8 +72,7 @@ priority = "max"
 refresh = "instantly"
 requires = [
 	{ npc = "ryis" },
-	{ ryis_has_child = false },
-	{ any = [{ ryis_is_spouse = true }, { da_ryis_park = 2 }] },
+	{ da_ryis_park = 2 },
 	{ da_ryis_park_follow_up_gate = true },
 ]
 writes = [{ da_ryis_park_follow_up_gate = false }]

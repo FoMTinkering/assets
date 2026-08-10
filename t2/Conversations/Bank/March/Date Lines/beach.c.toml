@@ -1,15 +1,7 @@
 [beach_accept_1]
 kind = "date_acceptance"
-requires = [
-	{ npc = "march" },
-	{ date = "beach" },
-	{ da_march_beach = 0 },
-	{ march_is_spouse = false }
-]
-writes = [
-	{ da_march_beach = 1 },
-	{ da_march_beach_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "march" }, { date = "beach" }, { da_march_beach = 0 }]
+writes = [{ da_march_beach = 1 }, { da_march_beach_follow_up_gate = true, expires = "1d" }]
 speaker = "march"
 portrait = "neutral"
 local = "You want to go for a walk?"
@@ -18,7 +10,7 @@ next = "1"
 [beach_accept_1.1]
 speaker = "march"
 portrait = "eight_heart_happy"
-local = "On the Beach?"
+local = "On the beach?"
 next = "2"
 
 [beach_accept_1.2]
@@ -28,22 +20,11 @@ local = "Sure, we can do that."
 
 [beach_accept_2]
 kind = "date_acceptance"
-requires = [
-	{ npc = "march" },
-	{ date = "beach" },
-	{ march_has_child = false },
-	{ any = [
-		{ march_is_spouse = true },
-		{ da_march_beach = 1, comparator = ">=" }
-	] }
-]
-writes = [
-	{ da_march_beach = 2 },
-	{ da_march_beach_follow_up_gate = true, expires = "1d" }
-]
+requires = [{ npc = "march" }, { date = "beach" }, { da_march_beach = 1, comparator = ">=" }]
+writes = [{ da_march_beach = 2 }, { da_march_beach_follow_up_gate = true, expires = "1d" }]
 speaker = "march"
 portrait = "eight_heart_happy"
-local = "Oh? A walk on the Beach?"
+local = "Oh? A walk on the beach?"
 next = "1"
 
 [beach_accept_2.1]
@@ -54,16 +35,11 @@ local = "Sure, [Ari]. I'd be happy to."
 [beach_follow_up_1]
 priority = "max"
 refresh = "never"
-requires = [
-	{ npc = "march" },
-	{ da_march_beach = 1 },
-	{ da_march_beach_follow_up_gate = true },
-	{ march_is_spouse = false }
-]
+requires = [{ npc = "march" }, { da_march_beach = 1 }, { da_march_beach_follow_up_gate = true }]
 writes = [{ da_march_beach_follow_up_gate = false }]
 actions = [{ bark = { bark = "blush", npc = "march" } }]
 portrait = "eight_heart_happy_blush"
-local = "Going to the Beach was nice..."
+local = "Going to the beach was nice..."
 next = "1"
 
 [beach_follow_up_1.1]
@@ -95,12 +71,7 @@ local = "N-nevermind."
 [beach_follow_up_2]
 priority = "max"
 refresh = "instantly"
-requires = [
-	{ npc = "march" },
-	{ march_has_child = false },
-	{ any = [{ march_is_spouse = true }, { da_march_beach = 2 }] },
-	{ da_march_beach_follow_up_gate = true }
-]
+requires = [{ npc = "march" }, { da_march_beach = 2 }, { da_march_beach_follow_up_gate = true }]
 writes = [{ da_march_beach_follow_up_gate = false }]
 actions = [{ bark = { bark = "heart", npc = "march" } }]
 portrait = "eight_heart_happy"
@@ -109,4 +80,4 @@ next = "1"
 
 [beach_follow_up_2.1]
 portrait = "eight_heart_happy_blush"
-local = "Let's go to the Beach again when the weather's nice, okay?"
+local = "Let's go to the beach again when the weather's nice, okay?"
