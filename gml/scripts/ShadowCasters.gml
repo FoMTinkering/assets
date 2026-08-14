@@ -27,7 +27,7 @@ function ShadowGrid(initial=false) constructor {
 
     //
     function caster_add(caster) {
-        if !DEBUG_ASSERTIONS {
+        if DEBUG_ASSERTIONS {
             assert_eq(caster[ShadowCasterField.Id], undefined);
         }
 

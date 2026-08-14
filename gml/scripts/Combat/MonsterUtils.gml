@@ -94,7 +94,19 @@ function monster_death_poof(owner, optional_position=undefined) {
                     GAME_STATS.perks[$ perk_to_string(Perk.GenerousInDefeatTwo)] += 1;
                 }
             }
+
+            if game_stats_mines_floor_available() {
+                var key = monster_id_to_string(self.owner.monster_id);
+                if GS_MINES_FLOOR.enemy_kill[$ key] == undefined {
+                    GS_MINES_FLOOR.enemy_kill[$ key] = 0;
+                }
+                GS_MINES_FLOOR.enemy_kill[$ key] += 1;
+
+            }
+
+            instance_destroy(self.owner);
         }
+
         if chance_percent(ARI.perk_value(Perk.Resonance)) {
             var lookup = fiddle_get(format("perks/{Perk}", Perk.Resonance));
             var fix_list = List();
@@ -144,20 +156,6 @@ function monster_death_poof(owner, optional_position=undefined) {
                 node.original_x = undefined;
                 node.original_y = undefined;
             }
-        }
-
-
-        if game_stats_mines_floor_available() {
-            var key = monster_id_to_string(self.owner.monster_id);
-            if GS_MINES_FLOOR.enemy_kill[$ key] == undefined {
-                GS_MINES_FLOOR.enemy_kill[$ key] = 0;
-            }
-            GS_MINES_FLOOR.enemy_kill[$ key] += 1;
-
-        }
-
-        if self.owner != undefined && instance_exists(self.owner) {
-            instance_destroy(self.owner);
         }
     });
 }
@@ -337,7 +335,7 @@ function monster_category_to_ui_info(cat) {
         };
         case MonsterCategory.Clod: return {
             icon: spr_ui_stillwell_quest_icon_rockclod,
-            label: "misc_local/clods_defeated",
+            label: "misc_local/rock_clods_defeated",
         };
         case MonsterCategory.Sap: return {
             icon: spr_ui_stillwell_quest_icon_sapling_green,

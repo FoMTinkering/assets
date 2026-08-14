@@ -419,15 +419,16 @@ function Ari() constructor {
             if next_quest != undefined {
                 QUEST_LOG.start(next_quest);
             }
-            if last_quest != undefined {
+            if last_quest != undefined && !QUEST_LOG.completed.contains(last_quest) {
                 var active_quest = QUEST_LOG.active.get(last_quest);
                 if active_quest == undefined {
-                    warn("Couldn't find an active quest for '{}'!", last_quest);
-                } else {
-                    var status = active_quest.progress();
-                    assert_eq(status, ProgressOutput.Complete);
-                    QUEST_LOG.complete(last_quest);
+                    warn("Couldn't find an active quest for '{}'! Starting it so it can complete.", last_quest);
+                    QUEST_LOG.start(last_quest);
+                    active_quest = QUEST_LOG.active.get(last_quest);
                 }
+                var status = active_quest.progress();
+                assert_eq(status, ProgressOutput.Complete);
+                QUEST_LOG.complete(last_quest);
             }
         }
     }
@@ -623,8 +624,8 @@ function Ari() constructor {
         self.gold = _struct.gold;
         self.essence = _struct.essence;
         self.renown = _struct.renown;
-        self.mana_current = _struct.mana_current;
-        self.mana_max = _struct.mana_max;
+        self.mana_current = int64(_struct.mana_current);
+        self.mana_max = int64(_struct.mana_max);
         self.status_effects.deserialize(_struct.status_effects);
         self.health_current = _struct.health_current;
         self.base_health = _struct.base_health;
@@ -934,6 +935,10 @@ function Ari() constructor {
     }
 
     function held_child() {
+        if MIST.blackboard.get("no_held_child") == true {
+            return undefined;
+        }
+
         var child = undefined;
         for (var i = 0; i < array_length(self.children); i++) {
             if self.children[i].location == ChildLocation.WithAri {

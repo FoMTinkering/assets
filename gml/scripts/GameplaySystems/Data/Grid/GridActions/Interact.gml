@@ -68,7 +68,7 @@ function can_interact(node) {
                                 && ARI.held_item() != undefined
                                 && ARI.held_item().prototype.essence_charge != undefined
                             )
-                        || (node.prototype.animal_toy != undefined && node.animal_count >= 1)
+                        || (node.prototype.animal_toy != undefined && animals_using_toy(node) > 0)
                         || (node.prototype.bed_kind != undefined && requirements_pass(Requirement.Sleep))
                         || (node.prototype.house_stairs != undefined);
             }
@@ -502,7 +502,7 @@ function interact(node) {
 
                                 //
                                 //
-                                var chain = new_world_chain(obj_ari, CURRENT_LOCATION_ID)
+                                var chain = new_world_chain(node.renderer, CURRENT_LOCATION_ID)
                                 TANGO.play("SoundEffects/Objects/UseSpouseGift", node.renderer.x, node.renderer.y);
                                 repeat 4 {
                                     chain.append(LinkId.Function, function(node) {
@@ -832,6 +832,9 @@ function interact(node) {
                         }
 
                         stop_animal_toy_sfx(node);
+
+                        //
+                        node.animal_count = 0;
                     }
 
                     if node.prototype.essence_machine != undefined

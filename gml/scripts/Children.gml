@@ -199,6 +199,7 @@ function report_children_facts() {
     T2R.write("spouse_utero", spouse_utero);
     T2R.write("stork_utero", stork_utero);
     T2R.write("child_born_today", child_born_today);
+    refresh_achievements([Requirement.WorldFactIs]);
 }
 
 function trigger_birth(child_id) {

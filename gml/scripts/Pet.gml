@@ -249,7 +249,7 @@ function Pet() constructor {
 
     function deserialize(pet_data, time) {
         self.variant = pet_data.variant;
-        if !DEBUG_ASSERTIONS && PET_PROTOTYPE.variants.contains_key(self.variant) == false {
+        if DEBUG_ASSERTIONS == false && PET_PROTOTYPE.variants.contains_key(self.variant) == false {
             error("Unexpected pet variant: `{}`, replaced with `cat_tabby`", self.variant);
             self.variant = "cat_tabby";
         }
@@ -302,7 +302,10 @@ enum PetManagement {
 }
 
 function pet_on_room_start() {
-    if PET.unlocked() && PET.location_id == CURRENT_LOCATION_ID {
+    if PET.unlocked()
+        && PET.location_id == CURRENT_LOCATION_ID
+        && instance_exists(obj_pet) == false
+    {
         spawn_pet();
     }
 }

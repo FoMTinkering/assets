@@ -324,7 +324,7 @@ function Decor() constructor {
             dump[$ arr[i]] = {
                 wallpaper: wp.wallpaper,
                 infusion: try_infusion_to_string(wp.infusion),
-                door_mold_sprite: asset_to_string(wp.door_mold_sprite)
+                door_mold_sprite: asset_to_string(wp.door_mold_sprite ?? spr_carpenter_house_f2_doorway2_spring)
             }
         }
         return dump;
@@ -417,7 +417,13 @@ function deserialize_wallpapers(data) {
         return_data[$ arr[i]] = {
             wallpaper: my_data.wallpaper,
             infusion: try_string_to_infusion(my_data.infusion),
-            door_mold_sprite: string_to_asset(my_data.door_mold_sprite)
+            door_mold_sprite: opt_and_then(my_data.door_mold_sprite, function(dms) {
+                try {
+                    return try_string_to_asset(dms);
+                } catch(_) {
+                    return undefined;
+                }
+            }) ?? "spr_carpenter_house_f2_doorway2_spring",
         }
     }
     return return_data;

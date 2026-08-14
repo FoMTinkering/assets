@@ -29,6 +29,8 @@ object_create(
                 {
                     items.remove(0);
 
+                    self.fsm.blackboard.insert("valid_gobble", true);
+
                     var data = get_treasure_from_distribution(self.x, self.y);
                     if data != undefined {
                         self.fsm.blackboard.insert("items", List(data[0]));
@@ -40,6 +42,8 @@ object_create(
                             self.fsm.blackboard.insert("secondary_items", List(data[0]));
                         }
                     }
+                } else {
+                    self.fsm.blackboard.insert("valid_gobble", false);
                 }
 
                 self.fsm.blackboard.insert("return_items", items);
@@ -203,27 +207,30 @@ object_create(
                                     item_obj.setup(List(item));
                                 }
 
-                                if ari_has_cosmetic_anywhere("head_mimic_hat") == false
-                                    && chance_percent(5)
-                                {
-                                    var item = new LiveItem(ItemId.Cosmetic);
-                                    item.cosmetic = "head_mimic_hat";
-                                    var item_obj = instance_create_layer(owner.x, owner.y, "Instances", obj_item);
-                                    item_obj.final_x = owner.x + irandom_range(-16, 16);
-                                    item_obj.final_y = owner.y + irandom_range(6, 32);
-
-                                    item_obj.setup(List(item));
-                                }
-
-                                if ari_has_pet_skin_anywhere("mimic") == false
-                                    && chance_percent(5)
-                                {
-                                    var item = new LiveItem(ItemId.PetSkinMimic);
-                                    var item_obj = instance_create_layer(owner.x, owner.y, "Instances", obj_item);
-                                    item_obj.final_x = owner.x + irandom_range(-16, 16);
-                                    item_obj.final_y = owner.y + irandom_range(6, 32);
-
-                                    item_obj.setup(List(item));
+                                if self.blackboard.try_take("valid_gobble", false) {
+                                    if ari_has_cosmetic_anywhere("head_mimic_hat") == false
+                                        && chance_percent(5)
+                                    {
+                                        var item = new LiveItem(ItemId.Cosmetic);
+                                        item.cosmetic = "head_mimic_hat";
+                                        var item_obj = instance_create_layer(owner.x, owner.y, "Instances", obj_item);
+                                        item_obj.final_x = owner.x + irandom_range(-16, 16);
+                                        item_obj.final_y = owner.y + irandom_range(6, 32);
+    
+                                        item_obj.setup(List(item));
+                                    }
+    
+                                    if ari_has_pet_skin_anywhere("mimic") == false
+                                        && ARI.perk_active(Perk.FriendShaped)
+                                        && chance_percent(5)
+                                    {
+                                        var item = new LiveItem(ItemId.PetSkinMimic);
+                                        var item_obj = instance_create_layer(owner.x, owner.y, "Instances", obj_item);
+                                        item_obj.final_x = owner.x + irandom_range(-16, 16);
+                                        item_obj.final_y = owner.y + irandom_range(6, 32);
+    
+                                        item_obj.setup(List(item));
+                                    }
                                 }
                             }
                         })

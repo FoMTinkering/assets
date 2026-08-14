@@ -89,7 +89,9 @@ function find_nearest_interactable(list, owner) {
                         self.mask_index = self.override_mask;
                     }
                     distance = distance_to_point(ari_x, ari_y);
-                    self.mask_index = stash;
+                    if self.override_mask != undefined {
+                        self.mask_index = stash;
+                    }
                 }
                 break;
             case InteractableMode.Box:

@@ -54,6 +54,17 @@ function WeatherManager() constructor {
     function on_new_day() {
         self.under_spell = false;
         self.spell_timer = undefined;
+        //
+        //
+        //
+        //
+        //
+        //
+        if CALENDAR.time == ARI.wedding_date  {
+            self.forecast[CALENDAR.day()] = matches(CALENDAR.season(), Season.Spring, Season.Fall)
+                ? Weather.Special
+                : Weather.Calm;
+        }
         self.set_weather(self.forecast[CALENDAR.day()]);
     }
 
@@ -124,7 +135,6 @@ function WeatherManager() constructor {
         }
 
         if matches(self.atmosphere.id, Atmosphere.Rain, Atmosphere.Storm) {
-            gpu_set_srgb_blending(false);
             var modifier = 1;
             if self.spell_timer != undefined {
                 modifier = min(self.spell_timer / fiddle_get("spells/summon_rain/indoor_fade_length"), 1);
@@ -192,8 +202,6 @@ function WeatherManager() constructor {
                     self.atmosphere.lightning.current -= 1;
                 }
             }
-
-            gpu_set_srgb_blending(true);
         } else if self.atmosphere.id != Atmosphere.HighClouds {
             draw_atmosphere_particles(self.atmosphere);
         }
@@ -277,7 +285,7 @@ function WeatherManager() constructor {
 
         gpu_set_stencil_operation(StencilOperation.Replace);
         gpu_set_stencil_test(cmpfunc_greater, stencil_increment());
-        
+
         gpu_set_color_write(false);
         for (var i = 0; i < array_length(self.atmosphere.clouds); i++) {
             var part = self.atmosphere.clouds[i];
@@ -303,8 +311,7 @@ function WeatherManager() constructor {
             );
         }
         gpu_set_color_write(true);
-        
-        gpu_set_srgb_blending(false);
+
         var output_size = window_get_output_dimensions();
         draw_sprite_ext(
             spr_pixel,
@@ -317,7 +324,6 @@ function WeatherManager() constructor {
 			make_color_rgb(12, 30, 30),
 			0.1,
         );
-        gpu_set_srgb_blending(true);
         gpu_disable_stencil();
     }
 

@@ -256,7 +256,11 @@ requires = [
 	{ balor_is_fiance = false },
 	{ reina_is_fiance = false },
 	{ engagement_delay = false },
-	{ engagement_cap = false }
+	{ engagement_cap = false },
+	{ any = [
+		{ animal_festival_today = false },
+		{ jo_explained_animal_festival = true },
+	] },
 ]
 actions = [{ bark = { bark = "cute_face", npc = "josephine" } }]
 portrait = "neutral"
@@ -295,7 +299,11 @@ requires = [
 	{ npc = "josephine" },
 	{ has_fiance = true },
 	{ balor_is_fiance = true },
-	{ engagement_cap = false }
+	{ engagement_cap = false },
+	{ any = [
+		{ animal_festival_today = false },
+		{ jo_explained_animal_festival = true },
+	] },
 ]
 actions = [{ bark = { bark = "cute_face", npc = "josephine" } }]
 portrait = "neutral"
@@ -344,7 +352,11 @@ requires = [
 	{ npc = "josephine" },
 	{ has_fiance = true },
 	{ reina_is_fiance = true },
-	{ engagement_cap = false }
+	{ engagement_cap = false },
+	{ any = [
+		{ animal_festival_today = false },
+		{ jo_explained_animal_festival = true },
+	] },
 ]
 actions = [{ bark = { bark = "cute_face", npc = "josephine" } }]
 portrait = "happy"
@@ -1573,7 +1585,7 @@ local = "Blessings on you both, [Ari]. It is an auspicious day."
 refresh = "never"
 priority = "max"
 requires = [
-	{ npc = "march" },
+	{ npc = "seridia" },
 	{ has_fiance = true },
 	{ juniper_is_fiance = true },
 	{ engagement_delay = false },

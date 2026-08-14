@@ -1525,7 +1525,12 @@ object_create(
                             return false;
                         }
 
-                        if festival_check.prototype.npc_date.item == undefined {
+                        var festival_requires_item = festival_check.prototype.npc_date.item != undefined;
+                        if is_home_location(CURRENT_LOCATION_ID) && !festival_requires_item {
+                            return false;
+                        }
+
+                        if festival_requires_item == false {
                             return true;
                         }
 

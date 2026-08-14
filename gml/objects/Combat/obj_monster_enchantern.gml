@@ -218,13 +218,13 @@ object_create(
                                     fsm.change_state(EnchanternState.Flee);
                                     fsm.blackboard.insert("innocent", true);
                                 }
-
                             } else if time_left <= 120 {
                                 if self.played_wind_down == false {
                                     self.wind_down_sound = TANGO.play(owner.config.misc_tango.wind_down, owner.x, owner.y);
                                     self.played_wind_down = true;
                                 }
 
+                                var old_time = instance_full_time(owner);
                                 if self.off {
                                     switch monster_vertical_cardinal_from_dir(owner.dir) {
                                         case Cardinal.North:
@@ -235,6 +235,8 @@ object_create(
                                             break;
                                         default: impossible("unexpected vertical cardinal");
                                     }
+                                    instance_set_full_time(owner, old_time);
+
                                     self.off_timer -= 1;
                                     if self.off_timer <= 0 {
                                         self.off = false;
@@ -249,6 +251,7 @@ object_create(
                                         self.current_on_timer = self.on_timer;
                                     }
                                 }
+                                instance_set_full_time(owner, old_time);
                             } else {
                                 owner.set_state_sprite(false);
                             }
@@ -466,9 +469,8 @@ object_create(
             push_from(obj_ari, self.config.pushed_radius, self.config.push_force * sqrt(obj_ari.move.sqrd_magnitude()));
             movement_and_collide(par_monster);
 
-            monster_outside_bounds(x, y, self);
-
             self.flee_timer -= 1;
+            monster_outside_bounds(x, y, self);
         },
         step_end: function() {
             if game_paused() {

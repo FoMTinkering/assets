@@ -20,7 +20,13 @@ object_create(
                 function() {
                     var point = trellis_point("bell_tower_f1/Bell Tower F2");
                     goto_location_id(LocationId.BellTowerF1)
-                        .set_exact_position(point.x, point.y)
+                        .set_exact_position(point.x, point.y);
+                    if instance_exists(obj_ari) {
+                        obj_ari.fsm.change_state(PlayerState.Dummy);
+                    }
+                },
+                function() {
+                    return TAXI.is_traveling() == false;
                 }
             );
         },

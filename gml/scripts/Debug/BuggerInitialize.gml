@@ -1557,7 +1557,7 @@ function bugger_initialize() {
                                 })
                                 .join("\n\n");
 
-                            trace(output);
+                            trace("{}", output);
                             BUGGER.cli.post("Information has been printed on the output.")
                         })
                 )
@@ -2439,116 +2439,6 @@ function bugger_initialize() {
                         })
                 )
         )
-        .add_command(
-            BuggerCommand("system")
-                .help("Low level general system commands")
-                .author("Gabe")
-                .subcommand(
-                    BuggerCommand("crash")
-                        .help("Crashes the game to test crash reporting features")
-                        .process(function () {
-                            obj_cosmic_debug.trigger_crash = "testing crash";
-                        })
-                )
-                .subcommand(
-                    BuggerCommand("collect_cycle")
-                        .process(function() {
-                            gc_collect();
-                            MEMORY_USED = undefined;
-                        })
-                )
-                .subcommand(
-                    BuggerCommand("resource_counts")
-                        .help("Prints all resource counts")
-                        .process(function () {
-                            BUGGER.cli.echo("{}", debug_event("ResourceCounts", true));
-                        })
-                )
-                .subcommand(
-                    BuggerCommand("mem_dump")
-                        .help("Prints all memory information gm has")
-                        .process(function () {
-                            var mem_info = debug_event("DumpMemory", true);
-                            BUGGER.cli.echo("allocated {}gb (free: {}gb)", mem_info.totalUsed / 1000000000, mem_info.free / 1000000000);
-                        })
-                )
-                .subcommand(
-                    BuggerCommand("debug_overlay")
-                        .help("Shows or hides the gm provided debug overlay")
-                        .process(function () {
-                            show_debug_overlay(!is_debug_overlay_open(), true);
-                        })
-                )
-                .subcommand(
-                    BuggerCommand("gc_enable")
-                        .help("Enable GMS's garbage collector")
-                        .process(function () {
-                            gc_enable(true);
-                        })
-                )
-                .subcommand(
-                    BuggerCommand("gc_disable")
-                        .help("Disable GMS's garbage collector")
-                        .process(function () {
-                            gc_enable(false);
-                        })
-                )
-                .subcommand(
-                    BuggerCommand("gc_collect")
-                        .process(function () {
-                            gc_collect();
-                        })
-                )
-                .subcommand(
-                    BuggerCommand("gc_info")
-                        .help("Prints information about the garbage collector's status")
-                        .process(function () {
-                            var _info = gc_get_stats();
-                            BUGGER.cli.post(fmt("Objects Touched: {}", _info.objects_touched));
-                            BUGGER.cli.post(
-                                fmt("Objects Collected: {}", _info.objects_collected)
-                            );
-                            BUGGER.cli.post(fmt("Traversal Time: {}", _info.traversal_time));
-                            BUGGER.cli.post(fmt("Collection Time: {}", _info.collection_time));
-                            BUGGER.cli.post(fmt("GC Frame: {}", _info.gc_frame));
-                            BUGGER.cli.post(
-                                fmt("Generation Collected: {}", _info.generation_collected)
-                            );
-                            BUGGER.cli.post(
-                                fmt("Number of Generations: {}", _info.num_generations)
-                            );
-                            for (var i = 0; i < _info.num_generations; i++) {
-                                BUGGER.cli.post(
-                                    fmt(
-                                        "Objects In Generation {}: {}",
-                                        string(i),
-                                        _info.num_objects_in_generation[i]
-                                    )
-                                );
-                            }
-                        })
-                )
-                .subcommand(
-                    BuggerCommand("mem_info")
-                        .help("Prints information about current dynamic memory resources.")
-                        .process(function () {
-                            static COUNT = function(ds_type) {
-                                var n = 0;
-                                for (var i = 0; i < 9999; i++) {
-                                    n += ds_exists(i, ds_type);
-                                }
-                                return n;
-                            }
-
-                            BUGGER.cli.echo("Lists: {}", COUNT(ds_type_list));
-                            BUGGER.cli.echo("Maps: {}", COUNT(ds_type_map));
-                            BUGGER.cli.echo("Queues: {}", COUNT(ds_type_queue));
-                            BUGGER.cli.echo("Prio Queues: {}", COUNT(ds_type_priority));
-                            BUGGER.cli.echo("Stacks: {}", COUNT(ds_type_stack));
-                            BUGGER.cli.echo("Chains: {}", array_length(CHAINS.chains));
-                        })
-                )
-        )
         .add_command(BuggerCommand("artifact")
             .subcommand(BuggerCommand("roll")
                 .process(function() {
@@ -2917,7 +2807,7 @@ function bugger_initialize() {
                     BuggerCommand("grant_mount")
                         .help("Gives Ari the default mount.")
                         .process(function() {
-                            ARI.mount = create_default_mount();
+                            ARI.mount = create_default_mount("mistmare");
                         })
                 )
                 .subcommand(

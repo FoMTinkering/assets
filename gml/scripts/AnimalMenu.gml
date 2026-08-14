@@ -587,14 +587,30 @@ function AnimalMenu() : AnchorMenu(Menu.Animal) constructor {
                     && points_to_animal_heart_level(a.heart_points) >= 5
                     && ARI.perk_active(Perk.NiceRide);
             });
-        
+
         if ARI.animal_variant_unlocks[AnimalKind.Horse].contains("giant_chicken_gold") {
-            animals.insert(create_default_mount("giant_chicken_gold"), 0);
+            var chicken_gold = create_default_mount("giant_chicken_gold");
+            if animals.is_empty() {
+                animals.push(chicken_gold);
+            } else {
+                animals.insert(chicken_gold, 0);
+            }
         }
         if ARI.animal_variant_unlocks[AnimalKind.Horse].contains("giant_chicken_white") {
-            animals.insert(create_default_mount("giant_chicken_white"), 0);
+            var chicken_white = create_default_mount("giant_chicken_white");
+            if animals.is_empty() {
+                animals.push(chicken_white);
+            } else {
+                animals.insert(chicken_white, 0);
+            }
         }
-        animals.insert(create_default_mount("mistmare"), 0);
+
+        var mistmare = create_default_mount("mistmare");
+        if animals.is_empty() {
+            animals.push(mistmare);
+        } else {
+            animals.insert(mistmare, 0);
+        }
 
         for (var i = 0; i < animals.count(); i++) {
 

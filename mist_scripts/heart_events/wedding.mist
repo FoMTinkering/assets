@@ -636,18 +636,17 @@ sim {
         fade_out(2);
     }
     {
-        walk_slow(ari, ari_house_exit_x(), ari_house_exit_y());
+        var exit_x = ari_house_exit_x();
+        var exit_y = ari_house_exit_y();
+        var path_possible = path_length(ari, exit_x, exit_y) != -1;
+        if path_possible {
+            walk_slow(ari, exit_x, exit_y);
+        }
     }
 }
 play_sound("SoundEffects/Entrances/DoorWoodIndoorOpen2D");
 wait(0.5);
 scene(farm);
-
-if current_season() == "spring" or current_season() == "fall" {
-    set_weather("special");
-} else {
-    set_weather("calm");
-}
 place_actor(ari, south, wed_ari_farm_entrance);
 place_actor(elsie, north, wed_elsie_farm_entrance);
 place_actor(josephine, north, wed_josephine_farm_entrance);

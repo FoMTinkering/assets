@@ -309,6 +309,8 @@ function Mist() constructor {
             );
 
             obj_ari.par.blend = undefined;
+
+            handle_child_on_par(obj_ari.par);
         }
 
         //
@@ -1064,7 +1066,7 @@ function Mist() constructor {
             var itinerary = goto_location_id(destination.location_id, true)
                 .set_exact_position(destination.pos.x, destination.pos.y);
             if cutscene_data.end_position != undefined && grant_items {
-                itinerary.set_arrival_callback(mist_give_items_after_scene, [cutscene_data.given_items]);
+                itinerary.set_arrival_callback(mist_give_items_after_scene, [cutscene_data.given_items, destination]);
             }
         } else {
 
@@ -1086,8 +1088,13 @@ function Mist() constructor {
                 }
             }
 
-            if grant_items {
-                mist_give_items_after_scene(cutscene_data.given_items);
+            if grant_items && !array_is_empty(cutscene_data.given_items) {
+                mist_give_items_after_scene(
+                    cutscene_data.given_items,
+                    cutscene_data.when_sleeping || cutscene_data.ends_day
+                        ? player_wake_position()
+                        : new LocationPosition(CURRENT_LOCATION_ID, Vec2(obj_ari.x, obj_ari.y)),
+                );
             }
 
             if self.active_cutscene.refreshes_room_layers {
@@ -1113,6 +1120,10 @@ function Mist() constructor {
 
         //
         self.blackboard.clear();
+
+        if instance_exists(obj_ari) {
+            handle_child_on_par(obj_ari.par);
+        }
 
         //
         trace("Done cleaning up {}", self.active_cutscene.id);
@@ -1185,7 +1196,7 @@ function skip_current_cutscene() {
     }, [], true);
 }
 
-function mist_give_items_after_scene(items) {
+function mist_give_items_after_scene(items, location_position) {
     for (var i = 0, c = array_length(items); i < c; i++) {
         var item = items[i];
 
@@ -1201,14 +1212,23 @@ function mist_give_items_after_scene(items) {
 
         if ARI.inventory.can_add(item.item_id, item.quantity) {
             ARI.give_item(li, item.quantity, false, false, false);
-        } else {
-            var ni = GRID.try_node_index_for_room_position(obj_ari.x, obj_ari.y);
-            var pos = Vec2(obj_ari.x, obj_ari.y);
-            if ni == undefined {
+        } else if location_position.location_id == CURRENT_LOCATION_ID {
+            var pos = location_position.pos.clone();
+            if GRID.try_node_index_for_room_position(pos.x, pos.y) == undefined {
                 pos.x = clamp(pos.x, 16, GRID.dims.x * 8 - 16);
                 pos.y = clamp(pos.y, 16, GRID.dims.y * 8 - 16);
             }
             drop_item(array_create(item.quantity, li), pos.x, pos.y);
+        } else {
+            GRIDS[location_position.location_id]
+                .lost_items
+                .push({
+                    x: location_position.pos.x,
+                    y: location_position.pos.y,
+                    items: ListFromArray(array_map(array_create(item.quantity, li), function(v) {
+                        return v.clone();
+                    })),
+                });
         }
     }
 }

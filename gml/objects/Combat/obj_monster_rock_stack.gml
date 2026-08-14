@@ -226,6 +226,7 @@ object_create(
                     StateBuilder(RockStackState.Hopping)
                         .start(function() {
                             self.spd = Vec2();
+                            self.jump_speed = owner.config.jump_speed;
 
                             if owner.homie_valid() {
                                 owner.can_overlap_ari = true;
@@ -236,7 +237,6 @@ object_create(
 
                                 spd = original_spd.clone();
 
-                                self.jump_speed = owner.config.jump_speed;
                                 owner.override_allowed = true;
                             } else {
                                 fsm.change_state(RockStackState.Walk);

@@ -229,7 +229,7 @@ object_create(
                                 }
                             }
 
-                            if (fsm.state_frame > (120 + owner.config.pre_attack_wait)) && (fsm.state_frame % owner.config.shot_rate < 1) {
+                            if (fsm.state_frame > (120 + owner.config.pre_attack_wait)) && (fsm.state_frame % owner.config.shot_rate < 1) && self.shot < owner.config.belt_size {
                                 var projectile = owner.projectiles[self.shot];
                                 if projectile != undefined {
                                     projectile.spd = owner.config.projectile_speed;

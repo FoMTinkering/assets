@@ -185,6 +185,7 @@ function load_game(loader) {
         ARI.song_overrides[string_to_location_id(keys[i])] = overrides[keys[i]];
     }
     ARI.dyn_song_overrides = files.player["dyn_song_overrides"] ?? {};
+    ARI.bell_sound = files.player["bell_sound"] ?? ARI.bell_sound;
 
     ARI.disable_break_ups = files.player["disable_break_ups"] ?? false;
     ARI.disable_break_up_letters = files.player["disable_break_up_letters"] ?? false;

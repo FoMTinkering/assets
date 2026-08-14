@@ -100,6 +100,13 @@ function BaseAnimal(kind, variant, sex) constructor {
 
         //
         var entry = variant[$ key];
+        if entry.sprites.base.contains_key(animation) == false {
+            tattletale_report_error_without_panic(
+                "animal tried to set uknown animation",
+                format("{AnimalKind} with {Cardinal} tried to set {}", self.kind, cardinality, animation)
+            );
+            animation = "idle";
+        }
         var card_to_use = cardinality;
         var base_sprites = entry.sprites.base.get(animation);
         var top_sprites = entry.sprites.top.get(animation);
@@ -148,13 +155,13 @@ function BaseAnimal(kind, variant, sex) constructor {
         }
 
         return {
-            base_sprite: base_sprite,
-            top_sprite: top_sprite,
-            base_cosmetic: base_cosmetic,
-            top_cosmetic: top_cosmetic,
+            base_sprite,
+            top_sprite,
+            base_cosmetic,
+            top_cosmetic,
             shadow: SHADOW_DICTIONARY.get(base_sprite),
-            lut: lut,
-            lut_texture: lut_texture,
+            lut,
+            lut_texture,
             lut_index: entry.lut_index,
             lut_uvs,
         };
@@ -384,6 +391,14 @@ function PlayerAnimal(kind, variant, sex) : BaseAnimal(kind, variant, sex) const
 
         if animal_data[$ "location_position"] != undefined {
             self.location_position = deserialize_location_position(animal_data.location_position);
+        }
+
+        //
+        if self.baby_sound_index != clamp(self.baby_sound_index, 0, array_length(self.prototype.sounds.baby) - 1) {
+            self.baby_sound_index = irandom(array_length(self.prototype.sounds.baby) - 1);
+        }
+        if self.adult_sound_index != clamp(self.adult_sound_index, 0, array_length(self.prototype.sounds.adult) - 1) {
+            self.adult_sound_index = irandom(array_length(self.prototype.sounds.adult) - 1);
         }
     }
 }

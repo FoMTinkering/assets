@@ -6,10 +6,6 @@ requires = [
 	{ caldarus_seridia_town = true },
 	{ dragon_market = "seridia" }
 ]
-end_writes = [
-	{ dragon_market = "caldarus" },
-	{ seridia_market_count = 1, operator = "+=" }
-]
 
 [seridia."6:00am"]
 destination = "narrows/mines_chat_1"
@@ -26,3 +22,7 @@ delayed_arrival_actions = [
 [seridia."7:25pm"]
 destination = "seridias_house/Seridia Desk Chair"
 on_arrival_actions = [{ animation = "write_sit" }]
+on_departure_writes = [
+	{ dragon_market = "caldarus" },
+	{ seridia_market_count = 1, operator = "+=" }
+]

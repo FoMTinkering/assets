@@ -1378,7 +1378,7 @@ function NpcSpeaker(id) : Speaker(id) constructor {
 
         var baby = undefined;
         var child = self.me.held_child();
-        if child != undefined {
+        if child != undefined && self.me.wardrobe.outfit_name != "dragon_statue" {
             baby = string_to_asset(format(
                 "spr_portrait_{NpcId}_baby_{ChildId}_{ChildSkinTone}",
                 self.id,

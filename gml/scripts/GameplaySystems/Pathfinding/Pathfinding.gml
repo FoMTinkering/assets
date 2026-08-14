@@ -132,7 +132,7 @@ function Pathfinding() constructor {
                 end_location.pos.y,
             );
 
-            crash(e);
+            crash("{}", e);
         }
 
         //

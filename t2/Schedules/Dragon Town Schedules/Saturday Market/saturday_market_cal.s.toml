@@ -6,10 +6,6 @@ requires = [
 	{ caldarus_seridia_town = true },
 	{ dragon_market = "caldarus" }
 ]
-end_writes = [
-	{ dragon_market = "seridia" },
-	{ caldarus_market_count = 1, operator = "+=" }
-]
 
 [caldarus."6:00am"]
 destination = "eastern_road/deep_woods_cutscene_exit"
@@ -26,3 +22,7 @@ delayed_arrival_actions = [
 [caldarus."8:15pm"]
 destination = "caldarus_house/Caldarus Wake Point"
 on_arrival_actions = [{ animation = "eyes_closed" }]
+on_departure_writes = [
+	{ dragon_market = "seridia" },
+	{ caldarus_market_count = 1, operator = "+=" }
+]

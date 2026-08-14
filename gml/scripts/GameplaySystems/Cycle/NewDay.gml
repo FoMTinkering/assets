@@ -289,7 +289,9 @@ function new_day_grid() {
         MIST_SIGHT_ACTIVE_INDEX = MIST_SIGHT_LIST.count() == 0 ? undefined : irandom(MIST_SIGHT_LIST.count() - 1);
     }
 
-    grow_back_new_day(GRIDS[LocationId.Farm]);
+    if ARI.perk_active(Perk.DeliberateDebrisTwo) == false {
+        grow_back_new_day(GRIDS[LocationId.Farm], ARI.perk_active(Perk.DeliberateDebris) ? 0.5 : 1.0);
+    }
     WEATHER.on_new_day();
     randomize();
 

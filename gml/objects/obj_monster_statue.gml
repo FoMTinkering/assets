@@ -442,11 +442,11 @@ object_create(
                     }
 
                     self.patience.value = PATIENCE_DAMAGED;
-
-                    if self.hit_points <= 0 {
-                        self.fsm.change_state(StatueState.Dying);
-                    }
                 }
+            }
+
+            if self.hit_points <= 0 && self.fsm.current_state_id() != StatueState.Dying {
+                self.fsm.change_state(StatueState.Dying);
             }
         },
     }

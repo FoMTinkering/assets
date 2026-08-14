@@ -124,10 +124,10 @@ function Inbox() constructor {
         for (var i = 0; i < array_length(array); i++) {
             var letter = array[i];
             if LETTERS.contains_key(letter.path) == false {
-                if !DEBUG_ASSERTIONS {
-                    error("missing letter `{}`", letter.path);
-                } else {
+                if DEBUG_ASSERTIONS {
                     crash("missing letter `{}`", letter.path);
+                } else {
+                    error("missing letter `{}`", letter.path);
                 }
                 continue;
             }

@@ -29,6 +29,7 @@ object_create(
                 function() {
                     if ARI.animal_variant_unlocks[AnimalKind.Horse].contains("giant_chicken_white") == false
                         && ARI.unlocked_all_chicken_tiers()
+                        && any_item_matches(ItemId.BigEgg) == false
                     {
                         play_conversation_from_path(NpcId.Caldarus, GAMEPLAY_CONVERSATIONS[GpTriggeredConversation.ChickenStatueEgg]);
 

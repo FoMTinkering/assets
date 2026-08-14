@@ -194,7 +194,10 @@ function QuestLogMenu(journal, context) : AnchorMenu(Menu.QuestLog) constructor 
                 }
 
                 category.sort_with(function(e1, e2) {
-                    return string_alphanumeric_comparison(local_get(QUESTS.get(e1).name), QUESTS.get(e2).name);
+                    return string_alphanumeric_comparison(
+                        local_get(QUESTS.get(e1).name),
+                        local_get(QUESTS.get(e2).name),
+                    );
                 });
 
                 var visuals = CATEGORY_VISUALS[i];

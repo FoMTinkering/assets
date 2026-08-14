@@ -108,8 +108,6 @@ function Display() constructor {
         //
         //
         //
-        //
-        gpu_set_srgb_blending(os_type == "macos");
         gpu_disable_blending();
 
         //
@@ -132,9 +130,6 @@ function Display() constructor {
         );
         gpu_reset_extra();
         gpu_enable_blending();
-
-        //
-        gpu_set_srgb_blending(true);
     }
 
     function inverse_asset_resize() {

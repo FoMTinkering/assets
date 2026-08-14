@@ -84,7 +84,7 @@ function quest_parse_file(quests, f, category) {
 function parse_quest(f_quest) {
     var quest = new Quest();
 
-    if !DEBUG_ASSERTIONS {
+    if DEBUG_ASSERTIONS == false {
         f_quest[$ "name"] = f_quest[$ "name"] == undefined ? "misc_local/missing" : f_quest[$ "name"];
         f_quest[$ "description"] = f_quest[$ "description"] == undefined ? "misc_local/missing" : f_quest[$ "description"]
         f_quest[$ "npc_for_icon"] =  f_quest[$ "npc_for_icon"] == undefined ? "celine" : f_quest[$ "npc_for_icon"]

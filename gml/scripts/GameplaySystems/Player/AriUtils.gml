@@ -468,54 +468,62 @@ function ari_teleport_to_room(destination_location, destination_x, destination_y
             return CURRENT_LOCATION_ID == destination_location;
         }, [destination_location])
         .append(LinkId.Function, function() {
-            //
-            obj_ari.set_cardinal(Cardinal.South);
-            obj_ari.fsm.change_state(PlayerState.Dummy);
-            if ARI.held_animal_id == undefined
-                && (ARI.held_item() == undefined || ARI.held_item().prototype.hold_over_head == false)
-            {
-                obj_ari.par.set_animation(AnimationName.Celebrate);
-                obj_ari.par.set_base_hold_on_last_frame();
+            if MIST.is_running() == false {
+                //
+                obj_ari.set_cardinal(Cardinal.South);
+                obj_ari.fsm.change_state(PlayerState.Dummy);
+                if ARI.held_animal_id == undefined
+                    && (ARI.held_item() == undefined || ARI.held_item().prototype.hold_over_head == false)
+                {
+                    obj_ari.par.set_animation(AnimationName.Celebrate);
+                    obj_ari.par.set_base_hold_on_last_frame();
+                }
+
+                shadow_caster_set_alpha(obj_ari.shadow_caster, 0.0);
+                //
+                obj_ari.image_alpha = 0.0;
+                obj_ari.par.alpha = 0.0;
+
+                create_animation_effect(
+                    obj_ari.x,
+                    obj_ari.y,
+                    -10000,
+                    spr_fx_teleport_appear
+                );
+                TANGO.play("SoundEffects/Entrances/TeleportEnd", obj_ari.x, obj_ari.y);
             }
-
-            shadow_caster_set_alpha(obj_ari.shadow_caster, 0.0);
-            //
-            obj_ari.image_alpha = 0.0;
-            obj_ari.par.alpha = 0.0;
-
-            create_animation_effect(
-                obj_ari.x,
-                obj_ari.y,
-                -10000,
-                spr_fx_teleport_appear
-            );
-            TANGO.play("SoundEffects/Entrances/TeleportEnd", obj_ari.x, obj_ari.y);
         })
         .append(LinkId.Timer, 49)
         .append(LinkId.Function, function() {
-            shadow_caster_set_alpha(obj_ari.shadow_caster, 1.0);
-            obj_ari.image_alpha = 1.0;
-            obj_ari.par.alpha = 1.0;
+            if MIST.is_running() == false {
+                shadow_caster_set_alpha(obj_ari.shadow_caster, 1.0);
+                obj_ari.image_alpha = 1.0;
+                obj_ari.par.alpha = 1.0;
 
-            //
-            obj_ari.par.blend = {
-                src_mode: bm_src_alpha,
-                dest_mode: bm_inv_src_alpha,
-                color: c_white,
-                alpha: 1.0,
-            };
+                //
+                obj_ari.par.blend = {
+                    src_mode: bm_src_alpha,
+                    dest_mode: bm_inv_src_alpha,
+                    color: c_white,
+                    alpha: 1.0,
+                };
+            }
         })
         .append(LinkId.Ease, new Ease(EaseId.Linear, 1.0, 0.0, 45), function(_, ab) {
-            obj_ari.par.blend = {
-                src_mode: bm_src_alpha,
-                dest_mode: bm_inv_src_alpha,
-                color: c_white,
-                alpha: floor(ab * 10.0) / 10.0,
-            };
+            if MIST.is_running() == false {
+                obj_ari.par.blend = {
+                    src_mode: bm_src_alpha,
+                    dest_mode: bm_inv_src_alpha,
+                    color: c_white,
+                    alpha: floor(ab * 10.0) / 10.0,
+                };
+            }
         })
         .append(LinkId.Function, function() {
             obj_ari.par.blend = undefined;
-            obj_ari.fsm.change_state(PlayerState.Default);
+            if MIST.is_running() == false {
+                obj_ari.fsm.change_state(PlayerState.Default);
+            }
             obj_ari.par.set_base_loop();
         });
 }
@@ -567,8 +575,23 @@ function mouse_cardinal() {
 }
 
 function date_eligible_for_wedding(time) {
+    //
+    static BANNED_DATES = [
+        { season: Season.Spring, day: 14 },
+        { season: Season.Fall, day: 7 },
+        { season: Season.Winter, day: 7 },
+    ];
+
     var season = get_seasons(time);
     var day = get_days(time);
+
+    for (var i = 0; i < array_length(BANNED_DATES); i++) {
+        var banned = BANNED_DATES[i];
+        if banned.season == season && banned.day - 1 == day {
+            return false;
+        }
+    }
+
     for (var i = 0; i < FestivalId.LEN; i++) {
         var festival = FESTIVALS[i];
         if !festival.prototype.implemented {

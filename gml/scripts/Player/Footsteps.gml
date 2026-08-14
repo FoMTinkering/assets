@@ -67,7 +67,7 @@ function try_play_footstep_at_position(xx, yy, cardinality, running, mount_cycle
                     tango_asset = data.mount_walk_sound;
                 }
                 break;
-            default: impossible("unexpected `{}`, mount_cycle");
+            default: impossible("unexpected `{}`, mount_cycle", mount_cycle);
         }
         TANGO.play(tango_asset, xx, yy);
     }

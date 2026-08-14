@@ -48,6 +48,7 @@ function TaxiItinerary(gm_room, dyn_index) {
         arrival_callback: undefined,
         arrival_callback_args: [],
         run_prologue: false,
+        new_dungeon_runner: undefined,
         mines: undefined,
         set_arrival_callback: function(func, args) {
             self.arrival_callback_args = args == undefined ? [] : args;
@@ -304,6 +305,10 @@ function Taxi() constructor {
     //
     function depart() {
         if self.room_swap_request != undefined {
+            if self.itinerary.new_dungeon_runner != undefined {
+                DUNGEON_RUNNER = self.itinerary.new_dungeon_runner;
+            }
+
             if self.itinerary.mines != undefined {
                 DUNGEON_RUNNER.post_proceed(self.itinerary.mines);
             }

@@ -18,7 +18,6 @@ enum UberShaderKind {
     Sepia = 13,
     StarPunchOut = 14,
     Circle = 15,
-    NoSrgb = 16,
     NormalPostPost = 17,
 }
 

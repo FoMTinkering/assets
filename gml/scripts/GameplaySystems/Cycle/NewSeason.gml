@@ -57,7 +57,9 @@ function new_season() {
     }
 
     //
-    spawn_new_season_colliders(GRIDS[LocationId.Farm]);
+    if ARI.perk_active(Perk.DeliberateDebrisTwo) == false {
+        spawn_new_season_colliders(GRIDS[LocationId.Farm]);
+    }
 
     trace(
         "Progressed to {Season} (and it took {micro} to get there)",

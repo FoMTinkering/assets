@@ -125,6 +125,13 @@ object_create(
             }
         },
         destroy: function() {
+            if self.tarball != undefined && instance_exists(self.tarball) {
+                instance_destroy(self.tarball);
+            }
+            if self.receiver != undefined && instance_exists(self.receiver) {
+                instance_destroy(self.receiver);
+            }
+
             if self.captured {
                 return;
             }
@@ -139,13 +146,6 @@ object_create(
             TANGO.play("SoundEffects/Objects/Explosion", x, y);
 
             spawn_particle_rockclod_bundle(x, y, depth, self.rock_particle);
-
-
-            if self.tarball != undefined && instance_exists(self.tarball) {
-                instance_destroy(self.tarball);
-            }
-
-            instance_destroy(self.receiver);
         },
         cleanup: function() {
             SHADOW_GRID.caster_remove(self.shadow_caster);

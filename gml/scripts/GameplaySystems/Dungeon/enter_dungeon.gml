@@ -1,8 +1,9 @@
 //
 function enter_dungeon(start_floor=0, length=undefined, should_skip=false) {
     var itinerary = create_dungeon_itinerary(length);
-    DUNGEON_RUNNER = new DungeonRunner(itinerary, start_floor);
-    goto_gm_room(DUNGEON_RUNNER.current_level().gm_room, TEST_SUITE || should_skip);
+    var new_runner = new DungeonRunner(itinerary, start_floor);
+    var itinerary = goto_gm_room(new_runner.current_level().gm_room, TEST_SUITE || should_skip);
+    itinerary.new_dungeon_runner = new_runner;
 }
 
 //

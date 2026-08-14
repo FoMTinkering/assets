@@ -144,7 +144,7 @@ function define_std(_runtime) {
         });
 
         create_function("__error", function(_msg) {
-            crash(_msg);
+            crash("{}", _msg);
         });
 
         create_function("__label", function(_name) {

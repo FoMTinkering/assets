@@ -82,7 +82,6 @@ var game_obj = object_create(
                     gpu_push_group("lights");
                 }
 
-                gpu_set_srgb_blending(false);
                 var is_dark_mines = in_dark_mines();
 
                 //
@@ -274,7 +273,6 @@ var game_obj = object_create(
                     ),
                     final_write_strength,
                 );
-                gpu_set_srgb_blending(true);
                 gpu_set_blendmode_ext(bm_src_alpha, bm_inv_src_alpha);
                 gpu_disable_stencil();
                 gpu_reset_extra();
@@ -615,10 +613,10 @@ var game_obj = object_create(
         },
         draw: function() {
             draw_extra_shadow_maps();
-            WEATHER.on_draw();
             if POST_PROCESS != undefined && POST_PROCESS.should_post_process {
                 self.draw_lights();
             }
+            WEATHER.on_draw();
         },
         room_start: function() {
             var start_time = get_timer();

@@ -16,9 +16,9 @@ function PopupMenu() : AnchorMenu(Menu.Popup) constructor {
             if index == undefined {
                 var err_msg = "A popup was somehow not in the open menu list!";
                 if DEBUG_ASSERTIONS {
-                    crash(err_msg);
+                    crash("{}", err_msg);
                 } else {
-                    warn(err_msg);
+                    warn("{}", err_msg);
                     tattletale_report_error_without_panic(err_msg, "");
                 }
             }
@@ -26,9 +26,9 @@ function PopupMenu() : AnchorMenu(Menu.Popup) constructor {
             if index != popup_stack.count() - 1 {
                 var err_msg = "A popup not at the top of the stack was asked to close!";
                 if DEBUG_ASSERTIONS {
-                    crash(err_msg);
+                    crash("{}", err_msg);
                 } else {
-                    warn(err_msg);
+                    warn("{}", err_msg);
                     tattletale_report_error_without_panic(err_msg, "");
                 }
             }
@@ -234,9 +234,9 @@ function PopupMenu() : AnchorMenu(Menu.Popup) constructor {
         if self.spawned {
             var err_msg = "Attempted to spawn a popup that was already spawned!";
             if DEBUG_ASSERTIONS {
-                crash(err_msg);
+                crash("{}", err_msg);
             } else {
-                warn(err_msg);
+                warn("{}", err_msg);
                 tattletale_report_error_without_panic(err_msg, "");
                 return;
             }

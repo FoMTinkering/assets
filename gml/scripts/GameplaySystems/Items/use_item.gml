@@ -234,11 +234,7 @@ function use_item(item, target_pos) {
         case ItemUse.Bait:
             var pos = obj_ari.cell_select.clone();
 
-            if GRID.item_effects_node_at_cell(pos.x, pos.y, item.prototype) == false
-                || GRID.item_effects_node_at_cell(pos.x + 1, pos.y, item.prototype) == false
-                || GRID.item_effects_node_at_cell(pos.x, pos.y + 1, item.prototype) == false
-                || GRID.item_effects_node_at_cell(pos.x + 1, pos.y + 1, item.prototype) == false
-            {
+            if GRID.item_effects_node_at_cell(pos.x, pos.y, item.prototype) == false {
                 break;
             }
 

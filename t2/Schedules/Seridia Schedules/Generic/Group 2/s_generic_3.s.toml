@@ -4,7 +4,6 @@ requires = [
 	{ seridia_is_human = true },
 	{ seridia_counter = 2 }
 ]
-end_writes = [{ seridia_counter = 0 }]
 
 # Seridia
 [seridia."6:00am"]
@@ -31,3 +30,4 @@ on_arrival_actions = [{ routine = "seridia_gold" }]
 [seridia."11:12pm"]
 destination = "seridias_house_back/Seridia Throne"
 on_arrival_actions = [{ activity = "drink" }]
+on_departure_writes = [{ seridia_counter = 0 }]

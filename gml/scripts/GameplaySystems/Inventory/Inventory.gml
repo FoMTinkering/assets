@@ -62,15 +62,20 @@ function __Inventory() constructor {
     }
 
     //
+    //
     static add = function(item, count=1) {
         var proto = is_struct(item) ? item.prototype : ITEM_PROTOTYPES[item];
         var remaining = count;
         while remaining > 0 {
             var slot = self.slot_for_item(item);
+            if slot == undefined {
+                break;
+            }
             var to_add = slot.one_slot ? 1 : min(remaining, proto.max_stack - slot.count);
             remaining -= to_add;
             slot.add(item, to_add);
         }
+        return remaining;
     }
 
     //
@@ -110,7 +115,8 @@ function __Inventory() constructor {
             count = min(count, limit - currently_held);
         }
 
-        return count;
+        //
+        return max(count, 0);
     }
 
     //
@@ -135,6 +141,20 @@ function __Inventory() constructor {
         //
         //
         return backup_slot;
+    }
+
+    //
+    //
+    static slot_with_item = function(item) {
+        item = is_struct(item) ? item : new LiveItem(item);
+        var size = self.size();
+        for (var i = 0; i < size; i++) {
+            var slot = self.slot(i);
+            if slot.count != 0 && slot.item.partial_eq(item) {
+                return slot;
+            }
+        }
+        return undefined;
     }
 
     //
@@ -219,9 +239,7 @@ function __Inventory() constructor {
                 slot.count = array_length(slot_data.members);
             } else {
                 slot.item = opt_and_then(slot_data.item, deserialize_live_item);
-                if slot.item != undefined {
-                    slot.count = slot_data.count;
-                }
+                slot.count = slot.item != undefined ? slot_data.count : 0;
             }
         }
     }
@@ -232,7 +250,24 @@ function __Inventory() constructor {
         //
         //
         self.drain().for_each(function(e) {
-            self.add(e);
+            if self.add(e) == 0 {
+                return;
+            }
+
+            if DEBUG_ASSERTIONS {
+                crash("Somehow failed to add {} in during sorting!", e);
+            } else {
+                //
+                //
+                var slot = self.slot_with_item(e);
+                if slot == undefined {
+                    error("Sorting had nowhere to put {}, so it has been lost!", e);
+                    return;
+                }
+                error("Sorting found more {} than we can hold -- over-stacking it.", e);
+                slot.add(e, 1);
+            }
+
         });
 
         //
@@ -299,12 +334,38 @@ function InventorySlot(index, inventory) constructor {
 
     //
     function add(item, count=1) {
+        if count < 0 {
+            var message = format("Slot {} was asked to add {} items!", self.index, count);
+            if DEBUG_ASSERTIONS {
+                crash("{}", message);
+            } else {
+                warn("{}", message);
+            }
+            return;
+        }
+
         if self.item == undefined {
             self.item = is_struct(item) ? item : new LiveItem(item);
         }
         //
         self.count += count;
         self.updates += 1;
+
+        var maximum = self.one_slot ? 1 : self.item.prototype.max_stack;
+        if self.count > maximum {
+            var message = format(
+                "Slot {} was given {} {}, putting it over its stack limit of {}!",
+                self.index,
+                self.count,
+                self.item.get_display_name(),
+                maximum,
+            );
+            if DEBUG_ASSERTIONS {
+                crash("{}", message);
+            } else {
+                warn("{}", message);
+            }
+        }
     }
 
     //
@@ -328,6 +389,16 @@ function InventorySlot(index, inventory) constructor {
 
     //
     function remove(amount) {
+        if amount < 0 {
+            var message = format("Slot {} was asked to remove {} items!", self.index, amount);
+            if DEBUG_ASSERTIONS {
+                crash("{}", message);
+            } else {
+                warn("{}", message);
+            }
+            amount = 0;
+        }
+
         self.updates += 1;
         self.count -= amount;
         if self.count <= 0 {
@@ -353,7 +424,7 @@ function InventorySlot(index, inventory) constructor {
     function room_for_item(item) {
         item = is_struct(item) ? item : new LiveItem(item);
 
-        if !self.valid_for(item) || (self.count != 0 && !self.item.partial_eq(item)) {
+        if !self.valid_for(item) || (self.count != 0 && (self.item == undefined || !self.item.partial_eq(item))) {
             return 0;
         }
 
@@ -368,7 +439,8 @@ function InventorySlot(index, inventory) constructor {
             maximum = min(maximum, limit);
         }
 
-        return maximum;
+        //
+        return max(maximum, 0);
     }
 
     //

@@ -417,7 +417,7 @@ function create_req_check() {
             }
             case Requirement.ReceivedLetter: return function(input) {
                 for (var i = 0; i < array_length(input); i++) {
-                    if !ARI.inbox.contents.contains(input[i]) {
+                    if !ARI.inbox.contains(input[i]) {
                         return false;
                     }
                 }
@@ -673,7 +673,7 @@ function create_req_check() {
             }
             case Requirement.HasChildAtAge: return function(age) {
                 for (var i = 0; i < array_length(ARI.children); i++) {
-                    if CALENDAR.year() - get_years(ARI.children[i].birthday) > 1 {
+                    if CALENDAR.year() - get_years(ARI.children[i].birthday) >= 1 {
                         return true;
                     }
                 }

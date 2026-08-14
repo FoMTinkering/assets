@@ -87,7 +87,7 @@ function BuggerMenu() : AnchorMenu(Menu.Bugger) constructor {
         self.cli_log.set_text(text);
 
         if !steam_on_deck() {
-            trace(str);
+            trace("{}", str);
         }
     }
 

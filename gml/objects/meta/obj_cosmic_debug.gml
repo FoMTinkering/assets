@@ -64,7 +64,6 @@ var cosmic_debug_obj = object_create(
             show_grow_back_sections = false;
 
             transforms = false;
-            trigger_crash = undefined;
 
             bird_landing_positions = false;
 
@@ -1115,10 +1114,6 @@ var cosmic_debug_obj = object_create(
                     draw_circle_color(x, y, config.inner_aggro_radius, c_red, c_red, false);
                 }
                 draw_set_alpha(1);
-            }
-
-            if trigger_crash != undefined {
-                crash(trigger_crash);
             }
 
             gpu_reset_extra();

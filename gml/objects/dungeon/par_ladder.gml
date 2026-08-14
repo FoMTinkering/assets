@@ -173,8 +173,8 @@ object_create(
                             enter_dungeon();
                         } else {
                             DUNGEON_RUNNER.proceed("descended");
-                            obj_ari.fsm.change_state(PlayerState.Dummy);
                         }
+                        obj_ari.fsm.change_state(PlayerState.Dummy);
                     },
                     can_interact,
                 );

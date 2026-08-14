@@ -799,14 +799,14 @@ enum AnnoyingItem {
 //
 function string_to_item_id_or_unknown(str) {
     var item_id;
-    if !DEBUG_ASSERTIONS {
+    if DEBUG_ASSERTIONS {
+        item_id = string_to_item_id(str);
+    } else {
         item_id = try_string_to_item_id(str);
         if item_id == undefined {
             error("Deserializing unexpected item_id: `{}`. replacing with unknown item...", str);
             item_id = ItemId.UnknownItem;
         }
-    } else {
-        item_id = string_to_item_id(str);
     }
     return item_id;
 }

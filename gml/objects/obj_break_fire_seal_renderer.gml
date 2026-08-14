@@ -32,6 +32,10 @@ object_create(
             }
         },
         step_end: function() {
+            if !instance_exists(self) {
+                return;
+            }
+            
             if self.black_alpha != 0 {
                 with obj_caldarus {
                     if MIST.blackboard.get("draw_cal_over_black") == true {
@@ -44,6 +48,10 @@ object_create(
             }
         },
         draw: function() {
+            if !instance_exists(self) {
+                return;
+            }
+
             if !MIST.is_running() {
                 if self.scroll != undefined && instance_exists(self.scroll) {
                     instance_destroy(self.scroll);
@@ -222,6 +230,9 @@ object_create(
         },
         draw_end: function() {
             //
+            if !instance_exists(self) {
+                return;
+            }
 
 
             if self.caldarus_sprite != undefined {

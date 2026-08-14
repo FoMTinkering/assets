@@ -468,6 +468,13 @@ function Npc(idx, brain) constructor {
         T2R.write(format("{NpcId}_is_partner", self.id), matches(status, "dating", "fiance", "spouse"));
         T2R.write("has_spouse", ARI.spouse() != undefined);
         T2R.write("has_fiance", ARI.fiance() != undefined);
+
+        refresh_achievements([
+            Requirement.HasSpouse,
+            Requirement.HasBestFriend,
+            Requirement.HasPartner,
+            Requirement.IsDating,
+        ]);
     }
 
     function give_gift(item) {
@@ -755,7 +762,19 @@ function Npc(idx, brain) constructor {
 
         //
         var schedule_name = value.schedule_name;
-        T2R.schedule_reload(self.id, schedule_name, CLOCK.time, value.had_arrived);
+        if schedule_name == "Schedules/Dragon Town Schedules/FNATI/fnati_0_dragon" {
+            schedule_name = "Schedules/Dragon Town Schedules/FNATI/fnati_5_dragon";
+        }
+        var output = T2R.schedule_reload(self.id, schedule_name, CLOCK.time, value.had_arrived);
+        if output == undefined {
+            tattletale_report_error_without_panic(
+                "Failed to deserialize schedule",
+                format("Couldn't find a schedule of the given name `{}`! Defaulting back to basement schedule...find them in Aldaria", schedule_name),
+            );
+            T2R.schedule_start(self.id, "Schedules/basement_schedule");
+            var pt = trellis_point_find_by_name(rm_aldaria, "default");
+            self.location_position = new LocationPosition(LocationId.Aldaria, Vec2(pt.x, pt.y));
+        }
     }
 
 }

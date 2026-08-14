@@ -450,7 +450,7 @@ TS_TESTS.push({
         chain.append(LinkId.Function, function() {
             var errors = local_validate_macros();
             if errors != undefined {
-                crash(errors);
+                crash("{}", errors);
             }
         })
     }
@@ -2496,11 +2496,15 @@ TS_TESTS.push({
     name: "dungeons",
     run_once: true,
     call: function(chain) {
-        chain.append(LinkId.Function, function(chain) {
+        chain.append(LinkId.Function, function() {
             randomize();
             trace("Starting a dungeon run with random seed {}", random_get_seed());
             enter_dungeon(0, DUNGEON_FLOOR_COUNT);
-
+        })
+        .append(LinkId.Await, function() {
+            return DUNGEON_RUNNER != undefined;
+        })
+        .append(LinkId.Function, function(chain) {
             var count = DUNGEON_FLOOR_COUNT;
             for (var i = 0; i < array_length(DUNGEON_RUNNER.side_levels); i++) {
                 if DUNGEON_RUNNER.side_levels[i] != undefined {

@@ -476,6 +476,20 @@ function setup_room() {
         }
     }
 
+    if CURRENT_LOCATION_ID == LocationId.MinesEntry {
+        with obj_assetobject {
+            if self.sprite_index == spr_narrows_mines_entry_cave_main_sealed {
+                if MIST.scene_history.contains("march_eight_hearts") {
+                    self.sprite_index = spr_narrows_mines_entry_cave_main_re_sealed;
+                    self.flavor_information = FLAVOR_TEXT.get(asset_to_string(self.sprite_index));
+                }
+                if MIST.is_running() && MIST.active_cutscene.id == "march_eight_hearts" {
+                    self.sprite_index = spr_narrows_mines_entry_cave_main_open;
+                }
+            }
+        }
+    }
+
     if MIST.is_running() && MIST.active_cutscene.id == "wedding" {
         var flower_fact = T2R.read("wedding_flower_color") ?? "white";
         var flower_lay = format("Level_0_Assets_Wedding_Flowers_{}", flower_fact);

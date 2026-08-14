@@ -129,6 +129,13 @@ function InventoryMenu(row_length, inventory, pilot, use_buy_numbers=false, filt
             if ANCHOR.in_directional_control() {
                 var pilot = ANCHOR.get_active_pilot();
                 var slot = pilot.get();
+
+                //
+                //
+                if slot == undefined {
+                    return;
+                }
+
                 var true_pos = ANCHOR.get_screen_position(slot);
                 icon.set_xy(
                     true_pos.x + slot.get_width() - 5,
@@ -407,12 +414,15 @@ function InventoryMenu(row_length, inventory, pilot, use_buy_numbers=false, filt
                 }
 
                 if deposit_items {
-                    var amount = secondary_behavior
-                        ? 1
-                        : min(hand_count, our_slot.room_for_item(hand_item));
-                    our_slot.add(hand_item, amount);
-                    hand_slot.remove(amount);
-                    self.hand_node.source_inventory = self.inventory;
+                    var amount = min(
+                        secondary_behavior ? 1 : hand_count,
+                        our_slot.room_for_item(hand_item),
+                    );
+                    if amount > 0 {
+                        our_slot.add(hand_item, amount);
+                        hand_slot.remove(amount);
+                        self.hand_node.source_inventory = self.inventory;
+                    }
                 }
                 break;
             case InventoryAction.Transfer:
@@ -424,8 +434,8 @@ function InventoryMenu(row_length, inventory, pilot, use_buy_numbers=false, filt
                     self.pair.room_for_item(transfer_item),
                     secondary_behavior ? 1 : transfer_count,
                 );
-                self.pair.add(transfer_item, amount_to_transfer);
-                transfer_slot.remove(amount_to_transfer);
+                var not_transferred = self.pair.add(transfer_item, amount_to_transfer);
+                transfer_slot.remove(amount_to_transfer - not_transferred);
                 break;
         }
 

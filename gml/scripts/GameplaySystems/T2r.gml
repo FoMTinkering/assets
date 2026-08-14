@@ -361,12 +361,19 @@ function T2r() constructor {
 
     //
     function schedule_reload(npc_id, schedule_name, time, had_arrived) {
-        return self.parse_t2_output(t2_schedule_reload(npc_id_to_string(npc_id), schedule_name, time, had_arrived));
+        var output = t2_schedule_reload(npc_id_to_string(npc_id), schedule_name, time, had_arrived);
+        if output == undefined {
+            return undefined;
+        } else {
+            return self.parse_t2_output(output);
+        }
     }
 
     //
-    function schedule_end(npc_id, expect_early=false) {
-        return self.parse_t2_output(t2_schedule_end(npc_id_to_string(npc_id), CALENDAR.unified_time(), expect_early));
+    function schedule_end(npc_id, expect_early=false, skip_end_writes=false) {
+        return self.parse_t2_output(
+            t2_schedule_end(npc_id_to_string(npc_id), CALENDAR.unified_time(), expect_early, skip_end_writes)
+        );
     }
 
     //
@@ -966,7 +973,10 @@ function parse_t2_world_fact(raw_wf) {
         case "string":
             return string(raw_wf.content);
         case "float":
-            return real(raw_wf.content);
+            //
+            //
+            //
+            return real(raw_wf.content ?? 0);
         case "undefined":
             return undefined;
         case "i64":
@@ -1292,7 +1302,12 @@ function perform_schedule_swap(npc_id, schedule_name, finish, time_target) {
             }
         }
 
-        T2R.schedule_end(npc_id);
+        //
+        //
+        //
+        //
+        //
+        T2R.schedule_end(npc_id, false, true);
     }
 
     //

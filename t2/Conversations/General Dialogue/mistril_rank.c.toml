@@ -243,7 +243,14 @@ local = "You're a real star!"
 [mistril_rank_josephine]
 priority = "max"
 refresh = "never"
-requires = [{ npc = "josephine" }, { mistril_rank = true }]
+requires = [
+	{ npc = "josephine" },
+	{ mistril_rank = true },
+	{ any = [
+		{ animal_festival_today = false },
+		{ jo_explained_animal_festival = true },
+	] },
+]
 actions = [{ bark = { bark = "cute_face", npc = "josephine" } }]
 portrait = "happy"
 local = "That was splendid, [Ari]!"

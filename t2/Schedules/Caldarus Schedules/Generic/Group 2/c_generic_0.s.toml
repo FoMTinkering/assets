@@ -3,7 +3,7 @@ requires = [
 	{ caldarus_home = true },
 	{ caldarus_counter = 2 }
 ]
-end_writes = [{ caldarus_counter = 0 }]
+
 
 # Caldarus
 [caldarus."6:00am"]
@@ -28,3 +28,4 @@ on_arrival_actions = [{ routine = "caldarus_house_reading" }]
 [caldarus."10:18pm"]
 destination = "caldarus_house/Caldarus Wake Point"
 on_arrival_actions = [{ animation = "eyes_closed" }]
+on_departure_writes = [{ caldarus_counter = 0 }]

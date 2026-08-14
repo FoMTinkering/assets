@@ -5,7 +5,6 @@ requires = [
 	{ seridia_counter = 2 },
 	{ season = "summer", comparator = "!=", ignore_priority = true }
 ]
-end_writes = [{ seridia_counter = 0 }]
 
 # Seridia
 [seridia."6:00am"]
@@ -23,3 +22,4 @@ on_arrival_actions = [{ routine = "seridia_dig_site_wander" }]
 [seridia."9:12pm"]
 destination = "seridias_house_back/Seridia Throne"
 on_arrival_actions = [{ activity = "drink" }]
+on_departure_writes = [{ seridia_counter = 0 }]

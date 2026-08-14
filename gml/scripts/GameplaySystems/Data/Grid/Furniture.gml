@@ -842,10 +842,10 @@ function write_furniture_to_location(grid, xx, yy, proto, stack_count, rotation=
             IN_HOUSE_STAIR_SEGMENT = true;
             var success_object = GRIDS[corresponding_room].write_node(node.top_left_x, node.top_left_y, node.prototype.house_stairs.paired_object, rotation);
             if success_object == undefined {
-                if !DEBUG_ASSERTIONS {
-                    error("Failed to write the upper staircase! This could be a game-breaking error");
-                } else {
+                if DEBUG_ASSERTIONS {
                     crash("failed to write upper staircase!");
+                } else {
+                    error("Failed to write the upper staircase! This could be a game-breaking error");
                 }
             }
             IN_HOUSE_STAIR_SEGMENT = false;
@@ -2138,7 +2138,14 @@ function furniture_chest_add_items(items_list, chest) {
     chest.renderer.sprite_index = chest.prototype.interaction_chest.bounce_sprite;
 
     for (var i = 0; i < items_list.count(); i++) {
-        chest.inventory.add(items_list.get(i));
+        var item = items_list.get(i);
+        if chest.inventory.add(item) > 0 {
+            if ARI.inventory.can_add(item) {
+                ARI.inventory.add(item);
+            } else {
+                drop_item(item, obj_ari.x, obj_ari.y);
+            }
+        }
     }
 }
 
@@ -2271,4 +2278,33 @@ function sprinkler_exit_room() {
             }
         }
     }
+}
+
+//
+//
+//
+//
+//
+function animals_using_toy(node) {
+    var count = 0;
+
+    //
+    with obj_player_animal {
+        if self.fsm.current_state_id() == AnimalState.UsingToy
+            && self.fsm.current_state().toy == node
+        {
+            count += 1;
+        }
+    }
+
+    //
+    with obj_pet {
+        if self.fsm.current_state_id() == PetState.UsingToy
+            && self.fsm.current_state().toy == node
+        {
+            count += 1;
+        }
+    }
+
+    return count;
 }

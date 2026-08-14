@@ -725,8 +725,8 @@ object_create(
                     helper.normalized();
                     helper.set_scale(last_safe_distance);
 
-                    self.jump_goal.x = x + helper.x;
-                    self.jump_goal.y = y + helper.y;
+                    self.jump_goal.x = floor(x + helper.x);
+                    self.jump_goal.y = floor(y + helper.y);
                 }
             }
 
@@ -1489,6 +1489,12 @@ object_create(
                     //
                     with self.fsm.current_state() {
                         mounted_par_offsets(self.in_idle_variant);
+                        self.mount_cycle_override = undefined;
+                        if ARI.mount.variant == "giant_chicken_white"
+                            || ARI.mount.variant == "giant_chicken_gold"
+                        {
+                            self.mount_cycle_override = MountCycle.Back;
+                        }
                     }
                 }
             }
@@ -2005,7 +2011,7 @@ object_create(
             gpu_set_depth_sub_offset(64);
             fsm.draw();
             gpu_set_depth_sub_offset(0);
-            
+
             var ratio = DISPLAY.asset_resize();
             var draw_x = floor((x + self.par_offset.x) * ratio) / ratio;
             var draw_y = floor((y + self.par_offset.y + z) * ratio) / ratio;

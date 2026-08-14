@@ -135,18 +135,18 @@ function Grid(cell_width, cell_height, location_id, dyn_index=undefined) constru
 
                     return true;
                 } else {
-                    var left = self.try_node_index_for_cell(xx + 1, yy);
+                    var right = self.try_node_index_for_cell(xx + 1, yy);
                     var bottom = self.try_node_index_for_cell(xx, yy + 1);
                     var bottom_right = self.try_node_index_for_cell(xx + 1, yy + 1);
 
                     //
                     //
-                    if left == undefined || bottom == undefined || bottom_right == undefined {
+                    if right == undefined || bottom == undefined || bottom_right == undefined {
                         return false;
                     }
 
                     return self.node_terrain_kind[ni] == TerrainKind.Water
-                        || self.node_terrain_kind[left] == TerrainKind.Water
+                        || self.node_terrain_kind[right] == TerrainKind.Water
                         || self.node_terrain_kind[bottom] == TerrainKind.Water
                         || self.node_terrain_kind[bottom_right] == TerrainKind.Water;
                 }
@@ -1074,11 +1074,11 @@ function Grid(cell_width, cell_height, location_id, dyn_index=undefined) constru
             //
             var object_id = try_string_to_object_id(obj.object_id);
             if object_id == undefined {
-                if !DEBUG_ASSERTIONS {
+                if DEBUG_ASSERTIONS {
+                    crash("Unexpected ObjectId name `{}`, did not match any ids", obj.object_id)
+                } else {
                     error("Unexpected object name: `{}`. ignoring...", obj.object_id);
                     continue;
-                } else {
-                    crash("Unexpected ObjectId name `{}`, did not match any ids", obj.object_id)
                 }
             }
             var category = object_id_to_object_category(object_id);

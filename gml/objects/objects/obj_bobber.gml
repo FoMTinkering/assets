@@ -26,14 +26,6 @@ object_create(
                 sprite_index = _sprite;
                 image_index = 0;
             }
-            function fish_escape() {
-                if self.bait_prototype == undefined {
-                    self.anim_effects.push(
-                        create_animation_effect_on_object(obj_bobber, spr_fx_reel_fish_splash_top, -1, 0)
-                    );
-                    self.set_sprite(spr_tool_lure_old_water_idle);
-                }
-            }
 
             //
             //
@@ -286,7 +278,7 @@ object_create(
                         );
 
                         //
-                        if self.owner.sprite_index == spr_tool_lure_old_bite_start {
+                        if self.owner.sprite_index == spr_tool_lure_old_bite_loop {
                             with self.owner {
                                 draw_sprite(spr_fx_lure_bite_loop, self.image_index, self.x, self.y);
                             }
@@ -432,11 +424,15 @@ object_create(
                         ae.lifetime_frames = (48 / 40) * 60;
                         self.anim_effects.push(ae);
                         nibble_data.kind = FishingEvent.None;
+                        self.set_sprite(spr_tool_lure_old_bite_start);
+                        break;
+                    case FishingEvent.Missed:
+                        self.set_sprite(spr_tool_lure_old_bite_end);
+                        nibble_data.kind = FishingEvent.None;
                         break;
                     case FishingEvent.Caught:
                         self.fsm.blackboard.set("icon", nibble_data.value.item.get_ui_icon());
                         self.fsm.blackboard.set("fish_size", nibble_data.value.size);
-                        self.set_sprite(spr_tool_lure_old_bite_start);
                         nibble_data.kind = FishingEvent.None;
                         break;
                 }
@@ -463,7 +459,7 @@ object_create(
                     self.set_sprite(spr_tool_lure_old_bite_loop);
                     break;
                 case spr_tool_lure_old_bite_end:
-                    self.set_sprite(spr_tool_lure_old_cast);
+                    self.set_sprite(spr_tool_lure_old_water_idle);
                     break;
             }
         },

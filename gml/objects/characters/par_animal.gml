@@ -157,7 +157,7 @@ object_create(
                 self.bark_emitter.x_offset = bark_offsets[self.me.cardinality].x;
                 self.bark_emitter.y_offset = bark_offsets[self.me.cardinality].y;
 
-                if ARI.held_animal_id == self.me.idx {
+                if ARI.held_animal_id == self.me.idx && instance_exists(obj_ari) {
                     var par = obj_ari.par;
                     var slot = par.slots[AnimationSlot.HeldItem];
                     var left_arm_slot = par.slots[AnimationSlot.BaseArmLeft];

@@ -6,9 +6,21 @@ enum ShrineMenuVariant {
 }
 
 function DragonShrineMenu(variant) : AnchorMenu(Menu.DragonShrine) constructor {
+    self.chain = undefined;
+
     //
     function on_free() {
+        self.cancel_transition();
         ANCHOR.free_node(self.essence_backplate);
+    }
+
+    function cancel_transition() {
+        if self.chain != undefined {
+            if self.chain.running {
+                CHAINS.cancel_chain(self.chain);
+            }
+            self.chain = undefined;
+        }
     }
 
     //
@@ -352,6 +364,7 @@ function DragonShrineMenu(variant) : AnchorMenu(Menu.DragonShrine) constructor {
 
     //
     function transition(target_state, build_function, args) {
+        self.cancel_transition();
         self.state = DragonShrineState.Transition;
         self.lock();
         ANCHOR.release_active_pilot();
@@ -430,6 +443,8 @@ function DragonShrineMenu(variant) : AnchorMenu(Menu.DragonShrine) constructor {
     });
 
     function on_close() {
+        self.cancel_transition();
+
         if !ari_has_recipe_anywhere(ItemId.BigBell) && ARI.perks[Perk.TheBellTolls] {
             if instance_exists(obj_dragonshrine) {
                 item_from_critical_poof(

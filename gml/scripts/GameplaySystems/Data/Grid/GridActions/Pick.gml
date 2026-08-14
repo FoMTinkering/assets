@@ -53,7 +53,7 @@ function can_pick_node(grid, ni, item_quality) {
             }
 
             if node_parent.prototype.animal_toy != undefined
-                && node_parent.animal_count > 0
+                && animals_using_toy(node_parent) > 0
             {
                 return false;
             }
@@ -450,7 +450,7 @@ function pick_node(grid, x_pos, y_pos, item, modifier, effect_override, doppel, 
             //
             if cannot_destroy
                 || array_contains(node.prototype.placeable_locations, CURRENT_LOCATION_ID) == false
-                || (node.prototype.animal_toy != undefined && node.animal_count > 0)
+                || (node.prototype.animal_toy != undefined && animals_using_toy(node) > 0)
             {
                 doppel.play_bad(pick_sfx.inadequate.sfx, node.renderer.x, node.renderer.y);
                 CAMERA.add_trauma(pick_sfx.inadequate.cam_trauma);

@@ -22,6 +22,13 @@ object_create(
             self.layer_vel = Vec2Zero();
             self.layer_pos = Vec2Zero();
 
+            function namebox_is_gone(menu) {
+                return menu.close_requested
+                    || menu.free_requested
+                    || menu.namebox_heart.freed
+                    || menu.namebox_heart.marked_for_death;
+            }
+
             function transform_name() {
                 var menu = ANCHOR.get_menu(Menu.Textbox);
 
@@ -36,13 +43,22 @@ object_create(
 
                 new_world_chain(self, LocationId.Town)
                     .append(LinkId.Function, function(menu) {
+                        if self.namebox_is_gone(menu) {
+                            return;
+                        }
                         menu.namebox_heart.set_sprite(spr_cutscene_dialogue_circle_green_crack);
                         menu.namebox_heart.set_speed(1);
                     }, [menu])
                     .append(LinkId.Await, function(menu) {
+                        if self.namebox_is_gone(menu) {
+                            return true;
+                        }
                         return menu.namebox_heart.get_index() == 1;
                     }, [menu])
                     .append(LinkId.Function, function(menu) {
+                        if self.namebox_is_gone(menu) {
+                            return;
+                        }
                         var poof = ANCHOR.sprite(menu.namebox_heart_backplate, menu.namebox_heart.get_z() - 1);
                         poof
                             .set_sprite(spr_cutscene_dialogue_poof)
@@ -68,19 +84,34 @@ object_create(
 
                     }, [menu])
                     .join(LinkId.Ease, new Ease(EaseId.QuartOut, 1.0, 0.0, 15), function(_, a, menu) {
+                        if self.namebox_is_gone(menu) {
+                            return;
+                        }
                         menu.namebox_heart.set_max_alpha(a);
                     }, [menu])
                     .append(LinkId.Await, function(menu) {
+                        if self.namebox_is_gone(menu) {
+                            return true;
+                        }
                         return menu.namebox_heart_backplate.get_index() == 16;
                     }, [menu])
                     .append(LinkId.Function, function(menu) {
+                        if self.namebox_is_gone(menu) {
+                            return;
+                        }
                         menu.namebox_heart.set_sprite(spr_ui_dialogue_heart_yellow);
                     }, [menu])
                     .join(LinkId.Ease, new Ease(EaseId.QuartOut, 0.0, 1.0, 15), function(_, a, menu) {
+                        if self.namebox_is_gone(menu) {
+                            return;
+                        }
                         menu.namebox_heart.set_max_alpha(a);
                         menu.namebox_heart.set_alpha(a);
                     }, [menu])
                     .append(LinkId.Function, function(menu) {
+                        if self.namebox_is_gone(menu) {
+                            return;
+                        }
                         var shine = ANCHOR.sprite(menu.namebox_heart);
                         shine
                             .set_sprite(spr_cutscene_dialogue_heart_shine)
@@ -92,24 +123,42 @@ object_create(
 
                 new_world_chain(self, LocationId.Town)
                     .append(LinkId.Await, function(menu) {
+                        if self.namebox_is_gone(menu) {
+                            return true; 
+                        }
                         return menu.namebox_heart.get_sprite() == spr_cutscene_dialogue_circle_green_crack
                             && menu.namebox_heart.get_index() == 4;
                     }, [menu])
                     .append(LinkId.Function, function(menu) {
+                        if self.namebox_is_gone(menu) {
+                            return;
+                        }
                         menu.namebox_text.set_alpha(0);
                     }, [menu])
                     .append(LinkId.Ease, new Ease(EaseId.QuartOut, 1.0, 0.0, 25), function(_, a, menu) {
+                        if self.namebox_is_gone(menu) {
+                            return;
+                        }
                         menu.namebox_text.set_alpha(a);
                     }, [menu])
                     .append(LinkId.Timer, 25)
                     .append(LinkId.Ease, new Ease(EaseId.QuartOut, original_width, target_width, 25), function(_, a, menu) {
+                        if self.namebox_is_gone(menu) {
+                            return;
+                        }
                         menu.namebox_front.set_width(a);
                         menu.namebox_back.set_width(a + TEXTBOX_NAMEBOX_BACK_PADDING);
                     }, [menu])
                     .append(LinkId.Function, function(menu) {
+                        if self.namebox_is_gone(menu) {
+                            return;
+                        }
                         menu.namebox_text.set_key(NPC_PROTOTYPES[NpcId.Seridia].name);
                     }, [menu])
                     .append(LinkId.Ease, new Ease(EaseId.QuartOut, 0, 1, 25), function(_, a, menu) {
+                        if self.namebox_is_gone(menu) {
+                            return;
+                        }
                         menu.namebox_text.set_alpha(a);
                     }, [menu])
             }

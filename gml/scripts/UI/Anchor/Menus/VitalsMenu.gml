@@ -276,13 +276,13 @@ function VitalsMenu(): AnchorMenu(Menu.Vitals) constructor {
                 var sprite;
                 if value <= base_mana {
                     sprite = spr_ui_hud_health_mana_ball_off;
-                } else if value == base_mana + 1 {
+                } else if value <= base_mana + 1 {
                     sprite = spr_ui_hud_health_mana_ball_threethirds;
-                } else if value == base_mana + 2 {
+                } else if value <= base_mana + 2 {
                     sprite = spr_ui_hud_health_mana_ball_half;
-                } else if value == base_mana + 3 {
+                } else if value <= base_mana + 3 {
                     sprite = spr_ui_hud_health_mana_ball_onequarter;
-                } else if value >= base_mana + 4 {
+                } else {
                     sprite = spr_ui_hud_health_mana_ball_on;
                 }
                 orbs[i].set_sprite(sprite);

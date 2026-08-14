@@ -81,10 +81,10 @@ function player_animation_assets_deserialize(deserialize_struct) {
         var asset_manifest = PLAYER_ANIMATION_DATABASE.player_assets.get(asset.name);
 
         if asset_manifest == undefined {
-            if !DEBUG_ASSERTIONS {
-                error("failed to load player_asset `{}`: unknown", asset.name);
-            } else {
+            if DEBUG_ASSERTIONS {
                 crash("failed to load player_asset `{}`: unknown", asset.name);
+            } else {
+                error("failed to load player_asset `{}`: unknown", asset.name);
             }
             continue;
         }

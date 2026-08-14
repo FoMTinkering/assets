@@ -209,6 +209,7 @@ function start_date_cutscene(npc, date) {
     MIST.blackboard.set("date_partner", npc_id_to_string(npc));
     MIST.blackboard.set("date", date);
     MIST.blackboard.set("outfit", outfit_for_date(npc, date, CALENDAR.time));
+    MIST.blackboard.set("no_held_child", true);
 
     //
     var item = undefined;
@@ -399,6 +400,13 @@ function spawn_date_photo(index) {
         local_get(NPC_PROTOTYPES[data.npc].name),
     )));
 
+    popup.forced_atlas = undefined;
+    var atlas_season = data.date == Date.Bathhouse ? Season.Summer : get_seasons(data.timestamp);
+    if atlas_season != CALENDAR.season() {
+        popup.forced_atlas = season_to_portrait_atlas(get_seasons(data.timestamp));
+        portrait_atlas_load(popup.forced_atlas);
+    }
+
     popup.backplate.set_size(232, 238);
     popup.header
         .set_xy(0, 0)
@@ -436,6 +444,12 @@ function spawn_date_photo(index) {
         ))
 
     popup.create_button("misc_local/close");
+
+    popup.close_callback = method(popup, function() {
+        if self.forced_atlas != undefined {
+            portrait_atlas_unload(self.forced_atlas);
+        }
+    })
 
     popup.spawn();
 }

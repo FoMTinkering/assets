@@ -131,7 +131,6 @@ function PostProcessor(post_process_track) constructor {
         gpu_disable_blending();
 
         if self.should_post_process {
-            gpu_set_srgb_blending(false);
             gpu_set_extra(UberShaderKind.DayNight);
                 //
                 shader_set_uniform_f_array("u_VividColor", self.vivid_color);
@@ -141,7 +140,6 @@ function PostProcessor(post_process_track) constructor {
 
                 draw_world_surface(0.0, 0.0, 1.0, 1.0, c_white, 1.0);
             gpu_reset_extra();
-            gpu_set_srgb_blending(true);
         } else {
             surface_blit(SurfaceDirection.WorldToScreen, true);
         }

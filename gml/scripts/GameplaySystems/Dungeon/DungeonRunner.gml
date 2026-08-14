@@ -57,13 +57,19 @@ function DungeonRunner(itinerary, start_floor) constructor {
     function proceed(end_floor_kind, skip_transition=false) {
         var level = self.current_level();
 
-        //
-        //
-        if self.current_floor + 1 >= self.itinerary.count() {
-            return;
+        var next_level = undefined;
+        if level[$ "is_side_room"] == true {
+            next_level = self.itinerary.get(self.current_floor);
+        } else {
+            //
+            //
+            if self.current_floor + 1 >= self.itinerary.count() {
+                return;
+            }
+
+            next_level = self.level(self.current_floor + 1);
         }
 
-        var next_level = self.level(self.current_floor + 1);
         var itin = goto_gm_room(next_level.gm_room, TEST_SUITE || skip_transition);
         itin.mines = end_floor_kind;
     }
@@ -72,7 +78,7 @@ function DungeonRunner(itinerary, start_floor) constructor {
     function post_proceed(end_floor_kind) {
         self.last_floor = self.current_floor;
         self.previous_floors[self.current_floor] = true;
-        game_stats_end_mines_floor("end_floor_kind");
+        game_stats_end_mines_floor(end_floor_kind);
 
         //
         if self.side_levels[self.current_floor] != undefined {
@@ -193,7 +199,10 @@ function DungeonRunner(itinerary, start_floor) constructor {
         }
         self.ladder_score = 0;
 
-        assert_neq(self.ladder_score_needed, 0, "There are no instances or enemies in mines room {}; ensure there are spawnable locations", asset_to_string(room()));
+        //
+        if DEBUG_ASSERTIONS {
+            assert_neq(self.ladder_score_needed, 0, "There are no instances or enemies in mines room {}; ensure there are spawnable locations", asset_to_string(room()));
+        }
 
         if self.current_level().impl == DungeonImpl.LadderChoice {
             var next_level = self.itinerary.get(self.current_floor + 1);

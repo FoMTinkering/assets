@@ -32,10 +32,7 @@ function GrowBack() constructor {
     max_colliders_spawned_per_day = f.max_colliders_spawned_per_day;
 }
 
-function grow_back_new_day(farm_grid) {
-    if ARI.perk_active(Perk.DeliberateDebrisTwo) {
-        return;
-    }
+function grow_back_new_day(farm_grid, modifier) {
     //
     var grid_dims_x = farm_grid.dims.x;
     var grid_dims_y = NORMAL_FARM_EDGE_Y;
@@ -45,11 +42,7 @@ function grow_back_new_day(farm_grid) {
     var x_width = (grid_dims_x div GROW_BACK.cell_size) + 1;
     var y_width = (grid_dims_y div GROW_BACK.cell_size) + 1;
 
-    var subtraction_amount = 1;
-    if ARI.perk_active(Perk.DeliberateDebris) {
-        subtraction_amount -= 0.5;
-        GAME_STATS.perks[$ perk_to_string(Perk.DeliberateDebris)] += 1;
-    }
+    var subtraction_amount = modifier;
 
     for (var xx = 0; xx < x_width; xx++) {
         for (var yy = 0; yy < y_width; yy++) {

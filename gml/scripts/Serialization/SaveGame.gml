@@ -154,6 +154,7 @@ function save_game(save_path) {
         song_unlocks: ARI.song_unlocks,
         song_overrides: array_to_struct(ARI.song_overrides, location_id_to_string),
         dyn_song_overrides: ARI.dyn_song_overrides,
+        bell_sound: ARI.bell_sound,
         presets: apply_func(ARI.presets.to_array(), function(e) {
             return e.serialize();
         }),

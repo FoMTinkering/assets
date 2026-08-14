@@ -34,7 +34,13 @@ object_create(
 
             //
             function parent_object() {
-                return self.parent_id == undefined ? undefined : self.parent_id.object_index;
+                if self.parent_id != undefined
+                    && instance_exists(self.parent_id)
+                {
+                    return self.parent_id.object_index;
+                } else {
+                    return undefined;
+                }
             }
 
             provenance = undefined;

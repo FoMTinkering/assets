@@ -727,16 +727,24 @@ object_create(
                         owner.set_sprites("idle");
 
                         ARI.held_animal_id = owner.me.idx;
-                        obj_ari.par.held_animal_render_callback = function(xx, yy, flipper) {
-                            var old_image_xscale = owner.image_xscale;
-                            owner.image_xscale = flipper;
-                            owner.draw_routine(xx, yy);
-                            owner.image_xscale = old_image_xscale;
-                        };
+                        if instance_exists(obj_ari) {
+                            obj_ari.par.held_animal_render_callback = function(xx, yy, flipper) {
+                                var old_image_xscale = owner.image_xscale;
+                                owner.image_xscale = flipper;
+                                owner.draw_routine(xx, yy);
+                                owner.image_xscale = old_image_xscale;
+                            };
+                        }
                         shadow_caster_set_sprite(owner.shadow_caster, undefined);
                         needs_offset = false;
                     })
                     .step(function() {
+                        if instance_exists(obj_ari) == false {
+                            owner.x = -room_width();
+                            owner.y = -room_height();
+                            return;
+                        }
+
                         //
                         owner.x = obj_ari.x;
                         owner.y = obj_ari.y;

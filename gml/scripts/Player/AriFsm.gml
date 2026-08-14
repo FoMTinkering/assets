@@ -597,9 +597,10 @@ function AriFsm() {
 
             //
             var live_item = ARI.held_item();
+            var pressed = false;
+
             if holding_animal == false && live_item != undefined {
                 if live_item.can_use() {
-                    var pressed = false;
                     switch live_item.prototype.use {
                         case ItemUse.UseTool:
                         case ItemUse.Attack:
@@ -637,6 +638,7 @@ function AriFsm() {
                 }
 
                 if self.owner.check_pressed_input(InputId.Throw)
+                    && pressed == false
                     && !item_is_soulbound(live_item.item_id)
                     && ARI.fire_breath_time <= 0
                 {
@@ -1303,6 +1305,9 @@ function AriFsm() {
 
             owner.receiver.status = set_flag(owner.receiver.status, ReceiverStatus.Aerial);
             self.move = Vec2();
+            self.max_move_frames = self.owner.jump_data.frames;
+            self.goal_x = self.owner.jump_goal.x;
+            self.goal_y = self.owner.jump_goal.y;
         })
         .step(function() {
             self.owner.emit_fire();
@@ -1349,9 +1354,22 @@ function AriFsm() {
                 }
             }
 
-            //
-            self.move.x = self.jump_spd.x;
-            self.move.y = self.jump_spd.y;
+            if self.fsm.state_frame < self.max_move_frames {
+                self.move.x = self.jump_spd.x;
+                self.move.y = self.jump_spd.y;
+
+                //
+                if self.fsm.state_frame == (self.max_move_frames - 1) {
+                    self.move.x = 0;
+                    self.move.y = 0;
+
+                    owner.x = self.goal_x;
+                    owner.y = self.goal_y;
+                }
+            } else {
+                self.move.x = 0;
+                self.move.y = 0;
+            }
 
             move_ari(self.owner, self.move);
             update_depth_items(self.owner);
@@ -1915,8 +1933,12 @@ function AriFsm() {
     .add_state(StateBuilder(PlayerState.ThrowItem)
         .start(function() {
             self.items_thrown = self.blackboard.take("items_thrown");
+            self.has_items = self.items_thrown.first() != undefined;
             self.do_not_make_item = self.blackboard.try_take("do_not_make_item", false);
-            self.owner.par.set_held_sprite(self.items_thrown.first().get_ui_icon());
+
+            if self.has_items {
+                self.owner.par.set_held_sprite(self.items_thrown.first().get_ui_icon());
+            }
             self.owner.par.set_animation(AnimationName.Throw);
 
             self.item_has_been_thrown = false;
@@ -1926,6 +1948,12 @@ function AriFsm() {
 
             if self.item_has_been_thrown == false && self.owner.par.base_current_frame_index() == 2 {
                 self.item_has_been_thrown = true;
+
+                //
+                if self.has_items == false {
+                    return;
+                }
+
                 //
                 if self.do_not_make_item {
                     self.owner.par.remove_held_sprite();
@@ -1940,7 +1968,7 @@ function AriFsm() {
             }
         })
         .stop(function() {
-            if self.item_has_been_thrown == false {
+            if self.item_has_been_thrown == false && self.has_items {
                 throw_item(self.owner, self.items_thrown);
             }
         })
@@ -2482,16 +2510,16 @@ function AriFsm() {
 
                         new_chain().append(LinkId.Await, function(emitters) {
                             if !game_paused() {
-                                ARI.mount.kind = AnimalKind.Horse;
-
-                                ARI.mount.prototype = ANIMAL_PROTOTYPES[AnimalKind.Horse];
-                                ARI.mount.kind = AnimalKind.Horse;
-                                ARI.mount.variant = "giant_chicken_white";
-                                ARI.mount.cosmetic = undefined;
-                                ARI.mount_mirroring_animal = undefined;
-
-                                obj_ari.ui_mount_request = true;
-                                self.blackboard.insert("big_chicken", true);
+                                if ARI.mount != undefined {
+                                    ARI.mount.kind = AnimalKind.Horse;
+                                    ARI.mount.prototype = ANIMAL_PROTOTYPES[AnimalKind.Horse];
+                                    ARI.mount.kind = AnimalKind.Horse;
+                                    ARI.mount.variant = "giant_chicken_white";
+                                    ARI.mount.cosmetic = undefined;
+                                    ARI.mount_mirroring_animal = undefined;
+                                    obj_ari.ui_mount_request = true;
+                                    self.blackboard.insert("big_chicken", true);
+                                }
 
                                 for (var i = 0; i < array_length(emitters); i++) {
                                     var emitter = emitters[i];
@@ -4707,9 +4735,9 @@ function mounted_draw_after() {
     //
     self.timer += (40 / 60) * (!non_cutscene_pause() || ANCHOR.get_menu(Menu.Textbox) != undefined);
 
-    if self.timer >= frame_info[self.frame].duration {
+    if self.timer >= frame_info[clamp(self.frame, 0, array_length(frame_info) - 1)].duration {
         //
-        self.timer -= frame_info[self.frame].duration;
+        self.timer -= frame_info[clamp(self.frame, 0, array_length(frame_info) - 1)].duration;
         self.frame = (self.frame + 1) % sprite_info.num_subimages;
 
         return true;

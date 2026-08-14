@@ -481,8 +481,8 @@ function StorageBanner(inventory, menu, hand, pilot, pair, node) constructor {
                                 : self.pair.item_id_quantity(slot.item.item_id) != 0;
                             if check {
                                 var count = min(slot.count, self.pair.room_for_item(slot.item));
-                                self.pair.add(slot.item, count);
-                                slot.remove(count);
+                                var not_added = self.pair.add(slot.item, count);
+                                slot.remove(count - not_added);
                             }
                         }
                     }

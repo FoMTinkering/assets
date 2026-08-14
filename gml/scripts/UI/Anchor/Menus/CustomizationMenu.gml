@@ -726,8 +726,13 @@ function CustomizationMenu(journal_nodes, ari, preset_override, creation_behavio
             .add_glyph(InputId.Throw)
             .set_label("trash")
             .set_tap_callback(function() {
+                var hovered = ANCHOR.current_hovered_node;
+                if hovered == undefined || hovered.board_get("deletable") != true {
+                    return;
+                }
+
                 var pilot_position = self.preset_popup.pilot.get_position();
-                var index = ANCHOR.current_hovered_node.board_get("index");
+                var index = hovered.board_get("index");
                 var needs_change = self.ari.preset_index_selected >= index;
                 if needs_change {
                     if instance_exists(obj_ari) {
@@ -748,7 +753,17 @@ function CustomizationMenu(journal_nodes, ari, preset_override, creation_behavio
                     self.setup_left_page(self.ari.preset_index_selected);
                 }
                 self.generate_preset_popup_body();
-                var new_square = self.preset_popup.pilot.map[pilot_position.y][pilot_position.x];
+
+                //
+                //
+                var rows = array_length(self.preset_popup.pilot.map);
+                var columns = array_length(self.preset_popup.pilot.map[0]);
+                var slot = min(
+                    (pilot_position.y * columns) + pilot_position.x,
+                    self.ari.presets.count(),
+                    (rows * columns) - 1,
+                );
+                var new_square = self.preset_popup.pilot.map[slot div columns][slot % columns];
                 self.preset_popup.pilot.force_select(new_square);
             })
             .set_think_callback(function(trash_icon) {
