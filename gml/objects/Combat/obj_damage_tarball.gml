@@ -16,6 +16,7 @@ object_create(
 
             //
             parent_id = undefined;
+            parent_object_id = undefined;
 
             destruction_timer = undefined;
             can_hit_count = undefined;
@@ -31,17 +32,6 @@ object_create(
             already_hit_array = [];
 
             persists = false;
-
-            //
-            function parent_object() {
-                if self.parent_id != undefined
-                    && instance_exists(self.parent_id)
-                {
-                    return self.parent_id.object_index;
-                } else {
-                    return undefined;
-                }
-            }
 
             provenance = undefined;
             stats_entry = undefined;
@@ -243,7 +233,7 @@ object_create(
                                 && array_contains(self.already_hit_array, GRID.node_parent[inst_index].renderer.id) == false
                             {
                                 array_push(self.already_hit_array, GRID.node_parent[inst_index].renderer.id);
-                                var success = slash_node(GRID, xx, yy, self.parent_object());
+                                var success = slash_node(GRID, xx, yy, self.parent_object_id);
                                 if success && self.notify_on_destroy_grid_objects && self.grid_object_notifee != undefined && instance_exists(self.grid_object_notifee) {
                                     self.grid_object_notifee.on_object_destroy();
                                 }

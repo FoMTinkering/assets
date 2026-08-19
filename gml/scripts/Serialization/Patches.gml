@@ -17,6 +17,30 @@ function apply_save_patches(current_version, goal_version, loader) {
     //
     while current_version.patch != goal_version.patch {
         switch current_version.patch {
+            case 3:
+                var quest_file = loader.load_file("quests");
+                for (var i = 0; i < array_length(quest_file.active_quests); i++) {
+                    var quest_blob = quest_file.active_quests[i];
+                    var quest = QUESTS.get(quest_blob.quest_name);
+                    if quest == undefined {
+                        continue;
+                    }
+
+                    for (var stage = 0; stage < quest.tasks.count(); stage++) {
+                        var requirement = quest.tasks.get(stage).requirements[Requirement.DefeatedMonster];
+                        if requirement == undefined {
+                            continue;
+                        }
+
+                        for (var j = 0; j < array_length(requirement); j++) {
+                            quest_blob.blackboard[$ format("{MonsterId}_needed", requirement[j][0])] = requirement[j][1];
+                        }
+                    }
+                }
+                saver.save_file("quests", quest_file);
+
+                current_version.patch = 4;
+                break;
             default:
                 current_version.patch += 1;
                 break;

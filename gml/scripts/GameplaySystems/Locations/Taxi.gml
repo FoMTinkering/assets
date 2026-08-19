@@ -49,7 +49,7 @@ function TaxiItinerary(gm_room, dyn_index) {
         arrival_callback_args: [],
         run_prologue: false,
         new_dungeon_runner: undefined,
-        mines: undefined,
+        advance_dungeon_floor: false,
         set_arrival_callback: function(func, args) {
             self.arrival_callback_args = args == undefined ? [] : args;
             self.arrival_callback = func;
@@ -309,8 +309,8 @@ function Taxi() constructor {
                 DUNGEON_RUNNER = self.itinerary.new_dungeon_runner;
             }
 
-            if self.itinerary.mines != undefined {
-                DUNGEON_RUNNER.post_proceed(self.itinerary.mines);
+            if self.itinerary.advance_dungeon_floor {
+                DUNGEON_RUNNER.post_proceed();
             }
 
             trace(

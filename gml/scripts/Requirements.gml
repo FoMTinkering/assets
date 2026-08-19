@@ -81,8 +81,8 @@ function parse_requirements(entry) {
                 ? MAP_SINGLE_FIELD(this_entry, string_to_item_id)
                 : [string_to_item_id(this_entry), 1];
             case Requirement.DefeatedMonster: return is_struct(this_entry)
-                ? MAP_SINGLE_FIELD(this_entry, string_to_monster_category)
-                : [string_to_monster_category(this_entry), 1];
+                ? MAP_SINGLE_FIELD(this_entry, string_to_monster_id)
+                : [string_to_monster_id(this_entry), 1];
             case Requirement.DonatedItem: return string_to_item_id(this_entry);
             case Requirement.UnlockedAnimal: return string_to_animal_kind(this_entry);
             case Requirement.ReceivedLetter: return CONTENT_REGISTRY.validate_letter(this_entry);
@@ -365,9 +365,8 @@ function create_req_check() {
                 return true;
             }
             case Requirement.DefeatedMonster: return function(input) {
-                var count = 0;
                 for (var i = 0; i < array_length(input); i++) {
-                    if ARI.monster_kills(input[i][0]) < input[i][1] {
+                    if ARI.monsters_killed[input[i][0]] < input[i][1] {
                         return false;
                     }
                 }

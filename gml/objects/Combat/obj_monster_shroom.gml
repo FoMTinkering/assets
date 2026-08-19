@@ -637,7 +637,7 @@ object_create(
                             break;
                         case MushroomState.Shell:
                         case MushroomState.WiggleExit:
-                            if next_dmg.tarball.parent_object() == obj_ari
+                            if next_dmg.tarball.parent_object_id == obj_ari
                                 && obj_ari.fsm.current_state_id() == PlayerState.Sword
                             {
                                 self.fsm.blackboard.set("bounce_player", true);

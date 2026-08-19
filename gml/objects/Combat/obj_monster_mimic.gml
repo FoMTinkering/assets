@@ -216,10 +216,10 @@ object_create(
                                         var item_obj = instance_create_layer(owner.x, owner.y, "Instances", obj_item);
                                         item_obj.final_x = owner.x + irandom_range(-16, 16);
                                         item_obj.final_y = owner.y + irandom_range(6, 32);
-    
+
                                         item_obj.setup(List(item));
                                     }
-    
+
                                     if ari_has_pet_skin_anywhere("mimic") == false
                                         && ARI.perk_active(Perk.FriendShaped)
                                         && chance_percent(5)
@@ -228,7 +228,7 @@ object_create(
                                         var item_obj = instance_create_layer(owner.x, owner.y, "Instances", obj_item);
                                         item_obj.final_x = owner.x + irandom_range(-16, 16);
                                         item_obj.final_y = owner.y + irandom_range(6, 32);
-    
+
                                         item_obj.setup(List(item));
                                     }
                                 }
@@ -248,15 +248,8 @@ object_create(
                             ae.owner = owner;
                             ae.image_idx = 5;
                             ae.image_idx_func = method(ae, function() {
+                                ARI.monsters_killed[self.owner.config.monster_id] += 1;
                                 instance_destroy(self.owner);
-                                if game_stats_mines_floor_available() {
-                                    var key = monster_id_to_string(self.owner.monster_id);
-                                    if GS_MINES_FLOOR.enemy_kill[$ key] == undefined {
-                                        GS_MINES_FLOOR.enemy_kill[$ key] = 0;
-                                    }
-                                    GS_MINES_FLOOR.enemy_kill[$ key] += 1;
-                        
-                                }
                             });
                         })
                         .spawn()

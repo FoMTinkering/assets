@@ -87,10 +87,6 @@ object_create(
                 killed_by_ari: false,
             };
 
-            if GS_MINES_RUN != undefined && GS_MINES_FLOOR != undefined {
-                array_push(GS_MINES_FLOOR.damages, self.stats_entry);
-            }
-
             function get_cardinal() {
                 return monster_vertical_cardinal_from_dir(self.dir);
             }
@@ -331,6 +327,7 @@ object_create(
                 DUNGEON_RUNNER.on_monster_destroy(self.x div 8, self.y div 8);
             }
             game_stats_increment(GAME_STATS, "enemies_killed");
+            ARI.monsters_killed[self.config.monster_id] += 1;
             self.stats_entry.killed_by_ari = true;
         },
         cleanup: function() {

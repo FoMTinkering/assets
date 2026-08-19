@@ -1189,7 +1189,7 @@ function bugger_initialize() {
                 .author("gabe")
                 .process(function () {
                     if is_dungeon_room(room()) {
-                        DUNGEON_RUNNER.proceed("cheater");
+                        DUNGEON_RUNNER.proceed();
                     } else {
                         enter_dungeon();
                     }
@@ -1258,7 +1258,7 @@ function bugger_initialize() {
                 .subcommand(BuggerCommand("proceed")
                     .help("Proceeds to the next level of the dungeon.")
                     .process(function() {
-                        DUNGEON_RUNNER.proceed("cheater");
+                        DUNGEON_RUNNER.proceed();
                     })
                 )
                 .subcommand(BuggerCommand("spawn_ladder")
@@ -3227,7 +3227,7 @@ function bugger_initialize() {
                                 if DUNGEON_FLOOR >= (start_floor + 18) {
                                     enter_dungeon(start_floor, DUNGEON_FLOOR_COUNT, true);
                                 } else {
-                                    DUNGEON_RUNNER.proceed("cheater", true);
+                                    DUNGEON_RUNNER.proceed(true);
                                 }
                             }, [start_floor]);
                             c.append(LinkId.Timer, 1);

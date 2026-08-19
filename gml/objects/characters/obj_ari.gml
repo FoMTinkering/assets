@@ -1407,10 +1407,6 @@ object_create(
 
                 self.fsm.blackboard.set("hold_animation_forever", true);
 
-                if DUNGEON_RUNNER != undefined {
-                    DUNGEON_RUNNER.exit_mines_stats_condition = "fainted";
-                }
-
                 return true;
             }
 
@@ -1432,10 +1428,6 @@ object_create(
                 ARI.end_of_day_status = ARI.has_protection_scroll
                     ? EndOfDayStatus.Protected
                     : EndOfDayStatus.Died;
-
-                if DUNGEON_RUNNER != undefined {
-                    DUNGEON_RUNNER.exit_mines_stats_condition = "dead";
-                }
 
                 self.fsm.change_state(PlayerState.AnimateAndThen);
                 if is_swimming() {
@@ -1827,7 +1819,7 @@ object_create(
                     var damage_was_acid = has_flag(next_dmg.tarball.flags, CombatFlag.Acid);
                     var is_dead = ARI.modify_health(final_dmg, damage_was_acid == false);
 
-                    if GS_MINES_RUN != undefined && GS_MINES_FLOOR != undefined && next_dmg.tarball.stats_entry != undefined {
+                    if next_dmg.tarball.stats_entry != undefined {
                         next_dmg.tarball.stats_entry.damage_dealt += final_dmg;
                         next_dmg.tarball.stats_entry.damage_dealt_count += 1;
                     }

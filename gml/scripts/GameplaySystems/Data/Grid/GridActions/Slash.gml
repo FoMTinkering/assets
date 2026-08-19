@@ -67,29 +67,15 @@ function slash_node(grid, x_pos, y_pos, parent_obj) {
 
                 var arr = bundle.to_array();
 
-                if GS_MINES_RUN != undefined {
-                    for (var i = 0, c = array_length(arr); i < c; i++) {
-                        var item = arr[i];
-                        array_push(GS_MINES_FLOOR.debris_items_released, item_id_to_string(item.item_id));
-                    }
-                    if ARI.perk_active(Perk.MaterialWorld) {
-                        for (var i = 0, c = array_length(arr); i < c; i++) {
-                            var item = arr[i];
-                            array_push(GS_MINES_FLOOR.debris_items_released, item_id_to_string(item.item_id));
-                        }
-                        if array_length(arr) != 0 {
-                            item_from_critical_poof(node.renderer.x, node.renderer.y, arr);
-                        }
+                if is_dungeon_room(room()) {
+                    if ARI.perk_active(Perk.MaterialWorld) && array_length(arr) != 0 {
+                        item_from_critical_poof(node.renderer.x, node.renderer.y, arr);
                     }
 
                     if chance_percent(ARI.perk_value(Perk.VoidValue))
                         && (node.object_id == ObjectId.VoiditeSmall || node.object_id == ObjectId.VoiditeLarge)
                     {
                         item_from_critical_poof(node.renderer.x, node.renderer.y, arr);
-                        for (var i = 0, c = array_length(arr); i < c; i++) {
-                            var item = arr[i];
-                            array_push(GS_MINES_FLOOR.debris_items_released, item_id_to_string(item.item_id));
-                        }
                     }
                 }
 

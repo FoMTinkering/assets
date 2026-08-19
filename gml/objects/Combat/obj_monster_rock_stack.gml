@@ -345,7 +345,7 @@ object_create(
                         .create(function() {
                             //
                             function on_hit(tarball) {
-                                if tarball.parent_object() == obj_monster_rock_stack
+                                if tarball.parent_object_id == obj_monster_rock_stack
                                     && owner.homie_valid()
                                     && tarball.parent_id.homie.id == owner.id
                                     && point_distance(owner.x, owner.y, tarball.parent_id.x, tarball.parent_id.y) < owner.config.execution_distance
@@ -661,7 +661,7 @@ object_create(
                     var dmg = next_dmg.tarball.damage;
 
 
-                    if next_dmg.tarball.parent_object() == obj_monster_rock_stack {
+                    if next_dmg.tarball.parent_object_id == obj_monster_rock_stack {
                         self.dmg = 0;
                     }
 

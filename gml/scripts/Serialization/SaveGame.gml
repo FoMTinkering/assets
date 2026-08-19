@@ -124,6 +124,7 @@ function save_game(save_path) {
         items_acquired: serialize_array_bool(ARI.items_acquired, item_id_to_string),
         tutorials_seen: serialize_array_bool(ARI.tutorials_seen, tutorial_to_string),
         items_sold: array_to_struct(ARI.items_sold, item_id_to_string),
+        monsters_killed: array_to_struct(ARI.monsters_killed, monster_id_to_string),
         recipe_unlocks: serialize_array_bool(ARI.recipe_unlocks, item_id_to_string),
         recipes_created: serialize_array_bool(ARI.recipes_created, item_id_to_string),
         morning_recipe_unlocks: serialize_array_bool(ARI.morning_recipe_unlocks, item_id_to_string),

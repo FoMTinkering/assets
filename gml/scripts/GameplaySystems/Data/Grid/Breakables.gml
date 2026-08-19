@@ -138,10 +138,6 @@ function create_breakable_renderer(node) {
                         var biome_ore = DUNGEON.biomes[current_dungeon_biome() ?? DungeonBiome.Upper].ore;
                         var ore_count = irandom_range(node.prototype.chest.ore_count[0], node.prototype.chest.ore_count[1]);
                         for (var i = 0; i < ore_count; i++) {
-                            if is_dungeon_room(room()) {
-                                array_push(GS_MINES_FLOOR.chest_items_released, item_id_to_string(biome_ore));
-                            }
-
                             drop_chain
                                 .append(LinkId.Function, drop_item, [biome_ore, node.renderer.x, node.renderer.y, -4])
                                 .append(LinkId.Timer, 10);

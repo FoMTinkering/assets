@@ -1,12 +1,6 @@
 #macro GAME_STATS global.__game_stats
 global.__game_stats = undefined;
 
-#macro GS_MINES_FLOOR GS_MINES_RUN.current_floor_data
-#macro GS_MINES_RUN GAME_STATS.current_mines_run
-
-#macro GS_MINES_FLOOR_WRITTEN global.__mines_floor_written
-GS_MINES_FLOOR_WRITTEN = false;
-
 function GameStats() {
     return {
         npcs_spoken_to: {},
@@ -62,8 +56,6 @@ function GameStats() {
         animal_bead_drops: [],
         animal_eod_statuses: [],
         home_upgrades: [],
-        current_mines_run: undefined,
-        mines_data: []
     }
 }
 
@@ -96,123 +88,15 @@ function patch_game_stats(game_stats) {
             array_delete(game_stats.income, i, 1);
         }
     }
+
+    //
+    struct_remove(game_stats, "current_mines_run");
+    struct_remove(game_stats, "mines_data");
 }
 
 function game_stats_increment(game_stats, key, value=1) {
     var existing = game_stats[$ key] ?? 0;
     game_stats[$ key] = existing + value;
-}
-
-//
-function game_stats_serialize_ari_inventory() {
-    var inventory = [];
-
-    for (var i = 0; i < ARI.inventory.size(); i++) {
-        var slot = ARI.inventory.slot(i);
-        if slot.count != 0 {
-            array_push(inventory, {
-                item: slot.item.pretty_print(),
-                count: slot.count,
-            });
-        }
-    }
-
-    return inventory;
-}
-
-//
-function game_stats_mines_run() {
-    GS_MINES_RUN = {
-        day_entered: total_days(),
-        ari_inventory_size: ARI.inventory.size(),
-        time_start: CLOCK.time,
-        inventory_on_enter: game_stats_serialize_ari_inventory(),
-        inventory_on_exit: undefined,
-        status: "unexpected",
-        armor: [],
-
-        floor_data: [],
-        current_floor_data: undefined,
-    };
-
-    for (var i = 0; i < ARI.armor.size(); i++) {
-        var item = ARI.armor.slot(i).item;
-        if item != undefined {
-            array_push(GS_MINES_RUN.armor, item.pretty_print());
-        }
-    }
-}
-
-//
-function game_stats_current_mines_floor() {
-    return {
-        room_name: undefined,
-        current_floor: undefined,
-        status: "unexpected",
-        time_start: CLOCK.time,
-        time_end: undefined,
-
-        monsters_spawned: [],
-        rocks_spawned: [],
-        rock_drops: [],
-        rocks_broken: [],
-        fishes_spawned: [],
-        fishing_items: [],
-        bugs_spawned: [],
-        bugs_caught: [],
-        digsites: 0,
-        forageables_spawned: [],
-        forageables_harvested: [],
-        health_on_floor_enter: 0,
-        stamina_on_floor_enter: 0,
-        health_on_floor_exit: 0,
-        stamina_on_floor_exit: 0,
-        enemy_kill: {},
-        enemy_drops: [],
-        pickaxe_spawned_bugs: [],
-        snacks: [],
-        damages: [],
-        artifacts: [],
-        whirlpool_uses: 0,
-        chest_items_released: [],
-        debris_items_released: [],
-    };
-}
-
-//
-function game_stats_end_mines_floor(status) {
-    if GS_MINES_RUN == undefined || GS_MINES_FLOOR == undefined || GS_MINES_FLOOR_WRITTEN {
-        return;
-    }
-    GS_MINES_FLOOR.status = status;
-    GS_MINES_FLOOR.time_end = CLOCK.time;
-    GS_MINES_FLOOR.health_on_floor_exit = ARI.get_health();
-    GS_MINES_FLOOR.stamina_on_floor_exit = ARI.get_stamina();
-
-    GS_MINES_FLOOR_WRITTEN = true;
-    array_push(GS_MINES_RUN.floor_data, GS_MINES_FLOOR);
-}
-
-//
-function game_stats_end_mines_run(status) {
-    if GS_MINES_RUN == undefined {
-        return;
-    }
-    game_stats_end_mines_floor(status);
-    GS_MINES_RUN.status = status;
-    GS_MINES_RUN.exit_inventory = game_stats_serialize_ari_inventory();
-
-    //
-    GS_MINES_FLOOR = undefined;
-
-    array_push(GAME_STATS.mines_data, GS_MINES_RUN);
-
-    //
-    GS_MINES_RUN = undefined;
-}
-
-function game_stats_mines_floor_available() {
-    return is_dungeon_room(room()) && GS_MINES_RUN != undefined && GS_MINES_FLOOR != undefined;
 }
 
 //

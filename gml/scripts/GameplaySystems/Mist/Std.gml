@@ -757,7 +757,9 @@ function define_std(_runtime) {
         });
 
         create_function("__set_outfit", function(_actor, _outfit) {
-            MIST.npcs.get(string_to_npc_id(_actor)).wardrobe.set_outfit(_outfit);
+            var wardrobe = MIST.npcs.get(string_to_npc_id(_actor)).wardrobe;
+            wardrobe.set_outfit(_outfit);
+            MIST.borrow_portrait_atlas(wardrobe.outfit_current);
         });
 
         create_function("reset_outfit", function(_actor) {
