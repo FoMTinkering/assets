@@ -579,12 +579,12 @@ function try_requirement_to_listing(requirement, data, blackboard) {
         case Requirement.DefeatedMonster:
             var ari_has = 0;
             if blackboard != undefined {
-                var starting_amount = blackboard.get(format("{MonsterCategory}_needed", data[0])) - data[1];
-                ari_has = ARI.monsters_killed(data[0]) - starting_amount;
+                var starting_amount = blackboard.get_or(format("{MonsterId}_needed", data[0]), 0) - data[1];
+                ari_has = ARI.monsters_killed[data[0]] - starting_amount;
             } else {
                 ari_has = 0;
             }
-            var info = monster_category_to_ui_info(data[0]);
+            var info = monster_id_to_ui_info(data[0]);
             return Listing.Custom(
                 info.icon,
                 info.label,

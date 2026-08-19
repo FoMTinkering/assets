@@ -14,7 +14,7 @@ function DungeonRunner(itinerary, start_floor) constructor {
     self.blocking_music = false;
     self.side_levels = array_create(DUNGEON_FLOOR_COUNT, undefined);
     self.previous_floors = array_bool(DUNGEON_FLOOR_COUNT);
-    self.exit_mines_stats_condition = undefined;
+    self.has_entered = false;
 
     if !ARI.has_seen_treasure_level_today && ARI.perk_active(Perk.TreasureHunter) {
         var level = try_create_side_room(
@@ -54,7 +54,7 @@ function DungeonRunner(itinerary, start_floor) constructor {
 
     //
     //
-    function proceed(end_floor_kind, skip_transition=false) {
+    function proceed(skip_transition=false) {
         var level = self.current_level();
 
         var next_level = undefined;
@@ -71,14 +71,13 @@ function DungeonRunner(itinerary, start_floor) constructor {
         }
 
         var itin = goto_gm_room(next_level.gm_room, TEST_SUITE || skip_transition);
-        itin.mines = end_floor_kind;
+        itin.advance_dungeon_floor = true;
     }
 
     //
-    function post_proceed(end_floor_kind) {
+    function post_proceed() {
         self.last_floor = self.current_floor;
         self.previous_floors[self.current_floor] = true;
-        game_stats_end_mines_floor(end_floor_kind);
 
         //
         if self.side_levels[self.current_floor] != undefined {
@@ -97,12 +96,6 @@ function DungeonRunner(itinerary, start_floor) constructor {
 
     //
     function on_room_start() {
-        GS_MINES_FLOOR.room_name = asset_to_string(self.current_level().gm_room);
-        GS_MINES_FLOOR.current_floor = self.current_floor + 1;
-        GS_MINES_FLOOR.health_on_floor_enter = ARI.get_health();
-        GS_MINES_FLOOR.stamina_on_floor_enter = ARI.get_stamina();
-        GS_MINES_FLOOR_WRITTEN = false;
-
         DUNGEON_RUNNER.blocking_music = false; //
 
         var tutorial_chain = new_chain().append(LinkId.Timer, 30);

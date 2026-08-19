@@ -68,8 +68,7 @@ function dig_site_attempt_dig(xx, yy, item_to_find) {
         day: total_days(),
     });
 
-    if GS_MINES_RUN != undefined {
-        array_push(GS_MINES_FLOOR.artifacts, item_to_find.pretty_print());
+    if is_dungeon_room(room()) {
         if chance_percent(ARI.perk_value(Perk.NaturalBeauty) + ARI.perk_value(Perk.NaturalBeautyTwo)) {
             var furniture_options = [];
             var recipes = DUNGEON.biomes[current_dungeon_biome() ?? DungeonBiome.Upper].recipes

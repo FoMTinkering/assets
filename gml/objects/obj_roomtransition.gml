@@ -32,7 +32,7 @@ object_create(
                             var pos = trellis_point("mines_entry/dungeon entry");
                             goto_location_id(LocationId.MinesEntry).set_exact_position(pos.x, pos.y);
                         } else {
-                            DUNGEON_RUNNER.proceed("descended");
+                            DUNGEON_RUNNER.proceed();
                         }
                         return;
                     } else if self.destination_id == LocationId.RuinsSeal && CURRENT_LOCATION_ID == LocationId.VoidSeal {

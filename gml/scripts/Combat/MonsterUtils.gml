@@ -95,15 +95,6 @@ function monster_death_poof(owner, optional_position=undefined) {
                 }
             }
 
-            if game_stats_mines_floor_available() {
-                var key = monster_id_to_string(self.owner.monster_id);
-                if GS_MINES_FLOOR.enemy_kill[$ key] == undefined {
-                    GS_MINES_FLOOR.enemy_kill[$ key] = 0;
-                }
-                GS_MINES_FLOOR.enemy_kill[$ key] += 1;
-
-            }
-
             instance_destroy(self.owner);
         }
 
@@ -256,18 +247,6 @@ function create_drops_and_essence(drops, essence, xx, yy, monster_id, coin_count
         items = [];
     }
 
-    if game_stats_mines_floor_available() {
-        var key = monster_id_to_string(monster_id);
-
-        array_push(GS_MINES_FLOOR.enemy_drops, {
-            monster: key,
-            items: array_map(items, function(v) {
-                return v.pretty_print();
-            }),
-            coins: coin_count,
-        });
-    }
-
     drop_item(items, xx, yy);
 
     for (var i = 0; i < coin_count; i++) {
@@ -325,6 +304,33 @@ function create_smoke(xx, yy, sprite, source_depth, smoke_number=5) {
             SMOKE_DEBRIS,
         );
     }
+}
+
+function monster_id_to_ui_info(monster_id) {
+    switch monster_id {
+        case MonsterId.Sapling: return {
+            icon: spr_ui_stillwell_quest_icon_sapling_green,
+            label: "misc_local/green_saplings_defeated",
+        };
+        case MonsterId.MushroomGreen: return {
+            icon: spr_ui_stillwell_quest_icon_mushroom_green,
+            label: "misc_local/green_mushrooms_defeated",
+        };
+        case MonsterId.EnchanternBlue: return {
+            icon: spr_ui_stillwell_quest_icon_enchantern_blue,
+            label: "misc_local/blue_enchanterns_defeated",
+        };
+        case MonsterId.StalagmiteGreen: return {
+            icon: spr_ui_stillwell_quest_icon_stalagmite_green,
+            label: "misc_local/green_stalagmites_defeated",
+        };
+        case MonsterId.BatBlue: return {
+            icon: spr_ui_stillwell_quest_icon_essence_bat_blue,
+            label: "misc_local/blue_essence_bats_defeated",
+        };
+        default: return monster_category_to_ui_info(MONSTER_PROTOTYPES[monster_id].monster_category);
+    }
+
 }
 
 function monster_category_to_ui_info(cat) {

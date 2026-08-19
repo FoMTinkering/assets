@@ -93,13 +93,6 @@ function pick_node(grid, x_pos, y_pos, item, modifier, effect_override, doppel, 
     var object_id = undefined;
     var breaker = false;
 
-    //
-    //
-    var register_dungeon_stats = is_dungeon_room(room())
-        && ARI.end_of_day_status == undefined
-        && GS_MINES_RUN != undefined
-        && GS_MINES_FLOOR != undefined;
-
     for (var xx = 0; xx < 2; xx++) {
         if breaker {
             break;
@@ -208,28 +201,14 @@ function pick_node(grid, x_pos, y_pos, item, modifier, effect_override, doppel, 
                     if chance_percent(fiddle_get("misc/bugs/low_spawn")) {
                         var output = spawn_bug(xx div 8, yy div 8, BugSpawnType.Rock);
                         trace("Spawning a bug...success: {bool}", output != undefined);
-
-                        if register_dungeon_stats && output != undefined {
-                            array_push(GS_MINES_FLOOR.pickaxe_spawned_bugs, item_id_to_string(output.item_id));
-                        }
-                    }
-                    if register_dungeon_stats {
-                        array_push(GS_MINES_FLOOR.rocks_broken, object_id_to_string(object_id));
                     }
 
                     //
-                    var bundle_array = bundle.to_array();
                     drop_item(bundle.to_array(), xx, yy);
 
                     if chance_percent(ARI.perk_value(Perk.Masonry)){
                         item_from_critical_poof(xx, yy, ItemId.OreStone);
                         GAME_STATS.perks[$ perk_to_string(Perk.Masonry)] += 1;
-                    }
-
-                    if register_dungeon_stats {
-                        for (var i = 0, c = array_length(bundle_array); i < c; i++) {
-                            array_push(GS_MINES_FLOOR.rock_drops, item_id_to_string(bundle_array[i].item_id));
-                        }
                     }
 
                     //

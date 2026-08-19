@@ -2210,14 +2210,6 @@ function AriFsm() {
                             }
                         };
 
-                        if GS_MINES_RUN != undefined {
-                            array_push(GS_MINES_FLOOR.snacks, {
-                                item_name: item_id_to_string(self.live_item.item_id),
-                                hp_gain,
-                                stam_gain,
-                            });
-                        }
-
                         var skip_apply = hp_gain == 0 && stam_gain == 0;
                         if self.live_item.prototype.max_health_modifier != 0 {
                             if SETTINGS.get("sound_eating_drinking") {
@@ -2907,9 +2899,6 @@ function AriFsm() {
                                 day: total_days(),
                             });
                             array_push(self.bug, new LiveItem(inst.item_id));
-                            if GS_MINES_RUN != undefined {
-                                array_push(GS_MINES_FLOOR.bugs_caught, item_id_to_string(inst.item_id));
-                            }
                     }
                     instance_destroy(inst);
                     ARI.modify_stamina(self.live_item.prototype.stamina_cost);
@@ -3585,13 +3574,6 @@ function AriFsm() {
                             ARI.gain_xp(Skill.Fishing, xp);
                         }
 
-                        //
-                        if GS_MINES_RUN != undefined {
-                            array_push(
-                                GS_MINES_FLOOR.fishing_items,
-                                self.celebration_data.item.pretty_print(),
-                            );
-                        }
                         array_push(GAME_STATS.fish_caught, {
                             fish: self.celebration_data.item.pretty_print(),
                             day: total_days(),

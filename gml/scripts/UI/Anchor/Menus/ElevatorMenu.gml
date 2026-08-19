@@ -30,7 +30,6 @@ function ElevatorMenu() : AnchorMenu(Menu.Elevator) constructor {
                         var pos = trellis_point("mines_entry/elevator");
                         goto_location_id(LocationId.MinesEntry)
                             .set_exact_position(pos.x, pos.y);
-                        DUNGEON_RUNNER.exit_mines_stats_condition = "elevator";
                     } else {
                         enter_dungeon(flr - 1);
                     }

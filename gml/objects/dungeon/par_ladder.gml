@@ -154,7 +154,6 @@ object_create(
                             TANGO.play("SoundEffects/Entrances/LadderDescend");
                             var pos = trellis_point("mines_entry/dungeon entry");
                             goto_location_id(LocationId.MinesEntry).set_exact_position(pos.x, pos.y);
-                            DUNGEON_RUNNER.exit_mines_stats_condition = "ascended";
 
                             obj_ari.fsm.change_state(PlayerState.Dummy);
                         });
@@ -172,7 +171,7 @@ object_create(
                         if room() == rm_mines_entry {
                             enter_dungeon();
                         } else {
-                            DUNGEON_RUNNER.proceed("descended");
+                            DUNGEON_RUNNER.proceed();
                         }
                         obj_ari.fsm.change_state(PlayerState.Dummy);
                     },

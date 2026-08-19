@@ -343,6 +343,9 @@ function TarballBuilder(xx, yy, w, h, dmg, target=CombatTarget.Player) {
 
             //
             tarball_handle.parent_id = self.parent_id;
+            if tarball_handle.parent_id != undefined && instance_exists(tarball_handle.parent_id) {
+                tarball_handle.parent_object_id = tarball_handle.parent_id.object_index;
+            }
             tarball_handle.heavy = self.heavy;
             tarball_handle.critical = self.critical;
             tarball_handle.electrocute_kind = self.electrocute_kind;
@@ -371,6 +374,9 @@ function create_receiver(xx, yy, mask_idx, parent_id, data) {
     }
 
     dmg_rcvr.parent_id = parent_id;
+    if dmg_rcvr.parent_id != undefined && instance_exists(dmg_rcvr.parent_id) {
+        dmg_rcvr.parent_object_id = dmg_rcvr.parent_id.object_index;
+    }
     dmg_rcvr.iframes = data[$ "iframes"] ?? 0;
 
     //

@@ -270,8 +270,8 @@ function ActiveQuest(quest, quest_name, current_stage=0) constructor {
                 case Requirement.DefeatedMonster:
                     for (var j = 0; j < array_length(requirement); j++) {
                         self.blackboard.insert(
-                            format("{MonsterCategory}_needed", requirement[j][0]),
-                            ARI.monsters_killed(requirement[j][0]) + requirement[j][1],
+                            format("{MonsterId}_needed", requirement[j][0]),
+                            ARI.monsters_killed[requirement[j][0]] + requirement[j][1],
                         );
                     }
                     break;
@@ -307,8 +307,8 @@ function fulfills_all_requirements(requirements, quest_blackboard) {
                 break;
             case Requirement.DefeatedMonster:
                 for (var j = 0; j < array_length(requirement); j++) {
-                    var this_cat = requirement[j];
-                    if ARI.monsters_killed(this_cat[0]) < quest_blackboard.get(format("{MonsterCategory}_needed", this_cat[0])) {
+                    var this_monster = requirement[j];
+                    if ARI.monsters_killed[this_monster[0]] < quest_blackboard.get_or(format("{MonsterId}_needed", this_monster[0]), 0) {
                         return false;
                     }
                 }

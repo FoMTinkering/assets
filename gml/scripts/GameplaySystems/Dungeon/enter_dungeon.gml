@@ -9,8 +9,8 @@ function enter_dungeon(start_floor=0, length=undefined, should_skip=false) {
 //
 function on_dungeon_enter() {
     //
-    if GS_MINES_RUN == undefined {
-        game_stats_mines_run();
+    if !DUNGEON_RUNNER.has_entered {
+        DUNGEON_RUNNER.has_entered = true;
 
         if ARI.invulnerable_hits > 0 && ARI.perk_active(Perk.GuardiansShield) {
             ARI.status_effects.register(
@@ -23,8 +23,6 @@ function on_dungeon_enter() {
     }
 
     //
-    GS_MINES_FLOOR = game_stats_current_mines_floor();
-    GL_MINES_FLOOR_WRITTEN = false;
     build_dungeon_room(GRID);
     DUNGEON_RUNNER.on_room_start();
 
@@ -43,7 +41,6 @@ function on_dungeon_enter() {
 
 //
 function on_dungeon_exit() {
-    game_stats_end_mines_run(DUNGEON_RUNNER.exit_mines_stats_condition ?? "elevator");
     DUNGEON_RUNNER = undefined;
 
     ARI.status_effects.cancel(StatusEffectId.GuardiansShield);

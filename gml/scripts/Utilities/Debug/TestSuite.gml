@@ -2514,7 +2514,7 @@ TS_TESTS.push({
             repeat count {
                 chain.insert_chain(new Chain()
                     .append(LinkId.Function, function() {
-                        DUNGEON_RUNNER.proceed("cheater", true);
+                        DUNGEON_RUNNER.proceed(true);
                     })
                     .append(LinkId.Timer, 1)
                 );

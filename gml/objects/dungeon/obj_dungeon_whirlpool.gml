@@ -13,7 +13,6 @@ object_create(
                 "misc_local/enter_whirlpool",
                 function() {
                     obj_ari.dive(self, DiveBehavior.Whirlpool);
-                    GS_MINES_FLOOR.whirlpool_uses += 1;
                 },
                 function() {
                     return obj_ari.fsm.current_state_id() == PlayerState.Swim;

@@ -680,26 +680,6 @@ function Ari() constructor {
         }
     }
 
-    function monsters_killed(category) {
-        var count = 0;
-        var to_check = array_concat(GAME_STATS.mines_data, game_stats_mines_floor_available()
-            ? [GS_MINES_RUN, { floor_data: [GS_MINES_FLOOR] }]
-            : [],
-        );
-        for (var j = 0; j < array_length(to_check); j++) {
-            var run = to_check[j];
-            for (var k = 0; k < array_length(run.floor_data); k++) {
-                for (var h = 0; h < MonsterId.LEN; h++) {
-                    if MONSTER_PROTOTYPES[h].monster_category == category {
-                        var key = monster_id_to_string(h);
-                        count += run.floor_data[k].enemy_kill[key] ?? 0;
-                    }
-                }
-            }
-        }
-        return count;
-    }
-
     function animation_assets() {
         return self.presets.get(self.preset_index_selected);
     }
@@ -1031,6 +1011,7 @@ function Ari() constructor {
     inventory = Inventory(10);
     items_acquired = array_bool(ItemId.LEN);
     items_sold = array_create(ItemId.LEN, 0);
+    monsters_killed = array_create(MonsterId.LEN, 0);
     spells_learned = array_bool(Spell.LEN);
     legendary_fish_caught = array_bool(Season.LEN);
     recipe_unlocks = array_bool(ItemId.LEN);

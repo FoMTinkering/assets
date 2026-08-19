@@ -403,7 +403,7 @@ function spawn_date_photo(index) {
     popup.forced_atlas = undefined;
     var atlas_season = data.date == Date.Bathhouse ? Season.Summer : get_seasons(data.timestamp);
     if atlas_season != CALENDAR.season() {
-        popup.forced_atlas = season_to_portrait_atlas(get_seasons(data.timestamp));
+        popup.forced_atlas = season_to_portrait_atlas(atlas_season);
         portrait_atlas_load(popup.forced_atlas);
     }
 

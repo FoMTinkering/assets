@@ -209,9 +209,6 @@ function interact(node) {
                     day: total_days(),
                 });
             }
-            if GS_MINES_RUN != undefined {
-                array_push(GS_MINES_FLOOR.forageables_harvested, item_id_to_string(item));
-            }
             if node.ctx == CropFlag.EMPTY {
                 ARI.gain_xp(Skill.Farming, XpValue.harvest_crop);
                 array_push(GAME_STATS.crop_harvests, {

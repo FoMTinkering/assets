@@ -196,6 +196,12 @@ function load_game(loader) {
         try_string_to_item_id,
     );
 
+    apply_struct_to_array(
+        ARI.monsters_killed,
+        files.player[$ "monsters_killed"] ?? {},
+        try_string_to_monster_id,
+    );
+
     ARI.annual_item_purchase_bans = deserialize_array_bool(
         files.player.annual_item_purchase_bans,
         try_string_to_item_id,
@@ -509,8 +515,6 @@ function load_game(loader) {
     Game.play_time_comparator = current_time() / 1000;
 
     MIST_SIGHT_ACTIVE_INDEX = files.gamedata.active_mist_sight;
-
-    GS_MINES_RUN = undefined;
 
     FISH_TRAP_RARITY = files.gamedata[$ "fish_trap_rarity"];
     FISH_TRAP_TIMESTAMP = files.gamedata[$ "fish_trap_timestamp"];

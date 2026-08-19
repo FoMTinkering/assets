@@ -345,7 +345,7 @@ object_create(
                     StateBuilder(RockclodState.Flying)
                         .create(function() {
                             function on_hit(tarball) {
-                                var po = tarball.parent_object();
+                                var po = tarball.parent_object_id;
                                 if tarball.target == CombatTarget.Enemy {
                                     if (po == obj_monster_clod_projectile || po == obj_monster_enchantern_projectile || po == obj_monster_bat_sonic_attack || (po == obj_monster_clod && tarball.parent_id.fsm.current_state_id() == RockclodState.Flying))
                                         && self.reflected && self.reflection_cd == 0
@@ -659,7 +659,7 @@ object_create(
                         continue;
                     }
 
-                    if next_dmg.tarball.parent_object() == obj_monster_clod_bomb {
+                    if next_dmg.tarball.parent_object_id == obj_monster_clod_bomb {
                         continue;
                     }
 
@@ -683,10 +683,11 @@ object_create(
                     }
 
                     took_any_damage = true;
+                    var tarball_parent = next_dmg.tarball.parent_object_id;
 
-                    var from_projectile = next_dmg.tarball.parent_object() == obj_monster_clod_projectile
-                        || next_dmg.tarball.parent_object() == obj_fire_breath
-                        || next_dmg.tarball.parent_object() == obj_monster_clod
+                    var from_projectile = tarball_parent == obj_monster_clod_projectile
+                        || tarball_parent == obj_fire_breath
+                        || tarball_parent == obj_monster_clod
                         || next_dmg.tarball.instant_kill;
                     var dmg = from_projectile ? next_dmg.tarball.damage : 1;
                     self.hit_points -= dmg;
@@ -703,7 +704,7 @@ object_create(
 
                     var on_hit = self.config.misc_tango.weak_damage;
 
-                    if next_dmg.tarball.parent_object() == obj_monster_clod_projectile {
+                    if next_dmg.tarball.parent_object_id == obj_monster_clod_projectile {
                         TANGO.play(self.config.misc_tango.hit_by_projectile, x, y);
                         on_hit = self.config.misc_tango.strong_damage;
                     }

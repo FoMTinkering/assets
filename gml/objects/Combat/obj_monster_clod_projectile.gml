@@ -182,7 +182,7 @@ object_create(
                 TANGO.play("SoundEffects/Enemies/TakeDamageRockStrong");
 
                 //
-                if self.target_enemy == false && next_dmg.tarball.parent_object() == obj_ari {
+                if self.target_enemy == false && next_dmg.tarball.parent_object_id == obj_ari {
                     TANGO.play(self.reflect_tango, x, y);
                     self.reflect(next_dmg.tarball.damage, next_dmg.tarball.critical);
 

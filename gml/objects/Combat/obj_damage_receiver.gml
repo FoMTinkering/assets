@@ -9,6 +9,7 @@ object_create(
 
             //
             parent_id = undefined;
+            parent_object_id = undefined;
 
             //
             //
@@ -28,11 +29,6 @@ object_create(
 
             damage_back_tarball = undefined;
             on_damage_back = undefined;
-
-            //
-            function parent_object() {
-                return self.parent_id == undefined ? undefined : self.parent_id.object_index;
-            }
 
             //
             //
@@ -81,7 +77,7 @@ object_create(
                         continue;
                     }
 
-                    if self.parent_object() != obj_monster_rock_stack && has_flag(tarball.flags, CombatFlag.Rockstack) {
+                    if self.parent_object_id != obj_monster_rock_stack && has_flag(tarball.flags, CombatFlag.Rockstack) {
                         continue;
                     }
 

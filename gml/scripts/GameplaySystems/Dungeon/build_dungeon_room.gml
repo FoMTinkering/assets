@@ -204,33 +204,25 @@ function build_dungeon_room(grid) {
                     case DungeonSpawn.Enemy:
                     case DungeonSpawn.MiniBossEnemy:
                         spawn_monster((ox + 1) * 8, (oy + 1) * 8, candidate);
-                        array_push(GS_MINES_FLOOR.monsters_spawned, monster_id_to_string(candidate));
                         break;
                     case DungeonSpawn.Fish:
                     case DungeonSpawn.VoidPearl:
                         if candidate != undefined {
                             instance_create_depth((ox + 1) * 8, (oy + 1) * 8, 0, obj_fishy).initialise(new Fish(candidate));
-                            array_push(GS_MINES_FLOOR.fishes_spawned, fish_id_to_string(candidate));
                         }
                         break;
                     case DungeonSpawn.Bug:
                         instance_create_depth((ox + 1) * 8, (oy + 1) * 8, 0, obj_bug).setup(candidate);
-                        array_push(GS_MINES_FLOOR.bugs_spawned, item_id_to_string(candidate));
                         break;
                     case DungeonSpawn.Forageable:
                     case DungeonSpawn.VoidHerb:
                         grid.write_node(ox, oy, candidate, CropFlag.FORAGEABLE | CropFlag.SPAWN_GROWN);
-                        array_push(GS_MINES_FLOOR.forageables_spawned, object_id_to_string(candidate));
                         break;
                     case DungeonSpawn.Artifact:
                         grid.write_node(ox, oy, ObjectId.DigSite);
-                        GS_MINES_FLOOR.digsites += 1;
                         break;
                     default:
                         assert_neq(candidate, undefined, "Got an undefined candidate for spawn type {DungeonSpawn}", spawn);
-                        if object_id_to_object_category(candidate) == ObjectCategory.Rock {
-                            array_push(GS_MINES_FLOOR.rocks_spawned, object_id_to_string(candidate));
-                        }
                         grid.write_node(ox, oy, candidate);
                         break;
                 }

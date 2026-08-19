@@ -223,6 +223,40 @@ function Mist() constructor {
     self.halt_music_until_room_swap = false;
     self.restore_no_asymptote = false;
     self.requirement_overrides = array_create(Requirement.LEN, false);
+    self.borrowed_portrait_atlases = HashSet();
+
+    function borrow_portrait_atlas(outfit) {
+        var keys = outfit.portraits.keys();
+        var atlas = sprite_get_atlas(outfit.portraits.get(keys[0]));
+
+        if atlas == season_to_portrait_atlas(CALENDAR.season())
+            || self.borrowed_portrait_atlases.contains(atlas)
+        {
+            return;
+        }
+
+        if portrait_atlas_load(atlas) {
+            trace("Loaded portrait atlas '{}' for the current scene.", atlas);
+            self.borrowed_portrait_atlases.insert(atlas);
+        }
+    }
+
+    function return_portrait_atlases() {
+        var current = season_to_portrait_atlas(CALENDAR.season());
+        var atlases = self.borrowed_portrait_atlases.keys();
+
+        for (var i = 0; i < array_length(atlases); i++) {
+            //
+            //
+            if atlases[i] == current {
+                continue;
+            }
+
+            portrait_atlas_unload(atlases[i]);
+        }
+
+        self.borrowed_portrait_atlases.clear();
+    }
 
     //
     function request_scene(scene) {
@@ -323,6 +357,7 @@ function Mist() constructor {
         for (var i = 0; i < CameoId.LEN; i++) {
             var cameo = new Cameo(i, CameoBrain());
             self.cameos.push(cameo);
+            self.borrow_portrait_atlas(cameo.wardrobe.outfit_current);
         }
 
         static START_SCENE = function() {
@@ -829,6 +864,7 @@ function Mist() constructor {
         }
         self.npcs.clear();
         self.cameos.clear();
+        self.return_portrait_atlases();
 
         with obj_void_ari {
             instance_destroy();
